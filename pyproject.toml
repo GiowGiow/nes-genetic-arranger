@@ -1,0 +1,46 @@
+[project]
+name = "chiptune-ga-arranger"
+version = "0.1.0"
+description = "DCC831 (UFMG 2026/2) TP1: algorithmic music composition"
+authors = [
+    { name = "Giovanni Martinelli", email = "giofmartinelli@gmail.com" }
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "music21>=10.5.0",
+    "numpy>=2.5.4",
+    "pretty-midi>=0.2.11.post0",
+]
+
+[dependency-groups]
+dev = [
+    "marimo>=0.25.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
+
+[tool.uv]
+# Code lives directly in src/ (no installable package); run it with `uv run src/main.py`
+package = false
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "NPY"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+pythonpath = ["src"]
+# Docstring examples in src/ run as tests (constitution principle IV)
+addopts = "-ra --doctest-modules"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src"]

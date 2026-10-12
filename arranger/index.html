@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NES Arranger</title>
+<meta name="description" content="Arrange your own ABC or MIDI song for the NES sound chip with a genetic algorithm that runs in your browser. Your file never leaves your device.">
+<meta name="theme-color" content="#0B0E17">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/ui/main.js"></script>
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+<main>
+  <header class="hero">
+    <span class="eyebrow"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Chiptune GA Arranger · runs in your browser</span>
+    <h1>NES <span class="gradient">Arranger</span></h1>
+    <p class="lead">Give it a lead sheet or a MIDI song. A genetic algorithm evolves an arrangement for
+    the four channels of the NES sound chip, and you hear it next to the original. Your file stays on
+    this device.</p>
+    <div class="legend" aria-label="Channel colors">
+      <span class="chip"><span class="dot" style="--c: var(--p1)"></span>P1 pulse · melody</span>
+      <span class="chip"><span class="dot" style="--c: var(--p2)"></span>P2 pulse · harmony</span>
+      <span class="chip"><span class="dot" style="--c: var(--tr)"></span>TR triangle · bass</span>
+      <span class="chip"><span class="dot" style="--c: var(--no)"></span>NO noise · drums</span>
+    </div>
+    <nav class="steps" aria-label="Sections">
+      <a href="#song">Song</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#result">Result</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <noscript><p class="card notice">The arranger runs in JavaScript. Turn it on to arrange a song.</p></noscript>
+
+  <div class="panels">
+    <section id="song" class="card" aria-labelledby="song-title">
+      <h2 id="song-title">Song</h2>
+      <div class="tabs" role="tablist" aria-label="Where the song comes from">
+        <button type="button" role="tab" id="tab-file" aria-controls="panel-file" aria-selected="true">Your file</button>
+        <button type="button" role="tab" id="tab-examples" aria-controls="panel-examples" aria-selected="false" tabindex="-1">Examples</button>
+        <button type="button" role="tab" id="tab-catalog" aria-controls="panel-catalog" aria-selected="false" tabindex="-1">MPB catalog</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="panel-file" aria-labelledby="tab-file"></div>
+      <div class="tab-panel" role="tabpanel" id="panel-examples" aria-labelledby="tab-examples" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-catalog" aria-labelledby="tab-catalog" hidden></div>
+      <div class="song-details" data-song-details></div>
+    </section>
+
+    <section id="run" class="card" aria-labelledby="run-title">
+      <h2 id="run-title">Run</h2>
+      <p class="run-song" data-run-song>Choose a song first.</p>
+      <div class="run-fields">
+        <div class="has-tip">
+          <label class="inline">Seed<span class="tip-mark" aria-hidden="true">i</span>
+            <input type="number" min="0" step="1" value="1" class="mono" data-seed aria-describedby="tip-seed"></label>
+          <p class="tip" id="tip-seed" role="tooltip">Starts the random generator. The same song, seed and settings always give the same arrangement; another seed gives another plan.</p>
+        </div>
+        <div class="has-tip">
+          <label class="inline">Pace<span class="tip-mark" aria-hidden="true">i</span>
+            <select data-pace aria-describedby="tip-pace"><option value="watch">watch</option><option value="full">full speed</option></select></label>
+          <p class="tip" id="tip-pace" role="tooltip">Watch runs about 400 generations per second, so you can follow the evolution; full speed finishes in about a second. The arrangement is the same.</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button type="button" class="button primary" data-arrange disabled>Arrange</button>
+        <button type="button" class="button" data-stop disabled>Stop</button>
+      </div>
+      <p class="hint" data-run-hint></p>
+      <div class="changed-chips" data-changed aria-label="Settings changed from the defaults"></div>
+      <button type="button" class="button small" data-settings-toggle aria-expanded="false" aria-controls="settings">Settings</button>
+    </section>
+
+    <section id="settings" class="card" aria-labelledby="settings-title">
+      <div class="side-head">
+        <h2 id="settings-title" tabindex="-1">Settings</h2>
+        <button type="button" class="button small" data-settings-close>Close</button>
+      </div>
+      <p class="hint">The defaults are the command line's (<code>configs/default.json</code>). A bold name
+      differs from its default, shown below it. Hover or focus a field to read what it changes.</p>
+    </section>
+
+    <section id="evolution" class="card wide" aria-labelledby="evolution-title">
+      <h2 id="evolution-title">Evolution</h2>
+      <p class="placeholder">The fitness curve and the plan of every bar appear here while the run evolves.</p>
+    </section>
+
+    <section id="result" class="card wide" aria-labelledby="result-title">
+      <h2 id="result-title">Result</h2>
+      <p class="placeholder">Play the arrangement on the NES chip, compare it with the original, and download the MIDI, the settings and the lead sheet.</p>
+    </section>
+
+    <section id="about" class="card wide" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="about">
+        <p>The arranger is the browser version of the project's command line
+        (<a href="https://github.com/GiowGiow/nes-genetic-arranger">nes-genetic-arranger</a>, DCC831 TP1,
+        UFMG). It reads your song into a <em>lead sheet</em>: the melody, the chord of every moment and the
+        parts (verse, chorus). A genetic algorithm then searches for an <em>arrangement plan</em>: four genes
+        per bar, the texture of the second pulse channel (P2), the bass texture of the triangle (TR), the drum
+        pattern of the noise channel (NO) and the octave of the melody (P1). Seven music-theory criteria score
+        each plan, roulette selection with elitism picks parents, one-point crossover at bar lines and
+        per-gene mutation make children, and the run stops when the best plan stops improving.</p>
+        <p><strong>Same seed, same arrangement.</strong> The app has its own seeded random generator, so the same
+        song, seed and settings give the same arrangement in any browser. The command line uses numpy's
+        generator: the same seed there gives a different arrangement, equally valid. The algorithm, the
+        settings and the fitness are the same, and tests check that both score a plan identically.</p>
+        <p><strong>Your files stay here.</strong> Everything runs in this page: nothing you drop is uploaded,
+        and the app fetches only its own files.</p>
+        <p><strong>Credits.</strong> The MPB catalog search lists songs from
+        <a href="https://www.beakauffmann.com/">Beatriz Kauffmann's Web Site</a>, a non-commercial site of MIDI
+        sequences of Brazilian popular music; the app keeps only titles, names and links, and the files stay on
+        that site. ABC files are parsed with <a href="https://github.com/paulrosen/abcjs">abcjs</a> (MIT). Fonts:
+        Inter and JetBrains Mono (SIL Open Font License).</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <span>Version <span id="app-version" class="mono">dev</span></span>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="../listen/">Listening page</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="https://github.com/GiowGiow/nes-genetic-arranger">Code and method</a>
+  </footer>
+</main>
+</body>
+</html>

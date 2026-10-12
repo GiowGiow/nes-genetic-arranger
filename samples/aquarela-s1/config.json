@@ -1,0 +1,48 @@
+{
+  "population_size": 60,
+  "max_generations": 4000,
+  "stagnation_window": 400,
+  "mutation_rate": 0.01,
+  "elite_count": 2,
+  "phrase_length": 4,
+  "tempo_bpm": null,
+  "role_map": {},
+  "weights": {
+    "complementarity": 1.0,
+    "register": 1.0,
+    "coherence": 1.0,
+    "contrast": 1.0,
+    "bass_smoothness": 1.0,
+    "idiom": 1.0,
+    "fidelity": 0.5
+  },
+  "midi": {
+    "melody_track": 3,
+    "bars": [
+      4,
+      36
+    ],
+    "sections": [
+      [
+        0,
+        "A"
+      ],
+      [
+        16,
+        "B"
+      ]
+    ],
+    "grid": "auto"
+  },
+  "seed": 1,
+  "input_path": "data/raw/mpb/aquarela.mid",
+  "input_sha256": "bf8fbbc2c6af6c049cff5820445d5d5780dfde41a14d2aabe32d30d745728961",
+  "git_commit": "7971fe0c3221c53b2f1186afe87398de3323bd7d",
+  "git_dirty": true,
+  "created": "2026-10-12T05:40:10+00:00",
+  "run_id": "aquarela-s1-d9735b16",
+  "best_fitness": 0.8708728850016878,
+  "stop_reason": "stagnation",
+  "generations": 1183,
+  "audio": true
+}

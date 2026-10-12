@@ -1,0 +1,76 @@
+# Python and uv
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Notebooks (marimo writes session state and caches to __marimo__/ next to each notebook)
+__marimo__/
+.ipynb_checkpoints/
+
+# Secrets and local settings (this repository becomes public)
+.env
+.env.*
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Course material (the assignment statement is not ours to publish)
+tp1_geracao_musical_simbolica.pdf
+# Local link to the student's private literature library (third-party PDFs and notes)
+literature
+
+# Generated music: every run writes outputs/<run-id>/; curated pieces are copied to samples/
+outputs/
+# Intermediate audio from FluidSynth; deliverable audio is mp3
+*.wav
+
+# Large inputs: corpora are downloaded by a documented command, soundfonts are installed
+data/raw/
+*.sf2
+*.sf3
+
+# LaTeX build files (the compiled abstract PDF is tracked)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.xdv
+
+# Spec Kit catalog cache
+.specify/presets/.cache/
+.specify/extensions/.cache/
+.claude/launch.json
+.claude/worktrees/
+
+# Superdesign working files (design drafts live on superdesign.dev)
+.superdesign/
+
+# Node (the web app has no npm dependencies; this guards against a stray install)
+node_modules/

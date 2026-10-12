@@ -1,0 +1,384 @@
+/* NES Arranger: the page shell.
+   Design: the listening page's visual language (listen/index.html), a dark ground, glass cards and
+   the four NES channel colors, nothing else. The arranger is a workspace, so its aurora stands
+   still: four soft glows painted once, instead of the listening page's drifting blurred blades. */
+
+/* Fonts are served with the app (vendor/fonts/README.md): no request leaves the site. */
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 400 800; font-display: swap;
+  src: url("vendor/fonts/inter-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono"; font-style: normal; font-weight: 500 700; font-display: swap;
+  src: url("vendor/fonts/jetbrains-mono-latin.woff2") format("woff2");
+}
+
+:root {
+  --bg: #0B0E17;
+  --glass: rgba(20, 26, 42, 0.62);
+  --line: #25304a;
+  --text: #e6e9f0;
+  --muted: #9aa3b5;
+  --p1: #5F9ED1;
+  --p2: #FF800E;
+  --tr: #CFCFCF;
+  --no: #FFBC79;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+a { color: var(--p1); text-underline-offset: 3px; }
+a:hover { color: var(--no); }
+:focus-visible { outline: 2px solid var(--no); outline-offset: 3px; border-radius: 6px; }
+.mono { font-family: var(--mono); }
+
+/* Still aurora: the four channel colors as large soft glows, with a vignette on top. */
+.backdrop {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(11, 14, 23, .1) 0%, rgba(11, 14, 23, .8) 100%),
+    radial-gradient(60vw 40vh at 8% 0%, rgba(95, 158, 209, .30), transparent 70%),
+    radial-gradient(55vw 45vh at 100% 100%, rgba(255, 128, 14, .22), transparent 70%),
+    radial-gradient(40vw 30vh at 35% 60%, rgba(255, 188, 121, .10), transparent 70%),
+    radial-gradient(30vw 35vh at 80% 30%, rgba(207, 207, 207, .06), transparent 70%),
+    var(--bg);
+}
+
+main { max-width: 1180px; margin: 0 auto; padding: 32px 16px 64px; }
+
+/* Header */
+.hero { max-width: 820px; margin-bottom: 22px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(12px);
+  color: var(--muted); font-size: .85rem;
+}
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin: 12px 0 10px; }
+.gradient {
+  background: linear-gradient(90deg, var(--p1), var(--no) 55%, var(--p2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.lead { color: #c9cfdb; font-size: 1rem; margin: 0 0 12px; max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px;
+  background: rgba(11, 14, 23, .55); border: 1px solid var(--line); font-size: .82rem; color: var(--muted);
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); flex: none; }
+.eq { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; }
+.eq i { width: 4px; height: 10px; border-radius: 2px 2px 0 0; background: var(--c); animation: eq 1s ease-in-out infinite alternate; }
+.eq i:nth-child(1) { --c: var(--p1); animation-delay: .1s; }
+.eq i:nth-child(2) { --c: var(--p2); animation-delay: .45s; }
+.eq i:nth-child(3) { --c: var(--tr); animation-delay: .25s; }
+.eq i:nth-child(4) { --c: var(--no); animation-delay: .6s; }
+@keyframes eq { from { height: 4px; } to { height: 18px; } }
+
+/* Section links: the four steps of a run, then the catalog and the notes. */
+.steps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.steps a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
+  color: var(--text); text-decoration: none; font-size: .88rem; font-weight: 600;
+  border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(12px);
+  transition: border-color .2s, transform .2s;
+}
+.steps a:hover { border-color: var(--p1); transform: translateY(-1px); color: var(--text); }
+.step-num { font-family: var(--mono); font-weight: 700; color: var(--p1); }
+
+/* Panels: input and settings side by side on a wide screen, the rest across the page. */
+.panels { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.card {
+  position: relative; min-width: 0; padding: 20px; border-radius: 16px;
+  background: var(--glass); border: 1px solid var(--line);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  scroll-margin-top: 16px;
+}
+/* Gradient border in the channel colors while a control inside the card has keyboard focus. */
+.card::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(135deg, var(--p1), var(--no), var(--p2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .35s;
+}
+.card:focus-within::before { opacity: .8; }
+.card h2 { display: flex; align-items: baseline; gap: 12px; font-size: 1.25rem; letter-spacing: -.01em; margin: 0 0 8px; }
+.placeholder { color: var(--muted); margin: 0; }
+.notice { margin: 0 0 20px; }
+
+/* Controls shared by the panels. */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 40px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: rgba(255, 255, 255, .04); color: var(--text);
+  font: inherit; font-weight: 600; text-decoration: none; transition: border-color .2s, background .2s;
+}
+.button:hover:not(:disabled) { border-color: var(--p1); color: var(--text); }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.button.primary { background: linear-gradient(135deg, rgba(95, 158, 209, .35), rgba(255, 128, 14, .25)); border-color: var(--p1); }
+.button.small { min-height: 0; padding: 2px 10px; font-size: .9rem; }
+.button[aria-pressed="true"] { border-color: var(--no); background: rgba(255, 188, 121, .14); }
+input, select, textarea {
+  font: inherit; color: var(--text); background: rgba(0, 0, 0, .25);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; max-width: 100%;
+}
+input[type="number"] { width: 7.5em; }
+input[type="range"] { accent-color: var(--p1); flex: 1 1 160px; min-width: 120px; padding: 0; border: 0; background: none; }
+label.inline { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }
+label.block { display: grid; gap: 6px; color: var(--muted); margin: 10px 0; }
+.label { color: var(--muted); font-size: .85rem; }
+.hint { color: var(--muted); font-size: .9rem; }
+.status { margin: 10px 0 0; color: var(--muted); white-space: pre-line; }
+.error { color: #ff9b8a; }
+.caption { color: var(--muted); font-size: .88rem; margin: 8px 0 0; }
+.subhead { font-size: 1rem; margin: 18px 0 8px; }
+
+/* Input panel. */
+.dropzone {
+  display: grid; gap: 4px; place-items: center; text-align: center; cursor: pointer;
+  padding: 26px 14px; margin-top: 8px; border: 1.5px dashed var(--line); border-radius: 14px;
+  transition: border-color .2s, background .2s;
+}
+.dropzone:hover, .dropzone.over, .dropzone:focus-within { border-color: var(--p1); background: rgba(95, 158, 209, .07); }
+.dropzone input[type="file"] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.drop-title { font-weight: 700; }
+.drop-hint { color: var(--muted); font-size: .92rem; }
+/* Examples: a grid of equal cards that fills the tab, whatever the card text lengths. */
+.examples { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 8px; margin-top: 12px; }
+.examples .button-chip { width: 100%; height: 100%; align-content: start; }
+.button-chip[aria-pressed="true"] { border-color: var(--p2); background: rgba(255, 128, 14, .08); }
+.button-chip {
+  display: inline-grid; text-align: left; line-height: 1.25; cursor: pointer; font: inherit; color: var(--text);
+  padding: 6px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03);
+}
+.button-chip:hover { border-color: var(--p2); }
+.button-chip .title { font-weight: 600; font-size: .92rem; }
+.button-chip .artist { color: var(--muted); font-size: .78rem; }
+.field { margin-top: 10px; }
+.midi-options { border: 1px solid var(--line); border-radius: 12px; margin: 12px 0 0; padding: 10px 12px; min-width: 0; }
+.midi-options legend { color: var(--muted); padding: 0 6px; }
+.midi-options .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); }
+/* Numbers align right, so their digits line up for comparison. */
+th.num, td.num { text-align: right; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+thead th { color: var(--muted); font-weight: 500; }
+tr.drum { color: var(--muted); }
+.tracks td.name { max-width: 14em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Range bars: every pitched track on one pitch axis, low at the left; the chosen melody in its channel color. */
+.tracks td.range { white-space: nowrap; }
+.range-bar { position: relative; display: inline-block; width: 72px; height: 8px; margin-right: 6px; vertical-align: middle; border-radius: 2px; background: rgba(255, 255, 255, .06); }
+.range-bar span { position: absolute; top: 0; bottom: 0; min-width: 3px; border-radius: 2px; background: var(--muted); }
+.tracks tr:has(input:checked) .range-bar span { background: var(--p1); }
+.summary { margin-top: 14px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px 14px; margin: 0 0 8px; }
+.facts div { min-width: 0; }
+.facts .span { grid-column: 1 / -1; }
+.facts dt { color: var(--muted); font-size: .8rem; }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+
+/* Evolution panel. */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 8px 0 14px; }
+.counters { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.counter { display: grid; gap: 4px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(0, 0, 0, .18); }
+.counter .value { font-size: 1.15rem; font-weight: 700; }
+.counter .status { margin: 0; font-size: .85rem; }
+.meter { display: block; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .06); overflow: hidden; }
+.meter span { display: block; height: 100%; width: 0; background: var(--p1); transition: width .1s linear; }
+.meter.stagnation span { background: var(--p2); }
+.chart { display: block; width: 100%; height: 220px; margin-top: 12px; }
+.plan-grid { display: grid; gap: 3px; overflow-x: auto; padding-bottom: 4px; }
+.plan-row { display: grid; grid-template-columns: 52px repeat(var(--bars, 1), minmax(9px, 1fr)); gap: 2px; align-items: center; }
+.row-label { color: var(--muted); font-size: .75rem; }
+.gene { height: 16px; border-radius: 3px; background: var(--c); opacity: .15; transition: opacity .15s; }
+.parts .part-mark { font-size: .7rem; color: var(--no); white-space: nowrap; overflow: visible; height: 14px; }
+/* Chord row: a symbol where the harmony changes, spanning the bars that repeat it; a symbol wider
+   than its span keeps only the tick and the tooltip. */
+.plan-row.chords { align-items: stretch; }
+.chord-cell { min-height: 16px; padding-left: 2px; border-left: 1px solid var(--muted); font: .68rem/1.15 var(--mono); color: var(--text); white-space: pre; overflow: hidden; }
+.chord-cell.small { font-size: .56rem; letter-spacing: -.02em; }
+.chord-cell.tight span { visibility: hidden; }
+
+/* Result panel. */
+.transport { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.versions { display: inline-flex; gap: 6px; }
+.time { color: var(--muted); font-size: .9rem; }
+.scores { margin-top: 12px; max-width: 560px; }
+.scores tfoot th, .scores tfoot td { border-bottom: 0; font-weight: 700; }
+.scores tfoot .hint { font-weight: 400; }
+/* Score bars share one 0 to 1 scale, so the criterion that holds the fitness back is the shortest. */
+.scores .bar-cell { width: 40%; }
+.score-bar { display: block; height: 8px; border-radius: 2px; background: rgba(255, 255, 255, .06); }
+.score-bar span { display: block; height: 100%; border-radius: 2px; background: var(--muted); }
+.scores tfoot .score-bar span { background: var(--text); }
+.scores .scale { display: flex; justify-content: space-between; font: 400 .75rem var(--mono); color: var(--muted); }
+.downloads { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.downloads .button { flex-direction: column; gap: 0; border-radius: 12px; align-items: flex-start; }
+.downloads .file { font-size: .72rem; color: var(--muted); font-weight: 400; }
+
+/* Settings panel. */
+/* Settings: a drawer that slides in over the right side of the page and leaves the layout as it
+   is, so the evolution keeps its place while the values change. Closed, it waits off screen,
+   invisible to the mouse, the keyboard and screen readers. */
+#settings {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 30; width: min(380px, 100vw);
+  overflow: hidden auto; overscroll-behavior: contain; border-radius: 0; border-width: 0 0 0 1px;
+  background: #121828; padding: 16px 18px 24px; box-shadow: -16px 0 40px rgba(0, 0, 0, .55);
+  transform: translateX(100%); visibility: hidden;
+  transition: transform .25s ease, visibility 0s linear .25s;
+}
+#settings.open { transform: none; visibility: visible; transition: transform .25s ease; }
+@media (prefers-reduced-motion: reduce) { #settings, #settings.open { transition: none; } }
+/* The card's focus border would scroll with the drawer's content, so the drawer goes without it. */
+#settings::before { display: none; }
+.side-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.side-head h2 { margin: 0; }
+#settings-title:focus { outline: none; }
+/* One column of groups set apart by space, not boxes. */
+.settings-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 12px; }
+.settings-group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.settings-group legend { color: var(--muted); padding: 0; margin-bottom: 4px; font-size: .85rem; font-weight: 600; }
+.setting { display: grid; grid-template-columns: minmax(0, 1fr) 6.5em; gap: 2px 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(37, 48, 74, .5); }
+.setting:last-child { border-bottom: 0; }
+.setting label { font-weight: 400; font-size: .93rem; }
+/* A changed setting is the one bold name, with its default below it. */
+.setting.changed label { font-weight: 700; }
+.setting-note { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 0; color: var(--muted); font-size: .8rem; }
+.setting-note:empty { display: none; }
+.setting-note [data-default]:empty { display: none; }
+.share { display: inline-flex; align-items: center; gap: 8px; }
+.share-bar { display: block; width: 72px; height: 6px; border-radius: 2px; background: rgba(255, 255, 255, .06); }
+.share-bar span { display: block; height: 100%; border-radius: 2px; background: var(--muted); }
+.setting input { width: 100%; text-align: right; }
+/* Tooltips: what a setting changes, on hover or keyboard focus, floating over the page. */
+.has-tip { position: relative; }
+.tip {
+  position: absolute; left: 0; top: calc(100% + 6px); z-index: 20; width: min(320px, 90vw); margin: 0;
+  padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: #141a2a;
+  color: var(--text); font-size: .82rem; line-height: 1.45; box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  opacity: 0; visibility: hidden; transform: translateY(-4px); pointer-events: none;
+  transition: opacity .15s, transform .15s, visibility .15s;
+}
+.has-tip:hover .tip, .has-tip:focus-within .tip { opacity: 1; visibility: visible; transform: none; }
+.tip-mark {
+  display: inline-grid; place-items: center; width: 15px; height: 15px; margin-left: 6px; border-radius: 50%;
+  border: 1px solid var(--muted); color: var(--muted); font: 700 .66rem/1 Inter, system-ui, sans-serif; vertical-align: 1px; cursor: help;
+}
+.has-tip:hover .tip-mark, .has-tip:focus-within .tip-mark { border-color: var(--no); color: var(--no); }
+.setting .field-error { grid-column: 1 / -1; margin: 0; font-size: .82rem; }
+.setting .tip { grid-column: 1 / -1; right: 0; width: auto; }
+.setting.invalid input { border-color: #ff9b8a; }
+.field-error:empty { display: none; }
+/* Allowed textures: one fieldset per channel, its values in two columns, which fit the drawer at
+   any width down to a 375 px phone. A changed channel is bold like a changed setting. */
+.allowed-textures .hint { margin: 0 0 4px; font-size: .82rem; }
+.allowed-gene { border: 0; margin: 0; padding: 6px 0; min-width: 0; border-bottom: 1px solid rgba(37, 48, 74, .5); }
+.settings-group .allowed-gene legend { display: flex; align-items: center; gap: 8px; margin: 0; padding: 0; color: var(--text); font-size: .93rem; font-weight: 400; }
+.settings-group .allowed-gene.changed legend { font-weight: 700; }
+.settings-group .allowed-gene.invalid legend { color: #ff9b8a; }
+.allowed-values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 10px; margin-top: 2px; }
+.allowed-value label { display: flex; align-items: flex-start; gap: 6px; padding: 3px 0; font-size: .86rem; line-height: 1.3; cursor: pointer; }
+/* The box lines up with the first line of a label that wraps. */
+.allowed-value input { flex: none; width: 15px; height: 15px; margin: 2px 0 0; padding: 0; accent-color: var(--p1); }
+.allowed-value .tip-mark { margin-left: 5px; }
+/* A tooltip in the right column opens leftward, so it stays inside the drawer. */
+.allowed-value:nth-child(even) .tip { left: auto; right: 0; }
+.allowed-gene .setting-note { margin-top: 2px; }
+.allowed-gene .field-error { margin: 4px 0 0; font-size: .82rem; }
+/* Warnings, not errors: the run may go on, but a criterion or a channel has nothing left to do. */
+.allowed-warnings { display: grid; gap: 4px; margin-top: 8px; }
+.allowed-warnings:empty { display: none; }
+.allowed-warnings p { margin: 0; padding-left: 8px; border-left: 2px solid var(--no); color: var(--no); font-size: .82rem; }
+
+/* Run list. */
+.run-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.run {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; width: 100%; text-align: left; cursor: pointer;
+  font: inherit; color: var(--text); padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(0, 0, 0, .18);
+}
+.run:hover { border-color: var(--p1); }
+.run[aria-pressed="true"] { border-color: var(--no); }
+.run .fitness { font-weight: 700; color: var(--p1); }
+.run .seed { color: var(--muted); font-size: .85rem; }
+.run .changes { display: flex; flex-wrap: wrap; gap: 4px; color: var(--muted); font-size: .85rem; }
+.run .changed { padding: 1px 8px; border-radius: 999px; border: 1px solid var(--p2); color: var(--p2); font-size: .78rem; }
+.channel-view { display: block; width: 100%; height: 240px; margin-top: 12px; border-radius: 12px; background: rgba(0, 0, 0, .25); }
+
+footer {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
+  margin-top: 48px; color: var(--muted); font-size: .88rem; text-align: center;
+}
+footer .sep { color: var(--line); }
+#app-version { color: var(--no); }
+
+@media (min-width: 900px) {
+  .panels { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; }
+  .card.wide { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  main { padding-top: 36px; }
+  .card { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eq i { animation: none !important; }
+  .steps a { transition: none; }
+  html { scroll-behavior: auto; }
+}
+.about p { margin: 0 0 10px; color: #c9cfdb; }
+.about p:last-child { margin-bottom: 0; }
+.plan-legend { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 2px 10px; margin: 8px 0 0; font-size: .8rem; }
+.plan-legend dt { font-family: var(--mono); color: var(--c); }
+.plan-legend dd { margin: 0; color: var(--muted); }
+.catalog-results { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; max-height: 360px; overflow-y: auto; }
+.catalog-hit {
+  display: grid; width: 100%; text-align: left; cursor: pointer; font: inherit; color: var(--text);
+  padding: 6px 12px; border-radius: 10px; border: 1px solid var(--line); background: rgba(0, 0, 0, .18);
+}
+.catalog-hit:hover, .catalog-hit:focus-visible { border-color: var(--p2); }
+.catalog-hit .title { font-weight: 600; }
+.catalog-hit .names { color: var(--muted); font-size: .85rem; }
+.catalog-pick { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid var(--no); background: rgba(255, 188, 121, .06); }
+.catalog-pick .picked { margin: 0 0 8px; }
+.two-steps { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.two-steps .hint { display: block; }
+.credit { margin: 8px 0; color: var(--no); font-size: .9rem; }
+
+/* Song card: tabs over the three ways to choose a song. */
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); margin: 6px 0 12px; }
+.tabs [role="tab"] {
+  font: inherit; font-weight: 600; color: var(--muted); background: none; cursor: pointer;
+  border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; margin-bottom: -1px;
+}
+.tabs [role="tab"]:hover { color: var(--text); }
+.tabs [role="tab"][aria-selected="true"] { color: var(--text); border-bottom-color: var(--p2); }
+.tab-panel .dropzone { margin-top: 0; }
+#song.over { border-color: var(--p1); }
+.song-details .status:empty { display: none; }
+
+/* Run card. */
+.run-song { margin: 0 0 10px; font-weight: 600; overflow-wrap: anywhere; }
+.run-fields { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+#run .toolbar { margin: 12px 0 6px; }
+#run .button.primary { min-width: 9em; }
+.changed-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
+.changed-chips:empty { display: none; }
+.changed-chips .changed { cursor: pointer; background: none; font: .78rem var(--mono); padding: 1px 8px; border-radius: 999px; border: 1px solid var(--p2); color: var(--p2); }
+#settings code { font-family: var(--mono); font-size: .85em; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+.step-title { font-size: .95rem; margin: 14px 0 4px; }
+.midi-options .hint { margin: 0 0 8px; }
+.tracks tr.suggested td { background: rgba(95, 158, 209, .08); }
+.tracks td .name { color: var(--muted); }
+.tracks th .has-tip { display: inline-flex; align-items: center; }
+.midi-options textarea { width: 100%; }
+.tempo-hint { margin: 0 0 10px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); color: #c9cfdb; font-size: .9rem; }
+.tempo-hint .button { margin-left: 6px; }

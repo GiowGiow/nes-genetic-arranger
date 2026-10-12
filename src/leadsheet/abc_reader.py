@@ -1,0 +1,370 @@
+"""Read a lead sheet written in ABC notation.
+
+ABC is a plain-text music notation: a header of `field:value` lines (T: title, M: meter, Q: tempo,
+K: key) followed by the tune body, where letters are notes, `|` are bar lines and quoted strings
+such as "Am" are chord symbols. A `P:` line in the body marks where a part (verse, chorus) starts.
+
+music21 parses the notes, chord symbols, key and tempo. It drops the `P:` field, silently skips
+chord symbols it cannot parse, and keeps only the first meter of a tune, so this module also scans
+the ABC text itself, bar line by bar line, to read the part labels, the meter of every bar (the
+`M:` field, an inline `[M:3/4]` or an `M:` line in the body) and to check every chord symbol.
+
+The arranger works bar by bar, in the order the bars are played, in the meters of
+`leadsheet.meter` (2/2, 2/4, 3/4, 4/4, 6/8, 9/8, 12/8, 5/4, 7/8). So the reader rejects any other
+meter, pickups and incomplete bars, and repeat signs (a repeat must be written out in full). Each
+bar holds only its own notes: a tie inside a bar joins the tied notes into one melody note, but a
+note tied across a bar line gives one note in each bar.
+"""
+
+import re
+from dataclasses import dataclass
+from itertools import groupby
+from pathlib import Path
+
+from music21 import converter, harmony, key, stream, tempo
+
+from leadsheet.chords import chord_tones
+from leadsheet.meter import Meter, parse_meter
+from leadsheet.model import Bar, ChordSegment, LeadSheet, MelodyNote
+
+DEFAULT_TEMPO_BPM = 140.0
+
+# In ABC, a quoted string that starts with one of these characters is a text annotation placed
+# above, below or beside the staff, not a chord symbol.
+ANNOTATION_PREFIXES = ("^", "_", "<", ">", "@")
+
+# Repeat signs and first/second endings. "|1" and "|2" are the short form of "[1" and "[2".
+REPEAT_SIGNS = ("|:", ":|", "::", "[1", "[2", "|1", "|2")
+
+# One token of a body line: a comment (which ends the line), a quoted string, an inline field
+# such as [M:3/4], a repeat sign or a bar line. "||" and "|]" are matched whole, so each closes one
+# bar. Quoted strings are matched before bar lines so that a "|" inside quotes is never taken for
+# a bar line.
+BODY_TOKEN = re.compile(r'%.*|"[^"]*"|\[[A-Za-z]:[^\]]*\]|\|:|:\||::|\[[12]|\|[12]|\|[|\]]?')
+
+# A header-style field inside the body, such as "w:" (lyrics) or "N:" (notes). It holds no bars.
+FIELD_LINE = re.compile(r"^[A-Za-z+]:")
+
+
+@dataclass(frozen=True)
+class _ScannedBar:
+    """What the ABC text says about one bar: its part label, its section and its meter."""
+
+    label: str
+    section: int
+    meter: Meter
+
+
+def read_lead_sheet(
+    path: str | Path,
+    phrase_length: int = 4,
+    role_map: dict[str, str] | None = None,
+    tempo_override: float | None = None,
+) -> LeadSheet:
+    """Read the first tune of an ABC file into a lead sheet.
+
+    See `read_lead_sheet_text` for the arguments and the rejected cases.
+    """
+    text = Path(path).read_text(encoding="utf-8")
+    return read_lead_sheet_text(text, phrase_length, role_map, tempo_override)
+
+
+def read_lead_sheet_text(
+    text: str,
+    phrase_length: int = 4,
+    role_map: dict[str, str] | None = None,
+    tempo_override: float | None = None,
+) -> LeadSheet:
+    """Read the first tune of an ABC text into a lead sheet.
+
+    Args:
+        text: ABC notation. Only the first tune (up to the second "X:" line) is read.
+        phrase_length: number of bars per phrase, counted from the start of each part.
+        role_map: part label -> "verse" or "chorus". Labels it does not list fall back to the
+            default: a label that contains "chorus" (any case) or equals "B" is a chorus, every
+            other label is a verse.
+        tempo_override: tempo in quarter notes per minute that replaces the tune's own Q: field.
+
+    Returns:
+        The lead sheet, with one `Bar` per bar of the tune.
+
+    Raises:
+        ValueError: for a repeat sign, an unsupported or missing meter, a pickup or incomplete
+            bar, a tune without chord symbols or with an unknown one. The message names the bar
+            when it can.
+
+    >>> sheet = read_lead_sheet_text('X:1\\nT:Scale\\nM:4/4\\nL:1/4\\nK:C\\n"C"CDEF|"G7"GABc|')
+    >>> [bar.chords[0].symbol for bar in sheet.bars], sheet.bars[1].melody[0].pitch
+    (['C', 'G7'], 67)
+    """
+    if phrase_length < 1:
+        raise ValueError(f"phrase_length must be at least 1, got {phrase_length}")
+    tune = _first_tune(text)
+    scanned_bars = _scan_body(tune)
+
+    score = converter.parse(tune, format="abc")
+    # music21 numbers the first measure 0 (or 1), so measures are matched by position, not number.
+    measures = list(score.parts[0].getElementsByClass(stream.Measure))
+    if not measures:
+        raise ValueError(
+            "music21 splits a tune into bars only when it has at least two plain '|' bar lines"
+        )
+    if len(measures) != len(scanned_bars):
+        raise ValueError(
+            f"music21 found {len(measures)} bars but the bar lines of the text close "
+            f"{len(scanned_bars)}; check for an overfull bar (music21 splits it in two) or a "
+            "missing final bar line"
+        )
+    meters = [bar.meter for bar in scanned_bars]
+    _check_complete_bars(measures, meters)
+
+    chords_per_bar = _chord_segments(
+        [_chord_changes(measure) for measure in measures],
+        [meter.bar_beats for meter in meters],
+    )
+    marks = phrase_marks([bar.section for bar in scanned_bars], phrase_length)
+    bars = []
+    for index, measure in enumerate(measures):
+        label = scanned_bars[index].label
+        phrase, phrase_end = marks[index]
+        bars.append(
+            Bar(
+                index=index,
+                melody=_melody(measure),
+                chords=chords_per_bar[index],
+                label=label,
+                role=section_role(label, role_map),
+                phrase=phrase,
+                phrase_end=phrase_end,
+                meter=meters[index],
+            )
+        )
+    return LeadSheet(
+        title=score.metadata.title or "",
+        key=_key_name(score, tune),
+        tempo_bpm=_tempo_bpm(score, tempo_override),
+        bars=tuple(bars),
+    )
+
+
+def _first_tune(text: str) -> str:
+    """Keep only the first tune of an ABC text (every tune starts with an "X:" line).
+
+    >>> two_tunes = "X:1\\nT:One\\nK:C\\nC4|\\nX:2\\nT:Two\\nK:C\\nD4|"
+    >>> _first_tune(two_tunes).splitlines()
+    ['X:1', 'T:One', 'K:C', 'C4|']
+    """
+    lines = text.splitlines()
+    tune_starts = [number for number, line in enumerate(lines) if line.startswith("X:")]
+    if len(tune_starts) > 1:
+        lines = lines[: tune_starts[1]]
+    return "\n".join(lines)
+
+
+def _scan_body(tune: str) -> list[_ScannedBar]:
+    """Read from the ABC text what music21 does not report: part labels, sections and meters.
+
+    The body starts after the K: line. Each "P:" line starts a new section with its label, and
+    each bar line closes one bar. The meter comes from the header's M: field; an inline [M:x] or
+    an M: line in the body changes it from the bar where it appears. The scan also rejects
+    repeat signs and checks every chord symbol, because music21 would expand the first and
+    silently drop an unknown second.
+
+    >>> bars = _scan_body('X:1\\nM:4/4\\nK:C\\n"C"CDEF|\\nP:A\\nGABc|"F"cBAG||\\nP:B\\n[M:2/4]C2|]')
+    >>> [(bar.label, bar.section, str(bar.meter)) for bar in bars]
+    [('', 0, '4/4'), ('A', 1, '4/4'), ('A', 1, '4/4'), ('B', 2, '2/4')]
+    """
+    lines = tune.splitlines()
+    key_line = next((n for n, line in enumerate(lines) if line.startswith("K:")), None)
+    if key_line is None:
+        raise ValueError("the tune has no K: (key) line, so its body cannot be found")
+    meter_field = next((line[2:] for line in lines[:key_line] if line.startswith("M:")), None)
+    if meter_field is None:
+        raise ValueError("the tune has no M: (meter) field; write one, for example M:4/4")
+    meter = parse_meter(_without_comment(meter_field), bar_number=1)
+
+    label, section = "", 0
+    bars: list[_ScannedBar] = []
+    for line in lines[key_line + 1 :]:
+        if line.startswith("P:"):
+            label, section = line[2:].strip(), section + 1
+            continue
+        if line.startswith("M:"):
+            meter = parse_meter(_without_comment(line[2:]), bar_number=len(bars) + 1)
+            continue
+        if FIELD_LINE.match(line):
+            continue
+        for token in BODY_TOKEN.findall(line):
+            bar_number = len(bars) + 1  # the bar being read, counted from 1 as musicians do
+            if token.startswith("%"):
+                break
+            if token.startswith("[M:"):
+                meter = parse_meter(token[3:-1], bar_number)
+            elif token.startswith("["):
+                continue  # another inline field ([K:], [L:], ...) holds no bar
+            elif token.startswith('"'):
+                _check_chord_symbol(token.strip('"'), bar_number)
+            elif token in REPEAT_SIGNS:
+                raise ValueError(
+                    f"bar {bar_number}: repeat sign or ending {token!r} is not supported; "
+                    "write the repeated bars out in full"
+                )
+            else:
+                bars.append(_ScannedBar(label, section, meter))
+    return bars
+
+
+def _without_comment(field_value: str) -> str:
+    """A field's value without a trailing % comment."""
+    return field_value.split("%", 1)[0].strip()
+
+
+def _check_chord_symbol(quoted_text: str, bar_number: int) -> None:
+    """Raise ValueError, naming the bar, when a quoted chord symbol is not a known chord."""
+    if quoted_text.startswith(ANNOTATION_PREFIXES):
+        return
+    try:
+        chord_tones(quoted_text.strip())
+    except ValueError as error:
+        raise ValueError(f"bar {bar_number}: {error}") from None
+
+
+def _check_complete_bars(measures: list[stream.Measure], meters: list[Meter]) -> None:
+    """Raise ValueError, naming the bar, when a bar does not last exactly as long as its meter."""
+    for index, (measure, bar_meter) in enumerate(zip(measures, meters, strict=True)):
+        beats = float(measure.duration.quarterLength)
+        if beats != bar_meter.bar_beats:
+            raise ValueError(
+                f"bar {index + 1} lasts {beats:g} beats instead of {bar_meter.bar_beats:g} "
+                f"({bar_meter}); pickups and incomplete bars are not supported"
+            )
+
+
+def _melody(measure: stream.Measure) -> tuple[MelodyNote, ...]:
+    """Return the melody notes of one bar, with onsets measured from the bar start."""
+    notes: list[MelodyNote] = []
+    for element in measure.flatten().notes:
+        # Chord symbols are harmony, not melody; grace notes take no time of their own.
+        if isinstance(element, harmony.ChordSymbol) or element.duration.isGrace:
+            continue
+        # When the melody plays several notes at once, the top note carries the tune.
+        pitch = max(p.midi for p in element.pitches)
+        onset, duration = float(element.offset), float(element.duration.quarterLength)
+        # A tie makes two written notes sound as one, for example to place a chord change
+        # in the middle of a long note.
+        tied = element.tie is not None and element.tie.type in ("stop", "continue")
+        if tied and notes and notes[-1].pitch == pitch:
+            previous = notes[-1]
+            if abs(previous.onset + previous.duration - onset) < 1e-9:
+                notes[-1] = MelodyNote(pitch, previous.onset, previous.duration + duration)
+                continue
+        notes.append(MelodyNote(pitch, onset, duration))
+    return tuple(notes)
+
+
+def _chord_changes(measure: stream.Measure) -> list[tuple[float, str]]:
+    """Return (onset, symbol) for each chord symbol written in one bar."""
+    return [
+        # music21 writes flats as "-" (E-m); the lead sheet writes them as "b" (Ebm).
+        (float(chord_symbol.offset), chord_symbol.figure.replace("-", "b"))
+        for chord_symbol in measure.flatten().getElementsByClass(harmony.ChordSymbol)
+    ]
+
+
+def _chord_segments(
+    changes_per_bar: list[list[tuple[float, str]]], bar_lengths: list[float]
+) -> list[tuple[ChordSegment, ...]]:
+    """Turn the chord changes of each bar into segments that cover the whole bar.
+
+    A chord stays in effect until the next chord symbol, across bar lines. Before the first
+    chord symbol of the piece no chord is in effect yet, so the first symbol fills that gap.
+    `bar_lengths` gives each bar's length in beats, where its last segment ends.
+
+    >>> segments = _chord_segments([[(2.0, "C")], [], [(0.0, "F"), (3.0, "G")]], [4.0] * 3)
+    >>> [[(s.symbol, s.onset, s.duration) for s in bar] for bar in segments]
+    [[('C', 0.0, 2.0), ('C', 2.0, 2.0)], [('C', 0.0, 4.0)], [('F', 0.0, 3.0), ('G', 3.0, 1.0)]]
+    """
+    written = [symbol for changes in changes_per_bar for _, symbol in changes]
+    if not written:
+        raise ValueError("the tune has no chord symbol; a lead sheet needs at least one")
+
+    in_effect = written[0]
+    segments_per_bar = []
+    for changes, bar_length in zip(changes_per_bar, bar_lengths, strict=True):
+        # The bar starts with the chord carried over; a symbol on beat 0 replaces it.
+        starts = {0.0: in_effect, **dict(changes)}
+        onsets = sorted(starts)
+        ends = [*onsets[1:], float(bar_length)]
+        segments = []
+        for onset, end in zip(onsets, ends, strict=True):
+            root, tones = chord_tones(starts[onset])
+            segments.append(ChordSegment(starts[onset], root, tones, onset, end - onset))
+        segments_per_bar.append(tuple(segments))
+        in_effect = starts[onsets[-1]]
+    return segments_per_bar
+
+
+def phrase_marks(sections: list[int], phrase_length: int) -> list[tuple[int, bool]]:
+    """Give each bar its phrase index and whether it is the last bar of its phrase.
+
+    Phrases are chunks of `phrase_length` bars counted from the start of each section, so a
+    section of 6 bars with 4-bar phrases holds one 4-bar phrase and one 2-bar phrase. Phrase
+    indices count over the whole piece.
+
+    >>> phrase_marks([1, 1, 1, 1, 1, 1, 2, 2], phrase_length=4)
+    [(0, False), (0, False), (0, False), (0, True), (1, False), (1, True), (2, False), (2, True)]
+    """
+    marks: list[tuple[int, bool]] = []
+    first_phrase = 0
+    for _, section_bars in groupby(sections):
+        section_size = len(list(section_bars))
+        for position in range(section_size):
+            phrase = first_phrase + position // phrase_length
+            ends_phrase = (position + 1) % phrase_length == 0 or position + 1 == section_size
+            marks.append((phrase, ends_phrase))
+        first_phrase = marks[-1][0] + 1
+    return marks
+
+
+def section_role(label: str, role_map: dict[str, str] | None) -> str:
+    """Return "verse" or "chorus" for a part label.
+
+    >>> [section_role(label, None) for label in ("B", "Chorus 2", "A")]
+    ['chorus', 'chorus', 'verse']
+    >>> section_role("A", {"A": "chorus"})
+    'chorus'
+    """
+    if role_map is not None and label in role_map:
+        return role_map[label]
+    # In a two-part tune (A B), the B part usually plays the role of the chorus.
+    return "chorus" if "chorus" in label.lower() or label == "B" else "verse"
+
+
+def _key_name(score: stream.Score, tune: str) -> str:
+    """Return the key of the tune in music21's spelling, for example "e- minor" or "C major".
+
+    "K:none" is how ABC writes a tune without a key signature, such as a lead sheet reduced from
+    a MIDI song, whose key is unknown. music21 reads it as C major; the lead sheet keeps "" (no
+    key), as the MIDI reader does.
+
+    >>> _key_name(stream.Score(), "X:1\\nK:none\\nCDEF|")
+    ''
+    """
+    key_field = next((line[2:].split() for line in tune.splitlines() if line.startswith("K:")), [])
+    if key_field and key_field[0].lower() == "none":
+        return ""
+    tune_key = score.recurse().getElementsByClass(key.Key).first()
+    if tune_key is None:
+        return ""
+    return f"{tune_key.tonicPitchNameWithCase} {tune_key.mode}"
+
+
+def _tempo_bpm(score: stream.Score, tempo_override: float | None) -> float:
+    """Return the tempo in quarter notes per minute: the override, the Q: field or 140."""
+    if tempo_override is not None:
+        return float(tempo_override)
+    mark = score.recurse().getElementsByClass(tempo.MetronomeMark).first()
+    if mark is None or mark.getQuarterBPM() is None:
+        return DEFAULT_TEMPO_BPM
+    # The unit conversion leaves float noise, such as 110.00000000000001 for Q:1/4=110.
+    return round(mark.getQuarterBPM(), 6)

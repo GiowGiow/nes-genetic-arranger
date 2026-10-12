@@ -1,0 +1,56 @@
+{
+  "population_size": 60,
+  "max_generations": 4000,
+  "stagnation_window": 400,
+  "mutation_rate": 0.01,
+  "elite_count": 2,
+  "phrase_length": 4,
+  "tempo_bpm": null,
+  "role_map": {},
+  "weights": {
+    "complementarity": 1.0,
+    "register": 1.0,
+    "coherence": 1.0,
+    "contrast": 1.0,
+    "bass_smoothness": 1.0,
+    "idiom": 1.0,
+    "fidelity": 0.5
+  },
+  "midi": {
+    "melody_track": 2,
+    "bars": [
+      0,
+      56
+    ],
+    "sections": [
+      [
+        0,
+        "A"
+      ],
+      [
+        16,
+        "B"
+      ],
+      [
+        24,
+        "A"
+      ],
+      [
+        40,
+        "Chorus"
+      ]
+    ],
+    "grid": "auto"
+  },
+  "seed": 1,
+  "input_path": "data/raw/mpb/amor_i_love_you.mid",
+  "input_sha256": "973e33c89cf71fedf89dedc6e1cd14e4d0c371ad9d265d7c2b6e72efa6d571cb",
+  "git_commit": "0aa9d91370c1fc8902e948b137d919e094246f67",
+  "git_dirty": true,
+  "created": "2026-10-12T00:47:41+00:00",
+  "run_id": "amor_i_love_you-s1-e24d1066",
+  "best_fitness": 0.8333845696509383,
+  "stop_reason": "stagnation",
+  "generations": 2935,
+  "audio": true
+}
