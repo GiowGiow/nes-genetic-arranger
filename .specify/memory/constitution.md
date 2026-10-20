@@ -1,8 +1,10 @@
-# DCC831 TP1 Algorithmic Composition Constitution
+# NES Genetic Arranger Constitution
 
-This project is the first assignment (TP1) of DCC831 – Generative AI for Music (UFMG, 2026/2).
-It implements one classic algorithmic composition method end to end, from a symbolic
-representation to synthesized audio, and reports it in an ISMIR-format abstract.
+This project began as the first assignment (TP1) of DCC831 – Generative AI for Music (UFMG,
+2026/2). It implements one classic algorithmic composition method end to end, from a symbolic
+representation to synthesized audio, and reports it in an ISMIR-format abstract. After the
+submission it continues as `nes-genetic-arranger`: the same method, the command line, the
+browser arranger and, since spec 005, an optional song server.
 
 The code has two goals of equal weight: produce correct, reproducible music, and teach a human
 reader how the method works. Every principle below serves one or both goals.
@@ -148,7 +150,8 @@ Rationale: a small, direct codebase is easier to test, explain and grade.
   the argparse entry point (`uv run src/main.py`). Tests live in `tests/`, the abstract in
   `paper/`, notebooks in `notebooks/`, long-form docs in `docs/`, and curated pieces in
   `samples/`. The web app lives in one top-level folder of its own (named in its plan), with
-  its tests inside that folder.
+  its tests inside that folder. The song server lives in `server/`, with its tests in
+  `tests/server/`.
 - Language: all repository text is in English: code, identifiers, docstrings, comments, Spec
   Kit artifacts, README, glossary, explanation document, notebook narrative and the abstract.
   Every Markdown code block carries a language tag.
@@ -176,9 +179,26 @@ Rationale: a small, direct codebase is easier to test, explain and grade.
   reduces from each MIDI song may be committed as ABC in `data/leadsheets/` (the project's own
   reduction: one melody track, detected chords and part labels, no accompaniment or lyrics), so
   that the runs can be reproduced without the MIDI files.
-- A catalog of third-party songs (for the web app's search) MAY be committed as metadata and
-  links only: title, composers, performer and page and file URLs. It MUST NOT hold third-party
-  MIDI files, and it credits its source.
+- Third-party material:
+  - A catalog of third-party songs MAY be committed as metadata, links and analysis facts:
+    title, composers, performer, page and file URLs, and facts the code measured (melody
+    track, bar range, sections, key, tempo, meter, the file's SHA-256). It MUST NOT hold notes
+    of copyrighted songs, and it credits its source.
+  - Copyrighted songs, including sources marked "All Rights Reserved", are loaded on demand
+    from their source: the song server fetches a song when a visitor asks for it and keeps at
+    most a temporary, size-capped cache. No permanent copy is kept, neither in git nor on the
+    server.
+  - ABC lead sheets MAY be committed only when the composition is in the public domain or the
+    collection's license allows redistribution:
+    - Public domain means every listed author died 70 or more full years ago, checked against a
+      recorded source such as Wikidata. An unknown or ambiguous author counts as not public
+      domain.
+    - A licensed collection keeps its license file next to its files, and the app shows its
+      attribution.
+  - The academic reductions already in `data/leadsheets/` stay as they are.
+  - Sources whose terms forbid processing by language models (for example The Session's data
+    dump) are accessed only by the app, at the visitor's request. AI agents working on the
+    repository never read their data; tests use synthetic data shaped like theirs.
 - Deliverables: public GitHub repository with README (install, reproduce, pieces, AI usage
   statement) and `requirements.txt`; at least 3 synthesized pieces in the repository; an ISMIR
   abstract of at most 3 pages of content (postgraduate rule) with at least 4 references, 3 of
@@ -190,10 +210,14 @@ These rules govern the browser arranger (spec `002-browser-arranger`), a static 
 reimplements the lead-sheet reader, the GA and the NES chip synthesizer in the visitor's browser.
 Principles I–VII apply to it as well.
 
-- Hosting: static files on the project's GitHub Pages site. No server-side code, no accounts,
-  no analytics.
-- Privacy: files and settings the visitor gives MUST stay on the visitor's device. The app sends
-  them to no server, and it fetches only its own files and the links the visitor clicks.
+- Hosting: static files on the project's GitHub Pages site. The app MAY use one optional
+  companion song server (see "Song Server Constraints") for search across external music sites
+  and for loading songs from them. The app MUST keep working without it: local sources,
+  uploads, the GA and playback. When the server does not answer, the app says so. No accounts
+  and no analytics, on either side.
+- Privacy: files and settings the visitor gives MUST stay on the visitor's device. Only search
+  queries and song identifiers go to the song server. Apart from that, the app fetches only its
+  own files, the APIs of sources that allow browser access, and the links the visitor clicks.
 - Build: no build step when feasible. When one is needed, it stays minimal, and the committed
   output can be served as it is.
 - Dependencies: few, pinned to exact versions, loaded from the repository or a pinned CDN URL.
@@ -207,13 +231,36 @@ Principles I–VII apply to it as well.
   command line accepts with `--config`, and the lead sheet as ABC. The settings file records the
   seed, every hyperparameter, the input's SHA-256, the app version (git commit) and the date.
 
+## Song Server Constraints
+
+These rules govern the song server (spec `005`), a small Python service in `server/` that the
+student deploys. Principles I–VII apply to it as well.
+
+- Purpose: search allow-listed external music sites, and load songs from them on demand. For
+  catalog songs it reduces the MIDI file to an ABC lead sheet with the recorded analysis facts.
+- Reference code: reductions reuse `src/leadsheet`, so the server's lead sheet equals the
+  command line's for the same file and options, by construction.
+- Upstreams:
+  - Only allow-listed hosts are contacted, and a redirect to a host off the list is refused.
+  - Every fetch has a size cap and a timeout, and the content is sniffed (MIDI or ABC) before
+    use.
+  - Requests to each upstream are spaced politely and carry the project User-Agent.
+  - The server has no network route to private address ranges (LAN, cluster).
+  - A takedown denylist lists songs the server refuses to serve.
+- Visitors:
+  - Rate limits apply per IP.
+  - CORS allows only the Pages origin, plus localhost during development.
+  - The server logs no visitor data beyond what rate limiting keeps in memory.
+- Tests run against mocked upstreams; no test touches the network.
+
 ## Development Workflow and Quality Gates
 
 - pre-commit runs on every commit: file hygiene, ruff check and format, `uv.lock` sync and
   `requirements.txt` export. pytest, including doctests, runs before every push, and so do the
   web app's tests once the app exists.
-- Work after the TP1 submission (tag `v1.0-submission`) happens on feature branches. `main`,
-  which GitHub Pages serves, changes only when the student merges.
+- The TP1 submission is preserved in the original repository (`chiptune-ga-arranger`, tag
+  `v1.0-submission`). In this repository the student commits directly to `main`, which GitHub
+  Pages serves; feature branches are optional.
 - Each commit is small and leaves the test suite green. Under principle II, the failing test
   and the code that makes it pass may land in the same commit, but the test is written first.
 - Before a feature is done, its docstrings, glossary entries, visuals and README commands are
@@ -233,4 +280,4 @@ Principles I–VII apply to it as well.
 - Agent guidance files in the repository (such as `CLAUDE.md`) must not contradict this
   document.
 
-**Version**: 1.3.0 | **Ratified**: 2026-10-11 | **Last Amended**: 2026-10-12
+**Version**: 2.0.0 | **Ratified**: 2026-10-11 | **Last Amended**: 2026-10-20
