@@ -486,7 +486,7 @@ Piano rolls of two arrangements (every sample folder has its own `pianoroll.png`
 The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (spec
 `specs/002-browser-arranger/`) brings the method to any song:
 
-1. Drop an ABC lead sheet or a multi-track MIDI file, or pick one of the 8 committed lead sheets.
+1. Drop an ABC lead sheet, a multi-track MIDI file or an audio file (MP3, WAV, M4A, OGG, FLAC…), or pick a song of the shelf.
    For a MIDI song, choose the melody track (the likeliest one is preselected), the bars to
    arrange and where each part starts. The page shows the lead sheet it read before any run,
    with its meter. Songs in any meter n/d (d = 1, 2, 4, 8 or 16, n from 1 to 32), and in additive
@@ -519,6 +519,15 @@ downloaded `config.json` reruns in the command line:
 ```bash
 uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed 1
 ```
+
+**Audio files.** An audio file is turned into notes on your device, with no server: the browser
+decodes it, [Basic Pitch](https://github.com/spotify/basic-pitch) (Spotify, Apache-2.0, vendored in
+`arranger/vendor/basic-pitch/`, 1.7 MB, loaded only when you open an audio file) finds the notes, and
+the page writes a MIDI file with a melody track (the highest sounding note) and an accompaniment
+track, at the tempo it finds on the beat of the onsets. That file is read like any MIDI file, and
+you can change its melody track as usual. It hears one voice or instrument well and a full mix
+roughly; at most the first five minutes are used. A YouTube video cannot be opened this way: a page
+cannot read another site's video or audio, so save the audio first and open the file.
 
 **Song catalog.** The Song tab is a shelf of vinyl records (a page of 9, or 15 on a wide screen), with the list of
 every song beside them and a search box above that list (click a title to select it,
@@ -680,6 +689,8 @@ Meter terms (specs 003 and 006):
 - **The Session** is searched from your browser at your request; its data is never copied or
   read by the tools that wrote this project.
 - **three.js** (MIT) draws the record shelf, vendored in `arranger/vendor/three/`.
+- **Basic Pitch** (Spotify, Apache-2.0) and **TensorFlow.js** (Google, Apache-2.0) turn an audio file
+  into notes, vendored in `arranger/vendor/basic-pitch/` with their license and the way they were built.
 
 ## AI usage
 
@@ -728,6 +739,7 @@ Meter terms (specs 003 and 006):
 | After submission | "De onde que você tirou que é creative commons? E de onde você tirou que uma reinterpretação/cover de música vai ter direitos autorais?" | Challenged the licensing plan; the outcome is the on-demand server for copyrighted songs and committed ABC only for public-domain songs and licensed collections. |
 | After submission | "dê suporte à todos os tipos de tempo, não só os definidos atualmente." | Asked for every time signature (spec 006). |
 | After submission | "Agora testando, Poderia juntar essas duas sessões. [...] As músicas do acervo livre que ninguém conhece eu acho que agregam pouco valor, músicas famosas dessas sim. Deveria ter uma lista do lado também nessa UI dizendo quais são todas as músicas." | Merged the Song and Run cards, cut the open collections to the best-known songs, and added a title list beside the 3D records. |
+| After submission | "talvez evolution e result poderiam estar lado a lado [...] esse mixer podia vir do canto esquerdo da tela [...] repensasse o painel de seleção de instrumento de qual é a voz [...] Ter dois botões de arrange pra mim não faz sentido [...] O preview deveria mostrar a tela de result também. Tem como a gente converter um vídeo do youtube pra midi/abc e/ou converter áudio pra midi/abc num app assim sem server? Se tiver como implemente isso." | Reworked the Evolution tab, the mixer drawer, the melody options and Preview, and added in-browser audio to MIDI (spec 007); a YouTube video cannot be read by a page, so it was not implemented. |
 | After submission | "Pode fazer a emenda e dar push da branch." / "Pode rodar o plan." / "Pode rodar o tasks." / "Pode rodar o implement." | Approved the constitution amendment (1.3.0, web app rules) and each Spec Kit stage of the browser arranger. |
 
 ## License

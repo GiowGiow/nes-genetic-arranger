@@ -27,6 +27,7 @@ import {
   melodyConfidence,
   suggestMelodyTrack,
 } from "../core/midi-song.js";
+import { isAudioName } from "./audio-import.js";
 import { noteName, programName } from "./gm-programs.js";
 
 export { MAX_BARS };
@@ -231,8 +232,10 @@ export function loadAbcjs() {
  *   onFileDropped?: (name: string) => unknown | null,
  *   previewTrack?: (trackIndex: number) => string,
  *   useTempo?: (bpm: number) => void,
+ *   transcribeAudio?: (file: File, say: (text: string) => void) => Promise<File>,
  * }} options `onFileDropped` lets the catalog panel claim a dropped file (FR-031);
- *   `previewTrack` plays one track of the MIDI song alone and says what it plays
+ *   `previewTrack` plays one track of the MIDI song alone and says what it plays;
+ *   `transcribeAudio` turns an audio file into a MIDI file, saying how far it is
  * @returns {{reread: () => void, current: () => LoadedInput | null, readFile: (file: File, overrides?: Record<string, number>, catalogEntry?: unknown) => Promise<void>}}
  */
 export function createInputPanel(targets, options) {
@@ -240,8 +243,8 @@ export function createInputPanel(targets, options) {
   targets.file.insertAdjacentHTML(
     "beforeend",
     `<label class="dropzone" data-drop>
-      <input type="file" accept=".abc,.txt,.mid,.midi,.kar" data-file>
-      <span class="drop-title">Drop an ABC or MIDI file here</span>
+      <input type="file" accept=".abc,.txt,.mid,.midi,.kar,.mp3,.wav,.m4a,.aac,.ogg,.oga,.opus,.flac,.webm,audio/*" data-file>
+      <span class="drop-title">Drop an ABC, MIDI or audio file here</span>
       <span class="drop-hint">or <span class="button small">choose a file</span>. It stays on this device.</span>
     </label>`,
   );
@@ -367,6 +370,15 @@ export function createInputPanel(targets, options) {
   async function readDroppedFile(file, overrides = {}, catalogEntry = null) {
     for (const button of $("[data-examples]").querySelectorAll("button")) {
       button.setAttribute("aria-pressed", "false");
+    }
+    if (options.transcribeAudio && isAudioName(file.name)) {
+      // A recording becomes a MIDI file first (on this device), then is read like any MIDI file.
+      try {
+        file = await options.transcribeAudio(file, (text) => setStatus(text));
+      } catch (error) {
+        setStatus(/** @type {Error} */ (error).message ?? String(error), true);
+        return;
+      }
     }
     const bytes = new Uint8Array(await file.arrayBuffer());
     await openFile(file.name, bytes, overrides, catalogEntry ?? options.onFileDropped?.(file.name) ?? null);

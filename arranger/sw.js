@@ -7,7 +7,8 @@
  * A deployed copy serves them cache first, so a repeat visit opens without the network; the cache
  * name holds the deployed commit, so a new deploy installs a fresh cache and deletes the old one.
  * A local copy ("dev") goes to the network first, so edits show up on reload. The catalog list is
- * cached the first time the catalog panel loads it. Only same-origin GET requests are handled:
+ * cached the first time the catalog panel loads it. The audio transcription model (vendor/basic-pitch/,
+ * 1.7 MB) is not precached either: it is cached the first time an audio file is opened. Only same-origin GET requests are handled:
  * catalog links open on their own site, untouched.
  */
 
@@ -29,6 +30,7 @@ const APP_SHELL = [
   "src/core/abc-reader.js",
   "src/core/abc-writer.js",
   "src/core/arrangement.js",
+  "src/core/audio-to-midi.js",
   "src/core/catalog.js",
   "src/core/chords.js",
   "src/core/evolution.js",
@@ -47,6 +49,7 @@ const APP_SHELL = [
   "src/core/textures.js",
   "src/core/thesession.js",
   "src/runner.js",
+  "src/ui/audio-import.js",
   "src/ui/channel-paths.js",
   "src/ui/channel-view.js",
   "src/ui/downloads.js",

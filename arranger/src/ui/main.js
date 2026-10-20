@@ -30,6 +30,7 @@ import { createEvolutionView } from "./evolution-view.js";
 import { createInputPanel, loadAbcjs } from "./input-panel.js";
 import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
 import { readLeadSheetAbc } from "../core/abc-reader.js";
+import { transcribeAudioFile } from "./audio-import.js";
 import { createMixerPanel } from "./mixer-panel.js";
 import { createPlanGrid } from "./plan-grid.js";
 import { addRun } from "./run-list.js";
@@ -110,6 +111,8 @@ function placeRunStrip(tab) {
 const inputPanel = createInputPanel(
   { root: $("#song"), file: $("[data-file-target]"), examples: $("[data-examples-target]"), details: $("[data-song-details]") },
   {
+    // A recording is listened to on this device and becomes a MIDI file (spec 007)
+    transcribeAudio: async (file, say) => (await transcribeAudioFile(file, { onProgress: say })).file,
   examples: [],
   previewTrack: (index) => previewTrack(index),
   useTempo(bpm) {
