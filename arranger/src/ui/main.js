@@ -60,7 +60,7 @@ const state = {
   /** @type {LoadedInput | null} */
   input: null,
   /** @type {"watch" | "full"} */
-  pace: "watch",
+  pace: "full",
   /** @type {"idle" | "evolving" | "realized" | "ready" | "failed"} */
   phase: "idle",
   /** @type {string | null} */

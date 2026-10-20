@@ -46,10 +46,11 @@ def load_config(path: Path | str | None = None, overrides: Sequence[str] = ()) -
 
     Dotted keys reach nested values (`weights.contrast=3`). Values are parsed as JSON, and a value
     that is not valid JSON is kept as a string (`role_map.A=chorus`). The file may be a run record
-    (a run folder's `config.json`): its RUN_RECORD_KEYS are skipped. A ValueError rejects an
-    unknown key, criterion weights that are not finite numbers of at least 0 or that are all 0
-    (the fitness is their weighted mean), and `allowed` lists that are empty or hold an unknown or
-    repeated value.
+    (a run folder's `config.json`): its RUN_RECORD_KEYS are skipped, and a record without
+    `allowed`, made before that setting existed, allows every value, as its run did. A
+    ValueError rejects an unknown key, criterion weights that are not finite numbers of at least
+    0 or that are all 0 (the fitness is their weighted mean), and `allowed` lists that are empty
+    or hold an unknown or repeated value.
 
     >>> load_config(overrides=["weights.contrast=3"])["weights"]["contrast"]
     3
@@ -58,6 +59,10 @@ def load_config(path: Path | str | None = None, overrides: Sequence[str] = ()) -
     if path is not None:
         loaded = json.loads(Path(path).read_text())
         hyperparameters = {k: v for k, v in loaded.items() if k not in RUN_RECORD_KEYS}
+        if "allowed" not in loaded and any(key in loaded for key in RUN_RECORD_KEYS):
+            # A run record made before the setting existed (every committed sample) let the GA
+            # draw every value; the defaults now leave some out, so the record must not get them.
+            config["allowed"] = {gene: list(values) for gene, (values, _) in GENE_VALUES.items()}
         _merge(config, hyperparameters, prefix="")
     for item in overrides:
         key, sep, raw_value = item.partition("=")

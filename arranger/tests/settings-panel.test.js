@@ -141,7 +141,8 @@ test("each channel row shows its validation message and its changed mark, like a
 });
 
 test("a changed channel names its default, and the run card names the channel", () => {
-  assert.equal(defaultNote("allowed.p2", defaults), "default: all allowed");
+  assert.equal(defaultNote("allowed.p2", defaults), "default: all but fast arpeggio (32nd notes)");
+  assert.equal(defaultNote("allowed.tr", defaults), "default: all but root");
   assert.equal(defaultNote("allowed.p1_octave", defaults), "default: all allowed");
   const narrower = structuredClone(defaults);
   narrower.allowed.p2 = ["hold", "arp16"];

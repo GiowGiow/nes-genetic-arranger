@@ -14,11 +14,11 @@
     "contrast": 1.0,
     "bass_smoothness": 1.0,
     "idiom": 1.0,
-    "fidelity": 0.5
+    "fidelity": 1.0
   },
   "allowed": {
-    "p2": ["hold", "arp16", "arp32", "echo", "third"],
-    "tr": ["root", "octave_pump", "root_fifth", "walking"],
+    "p2": ["hold", "arp16", "echo", "third"],
+    "tr": ["octave_pump", "root_fifth", "walking"],
     "no": ["none", "half_time", "eighth_beat", "sixteenth_beat", "fill"],
     "p1_octave": [0, 12, -12]
   },

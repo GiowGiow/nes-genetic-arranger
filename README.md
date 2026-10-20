@@ -65,7 +65,12 @@ change.
 example, `--set 'allowed.p2=["hold","arp16","echo","third"]'` keeps the 32nd-note arpeggio out.
 The 16th and 32nd arpeggios score the same on every criterion, so without this setting the GA
 picks between them almost at random. The first population and mutation draw only allowed values.
-With every value allowed (the default), they draw the same random numbers as before.
+With every value allowed, they draw the same random numbers as before the setting existed.
+
+**Defaults since spec 004** ([specs/004-sound-packs-and-defaults/](specs/004-sound-packs-and-defaults/)):
+fidelity weighs 1 like the other criteria, and the GA leaves out the 32nd-note arpeggio and the
+held bass root. The samples were made before, with fidelity 0.5 and every value allowed; their
+`config.json` records say so, so they still rerun to the same pieces.
 
 **Genetic algorithm.**
 
@@ -105,12 +110,12 @@ All hyperparameters are in [configs/default.json](configs/default.json) and can 
 | `mutation_rate` | 0.01 | Chance that each gene of a child changes to another valid value (about one gene per child). | none |
 | `elite_count` | 2 | Best plans copied unchanged into the next generation. | none |
 | `phrase_length` | 4 | Bars per phrase; coherence and drum fills follow phrases. | none |
-| `weights.<criterion>` | 1, fidelity 0.5 | Importance of each fitness criterion in the weighted mean; 0 removes it. | `ievan-polkka-s1-fidelity0`: fidelity 0, so the GA is free to move the melody by an octave |
+| `weights.<criterion>` | 1 (fidelity was 0.5 until spec 004) | Importance of each fitness criterion in the weighted mean; 0 removes it. | every sample used fidelity 0.5; `ievan-polkka-s1-fidelity0`: fidelity 0, so the GA is free to move the melody by an octave |
 | `midi.melody_track` | none | MIDI songs only: the track (or tracks) read as the melody. | each MIDI song (the track that carries the lyrics, or the line that plays throughout) |
 | `midi.bars` | whole file | MIDI songs only: the excerpt, first and last bar. | each MIDI song |
 | `midi.sections` | one part | MIDI songs only: part labels by bar; a label with "Chorus" (or "B") gets the chorus role, which the contrast criterion uses. | each MIDI song |
 | `midi.grid` | `auto` | MIDI songs only: use the file's beat grid, or re-estimate it from the drums when the file's tempo does not fit them. | none (Voa Voa is re-estimated automatically) |
-| `allowed.<gene>` | every value | The values the GA may draw for each gene (`p2`, `tr`, `no`, `p1_octave`), for example P2 without the 32nd-note arpeggio. Added after the submission (spec 003). | none |
+| `allowed.<gene>` | every value but P2 `arp32` and TR `root` | The values the GA may draw for each gene (`p2`, `tr`, `no`, `p1_octave`). Added after the submission (spec 003); the default leaves out the 32nd-note arpeggio and the held bass root since spec 004. | every sample allowed every value (a record without `allowed` loads that way) |
 
 ```mermaid
 flowchart LR

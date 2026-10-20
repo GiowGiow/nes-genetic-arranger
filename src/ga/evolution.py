@@ -59,8 +59,8 @@ def ga_params(config: dict) -> GAParams:
     """The GA hyperparameters of a run configuration (see `config.load_config`).
 
     >>> from config import load_config
-    >>> ga_params(load_config()).allowed[0]  # every P2 texture
-    (0, 1, 2, 3, 4)
+    >>> ga_params(load_config()).allowed[0]  # every P2 texture but arp32 (the default)
+    (0, 1, 3, 4)
     """
     return GAParams(
         population_size=config["population_size"],

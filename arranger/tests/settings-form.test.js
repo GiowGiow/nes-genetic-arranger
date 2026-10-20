@@ -31,7 +31,7 @@ test("form text becomes numbers, and an empty tempo becomes null", () => {
   assert.equal(settings.tempo_bpm, null);
   assert.equal(settings.weights.fidelity, 0);
   assert.equal(settings.weights.contrast, defaults.weights.contrast, "untouched fields stay");
-  assert.equal(defaults.weights.fidelity, 0.5, "the base is not changed");
+  assert.equal(defaults.weights.fidelity, 1, "the base is not changed");
 });
 
 test("text that is not a number stays text, so validation can name the field", () => {
@@ -116,6 +116,7 @@ test("weights that sum to zero give every criterion a share of zero", () => {
 // --- Allowed textures (spec 003, User Story 3) ------------------------------------------------
 
 /** Every value of every gene ticked, as checkbox text: the form at the defaults. */
+/** The boxes ticked by default (every value but those the defaults leave out). */
 const allTicked = () =>
   Object.fromEntries(
     Object.entries(defaults.allowed).map(([gene, values]) => [gene, values.map(String)]),
@@ -176,11 +177,11 @@ test("the warnings follow the order of the channels and can all show at once", (
 
 test("a changed allowed list is a changed setting, named by its gene", () => {
   const settings = structuredClone(defaults);
-  settings.allowed.p2 = ["hold", "arp16", "echo", "third"];
+  settings.allowed.p2 = ["hold", "echo"];
   settings.allowed.p1_octave = [0];
   assert.deepEqual(changedSettings(settings, defaults), ["allowed.p1_octave", "allowed.p2"]);
   settings.allowed = allowedFromForm(allTicked());
-  assert.deepEqual(changedSettings(settings, defaults), [], "ticking every box back is the default again");
+  assert.deepEqual(changedSettings(settings, defaults), [], "ticking the default boxes back is the default again");
 });
 
 test("a config.json with allowed lists restores them, and the genes it omits keep their default", () => {

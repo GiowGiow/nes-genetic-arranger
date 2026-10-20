@@ -179,16 +179,17 @@ export function settingValueText(key, value) {
  * @example
  * defaultNote("max_generations", defaults) // "default 3000"
  * defaultNote("tempo_bpm", defaults) // "default: the file's tempo"
- * defaultNote("allowed.p2", defaults) // "default: all allowed"
+ * defaultNote("allowed.p2", defaults) // "default: all but fast arpeggio (32nd notes)"
  */
 export function defaultNote(key, defaults) {
   const value = valueAt(defaults, key);
   const group = ALLOWED_GROUPS.find(({ gene }) => key === `allowed.${gene}`);
   if (group && Array.isArray(value)) {
-    // The default allows every value, and listing them all would only repeat the checkboxes.
-    if (group.values.every(([option]) => value.includes(option))) return "default: all allowed";
-    const labels = group.values.filter(([option]) => value.includes(option)).map(([, label]) => label);
-    return `default ${labels.join(", ")}`;
+    // Name the shorter side: the values a default leaves out, or the few it keeps.
+    const kept = group.values.filter(([option]) => value.includes(option)).map(([, label]) => label);
+    const left = group.values.filter(([option]) => !value.includes(option)).map(([, label]) => label);
+    if (left.length === 0) return "default: all allowed";
+    return left.length <= kept.length ? `default: all but ${left.join(", ")}` : `default ${kept.join(", ")}`;
   }
   // Only the tempo override has no default value: without it the song keeps its own tempo.
   return value === null || value === undefined ? "default: the file's tempo" : `default ${value}`;

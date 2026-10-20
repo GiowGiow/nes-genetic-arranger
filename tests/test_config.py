@@ -10,7 +10,7 @@ def test_defaults_come_from_the_default_config_file():
     cfg = load_config()
     assert cfg["population_size"] == 60
     assert cfg["mutation_rate"] == 0.01
-    assert cfg["weights"]["fidelity"] == 0.5
+    assert cfg["weights"]["fidelity"] == 1.0
     assert cfg["tempo_bpm"] is None
 
 
@@ -126,18 +126,39 @@ ALL_ALLOWED = {
 }
 
 
-def test_by_default_every_gene_value_is_allowed():
-    assert load_config()["allowed"] == ALL_ALLOWED
+DEFAULT_ALLOWED = ALL_ALLOWED | {
+    "p2": ["hold", "arp16", "echo", "third"],
+    "tr": ["octave_pump", "root_fifth", "walking"],
+}
+
+
+def test_by_default_the_fast_arpeggio_and_the_held_bass_root_are_left_out():
+    assert load_config()["allowed"] == DEFAULT_ALLOWED
+
+
+def test_by_default_fidelity_weighs_as_much_as_the_other_criteria():
+    assert load_config()["weights"]["fidelity"] == 1.0
+
+
+def test_a_record_with_allowed_keeps_its_lists(tmp_path):
+    record = tmp_path / "config.json"
+    record.write_text(json.dumps({"seed": 3, "allowed": {"p2": ["hold"]}}))
+
+    allowed = load_config(record)["allowed"]
+
+    assert allowed["p2"] == ["hold"]
+    assert allowed["tr"] == DEFAULT_ALLOWED["tr"]
 
 
 def test_an_override_replaces_one_gene_list_and_keeps_the_others():
     cfg = load_config(overrides=['allowed.p2=["hold","arp16"]'])
 
     assert cfg["allowed"]["p2"] == ["hold", "arp16"]
-    assert cfg["allowed"]["tr"] == ALL_ALLOWED["tr"]
+    assert cfg["allowed"]["tr"] == DEFAULT_ALLOWED["tr"]
 
 
 def test_a_run_record_without_allowed_reruns_with_everything_allowed():
+    # Records made before the setting existed (every committed sample) allowed every value.
     record = Path(__file__).resolve().parent.parent / "samples" / "korobeiniki-s1" / "config.json"
 
     assert load_config(record)["allowed"] == ALL_ALLOWED

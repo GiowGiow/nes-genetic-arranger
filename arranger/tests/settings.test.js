@@ -24,7 +24,7 @@ test("the defaults are configs/default.json with the seed set to 1", () => {
   assert.equal(settings.population_size, defaultConfig.population_size);
   assert.deepEqual(settings.weights, defaultConfig.weights);
   settings.weights.fidelity = 9;
-  assert.equal(defaultConfig.weights.fidelity, 0.5, "the defaults are copied, not shared");
+  assert.equal(defaultConfig.weights.fidelity, 1, "the defaults are copied, not shared");
 });
 
 test("valid default settings give no message", () => {
@@ -121,6 +121,13 @@ const EVERY_VALUE = {
   p1_octave: [0, 12, -12],
 };
 
+/** The defaults of spec 004: no fast arpeggio (arp32) and no held bass root. */
+const DEFAULT_ALLOWED = {
+  ...EVERY_VALUE,
+  p2: ["hold", "arp16", "echo", "third"],
+  tr: ["octave_pump", "root_fifth", "walking"],
+};
+
 /** A run record of the default settings with `allowed` replaced by the given lists. */
 function recordWith(/** @type {Record<string, unknown> | undefined} */ allowed) {
   const settings = defaultSettings(defaultConfig);
@@ -140,9 +147,9 @@ function recordWith(/** @type {Record<string, unknown> | undefined} */ allowed) 
   });
 }
 
-test("the default settings allow every value of every gene", () => {
+test("the default settings leave out the fast arpeggio and the held bass root", () => {
   const settings = defaultSettings(defaultConfig);
-  assert.deepEqual(settings.allowed, EVERY_VALUE);
+  assert.deepEqual(settings.allowed, DEFAULT_ALLOWED);
   assert.deepEqual(settings.allowed, defaultConfig.allowed);
 });
 
@@ -212,7 +219,7 @@ test("importing a record without allowed (made before the setting) allows every 
 test("importing some allowed genes keeps the others at their defaults", () => {
   const text = JSON.stringify({ allowed: { p2: ["hold", "arp16"] } });
   const imported = importConfig(text, defaultSettings(defaultConfig));
-  assert.deepEqual(imported.allowed, { ...EVERY_VALUE, p2: ["hold", "arp16"] });
+  assert.deepEqual(imported.allowed, { ...DEFAULT_ALLOWED, p2: ["hold", "arp16"] });
   assert.throws(
     () => importConfig(JSON.stringify({ allowed: { drums: ["none"] } }), defaultSettings(defaultConfig)),
     { message: "unknown configuration key 'allowed.drums'" },

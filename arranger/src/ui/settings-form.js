@@ -72,6 +72,16 @@ export function importConfig(text, defaults) {
     throw new Error("the file is not a JSON settings file");
   }
   const settings = structuredClone(defaults);
+  if (!("allowed" in loaded) && RUN_RECORD_KEYS.some((key) => key in loaded)) {
+    // A run record made before the setting existed (every committed sample) let the GA draw
+    // every value; the defaults now leave some out, so the record must not get them (spec 004).
+    settings.allowed = {
+      p2: [...P2_TEXTURES],
+      tr: [...TR_TEXTURES],
+      no: [...NO_PATTERNS],
+      p1_octave: [...P1_OCTAVES],
+    };
+  }
   for (const [key, value] of Object.entries(loaded)) {
     if (key === "seed") settings.seed = value;
     else if (!RUN_RECORD_KEYS.includes(key)) merge(settings, key, value, "");
