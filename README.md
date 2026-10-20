@@ -691,6 +691,11 @@ Meter terms (specs 003 and 006):
 - **three.js** (MIT) draws the record shelf, vendored in `arranger/vendor/three/`.
 - **Basic Pitch** (Spotify, Apache-2.0) and **TensorFlow.js** (Google, Apache-2.0) turn an audio file
   into notes, vendored in `arranger/vendor/basic-pitch/` with their license and the way they were built.
+  The model is used unchanged. Paper: Bittner, R. M., Bosch, J. J., Rubinstein, D., Meseguer-Brocal, G.,
+  Ewert, S. (2022). A lightweight instrument-agnostic model for polyphonic note transcription and
+  multipitch estimation. Proc. ICASSP. What this project adds is the glue in
+  `arranger/src/core/audio-to-midi.js`: note cleaning, the melody as the highest sounding note, a
+  simple tempo and beat finder, and the MIDI file.
 
 ## AI usage
 
