@@ -8,7 +8,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { cleanNotes, estimateTempo, mixToMono, notesToMidi, splitMelody } from "../src/core/audio-to-midi.js";
+import { cleanNotes, estimateTempo, mixToMono, notesToMidi, splitMelody, trackMelodyFrames } from "../src/core/audio-to-midi.js";
 import { readMidiFile } from "../src/core/midi-file.js";
 
 /**
@@ -142,4 +142,68 @@ test("with no usable note the file holds no notes, so the page can say there is 
   const { bytes, melodyCount, restCount } = notesToMidi([]);
   assert.equal(melodyCount + restCount, 0);
   assert.equal(readMidiFile(bytes).instruments.length, 0);
+});
+
+/**
+ * Frames of the model's note activations, one row per frame, one column per piano key from A0.
+ * @param {number} count
+ * @param {Array<[number, number, number, number]>} lines [first frame, last frame, pitch, activation]
+ */
+function activations(count, lines) {
+  const rows = Array.from({ length: count }, () => new Array(88).fill(0.01));
+  for (const [first, last, pitch, level] of lines) for (let frame = first; frame <= last; frame++) rows[frame][pitch - 21] = level;
+  return rows;
+}
+
+test("the melody tracker follows the strongest line in the singing register and ignores what is outside it", () => {
+  const frames = activations(180, [
+    [0, 89, 60, 0.8], // the voice: C4, then E4
+    [90, 179, 64, 0.8],
+    [0, 179, 84, 0.95], // a louder line far above the voice (a horn's high note)
+    [90, 179, 36, 0.9], // and a bass note far below
+    [90, 179, 67, 0.4], // a weaker note under the voice's second note
+  ]);
+  const notes = trackMelodyFrames(frames);
+  assert.deepEqual(
+    notes.map((note) => note.pitchMidi),
+    [60, 64],
+  );
+  assert.ok(notes[0].startFrame <= 2 && notes[0].startFrame + notes[0].durationFrames >= 86);
+  assert.ok(notes[0].amplitude > 0.5);
+});
+
+test("the melody tracker keeps a short rest between two notes of the same pitch, and drops a blip", () => {
+  const frames = activations(200, [
+    [0, 59, 62, 0.8],
+    [90, 149, 62, 0.8], // same pitch again after a rest
+    [70, 73, 71, 0.9], // a blip of 4 frames
+  ]);
+  const notes = trackMelodyFrames(frames);
+  assert.deepEqual(
+    notes.map((note) => note.pitchMidi),
+    [62, 62],
+  );
+});
+
+test("the melody tracker starts a new note where the model hears a new onset on the same pitch", () => {
+  const frames = activations(120, [[0, 119, 62, 0.8]]);
+  const onsets = activations(120, [
+    [0, 1, 62, 0.9],
+    [57, 61, 62, 0.6],
+    [59, 59, 62, 0.9], // struck again after about 0.7 s
+  ]);
+  const notes = trackMelodyFrames(frames, { onsets });
+  assert.deepEqual(
+    notes.map((note) => [note.pitchMidi, note.startFrame]),
+    [[62, 0], [62, 59]],
+  );
+  assert.equal(trackMelodyFrames(frames).length, 1, "without onsets it is one long note");
+});
+
+test("a recording of the melody alone, with the model's frames, gives the tracker's melody and the rest as the accompaniment", () => {
+  const heardAll = [heard(62, 0, 0.6), heard(64, 0.6, 0.6), heard(48, 0, 1.2)];
+  const trackerMelody = [heard(62, 0, 0.6), heard(64, 0.6, 0.6)];
+  const { melodyCount, restCount } = notesToMidi(heardAll, { melody: trackerMelody });
+  assert.equal(melodyCount, 2);
+  assert.equal(restCount, 1, "the bass note is the accompaniment; the notes the melody already has are not repeated");
 });

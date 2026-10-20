@@ -7,8 +7,10 @@
  * module makes those notes something the arranger can read:
  *
  * - `cleanNotes` drops what is too short or too weak to be a note;
- * - `splitMelody` takes the highest sounding note at every moment as the melody (the skyline of the
- *   notes, as the MIDI track table's skyline) and leaves the rest as the accompaniment, so the
+ * - `trackMelodyFrames` follows the strongest line in the singing register through the model's
+ *   frame-by-frame activations (a Viterbi path), which finds a voice in a band better than the
+ *   highest note does; `splitMelody` is the fallback, the skyline of the notes (the highest
+ *   sounding note at every moment). Whatever is not the melody is the accompaniment, so the
  *   lead-sheet reader finds a melody track and chords from the other one;
  * - `estimateTempo` finds the beat that the onsets fall on, and where the first beat is, because a
  *   recording has no tempo map and the reader quantizes to the beat;
@@ -49,6 +51,12 @@ const HANDOVER = 0.8;
 
 /** The tempi searched, in beats per minute: slower and faster ones are found as a half or a double. */
 const TEMPO_RANGE = /** @type {const} */ ([65, 150]);
+
+/** Frames the model gives per second of audio. */
+export const FRAMES_PER_SECOND = MODEL_RATE / 256;
+
+/** The register the melody tracker listens in (MIDI pitches A2 to E5): where a voice sings. */
+const SINGING_RANGE = /** @type {const} */ ([45, 76]);
 
 /** The tempo used when the notes say nothing about one. */
 const DEFAULT_BPM = 120;
@@ -135,6 +143,123 @@ export function splitMelody(notes) {
 }
 
 /**
+ * A note found by `trackMelodyFrames`, in the model's frames.
+ * @typedef {object} TrackedNote
+ * @property {number} pitchMidi
+ * @property {number} amplitude the mean activation along the note, from 0 to 1.
+ * @property {number} startFrame
+ * @property {number} durationFrames
+ */
+
+/**
+ * Follow the melody through the model's note activations.
+ *
+ * Every frame is in one of the keys of the singing register or in silence; the path that adds up
+ * the most activation, with a cost for leaps and for starting or stopping, is found with the
+ * Viterbi algorithm. A run of one key is a note. This picks the line that is strongest and
+ * steadiest in the register, a voice or a solo, and does not jump to a horn above it or to the
+ * bass below it, as the skyline of the notes does. Notes shorter than a tenth of a second are
+ * dropped.
+ *
+ * @param {number[][]} frames activations from 0 to 1, one row per frame, one column per piano key
+ *   from A0 (MIDI 21), as the model gives them
+ * @param {{low?: number, high?: number, silence?: number, leap?: number, onsets?: number[][] | null}} [options]
+ *   the register (MIDI pitches, default 45 to 76), the activation below which silence wins
+ *   (default 0.1), the cost of a leap per two semitones (default 0.6), and the model's onset
+ *   activations, which start a new note where the same pitch is struck again
+ * @returns {TrackedNote[]} in time order
+ * @example
+ * trackMelodyFrames(frames).map((note) => note.pitchMidi); // [60, 64, 62]
+ */
+export function trackMelodyFrames(
+  frames,
+  { low = SINGING_RANGE[0], high = SINGING_RANGE[1], silence = 0.1, leap = 0.6, onsets = null, minSeconds = 0.1, onsetGap = 6 } = {},
+) {
+  const keys = high - low + 1;
+  const silent = keys; // the last state
+  const states = keys + 1;
+  const total = frames.length;
+  if (total === 0) return [];
+  const silenceScore = Math.log(silence);
+  /** @param {number} from @param {number} to */
+  const move = (from, to) => {
+    if (from === to) return 0;
+    if (from === silent || to === silent) return -1;
+    return (-leap * Math.min(Math.abs(from - to), 12)) / 2;
+  };
+  let before = new Float64Array(states).fill(-1e9);
+  before[silent] = 0;
+  const came = Array.from({ length: total }, () => new Int16Array(states));
+  for (let frame = 0; frame < total; frame++) {
+    const now = new Float64Array(states);
+    for (let to = 0; to < states; to++) {
+      let best = -Infinity;
+      let from = 0;
+      for (let candidate = 0; candidate < states; candidate++) {
+        const value = before[candidate] + move(candidate, to);
+        if (value > best) {
+          best = value;
+          from = candidate;
+        }
+      }
+      now[to] = best + (to === silent ? silenceScore : Math.log(Math.max(1e-4, frames[frame][low + to - 21])));
+      came[frame][to] = from;
+    }
+    before = now;
+  }
+  let state = before.indexOf(Math.max(...before));
+  const path = new Int16Array(total);
+  for (let frame = total - 1; frame >= 0; frame--) {
+    path[frame] = state;
+    state = came[frame][state];
+  }
+  /**
+   * A run of one pitch, cut where the model hears the pitch struck again: at a frame whose onset
+   * activation is 0.5 or more, is the highest within two frames either side, and is at least 70 ms
+   * after the last cut.
+   *
+   * @param {number} first
+   * @param {number} end
+   * @param {number} pitch
+   * @returns {Array<[number, number]>} [first frame, end frame] of each note
+   */
+  const splitAtOnsets = (first, end, pitch) => {
+    if (!onsets) return [[first, end]];
+    /** @type {Array<[number, number]>} */
+    const parts = [];
+    let from = first;
+    for (let frame = first + onsetGap; frame < end - 3; frame++) {
+      const here = onsets[frame]?.[pitch - 21] ?? 0;
+      if (here < 0.5 || frame - from < onsetGap) continue;
+      let peak = true;
+      for (let near = frame - 2; near <= frame + 2; near++) if ((onsets[near]?.[pitch - 21] ?? 0) > here) peak = false;
+      if (!peak) continue;
+      parts.push([from, frame]);
+      from = frame;
+    }
+    parts.push([from, end]);
+    return parts;
+  };
+  /** @type {TrackedNote[]} */
+  const notes = [];
+  let start = 0;
+  for (let frame = 1; frame <= total; frame++) {
+    if (frame < total && path[frame] === path[start]) continue;
+    if (path[start] !== silent) {
+      for (const [first, end] of splitAtOnsets(start, frame, low + path[start])) {
+        const length = end - first;
+        if (length / FRAMES_PER_SECOND < minSeconds) continue;
+        let sum = 0;
+        for (let at = first; at < end; at++) sum += frames[at][low + path[start] - 21];
+        notes.push({ pitchMidi: low + path[start], amplitude: sum / length, startFrame: first, durationFrames: length });
+      }
+    }
+    start = frame;
+  }
+  return notes;
+}
+
+/**
  * The beat the note onsets fall on, and where it starts.
  *
  * Every tempo from 65 to 150 beats per minute is tried; for each, the onsets are placed on a circle
@@ -172,18 +297,42 @@ export function estimateTempo(notes) {
 }
 
 /**
+ * Split the notes around a melody that was found elsewhere: a note is the melody's when a melody
+ * note of the same pitch covers most of it; the others are the accompaniment.
+ *
+ * @param {HeardNote[]} notes
+ * @param {HeardNote[]} melody
+ * @returns {{melody: HeardNote[], rest: HeardNote[]}}
+ */
+function withMelody(notes, melody) {
+  const rest = notes.filter(
+    (note) =>
+      !melody.some((line) => {
+        const overlap =
+          Math.min(line.startTimeSeconds + line.durationSeconds, note.startTimeSeconds + note.durationSeconds) -
+          Math.max(line.startTimeSeconds, note.startTimeSeconds);
+        return line.pitchMidi === note.pitchMidi && overlap > 0.5 * note.durationSeconds;
+      }),
+  );
+  return { melody: [...melody].sort((a, b) => a.startTimeSeconds - b.startTimeSeconds), rest };
+}
+
+/**
  * Write the notes as a MIDI file the arranger can read: a "Melody" track (the skyline) and an
  * "Accompaniment" track (the rest), at the estimated tempo, in 4/4, with the first beat moved to
  * the start of the file.
  *
  * @param {HeardNote[]} notes straight from the model; they are cleaned here
+ * @param {{melody?: HeardNote[] | null}} [options] `melody`: the melody already found (for example
+ *   by `trackMelodyFrames`); the notes it does not hold are the accompaniment. Without it the
+ *   melody is the skyline of the notes.
  * @returns {{bytes: Uint8Array, bpm: number, melodyCount: number, restCount: number}}
  * @example
  * notesToMidi(notes).bpm; // 118.5
  */
-export function notesToMidi(notes) {
+export function notesToMidi(notes, { melody: found = null } = {}) {
   const kept = cleanNotes(notes);
-  const { melody, rest } = splitMelody(kept);
+  const { melody, rest } = found ? withMelody(kept, found) : splitMelody(kept);
   const { bpm, offsetSeconds } = estimateTempo(kept);
   const period = 60 / bpm;
   const first = kept.length > 0 ? kept[0].startTimeSeconds : 0;

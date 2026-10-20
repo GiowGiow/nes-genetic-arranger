@@ -12,7 +12,7 @@
  * audio has to be saved by the visitor first and opened here as a file.
  */
 
-import { MODEL_RATE, mixToMono, notesToMidi } from "../core/audio-to-midi.js";
+import { MODEL_RATE, mixToMono, notesToMidi, trackMelodyFrames } from "../core/audio-to-midi.js";
 
 /** File name extensions that are taken as audio. */
 export const AUDIO_EXTENSIONS = Object.freeze(["mp3", "wav", "m4a", "aac", "ogg", "oga", "opus", "flac", "webm"]);
@@ -87,7 +87,10 @@ export async function transcribeAudioFile(file, { onProgress = () => {} } = {}) 
   );
   onProgress("Writing the notes…");
   const notes = noteFramesToTime(outputToNotesPoly(frames, onsets, 0.5, 0.3, 5, true, null, null, true));
-  const { bytes, bpm, melodyCount } = notesToMidi(notes);
+  // The melody is the strongest line in the singing register; if that finds almost nothing (a tune
+  // above the voice's range, say), the highest sounding note is the melody instead.
+  const tracked = noteFramesToTime(trackMelodyFrames(frames, { onsets }));
+  const { bytes, bpm, melodyCount } = notesToMidi(notes, { melody: tracked.length >= 3 ? tracked : null });
   if (melodyCount === 0) throw new Error(`No notes were heard in ${file.name}.`);
   const name = `${file.name.replace(/\.[^.]*$/, "")}.mid`;
   return { file: new File([bytes], name, { type: "audio/midi" }), bpm, seconds: samples.length / MODEL_RATE, trimmed };

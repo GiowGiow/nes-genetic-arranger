@@ -523,8 +523,9 @@ uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed
 **Audio files.** An audio file is turned into notes on your device, with no server: the browser
 decodes it, [Basic Pitch](https://github.com/spotify/basic-pitch) (Spotify, Apache-2.0, vendored in
 `arranger/vendor/basic-pitch/`, 1.7 MB, loaded only when you open an audio file) finds the notes, and
-the page writes a MIDI file with a melody track (the highest sounding note) and an accompaniment
-track, at the tempo it finds on the beat of the onsets. That file is read like any MIDI file, and
+the page writes a MIDI file with a melody track (the strongest line in the singing register,
+followed through the model's activations; the highest sounding note if that finds almost nothing)
+and an accompaniment track, at the tempo it finds on the beat of the onsets. That file is read like any MIDI file, and
 you can change its melody track as usual. It hears one voice or instrument well and a full mix
 roughly; at most the first five minutes are used. A YouTube video cannot be opened this way: a page
 cannot read another site's video or audio, so save the audio first and open the file.
@@ -694,8 +695,8 @@ Meter terms (specs 003 and 006):
   The model is used unchanged. Paper: Bittner, R. M., Bosch, J. J., Rubinstein, D., Meseguer-Brocal, G.,
   Ewert, S. (2022). A lightweight instrument-agnostic model for polyphonic note transcription and
   multipitch estimation. Proc. ICASSP. What this project adds is the glue in
-  `arranger/src/core/audio-to-midi.js`: note cleaning, the melody as the highest sounding note, a
-  simple tempo and beat finder, and the MIDI file.
+  `arranger/src/core/audio-to-midi.js`: note cleaning, a Viterbi melody tracker over the model's
+  activations (singing register, 45 to 76), a simple tempo and beat finder, and the MIDI file.
 
 ## AI usage
 
