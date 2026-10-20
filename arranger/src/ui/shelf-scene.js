@@ -26,7 +26,7 @@
 import * as THREE from "three";
 
 import { createRandom } from "../core/random.js";
-import { CAMERA_FOV, cameraDistance, haloOpacity, recordPose, shelfColumns } from "./shelf-layout.js";
+import { CAMERA_FOV, HALO_SCALE, cameraDistance, haloOpacity, recordPose, shelfColumns } from "./shelf-layout.js";
 import { CHANNEL_COLORS, drawSprite, entrySprite } from "./sprites.js";
 
 /** The canvas renders at this fraction of the device's pixels: chunky, and cheap on phones. */
@@ -123,7 +123,7 @@ function makeHalo() {
     depthWrite: false,
   });
   const halo = new THREE.Sprite(material);
-  halo.scale.set(3.2, 3.2, 1);
+  halo.scale.set(HALO_SCALE, HALO_SCALE, 1);
   return halo;
 }
 

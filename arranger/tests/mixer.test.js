@@ -17,6 +17,8 @@ import { gatedRms, matchLoudness } from "../src/audio/loudness.js";
 import {
   CHANNELS,
   DEFAULT_LEVELS,
+  PACK_LEVELS,
+  defaultLevels,
   MAX_DB,
   MIN_DB,
   MIX_STORAGE_KEY,
@@ -260,13 +262,47 @@ test("readLevels clamps stored levels, and storeLevels clamps what it keeps", ()
   const storage = fakeStorage();
   storeLevels(storage, /** @type {any} */ ({ P1: 40, P2: -400, TR: 0, NO: 0, muted: {} }));
   const stored = JSON.parse(storage.items.get(MIX_STORAGE_KEY));
-  assert.deepEqual([stored.P1, stored.P2], [12, -60]);
+  assert.deepEqual([stored.packs.nes.P1, stored.packs.nes.P2], [12, -60]);
 
-  storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ ...stored, P1: 99 }));
+  stored.packs.nes.P1 = 99;
+  storage.setItem(MIX_STORAGE_KEY, JSON.stringify(stored));
   assert.equal(readLevels(storage).P1, 12);
 });
 
 test("storeLevels reports false, without throwing, when there is no storage or it refuses", () => {
   assert.equal(storeLevels(null, DEFAULT_LEVELS), false);
   assert.equal(storeLevels(blockedStorage, DEFAULT_LEVELS), false);
+});
+
+test("every sound pack has default levels of its own, all inside the scale with room to boost", () => {
+  assert.deepEqual(Object.keys(PACK_LEVELS).sort(), ["c64", "gameboy", "nes", "plain", "soft"]);
+  assert.equal(defaultLevels("nes"), DEFAULT_LEVELS);
+  assert.equal(defaultLevels("no such pack"), DEFAULT_LEVELS, "an unknown pack gets the NES levels");
+  assert.equal(defaultLevels(), DEFAULT_LEVELS);
+  for (const [pack, levels] of Object.entries(PACK_LEVELS)) {
+    assert.ok(Object.isFrozen(levels) && Object.isFrozen(levels.muted), pack);
+    for (const channel of CHANNELS) {
+      assert.ok(levels[channel] >= MIN_DB && MAX_DB - levels[channel] >= 2, `${pack} ${channel} keeps 2 dB of room`);
+    }
+    assert.equal(levels.P1, 0, `${pack}: the melody stays at the pack's own balance`);
+  }
+  assert.ok(PACK_LEVELS.plain.NO < PACK_LEVELS.nes.NO, "the Plain pack's drums are lower than the chip's");
+});
+
+test("levels are kept per sound pack: changing one pack leaves the others as they were", () => {
+  const storage = fakeStorage();
+  const plain = { ...clampLevels(defaultLevels("plain")), NO: -3 };
+  const nes = { ...clampLevels(DEFAULT_LEVELS), TR: 6 };
+  assert.equal(storeLevels(storage, plain, "plain"), true);
+  assert.equal(storeLevels(storage, nes, "nes"), true);
+  assert.deepEqual(readLevels(storage, "plain"), plain);
+  assert.deepEqual(readLevels(storage, "nes"), nes);
+  assert.deepEqual(readLevels(storage, "gameboy"), clampLevels(defaultLevels("gameboy")), "an untouched pack has its defaults");
+  assert.deepEqual(readLevels(storage), nes, "no pack named: the NES chip");
+});
+
+test("levels kept by the first version, which were one set for every pack, are ignored", () => {
+  const storage = fakeStorage();
+  storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ version: 1, ...clampLevels(DEFAULT_LEVELS), NO: -20 }));
+  assert.deepEqual(readLevels(storage, "plain"), clampLevels(defaultLevels("plain")));
 });

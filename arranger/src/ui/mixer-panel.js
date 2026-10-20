@@ -8,7 +8,8 @@
  * the level in dB relative to the sound pack's own balance, from Off (-60 dB, `MIN_DB`) to
  * +12 dB (`MAX_DB`), in half-dB steps. The value beside it is signed: "+4 dB" is louder than the
  * pack made the channel, "−1 dB" softer. Mute silences a channel and keeps its level for later,
- * and Reset brings back the default levels (`DEFAULT_LEVELS`).
+ * and Reset brings back the defaults of the sound pack in use (`defaults`). The panel is small: four
+ * vertical faders side by side, under a line that says which pack the levels are for.
  *
  * The panel only shows and reports levels: `onChange` gets the full levels on every change, and
  * the page hands them to the player and to local storage (`main.js`).
@@ -53,16 +54,18 @@ export function formatLevel(db) {
  * Build the panel at the end of `container`.
  *
  * @param {HTMLElement} container
- * @param {{levels?: Levels, onChange: (levels: Levels) => void}} options `levels` to show first
- *   (default DEFAULT_LEVELS); `onChange` gets a copy of the full levels after every slider move,
- *   mute toggle or Reset
- * @returns {{set: (levels: Levels) => void, get: () => Levels}} `set` shows levels without
- *   calling `onChange`; `get` returns a copy of the levels shown
+ * @param {{levels?: Levels, defaults?: () => Levels, onChange: (levels: Levels) => void}} options
+ *   `levels` to show first (default DEFAULT_LEVELS); `defaults` gives the levels Reset goes back
+ *   to (default DEFAULT_LEVELS); `onChange` gets a copy of the full levels after every slider
+ *   move, mute toggle or Reset
+ * @returns {{set: (levels: Levels) => void, get: () => Levels, setTitle: (text: string) => void}}
+ *   `set` shows levels without calling `onChange`; `get` returns a copy of the levels shown;
+ *   `setTitle` names the sound pack the levels are for
  * @example
  * const mixer = createMixerPanel(card, { levels: readLevels(localStorage), onChange: (levels) => player.setLevels(levels) });
  * mixer.get().TR; // 4, the bass at its default
  */
-export function createMixerPanel(container, { levels = DEFAULT_LEVELS, onChange }) {
+export function createMixerPanel(container, { levels = DEFAULT_LEVELS, defaults = () => DEFAULT_LEVELS, onChange }) {
   const doc = container.ownerDocument;
   const idPrefix = `mixer-${++panelCount}`;
   let current = clampLevels(levels);
@@ -84,6 +87,8 @@ export function createMixerPanel(container, { levels = DEFAULT_LEVELS, onChange 
   const root = element("div", "mixer");
   root.setAttribute("role", "group");
   root.setAttribute("aria-label", "Channel levels");
+  const title = element("p", "mixer-title", "Mix");
+  root.append(title);
   /** @type {Partial<Record<ChannelName, {slider: HTMLInputElement, value: HTMLOutputElement, mute: HTMLButtonElement}>>} */
   const rows = {};
 
@@ -134,16 +139,15 @@ export function createMixerPanel(container, { levels = DEFAULT_LEVELS, onChange 
   }
 
   const footer = element("div", "mixer-footer");
-  const note = element("p", "mixer-note", "Levels in dB over the sound pack's own balance.");
   const reset = element("button", "button small mixer-reset", "Reset");
   reset.type = "button";
-  reset.title = "Back to the default levels";
+  reset.title = "Back to this sound pack's default levels, in dB over its own balance";
   reset.addEventListener("click", () => {
-    current = clampLevels(DEFAULT_LEVELS);
+    current = clampLevels(defaults());
     CHANNELS.forEach(show);
     onChange(clampLevels(current));
   });
-  footer.append(note, reset);
+  footer.append(reset);
   root.append(footer);
   container.append(root);
 
@@ -164,5 +168,8 @@ export function createMixerPanel(container, { levels = DEFAULT_LEVELS, onChange 
       CHANNELS.forEach(show);
     },
     get: () => clampLevels(current),
+    setTitle(text) {
+      title.textContent = text;
+    },
   };
 }

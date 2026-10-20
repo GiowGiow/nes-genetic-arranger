@@ -348,12 +348,12 @@ test("the current page is a listbox of 15 songs, the first one selected", () => 
   assert.equal(pagerText(root), "Page 1 of 2");
 });
 
-test("a list beside the records names every song of the page with its composer, and marks the selected one", () => {
+test("a list beside the records names every song of the catalog, not only the page, and marks the selected one", () => {
   const { root, shelf, list } = mount();
   const songs = byClass(root, "shelf-songs")[0];
   assert.equal(songs.getAttribute("aria-hidden"), "true", "the listbox stays the accessible list");
-  let rows = byClass(songs, "shelf-song");
-  assert.equal(rows.length, 15);
+  const rows = byClass(songs, "shelf-song");
+  assert.equal(rows.length, 20, "all 20 songs, though a page of records holds 15");
   assert.equal(byClass(rows[3], "shelf-song-title")[0].textContent, "Água de Teste");
   assert.equal(byClass(rows[3], "shelf-song-by")[0].textContent, "Composer 3");
   assert.ok(rows[0].classList.contains("is-selected"));
@@ -361,8 +361,33 @@ test("a list beside the records names every song of the page with its composer, 
   assert.ok(rows[3].classList.contains("is-selected"));
   assert.ok(!rows[0].classList.contains("is-selected"));
   press(list, "PageDown");
-  rows = byClass(songs, "shelf-song");
-  assert.equal(rows.length, 5, "the second page lists its own songs");
+  assert.equal(shelf.page().page, 1, "the records turn to the page of the selected song");
+  assert.equal(byClass(songs, "shelf-song").length, 20, "the list does not change with the page");
+  assert.ok(byClass(songs, "shelf-song")[18].classList.contains("is-selected"));
+});
+
+test("clicking a song far down the list turns the records to its page", () => {
+  const { root, shelf } = mount();
+  click(byClass(root, "shelf-song")[17]);
+  assert.equal(shelf.page().page, 1);
+  assert.equal(shelf.selected()?.id, "song-17");
+});
+
+test("the search box sits above the list, filters it, and tells the page what was typed", () => {
+  /** @type {string[]} */
+  const typed = [];
+  const { root } = mount({ onSearch: (/** @type {string} */ query) => typed.push(query) });
+  const side = byClass(root, "shelf-side")[0];
+  const box = byClass(side, "song-search")[0];
+  assert.equal(box.tagName, "INPUT");
+  assert.equal(box.getAttribute("type"), "search");
+  assert.equal(box.getAttribute("aria-label"), "Search songs");
+  assert.ok(byClass(side, "shelf-songs")[0], "the list is in the same column as the box");
+  box.value = "Água";
+  box.dispatchEvent(new FakeEvent("input"));
+  assert.deepEqual(typed, ["Água"]);
+  assert.ok(byClass(root, "shelf-song").length < 20, "the list shows only the matches");
+  assert.ok(byClass(root, "shelf-song").length >= 1);
 });
 
 test("clicking a song in the list selects it, and double-clicking arranges it", () => {

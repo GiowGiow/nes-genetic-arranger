@@ -1,38 +1,34 @@
-/* Channel mixer (spec 005, src/ui/mixer-panel.js): one row per channel under the player.
-   Each row carries its channel color in --c (set by the panel), so the swatch and the slider
-   share it, as the plan grid and the channel view color the same four channels. Uses the
-   tokens and .button classes of style.css. On a phone the slider takes a line of its own. */
+/* Channel mixer (spec 005, src/ui/mixer-panel.js): four small vertical faders under the player,
+   one per channel, side by side. Each row carries its channel color in --c (set by the panel), so
+   the code and the fader share it, as the plan grid and the channel view color the same four
+   channels. Uses the tokens and .button classes of style.css. */
 
-.mixer { display: grid; gap: 6px; margin-top: 12px; }
-
-.mixer-row {
-  display: grid; align-items: center; gap: 4px 10px;
-  grid-template-columns: 7.5em minmax(0, 1fr) 4.5em auto;
-  grid-template-areas: "name level value mute";
+.mixer {
+  display: inline-grid; grid-template-columns: repeat(4, 56px); gap: 6px 4px; justify-items: center;
+  margin-top: 12px; padding: 10px 12px 8px; border: 1px solid var(--line); border-radius: 12px;
+  background: rgba(11, 14, 23, .45);
 }
+.mixer-title { grid-column: 1 / -1; justify-self: start; margin: 0; color: var(--muted); font-size: .78rem; }
 
+.mixer-row { display: grid; justify-items: center; align-content: start; gap: 4px; min-width: 0; }
+
+/* Channel code on top (P1), role under it in small type; the swatch is not needed here. */
 .mixer-name {
-  grid-area: name; display: inline-flex; align-items: center; gap: 8px; min-width: 0;
-  color: var(--text); font-size: .9rem; font-weight: 600; white-space: nowrap; cursor: pointer;
+  display: flex; flex-direction: column-reverse; align-items: center; gap: 0; min-width: 0;
+  white-space: nowrap; cursor: pointer;
 }
-.mixer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); flex: none; }
-.mixer-code { font: 500 .72rem var(--mono); color: var(--muted); }
+.mixer-swatch { display: none; }
+.mixer-code { font: 700 .86rem var(--mono); color: var(--c); }
+.mixer-role { color: var(--muted); font-size: .66rem; font-weight: 500; }
 
-.mixer-row input[type="range"] { grid-area: level; width: 100%; min-width: 0; accent-color: var(--c); }
-.mixer-value {
-  grid-area: value; text-align: right; white-space: nowrap;
-  font: 600 .82rem var(--mono); font-variant-numeric: tabular-nums; color: var(--text);
+/* A vertical fader: the range input turned on its side, the top of the track is loud. */
+.mixer-row input[type="range"] {
+  order: -1; writing-mode: vertical-lr; direction: rtl; width: 22px; height: 84px; margin: 0;
+  accent-color: var(--c);
 }
-.mixer-mute { grid-area: mute; }
+.mixer-value { order: 0; font: 600 .74rem var(--mono); font-variant-numeric: tabular-nums; color: var(--text); white-space: nowrap; }
+.mixer-mute { font-size: .68rem; padding: 1px 6px; }
 /* A muted channel keeps its level, shown dimmed until it is unmuted. */
 .mixer-row:has(.mixer-mute[aria-pressed="true"]) :is(.mixer-level, .mixer-value) { opacity: .4; }
 
-.mixer-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin-top: 2px; }
-.mixer-note { margin: 0; color: var(--muted); font-size: .82rem; }
-
-@media (max-width: 480px) {
-  .mixer-row {
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    grid-template-areas: "name value mute" "level level level";
-  }
-}
+.mixer-footer { grid-column: 1 / -1; justify-self: end; margin-top: 2px; }

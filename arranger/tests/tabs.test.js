@@ -6,20 +6,20 @@ import { test } from "node:test";
 
 import { TABS, stepTab, tabFromHash, tabForPanel } from "../src/ui/tabs.js";
 
-test("the four tabs come in the order of a run: song, evolution, result, then how it works", () => {
+test("the three tabs come in the order of a visit: song, evolution (with the result), then how it works", () => {
   assert.deepEqual(
     TABS.map((tab) => [tab.id, tab.label]),
     [
       ["song", "Song"],
       ["evolution", "Evolution"],
-      ["result", "Result"],
       ["how", "How it works"],
     ],
   );
 });
 
-test("the Song tab holds the song, the run and the settings cards", () => {
-  assert.deepEqual(TABS[0].panels, ["song", "run", "settings"]);
+test("the Evolution tab holds the evolution and the result, and the settings drawer opens from it and from Song", () => {
+  assert.deepEqual(TABS[0].panels, ["song", "settings"]);
+  assert.deepEqual(TABS[1].panels, ["evolution", "result", "settings"]);
 });
 
 test("the hash names the tab, and an unknown or empty hash opens the Song tab", () => {
@@ -33,15 +33,16 @@ test("an old link to a card opens the tab that holds it", () => {
   assert.equal(tabFromHash("#run"), "song");
   assert.equal(tabFromHash("#settings"), "song");
   assert.equal(tabFromHash("#about"), "how");
-  assert.equal(tabForPanel("result"), "result");
+  assert.equal(tabFromHash("#result"), "evolution", "the result is on the Evolution tab now");
+  assert.equal(tabForPanel("result"), "evolution");
   assert.equal(tabForPanel("nowhere"), null);
 });
 
 test("arrow keys move to the next or previous tab and wrap around; Home and End jump to the ends", () => {
-  assert.equal(stepTab(0, "ArrowRight", 4), 1);
-  assert.equal(stepTab(3, "ArrowRight", 4), 0);
-  assert.equal(stepTab(0, "ArrowLeft", 4), 3);
-  assert.equal(stepTab(2, "Home", 4), 0);
-  assert.equal(stepTab(1, "End", 4), 3);
-  assert.equal(stepTab(1, "Enter", 4), null);
+  assert.equal(stepTab(0, "ArrowRight", 3), 1);
+  assert.equal(stepTab(2, "ArrowRight", 3), 0);
+  assert.equal(stepTab(0, "ArrowLeft", 3), 2);
+  assert.equal(stepTab(2, "Home", 3), 0);
+  assert.equal(stepTab(1, "End", 3), 2);
+  assert.equal(stepTab(1, "Enter", 3), null);
 });

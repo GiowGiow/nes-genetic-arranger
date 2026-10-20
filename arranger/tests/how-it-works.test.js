@@ -19,6 +19,7 @@ import {
   EVOLUTION_FIGURE_BARS,
   GENOME_FIGURE_BARS,
   HOW_IT_WORKS_LINKS,
+  HOW_IT_WORKS_REFERENCES,
   LEAD_SHEET_FIGURE_BARS,
   WAVE_SAMPLES,
   howItWorksSteps,
@@ -391,12 +392,12 @@ test("the renderer draws one figure per step, each a labeled image with a captio
 test("the renderer gives each step a numbered heading and its paragraphs", () => {
   const container = new FakeDocument().createElement("div");
   renderHowItWorks(/** @type {any} */ (container), steps);
-  const headings = findAll(container, (element) => element.tagName === "h3");
+  const items = findAll(container, (element) => hasClass(element, "how-step"));
+  const headings = items.flatMap((item) => findAll(item, (element) => element.tagName === "h3"));
   assert.deepEqual(
     headings.map((heading) => heading.textContent),
     steps.map((candidate, index) => `${index + 1}${candidate.title}`),
   );
-  const items = findAll(container, (element) => hasClass(element, "how-step"));
   assert.equal(items.length, 6);
   items.forEach((item, index) => {
     const paragraphs = findAll(item, (element) => element.tagName === "p").map((paragraph) => paragraph.textContent);
@@ -420,4 +421,28 @@ test("a lead sheet without a title is called the song", () => {
   const untitled = howItWorksSteps({ leadSheet: { ...korobeiniki, title: "" }, plan, settings: runSettings });
   assert.match(untitled[0].text[1], /^The song has 32 bars/);
   assert.match(untitled[0].figure.caption, /of the song\./);
+});
+
+test("the references name the articles the method is built on, each with the part it was used for", () => {
+  assert.ok(HOW_IT_WORKS_REFERENCES.length >= 10);
+  const keys = HOW_IT_WORKS_REFERENCES.map((reference) => reference.key);
+  assert.equal(new Set(keys).size, keys.length, "no article twice");
+  for (const key of ["donahue2018nes", "ozcan2008genetic", "biles1994genjam", "tuohy2006gabased", "phonamnuaisuk1999evolving"]) {
+    assert.ok(keys.includes(key), key);
+  }
+  for (const reference of HOW_IT_WORKS_REFERENCES) {
+    assert.match(reference.citation, /\((19|20)\d\d\)/, `${reference.key} has a year`);
+    assert.ok(reference.used.length > 20, `${reference.key} says what it was used for`);
+  }
+});
+
+test("the renderer lists the references, as plain text, after the closing links", () => {
+  const container = new FakeDocument().createElement("div");
+  renderHowItWorks(/** @type {any} */ (container), steps);
+  const items = findAll(container, (element) => element.getAttribute("class") === "how-reference");
+  assert.equal(items.length, HOW_IT_WORKS_REFERENCES.length);
+  assert.ok(items[0].textContent.includes(HOW_IT_WORKS_REFERENCES[0].citation));
+  assert.ok(items[0].textContent.includes(HOW_IT_WORKS_REFERENCES[0].used));
+  const heading = findAll(container, (element) => element.tagName === "h3").map((element) => element.textContent);
+  assert.ok(heading.includes("References"));
 });

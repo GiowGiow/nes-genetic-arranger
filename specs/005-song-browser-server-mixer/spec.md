@@ -319,8 +319,8 @@ as the running example.
   server.
 - **FR-019**: The app MUST work without the server and say when it is offline. Without the
   server (not deployed yet, not answering, or its source down) an MPB song opens the way it did
-  before the server: its own page opens, the visitor downloads the MIDI and drops it in, and the
-  page says so. Until the server is deployed the published page does not ask it for anything
+  before the server: the MIDI file is downloaded straight from its source, the visitor drops it
+  in, and the page says so. Until the server is deployed the published page does not ask it for anything
   (`PRODUCTION_SERVER_LIVE`).
 
 ### Catalog data

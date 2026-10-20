@@ -26,8 +26,8 @@ import { join } from "node:path";
 
 import { SAMPLE_RATE } from "../src/audio/chip-synth.js";
 import { gatedRms } from "../src/audio/loudness.js";
-import { DEFAULT_LEVELS, channelGains, mixStems } from "../src/audio/mixer.js";
-import { renderPackStems } from "../src/audio/sound-packs.js";
+import { DEFAULT_LEVELS, channelGains, defaultLevels, mixStems } from "../src/audio/mixer.js";
+import { SOUND_PACKS, renderPackStems } from "../src/audio/sound-packs.js";
 import { buildExamples } from "../src/ui/examples.js";
 import { readFixture, repoRoot } from "./helpers.js";
 
@@ -159,5 +159,27 @@ test("the default mix, scaled to -3 dBFS like the WAV download, never clips", (t
   for (const { id, mixPeak } of measureExamples()) {
     t.diagnostic(`${id}: default mix peaks at ${toDb(mixPeak).toFixed(2)} dBFS`);
     assert.ok(mixPeak > 0 && mixPeak < 1, `${id}: peak ${mixPeak}`);
+  }
+});
+
+test("every sound pack's own defaults bring the drums closer to the melody, keep the bass near it and the harmony under it", (t) => {
+  const sources = JSON.parse(readFileSync(join(repoRoot, "data/sources.json"), "utf8"));
+  const examples = buildExamples(sources);
+  const unity = { P1: 1, P2: 1, TR: 1, NO: 1 };
+  for (const pack of SOUND_PACKS) {
+    const gains = channelGains(defaultLevels(pack.id));
+    const before = [];
+    const after = [];
+    for (const { id } of examples) {
+      const stems = renderPackStems(pack.id, exampleArrangement(id), SAMPLE_RATE);
+      before.push(gapsToP1(stems, unity));
+      after.push(gapsToP1(stems, gains));
+    }
+    const was = meanGaps(before);
+    const now = meanGaps(after);
+    t.diagnostic(`${pack.id}: before ${formatGaps(was)} dB; with its defaults ${formatGaps(now)} dB`);
+    assert.ok(now.NO - was.NO >= 4.5, `${pack.id}: the drums come at least 4.5 dB closer`);
+    assert.ok(now.TR >= -6 && now.TR <= 7, `${pack.id}: the bass is between 6 dB under and 7 dB over the melody (${now.TR.toFixed(1)})`);
+    assert.ok(now.P2 <= 0 && now.P2 >= -8, `${pack.id}: the harmony sits under the melody (${now.P2.toFixed(1)})`);
   }
 });

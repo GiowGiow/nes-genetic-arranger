@@ -369,6 +369,15 @@ footer { column-gap: 18px; }
 .run-strip { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
 .run-song { margin: 0 0 10px; font-weight: 600; overflow-wrap: anywhere; }
 .run-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+/* On the Evolution tab the strip stays at the top while the page scrolls, so a setting can be
+   changed and the next run started without going back up. */
+[data-run-slot="evolution"] {
+  position: sticky; top: 0; z-index: 5; margin: -6px -6px 14px; padding: 10px 6px 8px;
+  background: rgba(14, 19, 34, .94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+}
+[data-run-slot="evolution"] .run-strip { margin: 0; padding: 0; border: 0; }
+[data-run-slot="evolution"] .run-song { margin-bottom: 8px; }
+[data-run-slot="evolution"]:empty { display: none; }
 #run .toolbar { margin: 0; }
 #run .button.primary { min-width: 9em; }
 .changed-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }

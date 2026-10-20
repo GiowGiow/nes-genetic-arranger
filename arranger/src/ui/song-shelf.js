@@ -47,6 +47,8 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  * @property {CatalogEntry[]} [entries] the catalog; it may grow later (`setEntries`)
  * @property {(entry: CatalogEntry) => void} onArrange opens the song in the reading flow
  * @property {(entry: CatalogEntry) => void} [onPreview] plays the song; no Preview without it
+ * @property {(query: string) => void} [onSearch] called with the words typed in the shelf's search
+ *   box, so the page can look further than the catalog
  * @property {boolean} [webgl] draw the 3D scene; default: the browser has WebGL 2 and the
  *   address has no `?no-webgl`
  * @property {boolean} [reducedMotion] no bobbing or spinning; default: the visitor's setting
@@ -75,6 +77,7 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  * @property {(index: number) => void} select select a song of the list
  * @property {() => ShelfPage} page
  * @property {() => CatalogEntry | null} selected
+ * @property {HTMLInputElement} searchBox the search box above the list
  * @property {() => void} focus put the keyboard focus on the shelf
  * @property {() => void} resize measure the stage again (also done on its own when it resizes)
  * @property {() => void} destroy
@@ -185,6 +188,19 @@ function prefersReducedMotion() {
   return globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 }
 
+/**
+ * Scroll a list just enough to show a row, without moving the page (`scrollIntoView` would).
+ *
+ * @param {HTMLElement} scroller a positioned, scrolling list
+ * @param {HTMLElement} row one of its rows
+ */
+function keepInView(scroller, row) {
+  const top = row.offsetTop;
+  const bottom = top + row.offsetHeight;
+  if (top < scroller.scrollTop) scroller.scrollTop = top;
+  else if (bottom > scroller.scrollTop + scroller.clientHeight) scroller.scrollTop = bottom - scroller.clientHeight;
+}
+
 /** @param {CatalogEntry} entry */
 const keyOf = (entry) => `${entry.source}:${entry.id}`;
 
@@ -221,8 +237,10 @@ export function createSongShelf(root, options) {
   let shown = null;
   /** @type {HTMLElement[]} */
   let optionElements = [];
-  /** @type {HTMLElement[]} the rows of the visible list beside the records */
+  /** @type {HTMLElement[]} the rows of the visible list beside the records: every song of the list */
   let songRows = [];
+  /** @type {HTMLElement | null} the row that is marked as selected */
+  let markedRow = null;
   /** @type {ShelfScene | null} */
   let scene = null;
   let destroyed = false;
@@ -252,11 +270,19 @@ export function createSongShelf(root, options) {
   const stage = make("div", "shelf-stage");
   stage.append(canvasHost, listbox, empty);
   const info = make("aside", "shelf-info", { "aria-label": "Selected song" });
-  // The records do not say which song they are: this list does. The listbox above is the
-  // accessible one, so the list is hidden from assistive technology rather than read twice.
+  // The records do not say which song they are: this list does, with every song of the catalog
+  // and the search box above it. The listbox above is the accessible one, so the list is hidden
+  // from assistive technology rather than read twice.
+  const searchBox = make("input", "song-search", {
+    type: "search",
+    placeholder: "Search songs",
+    "aria-label": "Search songs",
+  });
   const songs = make("ol", "shelf-songs", { "aria-hidden": "true" });
+  const side = make("div", "shelf-side");
+  side.append(searchBox, songs);
   const body = make("div", "shelf-body");
-  body.append(stage, songs, info);
+  body.append(stage, side, info);
   const previous = make("button", "button small", { type: "button", "aria-label": "Previous page" });
   previous.textContent = "‹";
   const next = make("button", "button small", { type: "button", "aria-label": "Next page" });
@@ -392,11 +418,14 @@ export function createSongShelf(root, options) {
     const { page, start, pageEntries } = currentPage();
     const pages = pageCount(total, perPage);
 
+    if (!shown || shown.list !== list) {
+      songRows = list.map((entry, position) => buildSongRow(entry, position));
+      songs.replaceChildren(...songRows);
+      markedRow = null;
+    }
     if (!shown || shown.list !== list || shown.page !== page || shown.perPage !== perPage) {
       optionElements = pageEntries.map((entry, i) => buildOption(entry, start + i));
       listbox.replaceChildren(...optionElements);
-      songRows = pageEntries.map((entry, i) => buildSongRow(entry, start + i));
-      songs.replaceChildren(...songRows);
       shown = { list, page, perPage };
       scene?.setPage(pageEntries, index - start, columns);
     } else {
@@ -404,8 +433,10 @@ export function createSongShelf(root, options) {
     }
 
     optionElements.forEach((option, i) => option.setAttribute("aria-selected", String(start + i === index)));
-    songRows.forEach((row, i) => row.classList.toggle("is-selected", start + i === index));
-    songRows[index - start]?.scrollIntoView?.({ block: "nearest" });
+    markedRow?.classList.remove("is-selected");
+    markedRow = songRows[index] ?? null;
+    markedRow?.classList.add("is-selected");
+    if (markedRow) keepInView(songs, markedRow);
     if (total > 0) listbox.setAttribute("aria-activedescendant", `${id}-song-${index}`);
     else listbox.removeAttribute("aria-activedescendant");
     listbox.setAttribute("aria-label", `Songs, page ${page + 1} of ${pages}`);
@@ -453,6 +484,12 @@ export function createSongShelf(root, options) {
     move(event.key);
   });
   stage.addEventListener("click", () => listbox.focus());
+  searchBox.addEventListener("input", () => {
+    query = searchBox.value;
+    external = [];
+    refilter(false);
+    options.onSearch?.(query);
+  });
   previous.addEventListener("click", () => move("PageUp"));
   next.addEventListener("click", () => move("PageDown"));
 
@@ -502,6 +539,7 @@ export function createSongShelf(root, options) {
     },
     setQuery(next) {
       query = next;
+      searchBox.value = next;
       external = [];
       refilter(false);
     },
@@ -510,6 +548,7 @@ export function createSongShelf(root, options) {
       refilter(true);
     },
     select,
+    searchBox,
     page() {
       const { page, pageEntries } = currentPage();
       return { page, pages: pageCount(list.length, perPage), perPage, columns, index, total: list.length, entries: pageEntries };

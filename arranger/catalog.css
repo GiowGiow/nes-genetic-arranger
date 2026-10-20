@@ -14,9 +14,9 @@
 /* Card header: the title, the search box and "Open MIDI or ABC", always visible. */
 .song-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .song-head h2 { margin: 0; }
-.song-tools { display: flex; gap: 8px; flex: 1; justify-content: flex-end; min-width: 260px; }
+.song-tools { display: flex; gap: 8px; justify-content: flex-end; }
 .song-search {
-  flex: 1; max-width: 340px; min-width: 0; padding: 8px 12px; border-radius: 10px; font: inherit; font-size: .92rem;
+  width: 100%; min-width: 0; padding: 8px 12px; border-radius: 10px; font: inherit; font-size: .92rem;
   background: rgba(11, 14, 23, .55); border: 1px solid var(--line); color: var(--text);
 }
 .song-search:focus { border-color: var(--p1); outline: none; }
@@ -114,13 +114,15 @@
 .shelf-problem { margin: auto 0 0; color: var(--no); font-size: .88rem; }
 
 /* The list beside the records: which song each one is. A click selects, a double click arranges. */
+.shelf-side { grid-area: songs; display: flex; flex-direction: column; gap: 8px; height: 400px; min-width: 0; }
 .shelf-songs {
-  grid-area: songs; list-style: none; margin: 0; padding: 4px; height: 400px; overflow-y: auto;
+  position: relative; flex: 1; min-height: 0; list-style: none; margin: 0; padding: 4px; overflow-y: auto;
   border: 1px solid var(--line); border-radius: 14px; background: rgba(11, 14, 23, .45);
 }
 .shelf-song {
   display: flex; align-items: center; gap: 8px; min-width: 0; padding: 5px 8px; border-radius: 8px;
   font-size: .86rem; line-height: 1.25; cursor: pointer;
+  content-visibility: auto; contain-intrinsic-size: auto 28px; /* thousands of rows stay cheap */
 }
 .shelf-song:hover { background: rgba(140, 190, 240, .08); }
 .shelf-song.is-selected { background: rgba(95, 158, 209, .18); box-shadow: inset 0 0 0 1px rgba(140, 190, 240, .45); }
@@ -135,10 +137,10 @@
 
 @media (max-width: 980px) {
   .song-shelf .shelf-body { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "songs" "info"; }
-  .shelf-songs { height: 260px; }
+  .shelf-side { height: 320px; }
 }
 @media (max-width: 760px) {
   .shelf-stage { height: 300px; }
-  .song-tools { min-width: 100%; }
-  .song-search { max-width: none; }
+  .song-tools { width: 100%; }
+  .song-tools .button { flex: 1; }
 }

@@ -177,7 +177,7 @@ export function settingValueText(key, value) {
  * @param {Settings} defaults
  * @returns {string}
  * @example
- * defaultNote("max_generations", defaults) // "default 3000"
+ * defaultNote("max_generations", defaults) // "default 4000"
  * defaultNote("tempo_bpm", defaults) // "default: the file's tempo"
  * defaultNote("allowed.p2", defaults) // "default: all but fast arpeggio (32nd notes)"
  */

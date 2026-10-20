@@ -22,7 +22,7 @@ import { matchLoudness } from "../audio/loudness.js";
 import { leadSheetVoices, midiExcerptVoices, renderVoices, trackPreview } from "../audio/plain-synth.js";
 import { createPlayer } from "../audio/player.js";
 import { SOUND_PACKS, renderPackStems } from "../audio/sound-packs.js";
-import { matchMixLoudness, mixStems, readLevels, storeLevels } from "../audio/mixer.js";
+import { defaultLevels, matchMixLoudness, mixStems, readLevels, storeLevels } from "../audio/mixer.js";
 import { encodeWav } from "../audio/wav.js";
 import { createChannelView } from "./channel-view.js";
 import { createDownloads } from "./downloads.js";
@@ -39,7 +39,7 @@ import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
 import { setUpPageTabs } from "./tabs.js";
 import { createSongShelf } from "./song-shelf.js";
-import { PAGE_MESSAGE, displayTitle, externalEntry, loadCatalog, openEntry, serverUrl } from "../core/sources.js";
+import { PAGE_MESSAGE, PAGE_PREVIEW_MESSAGE, displayTitle, externalEntry, loadCatalog, localEntry, openEntry, serverUrl } from "../core/sources.js";
 import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
@@ -90,9 +90,23 @@ const defaults = defaultSettings(defaultConfig);
 const pageTabs = setUpPageTabs($("[data-page-tabs]"), {
   // The figures are drawn only when the tab is open; a timeout lets the page finish wiring first.
   onChange: (id) => {
+    placeRunStrip(id);
     if (id === "how") setTimeout(drawHowItWorks);
   },
 });
+
+/**
+ * The run controls (song, seed, pace, Arrange, Stop, Settings) live in the Song card and on top
+ * of the Evolution tab, so a setting can be changed and the next run started where the evolution
+ * and the result are. It is one element, moved to the slot of the tab that is open.
+ *
+ * @param {string} tab the tab id
+ */
+function placeRunStrip(tab) {
+  const slot = document.querySelector(`[data-run-slot="${tab === "evolution" ? "evolution" : "song"}"]`);
+  const strip = document.getElementById("run");
+  if (slot && strip && strip.parentElement !== slot && tab !== "how") slot.append(strip);
+}
 const inputPanel = createInputPanel(
   { root: $("#song"), file: $("[data-file-target]"), examples: $("[data-examples-target]"), details: $("[data-song-details]") },
   {
@@ -126,6 +140,7 @@ const inputPanel = createInputPanel(
       `${loaded.leadSheet.title || loaded.input.name} (${loaded.leadSheet.bars.length} bars)`;
     updateRunButtons();
     if (pageTabs.current() === "how") drawHowItWorks();
+    rememberOwnSong(loaded);
   },
   },
 );
@@ -135,6 +150,10 @@ const inputPanel = createInputPanel(
 const server = serverUrl(location);
 const shelf = createSongShelf($("[data-shelf]"), {
   entries: [],
+  onSearch: (query) => {
+    clearTimeout(searchTimer);
+    if (query.trim().length >= 2) searchTimer = setTimeout(() => searchElsewhere(query), 450);
+  },
   onArrange: async (entry) => {
     if (await openCatalogEntry(entry)) startRun();
   },
@@ -142,7 +161,41 @@ const shelf = createSongShelf($("[data-shelf]"), {
     if (await openCatalogEntry(entry, { openPages: false })) playIntro();
   },
 });
-loadCatalog(fetch, (entries) => shelf.setEntries(entries))
+/** @type {any[]} the catalog's songs, as far as they have been read */
+let catalogEntries = [];
+/** @type {any[]} the visitor's own files, as records, newest first */
+const ownEntries = [];
+/** @type {Map<string, {name: string, bytes: Uint8Array}>} the files behind those records */
+const ownFiles = new Map();
+
+function showSongs() {
+  shelf.setEntries([...ownEntries, ...catalogEntries]);
+}
+
+/**
+ * A file the visitor opened (dropped, chosen or from a link) gets its own record at the head of
+ * the shelf, selected, so it can be found and arranged again later in the visit.
+ *
+ * @param {any} loaded the input panel's loaded song
+ */
+function rememberOwnSong(loaded) {
+  const { input } = loaded;
+  if (input.catalogEntry) return; // a shelf song, or one matched to a shelf song
+  const entry = localEntry({ name: input.name, sha256: input.sha256, leadSheet: loaded.leadSheet });
+  const known = ownEntries.findIndex((own) => own.id === entry.id);
+  if (known < 0) {
+    ownEntries.unshift(entry);
+    ownFiles.set(entry.id, { name: input.name, bytes: input.bytes });
+  }
+  shelf.setQuery("");
+  showSongs();
+  shelf.select(known < 0 ? 0 : known);
+}
+
+loadCatalog(fetch, (entries) => {
+  catalogEntries = entries;
+  showSongs();
+})
   .then(({ entries }) => {
     if (entries.length === 0) throw new Error("empty catalog");
   })
@@ -151,15 +204,9 @@ loadCatalog(fetch, (entries) => shelf.setEntries(entries))
   );
 $("[data-open-file]").addEventListener("click", () => $("[data-file]").click());
 
-const searchBox = /** @type {HTMLInputElement} */ ($("[data-song-search]"));
 /** @type {ReturnType<typeof setTimeout> | undefined} */
 let searchTimer;
-searchBox.addEventListener("input", () => {
-  const query = searchBox.value;
-  shelf.setQuery(query);
-  clearTimeout(searchTimer);
-  if (query.trim().length >= 2) searchTimer = setTimeout(() => searchElsewhere(query), 450);
-});
+const searchBox = shelf.searchBox;
 
 /**
  * Search The Session (from the browser, its API allows it) and the song server's sites, and add
@@ -187,6 +234,24 @@ async function searchElsewhere(query) {
 }
 
 /**
+ * Download a file from another site: the browser saves it, and the page cannot read it, so the
+ * visitor drops it in afterwards.
+ *
+ * @param {string} url
+ * @param {string} name
+ */
+function downloadFrom(url, name) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = name;
+  link.rel = "noopener";
+  link.target = "_blank";
+  document.body.append(link);
+  link.click();
+  link.remove();
+}
+
+/**
  * Load a catalog song into the input panel, as if its file were dropped.
  *
  * @param {any} entry
@@ -194,13 +259,24 @@ async function searchElsewhere(query) {
  * @returns {Promise<boolean>} true when the song was read
  */
 async function openCatalogEntry(entry, { openPages = true } = {}) {
+  const own = ownFiles.get(entry.id);
+  if (entry.route?.local && own) {
+    const before = inputPanel.current();
+    await inputPanel.readFile(new File([own.bytes], own.name), {}, entry);
+    return inputPanel.current() !== before && inputPanel.current() !== null;
+  }
   songStatus(`Loading ${displayTitle(entry.t)}…`);
   try {
     const abcjs = entry.route?.thesession !== undefined ? await loadAbcjs() : undefined;
     const song = await openEntry(entry, { fetchFn: fetch, server, abcjs });
     if (song.kind === "link") {
-      if (openPages) window.open(song.url, "_blank", "noopener");
-      songStatus(song.byHand ? PAGE_MESSAGE : "");
+      if (song.byHand) {
+        if (openPages) downloadFrom(song.url, song.name);
+        songStatus(openPages ? PAGE_MESSAGE : PAGE_PREVIEW_MESSAGE);
+      } else {
+        if (openPages) window.open(song.url, "_blank", "noopener");
+        songStatus("");
+      }
       return false;
     }
     const before = inputPanel.current();
@@ -305,7 +381,7 @@ $("#result").insertAdjacentHTML(
      <span class="mono time" data-time>0:00 / 0:00</span>
    </div>
    <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
-   <div class="mixer" data-mixer></div>
+   <div class="mixer-slot" data-mixer></div>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
    <div data-channel-view></div>
    <p class="caption">Each channel is a line in its color, revealed as it plays: P1 melody (blue),
@@ -329,10 +405,12 @@ const levelStorage = (() => {
 /** @type {ReturnType<typeof setTimeout> | undefined} */
 let wavTimer;
 const mixerPanel = createMixerPanel($("[data-mixer]"), {
-  levels: readLevels(levelStorage),
+  // Each sound pack has its own levels, remembered separately (Plain's drums are not the chip's)
+  levels: readLevels(levelStorage, state.soundPack),
+  defaults: () => defaultLevels(state.soundPack),
   onChange(levels) {
     player.setLevels(levels);
-    storeLevels(levelStorage, levels);
+    storeLevels(levelStorage, levels, state.soundPack);
     // The WAV follows the mix; rebuilding it on every slider step would stall the slider.
     clearTimeout(wavTimer);
     wavTimer = setTimeout(() => {
@@ -342,6 +420,15 @@ const mixerPanel = createMixerPanel($("[data-mixer]"), {
   },
 });
 player.setLevels(mixerPanel.get());
+
+/** Show the chosen sound pack's levels: the visitor's own for that pack, or its defaults. */
+function showPackLevels() {
+  const pack = SOUND_PACKS.find((entry) => entry.id === state.soundPack) ?? SOUND_PACKS[0];
+  mixerPanel.set(readLevels(levelStorage, pack.id));
+  mixerPanel.setTitle(`Mix for ${pack.name}`);
+  player.setLevels(mixerPanel.get());
+}
+showPackLevels();
 
 /**
  * The download list with the WAV entry made from the stems at the mixer's current levels; the
@@ -469,7 +556,7 @@ async function finishRun(message) {
   const voices = originalVoices(input, leadSheet);
   const originalRaw = renderVoices(voices, leadSheet.tempoBpm, context.sampleRate, durationBeats);
   const stems = renderPackStems(state.soundPack, arrangement, context.sampleRate);
-  const { busScale, original: originalSamples } = matchMixLoudness(stems, originalRaw, context.sampleRate);
+  const { busScale, original: originalSamples } = matchMixLoudness(stems, originalRaw, context.sampleRate, defaultLevels(state.soundPack));
   scenes = buildScenes(arrangement, voices, leadSheet.tempoBpm);
   player.load({ arrangement: stems, original: originalSamples }, context.sampleRate, { busScale });
   const record = configRecord({
@@ -544,7 +631,6 @@ async function finishRun(message) {
     `Best fitness ${message.bestFitness.toFixed(4)} after ${message.generations} generations.`,
   );
   updateRunButtons();
-  pageTabs.show("result");
 }
 
 /** @type {Promise<import("../core/leadsheet.js").LeadSheet> | null} */
@@ -631,6 +717,7 @@ soundPackSelect.addEventListener("change", () => {
     // Without storage the choice lasts for this visit only.
   }
   showSoundPack();
+  showPackLevels();
   const run = state.runs.find((entry) => entry.id === state.currentRunId);
   if (!run || state.phase === "evolving") return;
   voiceRun(run);
@@ -889,7 +976,7 @@ function showSoundPack() {
 function voiceRun(run) {
   if (run.soundPack === state.soundPack) return;
   run.stems = renderPackStems(state.soundPack, run.arrangement, run.sampleRate);
-  const matched = matchMixLoudness(run.stems, run.originalRaw, run.sampleRate);
+  const matched = matchMixLoudness(run.stems, run.originalRaw, run.sampleRate, defaultLevels(state.soundPack));
   run.busScale = matched.busScale;
   run.originalSamples = matched.original;
   run.soundPack = state.soundPack;

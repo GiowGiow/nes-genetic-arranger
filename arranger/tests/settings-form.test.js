@@ -88,7 +88,7 @@ test("changed settings are the dotted keys that differ from the defaults, withou
   const settings = structuredClone(defaults);
   settings.seed = 9;
   settings.weights.fidelity = 0;
-  settings.max_generations = 4000;
+  settings.max_generations = 5000;
   assert.deepEqual(changedSettings(settings, defaults), ["max_generations", "weights.fidelity"]);
   assert.deepEqual(changedSettings(defaults, defaults), []);
 });

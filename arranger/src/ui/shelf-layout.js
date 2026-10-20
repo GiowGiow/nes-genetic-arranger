@@ -25,6 +25,9 @@ export const RECORD_SPACING = 1.7;
 /** Vertical field of view of the camera, in degrees. */
 export const CAMERA_FOV = 42;
 
+/** Width of the glow behind the selected record, in scene units (the camera leaves room for it). */
+export const HALO_SCALE = 2.6;
+
 /** Scale of a resting record and of the selected one (a record has radius 1 at scale 1). */
 const RESTING_SCALE = 0.58;
 const SELECTED_SCALE = 0.92;
@@ -93,19 +96,20 @@ export function recordPosition(index, columns) {
 }
 
 /**
- * How far the camera stands from the records' plane so the whole page fits the stage, with a
- * margin for the selected record, which comes forward and grows.
+ * How far the camera stands from the records' plane so the whole page fits the stage, with room
+ * for the selected record, which comes forward and grows, and for the glow around it.
  *
  * @param {number} columns
  * @param {number} aspect the stage's width divided by its height
  * @returns {number} in scene units
  * @example
- * cameraDistance(5, 2); // about 8.03: the height decides on a wide stage
+ * cameraDistance(5, 2); // about 9.5: the height decides on a wide stage
  */
 export function cameraDistance(columns, aspect) {
   const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
-  const neededWidth = columns * RECORD_SPACING + 0.4;
-  const neededHeight = SHELF_ROWS * RECORD_SPACING + 0.3;
+  // The edge records' centres, plus the glow around the selected one, which must not be cut off
+  const neededWidth = (columns - 1) * RECORD_SPACING + HALO_SCALE + 0.4;
+  const neededHeight = (SHELF_ROWS - 1) * RECORD_SPACING + HALO_SCALE + 0.5;
   return Math.max(neededWidth / 2 / (halfTan * aspect), neededHeight / 2 / halfTan) + 1;
 }
 

@@ -88,27 +88,58 @@ export const MAX_DB = 12;
 export const MIX_STORAGE_KEY = "nes-arranger-mix";
 
 // The format of the stored levels; a value with another version is ignored.
-const MIX_VERSION = 1;
+const MIX_VERSION = 2;
+
+/** @param {number} P2 @param {number} TR @param {number} NO @returns {Readonly<Levels>} */
+const packLevels = (P2, TR, NO) =>
+  Object.freeze({
+    P1: 0,
+    P2,
+    TR,
+    NO,
+    muted: Object.freeze({ P1: false, P2: false, TR: false, NO: false }),
+  });
 
 /**
- * The default levels, chosen by ear on top of the chip's balance (research R1): the melody as
- * the chip has it, the harmony 1 dB under it, the bass 4 dB and the drums 10 dB over it. The
- * low triangle bass and the short drum hits sound much softer than the pulses on small
- * speakers, more than an unweighted loudness measure shows. `tests/mixer-defaults.test.js`
- * checks on the 8 examples that the bass then sits from 2 dB under to 7 dB over the melody, in
- * gated loudness, and that the drums come at least 8 dB closer to it.
+ * The default levels of every sound pack, in dB over the pack's own balance (research R1). The
+ * NES levels were chosen by ear: the melody as the chip has it, the harmony 1 dB under it, the
+ * bass 4 dB and the drums 10 dB over it, because the low triangle bass and the short noise hits
+ * sound much softer than the pulses on small speakers, more than an unweighted loudness measure
+ * shows. The other packs start from the same balance, measured with a loudness weighted like
+ * the ear (K-weighting, ITU-R BS.1770) on the 8 examples: each pack's channels are lifted or
+ * cut until their weighted gap to the melody equals the NES one. Then the Plain pack's drums
+ * were lowered by ear (+10 dB was too loud for its noise-like hits), and its bass and the Soft
+ * pack's harmony were held at 10 dB and 8 dB so that every default keeps room to boost.
+ * `tests/mixer-defaults.test.js` checks the bounds on the examples.
+ * @type {Readonly<Record<string, Readonly<Levels>>>}
+ */
+export const PACK_LEVELS = Object.freeze({
+  nes: packLevels(-1, 4, 10),
+  gameboy: packLevels(0, 5, 7),
+  c64: packLevels(-5, 2, 5),
+  soft: packLevels(8, 3, 8),
+  plain: packLevels(4, 10, 5),
+});
+
+/**
+ * The default levels of the NES chip, kept for code that mixes without a sound pack.
  * @type {Readonly<Levels>}
  * @example
  * DEFAULT_LEVELS.TR; // 4: the bass, 4 dB over the chip's balance
  * DEFAULT_LEVELS.NO; // 10: the drums, about three times their chip amplitude
  */
-export const DEFAULT_LEVELS = Object.freeze({
-  P1: 0,
-  P2: -1,
-  TR: 4,
-  NO: 10,
-  muted: Object.freeze({ P1: false, P2: false, TR: false, NO: false }),
-});
+export const DEFAULT_LEVELS = PACK_LEVELS.nes;
+
+/**
+ * The default levels of a sound pack; an unknown pack gets the NES ones.
+ * @param {string} [packId] "nes", "gameboy", "c64", "soft" or "plain"
+ * @returns {Readonly<Levels>}
+ * @example
+ * defaultLevels("plain").NO; // 5: the Plain pack's drums need less than the chip's
+ */
+export function defaultLevels(packId = "nes") {
+  return PACK_LEVELS[packId] ?? PACK_LEVELS.nes;
+}
 
 /**
  * Turn a level in dB into an amplitude gain: 10^(dB / 20), and 0 at MIN_DB or below.
@@ -230,35 +261,45 @@ function peakOf(samples) {
 }
 
 /**
- * The levels kept by `storeLevels`, or the defaults when there are none, the storage is blocked,
- * or the value is unreadable or from another version.
+ * The levels kept by `storeLevels` for a sound pack, or the pack's defaults when there are none,
+ * the storage is blocked, or the value is unreadable or from another version.
  * @param {LevelStorage | null | undefined} storage usually `localStorage`
+ * @param {string} [packId] the sound pack the levels are for (default "nes")
  * @returns {Levels} clamped levels, a new object
  * @example
- * readLevels(localStorage); // the visitor's last levels, or a copy of DEFAULT_LEVELS
+ * readLevels(localStorage, "plain"); // the visitor's last Plain levels, or a copy of its defaults
  */
-export function readLevels(storage) {
+export function readLevels(storage, packId = "nes") {
   try {
     const stored = JSON.parse(storage?.getItem(MIX_STORAGE_KEY) ?? "null");
-    if (stored?.version === MIX_VERSION) return clampLevels(stored);
+    if (stored?.version === MIX_VERSION && stored.packs?.[packId]) return clampLevels(stored.packs[packId]);
   } catch {
     // A blocked storage or a value that is not JSON: the defaults below.
   }
-  return clampLevels(DEFAULT_LEVELS);
+  return clampLevels(defaultLevels(packId));
 }
 
 /**
- * Keep the levels, clamped and with a version, for the next visit.
+ * Keep the levels of a sound pack, clamped and with a version, for the next visit. The levels
+ * of the other packs stay as they were.
  * @param {LevelStorage | null | undefined} storage usually `localStorage`
  * @param {Levels} levels
+ * @param {string} [packId] the sound pack the levels are for (default "nes")
  * @returns {boolean} false when there is no storage or it refuses (blocked, full); never throws
  * @example
- * storeLevels(localStorage, { ...DEFAULT_LEVELS, NO: -6 }); // true
+ * storeLevels(localStorage, { ...DEFAULT_LEVELS, NO: -6 }, "nes"); // true
  */
-export function storeLevels(storage, levels) {
+export function storeLevels(storage, levels, packId = "nes") {
   if (!storage) return false;
   try {
-    storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ version: MIX_VERSION, ...clampLevels(levels) }));
+    let packs = {};
+    try {
+      const stored = JSON.parse(storage.getItem(MIX_STORAGE_KEY) ?? "null");
+      if (stored?.version === MIX_VERSION && stored.packs && typeof stored.packs === "object") packs = stored.packs;
+    } catch {
+      // Unreadable earlier value: start again.
+    }
+    storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ version: MIX_VERSION, packs: { ...packs, [packId]: clampLevels(levels) } }));
     return true;
   } catch {
     return false;

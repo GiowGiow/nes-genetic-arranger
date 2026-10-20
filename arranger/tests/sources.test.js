@@ -9,6 +9,8 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
 
+import { makeMeter } from "../src/core/meter.js";
+
 import {
   CATALOG_FILES,
   displayTitle,
@@ -16,6 +18,7 @@ import {
   PAGE_MESSAGE,
   PRODUCTION_SERVER,
   entryRequest,
+  localEntry,
   externalEntry,
   fnv1a,
   loadCatalog,
@@ -278,20 +281,27 @@ test("opening a MIDI file from the server gives its bytes", async () => {
 
 test("a song without a page of its own, and a server that does not answer, is called offline", async () => {
   const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
-  const entry = { ...fixture("mpb").entries[0], u: undefined };
+  const entry = { ...fixture("mpb").entries[0], u: undefined, facts: {} };
   await assert.rejects(openEntry(entry, { fetchFn, server: PRODUCTION_SERVER }), { message: OFFLINE_MESSAGE });
   assert.match(OFFLINE_MESSAGE, /song server is offline/);
   assert.match(OFFLINE_MESSAGE, /examples/);
 });
 
 test("with no song server, or one that does not answer, an MPB song opens the way it did before: its page, by hand", async () => {
-  const entry = { ...fixture("mpb").entries[0], u: "https://example.org/songs/agua-de-lua.html" };
-  const expected = { kind: "link", name: "Água de lua", url: "https://example.org/songs/agua-de-lua.html", byHand: true };
+  const entry = {
+    ...fixture("mpb").entries[0],
+    u: "https://example.org/songs/agua-de-lua.html",
+    facts: { midi: "https://example.org/songs/som/agua-de-lua.mid" },
+  };
+  const expected = { kind: "link", name: "Água de Lua.mid", url: "https://example.org/songs/som/agua-de-lua.mid", byHand: true };
   const noServer = fakeFetch({});
   const opened = await openEntry(entry, { fetchFn: noServer.fetchFn, server: null });
   assert.equal(opened.kind, "link");
-  assert.equal(opened.url, expected.url);
+  assert.equal(opened.url, expected.url, "the MIDI file itself, not the song's page");
+  assert.equal(opened.name, expected.name);
   assert.equal(opened.byHand, true);
+  const pageOnly = await openEntry({ ...entry, facts: {} }, { fetchFn: noServer.fetchFn, server: null });
+  assert.equal(pageOnly.url, entry.u, "no file address: the song's page");
   assert.equal(noServer.asked.length, 0, "no request goes out when there is no server");
 
   const down = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
@@ -304,7 +314,7 @@ test("with no song server, or one that does not answer, an MPB song opens the wa
     const fallback = await openEntry(entry, { fetchFn: broken.fetchFn, server: PRODUCTION_SERVER });
     assert.equal(fallback.kind, "link", `HTTP ${status} falls back to the page`);
   }
-  assert.match(PAGE_MESSAGE, /download the MIDI/);
+  assert.match(PAGE_MESSAGE, /MIDI file is downloading/);
 });
 
 test("entries from files in the repository never need the server", async () => {
@@ -324,7 +334,7 @@ test("server answers become plain sentences: changed at its source, cannot be ar
     [500, /HTTP 500/],
   ])) {
     const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: { status, body: '{"error": "upstream says something"}' } });
-    await assert.rejects(openEntry({ ...fixture("mpb").entries[0], u: undefined }, { fetchFn, server: PRODUCTION_SERVER }), (error) => {
+    await assert.rejects(openEntry({ ...fixture("mpb").entries[0], u: undefined, facts: {} }, { fetchFn, server: PRODUCTION_SERVER }), (error) => {
       assert.ok(error instanceof Error);
       assert.match(error.message, expected);
       assert.equal(error.message, loadErrorMessage(status));
@@ -426,4 +436,20 @@ test("external results come after the local ones, without songs listed twice", (
   const merged = mergeSearchResults(local, external);
   assert.deepEqual(merged.map((entry) => `${entry.source}:${entry.id}`), ["nottingham:reels-1", "nottingham:jigs-3", "web:5"]);
   assert.equal(merged[0], local[0], "local entries stay as they are");
+});
+
+test("a file the visitor opens becomes a record of its own, named by the song or the file", () => {
+  const sha256 = "ab12cd34ef56".padEnd(64, "0");
+  const bar = { meter: makeMeter(3, 4) };
+  const leadSheet = { title: "My Tune", key: "e- minor", tempoBpm: 96, bars: [bar, bar, bar, bar] };
+  const entry = localEntry({ name: "my_tune.mid", sha256, leadSheet: /** @type {any} */ (leadSheet) });
+  assert.equal(entry.id, "local-ab12cd34ef56");
+  assert.equal(entry.source, "local");
+  assert.equal(entry.t, "My Tune");
+  assert.equal(entry.c, "Your file");
+  assert.deepEqual(entry.route, { local: true });
+  assert.equal(entry.seed, 0xab12cd34, "the sprite follows the file's hash, so the same file looks the same");
+  assert.deepEqual(entry.facts, { key: "e- minor", tempo_bpm: 96, meter: "3/4", n_bars: 4 });
+  const untitled = localEntry({ name: "my_tune.final.mid", sha256, leadSheet: /** @type {any} */ ({ ...leadSheet, title: "" }) });
+  assert.equal(untitled.t, "my_tune.final", "no title: the file name without its extension");
 });

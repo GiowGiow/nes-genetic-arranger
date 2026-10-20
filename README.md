@@ -97,8 +97,8 @@ held bass root. The samples were made before, with fidelity 0.5 and every value 
   elitism (the 2 best plans survive unchanged).
 - **Crossover:** one cut point, only between bars.
 - **Mutation:** each gene changes with probability 0.01.
-- **Stopping:** 3000 generations, or 300 generations without improvement (4000 and 400 for the
-  MIDI songs).
+- **Stopping:** 4000 generations, or 300 generations without improvement (400 for the MIDI
+  songs, which are longer).
 
 All hyperparameters are in [configs/default.json](configs/default.json) and can be changed with
 `--set`, for example `--set weights.contrast=3`. The design is in
@@ -111,7 +111,7 @@ All hyperparameters are in [configs/default.json](configs/default.json) and can 
 |---|---|---|---|
 | `seed` (command line) | required | Starts the one random generator. The same seed and configuration give the same piece; another seed gives another plan. | `korobeiniki-s2` uses seed 2; all others seed 1 |
 | `population_size` | 60 | Plans (genotypes) per generation. | none |
-| `max_generations` | 3000 | Upper limit on the number of generations. | MIDI songs: 4000 (they are longer) |
+| `max_generations` | 4000 | Upper limit on the number of generations. | none |
 | `stagnation_window` | 300 | Stop after this many generations without a better plan. | MIDI songs: 400 |
 | `mutation_rate` | 0.01 | Chance that each gene of a child changes to another valid value (about one gene per child). | none |
 | `elite_count` | 2 | Best plans copied unchanged into the next generation. | none |
@@ -500,8 +500,8 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
    evolution can be followed; "full speed" finishes in under a second.
 4. Play the arrangement with the NES chip sound, or switch the sound pack (Game Boy, Commodore
    64, a soft synth or the original's plain instruments) without losing the position; switch to
-   the original at the same position. Four sliders set the level of P1, P2, bass and drums (the
-   defaults put the bass and drums where you can hear them; your mix is remembered), and the
+   the original at the same position. Four small sliders set the level of P1, P2, bass and drums for the sound pack in
+   use (each pack has its own defaults and your mix is remembered per pack), and the
    downloads are the MIDI, an audio WAV that follows the pack and the mix, the run's
    `config.json` and the lead sheet as ABC.
 
@@ -520,10 +520,13 @@ downloaded `config.json` reruns in the command line:
 uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed 1
 ```
 
-**Song catalog.** The Song tab is a shelf of vinyl records, 15 per page, with a list of their titles
-beside them (click a title to select it, double-click to arrange it): the 8 examples first, then
+**Song catalog.** The Song tab is a shelf of vinyl records (a page of 9, or 15 on a wide screen), with the list of
+every song beside them and a search box above that list (click a title to select it,
+double-click to arrange it; a file you open gets its own record at the top): the 8 examples first, then
 every other song in alphabetical order. The run controls (seed, pace, Arrange, Settings) sit in
-the same card, under the shelf. Search finds a song by title, composer or
+the same card, under the shelf, and on top of the Evolution tab, which also holds the result: change
+a setting, press Arrange again and hear the new arrangement on the same screen. A run goes on
+when you leave the tab. Search finds a song by title, composer or
 performer, and also looks for MIDI files on other sites. "Open MIDI or ABC" loads your own file.
 Every catalog song opens like an example: one click, no track to choose.
 
@@ -544,8 +547,8 @@ Every catalog song opens like an example: one click, no track to choose.
 
 **Status: the song server is written and tested but not deployed yet** (the homelab is in a
 memory test; see `deploy/homelab/README.md`). Until then the published page does not ask it for
-anything: an MPB song opens its page, you download the MIDI and drop it in (the way it worked
-before the server), and only The Session is searched besides the catalog. The examples, the
+anything: an MPB song downloads its MIDI file straight from the source and you drop it in (the
+way it worked before the server), and only The Session is searched besides the catalog. The examples, the
 public-domain songs, Nottingham and PDMX need no server. When the server goes up, set
 `PRODUCTION_SERVER_LIVE = true` in `arranger/src/core/sources.js`.
 

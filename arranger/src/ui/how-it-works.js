@@ -81,6 +81,84 @@ export const HOW_IT_WORKS_CLOSING =
   "synthesizer. The repository holds the code and its tests, and its README credits every song " +
   "source and license; the article explains the design and measures the results.";
 
+/**
+ * The articles the method is built on, with the part of the arranger each one informed. The keys
+ * are the BibTeX keys of the article's bibliography (`paper/references.bib`).
+ * @type {ReadonlyArray<Readonly<{key: string, citation: string, used: string}>>}
+ */
+export const HOW_IT_WORKS_REFERENCES = Object.freeze(
+  [
+    {
+      key: "donahue2018nes",
+      citation:
+        "Donahue, C., Mao, H. H., McAuley, J. (2018). The NES Music Database: a multi-instrumental dataset with expressive performance attributes. Proc. ISMIR.",
+      used: "The four voices of the chip and the pitch range each one can reach, which bound the genes.",
+    },
+    {
+      key: "driscoll2009endless",
+      citation: "Driscoll, K., Diaz, J. (2009). Endless loop: a brief history of chiptunes. Transformative Works and Cultures, 2.",
+      used: "The chiptune idioms the fitness rewards: arpeggios over a single chord, noise percussion and fills.",
+    },
+    {
+      key: "collins2007loop",
+      citation: "Collins, K. (2007). In the loop: creativity and constraint in 8-bit video game audio. Twentieth-Century Music, 4, 209–227.",
+      used: "Why the limits of the chip are treated as part of the style, not only as a restriction.",
+    },
+    {
+      key: "tuohy2006gabased",
+      citation: "Tuohy, D. R., Potter, W. D. (2006). GA-based music arranging for guitar. Proc. IEEE Congress on Evolutionary Computation, 1065–1070.",
+      used: "Arranging as a search: a genetic algorithm looks for a playable arrangement of a given piece.",
+    },
+    {
+      key: "carpentier2010solving",
+      citation:
+        "Carpentier, G., Assayag, G., Saint-James, E. (2010). Solving the musical orchestration problem using multiobjective constrained optimization with a genetic local search approach. Journal of Heuristics, 16, 681–714.",
+      used: "Arranging under the limits of an ensemble, judged by several criteria at once.",
+    },
+    {
+      key: "biles1994genjam",
+      citation: "Biles, J. A. (1994). GenJam: a genetic algorithm for generating jazz solos. Proc. International Computer Music Conference, 131–137.",
+      used: "A genome built from musical units (here one choice per bar) instead of single notes.",
+    },
+    {
+      key: "freitas2011melody",
+      citation: "Freitas, A. R. R., Guimarães, F. G. (2011). Melody harmonization in evolutionary music using multiobjective genetic algorithms. Proc. Sound and Music Computing Conference.",
+      used: "Crossover that cuts only between bars, so no bar is broken in the middle.",
+    },
+    {
+      key: "phonamnuaisuk1999evolving",
+      citation: "Phon-Amnuaisuk, S., Tuson, A., Wiggins, G. (1999). Evolving musical harmonisation. Artificial Neural Nets and Genetic Algorithms, 229–234.",
+      used: "The weights of the rules, more than the genetic operators, decide how good the result is; the harmony criteria.",
+    },
+    {
+      key: "ozcan2008genetic",
+      citation: "Özcan, E., Erçal, T. (2008). A genetic algorithm for generating improvised music. Artificial Evolution, LNCS 4926, 266–277.",
+      used: "The fitness as a weighted sum of criteria scored from 0 to 1, and a mutation rate of about one gene per child.",
+    },
+    {
+      key: "scirea2017affective",
+      citation: "Scirea, M., Togelius, J., Eklund, P., Risi, S. (2017). Affective evolutionary music composition with MetaCompose. Genetic Programming and Evolvable Machines, 18, 433–465.",
+      used: "The mutation rate close to 1 over the genome length.",
+    },
+    {
+      key: "towsey2001towards",
+      citation: "Towsey, M., Brown, A., Wright, S., Diederich, J. (2001). Towards melodic extension using genetic algorithms. Educational Technology & Society, 4, 54–65.",
+      used: "The note density measured over a bar, one of the criteria of the fitness.",
+    },
+    {
+      key: "donahue2019lakhnes",
+      citation: "Donahue, C., Mao, H. H., Li, Y. E., Cottrell, G. W., McAuley, J. (2019). LakhNES: improving multi-instrumental music generation with cross-domain pre-training. Proc. ISMIR.",
+      used: "The nearest earlier work: it maps the parts of any MIDI file onto the NES voices; this arranger searches each bar's texture with explicit musical criteria instead.",
+    },
+    {
+      key: "kaliakatsos2012interactive",
+      citation:
+        "Kaliakatsos-Papakostas, M. A., Epitropakis, M. G., Floros, A., Vrahatis, M. N. (2012). Interactive evolution of 8-bit melodies with genetic programming towards finding aesthetic measures for sound. EvoMUSART, LNCS 7247, 141–152.",
+      used: "Evolution has been used for 8-bit music before, for sound formulas judged by people; here the criteria are written down.",
+    },
+  ].map((reference) => Object.freeze(reference)),
+);
+
 // The gene rows in gene order (genome.js), with the plan grid's labels and channel colors.
 const GENE_ROWS = /** @type {const} */ ([
   { key: "p2", label: "P2", channel: "p2" },
@@ -708,7 +786,19 @@ export function renderHowItWorks(container, steps) {
     links.append(item);
   }
   closing.append(links);
-  container.replaceChildren(list, closing);
+  const references = html(doc, "section", { class: "how-references" });
+  references.append(
+    html(doc, "h3", {}, "References"),
+    html(doc, "p", { class: "hint" }, "The articles the method is built on, and what each one was used for."),
+  );
+  const cited = html(doc, "ol", { class: "how-refs" });
+  for (const reference of HOW_IT_WORKS_REFERENCES) {
+    const item = html(doc, "li", { class: "how-reference" });
+    item.append(html(doc, "span", { class: "how-citation" }, reference.citation), html(doc, "span", { class: "hint how-used" }, reference.used));
+    cited.append(item);
+  }
+  references.append(cited);
+  container.replaceChildren(list, closing, references);
 }
 
 /**

@@ -8,6 +8,7 @@ import { test } from "node:test";
 
 import {
   CAMERA_FOV,
+  HALO_SCALE,
   NARROW_WIDTH,
   RECORD_SPACING,
   SHELF_ROWS,
@@ -49,6 +50,20 @@ test("the camera stands far enough back to show every record, on wide and narrow
       const edge = 0.92; // radius of the selected record, the largest
       assert.ok(Math.abs(x) + edge <= halfTan * aspect * distance, `column edge of record ${index}, ${columns} columns`);
       assert.ok(Math.abs(y) + edge <= halfTan * distance, `row edge of record ${index}`);
+    }
+  }
+});
+
+test("the glow of the selected record fits the stage whichever record is selected, so it is never cut off", () => {
+  const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
+  const haloPlane = 1.1 - 0.3; // the glow sits 0.3 behind the selected record, which is 1.1 forward
+  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8]]) {
+    const distance = cameraDistance(columns, aspect);
+    for (let index = 0; index < columns * SHELF_ROWS; index++) {
+      const { x, y } = recordPosition(index, columns);
+      const reach = HALO_SCALE / 2;
+      assert.ok(Math.abs(x) + reach <= halfTan * aspect * (distance - haloPlane), `glow width at record ${index}, ${columns} columns`);
+      assert.ok(Math.abs(y) + 0.17 + reach <= halfTan * (distance - haloPlane), `glow height at record ${index}`);
     }
   }
 });

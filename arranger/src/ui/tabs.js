@@ -2,10 +2,12 @@
 /**
  * Page tabs: the page shows one screen at a time, in the order of a run (spec 005, story 7).
  *
- * Song holds the catalog, the run controls and the settings. Evolution shows the GA at work,
- * Result shows the arrangement, and How it works explains the method. The chosen tab lives in
- * the URL hash (`#song`, `#evolution`, `#result`, `#how`), so a reload or a shared link opens
- * the same screen. An old link to a card (`#run`, `#about`) opens the tab that now holds it.
+ * Song holds the catalog and the run controls. Evolution holds the run controls too, the GA at
+ * work and the result, so that a setting can be changed and the next run heard on one screen.
+ * How it works explains the method. The settings drawer opens from the Song and Evolution tabs.
+ * The chosen tab lives in the URL hash (`#song`, `#evolution`, `#how`), so a reload or a shared
+ * link opens the same screen. An old link to a card (`#run`, `#result`, `#about`) opens the tab
+ * that holds it now.
  * The keyboard follows the WAI-ARIA tabs pattern: arrows move between tabs and wrap, Home and
  * End jump to the ends.
  *
@@ -22,14 +24,13 @@
 
 /** @type {readonly PageTab[]} */
 export const TABS = Object.freeze([
-  Object.freeze({ id: "song", label: "Song", panels: Object.freeze(["song", "run", "settings"]) }),
-  Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["evolution"]) }),
-  Object.freeze({ id: "result", label: "Result", panels: Object.freeze(["result"]) }),
+  Object.freeze({ id: "song", label: "Song", panels: Object.freeze(["song", "settings"]) }),
+  Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["evolution", "result", "settings"]) }),
   Object.freeze({ id: "how", label: "How it works", panels: Object.freeze(["how"]) }),
 ]);
 
-/** Section ids from before the tabs, and the tab that holds them now. */
-const OLD_PANELS = Object.freeze({ about: "how" });
+/** Section ids from before the tabs or the merge of Result into Evolution, and the tab that holds them now. */
+const OLD_PANELS = Object.freeze({ about: "how", run: "song" });
 
 /**
  * The tab that shows a section.
@@ -89,12 +90,11 @@ export function setUpPageTabs(nav, options = {}) {
 
   function show(/** @type {string} */ id, { focus = false } = {}) {
     current = TABS.some((tab) => tab.id === id) ? id : TABS[0].id;
-    for (const tab of TABS) {
-      const selected = tab.id === current;
-      for (const panelId of tab.panels) {
-        const panel = document.getElementById(panelId);
-        if (panel) panel.hidden = !selected;
-      }
+    // A section can belong to two tabs (the settings drawer): it shows when the chosen tab has it.
+    const shown = new Set(TABS.find((tab) => tab.id === current)?.panels);
+    for (const panelId of new Set(TABS.flatMap((tab) => tab.panels))) {
+      const panel = document.getElementById(panelId);
+      if (panel) panel.hidden = !shown.has(panelId);
     }
     for (const button of buttons) {
       const selected = button.dataset.tab === current;

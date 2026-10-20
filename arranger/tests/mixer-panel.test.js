@@ -257,3 +257,22 @@ test("set shows new levels without reporting them, and get returns a copy", () =
   copy.muted.P1 = true;
   assert.deepEqual(panel.get(), SOME_LEVELS);
 });
+
+test("Reset goes back to the defaults it is given, and the title names the sound pack", () => {
+  const container = new FakeDocument().createElement("div");
+  /** @type {Levels[]} */
+  const reported = [];
+  const plainDefaults = { ...clampLevels(DEFAULT_LEVELS), NO: 5 };
+  const panel = createMixerPanel(/** @type {any} */ (container), {
+    levels: SOME_LEVELS,
+    defaults: () => plainDefaults,
+    onChange: (next) => reported.push(next),
+  });
+  one(container, hasClass("mixer-reset")).dispatch("click");
+  assert.equal(reported.at(-1)?.NO, 5, "the pack's drums, not the chip's");
+  assert.equal(panel.get().NO, 5);
+
+  const title = one(container, hasClass("mixer-title"));
+  panel.setTitle("Mix: Plain instruments");
+  assert.equal(title.textContent, "Mix: Plain instruments");
+});

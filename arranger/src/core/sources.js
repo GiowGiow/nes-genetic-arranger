@@ -53,9 +53,13 @@ export const SERVER_PORT = 8765;
 export const OFFLINE_MESSAGE =
   "The song server is offline, so this song cannot be opened now. Your own files, the examples and arranging still work.";
 
-/** What the page says when a song's file has to be fetched by hand from its own page. */
+/** What the page says when a song's file is downloaded from its source and dropped in by hand. */
 export const PAGE_MESSAGE =
-  "This song's file opens from its own page: download the MIDI there, then drop it here or choose it with Open MIDI or ABC.";
+  "The song's MIDI file is downloading from its source. When it finishes, drop it here or choose it with Open MIDI or ABC.";
+
+/** What Preview says for such a song: nothing is downloaded until the visitor arranges it. */
+export const PAGE_PREVIEW_MESSAGE =
+  "This song's file comes from its source: choose Arrange to download it, then drop it here.";
 
 /** What the page says when a file of the repository or the tune site cannot be reached. */
 export const NETWORK_MESSAGE = "The song could not be loaded. Check your connection and try again.";
@@ -118,6 +122,8 @@ const collator = new Intl.Collator("pt");
  * @property {string} [variant] "2/3" when a song has several files
  * @property {number} [order] place of an example
  */
+
+import { meterText } from "./meter.js";
 
 /** @typedef {{source: string, entries: CatalogEntry[]}} CatalogFile */
 
@@ -410,7 +416,7 @@ export async function openEntry(entry, { fetchFn, server, abcjs }) {
     if (needsServer) return pageLink(entry);
     throw new Error(NETWORK_MESSAGE);
   }
-  if (needsServer && entry.u && [502, 503, 504].includes(response.status)) return pageLink(entry);
+  if (needsServer && (entry.u || entry.facts?.midi) && [502, 503, 504].includes(response.status)) return pageLink(entry);
   if (!response.ok) throw new Error(loadErrorMessage(response.status));
 
   if (request.kind === "abc") {
@@ -424,16 +430,44 @@ export async function openEntry(entry, { fetchFn, server, abcjs }) {
 }
 
 /**
- * The way songs opened before the song server: the song's own page, where the visitor downloads
- * the MIDI file. Used when the server is not deployed, does not answer, or its source is down.
+ * The record of a file the visitor opened, so that it sits on the shelf with the other songs.
+ *
+ * @param {{name: string, sha256: string, leadSheet: import("./leadsheet.js").LeadSheet}} loaded
+ * @returns {CatalogEntry}
+ * @example
+ * localEntry({ name: "tune.mid", sha256: "ab12cd34…", leadSheet }).route; // { local: true }
+ */
+export function localEntry({ name, sha256, leadSheet }) {
+  const first = leadSheet.bars[0];
+  return {
+    id: `local-${sha256.slice(0, 12)}`,
+    source: "local",
+    t: leadSheet.title || name.replace(/\.[^.]+$/, ""),
+    c: "Your file",
+    license: "your file",
+    seed: Number.parseInt(sha256.slice(0, 8), 16),
+    route: { local: true },
+    facts: {
+      key: leadSheet.key,
+      tempo_bpm: leadSheet.tempoBpm,
+      meter: first ? meterText(first.meter) : "",
+      n_bars: leadSheet.bars.length,
+    },
+  };
+}
+
+/**
+ * The way songs opened before the song server: the song's MIDI file is downloaded straight from
+ * its source (its own page when the file's address is not known) and the visitor drops it in.
+ * Used when the server is not deployed, does not answer, or its source is down.
  *
  * @param {CatalogEntry} entry
  * @returns {OpenedSong}
  * @throws {Error} the offline sentence, for a song that has no page of its own
  */
 function pageLink(entry) {
-  if (!entry.u) throw new Error(OFFLINE_MESSAGE);
-  return { kind: "link", name: fileName(entry, ""), url: entry.u, byHand: true };
+  if (!entry.u && !entry.facts?.midi) throw new Error(OFFLINE_MESSAGE);
+  return { kind: "link", name: fileName(entry, "mid"), url: entry.facts?.midi || entry.u, byHand: true };
 }
 
 /**

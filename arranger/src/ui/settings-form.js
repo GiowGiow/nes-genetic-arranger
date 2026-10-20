@@ -192,7 +192,7 @@ export function allowedWarnings(allowed) {
  * @param {Settings} defaults
  * @returns {string[]}
  * @example
- * changedSettings({...defaults, max_generations: 4000}, defaults) // ["max_generations"]
+ * changedSettings({...defaults, max_generations: 5000}, defaults) // ["max_generations"]
  */
 export function changedSettings(settings, defaults) {
   /** @type {string[]} */
