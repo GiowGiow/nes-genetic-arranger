@@ -39,7 +39,7 @@ import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
 import { setUpPageTabs } from "./tabs.js";
 import { createSongShelf } from "./song-shelf.js";
-import { displayTitle, externalEntry, loadCatalog, openEntry, serverUrl } from "../core/sources.js";
+import { PAGE_MESSAGE, displayTitle, externalEntry, loadCatalog, openEntry, serverUrl } from "../core/sources.js";
 import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
@@ -139,7 +139,7 @@ const shelf = createSongShelf($("[data-shelf]"), {
     if (await openCatalogEntry(entry)) startRun();
   },
   onPreview: async (entry) => {
-    if (await openCatalogEntry(entry)) playIntro();
+    if (await openCatalogEntry(entry, { openPages: false })) playIntro();
   },
 });
 loadCatalog(fetch, (entries) => shelf.setEntries(entries))
@@ -170,9 +170,12 @@ searchBox.addEventListener("input", () => {
 async function searchElsewhere(query) {
   const [session, others] = await Promise.allSettled([
     fetch(sessionSearchUrl(query)).then((response) => (response.ok ? response.json() : Promise.reject())),
-    fetch(`${server}/search?q=${encodeURIComponent(query)}`).then((response) =>
-      response.ok ? response.json() : Promise.reject(),
-    ),
+    // No song server yet: only the sites the browser can reach itself are searched
+    server === null
+      ? Promise.resolve({ results: [] })
+      : fetch(`${server}/search?q=${encodeURIComponent(query)}`).then((response) =>
+          response.ok ? response.json() : Promise.reject(),
+        ),
   ]);
   if (searchBox.value !== query) return;
   const found = [
@@ -187,16 +190,17 @@ async function searchElsewhere(query) {
  * Load a catalog song into the input panel, as if its file were dropped.
  *
  * @param {any} entry
+ * @param {{openPages?: boolean}} [options] `openPages: false` (Preview) never opens a page
  * @returns {Promise<boolean>} true when the song was read
  */
-async function openCatalogEntry(entry) {
+async function openCatalogEntry(entry, { openPages = true } = {}) {
   songStatus(`Loading ${displayTitle(entry.t)}…`);
   try {
     const abcjs = entry.route?.thesession !== undefined ? await loadAbcjs() : undefined;
     const song = await openEntry(entry, { fetchFn: fetch, server, abcjs });
     if (song.kind === "link") {
-      window.open(song.url, "_blank", "noopener");
-      songStatus("");
+      if (openPages) window.open(song.url, "_blank", "noopener");
+      songStatus(song.byHand ? PAGE_MESSAGE : "");
       return false;
     }
     const before = inputPanel.current();

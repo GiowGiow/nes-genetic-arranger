@@ -538,6 +538,13 @@ Every catalog song opens like an example: one click, no track to choose.
   only), and from your browser to The Session directly. If the server is down the page says so
   and everything else keeps working.
 
+**Status: the song server is written and tested but not deployed yet** (the homelab is in a
+memory test; see `deploy/homelab/README.md`). Until then the published page does not ask it for
+anything: an MPB song opens its page, you download the MIDI and drop it in (the way it worked
+before the server), and only The Session is searched besides the catalog. The examples, the
+public-domain songs, Nottingham and PDMX need no server. When the server goes up, set
+`PRODUCTION_SERVER_LIVE = true` in `arranger/src/core/sources.js`.
+
 The page never sends your files anywhere: the server only receives search words and song ids.
 To ask for a song to be removed from the server, open an issue on this repository; the server
 keeps a denylist (`server/denylist.json`) that it checks before every request.

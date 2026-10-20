@@ -14,6 +14,30 @@ repository, not this one.
 | `ingress-external.yaml` | `nes-arranger-bh.giow.dev` through the FRP relay and Cloudflare, zone wildcard TLS, crowdsec, redirect, rate-limit and secure-headers middlewares, no forward-auth, Gatus check on `/health` |
 | `kustomization.yaml` | the list above |
 
+## Status and what to change before deploying (2026-10-20)
+
+Not deployed. The published page works without the server (`PRODUCTION_SERVER_LIVE = false` in
+`arranger/src/core/sources.js`). Findings from reading the homelab's documentation and cluster:
+
+- **No image registry is needed.** The homelab runs its own code as a stock image plus a clone of
+  the git repository (`kustomize/docs`, `kustomize/autobuy`): a `git-sync` init container clones
+  this public repository at a pinned commit (no token), a `python:3.12-slim` init container runs
+  `pip install --target` of the pinned server dependencies (`uv export --no-dev --group server
+  --no-emit-project --no-hashes`) into an `emptyDir`, and the main container runs `uvicorn
+  server.app:app` from the clone with `PYTHONPATH` on that directory. No `ghcr.io` pull secret
+  exists in the cluster, so the image in `deployment.yaml` below, and the image workflow, are not
+  the way to deploy. The `Dockerfile` stays for a local check.
+- Add `priorityClassName: homelab-low` and the Glance annotations (`glance/name`, `glance/icon`,
+  `glance/url`) to the Deployment, as the homelab rules ask.
+- The namespace `nes-arranger` must be added to the `services` AppProject destinations
+  (`argo-apps/projects.yaml`) in a commit before the service's own commit.
+- The cluster was in a temporary low-memory profile for an 8 GB test (commit f24a856 of the homelab
+  repository, 16 October 2026): memory requests were at 92 percent and ExternalDNS was paused, so
+  neither the Cloudflare record nor the Pi-hole address of a new host is created. Deploy after that
+  test ends, and add the Pi-hole `local=` line only once the A record exists.
+- A Cloudflare rule ("Misc Blocks", per the homelab notes) blocks countries other than BR, HU and
+  TW; a skip rule for this host is the owner's to create if visitors from elsewhere should reach it.
+
 ## Steps
 
 Pushing to the homelab repository needs the student's explicit approval at that time (task T053).

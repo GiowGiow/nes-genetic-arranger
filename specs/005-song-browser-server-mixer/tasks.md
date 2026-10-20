@@ -304,7 +304,7 @@ IMSLP link (quickstart step 4).
   - namespace, deployment, service, network-policy, ingress-external and kustomization;
   - a `README.md` with the FRP `customDomains` and Pi-hole `local=` edits, and the public-API
     exception note for the homelab `docs/security.md`.
-- [ ] T053 Ask the student for explicit OK, then copy the manifests into
+- [ ] T053 (DEFERRED 2026-10-20 until the homelab's 8 GB memory test ends; the page falls back to the pre-server way, see FR-019) Ask the student for explicit OK, then copy the manifests into
   `GiowGiow/homelab-kubernetes-server`, with the FRP and Pi-hole edits in the same commit, and
   push. Check `/health`, CORS and the private-IP refusal from outside.
 

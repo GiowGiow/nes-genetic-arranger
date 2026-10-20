@@ -36,8 +36,15 @@ export const CATALOG_FILES = Object.freeze(
   ),
 );
 
-/** The song server the published page uses. */
+/** The song server the published page uses once it is deployed (manifests in `deploy/homelab/`). */
 export const PRODUCTION_SERVER = "https://nes-arranger-bh.giow.dev";
+
+/**
+ * Whether the production song server is deployed. While it is not, the published page asks it
+ * for nothing: an MPB song opens the way it did before the server (its page opens, you download
+ * the MIDI file and drop it in) and no other site is searched. Set it to true when the server is up.
+ */
+export const PRODUCTION_SERVER_LIVE = false;
 
 /** The port of a song server running on the developer's machine (`server/app.py`). */
 export const SERVER_PORT = 8765;
@@ -45,6 +52,10 @@ export const SERVER_PORT = 8765;
 /** What the page says when the song server does not answer. */
 export const OFFLINE_MESSAGE =
   "The song server is offline, so this song cannot be opened now. Your own files, the examples and arranging still work.";
+
+/** What the page says when a song's file has to be fetched by hand from its own page. */
+export const PAGE_MESSAGE =
+  "This song's file opens from its own page: download the MIDI there, then drop it here or choose it with Open MIDI or ABC.";
 
 /** What the page says when a file of the repository or the tune site cannot be reached. */
 export const NETWORK_MESSAGE = "The song could not be loaded. Check your connection and try again.";
@@ -127,6 +138,7 @@ const collator = new Intl.Collator("pt");
  * @property {string} [text] the ABC tune, for "abc"
  * @property {Uint8Array} [bytes] the MIDI file, for "midi"
  * @property {string} [url] the page to open, for "link"
+ * @property {boolean} [byHand] for "link": the visitor downloads the song's file there and drops it in
  */
 
 /**
@@ -254,18 +266,20 @@ export function pageCount(total, perPage) {
 
 /**
  * The song server for this page: the developer's own machine when the page is served from it,
- * the production host otherwise.
+ * the production host once it is deployed, nothing before that.
  *
  * @param {{hostname: string}} location the page's `location`
- * @returns {string} the server's origin, without a trailing slash
+ * @param {boolean} [live] whether the production server is deployed (`PRODUCTION_SERVER_LIVE`)
+ * @returns {string | null} the server's origin without a trailing slash; null when there is none
  * @example
  * serverUrl({ hostname: "localhost" }); // "http://localhost:8765"
- * serverUrl({ hostname: "giowgiow.github.io" }); // "https://nes-arranger-bh.giow.dev"
+ * serverUrl({ hostname: "giowgiow.github.io" }, true); // "https://nes-arranger-bh.giow.dev"
+ * serverUrl({ hostname: "giowgiow.github.io" }, false); // null
  */
-export function serverUrl(location) {
+export function serverUrl(location, live = PRODUCTION_SERVER_LIVE) {
   const host = location.hostname;
   if (host === "localhost" || host === "127.0.0.1" || host === "[::1]") return `http://${host}:${SERVER_PORT}`;
-  return PRODUCTION_SERVER;
+  return live ? PRODUCTION_SERVER : null;
 }
 
 /**
@@ -369,8 +383,8 @@ function fileName(entry, extension) {
  * Load a song along its route, ready for the input panel.
  *
  * @param {CatalogEntry} entry
- * @param {{fetchFn: FetchFunction, server: string, abcjs?: any}} context `fetchFn` is the page's
- *   `fetch`; `server` the song server (`serverUrl`); `abcjs` the ABCJS object, needed by the
+ * @param {{fetchFn: FetchFunction, server: string | null, abcjs?: any}} context `fetchFn` is the
+ *   page's `fetch`; `server` the song server (`serverUrl`, null when there is none); `abcjs` the ABCJS object, needed by the
  *   folk tune site's tunes, which become MIDI (research R10)
  * @returns {Promise<OpenedSong>}
  * @throws {Error} with a sentence for the visitor: the server is offline, the song changed at
@@ -380,7 +394,9 @@ function fileName(entry, extension) {
  * inputPanel.readFile(new File([song.text ?? song.bytes], song.name));
  */
 export async function openEntry(entry, { fetchFn, server, abcjs }) {
-  const request = entryRequest(entry, server);
+  const needsServer = entry.route?.server !== undefined;
+  if (needsServer && server === null) return pageLink(entry);
+  const request = entryRequest(entry, server ?? "");
   if (request === null) {
     throw new Error(entry.error ? `This song cannot be arranged (${entry.error}).` : "This song cannot be arranged.");
   }
@@ -391,8 +407,10 @@ export async function openEntry(entry, { fetchFn, server, abcjs }) {
   try {
     response = await fetchFn(request.url);
   } catch {
-    throw new Error(entry.route?.server !== undefined ? OFFLINE_MESSAGE : NETWORK_MESSAGE);
+    if (needsServer) return pageLink(entry);
+    throw new Error(NETWORK_MESSAGE);
   }
+  if (needsServer && entry.u && [502, 503, 504].includes(response.status)) return pageLink(entry);
   if (!response.ok) throw new Error(loadErrorMessage(response.status));
 
   if (request.kind === "abc") {
@@ -403,6 +421,19 @@ export async function openEntry(entry, { fetchFn, server, abcjs }) {
   }
   const abc = tuneToAbc(await response.json(), request.setting ?? 0);
   return { kind: "midi", name: fileName(entry, "mid"), bytes: abcToMidi(abcjs, abc) };
+}
+
+/**
+ * The way songs opened before the song server: the song's own page, where the visitor downloads
+ * the MIDI file. Used when the server is not deployed, does not answer, or its source is down.
+ *
+ * @param {CatalogEntry} entry
+ * @returns {OpenedSong}
+ * @throws {Error} the offline sentence, for a song that has no page of its own
+ */
+function pageLink(entry) {
+  if (!entry.u) throw new Error(OFFLINE_MESSAGE);
+  return { kind: "link", name: fileName(entry, ""), url: entry.u, byHand: true };
 }
 
 /**

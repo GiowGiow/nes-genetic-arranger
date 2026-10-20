@@ -13,6 +13,7 @@ import {
   CATALOG_FILES,
   displayTitle,
   OFFLINE_MESSAGE,
+  PAGE_MESSAGE,
   PRODUCTION_SERVER,
   entryRequest,
   externalEntry,
@@ -176,7 +177,8 @@ test("a page holds perPage songs, and the last page holds the rest", () => {
 test("the song server is on this machine when the page is, and the production host otherwise", () => {
   assert.equal(serverUrl({ hostname: "localhost" }), "http://localhost:8765");
   assert.equal(serverUrl({ hostname: "127.0.0.1" }), "http://127.0.0.1:8765");
-  assert.equal(serverUrl({ hostname: "giowgiow.github.io" }), "https://nes-arranger-bh.giow.dev");
+  assert.equal(serverUrl({ hostname: "giowgiow.github.io" }, true), "https://nes-arranger-bh.giow.dev");
+  assert.equal(serverUrl({ hostname: "giowgiow.github.io" }), null, "the published page has no server until it is deployed");
   assert.equal(PRODUCTION_SERVER, "https://nes-arranger-bh.giow.dev");
 });
 
@@ -274,11 +276,42 @@ test("opening a MIDI file from the server gives its bytes", async () => {
   assert.deepEqual(opened.bytes, bytes);
 });
 
-test("a server that does not answer is called offline, and the message says what still works", async () => {
+test("a song without a page of its own, and a server that does not answer, is called offline", async () => {
   const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
-  await assert.rejects(openEntry(fixture("mpb").entries[0], { fetchFn, server: PRODUCTION_SERVER }), { message: OFFLINE_MESSAGE });
+  const entry = { ...fixture("mpb").entries[0], u: undefined };
+  await assert.rejects(openEntry(entry, { fetchFn, server: PRODUCTION_SERVER }), { message: OFFLINE_MESSAGE });
   assert.match(OFFLINE_MESSAGE, /song server is offline/);
   assert.match(OFFLINE_MESSAGE, /examples/);
+});
+
+test("with no song server, or one that does not answer, an MPB song opens the way it did before: its page, by hand", async () => {
+  const entry = { ...fixture("mpb").entries[0], u: "https://example.org/songs/agua-de-lua.html" };
+  const expected = { kind: "link", name: "Água de lua", url: "https://example.org/songs/agua-de-lua.html", byHand: true };
+  const noServer = fakeFetch({});
+  const opened = await openEntry(entry, { fetchFn: noServer.fetchFn, server: null });
+  assert.equal(opened.kind, "link");
+  assert.equal(opened.url, expected.url);
+  assert.equal(opened.byHand, true);
+  assert.equal(noServer.asked.length, 0, "no request goes out when there is no server");
+
+  const down = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
+  const afterFailure = await openEntry(entry, { fetchFn: down.fetchFn, server: PRODUCTION_SERVER });
+  assert.equal(afterFailure.kind, "link");
+  assert.equal(afterFailure.byHand, true);
+
+  for (const status of [502, 503, 504]) {
+    const broken = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: { status, body: "" } });
+    const fallback = await openEntry(entry, { fetchFn: broken.fetchFn, server: PRODUCTION_SERVER });
+    assert.equal(fallback.kind, "link", `HTTP ${status} falls back to the page`);
+  }
+  assert.match(PAGE_MESSAGE, /download the MIDI/);
+});
+
+test("entries from files in the repository never need the server", async () => {
+  const korobeiniki = fixture("examples").entries[0];
+  const { fetchFn } = fakeFetch({ ["../data/leadsheets/korobeiniki.abc"]: { body: "X:1\nT:K\nK:Am\nA|\n" } });
+  const opened = await openEntry(korobeiniki, { fetchFn, server: null });
+  assert.equal(opened.kind, "abc");
 });
 
 test("server answers become plain sentences: changed at its source, cannot be arranged, other errors", async () => {
@@ -291,7 +324,7 @@ test("server answers become plain sentences: changed at its source, cannot be ar
     [500, /HTTP 500/],
   ])) {
     const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: { status, body: '{"error": "upstream says something"}' } });
-    await assert.rejects(openEntry(fixture("mpb").entries[0], { fetchFn, server: PRODUCTION_SERVER }), (error) => {
+    await assert.rejects(openEntry({ ...fixture("mpb").entries[0], u: undefined }, { fetchFn, server: PRODUCTION_SERVER }), (error) => {
       assert.ok(error instanceof Error);
       assert.match(error.message, expected);
       assert.equal(error.message, loadErrorMessage(status));
