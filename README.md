@@ -536,7 +536,7 @@ every other song in alphabetical order. The run controls (seed, pace, Arrange, S
 the same card, under the shelf, and on top of the Evolution tab, which also holds the result: change
 a setting, press Arrange again and hear the new arrangement on the same screen. A run goes on
 when you leave the tab. Search finds a song by title, composer or
-performer, and also looks for MIDI files on other sites. "Open MIDI or ABC" loads your own file.
+performer, and also looks for MIDI files on other sites. "Open MIDI, ABC or audio" loads your own file (an audio file is turned into notes on your device).
 Every catalog song opens like an example: one click, no track to choose.
 
 - **Songs committed as ABC lead sheets** open with no server: public-domain songs (every author
