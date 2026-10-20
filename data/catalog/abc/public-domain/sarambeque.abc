@@ -1,0 +1,36 @@
+%abc-2.1
+% SARAMBEQUE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sarambeque.html (file
+% https://www.beakauffmann.com/mpb_s/som/sarambeque.mid, sha256
+% 4a64daaa8937f8a6d796d0fc3e561ae704c44444ff4eb1b5abde3e2ab2a1f187), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SARAMBEQUE
+M:2/4
+L:1/16
+Q:1/4=115.000029
+% Exact tempo 115.0000287500072 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z _e _a f _e c _A F | "C"E E E _E c c c _B | "C"_B _B _B _A g g g f | "C"f f f _e c' c' c' _b |
+"C"f' f' f' _e' _d' _d' _d' c' | "C"c' c' c' _b c' c' c' g | "C"_b _b _b _a g g g f | "C"_e _e _e G d d d G |
+"C"c _e _a f _e c _A F | "C"E E E _E c c c _B | "C"_B _B _B _A g g g f | "C"f f f _e c' c' c' _b |
+"C"f' f' f' _e' ^f' ^f' ^f' =f' | "C"_e' _e' _e' _d' c' c' c' g | "C"_b _b _b _a g g g f | "C"f f f _e c c c _B |
+"C"_A _e _a f _e c _A F | "C"E E E _E c c c _B | "C"_B _B _B _A g g g f | "C"f f f _e c' c' c' _b |
+"C"f' f' f' _e' _d' _d' _d' c' | "C"c' c' c' _b c' c' c' g | "C"_b _b _b _a g g g f | "C"_e _e _e G d d d G |
+"C"c _e _a f _e c _A F | "C"E E E _E c c c _B | "C"_B _B _B _A g g g f | "C"f f f _e c' c' c' _b |
+"C"f' f' f' _e' ^f' ^f' ^f' =f' | "C"_e' _e' _e' _d' c' c' c' g | "C"_b _b _b _a g g g f | "C"f f f _e c c c _B |
+"C"_A3 z _a'3 z | "C"_E,, _B, _B, _B, C C C C | "C"_E _E _E D _B z _B z | "C"_E,, F F F G G G G |
+"C"_B _B _B _A f z _e z | "C"B, _A _A _A f z _e z | "C"_B, G G G d z c z | "C"_A, F F F c F, _B ^F, |
+"C"G, G G G c C, _B G,, | "C"_E,, _B, _B, _B, C C C C | "C"_E _E _E D _B z _B z | "C"_E,, F F F G G G G |
+"C"_B _B _B _A f z _e z | "C"B, _e _e _e f f ^f ^f | "C"g d _e B c ^F G C | "C"F B, C F, _B, E, F, _B,, |
+"C"_E,3 z _e'3 z | "C"_E,, _B, _B, _B, C C C C | "C"_E _E _E D _B z _B z | "C"_E,, F F F G G G G |
+"C"_B _B _B _A f z _e z | "C"B, _A _A _A f z _e z | "C"_B, G G G d z c z | "C"_A, F F F c F, _B ^F, |
+"C"G, G G G c C, _B G,, | "C"_E,, _B, _B, _B, C C C C | "C"_E _E _E D _B z _B z | "C"_E,, F F F G G G G |
+"C"_B _B _B _A f z _e z | "C"B, _e _e _e f f ^f ^f | "C"g d _e B c ^F G C | "C"F B, C F, _B, E, F, _B,, |

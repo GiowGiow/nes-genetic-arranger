@@ -1,0 +1,31 @@
+%abc-2.1
+% ESTUDO Nº 1, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/estudo-n1.html (file
+% https://www.beakauffmann.com/mpb_e/som/estudo-n1.mid, sha256
+% f7afc69b6c845e8276ff7e4951e118eb6d132703d7ea9dc2c2e80e9c172f5ae4), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-43 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESTUDO Nº 1
+M:12/16
+L:1/16
+Q:1/4=98.999936
+% Exact tempo 98.99993565004183 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "Bm"^F, A, ^F, =D, ^F, =D, | "Bm7"B,, ^F, B,, ^F,, B,, ^F,, E,, _A,, B,, E, _A, B, | "E"E D B, _A, E, D, "F#m7"_D, E, =A, _D E =A |
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "B7"^F, A, C _E ^F A | "D7"c A ^F _E C A, "F#7"_d A ^F =E _D A, | "E7"D B, _A, E, D, B,, "A"=A,, =A, E =A3 |
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "Bm"^F, A, ^F, =D, ^F, =D, | "Bm7"B,, ^F, B,, ^F,, B,, ^F,, E,, _A,, B,, E, _A, B, | "E"E D B, _A, E, D, "F#m7"_D, E, =A, _D E =A |
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "B7"^F, A, C _E ^F A | "D7"c A ^F _E C A, "F#7"_d A ^F =E _D A, | "E7"D B, _A, E, D, B,, "A"=A,, =A, E =A3 |
+"D7"e c A E C A, "B7"D B, _A, E, D, B,, | "E7"E,, _A,, B,, E, _A, B, "D7"E C =A, E, C, =A,, | "D7"e c A E C A, C B, _B, =B, _A, E, | "Ebm"B,, _E, ^F, A, B, A, "E"_A, B, _A, =E,3 |
+"D7"e c A E C A, "E7"D B, _A, E, D, B,, | "E7"E,, _A,, B,, E, _A, B, "Eb7"=A,, _D, E, G, _B, _D | "Dm"D, F, A, B, C D "D7"F E _E =E C A, | "Abm"D B, _A, E, D, B,, "Am"=A,, =A, E =A3 |
+"D7"e c A E C A, "B7"D B, _A, E, D, B,, | "E7"E,, _A,, B,, E, _A, B, "D7"E C =A, E, C, =A,, | "D7"e c A E C A, C B, _B, =B, _A, E, | "Ebm"B,, _E, ^F, A, B, A, "E"_A, B, _A, =E,3 |
+"D7"e c A E C A, "E7"D B, _A, E, D, B,, | "E7"E,, _A,, B,, E, _A, B, "Eb7"=A,, _D, E, G, _B, _D | "Dm"D, F, A, B, C D "D7"F E _E =E C A, | "Abm"D B, _A, E, D, B,, "Am"=A,, =A, E =A3 |
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "Bm"^F, A, ^F, =D, ^F, =D, | "Bm7"B,, ^F, B,, ^F,, B,, ^F,, E,, _A,, B,, E, _A, B, | "E"E D B, _A, E, D, "F#m7"_D, E, =A, _D E =A |
+"A"_d e _d A _d A "E7"^F A ^F E _A E | "F#m7"_D E _D A, _D A, "B7"^F, A, C _E ^F A | "D7"c A ^F _E C A, "F#7"_d A ^F =E _D A, | "E7"D B, _A, E, D, B,, "F#m7"=A,, _D, E, =A, E, _D, |
+"A"_D A, E, E _D A, "F#m7"A E _D _d A E | "A"e _d A a3- "Dbm7"a3 _A,3 | "A"A,11 z |

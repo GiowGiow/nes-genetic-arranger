@@ -1,0 +1,24 @@
+%abc-2.1
+% Anniversary Reel, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 11 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Anniversary Reel
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"A7"z8 d4 e4 | "D"f6 d2 A4 d4 | "G"B4 d4 "A"c2 d2 e4 | "D"d8 A8 |
+"D7"F6 F2 G4 A4 | "G"B4 d8 B4 | "D"A6 G2 "Bm"F4 G4 | "Em"E16 |
+"A"E4 A4 d4 e4 | "D"f6 d2 A4 d4 | "G"B4 d4 "A"c2 d2 e4 | "D"d8 A8 |
+"D7"F6 F2 G4 A4 | "G"B4 d8 B4 | "D"A4 d4 "A"c2 d2 e4 | "D"d16 |
+"D"d8 "E7"e4 d4 | "A"c4 c4 "F#m"c2 B2 A4 | "Bm"B4 B4 "E"B2 A2 ^G4 | "D"A4 a8 f4 |
+"A"e6 c2 "D"A4 B4 | "A"c4 e4 e2 d2 c4 | "E"B4 d4 d2 c2 B4 | "A"A8- "Em"A8 |
+"A"A4 A4 d4 e4 | "D"f6 d2 A4 d4 | "G"B4 d4 "A"c2 d2 e4 | "D"d8 A8 |
+"D7"F6 F2 G4 A4 | "G"B4 d8 B4 | "D"A4 d4 "A"c2 d2 e4 | "D"d16 |
+"D"d8 z8 |

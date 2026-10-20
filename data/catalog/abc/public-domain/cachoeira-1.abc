@@ -1,0 +1,36 @@
+%abc-2.1
+% CACHOEIRA, by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cachoeira-1.html (file
+% https://www.beakauffmann.com/mpb_c/som/cachoeira-1.mid, sha256
+% e6e721abaabdf47ae8b14a56018a1f4cfba2aa9445cea9f8ee5996cd9b5f3426), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CACHOEIRA
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"a z E E E z ^F z | "A"E z A z _d z e z | "A"e e _d A E2 _d z | "E7"_d z B z B3 z |
+"A"_d e a E E z ^F z | "A"E z A z _d z e z | "F#m7"e2 _d A E2 _d z | "F#m7"B B A z A3 z |
+"F"_d'3 z a _a ^f2 | "F"_d'3 z a _a ^f2 | "Ab"_d'2 f _a _a f ^f _e | "Db"_d2 f _a _d' z3 |
+"Abm"e'3 z _d' b a2 | "Abm"e'3 z _d' b a2 | "B"e'2 _a b b _a =a ^f | "E"e2 _a b e'2 z2 |
+"A"a z E E E z ^F z | "A"E z A z _d z e z | "A"e e _d A E2 _d z | "E7"_d z B z B3 z |
+"A"_d e a E E z ^F z | "A"E z A z _d z e z | "F#m7"e2 _d A E2 _d z | "F#m7"B B B z A3 z |
+"D"a z ^f' z ^f' z e' z | "D"e' z d' z d' z _d' z | "D"_d' z c' z c' z b z | "E7"b z _b z _b z a z |
+"A"a z _a' z _a' z ^f' z | "A"^f' z e' z e' z _e' z | "A"_e' z =e' z b z _d' z | "D"d'2 z2 d'' z3 |
+"A"a z E E E z ^F z | "A"E z A z _d z e z | "A"e e _d A E2 _d z | "E7"_d z B z B3 z |
+"A"_d e a E E z ^F z | "A"E z A z _d z e z | "F#m7"e2 _d A E2 _d z | "F#m7"B B A z A3 z |
+"F"_d'3 z a _a ^f2 | "F"_d'3 z a _a ^f2 | "Ab7"_d'2 f _a _a f ^f _e | "Db"_d2 f _a _d' z3 |
+"Abm"e'3 z _d' b a2 | "Abm"e'3 z _d' b a2 | "B7"e'2 _a b b _a =a ^f | "E"e2 _a b e'2 z2 |
+"A"a z E E E z ^F z | "A"E z A z _d z e z | "A"e e _d A E2 _d z | "E7"_d z B z B3 z |
+"A"_d e a E E z ^F z | "A"E z A z _d z e z | "F#m7"e2 _d A E2 _d z | "F#m7"B B B z A3 z |
+"D"a z ^f' z ^f' z e' z | "D"e' z d' z d' z _d' z | "D"_d' z c' z c' z b z | "E7"b z _b z _b z a z |
+"A"a z _a' z _a' z ^f' z | "A"^f' z e' z e' z _e' z | "A"_e' z =e' z b z _d' z | "D"d'2 z2 d'' z3 |

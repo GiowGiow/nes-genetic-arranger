@@ -1,0 +1,24 @@
+%abc-2.1
+% Bonny Breast Knot, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 38 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Bonny Breast Knot
+M:4/4
+L:1/16
+Q:1/4=140
+K:C
+P:A
+"C"z12 c2 d2 | "C"e4 c4 c4 d2 e2 | "Dm"f2 e2 d2 c2 "G7"B4 G4 | "C"c4 e2 d2 c4 e2 d2 |
+"C"c4 g4 "G7"g6 f2 | "C"e4 c4 c4 d2 e2 | "F"f2 e2 d2 c2 "G"B4 G4 | "Am"c4 e4 "G7"d4 g2 f2 |
+"C"e4 c4 c4 c2 d2 | "C"e4 c4 c4 d2 e2 | "Dm"f2 e2 d2 c2 "G7"B4 G4 | "C"c4 e2 d2 c4 e2 d2 |
+"C"c4 g4 "G7"g6 f2 | "C"e4 c4 c4 d2 e2 | "F"f2 e2 d2 c2 "G"B4 G4 | "Am"c4 e4 "G7"d4 g2 f2 |
+"C"e4 c4 c4 e2 f2 | "C"g6 g2 "G7"g4 g4 | "C"g2 f2 e2 d2 "Am"c8 | "Dm"d4 d2 e2 "Dm7"f2 e2 f2 g2 |
+"G7"a4 d4 d4 e2 f2 | "C"g6 g2 "G7"g4 g4 | "C"g2 f2 e2 d2 "Am"c8 | "Dm"d8 "G7"G4 A2 B2 |
+"C"c4 e4 c4 e2 f2 | "C"g6 g2 "G7"g4 g4 | "C"g2 f2 e2 d2 "Am"c8 | "Dm"d4 d2 e2 "Dm7"f2 e2 f2 g2 |
+"G7"a4 d4 d4 e2 f2 | "C"g6 g2 "G7"g4 g4 | "C"g2 f2 e2 d2 "Am"c8 | "Dm"d8 "G7"G4 A2 B2 |
+"C"c4 e4 c4 z4 |

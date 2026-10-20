@@ -1,0 +1,25 @@
+%abc-2.1
+% Come heavy sleep, by John Dowland. Score published on MuseScore (artist: John Dowland), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Dowland (died 1626,
+% Wikidata Q207355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/5/QmR6VTMRFHEDQviWNiisVTgkYJULmp1RijYC7ep9RXmVJD.mid (sha256
+% e9e4c051e155a172257ffd53327774e69380c640af24a2cb1f5adc7f234cc53c): melody track 2, bars 0-23
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Come heavy sleep
+M:4/4
+L:1/16
+Q:1/4=67.999764
+% Exact tempo 67.99976426748387 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"B,12 _A,2 _A,2 | "B"^F,4 B,3 A, "E"_A,8 | "A"_D3 =D E4- "Dbm7"E2 B,2 _D2 _D2 | "B"^F,8 "E"_A,2 E,2 ^F,2 _A,2 |
+"A"A,2 _A, ^F, E,4- "F#m7"E,2 B,4 =A,2 | "E"_A,4 =A,4 "Dbm7"B,4 E,4 | "B"B,8 "F#m"z4 _D4 | "Dbm"_D2 B, A, _A,2 ^F,2 "Db"E,2 _E, _D, _E,2 _E,2 |
+"Db"_D,4 _A,4 "Dbm"_A,6 E,2 | "B7"^F,2 B,4 A, _A, "Dbm7"^F,2 E,2 E,2 _E,2 | [M:2/4]"E"E,8 | [M:4/4]"Ab"_E,6 _A, _A, _A,2 _A,2 _E,3 F, |
+"F#m"F,2 A,3 _A, ^F,2 "Db"=F,8 | "Dbm"z2 _A,2 B,2 _D2 "Abm"^F,6 _A,2 | "F#m"A,6 _A, ^F, "Dbm"_A,4 z2 B,2 | "Dbm7"B,2 _A,4 ^F, E, "Abm"^F,4 E,4 |
+"B"E,2 _E, _D, _E,4 "E"=E,8 | "Ab"_E,6 _A, _A, _A,2 _A,2 _E,3 F, | "F#m"F,2 A,3 _A, ^F,2 "Db"=F,8 | "Dbm"z2 _A,2 B,2 _D2 "Abm"^F,6 _A,2 |
+"F#m"A,6 _A, ^F, "Dbm"_A,4 z2 B,2 | "Dbm7"B,2 _A,4 ^F, E, "Abm"^F,4 E,4 | "B"E,2 _E, _D, _E,4 "E"=E,8 |

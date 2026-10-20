@@ -1,0 +1,30 @@
+%abc-2.1
+% Ave verum corpus K.618, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist:
+% Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/19/QmZfbGTDQEsE19m3tsnSiGcm1Z1PCSeQZgRR1fHbRpsNSw.mid (sha256
+% 9c5ad1116b3825fef24f86b15183efb8042e875d0ee74dfb58bd7d746a4cb57f): melody track 4, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave verum corpus K.618
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"D"D4 A,4 "F#"D4 E4 | "D"^F4 D4 ^F4 G4 | "D"A4 ^F4 d4 ^F4 | "E7"A4 _A4 "Em7"G8 |
+"A7"G4 B4 "F#m7"A4 G4 | "D"G4 ^F4 ^F4 A4 | "A"A4 E4 E4 A4 | "D"A4 ^f4 "A7"g4 G4 |
+"D"G8 ^F8 | "A"E4 _D4 z4 E4 | "A"E4 e4 "F#m7"_d4 A4 | "A"A4 _A4 "E7"_A4 E4 |
+"Dbm7"B4 e4 "E7"d4 B4 | "Bm7"B4 A4 "F#m"A4 A4 | "D"d8- "E7"d8 | "F#m7"d4 _d4 "D"B4 A4 |
+"E"A8 "E7"_A8 | "A"A4 A4 e8 | "F#m"e4 d4 "F7"e4 ^f4 | "Dbm"A4 B A _A =A "E7"_d z5 =A2 |
+"A"A4 G4 _D4 E4 | "A"A4 E4 _D4 E4 | "A7"A4 d4 "C7"_d4 _B4 | "C7"_B4 A4 "C"A8 |
+"Dm7"_B4 A4 "F"A8 | "G7"G4 G8 G4 | "Dm"G4 _B4 "A"A4 G4 | "F#7"G8 "Bm7"F2 E2 F4 |
+"A"E4 _D4 =D4 E4 | "D"^F12 ^F4 | "G"^F4 E4 D4 G4 | "F#m7"G8- "A7"G4 G4 |
+"A"G4 ^F4 E4 A4 | "F#m"A8- "Bm7"A4 A4 | "Bm"A4 z4 "Bm7"A4 B4 | "D"^F8 "A"D6 ^F2 |
+"Em7"G8 "G"z8 | "G"d8 "D7"d8 | "Gm"d8 "D7"_e8 | "E7"e4 B4 "Dbm7"_d4 =d4 |
+"A7"_d4 B2 A2 "Bm7"=d4 G4 | "D"^F8 "A7"E8 | "D"z4 ^F4 A8 | "Bm"A4 D4 "Em"G8 |
+"A"G G G G G G G G "A7"E8 | "D"z16 |

@@ -1,0 +1,37 @@
+%abc-2.1
+% A JANGADA, by Alberto Nepomuceno e Juvenal Galeno, as performed by Alberto Nepomuceno e Juvenal
+% Galeno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980); Juvenal Galeno (died
+% 1931, Wikidata Q10313214).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-jangada.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-jangada.mid, sha256
+% 287c9e9f211db0b3f3d00bd6a4a1e08cf30e0301ba366a55d0ed9ee84b05c8d6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-62 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A JANGADA
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Bbm7"z8 | "Fm"z8 | "Bbm7"z8 | "Bbm7"z8 |
+"Fm"f'4 f'2 _e'2 | "Bbm7"c' _b2 _d' c'2 _b2 | "Fm"c' _b2 _d' c' _b2 _a | "Ebm"^f7 z |
+"Ebm"^f ^f z ^f ^f _a2 _b | "Db"c'4 _a z _a2 | "Ab7"^f2 ^f2 ^f _a2 _b | "Bbm"c'8 |
+"Ab"c'2 c'2 c' z _b2 | "F#"_a2 z2 _a z _b z | "Fm"_d' _b2 _a ^f4 | "Ebm"c' z c' _b _a _b2 _d' |
+"Db"c'5 z _e'2 | "Ab7"_a2 _b2 c' _b2 _a | "Bbm"^f2 _d' z _d'2 _d'2 | "Ab"c'2 _b2 _a2 _b2 |
+"G"g8 | "G"g8 | "G"g8 | "G"g5 z3 |
+"F"f a2 c' b b2 a | "F"c' a2 g f3 z | "F"f a2 c' b b2 a | "F"c'8 |
+"F"c'8 | "F"c'8 | "F"c'8 | "Bbm7"z8 |
+"Fm"z8 | "Bbm7"z8 | "Bbm7"z8 | "Fm"f'4 f'2 _e'2 |
+"Bbm7"c' _b2 _d' c'2 _b2 | "Fm"c' _b2 _d' c' _b2 _a | "Ebm"^f7 z | "Ebm"^f ^f z ^f ^f _a2 _b |
+"Db"c'4 _a z _a2 | "Ab7"^f2 ^f2 ^f _a2 _b | "Bbm"c'8 | "Ab"c'2 c'2 c' z _b2 |
+"F#"_a2 z2 _a z _b z | "Fm"_d' _b2 _a ^f4 | "Ebm"c' z c' _b _a _b2 _d' | "Db"c'5 z _e'2 |
+"Ab7"_a2 _b2 c' _b2 _a | "Bbm"^f2 _d' z _d'2 _d'2 | "Ab"c'2 _b2 _a2 _b2 | "G"g8 |
+"G"g8 | "G"g8 | "G"g5 z3 | "F"f a2 c' b b2 a |
+"F"c' a2 g f3 z | "F"f a2 c' b b2 a | "F"c'8 | "F"c'8 |
+"F"c'8 | "F"c'8 |

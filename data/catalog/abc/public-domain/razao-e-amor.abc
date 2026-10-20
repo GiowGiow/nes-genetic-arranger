@@ -1,0 +1,27 @@
+%abc-2.1
+% RAZÃO E AMOR, by Alberto Nepomuceno, as performed by Alberto Nepomuceno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/razao-e-amor.html (file
+% https://www.beakauffmann.com/mpb_r/som/razao-e-amor.mid, sha256
+% 1594ac675839c4ba1b0223661ebea4a3c589ca02b302592e94297ac9bf48dfef), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-26 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RAZÃO E AMOR
+M:3/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"z12 | "Dm7"z12 | "Gm7"z12 | "G7"z12 |
+"E"z12 | "C7"z6 c z f2 d2 | "Am7"c6 A2 G2 A2 | "F"F7 z F2 G2 |
+"Dm7"A2 _B2 c2 f2 e2 d e | "C"c7 z c4 | "Gm7"d z d2 c z c z _B z _B2 | "D7"A3 z A z A z A3 z |
+"Gm"_B5 z _B2 A2 G2 | "G7"d11 z | "G7"d3 z3 D2 E2 F2 | "Dm7"C2 F2 G4 A4 |
+"A7"G4 F2 z2 _B4 | "F7"A4 c4 _B4 | "E7"d3 z d z d2 e2 f2 | "Dm7"f6 d2 c2 A z |
+"C7"A8 G A2 G | "F"F3 z9 | "Dm7"z12 | "Gm7"z12 |
+"C7"z12 | "F"z12 |

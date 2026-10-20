@@ -1,0 +1,25 @@
+%abc-2.1
+% Drømmen om 'Glade jul' CNW 85, by Carl Nielsen. Score published on MuseScore (artist: Carl
+% Nielsen), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carl Nielsen (died 1931,
+% Wikidata Q205139).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/38/QmTqgKcJsEY72wDjwUwbMBTsujxbi5F1VnNPHUZh4Co2kH.mid (sha256
+% 6b54efe931b956e30455cbe982d11cc4155267dd445ba85ebb766caa895819d4): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Drømmen om 'Glade jul' CNW 85
+M:6/8
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"E"B3 _d B2 _A6 | "E"B3 _d B2 _A6 | "Eb7"e3 _B _A2 _e3 _A _d2 | "Fm7"B2 _B2 _A2 _B6 |
+"Ab"_e3 f _e2 c6 | "Ab"_e3 f _e2 c4 B2 | "E"B b2 _b e' e2 a2 _a _d' _d | "B7"_d c e B _e B =d _B _d =B c A |
+"E"A ^F E ^F _A =A B _d _e =e ^f b | "E"a ^f e ^f _a =a b _d' =d' _d' =d' c' | "Db7"_d' e'2 ^f' e' a' =d' =d' _d'2 b a | "Em7"a ^f a g ^f2 e d d d c2 |
+"Em7"d c c c e g e z3 A A | "C"d c c c' b g a3 g g g | "C7"^f g g e g g e z2 _b g _e | "E7"_b c' c' _a _b _a _a _b c' d' c' _b |
+"A"c' b c'3 d' e' a' e' d' c' e' | "B"e' _d' _e'3 =e' ^f' b2 ^f'2 a | "E"_a ^f ^f =a _a _a b e' ^f' e' _e' b | "E"_a ^f ^f =a b _a' e' _e' b =a ^f =e |
+"E"e _d =d3 ^f e _d' b ^f' e' _e' | "E"e' _d' =d'3 ^f' e' ^f' e' =d' _d' =d' | "A"d' b _d'3 b c'3 b c' b | "Dbm7"e'6 e'6 |
+"E"e'11 z |

@@ -1,0 +1,25 @@
+%abc-2.1
+% le courant limpide, by Friedrich Burgmüller. Score published on MuseScore (artist: Johann
+% Friedrich Franz Burgmuller), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Friedrich Burgmüller (died 1874,
+% Wikidata Q62075).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/8/QmY9NPgydX3kdd9cJbZwrsH2HXTUMY9FaP56fzfnVHhSJ6.mid (sha256
+% 60b1d7cd0be3f1202156f8289b9c054c88e6e8c62adcbde1e861d28620d19979): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:le courant limpide
+M:4/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"B, G2 D B, G2 D C A2 D A, ^F2 D | "G"B, G2 D B, G2 D D A2 D G d2 B | "G"B g2 d B g2 d c a2 d A ^f2 d | "G"B g2 d B e2 d G c2 B D A2 G |
+"G"B, G2 D B, G2 D C A2 D A, ^F2 D | "G"B, G2 D B, G2 D D A2 D G d2 B | "G"B g2 d B g2 d c a2 d A ^f2 d | "G"B d2 g g b2 d' e'2 z6 |
+"D"z ^f2 A z ^f2 A "Db"z e2 A z ^f2 A | "Dbm"z g2 A z e2 A "B7"z _d2 A z =d2 A | "Db"z e2 A z ^f2 A "Dbm"z g2 A z e2 A | "Em7"z ^f2 A z e2 A "F#7"z d2 A z e2 A |
+"D"z ^f2 A z ^f2 A "Db"z e2 A z ^f2 A | "Dbm"z g2 A z e2 A "B7"z _d2 A z =d2 A | "Db"z e2 A z ^f2 A "Em"z g2 A z _d2 A | "F#"d e2 d c B2 A G ^F2 E D _D2 C |
+"G"B, G2 D B, G2 D C A2 D A, ^F2 D | "G"B, G2 D B, G2 D D A2 D G d2 B | "G"B g2 d B g2 d c a2 d A ^f2 d | "G"B g2 d B e2 d G c2 B D A2 G |
+"G"B, G2 D B, G2 D C A2 D A, ^F2 D | "G"B, G2 D B, G2 D D A2 D G d2 B | "G"B g2 d B g2 d c a2 d A ^f2 d | "G"B d2 g g b2 d' e'2 z6 |

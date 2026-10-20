@@ -1,0 +1,29 @@
+%abc-2.1
+% The Entertainer, by Scott Joplin. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Scott Joplin (died 1917,
+% Wikidata Q191499).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/27/QmbJXNcUfabd1RNA4zq9VbxhLEUkgdJxTAzjZMPugdho5X.mid (sha256
+% 3a9746a9ff4e358cfe7fef152514a7efca8057b4691ae218e3e3826ab243ebbc): melody track 0, bars 0-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Entertainer
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d'2 e'2 c'2 a4 b2 g4 | "D"d2 e2 c2 A4 B2 G4 | "D"d2 e2 c2 A4 B2 A2 _A2 | "D"G4 z4 g4 z4 |
+"E"z2 c4 z2 c4 z2 c2 | "E"c9 z c2 d2 _e2 | "E"e2 c2 d2 e4 B2 d4 | "E"c8- "D"c3 z5 |
+"E"z2 c4 z2 c4 z2 c2 | "E"c11 z A2 G2 | "E"^F2 A2 c2 e4 d2 c2 A2 | "E"d8- "D"d3 z5 |
+"E"z2 c4 z2 c4 z2 c2 | "E"c9 z c2 d2 _e2 | "E"e2 c2 d2 e4 B2 d4 | "E"c11 z c2 d2 |
+"C"e2 c2 d2 e2- "B"e2 c2 d2 c2 | "A"d2 c2 d2 e2- "Ab"e2 c2 d2 c2 | "G"d2 c2 d2 e4 B2 d4 | "G"c8 z2 E2 D2 _E2 |
+"C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 e2 c2 G2 | "F"A2 B2 c2 d2 e2 d2 c2 d2 |
+"C"G8 "G"z2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "E"G2 G2 A2 _B2 | "Em7"B2 B4 B4 A2 ^F2 D2 |
+"Dm"G8- "E7"G z E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 e2 c2 G2 | "F"A2 B2 c2 d2 e2 d2 c2 d2 |
+"Em"c8- "C"c z G2 ^F2 G2 | "F"c4 A2 c2- "F#"c2 A2 c2 A2 | "G"G2 c2 e2 g2- "Fm"g2 e2 c2 G2 | "E7"G4 A4 "F"c2 B2 z2 E2 |
+"C"E15 z |

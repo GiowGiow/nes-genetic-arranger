@@ -1,0 +1,32 @@
+%abc-2.1
+% O christmas night!, by Adolphe Adam (1803-1856). Score published on MuseScore (artist: Misc
+% Traditional), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Adolphe Adam (died 1856,
+% Wikidata Q189544).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/21/QmbgARtdcsdkf2xiQu16rgawKPGYQmHdngQA4wp4CvwKvH.mid (sha256
+% 3c14c7399544fa1ca60c4e14f593149d2434cd691dfda0af88e1aa981677003a): melody track 2, bars 0-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O christmas night!
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, "F#"^F, _D2 _B, ^F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, |
+"Db"F, _D2 _A, F _D2 _A, "Ab"^F, C2 _A, _E C2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, "F#"^F, _D2 _B, ^F _D2 _B, |
+"Db"F, _D2 _A, F _D2 _A, F, B,2 _A, F B,2 _A, | "C"F, C2 _A, F C2 _A, "Cm"G, C2 _B, E C2 _B, | "F"F, C2 _A, F C2 _A, "Ab"F, C2 _A, F C2 _A, | "Fm"^F, C2 _A, _E C2 _A, "Ab"^F, C2 _A, _E C2 _A, |
+"Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Fm"^F, C2 _A, _E C2 _A, "Ab"^F, C2 _A, _E C2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Bbm"F, _D2 _B, F _D2 _B, F, _D2 _B, F _D2 _B, |
+"Fm"F, C2 _A, F C2 _A, F, C2 _A, F C2 _A, | "Ebm"^F, _E2 _B, ^F _E2 _B, ^F, _E2 _B, ^F _E2 _B, | "Bbm"F, _D2 _B, F _D2 _B, F, _D2 _B, F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab7"_E, C2 _A, _E C2 _A, |
+"Db"_A, F2 _D _A F2 _D "F#"^F, _D2 _B, ^F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab"^F, C2 _A, _E C2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Ab"_E, C2 _A, _E C2 _A, "Ab7"^F, C2 _A, _E C2 _A, |
+"Fm"_A, F2 _D _A F2 _D "F#"^F, _E2 _B, ^F _E2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab7"_E4 z4 | "Db"_D _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, |
+"Db"F, _D2 _A, F _D2 _A, "F#"^F, _D2 _B, ^F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, "Ab"^F, C2 _A, _E C2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, |
+"Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Db"F, _D2 _A, F _D2 _A, "F#"^F, _D2 _B, ^F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, F, B,2 _A, F B,2 _A, | "C"F, C2 _A, F C2 _A, "Cm"G, C2 _B, E C2 _B, |
+"F"F, C2 _A, F C2 _A, "Ab"F, C2 _A, F C2 _A, | "Fm"^F, C2 _A, _E C2 _A, "Ab"^F, C2 _A, _E C2 _A, | "Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Fm"^F, C2 _A, _E C2 _A, "Ab"^F, C2 _A, _E C2 _A, |
+"Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Bbm"F, _D2 _B, F _D2 _B, F, _D2 _B, F _D2 _B, | "Fm"F, C2 _A, F C2 _A, F, C2 _A, F C2 _A, | "Ebm"^F, _E2 _B, ^F _E2 _B, ^F, _E2 _B, ^F _E2 _B, |
+"Bbm"F, _D2 _B, F _D2 _B, F, _D2 _B, F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab7"_E, C2 _A, _E C2 _A, | "Db"_A, F2 _D _A F2 _D "F#"^F, _D2 _B, ^F _D2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab"^F, C2 _A, _E C2 _A, |
+"Db"F, _D2 _A, F _D2 _A, F, _D2 _A, F _D2 _A, | "Ab"_E, C2 _A, _E C2 _A, "Ab7"_E, C2 _A, _E C2 _A, | "Fm"_A, F2 _D _A F2 _D "F#"^F, _E2 _B, ^F _E2 _B, | "Db"F, _D2 _A, F _D2 _A, "Ab"_E4 z4 |
+"Db"_D15 z |

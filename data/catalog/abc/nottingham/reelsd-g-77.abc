@@ -1,0 +1,28 @@
+%abc-2.1
+% La Grande Chaine, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 77 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:La Grande Chaine
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 D4 | "G"B4 B2 c2 B2 A2 G2 B2 | "G"d4 d4 B2 G2 B2 d2 | "Am"c2 d2 c2 B2 "D"A2 D2 F2 A2 |
+"G"d2 e2 d2 c2 "D7"B2 D2 G2 A2 | "G"B4 B2 c2 B2 A2 G2 B2 | "G"d4 d4 B2 G2 B2 d2 | "Am"c2 d2 c2 B2 "D7"A2 D2 F2 A2 |
+"G"G8 "C"e2 f2 g4 | "C"g2 f2 e2 f2 g2 e2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 "D"F2 A2 d2 e2 |
+"D7"d2 c2 B2 d2 "C"e2 f2 g4 | "C"g2 f2 e2 f2 g2 e2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 F2 A2 G4 |
+"G"G4 G4 "C"e2 f2 g4 | "C"g2 f2 e2 f2 g2 e2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 "Em7"F2 A2 d2 e2 |
+"D7"d2 c2 B2 D2 G2 A2 B4 | "G"B2 c2 B2 A2 G2 B2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 F2 A2 G4 |
+"G"G4 G4 D4 B4 | "G"B2 c2 B2 A2 G2 B2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 "Em7"F2 A2 d2 e2 |
+"D7"d2 c2 B2 D2 G2 A2 B4 | "G"B2 c2 B2 A2 G2 B2 d4 | "G"d4 B2 G2 "Am7"B2 d2 c2 d2 | "D7"c2 B2 A2 D2 F2 A2 G4 |
+"G"G4 e2 f2 "C"g4 g2 f2 | "C"e2 f2 g2 e2 "G"d4 d4 | "G"B2 G2 B2 d2 "Am"c2 d2 c2 B2 | "D"A2 D2 F2 A2 "D7"d2 e2 d2 c2 |
+"G"B2 d2 e2 f2 "C"g4 g2 f2 | "C"e2 f2 g2 e2 "G"d4 d4 | "G"B2 G2 B2 d2 "Am"c2 d2 c2 B2 | "D7"A2 D2 F2 A2 "G"G8 |
+"G"G4 e2 f2 "C"g4 g2 f2 | "C"e2 f2 g2 e2 "G"d4 d4 | "G"B2 G2 B2 d2 "Am"c2 d2 c2 B2 | "D"A2 D2 F2 A2 "G"d2 e2 d2 c2 |
+"D7"B2 D2 G2 A2 "G"B4 B2 c2 | "G"B2 A2 G2 B2 d4 d4 | "G"B2 G2 B2 d2 "Am"c2 d2 c2 B2 | "D7"A2 D2 F2 A2 "G"G8 |
+"G"G4 z12 |

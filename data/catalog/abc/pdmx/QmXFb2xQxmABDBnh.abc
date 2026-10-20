@@ -1,0 +1,34 @@
+%abc-2.1
+% Solomon HWV 67, by George Frederick Handel. Score published on MuseScore (artist: Georg
+% Friedrich Händel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): George Frederick Handel (died
+% 1759, Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/20/QmXFb2xQxmABDBnh22XsGiTiTUuszK63c1qa7GU3VzuudP.mid (sha256
+% 81c71fe5103f668c06e5b3bad405668614db176eedbb650a38051e040933f6a5): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Solomon HWV 67
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"_b f d f _b f d f "G7"_b f d f _b f d f | "F7"c _b a g f _e d c "Bb"d _B c d _e f g a | "G7"_b f d f _b f d f "C"_b e c e _b g c g | "C7"a g f g c2 e2 "D7"f2 c d c d c d |
+"F7"c A F A c A F A "Gm7"f d _B d f d _B d | "Dm7"_e c A c _e c A c "Bb"d F G A _B c d _e | "Gm7"f d _B d f d _B d "F"f c A c f c A c | "Em7"d _B G _B d _B G _B "Dm"d A F A d A F A |
+"Cm7"_b g _e g _b g _e g "Gm"_b f d f _b f d f | "Cm"_e f g f _e d c _B "C7"A _B c _B A G F _E | "Bb"D F _E G F A G _B "F"A c _B d c _e d f | "Cm"_e f _e f g f _e d "F"c d c d _e f _e f |
+"F"g f g f _e d _e d "Am"c d c d _e f _e f | "F"g f g f _e d _e d "Am"c d c d _e d _e c | "Bb"d f _e g f a g _b "F7"a2 g f _b2 _e2 | "F7"d2 c _B F2 A2 "Bb"_B2 F2 _B,4 |
+"Bb"_B c d _e d2 c2 _B2 f4 _e2 | "Bb"d2 _e d _e2 c2 d _e f g f2 _e2 | "Bb"d2 _e d _e2 c2 d2 c2 _B4 | "D"_b f d f _b f d f "G7"_b f d f _b f d f |
+"F7"c _b a g f _e d c "Bb"d2 F2 _B,4 | "Bb"f4 g f _e d _e2 g4 g2 | "Bb"f _e d f _e d c _e d2 f4 f2 | "Bb"_e d c _e d c _B d c2 f2 A _B c d |
+"Bb"c2 f2 A _B c d c2 f2 z4 | "Dm7"f c A c f c A c "D7"f c A c f c f a | "Bb"g f e d c _B A G "Gm7"A F G A _B c d e | "F"f g a _b a2 g2 f2 c4 _B2 |
+"F"A2 _B A _B2 G2 A _B c d c2 e2 | "F"f2 g a _b2 g2 a2 g2 f4 | "F"c2 A2 c2 A2 "C"c2 G2 c2 G2 | "D"a2 f2 a2 f2 "D7"a2 e2 a2 e2 |
+"Bb"f d _B d f d _B d "Dm"f c A c f c A c | "G"_B c d c _B A G F "C"E4 z2 g2 | "C"a2 g2 g2 f2 _b2 a2 a2 g2 | "C"a _b a g g a g f g a g f f g f e |
+"Gm7"d e d c _B c _B A "C"G A G A _B c _B c | "C"d c d c _B A _B A G A G A _B c _B c | "C"d c d c _B A _B A G A G A _B c _B c | "Bb"A2 f2 G2 e2 "F"f2 c2 F4 |
+"F"d _e f g f2 _e2 d2 f4 _e2 | "F"d2 _e d _e2 c2 d2 c2 _B4 | "D"_b f d f _b f d f "G7"_b f d f _b f d f | "F7"c _b a g f _e d c "Bb"d _B c d _B2 z2 |
+"Bb"d2 c2 c2 _B2 _e2 d2 d2 c2 | "Bb"d _e d c c d c _B c d c _B _B c _B A | "Bb"_B c d _e d2 c2 _B2 _b4 a2 | "Bb"g2 a g a2 ^f2 g2 d2 _B2 d2 |
+"Gm"g d _B d g d _B d "Cm7"g d _B d g d g _b | "D7"a g ^f e d c _B A "G"_B G A _B c d e ^f | "Bm"g4 G4 "Cm"g _e c _e g _e c _e | "Dm7"f2 d _e f2 c2 "Bb"f d _B d f d _B d |
+"Cm7"_e2 c d _e2 _B2 "F7"_e c A c _e c A c | "D"d2 _B c d2 A2 "Gm"g d _B d g d _B d | "Am"^f2 A4 _B c "Bb"d _B G _B d _B G z | "Cm"_e2 c2 B2 c2 "D7"a ^f d ^f a ^f d ^f |
+"Gm7"g d _B d g d _B d "Cm7"g2 f _e d2 c2 | "D7"_B4 A4 "G"G4 z4 | "Cm7"_b g _e g _b g _e g "Bb"_b f d f _b f d f | "C"g _e c _e g _e c _e "Gm"g d _B d g d _B d |
+"Fm7"_e c _A c _e c _A c "Eb"_e _B G _B _e _B G _B | "F7"_a g f _e d c _B _A "Cm7"G2 _E2 G2 _B2 | "Cm7"G _A _B c _B2 _A2 G2 g4 f2 | "Cm7"_e2 f _e f2 d2 _e2 _b4 _a2 |

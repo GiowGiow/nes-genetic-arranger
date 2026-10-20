@@ -1,0 +1,30 @@
+%abc-2.1
+% indonesia raya, by W.R. Soepratman. Score published on MuseScore (artist: Misc Traditional), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): W.R. Soepratman (died 1938,
+% Wikidata Q1144049).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/44/QmPt9f3r33dJieXsK9mEEFLKomQGMx7BYh9U8qL1DyboxL.mid (sha256
+% e3ba0e169ca0d962efbf6da190af108727145bb7863eb6e86f67442f9cc8a030): melody track 1, bars 0-43
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:indonesia raya
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z16 | "C7"C,4 C,3 C, C,4 C,3 C, | "Dm7"F,,11 z5 | "Dm7"F,4 F,4- "C7"F,4 C,4 |
+"Dm7"F,4 F,4- "Am"F,2 z2 F,4 | "D7"_B,,4 A,,4 "Gm7"G,,4 F,,4 | "C"C,8- "A7"C, z7 | "Gm"G,4 G,2 A,2 "G7"_B,3 _B, =B,3 =B, |
+"Bb"C4 C,4- "C7"C,2 z2 C,3 C, | "C7"C,4 C,4 C,4 C,4 | "F"F,,9 z7 | "Dm7"F,4 F,4- "C7"F,4 C,4 |
+"Dm7"F,,4 F,4- "Am"F,2 z2 E,,3 E,, | "Dm7"D,,2 E,,2 F,,2 G,,2 A,,4 G,,4 | "A"A,,8 "Gm7"_B,,2 z2 _B,,3 A,, | "Gm"G,,4 G,,4 "Gm7"A,,4 _B,,4 |
+"F"F,,8- "Am"F,, z3 _B,,3 _B,, | "Dm7"C,4 C,4 "C7"C,4 C,4 | "Dm7"F,8- "Am"F, z7 | "Bb"F,8- "Gm7"F,7 z |
+"Dm7"F,8- "Am7"F,7 z | "C7"C,8 E,8 | "Dm7"F,8- "Am"F,7 z | "Bb"F,8- "Gm7"F,7 z |
+"Dm7"F,8- "Am7"F,7 z | "C7"C,11 z C,3 C, | "F"F,,9 z3 F,3 F, | "Gm7"_B,,4 _B,,3 _B,, _B,,4 _B,,3 _B,, |
+"Dm7"F,4 F,3 F, F,4 z4 | "C7"C,4 C,3 C, "C"C,4 C,3 C, | "Dm7"F,,9 z3 F,3 F, | "Gm7"_B,,4 _B,,3 _B,, _B,,4 _B,,3 _B,, |
+"Dm7"F,,4 F,,3 F,, F,,4 F,3 F, | "C7"C,4 C,3 C, C,4 C,3 C, | "Dm7"F,,11 z F,3 F, | "Gm7"_B,,4 _B,,3 _B,, _B,,4 _B,,3 _B,, |
+"Dm7"F,4 F,3 F, F,4 z4 | "C7"C,4 C,3 C, "C"C,4 C,3 C, | "Dm7"F,,9 z3 F,3 F, | "Gm7"_B,,4 _B,,3 _B,, _B,,4 _B,,3 _B,, |
+"Dm7"F,,4 F,,3 F,, F,,4 F,3 F, | "C7"C,4 C,3 C, C,4 C,3 C, | "Dm7"F,,11 z5 |

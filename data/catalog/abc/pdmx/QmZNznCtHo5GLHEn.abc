@@ -1,0 +1,35 @@
+%abc-2.1
+% Liszt Les Adieux Rêverie from the Opera Romeo and Juliet, by Franz Liszt. Score published on
+% MuseScore (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Franz Liszt (died 1886, Wikidata
+% Q41309).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/34/QmZNznCtHo5GLHEnERzQvujZn9ju1eTh2KYovV94nuQPkD.mid (sha256
+% 83e6eec87e8ebf7c9150810ccabbdc3e28cda4f3310e4061b6bf0b8c790ebcb6): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Liszt Les Adieux Rêverie from the Opera Romeo and Juliet
+M:6/8
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"_D,,2 A,,2 E,2 _D,2 E,2 A,,2 | "A"_D,,2 A,,2 E,2 _D,2 E,2 A,,2 | "A"_D,,2 A,,2 E,2 _D,2 E,2 A,,2 | "A"_D,,2 A,,2 E,2 _D,2 E,2 A,,2 |
+"A"_D,,2 A,,2 E,4 C,2 ^F,2 | "F#m7"E,2 z10 | "F#m7"z12 | "F#m7"z12 |
+"F#m7"z12 | "F#m7"C,,2 A,,2 E,2 C,2 E,2 A,,2 | "A"C,,2 A,,2 E,2 C,2 E,2 A,,2 | "Am"C,,2 A,,2 E,2 C,2 E,2 A,,2 |
+"Am"C,,2 A,,2 E,2 C,2 E,2 A,,2 | "A"C,,2 A,,2 E,4 C,2 F,2 | "Am"E,2 z10 | "Am"z12 |
+"F#m7"z12 | "F#m7"z12 | "Gm7"C2 F2 d2 _B2 d2 F2 | "C7"C2 G2 e2 _B2 e2 G2 |
+"Gm7"C2 F2 _B2 F2 c2 F2 | "C7"C2 G2 c2 _B2 E2 C2 | "Gm7"C,2 F,2 D2 _B,2 D2 G,2 | "C7"C,2 G,2 E2 _B,2 E2 G,2 |
+"Gm7"C,2 F,2 _B,2 F,2 _B,2 F,2 | "C7"C,2 G,2 C2 _B,2 G,2 _B,2 | "Dm"C,2 F,2 _B,2 F,2 A,2 F,2 | "F#m7"C,2 G,2 C2 _B,2 z4 |
+"Em"z2 A,2 _B,2 =B,2 C2 G,2 | "C"_A, z =A, z _B, z ^F, z G, z _A, z | "Dm7"C, A, C2 F2 A2 F2 C2 | "C7"C, G, C2 E2 G2 E2 C2 |
+"Dm"C, F, A,2 C2 z2 C2 A,2 | "Am7"C, G, _B,2 C2 E2 C2 _B,2 | "Dm7"C, A, C2 F2 A2 F2 C2 | "C7"C, G, C2 E2 G2 E2 C2 |
+"Dm"C, F, A,2 C2 z2 C2 A,2 | "C"_B,6 A,2 C2 F2 | "Dm"A,2 D2 F2 A2 F2 D2 | "C"C, G, C2 E2 G2 E2 C2 |
+"Dm7"F,2 _B,2 D2 _B,2 D2 F2 | "C7"C, G, _B,2 C2 G2 C2 _B,2 | "Db"_A,2 _D2 F2 _A2 F2 _D2 | "Cm"C, G, C2 _E2 G2 _E2 C2 |
+"Bbm"F,2 _B,2 _D2 _B,2 _D2 F2 | "Bbm"z2 G,2 _A,2 =A,2 _B,2 C2 | "Bbm"_B,2 A,2 _B,2 C2 _D z =D z | "Bb"F,,2 D2 F,2 C,2 D2 F,2 |
+"Am7"F,,2 E2 F,2 C,2 E2 F,2 | "Gm7"F,,2 D2 F,2 C,2 _B,2 F,2 | "C7"F,,2 C2 F,2 C,2 C2 F,2 | "Bb"F,,2 D2 F,2 C,2 D2 F,2 |
+"Am7"F,,2 E2 F,2 C,2 E2 F,2 | "Gm7"F,,2 F2 F,2 C,2 F2 F,2 | "Am7"F,,2 E2 F,2 C,2 E2 F,2 | "Bb"F,,2 F2 F,2 C,2 F2 F,2 |
+"Am7"F,,2 E2 F,2 C,2 E2 F,2 | "Am7"F,,2 E2 F,2 C,2 E2 F,2 | "Dm7"F,,2 E2 F,2 C,2 E2 F,2 | "Gm7"F,,4 z2 _B6 |
+"Am7"_B3 z9 | "C7"z12 | "Dm7"z2 A2 d2 c2 z4 | "C7"z2 G2 c2 _B2 z4 |

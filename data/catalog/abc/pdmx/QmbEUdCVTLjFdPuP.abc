@@ -1,0 +1,23 @@
+%abc-2.1
+% Branle des cheveaux, by Thoinot Arbeau. Score published on MuseScore (artist: Thoinot Arbeau),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thoinot Arbeau (died 1595,
+% Wikidata Q919152).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/18/QmbEUdCVTLjFdPuPDmyssLTgTBvrquyDXQ9nKfMigUWHy8.mid (sha256
+% dcd682ce8c3bb3b29277ccf8451d5af9cc7532c16f61b1529bfd004c87336493): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Branle des cheveaux
+M:4/2
+L:1/16
+Q:1/4=279.999627
+% Exact tempo 279.9996266671644 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G4 A4 _B4 _B4 c4 _B4 A4 c4 | "C"_B4 A4 G4 F4 E8 D8 | "C"G4 A4 _B4 _B4 c4 _B4 A4 c4 | "C"_B4 G4 A4 A4 G16 |
+"C"G4 A4 _B4 _B4 c4 _B4 A4 c4 | "C"_B4 A4 G4 F4 E8 D8 | "C"G4 A4 _B4 _B4 c4 _B4 A4 c4 | "C"_B4 G4 A4 A4 G16 |
+"C"d4 c2 _B2 A4 A2 _B2 c4 _B2 A2 G4 _B4 | "C"A4 G4 F4 G4 A8 A8 | "C"d4 c2 _B2 A4 A2 _B2 c4 _B2 A2 G4 _B4 | "C"A4 G4 G4 F4 G8 G8 |
+"C"d4 c2 _B2 A4 A2 _B2 c4 _B2 A2 G4 _B4 | "C"A4 G4 F4 G4 A8 A8 | "C"d4 c2 _B2 A4 A2 _B2 c4 _B2 A2 G4 _B4 | "C"A4 G4 G4 F4 G8 G8 |

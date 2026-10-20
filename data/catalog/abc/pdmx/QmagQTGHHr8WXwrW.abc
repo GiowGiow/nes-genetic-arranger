@@ -1,0 +1,25 @@
+%abc-2.1
+% Livre de Guittarre dédié au Roy - 1682, by Robert de Visée. Score published on MuseScore
+% (artist: Robert de Visée), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Robert de Visée (died 1730,
+% Wikidata Q580371).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/21/QmagQTGHHr8WXwrWKt6PkroqG3cMLfkqaApqV3PF6cYZ2y.mid (sha256
+% 63fd110a1ebcb19340c5ff2218d0a9c58f55240706db8cd173bb04900407ec72): melody track 0, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Livre de Guittarre dédié au Roy - 1682
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A,, C E E, A, C E C A,, C E E, A, C E C | "C"B,, B, E E, _A, B, E B, B,, B, E E, _A, D E D | "C"A,, _D E E, A, _D E _D A,, _D G E, A, _D G _D | "C"A,, D F D, A, D F D A,, D F D, A, D F D |
+"C"A,,2 A, B, C2 A,2 E2 C2 B,2 A,2 | "C"_A,2 B,2 E2 D2 =A,,2 =A,2 C2 G,2 | "C"F,2 E2 D2 F,2 E,2 D2 _D2 G2 | "C"D,2 D2 ^F2 C,2 B,,2 D2 G2 B,,2 |
+"C"A,,2 C2 E2 ^F2 G,2 B,2 G2 A,2 | "C"B,2 D2 G2 F2 C2 E2 c2 D,2 | "C"E,2 c2 B2 c2 A2 F2 E2 F2 | "C"D,2 ^F2 B2 A2 D,2 E2 _A2 B,2 |
+[M:3/4]"C"C,2 E2 A2 E2 A2 D,2 | "C"E,2 A2 G2 ^F2 G2 E,2 | "C"_E,2 ^F2 D,2 ^F2 G2 ^F2 | "C"_D,2 E2 C,2 E2 ^F2 E2 |
+"C"B,,2 _D2 _E2 =E2 ^F2 _E2 | "C"E,2 _E2 =E2 ^F2 G2 _D2 | "C"D,2 _D2 =D2 E2 F2 B,2 | "C"C,2 B,2 C2 D2 E2 A,,2 |
+"C"B,,2 E,2 B,2 C2 D2 _A,2 | "C"A,,2 A,2 _B,2 =B,2 C2 D2 | "C"E2 B,,2 C,2 E2 ^F2 G2 | "C"^F2 C,2 B,,2 ^F2 G2 A2 |
+"C"E,2 A2 _A2 ^F2 _A2 _D2 | "C"D2 A,2 B,2 E,2 D2 B,2 | "C"A12 |

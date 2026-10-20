@@ -1,0 +1,31 @@
+%abc-2.1
+% dk, by Pietro Mascagni. Score published on MuseScore (artist: Pietro Mascagni), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pietro Mascagni (died 1945,
+% Wikidata Q181894).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/8/Qme9jFc4PsXsnVR5NaqDMAkr1CVwGFSSZBrKCBoy1EsK7i.mid (sha256
+% b7796d9ce0a390a748af8466379dc3d3e4085d0efd8f5b4a02a34d26cc7acb62): melody track 6, bars 1-49
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:dk
+M:3/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"G4 B4 d4 | "Am"d6 c2 B2 A2 | "Em7"e2 G2 B8 | "D"A4 B8 |
+"A7"B2 G2 ^F2 E2 e3 _d | "D"d8 c3 E | "D7"B4 A4 c d c G | "D7"B6 A2 G2 e2 |
+"A7"e2 d2 _d2 B2 A2 G2 | "A"G ^F A B, ^F6 E2 | "D"D10 z2 | "Am"E4 ^F4 A z3 |
+"Bm"z2 d4 _d2 B2 ^F2 | "Am"E4 ^F4 A z3 | "Bm"z2 d4 _d2 B2 ^F2 | "D"^F4 d4 ^F4 |
+"Bm7"^F2 E2 _d2 B2 A2 =D2 | "A7"G2 B,2 ^F6 E2 | "D"D10 z2 | "Em7"B8 d4 |
+"Em7"G8 B4 | "Am7"E4 e2 d2 c2 G2 | "D7"B8 A4 | "Am7"c8 E4 |
+"Em7"B4 d4 G4 | "Em7"B8 A4 | "G"G12 | "Am7"e4 e2 d2 c2 G2 |
+"D7"B8 A4 | "C"c4 c2 B2 A2 E2 | "D7"G8 ^F4 | "C"G4 A2 B2 c d e ^f |
+"Em7"g6 g2 ^f2 e2 | "Em7"B4 d4 ^F4 | "Em7"G6 g2 g2 g2 | "Em7"g6 g2 g2 g2 |
+"Am7"g6 g2 ^f2 e2 | "Em7"B4 d4 ^F4 | "Em7"G6 g2 g2 g2 | "Em7"g6 g2 g2 g2 |
+"Am7"g6 g2 ^f2 e2 | "Em7"B4 d4 ^F4 | "Em7"G6 ^F2 G2 A2 | "Em7"B6 G2 B2 e2 |
+"C"e6 c2 e2 g2 | "G"b12 | "G"b12 | "G"b2 z10 |

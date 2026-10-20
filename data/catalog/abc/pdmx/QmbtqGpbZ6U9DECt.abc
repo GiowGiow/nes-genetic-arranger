@@ -1,0 +1,36 @@
+%abc-2.1
+% Keyboard Sonata in A Major K. 323, by Domenico Scarlatti (1685-1757). Score published on
+% MuseScore (artist: Domenico Scarlatti), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Scarlatti (died 1757,
+% Wikidata Q167837).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/44/QmbtqGpbZ6U9DECtd1YBPf2fXQP2kPyRnEU2A8odVEfzb1.mid (sha256
+% f2784d503da2870eec0345067460ce42013b4d25fcaa191f8b710b9db868bb67): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Keyboard Sonata in A Major K. 323
+M:6/8
+L:1/16
+Q:1/4=157.999932
+% Exact tempo 157.99993153336297 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"e2 _d2 a2 e2 _d2 a2 | "A"e3 z a2 d2 _d2 B2 | "A"_d3 z a2 B2 A2 _A2 | "A"A3 z a2 d2 _d2 B2 |
+"A"_d3 z a2 B2 A2 _A2 | "A"A6 z6 | "A"z6 _d6 | "Abm7"_d6 _d6 |
+"E7"_d6 =d6 | "Db"e2 _d2 A2 z6 | "A"z6 _d6 | "Abm7"_d6 _d6 |
+"E7"_d6 =d6 | "Db7"e2 _d2 a2 _e2 B2 a2 | "E"_a2 ^f2 e2 z6 | "E"z6 _a6 |
+"Ebm7"_a6 _a6 | "B7"_a6 =a6 | "Ab"b2 _a2 e2 z6 | "E"z6 _a6 |
+"Ebm7"_a6 _a6 | "B7"_a6 =a6 | "Ab"b2 _a2 e2 B2 _a2 b2 | "A"b2 a2 _a2 _a2 ^f2 e2 |
+"B"_e2 z10 | "Db7"z2 B2 _e2 =e2 _d2 _B2 | "Db7"_B2 =B2 _e2 =e2 _d2 _B2 | "Db7"_B2 =B2 _e2 =e2 _d2 _b2 |
+"Abm"b2 ^f2 _e2 =e2 _a2 B2 | "B7"_d2 a2 _a2 ^f2 e2 _e2 | "E"e2 z10 | "Dbm"z2 _d2 _e2 =e2 _d2 _B2 |
+"Db7"_B2 =B2 _e2 =e2 _d2 _B2 | "Db7"_B2 =B2 _e2 =e2 _d2 _b2 | "Abm"b2 ^f2 _e2 =e2 _a2 B2 | "B7"_d2 a2 _a2 ^f2 e2 _e2 |
+"Dbm"e2 B2 _A2 E2 _A2 B2 | "B7"_d2 A2 a2 ^f2 e2 _e2 | [M:3/8]"E"e6 | "E"z6 |
+"E"B6 | [M:6/8]"Dbm"B6 _d6 | "B"d2 B2 d2 z6 | "Bm"z6 ^f6 |
+"Db7"^f6 _a6 | "F#"a2 ^f2 _d2 A2 _d2 ^f2 | "E"a2 e2 _d2 A2 _d2 e2 | "D"a2 ^f2 d2 A2 d2 ^f2 |
+"Db"a2 e2 _d2 A2 _d2 e2 | "B"a2 ^f2 _e2 B2 _e2 ^f2 | "A"a2 _a2 ^f2 ^f2 e2 _e2 | "Abm7"e6 d6 |
+"E7"_d6 B6 | "Db"e2 _d2 A2 z6 | "F#"z6 a2 ^f2 _e2 | "F#7"_e2 =e2 _a2 =a2 ^f2 _e2 |
+"F#7"_e2 =e2 _a2 =a2 ^f2 _e2 | "Dbm"e2 b2 _a2 =a2 e2 _d2 | "E7"d2 ^f2 d4 _d2 B2 | "A"A2 _d2 e2 z6 |
+"F#"z6 a2 ^f2 _e2 | "F#7"_e2 =e2 _a2 =a2 ^f2 _e2 | "F#7"_e2 =e2 _a2 =a2 ^f2 _e2 | "Dbm"e2 b2 _a2 =a2 e2 _d2 |

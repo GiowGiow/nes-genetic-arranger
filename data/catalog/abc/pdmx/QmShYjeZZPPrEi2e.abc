@@ -1,0 +1,28 @@
+%abc-2.1
+% Amor da che tu voi, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio
+% Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/23/QmShYjeZZPPrEi2ebqZKVbTSNA2EL8sNZR3uVc4VFgRtfm.mid (sha256
+% 87608e4c7b178e4ee2b7182682e558d4c445cf8fe9957e0fd2752d1a6837df94): melody track 0, bars 1-39
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Amor da che tu voi
+M:4/2
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"G"z16 "Bm"z16 | "E7"z12 d4 "A7"c12 B4 | "Am"c4 d4 e8- "G"e4 e4 d4 e4 | "A7"c8 B8 "Am7"z16 |
+"C"z16 "A7"z4 A4 B8 | "G"B4 A4 B4 c4 "Bm"d16 | "C"z12 d4 "A7"c12 B4 | "Am"c4 d4 e8- "G"e4 e4 d4 e4 |
+"G"c8 B4 B4- "Em7"B4 B4 B8 | "Em7"A4 c4 B8 "C"c4 c4 c8 | "C"c4 G4 A4 B4 "A7"c8 B4 B4 | "Am"c4 d4 e6 d c "G"d4 e4 d8 |
+"Am7"c8 z8 "C"z16 | "C"z4 c8 B4 "Dm7"c8 A4 d4 | "Dm7"G8 A8 "Am7"z8 c6 B2 | "Dm7"A8 A4 G4 A6 B2 c2 B2 c2 d2 |
+"Em7"e8 A4 f4 "Am7"e4 f6 f2 e4 | "Gm"d8 d8 "G"z12 B4 | "Em7"B4 B4 B8 "D7"c6 B2 A8 | "G"A4 A4 B4 B4 "Am7"c8 c8 |
+"Am"z16 "F"z16 | "D"z12 d4 "F"c8 A8 | "D7"G4 F4 E8 "D"D4 d4 c4 A4 | "Am7"c6 d2 e8 "G7"d4 d8 c4 |
+"E"c4 A4 c4 G4 "Dm7"A6 B2 c6 d2 | "C"e8 d8 "Am"z16 | "Gm7"z4 d4 c4 A4 "E"c4 c4 B8 | "D"A8 z4 A4 "Am7"B4 c8 c4 |
+"Am7"c4 A4 c8 B4 A8 G4 | "D7"G4 G8 F4 "E"E16 | "Am"E4 e4 c6 d2 "B7"e8 d8 | "C"c8 B8 c12 d4 |
+"G7"e8 d8 "Am7"z8 c8 | "Dm"A12 B4 "C"c4 B4 A4 G4 | "F"F8 E8 "E"A12 G4 | "A7"c8 B8 "Am"A16 |
+"G"B32 | "G"B32 |

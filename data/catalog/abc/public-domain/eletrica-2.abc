@@ -1,0 +1,35 @@
+%abc-2.1
+% ELÉTRICA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/eletrica-2.html (file
+% https://www.beakauffmann.com/mpb_e/som/eletrica-2.mid, sha256
+% a42c373e61a6256df597a0114ee312b846cdd0d16f418e729621aafa60431a98), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ELÉTRICA
+M:3/4
+L:1/16
+Q:1/4=192
+K:none
+P:A
+"Bb7"_B2 =B2 c4 _d4 | "Bb7"d4 _B,2 _B,2 _B,4 | "Bb7"_B2 c2 _d4 =d4 | "Eb"_e4 _B,2 _B,2 _B,4 |
+"Cm7"z2 d'2 f'2 _e'2 d'2 c'2 | "Bb7"_e' f'2 _e' d'2 _b'2 _b'4 | "Bb7"d' _e'2 d' c'2 _a'2 _a'4 | "Eb"g'2 _e'2 _b2 g2 _e2 G2 |
+"Eb"_B2 =B2 c4 _d4 | "Bb7"d4 _B,2 _B,2 _B,4 | "Bb7"_B2 c2 _d4 =d4 | "Eb"_e4 _B,2 _B,2 _B,4 |
+"Cm"z2 d'2 f'2 _e'2 d'2 c'2 | "Gm"_b2 d'2 g'2 _b'2 d''4 | "D7"z2 _d''2 _e''2 =d''2 a'2 _b'2 | "Gm"g'6 g''2 g''4 |
+"Gm"_B2 =B2 c4 _d4 | "Bb7"d4 _B,2 _B,2 _B,4 | "Bb7"_B2 c2 _d4 =d4 | "Eb"_e4 _B,2 _B,2 _B,4 |
+"Cm7"z2 d'2 f'2 _e'2 d'2 c'2 | "Bb7"_e' f'2 _e' d'2 _b'2 _b'4 | "Bb7"d' _e'2 d' c'2 _a'2 _a'4 | "Eb"g'2 _e'2 _b2 g2 _e2 G2 |
+"Eb7"_e2 _e2 _e4 _e4 | "Ab"_e2 _e2 _e4 _e4 | "F7"f2 f2 f4 f4 | "Bb"f2 f2 f4 f4 |
+"G7"g2 g2 g4 g4 | "Cm"g2 g2 g4 g4 | "Bb7"_b2 _b2 f4 g4 | "Eb"_e4 z4 _e'4 |
+"Eb"g2 _a2 =a2 _b2 =b2 c'2 | "C7"_d'8 c'4 | "C7"b2 c'2 _d'2 c'2 g2 c'2 | "Fm"_b8 _a4 |
+"Fm"a2 _b2 =b2 c'2 _d'2 =d'2 | "D7"_e'8 d'4 | "D7"_d'2 =d'2 _e'2 =d'2 a2 =d'2 | "Gm"c'8 _b4 |
+"Eb7"_b2 g2 e2 _d2 _B2 G2 | "Fm"G _A G _A G _A G _A F4 | "F#7"E2 G2 _B2 _d2 e2 g2 | "Fm"_b c' _b c' _b c' _b c' _a4 |
+"Ab7"_e'2 c'2 a2 ^f2 _e2 c2 | "Cm7"c d c d c d c d _B4 | "Bb7"B2 d2 f2 _a2 b2 d'2 | "Cm"f' g' f' g' f' g' f' g' _e'4 |
+"D7"^f'2 _e'2 c'2 a2 ^f2 _e2 | "Cm7"_B2 c2 d2 _e2 f2 g2 | "Bb7"_a2 _b2 c'2 d'2 _e'2 f'2 | "Eb"_a'8 g'4 |
+"Abm"f'2 _e'2 b2 _a2 f2 _e2 | "Cm7"_B2 c2 d2 _e2 f2 g2 | "Bb7"_a2 _b2 c'2 d'2 g'2 f'2 | "Eb"_e'4 z4 _e''4 |
+"Eb"g2 _a2 =a2 _b2 =b2 c'2 | "C7"_d'8 c'4 | "C7"b2 c'2 _d'2 c'2 g2 c'2 | "Fm"_b8 _a4 |
+"Fm"a2 _b2 =b2 c'2 _d'2 =d'2 | "D7"_e'8 d'4 | "D7"_d'2 =d'2 _e'2 =d'2 a2 =d'2 | "Gm"c'8 _b4 |

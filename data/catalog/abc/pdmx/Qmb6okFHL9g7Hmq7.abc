@@ -1,0 +1,35 @@
+%abc-2.1
+% Le célèbre Menuet d'Exaudet, by Halfdan Kjerulf. Score published on MuseScore (artist: Halfdan
+% Kjerulf), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Halfdan Kjerulf (died 1868,
+% Wikidata Q740077).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/5/Qmb6okFHL9g7Hmq7pyercQMePwTHxhiEvYkyKcYH1Z2cK9.mid (sha256
+% f93f417cd831bc4e9d08af7c2cf98f3cbd0ca3decabeead1ad131ce72b3d8016): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le célèbre Menuet d'Exaudet
+M:3/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"C2 C2 C8 | "G7"D2 D2 D8 | "Am7"F8 E4 | "Am7"D8 C4 |
+"G7"D4 B,4 C2 E2 | "G7"D4 B,4 C2 E2 | "Em7"G4 D2 F2 E2 E2 | "G7"E2 D2 C2 B,2 A,2 G,2 |
+"C"C2 C2 C8 | "G"D2 D2 D8 | "Am7"F8 E4 | "Am7"D8 C4 |
+"G"B,2 D2 F2 D2 E2 C2 | "G"G2 ^F2 =F2 G2 E2 G2 | "G7"F2 D2 C4 B,4 | "C"D C7 z4 |
+"C"E2 E2 E2 E2 E2 E2 | "F"F8 E4 | "G7"F2 E2 D2 C2 B,2 G2 | "C"E8 D4 |
+"G"E2 E2 E8 | "F"D2 D2 D8 | "Em7"G,2 A,2 B,2 C2 D2 E2 | "D7"^F2 G ^F E2 D2 G4 |
+"D7"D4 ^F4 G4 | "D7"D4 ^F4 G4 | "G"E2 E2 D4 ^F3 G | "G"G2 F2 E2 D2 C2 B,2 |
+"C"C2 C2 C8 | "G7"D2 D2 D8 | "Am7"F8 E4 | "Am7"D8 C4 |
+"G7"D4 B,4 C2 E2 | "G7"D4 B,4 C2 E2 | "Em7"G4 D2 F2 E2 E2 | "G7"E2 D2 C2 B,2 A,2 G,2 |
+"C"C2 C2 C8 | "G"D2 D2 D8 | "Am7"F8 E4 | "Am7"D8 C4 |
+"G"B,2 D2 F2 D2 E2 C2 | "G"G2 ^F2 =F2 G2 E2 G2 | "G7"F2 D2 C4 B,4 | "C"C8 z4 |
+"C"E2 E2 E2 E2 E2 E2 | "F"F8 E4 | "G7"F2 E2 D2 C2 B,2 G2 | "C"E8 D4 |
+"G"E2 E2 E8 | "F"D2 D2 D8 | "Em7"G,2 A,2 B,2 C2 D2 E2 | "D7"^F2 G ^F E2 D2 G4 |
+"D7"D4 ^F4 G4 | "D7"D4 ^F4 G4 | "G"E2 E2 D4 ^F3 G | "G"G2 F2 E2 D2 C2 B,2 |
+"C"C2 C2 C8 | "G7"D2 D2 D8 | "Am7"F8 E4 | "Am7"D8 C4 |
+"G7"D4 B,4 C2 E2 | "G7"D4 B,4 C2 E2 | "Em7"G4 D2 F2 E2 E2 | "G7"E2 D2 C2 B,2 A,2 G,2 |

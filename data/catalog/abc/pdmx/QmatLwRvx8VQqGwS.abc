@@ -1,0 +1,35 @@
+%abc-2.1
+% Come vivrò nelle mie pene, by Benedetto Pallavicino. Score published on MuseScore (artist:
+% Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/44/QmatLwRvx8VQqGwSCo85V4MYzoHgnsgYaXMZ7NYBhmSNEg.mid (sha256
+% 9215ed4bacf656aea02dd4c59ad3a144601b1f034cfcc2f3bb95520ef9767a40): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Come vivrò nelle mie pene
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z16 | "G"d16 | "D"d8 A8 | "D"A8 "Em7"_B8 |
+"D"A8 "Bm"G8 | "C"G12 G4 | "C"A8- "E7"A8 | "D7"A8 "Am7"B8 |
+"Am"c8- "D"c8 | "G"B16 | "E"z8 e8 | "F#m7"A8- "Dm7"A4 A4 |
+"E"_A8 "Am"=A8 | "E"B16 | "A"A8 A4 E4 | "A"E8 "D"E4 ^F4 |
+"C"G8 "E7"G4 G4 | "C"G4 G4 "D"A8 | "D"A4 A4 "G"B8 | "D"z4 A4 "G"B8 |
+"C"z4 G4 "A"c8 | "B7"B8 "C"d8 | "Em7"d4 A4 "D"A8 | "G"B8 G8 |
+"Em7"G4 G4 "F"F8 | "F"F4 E4 "G"G8 | "C"G8 z4 c4 | "Em7"B4 c4 "F"A8 |
+"F"A4 c4- "G"c4 B4 | "C"c4 c4 "F#m7"_d4 _d4 | "D"d8 "G"d8 | "Em"e8 "Em7"d4 c4 |
+"C"c4 B4 "D"A8 | "G"B8 z4 B4 | "C"c6 d2 c4 A4 | "A"A8 "D"A4 A4 |
+"Em7"B6 A2 "Am7"B4 A4 | "E"_A8 "C"_A4 G4 | "C"G4 B4 "D"A8 | "Em7"A4 B4- "Bm7"B4 d4 |
+"A"_d8 "Dbm7"e8 | "A"e4 f4 e8 | "D"d16 | "D"z8 "Bm"z8 |
+"E"z8 "Dbm"z8 | "F#m"z8 "D"z8 | "G"z8 "Dbm7"z8 | "Am"A8- "D7"A4 A4 |
+"G"B8- "Em"B4 B4 | "A"c8- "D"c8 | "Bm"d8 "Em"d8 | "Dbm"e8- "F#m7"e8 |
+"D"A8 "Bm"d8 | "E"B8 "Dbm"e8 | "D"d8- "G"d8 | "D"d16 |
+"G"d8 "C"c8 | "Dm"A12 B4 | "E"B4 A8 _A4 | "A"A8 z4 _d4 |
+"Dm"d12 c4 | "G7"B4 A4 "A"A8 | "D"A8- "Dm"A8 | "Am"z8 "Am7"z8 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Saratoga, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsr-t.abc,
+% tune X: 36 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% f80a2c0f37a49b9b0c748e922924d59c40d82758abc5b0f7fc9245d7fd563be0).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Saratoga
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 c2 d2 | "A"e2 ^d2 e2 f2 e2 =d2 c2 B2 | "A"A2 a2 g2 a2 e4 c4 | "D"d4 f2 e2 d2 c2 B2 A2 |
+"E7"G2 A2 B2 G2 E4 c2 d2 | "A"e2 ^d2 e2 f2 e2 =d2 c2 B2 | "A"A2 a2 g2 a2 e4 c4 | "D"d2 f2 e2 d2 c2 B2 A2 G2 |
+"A"A4 A4 "F#m7"G2 A2 B2 E2 | "E"E4 B2 E2 "F#m7"d2 E2 c2 E2 | "A"E4 c2 E2 "F#m7"e2 E2 B2 E2 | "E"E4 B2 E2 "F#m7"d2 E2 c2 A2 |
+"A"E2 C2 A,4 "F#m7"c4 B2 E2 | "E"E4 B2 E2 "F#m7"d2 E2 c2 E2 | "A"E4 c2 E2 "D"e2 E2 d2 f2 | "D"e2 d2 c2 B2 A2 G2 A4 |
+"A"A4 A4 c2 d2 e2 ^d2 | "A"e2 f2 e2 d2 c2 B2 A2 a2 | "A"g2 a2 e4 "D"c4 d4 | "D"f2 e2 d2 c2 "E7"B2 A2 G2 A2 |
+"E7"B2 G2 E4 c2 d2 e2 ^d2 | "A"e2 f2 e2 d2 c2 B2 A2 a2 | "A"g2 a2 e4 "D"c4 d2 f2 | "D"e2 d2 c2 B2 A2 G2 A4 |
+"A"A4 G2 A2 "E"B2 E2 E4 | "E"B2 E2 d2 E2 "A"c2 E2 E4 | "A"c2 E2 e2 E2 "E"B2 E2 E4 | "E"B2 E2 d2 E2 "A"c2 A2 E2 C2 |
+"A"A,4 c4 "E"B2 E2 E4 | "E"B2 E2 d2 E2 "A"c2 E2 E4 | "A"c2 E2 e2 E2 "D"d2 f2 e2 d2 | "D"c2 B2 A2 G2 "A"A4 A4 |
+"A"A4 z12 |

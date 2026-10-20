@@ -1,0 +1,35 @@
+%abc-2.1
+% Ich hatte viel Bekümmernis BWV 21, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/49/QmeVGzFMktDMyaaSdH4dF4rob4cGm3LTQzaFKRgUrZF8Wa.mid (sha256
+% b19554be112f04223878a23c11bfa5ae3f490f99027a0585356cbd0f49f1d5c4): melody track 10, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ich hatte viel Bekümmernis BWV 21
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z4 E4 G4 z4 | "C"z4 G2 G2 "Dbm7"E6 E2 | "Dbm7"E8 z4 E4 | "Am"E4 E2 D2 "Am7"E4 C4 |
+"D"A,8 "Bm7"z4 D4 | "G"D4 D4 z4 D4 | "Abm7"B,4 B,4 z4 B,4 | "Em"B,4 B,4 z4 B,4 |
+"Em7"G,4 G,4 z4 G,4 | "C"C8 "Am7"z4 C4 | "G"G8 z8 | "C"z8 "Em"z8 |
+"G"z8 "C"z8 | "G"z16 | "Am"z8 "G"G,4 z2 G,2 | "G"B,2 B,2 z2 B,2 "Am"C4 z2 C C |
+"Bm"G4 z2 G2 "C"E2 D2 E2 C2 | "Em7"F2 D2 E2 C2 "G7"D6 D2 | "C"C2 G F E F E D C D E D C E D C | "Em"B, C B, A, G, A, G, F, "Am"E, F, E, D, C, E, D, C, |
+"G"G, A, G, A, G, A, G, A, "Em7"G, A, G, A, G, A, G, A, | "D7"G, A, G, A, ^F,4 "G"G,2 G,2 B,2 D2 | "G"G2 D2 B,2 G,2 "Am"C4 A,4 | "G"D6 D2 "C"C4 z2 G,2 |
+"Em7"A,2 F,2 G,2 E,2 "G7"F,2 D,2 G,4 | "C"C,2 G,2 C2 E2 G4 z2 C C | "G"D C D E D F E D "C"E D E F E G ^F A | "G"G2 G,2 z4 "Am7"z8 |
+"Am"z8 "G"G,4 z2 G,2 | "G"B,2 B,2 z2 B,2 "C"C4 z2 C C | "Em7"G4 z2 G2 "C"E2 D2 E2 C2 | "C"F2 D2 E2 C2 "G7"D6 D2 |
+"C"C2 G F E F E D C D E D C E D C | "G"B, C B, A, G, A, G, F, "Am7"E, F, E, D, C, E, D, C, | "G"G, A, G, A, G, A, G, A, "Em7"G, A, G, A, G, A, G, A, | "D7"G, A, G, A, ^F,4 "G"G,2 G,2 B,2 D2 |
+"G"G2 D2 B,2 G,2 "Am"C4 A,4 | "Em7"D6 D2 "C"C4 z2 G,2 | "C"A,2 F,2 G,2 E,2 "G7"A,2 F,2 G,4 | "C"G,2 C2 E2 C2 G,2 G F E F E D |
+"C"C2 C2 z2 C C "Am"G,2 G,2 z2 C C | "G"D2 D2 z2 G2 E2 G2 G2 D2 | "F#m7"E4 D4 "G"D2 G,2 B,2 G,2 | "G"D4 z2 D C B, C B, A, G,2 G,2 |
+"Em"z2 G G D2 G,2 "Dm"A,2 A,2 z2 D2 | "Dm"_B,2 D2 D2 A,2 "A7"_B,2 G,2 A,4 | "Dm"F,4 z2 F,2 A,2 A,2 z2 A,2 | "Dm"D4 z2 D D "Bm7"F4 z2 B,2 |
+"Am"E2 D2 E2 C2 A,3 _A, =A,2 E2 | "E7"D3 C B,4 "Am"C2 z4 E D | "Am7"C D C B, A,2 A,2 "D"z6 A G | "D7"^F G ^F E D2 D2 "G"z6 D C |
+"G7"B, C B, A, G,2 G,2 "C"z6 G F | "C7"E F E D C2 C2 "F"z6 C _B, | "F"A, _B, A, G, F,2 F,2 C2 C2 z2 C2 | "C"C4 z2 E E "Dm"F4 z2 F2 |
+"C"G2 F2 G2 E2 C3 C C2 G2 | "Dm7"F3 E D4 "C"E2 G,2 C2 E2 | "C"G4 z2 C C "G"D C D E D F E D | "C"E D E F E G ^F A "G"G2 G,2 z2 D2 |
+"Am7"C2 C,2 G,2 B,2 "Am"A,2 G,2 A,4 | "G"B,2 G,2 B,2 G,2 D2 D C B, C B, A, | "C"G,2 G,2 z2 G, A, "Em7"B, C B, A, G,2 G,2 | "C"G,2 G,2 z2 E E F2 F2 z2 E2 |

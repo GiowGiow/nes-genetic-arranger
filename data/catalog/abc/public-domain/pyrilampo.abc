@@ -1,0 +1,36 @@
+%abc-2.1
+% PYRILAMPO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/pyrilampo.html (file
+% https://www.beakauffmann.com/mpb_p/som/pyrilampo.mid, sha256
+% c96038bf2f31ca1a41a7f9ead8e50f2e2db6181a198b18f32854c28c2c6b77fd), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PYRILAMPO
+M:2/4
+L:1/16
+Q:1/4=88.000023
+% Exact tempo 88.00002346667293 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"^f z B,, e2 _e =e2 | "C"b z D, a2 _a =a2 | "C"d'2 e _E2 D _D2 | "C"a2 A _A,2 G, ^F,2 |
+"C"^f z B,, e2 _e =e2 | "C"b z D, a2 _a =a2 | "C"d'2 e _E2 =E F =E | "C"e D e A, G, E, _D, A,, |
+"C"^f E,, B,, e2 _e =e2 | "C"b z D, a2 _a =a2 | "C"d'2 e _E2 D _D2 | "C"a2 A _A,2 G, ^F,2 |
+"C"^f z B,, e2 _e =e2 | "C"b z2 A,2 D _B,2 | "C"_E2 z B,2 =E _D2 | "C"G2 D A,,2 ^F,, D,, ^f |
+"C"b _d' =d' ^f b =d' _d' e | "C"^f _d' b B,2 b B, g' | "C"^f' e' _e' c' b a g ^f | "C"e _e ^f =e G A B b |
+"C"e' ^f' g' b e' g' ^f' a | "C"b ^f' e' E2 e' E d' | "C"_d' b _b g ^f e =d _d | "C"B _B _d =B =D E ^F ^f |
+"C"b _d' =d' ^f b =d' _d' e | "C"^f _d' b B,2 b B, g | "C"^f e _e c' b _b =b _e' | "C"^f' b' a' E2 E g'2 |
+"C"E2 _D, _B =B _d =d _d | "C"d e f ^f b B, B, ^f | "C"d B d _d c _d g ^f | "C"_d =d B2 B, b B,,, ^f |
+"C"b _d' =d' ^f b =d' _d' e | "C"^f _d' b B,2 b B, g' | "C"^f' e' _e' c' b a g ^f | "C"e _e ^f =e G A B b |
+"C"e' ^f' g' b e' g' ^f' a | "C"b ^f' e' E2 e' E d' | "C"_d' b _b g ^f e =d _d | "C"B _B _d =B =D E ^F ^f |
+"C"b _d' =d' ^f b =d' _d' e | "C"^f _d' b B,2 b B, g | "C"^f e _e c' b _b =b _e' | "C"^f' b' a' E2 E g'2 |
+"C"E2 _D, _B =B _d =d _d | "C"d e f ^f b B, B, ^f | "C"d B d _d c _d g ^f | "C"_d =d B2 B, b B,,,2 |
+"C"^f z B,, e2 _e =e2 | "C"b z D, a2 _a =a2 | "C"d'2 e _E2 D _D2 | "C"a2 A _A,2 G, ^F,2 |
+"C"^f z B,, e2 _e =e2 | "C"b z2 A,2 D _B,2 | "C"_E2 z B,2 =E _D2 | "C"G2 D4 d'2 |
+"C"d'2 D,, ^F, E D G ^F | "C"B A A G c B e d | "C"a g ^f C2 ^f C,2 | "C"a2 e B,2 B, d2 |
+"C"B,2 D,, ^F, E D G ^F | "C"B A A G c B e d | "C"a g ^f d2 B A2 | "C"a2 D _d =d _D =D _D, |

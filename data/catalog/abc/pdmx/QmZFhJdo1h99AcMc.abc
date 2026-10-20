@@ -1,0 +1,34 @@
+%abc-2.1
+% Sicut cervus, by Giovanni Pierluigi da Palestrina. Score published on MuseScore (artist:
+% Giovanni Pierluigi da Palestrina), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Pierluigi da Palestrina
+% (died 1594, Wikidata Q179277).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/20/QmZFhJdo1h99AcMc2VJmmHeYzW9XasFJk5ybsidHujm6s5.mid (sha256
+% b6be52829e9cf274184951df1ce7b4c52d625c43793df1ccd6f7afdb7c0b5223): melody track 2, bars 0-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sicut cervus
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"G,16 | "D"G,8 A,8 | "D"G,4 D,4 G,6 A,2 | "D"B,4 B,4 "Em"C8 |
+"Em7"B,4 G,4 "C"C6 B,2 | "F#m7"C4 D4 "G"B,8 | "G"B,8 "Em7"z8 | "Am"z8 "D"D8 |
+"G"D8 "Bm"D8 | "D7"E8 "B"D4 G,4 | "G"B,6 C2 D4 D4 | "G"E8 "F#m"D8 |
+"G"B,6 C2 D4 G,4 | "Em7"B,8 "Am"C6 D2 | "G"E4 D4- "C"D2 C2 C4 | "Em7"C4 B,2 A,2 "Em"B,4 G,4 |
+"D"G,4 ^F,4 "G"G,8 | "G"G,8 z8 | "C"z4 G,4 "G"B,6 C2 | "G"D4 D4 "C"E8 |
+"D"D6 C2 "C"B,4 C4 | "D"A,16 | "Em"G,8 "G"z8 | "G"D8- "F#m"D8 |
+"Em"C8 B,6 C2 | "F#"D4 E4- "C"E2 D2 D4 | "Em"D4 _D4 "D"=D8 | "C"G,8 "Am7"z8 |
+"G"z8 "D"z4 A,4 | "D7"A,4 B,4 "C"C4 C4 | "D7"G,8 "G"z8 | "G"D8- "F#m"D8 |
+"E"C8 "A7"B,4 C4 | "A7"C2 B,2 B,4 "D"A,4 A,4 | "D"D,4 A,4 "G"B,4 B,4 | "D"A,8 z8 |
+"D7"z8 "B"G,8 | "Em7"G,8 "D"^F,8 | "C"E,6 ^F,2 G,4 A,4 | "Bm"A,2 G,2 G,4- "Am"G,4 ^F,4 |
+"E"G,6 A,2 "G"B,6 C2 | "D"D8 z8 | "C"z4 C4- "G"C4 B,4 | "G"B,8 "D7"A,8 |
+"Em7"G,8 "D"D,8 | "D"D,4 A,4 "Em"B,4 C4 | "D"D4 D,2 E,2 ^F,2 G,2 A,2 ^F,2 | "C"G,4 A,4- "Bm"A,2 G,2 G,4 |
+"Am"G,4 ^F,4 "G"G,8 | "G"z8 "D"z8 | "A"z4 C4- "Em"C4 B,4 | "Em"B,8 "Am"A,8 |
+"C"G,4 G,4 "Am"A,4 C4 | "C"C4 B,4 "D"A,8 | "Em7"G,8 "C"z4 B,4 | "C"C4 E8 D4 |
+"C"C16 | "G"B,16 |

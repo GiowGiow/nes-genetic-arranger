@@ -1,0 +1,35 @@
+%abc-2.1
+% Dolly Suite Op.56, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/35/QmdoCewBdgAguaD2pPu19sDYjRmsDBEFgE3pGCqZ7bGsWP.mid (sha256
+% da94ad4d28ad9a5a975b633a6469a4688de3354b499954c7f0c7155e00e7c7dc): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dolly Suite Op.56
+M:3/4
+L:1/16
+Q:1/4=198.000198
+% Exact tempo 198.000198000198 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"_e'4 _b8 | "Fm7"c'4 f8 | "Bb"g4 _B4 =B4 | "Eb"c12 |
+"Cm"c z A2 _B2 c2 d2 _e2 | "Cm"f2 g2 _a2 _b2 c'2 d'2 | "Cm7"_e'4 d'4 c'4 | "Cm7"_b4 g4 _e4 |
+"F#"_e2 B2 c2 d2 _e2 ^f2 | "Fm7"_e2 B2 c2 d2 _e2 g2 | "Gm"d2 A2 _B2 c2 d2 _e2 | "Bb7"f2 g2 _a2 _b2 c'2 d'2 |
+"Eb"_e'4 _b8 | "Fm7"c'4 f8 | "Bb7"g4 _B4 c4 | "Dbm"_d12 |
+"Db"_d z B2 c2 =d2 _e2 f2 | "Db"g2 _a2 _b2 c'2 d'2 _e'2 | "F7"g'4 f'4 _e'4 | "Gm"d'4 _b4 g4 |
+"C7"d2 ^F2 G2 A2 _B2 c2 | "Bb7"z2 g2 _a2 _b2 c'2 d'2 | "Eb"_e'4 f2 ^f2 g2 _a2 | "F#m7"a2 _b2 =b2 c'2 _d'2 =d'2 |
+"Eb"_e'4 _b8 | "Fm7"c'4 f8 | "Bb"g4 _B4 =B4 | "Eb"c12 |
+"Cm"c z A2 _B2 c2 d2 _e2 | "Cm"f2 g2 _a2 _b2 c'2 d'2 | "Cm7"_e'4 d'4 c'4 | "Cm7"_b4 g4 _e4 |
+"F#"_e2 B2 c2 d2 _e2 ^f2 | "Fm7"_e2 B2 c2 d2 _e2 g2 | "Gm"d2 A2 _B2 c2 d2 _e2 | "Bb7"f2 g2 _a2 _b2 c'2 d'2 |
+"Eb"_e'4 _b8 | "Fm7"c'4 f8 | "Bb7"g4 _B4 c4 | "Dbm"_d12 |
+"Db"_d2 B2 c2 =d2 _e2 f2 | "Db"g2 _a2 _b2 c'2 d'2 _e'2 | "F7"g'4 f'4 _e'4 | "Gm"d'4 _b4 g4 |
+"C7"d2 ^F2 G2 A2 _B2 c2 | "Bb7"z2 g2 _a2 _b2 c'2 d'2 | "Eb"_e'4 _b2 a2 c'2 _b2 | "Eb"a2 _b2 g2 _e2 _B4 |
+"Eb"_B4 _A2 z2 G2 z2 | "D"F8 _B4 | "Dbm"c8 _B4 | "Ebm"_d8 c4 |
+"Bbm"_B2 z2 _A2 z2 G2 z2 | "E7"F8 _B4 | "Dbm"c8 _B4 | "Ebm"_d8 c4 |
+"Bbm"_B4 _A4 _B4 | "Bb7"c8 _B4 | "C7"d8 c4 | "B"f8 _e4 |
+"Cm"_e4 f2 z2 ^f2 z2 | "Bm"g8 d4 | "Bb"G8 _B4 | "Eb"F8 _E4 |

@@ -1,0 +1,21 @@
+%abc-2.1
+% Old Black Joe, by Stephen C. Foster. Score published on MuseScore (artist: Stephen Foster), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Stephen C. Foster (died 1864,
+% Wikidata Q305202).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/16/QmdDiCHuvDXE7YWDuaKap2dDc2Bn2pGdkyGzAqTJs9YTYy.mid (sha256
+% 6e735bf4c8a845fa1161d44c87f136141ce46facb9866e6906dfc6e7154c8575): melody track 0, bars 0-12
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Old Black Joe
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"D4 ^F3 G A4 z2 A A | "Em7"B2 d2 _d2 A, B "D"A8 | "D"D4 ^F3 G A4 z2 A A | "D"B2 A2 G3 ^F "A"E8 |
+"D"D4 ^F3 G A4 z2 A A | "G"B2 d2 _d2 B2 "D"A4 z2 =d2 | "A"_d3 =d e2 _d2 "G"=d2 B2 A2 B2 | "A7"^F4 E4 "D"D6 A2 |
+"D"^F2 A2 z2 A2 ^F2 A2 z2 A A | "G"B2 d2 _d2 B2 "D"A4 z2 =d2 | "A"_d3 =d e2 _d2 "G"=d2 B2 A2 B2 | "A7"^F4 E4 "D"D6 z2 |

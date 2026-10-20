@@ -1,0 +1,36 @@
+%abc-2.1
+% CONFIDÊNCIAS, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/confidencias-1.html (file
+% https://www.beakauffmann.com/mpb_c/som/confidencias-1.mid, sha256
+% c6a2722010ee19699a67ccd6b909f78690d3dee657ba477167dad3cd9ec25908), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CONFIDÊNCIAS
+M:3/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z2 e2 A4 z4 | "E"f2 e2 A4 z4 | "B7"e2 _e2 d2 _e2 c'2 b2 | "B7"b11 z |
+"Dm"z2 d2 e2 d2 _d2 =d2 | "E7"e2 d2 _d2 =d2 e2 =d2 | "Am"d2 c2 B2 c2 A4 | "Am"z8 A4 |
+"Am"z2 c2 d2 c2 B2 c2 | "Cm"d2 c2 B2 c2 d2 c2 | "Em7"c2 B2 _B2 =B2 a2 g2 | "Em7"g11 z |
+"A7"z2 A2 B2 A2 _A2 =A2 | "D7"B2 A2 _A2 =A2 B2 =A2 | "B7"A2 G2 D4 z4 | "E"c2 d2 _A4 z4 |
+"A"z2 e2 A4 z4 | "E"f2 e2 A4 z4 | "B7"e2 _e2 d2 _e2 c'2 b2 | "B7"b11 z |
+"G7"z2 _a2 b2 =a2 f2 d2 | "G7"B2 c2 _d2 e2 =d2 B2 | "Am7"A11 z | "Em"G4 E4 E4 |
+"E"D2 _e2 f2 =e2 d2 B2 | "E7"_A2 =A2 _B2 c2 =B2 _A2 | "A7"F7 z E4 | "Dm"E7 z D4 |
+"E7"D7 z C4 | "E7"C7 z B,4 | "E7"A,2 C2 E2 A2 c2 e2 | "Am"a4 z8 |
+"A"z2 e2 A4 z4 | "E"f2 e2 A4 z4 | "B7"e2 _e2 d2 _e2 c'2 b2 | "B7"b11 z |
+"Dm"z2 d2 e2 d2 _d2 =d2 | "E7"e2 d2 _d2 =d2 e2 =d2 | "Am"d2 c2 B2 c2 A4 | "Am"z8 A4 |
+"Am"z2 c2 d2 c2 B2 c2 | "Cm"d2 c2 B2 c2 d2 c2 | "Em7"c2 B2 _B2 =B2 a2 g2 | "Em7"g11 z |
+"A7"z2 A2 B2 A2 _A2 =A2 | "D7"B2 A2 _A2 =A2 B2 =A2 | "B7"A2 G2 D4 z4 | "E"c2 d2 _A4 z4 |
+"A"z2 e2 A4 z4 | "E"f2 e2 A4 z4 | "B7"e2 _e2 d2 _e2 c'2 b2 | "B7"b11 z |
+"G7"z2 _a2 b2 =a2 f2 d2 | "G7"B2 c2 _d2 e2 =d2 B2 | "Am7"A11 z | "Em"G4 E4 E4 |
+"E"D2 _e2 f2 =e2 d2 B2 | "E7"_A2 =A2 _B2 c2 =B2 _A2 | "A7"F7 z E4 | "Dm"E7 z D4 |
+"E7"D7 z C4 | "E7"C7 z B,4 | "E7"A,2 C2 E2 A2 c2 e2 | "Am"a4 z8 |

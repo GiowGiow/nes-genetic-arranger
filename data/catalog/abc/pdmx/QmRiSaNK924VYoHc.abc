@@ -1,0 +1,25 @@
+%abc-2.1
+% Under the Greenwood Tree, by Carl Henze (1872 - 1946). Score published on MuseScore (artist:
+% Bruno Karl Ludwig Henze), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carl Henze (died 1946, Wikidata
+% Q1038761).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/25/QmRiSaNK924VYoHcs1PvxcsSgswBpt1bDFRiqwsrUs5p4k.mid (sha256
+% fda7e386ce5ef637955f32c8f2ff3e0d2a5c01ff8c6bcccc546cb27bad2bd654): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Under the Greenwood Tree
+M:4/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G2 B,2 ^F2 E2 G2 B,2 ^F2 E2 | "C"G2 C2 z2 C2 ^F2 C2 z2 C2 | "C"^F2 B,2 E2 _E2 ^F2 B,2 =E2 _E2 | "C"^F2 B,2 z2 B,2 E2 B,2 z2 B,2 |
+"C"G2 B,2 ^F2 G2 A2 _E2 B3 c | "C"B2 B,2 z2 B,2 G2 B,2 z2 B,2 | "C"G2 ^F2 E2 _E2 G2 ^F2 =E2 _E2 | "C"E2 B,4 B,2 E,,8 |
+"C"E2 B,2 _A,2 ^F2 _A2 ^F2 _A2 =A2 | "C"B2 B,2 E,,2 B,2 _A2 B,2 E,,2 =A2 | "C"^F2 B,2 A,2 E2 _E2 A2 _A2 G2 | "C"_A2 B,2 E,,2 B,2 E2 B,2 _A,2 ^F2 |
+"C"_A2 _A2 _A2 _A2 _A2 ^F2 _A2 =A2 | "C"B2 B,2 E,,2 B,2 _A2 B,2 E,,2 =A2 | "C"^F2 B,2 A,2 E2 _E2 A2 _A2 ^F2 | "C"E2 A,2 _A,2 ^F,2 _A,8 |
+"C"G2 B,2 ^F2 E2 G2 B,2 ^F2 E2 | "C"G2 C2 z2 C2 ^F2 C2 z2 C2 | "C"^F2 B,2 E2 _E2 ^F2 B,2 =E2 _E2 | "C"^F2 B,2 z2 B,2 E2 B,2 z2 B,2 |
+"C"G2 B,2 ^F2 G2 A2 _E2 B3 c | "C"B2 B,2 z2 B,2 G2 B,2 z2 B,2 | "C"G2 ^F2 E2 _E2 G2 ^F2 =E2 _E2 | "C"E2 B,4 B,2 e8 |

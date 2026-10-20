@@ -1,0 +1,35 @@
+%abc-2.1
+% Images pour orchestre, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/45/QmRTQoLVCx52KdCkNzy52M1LXrYhfp9W3uPYFSPhrJAnnR.mid (sha256
+% cba73aa2fa30b94eaeba74ab14ee6edbdb5f23be1b06b6122779db567bb554f3): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Images pour orchestre
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 | "C"z8 | "C"z8 | "C"z8 |
+"C"D F D F D F D F | "C"D F D F D F _E A | "C"D F D F D F D F | "C"D F D F D F _E A |
+"G7"A z A z A z B z | "G7"A z A z A z B z | "G7"A z A z G z G z | "Ab7"G z G z G z G z |
+"Ab7"G z G z G z G z | "Ab7"G z G z G z G z | "Ab7"G z G z G z G z | "Bb"C _E C _E C _E C _E |
+"Bb"C _E C _E C _E _D G | "Bb"C _E C _E C _E C _E | "Bb"C _E C _E C _E _D G | "F7"G z G z G z A z |
+"F7"G z G z G z A z | "F7"G z G z G z A z | "F7"G z G z G z A z | "F7"G z A z G z A z |
+"F7"G z A z G z A z | "C"G z g z G z g z | "Dm"G z g z G z g z | "Dm"G2 g z G2 g z |
+"Dm"G2 g z G2 g z | "C"z2 g'2 g' f'2 e' | "C"d' z c' z c' z g z | "Em7"G F D F D F D F |
+"Am7"D F D F D F D F | "Dm7"G2 g z G2 g z | "Dm"G2 g z G2 g z | "Dm"G2 g z G2 g z |
+"Dm"G2 g z G2 g z | "C"z2 g' z g' f' z e' | "C"d' z c' z c' z g z | "Em7"G F D F D F D F |
+"Am7"D F D F D F D F | "Bb"D F D F D F D F | "Gm"D F D F D F D F | "Bb"D F D F D F D F |
+"Gm"D F D F D F D F | "G7"D F D F D F D F | "G7"D F D F D F D F | "G"D F D F D F D F |
+"G"D F G B G B E G | "G"D F D F D F D F | "G"D F D F D F B d | "G"d f g b d' f' g' b' |
+"C"c'' g' c'' g' c'' g' c'' g' | "C"c'' g' c'' g' c'' g' c'' g' | "C"c'' g' c'' g' g' d' g' d' | "D7"c' g c' g g d g d |
+"C"c' g c' g c' g c' g | "C"c' g c' g g d g d | "C"c' g c' g g d g d | "G7"c G c G g d g d |
+"E"c' g c' g g d g d | "E"c G c G G D G D | "F#"G D G D G D G D | "F#"G D G D G D G D |

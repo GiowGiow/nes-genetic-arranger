@@ -1,0 +1,35 @@
+%abc-2.1
+% Hvalite imja Gospodne, by Dobri Hristov. Score published on MuseScore (artist: Dobri Hristov),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Dobri Hristov (died 1941,
+% Wikidata Q1233402).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/3/Qmb4M8Q3MhhrUpVWNPhkMoFx1f27cgwGa2rN4is81gsYk4.mid (sha256
+% d2eede630ea4b747978a10d1291637ddddae10bb1a8c2455ba7558bd8f1238a4): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hvalite imja Gospodne
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z8 "A"z8 | "C"z8 "B"z8 | "B"z8 "E"z4 _A4 | "Am"A8 A8 |
+"Dm"A8 "Dm7"A4 A4 | "C"A8 "E7"_A8 | "Am"A12 z4 | "Am"z8 "E"z8 |
+"A"z8 "E"z8 | "G"z8 "G7"z8 | "E"z16 | "E"z12 _A4 |
+"E7"B8 _A4 B4 | "E"c8 "Am"A4 c4 | "A7"e4 d4 _d4 =d4 | "Am"d4 c4 B4 A4 |
+"E"c4 B4 "E7"A4 _A4 | "Am"E8 z8 | "Am"z8 "E"E4 E4 | "Am"A4 E4 z8 |
+"Am"z8 "E"E4 E4 | "E7"B4 _A4 z8 | "E7"z8 "Am7"A4 B4 | "C"c8 "Dm"B8 |
+"C"A8 "E7"_A8 | "Am"E16 | "A"z8 "B7"z8 | "Am"z8 "Em"z8 |
+"G"z16 | "C"z4 G4 G4 G4 | "Em7"G8- "Dm7"G4 G4 | "C"G8 "Am7"c4 B4 |
+"Dm"A8- "D7"A4 A4 | "G"G4 z12 | "G7"z4 G4 "E7"_A4 _A4 | "Am"A4 G4 "Bm7"F4 E4 |
+"E"E8 E8 | "Am"E8 z8 | "Am"z8 "E"E4 E4 | "Am"A4 E4 "E"E4 E4 |
+"E7"B4 _A4 z8 | "E7"z8 "Am7"A4 B4 | "C"c8 "Dm"B4 B4 | "C"A4 A4- "E7"A4 _A4 |
+[M:1/2]"Am"E8 | "E"z8 | [M:4/4]"A"z16 | "C"z8 "B7"z8 |
+"G"z8 "C"G4 G4 | "Dm7"A8 "C"G4 G4 | "Dm7"F8 "C"G8 | "C"A4 G4 "Dm7"A4 F4 |
+"C"G8 G4 G4 | "C"G8 G4 G4 | "Em7"G8 "Am7"c4 B4 | "Dm"A8- "D7"A8 |
+"G7"G8 "E"_A8 | "Am"A4 G4 "Bm7"F4 E4 | "E"E8 E4 E4 | "Am"E8 z8 |
+"Am"z8 "E"E4 E4 | "Am"E4 E4 "E"E4 E4 | "E7"B4 _A4 z8 | "E7"z8 "Am7"A4 B4 |

@@ -1,0 +1,31 @@
+%abc-2.1
+% State Anthem of the Soviet Union, by Alexander Vasilyevich Alexandrov. Score published on
+% MuseScore (artist: Alexander Alexandrov), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Alexander Vasilyevich Alexandrov
+% (died 1946, Wikidata Q319708).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/47/QmZUC3y3hrAzSQwFLUXy7PbdTWCg2VgX4H3nn3munLRD82.mid (sha256
+% 8a5441862a540fba1d86967caeb1d58a867b6c44da4e2ef05f4da82ebbb20c2c): melody track 1, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:State Anthem of the Soviet Union
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"_E,11 z5 | "Cm7"_E,4 _E,4 "Gm"G,4 G,4 | "Cm7"_A,4 _A,4 G,4 G,4 | "Fm"F,4 F,4 "Fm7"_E,4 _E,4 |
+"Fm"_E,4 D,2 C,2 "Bb"_B,,4 _B,,,4 | "Cm7"_E,,4 G,,4 "Gm7"_B,,4 _B,,4 | "Cm"C,4 _E,4 "Gm"G,4 G,,4 | "Fm7"_A,,4 F,,4 "Cm7"G,,4 G,,4 |
+"F7"F,,4 F,4 "Gm7"_B,,2 _A,,2 G,,2 F,,2 | "Cm7"_E,,4 _E,4 "Gm7"G,,4 G,4 | "Bb"_B,,4 D,4 "Gm7"_B,4 _A,2 G,2 | "Cm"C,2 G,,2 C,2 D,2 "Gm"_E,4 G,4 |
+"Gm"G,,4 _B,,2 D,2 G,4 F,2 _B,,2 | "Ab"_A,4 _E,4 _A,4 _E,4 | "Ab"_A,4 _E,4 _A,,8 | "Fm"F,,4 F,4 "Bb"_B,,4 _B,,,4 |
+"Gm"_E,,4 G,,2 _B,,2 "Cm7"_E,4 _E,,4 | "Fm"D,,4 D,4 "Gm"G,4 G,,4 | "Cm"C,,4 _E,,2 G,,2 C,4 _B,,4 | "Fm7"_A,,4 F,,4 "Cm7"G,,4 G,,4 |
+"Fm7"F,,4 F,,4 "Gm7"_B,,4 _B,,,4 | "Cm7"_E,4 _E,4 "Gm"G,4 G,4 | "Cm7"_A,4 _A,4 G,4 G,4 | "Fm"F,4 F,4 "Fm7"_E,4 _E,4 |
+"Fm"_E,4 D,2 C,2 "Bb"_B,,4 _B,,,4 | "Cm7"_E,,4 G,,4 "Gm7"_B,,4 _B,,4 | "Cm"C,4 _E,4 "Gm"G,4 G,,4 | "Fm7"_A,,4 F,,4 "Cm7"G,,4 G,,4 |
+"F7"F,,4 F,4 "Gm7"_B,,2 _A,,2 G,,2 F,,2 | "Cm7"_E,,4 _E,4 "Gm7"G,,4 G,4 | "Bb"_B,,4 D,4 "Gm7"_B,4 _A,2 G,2 | "Cm"C,2 G,,2 C,2 D,2 "Gm"_E,4 G,4 |
+"Gm"G,,4 _B,,2 D,2 G,4 F,2 _B,,2 | "Ab"_A,4 _E,4 _A,4 _E,4 | "Ab"_A,4 _E,4 _A,,8 | "Fm"F,,4 F,4 "Bb"_B,,4 _B,,,4 |
+"Gm"_E,,4 G,,2 _B,,2 "Cm7"_E,4 _E,,4 | "Fm"D,,4 D,4 "Gm"G,4 G,,4 | "Cm"C,,4 _E,,2 G,,2 C,4 _B,,4 | "Fm7"_A,,4 F,,4 "Cm7"G,,4 G,,4 |
+"Bb7"_B,,8 _A,,4 _B,,4 | "Eb"_E,,15 z |

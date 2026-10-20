@@ -1,0 +1,35 @@
+%abc-2.1
+% EPONINA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/eponina.html (file
+% https://www.beakauffmann.com/mpb_e/som/eponina.mid, sha256
+% e01e65b982938ea40efaab5b2ee8cfa67b9fdc8afd6daabb01735638a37df871), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:EPONINA
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Ab"c4 z4 c4 | "Cm"z2 G2 _A2 c2 g2 f f | "Eb7"g z9 _e2 | "Eb"_d2 _B2 G2 _E2 _D2 _B,2 |
+"Fm"_A4 z4 _A4 | "Ab"z2 E2 F2 _A2 _e2 _d _d | "Gm7"_e z9 c2 | "C7"_B2 G2 E2 _B2 C2 _B,2 |
+"Ebm"_B,2 A,2 _D2 C2 ^F2 =F2 | "F7"_B2 A2 _d2 c2 ^f2 =f2 | "Bbm"e6 f2 c'2 _b2 | "Dbm"_a6 e2 _d2 _B _A |
+"Eb7"_B z5 G2 ^F2 G2 | "Eb7"f4 f4 f3 F | "Ab"G z5 _E2 D2 _E2 | "Fm7"f4 f4 f4 |
+"Ab"c4 z4 c4 | "Cm"z2 G2 _A2 c2 g2 f f | "Eb7"g z9 _e2 | "Eb"_d2 _B2 G2 _E2 _D2 _B,2 |
+"Fm"_A4 z4 _A4 | "Ab"z2 E2 F2 _A2 _e2 _d _d | "Gm7"_e z9 c2 | "C7"_B2 G2 E2 _B2 C2 _B,2 |
+"Ebm"_B,2 A,2 _D2 C2 ^F2 =F2 | "F7"_B2 A2 _d2 c2 ^f2 =f2 | "Bbm"c'8 _b4 | "E7"_a2 =a2 _b2 =b2 e'2 _a2 |
+"F#m7"b8 a4 | "Eb7"g2 _a2 =a2 _b2 _e'2 _e2 | "Ab"_a4 z8 | "Fm7"_a''4 z8 |
+"Eb"g6 ^f2 g2 _b2 | "C7"_a8 g4 | "F7"g6 f2 B2 c2 | "F7"g8 f4 |
+"Bb7"_e6 d2 =E2 F2 | "Bb7"_e8 d4 | "Eb"c6 _B2 G2 _B2 | "Bb"_A2 F2 D2 _B,2 _A,2 F,2 |
+"Eb"g6 ^f2 g2 _b2 | "C7"_a8 g4 | "Gm7"g6 f2 d2 _B2 | "G7"_e8 d4 |
+"C7"d6 c2 G2 E2 | "F7"d8 c4 | "Bb7"c8 _B4 | "Bb7"_e2 d2 g2 f2 c'2 _b2 |
+"Eb"g6 ^f2 g2 _b2 | "C7"_a8 g4 | "F7"g6 f2 B2 c2 | "F7"g8 f4 |
+"Db7"_e6 d2 =E2 F2 | "Db7"_e8 d4 | "Cm"f6 _e2 D2 _E2 | "Cm"G2 c2 _e2 g2 c'2 _e'2 |
+"Fm"z2 d'2 f'2 _e'2 b2 d'2 | "Db7"c'2 g2 _b2 _a2 _e2 f2 | "Cm7"g2 d2 f2 _e2 G2 c2 | "Cm7"_B11 z |
+"Fm7"z2 B2 d2 c2 G2 _B2 | "Bb7"_A2 F2 C2 _E2 D2 _B2 | "Eb"_E2 G,2 _B,2 _E2 G2 _B2 | "Eb"_e4 z8 |

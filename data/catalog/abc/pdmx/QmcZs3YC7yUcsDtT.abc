@@ -1,0 +1,28 @@
+%abc-2.1
+% Verdi - Nabucco, by Giuseppe Verdi (1813-1901). Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giuseppe Verdi (died 1901,
+% Wikidata Q7317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/57/QmcZs3YC7yUcsDtTnNAzYSJnSsjhtu2VYXubfDLd2Xc8xp.mid (sha256
+% 600d4eaff78e055380eb5602ae9dea6250a917cbff36d8d3e065cabb1342dad9): melody track 1, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Verdi - Nabucco
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F"z C F C z C F C z C F C z C F C | "F"z C F C z C F C z C F C z C F C | "Gm"z C E C z C E C "C"z C E C z C E C | "Am7"z C F C z C F C "A7"z _B, _B _B, z =B, _B =B, |
+"C"z B, F B, z C E C z C E C z _B, E _B, | "F"z C F C z C F C z C F C z C F C | "Gm"z C E C z C E C "C"z C E C z C E C | "Gm7"z C F C z D _B D "C"z C F C z _B, E _B, |
+"F"z C F C z C F C z C F C z C F C | "Em"z C _B C z C _B C "G7"z =B, F =B, z =B, F =B, | "C"z C E C z C E C "F"z C F C z C F C | "G"z C E C z C E C z B, D B, z B, D B, |
+"C"z C E C z C E C z C E C z C E C | "F"z C F C z C F C z C F C z C F C | "C7"z C E C z C E C "F"z C E C z C E C | "F"z C F C z D _B D "G7"z C F C z C E C |
+"F"z C F C z C F C z C F C c'3 c' | "C"e'4 e'3 e' e'4 e' d'2 c' | "G"b4 a b2 c' "C"g4 z4 | "G7"z B, F B, z B, F B, z B, F B, z B, F B, |
+"Am7"z C F C z C E C "C"z C E C g3 g | "C"e'4 e'3 e' e'4 e' d'2 c' | "G"b4 a b2 c' "C"g4 z4 | "G7"z B, F B, z B, F B, z B, F B, z B, F B, |
+"C"z C E C z C E C E4 C3 C | "C"_B e g e' g' z2 _B "Fm"_A f _a f' _a' z2 _A | "C"G g' c' g c' g c G C z3 C3 C | "C"_B e g e' g' z2 _B "Fm"_A f _a f' _a' z2 _A |
+"C"G G _A _B =B _d =d e "Am7"f g _a _b =b _d' =d' e' | "F"f' c' c' d' z c' c' d' z c' c' d' z c' c' d' | "C7"z c' c' _d' z c' c' _d' z c' c' _d' z c' c' _d' | "Am7"z c' c' d' z d' d' e' "C"z c' c' d' z c' c' _d' |
+"Dm7"z c' c' d' z _d' _d' =d' "Dm"z =d' =d' _e' z _e' _e' f' | "Bb"z f' f' g' z f' f' g' "C7"z c' c' d' z c' c' _d' | "Dm7"z c' c' d' z _d' _d' =d' "Dm"z =d' =d' _e' z _e' _e' f' | "Bb"z f' f' g' z f' f' g' "C7"z c' c' d' z c' c' _d' |
+"Dm7"z c' c' d' z c' c' d' z c' c' d' z c' c' d' | "F"f2 z2 F F2 F F2 z2 F F2 F | "F"F4 z4 F4 z4 | "F"F4 z12 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Sonatina in A minor, by Carl Reinecke. Score published on MuseScore (artist: Carl Reinecke), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carl Reinecke (died 1910,
+% Wikidata Q159569).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/45/QmSTdxMvMqwFtoxTnEnLjWmd8ymDZEWdfNVX3gmuEfdost.mid (sha256
+% 99a7130b2675112c0560195e3fc22f3c86007f1c3100dcdaef4b18ab9304cdce): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonatina in A minor
+M:4/4
+L:1/16
+Q:1/4=151.999939
+% Exact tempo 151.99993920002433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z2 C2 E2 A2 E2 A2 E2 C2 | "A"z2 C2 E2 A2 E2 A2 E2 C2 | "A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 | "Dm"z2 D2 F2 A2 F2 A2 F2 D2 |
+"E"z2 B,2 E2 _A2 "E7"E2 _A2 E2 B,2 | "D"z2 A,2 E2 A2 "Am"E2 A2 E2 A,2 | "A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 | "G7"z2 D2 F2 A2 "Bm7"F2 A2 F2 D2 |
+"C"z2 E2 E2 e2 "E"z2 E2 E2 B2 | "A"z2 E z E2 c2 A8 | "C"e6 e2 "Em7"B4 c4 | "Dm7"c6 A2 E4 F4 |
+"Dm7"f6 f2 _d4 =d4 | "C"d6 B2 ^F4 G4 | "C"g6 g2 "C7"_e4 =e4 | "D"g4 f4 "Dm"e4 d4 |
+"C"c6 c2 "G7"d2 z2 e2 z2 | "G"d8 "C"c4 z4 | "E"B8 "F"A4 z4 | "D"A4 z12 |
+"E"_A4 z12 | "A"z2 C2 E2 A2 E2 A2 E2 C2 | "A"z2 C2 E2 A2 E2 A2 E2 C2 | "A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 |
+"Dm"z2 D2 F2 A2 F2 A2 F2 D2 | "E"z2 B,2 E2 _A2 "E7"E2 _A2 E2 B,2 | "D"z2 A,2 E2 A2 "Am"E2 A2 E2 A,2 | "A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 |
+"G7"z2 D2 F2 A2 "Bm7"F2 A2 F2 D2 | "C"z2 E2 E2 e2 "E"z2 E2 E2 B2 | "A"z2 E z E2 c2 A8 | "C"e6 e2 "Em7"B4 c4 |
+"Dm7"c6 A2 E4 F4 | "Dm7"f6 f2 _d4 =d4 | "C"d6 B2 ^F4 G4 | "C"g6 g2 "C7"_e4 =e4 |
+"D"g4 f4 "Dm"e4 d4 | "C"c6 c2 "G7"d2 z2 e2 z2 | "G"d8 "C"c4 z4 | "C"_B8 "F"A4 z4 |
+"Bb"d4 z12 | "C"E4 z12 | "Db"z2 _A,2 _D2 F2 _D2 F2 _D2 _A,2 | "C"^F8- "C7"^F7 z |
+"Db"z2 _A,2 _D2 F2 _D2 F2 _D2 _A,2 | "Db"z2 _A,2 _D2 F2 _D2 F2 _D2 _A,2 | "Dbm7"z2 _A,2 D2 E2 D2 E2 D2 _A,2 | "E"z2 D2 E2 _A2 E2 _A2 E2 D2 |
+"A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 | "Dm"z2 D2 F2 A2 F2 A2 F2 D2 | "E"z2 B,2 E2 _A2 "E7"E2 _A2 E2 B,2 | "D"z2 A,2 E2 A2 "Am"E2 A2 E2 A,2 |
+"A"z2 _D2 E2 A2 "A7"E2 A2 E2 _D2 | "G7"z2 D2 F2 A2 "Bm7"F2 A2 F2 D2 | "C"z2 E2 A2 c2 "E"z2 D2 E2 _A2 | "A"z2 C2 E2 A2 c2 A2 c2 e2 |
+"A7"a6 a2 _e4 =e4 | "Dm"f6 d2 _B4 =B4 | "E7"e6 d2 _B4 =B4 | "A"d4 c4 B4 A4 |
+"F#m7"A6 A2 "A7"_E4 =E4 | "D"G4 F4 "E"E2 z2 D2 z2 | "E"E4 z4 E4 z4 | "A"E15 z |

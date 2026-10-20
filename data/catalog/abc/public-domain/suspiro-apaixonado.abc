@@ -1,0 +1,36 @@
+%abc-2.1
+% SUSPIRO APAIXONADO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/suspiro-apaixonado.html (file
+% https://www.beakauffmann.com/mpb_s/som/suspiro-apaixonado.mid, sha256
+% 0e0924b4839a82af99d96bdc5a48a955e272c3611660a1d060e039cbc9fe63c7), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SUSPIRO APAIXONADO
+M:3/4
+L:1/16
+Q:1/4=135.000135
+% Exact tempo 135.000135000135 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"E10 ^F,,2 | "Em"G,,2 B,,2 E,2 G,2 B,2 D2 | "Em"G11 z | "B"^F11 z |
+"G"D11 z | "F#"_D4 C4 _D4 | "B7"^F4 ^F,5 z A,2 | "Em"B4 A5 z _A2 |
+"Em"G5 z A2 _B2 =B2 | "Em"_d7 z B4 | "Bm"^F7 z ^F G A2 | "Bm"A5 z G2 ^F4 |
+"Db"_D11 z | "F#"^F4 E5 z _D2 | "Bm"D8 ^F4 | "Abm7"B11 z |
+"Bm"^F4 D4 B,4 | "Abm7"d4 B,4 D3 z | "Db"F4 _D4 B,4 | "Db7"_d11 z |
+"F#7"^F4 _A4 _B4 | "Ebm7"B4 _d5 z =d2 | "Bm"^f12 | "B7"_E6 _E,2 =E,2 ^F,2 |
+"C"E2 G2 G2 _d2 _d4 | "Bb7"_D4 B,4 B4 | "D"B,2 D2 D2 G2 G4 | "Em"G4 D4 ^F4 |
+"Db"F11 z | "Db7"_D11 z | "F#"^F2 e2 ^F,2 _d2 _D2 _B2 | "A"G2 z ^F E _D2 _B, G, ^F, E, _D, |
+"Bm"^F4 D4 B,4 | "Abm7"d4 B,4 D3 z | "Db"F4 _D4 B,4 | "Db7"_d11 z |
+"F#7"^F4 _A4 _B4 | "Ebm7"B4 _d5 z =d2 | "Bm"^f12 | "B7"_E6 _E,2 =E,2 ^F,2 |
+"C"E2 G2 G2 _d2 _d4 | "Bb7"_D4 B,4 B4 | "D"B,2 D2 D2 G2 G4 | "Em"G4 D4 ^F4 |
+"Am7"d2 c2 G2 E2 C2 G,2 | "F#"^F,2 _B,2 _D2 ^F2 E2 ^F2 | "Bm"B4 ^F4 D4 | "Bm"B11 z |
+"Bm"^F4 D4 B,4 | "Abm7"d4 B,4 D3 z | "Db"F4 _D4 B,4 | "Db7"_d11 z |
+"F#7"^F4 _A4 _B4 | "Ebm7"B4 _d5 z =d2 | "Bm"^f12 | "B7"_E6 _E,2 =E,2 ^F,2 |
+"C"E2 G2 G2 _d2 _d4 | "Bb7"_D4 B,4 B4 | "D"B,2 D2 D2 G2 G4 | "Em"G4 D4 ^F4 |
+"Db"F11 z | "Db7"_D11 z | "F#"^F2 e2 ^F,2 _d2 _D2 _B2 | "A"G2 z ^F E _D2 _B, G, ^F, E, _D, |

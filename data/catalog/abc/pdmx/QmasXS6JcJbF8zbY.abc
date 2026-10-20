@@ -1,0 +1,35 @@
+%abc-2.1
+% Études enfantines Op.37, by Henry Lemoine. Score published on MuseScore (artist: Henry Lemoine),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Lemoine (died 1854,
+% Wikidata Q1606982).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/42/QmasXS6JcJbF8zbYytgRDZ1qCfEHP1tvzeQQSanYPBsewM.mid (sha256
+% d8b331acd1bae8cec880b5810a8d48c413897269a8a88e74ec1e79f85c356900): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études enfantines Op.37
+M:3/4
+L:1/16
+Q:1/4=145.000036
+% Exact tempo 145.00003625000906 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"D12 | "A7"E12 | "Dm"D4 E4 D4 | "A7"_D8 z4 |
+"Dm"D12 | "Am"E2 z10 | "E"D2 E,2 E,2 E,2 E,2 E,2 | "A7"_D2 E9 z |
+"Dm"D12 | "A7"E12 | "Dm"D4 E4 D4 | "A7"_D8 z4 |
+"Dm"D11 z | "Gm"G,2 D2 D2 D2 D2 D2 | "A7"_D11 z | [M:2/4]"Dm"D4 D, z3 |
+[M:1/4]"D"z4 | [M:3/4]"C7"E,2 C2 C2 C2 C2 C2 | "F"C11 z | "C7"E,2 C2 C2 C2 C2 C2 |
+"F"C11 z | "Gm7"D8 _B,4 | "F"A,8 C4 | "Gm7"D8 _B,4 |
+"F"A,8 C4 | "G7"B,2 D2 D2 D2 D2 D2 | "C"C4 _B,4 A,4 | "C7"_B,6 z2 _B,4 |
+"F"A,4 z8 | "F7"C2 F,2 F,2 F,2 F,2 F,2 | "Gm"_B,2 F,2 F,2 F,2 F,2 F,2 | "Cm"A,2 F,2 F,2 F,2 F,2 F,2 |
+"Gm7"_B,8 z4 | "Db7"D2 G,2 G,2 G,2 G,2 G,2 | "C"C2 G,2 G,2 G,2 G,2 G,2 | "Dm"B,2 G,2 G,2 G,2 G,2 G,2 |
+"C"C8 z4 | "Eb7"E2 A,2 A,2 A,2 A,2 A,2 | "Dm"D2 A,2 A,2 A,2 A,2 A,2 | "Em"_D2 A,2 A,2 A,2 A,2 A,2 |
+"Dm"D8 z4 | "D"C2 D2 D2 D2 D2 D2 | "Em7"D11 z | "E7"D2 E2 E2 E2 E2 E2 |
+"F#m"E2 A,2 A,2 A,2 A,2 A,2 | "Dm"F2 A,2 A,2 A,2 A,2 A,2 | "A"E2 A,2 A,2 A,2 E2 A,2 | "Dm"F2 A,2 A,2 A,2 A,2 A,2 |
+"A"E4 z8 | "A"G11 z | "A"F11 z | "G"E11 z |
+"Dm"D12 | "A7"E12 | "Dm"D4 E4 D4 | "A7"_D8 z4 |
+"Dm"D12 | "Am"E2 z10 | "E"D2 E,2 E,2 E,2 E,2 E,2 | "A7"_D2 E9 z |
+"Dm"D12 | "A7"E12 | "Dm"D4 E4 D4 | "A7"_D8 z4 |

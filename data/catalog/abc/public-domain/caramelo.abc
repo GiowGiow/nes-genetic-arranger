@@ -1,0 +1,36 @@
+%abc-2.1
+% CARAMELO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/caramelo.html (file
+% https://www.beakauffmann.com/mpb_c/som/caramelo.mid, sha256
+% 96ee1070ec69769532bf2dd9ecf656f2fdb71de9c1ec91d6357adcd19d2c4e71), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CARAMELO
+M:2/4
+L:1/16
+Q:1/4=69.999988
+% Exact tempo 69.99998833333528 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 | "Dm"z A2 A z A2 G | "Cm7"z D2 D _E D _D2 | "A"z E2 E z A2 A |
+"Dm"F2 D d A _B, =B, _D | "G7"z A2 A z A2 F | "A"z A2 A A,4 | "E"_A,4 E2 _A2 |
+"A7"z E2 E z E A2 | "Dm"z A2 A F E _E D | "Gm"D _D C z _B, z _B2 | "A"z A, B, _D =D E F G |
+"D"z A2 A z2 ^F ^F | "Gm"_B,4 D4 | "Gm7"z F2 F z F D2 | "A"A,4 G2 E2 |
+"Dm"D4 d2 z2 | "Dm"z A2 A z A2 G | "Cm7"z D2 D _E D _D2 | "A"z E2 E z A2 A |
+"Dm"F2 D d A _B, =B, _D | "G7"z A2 A z A2 F | "A"z A2 A A,4 | "E"_A,4 E2 _A2 |
+"A7"z E2 E z E A2 | "Dm"z A2 A F E _E D | "Gm"D _D C z _B, z _B2 | "A"z A, B, _D =D E F G |
+"D"z A2 A z2 ^F ^F | "Gm"_B,4 D4 | "Gm7"z F2 F z F D2 | "A"A,4 G2 E2 |
+"Bm7"D3 F, ^F, _A, =A, B, | "C7"z E2 E z G c G | "Gm7"F C3 F2 d2 | "Fm7"z _B _E G _E4 |
+"Db"_A2 F2 _A2 _d2 | "C7"z E2 c2 d _e =e | "Dm"F C3 ^f4 | "Gm"z G2 G z A2 A |
+"C7"z _B2 _B _B c _d _e | "C7"z e2 e z G c G | "Gm7"c A3 f4 | "Fm7"z _B2 _B z _A2 _A |
+"Db"z ^F2 ^F z _A2 =F | "C7"G3 _B c2 E,2 | "Dm7"z2 A A z A2 A | "C"z _A _D2 C B, =A, G, |
+"Dm7"C3 F,2 A, _B, =B, | "C7"z E2 E z G c G | "Gm7"F C3 F2 d2 | "Fm7"z _B _E G _E4 |
+"Db"_A2 F2 _A2 _d2 | "C7"z E2 c2 d _e =e | "Dm"F C3 ^f4 | "Gm"z G2 G z A2 A |
+"C7"z _B2 _B _B c _d _e | "C7"z e2 e z G c G | "Gm7"c A3 f4 | "Fm7"z _B2 _B z _A2 _A |
+"Db"z ^F2 ^F z _A2 =F | "C7"G3 _B c2 E,2 | "Dm7"z2 A A z A2 A | "C"z _A _D2 C B, =A, G, |

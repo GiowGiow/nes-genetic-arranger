@@ -1,0 +1,36 @@
+%abc-2.1
+% NOVE DE MAIO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nove-de-maio.html (file
+% https://www.beakauffmann.com/mpb_n/som/nove-de-maio.mid, sha256
+% 3aa14bf32d589a547d93ca8449ae0dc5bf1d46827a7f64fc7b95c37e6d77e1fd), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NOVE DE MAIO
+M:4/4
+L:1/16
+Q:1/4=152.000324
+% Exact tempo 152.00032426735845 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C7"C,16 | "Dm"z8 "Dm7"C z C z C z3 | "F#"_E,16 | "C7"E,6 C z "D7"C z5 A2 |
+"Am7"F,,2 z2 C,2 F,,2 C,,2 z2 C,2 C,,2 | "Dm7"F,,2 z2 C,2 F,,2 C,,2 z2 C,2 C,,2 | "E"G,,2 z2 C,2 G,,2 "Db"C,,2 z2 C,2 C,,2 | "Gm"G,,2 z2 C,2 G,,2 "Bb"C,,2 z2 C,2 C,,2 |
+"D7"G,,2 z2 C,2 G,,2 C,,2 z2 C,2 C,,2 | "C"G,,2 z2 C,2 G,,2 "C7"C,,2 z2 C,2 C,,2 | "F"F,,2 z2 C,2 F,,2 "G7"C,,2 z2 C,2 C,,2 | "Am"F,,2 z2 C,2 F,,2 C,,2 z2 C,2 C,,2 |
+"G"A,,2 z2 D z D2 D,,2 D z D2 D,,2 | "D"A,,2 z2 D,2 A,,2 "D7"D,,2 z2 D,2 D,,2 | "Gm"G,,2 z2 D,2 G,,2 "Db"D,,2 z2 D,2 D,,2 | "Bb"G,,2 z2 D,2 G,,2 D,,2 z2 D,2 D,,2 |
+"Bm7"z8 "F#m7"z8 | "E7"B,,2 z2 E,2 B,,2 E,,2 z2 E,2 E,,2 | "Am"z4 E,2 A,,2 "C7"_A,,2 z2 E,2 _A,,2 | "C"G,,2 z2 _B,2 C, z "D7"C,,2 z2 _B,2 C, z |
+"Dm7"F,,2 z2 A,2 C,2 "Bm"C3 z A,2 C,2 | "Eb7"E,,2 z2 G,2 _D,2 E,,2 c4 _d2 | "Dm7"D,,2 z2 F,2 A,,2 "Ab"D,,2 z2 F,2 A,,2 | "Cm7"C,,2 z2 _E,2 ^F,,2 "Ab7"C,,2 z2 _E,2 ^F,,2 |
+"Gm"_B,,,2 z6 "G"_B,,,2 z6 | "Db7"B,,,2 z2 D,2 G,,2 B,,,2 ^F2 D,2 =F,2 | "C7"C,,4 z2 C,,2 "Dm7"D,,4 D,2 D,,2 | "Ab7"_E,,4 z2 _E,,2 "Am7"=E,,4 =E,2 =E,,2 |
+"Am7"F,,2 z2 C,2 F,,2 C,,2 z2 C,2 C,,2 | "Dm7"F,,2 z2 C,2 F,,2 C,,2 z2 C,2 C,,2 | "E"G,,2 z2 C,2 G,,2 "Db"C,,2 z2 C,2 C,,2 | "Gm"G,,2 z2 C,2 G,,2 "Bb"C,,2 z2 C,2 C,,2 |
+"D7"G,,2 z2 C,2 G,,2 C,,2 z2 C,2 C,,2 | "C"G,,2 z2 C,2 G,,2 "C7"C,,2 z2 C,2 C,,2 | "F"F,,2 z2 C,2 F,,2 "G7"C,,2 z2 C,2 C,,2 | "Dm7"A,4 C,2 F,,2 _E,,4 C,2 _E,,2 |
+"C7"D,,2 z2 ^F,2 A,,2 D,,2 z2 ^F2 A,,2 | "D"D,,2 z2 ^F,2 A,,2 "D7"D,,2 z4 A,,2 | "G"_B,,,2 z2 D z D2 z2 D z D2 C,2 | "F"_D,4 _A,,4- "Db7"_A,,4 _D,,4 |
+"Am"C,4 A,,8 C,,4 | "Gm"G,,8- "Gm7"G,,4 C,,4 | "Db7"F,,15 z | "C"z8 "F"z8 |
+"C"C,,2 G,,2 E,2 G,,2 "Am7"C,,2 A,,2 F,2 A,,2 | "C"C,,2 G,,2 E,2 G,,2 C,,2 G,,2 E,2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "G7"C,,2 G,,2 z2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "C"C,,2 G,,2 E,2 G,,2 |
+"C"C,,2 G,,2 E,2 G,,2 "Am7"C,,2 A,,2 F,2 A,,2 | "C"C,,2 G,,2 E,2 G,,2 C,,2 G,,2 E,2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "G7"C,,2 G,,2 F,2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "Am7"C,,2 z6 |
+"Em"E,,2 B,,2 G,2 B,,2 E,,2 B,,2 G,2 B,,2 | "C"E,,2 C,2 A,2 C,2 "Am"E,,2 C,2 z2 C,2 | "D7"E,,2 C,2 A,2 C,2 E,,2 C,2 A,2 C,2 | "Em"E,,2 B,,2 G,2 B,,2 E,,2 B,,2 z2 B,,2 |
+"Em"E,, z B,,2 G,2 B,,2 E,,2 B,,2 G,2 B,,2 | "Am"^F6 ^F2- "C"^F4 E2 C,2 | "F7"E,,2 B,,2 ^F,2 B,,2 "A7"E,,2 B,,2 _E,2 B,,2 | "Em"E,,2 B,,2 E,2 B,,2 "G7"E,,2 B,,2 D,,2 G,,2 |
+"C"C,,2 G,,2 E,2 G,,2 "Am7"C,,2 A,,2 F,2 A,,2 | "C"C,,2 G,,2 E,2 G,,2 C,,2 G,,2 E,2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "G7"C,,2 G,,2 z2 G,,2 | "Em"C,,2 G,,2 z2 G,,2 "C"C,,2 G,,2 E,2 G,,2 |

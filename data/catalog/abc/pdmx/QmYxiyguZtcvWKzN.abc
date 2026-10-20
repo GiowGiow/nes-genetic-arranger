@@ -1,0 +1,29 @@
+%abc-2.1
+% Chanson triste, by Henri Duparc. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henri Duparc (died 1933,
+% Wikidata Q364983).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/52/QmYxiyguZtcvWKzNii3HWADY6Fyvq3dkTfXJcxZhTFdc9F.mid (sha256
+% 63d9a113f015cacd81de0f1bb428122989dd785e26bfcc17deafef85fb28df99): melody track 0, bars 0-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chanson triste
+M:12/8
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z24 | "A"E4 B,2 B,6 B,4 B,2 _D4 =D2 | "A"E6 E4 z2 "D"A6 ^F6 | "A"E4 E2 E12 E4 E2 |
+"E"E12- "A"E2 z10 | "A"z6 E4 E2 "D"^F10 ^F2 | "Db7"_A6 _A4 _A2 "E7"B6 B4 z2 | "A"_d6 A4 E2 B,10 z2 |
+"A"B,6 _D4 =D2 E10 z2 | "A"z12 "D"z12 | "Bm"z12 "Db"z12 | "Db"_A4 _D2 _D6 "Ab7"=A4 =A2 _A4 ^F2 |
+"E7"E6 E4 z2 "Bm"d4 A2 ^F4 z2 | "E"E4 E2 E4 E2 "E7"E4 B,2 _D4 =D2 | "F#m7"E4 E2 E4 E2 "Dm7"F6 F4 z2 | "C"c6 c6 "G"G4 G2 G6 |
+"G"G6 E4 C2 G,12 | "C"G,2 z10 "D"z12 | "C"z12 "E"z12 | "E"B4 E2 E4 E2 "Dm"F6 G4 A2 |
+"G"G6 G4 z2 "Cm7"_e6 _B4 G2 | "Ab"F6 F2 G2 _A2 "Eb7"G10 z2 | "Fm7"_A6 _B4 _A2 "Cm"G6 F2 _E2 D2 | "Abm"F6 F4 z2 "G7"z12 |
+"E7"z12 "Dm"F6 F4 F2 | "E7"E6 E4 z2 "F#m7"z4 E2 ^F4 ^F2 | "E"B,6 B,2 _D2 =D2 "A"E10 z2 | "E"^F6 E4 E2 "A"E12 |
+"E"^F6 E4 E2 "A"E6 E4 z2 | "A"A4 A2 A4 _D2 "Db"_D6 F4 F2 | "Bm"E6 d12 A4 ^F2 | "E"E4 E2 ^F4 ^F2 "E7"B6 B4 z2 |
+"A"_d4 A2 E4 E2 z2 B,4 _D4 =D2 | "A"E10 z2 "E"z12 | "A"z12 "E"z12 | "A"z24 |
+"A"z24 |

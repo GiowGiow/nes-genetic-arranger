@@ -1,0 +1,35 @@
+%abc-2.1
+% MANDINGA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/mandinga.html (file
+% https://www.beakauffmann.com/mpb_m/som/mandinga.mid, sha256
+% 38a4215188081d093eebbccd368a675dec790bd8b886a44987629cadcf406185), from Beatriz Kauffmann's Web
+% Site. Melody track 3, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MANDINGA
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"D"z a2 z5 | "A"z a2 a z2 a2 | "D"z a2 z5 | "A"z a2 a z2 a2 |
+"D"z ^f2 a d' ^f'2 e' | "Em"d' _d'2 b a b2 _d' | "D"d' a2 ^f d e2 ^f | "A7"a6 z2 |
+"D"z ^f2 a d' ^f'2 e' | "A7"d' _d'2 b a b2 _d' | "D"d' a2 ^f d e2 ^f | "A7"a6 z2 |
+"D"z d'2 e' d' a2 c' | "Em7"b2 d'5 z | "F#m7"z a2 b a e2 g | "Bm7"^f2 a5 z |
+"D"z d'2 e' d' a2 c' | "Em7"b2 d'5 z | "A"z a2 b a e2 ^f | "D"d2 A2 z4 |
+"A"z _d'2 _d' z2 a2 | "D"z2 a2 z4 | "A"z a2 a z2 a2 | "D"d3 z d'3 z |
+"Gm7"z d'2 d'2 f'2 d' | "Am"c'2 z f' c'3 z | "Gm"z _b2 _b2 d'2 _b | "F"a2 z c' f3 z |
+"C7"z e2 f2 g2 _a | "F"a2 z c' f'2 z d' | "Am7"c'2 z c c2 z c | "Gm7"z d'2 d'2 a'2 d' |
+"Dm7"c'2 z f' c'3 z | "Gm"z _b2 _b2 d'2 _b | "D"a2 z d' _e3 z | "Gm"z g2 a _b c'2 d' |
+"Dm7"e' f'2 d' c'3 z | "C7"z e'2 d' c' g2 a | "Dm7"f3 z f'3 z | "D"z a2 z5 |
+"A"z a2 a z2 a2 | "D"z a2 z5 | "A"z a2 a z2 a2 | "D"z ^f2 a d' ^f'2 e' |
+"Em"d' _d'2 b a b2 _d' | "D"d' a2 ^f d e2 ^f | "A7"a6 z2 | "D"z ^f2 a d' ^f'2 e' |
+"A7"d' _d'2 b a b2 _d' | "D"d' a2 ^f d e2 ^f | "A7"a6 z2 | "D"z d'2 e' d' a2 c' |
+"Em7"b2 d'5 z | "F#m7"z a2 b a e2 g | "Bm7"^f2 a5 z | "D"z d'2 e' d' a2 c' |
+"Em7"b2 d'5 z | "A"z a2 b a e2 ^f | "D"d2 A2 z4 | "A"z _d'2 _d' z2 a2 |
+"D"z2 a2 z4 | "A"z a2 a z2 a2 | "D"d3 z d'3 z | "Gm7"z d'2 d'2 f'2 d' |

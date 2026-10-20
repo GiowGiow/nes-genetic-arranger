@@ -1,0 +1,35 @@
+%abc-2.1
+% O PÉ DE ANJO, by Sinhô, as performed by Sinhô.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Sinhô (died 1930, Wikidata Q7129006).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-pe-de-anjo.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-pe-de-anjo.mid, sha256
+% b95b9cf59904b23ce5ba7dcc901a20a7c030f7980916771eb29197f005662f38), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O PÉ DE ANJO
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Em"c8 | "F7"B4 A4 | "Dm"A G2 D2 E2 F | "Dm"F3 z5 |
+"Em7"B8 | "G"A4 G4 | "C"A G2 C2 D2 E | "C7"E3 z5 |
+"F#m7"A6 A2 | "F#m7"G4 E2 G2 | "Dm"G2 F2 D E2 F | "Dm"F3 z G2 A2 |
+"F"E6 E2 | "G"D6 D2 | "C"C E2 A2 G2 c | "C"c2 z6 |
+"C"c8 | "F7"B4 A4 | "Dm"A G2 D2 E2 F | "Dm7"F3 z5 |
+"Em7"B8 | "G"A4 G4 | "C"A G2 C2 D2 E | "C7"E3 z5 |
+"A7"A6 A2 | "F"G4 E2 G2 | "Dm"G2 F2 D E2 F | "Dm"F3 z G2 A2 |
+"Dm"E6 E2 | "G"D6 D2 | "C"C8 | "C"z8 |
+"C"G2 G4 G2 | "Cm"G2 F4 E2 | "Dm"F4 D4 | "Dm"D4 z4 |
+"Dm"A2 A4 A2 | "G"A2 G4 ^F2 | "C"G8 | "C"G8 |
+"Am7"G2 G4 G2 | "Dm7"G2 A4 _B2 | "G"B8 | "C"D4 z4 |
+"D7"d2 c4 B2 | "D"A2 d4 B2 | "Dm"A8 | "Em"G6 z2 |
+"Em"c8 | "F7"B4 A4 | "Dm"A G2 D2 E2 F | "Dm"F3 z5 |
+"Em7"B8 | "G"A4 G4 | "C"A G2 C2 D2 E | "C7"E3 z5 |
+"F#m7"A6 A2 | "F#m7"G4 E2 G2 | "Dm"G2 F2 D E2 F | "Dm"F3 z G2 A2 |
+"F"E6 E2 | "G"D6 D2 | "C"C E2 A2 G2 c | "C"c7 z |

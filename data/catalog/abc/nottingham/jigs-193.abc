@@ -1,0 +1,24 @@
+%abc-2.1
+% Maple Leaf Jig, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc,
+% tune X: 193 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Maple Leaf Jig
+M:6/8
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z10 D2 | "G"B4 G2 G4 E2 | "G"D4 B,2 B,4 G2 | "D"F4 A2 A2 G2 F2 |
+"G"G4 B2 B2 G2 A2 | "C"B4 G2 G4 E2 | "G"D4 B,2 B,4 G2 | "D"F4 A2 A2 G2 F2 |
+"G"G10 D2 | "G"B4 G2 G4 E2 | "G"D4 B,2 B,4 G2 | "D"F4 A2 A2 G2 F2 |
+"G"G4 B2 B2 G2 A2 | "C"B4 G2 G4 E2 | "G"D4 B,2 B,4 G2 | "D"F4 A2 A2 G2 F2 |
+"G"G10 F G | "D"A4 A2 A2 ^G2 A2 | "D"B2 A2 ^G2 A4 d2 | "A"d4 ^c2 ^c4 e2 |
+"D"e4 d2 d2 F2 G2 | "D"A4 A2 A2 ^G2 A2 | "D"B2 A2 ^G2 A4 d2 | "A"d4 ^c2 ^c2 B2 ^c2 |
+"D"d10 F G | "D"A4 A2 A2 ^G2 A2 | "D"B2 A2 ^G2 A4 d2 | "A"d4 ^c2 ^c4 e2 |
+"D"e4 d2 d2 F2 G2 | "D"A4 A2 A2 ^G2 A2 | "D"B2 A2 ^G2 A4 d2 | "A"d4 ^c2 ^c2 B2 ^c2 |
+"D"d6 c4 z2 |

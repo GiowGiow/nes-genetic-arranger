@@ -1,0 +1,35 @@
+%abc-2.1
+% TRÊS ESTRELINHAS, by Anacleto de Medeiros, as performed by Anacleto de Medeiros.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Anacleto de Medeiros (died 1907, Wikidata Q483486).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/tres-estrelinhas.html (file
+% https://www.beakauffmann.com/mpb_t/som/tres-estrelinhas.mid, sha256
+% 504863eb56b7f57956c01513adba57030d49504c8eba8e9a59267ac2b0749303), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TRÊS ESTRELINHAS
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"A7"z7 A, | "A7"_B, A, _D E G _B A E | "Dm"G F E G F2 z F | "F7"G F A c _e g f c |
+"Gm7"_e d _d _e =d2 z f | "A7"f e G _B e2 z f | "Dm"e d F A d2 z F | "A7"F E _B A E2 z F |
+"Dm"E D A F A _B A c | "A7"B A A e g _b a g | "D7"g ^f =f ^f a3 z | "Gm"z G ^F G _B A _A =A |
+"Gm"c _B A c _B3 z | "Em7"z ^F G A _B d =f e | "Dm"A _B A _A =A3 z | "F#m7"z e _d A _B A E F |
+"Dm"D E F A D _B, C _B, | "A7"_B, A, _D E G _B A E | "Dm"G F E G F2 z F | "F7"G F A c _e g f c |
+"Gm7"_e d _d _e =d2 z f | "A7"f e G _B e2 z f | "Dm"e d F A d2 z F | "A7"F E _B A E2 z F |
+"Dm"E D A F A _B A c | "A7"B A A e g _b a g | "D7"g ^f =f ^f a3 z | "Gm"z G ^F G _B A _A =A |
+"Gm"c _B A c _B3 z | "Em7"z ^F G A _B d =f e | "Dm"A _B A _A =A3 z | "F#m7"z e _d A _B A E F |
+"Dm"D E F A d3 z | "D7"z _e d _d =d A _B c | "Gm"c _B A c _B3 z | "Dbm7"z f e _e =e B c d |
+"Am"d c B d c3 z | "Gm7"z e d _d =d e f g | "Dm7"a g f e d c _B ^F | "Gm"A G D F E2 c2 |
+"D7"c6 z2 | "D7"z _e d _d =d A _B c | "Gm"c _B A c _B3 z | "Dbm7"z f e _e =e B c d |
+"Am"d c B d c3 z | "Gm7"z e d _d =d e f g | "Dm7"a g f e d c _B ^F | "Gm"A G D F E2 c2 |
+"F"F6 z2 | "D7"z _e d _d =d A _B c | "Gm"c _B A c _B3 z | "Dbm7"z f e _e =e B c d |
+"Am"d c B d c3 z | "Gm7"z e d _d =d e f g | "Dm7"a g f e d c _B ^F | "Gm"A G D F E2 c2 |
+"F"F3 z D _B, C _B, | "A7"_B, A, _D E G _B A E | "Dm"G F E G F2 z F | "F7"G F A c _e g f c |
+"Gm7"_e d _d _e =d2 z f | "A7"f e G _B e2 z f | "Dm"e d F A d2 z F | "A7"F E _B A E2 z F |

@@ -1,0 +1,35 @@
+%abc-2.1
+% TRISTEZAS DE UM VIOLÃO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/tristezas-de-um-violao.html (file
+% https://www.beakauffmann.com/mpb_t/som/tristezas-de-um-violao.mid, sha256
+% 08b96bcda5cbb9cbbd3f92cdd94754d30cf262e2e883ac9aea9de18e5a2c83aa), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TRISTEZAS DE UM VIOLÃO
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"E"z3 e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A F | "G7"E G E _E2 A2 B |
+"C"A G2 e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A c | "B7"e _d A _D _A B G B |
+"E7"^F =F E e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A F | "G7"E G E _E2 A2 B |
+"C7"A G2 A, B, C _D =D | "F7"_E C D _E F G A B | "Cm7"c _A =A G2 ^F2 =F | "D7"F E2 _E2 F =E B |
+"E"A2 z e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A F | "G7"E G E _E2 A2 B |
+"C"A G2 e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A c | "B7"e _d A _D _A B G B |
+"E7"^F =F E e _e =e B c | "A7"d3 c B A _E G | "D7"G3 F E F A F | "G7"E G E _E2 A2 B |
+"C7"A G2 A, B, C _D =D | "F7"_E C D _E F G A B | "Cm7"c _A =A G2 ^F2 =F | "D7"F E2 _E2 F =E B |
+"B7"A2 z6 | "Ebm"z c3 z B3 | "G7"A3 G2 E F, B, | "Em"D3 C z B2 A |
+"C"e e2 e d z3 | "Fm"z e2 d z c2 B | "Eb"z B2 A z B2 A | "C"z _A3 z _A ^F2 |
+"F#7"_A, E z6 | "E"z F2 E z c _A B | "A7"B A z6 | "Ab7"z _B2 _A z F C _E |
+"Fm"_E3 _D2 C _D =E | "F#m"E D _D =D ^F G A B | "Ab"c4 z _B2 _A | "G7"_B _A3 z E2 G |
+"C"C2 _E, =E, B, A, B,, z | "Ebm"z c3 z B3 | "G7"A3 G2 E F, B, | "Em"D3 C z B2 A |
+"C"e e2 e d z3 | "Fm"z e2 d z c2 B | "Eb"z B2 A z B2 A | "C"z _A3 z _A ^F2 |
+"F#7"_A, E z6 | "E"z F2 E z c _A B | "A7"B A z6 | "Ab7"z _B2 _A z F C _E |
+"Fm"_E3 _D2 C _D =E | "F#m"E D _D =D ^F G A B | "Ab"c4 z _B2 _A | "G7"_B _A3 z E2 G |

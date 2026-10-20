@@ -1,0 +1,31 @@
+%abc-2.1
+% SANTA MARIA, by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/santa-maria.html (file
+% https://www.beakauffmann.com/mpb_s/som/santa-maria.mid, sha256
+% cdd91f4dd42b0ea17a8e64b8143580c65c65baf1387d1a129a98855dca23df25), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-48 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SANTA MARIA
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"D"^f4 B _d =d2 | "D"^f4 B _d =d2 | "D"^f z b z ^f z b z | "A"^f3 z3 ^f g |
+"F#7"e2 ^F3 z e ^f | "Bm"d2 ^F3 z d e | "F#7"_d2 g a ^f z _B z | "Bm"B2 z2 b2 z2 |
+"D"D z ^F z A z B z | "A7"A6 z2 | "D"d z _d z =d z B z | "A7"A3 z3 E2 |
+"D"A3 z3 ^F2 | "A7"A3 z3 E2 | "Bm7"^F2 d3 z _d2 | "A"d2 _d2 B2 _B2 |
+"D"B2 ^f2 a2 b2 | "A7"a6 z2 | "D"^f'2 e'2 d'2 a2 | "Gm"_b6 z2 |
+"Db7"f'2 e'2 d'2 b2 | "D"a2 b2 _d'2 =d'2 | "A7"e'2 ^f'2 g'2 a'2 | "D"d'2 z2 d'2 z2 |
+"D"^f4 B _d =d2 | "D"^f4 B _d =d2 | "D"^f z b z ^f z b z | "A"^f3 z3 ^f g |
+"F#7"e2 ^F3 z e ^f | "Bm"d2 ^F3 z d e | "F#7"_d2 g a ^f z _B z | "Bm"B2 z2 b2 z2 |
+"D"D z ^F z A z B z | "A7"A6 z2 | "D"d z _d z =d z B z | "A7"A3 z3 E2 |
+"D"A3 z3 ^F2 | "A7"A3 z3 E2 | "Bm7"^F2 d3 z _d2 | "A"d2 _d2 B2 _B2 |
+"D"B2 ^f2 a2 b2 | "A7"a6 z2 | "D"^f'2 e'2 d'2 a2 | "Gm"_b6 z2 |
+"Db7"f'2 e'2 d'2 b2 | "D"a2 b2 _d'2 =d'2 | "A7"e'2 ^f'2 g'2 a'2 | "D"d'2 z2 d'2 z2 |

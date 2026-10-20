@@ -1,0 +1,24 @@
+%abc-2.1
+% john hardy, by Trad.. Score published on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/37/QmSPcbe3byBCy6kFjguhX6hEonU7fHpTMoPrXVTgCpdEp2.mid (sha256
+% ffb33865fb52f271a50676b9e8e8511c5151f4d4d23b30f21da70f0b6867c2fe): melody track 0, bars 1-22
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:john hardy
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z4 E2 F2 ^F2 G2 A2 B2 | "C"e12 A4 | "C"_a4 =a4 _a8 | "C"d12 _B2 =B2 |
+"C"G12 E2 G2 | "C"e2 e2 e4 e4 A4 | "C"a8 g8 | "C"g14 g2 |
+"C"g12 g2 ^f2 | "C"a2 g2 e2 d2 c2 A2 _B =B2 _B | "C"A2 G6 A2 _B2 =B2 _B2 | "C"_B =B2 _B _B2 G2 E2 ^F2 G2 E2 |
+"C"F2 E2 D2 C2 B,2 A,2 G,4 | "C"_B8 _A8 | "C"A,2 B,2 C4 D2 E2 ^F2 G2 | "C"A2 B2 c2 e2 c8 |
+"C"c2 e2 c2 A2 c2 B2 A2 G2 | "C"A2 G2 ^F2 E2 D2 E2 ^F2 G2 | "C"f2 f2 d2 c2 B2 G2 E2 D2 | "C"G10 A6 |
+"C"A4 A,4 ^F8 |

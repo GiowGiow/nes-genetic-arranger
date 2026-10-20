@@ -1,0 +1,35 @@
+%abc-2.1
+% Dolly Suite Op.56, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/34/QmRNeyqi6H3oAWnke6kN4KNNRzxdVip48GiVz5Q565zKaD.mid (sha256
+% de529c33734f044898d3e21a1e3c94aa06e4d09c4446dc2a824042bbba797f0c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dolly Suite Op.56
+M:3/4
+L:1/16
+Q:1/4=234.000234
+% Exact tempo 234.00023400023403 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z12 | "Bb"z12 | "Gm7"z12 | "Am"z12 |
+"F"A2 z2 F2 z2 A2 z2 | "Dm"d2 z2 d8 | "Gm7"f2 e2 d2 z2 e2 z2 | "Am"c2 z2 a8 |
+"G7"c'2 b2 a2 z2 b2 z2 | "C7"e'2 z2 _b2 z2 e'2 z2 | "Am7"a2 z2 e'2 z2 b2 z2 | "C"e'2 z2 c'8 |
+"Bb"d'2 _d'2 =d'2 z2 f4 | "G7"f4 g4 _a4 | "A"a8 c'2 _b2 | "D7"a8 g2 a2 |
+"Gm"_b2 z2 _B2 z2 _b2 z2 | "Eb7"g2 z2 _b2 z2 f2 z2 | "C7"_b2 z2 _e2 z2 d2 c2 | "C7"B2 c2 d2 e2 f2 g2 |
+"F"a2 z2 f2 z2 a2 z2 | "Bm7"d'2 z2 d'8 | "Bb"f'2 e'2 d'2 z2 e'2 z2 | "Am7"c''2 z2 _e'2 z2 c''2 z2 |
+"D7"c'2 z2 c''2 z2 a'2 z2 | "Gm7"_b'2 a'2 g'2 z2 _b'2 z2 | "A7"g'2 z2 _b'2 a'2 g'2 z2 | "Dm7"a'2 z2 f'2 z2 d''2 z2 |
+"Bm7"f'2 z2 f''2 z2 f'2 z2 | "C7"d''2 z2 e'2 z2 d''2 e'2 | "F"f'4 z8 | "C"z4 c2 e2 g2 z2 |
+"F"a2 z4 a2 c'2 z2 | "G7"b2 z4 b2 d'2 z2 | "Dm7"c'2 z4 c'2 a4 | "G7"z4 f2 a2 d'2 z2 |
+"Dm7"c'2 z4 c'2 a2 z2 | "Am7"g2 z4 g2 e2 z2 | "G"d2 z4 d2 g2 z2 | "G"z12 |
+"Ab"c4 z2 c2 c'4 | "Bb7"c'4 _b4 _a4 | "Eb"g2 z4 g2 g'2 z2 | "Eb7"z4 _b'4 _d'4 |
+"Em7"d'6 c'2 b2 z2 | "D7"g'6 b2 a2 z2 | "G"g2 z10 | "C"z4 c2 e2 g2 z2 |
+"F"a2 z4 a2 c'2 z2 | "G7"b2 z4 b2 d'2 z2 | "Dm7"c'2 z4 c'2 a4 | "G7"z4 f2 a2 d'2 z2 |
+"Dm7"c'2 z4 c'2 a2 z2 | "Am7"g2 z4 g2 e2 z2 | "G"d2 z4 d2 g2 z2 | "G"z12 |
+"Am"c2 z4 c2 c'4 | "B7"c'4 b4 a4 | "Em"g2 z4 g2 e'2 z2 | "C7"z4 g'4 _b4 |
+"G"b6 a2 g2 z2 | "Bm7"e'6 g2 ^f2 z2 | "Em"e2 z10 | "C7"z2 E2 G2 c2 e2 z2 |

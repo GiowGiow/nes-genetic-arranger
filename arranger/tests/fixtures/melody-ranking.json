@@ -1,0 +1,775 @@
+{
+ "about": "The app's melody-track ranking (core/midi-song.js describeTracks + rankMelodyTracks) of the project's MIDI songs, written by node arranger/tests/fixtures/make-melody-ranking.mjs. tests/catalog/test_analysis.py checks the Python port against it. No notes are stored.",
+ "songs": [
+  {
+   "path": "arranger/tests/fixtures/midi-songs/synthetic-changes.mid",
+   "sha256": "45ab21b46e3ebb976bb2cea161dc772ba6f39b3fb0890284e48f4bf7e815e69e",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "flute",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 20,
+     "mean_pitch": 75.45,
+     "polyphony": 0
+    },
+    {
+     "index": 1,
+     "name": "pad",
+     "program": 89,
+     "is_drum": false,
+     "note_count": 32,
+     "mean_pitch": 67.21875,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "bass",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 10,
+     "mean_pitch": 38.9,
+     "polyphony": 0
+    },
+    {
+     "index": 3,
+     "name": "drums",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 20,
+     "mean_pitch": 36,
+     "polyphony": 0
+    }
+   ],
+   "ranking": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "path": "arranger/tests/fixtures/midi-songs/synthetic-count-in.mid",
+   "sha256": "bf4c88d2cb5d5b09ed658d0d7553219c5210c005fdbb155875359b53f735d648",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "flute",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 16,
+     "mean_pitch": 75.625,
+     "polyphony": 0
+    },
+    {
+     "index": 1,
+     "name": "pad",
+     "program": 89,
+     "is_drum": false,
+     "note_count": 26,
+     "mean_pitch": 67.46153846153847,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "bass",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 8,
+     "mean_pitch": 39,
+     "polyphony": 0
+    },
+    {
+     "index": 3,
+     "name": "drums",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 22,
+     "mean_pitch": 36,
+     "polyphony": 0
+    }
+   ],
+   "ranking": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "path": "arranger/tests/fixtures/midi-songs/synthetic-twelve-eight.mid",
+   "sha256": "33223a8b25125c3507aa069929212f126a43d27b746b218986ad00988df0f78e",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "flute",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 16,
+     "mean_pitch": 75.625,
+     "polyphony": 0
+    },
+    {
+     "index": 1,
+     "name": "pad",
+     "program": 89,
+     "is_drum": false,
+     "note_count": 26,
+     "mean_pitch": 67.46153846153847,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "bass",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 8,
+     "mean_pitch": 39,
+     "polyphony": 0
+    },
+    {
+     "index": 3,
+     "name": "drums",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 16,
+     "mean_pitch": 36,
+     "polyphony": 0
+    }
+   ],
+   "ranking": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "path": "arranger/tests/fixtures/midi-songs/synthetic-waltz.mid",
+   "sha256": "f08b4cb7a034f29e3c73f80ed1a1d30c5988b1d396e996dc80a8b1f6305f7aa3",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "flute",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 24,
+     "mean_pitch": 75.625,
+     "polyphony": 0
+    },
+    {
+     "index": 1,
+     "name": "pad",
+     "program": 89,
+     "is_drum": false,
+     "note_count": 26,
+     "mean_pitch": 67.46153846153847,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "bass",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 8,
+     "mean_pitch": 39,
+     "polyphony": 0
+    },
+    {
+     "index": 3,
+     "name": "drums",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 24,
+     "mean_pitch": 36,
+     "polyphony": 0
+    }
+   ],
+   "ranking": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "path": "data/raw/chiclete/voa_voa.mid",
+   "sha256": "d7e4c13991ba7c1c2e5298568439cdaad8de1d521faea264b52cd17107013522",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Chiclete Com Banana",
+     "program": 1,
+     "is_drum": false,
+     "note_count": 403,
+     "mean_pitch": 60.52357320099256,
+     "polyphony": 1
+    },
+    {
+     "index": 1,
+     "name": "Voa Voa",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 789,
+     "mean_pitch": 36.039290240811155,
+     "polyphony": 0
+    },
+    {
+     "index": 2,
+     "name": "Editado Por: Fernando",
+     "program": 50,
+     "is_drum": false,
+     "note_count": 403,
+     "mean_pitch": 60.52357320099256,
+     "polyphony": 1
+    },
+    {
+     "index": 3,
+     "name": "Sjoiais",
+     "program": 66,
+     "is_drum": false,
+     "note_count": 444,
+     "mean_pitch": 59.0990990990991,
+     "polyphony": 0.036036036036036036
+    },
+    {
+     "index": 4,
+     "name": "xxx",
+     "program": 27,
+     "is_drum": false,
+     "note_count": 2334,
+     "mean_pitch": 62.53213367609254,
+     "polyphony": 1
+    },
+    {
+     "index": 5,
+     "name": "xxx",
+     "program": 88,
+     "is_drum": false,
+     "note_count": 202,
+     "mean_pitch": 73.29702970297029,
+     "polyphony": 0
+    },
+    {
+     "index": 6,
+     "name": "xxx",
+     "program": 10,
+     "is_drum": false,
+     "note_count": 168,
+     "mean_pitch": 85.47619047619048,
+     "polyphony": 0
+    },
+    {
+     "index": 7,
+     "name": "2014",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 5776,
+     "mean_pitch": 53.637984764542935,
+     "polyphony": 0.9416551246537396
+    }
+   ],
+   "ranking": [
+    3,
+    5,
+    1,
+    6,
+    0,
+    2,
+    4
+   ]
+  },
+  {
+   "path": "data/raw/mpb/mulher_de_fases.mid",
+   "sha256": "fc5611b11bc4a11138ddd5b058b0897e3843cc3c57ccb8ccb524d8a271804916",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Mulher de Fases",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 2145,
+     "mean_pitch": 59.13566433566434,
+     "polyphony": 1
+    },
+    {
+     "index": 1,
+     "name": "Mulher de Fases",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 2222,
+     "mean_pitch": 44.21287128712871,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "Mulher de Fases",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 516,
+     "mean_pitch": 35.01162790697674,
+     "polyphony": 0.6550387596899225
+    },
+    {
+     "index": 3,
+     "name": "Mulher de Fases",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 1007,
+     "mean_pitch": 59.09235352532274,
+     "polyphony": 1
+    },
+    {
+     "index": 4,
+     "name": "Mulher de Fases",
+     "program": 4,
+     "is_drum": false,
+     "note_count": 275,
+     "mean_pitch": 59.22909090909091,
+     "polyphony": 1
+    },
+    {
+     "index": 5,
+     "name": "Mulher de Fases",
+     "program": 49,
+     "is_drum": false,
+     "note_count": 169,
+     "mean_pitch": 57.23668639053255,
+     "polyphony": 1
+    },
+    {
+     "index": 6,
+     "name": "Mulher de Fases",
+     "program": 22,
+     "is_drum": false,
+     "note_count": 351,
+     "mean_pitch": 70.1025641025641,
+     "polyphony": 0.4757834757834758
+    },
+    {
+     "index": 7,
+     "name": "Mulher de Fases",
+     "program": 48,
+     "is_drum": false,
+     "note_count": 273,
+     "mean_pitch": 66.68864468864469,
+     "polyphony": 0.15384615384615385
+    },
+    {
+     "index": 8,
+     "name": "Mulher de Fases",
+     "program": 50,
+     "is_drum": false,
+     "note_count": 34,
+     "mean_pitch": 59.529411764705884,
+     "polyphony": 1
+    }
+   ],
+   "ranking": [
+    7,
+    6,
+    2,
+    0,
+    3,
+    4,
+    5,
+    8
+   ]
+  },
+  {
+   "path": "data/raw/mpb/amor_i_love_you.mid",
+   "sha256": "973e33c89cf71fedf89dedc6e1cd14e4d0c371ad9d265d7c2b6e72efa6d571cb",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Amor I Love You",
+     "program": 24,
+     "is_drum": false,
+     "note_count": 1991,
+     "mean_pitch": 57.83726770467102,
+     "polyphony": 1
+    },
+    {
+     "index": 1,
+     "name": "Amor I Love You",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 1987,
+     "mean_pitch": 57.8288877705083,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "Amor I Love You",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 310,
+     "mean_pitch": 62.91612903225806,
+     "polyphony": 0.2161290322580645
+    },
+    {
+     "index": 3,
+     "name": "Amor I Love You",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 242,
+     "mean_pitch": 40.54132231404959,
+     "polyphony": 0
+    },
+    {
+     "index": 4,
+     "name": "Amor I Love You",
+     "program": 110,
+     "is_drum": false,
+     "note_count": 991,
+     "mean_pitch": 54.423814328960646,
+     "polyphony": 0.9949545913218971
+    },
+    {
+     "index": 5,
+     "name": "Amor I Love You",
+     "program": 48,
+     "is_drum": false,
+     "note_count": 79,
+     "mean_pitch": 58.151898734177216,
+     "polyphony": 1
+    },
+    {
+     "index": 6,
+     "name": "Amor I Love You",
+     "program": 52,
+     "is_drum": false,
+     "note_count": 140,
+     "mean_pitch": 65.75714285714285,
+     "polyphony": 1
+    },
+    {
+     "index": 7,
+     "name": "Amor I Love You",
+     "program": 60,
+     "is_drum": false,
+     "note_count": 144,
+     "mean_pitch": 66.27777777777777,
+     "polyphony": 0.4583333333333333
+    },
+    {
+     "index": 8,
+     "name": "Amor I Love You",
+     "program": 56,
+     "is_drum": false,
+     "note_count": 82,
+     "mean_pitch": 63.609756097560975,
+     "polyphony": 1
+    },
+    {
+     "index": 9,
+     "name": "Amor I Love You",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 1074,
+     "mean_pitch": 68.5148975791434,
+     "polyphony": 1
+    },
+    {
+     "index": 10,
+     "name": "Amor I Love You",
+     "program": 80,
+     "is_drum": false,
+     "note_count": 4,
+     "mean_pitch": 95.5,
+     "polyphony": 1
+    },
+    {
+     "index": 11,
+     "name": "Amor I Love You",
+     "program": 69,
+     "is_drum": false,
+     "note_count": 78,
+     "mean_pitch": 68.48717948717949,
+     "polyphony": 0
+    },
+    {
+     "index": 12,
+     "name": "Amor I Love You",
+     "program": 54,
+     "is_drum": false,
+     "note_count": 50,
+     "mean_pitch": 58.88,
+     "polyphony": 1
+    },
+    {
+     "index": 13,
+     "name": "Amor I Love You",
+     "program": 48,
+     "is_drum": false,
+     "note_count": 28,
+     "mean_pitch": 74.42857142857143,
+     "polyphony": 1
+    }
+   ],
+   "ranking": [
+    2,
+    7,
+    11,
+    3,
+    4,
+    0,
+    1,
+    5,
+    6,
+    8,
+    10,
+    12,
+    13
+   ]
+  },
+  {
+   "path": "data/raw/mpb/por_voce_bk.mid",
+   "sha256": "8f3b706ffd32561caba1e3eff7ad0e1d1b66b702e9adea9a3dc2fec1e7dd8701",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Por voce - Barao vermelho ",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 1723,
+     "mean_pitch": 56.20429483459083,
+     "polyphony": 0.77539175856065
+    },
+    {
+     "index": 1,
+     "name": "Por voce - Barao vermelho ",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 1413,
+     "mean_pitch": 56.23991507430998,
+     "polyphony": 1
+    },
+    {
+     "index": 2,
+     "name": "Por voce - Barao vermelho ",
+     "program": 0,
+     "is_drum": false,
+     "note_count": 441,
+     "mean_pitch": 58.868480725623584,
+     "polyphony": 0.9863945578231292
+    },
+    {
+     "index": 3,
+     "name": "Por voce - Barao vermelho ",
+     "program": 27,
+     "is_drum": false,
+     "note_count": 428,
+     "mean_pitch": 57.93457943925234,
+     "polyphony": 0.9929906542056075
+    },
+    {
+     "index": 4,
+     "name": "Por voce - Barao vermelho ",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 293,
+     "mean_pitch": 65.91126279863481,
+     "polyphony": 0.12286689419795221
+    },
+    {
+     "index": 5,
+     "name": "Por voce - Barao vermelho ",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 1398,
+     "mean_pitch": 46.76251788268956,
+     "polyphony": 0.5772532188841202
+    },
+    {
+     "index": 6,
+     "name": "Por voce - Barao vermelho ",
+     "program": 30,
+     "is_drum": false,
+     "note_count": 98,
+     "mean_pitch": 54.244897959183675,
+     "polyphony": 0.8469387755102041
+    },
+    {
+     "index": 7,
+     "name": "Por voce - Barao vermelho ",
+     "program": 29,
+     "is_drum": false,
+     "note_count": 106,
+     "mean_pitch": 61.575471698113205,
+     "polyphony": 0.8301886792452831
+    },
+    {
+     "index": 8,
+     "name": "Por voce - Barao vermelho ",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 201,
+     "mean_pitch": 31.920398009950247,
+     "polyphony": 0.05970149253731343
+    },
+    {
+     "index": 9,
+     "name": "Por voce - Barao vermelho ",
+     "program": 30,
+     "is_drum": false,
+     "note_count": 41,
+     "mean_pitch": 66.07317073170732,
+     "polyphony": 0.7073170731707317
+    }
+   ],
+   "ranking": [
+    0,
+    4,
+    8,
+    7,
+    9,
+    2,
+    6,
+    3,
+    1
+   ]
+  },
+  {
+   "path": "data/raw/mpb/fico_assim_sem_voce.mid",
+   "sha256": "7202f877491e86a6cfb793d8ba09e5ac3bfa7bbc7094d3a0a43ab82555d356ae",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Adriana Calcanhoto",
+     "program": 24,
+     "is_drum": false,
+     "note_count": 810,
+     "mean_pitch": 56.6641975308642,
+     "polyphony": 0.9753086419753086
+    },
+    {
+     "index": 1,
+     "name": "Adriana Calcanhoto",
+     "program": 73,
+     "is_drum": false,
+     "note_count": 377,
+     "mean_pitch": 73.96816976127322,
+     "polyphony": 0.46419098143236076
+    },
+    {
+     "index": 2,
+     "name": "Adriana Calcanhoto",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 595,
+     "mean_pitch": 47.38151260504202,
+     "polyphony": 0.6655462184873949
+    },
+    {
+     "index": 3,
+     "name": "Adriana Calcanhoto",
+     "program": 33,
+     "is_drum": false,
+     "note_count": 96,
+     "mean_pitch": 37.427083333333336,
+     "polyphony": 0.3645833333333333
+    },
+    {
+     "index": 4,
+     "name": "Adriana Calcanhoto",
+     "program": 80,
+     "is_drum": false,
+     "note_count": 4,
+     "mean_pitch": 91,
+     "polyphony": 0
+    }
+   ],
+   "ranking": [
+    1,
+    0,
+    3,
+    4
+   ]
+  },
+  {
+   "path": "data/raw/mpb/aquarela.mid",
+   "sha256": "bf8fbbc2c6af6c049cff5820445d5d5780dfde41a14d2aabe32d30d745728961",
+   "tracks": [
+    {
+     "index": 0,
+     "name": "Introdução",
+     "program": 88,
+     "is_drum": false,
+     "note_count": 140,
+     "mean_pitch": 81.34285714285714,
+     "polyphony": 1
+    },
+    {
+     "index": 1,
+     "name": "Baixo",
+     "program": 35,
+     "is_drum": false,
+     "note_count": 401,
+     "mean_pitch": 36.51870324189526,
+     "polyphony": 0.6583541147132169
+    },
+    {
+     "index": 2,
+     "name": "Violão Base",
+     "program": 25,
+     "is_drum": false,
+     "note_count": 941,
+     "mean_pitch": 63.07545164718385,
+     "polyphony": 0.9989373007438895
+    },
+    {
+     "index": 3,
+     "name": "Fretless 2",
+     "program": 71,
+     "is_drum": false,
+     "note_count": 518,
+     "mean_pitch": 66.7876447876448,
+     "polyphony": 0.003861003861003861
+    },
+    {
+     "index": 4,
+     "name": "Clarinete",
+     "program": 71,
+     "is_drum": false,
+     "note_count": 100,
+     "mean_pitch": 61.36,
+     "polyphony": 0
+    },
+    {
+     "index": 5,
+     "name": "Cordas",
+     "program": 48,
+     "is_drum": false,
+     "note_count": 110,
+     "mean_pitch": 65.72727272727273,
+     "polyphony": 0.14545454545454545
+    },
+    {
+     "index": 6,
+     "name": "Baixo Pizzicatt",
+     "program": 32,
+     "is_drum": false,
+     "note_count": 228,
+     "mean_pitch": 65.15789473684211,
+     "polyphony": 0.5614035087719298
+    },
+    {
+     "index": 7,
+     "name": "Tempo Block",
+     "program": 0,
+     "is_drum": true,
+     "note_count": 5234,
+     "mean_pitch": 59.4220481467329,
+     "polyphony": 0.99980894153611
+    }
+   ],
+   "ranking": [
+    3,
+    4,
+    6,
+    5,
+    1,
+    2,
+    0
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+%abc-2.1
+% BATENDO A LINDA PLUMAGEM, by Gabriel Fernandes da Trindade, as performed by Gabriel Fernandes da
+% Trindade.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Gabriel Fernandes da Trindade (died 1854, Wikidata Q45316331).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/batendo-a-linda-plumagem.html (file
+% https://www.beakauffmann.com/mpb_b/som/batendo-a-linda-plumagem.mid, sha256
+% dc3df3bba46c46ae236ef2c37e8a3d66153260c3e41ff182159cd8e56fb89748), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-34 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BATENDO A LINDA PLUMAGEM
+M:6/8
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"A"E2 ^F2 _A2 =A2 B2 _d2 | "E"d4 d _B =B z5 | "E"E2 _A2 =A2 B2 _d2 =d2 | "A"^f4 d c _d z5 |
+"F"d _d c _d =d _d _d B _B =B _d =B | "F#m"B4 A2 _d2 =d2 e2 | "B"_a ^f e _e _d B _B =B _d =B =A ^F | "E"^F4 E2 z6 |
+"A"E2 ^F2 _A2 =A2 B2 _d2 | "E"d4 d _B =B z5 | "E"E2 _A2 =A2 B2 _d2 =d2 | "A"^f4 d c _d z5 |
+"F"d _d c _d =d _d _d B _B =B _d =B | "F#m"B4 A2 _d2 =d2 e2 | "B"_a ^f e _e _d B _B =B _d =B =A ^F | "E"^F4 E2 z6 |
+"Ab"e4 _e _d c4 _d _e | "Dbm"_e2 _d2 z6 =E2 | "E"E ^F _A =A B _d e3 =d _d B | "A"A4 _d2 E2 z2 ^F2 |
+"F#"^F _A _B =B _d =d ^f3 e =d _d | "B7"e4 d2 z2 _e2 _e2 | "Dbm7"^f2 e2 _d2 _d2 B2 _d2 | "D"e4 d2 B ^f =f ^f d B |
+"E"B4 A2 E2 ^F2 _A2 | "F#m7"_A2 =A2 z6 _A2 | "F#m"_d2 B2 A2 A2 _A2 =A2 | "Bm"_B4 =B2 z A _A =B =A ^F |
+"A"^F4 E2 E2 ^F2 _A2 | "F#m7"_A4 =A2 z4 =A2 | "F#m"_d2 B2 A2 ^f e =d _d B A | "Bm"_B4 =B2 =B4 _a e |
+"E"d z3 A2 _A2 _d2 B2 | "A"B2 A2 z8 |

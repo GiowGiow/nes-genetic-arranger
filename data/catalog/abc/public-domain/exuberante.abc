@@ -1,0 +1,36 @@
+%abc-2.1
+% EXUBERANTE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/exuberante.html (file
+% https://www.beakauffmann.com/mpb_e/som/exuberante.mid, sha256
+% 66c885fe16bbb5d20d836d45b038b857119e5e366956e0deba94578812c52785), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:EXUBERANTE
+M:2/4
+L:1/16
+Q:1/4=113.999954
+% Exact tempo 113.99995440001827 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 | "C"z8 | "Dm"z8 | "C7"z8 |
+"F"A3 z G3 z | "Dm7"F3 z E3 z | "Bb"D8 | "D7"D6 z2 |
+"Gm"_B3 z A3 z | "Gm7"G3 z F3 z | "C7"E8 | "C7"E6 z2 |
+"Ab7"z4 _e3 z | "D7"d3 z c3 z | "Gm"c3 z _B3 z | "D"z8 |
+"Bb7"z4 f3 z | "Em7"e3 z d3 z | "Am"d3 z c3 z | "Dbm7"z8 |
+"Gm"z2 _B3 z d2 | "Gm7"A3 z G3 z | "Dm7"z2 A3 z c2 | "F"G3 z F3 z |
+"C7"z2 E2 G2 _B2 | "C"d3 z c3 z | "B7"z2 _E2 ^F2 A2 | "Cm"c2 _e2 d2 c2 |
+"Gm"z2 _B3 z d2 | "Gm"A3 z G3 z | "Dm7"z2 A3 z c2 | "Dm7"G3 z F3 z |
+"C7"z2 E2 G2 _B2 | "C"_d3 z c3 z | "F"F3 z F3 z | "F"F3 z5 |
+"Bb"c3 z F3 z | "G7"_e3 z d3 z | "C7"d2 c2 B2 c2 | "C7"A3 z G3 z |
+"F7"G2 F2 E2 F2 | "F7"d3 z c3 z | "Gm7"c2 _B2 A2 _B2 | "F"G3 z F3 z |
+"D7"_e5 z d2 | "G7"_d2 =d2 ^F2 G2 | "D7"d5 z c2 | "C7"B2 c2 ^F2 G2 |
+"F7"_B5 z A2 | "F7"_A2 =A2 d2 c2 | "Gm7"_B3 z5 | "Bb"z8 |
+"C"z8 | "C"z8 | "Dm"z8 | "C7"z8 |
+"F"A3 z G3 z | "Dm7"F3 z E3 z | "Bb"D8 | "D7"D6 z2 |
+"Gm"_B3 z A3 z | "Gm7"G3 z F3 z | "C7"E8 | "C7"E6 z2 |

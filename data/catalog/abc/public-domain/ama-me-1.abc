@@ -1,0 +1,35 @@
+%abc-2.1
+% AMA-ME (Aime-Moi), by Alberto Nepomuceno e Émilie Arnal, as performed by Alberto Nepomuceno e
+% Émilie Arnal.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980); Émilie Arnal (died
+% 1935, Wikidata Q15407110).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/ama-me-1.html (file
+% https://www.beakauffmann.com/mpb_a/som/ama-me-1.mid, sha256
+% cbf8b22bcf078f75f5c90904b6cbf97784d0cbb5b261e44998dc1271d7bd50ad), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-51 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AMA-ME (Aime-Moi)
+M:2/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab7"_D, E, _A, _A _D, _E, ^F, ^F | "Ab7"_D, E, _A, _A _D, _E, ^F, ^F | "Ab7"_D, E, _A, _A _D, _E, ^F, ^F | "Ab7"_D, E, _A, _A _D, _E, ^F, ^F |
+"Db"_D, E, _A, _A B,, E, _A, _A | "Db7"A,, _E, ^F, ^F _A,, =E, B, B | "Abm"^F,, B,, A, A E,, B,, _A, _A | "Abm7"_E,, ^F,, B,, B, _E,, ^F,, B,, B, |
+"E"_D,, _A,, _D, _D _D, _A, _D _d | "Eb"_A,, _E, _A, ^F _A, _E _A _a | "E"_D, E, _A, _A _D, _E, ^F, ^F | "Ab"_D, E, _A, _A _D, F, _A, _A |
+"Ab"_D, ^F, A, A _D, =F, _A, _A | "A"_D, ^F, A, A _D, ^F, A, A | "F7"B,, A, _E B C, A, C =e | "Eb"B,, A, _E B B,, A, _E B |
+"Ebm"_D, ^F, ^F A _d z3 | "F#m7"z8 | "Eb"C, _A, ^F _A _e z3 | "Eb"_D, E, _A, _A _D, _E, ^F, ^F |
+"Ab7"_D, E, _A, _A _D, _E, ^F, ^F | "Db"_D, E, _A, _A B,, E, _A, _A | "Db7"A,, _E, ^F, ^F _A,, =E, B, B | "Abm"^F,, B,, A, B E,, B,, _A, B |
+"Abm7"_E,, ^F,, B,, B, _E,, ^F,, B,, B, | "E"_D,, _A,, _D, _D _D, _A, _D _d | "Eb"_A,, _E, ^F, _A _A, _E _A _a | "E"_D, E, _A, _A _D, _E, ^F, ^F |
+"Ab"_D, E, _A, _A _D, F, _A, _A | "D"_D, ^F, A, A _D, =F, _A, _A | "A"_D, ^F, A, A _D, ^F, A, A | "D"B,, ^F, B, B B, B d d' |
+"B"_D E _A e _a e _A E | "C"_D, _D E _d e _d E _D | "Db"^F, _D ^F _d a _d _D A, | "F#"D, D ^F d ^f d ^F D |
+"F#"_E, _E ^F _d ^f _d ^F _D | "F#"_E, _A, _E _A _e _A ^F _E | "F#"_D, E, _A, _A _D, _E, ^F, ^F | "F#"_D, E, _A, _A _D, _E, ^F, ^F |
+"Ab"_D, E, _A, _A _D, _E, ^F, ^F | "Ab7"_D, E, _A, _A _D, _E, ^F, ^F | "Ab"_D, E, _A, _A B,, E, _A, _A | "Db"A,, _E, ^F, ^F _A,, =E, _A, _A |
+"Db"_D, _E, A _e a z3 | "F#m7"z8 | "A"z8 | "D"_E, _A, ^F _A _a2 z2 |
+"Ab"_a E _A _a ^f _E ^F ^f | "Ab"_a E _A _a ^f _E ^F ^f | "Ab"_a E _d e _d'2 z2 |

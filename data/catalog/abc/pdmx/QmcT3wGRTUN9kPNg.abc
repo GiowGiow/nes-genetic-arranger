@@ -1,0 +1,35 @@
+%abc-2.1
+% H.M.S. Pinafore, by Sir Arthur Sullivan (1842-1900). Score published on MuseScore (artist:
+% Arthur Sullivan), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sir Arthur Sullivan (died 1900,
+% Wikidata Q212692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/45/QmcT3wGRTUN9kPNgqJiMx2yJG1Hk9KnP8gfAJrp8h7n8DV.mid (sha256
+% afb74fc27b556d4e091953406d3de5be7fcd1727cb85643f60c69f91f17a0017): melody track 17, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:H.M.S. Pinafore
+M:6/8
+L:1/16
+Q:1/4=165.000165
+% Exact tempo 165.000165000165 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F7"z12 | "F7"z12 | "F7"z12 | "Bb"z10 _b2 |
+"Eb"_e'4 _e'2 _e'3 d' c'2 | "Eb"_b4 _b2 _b4 _a2 | "Cm7"g3 f _e2 g3 f _e2 | "Bb"g4 f2 f4 _b2 |
+"Eb"_e'4 _e'2 _e'3 d' c'2 | "Eb"_b4 _b2 _b4 _a2 | "Cm7"g3 f _e2 g4 f2 | "Eb"f4 _e2 _e4 z2 |
+"Cm"z12 | "Fm"z12 | "Dm"z12 | "G7"z12 |
+"Cm"z12 | "Cm"z12 | "F"z12 | "Bb"z12 |
+"Bb"A12 | "Bb"G12 | "Bb"F12 | "Bb"G12 |
+"Bb"A12 | "Bb"G12 | "Bb"F12 | "Bb"D6 z4 _b2 |
+"Eb"_e'4 _e'2 _e'3 d' c'2 | "Eb"_b4 _b2 _b4 _a2 | "Cm7"g3 f _e2 g3 f _e2 | "Bb"g4 f2 f4 _b2 |
+"Eb"_e'4 _e'2 _e'3 d' c'2 | "Eb"_b4 _b2 _b4 _a2 | "Cm7"g3 f _e2 g4 f2 | "Cm7"f4 _e2 _e4 g _b |
+"Eb"_e4 g _b d4 g _b | "Cm7"c4 g _b _B4 _e g | "Bb7"g2 f2 e2 f4 _B f | "Eb"f2 _e2 d2 _e4 g _b |
+"Eb"_e4 g _b d4 g _b | "Cm7"c4 g _b _B4 _e g | "Bb7"g2 f2 e2 f2 z2 _B2 | "Eb"_e2 z10 |
+"Bb7"g2 f2 e2 f4 g2 | "C"_e6 z6 | "Bbm"_e2 _d2 c2 _d4 _a2 | "Cm"_a12 |
+"Fm7"_e12 | "Fm7"_d12 | "Eb7"_B12 | [M:3/4]"Ab"_A4 z8 |
+"Ab"z12 | "Eb7"z12 | "Ab"z12 | "Ab"z12 |
+"Eb7"z12 | "Ab"z12 | "Dbm"z12 | "F7"z12 |
+"Bbm"z12 | "Bb"z12 | "Bb"z12 | "Eb"z8 _e4 |

@@ -1,0 +1,28 @@
+%abc-2.1
+% Swannee, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsr-t.abc,
+% tune X: 65 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% f80a2c0f37a49b9b0c748e922924d59c40d82758abc5b0f7fc9245d7fd563be0).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Swannee
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 D4 E4 | "D"F8 F4 D4 | "A7"E8 E4 C4 | "D"D8 "A7"E8 |
+"D"F16 | "A7"E4 D4 F4 E4 | "D"D8 d8 | "G"B4 d12 |
+"D"A16 | "Bm"F8 D8 | "E7"E4 d4 c4 B4 | "A7"A4 G4 F4 E4 |
+"D"F16 | "A7"E4 D4 F4 E4 | "D"D8 d8 | "G"B4 d12 |
+"D"A8 F4 D4 | "A7"E8 F4 E4 | "D"D16 | "D"D8 D4 E4 |
+"D"F4 F4 F4 F4 | "D"F4 E4 D4 E4 | "D"F4 F4 F4 F4 | "D"F8 G4 F4 |
+"A7"E4 E4 E4 E4 | "A7"E4 F4 G4 A4 | "A7"E4 G4 F4 E4 | "D"D8 "A7"F4 G4 |
+"D"A8 d8 | "D7"A12 F4 | "G"G4 F4 G4 A4 | "G"B8 c4 B4 |
+"A7"A8 c4 B4 | "A7"A8 c4 B4 | "A7"A4 G4 F4 E4 | "D"D8 D4 E4 |
+"D"F4 F4 F4 F4 | "D"F4 E4 D4 E4 | "D"F4 F4 F4 F4 | "D"F8 G4 F4 |
+"A7"E4 E4 E4 E4 | "A7"E4 F4 G4 A4 | "A7"E4 G4 F4 E4 | "D"D8 "A7"F4 G4 |
+"D"A8 d8 | "D7"A12 F4 | "G"G4 F4 G4 A4 | "G"B8 c4 B4 |
+"A7"A8 c4 B4 | "A7"A8 c4 B4 | "A7"A4 G4 F4 E4 | "D"D8 z8 |

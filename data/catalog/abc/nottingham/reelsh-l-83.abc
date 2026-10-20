@@ -1,0 +1,24 @@
+%abc-2.1
+% Lloyd of Binghampton, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 83 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Lloyd of Binghampton
+M:4/4
+L:1/16
+Q:1/4=140
+K:Bb
+P:A
+"Bb"z12 F2 E2 | "Bb"D4 F8 B2 c2 | "Bb"d2 e2 d2 c2 B4 D4 | "Eb"E4 G8 e2 f2 |
+"Eb"g2 f2 e2 d2 c2 d2 c2 B2 | "F"A4 a4 a4 g2 a2 | "Bb"b4 f4 d4 c2 B2 | "F"A2 B2 c2 d2 e2 c2 A2 c2 |
+"Bb"B4 d4 "Gm7"B2 A2 G4 | "Gm"D6 G2 _G2 =G2 A2 =G2 | "Gm"_G2 =G2 B2 =G2 "Gm7"F2 =G2 F4 | "F"C6 F2 =E2 F2 G2 F2 |
+"F"=E2 F2 A2 F2 "Gm7"_E2 F2 G4 | "Gm"D6 G2 _G2 =G2 A2 =G2 | "Gm"_G2 =G2 B2 =G2 "Eb"F2 =G2 e2 =g2 | "Eb"f2 e2 d2 c2 B2 c2 d4 |
+"Bb"B4 F4 F2 E2 D4 | "Bb"F8 B2 c2 d2 e2 | "Bb"d2 c2 B4 "Eb"D4 E4 | "Eb"G8 e2 f2 g2 f2 |
+"Eb"e2 d2 c2 d2 "F7"c2 B2 A4 | "F"a4 a4 "Gm7"g2 a2 b4 | "Bb"f4 d4 "Gm7"c2 B2 A2 B2 | "F"c2 d2 e2 c2 "Gm7"A2 c2 B4 |
+"Bb"d4 B2 A2 "Gm"G4 D4 | "Gm"D2 G2 _G2 =G2 A2 =G2 _G2 =G2 | "Gm"B2 G2 F2 G2 "F"F4 C4 | "F"C2 F2 =E2 F2 G2 F2 =E2 F2 |
+"F"A2 F2 E2 F2 "Gm"G4 D4 | "Gm"D2 G2 _G2 =G2 A2 =G2 _G2 =G2 | "Gm"B2 G2 F2 G2 "Eb"e2 g2 f2 e2 | "Eb"d2 c2 B2 c2 "Bb"d4 B4 |
+"Bb"F4 z12 |

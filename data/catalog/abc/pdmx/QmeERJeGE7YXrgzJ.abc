@@ -1,0 +1,35 @@
+%abc-2.1
+% Tchaikovsky Violin Concerto, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/18/QmeERJeGE7YXrgzJNE15zAVyF6XNNbgC8LojiFbTHXkbJj.mid (sha256
+% abf6874784b1c5717db8384d959b849c367b255a86c01b271d384f754621ec1b): melody track 0, bars 3-67
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tchaikovsky Violin Concerto
+M:3/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D4 D4 D4 | "C"_E _E _E _E _E _E _E _E _E D F _E |
+"C"D8 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D4 D4 D4 | "C"C _B, A,6 _B, A, G,2 |
+"C"^F, _E, D,6 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D4 D4 D4 | "C"_E _E _E _E _E _E _E _E _E D F _E |
+"C"D8 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D4 D4 D4 | "C"F _E F _E F4 G ^F G =E |
+"C"G2 _B,2 D2 _B2 A2 G2 | "C"^F2 A2 D2 G2 =F2 _E2 | "C"D2 F2 _B,2 A,2 _B,2 C2 | "C"_D4 =D2 _B,2 A,2 G,2 |
+"C"_D4 =D2 _B,2 A,2 G,2 | "C"^F,2 G,2 D,2 E,4 ^F,2 | "C"G,4 z8 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"G2 _E2 _B,6 c2 | "C"_B2 G2 _E2 _B,2 D2 _E2 | "C"F2 G2 _B,6 _E2 | "C"F2 G2 _B,2 =B,2 D2 C2 |
+"C"F,6 ^F,2 G,4 | "C"_A,4 _A, _B,2 C D _E2 F | "C"G2 _E2 _B,6 c2 | "C"_B2 G2 E C2 D E F2 G |
+"C"_A4 G2 F2 _E2 D2 | "C"F2 D2 _B,2 _D2 C2 G,2 | "C"_A,2 B,2 _B,2 F,2 G,2 _B,2 | "C"_E,2 =E,2 F,2 ^F,2 G,2 G2 |
+"C"_A4 G2 F2 _E2 D2 | "C"_B2 G2 _E2 _E2 _e4 | "C"_e4 _e2 _E2 _e4 | "C"_e6 _E2 _e2 d2 |
+"C"_d2 A2 =d2 A2 =d2 c2 | "C"B2 G2 c2 _B2 A2 F2 | "C"_B2 _A2 G2 _B2 _E2 =E2 | "C"F2 _E2 D2 C2 B,2 C2 |
+"C"_E2 C,2 D,2 _E,2 F,2 ^F,2 | "C"G, G,2 B, D, G,2 B, _E D2 B, | "C"z _A,2 C, F, _A,2 C F _E2 _B, | "C"z _E2 D C D2 _E F G2 _A |
+"C"_B G2 _E C _B,2 G, _E, _B,2 G, | "C"_A, _B,2 =B, C, D,2 _E, F, G,2 _A, | "C"C B,2 C C D2 _E F G2 _A | "C"c d2 _e _E ^F2 G A A,2 A |
+"C"A _B2 A ^F D2 _B, A, ^F,2 A, | "C"D,2 z6 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D z D z D D z D D D z D |
+"C"_E _E _E _E _E _E _E _E _E D F _E | "C"D8 D,4 | "C"G,6 A,2 _B,2 C2 | "C"D2 D,4 D2 D,2 D2 |

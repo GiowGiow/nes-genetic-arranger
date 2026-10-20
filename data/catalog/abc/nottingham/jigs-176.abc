@@ -1,0 +1,40 @@
+%abc-2.1
+% Liberty Bell, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc,
+% tune X: 176 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Liberty Bell
+M:6/8
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z10 d c | "G"B4 B2 B2 ^A2 B2 | "G"g4 d2 d4 B2 | "Am"c4 c2 c4 d2 |
+"Am"e6 e4 c2 | "D"A4 A2 A2 ^G2 A2 | "D7"f4 e2 e4 c2 | "D7"B4 B2 B4 c2 |
+"D7"d10 c2 | "G"B4 B2 B2 ^A2 B2 | "G"g4 d2 d4 B2 | "A"^c4 a2 a4 a2 |
+"A7"a6 a4 g2 | "D"f4 a2 a2 ^g2 a2 | "A7"e4 a2 a2 ^g2 a2 | "D7"d4 ^c2 d4 =c2 |
+"D7"d6 d4 d c | "G"B4 B2 B2 ^A2 B2 | "G"g4 d2 d4 B2 | "Am"c4 c2 c4 d2 |
+"Am"e6 e4 c2 | "D"A4 A2 A2 ^G2 A2 | "D7"f4 e2 e4 c2 | "D7"B4 B2 B4 c2 |
+"D7"d10 c2 | "G"B4 B2 B2 ^A2 B2 | "G"g4 d2 d4 B2 | "A"^c4 a2 a4 a2 |
+"A7"a6 a4 g2 | "D"f4 a2 a2 ^g2 a2 | "A7"e4 a2 a2 ^g2 a2 | "D7"d4 ^c2 d4 =c2 |
+"D7"d6 d4 c2 | "G"B2 ^A2 B2 e4 d2 | "G"B6 G6 | "D7"E6 A6 |
+"G"G6 G4 G2 | "D7"A2 B2 d2 f4 e2 | "G"d6 g6 | "D"f6 e6 |
+"D7"d6 d4 d2 | "C"e4 e2 e2 ^d2 e2 | "B7"f6 f6 | "Em"g4 g2 a2 g2 a2 |
+"B"b6 b4 b2 | "C"a4 g2 e4 c2 | "G"B6 G6 | "D7"A6 F6 |
+"G"G6 G4 c2 | "G"B2 ^A2 B2 e4 d2 | "G"B6 G6 | "D7"E6 A6 |
+"G"G6 G4 G2 | "D7"A2 B2 d2 f4 e2 | "G"d6 g6 | "D"f6 e6 |
+"D7"d6 d4 d2 | "C"e4 e2 e2 ^d2 e2 | "B7"f6 f6 | "Em"g4 g2 a2 g2 a2 |
+"B"b6 b4 b2 | "C"a4 g2 e4 c2 | "G"B6 G6 | "D7"A6 F6 |
+"G"G6 G4 G2 | "C"E6 =F6 | "C"F6 G6 | "C"e4 e2 e4 ^d2 |
+"C"e6 e4 G2 | "C"E6 =F6 | "C"F6 G6 | "G"=f4 =f2 =f4 e2 |
+"G"=f6 =f4 e2 | "G"d6 ^c6 | "G"d4 G2 F4 G2 | "C"e6 ^d6 |
+"C"e4 G2 F4 G2 | "G"B6 d6 | "D7"c4 d2 A4 c2 | "G"B4 c2 A4 B2 |
+"G7"G4 A2 =F4 G2 | "C"E6 =F6 | "C"F6 G6 | "C"e4 e2 e4 ^d2 |
+"C"e6 e4 G2 | "C"E6 =F6 | "C"F6 G6 | "G"=f4 =f2 =f4 e2 |
+"G"=f6 =f4 e2 | "G"d6 ^c6 | "G"d4 G2 F4 G2 | "C"e6 ^d6 |
+"C"e4 G2 F4 G2 | "F"A6 =f6 | "C"e4 c2 d4 B2 | "C"c12 |
+"C"c8 z4 |

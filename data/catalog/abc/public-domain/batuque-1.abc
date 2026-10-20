@@ -1,0 +1,35 @@
+%abc-2.1
+% BATUQUE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/batuque-1.html (file
+% https://www.beakauffmann.com/mpb_b/som/batuque-1.mid, sha256
+% 2649826c93a728ca0793c91172d7c71aad875e69bbba1427e3e42701fe9932ff), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BATUQUE
+M:2/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"D"_B z =B z e z _A z | "A"B z A z _A z ^F z | "D"^F z E z _B, z =B, z | "A"D z _D z ^F z E z |
+"D"_B z =B z e z _A z | "A"B z A z E z ^F z | "B"_A z B z ^F z B z | "E"E z _A z B z e z |
+"Dbm7"_A D _A D _A D E D | "Abm7"E _D E _D _D A, _D A, | "F#7"D _A, D _A, _A, D, _A, D, | "F#7"A, E, A, E, _D A, _D A, |
+"Dbm7"_A D _A D _A D _A D | "Abm7"^F _D ^F _D C A, C A, | "Ab7"_D4 C4 | "E7"B,8 |
+"A"z E, _D A, =D B, E =D | "A"_D E _D A, ^F, A, _A, B, | "A"A, E, _D A, =D B, E =D | "A"_D E _D E, ^F, A, _A, B, |
+"F#m7"A, _D E A _A F _D B, | "F#"A, _D A, ^F, =F, _A, E, _B, | "F#7"D,2 z B,, D,2 B,,2 | "Bm7"D _D B, A, _A, ^F, E, =D, |
+"A"_D,3 E,5 | "F#m7"E,3 E,5 | "E7"E,3 E,5 | "Dbm7"E,3 E,5 |
+"A"E,3 E, B,2 B,2 | "F#m7"_D3 ^F _A2 _B2 | "E7"B, _D =D E ^F _A =A B | "Db"_d4 _B z _B z |
+"G7"_d2 B z _A z _A z | "F7"B2 A z ^F z ^F z | "E7"A2 _A z ^F z E z | "A7"^F2 E z _B z _B z |
+"G7"_d2 B z _A z _A z | "C7"B2 A z E z ^F z | "B"_A2 B z ^F2 B z | "Dbm7"E4 _B z _B z |
+"G7"_d2 B z _A z _A z | "F7"B2 A z ^F z ^F z | "E7"A2 _A z ^F z E z | "A7"^F2 E z _B z _B z |
+"G7"_d2 B z _A z _A z | "C7"B2 A z E z ^F z | "E7"d _d =d e f =d B _A | "D"A B _d =d _e2 A2 |
+"D"d4 z4 | "Abm7"_E,3 _E, D,2 D,2 | "Db"_D,3 ^F E ^F E ^F | "Ebm"E _A, B _A, E =A, =A _B, |
+"Ab"_A8 | "F#m7"_D A A A _D _A _A _A | "E"D ^F ^F ^F D _A _A _A | "F#m7"_D A A A _D _A _A _A |
+"E"D ^F ^F ^F D _A _A _A | "Db"_D _d _d _d _D B B B | "F#"_D B B B _D A A A | "B7"_E _d _d _d _E B B B |
+"E"D _d _d _d =D B B B | "F#m7"_D A A A _D _A _A _A | "E"D ^F ^F ^F D _A _A _A | "F#m7"_D A A A _D _A _A _A |

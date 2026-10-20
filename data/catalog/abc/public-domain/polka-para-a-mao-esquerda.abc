@@ -1,0 +1,35 @@
+%abc-2.1
+% POLKA PARA A MÃO ESQUERDA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/polka-para-a-mao-esquerda.html (file
+% https://www.beakauffmann.com/mpb_p/som/polka-para-a-mao-esquerda.mid, sha256
+% f732e6da0b4fbb951fde16ed975ade88ef4ee10a6de9b39ff68ef9639be3eac8), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:POLKA PARA A MÃO ESQUERDA
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Eb"G2 _E2 F2 D2 | "Cm7"_E2 _B, _B G _E _B, G, | "Fm"_A2 F2 G2 E2 | "Fm"z8 |
+"D7"A, C _E _E z4 | "Bb7"c3 _B _A F D z | "Bb7"z6 d2 | "Eb"c _B G _E C _B, C _A, |
+"Gm7"z2 G4 F2 | "Cm"_E2 _B, _B G _E _B, G, | "Fm"_A4 z2 E2 | "Fm"F3 c _A F z2 |
+"Ab7"A, C _E _E z4 | "Dm7"g2 _e d f _e d c | "Bb7"G G z2 _E z3 | "Eb"_E z _B z _e4 |
+"Eb"G3 z F3 z | "Cm7"_E2 z _B G _E z2 | "Fm"_A4 G4 | "Fm"z8 |
+"D7"A,, C, _E, _E, z4 | "Bb7"c3 _B _A F D z | "Bb7"z2 D F z2 d2 | "Eb"c _B G _E z3 _A,, |
+"Gm7"z2 G4 F2 | "Cm7"_E2 z _B G _E z2 | "Fm"_A4 G4 | "Fm"F3 c _A F C _A, |
+"Ab7"A,, C, _E, _E, z4 | "Dm7"g2 z2 f z2 c | "Bb7"G G z2 _E z3 | "Eb"_E z _B z _e4 |
+"Cm"G3 _E G _e d c | "D"c2 _A B d2 B2 | "C"G3 ^F G _E D C | "G7"C,3 z D,4 |
+"Cm"G3 _E G A _B c | "Gm"d3 _B z4 | "D7"_A,,2 _E,, G,, ^F,,2 d2 | "G7"B,, B _A F D B,, _A,, G,, |
+"C"G3 ^F G _e d c | "Bb7"c3 B d2 B2 | "Cm"G3 _E G, _E D C | "G7"C,3 B,, D,4 |
+"C7"G3 ^F G _d c _B | "Fm"_B3 _A G F C D | "G7"_E G c _e _e2 d2 | "Cm"c2 z2 c'3 z |
+"Cm"G3 _E G _e d c | "D"c2 _A B d2 B2 | "C"G3 ^F G _E D C | "G7"C,3 z D,4 |
+"Cm"G3 _E G A _B c | "Gm"d3 _B z4 | "D7"_A,,2 _E,, G,, ^F,,2 d2 | "G7"B,, B _A F D B,, _A,, G,, |
+"C"G3 ^F G _e d c | "Bb7"c3 B d2 B2 | "Cm"G3 _E G, _E D C | "G7"C,3 B,, D,4 |
+"C7"G3 ^F G _d c _B | "Fm"_B3 _A G F C D | "G7"_E G c _e _e2 d2 | "Cm"c4 g3 z |

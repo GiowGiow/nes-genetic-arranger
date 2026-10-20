@@ -1,0 +1,24 @@
+%abc-2.1
+% Navvie on the Line, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/hpps.abc, tune X: 47 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Navvie on the Line
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 B2 c2 | "G"d2 g2 f2 e2 d2 c2 B2 A2 | "G"G2 B2 D2 G2 B4 B A2 G | "D7"F2 A2 D2 F2 A4 A G2 F |
+"G"G2 B2 D2 G2 "D7"B4 B2 c2 | "G"d2 g2 f2 e2 d e2 d c B2 A | "G"G2 B2 D2 G2 B4 A2 G2 | "D7"F2 G2 A2 B2 c2 d2 e2 f2 |
+"G"g4 G4 G4 B2 c2 | "G"d2 g2 f2 e2 d2 c2 B2 A2 | "G"G2 B2 D2 G2 B4 B A2 G | "D7"F2 A2 D2 F2 A4 A G2 F |
+"G"G2 B2 D2 G2 "D7"B4 B2 c2 | "G"d2 g2 f2 e2 d e2 d c B2 A | "G"G2 B2 D2 G2 B4 A2 G2 | "D7"F2 G2 A2 B2 c2 d2 e2 f2 |
+"G"g4 G4 G4 A2 G2 | "D7"F2 A2 D2 F2 A4 A G2 F | "G"G2 B2 D2 G2 B4 B A2 G | "D7"F2 A2 D2 F2 A4 A G2 F |
+"G"G2 D2 E2 F2 "D7"G2 A2 B2 c2 | "G"d2 g2 f2 e2 d e2 d c B2 A | "G"G2 B2 D2 G2 B4 A2 G2 | "D7"F2 G2 A2 B2 c2 d2 e2 f2 |
+"G"g4 G4 G4 A2 G2 | "D7"F2 A2 D2 F2 A4 A G2 F | "G"G2 B2 D2 G2 B4 B A2 G | "D7"F2 A2 D2 F2 A4 A G2 F |
+"G"G2 D2 E2 F2 "D7"G2 A2 B2 c2 | "G"d2 g2 f2 e2 d e2 d c B2 A | "G"G2 B2 D2 G2 B4 A2 G2 | "D7"F2 G2 A2 B2 c2 d2 e2 f2 |
+"G"g4 G4 G4 z4 |

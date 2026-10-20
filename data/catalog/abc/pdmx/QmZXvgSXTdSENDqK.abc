@@ -1,0 +1,35 @@
+%abc-2.1
+% Ave Maria, by Josquin des Prez(c.1455-1521). Score published on MuseScore (artist: Josquin
+% Desprez), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josquin des Prez (died 1521,
+% Wikidata Q143100).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/53/QmZXvgSXTdSENDqKFuiisfnkWB4MHGgzotdcZokenxokbr.mid (sha256
+% 587c0b3e7dace881d4748826eff7d600fa1ba8be87858470309fd22a23c615dd): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave Maria
+M:4/4
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z8 "C"z8 | "C"z16 | "D"G,8 "E"C8 | "C"C8 C8 |
+"G"D8 "C"E8 | "C"C16 | "G"z8 "C"z8 | "C"z16 |
+"D"z8 "Em"z8 | "Am7"C8- "C"C4 B,4 | "Am"A,8 "B"G,8 | "C"A,4 G,4 C8 |
+"A"C4 B,2 A,2 "G"B,8 | "Am7"C8- "C"C8 | "Am"z8 "G"z8 | "Am"z16 |
+"C"z16 | "D"z8 "E"C8 | "C"C4 C4 "A7"C8 | "F"D8 "C"E8 |
+"D7"C8- "Am7"C8 | "Dm"z8 "C"z8 | "C"C16 | "D"A,8 "Em"G,8 |
+"C"A,6 B,2 C8 | "D7"C4 D4 "C"E8 | "Am"E4 D2 C2 "G"G6 F2 | "C"E2 D2 C12 |
+"Am"E4 F4 "G"G8 | "Am"E16 | "C"z8 C8 | "C"E8 "D"F8 |
+"E"G8 G4 A4 | "E"A4 G4 "E7"F8 | "E"E8- "C"E8 | "C"z8 "Dm"A,8 |
+"C"B,8- "A7"B,4 C4 | "A7"C2 B,2 B,4- "Dm"B,4 A,4 | "E"B,16 | "E"z8 "C"C8 |
+"C"C8 C8 | "Dm"C8- "C"C4 D2 E2 | "Bb"F4 D4 "C"G8 | "G"G8- "Em"G8 |
+"Dm7"F4 A4 "Em7"G8 | "Am"C8 "Dm7"A8 | "Em7"G4 B4 "Am"A8 | "Bm"D6 E2 "Em7"F4 G4 |
+"Am"C8 "G7"z4 D4 | "Am7"C4 A,4- "Am"A,2 B,2 C4 | "Gm7"D4 G,4- "Gm"G,2 A,2 B,4 | "F"C4 A,4 "G"G,8 |
+"C"G,4 G6 F2 E2 D2 | "C"E8 z8 | "C"C8 "B"F8 | "C"F4 E4 "D"F8 |
+"B"G8 "G"E8 | "G"E4 D2 C2 "A7"C8 | "Am7"B,4 C4 "G"D8 | "C"C8 "F"z8 |
+"C"z8 "Dm"z8 | "G"z8 "Em"z8 | "C"z8 "Am7"z8 | "C"z8 "D"z8 |

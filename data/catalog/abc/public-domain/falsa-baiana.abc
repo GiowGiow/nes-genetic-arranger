@@ -1,0 +1,35 @@
+%abc-2.1
+% FALSA BAIANA, by Geraldo Pereira, as performed by João Gilberto.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Geraldo Pereira (died 1955, Wikidata Q10289092).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/falsa-baiana.html (file
+% https://www.beakauffmann.com/mpb_f/som/falsa-baiana.mid, sha256
+% ba0beaa7c8a7a69d62ea1e98c865cde627e47bf90c1767bf401f44188edd07b0), from Beatriz Kauffmann's Web
+% Site. Melody track 3, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FALSA BAIANA
+M:2/4
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"Bm"z6 B2 | "Em7"d2 d B d2 d B | "Em7"d2 d B d d E A | "A7"A A2 E A2 A E |
+"A7"B2 B G E G B d | "Em7"d d2 A d d2 A | "D7"d A A A A G B2 | "Em7"B3 G5 |
+"G7"z3 G G G G e | "C"e e2 c e2 e c | "Dbm"e e e c e e d2 | "Bm7"d d2 B d2 d B |
+"E7"d2 d B d d2 E | "A7"A A2 A A B2 A | "D7"D D2 D D D D G | "Em7"G4 G4 |
+"D7"z6 B2 | "Em7"d2 d B d2 d B | "Em7"d2 d B d d E A | "A7"A A2 E A2 A E |
+"A7"B2 B G E G B d | "Em7"d d2 A d d2 A | "D7"d A A A A G B2 | "Em7"B3 G5 |
+"G7"z8 | "C"z8 | "Dbm"z8 | "Bm"z8 |
+"E7"z8 | "A7"z8 | "D7"z8 | "Em7"z8 |
+"Em7"z8 | "Am7"z8 | "D7"z8 | "Em7"z8 |
+"E7"z8 | "Am7"z8 | "D7"z8 | "Em7"z8 |
+"G7"z8 | "C"z8 | "Cm"z8 | "Bm7"z8 |
+"E7"z8 | "Am7"z8 | "D7"z8 | "Em7"z8 |
+"Em7"z8 | "Em7"z8 | "Em7"z8 | "A7"z8 |
+"A7"z8 | "Em7"z8 | "D7"z8 | "Em7"z8 |
+"G7"z8 | "C"z8 | "Dbm"z8 | "Bm"z8 |
+"E7"z8 | "A7"z8 | "D7"z8 | "Em7"z8 |

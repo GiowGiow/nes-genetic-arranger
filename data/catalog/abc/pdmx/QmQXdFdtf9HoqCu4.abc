@@ -1,0 +1,30 @@
+%abc-2.1
+% 21 Hungarian Dances (Piano) WoO 1, by Johannes Brahms. Score published on MuseScore (artist:
+% Johannes Brahms), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/53/QmQXdFdtf9HoqCu4QjmtTaojujBNwc1BjAgd25yTZokJU7.mid (sha256
+% 64736b2f26bb5deef18e172ecee1dcdbbdc0b48e2eecd5c2bf7c4c1250a6b4a2): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:21 Hungarian Dances (Piano) WoO 1
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"D6 G2 | "Gm"_B6 G2 | "Cm"^F6 G A | "Gm"G8 |
+"Cm"_E6 F G | "Gm"D8 | "D"C _B, _B, A, A,3 D | "Gm"G,8 |
+"Gm"D6 G _B | "Gm"d6 _B2 | "Cm"A6 _B c | "Gm"_B8 |
+"Dm"_e f g _e d _e f d | "Cm7"c d _e c _B c d _B | "D"c _B _B A A3 d | "Gm"G4 g2 z2 |
+"G7"d4 d4 | "G7"_e6 d2 | "Cm"z2 c4 B c | "Cm"d c B d c2 z2 |
+"F7"c4 c4 | "Dm"d6 c2 | "Gm7"z2 _B4 A _B | "Gm7"c _B A c _B2 z2 |
+"D7"A4 A4 | "D7"c2 _B4 A2 | "Eb"A2 G4 ^F G | "Cm7"A G ^F A G4 |
+"D"d2 z5 D | "F#7"E2 z2 ^F2 z2 | "Gm"G2 G4 ^F G | "Gm"A G ^F A G2 z2 |
+"Gm"D6 G2 | "Gm"_B6 G2 | "Cm"^F6 G A | "Gm"G8 |
+"Cm"_E6 F G | "Gm"D8 | "D"C _B, _B, A, A,3 D | "Gm"G,8 |
+"Gm"D6 G _B | "Gm"d6 _B2 | "Cm"A6 _B c | "Gm"_B8 |
+"Dm"_e f g _e d _e f d | "Cm7"c d _e c _B c d _B | "D"c _B _B A A3 d | "Gm"G4 g2 z2 |

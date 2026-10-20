@@ -1,0 +1,35 @@
+%abc-2.1
+% NOÊMIA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/noemia.html (file
+% https://www.beakauffmann.com/mpb_n/som/noemia.mid, sha256
+% d71ef425ea94477a920b512c198c098662dc2898d58878d018623b6ca3d7907d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NOÊMIA
+M:3/4
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"Db"_d'2 _b2 _a2 f2 _d2 _B2 | "Db"_d2 _B2 _A2 F2 _D2 _B,2 | "Db"_A,2 _D2 _A2 _A2 _d2 _a2 | "Db"_a4 z8 |
+"Db"_d'2 _b2 _a2 f2 _d2 _B2 | "Db"_d2 _B2 _A2 F2 _E2 _D2 | "Ab7"C2 ^F2 _A2 c2 ^f2 c'2 | "Ab7"c'4 z8 |
+"F7"z2 _E2 F2 ^F2 A2 c2 | "F7"_e2 ^f2 a2 c'2 ^f'2 =f'2 | "Bbm"c'2 _e'2 _d'2 f2 c'2 _b2 | "Bbm"_d4 z8 |
+"Eb7"z2 D2 _E2 ^F2 G2 A2 | "Eb7"_B2 d2 _e2 g2 c'2 g2 | "Ab7"_b2 _a2 c2 f2 _e2 ^F2 | "Ab7"_d2 c2 C2 _B2 _A2 C2 |
+"Db"_d'2 _b2 _a2 f2 _d2 _B2 | "Db"_d2 _B2 _A2 F2 _D2 _B,2 | "Db"_A,2 _D2 _A2 _A2 _d2 _a2 | "Fm7"_a4 z8 |
+"Bb7"b2 _d'2 b2 _b2 _a2 f2 | "Bb7"d2 _B2 _A2 F2 D2 _B,2 | "Ebm"^F,2 _B,2 _E2 ^F2 _B2 _e2 | "Ebm"_b4 z8 |
+"Eb7"z2 _D2 E2 G2 _B2 _d2 | "C7"e2 g2 _b2 _d'2 c'2 _b2 | "Db"_a2 f'2 c'2 _e'2 _d'2 _a2 | "Db"f2 ^f2 _a2 _b2 c'2 _d'2 |
+"Ebm"_e'2 f'2 ^f'2 _a'2 =a'4 | "Ab7"z4 _a'4 z4 | "Db"_d''4 z4 _a'4 | "Db"_d'4 z8 |
+"Eb7"_e'4 z4 =e'4 | "Eb7"z4 f'6 g'2 | "Ab"_b'8 _a'4 | "Fm7"z2 g'2 _b'2 _a'2 g'2 f' _b' |
+"Eb7"_a'4 g'2 _d''2 g'3 _a' | "Eb7"g'4 f'2 _d''2 f'3 g' | "Ab"f'4 _e'2 c''2 _a'2 _e2 | "Fm7"c'2 _a2 _e2 c2 _A2 _E2 |
+"Eb7"_e'4 z4 =e'4 | "Eb7"z4 f'6 g'2 | "Fm"_b'8 _a'4 | "Fm"z2 g'2 _b'2 _a'2 g'2 f'2 |
+"Cm"_e'2 g'2 c'2 _e'2 g2 c'2 | "G7"b2 d'2 f2 b2 d2 f2 | "Cm"_e2 g2 c2 _e2 G2 c2 | "Cm"_E2 G2 C2 _E2 G,2 C2 |
+"Eb7"_e'4 z4 =e'4 | "Eb7"z4 f'6 g'2 | "Ab"_b'8 _a'4 | "Fm7"z2 g'2 _b'2 _a'2 g'2 f' _b' |
+"Eb7"_a'4 g'2 _d''2 g'3 _a' | "Eb7"g'4 f'2 _d''2 f'3 g' | "Ab"f'4 _e'2 c''2 _a'2 _e'2 | "Fm7"c'2 _a2 _e2 c2 _A2 _E2 |
+"Eb7"_e'4 z4 =e'4 | "Eb7"z4 f'6 g'2 | "Fm"_b'8 _a'4 | "Db7"z2 f'2 d'2 b2 _a2 f2 |
+"Fm7"f' _e' c' _a f _e c _A F _E C F, | "Eb"z8 _e4 | "Ab"_A4 z8 | "Ab7"_a4 _B2 c2 _d2 _e2 |

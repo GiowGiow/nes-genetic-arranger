@@ -1,0 +1,36 @@
+%abc-2.1
+% A FONTE DO LAMBARI, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-fonte-do-lambari.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-fonte-do-lambari.mid, sha256
+% 08f0af1965d62f0c576f9896b2e9501d865f50d50c70dcf080db782c918ed18d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A FONTE DO LAMBARI
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb7"z2 _A3 G2 F | "Eb7"G2 G2 f2 f2 | "Ab"_e3 _A2 G2 F | "Eb7"G2 G2 f2 f2 |
+"C7"_e3 _a3 =e2 | "Dm7"g3 f z c B c | "Bbm"_e3 _d z F =E F | "Eb7"c3 _B z _E D _E |
+"Ab"_B _A _e c _A F _E C | "Eb7"G2 G2 f2 f2 | "Ab"_e3 _A2 G2 F | "Eb7"G2 G2 f2 f2 |
+"C7"_e3 _a3 =e2 | "Dm7"g3 f z c B c | "Bbm"_e3 _d z F =E F | "Eb7"c3 _B z _E _e _E |
+"Ab"_A3 _A2 G2 F | "Eb7"G2 G2 f2 f2 | "Ab"_e3 _A2 G2 F | "Eb7"G2 G2 f2 f2 |
+"C7"_e3 _a3 =e2 | "Dm7"g3 f z c B c | "Bbm"_e3 _d z F =E F | "Eb7"c3 _B z _E D _E |
+"Ab"_B _A _e c _A F _E C | "Eb7"G2 G2 f2 f2 | "Ab"_e3 _A2 G2 F | "Eb7"G2 G2 f2 f2 |
+"C7"_e3 _a3 =e2 | "Dm7"g3 f z c B c | "Bbm"_e3 _d z F =E F | "Eb7"c3 _B z _E _e _E |
+"Ab"_A,3 _A z _a _b =b | "C7"c'3 c c2 c2 | "Fm"z F c c z c' _d' =d' | "Eb7"_e'3 _e _e2 _e2 |
+"Ab"z _A _e _e z =e' f' ^f' | "G7"g'3 g g2 g2 | "Cm"z c g g z g' _a' =a' | "Bb7"c'' _b' _a' f' d' _b _a f |
+"Eb"_e d _e =e g f _e _d | "C7"c3 c z c d f | "Fm"g e f g _a _b c' _d' | "Eb7"_e'3 _e z _e f _a |
+"Fm"_b g _a _b c' _d' _e'2 | "Bbm"e' g' f' c' _e' _d' f =e | "Fm7"_e c' g _b _a c _d =d | "Eb7"f _e _d _B G _E _D _B, |
+"Ab"_A,2 _A2 z _a _b =b | "C7"c'3 c c2 c2 | "Fm"z F c c z c' _d' =d' | "Eb7"_e'3 _e _e2 _e2 |
+"Ab"z _A _e _e z =e' f' ^f' | "G7"g'3 g g2 g2 | "Cm"z c g g z g' _a' =a' | "Bb7"c'' _b' _a' f' d' _b _a f |
+"Eb"_e d _e =e g f _e _d | "C7"c3 c z c d f | "Fm"g e f g _a _b c' _d' | "Eb7"_e'3 _e z _e f _a |
+"Fm"_b g _a _b c' _d' _e'2 | "Bbm"e' g' f' c' _e' _d' f =e | "Fm7"_e c' g _b _a c _d =d | "Eb7"f _e _d _B G _E _D _B, |

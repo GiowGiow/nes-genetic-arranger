@@ -1,0 +1,27 @@
+%abc-2.1
+% Serenad, by Jacob Axel Josephson. Score published on MuseScore (artist: Jacob Axel Josephson),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacob Axel Josephson (died 1880,
+% Wikidata Q1677426).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/9/QmbacGm6JEAT46yX3vrWfBqN6bfMXWkpDivW3TwoLx3R1f.mid (sha256
+% a0a695606afaa54f0090b2adc9d3c3ad6b4f6763bfb7c94b4e8565a10ceee2ae): melody track 1, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Serenad
+M:3/8
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"A"C2 B,2 C2 | "Dm"D3 C B,2 | "Dbm7"B,2 B,2 E,2 | "Am"E,3 E, E,2 |
+"F"A,2 C2 C2 | "C"C4 z2 | "F"A,2 C2 C2 | "C"C3 G, G,2 |
+"E"_A,2 B,2 B,2 | "Am"A,3 _A, =A,2 | "G7"A,2 A,2 G,2 | "C"G,4 z2 |
+"G"B,2 C2 D2 | "C"C3 B, C2 | "B7"_E _E _E2 _E2 | "Em"B,3 B, B,2 |
+"B7"C2 B,2 A,2 | "E"_A,4 z2 | "F7"C2 C2 C2 | "Ab"B,3 B, A,2 |
+"E"B,2 C2 D2 | "Dm"_D2 =D E =D2 | "E7"C2 B,3 D | "A"C4 z2 |
+"G"B,2 C2 D2 | "C"C3 B, C2 | "B7"_E _E _E2 _E2 | "Em"B,3 B, B,2 |
+"B7"C2 B,2 A,2 | "E"_A,4 z2 | "F7"C2 C2 C2 | "Ab"B,3 B, A,2 |
+"E"B,2 C2 D2 | "Dm"_D2 =D E =D2 | "E7"C2 B,3 D | "A"C4 z2 |

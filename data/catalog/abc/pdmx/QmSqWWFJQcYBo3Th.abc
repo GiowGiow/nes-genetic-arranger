@@ -1,0 +1,35 @@
+%abc-2.1
+% pavane pour une infante defunte pavane for a dead princess, by Maurice Ravel. Score published on
+% MuseScore (artist: Maurice Ravel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/38/QmSqWWFJQcYBo3The4vsCZmcbNGEPEVTMioSSMsQSPaKQF.mid (sha256
+% a4ac9b2330bd0997b5cd6e3180bad2567fd455a6178478d4592bf921cc64f9cf): melody track 1, bars 6-70
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:pavane pour une infante defunte pavane for a dead princess
+M:4/4
+L:1/16
+Q:1/4=55.000005
+% Exact tempo 55.000004583333705 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z14 E G | "Em"B,4 z12 | "Em"z16 | "Em"z16 |
+"Em"z16 | "Em"z16 | [M:2/4]"Em"z8 | [M:4/4]"Em"B,,,8 B,,,8 |
+"Em"B,,,16 | "Em"B,,,8 B,,,8 | "Em"B,,,16 | "Em"A,,,16 |
+"Em"E,4 A,4 z2 D,2 A,,2 E,,2 | [M:2/4]"Em"A,,4 D,4 | [M:4/4]"Em"B,,16 | "Em"E,16 |
+"Em"A,16 | "Em"z4 A,,4 D,,8 | "Em"z16 | "Em"z16 |
+[M:2/4]"Em"z8 | [M:4/4]"Em"z16 | [M:2/4]"Em"z8 | [M:4/4]"Em"z16 |
+"Em"z16 | "Em"z16 | "Em"z16 | "Em"z16 |
+"Em"z16 | "Em"z8 "Bm"z6 D ^F | "Bm"b4 z12 | "Bm"z16 |
+"Bm"z16 | [M:2/4]"Bm"z8 | [M:4/4]"Bm"z16 | "B"z16 |
+"B"z16 | "B"z16 | "B"z16 | "B"z16 |
+"B"z8 "G7"z2 G2 z2 G2 | "G7"_E2 z14 | "G7"z16 | "G7"z16 |
+"A"E8 z8 | "A"z16 | [M:2/4]"A"z8 | [M:4/4]"A"z8 f d' g'4 G2 |
+"A"z4 _B _e' a' _b _E z7 | "A"z16 | "A"z8 "G7"z2 G2 z2 G2 | "G7"_E4 _B c _b c'5 z4 |
+"G7"z4 A c' g' _a _D z7 | "G7"z16 | "A"E8 z8 | "A"z16 |
+[M:2/4]"A"z8 | "A"z8 | "A"z8 | [M:4/4]"E7"G,,4 G4 "E"C,,4 G4 |
+"Abm7"D,,4 B z3 "Em"E,,4 B z3 | "C"C,4 B4 A,,4 A4 | "Bm7"B,,4 A4 G,,4 G4 | "Am7"A,,4 G4 ^F,,4 ^F4 |

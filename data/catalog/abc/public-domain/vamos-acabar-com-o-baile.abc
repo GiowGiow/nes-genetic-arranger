@@ -1,0 +1,36 @@
+%abc-2.1
+% VAMOS ACABAR COM O BAILE, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_v/vamos-acabar-com-o-baile.html (file
+% https://www.beakauffmann.com/mpb_v/som/vamos-acabar-com-o-baile.mid, sha256
+% 96537322b71cb88a96902a6c564f138ba85ef857b56503a80c585446a1d0f2b5), from Beatriz Kauffmann's Web
+% Site. Melody track 6, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:VAMOS ACABAR COM O BAILE
+M:2/4
+L:1/16
+Q:1/4=93.000042
+% Exact tempo 93.00004185001885 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z5 E,2 E, | "Am"A,2 z A,4 z | "Bm7"F2 z E z E,2 E, | "Am"A,2 z A,4 z |
+"Am7"F2 z E z _A, =A, _B, | "E7"B,3 z _A,3 z | "Am"A,3 z C E D C | "E7"B,3 z _A,3 z |
+"A"z A, _D E G _B A G | "Dm"F3 z D3 z | "Am7"C3 z2 _A, =A, _B, | "B7"B,3 z A,3 z |
+"E"_A,3 z2 _D =D _E | "E7"E3 z D3 z | "Am"C3 z A,2 z C | "E7"B,3 z _A,3 z |
+"F#m7"z E G _B A G F E | "Dm"D2 z D B,2 z B, | "Am7"C2 z C A,2 z A, | "B7"B,2 z B, _A,2 z _A, |
+"Am"A,3 z2 _A, =A, _B, | "E7"B,3 z _A,3 z | "Am"A,3 z C E D C | "E7"B,3 z _A,3 z |
+"A"z A, _D E G _B A G | "Dm"F3 z D3 z | "Am7"C3 z2 _A, =A, _B, | "B7"B,3 z A,3 z |
+"E"_A,3 z2 _D =D _E | "E7"E3 z D3 z | "Am"C3 z A,2 z C | "E7"B,3 z _A,3 z |
+"F#m7"z E G _B A G F E | "Dm"D2 z D B,2 z B, | "Am7"C2 z C A,2 z A, | "B7"B,2 z B, _A,2 z _A, |
+"Am"z E2 _E F =E D C | "E"B,3 z E,3 z | "Am"z A2 _A G F E D | "A7"_D3 z A,3 z |
+"Dm"z _D, =D, E, F, A, =D E | "Dm"F3 z B,3 z | "Am"C3 z A,2 _D =D | "B7"_E3 z B,3 z |
+"Dbm7"z E2 _E F =E D C | "E"B,3 z E,3 z | "Am"z A2 _A G F E D | "A7"_D3 z A,3 z |
+"Dm"z _D, =D, E, F, A, =D E | "Dm"F3 z B,3 z | "Am"C3 z A,2 _D =D | "B7"_E2 z _E D2 z D |
+"Am"z E2 _E F =E D C | "E"B,3 z E,3 z | "Am"z A2 _A G F E D | "A7"_D3 z A,3 z |
+"Dm"z _D, =D, E, F, A, =D E | "Dm"F3 z B,3 z | "Am"C3 z A,2 _D =D | "B7"_E3 z B,3 z |
+"Dbm7"z E2 _E F =E D C | "E"B,3 z E,3 z | "Am"z A2 _A G F E D | "A7"_D3 z A,3 z |

@@ -1,0 +1,29 @@
+%abc-2.1
+% Out of the deep, by Thomas Tomkins (1572-1656). Score published on MuseScore (artist: Thomas
+% Tomkins), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Tomkins (died 1656,
+% Wikidata Q968698).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/7/Qmb86CnSpHnnaGNzxKXoeQWG9Xsp6XdApDJG4YYTeUFWES.mid (sha256
+% d06efef56d28d5fcb232a61fa3fa097f25d62194459bf0d1095b2438a6fded7b): melody track 1, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Out of the deep
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B"z16 | "Bb"^F,4 ^F,4- "Db7"^F,4 E,4 | "Bm"^F,4 _A,2 _A,2 "Eb7"=A,4 ^F,2 ^F,2 | "Dbm"_A,4 _B,4 "Dbm7"=B,4 G,2 G,2 |
+"Eb"^F,6 ^F,2 "Dbm7"G,6 ^F,2 | "Db7"E,8 D,4 E,4 | "Bm"^F,4 _A,2 _A,2 "Ebm7"=A,4 ^F,2 ^F,2 | "F#7"G,4 A,4 "Em7"B,8 |
+"F#"_B,4 =B,8 _B,4 | "G"B,6 B,2 "F#7"_D6 _D2 | "Eb"B,4 B,2 B,2- "F#7"B,2 _B, _A, _B,4 | "Bm"B,2 _D2 =D4- "A7"=D4 _D4 |
+"Em"D4 B,2 D2- "A7"D2 _D B, _D4 | "D"D2 E2 ^F4- "Db7"^F4 =F4 | "Bb"^F6 E2 "Dbm7"D2 B,2 E4 | "Bm"E4 D4 "F#7"_D8 |
+"B"_E4 B,4 D4 G4 | "Em7"^F6 E2 "F#7"D3 E _D4 | "F#m"B,3 _D A,4 "Db7"B,6 A,2 | "F#7"_A,4 _D4 "Bm"B,2 _D2 =D4 |
+"D"D4 _D2 B,2 "F#"_B,6 =B,2 | "D"_D4 ^F,4 "F#"A,4 =D4 | "Fm"_D6 B,2 "Abm7"A,4 E4 | "F#"D4 _D2 _D2- "D"_D2 B, A, B,4 |
+"F#"B,4 _B,2 _A,2 _B,8 | "D"z8 "Em"z8 | "F#m7"z8 "Dbm"z4 B,4 | "A"_D8 "Abm7"A,4 =D4 |
+"Bm"D4 _D4 "B"_E2 B,2 =E4 | "B"E4 _E4 "E"=E4 B,4 | "F#m7"_D8 "F"^F,4 _D4 | "F#m"_D4 =D4- "A7"=D4 _D4 |
+"D"D6 D2 "Dbm"_D2 B,2 E4 | "Db7"E4 D4 "F#7"_D4 _D2 ^F2 | "Abm"^F2 E D E4- "Abm7"E4 D4 | "Ebm"_D6 _D2 "E"=D4 _D4 |
+"F#7"_D2 B,2 B,4- "F#"B,4 _B,4 | "B"B,16 |

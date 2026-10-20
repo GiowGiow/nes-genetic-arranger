@@ -1,0 +1,22 @@
+%abc-2.1
+% Meimorgen, by Catharina van Rennes. Score published on MuseScore (artist: Catharina van Rennes),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Catharina van Rennes (died 1940,
+% Wikidata Q2155613).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/55/QmSYTnCmjq6PgTZdX9xodk5Nx8tG1fRW5DJsadzq7oRn2Z.mid (sha256
+% 8bffd6d01b2f048acc328037ef9d8e6cf5c27fbce4284dd58a1758ca53b742e9): melody track 0, bars 0-10
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Meimorgen
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"c2 A2 F2 A2 "C"G4 C4 | "E"c4 G3 G "F"A8 | "Dm7"c2 A2 F2 A2 "E"G4 c4 | "G7"d4 G3 G "E"c8 |
+"E"_B4 _B2 _B2 "A7"_B2 A2 G2 F2 | "F"E4 F3 A "E"A4 G4 | "G7"_B4 A2 A2 "A"d4 c2 c2 | "G7"B4 c2 d2 "E"d4 c4 |
+"Bb"c4 d2 c2 "A7"f4 d2 _B2 | "E"A4 G3 A "F"F8 |

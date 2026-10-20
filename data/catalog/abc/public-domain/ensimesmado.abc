@@ -1,0 +1,36 @@
+%abc-2.1
+% ENSIMESMADO (O Alvorecer), by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/ensimesmado.html (file
+% https://www.beakauffmann.com/mpb_e/som/ensimesmado.mid, sha256
+% 9020c482a16d1e110709c1c8f236480af127d49327e361f9c5b70355f5808efa), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ENSIMESMADO (O Alvorecer)
+M:2/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb7"_d _d _e' c'' _b' g' _e' _d' | "Cm"z c' _e' _b' _a' _e' c' _b | "Abm"z _a b g' f' d' b _a | "Eb"z g _b f' _e' _b g z |
+"Eb7"z g _b f' _e' _d' _b g | "Cm"z ^f a =f' _e' c' a ^f | "Abm"z f _a _e' d' b _a f | "Eb7"_B3 z2 G _B f |
+"Cm7"f _e c z2 =E G _d | "Db"_d c z4 F _B | "F7"_B _A _E z F _E _D G, | "Ab"F _E C z _E G _B f |
+"F7"f _e c _A ^F z c ^f | "Db"^f =f _d _B _A2 =d _a | "Eb"_a g _e z2 =e2 z | "Ebm7"_d' c' _a z2 =a c' ^f' |
+"Db7"^f' =f' _d' _b z =b =d' _b' | "Cm7"_b' _a' _e' c' ^f' =e' =b _a | "Dbm7"b a e z f' _e' _b g | "Ebm7"_b a _e z _e' _d' _b =e |
+"Eb7"_d' c' _a _e c' _b g _d | "G7"_b _a f c g f d =B | "Cm"f _e c z c _B _e z | "Ab"_B _A _e z2 G _B f |
+"Cm7"f _e c z2 =E G _d | "Db"_d c z4 F _B | "F7"_B _A _E z F _E _D G, | "Ab"F _E C z _E G _B f |
+"F7"f _e c _A ^F z c ^f | "Db"^f =f _d _B _A2 =d _a | "Eb"_a g _e z2 =e2 z | "Ebm7"_d' c' _a z2 =a c' ^f' |
+"Db7"^f' =f' _d' _b z =b =d' _b' | "Cm7"_b' _a' _e' c' ^f' =e' =b _a | "Dbm7"b a e z f' _e' _b g | "Ebm7"_b a _e z _e' _d' _b =e |
+"Eb7"_d' c' _a _e c' _b g _d | "G7"_b _a f c g f d =B | "Cm"f _e c z c _B _e z | "Ab"_A3 z2 c c f |
+"G7"z _B _B _e z _A _A _d | "Dbm"z G G c z F F _B | "C7"z F F _A z E E G | "Ab"z F F c z F F c |
+"C"z F F B, z E E _B | "F"z C C _A z C C _A | "Em"z _D _D G z =D =D F | "Fm"z C C E z c c f |
+"G7"z _B _B _e z _A _A _d | "C"z G G c z _e _e z | "Bb7"z _d _d g z c c f | "Eb7"z _B _B _e z f f _b |
+"C7"z f f _a z e e c' | "Bbm"z _e _e _e z _d _d _b | "Fm"z c c _a z _B E2 | "Fm"z _A _A f z c c f |
+"G7"z _B _B _e z _A _A _d | "Dbm"z G G c z F F _B | "C7"z F F _A z E E G | "Ab"z F F c z F F c |
+"C"z F F B, z E E _B | "F"z C C _A z C C _A | "Em"z _D _D G z =D =D F | "Fm"z C C E z c c f |

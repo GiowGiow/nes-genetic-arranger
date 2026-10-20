@@ -1,0 +1,26 @@
+%abc-2.1
+% Francisco Tárrega - Estudio en Mi Minor, by Francisco Tárrega (1852 - 1909). Score published on
+% MuseScore (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/42/QmXsA4Zg7js9btxkdqiDw8PQecLu8HT597gfCzS6ehvsRv.mid (sha256
+% 31e13672884dcaf83957e0e22b3c368bb979eb8fdf9d73ad18d408d483f58118): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Francisco Tárrega - Estudio en Mi Minor
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"B B,2 G, B B,2 G, B B,2 G, |
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"E4 E8 |
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"B B,2 G, B B,2 G, B B,2 G, |
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"E4 E8 |
+"C"E B,2 G, G B,2 G, B B,2 G, | "C"B E2 C A E2 C c E2 C | "C"^F C2 A, G C2 A, A D2 C | "C"A B,2 G, G B,2 G, B B,2 G, |
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"E4 e8 |
+"C"E B,2 G, G B,2 G, B B,2 G, | "C"B E2 C A E2 C c E2 C | "C"^F C2 A, G C2 A, A D2 C | "C"A B,2 G, G B,2 G, B B,2 G, |
+"C"E B,2 G, G B,2 G, G B,2 G, | "C"G C2 A, ^F C2 A, ^F C2 A, | "C"A _E2 A, G _E2 A, ^F _E2 A, | "C"E4 e8 |

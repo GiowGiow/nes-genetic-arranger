@@ -1,0 +1,30 @@
+%abc-2.1
+% Sinfonia in E-flat major BWV 791, by Johann Sebastian Bach (1685-1750). Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/14/QmbCrzg535Y4nb5Tnx42rSSpdSoEamV5y9P8BG8J6Etw9N.mid (sha256
+% c6a69b8a7ca884024d967a9a005d044a93a2bf2fffc42a3495ed9b54fac43b82): melody track 0, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sinfonia in E-flat major BWV 791
+M:3/4
+L:1/16
+Q:1/4=56.999977
+% Exact tempo 56.999977200009134 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm7"z7 _B _e3 f | "Bb"_e2 d5 c _d3 _e | "Ab"_d2 c5 c c2 f g | "Cm"f2 _e5 d d2 _e f |
+"Cm7"_e2 d5 d d2 g g | "Ab"g2 c5 c c2 f f | "Fm7"f2 _B2 _e8 | "Bb"_e4 d8 |
+"Cm7"d2 _e5 z5 | "Ab"z7 _a f z2 d | "Dm7"d7 _e _e2 f2 | "G"f3 _e _e2 f _e f _e _e c |
+"Cm"c4 z8 | "F"z7 c f3 g | "Bb"_e2 d5 _e _e2 f g | "F"f2 _e d d2 c _e d d d c |
+"Bb"_B4 z3 _b _b _b _b _b | "Eb"_a2 g5 _a _b4 | "Ab"_b3 g f2 e f g4 | "Fm"g3 f _e2 _d c c2 f g |
+"C"f2 e5 e _a3 _a | "Bbm"_a4 g3 f f _b2 _b | "C"_b4 f f f e e2 f e | "C"e2 f g f4 f f f f |
+"Fm"f4 z8 | "Bbm"z7 f _b3 _a | "Eb7"g z g5 _a _e2 _d2 | "Eb"_d3 c c4 c c c _B |
+"Ab"_A7 _E _A3 _B | "Cm7"_A2 G5 F G3 _A | "Bb"_B7 F F2 _B c | "Fm7"_B2 _A5 G G2 _A _B |
+"Cm"_A2 G5 G c3 c | "Bb"c4 _B8 | "Ab"_B4 _A8 | "Cm7"_A7 G c3 c |
+"Bb"c2 F5 F _B3 c | "Eb"_A8 G4 |

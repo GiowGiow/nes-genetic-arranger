@@ -1,0 +1,35 @@
+%abc-2.1
+% Waltzes Op.64, by Frederic Chopin. Score published on MuseScore (artist: Frédéric Chopin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frederic Chopin (died 1880,
+% Wikidata Q15970295).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/26/QmTjD7qrdZCaNYy77zdiBjVy3NKkS1bbyj4LvTyivfZTPW.mid (sha256
+% b18b7f4d4422ab327a8a28ac42c43bfe77fb42e8ee7a749fc2b2a0de3cc15461): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Waltzes Op.64
+M:3/4
+L:1/16
+Q:1/4=220.00022
+% Exact tempo 220.00022000022 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"_A4 G2 _A2 c2 _B2 | "Db"G2 _A2 _B2 _A2 c2 _B2 | "Db"G2 _A2 c2 _B2 G2 _A2 | "Db"c2 _B2 G2 _A2 c2 _B2 |
+"Db"G2 _A2 c2 _B2 G2 _A2 | "Db"c2 _B2 G2 _A2 c2 _B2 | "Db"G2 _A2 c2 _B2 G2 _A2 | "Db"_B2 c2 _d2 _e2 f2 ^f2 |
+"Ab7"_b6 _a2 ^f2 =f2 | "Ab7"f2 _e2 f _e d2 _e4 | "Ab7"_b6 _a2 ^f2 =f2 | "Ab7"f2 f _e d2 _e2 f2 _B2 |
+"Db"G2 _A2 c2 _B2 G2 _A2 | "Db"c2 _B2 G2 _A2 c2 _B2 | "Db"G2 _A2 c2 _B2 G2 _A2 | "Db"_B2 c2 _d2 _e2 f2 ^f2 |
+"Ab7"_b6 _a2 ^f2 =f2 | "Ab7"f2 _e2 f _e d2 _e4 | "Ab7"_b6 _a2 ^f2 =f2 | "Ab7"_e2 f2 f _e d2 _e2 =e2 |
+"F7"f ^f2 =f e2 =f2 _a2 ^f2 | "Dm7"f2 ^f2 =f2 e2 =f2 _b2 | "Ab7"_a _b2 _a g2 _a2 c'2 _b2 | "Db"_a2 _b2 _a2 g2 _a2 _d'2 |
+"Ebm"c'2 _b2 _a2 ^f2 =f2 _e2 | "Db"_d2 c2 _B2 _A2 ^F2 =F2 | "Ab7"_E2 _D2 C2 _E2 _B2 _A2 | "Db"G2 _A2 _B2 c2 _d2 _e2 |
+"F7"f ^f2 =f e2 =f2 _a2 ^f2 | "Bbm"f2 ^f2 =f2 e2 =f2 _b2 | "Ab7"_a _b2 _a g2 _a2 c'2 _b2 | "Db"_a2 _b2 _a2 g2 _a2 f'2 |
+"Ebm7"_e'2 _d'2 c'2 _b2 _a2 ^f2 | "Db"f2 _e2 _d2 c2 _B2 _A2 | "Ab7"A2 c2 _B2 F2 ^F2 C2 | "Db"_D4 z4 f4 |
+"F7"f ^f2 =f e2 =f2 _a2 ^f2 | "Dm7"f2 ^f2 =f2 e2 =f2 _b2 | "Ab7"_a _b2 _a g2 _a2 c'2 _b2 | "Db"_a2 _b2 _a2 g2 _a2 _d'2 |
+"Ebm"c'2 _b2 _a2 ^f2 =f2 _e2 | "Db"_d2 c2 _B2 _A2 ^F2 =F2 | "Ab7"_E2 _D2 C2 _E2 _B2 _A2 | "Db"G2 _A2 _B2 c2 _d2 _e2 |
+"F7"f ^f2 =f e2 =f2 _a2 ^f2 | "Bbm"f2 ^f2 =f2 e2 =f2 _b2 | "Ab7"_a _b2 _a g2 _a2 c'2 _b2 | "Db"_a2 _b2 _a2 g2 _a2 f'2 |
+"Ebm7"_e'2 _d'2 c'2 _b2 _a2 ^f2 | "Db"f2 _e2 _d2 c2 _B2 _A2 | "Ab7"A2 c2 _B2 F2 ^F2 C2 | "Db"_D4 z4 _A4 |
+"Ab7"_A8 _E4 | "Ab7"_A8 E4 | "Db"_A8 F4 | "Db"f8 f4 |
+"Ab7"f8 _B4 | "Ab7"f8 c4 | "Db"_e8 _d4 | "Db"c3 _e3 _d3 _B3 |
+"Ab7"_A8 _E4 | "Ab7"_A8 E4 | "Db"_A8 F4 | "Db7"f12 |

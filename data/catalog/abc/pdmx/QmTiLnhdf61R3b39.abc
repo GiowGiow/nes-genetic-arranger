@@ -1,0 +1,23 @@
+%abc-2.1
+% Matelote, by Trad.. Score published on MuseScore (artist: Misc tunes), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/25/QmTiLnhdf61R3b398Z3qaT5MYoUQQhbZcru2tcPQnNYerj.mid (sha256
+% 2dca86a0c1de1608ed4374091eb3eda10aba2b843ad1f03976c14201e3802037): melody track 0, bars 0-18
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Matelote
+M:6/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"d6 f6 | "C"_e2 d2 c2 d4 _B2 | "C"d6 f6 | [M:3/8]"C"_e2 d2 c2 |
+"C"_B6 | [M:6/8]"C"d6 f6 | "C"_e2 d2 c2 d4 _B2 | "C"d6 f6 |
+[M:3/8]"C"_e2 d2 c2 | "C"_B6 | [M:6/8]"C"d2 c2 _B2 d2 c2 _B2 | "C"f4 f2 f6 |
+"C"G2 A2 _B2 f2 _e2 d2 | "C"c4 c2 c6 | "C"d2 c2 _B2 d2 c2 _B2 | "C"f4 f2 f6 |
+"C"G2 A2 _B2 G2 c2 A2 | "C"_B4 _B2 _B6 |

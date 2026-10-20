@@ -1,0 +1,35 @@
+%abc-2.1
+% Peer Gynt Op. 23: Anitra's Dance, by Edvard Grieg. Score published on MuseScore (artist: Edvard
+% Grieg), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/39/QmfQUCzMimagAnE27ef1xcaVy8NykmgZhc4GzcEkgvvoUr.mid (sha256
+% eb757dda60385244c326eb02e5f80cfa52087a671437d2bfe6e4333cc216d596): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Peer Gynt Op. 23: Anitra's Dance
+M:3/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"e'12 | "E"e'4 z8 | "A"z4 C2 z2 D2 z2 | "A"z4 E2 z2 F2 z2 |
+"A"z4 E2 z2 D2 z2 | "A"z4 C2 z2 E2 z2 | "Am"B A _A z =A z B z c z d z | "Am"e2 a2 e2 z2 d e z2 |
+"Am"c2 a2 c2 z2 B c z2 | "Am"A8 z4 | "Am7"A2 c2 A4 G A z2 | "Ab7"^F2 c2 ^F8 |
+"Am7"F2 c2 F4 E F z2 | "B"_E2 B2 _E8 | "B7"B z _B z ^F z =B z A z =F z | "Dbm7"B z _A z E z B z G z _E z |
+"Db7"B z ^F z D z B z =F z _D z | "B"B z E z C z B z _E z B, z | "F#m7"^F E _E z =E z ^F z G z A z | "Em"B z e z B z A z G z ^F z |
+"B"E z ^F z G z A z B2 z2 | "E"e2 z6 E4 | "Am"B A _A z =A z B z c z d z | "Dm7"e2 a2 e2 z2 d e z2 |
+"Am"c2 a2 c2 z2 B c z2 | "Am"A8 z4 | "Am7"A2 c2 A2 z2 G A z2 | "Ab7"^F2 c2 ^F8 |
+"Am7"F2 c2 F2 z2 E F z2 | "B"_E2 B2 _E8 | "B7"B z _B z ^F z =B z A z =F z | "Dbm7"B z _A z E z B z G z _E z |
+"Db7"B z ^F z D z B z =F z _D z | "B"B z E z C z B z _E z B, z | "F#m7"^F E _E z =E z ^F z G z A z | "Em"B z e z B z A z G z ^F z |
+"B"E z ^F z G z A z B2 z2 | "E"e2 z10 | "E7"f6 e2 e2 d2 | "E7"d6 e2 e2 f2 |
+"E7"f12 | "E7"e4 z8 | "Dm7"z10 f2 | "Bm7"d z c z B z7 |
+"E7"z2 d2 B z A z _A z3 | "E7"z12 | "A7"_b6 a2 a2 g2 | "A7"g6 a2 a2 _b2 |
+"A7"_b12 | "A7"a4 z8 | "C7"z10 _b2 | "Em7"g2 f2 e2 z6 |
+"A7"z2 g2 e2 d2 _d2 z2 | "A7"z12 | "D"z4 ^F2 z2 G2 z2 | "D"z4 A2 z2 B2 z2 |
+"D"z4 A2 z2 A4 | "D"e d _d z =d z e z ^f z g z | "D"a2 d'2 a4 g a z2 | "D"^f2 d'2 ^f4 e ^f z2 |
+"Dm"d12 | "D"z4 F2 z2 G2 z2 | "D"z4 A2 z2 _B2 z2 | "D"z4 A2 z2 A4 |

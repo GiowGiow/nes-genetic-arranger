@@ -1,0 +1,35 @@
+%abc-2.1
+% Impromptu passione, by Modest Mussorgsky. Score published on MuseScore (artist: Modest
+% Mussorgsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Modest Mussorgsky (died 1881,
+% Wikidata Q132682).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/48/QmUv32fhPyLu94Ru3Hri4bggfrLVs4JurjLpPtt2ZLXo2C.mid (sha256
+% d4fbd4909dd9503e7a5dc465004a0c40b498d64787daf1d0a61685424dbb7618): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Impromptu passione
+M:4/4
+L:1/16
+Q:1/4=94.000128
+% Exact tempo 94.00012846684224 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#"^F,,4 ^F,4 _B,4 _D4 | "Bbm7"^F4 _D4 "Ebm7"_B,4 ^F,4 | "Ebm"_E,4 _B,4 "Ab7"_E4 _A,4 | "Ab7"_D,4 _A,4 "Fm"_D4 B,4 |
+"F#"^F,4 _B,4 _D4 ^F4 | "Bbm7"_D4 _B,4 "Ebm7"^F4 _D4 | "Ebm"^F,4 _B,4 _E4 _B,4 | "Ebm"^F,4 _A,4 "Fm7"_D,4 _D4 |
+"Db7"_D,4 _A,4 _D4 _A,4 | "G7"D,4 B,4 "E7"D4 B,4 | "Db7"_D,4 _A,4 "Db"_D2 z2 _A,4 | "Db7"D,4 B,4 "E7"D4 B,4 |
+"F#"_E,4 _B,4 "Ebm"_E2 z2 _E,4 | "Ebm"_A,,4 _A,4 "Ab7"C4 _A,4 | "Ab7"_D,4 _A,4 "Db"_D4 _A,4 | "Db7"_D,4 _D8 B,4 |
+"F#"^F,,4 ^F,4 _D4 ^F,4 | "Bbm7"^F,4 _B2 z2 "Ebm7"_A4 ^F4 | "Ebm"_E,4 _B,4 "Ab7"_D4 _A,4 | "Ab7"_D,4 _A,4 "Fm"C4 _D4 |
+"F#"^F,4 _B,4 _D4 ^F,4 | "Bbm7"_D,4 _B2 z2 "Ebm7"_A4 ^F4 | "Ebm"^F,4 _B,4 _E4 _B,4 | "Ebm"^F,4 _A,4 "Ab7"^F,4 =F,4 |
+"Db7"_D,4 _A,4 "Fm7"B,4 _A,4 | "F#m"A,,4 A,4 _D4 ^F4 | "Ab7"_A,,4 _A,4 "F#m"=A,,4 _D4 | "F#m"A,,4 A,4 "A"_D4 ^F4 |
+"Ab7"_A,,4 _A,4 C4 _A,4 | "Abm"D,4 D4 "Db7"_E4 F4 | "Db7"_E4 D,4 "F#"_E4 _E,4 | "Abm7"A,,4 D4 "Db7"_E4 F4 |
+"Db7"D4 D,4 "F#"_E4 _E,4 | "F#"^F,4 ^F,4 "Ebm"_B,4 _E4 | "Abm"_D,4 _A,4 "Db7"B,4 _D4 | "Ebm7"^F,, _D,3 ^F,4 "Bbm7"_B,4 _D4 |
+"Ebm"_D,4 _E,4 "D7"^F,4 A,4 | "F#m"_D,4 ^F,4 "A"A,4 _D4 | "Abm7"_D,4 B,,4 "Bm"=D,4 ^F,4 | "Bm"_D,4 =D,4 ^F,4 _A,4 |
+"Bm"_D,4 ^F,4 _A,4 B,4 | "Db7"_D,4 _D4 F4 _A2 z2 | "Db7"_D,4 F,4 "Db"_A,4 B,4 | "F#"^F,4 _B,4 _D4 ^F4 |
+"Bbm7"^F,4 _B,4 "Ebm7"_D4 ^F4 | "Ebm"_E,4 _B,4 _E2 z2 _E,4 | "Ebm"_A,,4 _A,4 "Ab7"_D,4 B,4 | "F#"^F,4 ^F,4 _B,4 _D4 |
+"Bbm7"^F4 _D4 "Ebm7"_B,4 ^F,4 | "Ebm"_E,4 ^F,4 "D"_B,4 =B,4 | "Db"_D,4 F,4 "Db7"_A,4 B,4 | "Bbm"_D,4 _B,,4 _D,4 ^F,4 |
+"Bbm7"F,4 ^F,,4 "Ebm7"_B,,4 _D,4 | "Abm7"^F,2 z2 B,,4 _E,4 ^F,2 z2 | "G7"F,2 z2 B,,4 "E7"D,4 F,4 | "Db7"D,4 B,,4 D,4 F,4 |
+"Db7"_A,4 B,4 "Bb7"D4 F2 z2 | "E7"F15 z | "Gm"^F,4 z4 "Bb7"^F,8 | "Ab7"_B,8 "Ebm"_D8 |
+"Eb7"^F8 "Bbm"^f8 | "F#"_b8 "F"_d'8 | "Ebm"^f'4 z4 "Bm"B,8 | "F#"^F,16 |

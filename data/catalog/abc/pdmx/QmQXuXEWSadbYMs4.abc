@@ -1,0 +1,35 @@
+%abc-2.1
+% Moments Musicaux Op.16, by Sergei Rachmaninoff(1873-1943). Score published on MuseScore (artist:
+% Sergei Rachmaninoff), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sergei Rachmaninoff (died 1943,
+% Wikidata Q131861).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/53/QmQXuXEWSadbYMs4pz7cEjHqD5qPGDiuHe2JJ3Yb58rCfp.mid (sha256
+% 12774e0848ff8b3a8f5fe3dd00c14e74c790155ef6603f8fff93ce375577ddf7): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Moments Musicaux Op.16
+M:2/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db7"D, F B, ^F _A ^F E _E | "Ab7"_E, ^F C _A =A _A =F =E | "Ebm"F, A B _d _A, =A B _d | "D"_B, _A _B =B _A ^F E _E |
+"Db7"D, F B, ^F _A ^F E _E | "Ab7"_E, ^F C _A =A _A =F =E | "Ebm"F, A B _d _A, =A B _d | "Bb7"_B, _A _B =B _A ^F E _E |
+"Ebm"_E,, C, D, F, ^F, A, _B, D | "Ebm7"F _E C _B, G, ^F, =F,, =F, | "Ebm7"^F,, _E, =F, _A, _B, C _D =F | "F#"^F =F D _D _B, A, _A,, _A, |
+"F#7"_B,, G, A, C C, G, E _B, | "C7"G C _B E _d _A _A G | "B7"F, C _D _E C _B, _D _E | "Ebm"C _E F _E ^F =F _A ^F |
+"Db7"D, F B, ^F _A ^F E _E | "Ab7"_E, ^F C _A =A _A =F =E | "Ebm"F, A B _d _A, =A B _d | "Bb7"_B, _A _B =B _A ^F E _E |
+"F#7"G, _B E =B _d =B A _A | "Db7"_A, B F _d =d _d _B =A | "Abm"_B, d e ^f _a ^f ^f =f | "Abm7"B, _A _B _d _e _d =E _d |
+"F#m"A, A _d _e =e =d B _B | "F"F, A _A _B c _B c _B | "Fm"_A, _A c d _e _d _B =A | "E"E, _A G =A B =A B =A |
+"Gm"G, G B _d =d c A G | "F#m"^F, ^F A c _d B _A ^F | "Fm"F, F A B c _B G F | "Em"E, E G _B =B A ^F E |
+"D"_E,, ^F, _B, =F ^F =F _D =B, | "Db"^F,, _B, _D =F ^F =B, ^F =B, | "Ab7"_A,, _A, C F ^F =F ^F =F | "Abm7"_B,, C D F ^F =F D =B, |
+"D"_E,, ^F, _B, =F z =F _D =B, | "D"^F,, _B, _D =F z =B, =D =B, | "Db"_A,, _A, C _E z2 _D F | "Abm7"_B,,, F, D2 z4 |
+"Ebm"^F,8 | "Ebm"^F,8 | "Ebm"^F,8 | "Ebm"z8 |
+"Bb7"D,, C, D, F, _B, _A, F, _E, | "D7"_E,, c c ^F c =F c ^F | "Bb7"D,, C, D, F, _B, _A, F, _E, | "D7"_E,, c c ^F c =F c ^F |
+"Eb"B _B c _B =B _B c _B | "Eb"B _B c ^F =B _B c ^F | "B7"F,, ^F, A, B, C ^F A B | "D7"c B A ^F C B, A, ^F, |
+"B7"F,, F, ^F, A, B, D _E ^F | "Abm7"F,, F, ^F, _B, =B, D _E ^F | "B7"F,, F, ^F, A, B, D _E ^F | "Abm7"F,, F, ^F, _B, =B, D _E ^F |
+"Db7"F,, _E, F, _A, _D B, _A, ^F, | "F7"^F,, _e _e A _e _A _e =A | "Db7"F,, _E, F, _A, _D B, _A, ^F, | "F7"^F,, _e _e A _e _A _e =A |
+"Eb"B _B c _B =B _B c _B | "Eb"B _B c ^F =B _B c ^F | "Bb7"E,, E, F, _B, =B, E F _B | "Db7"B _B F E _B, _B, F, E, |

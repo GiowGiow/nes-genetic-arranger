@@ -1,0 +1,33 @@
+%abc-2.1
+% Fuggite pur fuggite, by Pomponio Nenna. Score published on MuseScore (artist: Pomponio Nenna),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pomponio Nenna (died 1608,
+% Wikidata Q3907903).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/36/Qmap6fTCybpaeiyoXbZJ7LoH7LTGqPEdSvy4hdfEB1vyS5.mid (sha256
+% 7813dcba5bcead6479f4a9f63b61704c7962c96c1f2554992c09aca0d2718cf5): melody track 0, bars 2-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fuggite pur fuggite
+M:4/4
+L:1/16
+Q:1/4=55.999978
+% Exact tempo 55.99997760000896 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"c4 c4- "Dm7"c2 d2 d2 e2 | "F"f4 f2 f2 "A"_d8 | "A"z4 a4 e8 | "D"z2 ^f2 ^f2 g2 "Dm7"c6 B2 |
+"C"c8 c8 | "F"z8 "Dm7"z8 | "Am7"z2 G2 _B2 c2 "Gm7"d2 d2 d2 d2 | "Gm7"d4 c2 _B2 c8 |
+"F"c2 c2 _B2 A2 "Cm"c8 | "Bb"A4 _B4- "Dm"_B4 A2 F2 | "F"A8 "C"G8 | "Gm"z16 |
+"Gm"z2 d2 d2 e2 "D"f2 f2 f2 f2 | "Dm"f4 e2 d2 "C"_e8 | "Gm"d8- "Dm"d4 c2 _B2 | "Gm"d8- "D"d8 |
+"G"B16 | "Dm"z8 "C"z8 | "Dm"z8 "A"z8 | "Gm"z8 "Dm"z4 d4 |
+"C"B4 c4 "G7"A6 A2 | "A"A8 "D"A8 | "Bb"z2 f2 f2 f2 "Dm7"f6 c2 | "Bb"d8 "C"z2 g2 g2 g2 |
+"Em7"g6 d2 "C"e8 | "Am7"z8 "Dm"z8 | "Gm7"z4 d4- "Eb"d2 d2 c4 | "Dm"f2 e2 d2 c2 "D"_B2 A2 _B4 |
+"Dm"A8- "Dm7"A8 | "Em7"z8 "C"c8 | "F"c8 "A7"c8 | "Dm"_B4 A4- "D"A4 _B2 c2 |
+"D"A8 "G"G8 | "Gm"z4 d4- "Gm7"d4 f2 c2 | "Gm7"d4 c4 "C"c8 | "F"c8 "Gm7"z8 |
+"Gm"z4 d4 _B2 d2 c2 _B2 | "D"A4 A4 "Gm"z8 | "Gm"d8 "F"f8 | "Dm7"f8 "Gm7"d8 |
+"D"d16 | "Gm"B4 d4- "Eb"d4 d2 _e2 | "Gm7"d6 _B2 "F"c8 | "Bb"_B4 _B4 "G7"A2 d2 c2 _B2 |
+"Dm"A4 A4 "Gm"z8 | "F"z4 c4 A2 c2 _B2 A2 | "C"G4 G4 "Am7"z8 | "Am"z4 c4 "A"A2 c2 _B2 A2 |
+"C"G4 G4 "Gm"z4 g4 | "Gm"e2 g2 f2 e2 "G"d4 d4 | "Gm"g6 _e2 "G"d8 | "C"c4 c4 "F"A2 c2 _B2 A2 |
+"F"c4 d4 "Eb"_e8 | "C"_e8 "Dm7"c8 | "C"c16 | "F"c16 |

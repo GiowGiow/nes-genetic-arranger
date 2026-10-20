@@ -1,0 +1,34 @@
+%abc-2.1
+% Vivrò io mai per altro, by Benedetto Pallavicino. Score published on MuseScore (artist:
+% Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/14/QmaCb2tfypVKmuLB1LfzEZ5auQCM88hhJGf4kRkdVRrw1n.mid (sha256
+% cce20dc7b697e38e73838f0c4c3527c09096feabcd3540ad94d4d07fc5ae3dbc): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Vivrò io mai per altro
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"g16 | "D"a16 | "D"a8 "G"d8 | "F"f12 c4 |
+"F"c8 "Am"c8 | "G"d8 e8 | "A7"e8 "Dm"d8 | "A"d8 _d8 |
+"Dm"d8 "A"z4 e4 | "A"e8 "D"^f8 | "G"g8 B8 | "E"B4 B4 _d8 |
+"F#m7"_d8 "Bm"=d8 | "D"A16 | "G"B16 | "G"z8 d4 d4 |
+"G"d8 "Em"e4 B4 | "Em"_d4 =d8 _d4 | "D"d8- "Dm"d8 | "Dm"z8 a4 a4 |
+"Dm"a8 "Am"a4 e4 | "Am"^f4 g8 ^f4 | "G"g8 z4 d4 | "Em"d4 e4 "A"e8 |
+"A"e4 f4- "F#m7"f4 e4 | "Em"e4 g4- "C"g4 c4 | "G"d16 | "C"e8 z4 g4 |
+"G"d6 d2 "Am7"d4 c4 | "E"B8 B8 | "Am"z4 a4 "C"e6 e2 | "F"e4 d4 "A"_d8 |
+"A"_d8 z8 | "Em"z8 "C"g8 | "G"g8 d8 | "G"d4 d4 "F#m7"e8 |
+"E"e8 "F#m7"e8 | "E"e16 | "A"_d16 | "A"z8 "C"e8 |
+"C"e8 e8 | "C"g16 | "C"g8 "Am7"d4 c4 | "E"B6 B2 "A7"_d4 =d4 |
+"C"e8 e8 | "Em7"z8 "C"z8 | "Am7"z8 "Dbm7"z8 | "Am"z8 "G"z8 |
+"C"z16 | "C"z8 e8 | "C"e8 e8 | "C"g8- "Em"g8 |
+"G"g8 "D7"g4 e4 | "E"e6 e2 "G"e4 g4 | "C"g8 g8 | "B7"z4 d4 "G"d4 B4 |
+"Em"d4 c4 "Eb"B6 B2 | "Em"B4 G4 "D"^F8 | "G"G8 "Bm7"z8 | "G"z8 "Em"z4 g4 |
+"Em"g4 ^f4 g4 e4 | "Em"e4 B4 d8 | "D"d8 "Em7"d8 | "D"A16 |

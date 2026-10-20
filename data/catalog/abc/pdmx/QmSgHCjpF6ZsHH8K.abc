@@ -1,0 +1,35 @@
+%abc-2.1
+% Stanco non gia Signore, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio
+% Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/21/QmSgHCjpF6ZsHH8KdhDa4f6hXDEKosqkJN54ekDt6U3jXa.mid (sha256
+% bafe0adc3c5f089ad5f99838c6013fb4486b10b7b7b9d0cf1f452446c7f8fa0e): melody track 1, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Stanco non gia Signore
+M:4/2
+L:1/16
+Q:1/4=172.000103
+% Exact tempo 172.00010320006191 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"_D32 | "Fm"C8 C8 _E8 _E8 | "Bb"_B,4 C4 _D4 _E4 "Eb7"F16 | "Db"F16 "C"_E16 |
+"F"F12 F4 F8 _A8 | "Cm7"_E8 ^F8- "Bbm"^F8 =F8 | "Fm"F8 C8 "C"_E16 | "Eb"_B,8 _E8- "Bb"_E4 D2 C2 D8 |
+"Eb"_E16 z8 G8 | "Ab"G8 _A8 "Fm"F16 | "F#"_D8 _E4 _D4 "Db"F16 | "Ab"F16 "Bbm"z8 F8 |
+"F"F4 F4 F8 "C"_A16 | "C"_E8 _A8- "Cm"_A8 G8 | "Fm7"G8 F8- "Bbm"F8 _B8 | "F7"G8 _A8 "Bbm7"F16 |
+"Bbm"F8 _D8 "Fm"_E8 F8 | "Eb7"_B,8 F8- "F#"F4 _E2 _D2 _E8 | "Fm7"F8 _B,8 "Cm7"_B,8 _B,8 | "Ab"_B,4 _B,4 C8 "Db"_D12 F4 |
+"Fm"E8 F16 _A8 | "C"_A8 G8 "F"z8 _A8 | "F"_A12 G4 F4 _E4 _D8 | "F"_D8 C8 "Bbm"_B,4 C4 _D4 _E4 |
+"C7"F12 _E4 "Bb"_D16 | "Fm"_D8 C8 "Ab"z8 C8 | "Cm"_B,8 _E8 "Eb"_E8 _E8 | "Cm7"_D8 _B,8 "Ab"_E8 C8 |
+"Ebm"_B,4 _B,4 _E8- "Bb"_E4 _D2 C2 _D8 | "Eb"_E8 z4 _B,4 "Fm7"C12 _E4 | "Fm"_D4 C4 _E12 =D2 C2 =D8 | "Eb"_E8 _B,8- "Db"_B,4 C4 _D8 |
+"Fm"_D8 C8 "Fm7"_B,8 C8 | "Bbm7"C4 _B,2 _A,2 _D8- "Eb7"_D8 _B,8 | "Ab"z8 C8 "Fm"_E8 _E8 | "Eb"_B,16 "Bbm"z8 _B,8 |
+"Bb"_D8 _D8 "Db"_A,16 | "Ab"C12 C4 "Bb7"C8 _D8 | "Cm7"_D8 C8 "Fm"F8 _E8 | "Bbm"z8 F8 "Fm"_A8 F8 |
+"Cm"_E12 C4 "Ab"F8 _E4 F4 | "Ab"F4 G4 _A8- "Bbm"_A4 G2 F2 G8 | "Fm"_A8 _E8 _E8 F8 | "Ebm7"_E8 F8 "Bbm7"^F8 =F8 |
+"F#"z8 _E8 "F"F8 F8 | "F"F16- "C7"F16 | "Bbm"F16- "F"F16 | "C"G16 _A8 G8 |
+"Fm"F12 G4 "F"_A16 | "Cm"G8 C8 "C"_E8 _E8 | "Eb"_B,16 "Bbm"z8 _B,8 | "Bb"_D8 _D8 "Db"_A,16 |
+"Ab"C12 C4 "Bb7"C8 _D8 | "Cm7"_D8 C8 "Fm"F8 _E8 | "Bbm"z8 F8 "Fm"_A8 F8 | "Cm"_E12 C4 "Ab"F8 _E4 F4 |
+"Ab"F4 G4 _A8- "Bbm"_A4 G2 F2 G8 | "Fm"_A8 _E8 _E8 F8 | "Ebm7"_E8 F8 "Bbm7"^F8 =F8 | "F#"z8 _E8 "F"F8 F8 |
+"F"F16- "C7"F16 | "Bbm"F16- "F"F16 | "C"G16 _A8 G8 | "Fm"F12 G4 "F"_A16 |

@@ -1,0 +1,22 @@
+%abc-2.1
+% Lijepa naša domovino, by Josip Runjanin. Score published on MuseScore (artist: Josip Runjanin),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josip Runjanin (died 1878,
+% Wikidata Q1265421).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/42/Qmbs5dnyd8oHUX4eCeBrfhYNhDQzZrBPADQYzCwjQWMf1t.mid (sha256
+% 99e5369dcf48696dee1bcf294e6775c48f65c0778f21e2a9a23eeb9b456e24ed): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lijepa naša domovino
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"_d4 _d4 _d6 B2 | "F#m7"B2 A2 A4- "F#m"A2 E4 E2 | "Dbm7"D2 _D2 =D2 ^F2 "E7"^F8 | "B7"E2 D2 _D2 =D2 "F#m"E4 E2 z2 |
+"A"_d4 _d4 _d6 B2 | "F#m7"B2 A2 A4- "F#m"A2 E4 E2 | "Dbm7"D2 _D2 =D2 ^F2 "E7"^F8 | "E"E2 E2 _A4 "A"E4 E2 z2 |
+"E"_A4 _A4 _A6 ^F2 | "E"_A4 _A2 =A2 B6 _A2 | "Db"B2 B2 B2 B2 "F#m"B4 A4 | "Dbm7"_A4 ^F4 "E"E4 E2 z2 |
+"A"_d4 _d4 _d6 B2 | "F#m7"B2 A2 A4 "F#m"E4 E2 z2 | "Dbm7"D2 _D2 =D2 E2 "E7"^F8 | "E"_A2 _A2 B4 "A"=A4 =A2 z2 |

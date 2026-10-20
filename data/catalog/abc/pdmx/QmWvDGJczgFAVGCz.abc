@@ -1,0 +1,25 @@
+%abc-2.1
+% Le quattro stagioni, by Antonio Vivaldi. Score published on MuseScore (artist: Antonio Vivaldi),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/48/QmWvDGJczgFAVGCzbHEsrhvnHxhgCdaUQaWd8spNcpd9sY.mid (sha256
+% a1ca9ba27719c0c5a1dd800e9ce657cf4b210015ca34cb06e77c6112708b82db): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le quattro stagioni
+M:3/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Em"b4 e3 b g3 e | "Abm7"^f3 e ^f4 z3 B | "B7"a4 B3 a g3 ^f | "Em"g3 ^f e3 g a3 b |
+"Bm"^f3 e ^f3 b ^f3 d | "Am"e3 d e3 a e3 c | "Em7"d3 c d3 g d3 B | "D7"c3 B c3 ^f a3 c |
+"G"B3 A B4 z3 B | "Em"e3 g b3 g e3 d | "A"_d3 B _d4 z3 e | "D7"^f3 A c3 A ^F3 E |
+"Bm"D3 c d3 B g3 g | "F#7"g6 e2 ^f2 _d2 | "Bm"d3 B B _B =B =B =B =B =B2 | "B"B4 z3 B _e3 ^f |
+"B7"a3 B _e3 ^f b3 a | "Em"g3 ^f e4 z3 e | "Am"c3 A c3 e a3 a | "Am7"a6 b2 g3 ^f |
+"B7"g2 ^f e e _e =e =e =e =e =e2 | "Em"e2 b a g2 ^f e =f2 _a2 | "B7"a6 b2 g3 ^f | "B"g2 ^f e e _e =e =e =e =e =e2 |
+"Dbm7"e12 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% 2 Fughe dissimili in una, by Pietro Raimondi. Score published on MuseScore (artist: Pietro
+% Raimondi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pietro Raimondi (died 1853,
+% Wikidata Q1369703).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/1/Qma2DJRsVccovszq43rkwQkCR1GDafvf2MrYFLJYqyAQLy.mid (sha256
+% 4657c2a52cf687eb89a247a6d904eef9fde3af08145e4b12235b6196ba5fea10): melody track 4, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:2 Fughe dissimili in una
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 | "C"z12 | "G"G,12 | "D7"A,2 G,2 ^F,2 G,2 A,2 ^F,2 |
+"Em7"G,2 A,2 B,6 C D | "C"E6 D2 C2 B,2 | "Am"A,2 B,2 C2 B,2 A,4 | "D"A,2 B, C D6 C2 |
+"Em7"B,4 B,4 B,2 C D | "D7"E2 D2 C2 ^F,2 G,2 A,2 | "G"B,8 _D4 | "D"D12 |
+"A7"E2 D2 _D2 =D2 A,4 | "D"D,12 | "Em7"G,4 G,,4 E,2 ^F,2 | "Em"G,2 A,2 B,4 E,4 |
+"A"E,12 | "D"D,12 | "G"G,12 | "C"C,8 D,4 |
+"G"G12 | "D7"A2 G2 A,8 | "G"G,4 G,,6 G,2 | "C"C,2 D,2 E,4 _A,4 |
+"Am"A,4 A,,4 z4 | "D"D,12 | "G"G,,4 B6 c d | "D7"e2 d2 c4 D4 |
+"G"G8 E4 | "D"D,12 | "F#m7"E,2 D,2 _D,2 =D,2 E,2 _D,2 | "D"D,2 E,2 ^F,6 G, A, |
+"Em"B,4 B,2 A,2 G,2 ^F,2 | "Em"E,2 ^F,2 G,2 ^F,2 E,4 | "Am"E,2 ^F, G, A,6 G,2 | "D"^F,4 ^F,6 G, A, |
+"Em7"B,2 A,2 G,2 B,,2 C,2 D,2 | "C"E,8 ^F,4 | "G"G,4 g2 f2 _e2 d2 | "Cm"_E2 D2 C2 D2 _E2 C2 |
+"Cm"_E,12 | "Dm7"D,8 C,4 | "Bb"_B,,6 C,2 D,2 E,2 | "Bb"F,2 G, A, _B,4 _B,,4 |
+"Cm7"_E,6 D,2 C,4 | "F7"C2 _B,2 A,6 G,2 | "D7"^F,12 | "D7"^F,4 D,6 ^F,2 |
+"Gm"G,2 A,2 _B,4 z4 | "C7"E,12 | "C7"E,4 C,6 E,2 | "Am7"^F,2 G,2 A,2 G,2 ^F,2 E,2 |
+"Dm"^F,2 E,2 D,8 | "C"C,4 C8 | "G7"D2 C2 B,2 C2 G,4 | "C"C8 C,4 |
+"Dm"F,4 z4 D,2 E,2 | "Dm"F,2 G,2 A,4 D,4 | "Em7"D,12 | "C"E,2 D,2 C,8 |
+"G7"z4 G,8 | "C"C8 A,4 | "G"G12 | "D7"A2 G2 A,8 |

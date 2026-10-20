@@ -1,0 +1,35 @@
+%abc-2.1
+% FURINGA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/furinga.html (file
+% https://www.beakauffmann.com/mpb_f/som/furinga.mid, sha256
+% d97f97efaabd1fefb4a002e066d660f06cbda564193ac83b041125304e52974d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FURINGA
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dbm7"z5 A f A | "Dbm7"_A3 e z G e G | "Dm"F3 d z F E D | "A"_B _B2 _B A2 A2 |
+"Dm"A3 A z A a A | "Dbm7"_A3 _a z G g G | "Bm7"F3 f z f e d | "E7"c d2 _e =e2 =e2 |
+"A"e3 a'' z A f A | "Dbm7"_A3 e z G e G | "Dm"F3 d z F E D | "A"_B _B2 _B A2 A2 |
+"D"A3 A z d d' c | "A7"_B3 _b z _B _b A | "Bb7"G3 g z F E D | "A"A A2 A A2 A2 |
+"D"d3 d z A f A | "Dbm7"_A3 e z G e G | "Dm"F3 d z F E D | "A"_B _B2 _B A2 A2 |
+"Dm"A3 A z A a A | "Dbm7"_A3 _a z G g G | "Bm7"F3 f z f e d | "E7"c d2 _e =e2 =e2 |
+"A"e3 a'' z A f A | "Dbm7"_A3 e z G e G | "Dm"F3 d z F E D | "A"_B _B2 _B A2 A2 |
+"D"A3 A z d d' c | "A7"_B3 _b z _B _b A | "Bb7"G3 g z F E D | "A"A A2 A A2 A2 |
+"D"d3 d z c d _e | "C7"e3 e z e d _d | "F"c3 c z f g _a | "Am7"a3 a z a c' a |
+"Gm"d'3 d' z d _B G | "Bb"D2 D2 f2 f2 | "C7"e3 e z c' _b g | "C7"e e2 e d2 _d2 |
+"F"c3 c z c d _e | "C7"e3 e z e d _d | "F"c3 c z f g _a | "Am7"a3 a z a c' a |
+"Gm"d'3 d' z d _B G | "Bb"D2 D2 f2 f'2 | "Dm7"c''3 a' f' c' a f | "C7"B d2 g e g2 c' |
+"F"f2 f'2 z c d _e | "C7"e3 e z e d _d | "F"c3 c z f g _a | "Am7"a3 a z a c' a |
+"Gm"d'3 d' z d _B G | "Bb"D2 D2 f2 f2 | "C7"e3 e z c' _b g | "C7"e e2 e d2 _d2 |
+"F"c3 c z c d _e | "C7"e3 e z e d _d | "F"c3 c z f g _a | "Am7"a3 a z a c' a |
+"Gm"d'3 d' z d _B G | "Bb"D2 D2 f2 f'2 | "Dm7"c''3 a' f' c' a f | "C7"B d2 g e g2 c' |

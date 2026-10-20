@@ -1,0 +1,33 @@
+%abc-2.1
+% Symphony No.1, by Gustav Mahler. Score published on MuseScore (artist: Gustav Mahler), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Mahler (died 1911,
+% Wikidata Q7304).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/32/QmeMWRNojyXK2vV6w3LYXyYZ9qJW6EYRW41zGNZ9EjMQsd.mid (sha256
+% 8c632f7de3016ee5b35cfdc0cf1291371579bfba7528bafe799ebe4059aec84b): melody track 19, bars 0-56
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.1
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"a'16 | "A"a'16 | "A"a'4 z12 | "A"z16 |
+"A"z16 | "A"z16 | "A"z16 | "Dm"z8 "Am"z8 |
+"D"z8 "A"z8 | "A"z16 | "A"z16 | "A"z16 |
+"A"z8 "Bm7"z8 | "Bm7"z16 | "Am"z16 | "Am"z8 "A"z8 |
+"A"z16 | "A"z16 | "Dm"z8 "Am"z8 | "D"z8 "A"z8 |
+"A"z16 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "A"z16 | "A"z16 | "A"A8 E8 |
+"Dm"F8 "Am"C8 | "D"D16 | "A"A,16 | "D"A,4 z4 "A"z8 |
+"A"z16 | "A"z16 | "A"z16 | "D"z8 "A"z8 |
+"Am"z16 | "Am"z8 "A"z8 | "A"z16 | "D"z8 "A"z8 |
+"A"a'16 | "D"a'8- "A"a'8 | "A"a'16 | "D"z16 |
+"A"z16 | "A"z16 | "A"A,,4 _B,,4 "Am"=B,,4 C, =B,,2 A,, | "A"_B,,4 =B,,4 "Am"C,4 _D, =B,,2 A,, |
+"B7"B,,4 C,4 "F#7"_D,4 =D, _D,2 _B,, | "Dm7"C,4 D,4 "Cm7"_E,4 =E, D,2 C, | "D"D,4 E,4 "Dm7"F,4 G, F,2 E, | "F"F,4 G,4 "A"A,4 _B, A,2 G, |
+"Am"B,4 C4 "Dm7"D4 E D2 C | "Am"D4 E4 "Dm"F4 G F2 E | "Gm7"F4 G F2 E "Dm"F4 G F2 E | "A"z16 |

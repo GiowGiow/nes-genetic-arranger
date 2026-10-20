@@ -1,0 +1,36 @@
+%abc-2.1
+% O NOME DELA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-nome-dela.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-nome-dela.mid, sha256
+% ef4c977448511081f8de52e6e34a29a00b173a3d6f6ffd3955388cf103cf19fe), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O NOME DELA
+M:2/4
+L:1/16
+Q:1/4=94.000276
+% Exact tempo 94.00027573414216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C7"f4 A4 | "C7"z c E c c C D E | "F"F2 A2 c2 d2 | "C7"z c E c c4 |
+"A7"A4 A4 | "Dm"z A D A A f e d | "E7"c B c e B _B =B e | "C7"A _B =B c _d =d _e =e |
+"F"f4 A4 | "C7"z c E c c C D E | "F"F2 A2 c2 d2 | "C7"z c E c c4 |
+"A7"A4 A4 | "G7"z A D A z f e d | "Dm7"c A F _B A C _B, G | "F"F4 f4 |
+"C"z a2 g e c G _A | "Dm"A A, D A z2 A2 | "G7"z e'2 d' b g ^f =f | "C"z a2 g e c G E |
+"Cm"C a2 g e c G A | "Em7"B B, D B z2 d'2 | "D7"z d'2 d' d' d'2 d' | "G7"g g'2 g' g' g'2 g' |
+"C"c' a2 g e c G _A | "Dm"A A, D A z2 A2 | "G7"z e'2 d' b g ^f =f | "Em"z a2 g e c G E |
+"A7"_D E G _B A _d f _d | "F7"e d _d =d b2 a2 | "G7"z g ^f g =f g d g | "C"c4 c'4 |
+"C"z a2 g e c G _A | "Dm"A A, D A z2 A2 | "G7"z e'2 d' b g ^f =f | "C"z a2 g e c G E |
+"Cm"C a2 g e c G A | "Em7"B B, D B z2 d'2 | "D7"z d'2 d' d' d'2 d' | "G7"g g'2 g' g' g'2 g' |
+"C"c' a2 g e c G _A | "Dm"A A, D A z2 A2 | "G7"z e'2 d' b g ^f =f | "Em"z a2 g e c G E |
+"A7"_D E G _B A _d f _d | "F7"e d _d =d b2 a2 | "G7"z g ^f g =f g d g | "C"c4 c'4 |
+"C"f4 A4 | "C7"z c E c c C D E | "F"F2 A2 c2 d2 | "C7"z c E c c4 |
+"A7"A4 A4 | "Dm"z A D A A f e d | "E7"c B c e B _B =B e | "C7"A _B =B c _d =d _e =e |
+"F"f4 A4 | "C7"z c E c c C D E | "F"F2 A2 c2 d2 | "C7"z c E c c4 |
+"A7"A4 A4 | "G7"z A D A z f e d | "Dm7"c A F _B A C _B, G | "F"F4 f4 |

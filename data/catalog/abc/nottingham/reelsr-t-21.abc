@@ -1,0 +1,24 @@
+%abc-2.1
+% Ross's Reel, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsr-t.abc, tune X: 21 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f80a2c0f37a49b9b0c748e922924d59c40d82758abc5b0f7fc9245d7fd563be0).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Ross's Reel
+M:4/4
+L:1/16
+Q:1/4=140
+K:F
+P:A
+"C"z12 a4 | "C"g6 f2 "C7"e4 d4 | "F"c2 d2 c2 B2 A4 G2 F2 | "C"E2 C2 E2 G2 "C7"c2 d2 c2 B2 |
+"F"A2 F2 A2 c2 f4 a4 | "C"g6 f2 "C7"e4 d4 | "F"c2 d2 c2 B2 A4 G2 F2 | "C7"E2 F2 G2 A2 B2 c2 d2 e2 |
+"F"f4 a4 f4 a4 | "C"g6 f2 "C7"e4 d4 | "F"c2 d2 c2 B2 A4 G2 F2 | "C"E2 C2 E2 G2 "C7"c2 d2 c2 B2 |
+"F"A2 F2 A2 c2 f4 a4 | "C"g6 f2 "C7"e4 d4 | "F"c2 d2 c2 B2 A4 G2 F2 | "C7"E2 F2 G2 A2 B2 c2 d2 e2 |
+"F"f4 a4 f4 c2 B2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 | "F"A2 c2 f2 c2 a2 c2 f2 c2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 |
+"F"A2 c2 f2 c2 a2 c2 f2 c2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 | "C"=B2 c2 e2 c2 g2 c2 _b2 c2 | "C"=B2 c2 e2 c2 g2 c2 _b2 c2 |
+"C7"a2 c2 g2 c2 "F"f4 c2 B2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 | "F"A2 c2 f2 c2 a2 c2 f2 c2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 |
+"F"A2 c2 f2 c2 a2 c2 f2 c2 | "F"A2 c2 c2 c2 d2 c2 c2 c2 | "C"=B2 c2 e2 c2 g2 c2 _b2 c2 | "C"=B2 c2 e2 c2 g2 c2 _b2 c2 |
+"C7"a2 c2 g2 c2 "F"f4 z4 |

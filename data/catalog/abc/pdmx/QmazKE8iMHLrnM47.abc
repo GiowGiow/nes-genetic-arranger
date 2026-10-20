@@ -1,0 +1,31 @@
+%abc-2.1
+% Dedens Tournay, by Thomas Crecquillon. Score published on MuseScore (artist: Thomas
+% Crecquillon), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Crecquillon (died 1557,
+% Wikidata Q611169).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/56/QmazKE8iMHLrnM47SWQVuMmZUPvhhx5iWZg5TGicDP4zxi.mid (sha256
+% 3452d266a4603a9981b8b8a4fcb36543deb3a2e61348fc43c6f04b796b8850e5): melody track 1, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dedens Tournay
+M:2/2
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z12 C4 | "Dm"F4 G4 A4 c4 | "F"_B4 A4 G8 | "Dm7"F4 A6 F2 G4 |
+"Dm7"A4 G2 F2 E8 | "Gm7"z4 C4 D4 _B,4 | "Dm"C2 C2 C2 C2 F4 D4 | "Am7"E4 F4 G4 F4 |
+"F"F2 D2 E4 F4 F4 | "Gm7"G4 A4 D8 | "Dm7"z4 A4 A4 F4 | "C"G8 E4 C4 |
+"Gm7"D4 E4 F6 G2 | "Dm7"A4 G2 F2 E4 F4 | "Am7"D8 C4 A,4 | "Gm7"C4 D8 _B,4 |
+"Dm7"C8 A,4 F,4 | "Bb"A,6 _B,2 C4 _B,4 | "Dm7"A,4 F,4 G,4 D4 | "Dm7"G4 F4 G4 A4 |
+"Gm"G4 F4 G8 | "F"E4 A4 A4 G4 | "Dm7"A4 G4 F6 E2 | "Gm"D2 C2 F8 E4 |
+"F"F8 z4 F4 | "Dm7"F4 E4 D4 F4 | "Dm7"F4 E4 D8 | "C"C8 F4 F2 E2 |
+"Am7"D2 F2 E2 D2 C2 F4 E2 | "Dm7"F4 z4 F4 G2 F2 | "Bb"E2 G2 F2 E2 D2 C2 F4 | "C"F4 E4 F4 F4 |
+"Bb"F6 G2 A4 G4 | "Gm7"E4 F4 D4 E4 | "F"F8 z4 C4 | "Dm7"F4 G4 A4 c4 |
+"F"_B4 A4 G8 | "Dm7"F4 A6 F2 G4 | "Dm7"A4 G2 F2 E8 | "Gm7"z4 C4 D4 _B,4 |
+"Dm7"C4 D8 E4 | "C7"F4 D4 G8 | "C7"z4 F8 D4 | "C7"E4 D4 C8 |
+"F"C16 |

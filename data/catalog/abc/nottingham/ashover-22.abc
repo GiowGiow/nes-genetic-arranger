@@ -1,0 +1,22 @@
+%abc-2.1
+% Harper's Frolick, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/ashover.abc, tune X: 22 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6586eea8dca53866b42721050d11fc1408bdb2cf31a902b41c5c13504139b164).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Harper's Frolick
+M:2/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z6 A2 | "D"A2 F2 D2 A2 | "D"F2 A2 D2 d2 | "A"c2 d2 e2 c2 |
+"D"d c d e d2 A2 | "D"F2 A2 D2 A2 | "D"F2 A2 D2 d2 | "A"c2 d2 e2 d c |
+"D"d6 A2 | "D"A2 F2 D2 A2 | "D"F2 A2 D2 d2 | "A"c2 d2 e2 c2 |
+"D"d c d e d2 A2 | "D"F2 A2 D2 A2 | "D"F2 A2 D2 d2 | "A"c2 d2 e2 d c |
+"A"d6 g2 | "D"f2 d4 e f | "F#m7"g2 e4 g2 | "Bm"f2 d4 f2 |
+"F#m7"e d c B A3 g | "D"f2 d4 e f | "F#m7"g2 e4 g2 | "D"f2 d2 e2 d c |
+"D"d6 z2 |

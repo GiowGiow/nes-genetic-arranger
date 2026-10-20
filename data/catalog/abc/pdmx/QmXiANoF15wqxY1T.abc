@@ -1,0 +1,29 @@
+%abc-2.1
+% La fille aux cheveux de lin, by Claude Debussy. Score published on MuseScore (artist: Claude
+% Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/25/QmXiANoF15wqxY1T8hka5xUpgtC7ZNWWHciJ5qJe9mEgXf.mid (sha256
+% 4554a8f1d3ce74f39c2522de4fa19215ff7480dc42015cb28adcfbee4410bcef): melody track 0, bars 0-39
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La fille aux cheveux de lin
+M:3/4
+L:1/16
+Q:1/4=55.999978
+% Exact tempo 55.99997760000896 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B"_d6 _B ^F _E2 ^F _B | "B"_d2 _B ^F _E2 ^F _B ^F2 ^F _E | "F#"^F2 =F _E _D8 | "F#"_D8 _E2 ^F2 |
+"Bbm7"_A6 _d2 _B2 ^F _B | "Eb"_A2 _d2 _B4 _e4 | "Eb"_e4 _B6 =B2 | "F#7"_d6 _B ^F _E2 ^F _B |
+"Ab7"_d2 _B ^F _E2 ^F _B ^F2 ^F _E | "F#"^F2 =F _E _D5 B, _B, _A, | "F#"^F,2 =F, _E, _D,5 B,, _B, _D | "F#"_E2 ^F _A B2 _d2 _e2 ^f2 |
+"F#"_B2 f _e _d5 =B _B _A | "Abm7"^F _A _B =F _E _A ^F _D =B, =F _E _B, | "F#7"_A, _D B,3 _D E _A B _d e _a | "B"b2 _b _a ^f8 |
+"Db7"_b2 _a ^f _e6 _d =B | "Bb7"_B2 _A ^F _E4 _B,,2 _E C | "Eb"_E3 C, _E, F, G, _B, C2 _E C | "Eb"_E2 _B, C _E F G _B c2 _e c |
+"Ebm"_e2 _B c _e f g _b _e'4 | "Ab"_e'2 _d' _e' _b z _a3 ^f =f _e | "Db7"_e2 _d _e _B2 _A4 ^F _A | "Ebm7"_B3 ^F _E2 ^F2 _B2 _d2 |
+"B"_B2 ^F2 _E4 ^F4 | "Ebm7"_B3 ^F _B2 _d2 _e2 ^f2 | "Ab7"_b2 ^f2 _B4 _D4 | "B"^F8 _d'4 |
+"B"_d'6 _b ^f _e2 ^f _b | "B"_d'2 _b ^f _e2 ^f _b ^f2 ^f _e | "Ebm"^f4 =f4 _e4 | "F#"_d6 B2 _B2 _A2 |
+"Abm7"^F _A _B =F _E _A ^F _D =B, =F _E _B, | "Db7"_A, _D _E _B, =B, _D _E _B, _A, _D _E _B, | "Fm7"B, ^F _A B _d _e ^f _a b _d' z _e' | "F#"^f'12 |
+"F#"^f'11 z | "F#"^f'4 z8 | "F#"z12 |

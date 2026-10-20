@@ -1,0 +1,35 @@
+%abc-2.1
+% 3 Gymnopédies, by Erik Satie(18661925). Score published on MuseScore (artist: Erik Satie), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Erik Satie (died 1925, Wikidata
+% Q187192).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/1/QmX2yTWCrTyXC5ay6NW7iP8cpKU8WsXEo2MDLSxCmQ7zvW.mid (sha256
+% a8bf7e86b5d6bc5ba795512d2c530d9ecbc7f6a9d20ef5e0adfcdf285695ff5f): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:3 Gymnopédies
+M:3/4
+L:1/16
+Q:1/4=67.999764
+% Exact tempo 67.99976426748387 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 | "D"z12 | "G"z12 | "D"z12 |
+"G"z4 ^f4 a4 | "D"g4 ^f4 _d4 | "G"B4 _d4 =d4 | "D"A12 |
+"G"^F12 | "D"^F12 | "G"^F12 | "D"^F10 z2 |
+"G"z4 ^f4 a4 | "D"g4 ^f4 _d4 | "G"B4 _d4 =d4 | "D"A12 |
+"F#m"_d12 | "Bm"^f12 | "Em"E12 | "Em7"E12 |
+"Dm"E10 z2 | "Am"A4 B4 c4 | "Em7"e4 d4 B4 | "Em7"d4 c4 B4 |
+"D7"d12 | "D7"d8 d4 | "Dm7"e4 f4 g4 | "D7"a4 c4 d4 |
+"Em7"e4 d4 B4 | "D7"d12 | "D7"d8 d4 | "Em"g12 |
+"F#m"^f12 | "Bm"B4 A4 B4 | "F#m7"_d4 =d4 e4 | "F#m7"_d4 =d4 e4 |
+"Em7"^F12 | "Am"c11 z | "D"d11 z | "G"z12 |
+"D"z12 | "G"z12 | "D"z12 | "G"z4 ^f4 a4 |
+"D"g4 ^f4 _d4 | "G"B4 _d4 =d4 | "D"A12 | "G"^F12 |
+"D"^F12 | "G"^F12 | "D"^F10 z2 | "G"z4 ^f4 a4 |
+"D"g4 ^f4 _d4 | "G"B4 _d4 =d4 | "D"A12 | "F#m"_d12 |
+"Bm"^f12 | "Em"E12 | "Em7"E12 | "Dm"E10 z2 |
+"Am"A4 B4 c4 | "Em7"e4 d4 B4 | "Em7"d4 c4 B4 | "D7"d12 |

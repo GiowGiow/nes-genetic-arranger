@@ -1,0 +1,20 @@
+%abc-2.1
+% She'll be Coming Round the Mountain, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 70 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:She'll be Coming Round the Mountain
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 A4 B4 | "D"d4 d4 d4 d4 | "D"B4 A4 F4 A4 | "D"d16 |
+"D"d8 d4 e4 | "D"f4 f4 f4 f4 | "D"a4 a4 a4 f4 | "E7"e16 |
+"A7"e8 a4 g4 | "D"f8 f8 | "D7"e4 d12 | "G"d8 d8 |
+"Gm"g4 g8 g4 | "D"f8 f8 | "E7"e4 e4 "A7"e4 e4 | "D"d16 |
+"D"d8 z8 |

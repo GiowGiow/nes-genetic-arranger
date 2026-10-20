@@ -1,0 +1,35 @@
+%abc-2.1
+% Philémon et Baucis, by Charles Gounod. Score published on MuseScore (artist: Charles Gounod),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Charles Gounod (died 1893,
+% Wikidata Q180278).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/20/QmTFeZjPu1yzTzf24x8NvsUdZ9p4acHW1sX1QxkGr5kC6c.mid (sha256
+% e48f11b914a90ff0bd8bd241535355fac23a948101f84a9a1727282b057ac644): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Philémon et Baucis
+M:2/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ebm"_D,2 F,2 _B, z C _D | "Ebm"_B,2 F,2 _B, z C _D | "Ebm"_B,2 F,2 _D z _E F | "Bbm"_D2 _A,2 F z G =A |
+"F"F4 c2 f2 | "Gm7"_d2 c _B c2 _d2 | "Eb"_e2 _d c _d2 _e2 | "F"_d4 c4 |
+"Bb"_B6 z2 | "Bbm"z8 | "Bbm"z8 | "Bb"_D,2 F,2 _B, z C _D |
+"Ebm"_B,2 F,2 _B, z C _D | "Bbm"_B,4 z4 | "C"z8 | "F"_A,2 C2 F z G _A |
+"Db"F2 C2 F z G _A | "Fm"F2 z2 _d4 | "Ab7"_E2 F ^F =F2 _E2 | "Db"_A2 _A2 _d2 _A2 |
+"Db"F2 _A2 _D2 F2 | "Ab"_A, z _A _B ^F z ^F _A | "Ab7"F z F ^F _E z _E =F | "Db"_D2 z _D C _D _E F |
+"Bb7"_A,2 z2 F3 F | "C"A8 | "C"A z3 e2 z2 | "F"f F F F F F F F |
+"F7"F z G A _B c d _e | "Gm7"F z D z D z _B z | "Dm7"_b2 a2 z2 f z | "Bb"f z d z d z _b z |
+"Dm7"_b2 a2 z2 f z | "Bb"d' z _d' z =d' z _d' z | "D7"d' z a z _b z ^f z | "A7"g z d z _e z B z |
+"Cm"c2 z2 F4 | "C"_E2 z2 F4 | "Cm"_E2 z2 ^F4 | "Cm"F2 z2 ^F4 |
+"F"F2 z6 | "F"z2 F, z F, z F, z | "Dm7"_E z _E z D z D z | "F7"_E F A c _e z3 |
+"Dm7"_E z _E z D z D z | "F7"_E F A c _e f a c' | "Eb"_e' d' c' _b a g f _e | "Db"d _e d _e d _e d _e |
+"Db"d _e d _e d _e d _e | "D"d G _A =A _B =B c _d | "D"d _e =e f ^f g _a =a | "Bb"_b2 F G _A2 F2 |
+"Eb7"G z _A z _A z3 | "C"G z G A _B2 G2 | "F7"A z _B z _B z3 | "D"A z A _B c2 A2 |
+"Cm"_B2 _E2 D2 G2 | "F"F2 z2 a2 z2 | "Ebm"_b2 z2 _b z c' d' | "F#"_b4 _b z c' d' |
+"Bb"_b4 f' z d' c' | "C7"_b z d z c3 _B | "Bb"_B8 | "Bb"_B z7 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite Española No.1 Op.47, by Isaac Albeniz (1860 - 1909). Score published on MuseScore (artist:
+% Isaac Albéniz), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Isaac Albeniz (died 1909,
+% Wikidata Q185812).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/33/QmYnaoNLbcJQrHnQgxHcyYi7jwb9nADNpkrTUYWNBXxs3q.mid (sha256
+% 471d833d46dd21bd62302e4e8ced11f163a75740ff237376e885db597cf509bc): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite Española No.1 Op.47
+M:3/4
+L:1/16
+Q:1/4=115.000249
+% Exact tempo 115.00024916720655 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"B2 B ^F B2 B _E c2 c D | "C"B2 B ^F B2 B _E c2 c D | "C"g2 D, E, D,2 D,2 ^f3 d | "C"e2 e ^f d2 D, z c2 D, A |
+"C"B c d2 d2 B, D C D C D | "C"B,2 D E D E G E ^F2 E D | "C"g2 D, E, D,2 D,2 ^f3 d | "C"e2 e ^f d2 D, z c2 D, A |
+"C"B c d2 d2 B, D C D C D | "C"B,2 D E D E G E ^F2 E D | "C"G2 D, _E, D, z D, z F3 C | "C"D2 D _E F2 F,2 _E3 C |
+"C"D _E D _E F G A G F _E D C | "C"D _E D _E F G A G F _E D C | "C"D2 F, G, F, z F, z D2 D C | "C"_B,2 G, _A, G, z C D _E2 F _E |
+"C"D2 B, C D2 B c B2 A B | "C"G2 B ^F B2 B _E c2 c D | "C"B2 B ^F B2 B _E c2 c D | "C"B2 B, ^F, B,2 D _B, D2 G _D |
+"C"G2 B ^F B2 d _B d2 g _B | "C"g2 g _B g2 g _B g2 g _B | "C"g2 g _B g2 g _B g2 g _B | "C"g2 G,, G,, G,, G,, G,, G,, G,, G,, G,, G,, |
+"C"G,,2 G,, G,, G,,2 G,, G,, G,,2 G,,2 | "C"_e2 _B, C _B, z _B, z d2 _B, _B | "C"c2 c d _B4 _A3 F | "C"G _A _B2 _B2 G, _B, _A, _B, _A, _B, |
+"C"G,2 _B, C _B, C _E C D2 C _B, | "C"_e2 _B, C _B, z _B, z d2 _B, _B | "C"c2 c d _B4 A3 G | "C"^F G A z A2 ^F, A, G, A, G, A, |
+"C"^F,2 A, B, A, B, A, B, _D2 B, A, | "C"d2 A, B, A,2 A,2 _d2 A, A | "C"B2 B _d A2 A,2 G3 E | "C"^F G A z A2 ^F, A, G, A, G, A, |
+"C"^F,2 A, B, A, B, A, B, _D2 B, A, | "C"d2 A, B, A, z A, z _d2 A, A | "C"B2 A, B, A, z d2 _d2 A, A | "C"B2 A, B, A, z d2 c3 A, |
+"C"C D _E F _E F _E D C D C _B, | "C"A, _B, C D C D C _B, A, _B, A, G, | "C"^F, G, A, _B, C _B, A, G, =F, G, =F, _E, | "C"D,2 ^F2 A2 d2 _e2 _E2 |
+"C"D,2 ^F2 A2 d2 _e2 _E2 | "C"^F2 ^F _D ^F2 ^F _B, G2 G A, | "C"^F2 ^F _D ^F2 ^F _B, G2 G A, | "C"^F2 D, D, D, D, D, D, D, D, D, D, |
+"C"D,2 d d d2 d d d2 d d | "C"B2 B ^F B2 B _E c2 c D | "C"B2 B ^F B2 B _E c2 c D | "C"g2 D, E, D,2 D,2 ^f3 d |
+"C"e2 e ^f d2 D, z c2 D, A | "C"B c d2 d2 B, D C D C D | "C"B,2 D E D E G E ^F2 E D | "C"g2 D, E, D,2 D,2 ^f3 d |
+"C"e2 e ^f d2 D, z c2 D, A | "C"B c d2 d2 B, D C D C D | "C"B,2 D E D E G E ^F2 E D | "C"G2 D, _E, D, z D, z F3 C |
+"C"D2 D _E F2 F,2 _E3 C | "C"D _E D _E F G A G F _E D C | "C"D _E D _E F G A G F _E D C | "C"D2 F, G, F, z F, z D2 D C |

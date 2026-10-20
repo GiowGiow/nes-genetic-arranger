@@ -1,0 +1,34 @@
+%abc-2.1
+% Die Entführung aus dem Serail K.384, by Wolfgang Amadeus Mozart. Score published on MuseScore
+% (artist: Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/29/QmUKQ9d523ddkpvYBpNSso4PSLryZwcCmQXzoLsfReTuRQ.mid (sha256
+% 8e262229f578a802e30335c909b5dbdeacd1e095c2905535bfcef9b2d5181efb): melody track 6, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Die Entführung aus dem Serail K.384
+M:2/4
+L:1/16
+Q:1/4=150
+K:none
+P:A
+"D"D A ^F A D A ^F A | "D"D A ^F A D A ^F A | "D"D A ^F A d A ^F A | "D"D A ^F A D A ^F A |
+"D"D A ^F A D A ^F A | "D"D A ^F A d A ^F A | "D"d6 e z | "D"^f z g z a z b z |
+"D"a4 b z d' z | "D"^f2 ^F z G z B z | "D"^F4 G z B z | "D"^F z ^F z G z G B |
+"D"^F4 ^f4 | "D"^f6 e d | "A"_d2 =d2 ^f e =d _d | "D"d4 ^f2 ^f2 |
+"D"^f6 e d | "A"_d2 =d2 ^f e =d _d | "D"d4 D4 | "D"D A ^F A D A ^F A |
+"D"D A ^F A D A ^F A | "D"D A ^F A d A ^F A | "D"D A ^F A D A ^F A | "D"D A ^F A D A ^F A |
+"D"D A ^F A d A ^F A | "D"d6 _d z | "D"d z e z ^f z g z | "D"^f4 g z b z |
+"D"^f4 z4 | "D"d6 _d z | "D"d z e z ^f z g z | "A"^f4 e z _d z |
+"D"d4 z4 | "D"d6 _d z | "D"d z e z ^f z g z | "D"^f4 g z b z |
+"D"^f4 z4 | "D"d6 _d z | "D"d z e z ^f z g z | "A"^f4 e z _d z |
+"D"d4 z4 | "Bm7"A, _D E E B, =D E E | "A"A, _D E E E E E E | "E7"_A, B, E E E E E E |
+"A"A, _D E E E E E E | "Dbm7"A, _D E E B, =D E E | "A"A, _D E E E E E E | "E7"_A, B, E E E E E E |
+"A"A, _D E E E E E E | "A"A,4 A4 | "Db"z4 _A4 | "F#m"z4 ^F4 |
+"F#m7"z4 E4 | "D"z4 D4 | "E"z4 E4 | "F#m"^F4 z4 |
+"F#m"z8 | "A"z4 A4 | "Db"z4 _A4 | "F#m"z4 ^F4 |
+"F#m7"z4 E4 | "D"z4 D4 | "E"z4 E4 | "A"A, _A, =A, _A, =A, _A, =A, _A, |

@@ -1,0 +1,26 @@
+%abc-2.1
+% Sol occasum nesciens, by Heinrich Isaac. Score published on MuseScore (artist: Heinrich Isaac),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Heinrich Isaac (died 1517,
+% Wikidata Q316668).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/2/Qmb358bs6oAHZW7KH8ay14HbAf845us63mrTJ7fit51JfA.mid (sha256
+% e48c5cf17c77927104340c133410a79205d77fd33117c7ce875ab84f0d534b45): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sol occasum nesciens
+M:2/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z16 | "A7"z8 c8 | "F"c8 d8 | "A7"e8 c4 f4 |
+"F"f2 e2 d4 c4 d4 | "G7"d2 c2 c8 _B4 | "F"c12 A4 | "A"G4 c6 _B2 A2 G2 |
+"Gm"F8 z8 | "A"z4 c4 c4 _B2 A2 | "C"G8 E8 | "C"E4 F4 G8 |
+"Am"F2 G2 A2 _B2 c4 A4 | "G"_B4 d8 c2 _B2 | "A"A4 d8 c4 | "Bb"d6 e2 f8 |
+"A7"f4 e8 d4 | "A"d4 c2 _B2 c8 | "G7"d4 _B4 A8 | "G7"z4 G4 A2 G2 c4 |
+"Am7"c4 _B4 c8 | "Gm7"z4 F4 G4 A4 | "Gm7"_B8 A4 F4 | "Gm7"G4 A4 _B8 |
+"F"A16 |

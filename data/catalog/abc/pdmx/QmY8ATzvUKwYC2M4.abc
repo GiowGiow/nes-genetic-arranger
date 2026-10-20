@@ -1,0 +1,25 @@
+%abc-2.1
+% Il barbiere di Siviglia, by Gioachino Rossini. Score published on MuseScore (artist: Gioacchino
+% Rossini), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gioachino Rossini (died 1868,
+% Wikidata Q9726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/7/QmY8ATzvUKwYC2M4QfMkeAzdgLkxHEJsgoq4Ry3FCyaR8U.mid (sha256
+% e5a665b1e0913fecc9b5ff284bedb531d4ed89d75a278183bfa9188b2e5a76f5): melody track 0, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Il barbiere di Siviglia
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"z16 | "Em"z10 b z b z b z | "Em"c'2 b2 z8 b z b z | "Em"c'2 b2 z6 b z b z b z |
+"Em"c'2 b2 z2 a z a2 g2 z2 ^f z | "G"^f2 e2 e4 z2 g z g z g z | "Em"^f2 e2 z2 g z ^f2 e2 z2 g z | "Abm"b2 ^f2 ^f4 z2 ^f z g z a z |
+"E"b2 g2 ^f2 e2 "C"d2 c2 B2 _B2 | "B"B z3 B4- "E7"B2 e z d z c z | "B"B2 z2 B4- "E7"B2 e z d z c z | "E7"B z e z d z c z B z e z d z c z |
+"B"B2 z2 A2 z2 "Eb7"G2 z2 ^F2 z2 | "Em"E2 z14 | "Em"z10 b z b z b z | "Em"c'2 b2 z8 b z b z |
+"Em"c'2 b2 z6 b z b z b z | "Em"c'2 b2 z2 a z a2 g2 z2 ^f z | "G"^f2 e2 e4 z2 g z g z g z | "Em"^f2 e2 z2 g z ^f2 e2 z2 g z |
+"Abm"b2 ^f2 ^f4 z2 a z g z ^f z | "E"b2 g2 g2 e2 "C"e2 c2 c2 A2 | "C"G2 B2 B2 G2 "F7"^F2 A2 A2 ^F2 | "Em"E4 E z D z9 |
+"Em"E4 E z B, z9 | "Em"^F8 "B"G8 | "Em"E15 z |

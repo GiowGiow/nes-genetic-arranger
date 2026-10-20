@@ -1,0 +1,26 @@
+%abc-2.1
+% Violin Concerto Op.35, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/15/QmXdVtp4KmMuQr99r1w1AXzPqVCvp8o4bdtQSPMi3hWx8z.mid (sha256
+% 9e78edd3f49b81b152b849355c179e4bca1399772ac41914b4dcf9a424781943): melody track 0, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Violin Concerto Op.35
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"e G, E G e G, E G A B c d f c e g | "C"d G, G e d D E ^F G A B d e A B _d | "C"f D A d f F G A B _d =d e g =d f a | "C"e A, A f e E ^F _A =A B _d =d e =d _d e |
+"C"a A A b c' A b a g c b c c' c a g | "C"f A A _a =a =A g f e =A _a =A =a =A f e | "C"e f e B c d c G F e e B e _a b e' | "C"e' f' e' b c' d' c' g f e e _A _A ^F _A B |
+"C"e' G, E G e G, E G A B c d f' c' e' g' | "C"d' D G e d D G B d g b d' e' a b _d' | "C"f' D A d f F G A B _d =d e g =d f a' | "C"e' A, A f e E ^F _A =A B _d =d e =d _d e |
+"C"a A A b c' A b a g c b c c' c a g | "C"f A A _a =a =A g f e =A _a =A =a =A f e | "C"_e ^F b ^F c' ^F d B, _e B, A B c B, =E ^F | "C"G G, _B _B _B G, _B e e E _b E _d' G e' _B |
+"C"_e' B b ^F c' ^F _d B, _e B, A B c B, =E ^F | "C"G G, _B _B _B G, e e e E _b E _d' G e' =B | "C"e' A a E _b E c A, _d A, G A _B A, =D E | "C"F A, A A A D d e f D a D d' D f' D |
+"C"a' A a E _b E c A, _d A, G A _B A, =D E | "C"A A, A A A D d e f D a D d' D f' D | "C"f' D B B B _A, d e f D b D d' D f' D | "C"f' D B B B G, d e f D b D d' D f' D |
+"C"^f' D ^F B d ^f b d' _a' D _A B d _a b d' | "C"_a' D _A B d _a b d' _a' _A B f _a b f' _a' | "C"a'2 z14 |

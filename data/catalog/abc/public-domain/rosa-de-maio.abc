@@ -1,0 +1,36 @@
+%abc-2.1
+% ROSA DE MAIO, by Custódio Mesquita e Evaldo Rui, as performed by Custódio Mesquita e Evaldo Rui.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Custódio Mesquita (died 1945, Wikidata Q10262534); Evaldo Rui (died 1954,
+% Wikidata Q20048020).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/rosa-de-maio.html (file
+% https://www.beakauffmann.com/mpb_r/som/rosa-de-maio.mid, sha256
+% 5ea5b76a3d5ac742bc6115e8ccfc65934eadb04601e2a59b0632dd58264f6df0), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-59 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ROSA DE MAIO
+M:4/4
+L:1/16
+Q:1/4=81.2
+% Exact tempo 81.1999999999988 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"z8 "E7"z8 | "E7"z13 A,2 B, | "Am"B, C2 E5 z E7 | "Am"E5 A,2 B,- "F#m7"B, C2 _E5 |
+"B7"z _E11 z A,2 B, | "F#m7"B, C2 A5- "A7"A A7 | "A7"A4 G3 F- "G7"F E2 F5 | "Dm"F10 z2 F2 z F |
+"E7"z F2 B,5 z B,7 | "E7"B,3 z E3 E2 z E A,5 | "Am"A, A,11 z C2 _A, | "Am"_A, =A,2 C5- "F7"C C7 |
+"F7"C2 z2 C D2 C- "Abm"C D2 E5 | "E7"E11 z2 A,2 B, | "Am"B, C2 E4 z2 E7 | "Am"E4 A,3 B,- "F#m7"B, C2 _E5 |
+"B7"z _E11 A,3 B, | "F#m"B, C z A5 "A7"A8 | "A7"A4 G3 F- "G7"F E2 F5 | "Dm"F11 D4 E |
+"E7"E F2 B5 B8 | "E7"B3 A B z2 _A2 =A2 c4 z | "Am"c11 z2 A,2 B, | "Am"B, C2 _E5 "F7"z _E7 |
+"E7"_E4 D3 C2 B,2 A,5 | "Am"A,8- "Dm"A,8 | "Am"A,16 | "Am"A,12 z4 |
+"Am"z A,3 B, C E5 z E4 | "Am"E7 z2 A,2 B,2 C2 _E | "B7"_E4 z _E10 z | "F#m7"z A,2 B,2 C z A- "A7"A4 A4 |
+"A7"A7 z G3 F2 E2 F | "Dm"F15 z | "Dm"F2 F2 z F2 B,- "E7"B,3 z B,4 | "E7"B,8 E2 z2 E z E2 |
+"Am"E A,3 z A,9 z2 | "Am"C2 z2 _A, =A,2 C- "F7"C3 z C4 | "F7"C4 z2 C2 D3 C D2 E2 | "E7"E16 |
+"E7"A,3 B,2 C2 E- "Am"E3 z E4 | "Am"E7 z2 A,2 B,2 C z _E | "B7"_E3 z _E11 z | "F#m7"z A,2 B,2 C z2 "A7"A2 z A5 |
+"A7"A7 A G4 F E F2 | "Dm"F16 | "Dm"D3 E2 F2 B- "Dbm7"B2 z2 B4 | "Dbm7"B7 B z3 _A2 =A2 c |
+"Am"c3 z c12 | "Am"z3 A,2 B, C z "F7"_E3 _E5 | "Abm"_E5 z D2- "E7"D3 D z B,2 A, | "Am"A,8- "Dm7"A, A7 |
+"Dm"A3 z B2 A2- "Am"A7 z | "Am"E3 ^F4 z "E7"_A5 =A3 | "Am"A8- "Dm7"A z A6 | "Dm"A2 B4 A2- "Am"A6 E2 |
+"E7"E2 ^F4 z _A5 z2 =A2 | "Am"A13 z3 | "F#m7"z8 "Dbm7"z8 |

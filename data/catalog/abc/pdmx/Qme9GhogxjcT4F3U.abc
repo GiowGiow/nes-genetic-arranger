@@ -1,0 +1,35 @@
+%abc-2.1
+% recuerdos de la alhambra, by Francisco Tárrega. Score published on MuseScore (artist: Francisco
+% Tárrega), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/8/Qme9GhogxjcT4F3U1h4bJVCkDSEf7jLHdYmQARYVFV9t1i.mid (sha256
+% 1d83fe71be27e0276935b2ca4093ebf3bce76ca4a6dd21b5d8a9285949e772a7): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:recuerdos de la alhambra
+M:3/4
+L:1/16
+Q:1/4=77.999977
+% Exact tempo 77.99997660000703 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E E E E E E E E E D D D | "C"D C C C C C C C D D D D | "C"E E E E E E E E E E E E | "C"E E E E E E E E F F F F |
+"C"G G G G G G G G G F F F | "C"F E E E E E E E F F F F | "C"G G G G G G G G G G G G | "C"G G G G G G G G G G G G |
+"C"c c c c c c c c c B B B | "C"B A A A A A A A B B B B | "C"B A A B A _A _A _A _A _A _A _A | "C"_A _A _A _A _A _A _A _A _A _A _A _A |
+"C"_B _B _B _B _B _B _B _B _B A A A | "C"A G G G G G G G A A A A | "C"A G G A G F F F F F F F | "C"F F F F F F F F F F F F |
+"C"F E E E E E E E E D D D | "C"D C C C C C C C D D D D | "C"D C C D C B, B, B, B, B, B, B, | "C"B, B, B, B, B, B, B, B, B, B, B, B, |
+"C"E E E E E E E E E D D D | "C"D C C C C C C C D D D D | "C"E E E E E E E E E E E E | "C"E E E E E E E E F F F F |
+"C"G G G G G G G G G F F F | "C"F E E E E E E E F F F F | "C"G G G G G G G G G G G G | "C"G G G G G G G G G G G G |
+"C"c c c c c c c c c B B B | "C"B A A A A A A A B B B B | "C"B A A B A _A _A _A _A _A _A _A | "C"_A _A _A _A _A _A _A _A _A _A _A _A |
+"C"_B _B _B _B _B _B _B _B _B A A A | "C"A G G G G G G G A A A A | "C"A G G A G F F F F F F F | "C"F F F F F F F F F F F F |
+"C"F E E E E E E E E D D D | "C"D C C C C C C C D D D D | "C"D C C D C B, B, B, B, B, B, B, | "C"B, B, B, B, B, B, B, B, B, B, B, B, |
+"C"E E E E E E E E E D D D | "C"D _D _D _D _D _D _D _D =D =D =D =D | "C"E E E E E E E E E E E E | "C"E E E E E E E E E E E E |
+"C"^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F | "C"d d d d d d d d d ^F ^F ^F | "C"^F ^F ^F _A ^F E E E E E E E | "C"E E E E E E E E E E E E |
+"C"A A A A A A A A A A A A | "C"A _A _A _A _A _A _A _A _A _E _E _E | "C"^F ^F ^F ^F ^F E E E E E E E | "C"E E E E E E E E E E E E |
+"C"E D D D D D D D D D D D | "C"D _D _D _D _D _D _D _D _D B, B, B, | "C"B, B, B, _D B, A, A, A, A, A, A, A, | "C"A, A, A, A, A, A, B, B, _D _D =D =D |
+"C"E E E E E E E E E D D D | "C"D _D _D _D _D _D _D _D =D =D =D =D | "C"E E E E E E E E E E E E | "C"E E E E E E E E E E E E |
+"C"^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F | "C"d d d d d d d d d ^F ^F ^F | "C"^F ^F ^F _A ^F E E E E E E E | "C"E E E E E E E E E E E E |

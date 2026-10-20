@@ -1,0 +1,34 @@
+%abc-2.1
+% le petit negre, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/5/QmQ69pQ8vazfN2JxhjU93N7PhHGGJnG6FYQfCJ1A8462nQ.mid (sha256
+% 7df2db6f989af196ba665d7eb8e2613ff597ddff0df671e03a8060c9883dbfcb): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:le petit negre
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"e g2 e g z e z | "D"c e2 c e z c z | "D"A c2 A c2 A c | "Db"A8 |
+"Am"G A2 G E2 G2 | "Fm"E F2 E C4 | "D"C D2 C G,2 G, B, | "G7"G,8 |
+"B"E, G,2 E, G, z E, z | "A7"C, E,2 C, E, z C, z | "E"A,, C,2 A,, C,2 A,, C, | "Dm"A,,8 |
+"Am7"z4 D, z E, z | "Am7"z4 D2 E G | "Dm7"z4 e2 g a | "C"c'4 z4 |
+"D7"_B8 | "Dm7"_B8 | "Dm7"_B6 G2 | "Dm7"_B8 |
+"Dm7"_B4 z2 =B2 | "Am"c2 _B4 z2 | "Dm"F2 A4 z2 | "E7"E2 G4 G2 |
+"Am"C2 G4 z2 | "Gm7"_B,2 D2 F2 G2 | "Bb"_B2 d2 f2 d2 | "Bb"_B2 ^F2 z2 ^F2 |
+"Bb"z2 ^F4 z2 | "Am"d c _B4 z2 | "Dm"F2 A4 z2 | "E7"F E G4 G2 |
+"Am"C2 G4 z2 | "Gm7"_B,2 D2 F2 G2 | "Bb"_B2 d2 f2 d2 | "Dm"f2 d2 f2 _e2 |
+"F7"f2 _e2 f2 _e2 | "Abm7"^f2 _e2 ^f2 z2 | "B"e g2 e g z e z | "A7"c e2 c e z c z |
+"D"A c2 A c2 A c | "Db"A8 | "Am"G A2 G E2 G2 | "Fm"E F2 E C4 |
+"D"C D2 C G,2 G, B, | "G7"G,8 | "B"E, G,2 E, G, z E, z | "A7"C, E,2 C, E, z C, z |
+"E"A,, C,2 A,, C,2 A,, C, | "Dm"A,,8 | "Am7"z4 D, z E, z | "Am7"z4 D2 E G |
+"Dm7"z4 e2 g a | "C"c'2 z6 | "D7"_B8 | "Dm7"_B8 |
+"Dm7"_B8 | "Dm7"_B8 | "Dm7"_B4 z2 =B2 | "Am"c2 _B4 z2 |
+"Dm"F2 A4 z2 | "E7"E2 G4 G2 | "Am"C2 G4 z2 | "Gm7"_B,2 D2 F2 G2 |

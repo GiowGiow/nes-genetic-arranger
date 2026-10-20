@@ -1,0 +1,31 @@
+%abc-2.1
+% Perche credi o mio core, by Claudio Saracini. Score published on MuseScore (artist: Claudio
+% Saracini), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudio Saracini (died 1630,
+% Wikidata Q2333985).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/43/QmSSKCXbbUAdediReDh6NaDdzsK6hmQp3f4d43AHjJgLA8.mid (sha256
+% 52a55c9848385748fcef5452a64a5d3eef5e21de9fe0734a27cad9d0347aaa84): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Perche credi o mio core
+M:4/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"_B2 c2 d4- "C"d4 _e2 d2 | "F"c4 c4 "F#"d2 A2 _B4 | "Dm"A2 G2 c4 "Gm7"c4 f2 e2 | "Gm"d8- "F"d4 c2 _B2 |
+"F"c16 | "Bb"_B16 | "G"_B2 d2 G4 A2 _B2 ^F4 | "D"D E ^F G A _B ^F G A _B c d A4 |
+"D"A16 | "G"G16 | "G"_B2 c2 d4- "C"d4 _e2 d2 | "F"c4 c4 "F#"d2 A2 _B4 |
+"Dm"A2 G2 c4 "Gm7"c4 f2 e2 | "Gm"d8- "F"d4 c2 _B2 | "F"c16 | "Bb"_B16 |
+"G"_B2 d2 G4 A2 _B2 ^F4 | "D"D E ^F G A _B ^F G A _B c d A4 | "D"A16 | "G"G16 |
+"F"z4 A4 c8 | "Bb"z4 _B4 d8 | "D"z2 f2 d2 A2 "F"c8 | "F"c8 "D"d4 A4 |
+"D"D E F G A _B c d5 d2 d2 | "Eb"_B8- "A"_B4 c d e f | "A"A8 "Bb"d8 | "Bb"d2 d2 f4- "D"f2 f2 f2 f2 |
+"F"c6 c2 "Bb"d4 d4 | "C"z2 c2 G2 A2 "G"_B2 c2 d2 _B2 | "F"c2 _B2 A4 "Bb"_B8 | "D"z2 A2 _B2 c2 A8 |
+"D"A16 | "G"G16 | "F"z4 A4 c8 | "Bb"z4 _B4 d8 |
+"D"z2 f2 d2 A2 "F"c8 | "F"c8 "D"d4 A4 | "D"D E F G A _B c d5 d2 d2 | "Eb"_B8- "A"_B4 c d e f |
+"A"A8 "Bb"d8 | "Bb"d2 d2 f4- "D"f2 f2 f2 f2 | "F"c6 c2 "Bb"d4 d4 | "C"z2 c2 G2 A2 "G"_B2 c2 d2 _B2 |
+"F"c2 _B2 A4 "Bb"_B8 | "D"z2 A2 _B2 c2 A8 | "D"A16 | "G"G16 |

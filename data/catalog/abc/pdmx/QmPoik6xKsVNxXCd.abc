@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphonie No.1 Op.14, by Louis Vierne. Score published on MuseScore (artist: Louis Vierne), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Louis Vierne (died 1937,
+% Wikidata Q299669).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/35/QmPoik6xKsVNxXCdMTun7GSGkQbRbk1oyMpGZzztuKVR61.mid (sha256
+% f75fd2e7aa916d105f1683fd5dbbb8f286e48432cc35ea5db2d8d90928c800fa): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphonie No.1 Op.14
+M:2/2
+L:1/16
+Q:1/4=176.000047
+% Exact tempo 176.00004693334586 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 |
+"D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 | "D"a2 ^f2 ^F2 A2 a2 g2 G2 A2 |
+"D"a2 ^f2 ^F2 A2 _b2 ^f2 ^F2 _B2 | "Bm"b2 ^f2 ^F2 B2 d'2 b2 B2 d2 | "Bm"b2 ^f2 ^F2 B2 d'2 b2 B2 d2 | "Em"b2 g2 G2 B2 e'2 b2 B2 e2 |
+"Bm"b2 ^f2 ^F2 B2 d'2 b2 B2 d2 | "Em"b2 g2 G2 B2 e'2 b2 B2 e2 | "Bm"b2 ^f2 ^F2 B2 d'2 b2 B2 d2 | "E"b2 _a2 _A2 B2 e'2 b2 B2 e2 |
+"Bm"b2 ^f2 ^F2 B2 d'2 b2 B2 d2 | "E"b2 _a2 _A2 B2 e'2 b2 B2 e2 | "A7"_d'2 a2 A2 _d2 e'2 a2 A2 e2 | "Em7"d'2 b2 B2 d2 b2 g2 G2 B2 |
+"A7"_d'2 a2 A2 _d2 e'2 a2 A2 e2 | "Em7"d'2 b2 B2 d2 b2 g2 G2 B2 | "A7"A2 z6 A,4 A,, z B,, z | "Bm7"_D, z B,, z _D, z =D, z E, z =D, z E, z ^F, z |
+"A7"G,4 z4 A,4 A,,2 B,,2 | "Bm7"_D,2 B,,2 _D,2 =D,2 E,2 =D,2 E,2 ^F,2 | "A7"G,4 z4 A,4 A,,2 B,,2 | "F#m7"_D,2 C,2 _D,2 _E,2 =E,2 ^F,2 =E,2 =D,2 |
+"Db"B,4 z12 | "F#m7"_D4 z12 | "A"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 | "Bm7"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 |
+"Bm7"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 | "D"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 | "A"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 | "Bm7"A,2 B,2 A,2 _A,2 =A,2 B,2 _D2 B,2 |
+"D"A,2 B,2 A,2 _A,2 =A,2 _A,2 =A,2 _B,2 | "Bm"B,2 A,2 G,2 ^F,2 G,2 ^F,2 G,2 A,2 | "Bm"B,2 A,2 G,2 ^F,2 G,2 ^F,2 G,2 A,2 | "Bm7"B,2 z14 |
+"E7"z16 | "E7"z16 | "E7"z16 | "E7"z16 |
+"Db7"z16 | "E7"z16 | "E"z16 | "C"z16 |
+"A"_d'4 b2 a2 _a4 =a4 | "E7"_b6 =b2 ^f4 e4 | "E7"d'4 b2 a2 _a4 =a4 | "E7"_b6 =b2 ^f4 e4 |
+"E7"_b4 _a2 ^f2 e8 | "E7"b4 _a2 ^f2 e8 | "Em"b4 a2 g2 ^f8 | "F#7"_d'4 _b2 _a2 ^f8 |
+"F#7"_e'4 _d'2 b2 _b4 =b4 | "F#7"c'6 _d'2 _a4 ^f4 | "F#7"e'4 _d'2 b2 _b4 =b4 | "F#7"c'6 _d'2 _a4 ^f4 |
+"F#7"b4 _b2 _a2 ^f8 | "F#7"_d'4 _b2 _a2 ^f8 | "F#m"_d'4 b2 a2 _a8 | "Ab7"_e'4 c'2 _b2 _a8 |

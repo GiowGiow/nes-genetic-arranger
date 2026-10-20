@@ -1,0 +1,27 @@
+%abc-2.1
+% ESCURINHO, by Geraldo Pereira, as performed by Geraldo Pereira.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Geraldo Pereira (died 1955, Wikidata Q10289092).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/escurinho.html (file
+% https://www.beakauffmann.com/mpb_e/som/escurinho.mid, sha256
+% 42c3be695fde9ab2c6d214c5efa7f7502a5854c975bdc3e7ac0e2921c4712fb7), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-28 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESCURINHO
+M:4/4
+L:1/16
+Q:1/4=70.2
+% Exact tempo 70.19999999999942 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "C"z8 "G7"z6 G G | "C"E G G G E G G G E G2 z G z G G | "G7"E F F F A E E E D F4 z A, A, |
+"G7"A, F F F F E E E "C"D G G G G E E D | "D7"E D E D E D C A, "G7"C z D3 z G G | "C"E G G G E G G G E G2 z G z G G | "G7"E F F F A E E E D F4 z A, A, |
+"G7"A, F F F F E E D D F z2 F z G G | "C"G G C C E D C A, C z C3 z A A | "F"F A A A F A A A F A F A F z G G | "Am7"E G G G E G G G "C"E G E G E z F F |
+"G7"D F F F D F F F D F D F D z G G | "D7"G c E E A z G D "G7"B, D z2 C z3 | "Am7"z6 G G "C"E G G G E G G G | "C"E G z2 G z G G "G7"E F F F A E E E |
+"G7"D F3 z2 A, A, A, F F F F E E E | "C"D G G G E E D D "D7"E D E D E D C A, | "G7"C z D4 G G "C"E G G G E G G G | "C"E G2 z G z G G "G7"E F F F A E E E |
+"G7"D F4 z A, A, A, F F F F E E E | "G7"D z F2 z F G G "Am7"G G C C E D C A, | "C"C C5 A A "G7"F A A A F A A A | "F"F A F A F z G G "C"E G G G E G G G |
+"C"E G E G E z F F "G7"D F F F D F F F | "G7"D F D F D z G G "C"G c E E A2 G D | "G7"B, D3 C4- "C"C3 z5 | "C"z16 |

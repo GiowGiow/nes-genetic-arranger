@@ -1,0 +1,35 @@
+%abc-2.1
+% NAZARETH, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nazareth.html (file
+% https://www.beakauffmann.com/mpb_n/som/nazareth.mid, sha256
+% 65133c832fa23961d2f932aca1b7f12142adc136a8cd52d90e46e5feb12775e5), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NAZARETH
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Dm"D A2 A A2 A2 | "G7"z g2 g f f2 f | "C7"e e2 d c2 c'2 |
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Db"D A2 F _B,2 F2 | "C"A, F2 F G,2 E2 | "F"F3 z f3 z |
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Dm"D A2 A A2 A2 | "G7"z g2 g f f2 f | "C7"e e2 d c2 c'2 |
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Db"D A2 F _B,2 F2 | "C"A, F2 F G,2 E2 | "F"F3 z f3 z |
+"C"z2 G2 z2 G2 | "G7"z G2 g g a g2 | "C"z2 G2 z2 G2 | "G7"z G2 g g a g2 |
+"C"z2 g2 _a2 _a2 | "Dm"b a2 _a =a3 z | "D7"z2 a2 b2 c'2 | "G7"e' d'2 b g2 g'2 |
+"C"z2 G2 z2 G2 | "G7"z G2 g g a g2 | "C"z2 G2 z2 G2 | "G7"z G2 g g a g2 |
+"C"z2 g2 _a2 _a2 | "Dm"b a2 _a =a d'2 c' | "G7"c' b2 _b =b e'2 d' | "C"c'2 e'2 c'3 z |
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Dm"D A2 A A2 A2 | "G7"z g2 g f f2 f | "C7"e e2 d c2 c'2 |
+"Dm"A, F2 F A,2 F2 | "C"G, E2 E E,2 E2 | "Dm7"z f2 f d d2 d | "C7"c c2 G c3 z |
+"A7"_D A2 A _D2 A2 | "Db"D A2 A _B,2 F2 | "C"A, F2 F G,2 E2 | "F"F3 z f3 z |

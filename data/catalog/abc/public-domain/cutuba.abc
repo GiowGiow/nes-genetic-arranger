@@ -1,0 +1,36 @@
+%abc-2.1
+% CUTUBA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cutuba.html (file
+% https://www.beakauffmann.com/mpb_c/som/cutuba.mid, sha256
+% b455ccd4b1f11ba94d13ee8e46bc717c897d42e597541d992669247bb46dfd0f), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CUTUBA
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"z8 | "G"z D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"Em7"G, G2 G G2 z2 | "G"z D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"Em7"B, G2 G G2 G2 | "Em7"B,, G2 G G2 G2 | "C"C, A2 A A2 A2 | "D7"D, ^F2 ^F ^F2 ^F2 |
+"Bm"G, G2 G G2 G2 | "Bm"B,, B,2 B, B,2 B,2 | "Am"C, C2 C C,2 C2 | "Db7"A,, A,2 A, G,,2 G,2 |
+"D7"^F,, ^F,2 ^F,, D,,4 | "Bm7"G,,, D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"Em7"G, G2 G G2 z2 | "G"z D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"G"B, G2 G B,,, B,,2 B,, | "Ab"C,, C,2 C, _D,, _D,2 _D, | "Bbm7"D, D,2 _E, =E, F,2 ^F, | "D7"D,, ^F2 ^F ^F,2 ^F2 |
+"Bm"_E, ^F2 ^F =E,2 _A2 | "Am7"C A2 A A2 _D2 | "B"D G2 G G2 G2 | "E7"A, E2 E D,2 C2 |
+"Em7"G,3 D, G,,4 | "F#7"E, E2 E C,2 E2 | "A7"B,, _E2 _E _E2 _E2 | "F#7"E, E2 E C,2 E2 |
+"B7"_E, B,2 B, B,2 B,2 | "Em"G, E2 E E2 E2 | "C"A, E2 E E2 E2 | "C7"^F,, E2 E E2 E2 |
+"B7"B,, _E2 _E _E2 _E2 | "F#7"E, E2 E C,2 E2 | "A7"B,, _E2 _E _E2 _E2 | "F#7"E, E2 E C,2 E2 |
+"B7"_E, B,2 B, B,2 B,2 | "Em"G, E2 E E2 E2 | "F#m7"E4 z4 | "A7"B,, E2 E B,,2 _E2 |
+"Em7"E4 E,,2 z2 | "G"z D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"Em7"G, G2 G G2 z2 | "G"z D,2 _E, =E, _E, D, A,, | "D7"D,,3 A,,, D,,,4 | "D7"A, ^F2 ^F ^F,2 ^F2 |
+"Em7"B, G2 G G2 G2 | "Em7"B,, G2 G G2 G2 | "C"C, A2 A A2 A2 | "D7"D, ^F2 ^F ^F2 ^F2 |
+"Bm"G, G2 G G2 G2 | "Bm"B,, B,2 B, B,2 B,2 | "Am"C, C2 C C,2 C2 | "Db7"A,, A,2 A, G,,2 G,2 |

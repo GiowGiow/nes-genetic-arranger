@@ -1,0 +1,30 @@
+%abc-2.1
+% The Nutcracker (ballet) Op.71, by Tchaikovsky. Score published on MuseScore (artist: Pyotr
+% Ilyich Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/27/QmRJMUqnszAnfUqyEfmPGWWo9i381RTtbhcCmDPudghT6w.mid (sha256
+% 9282074aa79af80dfac9c025431562050594ca982e86a822b038ac6ed8597c23): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Nutcracker (ballet) Op.71
+M:4/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "D7"^F z ^F d A z A d | "G"B z B d G z G d "D7"A z G z A d e ^f |
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "D7"^F z ^F d A z A d | "G"B z B d A z A d G z E z G4 |
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "D7"^F z ^F d A z A d | "G"B z B d G z G d "D7"A z G z A d e ^f |
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "D7"^F z ^F d A z A d | "G"B z B d A z A d G z E z G4 |
+"D"D z D z D z D z "E"E z E _E =E2 =E z | "F#m7"E z E z E z E z "Bm"^F z ^F =F ^F2 ^F z | "D"G z G z ^F z ^F z "E7"E z E z D z D z | "A"_D z _D z B, z B, z "D"A, z A, z A,4 |
+"D"D z D z D z D z "E"E z E _E =E2 =E z | "F#m7"E z E z E z E z "Bm"^F z ^F =F ^F2 ^F z | "D"G z G z ^F z ^F z "E7"E z E z D z D z | "A7"_D z _D z B, z B, z "Bm7"A, z A, z A, z A2 |
+"Eb"c2 z6 "D"z6 A2 | "Eb"c2 z6 "D"z6 A2 | "Cm"c2 z4 A2 c2 z4 A2 | "D7"c2 A2 c2 A2 c2 A2 A2 z2 |
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "D7"^F z ^F d A z A d | "G"B z B d G z G d "D7"A z G z A d e ^f |
+"Em7"g z g ^f g2 g z "C"e z d z c2 e2 | "Em7"d z d c d2 d z "Em"B z A z G2 B d | "G"A z A d G z G d "Am7"^F z ^F d A z A d | "G"B z B d A z A d G z G d B z B d |
+"G"A z A d G z G d "Am7"^F z ^F d A z A d | "G"B z B d A z A d G z G d A z A d | "D7"A z A d c z c d "G"B z B d G z G d | "D7"A z A d c z c d "G"B z B d A z A d |
+"Am7"A z A d G z G d A z A d G z G d | "Am7"A z A d G z G d A2 d2 g2 z2 |

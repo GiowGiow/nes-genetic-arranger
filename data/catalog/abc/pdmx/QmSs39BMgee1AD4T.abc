@@ -1,0 +1,35 @@
+%abc-2.1
+% Pomp and Circumstance March No.1 Op.39 No.1, by Sir Edward Elgar. Score published on MuseScore
+% (artist: Edward Elgar), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sir Edward Elgar (died 1934,
+% Wikidata Q179631).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/42/QmSs39BMgee1AD4TYD4kJNZuAcved3jt316TsRXJbdmVsi.mid (sha256
+% f4361fce5c78ce42a88954a6c52fb8873382cb3b90935280a41856fe1dfcbb76): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pomp and Circumstance March No.1 Op.39 No.1
+M:2/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"G8 | "D7"^F2 G2 A4 | "Em"z8 | "Em7"z8 |
+"C"z8 | "Em7"z2 C2 z4 | "A7"z8 | "D"z8 |
+"G"z8 | "A7"z2 D4 E2 | "D"A8 | "G"z8 |
+"Em7"G8 | "A7"G2 ^F4 E2 | "D"z8 | "D7"z8 |
+"G"G8 | "D7"^F2 G2 A4 | "Em"z8 | "Em7"z8 |
+"C"z8 | "Em7"z2 C2 z4 | "A7"z8 | "D"z8 |
+"G"z8 | "A7"z2 D4 E2 | "D"A8 | "D"z8 |
+"C"c8 | "D"c2 B4 A2 | "G"B8 | "G7"B8 |
+"C"z8 | "D7"^F2 G4 A2 | "Em7"z8 | "Em"G8 |
+"Am7"z8 | "D7"z2 B,4 A,2 | "G"z8 | "G"z8 |
+"Em7"g8 | "D7"^f2 g2 a4 | "Em7"e8 | "G"d8 |
+"C"c8 | "Em7"B2 c2 d4 | "A7"A8 | "D"A6 z2 |
+"G"B8 | "A7"_d2 =d4 e2 | "D"a8 | "Bm"d8 |
+"Em7"g8 | "A7"g2 ^f4 e2 | "D"d8 | "D7"d8 |
+"G"g8 | "D7"^f2 g2 a4 | "Em"e8 | "Em"d8 |
+"C"c8 | "Em7"B2 c2 d4 | "A7"A8 | "D"A6 z2 |

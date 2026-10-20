@@ -1,0 +1,35 @@
+%abc-2.1
+% Farnace RV 711, by Antonio Vivaldi. Score published on MuseScore (artist: Antonio Vivaldi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/9/QmdaVv8eQwPvDUbdF57mq34SearJKtButndGyAhext4WFo.mid (sha256
+% cb04abdbc00e46607d8fde47c897973381c38f3bf2b347f4073dac6a946185bb): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Farnace RV 711
+M:4/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 "G7"z8 | "Db"z8 "Bbm"z8 | "Em"z8 "Fm"z8 | "Bbm7"z8 "F#7"z8 |
+"C"z8 "Bb7"z8 | "Db"z8 "C"z8 | "C7"z8 "Bb7"z8 | "F"c2 F F F2 F2 "Bbm"_d c z6 |
+"C7"g f e _d c _B _A G "Fm"_A2 F2 z4 | "F7"A2 A A f2 A2 "Dm"_B A _B2 z4 | "Db7"B2 B B f2 B2 "C"c B c2 z2 c2 | "C"C2 _B2 C2 _A2 G4 z4 |
+"Fm"c2 _B G F2 c2 "Eb7"_d z _d _d2 f _e c | "Fm7"c z c c2 _e c _B "C7"_B z _B _B2 _d _B _A | "Fm"_A2 _A3 G _A G "Cm"_E D C2 z2 _e2 | "G7"f2 _e z c z _A z F4 z2 B2 |
+"C"c2 C2 D3 C "Cm7"C4 z4 | "G"z8 "Gm7"z8 | "Cm"z8 c2 G2 G2 G2 | "Fm"_A G _A2 z4 "G7"f _e d c B _A G F |
+"Cm"_E2 C2 z4 "C"g f =e _d c _B _A G | "Fm"_A2 F2 z4 "Db"_d3 _d _d2 _d2 | "Eb7"g5 f _d c "Cm"c c c c c c c c | "Fm"f5 _e c _B "Bb"_B _B _B _B _B _B _B _B |
+"C7"e5 _d _B _A "Fm"_A2 F2 z2 f2 | "Bbm"f2 _e z c z _A z "C7"=E4 z2 g2 | "C7"g2 f z _d z _B2 "Db7"=B4 z2 e2 | "C"f2 F2 _A2 G F "Fm"F4 z4 |
+"Fm"z8 "Dbm"z8 | "Cm"z8 "Dm7"z8 | "Eb7"z8 "C7"z8 | "C7"z8 "Fm"z8 |
+"Fm"z6 c2 _d2 _d2 _d2 c2 | "G7"B4 c4 "F7"_e2 c c c2 c2 | "G"B A G2 z2 d2 f2 d2 G2 f2 | "G"_e2 d2 z2 G2 _e2 d c B3 c |
+"Cm"c4 z2 c2 "F7"_e2 c2 F2 _e2 | "Bbm"_d2 _d2 z _B _d f "Eb7"G2 G2 z _E G _B | "F"A2 A2 z F A _e "Bbm"_d c _B2 z2 f2 | "F"_d2 c _B A3 _B "Bbm"_B8 |
+"F"z8 "G7"z8 | "Db"z8 "Bbm"z8 | "Em"z8 "Fm"z8 | "Bbm7"z8 "F#7"z8 |
+"C"z8 "Bb7"z8 | "Db"z8 "C"z8 | "C7"z8 "Bb7"z8 | "F"c2 F F F2 F2 "Bbm"_d c z6 |
+"C7"g f e _d c _B _A G "Fm"_A2 F2 z4 | "F7"A2 A A f2 A2 "Dm"_B A _B2 z4 | "Db7"B2 B B f2 B2 "C"c B c2 z2 c2 | "C"C2 _B2 C2 _A2 G4 z4 |
+"Fm"c2 _B G F2 c2 "Eb7"_d z _d _d2 f _e c | "Fm7"c z c c2 _e c _B "C7"_B z _B _B2 _d _B _A | "Fm"_A2 _A3 G _A G "Cm"_E D C2 z2 _e2 | "G7"f2 _e z c z _A z F4 z2 B2 |
+"C"c2 C2 D3 C "Cm7"C4 z4 | "G"z8 "Gm7"z8 | "Cm"z8 c2 G2 G2 G2 | "Fm"_A G _A2 z4 "G7"f _e d c B _A G F |
+"Cm"_E2 C2 z4 "C"g f =e _d c _B _A G | "Fm"_A2 F2 z4 "Db"_d3 _d _d2 _d2 | "Eb7"g5 f _d c "Cm"c c c c c c c c | "Fm"f5 _e c _B "Bb"_B _B _B _B _B _B _B _B |

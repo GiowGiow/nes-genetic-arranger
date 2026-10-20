@@ -1,0 +1,35 @@
+%abc-2.1
+% Padre del ciel, by Cipriano de Rore. Score published on MuseScore (artist: Cipriano de Rore),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Cipriano de Rore (died 1565,
+% Wikidata Q316074).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/9/QmbavAwks6Fzsuagn13pTHmSfQoXcxG2LMdm2M9S2tWqRL.mid (sha256
+% d5358449dc8b9fe1c8ed8e7a8ce0cad73825c5f9bef35a78897a1fe18967cbfd): melody track 2, bars 0-61
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Padre del ciel
+M:4/2
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z16 "Db"z16 | "Fm"F16 "C"E8 E8 | "F"F8 z4 F4 "Bb"D8 D8 | "Cm7"_E4 _E4 _E8 "Fm"C8 C8 |
+"Cm"C4 G,4 _A,8 "Cm7"G,4 G,4 G,4 _B,4 | "Eb"_B,4 _B,4 C8 "Fm"C4 D4 _E4 F4 | "Fm"_E4 D4 F4 C4 C2 _B,2 _A,2 G,2 F,8 | "Cm"_E,4 _E6 D2 C2 _B,2 _A,6 _B,2 C4 C4 |
+"Bb"z4 F4 C4 C4- "Fm"C2 C2 D4 _E4 _E4 | "Bbm"F12 _E4 "Cm"_A,6 _B,2 C8 | "Ab"C4 F,4 C8- "Cm"C4 _B,4 _A,8 | "Fm"F,4 F8 C4 "Bb7"_D4 _D4 C8 |
+"Db"C8 F,4 _B,4- "Bbm"_B,4 _A,4 _A,4 G,4 | "Gm7"C8 D4 _E4- "Fm"_E4 D4 F8 | "C"F8 _E8 "Bbm"z8 _A,8 | "Ab"_A,8 G,4 G,4 "Bbm"_B,8 F,8 |
+"Cm"_A,4 C6 D2 _E4 "Cm7"_A,4 C4 _E4 _B,4 | "Ab"C4 C4 _B,8 "Eb"_A,8 z4 _E4 | "Ab"_E4 C4 F6 _E2 "Fm"C4 _D4 C8 | "F"A,4 A,8 A,4 "Cm"_B,8 _B,4 C4 |
+"Bb"D4 D4 D4 D4 "Ab"_E8 F8 | "Cm7"z4 G,8 G,4 "Db"_A,12 _A,4 | "Bbm"_A,4 _B,8 G,4- "Fm7"G,4 C8 _A,4 | "Bb"_D8 C8- "Fm7"C8 z8 |
+"Cm7"G,16 "Fm"A,8 C8 | "Gm"_B,4 _B,4 G,8 "Fm"F,4 C8 _A,4 | "Cm7"G,6 _A,2 _B,4 F,4 "C"z4 C8 C4 | "Bb"F8 _D4 _D4 "Cm"C12 _A,4 |
+"Cm7"G,4 G,4 C8 "Bbm"F,4 F8 _B,4 | "Fm"C8 C4 F8 C4 F8 | "C"E32 | "F"z16 "Bbm"z16 |
+"Gm"z16 "F"C16 | "Cm7"G,12 A,4 _B,8 _B,8 | "Fm"C4 F4 _E8- "Cm"_E4 _B,4 C4 C4 | "Bbm"_B,4 F,4 F,4 G,4 "Ab"_A,8 _E,4 _E4 |
+"Cm7"_D4 _D4 C8 "Fm7"_B,4 _E4 C4 F4 | "C7"F2 E2 E2 D E F8 "Cm7"_B,4 E8 D4 | "Fm7"z4 F4 _B,4 _B,4 "Cm7"C4 C4 D4 F4 | "Fm"_E4 _E4 C2 _B,2 C2 D2 "Eb"_E8 _B,8 |
+"Cm"z12 G,4 "Gm7"G,4 G,4 C4 _B,4 | "G"C4 F,4 _B,4 _B,4 "Cm"G,8 G,4 C4 | "Cm7"C4 _E4 D4 _E4 "Fm"C12 F,4 | "Cm"_B,4 _B,4 C8 "Em7"G,8 z8 |
+"C"G,12 G,4 "Dm7"F,16 | "Gm"_E,4 _E,4 _B,8 "Fm"F,8 C8 | "Cm7"C4 _B,4 _B,8 G,4 _E8 _B,4 | "Fm"F8 F4 C4 "Eb"_E8 _E,8 |
+"Bbm"_B,12 F,4 "Fm"_D8 C8 | "Gm"z12 _B,4 "Fm"C12 A,4 | "Cm7"_B,8 G,8 "Bbm"_A,4 F,4 F,4 F,4 | "Ab"_A,16 "Eb"G,8 z4 _B,4 |
+"Fm7"C8 A,4 _B,4- "Cm"_B,4 G,4 _A,8 | "Eb"F,4 z2 F2 D4 _E4 "Fm7"C8 _B,8 | "Cm7"z8 F,8 "Cm"_E,6 F,2 G,4 _A,4 | "Cm"G,4 G,4 C12 B,4 C4 G,4 |
+"Cm"_A,8 G,8 "Fm"F,12 E,4 | "C"F,8 G,4 G,4 "Dm7"_A,12 G,4 | "C"C8 _B,4 C6 _B,2 _B,6 A, G, A,4 | "Bbm"_B,4 _B,8 C4 _D6 C2 _B,8 |
+"F"A,32 |

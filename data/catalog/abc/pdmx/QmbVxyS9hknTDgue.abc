@@ -1,0 +1,29 @@
+%abc-2.1
+% Ben si vedrà se la nemica mia, by Benedetto Pallavicino. Score published on MuseScore (artist:
+% Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/49/QmbVxyS9hknTDguetaaE6ZYArzLCFTuvhEgHbvsWDUcthj.mid (sha256
+% 5fb8da348548549fd26ec67592ba2cc5e44d3048dfaa5022903d8f239ae450a3): melody track 0, bars 2-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ben si vedrà se la nemica mia
+M:4/2
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z8 c8 "E"B12 c4 | "G7"A8 G8 "D7"G8 F8 | "E"E8 D8 E16 | "A"E8 A8 "Dbm7"_A12 =A4 |
+"G"^F8 G8 "Am"G8 c8 | "Am7"B8 A8 "E"B16 | "A"_d16 "Em"z8 e8 | "Dm"d4 c4 B8 A16 |
+"Em"z8 e8 "G7"d4 c4 B8 | "C"c8 B8 "D7"A8 B4 G4 | "C"G4 c4 A8 "G"B16 | "G"d8 B8 "Em"B4 A8 _A4 |
+"Am"A8 E4 E4 "Db7"E8 E8 | "E7"A8 G8 "Em7"A4 A4 c4 B4 | "Am7"e4 d4 c4 B4 "Am"A4 B4 c4 A4 | "Dbm"B8 A8 "Dm7"z16 |
+"E"z16 "Am"z16 | "Am"z8 E8 "A7"c12 B4 | "F"A4 A4 G8 "Am"G8 G4 ^F4 | "Am7"G8 A4 c4 "C"c4 B4 c8 |
+"Am7"d8 z8 "Em7"z16 | "Am7"z16 "Dm"z8 d8 | "Dm7"c8 B8 "Am"A8 c8 | "G"c8 B16 B8 |
+"F"c16 d16 | "E"e16 "F"c8 c8 | "C"c8 B8 "Dm"A4 d8 c4 | "Em7"B4 c4 B4 A4 "Bm"A12 _A4 |
+"A"A16 "Em7"z8 G8 | "Am7"G4 G4 c8 "Dm7"A4 A4 B4 A4 | "Am"_A4 _A4 =A8 "D7"E4 =A8 =A4 | "G"d8 B4 B4 "Am"c16 |
+"C"B8 z4 G4- "F"G4 A4 B4 c4 | "F"c4 B4 c8 "D7"z16 | "G"z8 G8 "C"G8 c4 A4 | "Dm7"A4 A4 A8 d8 c8 |
+"Am7"c4 c4 d8 "C"e8 z4 e4 | "Dm"d8 d4 c4- "Em"c4 A4 B8 | "Dm"B8 d8- "F#m7"d4 c4 B8 | "A"_d32 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Zeak Waltz, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsu-z.abc,
+% tune X: 34 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% d104d7d1bb83eb1ca18f6b944dc22cf9f7bfe5f955d07cd573615985f69c2c1f).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Zeak Waltz
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"d2 c2 d2 e2 d4 f2 e2 | "D"d2 c2 d2 e2 d4 e2 f2 | "G"g2 f2 e2 d2 c2 d2 e2 d2 |
+"A7"c2 B2 A2 ^G2 A4 A4 | "D"d2 c2 d2 e2 d4 f2 e2 | "D"d2 c2 d2 e2 d4 e2 f2 | "G"g2 f2 e2 d2 "A7"c2 d2 e2 c2 |
+"D"d4 d4 d4 A4 | "D"d2 c2 d2 e2 d4 f2 e2 | "D"d2 c2 d2 e2 d4 e2 f2 | "G"g2 f2 e2 d2 c2 d2 e2 d2 |
+"A7"c2 B2 A2 ^G2 A4 A4 | "D"d2 c2 d2 e2 d4 f2 e2 | "D"d2 c2 d2 e2 d4 e2 f2 | "G"g2 f2 e2 d2 "A7"c2 d2 e2 c2 |
+"D"d4 d4 d4 f4 | "G"g4 e4 e2 g2 e2 g2 | "D"f4 d4 d2 f2 d2 f2 | "E7"e2 f2 e2 d2 c2 B2 A2 ^G2 |
+"A"A4 A4 A4 e2 f2 | "G"g4 e4 e2 g2 e2 g2 | "D"f4 d4 d2 f2 d2 f2 | "E7"e2 f2 e2 d2 "A7"c2 d2 e2 c2 |
+"D"d4 d4 d4 f4 | "G"g4 e4 e2 g2 e2 g2 | "D"f4 d4 d2 f2 d2 f2 | "E7"e2 f2 e2 d2 c2 B2 A2 ^G2 |
+"A"A4 A4 A4 e2 f2 | "G"g4 e4 e2 g2 e2 g2 | "D"f4 d4 d2 f2 d2 f2 | "E7"e2 f2 e2 d2 "A7"c2 d2 e2 c2 |
+"D"d4 d4 d4 z4 |

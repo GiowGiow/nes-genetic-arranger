@@ -1,0 +1,24 @@
+%abc-2.1
+% Grandpa's, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsd-g.abc,
+% tune X: 78 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Grandpa's
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A2 G2 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "E7"e4 d4 |
+"A7"c4 B4 A4 G4 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "A7"e4 B2 c2 |
+"D"d12 A2 G2 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "E7"e4 d4 |
+"A7"c4 B4 A4 G4 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "A7"e4 B2 c2 |
+"D"d16 | "A"e2 c2 A4 e2 c2 A4 | "G"g4 f4 "A"e2 c2 A4 | "G"g4 f4 "E7"e4 d4 |
+"A7"c4 B4 A4 G4 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "A7"e4 B2 c2 |
+"D"d12 z4 | "A"e2 c2 A4 e2 c2 A4 | "G"g4 f4 "A"e2 c2 A4 | "G"g4 f4 "E7"e4 d4 |
+"A7"c4 B4 A4 G4 | "D"F4 A4 "A7"B4 c4 | "D"d2 c2 d2 e2 f4 a4 | "Em"g4 f4 "A7"e4 B2 c2 |
+"D"d12 z4 |

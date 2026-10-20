@@ -1,0 +1,35 @@
+%abc-2.1
+% Daphnis et Chloé, by Maurice Ravel. Score published on MuseScore (artist: Maurice Ravel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/26/QmPjjx5KXsQ6ufRDQQ5z4rmCrebWr8FNctNmuDajmNVkVn.mid (sha256
+% 9af66f23c0005b57c20ca3afda97d141bd5ab846041ba0da713e94b026bd6225): melody track 21, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Daphnis et Chloé
+M:4/4
+L:1/16
+Q:1/4=198.5
+% Exact tempo 198.49999999999213 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z16 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "A"z8 "B7"z8 | "B7"z16 | "B7"z16 |
+"B7"z8 "A"z8 | "A"z16 | "A"z16 | "A"z16 |
+"A"z16 | "B7"z6 a a a a a a a a a a | "B7"a a a a a a a a a z a a a a a a | "B7"a a a a a a a a a a a a a a a a |
+"B7"a a a a a a z a a a a a a a a a | "F#m7"a a a a a a a a "A"a a a a a a a a | "B7"a a a a z a a a a a a a a a a a | "B7"a a a a a a a a "A"a a a a a a a a |
+"B7"a z a a a a a a a a a a a a a a | "B7"a a a a a a a a a a a a a a a a | "B7"a a z a a a a a a a a a a a a a | "B7"a a a a a a a a a a a a a a a a |
+"B7"a a a z a a a a "A"a a a a a a a a | "A"a a a a a a a a a a a a a a a a | "A"z a a a a a a a a a a a a a a a | "A"a a a a a a a a a a a a a a a z |
+"A"a a a a a a a a a a a a a a a a | "A"a a a a a a a a a a a a z a a a | "A"a a a a a a a a a a a a a a a a | "A"a a a a a a a a a a z a a a a a |
+"A"a a a a a a a a "Am7"a a a a a a a a | "Am7"a a a a a a a a z a a a a a a a | "Am7"a a a a a a a a a a a a a a a a | "Am7"a a a a a a a a a z a a a a a a |
+"Am7"a a a a a a a a a a a a a a a a | "Am7"a a a a a a a a z a a a a a a a | "Am7"a a a a a a a a a a a a a a a a | "Am7"a a a a a a z a a a a a a a a a |
+"Am7"a a a a a a a a a a a a a a a a | "Am7"a a a z a a a a a a a a a a a a | "Am7"a a a a a a a a a a a a a a a a | "Am7"a z a a a a a a a a a a a a a a |
+"Am7"a a a a a a a a a a a a a a z a | "G"a a a a a a a a a a a a a a a a | "G7"a a a a a a a a a a a a a a a z | "G7"a a a a a a a a a a a a a a a a |
+"G7"a a a a a a a a a a a a a a a a | "G7"z a a a a a a a a a a a a a a a | "G"a a a a a a a a a a a a a z a a | "G7"a a a a a a a a a a a a a a a a |

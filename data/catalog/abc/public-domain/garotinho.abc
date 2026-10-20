@@ -1,0 +1,36 @@
+%abc-2.1
+% GAROTINHO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/garotinho.html (file
+% https://www.beakauffmann.com/mpb_g/som/garotinho.mid, sha256
+% 6733efc09760124c557883e3b14ba5c4ced8c8628ee83b101e46349a9398b19d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GAROTINHO
+M:4/4
+L:1/16
+Q:1/4=137.999876
+% Exact tempo 137.99987580011177 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"_A5 z _E2 "Eb"z2 C2 _D2 =D2 | "Ab"_E2 c2 G2 _B2 "Eb"_A2 D2 _E2 =E2 | "C"F5 z F2 "F"z2 C2 B,2 _B,2 | "C"A,3 z _e3 z "F"c3 z A3 z |
+"F"c5 z _B2 "Bb"z2 D2 _E2 =E2 | "F"F3 z G3 z "Bb"_A3 z =A3 z | "Eb"c5 z _B2 "Bb7"z2 _B,2 A,2 _A,2 | "Em7"z8 "Eb7"z8 |
+"Ab"_A5 z _E2 "Eb"z2 C2 _D2 =D2 | "Ab"_E2 c2 G2 _B2 "Eb"_A2 D2 _E2 =E2 | "C"F5 z F2 "F"z2 C2 B,2 _B,2 | "C"A,3 z _e3 z "F"c3 z A3 z |
+"F"c3 z _B2 c2- "Bb"c2 _B2 c3 z | "Eb"c3 z _B2 c4 _B2 _E3 z | "E7"_A3 z E4- "D"E2 z2 _E3 z | "Ab"_A6 z2 _a3 z5 |
+"Db"f3 z _d2 f4 _d2 f3 z | "Eb7"e3 z _d2 e4 _d2 e3 z | "Db"f3 z _d2 f4 _d2 f3 z | "Db"z4 _d3 z _A3 z _B3 z |
+"Db"c3 z _A2 c4 _A2 c3 z | "F"z4 _d3 z "E"_A3 z _B3 z | "Ab7"c3 z _A2 c4 _A2 c3 z | "Eb"z4 _A3 z "Ab"_e3 z f3 z |
+"Ebm"^f3 z _e2 ^f4 _e2 ^f3 z | "Fm7"f3 z d2 f2- "Db7"f2 d2 f3 z | "Ebm"^f3 z _e2 ^f4 _e2 ^f3 z | "F#"z4 f3 z "G"_e3 z _d3 z |
+"Ab"c3 z _A2 c4 _A2 c3 z | "Bb"_d3 z _A2 _d4 _A2 _d3 z | "B"d3 z _A2 d4 _A2 d3 z | "C"_e3 z _B2 _e2- "Ab"_e2 _B2 =e3 z |
+"Db"f3 z _d2 f4 _d2 f3 z | "Eb7"e3 z _d2 e4 _d2 e3 z | "Db"f3 z _d2 f4 _d2 f3 z | "Db"z4 _d3 z _A3 z _B3 z |
+"Db"c3 z _A2 c4 _A2 c3 z | "F"z4 _d3 z "E"_A3 z _B3 z | "Ab7"c3 z _A2 c4 _A2 c3 z | "Eb"z4 _A3 z "Ab"_e3 z f3 z |
+"Ebm"^f3 z _e2 ^f4 _e2 ^f3 z | "Fm7"f3 z d2 f2- "Db7"f2 d2 f3 z | "Ebm"^f3 z _e2 ^f4 _e2 ^f3 z | "G"z4 _d3 z "A7"_e3 z =e3 z |
+"Db"f3 z _d2 f4 _d2 f3 z | "Ab7"z4 _a3 z _e3 z f3 z | "Db"_d3 z _A3 z "C7"G3 z ^F3 z | "Db"F3 z5 _d3 z5 |
+"Ab"_A5 z _E2 "Eb"z2 C2 _D2 =D2 | "Ab"_E2 c2 G2 _B2 "Eb"_A2 D2 _E2 =E2 | "C"F5 z F2 "F"z2 C2 B,2 _B,2 | "C"A,3 z _e3 z "F"c3 z A3 z |
+"F"c5 z _B2 "Bb"z2 D2 _E2 =E2 | "F"F3 z G3 z "Bb"_A3 z =A3 z | "Eb"c5 z _B2 "Bb7"z2 _B,2 A,2 _A,2 | "Em7"z8 "Eb7"z8 |
+"Ab"_A5 z _E2 "Eb"z2 C2 _D2 =D2 | "Ab"_E2 c2 G2 _B2 "Eb"_A2 D2 _E2 =E2 | "C"F5 z F2 "F"z2 C2 B,2 _B,2 | "C"A,3 z _e3 z "F"c3 z A3 z |
+"F"c3 z _B2 c2- "Bb"c2 _B2 c3 z | "Eb"c3 z _B2 c4 _B2 _E3 z | "E7"_A3 z E4- "D"E2 z2 _E3 z | "Ab"_A6 z2 _a3 z5 |

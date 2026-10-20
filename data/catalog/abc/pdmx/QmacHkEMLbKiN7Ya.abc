@@ -1,0 +1,30 @@
+%abc-2.1
+% Prelude and Fugue in E minor BWV 855, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/13/QmacHkEMLbKiN7YagLdNjR2WPRvZAZW6ahjHjtPgvRNCdn.mid (sha256
+% d12f01b6ba8adaedfe6c54712df649e648b2f07cfeed17b27934a0b4d658b398): melody track 0, bars 0-43
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prelude and Fugue in E minor BWV 855
+M:3/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"z C _E G _E C _E C z C z C | "Cm"z C _E G _E C _E C z C z C | "Fm"z C F _A F C F C z C z C | "Fm"z C F _A F C F C z C z C |
+"Fm"z B, D F D B, D B, z B, z B, | "Fm"z B, D F D B, D B, z B, z B, | "Cm"z G, C _E C G, C G, z G, z G, | "Cm7"z G, C _E C G, C G, z G, z G, |
+"Ab"z G, C _E C G, C G, z G, z G, | "Cm"z G, C _E C G, C G, z G, z G, | "Ab7"z A, C _E C A, C A, z A, z A, | "D"z A, C _E C A, C A, z A, z A, |
+"Gm"z A, _B, D _B, A, _B, A, z A, z A, | "Gm"z G, _B, D _B, G, _B, G, z G, z G, | "Eb"z _B, D G D _B, D _B, z _B, z _B, | "Am"z A, _E G _E A, _E A, z A, z A, |
+"D"z A, C ^F C A, C A, z A, z A, | "D"z A, C ^F C A, C A, z A, z A, | "Gm"z _B, D G D _B, D _B, z _B, z _B, | "D7"z C ^F A ^F C ^F C z C z C |
+"Em7"z D G _B G D G D z D z D | "D"z D ^F c ^F D ^F D z D z D | "Eb"z _D G _B G _D G _D z _D z _D | "D"z C _E A _E C _E C z C z C |
+"E7"z _B, E G E _B, E _B, z _B, z _B, | "D7"z A, C G C A, C A, z A, z A, | "D"z A, C ^F C A, C A, z A, z A, | "Gm"z G, _B, E _B, G, _B, G, z G, z G, |
+"D7"z ^F, A, _E A, ^F, A, ^F, z ^F, z ^F, | "Gm"z G, _B, D _B, G, _B, G, z G, z G, | "D7"z G, A, C A, G, A, G, z G, z G, | "D"z ^F, A, C, A, ^F, A, ^F, z ^F, z ^F, |
+"Cm"z ^F, A, C, A, ^F, A, ^F, z ^F, z ^F, | "G"z G, A, C B, G, B, G, z G, z G, | "Cm"z A, C ^F C A, C A, z A, z A, | "Cm"z C ^F A ^F C ^F C z C z C |
+"G"z B, D G D B, D B, z B, z B, | "G7"z B, D F D B, D B, z B, z B, | "Cm"z G, C _E C G, C G, z G, z G, | "Cm"z ^F, C _E C ^F, C ^F, z ^F, z ^F, |
+"Cm"z ^F, C _E C ^F, C ^F, z ^F, z ^F, | "G"z G, B, D B, G, B, D _E C A, ^F | "G"G4 z8 |

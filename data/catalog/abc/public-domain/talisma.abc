@@ -1,0 +1,36 @@
+%abc-2.1
+% TALISMÃ, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/talisma.html (file
+% https://www.beakauffmann.com/mpb_t/som/talisma.mid, sha256
+% e3e64c3987d4de9039c01c6e1299b3d02d9e8181e5c95df8b6f69e20229ca0f8), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TALISMÃ
+M:2/4
+L:1/16
+Q:1/4=74.000165
+% Exact tempo 74.00016526703577 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"f _A2 _B c _d2 _e | "Db"f2 _A2 c z _A2 | "Ab7"^f _A2 _B c _d2 =d | "Ab7"_e2 _A _A c z _A2 |
+"Bbm7"_d _B2 c _d _e2 =e | "Eb7"f _e2 f g _a2 _b | "Abm"c' _b2 f _a ^f2 d | "Ab7"f _e2 c2 _B z _A |
+"Db"f _A2 _B c _d2 _e | "Db7"f2 _d2 f z _d2 | "F#"_d' _d2 _e f ^f2 _a | "A7"a A2 B _d =d2 e |
+"D"^f b2 a ^f d2 _d | "Ab7"c _b2 _a ^f _e2 =f | "Ab7"_d F2 _B _A _E2 F | "Db"_D4 _a2 z2 |
+"Db"f _A2 _B c _d2 _e | "Db"f2 _A2 c z _A2 | "Ab7"^f _A2 _B c _d2 =d | "Ab7"_e2 _A _A c z _A2 |
+"Bbm7"_d _B2 c _d _e2 =e | "Eb7"f _e2 f g _a2 _b | "Abm"c' _b2 f _a ^f2 d | "Ab7"f _e2 c2 _B z _A |
+"Db"f _A2 _B c _d2 _e | "Db7"f2 _d2 f z _d2 | "F#"_d' _d2 _e f ^f2 _a | "A7"a A2 B _d =d2 e |
+"D"^f b2 a ^f d2 _d | "Ab7"c _b2 _a ^f _e2 =f | "Ab7"_d F2 _B _A _E2 F | "Db"_D4 _d'4 |
+"Bb"z f'2 f5 | "Bb"z _e2 _d c _B2 A | "Bbm"c _B2 ^F =F4 | "Db7"F D2 _E z2 f2 |
+"Bb"z f'2 f5 | "Bb"z _e2 _d c _B2 A | "Bbm"c _B2 ^F =F4 | "Db7"F D2 _E z2 f2 |
+"Bb7"z e'2 f' _a' ^f'2 d' | "Ebm"f' _e'2 a c'2 _b2 | "Ab7"z d'2 _e' ^f' =f'2 c' | "Db"_e' _d'2 g _b2 _a2 |
+"F7"z b2 c' _e' _d'2 a | "Bbm"c' _b2 f _a ^f2 d | "Eb"f _e2 _d c2 _B2 | "F"A4 f4 |
+"Bb"z f'2 f5 | "Bb"z _e2 _d c _B2 A | "Bbm"c _B2 ^F =F4 | "Db7"F D2 _E z2 f2 |
+"Bb"z f'2 f5 | "Bb"z _e2 _d c _B2 A | "Bbm"c _B2 ^F =F4 | "Db7"F D2 _E z2 f2 |
+"Bb7"z e'2 f' _a' ^f'2 d' | "Ebm"f' _e'2 a c'2 _b2 | "Ab7"z d'2 _e' ^f' =f'2 c' | "Db"_e' _d'2 g _b2 _a2 |
+"F7"z b2 c' _e' _d'2 a | "F#"c' _b2 f _a ^f2 _e | "F"_d _e2 =e f2 f2 | "Bb"_b4 _b'4 |

@@ -1,11 +1,16 @@
-"""The MPB MIDI catalog: a searchable list of Brazilian songs that have a MIDI file on the web.
+"""The song browser's catalogs: which songs the app offers, and how each one opens.
 
-Beatriz Kauffmann's Web Site (https://www.beakauffmann.com/) lists thousands of fan-made MIDI
-sequences of Brazilian popular music (MPB), one index page per initial letter. The browser
-arranger lets a visitor search that list by title, composer or performer, then download a song
-from the site and arrange it. This package builds the list once, offline: `pages` reads the
-site's HTML and `crawl` walks the site politely and writes `arranger/data/catalog.json`.
+The browser shows one memory card per source. This package writes their files, offline, with
+the `catalog` command (contracts/cli.md):
 
-The site says "All Rights Reserved", so the catalog keeps metadata and links only (title,
-composers, performer, page and MIDI URLs) and credits the site. The MIDI files stay on the site.
+- `crawl` and `pages` walk Beatriz Kauffmann's Web Site (https://www.beakauffmann.com/), a list
+  of about 3,700 Brazilian songs (MPB) with fan-made MIDI files, for titles, composers and links.
+- `analysis` measures each MPB MIDI file of a local study copy (melody track, bars, key, tempo,
+  meter) and writes `arranger/data/catalog/mpb.json`: metadata, links and facts, never notes,
+  because the site says "All Rights Reserved". The song server reads a song from the site when
+  a visitor opens it.
+- `authors` looks up the authors' death years on Wikidata, for the public-domain rule.
+- `collections` writes the lead sheets the repository may redistribute (public-domain MPB songs,
+  the Nottingham folk tunes, a PDMX subset) and the Examples card.
+- `cards` holds what every catalog file shares: the envelope, the sort order, the sprite seed.
 """

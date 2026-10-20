@@ -1,0 +1,36 @@
+%abc-2.1
+% MURMÚRIO (Improviso), by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/murmurio.html (file
+% https://www.beakauffmann.com/mpb_m/som/murmurio.mid, sha256
+% 1342a8ea3601b6241351772a05e80073e8623d71ae84d272ac4a6b6782841c6f), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MURMÚRIO (Improviso)
+M:6/8
+L:1/16
+Q:1/4=69.999988
+% Exact tempo 69.99998833333528 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"c _E C _E C _E _B =E _D =E _D =E | "C"_A _E C _E C _E C _E c _A _d _B | "C"_e _A _E _A _E _A f _A F _A F _A | "C"_e G _E G _E G _e G _E G _d G |
+"C"c c C E C E c c C F C F | "C"c c C E C E c c _B _B _A _A | "C"G _E _B, _E _B, _E G D _A, D _A, D | "C"_E _B, G, _B, G, _B, _E G _B g f _e |
+"C"_d F _D F _D F A _E C _E C _E | "C"c _E C _E C _E _B F _D F _D F | "C"_d F _D F _D F A _E C _E C _E | "C"_B F _D F _D F _D F _D F _D F |
+"C"_B G _E G _E G c G _E G _B G | "C"_e _A _E _A f _A _e _A _E _A c _E | "C"c G E G E G _B G E G E G | "C"_e _A _E _A _E _A _E _A _E _A _E _A |
+"C"e _A E _A E _A _e ^F _E ^F _d ^F | "C"B _A E _A E _A _e _A _E _A _E _A | "C"_a _B _A _B _A _B _b _B _A _B d _B | "C"_e _B G _B G _B _d G _D G G, G |
+"C"c _E C _E C _E c =E _D =E _B =E | "C"_B _E C _E C _E _A _E c _A _d _A | "C"_e _A _E _A _E _A =e _A =E _A =E _A | "C"f _A F _A F _A F _A F _A F _A |
+"C"_a _B _A _B _A _B g _B _A _B f _B | "C"_e G _E G c G _B G _E G _E G | "C"d F D F c F _B F D F D F | "C"_e G _E G c G _B G _E G _E G |
+"C"f _A F _A c _A _B F _B, F _B, F | "C"g _B G _B G _B g _B G _B f _B | "C"f _B G _B e _B _d _B G _B c _B | "C"g c A c A c f c A c _e c |
+"C"_e _A F _A d _A B F D F _B F | "C"f _B _E _B _e _E _B _E _B, _E G _E | "C"G _E B, _E B, _E F _E B, _E B, _E | "C"G _E A, _E A, _E F _E A, _E A, _E |
+"C"_A D _B, D _B, D G D _B, D F D | "C"_E _B, G, _B, G, _B, =E =B, _A, =B, _A, =B, | "C"F C A, C A, C _B F D F D F | "C"_E _B, G, _B, G, _B, =E =B, _A, =B, _A, =B, |
+"C"F C A, C A, C _B F D F D F | "C"_B G _E _D _B, _E, _d _B G _E _D _E, | "C"f _d _B G _D _E, _b g _e _d _B _E | "C"_d' _b g _e _d _E f' _d' _b g f _e |
+"C"f'' _e'' _d'' c'' _b' _a' g' f' _e' =d' _d' c' | "C"_b _a g f _e d _d c _B _A G F | "C"E F E F E F ^F G ^F G ^F G | "C"_A =A _A =A _A =A _B =B _B =B _B =B |
+"C"c _E C _E C _E _B =E _D =E _D =E | "C"_A _E C _E C _E C _E c _A _d _B | "C"_e _A _E _A _E _A f _A F _A F _A | "C"_e G _E G _E G _e G _E G _d G |
+"C"c E C E C E c F C F C F | "C"c E C E C E c C _B C _A C | "C"G _E _B, _E _B, _E F D _A, D _A, D | "C"_E _B, G, _B, G, _B, _E G _B g f _e |
+"C"_d F _D F _D F A _E C _E C _E | "C"c _E C _E C _E _B F _D F _D F | "C"_d F _D F _D F A _E C _E C _E | "C"_B F _D F _D F _D F _D F _D F |
+"C"_B G _E G _E G c G _E G _B G | "C"_e _A _E _A f _A _e _A _E _A c _E | "C"c G E G E G _B G E G E G | "C"_e _A _E _A _E _A _E _A _E _A _E _A |

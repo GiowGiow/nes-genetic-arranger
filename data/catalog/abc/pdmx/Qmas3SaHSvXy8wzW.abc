@@ -1,0 +1,27 @@
+%abc-2.1
+% Quel neo quel vago neo, by Constantijn Huygens. Score published on MuseScore (artist:
+% Constantijn Huygens), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Constantijn Huygens (died 1687,
+% Wikidata Q560746).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/42/Qmas3SaHSvXy8wzWwy8Z7H8paCE1FrQJUxWb6BHyb6CGbw.mid (sha256
+% e7ca844210549fe2a7b7d6eaa15747d2688972a3a96e0d4da2e0a21af5076f6d): melody track 0, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Quel neo quel vago neo
+M:4/4
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"C"z6 G2 G6 c2 | "C"A2 G2 G2 G2 z2 E2 G4 | "Bm7"G2 G2 A2 A2 "G"B2 B2 d4 | "G7"d4 G2 G2 "Em"G8 |
+"D"A4 D2 D2 "Bb"F4 G2 G2 | "Am7"A2 A2 E2 F2 "Em"G4 G2 F2 | "C"E8 "G"D8 | "C"z6 G2 G6 c2 |
+"C"A2 G2 G2 G2 z2 E2 G4 | "Bm7"G2 G2 A2 A2 "G"B2 B2 d4 | "G7"d4 G2 G2 "Em"G8 | "D"A4 D2 D2 "Bb"F4 G2 G2 |
+"Am7"A2 A2 E2 F2 "Em"G4 G2 F2 | "C"E8 "G"D8 | "G"z4 d4- "F#m"d4 A2 A2 | "Em7"B2 B2 A2 G2 "C"G4 G2 E2 |
+"C"E4 A4- "Dbm7"A4 _A2 _A2 | "Am7"A3 E G4- "C"G4 G4 | "G"A4 B4 "Gm"_B8 | "D"_B4 A2 G2 "Gm"G6 D2 |
+"Gm"_E4 D4 G6 G2 | "A7"c8 "F#m"A4 A2 D2 | "Gm"D6 D2 "Am"E6 F2 | "Am7"G3 G A3 A "C"B c d c c4 |
+"G"z4 d4- "F#m"d4 A2 A2 | "Em7"B2 B2 A2 G2 "C"G4 G2 E2 | "C"E4 A4- "Dbm7"A4 _A2 _A2 | "Am7"A3 E G4- "C"G4 G4 |
+"G"A4 B4 "Gm"_B8 | "D"_B4 A2 G2 "Gm"G6 D2 | "Gm"_E4 D4 G6 G2 | "A7"c8 "F#m"A4 A2 D2 |
+"Gm"D6 D2 "Am"E6 F2 | "Am7"G3 G A3 A "C"B c d c c4 |

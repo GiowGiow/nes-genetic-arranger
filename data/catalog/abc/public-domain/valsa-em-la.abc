@@ -1,0 +1,36 @@
+%abc-2.1
+% VALSA EM LÁ, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_v/valsa-em-la.html (file
+% https://www.beakauffmann.com/mpb_v/som/valsa-em-la.mid, sha256
+% 993b0e1c458e51ae93cdb3de6d1f3703e5abb28b6de9f654aeb6928e89121c25), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:VALSA EM LÁ
+M:3/4
+L:1/16
+Q:1/4=97.999984
+% Exact tempo 97.9999836666694 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"E6 E, ^F A z3 | "F#m"E6 A, ^F A z3 | "Bm"D2 A,4 _A,2 E,2 B,2 | "E"_D6 B,2 _A2 =D2 |
+"A"B2 A2 E2 _D2 C2 _D2 | "F#m"_A6 ^F,2 ^F2 ^F,2 | "Dbm7"^F6 E,5 z | "E"E8 E,4 |
+"Db"_d5 z c2 _d2 =d2 | "Db"_d5 z c2 _d2 =d2 | "F#m"d6 _D2 A,2 ^F,2 | "F#m"_d6 ^F,2 A,4 |
+"B7"B,2 _D2 _E2 =E2 ^F2 _A2 | "F#"A2 B2 _d2 _e2 =e2 f2 | "E7"^f6 B2 _A2 E2 | "E"e8 E4 |
+"A"E6 E, ^F A z3 | "F#m"E6 A, ^F A z3 | "Bm"D2 A,4 _A,2 E,2 B,2 | "E"_D6 B,2 _A2 =D2 |
+"A"B2 A2 E2 _D2 C2 _D2 | "F#m"_A6 ^F,2 ^F2 ^F,2 | "Dbm7"^F6 E,5 z | "E7"E2 _A,2 E,7 z |
+"A"A,2 B,2 _D2 =D2 E2 ^F2 | "B7"E2 A,2 B,2 _D2 =D2 ^F2 | "Bm"A2 ^F2 D2 B,2 A,2 ^F,2 | "D"D,2 ^F,2 A,2 D2 ^F2 A2 |
+"F#m7"^f2 _d2 A2 ^F2 E2 _D2 | "E"_A2 B,2 B7 z | "F#m7"E2 ^f2 e2 _d5 z | "F#m7"A11 z |
+"E"B,6 E,2 ^F,2 _A,2 | "Db"_D,4 _D2 F,2 A2 _A,2 | "F#"_A6 ^F,2 E,2 _E,2 | "F#"^F8 E,4 |
+"B7"B,2 _D2 _E2 =E2 ^F2 _A2 | "F#"A2 B2 _d2 _e2 =e2 f2 | "E"^f6 B2 _A2 E2 | "E"e8 B,4 |
+"E"B,2 _D2 _E2 =E2 ^F2 _A2 | "E"G2 _A2 G2 _A2 B2 _B2 | "E"_A2 ^F2 E2 _E2 _D2 B,2 | "Ab7"_D2 B,2 A,2 _A,2 ^F,2 _E,2 |
+"Db7"_E6 _A,5 z | "F#"_D2 ^F,2 E,4 ^F2 _E2 | "B7"_D2 ^F,2 _E,2 _D,5 z | "Ebm"B,8 B,,4 |
+"E"B,6 E,2 ^F,2 _A,2 | "Db"_D,4 _D2 F,2 A2 _A,2 | "F#"_A6 ^F,2 E,2 _E,2 | "F#"^F8 E,4 |
+"B7"B,2 _D2 _E2 =E2 ^F2 _A2 | "F#"A2 B2 _d2 _e2 =e2 f2 | "E"^f6 B2 _A2 E2 | "E"e8 B,4 |
+"A"_A2 E4 ^F2 E2 _D2 | "F#7"G,2 _B,2 _D2 E2 ^F2 _A2 | "E"_A ^F E2 B,2 _A,5 z | "E"E,5 z _A,2 B,2 _E2 |
+"B7"_E _D B,2 A,2 _E,5 z | "Abm7"_E,6 ^F,2 B,2 _E2 | "E"E2 E,2 B,2 E,2 _A,4 | "E"E8 B,4 |

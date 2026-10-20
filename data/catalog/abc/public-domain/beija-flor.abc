@@ -1,0 +1,35 @@
+%abc-2.1
+% BEIJA-FLOR, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/beija-flor.html (file
+% https://www.beakauffmann.com/mpb_b/som/beija-flor.mid, sha256
+% de2bdabbf8cd66e2aa99c3f591a30fe906685c493a398c7854f267874993ce30), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BEIJA-FLOR
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E7"z3 A a z a z | "E7"_a3 _A ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"_d B A E a z a z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"A3 A a z a z | "E7"_a3 _A ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"_d B A E a z a z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"A3 _d _d' z _d' z | "F#m"a3 _d a z a z | "Ab7"_a3 B _a z _a z | "Db7"a3 B _a z _a z |
+"F#m"_d3 _d _d' z _d' z | "F#m"a3 _d a z a z | "Ab7"_a3 B _a z _a z | "Db7"a3 B _a z _a z |
+"F#m"^f3 _d _d' z _d' z | "F#m"a3 _d a z a z | "Ab7"_a3 B _a z _a z | "Db7"a3 B _a z _a z |
+"F#m"_d3 _d _d' z _d' z | "F#m"a3 _d a z a z | "Ab7"_a3 B _a z _a z | "Db7"a3 B _a z _a z |
+"F#m"^f3 _d _d' z _d' z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"_d B A E a z a z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"A3 A a z a z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A"_d B A E a z a z | "E7"_a3 _a ^f z ^f z | "F#m7"e3 e ^f z ^f z | "E7"B _d =d z _A =A B E |
+"A7"A3 A B z _d z | "D"d d2 A d z e z | "A7"_d _d2 _d b z b z | "A7"_d _d2 _d b z b z |
+"D"a2 a A B z _d z | "D"d d2 A d z e z | "F#m7"_d _d2 _d e z e z | "E7"E E2 F ^F z _A z |
+"A7"A A2 _B =B z _d z | "D"d d2 A d z e z | "A7"_d _d2 _d b z b z | "A7"_d _d2 _d b z b z |
+"D"a a2 A B z _d z | "D7"d d2 A d z d z | "Bb"d d2 d e z f z | "A"^f g _a =a b =a e ^f |

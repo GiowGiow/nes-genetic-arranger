@@ -1,0 +1,36 @@
+%abc-2.1
+% AQUI ESTOU, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/aqui-estou.html (file
+% https://www.beakauffmann.com/mpb_a/som/aqui-estou.mid, sha256
+% 983fd1df0f3814467aac730c7749b5f048e3c77b72487311795636669254b57b), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AQUI ESTOU
+M:2/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"z5 d d d | "Dm"d c _B A G F E D | "A7"_D E G _B A e e e | "A7"e d _d _B A G F E |
+"Dm"D _D =D E F E F A | "Dm"d c _B A G F E _E | "Am"E3 F E F E F | "E"E F E F E F E D |
+"A7"_D E G _B A =d =d =d | "Dm"d c _B A G F E C | "A7"_D E G _B A _e _e _e | "D7"_e d c A ^F D C A, |
+"Gm"G, ^F, G, A, _B, A, _B, D | "Gm"G ^F G A _B A _B c | "Dm"d _d =d A F =D _B, A, | "C7"_A, B, D F E B, _D =A |
+"Dm"D E F A d d d d | "Dm"d c _B A G F E D | "A7"_D E G _B A e e e | "A7"e d _d _B A G F E |
+"Dm"D _D =D E F E F A | "Dm"d c _B A G F E _E | "Am"E3 F E F E F | "E"E F E F E F E D |
+"A7"_D E G _B A =d =d =d | "Dm"d c _B A G F E C | "A7"_D E G _B A _e _e _e | "D7"_e d c A ^F D C A, |
+"Gm"G, ^F, G, A, _B, A, _B, D | "Gm"G ^F G A _B A _B c | "Dm"d _d =d A F =D _B, A, | "C7"_A, B, D F E B, _D =A |
+"Dm"z8 | "Bm7"z8 | "Em"z8 | "Bm7"z8 |
+"A7"z8 | "A7"z8 | "A7"z8 | "A7"z8 |
+"Bm7"z8 | "Em"z8 | "Em"z8 | "D7"z8 |
+"Em7"z8 | "F"z8 | "Bm7"z8 | "Em"z8 |
+"D"z8 | "Bm7"z8 | "Em"z8 | "Bm7"z8 |
+"A7"z8 | "A7"z8 | "A7"z8 | "A7"z8 |
+"Bm7"z8 | "Em"z8 | "Em"z8 | "D7"z8 |
+"Em7"z8 | "F"z8 | "Bm7"z8 | "Em"z8 |

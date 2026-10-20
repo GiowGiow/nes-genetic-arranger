@@ -1,0 +1,35 @@
+%abc-2.1
+% GOTAS DE OURO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gotas-de-ouro.html (file
+% https://www.beakauffmann.com/mpb_g/som/gotas-de-ouro.mid, sha256
+% 0b0335d9d8323879ad0a2b3d866f491f2332638669751106f1e4fe73e5fcffb9), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GOTAS DE OURO
+M:6/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G,2 G,,2 G,,2 A,2 G,,2 B,2 | "C"A,2 G,,2 G,,2 G,2 G,,2 G,,2 | "C"G,2 G,,2 G,,2 A,2 G,,2 B,2 | "C"A,2 G,,2 G,,2 G,2 G,,2 G,,2 |
+"C"A,2 G,,2 G,,2 E,2 F,2 G,2 | "C"A,2 G,,2 G,,2 F,2 G,,2 E,2 | "C"E,2 G,,2 G,,2 G,,2 G,,2 G,,2 | "C"E,2 G,,2 G,,2 D,2 G,,2 G,,2 |
+[M:3/4]"C"E4 C4 C4 | "C"G4 D4 D4 | "C"c4 F4 F4 | "C"_A,,4 B4 =A4 |
+"C"G2 ^F2 G2 _A2 B2 =A2 | "C"E2 G2 F2 B,2 E2 D2 | "C"D2 C2 B,2 C2 E2 G2 | "C"A2 G2 F2 D2 B,2 A,2 |
+"C"E4 C4 C4 | "C"_A4 D4 e4 | "C"d4 c4 c4 | "C"C,4 B4 A4 |
+"C"G2 A2 _B2 =B2 =B,4 | "C"B,,4 B4 A4 | "C"E,,2 A2 A4 G4 | "C"D,2 A2 A4 G4 |
+"C"E4 C4 C4 | "C"G4 D4 D4 | "C"c4 F4 F4 | "C"_A,,4 B4 =A4 |
+"C"G2 ^F2 G2 _A2 B2 =A2 | "C"E2 G2 F2 B,2 E2 D2 | "C"D2 C2 B,2 C2 E2 G2 | "C"A2 G2 F2 D2 B,2 G,2 |
+"C"E4 C4 C4 | "C"_A4 D4 e4 | "C"d4 A4 c4 | "C"^F,,4 B,4 A,4 |
+"C"G,2 G2 F2 E2 D2 C2 | "C"B,2 A,2 G,2 F,2 E,2 D,2 | "C"C,4 z4 G4 | "C"c4 z8 |
+"C"E4 C4 C4 | "C"G4 D4 D4 | "C"c4 F4 F4 | "C"_A,,4 B4 =A4 |
+"C"G2 ^F2 G2 _A2 B2 =A2 | "C"E2 G2 F2 B,2 E2 D2 | "C"D2 C2 B,2 C2 E2 G2 | "C"A2 G2 F2 D2 B,2 A,2 |
+"C"E4 C4 C4 | "C"_A4 D4 e4 | "C"d4 c4 c4 | "C"C,4 B4 A4 |
+"C"G2 A2 _B2 =B2 =B,4 | "C"B,,4 B4 A4 | "C"E,,2 A2 A4 G4 | "C"D,2 A2 A4 G4 |
+"C"E4 C4 C4 | "C"G4 D4 D4 | "C"c4 F4 F4 | "C"_A,,4 B4 =A4 |
+"C"G2 ^F2 G2 _A2 B2 =A2 | "C"E2 G2 F2 B,2 E2 D2 | "C"D2 C2 B,2 C2 E2 G2 | "C"A2 G2 F2 D2 B,2 G,2 |

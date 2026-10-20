@@ -1,0 +1,24 @@
+%abc-2.1
+% The Leaving of Liverpool, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 81 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Leaving of Liverpool
+M:2/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z4 D2 E2 | "D"F6 A2 | "D7"G2 F2 E2 D2 | "G"d6 B2 |
+"D"A4 D2 E2 | "D"F4 A2 A2 | "Bm"B4 A2 F2 | "Em"E8 |
+"A7"E4 D2 E2 | "D"F6 A2 | "D7"G2 F2 E2 D2 | "G"d6 B2 |
+"D"A4 D2 E2 | "Bm7"F2 A2 A2 F2 | "A7"E2 G2 F2 E2 | "D"D8 |
+"D"D4 c2 d2 | "A7"e6 c2 | "A7"A4 c2 e2 | "G"d6 B2 |
+"D"A4 D2 E2 | "D"F2 A2 A2 A2 | "B7"^G2 A2 B2 A2 | "E7"E8 |
+"A7"E2 A2 A2 G2 | "D"F6 A2 | "D7"G2 F2 E2 D2 | "G"d6 B2 |
+"D"A4 D2 E2 | "Bm7"F2 A2 A2 F2 | "A7"E2 G2 F2 E2 | "D"D8 |
+"D"D4 z4 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% MEU CAVAQUINHO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/meu-cavaquinho.html (file
+% https://www.beakauffmann.com/mpb_m/som/meu-cavaquinho.mid, sha256
+% 9a54204578adcb05560f47961c1f511169f6e0833632fa07594332d09d12c27a), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MEU CAVAQUINHO
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D7"z d _b a g f _e d | "D7"d c a g ^f _e d c | "Gm"c _B A _B d g a _b | "D7"_b a ^f d c d ^f a |
+"Gm"d' d _b a g f _e d | "D7"d c a g ^f _e d c | "Gm"c _B A _B d g a _b | "D7"a f d A g e _d A |
+"F"^f d _b a g =f _e d | "D7"d c a g ^f _e d c | "Gm"c _B A _B d g a _b | "D7"_b a ^f d c d ^f a |
+"G7"d' c' b _a g f _e d | "Cm"f e _e d c _B A G | "Gm"_e d c _B A G ^F _E | "F#m7"D G _B _e g ^f _b a |
+"Bb7"g d z6 | "D7"z8 | "Gm"z8 | "D7"z8 |
+"Gm"z8 | "D7"z8 | "Gm"z8 | "D7"z8 |
+"F"z8 | "D7"z8 | "Gm"z8 | "D7"z8 |
+"G7"z8 | "Cm"z8 | "Gm"z8 | "A7"z8 |
+"Gm"z8 | "F7"z8 | "Gm7"z8 | "D7"z8 |
+"Gm"z8 | "A7"z8 | "G7"z8 | "C7"z8 |
+"F7"z8 | "F7"z8 | "Gm7"z8 | "D7"z8 |
+"Gm"z8 | "A7"z8 | "G7"z8 | "Gm"z8 |
+"Gm7"z8 | "F7"z8 | "Gm7"z8 | "D7"z8 |
+"Gm"z8 | "A7"z8 | "G7"z8 | "C7"z8 |
+"F7"z8 | "F7"z8 | "Gm7"z8 | "D7"z8 |
+"Gm"z8 | "A7"z8 | "G7"z8 | "Gm"z8 |

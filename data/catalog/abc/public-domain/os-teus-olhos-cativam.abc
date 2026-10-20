@@ -1,0 +1,35 @@
+%abc-2.1
+% OS TEUS OLHOS CATIVAM, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/os-teus-olhos-cativam.html (file
+% https://www.beakauffmann.com/mpb_o/som/os-teus-olhos-cativam.mid, sha256
+% 83a81561907214520b6fc94f3b92d2f9b99f987a8ce95f287b42ba2831b2cef5), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:OS TEUS OLHOS CATIVAM
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"Bm7"D, D D G ^F,, z D2 | "A7"E,,2 _D _D A z A,, z | "D7"D, D D G D2 E, z | "Abm7"_E, z B, B, B, z B,2 |
+"Em"G, z3 B, z G,2 | "D"z D D G A, z A,2 | "A7"_A,2 E2 G,2 E2 | "Bm7"^F,2 D D D2 D2 |
+"Bm7"D D D G G,2 D2 | "A7"E,2 _D _D _D2 A,, z | "D7"D,2 z4 E, z | "Abm7"_E,2 B, B, B, z B,2 |
+"Em"G,2 z4 G,2 | "D"A, D D G A, z D2 | "A7"E,2 _D2 A,,2 _d A | "D"A,2 D,,2 z4 |
+"F#m7"A,2 z2 _D2 A2 | "D"B,2 z _A _A,2 _A2 | "Bm"z f f _A _A, z e e | "Dbm"A,2 z e E,2 e e |
+"F#m7"A,2 z2 C3 z | "Dbm7"B,3 _a _A,2 E z | "B7"^F,3 _E _E,2 _E2 | "E7"E,3 _a E,2 E2 |
+"F#m7"A,3 z _D2 a a | "E7"B,3 _a _A,2 ^f ^f | "E7"B,2 z f _A,2 z2 | "A"A,3 E _D2 A2 |
+"F#7"_D,2 z _B, E,2 =d _d | "D"D,2 z B z2 _E, z | "E"E, z2 d _d z E, z | "A"A,,2 z2 A,,2 z2 |
+"Bm7"D, D D G ^F,, z D2 | "A7"E,,2 _D _D A z A,, z | "D7"D, D D G D2 E, z | "Abm7"_E, z B, B, B, z B,2 |
+"Em"G, z3 B, z G,2 | "D"z D D G A, z A,2 | "A7"_A,2 E2 G,2 E2 | "Bm7"^F,2 D D D2 D2 |
+"Bm7"D D D G G,2 D2 | "A7"E,2 _D _D _D2 A,, z | "D7"D,2 z4 E, z | "Abm7"_E,2 B, B, B, z B,2 |
+"Em"G,2 z4 G,2 | "D"A, D D G A, z D2 | "A7"E,2 _D2 A,,2 _d A | "D"A,2 D,,2 z4 |
+"F#m7"A,2 z2 _D2 A2 | "D"B,2 z _A _A,2 _A2 | "Bm"z f f _A _A, z e e | "Dbm"A,2 z e E,2 e e |
+"F#m7"A,2 z2 C3 z | "Dbm7"B,3 _a _A,2 E z | "B7"^F,3 _E _E,2 _E2 | "E7"E,3 _a E,2 E2 |
+"F#m7"A,3 z _D2 a a | "E7"B,3 _a _A,2 ^f ^f | "E7"B,2 z f _A,2 z2 | "A"A,3 E _D2 A2 |
+"F#7"_D,2 z _B, E,2 =d _d | "D"D,2 z B z2 _E, z | "E"E, z2 d _d z E, z | "F#m7"_D, z A, z A,,2 z2 |

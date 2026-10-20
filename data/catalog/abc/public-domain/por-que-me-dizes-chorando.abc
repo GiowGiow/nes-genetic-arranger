@@ -1,0 +1,28 @@
+%abc-2.1
+% POR QUE ME DIZES CHORANDO?, by Joaquim Manoel da Câmara, as performed by Joaquim Manoel da
+% Câmara.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Manoel da Câmara (died 1840, Wikidata Q10307284).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/por-que-me-dizes-chorando.html (file
+% https://www.beakauffmann.com/mpb_p/som/por-que-me-dizes-chorando.mid, sha256
+% ec51c0cf41b8c7889ee4113ca0d4e62d8f24f518eec5d3ee24689fb41fec3056), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-31 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:POR QUE ME DIZES CHORANDO?
+M:4/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "F"_A,2 D2 _B,2 D2 "Bb"_A,2 D2 _B,2 D2 | "Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "Dm"_A,2 D2 _B,2 D2 "Bb"_A,2 D2 _B,2 D2 |
+"Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "Ab"_A,2 _E2 C2 _E2 _A,2 _E2 C2 _E2 | "D7"_A,2 _E2 C2 _E2 "Dm7"_A,2 _E2 C2 _E2 | "Bb"_A,2 D2 _B,2 D2 _A,2 D2 _B,2 D2 |
+"Eb"G,2 _E2 _B,2 _E2 "Cm"F,2 _E2 A,2 _E2 | "Bb"F,2 D2 _B,2 D2 F,2 D2 _B,2 D2 | "Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "Dm"_A,2 D2 _B,2 D2 "Bb"_A,2 D2 _B,2 D2 |
+"Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "Ab"_A,2 _E2 C2 _E2 _A,2 _E2 C2 _E2 | "D7"_A,2 _E2 C2 _E2 "Dm7"_A,2 _E2 C2 _E2 | "Bb"_A,2 D2 _B,2 D2 _A,2 D2 _B,2 D2 |
+"Eb"G,2 _E2 _B,2 _E2 "Cm"F,2 _E2 A,2 _E2 | "Bb"F,2 D2 _B,2 D2 F,2 D2 _B,2 D2 | "C"_B,2 E2 C2 E2 _B,2 E2 C2 E2 | "Fm"_A,2 F2 C2 F2 _A,2 F2 C2 F2 |
+"Bb7"_A,2 D2 _B,2 D2 "Bb"_A,2 D2 _B,2 D2 | "Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "C"_B,2 E2 C2 E2 _B,2 E2 C2 E2 | "Fm"_A,2 F2 C2 F2 _A,2 F2 C2 F2 |
+"Bb7"_A,2 D2 _B,2 D2 "Bb"_A,2 D2 _B,2 D2 | "Eb"G,2 _E2 _B,2 _E2 G,2 _E2 _B,2 _E2 | "Bb"_B,2 _A2 G2 _A2 _B,2 _A2 G2 _A2 | "Eb"_B,2 G2 ^F2 G2 _B,2 G2 ^F2 G2 |
+"Bb"_B,2 _A2 G2 _A2 _B,2 _A2 G2 _A2 | "Eb"_E4 z4 G4 z4 | "Eb"_E8 z8 |

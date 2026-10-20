@@ -1,0 +1,34 @@
+%abc-2.1
+% Osculetur me osculo oris sui, by Jacob Barbireau. Score published on MuseScore (artist: Jacques
+% Barbireau), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacob Barbireau (died 1491,
+% Wikidata Q1250056).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/13/Qmbc7js1fkSA1wGzwEyKcKs7pbAGUh8KhNpVZQjSEUPMk9.mid (sha256
+% 3c8968689dbae4aef9a1d9e6bfa912ac9a583bf1c6970a5f72c34f6584ea6a32): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Osculetur me osculo oris sui
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E"E,14 F,2 G,8 | "C"G,6 A,2 B,8 C8 | "Dm"A,8 D6 C2 B,2 A,2 G,4 | "Am"A,4 C6 B,2 A,8 G,2 F,2 |
+"G"E,6 F,2 G,2 A,2 B,2 C2 B,2 A,4 G,2 | "Am"A,16 C8 | "Em"C8 B,16 | "Dm"A,16 z8 |
+"Am7"A,4 C6 B,2 A,4 E8 | "Em"z4 C8 B,4 C4 D4 | "G7"D4 E6 D2 B,4 A,4 C4 | "C"C2 B,2 G,4 z4 A,4 C6 B,2 |
+"Dm"A,2 G,2 A,6 G,2 E,4 F,8 | "Am"E,4 A,8 G,4 A,4 C4 | "F"B,8 A,6 B,2 C4 D4 | "Em7"D2 C2 B,2 A,2 B,8 E,8 |
+"G7"D,8 z4 A,12 | "Bb"G,4 F,4 _B,4 A,8 G,4 | "Am"A,4 C6 B,2 A,2 G,2 A,8 | "C"G,4 C12 B,8 |
+"Am"A,4 C6 D2 E6 F2 E2 D2 | "C"C4 E8 D4 E8 | "Am7"D4 E6 D C B,4 C6 B,2 | "C"A,2 G,2 A,4 z4 G,4 C6 B,2 |
+"E7"G,4 A,8 B,4 C6 B,2 | "Dm"A,4 G,8 F,4 A,6 G,2 | "C"E,4 G,8 F,4 G,8 | "G"z4 G,4 E,4 A,6 G,2 B,4 |
+"E7"B,2 A,2 C6 B,2 A,8 _A,4 | "A"A,4 C8 B,4 C8 | "F"z24 | "G7"E6 D C B,8 A,8 |
+"Am7"A,8 C12 B,4 | "Am"A,24 | "Em"G,8 A,8 B,4 D4 | "F"D4 C4 B,4 C4 A,4 G,4 |
+"C"G,2 F,2 E,6 F,2 G,4 A,4 G,4 | "G7"D6 C2 D4 B,4 A,8 | "C"G,8 z16 | "Em7"z24 |
+"Am7"z24 | "G"G,4 B,6 C2 D6 C2 E4 | "A7"E2 D2 F4 E2 D2 D8 C4 | "Dm"D8 z4 B,4 C4 D4 |
+"Em7"D8 B,8 C4 D4 | "F"E6 D2 C2 B,2 E8 D4 | "C"E8 z8 E,8 | "C"E,4 F,4 G,16 |
+"Em"G,16 G,8 | "Am"E,4 A,6 G,2 F,2 E,2 F,8 | "G"G,12 F,2 E,2 D,4 G,4 | "Am"C,2 D,2 E,2 F,2 G,4 C,4 z8 |
+"G7"z24 | "G"E4 D4 C4 F4 D4 E4 | "F"C6 B,2 C2 D2 E8 D4 | "E"E24 |
+"E"E24 | [M:2/2]"Em"E16 | "A7"E8 C8 | "D7"D8 A,8 |
+"B"A,4 G,2 F,2 G,8 | "Am"A,12 G,4 | "Am"E,8 A,8 | "Am"A,4 G,4 A,4 B,4 |

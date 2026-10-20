@@ -1,0 +1,36 @@
+%abc-2.1
+% INFERNAL, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_i/infernal.html (file
+% https://www.beakauffmann.com/mpb_i/som/infernal.mid, sha256
+% 8e8844632514f0ea710a0f8e6a078d1f7b79dca842751e4682ab6d16b9d51605), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:INFERNAL
+M:2/4
+L:1/16
+Q:1/4=74.000074
+% Exact tempo 74.000074000074 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"E2 c A E c A E | "F"F2 c A F c A F | "E"E _A B d f e _e =e | "Am"f e c A _A G ^F =F |
+"Am"E2 c A E c A E | "Em"B5 B e ^f | "Ebm7"g ^f _B _d g ^f =B _e | "E"f e d B _A G ^F =F |
+"Am"E2 c A E c A E | "F"F2 c A F c A F | "E"E _A B d f e d f | "A7"f e _d A G A _d e |
+"Dm"e d A F D F A d | "Am"d c A E C E A c | "E7"_E ^F A c D =E _A B | "F#m7"A4 z4 |
+"Am"E2 c A E c A E | "F"F2 c A F c A F | "E"E _A B d f e _e =e | "Am"f e c A _A G ^F =F |
+"Am"E2 c A E c A E | "Em"B5 B e ^f | "Ebm7"g ^f _B _d g ^f =B _e | "E"f e d B _A G ^F =F |
+"Am"E2 c A E c A E | "F"F2 c A F c A F | "E"E _A B d f e d f | "A7"f e _d A G A _d e |
+"Dm"e d A F D F A d | "Am"d c A E C E A c | "E7"_E ^F A c D =E _A B | "F#m7"A4 z4 |
+"Am"A4 z g g g | "G"g G B d g g g g | "C"g E G c e e e e | "E7"e E _A B e e e e |
+"A7"e G A _d e e e e | "B7"_e c A ^F _e c b a | "Am7"a g e c e g c' e' | "D7"e' d' _d' =d' c' =d' e ^f |
+"G7"a g f d B g g g | "Em7"g G B d g g g g | "C"g E G c e e e e | "E"e E _A B e e e e |
+"A7"e G A _d e e e e | "B7"_e c A ^F _e c b a | "Am7"a g e c f e d _d | "G7"e d A d a g f d |
+"C"c5 e f g | "G"g G B d g g g g | "C"g E G c e e e e | "E7"e E _A B e e e e |
+"A7"e G A _d e e e e | "B7"_e c A ^F _e c b a | "Am7"a g e c e g c' e' | "D7"e' d' _d' =d' c' =d' e ^f |
+"G7"a g f d B g g g | "Em7"g G B d g g g g | "C"g E G c e e e e | "E"e E _A B e e e e |
+"A7"e G A _d e e e e | "B7"_e c A ^F _e c b a | "Am7"a g e c f e d _d | "G7"e d A d a g f d |

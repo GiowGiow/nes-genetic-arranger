@@ -1,0 +1,23 @@
+%abc-2.1
+% He Hideth My Soul, by William James Kirkpatrick. Score published on MuseScore (artist: not
+% given), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): William James Kirkpatrick (died
+% 1921, Wikidata Q3848833).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/11/QmabSkfvie5oeXwJmtoCyD2TqqiVx3f6wCrLDhs82PzJzi.mid (sha256
+% c347cea98f5b56044fd35334c9579d524efa3ee94af455c94acf396b44bb83ce): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:He Hideth My Soul
+M:6/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z10 G2 | "C"G3 G G2 G2 F2 E2 | "F"c3 c c2 c4 G2 | "C"G3 G G2 G2 G2 G2 |
+"G"G10 B2 | "C"c3 G G2 G2 F2 E2 | "F"c3 c c2 A4 c2 | "G"c3 G E2 D2 D2 F2 |
+"C"E12 | "G"z10 G2 | "G7"d3 d d2 d4 G G | "C"G3 G c2 c4 G2 |
+"G7"G2 G2 G2 G2 G2 G2 | "C"G10 G2 | "C"G3 G G2 G4 G G | "F"A3 A A2 A4 c2 |
+"C"c3 c c2 B2 c2 d2 | "Am7"c4 B2 c4 c2 | "Em"c3 G E2 D3 F F2 | "C"E12 |

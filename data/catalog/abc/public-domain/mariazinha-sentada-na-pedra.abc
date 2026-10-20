@@ -1,0 +1,36 @@
+%abc-2.1
+% MARIAZINHA SENTADA NA PEDRA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/mariazinha-sentada-na-pedra.html (file
+% https://www.beakauffmann.com/mpb_m/som/mariazinha-sentada-na-pedra.mid, sha256
+% e6159d0dcb9d286da3ea3d5faaa67858c985d24f7496bc0acd4d328d1889708a), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MARIAZINHA SENTADA NA PEDRA
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m7"z A z A2 _A B2 | "E"z _A2 E D4 | "F#m7"z A z A2 _A B2 | "E"z _A2 E D4 |
+"F#m7"z E2 B, A, _A,2 ^F, | "E"E,2 E2 z2 E2 | "F#m7"z E2 B, A, _A,2 ^F, | "E"E,2 E2 z2 E2 |
+"F#m7"z _d _d e z _d _d e | "E7"z d d e z d d e | "F#m7"z _d _d e z _d _d e | "E7"z d d e z e e e |
+"F#m7"^f e2 d _d B2 _d | "E7"d3 B z e e e | "F#m7"^f e2 d _d B2 _d | "E7"d3 B z E D2 |
+"F#m7"A A2 B _d B2 _d | "E7"d3 B2 _A2 E | "F#m7"B3 A2 _A2 ^F | "E7"E3 E z e e e |
+"F#m7"^f e2 _D _d B2 _d | "E7"d3 B z e e e | "F#m7"^f e2 d _d B2 _d | "E7"d3 B z E D2 |
+"F#m7"A A2 B _d B2 _d | "Bm"d3 B2 ^F2 D | "E7"^F3 E2 B,2 _D | "A"z A, z a z A A A |
+"A7"e e e e z A A A | "Dm"f f f f z a a a | "G7"g g g g z f f f | "C"e e e e z f f f |
+"E7"e e e e z d d d | "Am"c c c c z B B B | "B7"A A z D F, z _E z | "E7"_A _A _A _A z E E E |
+"Am"e e e e z A A A | "Dm"f f f f z a a a | "G7"g g g g z f f f | "C"e e e e z f f f |
+"E7"e e e e z d d d | "Dm7"c c c c z _B _B _B | "Am"A A A z2 E E z | "Am"A2 z2 a2 z2 |
+"F#m7"z A z A2 _A B2 | "E"z _A2 E D4 | "F#m7"z A z A2 _A B2 | "E"z _A2 E D4 |
+"F#m7"z E2 B, A, _A,2 ^F, | "E"E,2 E2 z2 E2 | "F#m7"z E2 B, A, _A,2 ^F, | "E"E,2 E2 z2 E2 |
+"F#m7"z _d _d e z _d _d e | "E7"z d d e z d d e | "F#m7"z _d _d e z _d _d e | "E7"z d d e z e e e |
+"F#m7"^f e2 d _d B2 _d | "E7"d3 B z e e e | "F#m7"^f e2 d _d B2 _d | "E7"d3 B z E D2 |
+"F#m7"A A2 B _d B2 _d | "E7"d3 B2 _A2 E | "F#m7"B3 A2 _A2 ^F | "E7"E3 E z e e e |

@@ -1,0 +1,27 @@
+%abc-2.1
+% Übers Gebirg Maria geht, by Johannes Eccard (1553-1611). Score published on MuseScore (artist:
+% Johannes Eccard), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Eccard (died 1611,
+% Wikidata Q61582).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/17/QmbeEdsuwu8TLxemBc9zmK2ihfdJgPzyH3zARNBMqDBQkp.mid (sha256
+% 594ee7e7e1c6fb1fa164490147a40c7c588b0709cad98a8bf653ae2c48f4debd): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Übers Gebirg Maria geht
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Eb"z16 | "Eb"_B8 _e4 d4 | "F"c4 _B4 c6 c2 | "Gm7"_B8 z8 |
+"Cm7"z4 _B4 G4 A4 | "Bb"_B4 G4 F6 F2 | "Eb"_E16 | "Eb"z16 |
+"Eb"_B8 _e4 d4 | "F"c4 _B4 c6 c2 | "Gm7"_B8 z8 | "Cm7"z4 _B4 G4 A4 |
+"Bb"_B4 G4 F6 F2 | "Eb"_E8 z8 | "Gm7"z4 F4 _B4 _B4 | "Fm"_A4 G4 G4 F4 |
+"G"G4 d4 _e6 _e2 | "Am7"d4 g8 f4 | "Bb"f4 _e6 d c d4 | "Eb"_e8 z4 _B4 |
+"Bb"f6 f2 f4 _e4 | "C"d8 d4 _e4 | "Fm7"c6 c2 c4 _B4 | "F"A4 _B6 A G A4 |
+"Bb"_B8 z4 c4 | "Db"c4 c4 f8 | "Db"f4 _e8 _d4 | "Cm"c8 z4 c4 |
+"Gm"_B6 _A2 G4 _e4 | "Bb"d6 c2 _B4 _A4 | "Bb"G8 F8 | "Eb"_E8 z4 _B4 |
+"Cm7"G6 F2 _E4 C4 | "Bb"F6 _E2 D4 F4 | "Bb"F4 _E8 D4 | "Eb"_E16 |

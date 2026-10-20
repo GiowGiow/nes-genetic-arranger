@@ -1,0 +1,35 @@
+%abc-2.1
+% 2 Sonatinas for Piano Anh.5, by L. v. Beethoven(1770 1827). Score published on MuseScore
+% (artist: Ludwig van Beethoven), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): L. v. Beethoven (died 1827,
+% Wikidata Q255).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/22/QmTGp6XWcEQqR1nTn2LrKV4Rg2JdJfsrEAvh7coVkbeKoS.mid (sha256
+% 50f50a1eb9c5553db5e99839762d7dd76e921b2eb7c217e2ed48222068128326): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:2 Sonatinas for Piano Anh.5
+M:2/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"f4 f2 f2 | "F"f e d c _B A G F | "F"E2 F2 G2 A2 | "E"c4 _B2 z2 |
+"C7"g4 g2 g2 | "E"g f e d c _B A G | "Am7"F2 E2 F2 G2 | "F"A4 c A c A |
+"Am"F2 z2 A z F2 | "Am"A z F2 f c f c | "F"A2 z2 c z A2 | "F"c z A2 a f a f |
+"Db7"d2 d2 _d =d e f | "C"g2 g2 a g f e | "Db7"_d =d _d =d _d =d e f | "C"a g a g a g f e |
+"G7"d2 e f c2 B2 | "C"c2 B c _d =d _e =e | "F"f4 f2 f2 | "F"f e d c _B A G F |
+"Db7"_E2 D F _E2 D F | "C"_E4 z4 | "F"_e4 _e2 _e2 | "F"_e d c _B A G F _E |
+"Dm"D2 C _E D2 C _E | "Bb"D4 z4 | "F#"d2 _e _d =d2 _e _d | "F#"d2 a2 ^f2 c2 |
+"F#"_B2 A c _B2 A c | "Gm7"_B4 z4 | "E"c2 B d c2 B d | "E"c2 g2 e2 _B2 |
+"E"A2 G _B A2 G _B | "Dm7"A8 | "D"_B2 f2 d2 A2 | "C7"G8 |
+"Db"A2 e2 _d2 G2 | "Dm7"F8 | "B"z2 F2 d2 B2 | "B"f2 d2 b2 f2 |
+"B"d'2 b2 f'2 d'2 | "G7"c'2 b2 a2 b2 | "C"c'2 z2 g e g e | "C"c2 z2 c' g c' g |
+"C"e2 z2 e' c' e' c' | "G7"b2 d'2 f'2 b2 | "C"c'2 z2 d' _b d' _b | "C"g2 z2 _b g _b g |
+"C"e2 z2 g e g e | "C7"c2 z2 c A c A | "Am"F2 z2 A z F2 | "Am"A z F2 f c f c |
+"F"A2 z2 c z A2 | "F"c z A2 a f a f | "Db7"d2 d2 _d =d e f | "C"g2 g2 d' _b d' _b |
+"C7"a g a g ^f g a _b | "Dm"d' c' d' c' _b a g f | "C7"g2 a _b f2 e2 | "F"f2 a2 f2 d2 |
+"C7"c8 | "F"c2 a2 f2 d2 | "C7"c8 | "F"c2 a2 g f e d |

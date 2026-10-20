@@ -1,0 +1,36 @@
+%abc-2.1
+% SONHADOR, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sonhador.html (file
+% https://www.beakauffmann.com/mpb_s/som/sonhador.mid, sha256
+% 4d4e8c1508fec78011563dc87b71173bb0c16e5a6173f2017641c6f6f00b887b), from Beatriz Kauffmann's Web
+% Site. Melody track 5, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SONHADOR
+M:2/4
+L:1/16
+Q:1/4=86.000052
+% Exact tempo 86.00005160003096 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z8 | "Dm"F,5 z D,2 | "Dm"A,,2 z D, F,2 z D, | "Gm"G,3 z _B,,2 D,2 |
+"Gm"G,,2 z _B,, G,2 D,2 | "A7"E,2 z G, _D,2 G,,2 | "F#7"G,,2 z _D, E,2 _D,2 | "Dm"F,,2 z D, F,2 z2 |
+"Dm"A,,2 z D, F,2 A,,2 | "Dm"D,2 z F, A,2 D,2 | "Dm"F,,2 z A,, D,2 F,,2 | "Am"C,2 E,,2 E,2 z2 |
+"Am"E,,2 z C, E,2 A,,2 | "Gm7"D,2 z F, _B,2 D,2 | "Bb7"F,,2 z _A,, D,2 _A,,2 | "A7"G,,2 z _D, E,2 z2 |
+"A7"E,,2 z _D, G,2 z2 | "Dm"D,2 z F, A,2 D,2 | "Dm"F,,2 z A,, D,2 F,,2 | "Gm"G,3 z _B,,2 D,2 |
+"Gm"G,,2 z _B,, G,2 D,2 | "A7"G,,2 z _D, E,2 z2 | "A7"E,,2 z _D, G,2 z2 | "D"^F,,2 z A,, D,2 ^F,,2 |
+"D7"^F,,2 z A,, C,2 ^F,,2 | "Gm"G,,2 z _B,, G,2 D,2 | "A7"G,,2 z _D, E,2 z2 | "Dm"F,,2 z A,, D,2 D,,2 |
+"Dm"F,,2 z A,, D,2 F,,2 | "Dbm7"E,2 z _A, B,,2 _A,2 | "A7"G,,2 z _D, E,2 z2 | "Dm"F,,2 z A,, D,2 D,,2 |
+"Dm"A,,3 z F,,3 z | "Dm"F,5 z D,2 | "Dm"A,,2 z D, F,2 z D, | "Gm"G,3 z _B,,2 D,2 |
+"Gm"G,,2 z _B,, G,2 D,2 | "A7"E,2 z G, _D,2 G,,2 | "F#7"G,,2 z _D, E,2 _D,2 | "Dm"F,,2 z D, F,2 z2 |
+"Dm"A,,2 z D, F,2 A,,2 | "Dm"D,2 z F, A,2 D,2 | "Dm"F,,2 z A,, D,2 F,,2 | "Am"C,2 E,,2 E,2 z2 |
+"Am"E,,2 z C, E,2 A,,2 | "Gm7"D,2 z F, _B,2 D,2 | "Bb7"F,,2 z _A,, D,2 _A,,2 | "A7"G,,2 z _D, E,2 z2 |
+"A7"E,,2 z _D, G,2 z2 | "Dm"D,2 z F, A,2 D,2 | "Dm"F,,2 z A,, D,2 F,,2 | "Gm"G,3 z _B,,2 D,2 |
+"Gm"G,,2 z _B,, G,2 D,2 | "A7"G,,2 z _D, E,2 z2 | "A7"E,,2 z _D, G,2 z2 | "D"^F,,2 z A,, D,2 ^F,,2 |
+"D7"^F,,2 z A,, C,2 ^F,,2 | "Gm"G,,2 z _B,, G,2 D,2 | "A7"G,,2 z _D, E,2 z2 | "Dm"F,,2 z A,, D,2 D,,2 |
+"Dm"F,,2 z A,, D,2 F,,2 | "Dbm7"E,2 z _A, B,,2 _A,2 | "A7"G,,2 z _D, E,2 z2 | "Dm"F,,2 z A,, D,2 D,,2 |

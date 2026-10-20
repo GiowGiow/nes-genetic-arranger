@@ -1,0 +1,28 @@
+%abc-2.1
+% Tous mes amis, by Cornelius Canis. Score published on MuseScore (artist: Cornelius Canis), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Cornelius Canis (died 1561,
+% Wikidata Q2997483).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/10/QmTABDDA6ue895ihYbFmULzfV9hrt2WycT8AELtoJXzqq9.mid (sha256
+% 7e9d7ffb3fe7a480d3ec24ff288b1d4b1bed05c75522a6073bb137af8fb72959): melody track 2, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tous mes amis
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"D16 | "F"F8 E8 | "G"G8 z4 G,4 | "Am"C6 D2 E4 F4 |
+"Em7"G8 F4 G4 | "C"G4 G,4 A,4 B,4 | "Dm"C6 B,2 A,4 G,4 | "Em7"A,4 F4 E4 D2 C2 |
+"C"D4 D4 E8 | "C"z4 G4 G8 | "C"z4 G4 G8 | "Am"G4 G4 A4 A4 |
+"F"A2 G2 F2 E2 D2 C2 B,4 | "G7"A,8 G,8 | "C"G,8 z4 G4 | "Dm"A12 A4 |
+"G"G4 E8 F4 | "Dm7"G4 G4 A4 A4 | "Em7"G2 E2 G8 F4 | "Am7"E4 C4 D8 |
+"Dm7"z16 | "Dm7"G8 E4 F4 | "G"D4 G6 F2 D4 | "Dm7"E4 E4 F8 |
+"G"E8 G8 | "G"z4 G,4 C6 D2 | "F"E4 F4 G8 | "C"F4 G8 G,4 |
+"F"A,4 B,4 C6 B,2 | "Dm7"A,4 G,4 A,8 | "C"z12 D4 | "F"F8 E8 |
+"G"G8 z4 G,4 | "Am"C6 D2 E4 F4 | "Em7"G8 F4 G4 | "C"G4 G,4 A,4 B,4 |
+"Dm"C4 D8 E4 | "G"F4 D6 C2 D4 | "G"E8 D8 | "G"D16 |

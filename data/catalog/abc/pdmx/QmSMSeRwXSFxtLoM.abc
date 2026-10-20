@@ -1,0 +1,22 @@
+%abc-2.1
+% Mother And Child, by Trad.. Score published on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/32/QmSMSeRwXSFxtLoMCS9Sj1s367jybnQzLUu4tz2GdQDeQM.mid (sha256
+% 16575abc6c8ec70f0a84dbd9af2ecfaba8144bb1f78b21a4af38c0e608b004f3): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mother And Child
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A4 G2 E2 ^F2 D2 D4 | "C"E2 ^F2 G2 D2 E2 ^F2 G2 E2 | "C"A4 G2 E2 ^F2 D2 D2 ^F2 | "C"E2 ^F2 G2 E2 A4 A2 B2 |
+"C"A4 G2 E2 ^F2 D2 D4 | "C"E2 ^F2 G2 D2 E2 ^F2 G2 E2 | "C"A4 G2 E2 ^F2 D2 D2 ^F2 | "C"E2 ^F2 G2 E2 A4 A2 B2 |
+"C"_d2 A2 A2 B2 _d2 =d2 e2 g2 | "C"^f2 d2 e2 _d2 =d2 _d2 A2 B2 | "C"_d2 A2 A2 B2 _d2 =d2 e2 g2 | "C"^f2 d2 e2 _d2 =d4 e2 =d2 |
+"C"_d2 A2 A2 B2 _d2 =d2 e2 g2 | "C"^f2 d2 e2 _d2 =d2 _d2 A2 B2 | "C"_d2 A2 A2 B2 _d2 =d2 e2 g2 | "C"^f2 d2 e2 _d2 =d4 e2 =d2 |

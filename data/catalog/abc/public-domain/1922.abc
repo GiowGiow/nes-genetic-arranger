@@ -1,0 +1,36 @@
+%abc-2.1
+% 1922, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_0-9/1922.html (file
+% https://www.beakauffmann.com/mpb_0-9/som/1922.mid, sha256
+% 84099613e19127b064df5d5c7832b8da109f420a92160c6f579bce1141388613), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:1922
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z A2 A z A z A | "Dbm7"z _A z _A z _A z _A | "A"z A z A z A z A | "E7"B,,2 z B,, z B,,2 _D, |
+"A"z A z A z A z A | "Dbm7"z _A z _A z _A z _A | "A"z8 | "E7"B,, z2 B,, z B,,2 _D, |
+"A"A2 z2 a2 z2 | "A"z e2 ^f e ^f e z | "E7"z d2 _B _d =B2 _A | "A"E _D z _D ^F2 _D2 |
+"E7"_A D z2 e3 z | "A"z e2 ^f e ^f e z | "E7"z d2 _B _d =B2 _A | "A"E _D z _D ^F2 _D2 |
+"E7"_A2 z2 e3 z | "A7"z a2 b a b a2 | "Bm7"z ^f' z d' b z3 | "E7"z e2 ^f e ^f e z |
+"A"z _d' z a e z3 | "A7"z a2 b a b a z | "Bm7"z ^f' z d' b z3 | "E7"z e2 ^f e ^f e z |
+"A"z _d'2 a2 ^f2 =f | "E7"e2 z e z2 e z | "A"z _d'2 a2 ^f2 =f | "E"e D z e z2 e z |
+"A"z _D2 E2 A2 ^F | "E7"E2 z4 E z | "A"z _D2 E2 A2 ^F | "E7"E2 z4 E z |
+"A"z A z A z A z A | "Dbm7"z _A z _A z _A z _A | "A"z A z A z A z A | "E7"B,,2 z B,, z B,,2 _D, |
+"A"z A z A z A z A | "Dbm7"z _A z _A z _A z _A | "A"z8 | "E7"B,, z2 B,, z B,,2 _D, |
+"A"A2 z2 a2 z2 | "D"d'2 z2 ^f g2 _a | "A7"a5 z3 | "D"z d z d d _d2 B |
+"F#m7"A2 z2 a3 z | "D"d'3 z ^f g2 _a | "A7"a8 | "D"z d z d d _d A, B |
+"F#m7"A A, z A, a2 A, z | "D7"z c' z c' c' d'2 a | "Em7"b B, z d' g z E z | "A7"z b z b b a2 g |
+"D"^f3 a d2 z2 | "D7"z c' z c' e' d'2 c' | "Em7"b3 d' g2 z2 | "A7"z g z g _B ^f z e |
+"D"d2 z2 d' z3 | "A"z e2 ^f e ^f e z | "E7"z d2 _B _d =B2 _A | "A"E _D z _D ^F2 _D2 |
+"E7"_A D z2 e3 z | "A"z e2 ^f e ^f e z | "E7"z d2 _B _d =B2 _A | "A"E _D z _D ^F2 _D2 |

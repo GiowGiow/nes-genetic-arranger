@@ -1,0 +1,35 @@
+%abc-2.1
+% Missa O salutaris hostia, by Pierre de la Rue. Score published on MuseScore (artist: La Rue
+% Pierre de), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pierre de la Rue (died 1518,
+% Wikidata Q370540).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/41/QmSRGYQajPkHhgL7kcMuqgj8ygmAevBrD4JRzXZG9Criog.mid (sha256
+% be815b2727f0aaad2cd6ae3795e7b53d4a8cdf9755171c1778559cf815048388): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Missa O salutaris hostia
+M:2/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"A16 | "F"A8 A8 | "C"G8 A8 | "D7"G8 F8 |
+"Am"E8 z4 A4 | "Dm"A4 G2 F2 A6 _B2 | "Am"c16 | "F"A16 |
+"Bb"_B16 | "F"A16 | "Gm"G16 | "C"G16 |
+"D"F16 | "Bb"F12 E2 D2 | "C"E16 | "Dm"A16 |
+"Dm"A8 A8 | "Dm"A16 | "C"c12 _B2 A2 | "C7"G4 A4 _B8 |
+"Bb"_B8 A8 | "C7"A4 G4 G8 | "F"A12 F4 | "D"F16 |
+"Dm"A16 | "Am"A16 | "Bb"F8 D8 | "Bb"_B12 G4 |
+"C"G8 c8 | "F"c4 _B4 A4 G4 | "Dm7"F8 _B8 | "Bb"_B4 A4 G4 F4 |
+"C"E6 D2 E8 | "F"F16 | "F"A16 | "F"A8 A8 |
+"C"G8 A8 | "D7"G8 F8 | "Am"E8 z4 A4 | "Dm"A4 G2 F2 A6 _B2 |
+"Am"c16 | "F"A16 | "Bb"_B16 | "F"A16 |
+"Gm"G16 | "C"G16 | "D"F16 | "Bb"F12 E2 D2 |
+"C"E16 | "Dm"A16 | "Dm"A8 A8 | "Dm"A16 |
+"C"c12 _B2 A2 | "C7"G4 A4 _B8 | "Bb"_B8 A8 | "C7"A4 G4 G8 |
+"F"A12 F4 | "D"F16 | "Dm"A16 | "Am"A16 |
+"Bb"F8 D8 | "Bb"_B12 G4 | "C"G8 c8 | "F"c4 _B4 A4 G4 |

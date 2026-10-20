@@ -1,0 +1,35 @@
+%abc-2.1
+% Salve Regina à 4, by Josquin Desprez. Score published on MuseScore (artist: Josquin Desprez),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josquin Desprez (died 1521,
+% Wikidata Q143100).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/20/QmVFu47rYHVYBxhvWsJfok1kmwjVZJ4KqzKsgk63nShxbb.mid (sha256
+% b621830692b7b6f4bf1b308adee6524be8087db5218e12454c468ad73198fba2): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Salve Regina à 4
+M:2/2
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z16 | "D7"z16 | "A7"d8 c8 | "G"d8 G8 |
+"Am7"z8 d8 | "Dm7"c6 _B2 A2 G2 _B4 | "G"_B2 A2 G8 ^F4 | "Am7"G8 z4 F4 |
+"G7"G4 _B4 A6 G2 | "Am7"_B8 c8 | "G"d6 c2 _B2 A2 G4 | "Dm7"c8 _B4 A4 |
+"G"A2 G2 G8 ^F4 | "A7"G8 z8 | "D7"z16 | "G"z8 d8 |
+"D"c8 d8 | "Am7"G8 z8 | "Am7"d8 c6 _B2 | "G"A2 G2 _B6 A2 G4 |
+"Am7"G4 ^F4 G8 | "G"z4 F4 G4 _B4 | "Gm7"A6 G2 _B8 | "Dm7"c8 d6 c2 |
+"Am7"_B2 A2 G4 c8 | "Em7"_B4 A6 G2 G4 | "G"G4 ^F4 G8 | "D7"z8 G8 |
+"Gm7"F8 _B4 d4 | "D7"c6 _B2 d8 | "Am7"z8 c4 c4 | "C"c4 _B4 c8 |
+"Am7"d8 c4 _B4 | "G"A8 z8 | "Dm"c8 _B4 A4 | "Am7"G6 A _B c8 |
+"Gm"z4 F4 G4 _B4 | "Dm7"A4 G4 _B4 A4 | "G"A2 G2 G8 ^F4 | "G"G8 z8 |
+"Dm7"G8 F8 | "A7"_B4 d4 c6 _B2 | "C7"d8 z8 | "D"f8 d4 e4 |
+"D"e2 d2 d8 _d4 | "G"d8 z4 G4 | "G7"A4 c4 _B6 A2 | "D7"c8 z8 |
+"C"G8 A8 | "C7"_B8 A4 G4 | "F"G2 F2 F8 E4 | "Dm"F8 z4 F4 |
+"Am7"G8 F8 | "A7"z4 _B4 c8 | "Am7"d8 c6 _B2 | "G"A2 G2 _B6 A2 G4 |
+"G"G4 ^F4 G8 | "G7"z8 _B8 | "Dm7"c8 _B4 d4 | "D"c6 _B2 d8 |
+"Gm7"z12 f4 | "C7"e4 d4 f4 e4 | "D"e2 d2 d8 _d4 | "G"d8 z4 g4 |

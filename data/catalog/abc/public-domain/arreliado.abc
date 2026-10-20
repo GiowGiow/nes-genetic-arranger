@@ -1,0 +1,35 @@
+%abc-2.1
+% ARRELIADO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/arreliado.html (file
+% https://www.beakauffmann.com/mpb_a/som/arreliado.mid, sha256
+% 7fe2e96b1e62282dc090ea280134c319ede16bff48b819633856f0f537a8ddcd), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ARRELIADO
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"B"B B, _E B B, _E B B, | "B"B B, E B B, E B B, | "B"_d E G _d E G _d E | "B"_e _E ^F _e _E ^F _e _E |
+"B"B B, _E B B, _E B B, | "B"B B, E B,, B, E B z | "B"_B C E =B,, C E _B C | "B"B3 z5 |
+"Em"z e g e' z c e c' | "Abm7"z c e c' z B _e a | "Em"z e g e' z c e c' | "B7"z c e c' z B _e a |
+"Em"z A c a z G B g | "Abm7"z G B g z ^F A ^f | "Em"z E G e z C E c | "Abm7"z C E c z B, _E A |
+"Em"z e g e' z c e c' | "Abm7"z c e c' z B _e a | "Em"z e g e' z c e c' | "B7"z c e c' z B _e a |
+"Dm"z A d a z2 d _a | "Am"z B c b z A c a | "B7"z G B g z ^F B ^f | "Em"z E G e z B, _E B |
+"Dm"z A d a z2 d _a | "Am"z B c b z A c a | "B"z G B g _E B _e a | "Em"e2 z3 D E D |
+"D7"z D ^F A d ^f a c' | "G"b g b d' ^f' g' e' ^f' | "D7"c' e' a c' ^f a d2 | "Em7"g b d g z D z2 |
+"D7"z4 d ^f a c' | "G"b g b d' ^f' g' d' e' | "A"^f g' _a' =a' _b' =b' c'' _d'' | "D"d'' z4 D E D |
+"D7"C D ^F A d ^f C z | "G"b g b d' ^f' g' e' ^f' | "D7"c' e' a c' ^f a d2 | "Em7"g b d g z D z2 |
+"D7"C D ^F A d ^f a d' | "Bm7"a g' d' b _a =a ^f' e' | "Bm7"B,2 z B, _d =d C2 | "G"g4 z D E D |
+"D"C D ^F A d ^f a c' | "G"b g b d' ^f' g' e' ^f' | "D7"c' e' a c' ^f a d2 | "Em7"g b d g z D z2 |
+"D7"z4 d ^f a c' | "G"b g b d' ^f' g' d' e' | "A"^f g' _a' =a' _b' =b' c'' _d'' | "D"d'' z4 D E D |
+"D7"C D ^F A d ^f C z | "G"b g b d' ^f' g' e' ^f' | "D7"c' e' a c' ^f a d2 | "Em7"g b d g z D z2 |
+"D7"C D ^F A d ^f a d' | "Bm7"a g' d' b _a =a ^f' e' | "Bm7"B,2 z B, _d =d C2 | "G"g2 z2 g'3 z |
+"B"B B, _E B B, _E B B, | "B"B B, E B B, E B B, | "B"_d E G _d E G _d E | "B"_e _E ^F _e _E ^F _e _E |

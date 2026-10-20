@@ -1,0 +1,35 @@
+%abc-2.1
+% moonlight serenade, by Glenn Miller. Score published on MuseScore (artist: Glenn Miller), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Glenn Miller (died 1944,
+% Wikidata Q103651).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/42/QmWs3UQqz26GnEcj2EiJ4C6imbnzT4M1JLpFPq7gMhfUYx.mid (sha256
+% 1335a030c4ead515d70e41bb916b55df96cb23b80ac26722aa7f329694c30853): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:moonlight serenade
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"D13 E2 F | "Db7"D13 E2 F | "Gm"D5 E2 F "Gm7"D5 E2 F | "C7"^F4 G8 _A4 |
+"F"A13 _B2 c | "F"A13 _B2 c | "F"A5 _B2 c "F7"A5 _B2 c | "D7"d4 ^F4- "Gm"^F4 G4 |
+"Am"c4 E4- "F"E4 F4 | "Gm"_B4 _D8 =D4 | "C7"z8 "C"z8 | "F"z8 "C7"z8 |
+"F"D13 E2 F | "Db7"D13 E2 F | "Gm"D5 E2 F "Gm7"D5 E2 F | "C7"^F4 G8 _A4 |
+"F"A13 _B2 c | "F"A13 _B2 c | "F"A5 _B2 c "F7"A5 _B2 c | "D7"d4 ^F4- "Gm"^F4 G4 |
+"Am"c4 E4- "F"E4 F4 | "Gm"_B4 _D8 =D4 | "C7"z8 "C"z8 | "Dm7"z8 "Eb"z8 |
+"Bb"z16 | "G7"z8 "Gm7"z8 | "F#m7"z8 "A7"z8 | "F7"z4 _E, ^F, G, A,- "D7"A, C _E G A3 _B |
+"Dm"B3 B B4- "E7"B4 E4 | "F#m7"e3 e e4- "E"e4 d4 | "Am7"c3 c2 c3 "D7"^F7 ^F | "Gm7"_B3 _B2 _B3 "Bb"_D8 |
+"Dm7"D13 E2 F | "Bb7"D13 E2 F | "Gm"D5 E2 F "Gm7"D5 E2 F | "C7"^F4 G8 _A4 |
+"F"A13 _B2 c | "F"A13 _B2 c | "F"A5 _B2 c "F7"A5 _B2 c | "D7"d4 ^F4- "Gm"^F4 G4 |
+"Am"c4 E4- "F"E4 F4 | "Eb7"_B4 _D4- "Gm"_D4 =D4 | "C7"z8 "C"z8 | "F"z8 "F7"d8 |
+"Bb"A3 A A5 G2 A G F F A | "G7"c3 c c9 B2 _B | "E"A8 "A7"z8 | "F7"z8 "D7"z _E, C _E A3 _B |
+"Dm"B3 B B4- "E7"B4 E F E B | "Bm7"e3 e e4- "E"e6 _e d | "Am7"c3 c2 c3 "D7"^F6 ^F2 | "Gm7"_B3 _B2 _B3 "C7"_D8 |
+"F"D13 E2 F | "Db7"D13 E2 F | "Gm"D5 E2 F "Gm7"D5 E2 F | "C7"^F4 G8 _A4 |
+"F"A13 _B2 c | "F"A13 _B2 c | "F"A5 _B2 c "F7"A5 _B2 c | "D7"d4 ^F4- "Gm"^F4 G4 |
+"Am"c4 E4- "F"E4 F4 | "Gm"_B4 _D8 =D4 | "C7"z8 "C"z8 | "D7"D2 E F D2 E F "Dm"G2 A _B G2 A _B |

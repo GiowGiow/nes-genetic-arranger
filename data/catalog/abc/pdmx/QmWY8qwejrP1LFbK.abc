@@ -1,0 +1,23 @@
+%abc-2.1
+% Oh! Susanna, by Stephen Foster. Score published on MuseScore (artist: Stephen Foster), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Stephen Foster (died 1864,
+% Wikidata Q305202).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/55/QmWY8qwejrP1LFbKn5yFXZAyCX3abvncsjQJxLCcaeekTt.mid (sha256
+% 7ff15e45ce5860d51dfc48444c00d3668183e91973b71bacf3063d95232aa5ec): melody track 0, bars 0-17
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Oh! Susanna
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"z12 D2 E2 | "D"^F4 A4 "F#m"A6 B2 | "D"A4 ^F4 "F#m"D6 E2 | "D"^F4 ^F4 "F#m"E4 D4 |
+"A7"E11 z D2 E2 | "D"^F4 A4 "F#m"A6 B2 | "D"A4 ^F4 "F#m"D6 E2 | "D"^F4 ^F4 "A7"E4 E4 |
+"D"D8- "F#m"D7 z | "G"G8 G8 | "G"B4 B8 B4 | "D"A4 A4 ^F4 z4 |
+"A7"E11 z D2 E2 | "D"^F4 A4 "F#m"A6 B2 | "D"A4 ^F4 "F#m"D6 E2 | "D"^F4 ^F4 "A7"E4 E4 |
+"D"D8- "F#m"D7 z |

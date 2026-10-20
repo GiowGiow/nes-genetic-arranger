@@ -1,0 +1,32 @@
+%abc-2.1
+% Vidi fillide mia, by Giovanni de Macque. Score published on MuseScore (artist: Giovanni de
+% Macque), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni de Macque (died 1614,
+% Wikidata Q1403614).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/34/QmSNr6kqjghwf578EKSyrZoCtu1yuoQkJ2LkPmgbXd7TGS.mid (sha256
+% a06b88f1738e5d7238c9a16c6f8611263806ad71ec7690380932ca047631568f): melody track 0, bars 2-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Vidi fillide mia
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"z8 "Eb"z8 | "Cm7"z4 _B4 "Cm"G4 _A4 | "Bb"_A2 _A2 G4 F8 | "Eb"G8 "Bb"z8 |
+"Gm7"z4 _B4 "Gm"_B2 c2 d2 _e2 | "F"f8 "Fm"c8 | "Eb"z4 _e4 c4 _e4 | "Bb"_e2 _e2 d4 d4 c4 |
+"Fm7"z8 "Eb"z8 | "Bbm"z4 F4 "Db"F2 G2 _A2 _B2 | "Ab"c8 "Cm"c4 _B4 | "Bb"_B2 _B2 F2 G2 _B8 |
+"Eb"_B16 | "Bb7"z4 c4- "Fm7"c4 _B4 | "Db"_B2 _A2 G2 F2 _A8 | "Dm7"_A8 "C"G8 |
+"Cm7"z4 f4- "Gm"f4 _e4 | "Eb"_e2 d2 c2 _B2 "Cm"c8 | "Cm"G8- "Bm"G8 | "C"z16 |
+"C"c4 c2 f2 e4 f4 | "F"c2 c2 d2 _e2 f8 | "Bb"d16 | "Eb"z4 _B4 "Gm7"_B2 G2 _B4 |
+"Eb"_B4 G4 "Gm7"z4 _B4 | "Eb"_e6 _e2 "Bb"_e4 d4 | "Eb"_e4 _B4 "Cm7"_B2 G2 _B4 | "Eb"_B4 G4 z4 d4 |
+"Gm7"d2 _e2 d8 d4 | "Gm7"z8 "Fm"f8 | "Fm"f8 f8 | "Fm"f8 "C"_e8 |
+"Cm"_e8 "Em7"d8 | "D"d16 | "D"d8 "C"e8 | "Dm7"f8- "F"f4 _d4 |
+"C"c16 | "F"c4 c8 _d2 A2 | "Fm"c12 F4 | "Fm"z8 "F"z8 |
+"Bb"z4 f4 "Cm7"d _e f2 _B c d2 | "F"c8 "Cm7"z8 | "Bb"z4 f4 "Fm"f8 | "Gm"f4 _e d c _B "Dm"A4 _B4 |
+"F"A8 "Bb"_B8 | "Bb"z4 f4 "Gm7"d4 _e4 | "Cm7"f4 _B4 "Gm7"z8 | "Eb"z4 _e4- "Bb"_e4 d2 c2 |
+"Cm7"_B8- "Gm"_B8 | "Cm7"_B8- "Bb"_B8 | "Eb"_B16 |

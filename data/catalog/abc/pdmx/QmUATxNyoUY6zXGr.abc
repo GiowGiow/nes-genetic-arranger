@@ -1,0 +1,36 @@
+%abc-2.1
+% Awesome Wedding Recessional II (Lemmens Fanfare for Organ), by Jacques-Nicolas Lemmens. Score
+% published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacques-Nicolas Lemmens (died
+% 1881, Wikidata Q712718).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/10/QmUATxNyoUY6zXGrAUSdF6XLGUrDP7pJ4MFMqhsZCd2Aoi.mid (sha256
+% 9de87e41436bdfb7a62a141705820c426588755ec93be5f4357312b97c30ca7e): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Awesome Wedding Recessional II (Lemmens Fanfare for Organ)
+M:2/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A a A g A ^f A | "A"e ^F B A G E _D A, |
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A a A g A ^f A | "A7"e A B _d =d _d =d e |
+"Bm"^f d B d ^f d ^f b | "F#"_b ^f _d ^f _B _d ^F _A | "A"e _d A _d e _d e a | "E"_a e B e _A B E ^F |
+"G"d B G B d B d g | "D"^f a d ^f A d ^F A | "F#m"G A E G ^F A D ^F | "A"E A _D E A, z2 A |
+"F#m7"G A E G ^F A D ^F | "A"E A _D E A, z2 A | "Dm"G A E G F A D F | "A"E A _D E A, A B _d |
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A a A g A ^f A | "A"e ^F B A G E _D A, |
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A a A g A ^f A | "A7"e A B _d =d _d =d e |
+"Bm"^f d B d ^f d ^f b | "F#"_b ^f _d ^f _B _d ^F _A | "A"e _d A _d e _d e a | "E"_a e B e _A B E ^F |
+"G"d B G B d B d g | "D"^f a d ^f A d ^F A | "F#m"G A E G ^F A D ^F | "A"E A _D E A, z2 A |
+"F#m7"G A E G ^F A D ^F | "A"E A _D E A, z2 A | "Dm"G A E G F A D F | "A"E A _D E A, A B _d |
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A a A g A ^f A | "A"e ^F B A G E _D A, |
+"D"d A ^F A d A e A | "D"^f A ^F A d A e A | "D"^f A g e a ^f b g | "D7"_d' =d e ^f b ^f e =d |
+"A7"g A B _d ^f _d B A | "A7"e G A B _d G ^F E | "D"d A ^F A d A ^F A | "A7"G A G A G A G A |
+"D"^F A ^F A d A ^F A | "A7"G A G A G A G A | "D"^F A ^F A d A ^F A | "A7"G A G A G A G A |
+"D"^F A ^F A d A ^F A | "A7"G A G A G A G A | "D"^F A ^F A E A E A | "D"D A ^F D G, A, G, A, |
+"D"^F, A, ^F, A, E, A, E, A, | "D"D, A,, D, E, z4 | "G"G D B, D G B A ^F | "G"G D B, D G B A ^F |

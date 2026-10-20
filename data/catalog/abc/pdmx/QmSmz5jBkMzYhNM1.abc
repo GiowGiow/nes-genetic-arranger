@@ -1,0 +1,35 @@
+%abc-2.1
+% Amor s'avien giamai, by Benedetto Pallavicino. Score published on MuseScore (artist: Benedetto
+% Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/31/QmSmz5jBkMzYhNM1JhQC1tW8gmy1PmXhpXjdQaAqZt5wQt.mid (sha256
+% 5d4903026221ccfbb87cdb1770923497f2b8d225b41c194917f1e273d5684644): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Amor s'avien giamai
+M:4/4
+L:1/16
+Q:1/4=97.999824
+% Exact tempo 97.99982360031753 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z8 "Cm"z8 | "Cm"z8 "F"z8 | "G"z8 "F"z8 | "Bb"z8 "Gm"z8 |
+"Cm7"z8 "D"z8 | "G"z8 d8 | "C"_e12 d4 | "Fm"c4 c4 "G"B8 |
+"C"c8 G8 | "F"A8 "Gm7"_B4 G4 | "Cm7"G4 G4 "D"^F8 | "G"G16 |
+"F"z8 "Gm"z4 d4 | "F"c6 c2 "Gm"_B4 _B4 | "F"A8 "Gm"_B4 f4 | "F"f6 _e2 "Bb"d4 _B4 |
+"Dm7"c8 "Dm"A8 | "C"z8 "F"z8 | "Bb"z4 _B4- "Dm7"_B4 A4 | "Gm"G8 "D"^F4 G4 |
+"Dm7"A4 _B4 "G7"_B4 c4 | "Bb"d8 d4 d4 | "Gm7"d4 c4 "G"_B8 | "Gm"A4 _B4 "F"c4 c4 |
+"F"d4 A4 "Bb"_B8 | "Cm"G4 c4 "C"A4 G4 | "D"^F4 G8 ^F4 | "G"G8- "C"G8 |
+"F"z8 "G"d4 d2 d2 | "C"c6 _B2 "F"A4 f4 | "G"d4 d4 "Cm"_e8 | "Gm7"d4 _B4 "Eb"_B4 G4 |
+"F"A2 _B2 c4- "G"c4 =B4 | "C"c8 "Gm7"z4 d4 | "Gm"d2 d2 _B4- "Dm7"_B4 A4 | "Bb"z8 "Gm"g4 g2 g2 |
+"Am"f6 _e2 "G"d8 | "Dm7"z4 G4 "G"G4 D4 | "C"_E8 "Cm"C4 c4 | "D"A4 G4 ^F8 |
+"G"G16 | "Em7"A4 B4 "F"c8 | "Cm"c4 G4 "D"A8 | "G"B8 z8 |
+"Bb"z8 "Fm"z8 | "G"z8 "C"c8 | "F"c6 c2 "Bb"d4 d4 | "Eb"_e8 "C"_e4 _e4 |
+"Gm"d6 d2 "Dm"f4 d4 | "F"c8 "Bb"d8 | "Eb"_e8 "C"_e8 | "G"d16 |
+"C"c8 "Cm"z4 G4 | "B"G4 G4 "C"G8 | "Dm"_B4 A4 "C"G8 | "F"A8 "Am7"z8 |
+"F"z8 "Gm7"z8 | "F"z4 f4 "Bb"f4 f4 | "Bb"d6 _e2 f8 | "Cm"c8 g8 |
+"Gm"g4 g4 "Bb"f8 | "Cm"_e8 "Gm"d8 | "F"d4 c4- "Fm"c4 F4 | "G7"G8- "G"G8 |

@@ -1,0 +1,33 @@
+%abc-2.1
+% EMBOLADA DO BRIGADEIRO, by Mignone, as performed by Mignone.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Mignone (died 1679, Wikidata Q330400).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/embolada-do-brigadeiro.html (file
+% https://www.beakauffmann.com/mpb_e/som/embolada-do-brigadeiro.mid, sha256
+% 166b679287b200f4fa72248f11ce26119da0b52582762db6ae36e33dad654398), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-51 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:EMBOLADA DO BRIGADEIRO
+M:2/4
+L:1/16
+Q:1/4=94.999992
+% Exact tempo 94.99999208333399 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm7"z8 | "Cm7"z8 | "Cm7"z8 | "Cm7"z8 |
+"Cm7"z8 | "Bb7"z8 | "Cm7"z8 | "Bb7"z8 |
+"Eb"z8 | "Eb"z2 c _B G _E F _A | "Eb"G G c _B G _E F _A | "Eb"G G c _B G _E F _A |
+"Eb"G G _E _E G _E G _E | "Eb"_E _E c _B G _E F _A | "Eb"G G c _B G _E F _A | "Eb"G G c _B G _E F _A |
+"Eb7"G G _E _E G _E G _E | "Eb"_E _E _E _E c _e d c | "Cm7"_B G c _B _A F _B _A | "Eb"G G _E _E c _e d c |
+"Cm7"_B G c _B G _E F F | "Cm7"_E _E7 | "Cm7"z8 | "Cm7"z8 |
+"Cm7"z8 | "Eb"z8 | "Bb7"z8 | "Cm7"z8 |
+"Bb7"z8 | "Eb"z8 | "Eb"z2 c _B G _E F _A | "Eb"G G c _B G _E F _A |
+"Eb"G G c _B G _E F _A | "Eb"G G _E _E G _E G _E | "Eb"_E _E c _B G _E F _A | "Eb"G G c _B G _E F _A |
+"Eb"G G c _B G _E F _A | "Eb7"G G _E _E G _E G _E | "Eb"_E _E _E _E c _e d c | "Cm7"_B G c _B _A F _B _A |
+"Eb"G G _E _E c _e d c | "Cm7"_B G c _B G _E F F | "Cm7"_E _E7 | "Cm7"z8 |
+"Cm7"z8 | "Cm7"z8 | "Eb"z8 | "Bb7"z8 |
+"Cm7"z8 | "Bb7"z8 | "Eb"z8 |

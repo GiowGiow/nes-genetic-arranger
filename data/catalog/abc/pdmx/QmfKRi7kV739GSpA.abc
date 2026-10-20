@@ -1,0 +1,35 @@
+%abc-2.1
+% solace, by Scott Joplin. Score published on MuseScore (artist: Scott Joplin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Scott Joplin (died 1917,
+% Wikidata Q191499).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/29/QmfKRi7kV739GSpACKLUA7vNx9QY82Z42mtANDwUajvsip.mid (sha256
+% 70af5d2bd0b22b9e6e1c562116eef459b094814834f0542fc3943fd93422da8d): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:solace
+M:2/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"F, G, _A, =A,2 F, D, C, | "Gm7"_B,, _B, C D3 _B,,2 | "G7"C, G, A, _B,3 C,,2 | "Dm"F,, _A, =A, C3 C,2 |
+"Dm7"F, G, _A, =A,3 F,2 | "Am"E, E D C2 A, E, C, | "E"E,, D C B,3 B,2 | "F#m7"C2 E, A,,3 C,2 |
+"Dm7"F, G, _A, =A,2 F, D, C, | "Gm7"_B,, _B, C D3 _B,,2 | "G7"C, G, A, _B,3 C,,2 | "F"F,, _A, =A, C3 _E,2 |
+"Gm7"D, F, _B, D3 _D2 | "Fm"C C2 _B,3 _B,2 | "C7"C3 C,5 | "Dm"F,3 C, F,,2 C,2 |
+"Dm7"F, G, _A, =A,2 F, D, C, | "Gm7"_B,, _B, C D3 _B,,2 | "G7"C, G, A, _B,3 C,,2 | "Dm"F,, _A, =A, C3 C,2 |
+"Dm7"F, G, _A, =A,3 F,2 | "Am"E, E D C2 A, E, C, | "E"E,, D C B,3 B,2 | "F#m7"C2 E, A,,3 C,2 |
+"Dm7"F, G, _A, =A,2 F, D, C, | "Gm7"_B,, _B, C D3 _B,,2 | "G7"C, G, A, _B,3 C,,2 | "F"F,, _A, =A, C3 _E,2 |
+"Gm7"D, F, _B, D3 _D2 | "Fm"C C2 _B,3 _B,2 | "C7"C3 C,5 | "Dm"F,3 C, F,,2 _A,,2 |
+"Eb"G,,3 G, E2 C,,2 | "Eb"G,,3 G, E2 C,,2 | "D"F,,3 A, F2 C,,2 | "D"F,, _A, =A, D3 ^F,,2 |
+"F#"G,,3 G, E2 C,,2 | "F#"G,,3 G, E2 C,,2 | "F"F,,3 A, F2 C,,2 | "Am"F,, _A, =A, C3 _A,,2 |
+"Eb"G,,3 G, E2 C,,2 | "Eb"G,,3 G, E2 C,,2 | "D"F,,3 A, F2 C,,2 | "Dm7"F,, _A, =A, D3 ^F,,2 |
+"Bb7"F3 F2 F3 | "Dm7"F3 F2 F2 D | "Am"F3 F2 C2 _B, | "F"A,3 C, F,,2 _A,,2 |
+"Eb"G,,3 G, E2 C,,2 | "Eb"G,,3 G, E2 C,,2 | "D"F,,3 A, F2 C,,2 | "D"F,, _A, =A, D3 ^F,,2 |
+"F#"G,,3 G, E2 C,,2 | "F#"G,,3 G, E2 C,,2 | "F"F,,3 A, F2 C,,2 | "Am"F,, _A, =A, C3 _A,,2 |
+"Eb"G,,3 G, E2 C,,2 | "Eb"G,,3 G, E2 C,,2 | "D"F,,3 A, F2 C,,2 | "Dm7"F,, _A, =A, D3 ^F,,2 |
+"Bb7"F3 F2 F3 | "Dm7"F3 F2 F2 D | "Am"F3 F2 C2 _B, | "F"A,3 C, F,,2 z2 |

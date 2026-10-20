@@ -1,0 +1,30 @@
+%abc-2.1
+% Il Canto degli Italiani, by Michele Novaro. Score published on MuseScore (artist: Michele
+% Novaro), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Michele Novaro (died 1885,
+% Wikidata Q1407455).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/34/QmZN6xRcVGR7WNZxGTtjvpGvRUjTFFA4GjtoD18mLXa8sz.mid (sha256
+% c91be5095847e064019921b6f09d18f7691304accfa5cbb5ae4674e2577143da): melody track 0, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Il Canto degli Italiani
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_B2 _B _B _B2 _B _B _B2 _B _B d2 _B2 | "C"g2 e2 f4 z8 | "C"f2 f f f2 f f f2 f f f2 f f | "C"g2 f2 d4 z8 |
+"C"G2 G G G2 G G G2 G G _B2 G2 | "C"_e2 _d2 =d4 z8 | "C"d2 d d d2 d d d2 d d d2 d d | "C"_e2 d2 _B4 z8 |
+"C"A4 c3 d _e4 g4 | "C"e2 f f f2 d2 a2 g g g2 _e2 | "C"g2 f f f2 d2 f2 _e _e _e2 c2 | "C"_B4 z8 F4 |
+"C"F3 G F4 z4 d4 | "C"d3 _e d4 z4 d4 | "C"f3 _e d8 c4 | "C"d3 c _B4 z4 F4 |
+"C"F3 G F4 z4 d4 | "C"d3 _e d4 z4 d4 | "C"f3 _e d8 c4 | "C"d3 c _B4 z4 d4 |
+"C"d4 A8 _B3 c | "C"_B3 A G4 z4 _B4 | "C"A3 _B c4 z4 D4 | "C"d8 _e4 F4 |
+"C"F3 G F4 z4 d4 | "C"d3 _e d8 d4 | "C"f3 _e d6 f2 c2 f2 | "C"_B4 z2 _B _B _B4 z2 _B _B |
+"C"_B4 z2 _B _B =B2 c2 _d2 =d2 | "C"_e4 z3 G G4 G3 F | "C"_A4 G2 z _B _B4 _B3 =A | "C"c4 _B2 z _B _B4 c3 d |
+"C"_e4 G3 _A c4 _B3 G | "C"_A4 F2 z F F4 F3 E | "C"G4 F2 z _A _A4 _A3 G | "C"_B4 _A2 z f f4 f3 _e |
+"C"d4 d3 c _B4 _B3 _A | "C"G4 z3 G G4 G3 F | "C"_A4 G2 z G G4 F3 _E | "C"F4 D2 z G G4 G3 F |
+"C"_A4 G2 z G G4 F3 _E | "C"D4 z3 G G4 G3 F | "C"_A4 G2 z _B _B4 =A3 _B | "C"d4 c2 z c c3 d _e3 f |
+"C"g4 g3 g f4 f3 f | "C"_e2 z2 _e2 z10 |

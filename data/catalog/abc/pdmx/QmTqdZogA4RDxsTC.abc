@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite Polonaise No.1 Op.23, by Felix Blumenfeld(1863-1931). Score published on MuseScore
+% (artist: Felix Blumenfeld), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Felix Blumenfeld (died 1931,
+% Wikidata Q1349550).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/38/QmTqdZogA4RDxsTCryouSfAEdPPKxhQjTV4dNDEQ26Kt8b.mid (sha256
+% 1eecac002b810fea16e814e2fc48dc776ebfc6ae1704a5facb331a35336de228): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite Polonaise No.1 Op.23
+M:2/4
+L:1/16
+Q:1/4=115.999861
+% Exact tempo 115.99986080016704 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb7"G2 g2 c2 _e2 | "Bb7"d _e A c _B2 D2 | "Bb7"G2 g2 c2 _e2 | "Bb7"d _e A c _B2 D2 |
+"Bb7"G4 _B2 D2 | "Bb7"G4 _B2 D2 | "Bb7"G8 | "Bb7"G3 z _b2 _B, z |
+"Eb"_e2 _e'2 _a2 c'2 | "Cm7"_b c' f _a g2 d2 | "Fm7"_e2 _e'2 _a2 c'2 | "Cm7"_b c' f _a g2 _B2 |
+"Eb"_e f g4 _b2 | "Cm"_e f g4 a2 | "G"b z g3 G c _e | "G"d _e c B A G d2 |
+"G"G2 g3 G c _e | "G"d _e c B A G d2 | "G"d _e c B A G d2 | "G"d _e c B A G d2 |
+"G"d c g2 d c g2 | "Gm"d c g2 d c g2 | "Eb"_e F _e'2 _a2 c'2 | "Eb"_b c' f _a g2 d2 |
+"Fm7"_e2 _e'2 _a2 c'2 | "Cm7"_b c' f _a g2 _B2 | "Eb"_e f g4 _b2 | "Eb"g a _b4 c'2 |
+"Cm7"_b c' d'4 _e'2 | "Cm7"d'2 _e'2 c'2 f'2 | "Bb"_b2 _b'2 z _b _e' g' | "Bb"g' f' _e' d' c' g f'2 |
+"Bb"_B2 _b z2 _B _e g | "Bb"g f _e d c G f2 | "Bb"g f _e d c G f2 | "Bb"g f _e d c G f2 |
+"Bb"f c _b2 f c _b2 | "Bb"f c _b2 f c _b2 | "Fm7"_e _B _a z3 g f | "Fm7"e f g f f d _e c |
+"Bb7"_B c d _e f ^f g _b | "Bb7"_a g f c' d' c' _b _e' | "Dm7"d _B _a2 z2 g f | "Dm7"e f g z f d _e z |
+"E7"c c d _e f _a g _e | "G"d c B _A G F G _A | "E7"B c d _e f _a g _e | "G"d c B _A G F _E F |
+"G"G z G3 G, C _E | "G"D _E C B, D4 | "G"G2 G3 G, C _E | "G"D _E C B, D4 |
+"G"D _E C B, D4 | "G"D _E C B, D4 | "G"G2 g2 c2 _e2 | "G"d _e A c _B2 D2 |
+"G"G2 g2 c2 _e2 | "G"d _e A c _B2 D2 | "G"G4 _B2 D2 | "G"G4 _B2 D2 |
+"G"G8 | "Bb7"G3 z _b2 _B, z | "Eb"_e2 _e'2 _a2 c'2 | "Cm7"_b c' f _a g2 d2 |

@@ -1,0 +1,21 @@
+%abc-2.1
+% Dix (As with gladness men of old), by Conrad Kocher. Score published on MuseScore (artist: not
+% given), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Conrad Kocher (died 1872,
+% Wikidata Q1782165).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/31/Qmam3cG2ZknKSEHf95KHvgv4pyeCu4wqK2xE7dS6rm4YBK.mid (sha256
+% 7a65f62932825b786a319d9991f6cbe8ec504c3ee6be4402686fea413a59288b): melody track 0, bars 0-12
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dix (As with gladness men of old)
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"G4 ^F2 G2 "B7"A4 G4 | "F#m7"c4 c4 "G"B8 | "Am7"E4 ^F4 "C"G4 E4 | "D"D4 D4 "G"D8 |
+"G"G4 ^F2 G2 "B7"A4 G4 | "F#m7"c4 c4 "G"B8 | "Am7"E4 ^F4 "C"G4 E4 | "D"D4 D4 "G"D8 |
+"D7"B4 A4 "G"G4 B4 | "D"d4 D2 c2 "G"B8 | "Am7"E4 ^F4 "Em"G4 c4 | "D"B4 A2 C2 "G"G8 |

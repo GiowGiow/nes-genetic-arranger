@@ -1,0 +1,31 @@
+%abc-2.1
+% fredrik pacius maamme finnish and estonian national anthem, by Fredrik Pacius. Score published
+% on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Fredrik Pacius (died 1891,
+% Wikidata Q327024).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/35/Qmeos36PfuwdsMh5FNV6o1w4RQ6fGPysxZstnecysRCgwE.mid (sha256
+% 4b201a86bad7079f2fe1800681159e7d318464a59f3572c82407cf2d463faa91): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:fredrik pacius maamme finnish and estonian national anthem
+M:3/4
+L:1/16
+Q:1/4=69.000017
+% Exact tempo 69.00001725000433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z6 E2 _D2 =D2 | "C"E6 A2 B3 E | "C"_d8 A4 | "C"^F3 B A4 _A4 |
+"C"A8 E4 | "C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E4 E4 | "C"B3 A _A2 ^F2 E2 D2 |
+"C"_D2 ^F2 E6 E2 | "C"A3 E _D2 E2 A2 B2 | "C"_d8 A4 | "C"^F3 B A4 _A4 |
+"C"A8 E4 | "C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E4 E4 | "C"B3 A _A2 ^F2 E2 D2 |
+"C"_D2 ^F2 E6 E2 | "C"A3 E _D2 E2 A2 B2 | "C"_d8 A4 | "C"^F3 B A4 _A4 |
+"C"A8 z4 | "C"z6 E2 _D2 =D2 | "C"E6 A2 B3 E | "C"_d8 A4 |
+"C"^F3 B A4 _A4 | "C"A8 E4 | "C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E4 E4 |
+"C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E6 E2 | "C"A3 E _D2 E2 A2 B2 | "C"_d8 A4 |
+"C"^F3 B A4 _A4 | "C"A8 E4 | "C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E4 E4 |
+"C"B3 A _A2 ^F2 E2 D2 | "C"_D2 ^F2 E6 E2 | "C"A3 E _D2 E2 A2 B2 | "C"_d8 A4 |
+"C"^F3 B A4 _A4 | "C"A8 z4 |

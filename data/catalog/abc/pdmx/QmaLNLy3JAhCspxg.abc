@@ -1,0 +1,27 @@
+%abc-2.1
+% The Mikado, by Arthur Sullivan. Score published on MuseScore (artist: Arthur Sullivan), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Arthur Sullivan (died 1900,
+% Wikidata Q212692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/30/QmaLNLy3JAhCspxg3BZQbb27otAY4oyBB6uVive5dp6jqa.mid (sha256
+% b178e0ddde56829b27b5694f8f23e71e0304c2086f2c377ced47b0f7090d03f8): melody track 0, bars 0-33
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Mikado
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Ab"z8 "Cm"z8 | "Ab"_A,2 G,2 _A,2 G,2 "Cm"F,4 F,4 | "Ab"F,8 "Cm"z8 | "Eb7"G,2 F,2 G,2 F,2 _E,4 _E,4 |
+"Eb7"F,4 _E,4 z8 | "Ab"C2 _B,2 C2 _B,2 _A,4 _A,4 | "Fm"_A,8 z8 | "G7"G,2 _A,2 G,2 _A,2 G,4 G,4 |
+"C"G,4 C,4 z8 | "Fm"_A,2 G,2 F,2 G,2 _A,4 _A,4 | "C"G,8 z8 | "C"F,2 E,2 D,2 E,2 F,4 F,4 |
+"C"E,4 C,4 z8 | "C"_A,2 G,2 _A,2 G,2 E,4 G,4 | "Db"F,8 z8 | "Dm"_B,2 A,2 _B,2 A,2 "Bb"C4 _B,4 |
+"Eb"G,4 _B,4 z8 | "E"_D2 C2 _D2 C2 _D4 _A,4 | "Eb7"G,8 z8 | "E"_D2 C2 _D2 C2 _D4 _A,4 |
+"Eb7"G,4 _B,4 z4 _E,2 _E,2 | "Abm"B,6 B,2 "B7"B,6 B,2 | "E"B,8 "Abm"B,4 B,4 | "Gm7"_B,4 F,2 G,2 "Bb"_A,4 G,2 F,2 |
+"Eb7"G,2 F,2 _E,4 "Cm7"z8 | "Ab"_A,2 G,2 _A,2 G,2 "Fm7"F,4 F,4 | "Ab"F,8 "Fm7"z8 | "Eb7"G,2 F,2 G,2 F,2 "Eb"_E,4 _E,4 |
+"Eb7"F,4 _E,4 "Eb"z8 | "Ab7"C2 _B,2 C2 _B,2 "Ab"_A,4 _A,4 | "Db"_A,8 "Dbm"_B,6 _A,2 | "Fm7"C4 _E,4 "Eb"G,4 _B,4 |
+"Ab"_A,8 z8 |

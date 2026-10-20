@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite Polonaise No.1 Op.23, by Felix Blumenfeld(1863-1931). Score published on MuseScore
+% (artist: Felix Blumenfeld), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Felix Blumenfeld (died 1931,
+% Wikidata Q1349550).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/14/QmbCWFEbGoRcobXDKLMXxfN6WzSjHZZ4zFhpyyZYbZjrTq.mid (sha256
+% a9ca485346aae186119c635b27da392dd2a76cc562af686ada303a003fe0ef71): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite Polonaise No.1 Op.23
+M:3/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"_E,,4 _E4 F4 | "Bb"^F4 _E4 =F4 | "Ebm"^F4 _E4 =F4 | "F#"_E4 _E4 F4 |
+"Ebm"_E4 C4 D4 | "Ebm"_E4 C4 D4 | "Ebm"_E4 _E4 F4 | "F#"_E4 _E4 F4 |
+"Ebm"_E4 C4 D4 | "Ebm7"_E4 _E4 _D2 B,2 | "Ebm7"^F4 _d4 _A4 | "Bbm7"^F4 _d4 _A4 |
+"Ebm7"^F4 _E4 =F4 | "Ebm7"^F4 _E4 =F4 | "Ebm7"^F4 _d4 _A4 | "Bbm7"^F4 _E4 =F,4 |
+"Fm"_A,4 =A,2 F2 ^F2 =F2 | "Gm7"_E4 D2 C2 _A4 | "Ebm"_E4 D4 C4 | "Gm7"D8 _A4 |
+"Ebm"_E4 D4 C4 | "Gm7"D8 _A4 | "Ebm"^F4 B8 | "Db"F4 _B8 |
+"B"_E4 _A8 | "B"_B4 _A8 | "Ebm"^F8 _E4 | "Gm7"_E4 D2 C2 D4 |
+"Ebm"_E,,2 _B,,2 ^F,2 _B,,2 ^F,2 _E2 | "Ebm"_B,2 ^F2 _e2 z6 | "Eb"_E,,2 _B,,2 ^F,2 _B,,2 ^F,2 _E2 | "Ab7"_B,2 ^F2 _e2 z6 |
+"Fm7"_E,,2 B,,2 _A,2 D,2 B,2 _A,2 | "Eb7"F2 B,2 _A,2 F,2 B,,4 | "Db7"_E,,2 B,,2 _A,2 D,2 B,2 _A,2 | "F#"F2 B,2 _A,2 F,2 B,,2 _B,,2 |
+"Ebm"_E,,2 _B,,2 ^F,2 _B,,2 ^F,2 _E2 | "Ebm"_B,2 ^F2 _e2 z6 | "Eb"_E,,2 _B,,2 ^F,2 _B,,2 ^F,2 _E2 | "Ab7"_B,2 ^F2 _e2 z6 |
+"Bb7"_E,,2 B,,2 _A,2 D,2 B,2 _A,2 | "Fm7"F2 B,2 _A,2 F,2 B,,4 | "Dm"_E,,2 B,,2 _A,2 D,2 B,2 _A,2 | "Bbm7"D2 _A,2 F,2 D,2 B,,2 _B,,2 |
+"Ebm"_E,,2 _B,,2 ^F,2 _B,2 _E2 _B2 | "Bb"_B,4 _E4 F4 | "Ebm"_E,,2 _B,,2 _E,2 ^F,2 _B,2 _E2 | "Eb"_B,4 C4 D4 |
+"Ebm"_E,4 C4 D4 | "Ebm"_E,4 C4 D4 | "Ebm"^F4 _E4 =F4 | "F#"_E4 _E4 F4 |
+"Ebm"_E4 C4 D4 | "Ebm"_E4 C4 D4 | "Ebm"_E4 _E4 F4 | "F#"_E4 _E4 F4 |
+"Ebm"_E4 C4 D4 | "Ebm7"_E4 _E4 _D2 B,2 | "Ebm7"^F4 _d4 _A4 | "Bbm7"^F4 _d4 _A4 |
+"Ebm7"^F4 _E4 =F4 | "Ebm7"^F4 _E4 =F4 | "Ebm7"^F4 _d4 _A4 | "Bbm7"^F4 _E4 =F,4 |

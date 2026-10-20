@@ -1,0 +1,36 @@
+%abc-2.1
+% ESPANHOLITA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/espanholita.html (file
+% https://www.beakauffmann.com/mpb_e/som/espanholita.mid, sha256
+% 7b0694a9285ee96143529783a0ffc5f096583fab2ace215022081e43fa6a0114), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESPANHOLITA
+M:3/4
+L:1/16
+Q:1/4=110.00011
+% Exact tempo 110.00011000011 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"f'2 z2 _d'2 f' z _d'4 | "Db"z4 _e'2 z2 _d'3 z | "Ab7"c'4 ^f2 c'2 ^f4 | "Ab7"z4 _b2 z2 _a2 z2 |
+"Bbm"f'4 _a2 f'2 _a4 | "Bbm"z4 c'2 z2 _b2 z2 | "F7"a3 z _e2 a2 _e4 | "F7"z4 ^f3 z =f z3 |
+"Bb"_b2 z2 _a2 _b2 _a4 | "Bb7"z4 c'2 z2 d'2 z2 | "F#"_e'2 z2 _b2 _e'2 _b3 z | "Eb"z4 f'2 z2 ^f'2 z2 |
+"C"_a'2 z2 ^f2 _a2 ^f4 | "B"a3 z g2 a2 g2 z2 | "C7"_b3 z ^f2 _b z =b2 z2 | "Ab"c'3 z5 _a2 z2 |
+"Db"f'2 z2 _d'2 f' z _d'4 | "Db"z4 _e'2 z2 _d'2 z2 | "Ab7"c'3 z ^f2 c'2 ^f4 | "Ab7"z4 _b3 z _a z3 |
+"Bbm"_d'4 f2 _d'2 f3 z | "Bbm"z4 c'2 z2 _b2 z2 | "F7"a4 _e2 a2 _e4 | "F7"z4 ^f3 z =f z3 |
+"Bb7"_b2 z2 _a2 _b2 _a4 | "Bb7"z12 | "Ebm"f'6 z2 _e'2 z2 | "Gm"_d' _e'2 _d' c'4 _d'4 |
+"Db"_a2 z2 _d'5 z3 | "Ab"_e z3 _a4 C4 | "Db"_D2 F2 _A2 _d2 f2 _a2 | "Db"_d' z11 |
+"Db"f'2 z2 _d'2 f' z _d'4 | "Db"z4 _e'2 z2 _d'3 z | "Ab7"c'4 ^f2 c'2 ^f4 | "Ab7"z4 _b2 z2 _a2 z2 |
+"Bbm"f'4 _a2 f'2 _a4 | "Bbm"z4 c'2 z2 _b2 z2 | "F7"a3 z _e2 a2 _e4 | "F7"z4 ^f3 z =f z3 |
+"Bb"_b2 z2 _a2 _b2 _a4 | "Bb7"z4 c'2 z2 d'2 z2 | "F#"_e'2 z2 _b2 _e'2 _b3 z | "Eb"z4 f'2 z2 ^f'2 z2 |
+"C"_a'2 z2 ^f2 _a2 ^f4 | "B"a3 z g2 a2 g2 z2 | "C7"_b3 z ^f2 _b z =b2 z2 | "Ab"c'3 z5 _a2 z2 |
+"Db"f'2 z2 _d'2 f' z _d'4 | "Db"z4 _e'2 z2 _d'2 z2 | "Ab7"c'3 z ^f2 c'2 ^f4 | "Ab7"z4 _b3 z _a z3 |
+"Bbm"_d'4 f2 _d'2 f3 z | "Bbm"z4 c'2 z2 _b2 z2 | "F7"a4 _e2 a2 _e4 | "F7"z4 ^f3 z =f z3 |
+"Bb7"_b2 z2 _a2 _b2 _a4 | "Bb7"z12 | "Ebm"f'6 z2 _e'2 z2 | "Gm"_d' _e'2 _d' c'4 _d'4 |
+"Db"_a2 z2 _d'5 z3 | "Ab"_e z3 _a4 C4 | "Db"_D2 F2 _A2 _d2 f2 _a2 | "Db"_d'2 =d'2 _e'2 =e'2 g'2 f'2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Golden Slippers, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 72 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Golden Slippers
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 d2 e2 | "D"f4 f4 f2 e2 d2 e2 | "D"f4 f4 "A7"f4 d2 e2 | "D"f4 f4 f2 e2 d2 e2 |
+"A7"f4 e4 e4 c2 d2 | "A7"e4 e4 e2 d2 c2 d2 | "A7"e4 e4 e4 c2 d2 | "A7"e4 g4 f4 e4 |
+"D"e4 d4 d4 d2 e2 | "D"f4 f4 f2 e2 d2 e2 | "D"f4 f4 "A7"f4 d2 e2 | "D"f4 f4 f2 e2 d2 e2 |
+"A7"f4 e4 e4 c2 d2 | "A7"e4 e4 e2 d2 c2 d2 | "A7"e4 e4 e4 c2 d2 | "A7"e4 g4 f4 e4 |
+"D"e4 d4 d4 c2 B2 | "D"A12 d4 | "D7"f4 e4 d4 A4 | "G"B12 e4 |
+"Em"g4 f4 "E7"e4 d4 | "A7"c4 c4 c2 B2 c2 d2 | "A7"e8 A8 | "D"d6 c2 "A7"d4 e4 |
+"D"f8 "A7"a8 | "D"A12 d4 | "D7"f4 e4 d4 A4 | "G"B12 e4 |
+"Em"g4 f4 "E7"e4 d4 | "A7"c4 c4 c2 B2 c2 d2 | "A7"e8 g8 | "D"f6 g2 "A7"f4 e4 |
+"D"d8 d4 z4 |

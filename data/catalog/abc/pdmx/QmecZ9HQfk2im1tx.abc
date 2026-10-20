@@ -1,0 +1,29 @@
+%abc-2.1
+% The Love for Three Oranges (opera) Op.33, by Sergei Prokofiev. Score published on MuseScore
+% (artist: Sergei Prokofiev), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sergei Prokofiev (died 1953,
+% Wikidata Q49481).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/13/QmecZ9HQfk2im1txGk4VLULXhy6M9cU1CUo5yC4dz2akJi.mid (sha256
+% 78a869d328155c31a772d3548e387ba44a76956ffabe017d317968ce8f40b4a3): melody track 0, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Love for Three Oranges (opera) Op.33
+M:4/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"D"z16 | "D"z14 _E _E | "Fm7"_E2 z2 F2 z2 "E7"_E2 z2 _A2 z2 | "E"B2 z B _A12 |
+"Ab"c2 z c _A4 "E"B2 z B _A4 | "Eb"_e2 z _e G4- "Gm"G8 | "B"G2 _A _B =B4 G2 _A _B =B4 | "Eb"B2 c d _e4 B2 c d _e4 |
+"Ab7"z4 _e _e2 _e "F#"d4 c4 | "C"z4 d4 "D"^F8 | "C7"z2 G G G G G G G G G G G G G G | "C7"G2 c2 e2 ^f2 g4 G4 |
+"C7"c2 z c ^F4 c2 z c =F4 | "C7"c2 z c ^F2 C C z2 c c c c c c | "G7"c4 z12 | "G7"z2 d d d d d d d d d d d d d d |
+"G7"G7 f "C"G7 G | "Eb7"G F G G G G E F "G"G6 _E _E | "E7"_E2 z2 F2 z2 _E2 z2 _A2 z2 | "E"B2 z B _A12 |
+"E"c2 z c _A4 B2 z B _A4 | "Eb"_e2 z _e G4- "Gm"G8 | "B"G2 _A _B =B4 G2 _A _B =B4 | "Eb"B2 c d _e4 B2 c d _e4 |
+"Ab7"z4 _e _e2 _e "F#"d4 c4 | "C"z4 d4 "D7"^F6 z2 | "Bbm"_B,2 z C _A,2 z _D "Bb"_B,2 z _E C2 z F | "Bbm7"_D2 z2 G4 "Bb7"_E4 F2 z G |
+"Cm7"_E2 z F _D2 z G _E2 z _A F2 z _B | "Cm7"G2 z2 c4 "Eb7"_A4 _B2 z G | "Cm7"G2 c c c2 c F _D2 c2 c2 c F | "Eb7"_d2 _E F G2 G c "Bbm7"_A2 _B c _d c _d2 |
+"Db"_e2 F F F2 F _B "Gm7"G2 F F F2 F _B | "C7"G2 _A _B c2 c f "Eb7"_d6 _e2 | "Fm7"z2 _B, _D F2 z2 "E"z2 _D F _A2 z2 | "E"z6 G _E _B, z5 G _B |
+"E7"c2 z4 F _A "E"B2 z4 _A c | "Eb"_e2 z2 G2 _B _e "Cm"g2 f d _A z3 | "B"z2 _A _B =B4 G2 _A _B =B4 | "Eb"B2 c d _e4 B2 c d _e4 |
+"Dm7"e4 E4 "Am7"c4 _B4 | "F7"c4 _e4 "D7"=e4 A4 | "F#m7"_d4 _B4 "E7"=B4 =B4 | "F"d4 d4 "C"e4 z4 |

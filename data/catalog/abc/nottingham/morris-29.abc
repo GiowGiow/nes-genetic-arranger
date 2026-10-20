@@ -1,0 +1,20 @@
+%abc-2.1
+% Singing of the Travels, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/morris.abc, tune X: 29 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 cbf60b212c87748dea226c76b72a15db5b4f606bb35a580763e9cd8f7294e7da).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Singing of the Travels
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z8 d6 d2 | "G"e4 d4 d4 B4 | "C"c8 d6 c2 | "G"c4 B4 A4 G4 |
+"Am"G4 F4 "D7"E4 D4 | "G"G8 G4 A4 | "Em"B8 A4 G4 | "Am"D16 |
+"D7"D8 d6 d2 | "G"e4 d4 d4 B4 | "C"c8 d6 c2 | "G"c4 B4 A4 G4 |
+"Am"d16 | "D"d8 d4 c4 | "G"B4 d4 d4 d4 | "Am"d8 "D7"d8 |
+"G"G16 | "G"G12 z4 |

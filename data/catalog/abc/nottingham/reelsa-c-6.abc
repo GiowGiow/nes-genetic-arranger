@@ -1,0 +1,24 @@
+%abc-2.1
+% Alabama Jubilee, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 6 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Alabama Jubilee
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"E7"z4 d4 ^c4 d4 | "E7"e4 d4 B4 e4 | "E7"e4 d8 B4 | "E7"e4 d4 B4 e4 |
+"E7"e16 | "A7"e4 ^c4 A4 e4 | "A7"e4 ^c8 A4 | "A7"e4 ^c4 A4 e4 |
+"A7"e4 ^d4 e4 e4 | "D7"f4 =f4 ^f4 e4 | "D7"e4 d8 e4 | "D7"f4 =f4 ^f4 e4 |
+"D7"e4 d4 e4 f4 | "G"g8 e4 g4 | "G"e4 d4 B4 d4 | "G"g16 |
+"G"g4 d4 ^c4 d4 | "E7"e4 d4 B4 e4 | "E7"e4 d8 B4 | "E7"e4 d4 B4 e4 |
+"E7"e16 | "Am"A4 ^G4 A4 B4 | "Am"c4 B4 c4 d4 | "Am"e8 e8 |
+"D7"e4 f4 g4 a4 | "G"b16 | "B7"a16 | "Em"g8 "D"e8 |
+"G"d8 c4 d4 | "A7"e4 g4 e4 g4 | "D7"f8 d8 | "G"g16 |
+"G"g4 z12 |

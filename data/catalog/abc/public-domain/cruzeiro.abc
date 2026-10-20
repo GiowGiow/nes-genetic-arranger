@@ -1,0 +1,36 @@
+%abc-2.1
+% CRUZEIRO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cruzeiro.html (file
+% https://www.beakauffmann.com/mpb_c/som/cruzeiro.mid, sha256
+% 66dba1d50b726aa834f09cacb68c7b548493071c3cf13983147a90a84658f263), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CRUZEIRO
+M:4/4
+L:1/16
+Q:1/4=77.999977
+% Exact tempo 77.999976600007 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bbm7"z F,10 _A, _E _D F, ^F, | [M:2/4]"Bbm7"G,2 z G, ^F,2 C ^F, | "Db"F,3 F, _A,, z _D2 | "Ab7"_E,3 _A _A,, z C z |
+"Fm"F,3 _A, _E _D F, ^F, | "F7"G,2 z G, A,2 z A, | "Db"_B,2 z _B, z4 | "Eb"c2 z c _B2 _E _B |
+"Ebm7"_A2 z _A ^F2 _D2 | "F7"F2 z F _e2 _E z | "Bbm"_B,3 _d E2 _D2 | "Eb7"G,3 _E _E, z G z |
+"Cm7"_A,3 c z2 _E _b | "Ab7"F,3 _D _E,2 C ^f | "Bbm"_D,3 _B, ^F, z G, z | "Eb7"_A,2 z _D _A,, z C z |
+[M:4/4]"F"z F,10 _A, _E _D F, ^F, | [M:2/4]"Bbm7"G,2 z G, ^F,2 C ^F, | "Db"F,3 F, _A,, z _D2 | "Ab7"_E,3 _A _A,, z C z |
+"Fm"F,3 _A, _E _D F, ^F, | "F7"G,2 z G, A,2 z A, | "Db"_B,2 z _B, z4 | "Eb"c2 z c _B2 _E _B |
+"Ebm7"_A2 z _A ^F2 _D2 | "F7"F2 z F _e2 _E z | "Bbm"_B,3 _d E2 _D2 | "Eb7"G,3 _E _E, z G z |
+"Ab"_A,2 z c ^F,2 _E z | "Fm7"F,3 _D _E,2 C2 | "Db7"B,3 z _B,2 G,2 | "Fm7"z _D z _D _A,,2 C z |
+"Db"_D z3 _D, z3 | "F"_B,,2 z _D _D,2 _D z | "F7"C,3 _E F,,2 _E2 | "Gm7"_B,,3 _D _D,2 F2 |
+"F"C, F2 F F,, F F F | "F"_B,,3 _D _D,2 _D2 | "F7"C,3 _E F,,2 _E2 | "F"_B,,3 _D _D,2 _D2 |
+"F7"C,3 z F,, A, A, A, | "Gm7"_A,3 D _A,2 F2 | "Gm7"G, _b2 _e' _e' _e _e2 | "Ab7"z3 _E ^F,2 _E2 |
+"Db"F,3 z3 _A,2 | "F"_E,3 C _E,2 C2 | "Bb"_D,3 _B, _D,2 F,2 | "Ebm"_E,3 ^F, =E,2 G,2 |
+"F7"F,3 z2 F, _E, C, | "F"_B,,2 z _D _D,2 _D z | "F7"C,3 _E F,,2 _E2 | "Gm7"_B,,3 _D _D,2 F2 |
+"F"C, F2 F F,, F F F | "F"_B,,3 _D _D,2 _D2 | "F7"C,3 _E F,,2 _E2 | "F"_B,,3 _D _D,2 _D2 |
+"F7"C,3 z F,, A, A, A, | "Gm7"_A,3 D _A,2 F2 | "Gm7"G, _b2 _e' _e' _e _e2 | "Ab7"z3 _E ^F,2 _E2 |
+"Db"F,3 z3 _A,2 | "Eb"^F,3 _E ^F,2 _E2 | "Bbm"z f z _e' _e' _d' _d'2 | "F"C,3 _E F,,2 _E z |

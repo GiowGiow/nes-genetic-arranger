@@ -1,0 +1,32 @@
+%abc-2.1
+% Quando benigna, by Benedetto Pallavicino. Score published on MuseScore (artist: Benedetto
+% Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/55/QmaYm8gqKE3RL3QKoSzo3gatEWKsZoYCNiGoVYdm55yXuk.mid (sha256
+% 86649554093d034478f57e49d01b464e343e7c5b4c669bd548b76c83307561b5): melody track 0, bars 0-55
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Quando benigna
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"A16 | "G"_B8 _B8 | "D"A8 G8 | "D"A16 |
+"G7"B8 c8 | "F"c4 c4 A4 A4 | "E7"G8 G8 | "A"G4 F4 E8 |
+"Gm"^F8 G8 | "Dm7"A8 _B4 G4 | "D7"G4 G4 ^F8 | "G"G8 z4 _B4 |
+"F7"_B4 _B4 c8 | "Bb"d16 | "C7"z8 d8 | "Dm"d4 c4 _B8 |
+"Bb"A8 _B8 | "Gm7"A8 z4 d4 | "Eb"d4 c8 _B4 | "F"_B4 A4 A8 |
+"Bb"_B8 _B8 | "Dm7"_B4 _B4 A8 | "D7"G8 E8 | "Dm"F8 z4 d4 |
+"Bb"d4 _B4 d8 | "C"c4 _B4 A4 G4 | "D"G4 F8 G4 | "D"A16 |
+"G"_B8 z4 _B4 | "Em7"_B4 A4 G8 | "A"F4 G4 E8 | "D"^F16 |
+"C7"z16 | "Dm7"A8 d8 | "C"B8 c6 c2 | "Bb"A6 A2 d8 |
+"C"G8 c8 | "F"c8 A8 | "Dm"A8 d8 | "Gm"d4 d4 G8 |
+"Cm"G16 | "D"^F16 | "Am"z8 E8 | "Gm7"G4 A4 F4 F4 |
+"F"G8 A8 | "C"G8 _B4 _B4 | "Bb"A4 d4 _B4 _B4 | "Bb"_e4 d4 c8 |
+"Bb"_B8 _B8 | "Gm7"A4 G4 F4 D4 | "Bb"F8 F8 | "C7"E8 D4 D4 |
+"Dm"D4 A4 G4 A4 | "D"_B4 c4 d8 | "G"d16 |

@@ -1,0 +1,25 @@
+%abc-2.1
+% Questi gigli novelli, by Gio. Bassano. Score published on MuseScore (artist: Giovanni Bassano),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gio. Bassano (died 1592,
+% Wikidata Q346502).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/33/QmTnmnQL5ixCgAVnFp3qfcPU8q2M9CUVugyqq3d1eu5nA7.mid (sha256
+% 5ffd9a23d6474884b30261286624a1f34a3c01d37b537ef37e1ec67e26f1d760): melody track 1, bars 1-26
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Questi gigli novelli
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"E8 ^F4 A4- "F#m7"A2 _A2 _A4 =A8 | "A"E8 z8 "Em7"z4 A4 B6 B2 | "Bm7"_d4 _d4 =d2 e2 ^f4 "F#m7"e16 | "F#m7"z4 A4 _d4 e6 _d2 B4 _d2 =d2 e4 |
+"Dbm7"e8 z4 A4 "F#m7"A6 G2 ^F4 A4 | "F#m7"_A8 =A8 z4 =A4 B4 _d4 | "E"B4 A4 B8 "A"_d8 z8 | "Em7"z16 "F#m"z16 |
+"A"z20 _d6 _d2 _d4 | "Em7"d4 e4 B4 A2 G2 "Bm7"A2 B2 _d4 ^F4 A4 | "Bm"B4 B8 _B2 _A2 "B"_B8 =B4 d4 | "Bm7"d4 _d4 B8 "Em7"B4 A4 G8 |
+"D"^F4 ^f8 e4 "Bm"d6 d2 B4 d4 | "D"d4 _d4 =d4 A4 "F#m7"A6 A2 G4 G2 A2 | "E"A4 A2 A2 _A8 "A"=A8 z4 d4 | "D"_d6 =d2 B4 B2 =d2 "E"_d4 A2 A2 _A8 |
+"D"A8 z4 A4 "Bm7"G8 A8 | "Em"G16 "D"^F8 z4 A4 | "A"A2 A2 ^F4 A4 A8 _A4 =A4 e4 | "Bm7"e2 e2 d4 _d4 A4 "A"B8 _d4 A4 |
+"A"A2 A2 A4 A2 _A2 =A4 "F#m7"_d6 _d2 _d4 =d2 B2 | "A"_d8 _d4 =d2 e2 e4 e4 e4 =d2 _d2 | "F#m7"B4 _d4 A4 A2 A2 "A"B4 _d4 z4 =d4 | "A"d4 d4 _d8 "E"B16 |
+"A"_d32 |

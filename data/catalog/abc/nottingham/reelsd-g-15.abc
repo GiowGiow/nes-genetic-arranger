@@ -1,0 +1,32 @@
+%abc-2.1
+% Dorset Four Hand Reel, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 15 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Dorset Four Hand Reel
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 B2 A2 | "G"G4 B4 d4 c2 B2 | "C"c4 e4 c4 e4 | "G"G4 B4 d6 c2 |
+"Am"B4 A4 "D7"A4 B2 A2 | "G"G4 B4 d4 c2 B2 | "C"c4 e4 c4 e4 | "G"G4 B4 "D7"d6 c2 |
+"G"B4 G4 G4 B2 A2 | "G"G4 B4 d4 c2 B2 | "C"c4 e4 c4 e4 | "G"G4 B4 d6 c2 |
+"Am"B4 A4 "D7"A4 B2 A2 | "G"G4 B4 d4 c2 B2 | "C"c4 e4 c4 e4 | "G"G4 B4 "D7"d6 c2 |
+"G"B4 G4 G4 d4 | "G"g4 g4 "C"g2 f2 e4 | "G"d4 d4 "Em"d2 c2 B4 | "Am"A6 B2 c4 d4 |
+"D"e4 d4 d4 e2 f2 | "G"g4 g4 "C"g2 f2 e4 | "G"d4 d4 "Em"d2 c2 B4 | "Am"A4 A2 B2 "D7"c4 A4 |
+"G"G8 G4 d4 | "G"g4 g4 "C"g2 f2 e4 | "G"d4 d4 "Em"d2 c2 B4 | "Am"A6 B2 c4 d4 |
+"D"e4 d4 d4 e2 f2 | "G"g4 g4 "C"g2 f2 e4 | "G"d4 d4 "Em"d2 c2 B4 | "Am"A4 A2 B2 "D7"c4 A4 |
+"G"G8 G4 ^c2 B2 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 | "D"d4 f4 d4 f4 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 |
+"E7"B4 e4 B4 e4 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 | "D"d4 f4 d4 f4 | "E7"e2 a2 ^g2 f2 e2 d2 ^c2 B2 |
+"A"A4 ^c4 A4 ^c2 B2 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 | "D"d4 f4 d4 f4 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 |
+"E7"B4 e4 B4 e4 | "A"A4 ^c2 e2 a2 e2 ^c2 A2 | "D"d4 f4 d4 f4 | "E7"e2 a2 ^g2 f2 e2 d2 ^c2 B2 |
+"A"A4 ^c4 A4 ^c2 d2 | "A"e4 ^c4 e4 ^c4 | "D"f4 d4 f4 d4 | "A"e4 ^c4 e4 ^c4 |
+"E7"B4 e4 e6 e2 | "A"e4 ^c4 e4 ^c4 | "D"f4 d4 f4 d4 | "E7"e2 a2 ^g2 f2 e2 d2 ^c2 B2 |
+"A"A4 ^c4 A4 ^c2 d2 | "A"e4 ^c4 e4 ^c4 | "D"f4 d4 f4 d4 | "A"e4 ^c4 e4 ^c4 |
+"E7"B4 e4 e6 e2 | "A"e4 ^c4 e4 ^c4 | "D"f4 d4 f4 d4 | "E7"e2 a2 ^g2 f2 e2 d2 ^c2 B2 |
+"A"A4 ^c4 A4 z4 |

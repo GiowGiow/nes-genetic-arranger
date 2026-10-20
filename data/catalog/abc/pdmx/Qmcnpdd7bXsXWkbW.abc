@@ -1,0 +1,29 @@
+%abc-2.1
+% Ave Maria, by Charles François Gounod. Score published on MuseScore (artist: Charles Gounod),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Charles François Gounod (died
+% 1893, Wikidata Q180278).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/33/Qmcnpdd7bXsXWkbWLHgDsFrd8zjJxD44u6xQM4EdStyhBu.mid (sha256
+% 89a324244af01417326add8947a0a0c4d01ac6dcbaf365bf2ae1b03f1ec67c35): melody track 1, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave Maria
+M:4/4
+L:1/16
+Q:1/4=64.999783
+% Exact tempo 64.99978333405555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z2 A d ^f A d ^f z2 A d ^f A d ^f | "E7"z2 B e g B d g z2 B d g B d g | "Dbm"z2 A e g A e g z2 A e g A e g | "D"z2 A d ^f A d ^f z2 A d ^f A d ^f |
+"D"z2 A d ^f A d ^f z2 A d ^f A d ^f | "Em7"z2 A e g A e g z2 A e g A e g | "F#m7"z2 A e g A e g z2 A e g A e g | "D"z2 A d ^f A d ^f z2 A d ^f A d ^f |
+"Bm"z2 B ^f b B ^f b z2 B ^f b B ^f b | "E7"z2 _A B e _A B e z2 _A B e _A B e | "F#m7"z2 A e a A e a "A"z2 A e a A e a | "E7"z2 ^F A d ^F A d "Db"z2 ^F A d ^F A d |
+"Bm"z2 ^F A d ^F A d "D"z2 ^F A d ^F A d | "E"z2 E _A d E _A d z2 E _A d E _A d | "A"z2 E A _d E A _d z2 E A _d E A _d | "D7"z2 ^F A _e ^F A _e z2 ^F A _e ^F A _e |
+"G"z2 E B e E B e z2 E B e E B e | "C7"z2 E G _d E G _d z2 E G _d E G _d | "F#m"z2 D A d D A d z2 D A d D A d | "D"z2 B, D G B, D G z2 B, D G B, D G |
+"Em"z2 B, D G B, D G z2 B, D G B, D G | "A"z2 A, _D G A, _D G z2 A, _D G A, _D G | "D"z2 A, D ^F A, D ^F z2 A, D ^F A, D ^F | "D"z2 C D ^F C D ^F z2 C D ^F C D ^F |
+"G"z2 B, D ^F B, D ^F z2 B, D ^F B, D ^F | "E7"z2 B, D F B, D F z2 B, D F B, D F | "Dm"z2 _D =D F _D =D F z2 _D =D F _D =D F | "Gm"z2 _D =D E _D =D E "C7"z2 _D =D E _D =D E |
+"A7"z2 A, _D E A, _D E z2 A, _D E A, _D E | "D"z2 A, D ^F A, D ^F z2 A, D ^F A, D ^F | "A7"z2 A, D G A, D G z2 A, D G A, D G | "A"z2 A, _D G A, _D G z2 A, _D G A, _D G |
+"B7"z2 B, D _A B, D _A "Dm"z2 B, D _A B, D _A | "D"z2 A, D A A, D A z2 A, D A A, D A | "A"z2 A, D G A, D G z2 A, D G A, D G | "A"z2 A, _D G A, _D G z2 A, _D G A, _D G |
+"D"z2 A, C ^F A, C ^F z2 A, C ^F A, C ^F | "D"z2 G, B, D G D B, D B, G, B, G, E, G, E, | "D"z2 A _d e g e _d e _d A _d E G ^F E | "D"d16 |

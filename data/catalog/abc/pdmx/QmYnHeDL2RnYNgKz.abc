@@ -1,0 +1,31 @@
+%abc-2.1
+% Deilig er jorden, by Iver Holter. Score published on MuseScore (artist: Iver Holter), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Iver Holter (died 1941, Wikidata
+% Q322391).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/33/QmYnHeDL2RnYNgKzvQ36DKgPHZw7ag227GuUjP1crYZc4E.mid (sha256
+% 1f3e549d756c1aeed9c99210cea17fee6c0e4b0c7283908544dccbe994c773c8): melody track 0, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Deilig er jorden
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"E8 "Dbm7"E4 E4 | "B7"^F4 _E4 "E"=E8 | "E"_A6 _A2 "Dbm"_A4 _A4 | "B7"A4 ^F4 "E"_A8 |
+"Dbm7"B8 e4 _d4 | "Db7"B8 "E"A4 _A4 | "F#m"A8 "F#7"_A8 | "Dbm7"^F8- "B7"^F8 |
+"Db"B8 "Db7"_d4 B4 | "D"B4 _A4 "F#"=A8 | "B"A8 "Db7"B4 A4 | "C"A4 ^F4 "Dbm7"_A4 _A4 |
+"Db7"_A4 _A4 "Db"B6 =A2 | "B"_A8 "B7"^F8 | "E"E16 | "E"_A8 "C"_A4 =A4 |
+"B7"B8 "E"B8 | "Ab7"B4 c4 "Dbm7"_d4 =d4 | "F#m7"_d4 B4 "Abm7"B8 | "Abm"E8 "A"_d4 e4 |
+"Dbm7"e4 B4- "Ab7"B4 c4 | "A"_d4 ^F4 "Dbm7"_A4 _B4 | "F#m7"B8- "Abm7"B4 A4 | "Db7"_A4 =A4 B4 _d4 |
+"Db7"_d8 "F#m"^f4 e4 | "B7"e4 _e4 _d4 B4 | "F#m"B8 "Db7"e4 d4 | "Db7"_d4 F4 "Bm7"_A6 =A2 |
+"Dbm7"B8 "F#7"A8 | "Dbm"A4 ^F4 "E"_A8 | "E"E8 E4 E4 | "E"^F4 _E4 =E8 |
+"E"_A6 _A2 "Dbm7"_A4 _A4 | "E"A4 ^F4 _A8 | "E"B8 "F#m7"e4 _d4 | "E7"B8 "Dbm7"A4 _A4 |
+"F#m7"A8 "E"_A8 | "B"^F8- "B7"^F8 | "Abm7"B8 "Db"_d4 B4 | "D"B4 _A4 "F#7"=A8 |
+"Abm7"A8 "B"B4 A4 | "E"A4 ^F4 "Dbm7"_A4 _A4 | "Dbm7"_A4 _A4 "Db"B6 =A2 | "Dbm7"_A8 "B7"^F8 |
+"E"E16 |

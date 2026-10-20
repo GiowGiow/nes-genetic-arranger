@@ -1,0 +1,24 @@
+%abc-2.1
+% Inventio 11, by Johann Sebastian Bach. Score published on MuseScore (artist: Johann Sebastian
+% Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/16/QmSDCwHjSSFa5GvZL9fzKZgXjk9bK7VSXiaHXhKomLydpf.mid (sha256
+% 94226ca54c9aa51b93b291ab9a228e3fe2bc47dacf1665631a8882aa3ce56ddb): melody track 0, bars 0-23
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Inventio 11
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z D E ^F G A _B G "F"A G ^F E D c _B A | "Eb"G F E D C _B A G "Em7"d c _B d c _B A c | "C7"_B A G A _B c d e "Dm7"f2 d2 z2 d2 | "Cm7"_e d c d _e2 =e2 "D7"f =e d =e f2 ^f2 |
+"Gm"g2 d c d _e f d "F7"_e d c _B A g f _e | "Bb"d c d e f g a f "A7"g f e d _d _b a g | "Dm"f5 g a _b "A7"_d =d e =d _d2 c2 | "G7"B c d c B2 _B2 "A7"A2 d4 _d2 |
+"Dbm"A2 f4 _e2 "Gm7"A2 a4 g2 | "A7"g2 f e f d e _d "A"=d3 e e3 =d | "Dm"d2 c _B A _B c A "C"_B A G F E d c _B | "F7"A G A B c4- "Fm7"c A B c d4 |
+"Cm"d G A B c d _e c "G"d c B A G f _e d | "Fm"c _B _A G F _e d c "Gm"g f _e g f _e d f | "Cm"_e d c d _e f g _a "G7"B2 d2 z2 F2 | "Eb"_E2 c2 D2 B2 "Cm7"c G c d _e4 |
+"Fm7"_e c d _e f4- "Gm7"f2 _e d g3 f | "Cm7"_e d c _B A G ^F A "Bb"_E D =E ^F G A _B G | "F"A G E E D c _B A "Eb"G F E D C _B A G | "Em7"d c _B d c _B A c "Gm"_B A G _B A G ^F A |
+"D7"G A _B c d e ^f g "Cm7"a ^f g a d4 | "Cm"d c _e d c _B A c "D7"^F A _B A G =F _E G | "Gm"_D G A _B =D A G ^F "G"G8 |

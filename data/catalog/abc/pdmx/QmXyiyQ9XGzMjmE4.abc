@@ -1,0 +1,35 @@
+%abc-2.1
+% Children's Corner, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/54/QmXyiyQ9XGzMjmE4XWK5qJXdQeDsrsGi9gfLNAcbcFaoyK.mid (sha256
+% e88857e68084e8bde108cd9c928678174030d2a3a0b87533a4b5bc43aa59ba5d): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Children's Corner
+M:2/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"F,,4 D,,8 F,,2 G,,2 | "G7"C,,2 D,,2 F,,8 D,,2 C,,2 | "G7"C,,2 D,,2 D,,4 C,,4 F,,4 | "G7"D,,16 |
+"G7"D,,12 C,,2 A,,,2 | "G7"G,,,2 F,,,2 G,,,8 A,,,2 C,,2 | "G7"G,,,4 D,,4 C,,4 A,,,4 | "G7"G,,,2 F,,,2 G,,,4 A,,,4 C,,4 |
+"C7"G,,,8 G, z G,6 | "C7"G,3 z G,12 | "Gm"G,16 | "C7"z16 |
+"Gm"z16 | "C7"G,4 z12 | "G7"_E,,16 | "G7"_D,,16 |
+"G7"_D,,8 _B,,,8 | "G7"^F,,,8 G,,,4 z4 | "Dm7"G,4 D,4 F,,4 _B,,,4 | "Dm7"G,4 D,4 F,,4 _B,,,4 |
+"Dm"G,4 D,4 F,,4 _B,,,4 | "Dm7"G,4 D,4 F,,4 _B,,,4 | "Dm7"G,4 D,4 F,,4 _B,,,4 | "D"G,4 D,4 F,,4 _B,,,4 |
+"Dm7"G,4 D,4 F,,4 _B,,,4 | "D7"G,4 D,4 F,,4 _B,,,4 | "Dm7"G,4 D,4 F,,4 _B,,,4 | "C"G,4 D,4 F,,4 _B,,,4 |
+"Bb7"_A,,,8 G,,4 z4 | "Bb7"_A,,,4 F,,2 F,, z _E,,4 C,2 z2 | "Bb7"_A,,,8 G,,4 z4 | "C7"F,,4 z8 A,,,4 |
+"Fm"_A,,4 _B,,4 _A,,4 _A,,,4 | "Bb7"_A,,4 _B,,4 _A,,4 _A,,,4 | "Ab7"_A,,4 _B,,4 _A,,4 _A,,,4 | "Ebm7"_A,,4 _B,,4 _A,,4 _A,,,4 |
+"C7"_A,,4 _B,,4 _A,,4 _A,,,4 | "C7"_A,,4 _B,,4 _A,,4 _B,,,4 | "Eb7"A,,, z A,, z B,,, z B,, z A,,, z A,, z B,,, z B,, z | "Eb7"A,,, z A,, z B,,, z B,, z A,,, z A,, z B,,, z B,, z |
+"Cm"A,,, z A,, z B,,, z B,, z _D,, z _D, z _E,, z _E, z | "F#m"F,, z F, z _E,, z _E, z _D,, z _D, z B,,, z B,, z | "Eb7"A,,, z A,, z B,,, z B,, z A,,, z A,, z B,,, z B,, z | "Eb7"A,,, z A,, z B,,, z B,, z A,,, z A,, z B,,, z B,, z |
+"Em"A,,, z A,, z B,,, z B,, z _D,, z _D, z _E,, z _E, z | "Em"F,, z F, z G,, z G, z A,, z A, z B,, z B, z | "Em"_D,2 _D4 z2 _D,2 _D4 z2 | "Fm"_D,2 _D4 z2 _D,2 _D4 z2 |
+"A7"_D,2 _D4 z2 _D2 _D,4 z2 | "Em"_D,2 _D4 z2 _D2 _D,4 z2 | "Em"_D,2 _D4 z2 _D,8 | "Em"_D,2 _D4 z2 _D,8 |
+"Eb7"^F,,16 | "Db"^F,,4 ^F,, z ^F,, z =F,, z =F,, z =F,, z =F,, z | "Eb7"E,,4 E,, z E,, z _E,,4 _B,,4 | "Db"^F,,4 ^F,, z ^F,, z =F,, z =F,, z =F,, z =F,, z |
+"Eb"_B,,4 _E,,4 _B,,4 _E,,4 | "Abm7"_B,,4 _E,,4 _B,,4 _E,,4 | "Eb"_B,,4 _E,,4 _B,,4 _E,,4 | "Eb"_D,,4 _E,,4 _B,,,4 _E,,4 |
+"Eb"_B,,4 _E,,4 _B,,4 _E,,4 | "Eb"_D,,4 _E,,4 B,,,4 _E,,4 | "Gm7"F,,16 | "G7"F,,12 F,,4 |

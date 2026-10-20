@@ -1,0 +1,20 @@
+%abc-2.1
+% MacAllan, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/hpps.abc, tune
+% X: 37 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:MacAllan
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"D"z15 D | "F#m7"C E3 A3 B "F#m"c B A G A3 c | "D"d3 e f3 e "Abm"d c B A G B3 | "F#m7"C E3 A3 B "F#m"c B A G A3 a |
+"F#m7"f g a f e2 a2 "D"c2 A2 A3 D | "F#m7"C E3 A3 B "F#m"c B A G A3 c | "D"d3 e f3 e "Abm"d c B A G B3 | "F#m7"C E3 A3 B "F#m"c B A G A3 a |
+"F#m7"f g a f e2 a2 "A"c2 A2 A3 g | "A"a3 A c d e2 "F#m7"f3 a e3 a | "D"d3 a c3 a "Abm"B3 A G B3 | "Db7"A B2 c d c2 B "F#m7"c d2 e a3 g |
+"F#m7"f g a2 e3 a "A"c2 A2 A3 g | "A"a3 A c d e2 "F#m7"f3 a e3 a | "D"d3 a c3 a "Abm"B3 A G B3 | "Db7"A B2 c d c2 B "F#m7"c d2 e a3 g |
+"F#m7"f g a2 e3 a "A"c2 A2 A3 z |

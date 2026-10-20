@@ -1,0 +1,35 @@
+%abc-2.1
+% ESPALHAFATOSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/espalhafatoso.html (file
+% https://www.beakauffmann.com/mpb_e/som/espalhafatoso.mid, sha256
+% 3ca7bcac374ef3863cfcabb9ab5c445ee813096958358d58f8f08454b1c47453), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESPALHAFATOSO
+M:2/4
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"C"z E G e z2 d2 | "A7"z C E c z2 _B2 | "Db7"z A, D A z2 G2 | "Dm"z F, A, F2 E, D, C, |
+"B"z B, D A F,2 A2 | "Em7"z G, C G z4 | "F"z F, A, D ^F,,2 C2 | "G"z D, F, B, A,2 G,2 |
+"C"z E, G, E B,,2 D2 | "A"z C E c G,2 _B2 | "F"z A, D A E,2 G2 | "D"z F, A, F D, E D C |
+"B"C B, D A F,2 G2 | "G"z G, C G F,2 A2 | "G"z E, G, G D,2 B,2 | "G"C2 G,,2 c4 |
+"C"z E G e z2 d2 | "A7"z C E c z2 _B2 | "Db7"z A, D A z2 G2 | "Dm"z F, A, F2 E, D, C, |
+"B"z B, D A F,2 A2 | "Em7"z G, C G z4 | "F"z F, A, D ^F,,2 C2 | "G"z D, F, B, A,2 G,2 |
+"C"z E, G, E B,,2 D2 | "A"z C E c G,2 _B2 | "F"z A, D A E,2 G2 | "D"z F, A, F D, E D C |
+"B"C B, D A F,2 G2 | "G"z G, C G F,2 A2 | "G"z E, G, G D,2 B,2 | "G"C2 G,,2 c4 |
+"A"z c C c B,,2 c2 | "C"z A A, c B,2 C2 | "Db"z A A, A A,,2 G2 | "D"z F F, A, D,2 D2 |
+"D"z F F, D, C,2 E2 | "B"z D D, B,, A,,2 C2 | "Ab"z B, D, B, F,,2 A,2 | "E"z _A, B,, D, E, D, C, B,, |
+"A"z E E, E B,,2 D2 | "C"z A, E, A,2 B,,2 C, | "Db"z A, E, A, G,,2 G,2 | "Db"D4 F,2 D2 |
+"C"z _B, D G G D _B, F, | "A"F, A, C E A c d E | "Dbm7"_E G ^F _E _E G ^F _E | "F#m7"A8 |
+"C"z E, G, e B,,2 d'2 | "A"z C, E, c' G,,2 _b2 | "F"z A,, D, A E,,2 G2 | "Dm7"z F, A, f d'4 |
+"G"z B,, D, a F,,2 a2 | "Em"z C, E, G z F, z E, | "F"z F, A, d' ^F,,2 c'2 | "G"z D, F, G a2 g2 |
+"C"z E G d B,,2 d2 | "A"z C E G c z B2 | "F"z A, D A E,,2 _D G | "F"D F3 z E, D, C, |
+"B"z B, D A D,2 A2 | "E"z E, G, G F,2 A2 | "G"z E, G, G G,,2 B,2 | "G"C4 c4 |

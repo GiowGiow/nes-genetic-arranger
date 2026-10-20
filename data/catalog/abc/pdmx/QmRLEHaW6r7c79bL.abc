@@ -1,0 +1,28 @@
+%abc-2.1
+% Sonata 4 Les delices de la solitude for 2 Celli Paris 1738, by Michel Corrette. Score published
+% on MuseScore (artist: Michel Corrette), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Michel Corrette (died 1795,
+% Wikidata Q982378).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/30/QmRLEHaW6r7c79bLNDCZwkjjy3uztjQifGuYhm9kAhP9k6.mid (sha256
+% cd9efd007587e7229bb11c2a02c67b742cdb3876df3c3c7398f1de794b9a3709): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonata 4 Les delices de la solitude for 2 Celli Paris 1738
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z8 "B"z8 | "F#"E ^F G A B2 B2 "F#m7"e2 B2 ^f2 B2 | "E"g4 ^f4 "Em"e2 b2 g2 e2 | "B"_e =e ^f2 B2 a2 "E"g ^f g a g ^f g =e |
+"B"^f2 B2 z2 b a "C"g2 ^f2 g2 e2 | "Am"a4 z2 a g "D"^f2 e2 ^f2 d2 | "G"g4 z2 g ^f "C"e2 d2 e2 c2 | "F#m"^f4 z2 ^f e "Db7"_e2 _d2 _e2 B2 |
+"Em"e _e =e B =e _e =e B "B"^f =e ^f B ^f =e ^f B | "F#7"g ^f g a g ^f g a "Em"b2 B2 e2 a2 | "Eb"g4 ^f4 "E"e2 g ^f e2 g2 | "Em"_d2 e =d _d2 e2 "Dbm"_B2 _d =B _B2 _d2 |
+"F#"^F2 ^f2 ^f2 e2 "Dbm7"e2 d2 d2 _d2 | "E7"c2 B2 B2 _B2 "F#"e2 _d'2 e2 =d _d | "Db7"d2 b2 d2 _d B "Bbm"_d2 e2 =d2 _d2 | "Bb"d4 _d4 "B"B8 |
+"Em"z8 "B"z8 | "F#"E ^F G A B2 B2 "F#m7"e2 B2 ^f2 B2 | "E"g4 ^f4 "Em"e2 b2 g2 e2 | "B"_e =e ^f2 B2 a2 "E"g ^f g a g ^f g =e |
+"B"^f2 B2 z2 b a "C"g2 ^f2 g2 e2 | "Am"a4 z2 a g "D"^f2 e2 ^f2 d2 | "G"g4 z2 g ^f "C"e2 d2 e2 c2 | "F#m"^f4 z2 ^f e "Db7"_e2 _d2 _e2 B2 |
+"Em"e _e =e B =e _e =e B "B"^f =e ^f B ^f =e ^f B | "F#7"g ^f g a g ^f g a "Em"b2 B2 e2 a2 | "Eb"g4 ^f4 "E"e2 g ^f e2 g2 | "Em"_d2 e =d _d2 e2 "Dbm"_B2 _d =B _B2 _d2 |
+"F#"^F2 ^f2 ^f2 e2 "Dbm7"e2 d2 d2 _d2 | "E7"c2 B2 B2 _B2 "F#"e2 _d'2 e2 =d _d | "Db7"d2 b2 d2 _d B "Bbm"_d2 e2 =d2 _d2 | "Bb"d4 _d4 "B"B8 |

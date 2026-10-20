@@ -1,0 +1,35 @@
+%abc-2.1
+% chopsticks, by Euphemia Allen (18611949). Score published on MuseScore (artist: Euphemia Allen),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Euphemia Allen (died 1949,
+% Wikidata Q5410324).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/40/QmZrb5GStMrToFVj4gQAGcqX8ftWMfDFqnryNJJL5PX6Nz.mid (sha256
+% 594048351a031d05e086d79aa7cdee14bb0020fe4477a75af241e2210c425834): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:chopsticks
+M:6/8
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"g z g z g z g z g z g z | "C"g z g z g z g z g z g z | "G"b z b z b z b z b z b z | "C"c' z c' z c' z c' z b z a z |
+"G7"g z g z g z g z g z g z | "C"g z g z g z g z g z g z | "G"b z b z b z b z b z b z | "C"c' z g z e z c4 e'2 |
+"G7"d'4 c'2 b4 a2 | "C"g4 g2 g2 a2 g2 | "G"f4 f2 f2 g2 f2 | "C"e4 f2 g4 e'2 |
+"G7"d'4 c'2 b4 a2 | "C"g4 g2 g2 a2 g2 | "G"f4 f2 f2 g2 f2 | "C"e4 e2 e3 z3 |
+"G7"g4 f e d2 c2 d2 | "C"e4 c2 G6 | "G7"G2 B2 c2 d6 | "C"G2 c2 d2 e6 |
+"G7"g4 f e d2 c2 d2 | "C"e4 c2 G6 | "G7"G2 B2 d2 f2 e2 d2 | "C"c9 z3 |
+"C"g z _a z =a z g z _a z =a z | "C"g z _a z =a z g z _a z =a z | "G"a z _b z =b z a z _b z =b z | "C"c' z c' z c' z c' z b z a z |
+"G"g z _a z =a z g z _a z =a z | "C"g z _a z =a z g z _a z =a z | "G"a z _b z =b z a z _b z =b z | "C"c' z g z e z c4 e2 |
+"G7"d4 c2 B4 A2 | "C"G2 z2 G B d f g z G2 | "G"F2 z2 F A c e f z F2 | "C"E2 z2 E G B d e z e2 |
+"G7"d4 c2 B4 A2 | "C"G2 z2 G B d f g z G2 | "G"F2 z2 F A c e f z F2 | "C"E2 z2 E G B d e z c2 |
+"G7"G6 G B d f d2 | "C"G6 G c e g e2 | "G"B6 G B d f d2 | "C"c6 E G c e c2 |
+"G7"G6 G B d f d2 | "C"G6 G c e g e2 | "G"B6 G B d f d2 | "C"c4 G2 c3 z3 |
+"G7"g4 f e d2 c2 d2 | "C"e4 c2 G6 | "G7"G2 B2 c2 d6 | "C"G2 c2 d2 e6 |
+"G7"g4 f e d2 c2 d2 | "C"e4 c2 G6 | "G7"G2 B2 d2 f2 e2 d2 | "C"c9 z3 |
+"G7"d' _d' =d' z b _b =b z g ^f g z | "C"c' b c' z g ^f g z e _e =e z | "G"b a b z f e f z d _d =d z | "C"c z e z a z g6 |
+"G7"d' _d' =d' z b _b =b z g ^f g z | "C"c' b c' z g ^f g z e _e =e z | "G"b a b z f e f z d _d =d z | "C"c z c' z b z c'6 |

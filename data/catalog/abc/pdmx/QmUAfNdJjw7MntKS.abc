@@ -1,0 +1,35 @@
+%abc-2.1
+% Edvard Grieg - Lyric Pieces Op.38 No.4 'Halling' (Norwegian Dance), by Edvard Grieg. Score
+% published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/10/QmUAfNdJjw7MntKS7o8PGERYjusEPwWEB2z73sznq9oRwi.mid (sha256
+% f277a3b944d288b246b2760a728ce203ea28e67bc67e8425f45a096967e0479e): melody track 4, bars 0-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Edvard Grieg - Lyric Pieces Op.38 No.4 'Halling' (Norwegian Dance)
+M:2/4
+L:1/16
+Q:1/4=150.6
+% Exact tempo 150.59999999999485 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"d'2 _b g g3 ^f | "G"d _e' d'2 _b g2 g | "Am7"g ^f d2 z2 g2 | "D"^f d z2 G ^F D z |
+"Em7"z8 | "Gm"z d2 d3 A2 | "D"A3 d3 d2 | "D"A3 A2 g2 ^f |
+"D"d z2 G ^F D z2 | "G"G, ^F, D, z ^F, z3 | "Gm7"z8 | "Bb"z8 |
+"Bb"z8 | "Bb"z8 | "Bb"z8 | "Bb"z4 G z F2 |
+"Bb"D _E2 _E2 C D2 | "Bb"D D _B, C3 C A, | "Dm"_B,3 z5 | "D"z8 |
+"D"z8 | "D"z2 _B A5 | "D"z8 | "Gm"z2 _e' d'2 _b g g |
+"D7"g2 ^f d _e' d'2 _b | "D7"g2 g2 ^f d2 z | "D"z g2 ^f d z2 G | "Em7"^F D z6 |
+"Gm"z4 d2 d2 | "D"d A2 A3 d2 | "D"d3 A3 A2 | "D"g2 ^f d z G2 ^F |
+"D"D z2 G, ^F, D, z ^F, | "Gm"z8 | "Bb"z8 | "Bb"z8 |
+"Bb"z8 | "Bb"z8 | "Bb"z7 G | "Bb"z F D2 _E2 _E2 |
+"Bb"C D3 D _B, C2 | "Dm"C C A, _B,3 z2 | "D"z8 | "D"z8 |
+"D"z5 _B A2 | "Gm"A3 z5 | "D"z5 _e' d' z | "D7"_b g g3 ^f d _e |
+"D"d2 _B G G3 ^F | "D"D2 g ^f d2 z G | "D"^F D2 z5 | "D"z8 |
+"D"z8 | "D"G,2 ^F,2 D, z ^F, z | "Gm"G,8 | "Gm"G,8 |
+"Gm"z8 |

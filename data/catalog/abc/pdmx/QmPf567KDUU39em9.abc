@@ -1,0 +1,35 @@
+%abc-2.1
+% Gloria al Bravo Pueblo, by Juan José Landaeta. Score published on MuseScore (artist: Juan José
+% Landaeta), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Juan José Landaeta (died 1814,
+% Wikidata Q1710520).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/19/QmPf567KDUU39em94KXxwEsTX8cP7UVNaHmyDjyijQqZCM.mid (sha256
+% 9f9a2dc96e58708d7ec9895c341aab8cdffd2b93523862e53e3a315967573102): melody track 5, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Gloria al Bravo Pueblo
+M:2/4
+L:1/16
+Q:1/4=176
+% Exact tempo 175.9999999999934 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"f4 f4 | "F7"f4 f4 | "Bb"f8 | "Bb"d4 d4 |
+"Cm"_e8 | "Cm"c4 c4 | "F"c8 | "F"z4 c4 |
+"F7"_e8 | "Am7"c6 c2 | "Gm7"d8 | "Gm7"_B8 |
+"Cm"c4 c4 | "Dm7"A4 A4 | "Bb"_B2 F2 G2 A2 | "Cm7"_B2 c2 d2 _e2 |
+"Bb"f4 f4 | "Dm7"f4 f4 | "Bb"f8 | "Bb7"d4 d4 |
+"Gm7"_e4 f4 | "Eb"g4 _e4 | "F"c8 | "F"z4 c4 |
+"F7"_e2 f2 g2 _e2 | "F7"c2 d2 _e2 c2 | "Gm7"d2 _e2 f2 d2 | "Gm"_B2 c2 d2 _B2 |
+"Cm"c2 d2 _e2 c2 | "Dm7"A2 _B2 c2 A2 | "Bb"_B8 | "D"z8 |
+"Bb"z8 | "Bb"z8 | "Bb"z8 | "Dm"z6 d'2 |
+"Bb"d'8 | "Bb"_b4 z2 _b2 | "Bb"_b8 | "F"f4 z4 |
+"Cm"z8 | "C"z8 | "C"z8 | "F"z8 |
+"F"f4 a4 | "F"c'4 a4 | "F"f8 | "F"z4 F4 |
+"F7"F8 | "F7"G4 A4 | "Gm7"c8 | "Gm7"_B8 |
+"F7"F4 F4 | "F7"G4 A4 | "Bb"_B8 | "Gm7"z8 |
+"Bb7"_B4 c4 | "Bb7"_B4 c4 | "Eb"_B8 | "Eb"_e8 |
+"Bb7"_B4 c4 | "Bb"_B4 _A4 | "Eb"G8 | "Cm7"z4 g4 |

@@ -1,0 +1,31 @@
+%abc-2.1
+% Canary in Bb, by Henry Purcell. Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/17/QmTePoo9gyFM2ReYcGfRptjnkbnt59SToqH9dDTf1nVL4f.mid (sha256
+% 8325d5954fd6f97559177fc7ebf8c3817ca3f53766bfe37f9a03b1bf0d01803d): melody track 0, bars 1-49
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Canary in Bb
+M:3/4
+L:1/16
+Q:1/4=175.000073
+% Exact tempo 175.00007291669706 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"f6 _e2 d4 | "F"c6 c2 d4 | "C"_e6 d2 c4 | "G"d6 d2 _e4 |
+"D"f6 _e2 d4 | "Bb"c6 c2 d4 | "F7"d6 c2 _B4 | "Bb"_B11 z |
+"Bb"f6 _e2 d4 | "F"c6 c2 d4 | "C"_e6 d2 c4 | "G"d6 d2 _e4 |
+"D"f6 _e2 d4 | "Bb"c6 c2 d4 | "F7"d6 c2 _B4 | "Bb"_B11 z |
+"Bb"f6 g2 a4 | "G7"_b6 _b2 a4 | "Cm"g6 _b2 a4 | "D"^f6 e2 d4 |
+"B"g6 d2 _e4 | "A"f6 c2 d4 | "G"_B6 A2 _B4 | "F"A11 z |
+"Bb"f6 _e2 d4 | "F"c6 c2 d4 | "C"_e6 d2 c4 | "G"d6 d2 _e4 |
+"D"f6 _e2 d4 | "Bb"c6 c2 d4 | "F7"d6 c2 _B4 | "Bb"_B11 z |
+"Gm"d6 d2 g4 | "C7"e6 d2 c4 | "A7"f6 f2 g4 | "F"a8 a4 |
+"Bb"a6 _b2 g4 | "A"g6 a2 f4 | "C"f6 g2 e4 | "F"f11 z |
+"Bb"f6 _e2 d4 | "F"c6 c2 d4 | "C"_e6 d2 c4 | "G"d6 d2 _e4 |
+"D"f6 _e2 d4 | "Bb"c6 c2 d4 | "F7"d6 c2 _B4 | "Bb"_B11 z |

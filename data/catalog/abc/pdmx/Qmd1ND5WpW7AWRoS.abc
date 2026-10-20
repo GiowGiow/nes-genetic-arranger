@@ -1,0 +1,28 @@
+%abc-2.1
+% Mille regrets de vous abandonner, by Josquin des Prez (c.1450-1521). Score published on
+% MuseScore (artist: Josquin des Prez), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josquin des Prez (died 1521,
+% Wikidata Q143100).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/0/Qmd1ND5WpW7AWRoSmNxbmHgE4G5H9WzhXUE3y2WfecFiPR.mid (sha256
+% 3ba838de2a115734272a875d287b07cd5ca597ae7b8e8cf8996ca94fe95e7806): melody track 0, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mille regrets de vous abandonner
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E"E16 | "Dm7"A8 A8 | "C"G12 F2 E2 | "Em"D6 C2 D8 |
+"A"C4 c4 c4 c4 | "G7"B4 B4 A8 | "Am"z8 c8 | "D7"B8 A8 |
+"E"A4 G2 ^F2 G8 | "C"z8 c8 | "D7"B8 A8 | "C"A4 G2 ^F2 G8 |
+"F"A4 A4 A4 A4 | "D7"G4 G4 F8 | "Am"E16 | "G7"z16 |
+"Em"B16 | "Am"c8 A8 | "E"B8 e8 | "Db"d12 c4 |
+"E"B4 A4 _A8 | "Dm"A16 | "Bm7"z16 | "A"z8 E8 |
+"Em"G8 G8 | "G"D16 | "Dm"z4 d4 d4 d4 | "A"c16 |
+"G7"B8 A8 | "Am"z16 | "Bm7"z8 d8 | "Am"c16 |
+"G7"B8 A8 | "F"z4 A4 A4 A4 | "D7"G8 F8 | "Dm7"E4 A4 A4 A4 |
+"D7"G8 F8 | "Am"E4 E4 G4 E4 | "Am7"G8 E6 F2 | "Em"G16 |

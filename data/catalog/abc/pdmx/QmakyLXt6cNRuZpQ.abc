@@ -1,0 +1,35 @@
+%abc-2.1
+% Feria VI in Parasceve, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio
+% Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/28/QmakyLXt6cNRuZpQFF893RvKUkVpy2eULJ6vHmd7apCu1x.mid (sha256
+% 2141cbe5a1d0c080cc5834e751f8fbd6b5c2fb508aa2278de0b389cea8092c47): melody track 2, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Feria VI in Parasceve
+M:4/2
+L:1/16
+Q:1/4=103.999834
+% Exact tempo 103.99983360026624 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"D32 | "G"_B,16- "Bb"_B,8 A,8 | "Bb"G,16 "D"F,8 _B,8 | "Eb"_B,4 A,4 G,8- "D"G,8 F,8 |
+"G"_B,16 "Dm"A,16 | "Gm"z16 "F"z16 | "Gm7"D,16- "Dm"D,16 | "Bb"D,16 "Dm7"F,16 |
+"D"F,8 G,8 "Dm7"A,8 A,8 | "Bb"_B,12 C4 D16 | "Dm"C8 D8- "Gm"D8 D8 | "D"D16 "Gm"D12 C4 |
+"Bb"_B,4 A,4 G,8 "Dm"F,8 G,8 | "D"A,8 _B,8 A,16 | "G"G,32 | "Dm"D,4 E,4 F,4 G,4 "Dm7"A,4 _B,4 C8 |
+"Em7"z16 "Am7"G,16 | "G"G,32 | "Bb"G,24 G,8 | "Am7"F,8 _E,8 "Dm"D,12 D,4 |
+"Gm"G,8 D8- "Dm"D8 C8 | "Dm"_B,8 A,8 "C7"G,16 | "Dm7"F,16 "Dm"_B,12 A,4 | "Em7"G,16 "A"A,16 |
+"Dm"D,16 z16 | "Dm"z32 | "Bb"z16 "Am"z16 | "G"z32 |
+"D"z16 "D7"z16 | "Dm7"z16 "E7"z16 | "Em7"z16 "F#"z16 | "F#"z16 "D"z16 |
+"Gm"z8 G,8- "D"G,8 ^F,8 | "Gm"G,16 "D"D,16 | "Gm"D,8 G,8 "Bb"F,12 G,4 | "Am"A,16 "Gm"D,12 G,4 |
+"A"F,8 E,8 "Dm"D,16 | "Dm"z8 D8 "Em"C8 D8 | "Em7"_B,8 G,8 "Dm"F,8 D,8 | "C"E,8 ^F,8 G,12 G,4 |
+"Bb"D,8 _B,12 A,4 G,8 | "Am"G,8 F,4 E,4 F,8 E,8 | "G"G,32 | "D"F,24 E,8 |
+"Gm"D,32 | "D"D,32 | "D"D,32 | "A"A,32 |
+"A"A,16 "Gm7"D,8 _B,8 | "Gm"_B,4 A,4 G,8 "D"A,16 | "Bb"_B,32 | "F"C4 _B,4 A,4 G,4 "F7"F,8 G,8 |
+"D"D4 C2 _B,2 A,8 "G"=B,16 | "G"D32 | "C"_E16 "Gm"_E8 D8 | "A"D8 _D8 "D"=D16 |
+"D"z8 F,8 "Cm"G,16 | "Gm"G,8 _B,8- "G"_B,8 _B,8 | "Dm"A,24 _B,8 | "Cm"C16 "Gm"F,16 |
+"Gm"_B,4 G,4 D8 "D"D16 | "Bb"D32 | "F"A,16 "Cm"G,8 G,8 | "Gm"G,4 D,4 G,16 G,8 |

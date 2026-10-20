@@ -1,0 +1,28 @@
+%abc-2.1
+% Il barbiere di Siviglia, by Gioacchino Rossini. Score published on MuseScore (artist: Gioacchino
+% Rossini), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gioacchino Rossini (died 1868,
+% Wikidata Q9726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/43/QmPSATHm8XZWcVsHNmGPRgwh32WmPknBKRSyaK51pXv616.mid (sha256
+% 83aaf439c2afea14f901537749cae6652f32d12b40605111513d45fddb54b77b): melody track 1, bars 0-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Il barbiere di Siviglia
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Gm7"z16 | "Gm7"z16 | "Bb"z16 | "Gm7"z6 F, F, _B,2 _B,2 z2 F, F, |
+"Bb"D _B, _B,2 z12 | "Gm7"z7 F, F, _B,2 _B,2 C A, F, | "Gm"_B,4 z12 | "D"z6 F, F, "D7"_B,2 _B,2 z2 F, F, |
+"Gm"D _B, _B,2 z12 | "D"z6 D, D, "D7"G,2 G,2 z A, ^F, D, | "C7"G, D C G, F, z3 "Cm7"z D C G, F, z3 | "F"z F, F, F, G, z3 "F7"z A, A, A, _B,2 z2 |
+"F7"z16 | "Bb"z16 | "Gm7"z6 F, F, _B,2 _B,2 z F, A, F, | "Bb"D2 _B,2 z12 |
+"Gm7"z F, F, A, F, z F, F, _B, F, F, F, C F, F, F, | "Gm"_B,4 z4 D2 D2 z4 | "D"D D z D, ^F, D, z D, "D7"G,2 D,2 z A, ^F, D, | "Gm"_B, G, z14 |
+"D"D2 D2 C A, z2 "D7"_B, G, z2 C A, C A, | "C7"G, D C G, F, z3 "Cm7"z D C G, F, z3 | "F7"z F, F, F, F, C C _E, _E, _B, _B, D, _E, C C _E, | "F7"_E, _B, _B, D, _E, C C _E, _E, _B, _B, D, _E, C C _E, |
+"Bb"_E, z C A, C A, C A, D B, D B, D B, D B, | "Gm7"D _E _E C C G, A, B, "F7"C _D _D _B, _B, F, G, A, | "Eb"_B, D D D D _E _E _E "F7"_E D D D D C C C | "Bb"C z10 _B, C2 A,2 |
+"Bb"z3 _B, C2 A,2 z2 _B, F, C A, _E z | "Bb"C z C A, C A, C A, D B, D B, D B, D B, | "Gm7"D _E _E C C G, A, B, "F7"C _D _D _B, _B, F, G, A, | "Eb"_B, D D D D _E _E _E "F7"_E D D D D C C C |
+"Gm7"C D _E C D _B, C A, "F7"D D _E C D _B, C A, | "F7"_E D C _B, _E D C _B, "Bb"_E D C _B, _E D C _B, | "Gm7"_B,4 z12 | "Bb"z16 |
+"Bb"z16 |

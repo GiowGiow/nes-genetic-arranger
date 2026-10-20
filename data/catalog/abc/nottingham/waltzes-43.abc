@@ -1,0 +1,32 @@
+%abc-2.1
+% Shebag Shebong, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 43 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Shebag Shebong
+M:3/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"E7"z8 d2 e2 | "F#7"f8 e4 | "D"d8 f e2 d | "B7"B4 B4 A4 |
+"F#m"F8 A4 | "Bm7"B2 A2 B2 c2 d2 f2 | "C"e8 d2 e2 | "F#7"f4 f4 e4 |
+"D"d8 f4 | "B"B8 f4 | "A"A8 e4 | "F#7"F4 F4 E4 |
+"D"D8 f4 | "Dbm7"B8 e2 c2 | "A"A8 d2 c2 | "D"d8 d2 c2 |
+"E7"d6 c2 d2 e2 | "D"f4 f2 e2 d4 | "D"e2 d2 e2 f2 a4 | "B7"b8 a4 |
+"D"f8 e2 d2 | "F#m7"e4 e4 a4 | "F#7"f8 e4 | "Bm"d8 B4 |
+"Bm7"A8 B2 d2 | "F#7"F4 F4 E4 | "D"D8 f4 | "Dbm7"B8 e4 |
+"D"A8 f2 a2 | "D"b2 a2 g2 f2 e2 d2 | "Dbm"e8 d2 c2 | "D"d8 d2 c2 |
+"D"d8 d2 e2 | "F#7"f8 e4 | "D"d8 f e2 d | "B7"B4 B4 A4 |
+"F#m"F8 A4 | "Bm7"B2 A2 B2 c2 d2 f2 | "C"e8 d2 e2 | "F#7"f4 f4 e4 |
+"D"d8 f4 | "B"B8 f4 | "A"A8 e4 | "F#7"F4 F4 E4 |
+"D"D8 f4 | "Dbm7"B8 e2 c2 | "A"A8 d2 c2 | "D"d8 d2 c2 |
+"E7"d6 c2 d2 e2 | "D"f4 f2 e2 d4 | "D"e2 d2 e2 f2 a4 | "B7"b8 a4 |
+"D"f8 e2 d2 | "F#m7"e4 e4 a4 | "F#7"f8 e4 | "Bm"d8 B4 |
+"Bm7"A8 B2 d2 | "F#7"F4 F4 E4 | "D"D8 f4 | "Dbm7"B8 e4 |
+"D"A8 f2 a2 | "D"b2 a2 g2 f2 e2 d2 | "Dbm"e8 d2 c2 | "D"d8 d2 c2 |
+"D"d8 z4 |

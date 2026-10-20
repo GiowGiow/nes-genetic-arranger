@@ -1,0 +1,26 @@
+%abc-2.1
+% La Primavera, by Antonio Vivaldi. Score published on MuseScore (artist: Antonio Vivaldi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/30/QmfLht8FL6kYJaLTk6U3jVq6vCLR5yibcPcfQ1G7vNck8W.mid (sha256
+% fe2fd01ac644a6e1b7214d0bbcb589601a208eb4aeebfdf6798957a4c193cf58): melody track 1, bars 1-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La Primavera
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z14 G2 | "G"B2 B2 B2 A G d6 d c | "G"B2 B2 B2 A G d6 d c | "C"B2 c d c2 B2 "D"A2 ^F2 D2 G2 |
+"G"B2 B2 B2 A G d6 d c | "G"B2 B2 B2 A G d6 d c | "C"B2 c d c2 B2 "D"A4 z2 G2 | "G"d2 c B c2 d2 e2 d4 G2 |
+"G"d2 c B c2 d2 e2 d4 G2 | "Em7"e2 d4 c2 "G"B2 A G A4 | "G"G4 z2 G2 d2 c B c2 d2 | "G"e2 d4 G2 d2 c B c2 d2 |
+"G"e2 d4 G2 "Em7"e2 d4 c2 | "G"B2 A G A4 G8 | "Em"B2 B2 B2 A B "Am"c6 c B | "D7"A2 A2 A2 G A "G"B6 B c |
+"Em7"d2 d2 d2 d c "G"B2 B2 B2 B c | "Em7"d2 d2 d2 d c "G"B2 B2 B2 B c | "Em7"d2 d2 d2 c B "D"A4 z2 G2 | "G"d2 c B c2 d2 e2 d4 G2 |
+"G"d2 c B c2 d2 e2 d4 G2 | "Em7"e2 d4 c2 "G"B2 A G A4 | "G"G4 z2 G2 d2 c B c2 d2 | "G"e2 d4 G2 d2 c B c2 d2 |
+"G"e2 d4 G2 "Em7"e2 d4 c2 | "G"B2 A G A4 G8 |

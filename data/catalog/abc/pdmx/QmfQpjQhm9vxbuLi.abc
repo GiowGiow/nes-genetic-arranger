@@ -1,0 +1,25 @@
+%abc-2.1
+% Requiem in D minor K.626, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist:
+% Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/39/QmfQpjQhm9vxbuLi9YPx5XCyXtnPuMaqYzit6EFSMrMN7s.mid (sha256
+% dfcaf7e3a859dde04236f247e212cadfd7eabd6bb61125cfb30b9ceab4c6ae29): melody track 4, bars 0-23
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Requiem in D minor K.626
+M:4/4
+L:1/16
+Q:1/4=45.000011
+% Exact tempo 45.000011250002814 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"g2 G2 _B z g z "Cm7"_e z c z A z F z | "C"D z c'2 z2 a2 "D"z2 g2 z2 ^f2 | "Gm"g2 G z _B z g z "Gm7"_e z c z A z _B z | "Cm"_B z _e2 _B z _e z "Cm7"c z _A z F z G z |
+"Cm"G z c2 _e z _e' z d' z c' z _b z a z | "D"g z3 d3 d "Gm"d3 d d3 d | "D"d z a z g z _e z "Gm"c z d'2 z2 c z | "Cm"_e z g z f z d z "F7"_B z c'2 z2 _B z |
+"Bb"d z f z _e z c z "Cm7"A z _b2 z2 A z | "Am"c z _e z g z d z "D"_e z a2 c z d z | "Gm"c z15 | "Gm"z4 g3 f "C7"e3 d c z c' z |
+"F"_b z a z g z f z "Dm"e z d2 z2 g z | "Gm"_b z d' z c' z a z "C7"f z c2 z2 f z | "F"a z c' z _b z g z "Gm7"e z _B2 z2 e z | "Em7"g z _b z a z f z "Dm"d z2 _d =d3 =d |
+"A"d z _d z a2 _d2 =d z _d z a2 e2 | "Dm"f z _d z a z A z "A7"A z _B z A z G z | "Dm"F z5 a z "A7"g z g z f z _e z | "Bb"d z5 f z "D7"_e z _e z d z c z |
+"Gm"_B z3 g6 f2 _e2 d2 | "Gm7"_d2 _d2 =d2 =d2 "A"=d2 =d2 _d2 _d2 | "Dm"z2 d2 z2 A2 "D"F4 z4 |

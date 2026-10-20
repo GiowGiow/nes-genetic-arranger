@@ -1,0 +1,36 @@
+%abc-2.1
+% CADÊ O SOL?, by Walter Emanuel, as performed by Anjos e Demônios.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Walter Emanuel (died 1915, Wikidata Q55095452).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cade-o-sol.html (file
+% https://www.beakauffmann.com/mpb_c/som/cade-o-sol.mid, sha256
+% 0119540599b989ea45bf670ec7cbb4a7ca57e4253a0e4c52dc3e076a1441fe8c), from Beatriz Kauffmann's Web
+% Site. Melody track 7, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CADÊ O SOL?
+M:2/4
+L:1/16
+Q:1/4=97.999984
+% Exact tempo 97.9999836666694 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 | "D"z8 | "D"z8 | "Bm"z8 |
+"Bm"z8 | "Em"z8 | "Em7"z8 | "A"z8 |
+"A"z8 | "D"z8 | "Bm7"z8 | "Bm"z8 |
+"Bm"z8 | "Em"z8 | "Em"z8 | "A"z8 |
+"A"z7 A | "D"d z d d2 e z e | "Bm7"e d6 _d | "Bm"B z B B2 A B2 |
+"Bm"B6 z B | "Em"e z e e2 _e =e2 | "Em"e z ^f2 g2 e2 | "A"d2 _d _d2 =d e2 |
+"A"e7 A | "D"^f z ^f ^f2 g2 ^f | "Bm7"^f d3 ^f2 g2 | "Bm"a z a g2 ^f z ^f |
+"Bm"^f e2 d3 z d | "Em7"g z g g2 ^f g2 | "G"g2 ^f2 e2 d2 | "A"_d z _d B z B _d2 |
+"A7"_d3 z4 A | "D"d z d d2 e z e | "Bm7"e d6 _d | "Bm"B z B A z A B2 |
+"Bm"B6 z B | "Em"e z e e2 _e =e2 | "Em"e2 ^f2 g2 e2 | "A"d2 _d _d2 =d e2 |
+"A7"e7 A | "D"^f z ^f ^f2 g2 ^f | "Bm7"^f d3 ^f2 g2 | "Bm"a z a g z ^f z ^f |
+"Bm"^f e2 d3 d z | "Em"g z g g2 ^f g2 | "G"g2 ^f2 e2 d2 | "A7"e2 d _d2 B _d2 |
+"A7"_d3 z ^f ^f z g | "Bm7"a8 | "Bm7"a3 z a2 b2 | "F#m"b2 b4 a2 |
+"F#m"a6 _b =b | "Em"b2 a z a2 g z | "G"g2 ^f z ^f2 e2 | "A"^f2 e e2 d e2 |
+"A"e2 ^f z ^f2 g a | "Bm7"a8 | "Bm7"a3 z a2 b2 | "F#m"b2 a3 a3 |
+"Db"a6 _b =b | "Em"b2 a z a2 g z | "G"g2 ^f z ^f2 e2 | "A"^f2 e e2 d e2 |

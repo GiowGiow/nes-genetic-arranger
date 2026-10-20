@@ -1,0 +1,35 @@
+%abc-2.1
+% Dimmi per gratia amore, by Benedetto Pallavicino. Score published on MuseScore (artist:
+% Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/42/QmbsQVWZFRusEVhjnRNxkhuM2d8KVyvMSUG83ZXs11jVAW.mid (sha256
+% b76eb1c1fb050ff9c33e5ed9b870c4deb90b27954cf027c8fd8fcf1c002dd2ee): melody track 0, bars 2-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dimmi per gratia amore
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"f8- "C"f4 g2 c2 | "Gm"d8- "Gm7"d4 _B4 | "F"c16 | "Bb"d16 |
+"D7"z4 f4 "Cm7"_e4 d4 | "F"c8- "G"c4 _B4 | "C"A4 G4 "Dm"F8 | "C"E4 F8 E4 |
+"F"F16 | "F"c8- "Am7"c4 c2 G2 | "Gm"_B8- "Dm"_B4 F4 | "F"A4 _B8 A4 |
+"Bb"_B8 z4 f4 | "Bb"_e4 d4 "Dm7"c6 _B2 | "Eb"c4 G4 "F"A4 A4 | "Gm"_B8 "Cm"G8 |
+"Dm"z12 F4 | "C"G16 | "F"A16 | "Eb"z4 c2 c2 "Cm"_B6 c2 |
+"Dm"A4 c8 B4 | "Cm"c12 G2 A2 | "Gm"_B8 "Gm7"_B8 | "Dm7"z4 f2 f2 "F"e6 f2 |
+"Gm"d4 f8 e4 | "F"f8 z4 f4 | "Dm7"f4 _e2 _e2 "G"d4 d2 d2 | "Dm7"_e2 f2 d2 A2 "Cm"c4 c2 c2 |
+"Gm7"c2 f2 _e2 d2 "D"d8 | "G"d16 | "G"z8 "Cm"c4 c4 | "Em7"d4 d2 _e2 "Fm"c8 |
+"G"B8 "Gm"d4 d4 | "F#m"d4 d2 d2 "Eb"c8 | "D"d8 z4 ^F4 | "Bm"G8- "Cm"G8 |
+"Cm"A8- "C"A8 | "Dm7"A8 "Gm"G4 G4 | "D"^F4 G8 ^F4 | "G"G8 z4 d4 |
+"C"c8- "F"c8 | "G7"B8 "Dm7"c4 c4 | "Dm7"d8- "Dm"d8 | "C"G8 "Cm"c4 c2 c2 |
+"Gm"_B4 _B4 "F"A8 | "Gm"_B16 | "Gm"z16 | "Gm7"z8 "F"z8 |
+"Bb"d4 d2 d2 d4 d4 | "Cm"c16 | "Eb"_B8- "Cm7"_B8 | "Bb"z4 F4 "Gm"F4 G4 |
+"F"A6 _B2 c4 d4 | "F"f4 d4 c8 | "Bb"d16 | "Bb"f4 f2 f2 "Ab"f4 f4 |
+"C"_e8 "Gm"d8 | "C7"d4 d2 d2 "Gm7"d4 d4 | "F"c8 c4 c4 | "F"c4 _B4 "Dm7"A4 F4 |
+"C"G6 A2 "Cm"c4 A4 | "C"G16 | "F"A16 |

@@ -1,0 +1,29 @@
+%abc-2.1
+% Andante in C from Short Clarinet/Piano/Bassoon Pieces Book I, by Johann Sebastian Bach (1685 -
+% 1750). Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/37/QmaPTjfg6kxt521vUjxAHECssUc6dSkhaNRVY6KN3afoQX.mid (sha256
+% dd2948049b3d47f8bfcd1d1c0dea4349a83634fbe4d6ab64350af0af3d47ddad): melody track 0, bars 0-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Andante in C from Short Clarinet/Piano/Bassoon Pieces Book I
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z2 G c e G c e z2 G c e G c e | "Dm7"z2 A d f A d f z2 A d f A d f | "Bm"z2 G d f G d f z2 G d f G d f | "C"z2 G c e G c e z2 G c e G c e |
+"C"z2 A e a A e a z2 A e a A e a | "D7"z2 ^F A d ^F A d z2 ^F A d ^F A d | "Bm"z2 G d g G d g z2 G d g G d g | "B"z2 E G c E G c z2 E G c E G c |
+"Am"z2 E G c E G c z2 E G c E G c | "D"z2 D ^F c D ^F c z2 D ^F c D ^F c | "G"z2 D G B D G B z2 D G B D G B | "Gm"z2 E G _d E G _d z2 E G _d E G _d |
+"F"z2 D A d D A d z2 D A d D A d | "Fm"z2 D F B D F B z2 D F B D F B | "Em"z2 C G c C G c z2 C G c C G c | "E"z2 A, C F A, C F z2 A, C F A, C F |
+"Dm"z2 A, C F A, C F z2 A, C F A, C F | "G"z2 G, B, F G, B, F z2 G, B, F G, B, F | "C"z2 G, C E G, C E z2 G, C E G, C E | "C"z2 _B, C E _B, C E z2 _B, C E _B, C E |
+"F"z2 A, C E A, C E z2 A, C E A, C E | "D7"z2 A, C _E A, C _E z2 A, C _E A, C _E | "Fm"z2 B, C D B, C D z2 B, C D B, C D | "G7"z2 G, B, D G, B, D z2 G, B, D G, B, D |
+"C"z2 G, C E G, C E z2 G, C E G, C E | "G"z2 G, C F G, C F z2 G, C F G, C F | "G"z2 G, B, F G, B, F z2 G, B, F G, B, F | "Cm"z2 A, C ^F A, C ^F z2 A, C ^F A, C ^F |
+"C"z2 G, C G G, C G z2 G, C G G, C G | "G"z2 G, C F G, C F z2 G, C F G, C F | "G"z2 G, B, F G, B, F z2 G, B, F G, B, F | "C"z2 G, _B, E G, _B, E z2 G, _B, E G, _B, E |
+"C"z2 F, A, C F C A, "Dm7"C A, F, A, F, D, F, D, | "C"z2 G B d f d B d B G B D F E D | "C"c16 |

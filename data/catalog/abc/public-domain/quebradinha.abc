@@ -1,0 +1,36 @@
+%abc-2.1
+% QUEBRADINHA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_q/quebradinha.html (file
+% https://www.beakauffmann.com/mpb_q/som/quebradinha.mid, sha256
+% cd0ed5ec5090978e6958d92d62d4b4ff65db90a479e468db7c281328aa3e847e), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:QUEBRADINHA
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z5 d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z d _b a | "Gm"_b g d _B G A _B c | "Dm"d3 d z e f g | "Eb"a _b a _b a _b a _b |
+"D7"a3 d' z d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z g ^f g | "G7"_a3 g ^f g b d' | "Cm"f'3 _e' z _e' f' _e' | "D"_e' d' d' c' c' _b _b a |
+"Gm"g3 g' z d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z d _b a | "Gm"_b g d _B G A _B c | "Dm"d3 d z e f g | "Eb"a _b a _b a _b a _b |
+"D7"a3 d' z d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z g ^f g | "G7"_a3 g ^f g b d' | "Cm"f'3 _e' z _e' f' _e' | "D"_e' d' d' c' c' _b _b a |
+"Gm"g3 g' z a2 g | "F7"a f e f g a _b c' | "Gm7"d'3 d' z f' _e' d' | "F7"_e' z2 c' z _e' d' c' |
+"Bb"d' z2 _b z a2 g | "F7"a f e f g a _b c' | "Gm7"d'3 d' z f' _e' d' | "F7"_e' c' g _b a f d' c' |
+"Bb"_b3 _b' z a2 g | "F7"a f e f g a _b c' | "Gm7"d'3 d' z f' _e' d' | "F7"_e' z2 c' z _e' d' c' |
+"Bb"d' z2 _b z a2 g | "F7"a f e f g a _b c' | "Gm7"d'3 d' z f' _e' d' | "F7"_e' c' g _b a f d' c' |
+"Bb"_b3 _b' z d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z d _b a | "Gm"_b g d _B G A _B c | "Dm"d3 d z e f g | "Eb"a _b a _b a _b a _b |
+"D7"a3 d' z d _b a | "Gm"_b g d _B G A _B c | "D7"d3 d z d c' _b | "D7"c' z2 a z d _b a |
+"Gm"_b z2 g z g ^f g | "G7"_a3 g ^f g b d' | "Cm"f'3 _e' z _e' f' _e' | "D"_e' d' d' c' c' _b _b a |

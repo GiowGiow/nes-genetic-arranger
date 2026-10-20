@@ -1,0 +1,35 @@
+%abc-2.1
+% Tutta leggiadr' è bella, by Giovanni de Macque. Score published on MuseScore (artist: Giovanni
+% de Macque), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni de Macque (died 1614,
+% Wikidata Q1403614).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/37/QmaPnc3z98W1YGWtPobHf7y7b59ZHNP1L8eVWktUq2fWog.mid (sha256
+% 0bb318d2d29f8a848a046d271e457287f2987a872ad3b9c8ed4ddee34e13b0ff): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tutta leggiadr' è bella
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z16 | "Dm7"z8 "C7"z8 | "D"d8- "Gm"d4 c2 _B2 | "Dm"d4 c4 "Gm"_B8 |
+"D"A4 d4 "Gm"_B2 _B2 A2 G2 | "Dm7"A8 "Gm"G8 | "Dm"z4 _B4 "Am"A2 A2 G2 ^F2 | "G"G8 "C"G8 |
+[M:3/4]"F"c4 c4 B4 | "C"c6 d2 c2 B2 | "C"c8 d4 | "Bm7"d8 d4 |
+"C7"_e4 d4 c4 | "C7"d6 d2 d2 c2 | "Gm"d8 d4 | [M:4/4]"A"e8 "D"d8 |
+"D"z8 "G"z8 | "Gm"z8 "Gm7"z8 | "Dm"z8 "Am"c8 | "D"c8 "Em7"_B2 A2 _B2 G2 |
+"Em7"A8- "D"A8 | "Em"d8 z4 c2 _B2 | "F"A8 "Dm"A8 | "Dm"z4 d2 A2 "C"c8 |
+"F"A16 | "Cm"z8 "Cm7"z8 | "Gm"d8- "Dm"d8 | "G7"_B2 A2 _B2 F2 "Cm"G8 |
+"Gm"G4 d2 c2 "G"B4 B4 | "C"z4 c2 G2 "Am"A8 | "Dm"F4 _B2 A2 "Cm7"G8 | "C"_e4 c4 "Dm7"c8 |
+"C"c8 z4 c4 | "F"c2 c2 c4 c6 c2 | "F"c6 A2 "Dm"d8 | "Gm"d8 d8 |
+"D"z8 "D7"z4 c4 | "F"c2 c2 c4 c6 c2 | "F"c6 A2 "Dm"d8 | "Gm"d16 |
+"D"d16 | [M:3/4]"Bb"d12 | "Dm"c6 c2 c2 _B2 | "D"A8 A4 |
+"F"c12 | "C"c6 d2 c2 A2 | [M:4/4]"A"A8 A8 | "Dm"z4 A4- "Bb"A4 c2 d2 |
+"Eb"_e6 _e2 _e4 _B2 _e2 | "Eb"_e4 _B4 z4 _e4 | "Eb"_e8 _B8 | "Bb"z16 |
+[M:3/4]"Dm7"_B4 A2 G2 F2 A2 | "Em7"G4 G4 z2 A2 | "G"G2 F2 E2 G2 A4 | "C7"D4 z8 |
+"Gm7"d4 c2 _B2 A2 d2 | "G"_B6 A G A4 | [M:4/4]"G"B16 | "G"z8 "C"c8 |
+"Bb"z4 d4- "Dm"d4 c4 | "C"c8 c4 c4 | "G"_e4 _B2 c2 "Gm7"d8 | "Dm"d4 c4 "Cm"z8 |

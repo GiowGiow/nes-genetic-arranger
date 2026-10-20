@@ -1,0 +1,34 @@
+%abc-2.1
+% Britta Polka, by Hans Christian Lumbye. Score published on MuseScore (artist: Hans Christian
+% Lumbye), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Hans Christian Lumbye (died
+% 1874, Wikidata Q1346808).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/50/QmSwr3uGC5p6aK5Luxj4AZNR4apU4gYg4FJn4QzEggXcii.mid (sha256
+% cc14a4ec3e59d3536875c4ab9fd619d398d67ce920d077bb28041e127ccca83f): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Britta Polka
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"a2 _d =d e _d A ^F | "E"E2 _A _A _A2 _A2 | "A"A2 z6 | [M:3/8]"A"z6 |
+[M:1/8]"A"E2 | [M:2/4]"A"A2 A2 A2 A2 | "E7"A2 A G _A2 E2 | "E7"d2 d2 d2 d2 |
+"A"d2 d c _d2 A2 | "F#m7"e2 e2 e2 e2 | "B7"e2 d _d B2 A ^F | "E7"E2 A B _d2 B _d |
+[M:3/8]"E7"B4 A2 | [M:1/8]"E7"E2 | [M:2/4]"A"A2 A2 A2 A2 | "E7"A2 A G _A2 E2 |
+"E7"d2 d2 d2 d2 | "A"d2 d c _d2 A2 | "F#m7"e2 e2 e2 e2 | "B7"e2 d _d B2 A ^F |
+"E7"E2 A B _d2 B _d | [M:3/8]"E7"B4 A2 | [M:1/8]"E7"B A | [M:2/4]"E"_A z B z B z B =a |
+"E"_a z B z B z B _a | "B7"^f z B z B z B ^f | "B7"e2 _e _d B2 _B A | "E"_A z B z B z B =a |
+"E"_a z B z B z B _a | "B7"^f z B z B z B _e | [M:3/8]"E"e z B _d B2 | [M:1/8]"E"B A |
+[M:2/4]"E"_A z B z B z B =a | "E"_a z B z B z B _a | "B7"^f z B z B z B ^f | "B7"e2 _e _d B2 _B A |
+"E"_A z B z B z B =a | "E"_a z B z B z B _a | "B7"^f z B z B z B _e | "E"e z _E =E F ^F G _A |
+"A"A2 A2 A2 A2 | "E7"A2 A G _A2 E2 | "E7"d2 d2 d2 d2 | "A"d2 d c _d2 A2 |
+"F#m7"e2 e2 e2 e2 | "B7"e2 d _d B2 A ^F | "E7"E2 A B _d2 B _d | "E7"B4 A2 z2 |
+"D"^f2 z2 a2 z2 | "D"d' z a z d' z a z | "Em7"b2 z2 d'2 z2 | "D"^f'8 |
+"A7"a'2 z2 e'2 z2 | "D"^f' z d' z ^f' z d' z | "Dbm7"^f'4 e'3 d' | "A7"_d'2 b2 a2 g2 |
+"D"^f2 z2 a2 z2 | "D"d' z a z d' z a z | "Em7"b2 z2 d'2 z2 | "D"^f'8 |
+"B7"^f'4 b3 b | "Em"a'2 g'2 ^f'2 e'2 | "A7"d'2 a2 ^f'2 e'2 | "A7"^f' e'3 d'2 z2 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Hector the Hero, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 19 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Hector the Hero
+M:3/4
+L:1/16
+Q:1/4=140
+K:Bb
+P:A
+"Bb"z4 B4 c4 | "Bb"d6 c2 B4 | "Eb"g8 f2 d2 | "Bb"f10 g2 |
+"Bb"f8 B2 c2 | "Gm"d8 c2 B2 | "Eb"g8 f2 d2 | "Cm"c10 d2 |
+"F"c8 d2 f2 | "Gm"d6 c2 B4 | "Eb"g8 f2 d2 | "Bb"f8 B4 |
+"Eb"b8 g4 | "Bb"f8 B2 d2 | "F"c8 B4 | "Bb"B12 |
+"Bb"B4 B4 c4 | "Gm"d6 c2 B4 | "Eb"g8 f2 d2 | "Bb"f10 g2 |
+"Bb"f8 B2 c2 | "Gm"d8 c2 B2 | "Gm"g8 f2 d2 | "Cm"c10 d2 |
+"F"c8 d2 f2 | "Gm"d6 c2 B4 | "Eb"g8 f2 d2 | "Bb"f8 B4 |
+"Eb"b8 g4 | "Bb"f8 B2 d2 | "F"c8 B4 | "Bb"B12 |
+"Bb"B4 d4 f4 | "Eb"g8 e2 g2 | "Eb"b8 a2 g2 | "Bb"f10 g2 |
+"Bb"f8 d2 f2 | "Gm"g8 f2 d2 | "Gm"f8 B2 d2 | "Cm"c10 d2 |
+"F"c8 d2 f2 | "Eb"g8 e2 g2 | "Eb"b8 a2 g2 | "Bb"f8 e2 d2 |
+"Eb"b8 e4 | "Bb"d8 B2 d2 | "F"c8 B4 | "Bb"B12 |
+"Bb"B4 d4 f4 | "Eb"g8 e2 g2 | "Eb"b8 a2 g2 | "Bb"f10 g2 |
+"Bb"f8 d2 f2 | "Gm"g8 f2 d2 | "Gm"f8 B2 d2 | "Cm"c10 d2 |
+"F"c8 d2 f2 | "Gm"d8 c2 B2 | "Eb"g8 f2 d2 | "Bb"f8 B4 |
+"Eb"b8 g4 | "Bb"f8 B2 d2 | "F"c8 B4 | "Bb"B12 |
+"Eb"B4 g8 | "Eb"e2 g2 b8 | "Eb"a2 g2 f8 | "Bb"f2 g2 f8 |
+"Gm"d2 f2 g8 | "Gm"f2 d2 f8 | "Cm"B2 d2 c8 | "Dm7"c2 d2 c8 |
+"Gm7"d2 f2 d8 | "Eb"c2 B2 g8 | "Eb"f2 d2 f8 | "Eb"B4 b8 |
+"Eb"g4 f8 | "F"B2 d2 c8 | "Gm7"B4 B8 | "Bb"B8 z4 |

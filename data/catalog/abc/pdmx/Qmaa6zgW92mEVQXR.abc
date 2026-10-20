@@ -1,0 +1,31 @@
+%abc-2.1
+% the entertainer, by Scott Joplin. Score published on MuseScore (artist: Scott Joplin), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Scott Joplin (died 1917,
+% Wikidata Q191499).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/9/Qmaa6zgW92mEVQXRgeDnZEJVkdWMJzJDKx31rgGfC1nMdK.mid (sha256
+% 5ec9d024a3264b6eba3d2789e3a447a5fd5e0df9a06a6824d7ab7b380aefa0a1): melody track 0, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:the entertainer
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am"D2 E2 C2 A,4 B,2 G,4 | "Am"z8 "G"z8 | "Am"d2 e2 c2 A2- "B7"A2 B2 A2 _A2 | "G"G4 z4 G4 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "C"c2 c2 d2 _e2 | "C"e2 c2 d2 e2- "G7"e2 B2 d4 | "C"c12 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "Eb"c4 A2 G2 | "D"^F2 A2 c2 e4 d2 c2 A2 | "G"d8- "Bm7"d4 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "C"c2 c2 d2 _e2 | "C"e2 c2 d2 e2- "G7"e2 B2 d4 | "C"c12 c2 d2 |
+"C"e2 c2 d2 e2- "C7"e2 c2 d2 c2 | "Am"e2 c2 d2 e2- "Dbm"e2 c2 d2 c2 | "C"e2 c2 d2 e2- "G"e2 B2 d4 | "C"c8- "Cm"c2 E2 F2 ^F2 |
+"C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 E2 C2 G,2 | "F"A,2 B,2 C2 D2 "Fm"E2 D2 C2 D2 | "C"G,4 z4 "G"z4 E2 F2 |
+"C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 G2 A2 _B2 | "D"B2 B4 B2- "D7"B2 A2 ^F2 D2 | "G7"G8- "E7"G2 E2 F2 ^F2 |
+"C"G4 A2 G2- "G"G2 E2 F2 ^F2 | "C"G4 A2 G2- "G"G2 E2 C2 G,2 | "F"A,2 B,2 C2 D2 "Fm"E2 D2 C2 D2 | "Em"C8- "C7"C2 G,2 ^F,2 G,2 |
+"F"C4 A,2 C2- "F#m"C2 A,2 C2 A,2 | "C"G,2 C2 E2 G4 E2 C2 G,2 | "D"A,4 C4 "G7"E2 D4 C2 | "C"C8 z4 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "C"c2 c2 d2 _e2 | "C"e2 c2 d2 e2- "G7"e2 B2 d4 | "C"c12 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "Eb"c4 A2 G2 | "D"^F2 A2 c2 e4 d2 c2 A2 | "G"d8- "Bm7"d4 D2 _E2 |
+"C"E2 c4 E2 "C7"c4 E2 c2 | "F"c8- "C"c2 c2 d2 _e2 | "C"e2 c2 d2 e2- "G7"e2 B2 d4 | "C"c12 c2 d2 |
+"C"e2 c2 d2 e2- "C7"e2 c2 d2 c2 | "Am"e2 c2 d2 e2- "Dbm"e2 c2 d2 c2 | "C"e2 c2 d2 e2- "G"e2 B2 d4 | "C"c8 z8 |

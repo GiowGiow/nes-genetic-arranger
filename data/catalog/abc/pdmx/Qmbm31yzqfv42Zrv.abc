@@ -1,0 +1,35 @@
+%abc-2.1
+% 6 Concert Etudes after Paganini Caprices Op.10, by Robert Schumann. Score published on MuseScore
+% (artist: Robert Schumann), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Robert Schumann (died 1856,
+% Wikidata Q7351).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/31/Qmbm31yzqfv42Zrv9xeiH6nnDAe6LDisUNwb2ym5HNku3r.mid (sha256
+% be013a77c90188e526b930bdb8da2fa63919c8ffcbbd924165f5fde12af7b417): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:6 Concert Etudes after Paganini Caprices Op.10
+M:2/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"c5 G c d | "Cm"_e5 d _e f | "Cm"g5 f _e d | "C"_e4 d G _A G |
+"Cm"c5 g c d | "Cm"g5 g _e f | "Cm"g5 g _e d | "C"g4 d G _A G |
+"Fm"_A z4 c' _b _a | "Cm"g5 G _A G | "Ab"^F z4 _e' d' c' | "C"c'4 b g _a g |
+"Fm7"g4 c' g _a g | "Fm7"g4 c' _a f _d | "C"c4 d c d _e | "G"d4 c2 z2 |
+"Gm"_E G _A c d f g b | "C"c' _e f a b d' _e' G | "Gm"D F G B c _e f _a | "G"b d _e g a c' d' F |
+"Cm7"z _a' z _a' z _a' z _a' | "Ab"z g' z g' c' _a c _A | "F7"z g' z g' c' a _e c | "Bb"z d' f' _e' d' b d' b |
+"Bb"_b _e' c' _b g f c A | "Bb"D d f _e d B d B | "Bb"_B _e c _B G F F _E | "Bb"D4 _B _B _E F |
+"Bb"_B4 A A F A | "Bb"A4 _B2 A F | "Bb"A4 _B2 A F | "Bb"c z7 |
+"Eb"_b3 z c' z3 | "Eb"_e' z _a2 g2 f d | "Bb"c A _B A _B A _B A | "Bb"_B F _B _A _B D _B G, |
+"Cm7"_E D _E D _E D _E D | "Cm7"_E D _E =E F =E F ^F | "Em7"G ^F G G _A =A _B _B | "Ebm"_B _B d _B _e _e a a |
+"Bb7"g' f' _e' _b _a _b _e' f' | "Bb7"g' G G G c' c' c' c' | "D7"_b z c'' z _b' z _a' z | "Eb"g' _e _a d g c f f |
+"C"_e c _e d c _B _d c | "Cm7"_B c _B _A f d _B D | "G"_E ^f' g' d' _e' b c' g | "Gm"_a _e _e _e c' c' c' c' |
+"Eb"_e'2 z3 _e d _d | "Fm"_d4 c f e _e | "Bb7"_e4 d _b a _a | "Cm7"_a g c _e _e _B _A F |
+"Eb"_E4 _E D _B, D | "Eb"_E4 _E F _B, D | "Db7"D _B, _B, _B, _B, _B, _B, _B, | "Eb"_E4 z4 |
+"Cm"c5 G c d | "Cm"_e5 d _e f | "Cm"g5 f _e d | "C"_e4 d G _A G |
+"Cm"c5 g c d | "Cm"g5 g _e f | "Cm"g5 g _e d | "C"g4 d G _A G |

@@ -1,0 +1,34 @@
+%abc-2.1
+% Mitternacht, by Franz Paul Lachner (1803-1890). Score published on MuseScore (artist: not
+% given), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Franz Paul Lachner (died 1890,
+% Wikidata Q713451).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/24/QmTHYYTWHPR6iRH5Q1gRaHDr4WTDV6UWbfBMnRpBLN9eru.mid (sha256
+% c7766cbd32899a6e35a41583e656ae453fd828459b6da0161e385e4098ea2365): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mitternacht
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm"z16 | "Dm"A8 D6 d2 | "Gm"_B6 G2 E4 d4 | "Dm7"c3 A F4 "Bb"F E2 D D C2 _B, |
+"Dm7"A,8- "A"A,4 A,2 A2 | "Dm"A6 F2 D4 d4 | "D"c6 _B2 A8 | "D"A3 _B A3 _B A c3 _B2 A2 |
+"Gm"c _B2 A G8 D2 d2 | "Gm"d6 e2 d4 D2 d2 | "Bb7"d6 e2 d4 d4 | "A"f f f f f f f f d f3 e4 |
+"Dm"d A F E D6 F2 A2 d2 | "Em7"f f f f f f f f "A"d f3 _d4 | "Dm"d A F E D A, F, E, D,4 z4 | "Db"z8 "Dm"z8 |
+"Ab"z8 "A7"z8 | "Dm"z8 "Gm7"z8 | "A"z16 | "Db"z8 "Dm"z8 |
+"Ab"z8 "A7"z8 | "Dm"z8 "C7"z8 | "A7"z8 "Dm"z4 A4 | "Em7"F4 _D4 "D"=D4 =d4 |
+"Gm"_B6 G2 "Em7"E4 d4 | "A7"f f f f f f f f d f3 e4 | "Dm"d A F E D6 F2 A2 d2 | "Em7"f f f f f f f f "A"d f3 _d4 |
+"Dm"d4 z4 "D"z8 | "Eb"z16 | "Ab"z16 | "Ab"z16 |
+"Eb7"z16 | "C"z8 "G7"z8 | "C"z16 | "C"z8 "Ab7"z8 |
+"C"z16 | "C"z8 "C7"z8 | "C"z12 c4 | "F"c6 A2 "C7"A6 G2 |
+"F"G4 F8 E4 | "Dm7"D6 D2 "G7"G6 G2 | "C"C12 C4 | "Dm7"D6 D2 D2 F2 A2 c2 |
+"C"c8 E4 c4 | "Dm7"c6 d2 "F"c2 A2 G2 F2 | "C"G8 "C7"z8 | "F"z8 "C7"z8 |
+"Dm7"z8 "Em"z8 | "Dm"z8 "G7"z8 | "C"z16 | "Dm7"z16 |
+"C"z16 | "F"z8 "C"z8 | "F"z8 "C"z8 | "F"z8 "C"z8 |
+"F"z16 | "C"z8 "Dm7"z8 | "C"z16 | "C"z8 "Dm7"z8 |
+"C"z16 | "Dm7"z16 | "C"z8 "C7"z8 | "F"z8 "C"z8 |

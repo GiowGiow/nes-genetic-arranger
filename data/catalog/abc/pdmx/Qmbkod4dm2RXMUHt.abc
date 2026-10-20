@@ -1,0 +1,34 @@
+%abc-2.1
+% Fantasiant Amor, by Joan Brudieu. Score published on MuseScore (artist: Joan Brudieu), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joan Brudieu (died 1591,
+% Wikidata Q4894403).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/28/Qmbkod4dm2RXMUHtu9m7jjSr4rgiC1z2xEMiJ9SxztC51o.mid (sha256
+% c9e963d039cf58c20ab62526b01340295939af31620f3ae6c055864daa2aabb9): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantasiant Amor
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"E16 | "A"E8 E8 | "D"F8 "A"z4 E4 | "D7"F4 G4 "F"A4 G4 |
+"D"F8 "A"E4 A,4 | "A7"B,4 _D4 =D4 _D2 B,2 | "Dm"A,4 D4 "D7"E4 F4 | "D7"G4 ^F2 E2 "G"D4 G4 |
+"C"G4 E4- "F"E4 A4 | "D"G4 F4 "A"E8 | "Gm7"D8 "Gm"z4 D4 | "D"F8 "Dm"F8 |
+"Am"E8 z4 E4 | "C"F4 E4 "E7"D4 C4 | "Dm7"D8 "E"E8 | "Dm7"A,4 E4 "D7"F4 E4 |
+"Dm"D6 C2 "E"B,8 | "Am"A,4 E4 E4 E4 | "A"C4 C4 "F"F4 F4 | "Bb"D4 D4 "C7"G6 F2 |
+"C"E2 D2 C4- "Dm7"C2 D2 E2 C2 | "Dm"D4 A,4 "Em7"B,2 C2 D4 | "Em"D4 _D4 "Dm"=D8 | "Dm"D8 z4 A4 |
+"Am"A2 A2 A4 "C"E4 G4 | "Gm"G2 G2 G4 "Bb"D4 D4 | "A"F8 "Am"E8 | "Am"z4 E4- "Em"E2 E2 E4 |
+"G"B,4 D4- "Dm"D2 D2 D4 | "F"C4 A,4 "E"E8 | "A"C4 E4- "Am"E4 F4 | "Bb"F4 D4- "Gm"D4 E4 |
+"Am"E4 C4 "F"D4 F4 | "Gm"E4 D4- "Am"D4 C4 | "Dm"D8 "Dbm"z8 | "Dm"z8 "Am"E4 F4 |
+"Gm7"D4 E4 "F"C4 D4 | "Em"B,4 E4 "Dm"A,4 A4 | "A"A2 G2 E4 "D"F8 | "A"E16 |
+"G"z4 D4 D4 D4 | "G"D8 "Dm"z4 F4 | "D"F4 F4 "A"E8 | "A"z4 E4 "D7"F4 E4 |
+"Dm"D4 _D4 "Bb"=D8 | "Am"E8 z4 C4 | "B"D4 E4 "F"A,4 D4 | "Am7"C4 A,4 "Em7"_B,4 C4 |
+"Dm"D4 _B,4 "F"A,4 D4 | "D7"D4 C4 "D"F4 F4 | "Dm7"E4 A4- "C7"A4 G4 | "Gm"F4 E2 D2 "A"E8 |
+"Dm"D8 "C"z4 C4 | "B"D4 E4 "F"A,4 D4 | "Am7"C4 A,4 "Em7"B,4 C4 | "Dm"D4 _B,4 "F"A,4 D4 |
+"D7"D4 C4 "D"F4 F4 | "Dm7"E4 A4- "C7"A4 G4 | "Gm"F4 E2 D2 "A"E8 | "Dm"D16 |
+"Dm"D8- "Em7"D8 | "A"E16 | "A"E16 | "D"F16 |

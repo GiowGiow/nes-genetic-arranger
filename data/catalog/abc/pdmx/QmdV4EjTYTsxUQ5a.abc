@@ -1,0 +1,33 @@
+%abc-2.1
+% Gnossienne No.1, by Erik Satie. Score published on MuseScore (artist: Erik Satie), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Erik Satie (died 1925, Wikidata
+% Q187192).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/49/QmdV4EjTYTsxUQ5av9jmmFj7Yes4a9oHVCmYQo5YsUyRyt.mid (sha256
+% 973917bade8fd7060284b80145405f8d4584d28ec26108efb2953a62c4ac7306): melody track 0, bars 0-54
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Gnossienne No.1
+M:4/4
+L:1/16
+Q:1/4=85.000163
+% Exact tempo 85.00016291697891 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"z4 e2 g2 "C"^f4 e4 | "Am"e z7 "C"e z7 | "Am"z4 e2 g2 "C"^f4 e4 | "Am"a8 "C"a8 |
+"Am"z4 e2 g2 "C"^f4 e4 | "Am"e z7 "C"c z7 | "Em"B4 B4- "G"B7 z | "Am"c z3 B z3 "C"z8 |
+"Am"z8 "C"z8 | "Am"z4 e2 g2 "C"^f4 e4 | "Am"e z7 "C"e z7 | "Am"z4 e2 g2 "C"^f4 e4 |
+"Am"a8 "C"a8 | "Am"z4 e2 g2 "C"^f4 e4 | "Am"e z7 "C"c z7 | "Em"B4 B4- "G"B7 z |
+"Am"c z3 B z3 "C"z8 | "Am"z8 "C"z8 | "Dm"d8 "F"c z7 | "Dm"d8 "F"c z7 |
+"A"c z3 B z3 "F#m7"z8 | "A"z8 "F#m7"z8 | "Dm"d8 "F"c z7 | "Dm"d8 "F"c z7 |
+"A"c z3 B z3 "F#m7"z8 | "A"z8 "F#m7"z8 | "Am"z2 e2 ^f2 _a2 "C"=a2 b2 _e'2 b2 | "Am"a4 b z3 "C"z8 |
+"Am"b z7 "C"a z7 | "Am"f z7 "C"e z7 | "Am"c z3 B z3 "C"z8 | "Am"z8 "C"z8 |
+"Am"z2 e2 ^f2 _a2 "C"=a2 b2 _e'2 b2 | "Am"a4 b z3 "C"z8 | "Am"b z7 "C"a z7 | "Am"f z7 "C"e z7 |
+"Am"c z3 B z3 "C"z8 | "Am"z8 "C"z8 | "Dm"d8 "F"c z7 | "Dm"d8 "F"c z7 |
+"A"c z3 B z3 "F#m7"z8 | "A"z8 "F#m7"z8 | "Dm"d8 "F"c z7 | "Dm"d8 "F"c z7 |
+"A"c z3 B z3 "F#m7"z8 | "A"z8 "F#m7"z8 | "A"z4 e2 g2 "F#m7"^f4 e4 | "A"e z7 "F#m7"z8 |
+"A"z4 e2 g2 "F#m7"^f4 e4 | "A"a8- "F#m7"a7 z | "Dm"d8 "F"c z7 | "Dm"d8 "F"c z7 |
+"A"c z3 B z3 "F#m7"z8 | "F#m7"z16 |

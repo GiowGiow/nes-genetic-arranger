@@ -1,0 +1,32 @@
+%abc-2.1
+% Nocturne in C-sharp minor B.49, by Frédéric Chopin. Score published on MuseScore (artist:
+% Frédéric Chopin), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frédéric Chopin (died 1849,
+% Wikidata Q1268).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/20/QmeFZmFin9eqUraBuT4di7b9FRLb5y3Jin1eaNA4WxeG3n.mid (sha256
+% a2eb85cd7472ff8cf8c63f648744e25de0a2f43e22505f74b7c3f9d9389b4ca7): melody track 0, bars 0-51
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Nocturne in C-sharp minor B.49
+M:4/4
+L:1/16
+Q:1/4=69.000017
+% Exact tempo 69.00001725000433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_a8 ^f _a _a _a _a _a _a _a | "C"_a8 _d8 | "C"_d'8 _d'3 b _d' b2 a | "C"a8 z8 |
+"C"_a8 _e8 | "C"e8 ^f4 _d4 | "C"_e =e =e =e =e =e =e =e =e =e =e =e _e2 _d2 | "C"_e8 z4 _A4 |
+"C"_a8 ^f =a _a _a _a _a _a _a | "C"_a8 _d4 _d4 | "C"_d' =d'2 b a _a2 ^f =f _e _d B _A ^F =D _D | "C"A,8 z4 A,4 |
+"C"D8 d6 _d2 | "C"_d c _d c _d z c _d e4 _e2 _d2 | "C"_A4 =A8 _A4 | "C"_D8 z8 |
+"C"E4 ^F _A =A B _d =d2 _d B4 | "C"e2 d _d B2 A2 _d _e2 _d B4 | "C"e4 e3 e e4 _d'4 | "C"b3 a b3 _d' a8 |
+"C"_D2 _E F ^F2 _A2 =A B2 =A _A4 | "C"_d2 B A _A2 _D2 =A B2 =A ^F4 | "C"_A4 _A3 _A _A4 e4 | "C"_e3 _d _e3 =e _d8 |
+"C"_e _d _e _d _e z _d2 =e6 _e2 | "C"_E3 _d _d2 _d2 c2 _e6 | "C"_e _d _e _d z4 =e6 _e2 | "C"_E3 _d _d2 _d2 c2 _e6 |
+"C"_e4 _e _A, _E c _E _A, =A, _E G _e _d =A | "C"_A _A _e c' _e _A =A _e ^f _e' _d' =a _a2 _A,2 | "C"C2 _A,2 B,2 _E2 B2 _A2 B2 _e2 | "C"_a2 b2 _a'4 z4 _A4 |
+"C"_a8 ^f =a _a _a _a _a _a _a | "C"_a8 _d4 _d'4 | "C"_d' =d'2 b a _a2 ^f =f' _a' _d' b _a ^f =d _d | "C"A8 a8 |
+"C"_a8 _e8 | "C"e8 ^f ^f _a ^f _a z3 | "C"_e =e2 _e d _e2 =e ^f _a =a b c' d' _e' ^f' | "C"e'8 _e'4 _d'4 |
+"C"c'4 a4 _a4 _e4 | "C"e4 ^f2 _a2 ^f4 _d4 | "C"e e e e e e e e e e e e e e e e | "C"_d8 e _a b _e' _d' _a =e _d |
+"C"A z7 _d _a _e' b _e' _e' _d' ^f | "C"B z7 A _d _e =e ^f _e _d B | "C"_A8 =A _d e ^f _a e _e B | "C"_A8 _a8 |
+"C"_a16 | "C"_a'16 | "C"_a'16 |

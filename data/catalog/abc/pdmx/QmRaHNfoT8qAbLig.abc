@@ -1,0 +1,35 @@
+%abc-2.1
+% Sonata in G for Descant recorder and Piano, by James Hook (1746 - 1827). Score published on
+% MuseScore (artist: James Hook), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): James Hook (died 1827, Wikidata
+% Q614576).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/9/QmRaHNfoT8qAbLig2JVWLuF16oxZwomumw6UFGatFefJd6.mid (sha256
+% 805738c07f208bd3a3df47e76f101d84a09743859c9a134d01610e96fc49099b): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonata in G for Descant recorder and Piano
+M:4/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"G,2 D2 B,2 D2 G,2 D2 B,2 D2 | "A"^F,2 D2 A,2 D2 "D"^F,2 D2 A,2 D2 | "Em7"G,2 D2 B,2 D2 "B"A,2 D2 G,2 D2 | "B7"D,8 "E7"z8 |
+"G"G,2 D2 B,2 D2 G,2 D2 B,2 D2 | "A"^F,2 D2 A,2 D2 "D"^F,2 D2 A,2 D2 | "Am"G,4 C4 "B7"D4 D,4 | "D7"G,4 D,4 "Em"G,,4 z4 |
+"G"G,2 D2 B,2 D2 "Em7"G,2 D2 B,2 D2 | "D7"^F,2 D2 A,2 D2 ^F,2 D2 A,2 D2 | "G"G,2 D2 B,2 D2 "C"A,2 D2 G,2 D2 | "B7"D,8 "E7"z8 |
+"G"G,2 D2 B,2 D2 "Em7"G,2 D2 B,2 D2 | "D7"^F,2 D2 A,2 D2 ^F,2 D2 A,2 D2 | "Am7"G,4 C4 "B7"D4 D,4 | "D7"G,4 D,4 "Em"G,,4 z4 |
+"Em7"G,2 D2 B,2 D2 "Em"G,2 E2 C2 E2 | "D7"G,2 D2 B,2 D2 "G"G,2 D2 B,2 D2 | "Em7"G,2 D2 B,2 D2 "Em"G,2 E2 C2 E2 | "D"G,2 D2 B,2 D2 "Am7"G,2 D2 B,2 D2 |
+"D"G,2 D2 B,2 D2 "E"G,2 E2 C2 E2 | "D"G,2 D2 B,2 D2 "Am7"G,2 D2 B,2 D2 | "Em"G,4 E,4 "Dbm"A,4 A,,4 | "D"D,4 D,,4 "A"z4 G4 |
+"Bm7"^F4 D4 "A"z4 G4 | "Bm7"^F4 D4 "A"z4 G4 | "Bm7"^F4 D4 "A"_D4 A,4 | "D"D4 G,4 "Dbm"A,4 A,,4 |
+"D"D,4 D,,4 "A"z4 G,4 | "D"^F,4 D,4 "A"z4 G,4 | "D"^F,4 D,4 "A"z4 G,4 | "D"^F,4 D,4 "A"_D,4 A,,4 |
+"Em7"D,4 G,4 "Dbm"A,4 A,,4 | "E7"D,4 z12 | "E7"z16 | "E7"D,4 z4 "D7"D4 z4 |
+"G"D,4 z4 "D7"D4 z4 | "G"G,2 D2 B,2 D2 G,2 D2 B,2 D2 | "A"^F,2 D2 A,2 D2 "D"^F,2 D2 A,2 D2 | "Em7"G,2 D2 B,2 D2 "B"A,2 D2 G,2 D2 |
+"B7"D,8 "E7"z8 | "G"G,2 D2 B,2 D2 G,2 D2 B,2 D2 | "A"^F,2 D2 A,2 D2 "D"^F,2 D2 A,2 D2 | "Am"G,4 C4 "B7"D4 D,4 |
+"D7"G,4 D,4 "Em"G,,4 z4 | "G"G,2 D2 B,2 D2 "Em7"G,2 D2 B,2 D2 | "D7"^F,2 D2 A,2 D2 ^F,2 D2 A,2 D2 | "G"G,2 D2 B,2 D2 "C"A,2 D2 G,2 D2 |
+"B7"D,8 "E7"z8 | "G"G,2 D2 B,2 D2 "Em7"G,2 D2 B,2 D2 | "D7"^F,2 D2 A,2 D2 ^F,2 D2 A,2 D2 | "Am7"G,4 C4 "B7"D4 D,4 |
+"D7"G,4 D,4 "Em"G,,4 z4 | "B"G,2 D2 B,2 D2 "Am7"G,2 D2 B,2 D2 | "D7"A,2 D2 C2 D2 "B7"A,2 D2 C2 D2 | "C"^F,2 D2 A,2 D2 "D7"^F,2 D2 A,2 D2 |
+"Em7"G,2 D2 B,2 D2 "Am7"G,2 D2 B,2 D2 | "G"G,2 D2 B,2 D2 "F#m7"G,2 E2 C2 E2 | "D"G,2 D2 B,2 D2 "E7"G,2 D2 B,2 D2 | "Bm7"^F,2 D2 G,2 D2 "B"A,2 D2 G,2 D2 |
+"B"D,2 D2 _D2 =D2 "A"C2 =D2 A,2 =D2 | "B"G,2 D2 B,2 D2 "Am7"G,2 D2 B,2 D2 | "D7"A,2 D2 C2 D2 "B7"A,2 D2 C2 D2 | "C"^F,2 D2 A,2 D2 "D7"^F,2 D2 A,2 D2 |

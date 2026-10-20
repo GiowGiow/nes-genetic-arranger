@@ -1,0 +1,35 @@
+%abc-2.1
+% Tristan und Isolde WWV 90, by Richard Wagner. Score published on MuseScore (artist: Richard
+% Wagner), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Wagner (died 1883,
+% Wikidata Q1511).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/53/QmWXD7QKSx8Mr2tviKB2k37r71gfgLBkuRtzVw6Xz5tu6L.mid (sha256
+% aecbcf9897d899cbab0735704e9bdec1d0338c6890b8234c9cf2115d494358b4): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tristan und Isolde WWV 90
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"E8 z8 | "Eb7"C4 _D11 z | "Cm"_E4 _A4 "Eb"_A4 G3 C | "Abm"^F6 _A2 "Bb"_B2 =F2 z4 |
+"Abm7"^F4 B4 "F#"B4 _B3 _E | "D"A6 B2 "Db"_d4 _A2 z2 | "D"A,4 d2 A2 "A7"_d z A2 _D4 | "Dm"C4 c2 F2 "C"_B2 z2 E3 A, |
+"Fm7"_E z3 _A2 D2 "Bb7"_A4 _d2 G2 | "Abm7"_e4 _e f _E ^f "Db7"_a4 _D2 B2 | "Ebm7"A ^F A ^F A ^F A ^F "D"c ^F A ^F A ^F A ^F | "G"c G G G B G G G "Gm7"_B _A _A _A F F _B F |
+"Fm7"_a _e5 _A2 "E"B6 G2 | "Abm7"^F2 ^F, _E B _B, =B, _A "F#7"=B ^F =F =E _B _E _D _B, | "D"A _A, =A, ^F d _D =D B "A7"=d =A _A G _d ^F E _D | "Em7"B _D =D B g ^F G e "D7"g =d _d c ^f B A =f |
+"E"e3 _A B _E =E _d "F#m"=e4 =d _D _d =A | "Ab"^f4 _d G _A _e "F#m"^f4 =e =F ^F _e | "F#7"^f2 e2 _e _E =E _d "B7"^F _d3 c A ^F _E | "Db7"B B, ^F E e E A _A "B7"e =F _A ^F _e _d B _B |
+"D"d2 e _d b a ^f =d "Em"=d _B _d G c2 ^F2 | "Dm7"c C G F f F _B A "Gm"f G A _B e d c =B | "Cm7"_e2 f d c' _b g _e "Fm"_e =B d A _d2 G2 | "Eb7"_d _D _A ^F ^f ^F _d c "Db7"^f G _B _A =f c _d _e |
+"F#m7"e a b _a ^f' e' _d' =a "Bm"=a2 _e2 _a3 _d | "C"g G d c c' e b a "Dm"c' d e f b2 e2 | "Gm7"f _b c A _a f d _B "Cm"_B2 F2 =A2 E2 | "Db7"_A F F F F F _B F "Ebm"_d ^F ^F ^F c ^F ^F ^F |
+"B7"c ^F ^F ^F ^F ^F _d ^F "Ab"=d ^F ^F ^F _e ^F ^F ^F | "E7"e d d d d d d d "G"f d d d d d d d | "Abm7"^f _e _e B b2 ^f _e "F#7"b2 =e _d _b =e =e _d | "Dbm7"_a2 e B e' b b _a "B7"e' b b =a _e' =a =a ^f |
+"E"_d' _a _a e _a e e _a "Ab7"_a' c' c' c' _a c' ^f' c' | "Dbm"e' _a _a _a _d' =a _d _b "Bb"_b' f' f' f' _b f' _a' f' | "B"f' _b _b' _b ^f' =b _e' _a =b'6 _b'2 | "E"_b'4 _a'4 "Abm7"=B2 _d _B _a ^f _e =B |
+"D"B4 _B4 "F#m7"^f2 e _A _d2 =A2 | "C"A4 _A4 "Em7"G2 =A ^F e d B G | "Bb"G4 ^F4 "Dm7"d2 c E A2 =F2 | "E7"F4 E3 B, "Eb7"_E6 F2 |
+"F"_A4 G4 "E"G6 _A2 | "Eb"A4 _B4 "D"=B6 c2 | "Db"_e4 _d4 "B"=d6 _e2 | "C7"^f4 =f2 A2 "Ab"=f A, _B, D E _B d =f |
+"G"_b _D =D F _B _d =d f "F#"=b _b =b _b =b _b =b _b | "E"_d'2 b2 _b3 _a "B"_e2 ^f2 G g _a _b | "E"_d'2 b2 _b3 _a "B"_e2 ^f2 G g _a _b | "E"_d'2 b2 _b3 _a "Abm7"_e _a ^f2 _e g _a2 |
+"F#7"_d2 ^f2 g2 _a2 "Abm7"B2 ^f2 _e g _a2 | "F#7"e2 ^f2 g _a2 =a "Ab7"^f2 g2 ^f _a =a2 | "Dbm"e2 g2 e _a =a2 "Ab7"^f2 g2 ^f _a =a2 | "G7"a2 g2 _a =a2 _b "Bb7"f2 _a2 =a2 _b2 |
+"Cm7"g2 g2 _a =a2 _b "Bb7"_a g2 _a =a _b2 =b | "B7"^f2 a2 ^f _b =b2 "Dbm7"e2 _b2 =b2 c'2 | "B7"^f2 _b2 =b c'2 _d' "Dbm7"_a2 =b2 _a c' _d'2 | "G7"b2 _b2 =b c'2 _d' "Abm7"_d'2 =b2 c' _d'2 _e' |
+"F#7"_b _e' _d'2 _e'2 =e'2 "Abm7"=b2 =d'2 _e' =e'2 ^f' | "F#7"_d' _e'2 =e' f' ^f'2 _a' "Abm7"_e' _a' =f'2 _e' ^f' _a'2 | "F#7"_d' _a' f'2 ^f' g'2 _a' "Abm7"_e' _e'2 =e' =f' ^f'2 g' | [M:2/4]"B7"_e'2 ^f'2 g'2 _a'2 |
+[M:4/4]"F#7"e'2 ^f'2 g'2 _a'2 e'2 ^f'2 g'2 _a'2 | "F#7"e'2 f'2 ^f' g'2 _a' =f' =f'2 ^f' g' _a'2 _b' | "E"_d'' _a' _d' _a' _a' _a' _d' _a' "Dbm7"_a'2 b'2 _b'3 _a' | "Abm"_a' _e' _a _e' _e' _e' _a _e' "B"_e'2 ^f'2 g' _a'2 _b' |

@@ -1,0 +1,29 @@
+%abc-2.1
+% Weep O Mine Eyes, by John Bennet (c.1570-c.1614). Score published on MuseScore (artist: John
+% Bennet), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Bennet (died 1615, Wikidata
+% Q374718).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/53/QmfXiYcTNYo3mkGdAGa7tUwJSWVH645yLBM5J4U9Lvvd94.mid (sha256
+% 01c7d511b8bf4cef541442c2128e62bc810b63e6164ba9c4be6f84fcb44998fa): melody track 2, bars 0-43
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Weep O Mine Eyes
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"z8 C8 | "F#m7"C8 B,4 A,4 | "E"_A,8 =A,8 | "E"A,4 _A,2 ^F,2 _A,8 |
+"Am"A,8 A,8 | "Am"A,8 _A,4 =A,4 | "E"B,6 D2 C8 | "Am"B,8 E8 |
+"Dbm7"E4 D4 C8 | "Em"B,8 C8 | "Dm7"C4 B,4 A,8 | "E"_A,8 =A,8 |
+"E"A,8 _A,8 | "A"A,16 | "Db"z8 A,8 | "A"C16 |
+"Am"A,8 A,8 | "E"E16 | "F"A,16 | "Am"z16 |
+"Dbm7"E,16 | "A"F,16 | "Am7"E,8 E8 | "F"E8 D8 |
+"E"E8 B,8 | "Dm7"B,4 A,4 A,8 | "Bm"A,8 _A,8 | "A"A,16 |
+"Am"C16 | "Am"E16 | "E"E16 | "F"A,16 |
+"C"C12 C4 | "Dm"A,16 | "A"A,4 A,4 C4 D4 | "Am7"E6 D2 C4 B,4 |
+"F"A,4 A,4 D4 C4 | "G"B,4 C8 B,4 | "C"C12 C4 | "Dm"B,8 A,8 |
+"E7"_A,8 =A,8 | "E"A,8 _A,8 | "A"A,16 |

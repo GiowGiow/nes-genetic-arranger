@@ -1,0 +1,23 @@
+%abc-2.1
+% Psaume 38, by Claude Goudimel. Score published on MuseScore (artist: Claude Goudimel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Goudimel (died 1572,
+% Wikidata Q497713).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/51/QmfWxswzxxzNEFCH8qrWL2oM5prGE8SmJEHe17CqgM6QF7.mid (sha256
+% a4f20d5b85d0cd1f79c6a1d389ac12e9c299af1586c9b0a33ad4f4504e8d643d): melody track 0, bars 0-17
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Psaume 38
+M:4/2
+L:1/16
+Q:1/4=240
+K:none
+P:A
+"Am"A16 "E"_A16 | "E"A8 G8 "Am7"A8 B8 | "C"c16 "G"B16 | "C"z8 c16 B8 |
+"Am"A16 "E"_A16 | "E"z16 "Dm"A8 A8 | "C"c16 "Dm7"A8 A8 | "E"A8 _A8 "A"=A16 |
+"A"z16 c16 | "C"c16 "Am7"B8 A8 | "Dbm7"c8 B8 "Am"A16 | "E"_A16 "Am"z8 =A8 |
+"E"A8 G8 "F"F16 | "C"E16 z16 | "C"G16 c16 | "C"B8 G8 "F"F8 A8 |
+"E"A4 _A2 ^F2 _A8 "A"=A16 |

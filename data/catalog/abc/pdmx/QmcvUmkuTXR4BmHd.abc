@@ -1,0 +1,35 @@
+%abc-2.1
+% 6 Pièces d'orgue, by Eugène Gigout. Score published on MuseScore (artist: Eugène Gigout), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Eugène Gigout (died 1925,
+% Wikidata Q549483).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/48/QmcvUmkuTXR4BmHdY5vvK1Cthd4DzuP1FJqSbjgKdR41Gv.mid (sha256
+% 1a46215f79588f66827a884477688528136aa804c7c4b1ad2bc19f5561f65df6): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:6 Pièces d'orgue
+M:4/4
+L:1/16
+Q:1/4=77.999977
+% Exact tempo 77.99997660000703 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"B z2 c d6 B z c z e z | "G"d2 B c d6 B z c z e z | "Em7"d z2 B G4- "A7"G4 A2 z2 | "D"A12 z4 |
+"G"b z2 c' d'6 b z c' z e' z | "G"d' z b c' d'6 b z c' z e' z | "Em7"d' z2 b g4- "A7"g4 a2 z2 | "D"a12 z4 |
+"Am"A z2 B c6 A z B z d z | "Am"c z A B c6 A z B z d z | "Em"c z2 B G4- "Em7"G4 A2 z2 | "G"G12 z4 |
+"Am"a z2 b c'6 a z b z d' z | "Am"a z a b c'6 a z b z d' z | "Em"c' z2 b g4- "Em7"g4 a2 z2 | "G"g12 z4 |
+"G"B z2 c d6 B z c z e z | "G"d z B c d4- "Em7"d2 d z e z g z | "Bm"^f z2 d B2 z2 "A7"e8 | "D"d12 z4 |
+"Bb"d' z2 _e' f'6 d' z _e' z g' z | "Bb"f' z d' _e' f'4- "Gm7"f'2 d z g z _b z | "Dm"a z2 f d2 z2 "C"g8 | "F"f12 F E F G |
+"Cm"c B c d _e6 c z d z f z | "Cm"_e z c d _e4- "Fm"_e2 _e z f z _a z | "Cm7"g z2 f _e2 z2 "Bb7"f7 g | "Eb"g12 z4 |
+"Cm"c' z2 d' _e'6 c' z d' z f' z | "Cm"_e' z c' d' _e'4- "Ab"_e'2 _e' z f' z _d' z | "Fm7"c' z2 _e' _a2 z2 "Eb"_b7 c' | "Ab"c'12 z4 |
+"Fm"c' z2 f f6 g z f z g z | "Fm"_a z _a _b c'8 z4 | "Dbm7"b z2 e e4- "Abm7"e2 ^f z e z ^f z | "E"_a z _a =a b4- "Dbm7"b4 z4 |
+"Ebm"_b z2 _e _e6 f z _e z f z | "Ebm"^f z ^f _a _b8 z4 | "D"a z2 d d4- "F#m7"d2 e z d z e z | "D"^f z ^f g a6 g z ^f z g z |
+"D7"a z a b c'6 b z a z b z | "D7"c' z c' d' e'5 c' a b c'4 | "D"c' a b c' d'4- "Em7"d'2 b z c' z e' z | "Em7"d' z b c' d'6 b z c' z e' z |
+"Em7"d' z2 b g4- "A7"g4 a2 z2 | "D"a3 A ^F E ^F A D3 ^F ^F A A d | "F"a z2 b c'6 a z b z d' z | "F"c' z a b c'4- "Dm7"c'2 c' z d' z f' z |
+"C"e' z2 d' c'4 "G"d'4 b3 e' | "C"e'3 g e d e g c D E G C2 z2 | "Am"e z2 A A4- "F#m7"A2 B z A z B z | "Am"c z c d e8 z4 |
+"Fm7"_e' z2 _a _a4- "Cm7"_a2 _b z _a z _b z | "Ab"c' z c' _d' _e'4- "Fm7"_e'4 z4 | "G"d z2 G G4- "Em7"G2 A z G z A z | "G"B z B c d8 z4 |
+"Eb7"_d' z2 _e _e6 f z _e z f z | "Eb7"g z g _a _b4- "Bbm7"_b2 _a z g z _a z | "Eb7"_b z _b c' _d'5 _e =d _e g _b _d' z | "Fm7"_d'2 c' b c' =d' _e'2 "Gm7"_b2 =d' _d' =d' _e' f'2 |
+"Ab"c'2 _e' d' _e' f' ^f'2 "A"^f'2 =e' _e' =e' ^f' g'2 | "Em7"d'3 d' b _b =b d' "G7"f'8 | "D7"e'3 c' a _a =a c' "F7"_e'8 | "Em7"d' b ^f g _d' _b _e =e "D7"c' a =f ^f =b g _d =d |

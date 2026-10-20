@@ -1,0 +1,22 @@
+%abc-2.1
+% Fäderneslandet, by Johan Erik Nordblom. Score published on MuseScore (artist: Johan Erik
+% Nordblom), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johan Erik Nordblom (died 1848,
+% Wikidata Q6014376).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/30/QmbLSWcQZJx2Le71NBLYjorTtJYZWF7TJTKXjHJsU9oCN6.mid (sha256
+% 4d67f9eee48f57f6106fdc39a0789a09bcbd386efcbe7bec9bdee7b8a5f877ad): melody track 0, bars 0-12
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fäderneslandet
+M:4/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"C8 "Dm7"D4 E4 | "F"F12 z4 | "F"F4 F2 F2 "Em"C4 C2 C2 | "F"C2 z2 A,2 z10 |
+"Dm"D4 D2 D2 "Dbm"A,4 A,2 A,2 | "Dm"A,2 z2 F,2 z10 | "Bb"D8 "Am7"C4 _B,4 | "Dm"A,12 z4 |
+"G"_B,8 "A"A,4 G,4 | "Bb"F,12 z4 | "Bb"D8 "C"C4 E4 | "F"F12 z4 |

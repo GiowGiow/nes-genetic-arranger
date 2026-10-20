@@ -1,0 +1,26 @@
+%abc-2.1
+% Buffens, by Thoinot Arbeau. Score published on MuseScore (artist: Thoinot Arbeau), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thoinot Arbeau (died 1595,
+% Wikidata Q919152).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/23/QmThwtWRbgyYAuzReVohm87TFmeZSGJnFkyzEA7LWAt4J7.mid (sha256
+% 5b59acabccef326533b1b06e599a449945c4cf0e19087b9b01feafb9fbd2115c): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Buffens
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"F2 G2 A2 F2 _B6 _B2 | "C"A2 G2 A2 F2 G8 | "C"F2 G2 A2 F2 _B6 _B2 | "C"A2 F2 G2 G2 F8 |
+"C"F2 G2 A2 F2 _B6 _B2 | "C"A2 G2 A2 F2 G8 | "C"F2 G2 A2 F2 _B6 _B2 | "C"A2 F2 G2 G2 F8 |
+"C"c2 _B c d2 c2 _B6 _B2 | "C"A2 G2 A2 _B2 c8 | "C"c2 _B c d2 c2 _B6 _B2 | "C"A2 F2 G2 G2 F8 |
+"C"c2 _B c d2 c2 _B6 _B2 | "C"A2 G2 A2 _B2 c8 | "C"c2 _B c d2 c2 _B6 _B2 | "C"A2 F2 G2 G2 F8 |
+"C"a6 ^f2 g4 b4 | "C"^f4 a4 g2 ^f2 e2 d2 | "C"_d6 A2 B4 _d4 | "C"d2 _d2 =d2 e2 =d2 e2 ^f2 g2 |
+"C"a6 ^f2 g4 b4 | "C"^f4 a4 g2 ^f2 e2 d2 | "C"_d6 A2 B4 _d4 | "C"d8 d8 |
+"C"a6 ^f2 g4 b4 | "C"^f4 a4 g2 ^f2 e2 d2 | "C"_d6 A2 B4 _d4 | "C"d2 _d2 =d2 e2 =d2 e2 ^f2 g2 |
+"C"a6 ^f2 g4 b4 | "C"^f4 a4 g2 ^f2 e2 d2 | "C"_d6 A2 B4 _d4 | "C"d8 d8 |

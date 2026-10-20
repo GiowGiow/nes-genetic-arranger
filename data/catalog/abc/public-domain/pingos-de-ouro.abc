@@ -1,0 +1,36 @@
+%abc-2.1
+% PINGOS DE OURO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/pingos-de-ouro.html (file
+% https://www.beakauffmann.com/mpb_p/som/pingos-de-ouro.mid, sha256
+% d7d35109da8b13cf12e60a1168c938322a5eee3635078edbc701700bee2cd3e7), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PINGOS DE OURO
+M:2/4
+L:1/16
+Q:1/4=70.00007
+% Exact tempo 70.00007000007 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z6 d2 | "C"b ^f2 a g _d e =d | "C"G,, B c _d e =d B G | "C"b ^f2 a g _d _B,, e |
+"C"d B,,2 D, E,2 E,, _A,, | "C"A B2 c e d A c | "C"G,, B2 _B =B4 | "C"_A B2 d f e B d |
+"C"A,, c2 B c2 C,2 | "C"_d e2 g b a2 e | "C"g ^f2 =f ^f2 d2 | "C"b ^f2 a g _d e =d |
+"C"G,, B c _d e =d B G | "C"^f ^f2 ^f b2 B,,2 | "C"f f2 f _b3 _B,, | "C"_e f2 g _b g2 _e |
+"C"d _d =d _e =e =d B G | "C"g g2 g ^f ^f ^f g | "C"G,, e d B G2 d2 | "C"b ^f2 a g _d e =d |
+"C"G,, B c _d e =d B G | "C"b ^f2 a g _d _B,, e | "C"d B,,2 D, E,2 E,, _A,, | "C"A B2 c e d A c |
+"C"G,, B2 _B =B4 | "C"_A B2 d f e B d | "C"A,, c2 B c2 C,2 | "C"_d e2 g b a2 e |
+"C"g ^f2 =f ^f2 d2 | "C"b ^f2 a g _d e =d | "C"G,, B c _d e =d B G | "C"^f ^f2 ^f b2 B,,2 |
+"C"f f2 f _b3 _B,, | "C"_e f2 g _b g2 _e | "C"d _d =d _e =e =d B G | "C"g g2 g ^f ^f ^f g |
+"C"g e d B G2 z2 | "C"B, E2 ^F G B2 A | "C"G G,,2 E, B,,2 G,,2 | "C"_A B2 _B =B e d c |
+"C"A,, C,2 E, C,2 A,,2 | "C"B _e2 ^f b3 a | "C"g a g ^f e B G E | "C"D ^F2 A d3 c |
+"C"B c B A G A G ^F | "C"B, E2 ^F G B2 A | "C"G3 e d c B A | "C"_A _A =A _B =B e =B,, d |
+"C"c C,2 E,3 A,,2 | "C"D ^F2 A d3 c | "C"B c B A G B A G | "C"^F _B2 _d ^f _a2 ^f |
+"C"F A2 c f g2 f | "C"E _A _A,, B e f B,, e | "C"c d c B A2 _A2 | "C"A B2 c e d c B |
+"C"E,, e G,, ^f g2 B,,2 | "C"_B g2 ^f A g2 ^f | "C"e B E,, G E2 B,,2 | "C"B, E2 ^F G B2 A |
+"C"G G,,2 E, B,,2 G,,2 | "C"_A B2 _B =B e d c | "C"A,, C,2 E, C,2 A,,2 | "C"B _e2 ^f b3 a |

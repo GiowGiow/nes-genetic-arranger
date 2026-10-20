@@ -1,0 +1,36 @@
+%abc-2.1
+% LEVANTA POEIRA, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/levanta-poeira.html (file
+% https://www.beakauffmann.com/mpb_l/som/levanta-poeira.mid, sha256
+% 8f57439a90fa4589e8cfcdbcfb6e1084a0e7c0dc9cb1abd08c8ae6db9d83384c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LEVANTA POEIRA
+M:2/4
+L:1/16
+Q:1/4=94.999992
+% Exact tempo 94.99999208333399 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"z2 F2 G2 _A2 | "Dm"A2 z A, D F2 A | "D"A A _A =A d c =A ^F | "Gm"_B2 z D G A2 _B |
+"Gm"_B G _B A G F E D | "A7"_D _D2 E A4 | "A7"A A, _D E A G F E | "Dm"D _D =D E F E F G |
+"Dm"A2 F2 G2 _A2 | "Dm"A2 z A, D F2 A | "D"A A _A =A d c =A ^F | "Gm"_B2 z D G A2 _B |
+"Gm"_B G _B A G F E D | "A7"_D _D2 E A4 | "A7"A A, _D E A G F E | "Dm"D _D =D E F E F G |
+"Dm"A2 F2 G2 _A2 | "Dm"A2 z A, D F2 A | "D"A A _A =A d c =A ^F | "Gm"_B2 z D G A2 _B |
+"Gm"_B G _B A G F E D | "A7"_D _D2 E A4 | "A7"A A, _D E A G F E | "Dm"D _D =D E F E F G |
+"Dm"A2 F2 G2 _A2 | "Dm"A2 z A, D F2 A | "D"A A _A =A d c =A ^F | "Gm"_B2 z D G A2 _B |
+"Gm"_B G _B A G F E D | "A7"_D _D2 E A4 | "A7"A A, _D E A G F E | "Dm"D8 |
+"Gm"D2 z C z4 | "C"z8 | "C"z8 | "F"z8 |
+"F"z8 | "C7"z8 | "C7"z8 | "F"z8 |
+"Dm"z8 | "C"z8 | "C"z8 | "F"z8 |
+"F"z8 | "Gm"z8 | "Cm"z8 | "G7"z8 |
+"F"z8 | "C"z8 | "C"z8 | "F"z8 |
+"F"z8 | "C7"z8 | "C7"z8 | "F"z8 |
+"Dm"z8 | "C"z8 | "C"z8 | "F"z8 |
+"F"z8 | "Gm"z8 | "Cm"z8 | "G7"z8 |

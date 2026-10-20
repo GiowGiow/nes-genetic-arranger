@@ -1,0 +1,35 @@
+%abc-2.1
+% Lohengrin WWV 75, by Richard Wagner. Score published on MuseScore (artist: Richard Wagner), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Wagner (died 1883,
+% Wikidata Q1511).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/53/QmRX9z5w9vBGKx9AyRCHvm6PqBGufM34MwFL2rNU5yKY8J.mid (sha256
+% 412bb1e8290d067bc9d7c6e1549eaaa374cc1258ff4bb9de547c9fb30ff805c1): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lohengrin WWV 75
+M:2/4
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 | "F"z8 | "F"z8 | "F"z8 |
+"Bb"F4 F3 F | "Bb"F6 z2 | "Bb"F4 F3 F | "Bb"F6 z2 |
+"Bb"F4 F3 _B | "Bb"_B4 _B3 F | "Gm"F4 E3 E | "F"F6 z2 |
+"Bb"F4 F3 F | "Bb"F6 z2 | "Bb"F4 F3 F | "Bb"F6 z2 |
+"Bb"F4 F3 F | "Gm7"A4 G3 G | "F7"G4 _E3 F | "Bb"D6 z2 |
+"Cm7"_B4 A2 G2 | "C"_E4 _E4 | "F"F4 F3 F | "F"F6 z2 |
+"Eb"_B4 A2 G2 | "C"_E4 _E4 | "G"D4 ^F3 G | "G"G8 |
+"G"G4 G2 G2 | "G"A2 ^F2 G4 | "D7"^F4 ^F2 ^F2 | "D7"^F4 ^F4 |
+"Em7"G4 G2 G2 | "Em"G4 G4 | "Em7"G4 E3 E | "D7"^F4 ^F4 |
+"Gm"G4 G2 G2 | "Gm7"_B6 F2 | "F7"A4 A2 A2 | "Bb"_B8 |
+"Gm7"F4 _B2 _B2 | "Gm7"A4 G4 | "A"F4 G2 G2 | "D"^F6 =F2 |
+"Bb"F4 F3 F | "Bb"F6 z2 | "F7"F4 F3 F | "Bb"F6 z2 |
+"Bb"F4 F3 _B | "Bb"_B4 _B2 z F | "Bb"F4 E3 E | "Dm7"F6 z2 |
+"Bb"F4 F3 F | "Bb"F6 z2 | "F7"F4 F3 F | "Bb"F6 z2 |
+"Bb"F4 F3 F | "Gm7"A4 G3 G | "Cm7"_B8 | "F7"A4 F3 F |
+"Bb"F6 z2 | "Bb"z7 F | "Bb"F8 | "Bb"G6 F2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Staten Island, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsr-t.abc, tune X: 56 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f80a2c0f37a49b9b0c748e922924d59c40d82758abc5b0f7fc9245d7fd563be0).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Staten Island
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A2 G2 | "D"F2 D2 F2 G2 A4 A4 | "D"d2 f2 e2 d2 d2 c2 B2 A2 | "G"B4 G2 B2 "D"A4 F2 A2 |
+"Em"G4 E4 "A7"E4 A2 G2 | "D"F2 D2 F2 G2 A4 A4 | "D"d2 f2 e2 d2 d2 c2 B2 A2 | "G"d4 d4 "A7"e2 f2 g2 e2 |
+"D"f4 d4 d4 A2 G2 | "D"F2 D2 F2 G2 A4 A4 | "D"d2 f2 e2 d2 d2 c2 B2 A2 | "G"B4 G2 B2 "D"A4 F2 A2 |
+"Em"G4 E4 "A7"E4 A2 G2 | "D"F2 D2 F2 G2 A4 A4 | "D"d2 f2 e2 d2 d2 c2 B2 A2 | "G"d4 d4 "A7"e2 f2 g2 e2 |
+"D"f4 d4 d4 f2 g2 | "D"a4 f2 a2 "A"g4 e2 g2 | "D"f4 d2 f2 "A"e2 c2 A4 | "C"=c4 ^c4 e2 f2 g2 e2 |
+"C"=c4 ^c4 e2 f2 g2 e2 | "D"a4 f2 a2 "A"g4 e2 g2 | "D"f4 d2 f2 "A"e2 c2 A4 | "D"d4 d4 "A7"e2 f2 g2 e2 |
+"D"f4 d4 d4 f2 g2 | "D"a4 f2 a2 "A"g4 e2 g2 | "D"f4 d2 f2 "A"e2 c2 A4 | "C"=c4 ^c4 e2 f2 g2 e2 |
+"C"=c4 ^c4 e2 f2 g2 e2 | "D"a4 f2 a2 "A"g4 e2 g2 | "D"f4 d2 f2 "A"e2 c2 A4 | "D"d4 d4 "A7"e2 f2 g2 e2 |
+"D"f4 d4 d4 z4 |

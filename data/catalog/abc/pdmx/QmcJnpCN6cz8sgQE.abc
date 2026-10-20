@@ -1,0 +1,35 @@
+%abc-2.1
+% 3 Morceaux Op.11, by Anatoly Lyadov. Score published on MuseScore (artist: Anatoly Lyadov), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Anatoly Lyadov (died 1914,
+% Wikidata Q348282).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/27/QmcJnpCN6cz8sgQEbEPawNrDd9UTKV3GsdshVVQB3HSjEE.mid (sha256
+% a067977fc734fb91402e26777766691affe46c879199f33df0cfcea366896271): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:3 Morceaux Op.11
+M:2/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bm"z8 | "Bm"z8 | "Bm"z2 ^f4 _d2 | "Bm7"d2 _d2 z2 ^f2 |
+"E7"e8 | "Dbm7"e7 z | "F#7"e4 ^f2 _d2 | "Bm7"d2 _d2 B2 A z |
+"E7"B8 | "Db7"B3 z5 | "F#m"z2 _d4 _A2 | "F#m7"A2 _A2 z2 _d2 |
+"B7"B8 | "Abm7"B7 z | "Db7"B4 _d2 _A2 | "F#m7"A2 _A2 ^F2 E z |
+"Ebm7"^F8 | "D7"^F3 z5 | "F#m"^F2 A2 B2 _d2 | "Bm7"^f8 |
+"F#m"^F2 A2 B2 _d2 | "Bm7"^f8 | "F#m"^f2 a2 b2 _d'2 | "Dbm7"e'2 d'2 _d'2 b2 |
+"A"_d'4 b3 _d' | "Ebm7"b z3 ^F4 | "B"D ^F A ^F B ^F _d ^F | "E"e ^F d G _d _A B _A |
+"F#"A _D2 _D _A _D2 =A | "C"_A D2 D D D2 D | "B"G d'2 a b a2 g | "B"e d2 A B A2 G |
+"B"E D2 A, B, A,2 G, | "Em"E,2 D,2 G2 ^F2 | "Db7"F F2 F B F2 F | "Db7"^F ^F2 ^F _d _A2 _A |
+"F#7"_d2 z6 | "F#7"_D G2 F ^F _B2 =d | "F#7"_d g2 f ^f _b2 =d' | "F#7"_d' ^f'2 ^f e =d2 _d |
+"Bm"z2 ^f4 _d2 | "Bm7"d2 _d2 B2 ^f2 | "E7"e8 | "E7"e7 z |
+"Am"z2 e4 B2 | "Am7"c2 B2 A2 e2 | "D7"d8 | "D7"d7 z |
+"G"z2 d4 A2 | "G"B2 A2 G2 e2 | "Dm"d8 | "E7"d6 e2 |
+"Dm"d8 | "E7"d6 e2 | "G7"d8 | "G7"d7 z |
+"Bm"B2 d2 e2 ^f2 | "Em7"b8 | "Bm"B2 d2 e2 ^f2 | "Em7"b8 |
+"Bm"b2 d'2 e'2 ^f'2 | "F#m7"a'2 g'2 ^f'2 e'2 | "D"^f'4 e'3 ^f' | "Abm7"e' z3 B4 |

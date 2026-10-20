@@ -1,0 +1,34 @@
+%abc-2.1
+% Ouvre ton cœur, by Georges Bizet. Score published on MuseScore (artist: Georges Bizet), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/35/QmSo29G1TqAcUKjhcRubQX7fABbaPGoxHyW9CZF4WkzzSy.mid (sha256
+% 3e29f7e44eab971ab064327e58eae01e31b1ccf44f878111ee1a6fac5d32244b): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ouvre ton cœur
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"z12 | "D7"z12 | "Bb"z12 | "D"z12 |
+"G"z12 | "G"z12 | "G"z12 | "G"G4 d _e z c d4 |
+"G"d12 | "Cm"c2 d2 _e4 c2 _e2 | "G"d c _B A G8 | "G"G12 |
+"G"G8 z4 | "F7"A2 _B2 c2 F2 d2 _B2 | "F7"A2 _B2 c2 F2 d4 | "D7"c _B A _B G4 ^F4 |
+"Gm"G12 | "G"G12 | "G"G8 z4 | "G"G4 _e2 d c d4 |
+"G"d12 | "Cm"c2 d2 _e4 c2 _e2 | "G"d c _B A G8 | "G"G12 |
+"G"G8 z4 | "F7"A2 _B2 c2 F2 d2 _B2 | "F7"A2 _B2 c2 F2 d4 | "D7"c _B A _B G4 ^F4 |
+"Gm"G12 | "G"G12 | "G"G8 z4 | "G"B4 B4 B4 |
+"G"A8 d4 | "G"G4 G4 G4 | "G"A4 D4 z4 | "G7"B,4 A2 G2 G4 |
+"C"G4 z8 | "G7"B,4 A2 G2 G4 | "C"G4 z8 | "Am7"E2 D2 C2 D2 E2 ^F2 |
+"Em7"G2 A2 B2 c2 d2 z2 | "E7"e12 | "D7"e4 d3 z D3 z | "G"D B G10 |
+"G7"G8 z4 | "Cm"z12 | "Cm7"z12 | "Eb"z12 |
+"Cm7"z12 | "D7"z12 | "Gm"z12 | "G"z12 |
+"G"z12 | "G"G4 d3 c d4 | "Gm"d12 | "Cm"c2 d2 _e4 c2 _e2 |
+"Gm"d c _B A G8 | "Gm"G12 | "Gm"G8 z4 | "F7"A2 _B2 c2 F2 d2 _B2 |
+"F7"A2 _B2 c2 F2 d4 | "Cm7"c _B A _B G4 ^F4 | "Gm"G12 | "Gm"G12 |

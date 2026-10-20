@@ -1,0 +1,28 @@
+%abc-2.1
+% Workshop Reel, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsu-z.abc, tune X: 31 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 d104d7d1bb83eb1ca18f6b944dc22cf9f7bfe5f955d07cd573615985f69c2c1f).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Workshop Reel
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 d4 e4 | "D"f6 d2 A4 d4 | "G"B4 G8 B4 | "E7"e6 d2 c4 B4 |
+"A"A12 ^A4 | "G"B8 d4 B4 | "D"A4 F8 d4 | "E7"e6 d2 c4 B4 |
+"A7"A8 d4 e4 | "D"f6 d2 A4 d4 | "G"B4 G8 B4 | "E7"e6 d2 c4 B4 |
+"A"A12 ^A4 | "G"B8 d4 B4 | "D"A4 F8 d4 | "A7"c4 z4 e4 z4 |
+"D"d4 z4 "E7"c4 d4 | "A"e4 e4 "C7"e2 d2 c4 | "Bm"d4 f4 "Ab7"f2 e2 ^d4 | "Dbm"e8 c8 |
+"F#7"^A12 c4 | "Bm"d8 "E7"e6 d2 | "A"c8 d6 c2 | "B7"B6 A2 ^G4 A4 |
+"E7"B12 c2 d2 | "A"e4 e4 "C7"e2 d2 c4 | "Bm"d4 f4 "Ab7"f2 e2 ^d4 | "Dbm"e8 c8 |
+"F#7"^A12 c4 | "Bm"d8 "E7"e6 d2 | "A"c8 d6 c2 | "E7"B6 A2 B4 ^G4 |
+"A"A12 f2 g2 | "D"a6 f2 d4 a4 | "A7"g4 e8 g4 | "Bm"f6 e2 d4 f4 |
+"F#m"e4 c8 c4 | "G"B8 b8 | "D"a6 f2 d4 f4 | "A"e4 a4 "E7"^g4 b4 |
+"A"a12 f2 g2 | "D"a6 f2 d4 a4 | "A7"g4 e8 g4 | "Bm"f6 e2 d4 f4 |
+"F#m"e4 c8 c4 | "G"B8 b8 | "D"a6 f2 d4 f4 | "A7"e4 g4 f4 e4 |
+"D"d8 z8 |

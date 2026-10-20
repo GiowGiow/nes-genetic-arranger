@@ -1,0 +1,34 @@
+%abc-2.1
+% DUAS CONTAS, by Garoto, as performed by Garoto.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/duas-contas.html (file
+% https://www.beakauffmann.com/mpb_d/som/duas-contas-1.mid, sha256
+% c42f146a39838cf06dcffd1f81633a8339c1a12e67778ddc6ec8cc5012a40a72), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-56 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DUAS CONTAS
+M:2/4
+L:1/16
+Q:1/4=62.999997
+% Exact tempo 62.99999685000016 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 | "Gm7"z8 | "F"z8 | "E7"z8 |
+"Am7"B4 A4 | "Am7"z B A B A A ^F D | "Gm7"A4 G4 | "Gm7"z A G A G G E C |
+"C7"G4 F4 | "Db7"G F2 G E D E C | "C7"C6 z2 | "Bm7"z7 E |
+"Am7"B4 A4 | "Am7"z B A B A A ^F D | "Gm7"A4 G4 | "Gm7"z A G A G2 A _B |
+"Am7"c6 c2 | "F#m"D6 D2 | "Gm7"c c2 c c _B c _B | "Eb7"_B6 A2 |
+"Am7"G G2 G G F G E | "Db7"E6 D2 | "Gm7"A4 G4 | "C7"z A G A G A2 _B |
+"Am7"c8 | "D7"c4 d2 c2 | "Gm7"_B4 z4 | "C7"z3 A A A2 _B |
+"F"G3 F3 z2 | "E7"z8 | "Am7"B4 A4 | "Am7"z B A B A A ^F D |
+"Gm7"A4 G4 | "Gm7"z A G A G G E C | "C7"G4 F4 | "Db7"G F2 G E D E C |
+"C7"C6 z2 | "Bm7"z7 E | "Am7"B4 A4 | "Am7"z B A B A A ^F D |
+"Gm7"A4 G4 | "Gm7"z A G A G2 A _B | "Am7"c6 c2 | "F#m"D6 D2 |
+"Gm7"c c2 c c _B c _B | "Eb7"_B6 A2 | "Am7"G G2 G G F G E | "Db7"E6 D2 |
+"Gm7"A4 G4 | "C7"z A G A G A2 _B | "Am7"c8 | "D7"c4 d2 c2 |
+"Gm7"_B4 z4 | "C7"z3 A A A2 _B | "F"G3 F5 | "F"E8 |

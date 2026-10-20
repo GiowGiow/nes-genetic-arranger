@@ -1,0 +1,24 @@
+%abc-2.1
+% The Old Horned Sheep or The Humours Of Donnybrook, from the Nottingham Music Database as cleaned
+% by Jukedeck: ABC_cleaned/jigs.abc, tune X: 287 (https://github.com/jukedeck/nottingham-dataset;
+% source file sha256 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Old Horned Sheep or The Humours Of Donnybrook
+M:6/8
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z10 d f | "G"g4 G2 G2 F2 G2 | "C"E2 G2 G2 D2 G2 G2 | "G"g4 G2 G2 F2 G2 |
+"D7"E2 A2 G2 F2 E2 D2 | "G"g4 G2 G2 F2 G2 | "C"E2 G2 G2 D2 G2 G2 | "D7"E2 G2 G2 F2 G2 A2 |
+"G"B2 G2 G2 G4 d f | "G"g4 G2 G2 F2 G2 | "C"E2 G2 G2 D2 G2 G2 | "G"g4 G2 G2 F2 G2 |
+"D7"E2 A2 G2 F2 E2 D2 | "G"g4 G2 G2 F2 G2 | "C"E2 G2 G2 D2 G2 G2 | "D7"E2 G2 G2 F2 G2 A2 |
+"G"B2 G2 G2 G4 D2 | "G"B2 d2 d2 d2 B2 G2 | "G"B2 d2 d2 d4 G2 | "G"B2 d2 d2 d2 B2 G2 |
+"D7"c2 B2 c2 A4 c2 | "G"B2 d2 d2 d2 B2 G2 | "D7"B2 d2 d2 d2 e2 f2 | "Em"g2 f2 e2 d2 c2 B2 |
+"D7"A2 B2 G2 F2 E2 D2 | "G"B2 d2 d2 d2 B2 G2 | "G"B2 d2 d2 d4 G2 | "G"B2 d2 d2 d2 B2 G2 |
+"D7"c2 B2 c2 A4 c2 | "G"B2 d2 d2 d2 B2 G2 | "D7"B2 d2 d2 d2 e2 f2 | "Em"g2 f2 e2 d2 c2 B2 |
+"D7"A2 B2 G2 F2 E2 D2 |

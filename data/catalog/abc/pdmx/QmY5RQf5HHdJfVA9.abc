@@ -1,0 +1,27 @@
+%abc-2.1
+% Se La Face Ay Pale - Guillaume Dufay, by Guillaume Dufay. Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Guillaume Dufay (died 1474,
+% Wikidata Q207717).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/4/QmY5RQf5HHdJfVA95Dn1bE257cHbefkcqEAFGx8ivkCV59.mid (sha256
+% 06980cd73ef9d93e1f3cca46f908f6a67ec7ab2cb12036c61d65db32b35313e4): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Se La Face Ay Pale - Guillaume Dufay
+M:3/2
+L:1/16
+Q:1/4=169.999603
+% Exact tempo 169.99960333425886 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"c16 c8 | "G"d16 e8 | "Em7"e4 d4 c4 B8 A4 | "D"B16 z8 |
+"D7"c4 c4 B4 A8 F4 | "C"E16 z8 | "G"d16 d8 | "C"e16 d8 |
+"G"c4 B4 G4 c4 B4 A4 | "C"c16 z8 | "D"F8 F4 F8 F4 | "C"C24 |
+"Dm"z4 C4 D4 E4 F8 | "B"z4 c8 A4 ^F8 | "Em7"G4 G4 G4 G4 C8 | "C"z8 c8 B8 |
+"A"A8 G4 ^F8 E4 | "G"G8 z16 | "C"e16 d8 | "C"c8 B8 A8 |
+"C"G8 c4 c4 c4 A4 | "G"B16 z8 | "C"c16 A4 G4 | "Dm7"F8 E8 D8 |
+"C"C8 z4 G4 E4 C4 | "C"z4 G4 E4 G4 z4 c4 | "D7"B4 A4 c3 z2 C3 E4 F4 | "Am"G4 A4 E4 D4 E4 F4 |
+"Am7"G4 C4 c4 G4 A4 B4 | "C"c24 | "C"c24 |

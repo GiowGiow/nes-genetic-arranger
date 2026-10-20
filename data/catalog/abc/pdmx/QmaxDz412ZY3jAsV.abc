@@ -1,0 +1,35 @@
+%abc-2.1
+% Liberty Bell, by John Philip Sousa. Score published on MuseScore (artist: John Philip Sousa),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Philip Sousa (died 1932,
+% Wikidata Q295935).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/52/QmaxDz412ZY3jAsVvyJfDN4H7KzM5ut4nuum1BAU5oLHny.mid (sha256
+% f66030c4e068708690c50e9a56138ab34ab8cd01b5c10e9aaeaf62eac064712f): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Liberty Bell
+M:6/8
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"F4 E2 D4 _D2 | "C7"C4 B,2 _B,4 A,2 | "A7"G, z A, z _B, z A,4 G,2 | "C"C,4 z8 |
+"F"F,2 z2 A2 A2 z2 A2 | "F"F,2 z2 A2 A2 z2 A2 | "C7"F,2 z2 A2 A2 z2 A2 | "C7"F,2 z2 A2 A2 z2 A2 |
+"C"C2 z2 _B2 _B2 z2 _B2 | "C7"C2 z2 _B2 _B2 z2 _B2 | "F"C2 z2 _B2 _B2 z2 _B2 | "Dm7"C2 z2 _B2 _B2 z2 _B2 |
+"F"F,2 z2 A2 A2 z2 A2 | "F"F,2 z2 A2 A2 z2 A2 | "G7"F,2 z2 A2 A2 z2 A2 | "Em7"F,2 z2 A2 A2 z2 A2 |
+"C"G,2 z2 c2 c2 z2 c2 | "G"G,2 z2 B2 B2 z2 B2 | "C"C2 z2 G,2 C2 z2 G,2 | "C"C2 z4 G2 z4 |
+"F"F,2 z2 A2 A2 z2 A2 | "F"F,2 z2 A2 A2 z2 A2 | "C7"F,2 z2 A2 A2 z2 A2 | "C7"F,2 z2 A2 A2 z2 A2 |
+"C"C2 z2 _B2 _B2 z2 _B2 | "C7"C2 z2 _B2 _B2 z2 _B2 | "F"C2 z2 _B2 _B2 z2 _B2 | "Dm7"C2 z2 _B2 _B2 z2 _B2 |
+"F"F,2 z2 A2 A2 z2 A2 | "F"F,2 z2 A2 A2 z2 A2 | "G7"F,2 z2 A2 A2 z2 A2 | "Em7"F,2 z2 A2 A2 z2 A2 |
+"C"G,2 z2 c2 c2 z2 c2 | "G"G,2 z2 B2 B2 z2 B2 | "C"C2 z2 G,2 C2 z2 G,2 | "C"C2 z4 _B,6 |
+"Dm7"A,2 _A,2 =A,2 D4 C2 | "Dm7"A,6 F,6 | "C7"D,6 G,6 | "F"F,10 F,2 |
+"C"G,2 A,2 _B,2 E4 D2 | "Dm7"C6 F6 | "G"E6 D6 | "C"C10 z2 |
+"Bb"_B,2 z2 D2 D2 z2 D2 | "A7"A,2 z2 _D2 _D2 z2 _D2 | "Bb"D,2 z2 D2 _B,2 z2 D2 | "A"A,2 z2 E2 E2 z2 E2 |
+"Bb"_B,2 z2 G2 G2 z2 G2 | "F"C,2 z2 C2 C2 z2 C2 | "C7"E,2 z2 C2 C,2 z2 C2 | "Dm"C2 z2 C2 C4 C2 |
+"Dm7"A,2 _A,2 =A,2 D4 C2 | "Dm7"A,6 F,6 | "C7"D,6 G,6 | "F"F,10 F,2 |
+"C"G,2 A,2 _B,2 E4 D2 | "Dm7"C6 F6 | "G"E6 D6 | "C"C10 z2 |
+"Bb"_B,2 z2 D2 D2 z2 D2 | "A7"A,2 z2 _D2 _D2 z2 _D2 | "Bb"D,2 z2 D2 _B,2 z2 D2 | "A"A,2 z2 E2 E2 z2 E2 |

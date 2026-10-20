@@ -1,0 +1,36 @@
+%abc-2.1
+% Keyboard Sonata in E-Flat Major K. 306, by Domenico Scarlatti (1685-1757). Score published on
+% MuseScore (artist: Domenico Scarlatti), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Scarlatti (died 1757,
+% Wikidata Q167837).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/38/QmXqwTaVa7MbrhECzVT12aoC8r2a5Ppkf1Uv3LQMtFHDw1.mid (sha256
+% 667314f24d2d6e9f1acbca758c69587eceaf512088478d784d9aa78002d858ff): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Keyboard Sonata in E-Flat Major K. 306
+M:2/2
+L:1/16
+Q:1/4=148.999839
+% Exact tempo 148.99983858350816 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"_e6 d c _B8 | "Fm"_B2 g2 g2 f2 f2 _e2 _e2 d2 | "Fm"_e2 g2 g2 f2 f2 _e2 _e2 d2 | "Gm"_e2 _b2 _b2 g2 g2 _e2 _e2 c2 |
+"Bb7"c2 _A2 _A2 F2 F2 _B2 _B2 _A2 | "Cm7"G8 z4 _e4 | "Eb"d4 c4 _B4 _A4 | "Cm7"G8 z4 _e4 |
+"Eb"d4 c4 _B4 _A4 | "F7"G2 g2 g2 f2 f2 _e2 _e2 d2 | "Eb"d2 c2 c2 _B2 c c _B4 A _B | "F7"A8 z4 _B4 |
+"F"A4 _B4 c4 d4 | "F7"_e4 d4 g4 c4 | "Dm7"f4 _B4 f _e3 d2 c2 | "Bb"d2 c2 c2 _B2 _B2 A2 A2 G2 |
+"C7"G2 F2 F2 E2 E2 G2 G2 ^F2 | "C7"^F2 A2 A2 G2 G2 _B2 _B2 A2 | "G7"A2 c2 c2 _B2 _B2 d2 d2 _d2 | "Em7"_d2 e2 e2 =d2 =d2 f2 f2 e2 |
+"D"e2 g2 g2 f2 f2 a2 a2 g2 | "Dm"g2 f2 f2 e2 e2 d2 d2 c2 | "A7"c c _B4 A _B A2 z6 | "C"z4 B4 _d4 =d4 |
+"D7"e4 f4 g4 f4 | "C7"_b4 e4 a4 d4 | "D"a g3 f2 e2 f2 F2 F2 F2 | "C7"E2 E2 A2 A2 d4 _B4 |
+"A7"c4 A4 c _B3 A2 G2 | "F7"A2 A2 A2 A2 G2 G2 c2 c2 | "Dm7"f4 d4 f _e3 d2 c2 | "Bb"d2 f2 f2 _B2 c _B A2 A2 _B2 |
+"Dm7"c2 f2 f2 _B2 c _B A2 A2 _B2 | "C7"c2 f2 g f e2 e2 f2 g f e2 | "C7"e2 f2 g f e2 e2 f2 g f e2 | "F"e6 f6 z4 |
+"F"z2 c2 c2 c2 _d2 _B2 e2 c2 | "F"f2 c2 c2 c2 _d2 _B2 e2 c2 | "F"f4 c4 _d4 _e4 | "F"f4 c4 _d4 _e4 |
+"F7"f4 A4 _B4 ^f4 | "Dm7"f4 A4 _B4 c4 | "Ebm"_d4 A4 _B4 ^f4 | "Dm7"f4 A4 _B4 c4 |
+"Ebm"_d2 f2 _e2 c2 _d2 A2 A2 _B2 | "F7"c4 A4 _B4 ^f4 | "Dm7"f4 A4 _B4 c4 | "Ebm"_d4 A4 _B4 ^f4 |
+"Dm7"f4 A4 _B4 c4 | "F7"_d2 f2 c2 _e2 _B2 _d2 A2 c2 | "C7"_B2 f2 f2 _e2 _e2 d2 d2 c2 | "D"c2 _B2 _B2 A2 A2 G2 G2 F2 |
+"F"F2 g2 g2 f2 f2 _e2 _e2 d2 | "F7"d2 f2 c2 _e2 _B2 d2 A2 c2 | "C7"_B2 f2 f2 _e2 _e2 d2 d2 c2 | "D"c2 _B2 _B2 A2 A2 G2 G2 F2 |
+"F"F2 g2 g2 f2 f2 _e2 _e2 d2 | "F7"d2 f2 c2 _e2 _B2 d2 A2 c2 | "F"_B4 _b6 c'2 c2 _e2 | "F"d4 _b6 c'2 c2 _e2 |
+"F7"d2 _b2 g2 _e2 d2 f2 A2 c2 | "F7"_B2 d2 G2 _B2 D2 _B2 C2 A2 | "Bb"A4 _B8 z4 | "Eb"_e6 d c _B8 |

@@ -1,0 +1,22 @@
+%abc-2.1
+% Gitar Duet Andante In G, by Ferdinando Carulli (1770-1841). Score published on MuseScore
+% (artist: Ferdinando Carulli), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ferdinando Carulli (died 1841,
+% Wikidata Q332596).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/3/QmT4Poy2tBoViXyB5eZYPZfmecccrtsAj1b85NeJ5Mx1s4.mid (sha256
+% fcf97a6e08b8cd90f8c725d82ae1ef02e1fd54e48ce92fab94dd0971108be17b): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Gitar Duet Andante In G
+M:12/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am7"B,2 G,2 D2 C2 A,2 E2 "Bm"D2 G2 ^F2 G2 ^F2 E2 | "Abm7"D6 C6 "Em"B,6 z6 | "C"A,2 _A,2 B,2 =A,2 C2 B,2 C2 E2 _E2 =E2 C2 =A,2 | "Em"B,2 D2 _D2 =D2 C2 B,2 "D7"A,6 z6 |
+"Am7"B,2 G,2 D2 C2 A,2 E2 "Bm"D2 G2 ^F2 G2 ^F2 E2 | "Abm7"D6 C6 "Em"B,6 z6 | "Am"A,2 _A,2 B,2 C2 D2 E2 "Em7"D2 G2 D2 C2 B,2 =A,2 | "G"G,2 G2 D2 B,2 D2 B,2 G,6 z6 |
+"E"D2 C2 B,2 B,2 A,2 _A,2 _A,4 z4 E2 D2 | "F#m7"C2 E2 D2 B,2 D2 C2 "A7"A,4 z8 | "D"C2 B,2 A,2 A,2 G,2 ^F,2 ^F,4 z4 D2 C2 | "D"B,2 D2 C2 A,2 C2 B,2 "Em7"G,4 z8 |
+"C"E6 z6 "F#"z2 A,2 B,2 C2 D2 E2 | "B"D6 z6 "E"z2 G,2 A,2 B,2 C2 D2 | "C"E2 ^F2 G2 E2 C2 A,2 "Em7"G,2 G2 D2 C2 B,2 A,2 | "G"G,2 G2 D2 B,2 D2 B,2 G,6 z6 |

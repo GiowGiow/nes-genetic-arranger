@@ -1,0 +1,35 @@
+%abc-2.1
+% 01 Concerto for 2 Mandolins in G RV532 - Allegro I, by Antonio Vivaldi. Score published on
+% MuseScore (artist: Coral da Capela Calvário), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/35/QmUor26fXTwyhYgVvQWLaTu2adszze8GGu63HpBmSAhuGx.mid (sha256
+% f10484dc415755dfbdda185227e6da4caac40b02ff7e8201ff1cbd19e8c238ba): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:01 Concerto for 2 Mandolins in G RV532 - Allegro I
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"z14 G ^F | "G"G2 D2 D2 E ^F "Em7"G A B A G2 B,2 | "F#m"C B, A,2 A2 C2 "G"D C B,2 G2 B,2 | "D"C B, A,2 A2 C2 "G"B,2 G,2 z2 G ^F |
+"Em7"G2 D2 D2 E ^F "G"G A B A G2 B,2 | "A"_D B, A,2 A2 E2 ^F G A2 E2 A2 | "A"^F G A2 E2 A2 "Em7"^F2 E D E2 _D2 | "D7"D4 z D E ^F "G"G D E ^F G D E ^F |
+"Em7"G D B, D G D B, D "G7"F D B, D F D B, D | "C"E2 C2 z E ^F G "Am7"A E ^F G A E ^F G | "A"A E _D E A E _D E G E _D E G E _D E | "D"^F2 D2 z4 "G"B, C D2 G2 D2 |
+"G"B, C D2 G2 D2 B,2 D2 A,2 D2 | "G"B, C D2 G2 D2 "Em7"B,2 D2 A,2 D2 | "G"B,2 G2 A2 ^F2 G4 z2 G, A, | "Gm"_B, A, _B, C D C D _B, "D"A, G, A, _B, C _B, C A, |
+"Gm"_B, A, _B, C D C D _B, "D"C _B, C D _E D _E C | "Gm"_B,2 G,2 A,2 ^F,2 "G"G,4 z2 G, ^F, | "G"G, ^F, G, A, B, A, B, G, "D"^F, E, ^F, G, A, G, A, ^F, | "G"G, ^F, G, A, B, A, B, G, "D"A, G, A, B, C B, C A, |
+"G"B,2 B,2 C2 A,2 G,4 z4 | "E7"z8 "F#m"z8 | "G"G A B A G2 D2 "D"A B c B A2 D2 | "Em7"B2 A G A2 ^F2 "G"G4 z4 |
+"D"z8 "G"G D G B G D G B | "D"A D A c A D A c "G"B4 z4 | "G"B c d c B A G ^F "Em"G A B A G ^F E D | "A7"E ^F G ^F E D _D B, _D4 z4 |
+"D"z8 "A7"A, _D E _D A, _D E _D | "D"A, D ^F D A, D ^F D "A7"A, E G E A, E G E | "D"D ^F D ^F D ^F D ^F "A"_D E _D E _D E _D E | "D"D ^F D ^F D ^F D ^F "A"_D E _D E _D E _D E |
+"D"D ^F D ^F D ^F D ^F D4 z2 ^F G | "D"A4 z2 ^F G "A"A4 z4 | "D"z8 "A"z8 | "A7"z8 "D"z8 |
+"D"z A A A A A A A ^F A A A A A A A | "A"E A A A A A A A "D"D E ^F G A2 G2 | "D"^F2 E D E2 _D2 =D E ^F =D _D =D E _D | "D"D E ^F D _D =D E _D "A7"=D ^F E =D =D2 _D2 |
+"Bm7"D2 A,2 A,2 B, _D "D"=D E ^F E =D2 ^F2 | "F#m7"G ^F E2 A2 E2 "D"^F E D2 A2 ^F2 | "F#m7"G ^F E2 A2 E2 "D"^F2 D2 z4 | "F#m7"^F G A2 d2 A2 "D"^F G A2 d2 A2 |
+"F#m7"^F2 A2 E2 A2 "D"^F G A2 d2 A2 | "F#m7"^F2 A2 E2 A2 "D"^F2 E D E2 _D2 | "D"D4 z4 "A7"z8 | "D"D E ^F G A ^F D ^F "A"E ^F G A B G E G |
+"D"^F2 D2 z4 "Bm7"z8 | "G"D D D D G D D D G D D D G D D E | "C"F z2 E F z2 E "Em"F z2 E F z3 | "D7"C C C C ^F C C C ^F C C C ^F C C D |
+"Bm"E z2 D E z2 D "D"E z2 D E z3 | "Em"B, B, B, B, E B, B, B, E B, B, B, E B, B, C | "Am"D z2 C D z2 C "C"D z2 C D z3 | "B"B,2 _E2 B,,2 _E2 "Em"=E2 =E2 B,,2 =E2 |
+"B7"^F2 ^F2 B,,2 ^F2 "Em"G2 G2 B,,2 G2 | "D"^F2 B,,2 E2 B,,2 "G"_E2 B,,2 G2 B,,2 | "D"^F2 B,,2 E2 B,,2 "G"_E2 B,,2 G2 B,,2 | "D"^F2 B,,2 E2 B,,2 "B"_E4 z _E =E ^F |
+"Em"G G G G G ^F E _E =E4 z4 | "Em"G G G G G ^F E _E =E4 z4 | "Em"E E ^F G ^F ^F G A G G ^F E ^F ^F E _E | "Em"E E ^F G ^F ^F G A G G ^F E ^F ^F E _E |

@@ -1,0 +1,22 @@
+%abc-2.1
+% KELSO (Hopkins), by E. J. Hopkins. Score published on MuseScore (artist: E. J. Hopkins), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): E. J. Hopkins (died 1901,
+% Wikidata Q16030485).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/23/QmTh6tzrbkCVndmfxKni3DGcBgEezBBJ5NDaW5wr4kxqT1.mid (sha256
+% cfe4de9a4968bc904c57b37090d0af1cbbd11d2fde6cb434a256dbff212ab925): melody track 0, bars 0-13
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:KELSO (Hopkins)
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm7"_B8 _B8 "Bb"_B8 _e8 | "F"d12 c4 "Bb"_B16 | "Cm7"_B8 G8 "Bb"F8 _B8 | "C7"d8 E4 c4 "F"c16 |
+"Gm"_B8 _B8 "Eb"_B8 _e8 | "F#m"d12 c4 "Gm"_B16 | "C7"G8 A4 _B4 "D"d8 _E4 c4 | "C7"_B8 G8 "F"F16 |
+"F"_e8 _e8 "Gm"d8 _B8 | "D"d12 c4 "Gm"_B16 | "C7"A8 _D4 G4 "Gm7"F8 _B8 | "Dm7"G8 _E4 A4 "Bb"_B16 |
+"Eb"_B16 "Bb"_B16 |

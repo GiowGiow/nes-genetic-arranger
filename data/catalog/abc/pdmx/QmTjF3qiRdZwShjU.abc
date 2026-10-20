@@ -1,0 +1,27 @@
+%abc-2.1
+% vesti la giubba, by Leoncavallo. Score published on MuseScore (artist: Ruggero Leoncavallo), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Leoncavallo (died 1919, Wikidata
+% Q189015).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/26/QmTjF3qiRdZwShjUULg3P2de48sxcU5EsQjo4ZSNHT9on8.mid (sha256
+% d432a7c3f46168eb3e6c3277d0ae0cdf707f9e00d84569ca44685cd441e8d7d8): melody track 0, bars 0-33
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:vesti la giubba
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"d8 "Dm"_d6 F2 | "D"A8 "Dm"A4 A2 A2 | "D"A8 "Dm"_A6 D2 | "D"F8 F8 |
+"G"z4 E4 F4 G4 | "F#7"A8 A6 A2 | "F7"A4 A4 _B4 c4 | "Gm7"d15 z |
+"Am"f8 e6 e2 | "Gm"_e12 d4 | "F#m"_d4 =d4 A4 c4 | "G"c8 _B8 |
+"Eb7"_B8 "Bb"F6 G2 | "Dm7"A8 "Am"f6 c2 | "Gm"d8 "C7"d2 E2 E2 E2 | "F"F15 z |
+"F"z4 F4 E4 F4 | "F"_A4 =A4 c4 f4 | "Eb"^f8 ^F4 ^F4 | "F"F8 F4 z4 |
+"C"z4 E4 "E"A4 _A4 | "F#m7"c8 "E7"B4 A4 | "E"d4 d4 "E7"_d6 B2 | "C7"e8 "Gm"e8 |
+"A7"e15 z | "Gm"f8 e6 d2 | "Gm"f8 e8 | "Bb"z3 e2 f3 "C7"g3 f4 e |
+"A"g8 "Dm"f8 | "G"e8 "Bb"d6 _B2 | "Dm"A8 "Bb"E3 F2 G3 | "Eb7"A8 "A7"A4 A4 |
+"D"A15 z |

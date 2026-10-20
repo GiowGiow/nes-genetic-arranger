@@ -1,0 +1,34 @@
+%abc-2.1
+% Canon and Gigue in D major P.37, by Johann Pachelbel (1653 - 1706). Score published on MuseScore
+% (artist: Johann Pachelbel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Pachelbel (died 1706,
+% Wikidata Q76485).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/12/QmdBmvmnfvskQgyoojtkJtqNWpXWqSwHaivdLvGTpkkjZY.mid (sha256
+% 780dfc38d3f3bff987a5be4dda1c63bacc0c0e58e1ea495ae9c53c42e0129f89): melody track 0, bars 0-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Canon and Gigue in D major P.37
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z8 "D"z8 | "Em"z8 "Bm"z8 | "C"z8 "G"z8 | "C"z8 "D"z8 |
+"G"b8 "D"a8 | "Em"g8 "Bm"^f8 | "C"e8 "G"d8 | "C"e8 "D"^f8 |
+"G"g8 "D"^f8 | "Em"e8 "Bm"d8 | "C"c8 "G"B8 | "C"c8 "D"d8 |
+"G"g2 ^f2 g2 G2 "D"^F2 d2 A2 B2 | "Em"G2 g2 ^f2 e2 "Bm"^f2 b2 d'2 e'2 | "C"c'2 b2 a2 c'2 "G"b2 a2 g2 ^f2 | "C"e2 d2 c2 B2 "D"A2 c2 B2 A2 |
+"G"G2 A2 B2 c2 "D"d2 A2 d2 c2 | "Em"B2 e2 d2 c2 "Bm"d2 c2 B2 A2 | "C"G2 E2 e2 ^f2 "G"g2 ^f2 e2 d2 | "C"c2 B2 A2 e2 "D7"d2 e2 d2 c2 |
+"G"B4 b4 "D7"a8 | "Em7"z4 g4 "Bm7"b8 | "C"g8 "G"g8 | "C"g4 c'4 "D7"a4 d'4 |
+"G"d'2 b c' d'2 b c' "D"d' d e ^f g a b c' | "Em"b2 g a b2 B c "Bm"d e d c d B c d | "C"c2 e d c2 B A "G"B A G A B c d e | "C"c2 e d e2 ^f g "D"d e ^f g a b c' d' |
+"G"b2 g a b2 a g "D"a ^f g a b a g ^f | "Em"g2 e ^f g2 G A "Bm"B c B A B g ^f g | "C"e2 g ^f e2 d c "G"d c B c d e ^f g | "C"e2 g ^f g2 ^f e "D"^f g a g ^f g e ^f |
+"G"g2 B2 c2 B2 "D"A2 a2 b2 a2 | "Em"g2 B2 G2 e2 "Bm"d2 D2 C2 D2 | "C"E2 e2 ^f2 e2 "G"d2 D2 C2 D2 | "C"E2 e2 d2 e2 "D"^f2 ^F2 E2 ^F2 |
+"G"G2 g ^f g2 B2 "D"d2 d e ^f2 d2 | "Em"B2 g a b2 g2 "Bm7"b2 b a g2 ^f2 | "C"e2 e d e2 ^f2 "G"g2 b a g2 b2 | "C"c'2 g ^f e2 e2 "D"d2 A2 d2 c2 |
+"G"B6 b2 "D"b2 c'2 b2 a2 | "Em"g6 g2 "Bm"g2 a2 g2 ^f2 | "C"e8 "G"g8 | "C"g2 f2 e2 f2 "D"d6 d2 |
+"G"d6 d'2 "D7"d'2 e'2 d'2 c'2 | "Em"b6 b2 "Bm7"b2 c'2 b2 a2 | "C"g2 f2 e2 f2 "G"d6 d2 | "C"g2 f2 e2 f2 "D"d6 d2 |
+"G"g4 G4 "D"^F4 ^f4 | "Em"e4 E4 "Bm"D4 d4 | "C"c4 c'4 "Em7"b4 B4 | "C"A4 e4 "D"A4 a4 |
+"G"b4 B4 "D"A4 a4 | "Em"g4 G4 "Bm"^F4 ^f4 | "C"e4 e'4 "Em7"d'4 d4 | "C"c4 e2 a2 "D"d4 ^f4 |
+"G"g15 z |

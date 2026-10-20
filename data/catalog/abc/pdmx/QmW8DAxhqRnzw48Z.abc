@@ -1,0 +1,31 @@
+%abc-2.1
+% Jingle Bells, by James Pierpont (18221893). Score published on MuseScore (artist: James
+% Pierpont), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): James Pierpont (died 1893,
+% Wikidata Q1344188).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/7/QmW8DAxhqRnzw48ZrcTzAFUykqPj4EZGVQfnf1iP96nn44.mid (sha256
+% 3cadf38f47dd79217063c8e0b80627703e0d0427b33b011090ae8cea4602c901): melody track 4, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jingle Bells
+M:2/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"_E2 c2 _B2 _A2 | "Ab"_E8 | "Ab"_E2 c2 _B2 _A2 | "Db"F8 |
+"Bbm"F2 _d2 c2 _B2 | "Eb"G2 _e2 d2 _e2 | "Eb"g f _e _d c _B _A G | "Ab"_A4 z4 |
+"Ab"_E2 c2 _B2 _A2 | "Ab"_E8 | "Ab"_E2 c2 _B2 _A2 | "Db"F8 |
+"Bbm"F2 _d2 c2 _B2 | "Eb"G8 | "Eb7"z2 _B2 _B2 _B2 | "Ab"z2 _A2 _A2 _A2 |
+"Ab"_E2 c2 _B2 _A2 | "Ab"_E8 | "Ab"_E2 c2 _B2 _A2 | "Db"F8 |
+"Bbm"F2 _d2 c2 _B2 | "Eb"G8 | "Eb7"z2 G2 z2 G2 | "Ab"_A8 |
+"Ab"c' _e' c' _e' c' _e' c' _e' | "Cm7"_b _e' _b _e' _b _e' _b _e' | "Fm"c' _e' c' _e' c' _e' c' _e' | "C"g c' g e c e g c' |
+"Db"z f' _d' f' _a f' f f' | "Fm7"z _e' c' _e' _a _e' _e _e' | "Eb7"z _e' _e _e' f _e' g _e' | "Ab"_a _e' c' _e' _a'4 |
+"Ab"z _e' _e'' _e' _e'' _e' _e'' _e' | "Cm7"z _e' _e'' _e' _e'' _e' _e'' _e' | "Fm"z c' c'' c' c'' c' c'' c' | "C"e' c'' g' e c' g e g |
+"Db"z f f' f _e' f _d' f | "Fm7"c' _a _e' _a d' _a _e' _a | "Eb7"f' g _e' g _d' g _b g | "Ab"_a2 z2 _a'4 |
+"Ab"_e' c' c'' c' _b' c' _a' c' | "Ab"_e' c' _e' c' _e' c' _e' c' | "Ab"_e' c' c'' c' _b' c' _a' c' | "Db"f' _d' f' _d' f' _d' f' _d' |
+"Db"f' _d' _d'' _d' c'' _d' _b' _d' | "Fm7"_a' c' _e' c' d' c' _e' c' | "Eb7"g' f' _e' _d' c' _b _a g | "Ab"_a2 z2 _A4 |

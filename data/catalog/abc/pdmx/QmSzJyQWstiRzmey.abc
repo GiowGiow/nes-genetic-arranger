@@ -1,0 +1,26 @@
+%abc-2.1
+% 36 Caprices Op.20, by Luigi Legnani(1790 - 1877). Score published on MuseScore (artist: Luigi
+% Legnani), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luigi Legnani (died 1877,
+% Wikidata Q1876212).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/56/QmSzJyQWstiRzmey6J8WvVrV5SXqAuamRpgHFdgwMhEvgf.mid (sha256
+% 03d3b0b8912549950fa1d61c3919df65a1fd627826bc56412b11e6edb9f403ef): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:36 Caprices Op.20
+M:4/4
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"C"E E E E E E E E E E E E E E E E | "C"E z3 c3 B B3 _E =E3 ^F | [M:2/4]"C"G3 G G3 G | "C"^F3 ^F E3 E |
+[M:4/4]"C"_E4 z4 B4 B3 B | "C"B c z ^F ^F4 z2 ^F2 ^F2 E2 | "C"_E3 ^F =E z5 B2 B2 c2 | "C"c A ^F A, ^F, z5 ^F2 ^F2 G _A |
+"C"A B A _B =B A G G A2 G2 z4 | "C"E,, E2 E ^F,, E2 E G,, E2 E ^F,, E2 E | "C"E,, E2 E ^F,, E2 E G,, E2 E ^F,, E2 E | "C"A,, E2 E B,, E2 E C, E2 E B,, E2 E |
+"C"A,, E2 E E, E2 E C, E2 E A,, E2 E | "C"B,, E2 E _B,, E2 E =B,, E2 E _B,, E2 E | "C"B,, E2 E E, E2 E B,, E2 E _E, =E2 =E | "C"E4 z2 c e ^f2 e2 z B B c |
+"C"B2 _B2 z _B =B _d _d2 E2 G2 ^F E | "C"E2 _E2 B,4 z2 ^F z ^F z G z | "C"A z G2 G,4 z2 E ^F G2 ^F E | "C"B2 A2 C4 z2 A B c2 B A |
+"C"_e2 _E2 _e2 _e z =e d c z _E4 | "C"E E E E E E E E E E E E E E E E | "C"E E E E E E E E E E E E E E E E | [M:2/4]"C"E E E E E E E E |
+"C"E E E E E E E E | [M:4/4]"C"E z7 E4 _E4 | "C"E E,, E,, E,, c E,, E,, E,, B E,, E,, E,, A E,, E,, E,, | "C"G E,, E,, E,, ^F E,, E,, E,, E E,, E,, E,, C E,, E,, E,, |
+"C"B, E,, E,, E,, A, E,, E,, E,, G, E,, E,, E,, _E =E,, =E,, =E,, | "C"E E,, E,, E,, _E =E,, =E,, =E,, =E4 G,4 | "C"G,16 |

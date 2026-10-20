@@ -1,0 +1,24 @@
+%abc-2.1
+% Aunt Hessie's White Horse, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/hpps.abc, tune X: 1 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Aunt Hessie's White Horse
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 d4 | "G"G4 A4 B4 c4 | "G"d2 d4 d2 d4 d4 | "Em"d2 d4 d2 d4 d4 |
+"D7"d2 d4 d2 d4 d4 | "G"G4 A4 B4 c4 | "G"d2 d4 d2 d4 d4 | "D7"d4 c4 B4 A4 |
+"G"G12 d4 | "G"G4 A4 B4 c4 | "G"d2 d4 d2 d4 d4 | "Em"d2 d4 d2 d4 d4 |
+"D7"d2 d4 d2 d4 d4 | "G"G4 A4 B4 c4 | "G"d2 d4 d2 d4 d4 | "D7"d4 c4 B4 A4 |
+"G"G12 G4 | "G"g4 g4 f4 =f4 | "C"e2 e4 e2 e4 e4 | "C"g4 g4 f4 e4 |
+"G"d2 d4 d2 d4 d4 | "G"d4 d4 e4 d4 | "D7"f2 f4 f2 f4 f4 | "D7"d4 c4 B4 A4 |
+"G"G12 G4 | "G"g4 g4 f4 =f4 | "C"e2 e4 e2 e4 e4 | "C"g4 g4 f4 e4 |
+"G"d2 d4 d2 d4 d4 | "G"d4 d4 e4 d4 | "D7"f2 f4 f2 f4 f4 | "D7"d4 c4 B4 A4 |
+"G"G12 z4 |

@@ -1,0 +1,28 @@
+%abc-2.1
+% MEDITAÇÃO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/meditacao-3.html (file
+% https://www.beakauffmann.com/mpb_m/som/meditacao-3.mid, sha256
+% 611ae342112b5a9387383f660ed6e3d128c88ffec1f90b38772cc7fd1387c277), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-33 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MEDITAÇÃO
+M:2/4
+L:1/16
+Q:1/4=40
+K:none
+P:A
+"D"^F, D B, D A, D B, D | "D"G, _D C _D _B, _D _D _B, | "D"_D =D B, =D A, =D B, =D | "D"G, _D C _D _B, _D _D _B, |
+"D"_D =D A, B, _D E ^F _A | "D"A2 _D A G ^F E A, | "E7"E,, G, B, ^F _E ^F G A | "E7"d E, B, G d B G ^F |
+"E7"^F G, _D ^F ^F G, _D A | "E7"^F, D B, D A, D B, D | "E7"B, _D C _D _B, _D _D _B, | "E7"_D =D B, =D A, =D B, =D |
+"E7"B, _D C _D _B, _D _D _B, | "E7"_D =D B, =D A, =D B, =D | "E7"D, ^f e d _d B A ^F | "E7"A G A G ^F A E A |
+"E7"D, ^f e d _d B A ^F | "E7"A G A G ^F A E A | "A"C B B B B B B z | "A"G,, D ^F z E B, _B, A, |
+"A"_A, ^F ^F ^F ^F ^F _d _d | "A"A A B A c c c _B | "A"D, ^f e d _d B A ^F | "A"A G A G ^F A E A |
+"A"D, ^f e d _d B A ^F | "A"A G A G ^F A E A | "Bb"C B B B B B B z | "Bb"A D A D G D G D |
+"Bb"A,, ^F B,, ^F C, E A,, _D | "Bb"D B, A, D C _D _B, _D | "Bb"D B, A, D C _D _B, _D | "Bb"^F, D B, D A, D B, D |
+"Bb"E8 |

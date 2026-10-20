@@ -1,0 +1,35 @@
+%abc-2.1
+% 6 Études à Plusieurs Parties, by Heinrich Wilhelm Ernst. Score published on MuseScore (artist:
+% Heinrich Wilhelm Ernst), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Heinrich Wilhelm Ernst (died
+% 1865, Wikidata Q528748).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/31/QmRmDXTt2fDzLEkp9vhUyKva6Mg8RPLMT51ju9j9N3tc1a.mid (sha256
+% abaae45a52f6ba08bc06cfad26a946fa3d2cf2f19cfb65c2d63d2c40b09d851d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:6 Études à Plusieurs Parties
+M:6/8
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"a z2 f c z d c d B c2 | "C"_b z2 g e z d c d =B c2 | "C"c' z2 a f z f' z2 e' d' z | "C"c'2 z d' _b2 a z2 E _E z |
+"C"_b2 z a _b2 a2 z _a =a2 | "C"d'2 z A _B2 c'2 z _A =A2 | "C"f g f e f2 a2 z g f2 | "C"f A G ^F G z e3 A G2 |
+"C"a2 z f c2 d c d B c2 | "C"_b2 z g e2 d c d =B c2 | "C"c'2 z a f2 f'2 z e' d'2 | "C"c'2 z d' _b2 a2 z d _e2 |
+"C"_a2 z ^f _a2 =a2 z _a =a2 | "C"b2 z a b2 c'2 z b a2 | "C"a2 z g f2 e2 z d c2 | "C"B2 z e d2 c2 z c' c'2 |
+"C"c'2 z b a2 g2 c'2 e'2 | "C"a'3 d e2 b3 e d2 | "C"c'2 z G E2 D C D B, C2 | "C"e'2 z G C2 D C D B, C2 |
+"C"f'2 z F C2 D C D B, C2 | "C"d'2 z F C2 e'2 z F d'2 | "C"c'2 z G C2 D C D B, C2 | "C"e'2 z G C2 D C D B, C2 |
+"C"f'2 z F C2 D C D B, C2 | "C"d'2 z F C2 e'2 z F d'2 | "C"c'2 z G G2 G2 B2 c2 | "C"f'2 z G G2 b2 e2 d2 |
+"C"c'2 z G G2 G2 B2 c2 | "C"f'2 z G G2 b2 e2 d2 | "C"c'2 z G G2 b2 e2 d2 | "C"c'2 z G G2 b2 e2 d2 |
+"C"c'2 z C C2 D C D B, C2 | "C"c2 z B c2 d c d B c2 | "C"c _B, C _D c _E _d _E =D _E c _E | "C"c _E =E F =E _E _B _E _D C _B, _A, |
+"C"_B _A, _B, C _A D G F _B _E _e G | "C"_d _E =D _E F _E c _E F G _A _B | "C"c _B, C _D c _E _d _E =D _E c ^F | "C"c ^F G D G, D B A g G =f B |
+"C"f G G, G _e G _e F G, F d F | "C"d _E G, _E c _E c G, _D c _B _e | "C"c _B, C _D c _E _d _E =D _E c _E | "C"c _E =E F =E _E _B _E _D C _B, _A, |
+"C"_B _A, _B, C _A D G F _B _E _e G | "C"_d _E _A, _E F _E c _E F G _A _B | "C"c _B, C _D c _E =d _E =D _E c ^F | "C"c _B =B c d _e f _a g f _e d |
+"C"_e D _E F _e G f G F G _e A | "C"_e _d =d _e f g _a b _b _a ^f =f | "C"^f _B _A _e _B _E _a =B _B =f _B =F | "C"^f _B _A _e _B _E _a =B _B =f _B =F |
+"C"^f _a ^f =f _e d _e =e _e _d B _B | "C"B _A B _a b _a' b' _a' b _a B _A | "C"^F _E c _e c' _e' ^f' c' a c A C | "C"_B, F _B f _b f' _b' f' _b f _B F |
+"C"D F d f d' f' c'' _a' f' _a f _A | "C"G _B g _b g' _b' f'' _d'' _b' _d' _b _d | "C"c' _B c _d c' _e _d' _e =d _e c' _e | "C"c' _e =e f =e _e _b _e _d c _B _A |
+"C"_b _A _B c _a d g f _b _e _e' g | "C"_d' _e =d _e f g c' _A _B c _d _e | "C"f _E F ^F =f _A g _A G _A =f B | "C"f B c G C G e _d' c' _b _a g |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Fantaisie-impromptu Op.66, by Frédéric Chopin. Score published on MuseScore (artist: Frédéric
+% Chopin), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frédéric Chopin (died 1849,
+% Wikidata Q1268).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/13/QmZcUwdJEKU3DXk6fWYRkzTJ1UCC3JUxpgHymdEa2bYtpW.mid (sha256
+% 86c2534e6dc745fde23b9370d050bdeae08d9a5a930876a602f7b8b85444c1d1): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantaisie-impromptu Op.66
+M:2/2
+L:1/16
+Q:1/4=162.000162
+% Exact tempo 162.000162000162 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z16 | "Ab"z16 | "Dbm"z16 | "Dbm"z16 |
+"Dbm"z _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Dbm"z _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Ebm7"z A _d _e ^f a _d' _e' b' a' _a' ^f' =e' _e' ^f' _d' | "Ab7"c' _e' a _a ^f =a =e _e ^f _d c _e =A _A B =A |
+"Dbm"A _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Bbm7"z _A _B _A G _A _d e _e _d _e _d c _d =e _a | "Eb7"_e =e _e d _e b _b _a g =e' _e' _d' =b _b _a g | "Abm"_b _a =b d e _e _a _B _d =B _e G _B _A G _A |
+"F#m"_A _a c _d ^F ^f c _d =F =f c _d ^F ^f c _d | "E"_D _d ^F A _E _e ^F A =E =e _A B _A _a B =e | "F#m"_A _a c _d ^F ^f c _d =F =f c _d ^F ^f c _d | "E"F f B _e ^F ^f B _e A a B =e _A _a B =e |
+"F#m"_A _a c _d ^F ^f c _d =F =f c _d ^F ^f c _d | "E"_D _d ^F A _E _e ^F A =E =e _A B _A _a B =e | "F#m"_A _a c _d ^F ^f c _d _e _e' ^f =a _d _d' ^f =a | "Ab7"_d _d' _e ^f c c' _e ^f c c' _e ^f c c' _e ^f |
+"Ebm"c c' _e ^f B b _e ^f B b _e ^f _B _b _e ^f | "Ab7"_B _b _e ^f A a _e ^f A a _e ^f A a _e ^f | "Ebm"c c' _e ^f B b _e ^f B b _e ^f _B _b _e ^f | "B"_B _b _e ^f A a _e ^f A a _e ^f _A _a _e ^f |
+"Dbm"z _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Dbm"z _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Ebm7"z A _d _e ^f a _d' _e' b' a' _a' ^f' =e' _e' ^f' _d' | "Ab7"c' _e' a _a ^f =a =e _e ^f _d c _e =A _A B =A |
+"Dbm"A _A =A _A G _A _d e _e _d _e _d c _d =e _a | "Db7"e _e =e _e d _e ^f a ^f =f ^f =f =e =f _a _d' | "Db7"z _d =d _d c _d ^f a ^f =f ^f =f e =f _a _d' | "Ab7"_a ^f _a ^f =f ^f =a _d' =a _a =a _a g _a c' _e' |
+"Dbm"_a =a _a g _a e' _e' d' _d' c' b _b =a _a g ^f | "F#m7"e ^f e _e =e =e' _e' d' _d' c' b _b a _a g ^f | "A7"_a z _a' g' ^f' =f' e' _e' d' _d' c' b _b =a _a g | "A7"^f =f e _e d _d c B _B A _A G ^F =E _E _D |
+"Dbm"_A, z3 =a' _a' e'' e' ^f' e' _d'' _d' _e' _d' _a' _a | "Dbm"a _a e' e ^f e _d' _d _e _d _a _A =A _A =e =E | "Db"^F E _d _D _E _D _A _A, _E _D _A _A, _E _D =A =A, | "Db"_E _D _A _A, _E _D G G, _E _D _A _A, _E C _A _A, |
+"Db"z16 | "Db"z16 | [M:4/4]"Fm7"_A8 "Ab7"c _B c z _d2 _e2 | "Db"f8 _a4 _A4 |
+"Ab7"^f4 =f4 "Fm7"_e4 =f3 _d | "Ab"_A8 "F#"_B8 | "Bb"_B8 "Bb7"_d =B _d z _e2 f2 | "F7"^f4 =f4 "Ab7"_e4 =f4 |
+"Db"_d4 c _d _e _d "Eb7"f6 _e2 | "Ab"_e8- "Ebm"_e8 | "Ab"_A8 "Ab7"c _B c z _d2 _e2 | "Db"f8 _a4 _A4 |
+"Ab7"^f4 =f4 "Fm7"_e2 =f _d =f3 _d | "Ab"_A8 "F#"_B8 | "Bb"_B8 "Bb7"_d =B _d z _e2 f2 | "F7"^f4 =f4 "Ab7"_e4 =f4 |
+"Db"_d6 _A _B "Ab7"f6 _e2 | "Ab7"_e8 "Db"_d4 z2 _a2 | "Ab"_A8 "Eb7"c _B c =A _B3 c | "Ab"_A2 z2 c'4- "Dbm"c' _b _a e2 _d _B _a |
+"Fm7"_E8 "Eb7"c z2 A _B3 _e | "Ab"_A4 z4 "F#"_B4 _d c2 _B | "Ab"_A8 "Ab7"c _B c z _d2 _e2 | "Db"f8 _a4 _A4 |

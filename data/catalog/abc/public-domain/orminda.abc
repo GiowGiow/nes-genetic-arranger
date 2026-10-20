@@ -1,0 +1,35 @@
+%abc-2.1
+% ORMINDA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/orminda.html (file
+% https://www.beakauffmann.com/mpb_o/som/orminda.mid, sha256
+% 4905c428eea28e9e9724cacba53be7accac7c916a589c28964c4341c14b19359), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ORMINDA
+M:3/4
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"_e'4 z4 _e'3 _e' | "Eb7"g11 z |
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"a4 z2 c'2 _b2 g2 | "Eb7"_e4 z8 |
+"Fm7"_e'4 _d'4 c'3 _d' | "F7"c'4 _b4 a3 f' | "Bbm"c'11 f' | "Bbm"_b4 z8 |
+"Bb7"f'4 _b4 c'4 | "Bb7"d'4 _e'4 f'4 | "Eb7"_a'2 g'2 g'2 f'2 f'2 e'2 | "Eb7"e'2 _e'2 _e'2 d'2 d'2 _d'2 |
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"_e'4 z4 _e'3 _e' | "Eb7"g11 z |
+"B"_e'4 _d'4 b3 _d' | "Abm7"b4 _b4 =b4 | "F#7"^f'4 z4 ^f'4 | "Eb7"g'4 z4 _e'4 |
+"Fm7"_a'4 g'4 f'3 f' | "F7"_e'4 _d'4 c'3 c' | "Db"_b4 a4 _b4 | "Bbm"g'8 f'4 |
+"Eb7"g4 ^f4 g4 | "Eb7"c'4 z4 _b4 | "Fm7"_a4 z4 _e'4 | "Ab"_a'4 z8 |
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"_e'4 z4 _e'3 _e' | "Eb7"g11 z |
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"a4 z2 c'2 _b2 g2 | "Eb7"_e4 z8 |
+"Fm7"_e'4 _d'4 c'3 _d' | "F7"c'4 _b4 a3 f' | "Bbm"c'11 f' | "Bbm"_b4 z8 |
+"Bb7"f'4 _b4 c'4 | "Bb7"d'4 _e'4 f'4 | "Eb7"_a'2 g'2 g'2 f'2 f'2 e'2 | "Eb7"e'2 _e'2 _e'2 d'2 d'2 _d'2 |
+"Ab"c'4 _b4 _a3 _b | "Fm7"_a4 g4 _a4 | "Eb7"_e'4 z4 _e'3 _e' | "Eb7"g11 z |
+"B"_e'4 _d'4 b3 _d' | "Abm7"b4 _b4 =b4 | "F#7"^f'4 z4 ^f'4 | "Eb7"g'4 z4 _e'4 |
+"Fm7"_a'4 g'4 f'3 f' | "F7"_e'4 _d'4 c'3 c' | "Db"_b4 a4 _b4 | "Bbm"g'8 f'4 |
+"Eb7"g4 ^f4 g4 | "Eb7"c'4 z4 _b4 | "Fm7"_a4 z4 _e'4 | "Ab"_a'3 _e' _d'4 c'4 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% QUANDO PENSO EM TI, by Viúva Guerreiro, as performed by Viúva Guerreiro (Serafina Augusta Mourão
+% do Vale).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Viúva Guerreiro (died 1936, Wikidata Q119847179).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_q/quando-penso-em-ti.html (file
+% https://www.beakauffmann.com/mpb_q/som/quando-penso-em-ti.mid, sha256
+% d21fc22f4aaa1f78920140a1b3e1f9c061a81568469edb9289105e7b7a707a9d), from Beatriz Kauffmann's Web
+% Site. Melody track 4, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:QUANDO PENSO EM TI
+M:3/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"E7"e2 ^f2 _a2 =a2 b2 c'2 | "Am"b2 a2 e3 z5 | "E7"E2 ^F2 _A2 =A2 B2 c2 | "Am"B2 A2 a3 z5 |
+"F"A c f5 z5 | "Am"d3 z c3 z d3 z | "Dbm7"_A B e5 z5 | "E"z12 |
+"E"B d f5 z5 | "Dbm7"_A B e5 z5 | "Am"c f6 z5 | "Am"c e6 z5 |
+"E"d a6 z5 | "Dbm7"d _a6 z5 | "Am"c b6 z5 | "Am"c e a5 z5 |
+"Dm"c'3 z b3 z a3 z | "Dm"a3 z g3 z f3 z | "Am"f3 z e3 z a3 z | "Am"A c e5 z5 |
+"E"d3 z e3 z _a3 z | "Dbm7"b3 z d'3 z e'3 z | "E"f2 e2 d2 c2 B2 A2 | "Dbm7"_A2 F2 E2 D2 C2 B,2 |
+"E"d f3 z8 | "Dbm7"B e6 z5 | "Am"c f6 z5 | "Am"c e6 z5 |
+"E"d a6 z5 | "Dbm7"d _a6 z5 | "Am"e b6 z5 | "Am"e a6 z5 |
+"Dm"c'3 z b3 z a3 z | "Dm"a3 z g3 z f3 z | "Am"f3 z e3 z a3 z | "Am"A c e3 z7 |
+"B"z12 | "E"e _a b3 z7 | "Am"c e a3 z7 | "Am"z12 |
+"E"B d f5 z5 | "Dbm7"_A B e5 z5 | "Am"c f6 z5 | "Am"c e6 z5 |
+"E"d a6 z5 | "Dbm7"d _a6 z5 | "Am"c b6 z5 | "Am"c e a5 z5 |
+"Dm"c'3 z b3 z a3 z | "Dm"a3 z g3 z f3 z | "Am"f3 z e3 z a3 z | "Am"A c e5 z5 |
+"E"d3 z e3 z _a3 z | "Dbm7"b3 z d'3 z e'3 z | "E"f2 e2 d2 c2 B2 A2 | "Dbm7"_A2 F2 E2 D2 C2 B,2 |
+"E"d f3 z8 | "Dbm7"B e6 z5 | "Am"c f6 z5 | "Am"c e6 z5 |
+"E"d a6 z5 | "Dbm7"d _a6 z5 | "Am"e b6 z5 | "Am"e a6 z5 |

@@ -1,0 +1,31 @@
+%abc-2.1
+% Benedic anima mea, by Claudin de Sermisy. Score published on MuseScore (artist: Claudin de
+% Sermisy), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudin de Sermisy (died 1562,
+% Wikidata Q968593).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/27/QmVJeUxCmAMFDWz6cMqWVBztGEkpK7kmiR73W6mKBuCu6n.mid (sha256
+% bb62be8291b38d9ba2dc3df112dd79ce28ef16b861e69f562a60ebd43f67edd1): melody track 0, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Benedic anima mea
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb"_B16 | "Dm7"_B8 A8 | "Gm"G12 G4 | "Eb"_B8 _B8 |
+"F7"c8 A8 | "Gm7"A8 _B8 | "F"A12 G2 F2 | "F7"G8 A8 |
+"Bb"z16 | "Gm7"_B8 _e8 | "Eb"_e4 _e4 _e6 d c | "F7"_B8 A8 |
+"Bb"A4 A4 d8 | "Gm7"c8 z4 _B4 | "Bb"_B4 _B4 _B8 | "Eb"_B8 c4 _B4 |
+"F"_B4 A2 G2 A8 | "Bb"_B16 | "Gm"_B16 | "F7"z16 |
+"Bb"z4 _B8 _B4 | "C7"_e8 d8 | "Cm7"d4 d4 c8 | "Cm"_B8 _B8 |
+"Dm7"_B4 _B4 A4 F4 | "Dm7"G4 A8 G2 F2 | "Bb"G4 A4 _B6 A G | "Gm7"A8 G8 |
+"Cm7"_B8 c8 | "Bb"F8 _B8 | "Bb"_B4 _B4 _B8 | "Gm7"_B8 _B4 _B4 |
+"F7"G8 A6 _B2 | "G7"c4 _B8 A2 G2 | "F"A4 _B8 A4 | "Gm7"_B8 z8 |
+"F7"z16 | "Dm"z4 A4 c8 | "Bb"c4 c4 d8 | "Eb"_B8 z4 _e4 |
+"F7"_e4 _e4 d4 c4 | "Bb"c4 c4 d4 d4 | "Gm7"c4 A4 _B8 | "Dm7"A8 F4 G4 |
+"Dm7"G4 A8 _B4 | "Am7"_B2 c2 d2 _e2 f4 F4 | "Cm7"F4 _B8 _B4 | "Eb"_B8 _B8 |
+"F7"c8 A8 | "Eb"G16 | "F"F16 | "F"F16 |

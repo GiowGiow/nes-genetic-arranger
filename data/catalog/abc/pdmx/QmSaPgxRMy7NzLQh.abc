@@ -1,0 +1,22 @@
+%abc-2.1
+% The Haughs of Delvin, by Nathaniel Gow (1863-1831). Score published on MuseScore (artist:
+% Nathaniel Gow), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nathaniel Gow (died 1831,
+% Wikidata Q6969638).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/9/QmSaPgxRMy7NzLQhnQBVHvgEENJ6XqjrazsKo5JaAmWQZ2.mid (sha256
+% 36c0341f1cf57b582b4a5ad7f1da37d8b203eb183ed1e7adfdfeca542697d516): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Haughs of Delvin
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"B2 A G E2 B2 G2 E2 B2 E2 | "C"B2 A G E2 G2 ^F2 D2 A2 ^F2 | "C"B2 A G E2 B2 G2 E2 B2 G2 | "C"B _d =d2 B _d =d2 ^F2 =D2 A2 ^F2 |
+"C"B2 A G E2 B2 G2 E2 B2 E2 | "C"B2 A G E2 G2 ^F2 D2 A2 ^F2 | "C"B2 A G E2 B2 G2 E2 B2 G2 | "C"B _d =d2 B _d =d2 ^F2 =D2 A2 ^F2 |
+"C"^f e _e =e B2 g2 =e2 B2 g2 =e2 | "C"^f e _e =e B2 g2 ^f2 d2 a2 ^f2 | "C"e2 _e =e B2 g2 =e2 B2 g2 =e2 | "C"^f2 d2 B2 G2 ^F2 D2 A2 ^F2 |
+"C"^f e _e =e B2 g2 =e2 B2 g2 =e2 | "C"^f e _e =e B2 g2 ^f2 d2 a2 ^f2 | "C"e B e g b a g ^f g ^f e _e =e d c B | "C"c B A G ^F G A G ^F2 D2 A2 ^F2 |

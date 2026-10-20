@@ -1,0 +1,32 @@
+%abc-2.1
+% Fantasia and Fugue in A minor BWV 944, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/8/Qmb9L8hRsGeEWnf7TsSTSr2rCiBsDhZuLnXXHMmxqu1X3K.mid (sha256
+% 247f844ffb79d858572612f6e48d871c091cfd54afd0f0dae3ddf773a6842232): melody track 1, bars 0-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantasia and Fugue in A minor BWV 944
+M:3/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"E7"z12 | "Am7"z12 | "E7"z12 | "Am"z12 |
+"D7"z12 | "Am"z12 | "C"E G ^F E B ^F G A B, A G ^F | "Em"G A G ^F E B c d e d c B |
+"D7"c B A B c B A G ^F A G ^F | "Em"B A G A B A G ^F E G ^F E | "B7"A G ^F G A G ^F E _E ^F =E _E | "G"E B, E G B E G B e d e B |
+"A7"_d4 z =d _d B A G F E | "F"D A, D F A D F A d c d A | "G7"B4 z c B A G F E D | "F#m7"C4 z5 E D C |
+"E7"B,4 z5 D C B, | "E"A,2 A4 A2 _A4 | "Am7"E4 z2 e2 c2 e2 | "Dm7"d2 f2 B2 f2 G2 f2 |
+"Bm7"c2 e2 A2 e2 F2 e2 | "Dm7"B2 d2 _A2 d2 E2 d2 | "Am"A4 A4 z2 A2 | "Em7"A4 G4 z2 G2 |
+"Dm7"G4 F8 | "Dbm7"B,4 z4 E4 | "Dm7"E B A _A =A4 z4 | "Dm7"z B A _A =A4 z4 |
+"C"z B A _A =A4 z4 | "Dm7"z12 | "Em7"z _A ^F E =A B c d E4 | "E7"E4 z5 F E D |
+"E7"C5 D E F z4 | "Ab"z12 | "Am"z5 E F G A G F E | "G7"F E D E F E D C B, D C B, |
+"Am"E D C D E D C B, A, C B, A, | "E7"D C B, C D C B, z5 | "C"z4 E A, C E A G A E | "D7"^F4 z G ^F E D C B, A, |
+"Bm"z8 G ^F G _E | "Em"E4 z ^F E D z4 | "B7"z3 E _E =E _E =E z C B, z | "B7"G _E =E ^F _E6 _E2 |
+"Em7"E4 z A G ^F G B A G | "B7"A B c B A G ^F E D c B A | "Em"G A B A G ^F E D C B A G | "Eb"^F G A G ^F E _E _D B, A G ^F |
+"Em"G4 z e B G z G A B | "Am"c E A c e A c e a g ^f e | "B7"_e =e ^f =e _e _d B A G ^F =E _E | "Am7"E ^F G ^F E D C B, z4 |
+"B7"z12 |

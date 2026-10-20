@@ -1,0 +1,23 @@
+%abc-2.1
+% Le Reel Des Jeunes Maries, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 37 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Le Reel Des Jeunes Maries
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"D4 F2 A2 F2 A2 d2 e2 | "D"f2 a2 f2 d2 A4 f4 | "A"g2 f2 e2 d2 "A7"c2 A2 B2 c2 | "D"d2 c2 d2 e2 f2 e2 d2 A2 |
+"D"D4 F2 A2 F2 A2 d2 e2 | "D"f2 a2 f2 d2 A4 f4 | "A"g2 f2 e2 d2 "A7"c2 A2 B2 c2 | "D"d4 f4 d4 a4 |
+"D"f2 d2 A2 d2 f2 a2 g2 e2 | "A"c2 B2 A2 c2 e2 f2 g4 | "A"e2 c2 A2 c2 "D"e2 g2 f2 e2 | "D"d2 f2 e2 A2 d2 f2 a4 |
+"D"f2 d2 A2 d2 f2 a2 g2 e2 | "A"c2 B2 A2 c2 e2 f2 g4 | "A"e2 c2 A2 c2 "A7"e2 g2 f2 d2 | "D"e2 c2 d8 D4 |
+"D"F2 A2 F2 A2 d2 e2 f2 a2 | "D"f2 d2 A4 f4 g2 f2 | "A"e2 d2 c2 A2 "D"B2 c2 d2 c2 | "D"d2 e2 f2 e2 d2 A2 D4 |
+"D"F2 A2 F2 A2 d2 e2 f2 a2 | "D"f2 d2 A4 f4 g2 f2 | "A"e2 d2 c2 A2 "D"B2 c2 d4 | "D"f4 d4 a4 f2 d2 |
+"D"A2 d2 f2 a2 "A"g2 e2 c2 B2 | "A"A2 c2 e2 f2 g4 e2 c2 | "A7"A2 c2 e2 g2 "D"f2 e2 d2 f2 | "A7"e2 A2 d2 f2 "D"a4 f2 d2 |
+"D"A2 d2 f2 a2 "A"g2 e2 c2 B2 | "A"A2 c2 e2 f2 g4 e2 c2 | "A7"A2 c2 e2 g2 f2 d2 e2 c2 | "D"d8 z8 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Si bona suscepimus, by Ippolito Baccusi. Score published on MuseScore (artist: Anonymous), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ippolito Baccusi (died 1609,
+% Wikidata Q1493373).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/43/QmbSiLuTRESwwsKGWuV7xYcDpECwYCz4TKKC7ZVZkzXU1k.mid (sha256
+% 8c731b71c980ab56a3a332b38adb42927f535e6c5d4723382f4aa481a5155529): melody track 2, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Si bona suscepimus
+M:4/2
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"A16 _B16 | "E"A8 F8 G8 A8 | "F"D4 E4 F4 G4 "C"A4 B4 c4 A4 | "E7"B8 c8- "F"c4 B4 A8 |
+"C"G8 E8 "Em7"F8 E8 | "Am"E16 z16 | "Bb"z16 "F"z8 A8 | "Am7"G8 E8 "Dm"z8 D8 |
+"Am"C4 D4 E4 F4 "C"G8 G8 | "F"C16 "C"z16 | "G"z8 G8 "Dm"A8 D8 | "Am"E12 F4 "E"G8 G8 |
+"Dm7"A16 "Dm"z8 A8 | "Am"A8 E8 "G"G12 F4 | "C"E12 F4 "Am"G4 E4 A8 | "Bb"A8 G8 "Am"A16 |
+"Dm"A16 "Dm7"z8 A,8 | "F"A,8 C8 "Gm7"D8 G,8 | "Am"z8 A8- "Bb"A8 G8 | "D7"F8 E8 "Gm7"G8 A8 |
+"G7"_B16 "Am"A8 A8 | "Bb"A8 G8 "D7"F8 E8 | "Gm7"G8 C8 "C"E8 F8 | "C"F4 E2 D2 E8 "F"F16 |
+"C"C16 "Dm7"F8 G8 | "Am7"G4 D4 A8- "E"A4 _A2 ^F2 _A8 | "A"A16 "Am"E16 | "Am"E8 E8 E8 F8 |
+"Gm"F8 E4 D4 "A"E16 | "A"A24 A8 | "A"A16 "Dm"A16 | "A"A16 "F"z16 |
+"D7"z16 "A7"z16 | "D"z24 F8 | "A"F4 F4 E8 "D7"F8 G8 | "Dm7"A8 A8 "Am"_A8 =A8 |
+"E"A8 G8 "D7"G8 E8 | "E"E16 "A"z8 A8 | "Dbm"A8 A8 "G"A8 _B8 | "A"A16- "Dm"A16 |
+"F"z8 A8 "C"G16 | "Gm"G8 D8 "Dm"z8 F8 | "F"F4 G4 A8- "Am"A4 A4 E8 | "D"E8 F8 "Am"E16 |
+"E"E32 | "A"z8 A8 "Dm"A16 | "Dbm"A8 A8 "G"A8 _B8 | "A"A16- "Dm"A16 |
+"F"z8 A8 "C"G16 | "Gm"G8 D8 "Dm"z8 F8 | "F"F4 G4 A8- "Am"A4 A4 E8 | "D"E8 F8 "Am"E8 A,8 |
+"E"z32 | "Am"z8 A8- "Dm"A4 G4 F4 E4 | "A"D8 E8 "D"F16 | "A"E32 |
+"E"z16 "F"A16 | "A"c16 "E7"B8 A8 | "E"A8 G8 "Am"A8 A8 | "E"_A8 =A8 "Dm"D4 E4 F4 G4 |
+"A"A8 A,8 "Dm"A,16 | "E"z16 "F"z16 | "Em"z16 "A"z8 E8 | "D"F12 F4 "A"E16 |

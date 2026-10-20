@@ -1,0 +1,37 @@
+%abc-2.1
+% FILOMELA (Philomela Op.18 Nº 2), by Alberto Nepomuceno e Raimundo Correia, as performed by
+% Alberto Nepomuceno e Raimundo Correia.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980); Raimundo Correia (died
+% 1911, Wikidata Q1338991).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/filomela_op18-n2.html (file
+% https://www.beakauffmann.com/mpb_f/som/filomela_op18-n2.mid, sha256
+% 297892dedfd6d08835666426e48e669593077938fbb6badf13882c1a0b31ffae), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FILOMELA (Philomela Op.18 Nº 2)
+M:6/8
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"F#m7"z12 | "F#m7"z12 | "F#m7"z12 | "A"z12 |
+"E7"z12 | "E7"z12 | "Bm7"z12 | "Db7"z12 |
+"E7"z12 | "F#m7"z12 | "F#m7"z12 | "A"z12 |
+"E7"z12 | "E7"z12 | "Bm7"z12 | "Db7"z12 |
+"E7"z12 | "Bm"z12 | "Am7"z12 | "Am7"z12 |
+"G7"z12 | "G7"z12 | "Am7"z12 | "Am7"z12 |
+"G7"z12 | "G7"z12 | "Gm7"z12 | "Ab"z12 |
+"Bm7"z12 | "Bm"z12 | "F#7"z12 | "E"z12 |
+"F#7"z10 c c | "A7"z12 | "A7"z12 | "A"z12 |
+"A"d _d =d _d =d _d =d _d =d _d =d _d | "Dbm"^f e ^f e ^f e ^f e ^f e ^f e | "F#m7"^f e ^f e ^f e ^f e ^f e ^f e | "D7"^f z11 |
+"D7"z12 | "D"g ^f g ^f g ^f g ^f g ^f g ^f | "D"g ^f g ^f g ^f g ^f g ^f g ^f | "D"g ^f g ^f g ^f g ^f g ^f g ^f |
+"Bm7"g ^f g ^f g ^f g ^f g ^f g ^f | "D7"g ^f g ^f g ^f g ^f g ^f g ^f | "D"g ^f g ^f g ^f g ^f b a d' c' | "Am"d' z11 |
+"D7"z12 | "G"z12 | "Em7"z12 | "G"z12 |
+"D7"z12 | "D7"z12 | "Am7"z12 | "B7"z12 |
+"D7"z12 | "Gm"z12 | "Gm"z12 | "Gm"G D G D G D G D G D G D |
+"Eb7"G _D G _D G _D G _D _E _D _E _D | "Abm"_E z11 | "Abm"z12 | "Abm7"A _E A _E A _E A _E A _E A _E |

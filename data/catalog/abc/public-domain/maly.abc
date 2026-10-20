@@ -1,0 +1,35 @@
+%abc-2.1
+% MALY, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/maly.html (file
+% https://www.beakauffmann.com/mpb_m/som/maly.mid, sha256
+% fa2e353048ef5ea038f36be2bf65dc68421c1c158599e3842d05ebb4cda5c3f4), from Beatriz Kauffmann's Web
+% Site. Melody track 3, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MALY
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,,2 z _E, z2 A, ^F, | "Dm7"B,,2 z2 E,,2 z2 | "A"A,,2 z E B, A, E C, |
+"F#m7"^F,, z ^f' e' c' a' e ^f | "Em"B,,2 z E E2 G B | "F#7"E,2 z4 ^F, z | "B7"A,2 z _E _E2 _E z |
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,, z2 B, C z A, ^F, | "Dm7"B,, z3 E,,2 z2 | "Am"A,,2 z E, z2 F, E, |
+"Dm7"_E, z2 f a2 f z | "C"E, z F A, E2 A, z | "G7"F, d2 G, _A, z E, z | "Am"A, z E, z A,,4 |
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,,2 z _E, z2 A, ^F, | "Dm7"B,,2 z2 E,,2 z2 | "A"A,,2 z E B, A, E C, |
+"F#m7"^F,, z ^f' e' c' a' e ^f | "Em"B,,2 z E E2 G B | "F#7"E,2 z4 ^F, z | "B7"A,2 z _E _E2 _E z |
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,, z2 B, C z A, ^F, | "Dm7"B,, z3 E,,2 z2 | "Am"A,,2 z E, z2 F, E, |
+"Dm7"_E, z2 f a2 f z | "C"E, z F A, E2 A, z | "G7"F, d2 G, _A, z E, z | "Am"A, z E, z A,,4 |
+"G7"_a =a2 _b =b2 f'2 | "C"e' c'2 z5 | "D"D ^F,2 =F, E,2 D z | "Am"A,,2 z C C z C2 |
+"Abm"c _d2 =d C2 A z | "Am7"G,,3 z A,,2 z2 | "E7"D,2 z C G,,2 B,2 | "D7"C,2 z E C2 G2 |
+"F"F A,2 _A, G,2 F2 | "C"C,2 z E E z E2 | "D"D ^F,2 =F, E,2 D z | "Am"A,,2 z C C z C2 |
+"Bbm7"F,,2 z _D _D z _D2 | "D7"D,,2 z d z4 | "Em7"G,,2 z F F2 F2 | "C"C,2 E z E4 |
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,,2 z _E, z2 A, ^F, | "Dm7"B,,2 z2 E,,2 z2 | "A"A,,2 z E B, A, E C, |
+"F#m7"^F,, z ^f' e' c' a' e ^f | "Em"B,,2 z E E2 G B | "F#7"E,2 z4 ^F, z | "B7"A,2 z _E _E2 _E z |
+"Em7"_B,, z2 C A,,2 C2 | "B"^F,, z2 B, C z A, ^F, | "Dm7"B,, z3 E,,2 z2 | "Am"A,,2 z E, z2 F, E, |
+"Dm7"_E, z2 f a2 f z | "C"E, z F A, E2 A, z | "G7"F, d2 G, _A, z E, z | "Am"A, z E, z A,,4 |

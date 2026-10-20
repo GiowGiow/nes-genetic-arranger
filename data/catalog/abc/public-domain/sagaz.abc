@@ -1,0 +1,36 @@
+%abc-2.1
+% SAGAZ, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sagaz.html (file
+% https://www.beakauffmann.com/mpb_s/som/sagaz.mid, sha256
+% 0959fc45c01eca743920a2734797f6db0bb4ad697461162e1535498fe0c88f37), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SAGAZ
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"B B, D B2 A2 G | "D7"c C ^F c z4 | "Em7"B B, D B2 A2 G | "D7"A C D A z4 |
+"G"B B, D B2 A2 G | "F"A A, D A z2 _A z | "A"G _B, D G2 ^F2 E | "D"^F ^F, C ^F2 E2 D |
+"Em7"B B, D B2 A2 G | "D7"c C ^F c z4 | "Em7"B B, D B2 A2 G | "D7"A C D A z4 |
+"G7"B B, D B2 A2 G | "Eb"g G c g z2 a2 | "D7"b B d b z2 d'2 | "G"g'4 z4 |
+"Em7"B B, D B2 A2 G | "D7"c C ^F c z4 | "Em7"B B, D B2 A2 G | "D7"A C D A z4 |
+"G"B B, D B2 A2 G | "F"A A, D A z2 _A z | "A"G _B, D G2 ^F2 E | "D"^F ^F, C ^F2 E2 D |
+"Em7"B B, D B2 A2 G | "D7"c C ^F c z4 | "Em7"B B, D B2 A2 G | "D7"A C D A z4 |
+"G7"B B, D B2 A2 G | "Eb"g G c g z2 a2 | "D7"b B d b z2 d'2 | "G"g'4 z ^f' g' a' |
+"Em"b' b e' b' a' b g' b | "F#7"^f' _b _d' ^f' z =f' ^f' g' | "D7"a' a _e' a' g' a ^f' a | "Em"e' g b e' z _e' =e' ^f' |
+"Em"g' g b g' ^f' g e' g | "B7"_e' a b _e' ^f' b _e' ^f' | "B7"a' b _e' a' g' b ^f' b | "Em"e' _e' =e' ^f' g' ^f' g' a' |
+"Em"b' b e' b' a' b g' b | "F#7"^f' _b _d' ^f' z =f' ^f' g' | "D7"a' a _e' a' g' a ^f' a | "Em"e' g b e' z _e' =e' f' |
+"E7"e' f b d' c' e b d | "Am"a c e a z _a =a c' | "B7"b c e a g B ^f A | "E"e G B e z ^f' g' a' |
+"Em"b' b e' b' a' b g' b | "F#7"^f' _b _d' ^f' z =f' ^f' g' | "D7"a' a _e' a' g' a ^f' a | "Em"e' g b e' z _e' =e' ^f' |
+"Em"g' g b g' ^f' g e' g | "B7"_e' a b _e' ^f' b _e' ^f' | "B7"a' b _e' a' g' b ^f' b | "Em"e' _e' =e' ^f' g' ^f' g' a' |
+"Em"b' b e' b' a' b g' b | "F#7"^f' _b _d' ^f' z =f' ^f' g' | "D7"a' a _e' a' g' a ^f' a | "Em"e' g b e' z _e' =e' f' |
+"E7"e' f b d' c' e b d | "Am"a c e a z _a =a c' | "B7"b c e a g B ^f A | "E"e G B e z4 |

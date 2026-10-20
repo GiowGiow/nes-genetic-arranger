@@ -1,0 +1,35 @@
+%abc-2.1
+% SAMBA CARNAVALESCO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/samba-carnavalesco.html (file
+% https://www.beakauffmann.com/mpb_s/som/samba-carnavalesco.mid, sha256
+% cfa957a2aec2e413bfe61e71dfceb1b9d63b8665937f419984e5ad615ce97f8d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SAMBA CARNAVALESCO
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"C"z G z G2 G z G | "G"z G z G z2 G z | "C"z G z G2 G z G | "G"z G z G z2 G z |
+"C"z e2 g c' e'2 d' | "G"c' b2 a g a B, b | "C"c' g2 e c d2 e | "G7"g8 |
+"C"z e2 g c' e' C d' | "G"c' b2 a g a B, b | "C"c' g2 e c d2 e | "G7"g3 f z2 f z |
+"C7"z c'2 d' c' g2 _b | "Dm7"a2 c'6 | "G7"z g2 a g d2 f | "Am7"e2 g5 z |
+"C7"C, c'2 d' c' g2 _b | "Dm7"a2 c'5 z | "G7"z g2 a g d2 e | "C"c G z G E, G z G |
+"G"z G z G z2 G z | "C"z G z G2 G z G | "G"z G z G z2 G z | "C"C3 z C,2 z2 |
+"Ab"z c' z c'2 _e'2 c' | "Eb"_b3 _e' _b4 | "Bb7"z _a z _a2 c'2 _a | "Eb7"g3 _B, _D z G,2 |
+"B"z d2 _e B, z f2 | "Cm7"g G, z _b _e'3 c' | "Bb7"_b2 z _B _B2 z _B | "Eb"_B2 z _B _B2 _B,2 |
+"Ab"z c' z c'2 _e'2 c' | "Cm7"_b3 _e' _b2 z2 | "Bb7"z _a z _a2 c'2 _a | "C7"g3 c' c2 z2 |
+"Fm"z f2 g _a _b2 c' | "Eb"d' _e'2 c' _b3 z | "Bb7"z d' z c' _b f2 g | "Eb"_e2 z2 _e'3 z |
+"Ab"z c' z c'2 _e'2 c' | "Eb"_b3 _e' _b4 | "Bb7"z _a z _a2 c'2 _a | "Eb7"g3 _B, _D z G,2 |
+"B"z d2 _e B, z f2 | "Cm7"g G, z _b _e'3 c' | "Bb7"_b2 z _B _B2 z _B | "Eb"_B2 z _B _B2 _B,2 |
+"Ab"z c' z c'2 _e'2 c' | "Cm7"_b3 _e' _b2 z2 | "Bb7"z _a z _a2 c'2 _a | "C7"g3 c' c2 z2 |
+"Fm"z f2 g _a _b2 c' | "Eb"d' _e'2 c' _b3 z | "Bb7"z d' z c' _b f2 g | "G"_e2 z2 G4 |
+"C"z G z G2 G z G | "G"z G z G z2 G z | "C"z G z G2 G z G | "G"z G z G z2 G z |
+"C"z e2 g c' e'2 d' | "G"c' b2 a g a B, b | "C"c' g2 e c d2 e | "G7"g8 |

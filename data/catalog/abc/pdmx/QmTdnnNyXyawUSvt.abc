@@ -1,0 +1,30 @@
+%abc-2.1
+% Non sò se quel sorriso - Francesca Caccini, by Francesca Caccini (1587-c.1640). Score published
+% on MuseScore (artist: Francesca Caccini), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francesca Caccini (died 1641,
+% Wikidata Q232035).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/15/QmTdnnNyXyawUSvt3cqA4wW2Y5whrCvUUC1qmoVRCKfe66.mid (sha256
+% 6d1de2c2194bf6bc5a8656f1b6747a823d940b31dbf258b227bfe05b80c1aee9): melody track 0, bars 0-41
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Non sò se quel sorriso - Francesca Caccini
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"z16 _d8 | "D"d4 c4 d4 e4 f8 | "Gm"d8 c8 _B8 | "F"A12 A4 A8 |
+"F"_B8 c16 | "Bb"d4 c4 _B4 A4 G8 | "Am"F8 G12 F4 | "F"F24 |
+"Dm"z16 B8 | "C"c4 B4 c4 d4 c8 | "Gm"_B8 A12 G4 | "A7"A12 A4 _B8 |
+"Db"c4 A4 B4 c4 d4 e4 | "D"f8 f8 e8 | "A"d8 d12 _d4 | "D"d24 |
+"B7"z8 e8 e8 | "C"e8 f4 e4 d4 c4 | "E"B4 A4 B12 A4 | "A"A12 A4 B8 |
+"A7"c16 d8 | "C"e12 d4 c4 B4 | "Bm"A4 G4 A12 G4 | "G"G24 |
+"A7"z8 B8 _d8 | "Dm"d4 c4 d4 e4 d8 | "F#m7"c16 B8 | "Dm"A4 G4 A4 B4 c4 d4 |
+"C"c4 d4 e4 d4 d4 c4 | "C"c24 | "C"c6 d2 e8 d8 | "Dm"c4 B4 c4 A4 B4 c4 |
+"Dm"d4 e4 f8 e8 | "A7"d8 d12 _d4 | "Dm"d24 | "D"d6 e2 f8 e8 |
+"E7"d12 c4 B4 c4 | "Dm"A12 G4 A4 B4 | "D7"c4 d4 e16 | "E7"d4 c4 B12 A4 |
+"A"A24 |

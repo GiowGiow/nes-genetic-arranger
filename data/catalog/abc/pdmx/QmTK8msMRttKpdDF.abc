@@ -1,0 +1,33 @@
+%abc-2.1
+% Erravi Domine, by Constantijn Huygens. Score published on MuseScore (artist: Constantijn
+% Huygens), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Constantijn Huygens (died 1687,
+% Wikidata Q560746).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/29/QmTK8msMRttKpdDFQSr9iWDgE1LnCYBLDPFGMixdkvSdqc.mid (sha256
+% 08881172f2aa3a8f8d039fce626b891116f1ac633687d435ac39bd630f3f3a17): melody track 0, bars 0-54
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Erravi Domine
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z8 G8 | "Am7"G8- "Am"G4 ^F4 | "G"G8 z4 G4 | "G"G12 D4 |
+"Cm"_E8- "F7"_E4 D4 | "Gm"D4 D4 D4 G4 | "Gm"G4 A2 A2 _B8 | "Dm7"A4 c6 c2 _B2 A2 |
+"F"G4 A4- "Gm7"A4 G4 | "Dm"G4 F2 F2 "A"E6 D2 | "D"D16 | "Gm"z8 G8 |
+"Am7"G8- "Am"G4 ^F4 | "G"G8 z4 G4 | "G"G12 D4 | "Cm"_E8- "F7"_E4 D4 |
+"Gm"D4 D4 D4 G4 | "Gm"G4 A2 A2 _B8 | "Dm7"A4 c6 c2 _B2 A2 | "F"G4 A4- "Gm7"A4 G4 |
+"Dm"G4 F2 F2 "A"E6 D2 | "D"D16 | "Dm"A8 "Dm7"A4 d4 | "Em7"d2 c2 B2 B2 "Dm7"c4 A4 |
+"Bb"z4 _B10 F2 | "Eb"G2 G2 F4 "Gm"D4 D4 | "Dm"D E F D G4 "Eb"z G A _B c4 | "C"c3 c _B A G _B "F"A4 A4 |
+"Gm"A2 _B A G2 F2 "A"E2 A2 G A E2 | "D"^F3 D E ^F G A _B A c _B d4 | "D"d2 c2 _B2 A2 A8 | "Gm"G16 |
+"Gm"z4 G4 G2 G2 G2 G2 | "Cm"G2 G2 A3 G "D"^F4 z2 G2 | "D"G6 ^F2 "Gm"G8 | "Gm"z2 G2 G2 G2 "Cm"G2 G2 A4 |
+"D"A2 G2 ^F2 G2 G6 ^F2 | "G"G16 | "Dm"A8 "Dm7"A4 d4 | "Em7"d2 c2 B2 B2 "Dm7"c4 A4 |
+"Bb"z4 _B10 F2 | "Eb"G2 G2 F4 "Gm"D4 D4 | "Dm"D E F D G4 "Eb"z G A _B c4 | "C"c3 c _B A G _B "F"A4 A4 |
+"Gm"A2 _B A G2 F2 "A"E2 A2 G A E2 | "D"^F3 D E ^F G A _B A c _B d4 | "D"d2 c2 _B2 A2 A8 | "Gm"G16 |
+"Gm"z4 G4 G2 G2 G2 G2 | "Cm"G2 G2 A3 G "D"^F4 z2 G2 | "D"G6 ^F2 "Gm"G8 | "Gm"z2 G2 G2 G2 "Cm"G2 G2 A4 |
+"D"A2 G2 ^F2 G2 G6 ^F2 | "G"G16 |

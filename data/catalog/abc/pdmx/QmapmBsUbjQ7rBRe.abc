@@ -1,0 +1,28 @@
+%abc-2.1
+% Se si alto pon gir mie stanche rime, by Orlando di Lasso. Score published on MuseScore (artist:
+% Orlando di Lasso), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Orlando di Lasso (died 1594,
+% Wikidata Q154792).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/36/QmapmBsUbjQ7rBReMbNnyGc9UeqCRhLXUJWUErHsxxKjHj.mid (sha256
+% 848d07bcf1d0360fb06c8bed28ba3b48bbba3380d9e7e14da93c9008eeff96a7): melody track 3, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Se si alto pon gir mie stanche rime
+M:4/2
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"D"z8 G,8- "A7"G,4 G,4 C8 | "Gm"D8 E8 "Em7"F8 C8 | "Gm7"_B,4 _B,4 G,8 "D"G,8 D8 | "Gm"D4 D4 G8 "D7"E8 F8 |
+"D"G8 ^F8 "G"G12 G4 | "Bb"C8 D8 "Gm7"_E8 D8 | "Ab"_E8 _E4 D4 C4 D4 _E8 | "Fm"_E4 D2 C2 D8 "Eb"_E16 |
+"Cm7"z16 "Dm7"z12 _B,4 | "Gm7"_B,4 G,4 =B,4 C4 "Dm7"F,4 C4 A,4 A,4 | "Gm7"A,4 G,4 D4 _B,4 "Cm7"_B,8 G,4 G,4 | "D"G,4 D8 D4 "G7"G,8 C4 C4 |
+"Ab"C4 C4 _E8- "Bb"_E4 D2 C2 D8 | "Eb"_E12 D2 C2 _B,16 | "C7"z16 "Gm7"_B,8 _E8 | "C7"_E8 F8 G8 =E8 |
+"F"F12 F4 "Am7"C4 C4 F,8 | "Bb"_B,16 "Eb"z8 _E,8 | "Cm"_B,8 _E8 "Bb"F4 F4 D4 _B,4 | "D7"F4 D4 D8 "G"D12 G,4 |
+"C"C12 C4 "A"A,4 A,4 _D8 | "D"z8 D8 "Bb"F6 F2 F4 F4 | "G"G4 G4 D4 D4 "Bm"D16 | "D"D8 D,8 "Cm"z4 G,4 C4 F,4 |
+"Dm7"F,4 F,4 _B,8 "Cm7"_E,4 _A,8 _E,4 | "Fm"F,16 "Em7"G,16 | "Em7"G,16 "Cm"z12 D4 | "G"E4 E4 G8 "Am7"C16 |
+"F"C16 "D7"z16 | "Am7"z8 C8 "F"D4 D4 F8 | "Gm7"_B,16- "Eb"_B,16 | "Cm7"z8 _E,8 "Ab"_E8 C8 |
+"Cm7"D8 _E8 "Gm"F8 _B,8 | "Bb"z8 _B,8- "Eb"_B,8 C8 | "G"C8 _B,8 "Gm"A,8 G,8 | "Dm7"A,8 A,8 "Cm"z16 |
+"D"z8 A,8 "G"B,16 | "Cm"C8 _E8- "Eb"_E8 D8 | "Cm"C16- "G"C8 B,4 A,4 | "G"B,32 |

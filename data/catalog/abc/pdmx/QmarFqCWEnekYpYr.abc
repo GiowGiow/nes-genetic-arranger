@@ -1,0 +1,28 @@
+%abc-2.1
+% Hear My Prayer O Lord Z.15, by Henry Purcell (1659-1695). Score published on MuseScore (artist:
+% Henry Purcell), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/40/QmarFqCWEnekYpYr6cxpCZsPTbiEd33Gh6Yhj5r3f6dVKq.mid (sha256
+% 9a5ffcb44d783fc0bf26dfc86f8900b07970cb974c7c315cbaecae68781326fa): melody track 0, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hear My Prayer O Lord Z.15
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "C"z8 "Eb"z8 | "C"z4 G4 G4 A4 | "G"_B6 c2 =B4 =B4 |
+"Cm"c8- "Fm"c4 d4 | "C"_e4 c4 "Eb"z8 | "Cm"z8 "C"z8 | "F"z8 "Fm"z8 |
+"Fm"c8- "Ab"c4 c4 | "Cm"c4 c4 "G"_e8 | "C"c8 "Fm7"z8 | "Eb"z4 c4 "C"c4 _B4 |
+"G7"A6 G2 "Dm"_A4 _A4 | "G7"_A4 G4- "Cm7"G2 ^F2 G4 | "Gm"G2 ^F2 E2 D2 "D"z8 | "G"z4 G4 "Gm"G4 A4 |
+"Gm"_B6 c2 "Em7"=B4 =B4 | "Cm"c8- "C"c2 B2 c4 | "Cm"d8- "Em7"d8 | "C"G8- "Cm"G8 |
+"Gm"z8 "Cm"z8 | "Gm"z8 "Em7"z8 | "C"c8- "Fm7"c4 c4 | "Cm"c4 c4 _e8 |
+"Am7"c8- "Fm"c8 | "Eb"z4 c4 "C"c4 _B4 | "F"A6 G2 "Dm"_A4 _A4 | "G"G6 F2 _E4 F4 |
+"Gm"G4 G4 "Gm7"z4 d4 | "G7"d4 d4 "Cm"_e6 f2 | "C"e4 e4 "Ab"f8 | "G"f8 "Cm"_e6 d2 |
+"G"d12 c4 | "Cm"c4 c4- "C"c8 |

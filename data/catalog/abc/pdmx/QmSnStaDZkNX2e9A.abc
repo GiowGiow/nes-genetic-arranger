@@ -1,0 +1,24 @@
+%abc-2.1
+% Porridge for Two, by Fred Cairns. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Fred Cairns (died 1896, Wikidata
+% Q5494755).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/33/QmSnStaDZkNX2e9AjLXadLq4m1oThEd2z1uxViQHdrxSJ3.mid (sha256
+% d902271cdb49b0827c3b39a765b36230da54638c760bb87610e65e0d65600dbc): melody track 0, bars 0-21
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Porridge for Two
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c2 e2 g2 g2 c'2 a2 g2 f2 | "Dm"f e c2 e2 e2 f2 e2 d2 c2 | "Dm"B2 A2 B2 c2 "C"A2 G2 c2 f2 | "G"e2 d4 z2 "C"z2 e2 g2 g2 |
+"C"c'2 a2 g2 f e- "F"e2 c2 e2 e2 | "F"f2 e2 d2 c B- "Dm"B2 A2 B2 c2 | "C"A G3 c2 f2 e2 d2 c4 | "C"f2 f2 f2 g2 a2 a2 g2 f2 |
+"C"g2 b4 f2 f2 f2 g2 a2 | "C"a2 g2 f2 g2 b4 c'2 c'2 | "C"c'2 c'2 b4 a2 g2 g2 a2 | "C"g2 f2 a2 g4 b2 c'2 c'2 |
+"C"c'2 c'2 b2 a2 g2 b2 f4 | [M:2/4]"C"f4 z4 | [M:4/4]"C"c2 e2 g2 g2 c'2 a2 g2 f2 | "Dm"f e c2 e2 e2 f2 e2 d2 c2 |
+"Dm"B2 A2 B2 c2 "C"A2 G2 c2 f2 | "G"e2 d4 z2 "C"z2 e2 g2 g2 | "C"c'2 a2 g2 f e- "F"e2 c2 e2 e2 | "F"f2 e2 d2 c B- "Dm"B2 A2 B2 c2 |
+"C"A G3 c2 f2 e2 d2 c4 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Giovanni Pergolesi Stabat Mater AMEN, by Giovanni Pergolesi. Score published on MuseScore
+% (artist: Dragonx YT), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Pergolesi (died 1736,
+% Wikidata Q185312).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/28/QmNkYyxdRUP57nocnuZRZNvTPGNta4aVmBt5ZtYyJwEWyj.mid (sha256
+% 9f78ec2e575b11d8f09bb45e49504b9d1e6e7771d2056519a655bff79322d303): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Giovanni Pergolesi Stabat Mater AMEN
+M:2/2
+L:1/16
+Q:1/4=213.999872
+% Exact tempo 213.99987160007703 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"c16 | "Eb7"_d16 | "Fm"c16 | "C7"_B16 |
+"Fm7"_A8 _B4 _A4 | "C7"G16 | "G7"f8 c4 _B4 | "Fm"_a16 |
+"Cm"f16 | "G7"_e16 | "Cm7"d16 | "G7"c8 B8 |
+"C"c8 c'8 | "Db"c'8 _b8 | "C"_b8 _a8 | "Bb"_a8 g8 |
+"Ab"g8 f8 | "Gm"f8 e8 | "Fm"f8 _a8 | "Bb7"_a8 g4 f4 |
+"C"e4 _a4 f4 _a4 | "Db7"_d4 f4 B4 =d4 | "C"z12 F4 | "C"E4 D4 C4 B,4 |
+"C"C4 z8 F4 | "C"E4 D4 C4 B,4 | "C"c4 _d4 c4 _B4 | "Gm7"_A4 G4 F4 _E4 |
+"F"F12 _B4 | "F"A4 G4 F4 E4 | "F"F12 _B4 | "F"A4 G4 F4 E4 |
+"F"f4 ^f4 =f4 _e4 | "Cm7"_d4 c4 _B4 A4 | "Bb"_B12 _e4 | "Bbm"_d4 c4 _B4 A4 |
+"Bb"_B12 _e4 | "Bbm"_d4 c4 _B4 A4 | "Cm7"_b4 c'4 _d'4 c'4 | "Bbm7"_b4 _a4 g4 f4 |
+"C"e12 c'4 | "C"_b4 _a4 g4 f4 | "C"e12 c'4 | "C"_b4 _a4 g4 f4 |
+"C"e8 c8 | "Db"_d8 _b4 _d4 | "C"c8 _a4 c4 | "Bbm"_B8 g4 _B4 |
+"Fm"_A8 f4 _A4 | "Gm"G16 | "F"F4 _a2 z2 g2 z2 _a2 z2 | "F7"f2 z2 _a2 z2 c2 z2 _e2 z2 |
+"Bbm"_d2 z2 _b2 z2 _a2 z2 _b2 z2 | "G7"g2 z2 _b2 z2 d2 z2 f2 z2 | "C"e2 z2 c2 z2 f2 z2 _A2 z2 | "C7"G2 z2 f2 z2 G2 z2 e2 z2 |
+"F"f4 _A2 z2 G2 z2 _A2 z2 | "F7"F2 z2 _A2 z2 C2 z2 _E2 z2 | "Bbm"_D2 z2 _B2 z2 _A2 z2 _B2 z2 | "G7"G2 z2 _B2 z2 D2 z2 F2 z2 |
+"C"E2 z2 C2 z2 F2 z2 _A,2 z2 | "C7"G,2 z2 F2 z2 G,2 z2 E2 z2 | "F"F8 _a8 | "C7"z8 g8 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Purcell Henry - Two in one upon a ground, by Henry Purcell. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/21/QmbgNEu5hHtBhDrc9cWAo1UFPXpFwdywAF2YdiT3SU5JeD.mid (sha256
+% b988155bd458b94ff0fa11c5aab51ef77a54e8f240914aabdcda96b94447d2bf): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Purcell Henry - Two in one upon a ground
+M:3/4
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z12 | "G"z12 | "F"z12 | "E7"z12 |
+"Am"z12 | "E"z12 | "A"C6 B,2 A,4 | "G"E4 B,4 E,4 |
+"F"A,6 B,2 C4 | "E7"_A,12 | "Am"z4 E4 A,4 | "E"B,4 B,2 C2 D2 B,2 |
+"A"C4 C4 D4 | "G"E12 | "F"E4 A4 A4 | "E7"A6 B2 _A4 |
+"Am"A12 | "E"z4 E4 B,4 | "A"C4 C4 F4 | "G"B,4 B,4 E4 |
+"F"A,4 A,2 C2 B,2 A,2 | "E7"_A,6 ^F,2 E,4 | "Am"z8 C4 | "E"C4 B,4 B, C D2 |
+"Am"D4 C4 z4 | "G"z8 B,4 | "F"B,4 A,4 A, B, C2 | "E7"C4 B,4 z4 |
+"Am"z8 E4 | "E"E4 D3 E D4 | "A"D4 C3 D C4 | "G"C4 B,3 C B,4 |
+"F"B,4 A,2 _A,2 =A,4 | "E7"A,6 B,2 _A,4 | "Am"A,8 z4 | "E"z10 B,2 |
+"A"C2 B,2 A,2 B,2 C2 D2 | "G"E2 D2 C2 B,2 C2 _A,2 | "F"A,2 B,2 C2 D2 E2 F2 | "E7"G2 F2 E2 D2 E2 B,2 |
+"Am"C2 D2 E2 D2 C2 A,2 | "Em"B,4 B,6 A,2 | "Am"A,8 z4 | "G"z4 E4 E4 |
+"F"E4 D2 C2 B,2 A,2 | "E7"_A,8 z4 | "Am"z12 | "E"z4 E6 E2 |
+"A"F2 E2 D2 C2 B,2 A,2 | "C"B,2 A,2 B,2 D2 C2 B,2 | "F"A,2 _A,2 =A,2 ^F,2 _A,2 =A,2 | "E7"_A,2 ^F,2 _A,2 E,2 ^F,2 _A,2 |
+"Am"A,6 A,2 B,2 C2 | "E"B,2 A,2 B,2 C2 D2 B,2 | "Am"C2 D2 E D E E E E C D | "G"E12 |
+"F"z8 A,4 | "E7"_A,6 =A,2 B,4 | "Am"E,4 E4 F4 | "E"F4 E2 D2 C2 B,2 |
+"A"C4 D2 C2 B,2 A,2 | "G"B,8 E4 | "F"E4 D6 E2 | "E7"_A,2 =A,2 =A,6 _A,2 |

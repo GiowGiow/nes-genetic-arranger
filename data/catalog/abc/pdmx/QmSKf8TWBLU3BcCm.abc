@@ -1,0 +1,25 @@
+%abc-2.1
+% Il me prend fantasie, by Jacques Arcadelt. Score published on MuseScore (artist: Jacques
+% Arcadelt), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacques Arcadelt (died 1568,
+% Wikidata Q316402).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/29/QmSKf8TWBLU3BcCmoa8QBu2dXzy3RGj8cS98kYGQHTHpbf.mid (sha256
+% 9cdcf8462d9d19004bef18eb42a0e7a636b939a0c2fbf5d47584fc49b77ad9e1): melody track 2, bars 0-21
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Il me prend fantasie
+M:3/2
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"C8 E8 E8 | "Em"E12 D4 C8 | "C"B,16 G,8 | "C"C16 C8 |
+"Dm7"C8 A,8 A,8 | "E"G,24 | "Am"C8 E8 E8 | "Em"E12 D4 C8 |
+"C"B,16 G,8 | "C"C16 C8 | "Dm7"C8 A,8 A,8 | [M:2/2]"E"G,8 z4 G,4 |
+"Em7"B,4 B,4 D4 D4 | "C"E12 E4 | "Dm7"D2 E2 F2 E2 D2 C2 B,2 A,2 | "Am"B,4 B,4 A,8 |
+"Em"z4 G,4 B,4 B,4 | "Dm7"D4 D4 E8 | "C"E4 E4 D2 E2 F2 E2 | "A7"D2 C2 B,2 A,2 B,4 B,4 |
+"Am"A,16 |

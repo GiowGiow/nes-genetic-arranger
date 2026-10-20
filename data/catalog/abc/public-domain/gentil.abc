@@ -1,0 +1,36 @@
+%abc-2.1
+% GENTIL, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gentil.html (file
+% https://www.beakauffmann.com/mpb_g/som/gentil.mid, sha256
+% 019b682ef628b032f914f0c17c9c196ac2550946624ecbbd7885acda21129a2d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GENTIL
+M:4/4
+L:1/16
+Q:1/4=123.999992
+% Exact tempo 123.9999917333339 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "Abm7"^f3 _a ^f3 _e B4 z4 | "F#7"z2 E2 ^F2 _B2 _e4 _d3 =B | "B7"_d z _B2 =B2 _e2 _a4 ^f4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E7"b3 _d' b3 _a e4 e'4 | "F#m7"e'8 "C"z3 _e' =e'3 ^f' | "Dbm7"_a'3 =a' _b'3 =b' "B7"c''3 _d'' =d''3 _e'' | "E"e''4 z4 "Dbm7"e''4 z4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "Abm7"^f3 _a ^f3 _e B4 z4 | "F#7"z2 E2 ^F2 _B2 _e4 _d3 =B | "B7"_d z _B2 =B2 _e2 _a4 ^f4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E7"b3 _d' b3 _a e4 e'4 | "F#m7"e'8 "C"z3 _e' =e'3 ^f' | "Dbm7"_a'3 =a' _b'3 =b' "B7"c''3 _d'' =d''3 _e'' | "E"e''4 z4 "Dbm7"e''4 z4 |
+"Ab7"a6 _a2 g2 _a2 e'2 c'2 | "Dbm"_e'6 _d'2 z2 _d'2 b2 a2 | "Ab7"_a2 =a2 _a4 _e2 =e2 _e4 | "Dbm"_d _A2 E z4 "Db"z _e2 =e f ^f2 g |
+"F#7"_a6 ^f2 =f2 ^f2 _e'2 _b2 | "Abm7"_d'6 b2 "Db7"z2 b2 _b2 _a2 | "Abm7"^f _a2 ^f _e B2 _A "F#"^F4 _d4 | "Abm7"B4 z4 "B"z8 |
+"Ab7"a6 _a2 g2 _a2 e'2 c'2 | "Dbm"_e'6 _d'2 z2 _d'2 b2 a2 | "Ab7"_a2 =a2 _a4 _e2 =e2 _e4 | "Dbm"_d _A2 E z4 "Db"z _e2 =e f ^f2 g |
+"F#7"_a6 ^f2 =f2 ^f2 _e'2 _b2 | "Abm7"_d'6 b2 "Db7"z2 b2 _b2 _a2 | "Abm7"^f _a2 ^f _e B2 _A "F#"^F4 _d4 | "B"B4 b3 b "Ebm7"_b3 =b a4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "Abm7"^f3 _a ^f3 _e B4 z4 | "F#7"z2 E2 ^F2 _B2 _e4 _d3 =B | "B7"_d z _B2 =B2 _e2 _a4 ^f4 |
+"E"b3 _d' b3 _a "Dbm7"e4 f4 | "F#m"^f3 _a ^f3 _d =A4 z4 | "B7"z2 A2 B2 _e2 _a4 ^f3 =e | "E"^f z _e2 =e2 _a2 "Dbm7"_d'4 b4 |
+"E7"b3 _d' b3 _a e4 e'4 | "F#m7"e'8 "C"z3 _e' =e'3 ^f' | "Dbm7"_a'3 =a' _b'3 =b' "B7"c''3 _d'' =d''3 _e'' | "E"e''4 z4 "Dbm7"e''4 z4 |

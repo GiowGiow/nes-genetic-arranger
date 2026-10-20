@@ -1,0 +1,35 @@
+%abc-2.1
+% waltz, by Ferdinando Carulli. Score published on MuseScore (artist: Ferdinando Carulli), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ferdinando Carulli (died 1841,
+% Wikidata Q332596).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/38/QmYqgebAueJN7ho2vDJn6cQ5EVXLucN9n4EsRt8gkXzxLb.mid (sha256
+% 8c6d46cb73200618dbb4f9d41b0403c2b349925b3855231116cfbcf86791839c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:waltz
+M:3/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 | "Em7"z12 | "C"z12 | "Em7"z12 |
+"G"z12 | "Em7"z12 | "D7"z12 | "G"z12 |
+"G"z12 | "Em7"z12 | "C"z12 | "Em7"z12 |
+"G"z12 | "Em7"z12 | "D7"z12 | "G"z12 |
+"D7"z12 | "Em7"z12 | "D7"z12 | "Em7"z12 |
+"D7"z12 | "Em7"z12 | "D7"z12 | "G"z12 |
+"D7"z12 | "Em7"z12 | "D7"z12 | "Em7"z12 |
+"D7"z12 | "Em7"z12 | "D7"z12 | "G"z12 |
+"E"z12 | "Em"z12 | "Abm7"z12 | "Em"z12 |
+"E"z12 | "Em"z12 | "Abm7"z12 | "E"z12 |
+"E"z12 | "Em"z12 | "Abm7"z12 | "Em"z12 |
+"E"z12 | "Em"z12 | "Abm7"z12 | "E"z12 |
+"B7"z4 _E4 z4 | "Em"z12 | "Abm7"z12 | "Em"z12 |
+"B7"z12 | "Em"z12 | "Abm7"z12 | "E"z12 |
+"B7"z4 _E4 z4 | "Em"z12 | "Abm7"z12 | "Em"z12 |
+"B7"z12 | "Em"z12 | "Abm7"z12 | "E"z12 |

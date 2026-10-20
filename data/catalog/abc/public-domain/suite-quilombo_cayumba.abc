@@ -1,0 +1,35 @@
+%abc-2.1
+% SUITE QUILOMBO (Cayumba), by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/suite-quilombo_cayumba.html (file
+% https://www.beakauffmann.com/mpb_s/som/suite-quilombo_cayumba.mid, sha256
+% 6f6d3332c9c343f997adf9953f9981b68ce7753ed3841a1085cb304f4954a2b4), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SUITE QUILOMBO (Cayumba)
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"G"g a g ^f d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g a g e' d'2 z2 |
+"G"g a g e d e d B | "G"G A G E D2 B2 | "F#7"_d =d _d g ^f g ^f c' | "Bm"b2 z2 b2 z2 |
+"D7"A B A e d e d2 | "G"e3 z d e d2 | "D7"c d c B A B A2 | "G"G2 D D D E D2 |
+"G7"B c B e d e d2 | "C"G2 c c c d c2 | "A7"_d _d =d _d g a g2 | "D"^f2 d d d e d2 |
+"G"g a g e d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g a g e' d'2 z2 |
+"G"g a g e d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g2 z2 g2 z2 |
+"D"^f'2 z e' e' d'2 b | "D"b2 a2 a2 z b | "Am7"b2 g2 g2 z b | "D"b2 a2 a3 z |
+"D"^f'2 z e' e' d'2 b | "D"b2 a2 a2 z b | "Am7"b2 a2 a2 z ^f | "D"e z3 d'2 z2 |
+"D"^f'2 z e' e' d'2 b | "D"b2 a2 a2 z b | "Am7"b2 g2 g2 z b | "D"b2 a2 a3 z |
+"D"^f'2 z e' e' d'2 b | "D"b2 a2 a2 z b | "Am7"b2 a2 a2 z ^f | "D"e z3 d'2 z2 |
+"G"g a g ^f d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g a g e' d'2 z2 |
+"G"g a g e d e d B | "G"G A G E D2 B2 | "F#7"_d =d _d g ^f g ^f c' | "Bm"b2 z2 b2 z2 |
+"D7"A B A e d e d2 | "G"e3 z d e d2 | "D7"c d c B A B A2 | "G"G2 D D D E D2 |
+"G7"B c B e d e d2 | "C"G2 c c c d c2 | "A7"_d _d =d _d g a g2 | "D"^f2 d d d e d2 |
+"G"g a g e d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g a g e' d'2 z2 |
+"G"g a g e d e d B | "G"G A G E D2 D2 | "D7"A B A e d e d a | "G"g2 z2 g2 z2 |

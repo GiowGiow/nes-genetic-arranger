@@ -1,0 +1,35 @@
+%abc-2.1
+% Sonata for four Trombones, by Daniel Speer (1636 - 1707). Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Daniel Speer (died 1707,
+% Wikidata Q539915).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/40/QmdrfVYsESR2xRR5FM1eajcJkjGFzq8vE6XqFse89RLPpp.mid (sha256
+% 603f42ecee0b8545a5f8faa09c29b0178fc7a714a9c2f075ef9921b4aa037c14): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonata for four Trombones
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"D4 D2 D2 "A"_D8 | "Em7"z8 "Dm7"D2 F2 E2 G2 | "F"F2 C2 C2 C2 "C7"D2 D2 C4 | "Dm"C6 C2 "Bb"F3 E D2 D2 |
+"Am"C2 C2 D2 D2 "Am7"E2 E2 F2 F2 | "C"C3 D E2 E2 "Db7"D6 D2 | "C"C8 "A"C4 C2 C2 | "E"B,8 "Am7"A,4 _B,4 |
+"Dm7"C4 A,2 _B,2 "C"G,3 G, G,2 G,2 | "G7"A,4 G,4 "C"G,4 z4 | "Gm"z8 "Dm7"z2 G,2 A, _B, C A, | "Gm"D2 D2 D2 _D2 "Dm7"=D2 C2 E2 =D2 |
+"F"F2 E2 G2 F2 C2 C2 C2 C2 | "Em"_B,6 _B,2 "Gm7"A,4 z4 | "Gm7"F,2 A,2 G,2 _B,2 "C"C3 =B, A,2 A,2 | "C7"G,2 F,2 E,4 "Bb"F,2 C2 _B, C D _B, |
+"A7"E F E D _D4- "Dm7"_D2 C2 _B,2 _B,2 | "C"C2 E2 F2 C2 "Dm7"D3 D C2 C B, | "Dm7"A, B, C A, D E D C "Gm7"_B,2 _B,2 C2 C _B, | "Dm7"A,6 D C "Em"B, C D B, E F E D |
+"Dm"C2 C2 D2 C2 "E"B,6 B,2 | "F"_D2 A,2 C2 C2 "C"C8 | "C"C4 C4 "F"C8 | "Dm"D4 D2 D2 "A"_D8 |
+"Em7"z8 "Dm7"D2 F2 E2 G2 | "F"F2 C2 C2 C2 "C7"D2 D2 C4 | "Dm"C6 C2 "Bb"F3 E D2 D2 | "Am"C2 C2 D2 D2 "Am7"E2 E2 F2 F2 |
+"C"C3 D E2 E2 "Db7"D6 D2 | "C"C8 "A"C4 C2 C2 | "E"B,8 "Am7"A,4 _B,4 | "Dm7"C4 A,2 _B,2 "C"G,3 G, G,2 G,2 |
+"G7"A,4 G,4 "C"G,4 z4 | "Gm"z8 "Dm7"z2 G,2 A, _B, C A, | "Gm"D2 D2 D2 _D2 "Dm7"=D2 C2 E2 =D2 | "F"F2 E2 G2 F2 C2 C2 C2 C2 |
+"Em"_B,6 _B,2 "Gm7"A,4 z4 | "Gm7"F,2 A,2 G,2 _B,2 "C"C3 =B, A,2 A,2 | "C7"G,2 F,2 E,4 "Bb"F,2 C2 _B, C D _B, | "A7"E F E D _D4- "Dm7"_D2 C2 _B,2 _B,2 |
+"C"C2 E2 F2 C2 "Dm7"D3 D C2 C B, | "Dm7"A, B, C A, D E D C "Gm7"_B,2 _B,2 C2 C _B, | "Dm7"A,6 D C "Em"B, C D B, E F E D | "Dm"C2 C2 D2 C2 "E"B,6 B,2 |
+"F"_D2 A,2 C2 C2 "C"C8 | "C"C4 C4 "F"C8 | "Dm"z2 D2 D2 D2 "A"_D6 =D2 | "Gm7"E4 D4 "A"_D4 E4 |
+"Bb"D6 D2 "A"_D8 | "Dm"z6 D C "C"_B,2 _B, A, G,2 C =B, | "Am7"A,3 B, C2 C2 "G"C4 B,4 | "C"C4 C4- "Gm7"C2 D2 D4 |
+"C"E2 D2 C2 C2 "G"D4 G,4 | "C"G,2 E D C2 C2 "Gm7"_B,2 D C _B,2 _B, A, | "Am7"G,2 C2 C2 C2 "Gm7"D2 D2 D2 D2 | "Gm"D2 _B,2 A,3 A, "G"=B,2 D2 D2 C D |
+"C"E8- "F"E2 C2 C2 B, C | "Dm"D2 D2 D2 D2 "A"_D8 | "Dm"z6 D C "C"_B, _B, _B, _B, C2 C =B, | "F"A, A, A, A, D2 D C "Em7"B, B, B, B, C2 C B, |
+"F"A, A, A, A, A,2 A, A, "Gm7"_B,2 C2 G,4 | "Bb"C6 D C "C"_B, _B, _B, _B, C2 C =B, | "Am"C6 C2 "Gm"D2 D C _B, _B, _B, _B, | "Am7"C2 D2 C3 C "C"B,6 C B, |

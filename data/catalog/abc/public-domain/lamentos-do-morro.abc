@@ -1,0 +1,35 @@
+%abc-2.1
+% LAMENTOS DO MORRO, by Garoto, as performed by Gabriel Moura e Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/lamentos-do-morro.html (file
+% https://www.beakauffmann.com/mpb_l/som/lamentos-do-morro.mid, sha256
+% 2ae4125cf53a9ce88c9e85b1be8e73f3c4eafc52987cca1db3b5f2db692bb939), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LAMENTOS DO MORRO
+M:2/4
+L:1/16
+Q:1/4=125
+K:none
+P:A
+"C"D, D, D, D, D, D, D, D, | "C"D, D, D, D, G, G, G, G, | "C"D, D, D, D, G, G, G, G, | "C"D, D, D, D, G, G, G, G, |
+"C"D, D,2 D,2 G, G, G, | "C"D, D, D, D, G, G, G, G, | "C"E,, G, G, G,2 B, B, B, | "C"B,3 B, B,3 B, |
+"C"B, B,2 B,2 B,3 | "C"D, D, D, D, D, D, D, D, | "C"D, D, D, D, D, D, D, D, | "C"D, _B D, D, A D, D, D, |
+"C"_B D, D, A D, D, D, D, | "C"D, A D, D, G D, D, D, | "C"A D, D, G D, D, D, D, | "C"D, _B D, D, A D, D, D, |
+"C"_B D, D, A D, D, D, D, | "C"D, _A D, D, =A D, D, =A | "C"D, D, _A D, D, _A D, D, | "C"C, G2 G2 G2 G |
+"C"C, G2 G C, C,2 B,, | "C"_B,, D2 D2 D2 D | "C"_B,, D2 D _B,, D2 D | "C"A,, C2 D A,, C2 F |
+"C"A,, _E2 F A,, _E2 _B | "C"_B A,,2 G,2 C _E _B | "C"C A2 A z D, D, D, | "C"D, _B D, D, A D, D, D, |
+"C"_B D, D, A D, D, D, D, | "C"D, A D, D, G D, D, D, | "C"A D, D, G D, D, D, D, | "C"D, _B D, D, A D, D, D, |
+"C"_B D, D, A D, D, D, D, | "C"D, _A D, D, =A D, D, =A | "C"D, D, _A D, D, _A D, D, | "C"C, G2 G2 G2 G |
+"C"C, G2 G C, C,2 B,, | "C"_B,, D2 D2 D2 D | "C"_B,, D2 D _B,, D2 D | "C"A,, C2 D A,, C2 F |
+"C"A,, _E2 F A,, _E2 _B | "C"_B A,,2 G,2 C _E _B | "C"C A2 A z D, D, D, | "C"D, d D, D, c D, D, D, |
+"C"_B D, D, _A D, D, D, D, | "C"D, B D, D, A D, D, D, | "C"B D, D, A2 D, D, D, | "C"D, A D, D, G D, D, D, |
+"C"A D, D, G D, A2 G | "C"G E,, A,, E, G, C E G | "C"A, ^F2 ^F z D,2 E, | "C"G,, D2 D E,2 D,2 |
+"C"E,2 D D, G,, E,2 F, | "C"^F, D2 D _A,, =F, D2 | "C"E,2 D D _A,, E,2 E, | "C"A,, E2 E ^F,2 E,2 |
+"C"^F,2 E E, A,, ^F,2 G, | "C"_B,, E2 E _B,, G, E2 | "C"^F,2 E E _B,, ^F,2 A, | "C"B,, E2 E B,, z G,2 |
+"C"^F,2 E E z E,2 G, | "C"A,, E2 E E,, G, E2 | "C"^F,2 D D A,, ^F,2 D | "C"D D3 D z E,2 |

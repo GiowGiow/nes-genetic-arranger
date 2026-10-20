@@ -1,0 +1,27 @@
+%abc-2.1
+% Nun lasst uns mit den Engelein, by Johann Stobaeus. Score published on MuseScore (artist: Johann
+% Stobäus), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Stobaeus (died 1646,
+% Wikidata Q316164).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/38/QmbqyYNeSZC3Cp4d8Amii4hj6iHiKiooGpEZDqHDZ7ymDp.mid (sha256
+% 880715b687d134a22a626b3e39ae5b5e4dabd6818fb8efd032628e7da02449f8): melody track 3, bars 0-33
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Nun lasst uns mit den Engelein
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z12 C4 | "C"C4 D4 "Dm7"A,4 D4 | "C"G,6 G,2 G,4 F,4 | "D7"G,4 D4 "C"C6 C2 |
+"G"D4 E4 D8 | "C"C12 C4 | "C"C4 D4 "Dm7"A,4 D4 | "C"G,6 G,2 G,4 F,4 |
+"D7"G,4 D4 "C"C6 C2 | "G"D4 E4 D8 | "C"C4 G,4 G,4 C4 | "C"F,4 G,8 F,2 E,2 |
+"Gm7"D,2 E,2 F,4- "F"F,4 F,4 | "C"G,8 "F"z8 | "Am7"z8 "A"z8 | "D"z4 A,4 A,4 D4 |
+"G"G,4 D8 C2 _B,2 | "Dm7"A,2 _B,2 C4- "C"C4 C4 | "Gm"D4 G,4 "Am"A,6 _B,2 | "C7"C4 D4 "C"C8 |
+[M:2/4]"F"F,8 | "F"z4 C4 | [M:4/4]"Bb"_B,6 A,2 "Em7"G,4 G,4 | "Dm"A,4 B,4 "C"C4 C4 |
+"F"C6 _B,2 A,2 _B,2 C2 A,2 | "C"D4 C4 "G"D8 | [M:2/4]"C"C8 | "F"z4 C4 |
+[M:4/4]"Bb"_B,6 A,2 "Em7"G,4 G,4 | "Dm"A,4 B,4 "C"C4 C4 | "F"C6 _B,2 A,2 _B,2 C2 A,2 | "C"D4 C4 "G"D8 |
+[M:2/4]"C"C8 |

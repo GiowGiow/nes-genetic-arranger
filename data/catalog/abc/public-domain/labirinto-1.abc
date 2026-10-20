@@ -1,0 +1,36 @@
+%abc-2.1
+% LABIRINTO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/labirinto-1.html (file
+% https://www.beakauffmann.com/mpb_l/som/labirinto-1.mid, sha256
+% 1dc570688806df4ca0863e2fb6a151fc8d4f7c1a4122d9b8db5af42d7118f56c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LABIRINTO
+M:2/4
+L:1/16
+Q:1/4=93.999981
+% Exact tempo 93.99998120000377 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Db7"_A, B, _D F F, B, _D F |
+"D"^F, B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Bbm7"_A, _D F _A ^F, _A, C _E |
+"D"F B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Db7"_A, B, _D F F, B, _D F |
+"F#"E, ^F, _B, _D E, ^F, _B, _D | "F#"_E, ^F, B, _E D, ^F, A, C | "D7"_D, ^F, _B, _D C, =D, ^F, A, | "Bm7"B,, D, G, B, z2 _D, z |
+"D"^F,, B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Db7"_A, B, _D F F, B, _D F |
+"D"^F, B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Bbm7"_A, _D F _A ^F, _A, C _E |
+"D"F B, _A, _D, =D, B,, _A,, _E,, | "Abm"_D,, _A,, _D, F, B, _D F _D | "F#"_B, _D ^F _D A, C _E A | "Db7"_A, B, _D F F, B, _D F |
+"F#"E, ^F, _B, _D E, ^F, _B, _D | "F#"_E, ^F, B, _E D, ^F, A, C | "D7"_D, ^F, _B, _D C, =D, ^F, A, | "Bm7"B,, D, G, B, z2 _D, z |
+"D7"^F,,3 z _A,3 z | "Ebm"_E,3 _E _E _E z D | "Eb"_D3 _B, _B, z _B, z | "Abm"B,3 _A, _A, _B, z =B, |
+"B7"C3 A, A, z A, z | "Db"B,3 F, F, z F, z | "Abm"B,3 F, F, z F, z | "Ebm7"_B,3 ^F, ^F, z ^F, z |
+"Bb"^F, z3 D z3 | "Ebm"_E,3 _E _E _E z D | "Eb"_D3 _B, _B, z _B, z | "Abm"B,3 _A, _A, _B, z =B, |
+"B7"C3 A, A, z A, z | "F#"_D _D z _D _D _D z _D | "Ab7"C C z C C z C z | "Db"_D2 z _A,, _D,2 z _A,,, |
+"D7"_D,,3 z _A,3 z | "Ebm"_E,3 _E _E _E z D | "Eb"_D3 _B, _B, z _B, z | "Abm"B,3 _A, _A, _B, z =B, |
+"B7"C3 A, A, z A, z | "Db"B,3 F, F, z F, z | "Abm"B,3 F, F, z F, z | "Ebm7"_B,3 ^F, ^F, z ^F, z |
+"Bb"^F, z3 D z3 | "Ebm"_E,3 _E _E _E z D | "Eb"_D3 _B, _B, z _B, z | "Abm"B,3 _A, _A, _B, z =B, |
+"B7"C3 A, A, z A, z | "F#"_D _D z _D _D _D z _D | "Ab7"C C z C C z C z | "Db"_D2 z _A,, _D,3 z |

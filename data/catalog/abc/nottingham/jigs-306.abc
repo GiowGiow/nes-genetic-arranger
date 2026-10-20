@@ -1,0 +1,24 @@
+%abc-2.1
+% Swallowtail, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc,
+% tune X: 306 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Swallowtail
+M:6/8
+L:1/16
+Q:1/4=140
+K:Em
+P:A
+"Em"z10 E F | "Em"G2 E2 E2 B2 E2 E2 | "Em"G2 E2 E2 B2 A2 G2 | "D"F2 D2 D2 A2 D2 D2 |
+"D"d2 ^c2 d2 A2 G2 F2 | "Em"G2 E2 E2 B2 E2 E2 | "Em"G2 E2 E2 B4 ^c2 | "D"d2 ^c2 d2 A2 G2 F2 |
+"Em"G2 E2 E2 E4 E F | "Em"G2 E2 E2 B2 E2 E2 | "Em"G2 E2 E2 B2 A2 G2 | "D"F2 D2 D2 A2 D2 D2 |
+"D"d2 ^c2 d2 A2 G2 F2 | "Em"G2 E2 E2 B2 E2 E2 | "Em"G2 E2 E2 B4 ^c2 | "D"d2 ^c2 d2 A2 G2 F2 |
+"Em"G2 E2 E2 E4 B2 | "Em7"B2 ^c2 d2 e4 f2 | "Em"e4 f2 e2 d2 B2 | "Em7"B2 ^c2 d2 e4 f2 |
+"Em7"e2 d2 B2 d6 | "Em7"B2 ^c2 d2 e4 f2 | "Em"e4 f2 e2 d2 B2 | "D"d2 ^c2 d2 A2 G2 F2 |
+"Em"G2 E2 E2 E4 B2 | "Em7"B2 ^c2 d2 e4 f2 | "Em"e4 f2 e2 d2 B2 | "Em7"B2 ^c2 d2 e4 f2 |
+"Em7"e2 d2 B2 d6 | "Em7"B2 ^c2 d2 e4 f2 | "Em"e4 f2 e2 d2 B2 | "D"d2 ^c2 d2 A2 G2 F2 |
+"Em"G2 E2 E2 E4 z2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Cornish Quickstep, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 74 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Cornish Quickstep
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 f2 =f2 | "D"f4 d2 c2 d4 A2 ^G2 | "D"A4 d4 f6 f2 | "Em"g4 f4 e4 d4 |
+"A7"c4 B4 A4 f2 =f2 | "D"f4 d2 c2 d4 A2 ^G2 | "D"A4 d4 f6 f2 | "A7"e4 A4 B4 c4 |
+"A7"d8 d4 f2 =f2 | "D"f4 d2 c2 d4 A2 ^G2 | "D"A4 d4 f6 f2 | "Em"g4 f4 e4 d4 |
+"A7"c4 B4 A4 f2 =f2 | "D"f4 d2 c2 d4 A2 ^G2 | "D"A4 d4 f6 f2 | "A7"e4 A4 B4 c4 |
+"A7"d8 d4 A4 | "D"F4 A2 A2 A4 A4 | "G"G4 B2 B2 B4 B4 | "A7"A4 c2 c2 c4 c4 |
+"D"d2 e2 f2 e2 d2 c2 B2 A2 | "D"F4 A2 A2 A4 A4 | "G"G4 B2 B2 B4 B4 | "A7"A4 c2 c2 c4 e4 |
+"D"d12 A4 | "D"F4 A2 A2 A4 A4 | "G"G4 B2 B2 B4 B4 | "A7"A4 c2 c2 c4 c4 |
+"D"d2 e2 f2 e2 d2 c2 B2 A2 | "D"F4 A2 A2 A4 A4 | "G"G4 B2 B2 B4 B4 | "A7"A4 c2 c2 c4 e4 |
+"D"d12 z4 |

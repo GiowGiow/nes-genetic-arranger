@@ -1,0 +1,23 @@
+%abc-2.1
+% Rufty Tufty, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/playford.abc, tune X: 12 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 070877bc37176e0dedbcd038268d6669399201cd7b58d88b4ab36127528f9c76).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Rufty Tufty
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"d8 "A7"d4 e4 | "D"f8 e4 f4 | "G"g4 g4 "A7"f4 e4 |
+"D"d12 A4 | "D"d8 "A7"d4 e4 | "D"f8 e4 f4 | "G"g4 g4 "A7"f4 e4 |
+"D"d12 e2 f2 | "C"g4 f4 e4 d4 | "G"d4 =c4 B4 B2 =c2 | "G"d4 d4 =c4 B4 |
+"D7"A8 "G"G4 e2 f2 | "C"g4 f4 e4 d4 | "G"d4 =c4 B4 B2 =c2 | "G"d4 d4 =c4 B4 |
+"D7"A8 "G"G8 | "G"B6 =c2 d4 d4 | "C"e4 =c4 "D7"d8 | "G"B6 =c2 d4 d4 |
+"G"e4 =c4 "D7"d4 B2 =c2 | "G"d4 d4 =c4 B4 | "D7"A8 "G"G8 | "G"B6 =c2 d4 d4 |
+"C"e4 =c4 "D7"d8 | "G"B6 =c2 d4 d4 | "G"e4 =c4 "D7"d4 B2 =c2 | "G"d4 d4 =c4 B4 |
+"D7"A8 "G"G8 |

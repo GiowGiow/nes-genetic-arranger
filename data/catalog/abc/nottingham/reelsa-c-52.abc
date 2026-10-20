@@ -1,0 +1,24 @@
+%abc-2.1
+% Captain Maguire, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 52 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Captain Maguire
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 F2 G2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e4 "Bm"f4 e2 f2 | "Em"g4 a2 g2 "A7"f4 e4 |
+"D"d4 f4 "A7"A4 F2 G2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e4 "Bm"f4 e2 f2 | "Em"g4 a2 g2 "A7"f4 e4 |
+"D"d12 F2 G2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e4 "Bm"f4 e2 f2 | "Em"g4 a2 g2 "A7"f4 e4 |
+"D"d4 f4 "A7"A4 F2 G2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e4 "Bm"f4 e2 f2 | "Em"g4 a2 g2 "A7"f4 e4 |
+"D"d12 c2 d2 | "A"e6 e2 e4 d4 | "A"c4 e4 a8 | "A"e6 e2 e4 f4 |
+"A"g4 e4 c4 A4 | "A"e6 e2 e4 d4 | "A"c4 e4 a8 | "E7"e2 f2 e2 d2 c4 B4 |
+"A"A12 c2 d2 | "A"e6 e2 e4 d4 | "A"c4 e4 a8 | "A"e6 e2 e4 f4 |
+"A"g4 e4 c4 A4 | "A"e6 e2 e4 d4 | "A"c4 e4 a8 | "E7"e2 f2 e2 d2 c4 B4 |
+"A"A12 z4 |

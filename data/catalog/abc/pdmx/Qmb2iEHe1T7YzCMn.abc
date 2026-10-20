@@ -1,0 +1,26 @@
+%abc-2.1
+% Hornpipe, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/1/Qmb2iEHe1T7YzCMnRgYcvt432NZHvuXBT7NEoKsXNRktUw.mid (sha256
+% 320e22bacf459c5a442f364e59ec3815776d11f68cc97f32918c92112fd98281): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hornpipe
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"G4 _B2 c2 d4 e2 ^f2 g4 a2 g2 | "D"^f12 e4 d4 d2 c2 | "Eb"_B2 _e2 d4 A2 d2 c4 G2 c2 _B4 | "G"_B12 A4 G8 |
+"G7"_B4 _B2 c2 d4 d2 _e2 f4 _e2 d2 | "Cm"g4 g2 a2 _b4 a2 g2 f2 g2 f4 | "Cm7"_e2 f2 _e4 d2 _e2 d4 c2 d2 _B4 | "Gm7"_B12 A4 _B8 |
+"Gm"G4 _B2 c2 d4 e2 ^f2 g4 a2 g2 | "D"^f12 e4 d4 d2 c2 | "Eb"_B2 _e2 d4 A2 d2 c4 G2 c2 _B4 | "G"_B12 A4 G8 |
+"G7"_B4 _B2 c2 d4 d2 _e2 f4 _e2 d2 | "Cm"g4 g2 a2 _b4 a2 g2 f2 g2 f4 | "Cm7"_e2 f2 _e4 d2 _e2 d4 c2 d2 _B4 | "Gm7"_B12 A4 _B8 |
+"Bb"d2 _e2 f4 d2 _e2 f4 _e2 d2 c2 _B2 | "Bb"A2 _B2 c4 A2 _B2 c4 d2 c2 _B2 A2 | "Cm"G2 A2 _B4 G2 A2 _B4 c2 _B2 A2 G2 | "D7"^F12 G2 A2 D4 E2 ^F2 |
+"Gm7"G2 D2 G4 _B2 G2 _B4 c2 A2 c4 | "C7"d2 _B2 d4 f2 d2 f4 g2 e2 g4 | "Bb"a2 ^f2 a4 _b2 ^f2 g2 d2 _e2 c2 d2 A2 | "G"A12 G4 G8 |
+"Bb"d2 _e2 f4 d2 _e2 f4 _e2 d2 c2 _B2 | "Bb"A2 _B2 c4 A2 _B2 c4 d2 c2 _B2 A2 | "Cm"G2 A2 _B4 G2 A2 _B4 c2 _B2 A2 G2 | "D7"^F12 G2 A2 D4 E2 ^F2 |
+"Gm7"G2 D2 G4 _B2 G2 _B4 c2 A2 c4 | "C7"d2 _B2 d4 f2 d2 f4 g2 e2 g4 | "Bb"a2 ^f2 a4 _b2 ^f2 g2 d2 _e2 c2 d2 A2 | "G"A12 G4 G8 |

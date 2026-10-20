@@ -1,0 +1,26 @@
+%abc-2.1
+% Prelude and Fugue in C minor BWV 847, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/33/QmWn11hSuu3JZ67XCGczYZQsT3xoiJu7hbanuTPT6axTqT.mid (sha256
+% 9455a087745df05b657592aeccbcb663501a4185fe018a63beeae9d2654c5e53): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prelude and Fugue in C minor BWV 847
+M:4/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"C"z8 "Ab"z8 | "G"z8 "Fm"z8 | "Dm7"z2 g ^f g z c z "Cm"_e z g ^f g z a z | "Am"d z g ^f g z a z "F#m"c d _e4 d c |
+"Cm"_B z _e d _e z G z "Fm7"_A2 f _e f z =A z | "Eb"_B2 g f g z =B z "Dm7"c z d _e f4 | "C"f2 _e d c _B _A G "Ab"F z _a2 g z f z | "G"_e z d2 _e z f z "Fm"B z c2 d z B z |
+"G7"c z g ^f g z d z "Cm7"_e4 z2 =e z | "Fm7"f z f e f z c z "Gm7"d4 z2 d2 | "Eb"_e2 _e d _e z _B z "Ab"c2 _e d _e z f z | "Fm"_B z _e d _e z f z "Dm"_A _B c4 _B _A |
+"C7"G _E F G _A _B c d "Cm7"_e d c d _e f g =a | "Gm7"_b F G _A _B c d e "Fm7"f _e d _e f g =a _b | "Eb"c'2 b a g f _e d "Am7"c2 _e2 d2 c2 | "Cm"_B2 A2 _B2 c2 "Cm7"^F2 G2 A2 ^F2 |
+"Gm"G2 d c d z3 "C7"z2 e d e z3 | "D7"z2 ^f e ^f z3 "Gm"z2 G =F G z3 | "F7"z2 A G A z3 "G7"z2 B A B z3 | "Cm7"z2 c B c z G z "Dm"_A2 c B c z d z |
+"Fm7"G2 c B c z d z "G7"F G _A4 G F | "Cm"_E2 c B c2 G2 "Fm"_A4 z2 =A2 | "Dm7"_B z _B A _B2 F2 "Eb"G4 z2 G2 | "Cm7"G2 _A _B c =B c _A "Dm7"F8 |
+"G"F2 d c d z F z "F7"_E2 _e d _e z G z | "G7"F2 f _e f z _A z G f _e d c B =A G | "Ab"c z f2 _e z d z "G7"z2 _A2 G z F z | "Fm"G z F _E F z D2 "Cm"_A2 G z3 =A2 |
+"G"B2 c2 F _E D C "Cm"C2 c B c z G z | "C"_A z c B c z d z "Cm"G2 c B c z d z | "C"F G _A4 G F E8 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% While shepherds watched their flocks by night, by Richard Allison. Score published on MuseScore
+% (artist: Richard Allison), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Allison (died 1600,
+% Wikidata Q7323698).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/1/Qmc2pTofarQb4BVpBPcCqXUyd83C2ZJe4NWNcJcqFgR2eW.mid (sha256
+% 7e4c8b578ee21560983120af79fa4a77eaa1b007320f01994708e245c0025371): melody track 1, bars 0-18
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:While shepherds watched their flocks by night
+M:2/2
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"C16 | "F"F12 F4 | "Dm7"E8 F8 | "Bb"F8 F8 |
+"F"F16 | "C"E16 | "F"F8 E4 F4 | "G"G12 F4 |
+"C"E16 | "F"F16 | "Gm7"F12 A4 | "Am7"G8 F4 E4 |
+"Bb"D8 _B,8 | "C"C16 | "F"C16 | "Dm7"C8 A,4 B,4 |
+"C"C12 _B,4 | "F"A,16 |

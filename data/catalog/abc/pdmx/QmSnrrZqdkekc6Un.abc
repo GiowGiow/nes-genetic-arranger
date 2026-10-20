@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphony No.1 Op.2, by Camille Saint-Saëns. Score published on MuseScore (artist: Camille
+% Saint-Saëns), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Camille Saint-Saëns (died 1921,
+% Wikidata Q150445).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/33/QmSnrrZqdkekc6Unnmw96yKHEGXv77aFRR48xSAuJ1Joq8.mid (sha256
+% 943adcefdf94a2516c1c364f81bc884cecc7ce247ddbf1151a79e37bf62a9026): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.1 Op.2
+M:9/8
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, | "E"B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, | "E"E E E E E E E E E E E E E B, B, B, B, B, | "F#m7"_D _D _D _D _D A, A, A, A, A, A, A, B, B, B, B, B, B, |
+"A"_D _D _D _D _D A, A, A, A, A, A, A, B, B, B, B, B, B, | "Dbm7"E E E E E E E E E E E E E B, B, B, B, B, | "Bb7"_D _D _D _D _D _D _D _D _D _D _D _D _D B, B, B, B, B, | "B7"_D _D _D _D _D _D _D _D _D _D _D _D _D B, B, B, B, B, |
+"F#m"_D _D _D _D _D _D _D _D _D _D _D _D E E E E E E | "F#m"^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F | "B"^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F ^F | "Dbm7"_A _A _A _A _A _A _A E E E E E E D D D D D |
+"B"_E _E _E _E _E _E _E _E _E _E _E _E _E _E _E _E _E _E | "Dbm7"E E E E E E E E E E E E E D D D D D | "B"_E _E _E _E _E _E _E _E _E _E _E _E =E =E =E =E =E =E | "A"E E E E E E E E E E E E ^F ^F ^F ^F ^F ^F |
+"Dbm7"^F E E E E E E E E E E E E E E E E E | "A"E E E E E E E E E E E E E _D _D _D _D _D | "B7"_D A, A, A, A, A, A, A, A, A, A, A, A, _A, _A, _A, _A, _A, | "Dbm7"_A, _A, _A, _A, B, B, B, _B, _B, _B, _B, _B, _B, _B, _B, _B, _B, _B, |
+"E7"_B, _B, _B, _B, _B, _B, =B, =B, =B, =B, =B, =B, =B, =B, =B, =B, =B, =B, | "C"E E E E E E E E E E E E E A, A, A, A, A, | "B"A, A, A, A, A, A, B, B, B, B, B, B, B, B, B, B, B, B, | "E"B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, |
+"Eb"B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, | "Dbm"_D _D _D _D _D _D _D _D _D _D _D _D _D _D _D _D _D _D | "Dbm7"B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, B, | "F#7"^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, ^F, |
+"B"_E, ^F, B, _E B, ^F, _E, ^F, B, _E B, ^F, _E, ^F, B, _E B, ^F, | "Ebm"^F, B, _E ^F _E B, ^F, B, _E ^F _E B, ^F, B, _E ^F _E B, | "Db7"_A, B, _D F _D B, _A, B, _D F _D B, _A, B, _D F _D B, | "F#7"^F, _B, _D ^F _D _B, ^F, _B, _D ^F _D _B, z _B, ^F, _B, ^F, _B, |
+"Ebm"^F, B, ^F, B, ^F, B, ^F, B, ^F, B, ^F, B, ^F, B, ^F, B, ^F, B, | "Eb"G, B, G, B, G, B, G, B, G, B, G, B, G, B, G, B, G, B, | "E"_A, B, _A, B, _A, B, _A, B, _A, B, _A, B, _A, B, _A, B, _A, B, | "Bbm7"_A, B, _A, B, _A, B, _A, B, _A, B, _A, B, E, ^F, _B, _D _B, ^F, |
+"Abm7"_E, ^F, B, _E B, ^F, _E, ^F, B, _E B, ^F, _E, ^F, B, _E B, ^F, | "F#m"_E, ^F, A, _E A, ^F, _E, ^F, A, _E A, ^F, _E, ^F, A, _E A, ^F, | "Dbm"E, _A, _D E _D _A, E, _A, _D E _D _A, E, _A, _D E _D _A, | "G7"B, D _A D B, D _A, B, D _A D B, G, B, D G D B, |
+"Abm7"^F, B, _E ^F _E B, ^F, B, _E ^F _E B, ^F, B, D ^F D B, | "F#"^F, B, _D E _D B, ^F, _B, _D E _D _B, ^F, _B, _D _B, ^F, _B, | "B"_E11 z =E6 | "B"^F6 _A6 ^F6 |
+"Dbm7"E12 _D6 | "B"E6 ^F6 _D6 | "B"_E11 z =E6 | "B"^F6 B6 _A6 |
+"Dbm7"E17 z | "F#7"E6 _A6 ^F4 _D2 | "B"B,4 z8 ^F, B, ^F, B, G, B, | "B"z6 _A,2 B,2 _A,2 B,2 _A,2 B,2 |
+"Dbm7"z8 E,2 E, z7 | "B"z8 _B,2 _B, z7 | "B"^F, _E ^F, _E ^F, _E ^F, _E ^F, _E ^F, _E ^F, _E ^F, _E ^F, _E | "B"A, _E A, _E A, _E A, =E A, =E A, =E A, ^F A, ^F A, ^F |
+"B"_A, _D _A, _D _A, _D _A, _D _A, _D _A, _D _A, _D _A, _D _A, _D | "B"^F, _B, ^F, _B, ^F, _B, ^F, =B, ^F, =B, ^F, =B, ^F, _D ^F, _D ^F, _D | "B"_E,2 =E,2 ^F,2 _A,2 _B,2 =B,2 _D2 _E2 =E2 | "Ebm"^F18 |
+"F#m"^F5 z E2 ^F2 E2 _E2 _D2 C2 | "Dbm"C6 _D6 _B,2 =B,2 _D2 | "Ebm"^F,18 | "F#"^F,16 z2 |

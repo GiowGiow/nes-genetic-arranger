@@ -1,0 +1,24 @@
+%abc-2.1
+% Silver Threads Among the Gold, by H. P. Danks. Score published on MuseScore (artist: Hart Pease
+% Danks), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): H. P. Danks (died 1903, Wikidata
+% Q4352338).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/25/QmNiNvAZ11t496k1xS7Ty6N2UE8GJoZoQNWy7Krnv57LXo.mid (sha256
+% e3f9706fbf90957495aaa66bcc0a0f4315bf9ab9364e09ddd522b592e08dcb1b): melody track 1, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Silver Threads Among the Gold
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Bb"F6 G2 F2 D2 C2 _E2 | "Bb"D8 _B,4 z4 | "F"_E6 _E2 _E2 _E2 _E3 _E | "Bb"F12 z4 |
+"Bb"F6 G2 F2 D2 C3 _E | "Bb"D8 _B,4 z4 | "F"_E6 _E2 _E2 _E2 _E3 _E | "Bb"D12 z4 |
+"F"_E6 _E2 _E2 C2 C2 _E2 | "Bb"D6 D2 F4 z4 | "D7"F6 F2 "C"E2 E2 E3 E | "F"F4 G4 F4 _E4 |
+"Bb"F6 G2 F2 D2 C2 _E2 | "Bb"D8 _B,4 z4 | "F"_E6 _E2 _E2 G2 F2 _E2 | "Bb"D4 _E4 D8 |
+"F"_E6 _E2 _E2 C2 C2 _E2 | "Bb"D8 F4 z4 | "D7"F6 F2 "C"E2 E2 E3 E | "F"F4 G4 F4 _E4 |
+"Bb"F6 G2 F2 D2 C2 _E2 | "Bb"D8 _B,4 z4 | "F"_E6 _E2 _E2 G2 F2 _E2 | "Bb"D4 _E4 D8 |

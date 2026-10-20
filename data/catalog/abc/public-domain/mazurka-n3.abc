@@ -1,0 +1,36 @@
+%abc-2.1
+% MAZURKA Nº 3, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/mazurka-n3.html (file
+% https://www.beakauffmann.com/mpb_m/som/mazurka-n3.mid, sha256
+% 941796b906ea491dbdc695e94f0abf3f77a4404fa7baad31e6f53495de80978b), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MAZURKA Nº 3
+M:3/4
+L:1/16
+Q:1/4=84.000084
+% Exact tempo 84.000084000084 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d2 B2 A4 ^F4 | "B"E2 ^F2 E8 | "A7"E2 ^F2 E2 ^F2 A2 ^F2 | "D"B,2 _D2 B,8 |
+"D"d2 B2 A4 ^F4 | "E"E2 ^F2 E8 | "A7"E2 ^F2 E2 ^F2 A2 ^F2 | "D"D2 E2 z8 |
+"D"d2 B2 A4 ^F4 | "B"E2 ^F2 E8 | "A7"E2 ^F2 E2 ^F2 A2 ^F2 | "D"B,2 _D2 B,8 |
+"D"d2 B2 A4 ^F4 | "E"E2 ^F2 E8 | "A7"E2 ^F2 E2 ^F2 A2 ^F2 | "D"D2 E2 z8 |
+"B"D2 E2 D2 z2 ^F4 | "E"B,2 _D2 B,8 | "A7"_D2 =D2 _D2 z2 E4 | "D"A,2 B,2 A,2 z2 A,4 |
+"B"D2 E2 D2 z2 ^F4 | "E"B,2 _D2 B,4 B,4 | "F#"_D2 _E2 F2 ^F2 _B2 _A2 | "F#"^F2 _A2 ^F8 |
+"F#m7"_D2 _E2 _D4 A, ^F3 | "F#m7"E2 ^F2 E8 | "F#m7"_D2 _E2 _D4 A, ^F3 | "F#m7"E2 ^F2 E8 |
+"B7"_E2 =E2 ^F2 _A2 =A2 _A2 | "A"B2 A2 C2 _D2 E2 ^F2 | "Db7"_A8 ^F4 | "Dbm7"E8 z4 |
+"E"B,2 _D2 B,2 z2 _A4 | "F#"^F2 _A2 ^F8 | "B7"^F2 _A2 ^F2 z2 _E4 | "Dbm7"B,2 _D2 _D B,7 |
+"E"B,2 _D2 B,2 z2 _A4 | "F#"^F2 _A2 ^F8 | "Am"^F2 _A2 ^F4 _D4 | "Dbm7"E8 z4 |
+"E"B,2 _D2 B,2 z2 _A4 | "F#"^F2 _A2 ^F8 | "B7"^F2 _A2 ^F2 z2 _E4 | "Dbm7"B,2 _D2 _D B,7 |
+"E"B,2 _D2 B,2 z2 _A4 | "F#"^F2 _A2 ^F8 | "Am"^F2 _A2 ^F4 _D4 | "E"E2 ^F2 E8 |
+"Em7"B,2 _D2 B,4 G, E3 | "Em7"D2 E2 D8 | "Em7"B,2 _D2 B,4 G, E3 | "Em7"D2 E2 D8 |
+"A7"_D2 B,2 _D2 =D2 E2 _D2 | "G"D6 z6 | "Em"E2 _E2 =E2 ^F2 G2 ^F2 | "A7"E8 z4 |
+"D"d2 B2 A4 ^F4 | "B"E2 ^F2 B, E7 | "A7"E2 ^F2 E2 ^F2 A2 ^F2 | "D"B,2 _D2 B,8 |
+"D"d2 B2 A4 ^F4 | "E"E2 ^F2 D E7 | "A7"E2 ^F2 E2 ^F2 _D A ^F2 | "D"D2 E2 A,, D7 |

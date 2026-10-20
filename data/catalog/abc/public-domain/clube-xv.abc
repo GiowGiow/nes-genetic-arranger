@@ -1,0 +1,36 @@
+%abc-2.1
+% CLUBE XV, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/clube-xv.html (file
+% https://www.beakauffmann.com/mpb_c/som/clube-xv.mid, sha256
+% 9ac5e3207960d04feb49f03db56a28ac99f50c9bf0b12870e12d58628958f5dd), from Beatriz Kauffmann's Web
+% Site. Melody track 3, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CLUBE XV
+M:3/4
+L:1/16
+Q:1/4=140.00014
+% Exact tempo 140.00014000014 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"_A3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "E"E,3 E, _A z3 _A z3 | "B7"z3 ^f b a ^f _e B A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "B7"B,,3 A, _E z3 _E z3 | "B7"B,3 ^f b a ^f _e B A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "E"E,3 E, _A z3 _A z3 | "B7"B,3 ^f b a ^f _e B A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "B"B,,3 B,, _E z3 _E z3 | "Ebm7"_D,3 _B, ^F z3 ^F z3 |
+"B"B,,3 ^F, _E z3 _E z3 | "Abm7"^F,3 B, B z3 B z3 | "E"E,3 E, _A z3 _A z3 | "B7"z3 ^f b a ^f _e B A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "B7"B,,3 A, _E z3 _E z3 | "B7"B,3 ^f b a ^f _e B A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "E"E,3 E, _A z3 _A z3 | "E7"z3 b e' d' b _a e d B _A |
+"F#m7"E, z2 E, _D z3 _D z3 | "F#m7"E,3 A, A z3 A z3 | "Dbm7"E,3 E, _A z3 _A z3 | "Abm7"^F,3 _E B z4 A ^F _E |
+"E"E,3 B, _A z3 _A z3 | "Dbm7"B,3 E e z3 e z3 | "A"A,,3 A,, _D z3 _D z3 | "F#m7"E,3 _D A z3 A z3 |
+"E7"E,3 B, _A z3 _A z3 | "E7"E3 d _a z3 _a z3 | "E7"E,3 D _A z3 _A z3 | "E7"E3 b e' d' b _a e d B _A |
+"A"A,,3 E, _D z3 _D z3 | "F#m7"E,3 A, A z3 A z3 | "A"A,,3 A,, _D z3 _D z3 | "F#m7"E,3 _D A z3 A z3 |
+"Dbm"_D,3 _A, E z3 E z3 | "Dbm"_A,3 _D _d z3 _d z3 | "Fm7"_D, z2 _A,, C z3 C z3 | "Fm7"_E,3 C _A z3 _A z3 |
+"Dbm"_D,3 _A, E z3 E z3 | "Dbm"_A,3 _D _d z3 _d z3 | "Dbm"_D, z2 A,, _D z3 _D z3 | "F#m7"E,3 _D A z3 A z3 |
+"E7"E,3 B, _A z3 _A z3 | "E7"E3 d _a z3 _a z3 | "E7"E,3 D _A z3 _A z3 | "E7"E3 b e' d' b _a e d B _A |
+"A"A,,3 E, _D z3 _D z3 | "F#m7"E,3 A, A z3 A z3 | "A"A,,3 A,, _D z3 _D z3 | "A7"A,3 e a g e _d A G E _D |
+"D"D,3 A, ^F z3 ^F z3 | "Bm7"A,3 D d z3 d z3 | "A"A,,3 A,, _D z3 _D z3 | "E"E, z2 _A e z3 e z3 |

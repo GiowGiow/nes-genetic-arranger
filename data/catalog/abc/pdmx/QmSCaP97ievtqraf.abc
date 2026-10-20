@@ -1,0 +1,32 @@
+%abc-2.1
+% Resurrexi, by Giovanni Girolamo Kapsperger. Score published on MuseScore (artist: Giovanni
+% Girolamo Kapsperger), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Girolamo Kapsperger
+% (died 1651, Wikidata Q707863).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/14/QmSCaP97ievtqrafVcna6jZVrj7zbA9XYZDzhuSWxZLab9.mid (sha256
+% 86f75760e7109218fc08869d1970db95d3daa1fba679421b2da418b8c6c41433): melody track 0, bars 0-49
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Resurrexi
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F16 | "Eb"F8 G8 | "Bb"_B16 | "Bb"_B16 |
+"Bb"_B8- "A"_B4 c4 | "Bb"F4 _B2 c2 d2 F3 _B A2 | "C"G12 G4 | "F"F16 |
+[M:3/4]"Gm"F4 F D E F G E F G | "F"A6 _B2 c4 | [M:4/4]"D"z2 d e f4 "C7"_e d _e c d c d _B | "F"c16 |
+"Bb"_B16 | "F"c12 d4 | "G"_B16 | "D"A8 "Bb"d4 c4 |
+"Eb"_B8 "C"c4 _B4 | "D"A16 | "G"G16 | [M:3/4]"G7"B G A B c A B c F G A F |
+"Am"G6 A _B c4 | [M:4/4]"G"_B2 A2 _B2 G2 "F"A2 G2 A2 F2 | "C"G16 | "F"F8 A8 |
+"G"B8 "E"c8 | "D"c8 B8 | "C"c16 | "G"_B12 _B4 |
+"D"A8 "C"_e8 | "F"_e8 d4 d4 | "F"c16 | "Bb"_B16 |
+[M:3/4]"Gm"d4 c4 _B4 | "Dm7"A6 B2 c4 | "Em"c4 c4 B4 | "Cm"c4 _B2 A2 G4 |
+"Am"G4 G4 A4 | "Gm"_B6 A G F4 | "Cm"G4 G4 ^F4 | "Gm"G6 F E D4 |
+"Am"F4 F4 E4 | "Dm"F6 G2 A4 | "Am"c4 _B4 G4 | "F"F12 |
+[M:4/4]"Bb"_B c d _e d c _B A G A _B A G F =E D | "C"C4 G2 A2 _B2 c2 =B2 c2 | "C"E2 F2 G2 A2 _B2 c2 d c _B G | "C"G12 A4 |
+"F"F16 |

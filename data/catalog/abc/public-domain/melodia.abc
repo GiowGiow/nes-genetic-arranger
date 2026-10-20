@@ -1,0 +1,29 @@
+%abc-2.1
+% MELODIA, by Alberto Nepomuceno, as performed by Alberto Nepomuceno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/melodia.html (file
+% https://www.beakauffmann.com/mpb_m/som/melodia.mid, sha256
+% fa4dd7621259c60a78e5791d5ed3d42b6142c901ac601c632baecd5a37451271), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-33 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MELODIA
+M:4/4
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.9999136000691 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"d2 G,2 _B,2 D2 c2 G,2 C2 _E G | "C"_B2 G,2 _B,2 D z A2 C,2 _E,2 A, _E | "C"G2 _D,2 E,2 _B,2 ^F2 _D,2 E,2 A, G | "C"G2 D,2 G,2 _B, z ^F2 D,2 A,2 C D |
+"C"d2 G,2 _B,2 D2 c2 G,2 C2 _E G | "C"_B2 G,2 _B,2 D2 _A2 C,2 _E,2 _A, _E | "C"G2 _D,2 E,2 _B,2 ^F2 =D,2 A,2 C A | "C"G2 G,2 _B,2 D2 ^F2 G2 _B2 c2 |
+"C"d2 G,2 _B,2 D2 _e2 G,2 _B,2 _E _B | "C"c2 G,2 A,2 _E2 d2 ^F,2 A,2 D A | "C"_B2 F,2 G,2 D2 c2 _E,2 G,2 C G | "C"_B2 E,2 G,2 _D2 A2 _E,2 G,2 _D2 |
+"C"G2 _E,2 G,2 C2 _B2 =E,2 G,2 _D A | "C"_E2 D,2 G,2 C2 D2 D,2 ^F,2 C2 | "C"G2 _E,2 G,2 C z _B2 =E,2 G,2 _D A | "C"_E2 D,2 G,2 C2 D2 D,2 ^F,2 C2 |
+"C"d2 G,2 _B,2 D f _e2 G,2 =B,2 F d | "C"B2 C2 _E2 G2 c7 G | "C"_B2 D,2 G,2 D2 ^F2 D,2 A,2 C A | "C"G2 G,2 _B,2 D2 ^F2 G2 _B2 c2 |
+"C"d2 G,2 _B,2 D2 _e2 G,2 _B,2 _E _B | "C"c2 G,2 A,2 _E2 d2 ^F,2 A,2 D A | "C"_B2 F,2 G,2 D2 c2 _E,2 G,2 C G | "C"_B2 E,2 G,2 _D2 A2 _E,2 G,2 _D2 |
+"C"G2 _E,2 G,2 C2 _B2 =E,2 G,2 _D A | "C"_E2 D,2 G,2 C2 D2 D,2 ^F,2 C2 | "C"G2 _E,2 G,2 C z _B2 =E,2 G,2 _D A | "C"_E2 D,2 G,2 C2 D2 D,2 ^F,2 C2 |
+"C"d2 G,2 _B,2 D f _e2 G,2 =B,2 F d | "C"B2 C2 _E2 G2 c7 G | "C"_B2 D,2 G,2 D2 ^F2 D,2 A,2 C A | "C"G4 G,,2 _B,,2 D,2 G,2 _B,2 D2 |
+"C"G16 |

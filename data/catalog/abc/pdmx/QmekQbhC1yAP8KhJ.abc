@@ -1,0 +1,35 @@
+%abc-2.1
+% Jesu Joy of Man's Desiring, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/28/QmekQbhC1yAP8KhJtU1pWBR3Yb4LLSWiHHUFRfKHXAqCxL.mid (sha256
+% 0adb022df7dbf1a25bd3019fc2e529d72b5009167452da358484dd33e8cc41c3): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jesu Joy of Man's Desiring
+M:9/8
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"G,,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "Am"C2 D2 E2 D2 C2 B,2 A,2 B,2 G,2 | "Bm7"^F,2 G,2 A,2 D,2 ^F,2 A,2 C2 B,2 A,2 |
+"Am7"B,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "D7"E,2 D2 C2 B,2 A,2 G,2 D,2 G,2 ^F,2 | "G"G,2 B,2 D2 G2 D2 B,2 G,2 B,2 D2 |
+"Em7"B,6 ^F,,6 C6 | "D"D6 E,,6 D6 | "Em"C6 ^F,,6 B,6 | "Bm7"A,2 D,2 E,2 ^F,2 A,2 G,2 A,2 C2 B,2 |
+"D"C2 A,2 ^F,2 D,2 ^F,2 A,2 C2 B,2 A,2 | "Em7"B,6 ^F,,6 C6 | "Em7"D6 E,,6 B,6 | "D7"A,4 B, C B,6 A,6 |
+"Em7"G,,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "Am"C2 D2 E2 D2 C2 B,2 A,2 B,2 G,2 | "Bm7"^F,2 G,2 A,2 D,2 ^F,2 A,2 C2 B,2 A,2 |
+"Am7"B,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "D7"E,2 D2 C2 B,2 A,2 G,2 D,2 G,2 ^F,2 | "G"G,2 B,2 D2 G2 D2 B,2 G,2 B,2 D2 |
+"Em7"B,6 ^F,,6 C6 | "D"D6 E,,6 D6 | "Em"C6 ^F,,6 B,6 | "Bm7"A,2 D,2 E,2 ^F,2 A,2 G,2 A,2 C2 B,2 |
+"D"C2 A,2 ^F,2 D,2 ^F,2 A,2 C2 B,2 A,2 | "Em7"B,6 ^F,,6 C6 | "Em7"D6 E,,6 B,6 | "D7"A,4 B, C B,6 A,6 |
+"Bm"D6 C,6 B,6 | "Am"C6 A,3 G,3 C3 E,3 | "Bm7"B,6 B,,4 C D B,4 z2 | "Dm7"A,2 C2 B,2 C2 E2 D2 D2 F2 E2 |
+"C"E2 A2 _A2 =A2 E2 C2 =A,2 B,2 C2 | "E7"F2 E2 D2 C2 B,2 A,2 E,2 A,2 _A,2 | "Am7"C2 C,2 E,2 A,6 D6 | "Am7"E6 A,,6 E6 |
+"G7"D6 D,4 E F D6 | "C"C2 G2 F2 G2 E2 C2 G,2 A,2 _B,2 | "G7"A,2 C2 B,2 C2 A,2 F,2 D,2 E,2 F,2 | "Am7"E,2 C,2 D,2 E,2 G,2 ^F,2 G,2 B,2 A,2 |
+"Em7"B,6 ^F,,6 C6 | "Em7"D6 E,6 D6 | "Am7"C6 B,6 C,6 | "Bm7"A,2 D,2 E,2 ^F,2 A,2 G,2 A,2 C2 B,2 |
+"D"C2 A,2 ^F,2 D,2 ^F,2 A,2 C2 B,2 A,2 | "Em7"B,6 ^F,,6 C6 | "Em7"D6 E,,6 B,6 | "D7"A,4 B, C B,6 A,6 |
+"G"G,2 B,2 D2 G2 D2 B,2 G,2 B,2 D2 | "Bm"F2 D2 B,2 G,2 B,2 D2 E2 C2 A,2 | "G"^F,2 A,2 C2 D2 B,2 G,2 E,2 G,2 B,2 | "D7"C2 A,2 ^F,2 D,2 ^F,2 A,2 C2 B,2 A,2 |
+"Em7"B,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "Am"C2 D2 E2 D2 C2 B,2 A,2 B,2 G,2 | "D"^F,2 G,2 A,2 D,2 ^F,2 A,2 C2 B,2 A,2 |
+"Em7"B,2 G,2 A,2 B,2 D2 C2 C2 E2 D2 | "Em7"D2 G2 ^F2 G2 D2 B,2 G,2 A,2 B,2 | "D7"E,2 D2 C2 B,2 A,2 G,2 D,2 G,2 ^F,2 | [M:6/8]"G"G,12 |

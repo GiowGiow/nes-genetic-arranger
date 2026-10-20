@@ -1,0 +1,34 @@
+%abc-2.1
+% Pausanius Z.585, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/28/Qmck26S8z5f3WvVd6GUWPztV3DLsryyYxVfXvMDwR3Lj8S.mid (sha256
+% 2a2fc8999ef01107bab18aa39fd3376f9dc95d2b6b00e9cfd3756f0999364dbd): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pausanius Z.585
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"z16 d8 | "Gm"_B8 G8 z8 | "D"z16 d8 | "D"d4 A4 A8 z8 |
+"D"z16 d8 | "Cm7"d8 c4 _B4 c4 A4 | "G"_B8 G8 =B8 | "Cm"c8 _B4 A4 _B4 G4 |
+"Bb"^F8 ^F8 _B8 | "D7"_B8 A4 G4 A4 ^F4 | "Gm"G8 G8 d8 | "F7"_e12 f2 _e2 d8 |
+"Am7"d4 _e2 d2 c12 d2 c2 | "Em7"B8 B8 _B8 | "D"_B12 A4 A8 | "Cm7"G16 F8 |
+"Gm7"d12 _e4 f8 | "Bb"d6 c2 _B8 z8 | "Cm7"z24 | "F7"z24 |
+"Bb"z16 d8 | "Gm7"f8 d8 f8 | "F7"d12 c4 c8 | "Bb"_B16 z8 |
+"C"z24 | "Dm"z24 | "Cm7"z24 | "D"z16 A8 |
+"Cm7"d8 c4 _B4 c4 A4 | "Gm"_B8 G8 d8 | "F7"_e12 c4 c4 B4 | "Cm"c16 c8 |
+"F"c6 _B2 A8 z8 | "Bb"z16 d8 | "Cm"d6 c2 _B8 _e8 | "Dm"_e6 d2 c8 f8 |
+"F7"_e12 d4 _e8 | "Bb"d16 d8 | "C7"e8 e4 f4 e4 d4 | "A"_d6 B2 A8 A8 |
+"Dm"d12 e4 d4 _d4 | "Dm"d16 A8 | "Gm"_B12 c4 _B4 A4 | "A7"G8 E8 A8 |
+"A7"F12 E4 F8 | "Dm"D16 A6 A2 | "Gm"_B16 _B4 D4 | "Cm7"D8 _E8 z8 |
+"Cm"z24 | "D"z16 A8 | "D7"d8 A8 _B8 | "D"_B4 ^F4 ^F8 z8 |
+"D"z24 | "Bb"z16 d8 | "Cm"_e8 z16 | "Dm7"z8 c8 f8 |
+"Bb"d8 z16 | "Cm"z8 c8 _e8 | "D"A16 d8 | "D7"_e4 d4 c4 _B4 A4 G4 |
+"Gm"G16 d8 | "Cm"_e8 z16 | "Dm7"z8 c8 f8 | "Bb"d8 z16 |

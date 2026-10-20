@@ -1,0 +1,35 @@
+%abc-2.1
+% A poco à poco io sento, by Benedetto Pallavicino. Score published on MuseScore (artist:
+% Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/4/Qma5R4ijsd3DjFwMeDZVgBUiSuyBEUsX6idUPqMzbmbAc9.mid (sha256
+% 6e9eb0fb35025d704e0ab75755fdc99842dd63cfcd56f2e625903d95462148db): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:A poco à poco io sento
+M:4/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z16 | "Fm"z16 | "Cm"z16 | "Bb"z16 |
+"Ab"z16 | "G"z16 | "C"z16 | "Dm7"z8 "Gm7"z8 |
+"Eb"z4 g4 "Cm"g8 | "Fm7"g4 f4 "Bb7"f8 | "Gm"f4 _e4 "C"_e4 d2 c2 | "G"d16 |
+"C"e16 | "Fm"z16 | "Eb"z4 g4 "Cm"g8 | "Fm7"g4 f4 "Fm"f8 |
+"C"f4 _e4 "Cm"_e8 | "F"_e4 d2 c2 d8 | "Cm"d4 c2 _B2 "Fm"c8 | "Bb7"c4 _B2 _A2 "G7"=B8 |
+"Ab"c8 "Fm"C8 | "Bb"D8- "C7"D8 | "C7"E8 "Fm"F4 F4 | "C"G16 |
+"F"A8- "Dm"A8 | "Cm"z8 G8 | "Cm"A8 "Dm"_B8 | "Eb"_B8 _B8 |
+"Eb"c8 "F"d8 | "Cm7"d8 "Cm"c8 | "G"c8 B8 | "C"c16 |
+"C"c16 | "Db"z8 "C7"z8 | "Db"z8 f8 | "C"f4 f4 e8 |
+"Fm"e4 f4 "C"e8 | "Db"f8- "C7"f8 | "Eb7"z4 F4 "Db"F4 F4 | "Dm7"_A8 "C"G8 |
+"C"_A4 G2 F2 G8 | "Db"F8 "Fm"f4 f2 _e2 | "Db"_d4 c4 _B4 F4 | "Cm"_A4 G4- "Ab"G4 F4 |
+"C"F4 E4 "F"F4 c4 | "Fm7"c4 c4 "Db"_d8 | "Bbm"_d4 c4 _d8 | "Fm"_d8 c8 |
+"C"z8 c4 c2 _B2 | "F"_A6 G2 F4 c4 | "Bb"d4 _e4 d8 | "Eb"_e16 |
+"Eb"z8 "Cm7"z8 | "Cm7"z8 "Ab"z8 | "Fm7"z8 "C"z8 | "Fm"z8 "G"z8 |
+"Cm"z4 g4 "Eb"g8 | "C7"f4 _e8 d4 | "Ab"c8 "F7"_B4 _A4 | "Fm7"_A4 c4 "G"B8 |
+"Cm"c16 | "Ab"z8 "Cm7"z8 | "Fm7"z8 "Cm"c8 | "Cm"_A8 "Cm7"G8 |

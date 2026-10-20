@@ -1,0 +1,32 @@
+%abc-2.1
+% Con la candida man, by Constantijn Huygens. Score published on MuseScore (artist: Constantijn
+% Huygens), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Constantijn Huygens (died 1687,
+% Wikidata Q560746).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/25/QmbiehDpbBaP5XMWpwCMhDFyJRkyFHFh8y2oahwaDajHds.mid (sha256
+% 014362d0a4fc53f8f121c9d2ce84c7c91ab48b53a5e1eb2ce67e2437738fc8b9): melody track 0, bars 0-50
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Con la candida man
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z4 E2 E2 "Dbm7"E4 ^F2 _A2 | "F#m"A2 A2 A4- "D"A4 A2 B2 | "Db"_d2 _d2 e4- "Bm"e4 B4 | "F#m7"_d4 B2 _d2 "F#m"A8 |
+"F#7"z2 A2 B2 _d2 "Db"=d6 A2 | "Bm"B2 ^F2 _A4- "Dbm7"_A4 ^F2 E2 | "B"_E4 =E4 "B7"^F4 _A4 | "Dbm7"_A =A B2 ^F4 "B"^F8 |
+"E"E16 | "A"z4 E2 E2 "Dbm7"E4 ^F2 _A2 | "F#m"A2 A2 A4- "D"A4 A2 B2 | "Db"_d2 _d2 e4- "Bm"e4 B4 |
+"F#m7"_d4 B2 _d2 "F#m"A8 | "F#7"z2 A2 B2 _d2 "Db"=d6 A2 | "Bm"B2 ^F2 _A4- "Dbm7"_A4 ^F2 E2 | "B"_E4 =E4 "B7"^F4 _A4 |
+"Dbm7"_A =A B2 ^F4 "B"^F8 | "E"E16 | "Em"B4 B4 "Em7"B8 | "Ebm7"B4 _B2 _B2 "Em7"=B6 d2 |
+"Abm7"_d4 B4 "F#"_d2 ^F2 ^F2 _A2 | "Ebm"A4 A4- "Dbm7"A2 _A2 _A2 ^F2 | "Bm"^F2 ^F2 G4- "C"G4 _A4 | "Dbm7"A4 B4 "A"z8 |
+"Am"c4 c4 c8 | "A7"_d4 _d2 _d2 "D"=d2 A2 =d4 | "G"d4 B4 "Dbm7"B2 B2 e4 | "A"e2 _d2 ^f4- "Ebm7"^f4 _d4 |
+"Bm"z6 ^F2 "B7"^F4 ^F4 | "Dbm7"B8 "Dbm"E8 | "F#m"z4 _d2 =d2 "F#m7"e8 | "E"e8 _A4 =A4 |
+"F#m7"A5 B _d B "E"B8 | "A"A16 | "Em"B4 B4 "Em7"B8 | "Ebm7"B4 _B2 _B2 "Em7"=B6 d2 |
+"Abm7"_d4 B4 "F#"_d2 ^F2 ^F2 _A2 | "Ebm"A4 A4- "Dbm7"A2 _A2 _A2 ^F2 | "Bm"^F2 ^F2 G4- "C"G4 _A4 | "Dbm7"A4 B4 "A"z8 |
+"Am"c4 c4 c8 | "A7"_d4 _d2 _d2 "D"=d2 A2 =d4 | "G"d4 B4 "Dbm7"B2 B2 e4 | "A"e2 _d2 ^f4- "Ebm7"^f4 _d4 |
+"Bm"z6 ^F2 "B7"^F4 ^F4 | "Dbm7"B8 "Dbm"E8 | "F#m"z4 _d2 =d2 "F#m7"e8 | "E"e8 _A4 =A4 |
+"F#m7"A5 B _d B "E"B8 | "A"A16 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% CATRAPUS, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/catrapus.html (file
+% https://www.beakauffmann.com/mpb_c/som/catrapus.mid, sha256
+% 464aa819a590fd6f53cda5baa9fdd214ffcb3b04c9653dfd04d04cf6751cc3e2), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CATRAPUS
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A,, _e' ^f' =e' _e' ^f' =e' _d' | "C"e' D2 D d' D2 C, | "C"_D, _d' =d' _d' c' _d' e' =d' | "C"_d' =D2 =D b2 =D2 |
+"C"F, a a f f d d A | "C"_d e a _d' e'2 E2 | "C"_E, ^f' _a' =a' _b' _d'' =b' _a' | "C"^f' e' _d' b a ^f e _d |
+"C"A,, _e' ^f' =e' _e' ^f' =e' _d' | "C"e' D2 D d' D2 C, | "C"_D, _d' =d' _d' c' _d' e' =d' | "C"_d' =D2 =D b2 =D2 |
+"C"F, a a f f d d A | "C"_d e a _d' e'2 E f' | "C"_a' ^f' _d' e' =d' _a _d' b | "C"a4 a'4 |
+"C"A,, _e' ^f' =e' _e' ^f' =e' _d' | "C"e' D2 D d' D2 C, | "C"_D, _d' =d' _d' c' _d' e' =d' | "C"_d' =D2 =D b2 =D2 |
+"C"F, a a f f d d A | "C"_d e a _d' e'2 E2 | "C"_E, ^f' _a' =a' _b' _d'' =b' _a' | "C"^f' e' _d' b a ^f e _d |
+"C"A,, _e' ^f' =e' _e' ^f' =e' _d' | "C"e' D2 D d' D2 C, | "C"_D, _d' =d' _d' c' _d' e' =d' | "C"_d' =D2 =D b2 =D2 |
+"C"F, a a f f d d A | "C"_d e a _d' e'2 E f' | "C"_a' ^f' _d' e' =d' _a _d' b | "C"a4 a'4 |
+"C"_A, B, _D F _A B =a _a | "C"_a _a z f ^f ^F,2 =F, | "C"E, d e _a b d' _a' ^f' | "C"^f' ^f' z _e' =e'2 A2 |
+"C"D, _a' ^f' e' d' _d' b z | "C"E, ^f' e' d' _d' b a z | "C"^f _a =a _b _d' =b =a _a | "C"^f e _d A ^F E _D A, |
+"C"_A, B, _D F _A B =a _a | "C"_a _a z f ^f ^F,2 =F, | "C"E, d e _a b d' _a' ^f' | "C"^f' ^f' z _e' =e'2 A2 |
+"C"D,, f' d' _b f d _B F | "C"E A _d e a2 _D e | "C"f ^f b a g _a _d' b | "C"a4 a'4 |
+"C"_A, B, _D F _A B =a _a | "C"_a _a z f ^f ^F,2 =F, | "C"E, d e _a b d' _a' ^f' | "C"^f' ^f' z _e' =e'2 A2 |
+"C"D, _a' ^f' e' d' _d' b z | "C"E, ^f' e' d' _d' b a z | "C"^f _a =a _b _d' =b =a _a | "C"^f e _d A ^F E _D A, |
+"C"_A, B, _D F _A B =a _a | "C"_a _a z f ^f ^F,2 =F, | "C"E, d e _a b d' _a' ^f' | "C"^f' ^f' z _e' =e'2 A2 |
+"C"D,, f' d' _b f d _B F | "C"E A _d e a2 _D e | "C"f ^f b a g _a _d' b | "C"a4 a'4 |

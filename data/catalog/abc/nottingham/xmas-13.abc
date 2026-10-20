@@ -1,0 +1,19 @@
+%abc-2.1
+% W3KOOA, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/xmas.abc, tune X:
+% 13 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 05ebc4b856c8c5186bb828641e8f88f723c109d47ba7e3f1e5048b536e091249).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:W3KOOA
+M:6/8
+L:1/16
+Q:1/4=140
+K:Em
+P:A
+"Em"B4 A2 G4 E2 | "Em"F2 G2 F2 E6 | "Em"B4 A2 G4 E2 | "Em"F2 G2 F2 E6 |
+"Em7"G4 G2 A4 A2 | "G"B4 B2 d2 c2 B2 | "C"A2 B2 A2 G4 F2 | "Em7"E6 F4 A2 |
+"G"G4 G2 G4 D2 | "C"G4 E2 G6 | "G"G4 G2 G4 D2 | "C"G4 E2 G6 |
+"Em7"G4 G2 A4 B2 | "D7"c4 B2 A4 B2 | "G"G4 G2 G4 D2 | "Em7"G4 E2 G6 |

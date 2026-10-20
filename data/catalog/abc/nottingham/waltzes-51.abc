@@ -1,0 +1,28 @@
+%abc-2.1
+% Wind on the Heath, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 51 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Wind on the Heath
+M:3/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 A4 | "D"D6 E2 D4 | "D"F8 G4 | "D"A8 B4 |
+"D"A4 F4 D4 | "G"G8 d4 | "D"F8 d4 | "Em"E4 F4 D4 |
+"A7"C4 B,4 A,4 | "D"D6 E2 D4 | "D"F8 G4 | "D"A8 B4 |
+"D"A4 F4 D4 | "Em"F4 d4 F4 | "A7"E4 d4 c4 | "D"d4 A4 F4 |
+"D"D8 A4 | "D"d6 e2 d4 | "D"f8 g4 | "D"a8 g4 |
+"D"f4 e4 d4 | "G"B6 c2 B4 | "A"c8 d4 | "E7"e4 f4 d4 |
+"A7"c4 B4 A4 | "D"d6 e2 d4 | "Bm"f8 g4 | "F#m"a8 g4 |
+"Bm"f4 e4 d4 | "Em"B2 c2 d4 B4 | "A7"c2 d2 e4 c4 | "D"d12 |
+"D"d8 A4 | "D"d6 e2 d4 | "D"f8 g4 | "D"a8 g4 |
+"D"f4 e4 d4 | "G"B6 c2 B4 | "A"c8 d4 | "E7"e4 f4 d4 |
+"A7"c4 B4 A4 | "D"d4 a4 d4 | "A"c4 a4 c4 | "G"B4 a4 g4 |
+"D"f4 e4 d4 | "Em"B2 c2 d4 B4 | "A7"c2 d2 e4 c4 | "D"d4 A4 F4 |
+"D"D8 z4 |

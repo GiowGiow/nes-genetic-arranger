@@ -1,0 +1,35 @@
+%abc-2.1
+% Io son si stanco, by Giovanni Battista Mosto. Score published on MuseScore (artist: Giovanni
+% Battista Mosto), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Battista Mosto (died
+% 1596, Wikidata Q1119331).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/8/Qma9wo6GstrwkEauDTyQeiH9tfAnQ5VPEnufmTWu4W43q3.mid (sha256
+% 62e7fcc3d4617a17fb25ed0c4c21e96eaffe19c511e19502e8cc8e513c1538db): melody track 1, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Io son si stanco
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z16 | "E"z8 "Em"z8 | "F"z16 | "E"z8 "Em"z8 |
+"G7"D8- "Db7"D8 | "Am"A8- "A"A4 c4 | "Em"B16 | "F"A8 "Dm"A8 |
+"A"c4 B4 "Am"A8 | "Bm"A4 _A2 ^F2 _A8 | "A"A8 A,8 | "Dbm"A,8 "A"A,8 |
+"A"A,16 | "A"A,16 | "G"B,16 | "C"C8- "Am"C8 |
+"F#m7"B,8- "Em"B,8 | "E"B,16 | "A"A,16 | "A"z16 |
+"E"z8 "Am"A8 | "C"G8- "E7"G4 G4 | "E7"A4 G4 "Am"A8 | "Am"E8- "G"E4 D4 |
+"F"D4 E8 D4 | "C"E8- "E"E8 | "E"z16 | "A"F8- "Am"F8 |
+"Am"E8- "G"E8 | "G"D8- "F"D8 | "D"B,8- "E7"B,8 | "A"A,16 |
+"Dm"z8 "A"z4 A4 | "A"_d4 _d4 "Dm"=d8 | "C"G4 B4- "Dm"B4 d4 | "Dm"d2 d2 A4 "E"B8 |
+"A"c4 A4 "C"G4 F4 | "D7"E4 G4 "Em"A6 G2 | "F"F4 E4 "G"G8 | "C"G8 "Em7"z8 |
+"G7"G8 "C"G4 F4 | "Am"E2 D2 E2 F2 "Bm"G2 A2 G4 | "C"G4 E4 "D7"E4 F4 | "E"G4 A4 "E7"B4 E4 |
+"D"E4 F4- "Am"F2 E2 A4 | "E"A4 _A4 "A"=A4 c4 | "Em7"B4 A4- "E"A4 _A4 | "E"z8 "C"z4 A4 |
+"D"G4 F4 "A"E8 | "G"z4 G4 "Dm7"A4 B4 | "Em"c4 B4 "F"c6 c2 | "C"c4 G4 "F"A8 |
+"G"G8- "D7"G4 F4 | "Am7"E4 D4 "E"E8 | "A"_D8 z8 | "A"z12 A4 |
+"D"A4 B4 "C"c4 G4 | "Dm"c4 B4 "C"z4 c4 | "G7"B2 c2 B2 G2 "Am7"A4 B4 | "F"c8 "Am"z4 A4 |
+"E"_A8 _A8 | "E"z8 "D"A8 | "G"B8- "Em7"B4 c4 | "G7"c4 B4 "C"c8 |

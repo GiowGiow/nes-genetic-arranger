@@ -1,0 +1,35 @@
+%abc-2.1
+% Les contes d'Hoffmann, by Jacques Offenbach. Score published on MuseScore (artist: Jacques
+% Offenbach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacques Offenbach (died 1880,
+% Wikidata Q41555).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/52/QmZxD1L8TrGSfcPi1SUsfLtaJeNBfN7FuYSJSx47FnUFVX.mid (sha256
+% ca7d64d59a1e7033dc1971ef7288f7facf9dbd48578ec4e4f58aa6109c17ff60): melody track 13, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Les contes d'Hoffmann
+M:2/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"z2 a b e f a b | "F"g a f g c c d d | "D7"e2 z6 | "E"z8 |
+"Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "Bm7"z2 D2 z2 D2 | "Am"z2 E2 z2 _E2 |
+"Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "Bm7"z2 D2 z2 D2 |
+"Am"z2 E2 z2 _E2 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "G"z2 E2 z2 G2 |
+"Dm7"z2 G2 z2 F2 | "E"z2 E2 z2 E z | "Am"z2 E2 z2 ^F2 | "Am"z2 E2 z2 ^F2 |
+"Dm"z2 E2 z b d' b | "E"e' c' e' f' e' e e' d' | "Am"c' b c' b a2 ^F2 | "Am"z2 E2 z2 ^F2 |
+"Am"z2 A2 A2 z2 | "G7"z8 | "Am"z8 | "Am"z2 c2 z4 |
+"E7"z6 B2 | "Am"z2 a b e f a b | "F"g a f g c c d d | "D7"e2 z6 |
+"E"z8 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "Dm"z2 D2 z2 D2 |
+"Am"z2 E2 z2 _E2 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 |
+"Dm"z2 D2 z2 D2 | "Am"z2 E2 z2 _E2 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 |
+"G"z2 E2 z2 G2 | "Dm7"z2 G2 z2 F2 | "E"z2 E2 z2 E z | "Am"z2 E2 z2 ^F2 |
+"Am"z2 E2 z2 ^F2 | "Dm"z2 E2 z b d' b | "E"e' c' e' f' e' e e' d' | "Am"c' b c' b a2 ^F2 |
+"Am"z2 E2 z2 ^F2 | "Am"z2 A2 A2 z2 | "G7"z8 | "Am"z8 |
+"Am"z2 c2 z4 | "E7"z6 B2 | "Am"z2 a b e f a b | "F"g a f g c c d d |
+"D7"e2 z6 | "E"z8 | "Am"z2 E2 z2 E2 | "Am"z2 E2 z2 E2 |

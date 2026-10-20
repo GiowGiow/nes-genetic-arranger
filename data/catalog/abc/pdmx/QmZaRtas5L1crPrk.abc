@@ -1,0 +1,30 @@
+%abc-2.1
+% Cello Suite No.1 in G major BWV 1007, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/9/QmZaRtas5L1crPrkw7TJgLtGzJhG5pUcZqqWbP9K4CUyq3.mid (sha256
+% de4c05bdef265107bf6b21b01048be77d6d0dc17ffa3a7caf8d122de47ea2a54): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Cello Suite No.1 in G major BWV 1007
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"D A ^f e ^f A ^f A D A ^f e ^f A ^f A | "C"D B g ^f g B g B D B g ^f g B g B | "C"D _d g ^f g _d g _d =D _d g ^f g _d g _d | "C"D d ^f e ^f d ^f d D d ^f e ^f d ^f _d |
+"C"D d ^f e ^f d _d =d B =d _d =d ^F A _A ^F | "C"_A d e d e d e d _A d e d e d e d | "C"_d e a _a =a e =d e _d e =d e =A _d B =A | "C"B, ^F d _d =d ^F =d ^F B, ^F =d _d =d ^F =d ^F |
+"C"B, _A =A B =A _A ^F E d _d B =a _a ^f e =d | "C"_d B A a e a _d e A B _d e =d _d B A | "C"_e A c B c A _e A ^f A c B c A _e c | "C"G B e ^f g e B A G B e ^f g e _d B |
+"C"_B _d _B _d e _d e _d _B _d _B _d e _d e _d | "C"d _d B =d _d =d e _d =d _d B A G ^F E =D | "C"_D G A G A G A G _D G A G A G A G | "C"D ^F c B c ^F c ^F D ^F c B c ^F c ^F |
+"C"D G B A B G B G D G B A B G B G | "C"D _d g ^f g _d g _d =D _d g ^f g _d g _d | "C"D A ^f e ^f d _d B A G ^F E =D _D B, A, | "C"_A, E B _d =d B _d =d _A, E B _d =d B _d =d |
+"C"G, E A B _d A B _d G, E A B _d A B _d | "C"G, E A _d e _a =a3 E ^F G =A B _d =d | "C"e _d A B _d =d e ^f g e _d =d e ^f g a | "C"_b a _a =a =a g ^f g g e _d =B =A E ^F G |
+"C"A, E A _d e ^f g e ^f =d A G ^F =D E ^F | "C"A, D ^F A d e ^f d _a =f e =f =f e _e =e | "C"e d _d =d =d B _A ^F E _A B =d e _a =a _a | "C"a e _d B _d e A _d E A _A ^F E =D _D B, |
+"C"A,2 g ^f e d _d B A g ^f e =d _d B A | "C"G ^f e d _d B A G ^F e =d _d B A G ^F | "C"E d _d B _d e A e B e _d e =d e B e | "C"_d e A e =d e B e _d e A e =d e B e |
+"C"_d e A e B e _d e =d e e e ^f e A e | "C"e e ^f e g e A e ^f e g e a e ^f e | "C"g e ^f e g e e e ^f e e e ^f e d e | "C"e e d e e e _d e =d e _d e =d e B e |
+"C"_d e A B c A _d A =d A _e A =e A f A | "C"^f A g A _a =A =a =A _b =A =b =A c' =A _d' =A | "C"d' ^f A ^f d' ^f d' ^f d' ^f A ^f d' ^f d' ^f | "C"d' e A e d' e d' e d' e A e d' e d' e |
+"C"_d' g A g _d' g _d' g _d' g A g _d' g _d' g | "C"^f d'15 |

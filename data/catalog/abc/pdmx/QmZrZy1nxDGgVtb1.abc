@@ -1,0 +1,35 @@
+%abc-2.1
+% Le quattro stagioni, by Antonio Vivaldi. Score published on MuseScore (artist: Antonio Vivaldi),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/40/QmZrZy1nxDGgVtb1oBqaKTWCgHr4CWWBcpiVrN9M5w9cH4.mid (sha256
+% 8dc452dab97bc72fd1018ac575482289800a55d29276133031fe49129208e3b2): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le quattro stagioni
+M:3/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"D D, D, D, D, D, D, D, D, D, D, D, | "D"C D, D, D, D, D, D, D, D, D, D, D, | "D"_B, D, D, D, D, D, D, D, D, D, D, D, | "D"A, D, D, D, D, D, D, D, D,2 z2 |
+"D"z12 | "A"A A, A, A, A, A, A, A, A, A, A, A, | "A"G A, A, A, A, A, A, A, A, A, A, A, | "A"F A, A, A, A, A, A, A, A, A, A, A, |
+"A"E A, A, A, A, A, A, A, A,2 z2 | "A"z A G F E D _D B, A, G, F, E, | "Dm"D, D, D, D, D, D, D, D, D, D, D, D, | "D"D, d c _B A G F E D C _B, A, |
+"Gm"G, G, G, G, G, G, G, G, G, G, G, G, | "G"G, f e d c _B A G F E D C | "Bb"_B, _B, _B, _B, _B, _B, _B, _B, _B, _B, _B, _B, | "Bb"_B, a g f e d _d =B A G F E |
+"Dm"D D D D D D D D D D D D | "D"D a g f e d _d B A G F E | "Dm"D D D D D D D D D D D D | "D"A D D D A D D D A D D D |
+"A"A, E F G A B _d =d e2 z2 | "A7"z E F G A B _d =d e2 z2 | "Dm"z F G A _B _d =d e f2 z2 | "A"z A B _d =d e f g a2 z2 |
+"A"z A B _d =d e f g a2 z2 | "A7"z E F G A B _d =d e2 z2 | "Dm"z F G A _B _d =d e f2 z2 | "A"z A B _d =d e f g a2 z2 |
+"Dm"f d A F f d A F f d A F | "Dm"A F D A, A F D A, A F D A, | "Dm"D A, F, D, D A, F, D, D A, F, D, | "D"D ^F D ^F D ^F D ^F D ^F D ^F |
+"Gm"D D D D D D D D D D D D | "E7"B, B, B, B, B, B, B, B, B, B, B, B, | "Am"E A E A E A E A E A E A | "E"A, A A, A A, A A, A A, A A, A |
+"E"E _A E _A E _A E _A E _A E _A | "Am"A A, B, C D E ^F _A =A E ^F _A | "Am"A B c d e A B c d e ^f _a | "Am"a4 z e e _a _a b b e' |
+"A"e' e A, e d' e A, e c' e A, e | "A"b e A, e c' e A, e d' e A, e | "A"e' e A, e d' e A, e c' e A, e | "A"b4 z A A c c e e a |
+"A"a A A, A g A A, A f A A, A | "A"e A A, A f A A, A _a =A =A, =A | "A"a A A, A g A A, A f A A, A | "A"e4 z e' e' d' d' c' c' b |
+"A"b a a g g f f e e d d c | "A"c B B A A G G F F E E _E | "A"E2 _E2 =E2 _E2 =E2 C2 | "A"D2 B,2 C2 A,2 B,2 _A,2 |
+"Dm7"A,2 _A,2 =A,2 _A,2 =A,2 _A,2 | "Dm7"A,2 _A,2 =A,2 _A,2 =A,2 _A,2 | "Am"A,2 A,2 A,2 F2 c2 e2 | "Dm"f2 A,2 A,2 F2 d2 f2 |
+"G"f2 B,2 B,2 B2 d2 f2 | "C"e2 C2 C2 G2 c2 e2 | "F"e2 A,2 A,2 A2 c2 e2 | "Bb"d2 _B,2 _B,2 F2 _B2 d2 |
+"Eb"d2 G,2 G,2 G2 _B2 d2 | "F#m"d2 A,2 A,2 ^F2 A2 d2 | "D"c2 A,2 A,2 ^F2 A2 c2 | "Gm"_B _B, C D _E ^F G A _B2 z2 |

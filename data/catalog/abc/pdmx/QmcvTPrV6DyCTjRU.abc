@@ -1,0 +1,30 @@
+%abc-2.1
+% The Puppet Show, by Josephine Trott. Score published on MuseScore (artist: Josephine Trott), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josephine Trott (died 1950,
+% Wikidata Q106977284).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/48/QmcvTPrV6DyCTjRUjoB3f5G5KPXLzxg9Cyh9ZkPyUELxvm.mid (sha256
+% b960d17d59cbffce54f0dc3ccfc76c2b412ac2a8e5db84e34882c94db725cc69): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Puppet Show
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"g2 z2 a2 z2 ^f4 z4 |
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"d2 z2 A4 D2 z6 |
+"C"a b2 a ^f a2 ^f d ^f2 d A d2 A | "C"B _d2 B e ^f2 e g8 | "C"_d B2 A A B2 _d =d e2 ^f g a2 b | "C"a b2 a g a2 g ^f8 |
+"C"a b2 a ^f a2 ^f d ^f2 d A d2 A | "C"B _d2 B e ^f2 e g8 | "C"_d B2 A A B2 _d =d e2 ^f g a2 b | "C"a g2 ^f g ^f2 e d8 |
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"g2 z2 a2 z2 ^f4 z4 |
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"d2 z2 A4 D4 z4 |
+"C"B4 d4 G4 ^F4 | "C"E4 A z B z c6 A2 | "C"^F2 E2 D z E z ^F2 G2 A z B z | "C"c4 e4 d4 _d2 c2 |
+"C"B4 d4 G4 ^F4 | "C"E4 A z c z b6 a2 | "C"g2 d2 B z G z ^F2 e2 d z ^F z | "C"G12 z4 |
+"C"B4 d4 G4 ^F4 | "C"E4 A z B z c6 A2 | "C"^F2 E2 D z E z ^F2 G2 A z B z | "C"c4 e4 d4 _d2 c2 |
+"C"B4 d4 G4 ^F4 | "C"E4 A z c z b6 a2 | "C"g2 d2 B z G z ^F2 e2 d z ^F z | "C"G12 z4 |
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"g2 z2 a2 z2 ^f4 z4 |
+"C"a2 z2 ^f4 d2 z2 A4 | "C"B2 z2 e4 g8 | "C"_d z B z A z B z _d z =d z e z ^f z | "C"d2 z2 A4 D2 z6 |

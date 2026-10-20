@@ -1,0 +1,35 @@
+%abc-2.1
+% Ombra Fedele Anch'io (Idaspe), by Riccardo Broschi. Score published on MuseScore (artist:
+% Riccardo Broschi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Riccardo Broschi (died 1756,
+% Wikidata Q725818).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/50/QmewgwDBinXqXUpqez9r7EBjz6YWQoHPWEd7NhD577L1TN.mid (sha256
+% 2148cb52794e3aa9b8ff2f68569023284ba99bfd03eb3e8eeeb1cd7316d9309c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ombra Fedele Anch'io (Idaspe)
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z16 | "Fm7"z16 | "Bbm"z16 | "Ab"z8 "Eb"z8 |
+"Ab"z8 "Eb"z8 | "Ab"z16 | "Db"z8 "Bbm7"z8 | "Bbm7"z8 "Db"z8 |
+"F#"z16 | "Ab"z8 "Db"z8 | "Ab"z16 | "Db"z8 "Fm"z8 |
+"Fm"z8 "Ab7"z8 | "Fm"z8 "Ab7"z8 | "Db"z16 | "Db"_D4 _D3 _D _D4 F _E2 _D |
+"Fm"_A2 G2 _A4 "C"z4 _A4 | "Bbm"_d6 c _B "Cm"_A4 ^F4 | "Db"^F4 =F4 z4 =F4 | "Ab"_E4 _A4 "Bbm7"_D4 _D4 |
+"Gm"_D2 _B2 _B8 _D4 | "Ab"_D4 C4 z4 _E4 | "Db"F4 _A4 _d4 F4 | "Ab"F4 _E4 z4 _E4 |
+"Db"F4 _A4 _d4 F4 | "Ab"F4 _E4 "Fm"z4 _A4 | "F#"_B9 _A ^F =F _E ^F _A _B | "Fm"_A9 ^F =F _E _D =F ^F _A |
+"Ebm"^F8- "Ab"^F =F _E _D C _E =F ^F | "Db"F12 _d2 _B2 | "Eb7"G10 _B2 G2 F _E | "Cm7"_A4 _A4 "Gm"_A4 _A4 |
+"Fm"_A4 _A4 "Db"_A4 _A4 | "Cm"_A6 G F "C"_E4 F2 _D2 | "Eb"F F F F F F F F F F F F F F F F | "Ab"_A,8 z8 |
+"Db"z16 | "Cm"z16 | "Bbm"z16 | "Ab"z16 |
+"Db"_D4 _D3 _D _D4 F _E2 _D | "Db"_A2 G2 _A4 z4 _d4 | "Db"B4 _A4 _D4 B,4 | "F#"B,4 _B,4 "Ebm"z4 _e4 |
+"Eb"_d4 _B4 _E4 _D4 | "Ab"_D4 C4 z4 _E4 | "Db"F4 _A4 _d4 F4 | "Ab"F4 _E4 z4 _A4 |
+"Bb7"_B12 _A2 ^F2 | "Ab"_A _B2 c _d4- "Db"_d8 | "Ab"_e _d2 c c12 | "Bbm7"_d c2 _B _B12 |
+"Ab"c _B2 _A _A12 | "Ab"^F =F2 ^F _e12 | "Ab7"^F =F2 ^F ^F12 | "Ab7"z4 _B ^F3 "Ab"_A =F3 ^F _E3 |
+"Db"F3 _B _A3 _D "Ab"F _E7 | "Bbm"_D4 F4 "Ebm7"z2 _B2 _A2 _D2 | "Ab"F F F F F F F F F F F F F F F F | "Db"_D8 "Bbm7"z8 |
+"Bbm7"z8 "Db"z8 | "F#"z16 | "Ab"z8 "Db"z8 | "Ab"z16 |

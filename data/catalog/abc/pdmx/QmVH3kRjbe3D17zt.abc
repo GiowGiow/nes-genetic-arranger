@@ -1,0 +1,35 @@
+%abc-2.1
+% the entertainer, by Scott Joplin. Score published on MuseScore (artist: Scott Joplin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Scott Joplin (died 1917,
+% Wikidata Q191499).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/24/QmVH3kRjbe3D17ztBGxCh9S55B17WLRmrVBXZMXNiLLo71.mid (sha256
+% be13e023da0c71abe5f5c902556a007906a010d7c725aa06b5bdb0406bd63949): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:the entertainer
+M:4/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"d2 e2 c2 A4 B2 G4 | "C"D2 E2 C2 A,4 B,2 G,4 | "C"D,2 E,2 C,2 A,,4 B,,2 A,,2 _A,,2 | "C"G,,8 G4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 E,,2 G,2 A,2 G,2 | "C"^F,2 A,2 C2 E2 D,2 D2 C2 A,2 | "C"D4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 C,4 C2 D2 |
+"C"E2 C2 D2 E2 _B,,2 C2 D2 C2 | "C"E2 C2 D2 E2 _A,,2 C2 D2 C2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 E,,2 G,2 A,2 G,2 | "C"^F,2 A,2 C2 E2 D,2 D2 C2 A,2 | "C"D4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 C,4 C2 D2 |
+"C"E2 C2 D2 E2 _B,,2 C2 D2 C2 | "C"E2 C2 D2 E2 _A,,2 C2 D2 C2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 C,2 E2 F2 ^F2 |
+"C"G4 A2 G2 C,2 E2 F2 ^F2 | "C"G4 A2 G2 C,2 E2 C2 G,2 | "C"A,2 B,2 C2 D2 E2 D2 C2 D2 | "C"C2 E,2 F,2 G,2 A,2 G,2 E2 F2 |
+"C"G4 A2 G2 C,2 E2 F2 ^F2 | "C"G4 A2 G2 C,2 G2 A2 _B2 | "C"B2 B2 G,2 B2 D,2 A2 ^F2 D2 | "C"G4 D,4 G,2 E2 F2 ^F2 |
+"C"G4 A2 G2 C,2 E2 F2 ^F2 | "C"G4 A2 G2 C,2 E2 C2 G,2 | "C"A,2 B,2 C2 D2 E2 D2 C2 D2 | "C"C2 E,2 G,2 C4 G,2 ^F,2 G,2 |
+"C"C4 A,2 C2 ^F,,2 A,2 C2 A,2 | "C"G,2 C2 E2 G2 E,2 E2 C2 G,2 | "C"A,4 C4 E2 D2 D,4 | "C"C4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 E,,2 G,2 A,2 G,2 | "C"^F,2 A,2 C2 E2 D,2 D2 C2 A,2 | "C"D4 G,,4 A,,4 D,2 _E,2 |
+"C"E,2 C2 G,,2 E,2 C4 E,2 C2 | "C"F,,4 F,4 _A,,2 C2 D2 _E2 | "C"E2 C2 D2 E2 G,,2 B,2 D4 | "C"C4 G,,4 C,4 C2 D2 |

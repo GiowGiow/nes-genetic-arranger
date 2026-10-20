@@ -1,0 +1,34 @@
+%abc-2.1
+% Amor che'l mondo ciecamente, by Domenico Micheli. Score published on MuseScore (artist: Domenico
+% Micheli), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Micheli (died 1590,
+% Wikidata Q87642969).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/19/QmTfoqSG95tKLbXgcPUbJZ98p5ie4Ysprue8MCP2G2bMCa.mid (sha256
+% dbf57017b3c9670bb3b269bf2aa65d283dd7b5f5e359671aa2304ccb3f779079): melody track 1, bars 1-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Amor che'l mondo ciecamente
+M:4/2
+L:1/16
+Q:1/4=124.000248
+% Exact tempo 124.000248000496 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z16 E16 | "Am"E8 A8- "E"A8 G4 ^F4 | "E7"G8 ^F8 "D7"^F8 E8 | "D7"A12 A4 "Am"_A4 _A4 =A8 |
+"Am"E16 "E"z8 E8 | "D"E4 E4 ^F8 "G"G8 E8 | "C"G12 G4- "Am"G4 E4 A8 | "G"D8 z4 G4 "Am"G4 G4 A8 |
+"E"^F4 ^F4 _A4 _A4 "B7"=A8 ^F8 | "C"G4 E4 G4 A4 "B"^F4 E6 _E _D _E4 | "Dbm"E4 B,4 E6 E2 "A"D4 B,4 C8 | "E"B,8 E8- "Dm"E4 E4 A8 |
+"E"A4 G2 ^F2 G8 "B7"A8 ^F8 | "Am"E16 "Em7"z16 | "G"G16 "D"^F4 D4 ^F8 | "D7"E8 ^F8 "Am"G8 A4 A4 |
+"Em"D8 E8 "B"z8 B8 | "F#m7"B8 A8 "Em7"^F8 G8 | "G"G4 G4 ^F4 G4 "A"A4 E4 A8 | "E7"A8 _A8 "Dm7"z4 =A4 =A8 |
+"E"A8 _A8 "A"=A4 E4 =A8 | "D7"^F4 G4 E4 A4- "E"A4 _A2 ^F2 _A8 | "A"A8 A8 "Abm"B4 A4 ^F8 | "E"G4 E4 _A8- "Am"_A4 _A4 =A8 |
+"D7"E4 G4 F4 F4 "E"E16 | "A"E4 E4 E4 ^F4 "E"G4 E4 E8 | "A"E16 "B"z16 | "Am"z16 "B"z8 B8 |
+"E"B4 _A4 =A4 =A4 B16 | "Am"E16 "E7"z16 | "G"z8 G8 "D7"G8 ^F8 | "D"G4 E4 A8- "E"A8 _A8 |
+"E7"A4 A4 _A8 "A"=A8 z4 E4 | "E7"G4 F4 E8 "A"E8 A8 | "D"A8 ^F8 "A"_A8 =A8 | "Em7"z8 G8 "D"E8 F8 |
+"E"E16- "A"E8 ^F8 | "D"E8 D4 D4- "A7"D4 D4 _D8 | "D"D16- "Em7"D16 | "A"z8 A8- "D"A4 A4 A8 |
+"G"G8 G8 "A"E8 z4 E4 | "D"^F4 ^F4 ^F8 "G"G16 | "D"^F16 "A"E4 E4 E8 | "D"G8 ^F12 ^F4 ^F8 |
+"A"E8 E8 "D"^F8 A8 | "G"A4 A4 B8 "Dm"A8 A8 | "E"_A8 _A8 "E7"=A4 =A4 _A8 | "A"A16 "Dm7"z16 |
+"D7"z16 "C"z8 G8 | "E7"G4 G4 ^F8 "D"A16 | "Em7"A8 G8 "C"G8 G8 | "Em7"G4 G4 E8 G8 G8 |
+"Bm7"^F8 E8 "B"G4 G4 ^F8 | "E"A8 _A8 "E7"=A8 _A8 | "A"A16 _A8 =A8 | "E"_A4 E4 =A12 _A2 ^F2 _A8 |
+"A"A32 |

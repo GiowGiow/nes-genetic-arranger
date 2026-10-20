@@ -1,0 +1,36 @@
+%abc-2.1
+% SUTIL, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sutil.html (file
+% https://www.beakauffmann.com/mpb_s/som/sutil.mid, sha256
+% 9cde0fe5e9b132adae44f4aeea5497f72a899aaf4005d3cb20cfa3e5938300bd), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SUTIL
+M:2/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "F#m7"^f ^f ^f b z a z _d | "Ab7"c _d z =d _e z _A z |
+"Db7"^f ^f ^f d' z _d' z _a | "F#m"b a2 f ^f _d2 =d | "B7"e e e _d' z b z ^f | "Em7"a _a2 ^f =f e _e d |
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "C"^f ^f ^f a z g z c | "G7"B c2 _d =d2 G2 |
+"E7"f f f f e e e e | "Dm7"d d d d c c c c | "Abm7"_B _B _B _B A A A A | "A"A4 a4 |
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "F#m7"^f ^f ^f b z a z _d | "Ab7"c _d z =d _e z _A z |
+"Db7"^f ^f ^f d' z _d' z _a | "F#m"b a2 f ^f _d2 =d | "B7"e e e _d' z b z ^f | "Em7"a _a2 ^f =f e _e d |
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "C"^f ^f ^f a z g z c | "G7"B c2 _d =d2 G2 |
+"E7"f f f f e e e e | "Dm7"d d d d c c c c | "Abm7"_B _B _B _B A A A A | "F#m"A4 z a2 ^f |
+"Eb7"z _a2 _e z f2 _d | "F#m"z ^f2 _d z _d'2 a | "Db7"z _a2 _e' z _d'2 _a' | "F#m"z _d'2 ^f' z _d'2 a |
+"Eb7"z _a2 _e z f2 _d | "Abm7"z ^f2 _d z =d2 B | "Db"z A2 ^F z _A2 =F | "F#"z ^F2 _D z a2 ^f |
+"Eb7"z _a2 _e z f2 _d | "F#m"z ^f2 _d z _d'2 a | "Db7"z _a2 _e' z _d'2 _a' | "F#m"z _d'2 ^f' z _d'2 a |
+"Eb7"z _a2 _e z f2 _d | "Abm7"z ^f2 _d z =d2 B | "Db"z A2 ^F z _A2 =F | "F#7"^F4 e2 z2 |
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "F#m7"^f ^f ^f b z a z _d | "Ab7"c _d z =d _e z _A z |
+"Db7"^f ^f ^f d' z _d' z _a | "F#m"b a2 f ^f _d2 =d | "B7"e e e _d' z b z ^f | "Em7"a _a2 ^f =f e _e d |
+"A"d d d ^f z e z A | "E7"_A =A z _B =B z E z | "C"^f ^f ^f a z g z c | "G7"B c2 _d =d2 G2 |
+"E7"f f f f e e e e | "Dm7"d d d d c c c c | "Abm7"_B _B _B _B A A A A | "A"A4 a4 |

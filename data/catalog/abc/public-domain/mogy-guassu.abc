@@ -1,0 +1,36 @@
+%abc-2.1
+% MOGY GUASSÚ, by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/mogy-guassu.html (file
+% https://www.beakauffmann.com/mpb_m/som/mogy-guassu.mid, sha256
+% badca22824d089e5e76be66ff2b78f1ca8bbfc925f357665a60543a410ff6f1a), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MOGY GUASSÚ
+M:2/4
+L:1/16
+Q:1/4=94.999992
+% Exact tempo 94.99999208333399 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A7"B, z3 C z3 | "Em"D z3 G z ^F z | "A7"E z ^F z G z A z | "D7"G z ^F z d z3 |
+"A7"B z3 c z3 | "Em"d z3 g z ^f z | "C7"e z ^f z g z a z | "D7"b z a z g z3 |
+"A7"b4 c'4 | "B"d'4 g'2 ^f'2 | "C7"e'2 ^f'2 g'2 a'2 | "D7"g'2 ^f'2 d''4 |
+"A7"b4 c'4 | "B"d'4 g'2 ^f'2 | "C"e'2 ^f'2 g'2 a'2 | "Em7"b'2 a'2 g'4 |
+"A7"B, z3 C z3 | "Em"D z3 G z ^F z | "A7"E z ^F z G z A z | "D7"G z ^F z d z3 |
+"A7"B z3 c z3 | "Em"d z3 g z ^f z | "C7"e z ^f z g z a z | "D7"b z a z g z3 |
+"A7"b4 c'4 | "B"d'4 g'2 ^f'2 | "C7"e'2 ^f'2 g'2 a'2 | "D7"g'2 ^f'2 d''4 |
+"A7"b4 c'4 | "B"d'4 g'2 ^f'2 | "C"e'2 ^f'2 g'2 a'2 | "Em7"b'2 a'2 g'4 |
+"Em"b2 b2 b2 b2 | "Em"b6 e' z | "Am"d' z c' z g z a z | "Em"b8 |
+"B7"a2 a2 _a =a3 | "Em"g2 g2 ^f g3 | "C7"^f z e z _e z =e z | "B"^f z B z B2 z2 |
+"Em"b2 b2 b2 z2 | "Em"b6 e' z | "F7"d' z c' z g z a z | "Em7"b8 |
+"G7"b2 b2 _b =b3 | "C"c'2 c'2 b c'3 | "Eb7"_d'2 _d'2 _d'2 z2 | "D7"d'2 z2 d4 |
+"D"^f' z ^f' z ^f' z ^f' z | "D"^f' z ^f' z ^f' z ^f' z | "D"e' z d' z c' z b z | "Am7"c' z c' z c'2 z2 |
+"Em7"b2 c'2 b4 | "Am"a z b z a2 z2 | "Am7"g z a z g2 z2 | "D"^f z g z ^f2 z2 |
+"D"^f' z ^f' z ^f' z ^f' z | "D"^f' z ^f' z ^f' z ^f' z | "D7"^f' z g' z ^f' z e' z | "Em7"d'2 e'2 d'4 |
+"Am"c'2 d'2 c'4 | "Em7"b2 c'2 b4 | "D7"a2 b2 a2 d'2 | "G"g2 z2 g'2 z2 |

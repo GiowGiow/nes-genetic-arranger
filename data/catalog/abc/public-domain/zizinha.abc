@@ -1,0 +1,35 @@
+%abc-2.1
+% ZIZINHA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_z/zizinha.html (file
+% https://www.beakauffmann.com/mpb_z/som/zizinha.mid, sha256
+% df319d74292c04ff91baa6ff232ee773beea55cd73307bc3763184009beb4a56), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ZIZINHA
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Em7"d6 z2 | "Bm7"d _d2 =d b z a z | "G"B6 z2 | "Em7"B _B2 =B a z g z |
+"Bm7"A3 z B3 z | "Am7"c3 z _d3 z | "F#m7"d3 z e3 z | "D7"^f b2 a g ^f2 e |
+"Em7"d6 z2 | "Bm7"d _d2 =d b z a z | "G"B6 z2 | "Em7"B _B2 =B a z g z |
+"C7"z _A2 =A ^f2 e2 | "Em7"z _D =D ^F G B e =d | "D7"z _D2 =D B2 A2 | "G"G2 z G, z4 |
+"Em"b B B b a B B a | "Em"g B B g ^f B B ^f | "Em"e _e =e ^f g ^f g a | "B7"_b =b c' =b a ^f _e =B |
+"Em"b B B b a B B a | "Em"g B B g ^f B B ^f | "Em"e _e =e ^f g ^f g a | "B7"b2 z b z b c' d' |
+"E7"e'2 z e' z e e' d' | "Am"c'2 z c' z a b c' | "D7"d'2 z d' z d d' c' | "G"b2 z b z g a _b |
+"B7"b2 z b z B b a | "Em"g2 z g g2 ^f2 | "D7"e e2 e e2 e2 | "B"_e3 z2 b c' d' |
+"E7"e'2 z e' z e e' d' | "Am"c'2 z c' z a b c' | "D7"d'2 z d' z d d' c' | "G"b2 z b z g a _b |
+"B7"b2 z b z B b a | "Em"g2 z g g2 ^f2 | "D7"e e2 e e2 e2 | "B"_e3 z5 |
+"Em"b B B b a B B a | "Em"g B B g ^f B B ^f | "Em"e _e =e ^f g ^f g a | "B7"_b =b c' =b a ^f _e =B |
+"Em"b B B b a B B a | "Em"g B B g ^f B B ^f | "Em"e B B e _e B B _e | "Em7"e3 z d'3 z |
+"Em7"d6 z2 | "Bm7"d _d2 =d b z a z | "G"B6 z2 | "Em7"B _B2 =B a z g z |
+"Bm7"A3 z B3 z | "Am7"c3 z _d3 z | "F#m7"d3 z e3 z | "D7"^f b2 a g ^f2 e |
+"Em7"d6 z2 | "Bm7"d _d2 =d b z a z | "G"B6 z2 | "Em7"B _B2 =B a z g z |
+"C7"z _A2 =A ^f2 e2 | "Em7"z _D =D ^F G B e =d | "D7"z _D2 =D B2 A2 | "G"G2 z G, z a2 _a |

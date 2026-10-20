@@ -1,0 +1,24 @@
+%abc-2.1
+% Balquhidder Lasses, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 20 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Balquhidder Lasses
+M:4/4
+L:1/16
+Q:1/4=140
+K:Gm
+P:A
+"Gm"z12 d2 c2 | "Gm"B4 A2 B2 G2 A2 B2 c2 | "Gm"d4 d4 "C7"g6 g2 | "F"f4 c4 c2 d2 c2 A2 |
+"F"F2 G2 A2 B2 "D7"c4 d2 c2 | "Gm"B4 A2 B2 G2 A2 B2 c2 | "Gm"d4 d4 "C7"g6 g2 | "F"f4 c4 "D7"d2 c2 B2 A2 |
+"Gm"G8 G4 d2 c2 | "Gm"B4 A2 B2 G2 A2 B2 c2 | "Gm"d4 d4 "C7"g6 g2 | "F"f4 c4 c2 d2 c2 A2 |
+"F"F2 G2 A2 B2 "D7"c4 d2 c2 | "Gm"B4 A2 B2 G2 A2 B2 c2 | "Gm"d4 d4 "C7"g6 g2 | "F"f4 c4 "D7"d2 c2 B2 A2 |
+"Gm"G8 G4 d4 | "Gm"g4 g2 a2 g4 d4 | "Gm"g2 a2 b2 a2 "C7"g4 d2 =e2 | "F"f4 f2 g2 f2 c2 A2 c2 |
+"F"F2 G2 A2 B2 "D7"c4 d4 | "Gm"g4 g2 a2 g4 d4 | "Gm"g2 a2 b2 a2 "C7"g4 d2 =e2 | "F"f4 c4 "D7"d2 c2 B2 A2 |
+"Gm"G8 "D7"G4 d4 | "Gm"g4 g2 a2 g4 d4 | "Gm"g2 a2 b2 a2 "C7"g4 d2 =e2 | "F"f4 f2 g2 f2 c2 A2 c2 |
+"F"F2 G2 A2 B2 "D7"c4 d2 c2 | "Gm"B4 A2 B2 G2 A2 B2 c2 | "Gm"d4 d4 "C7"g6 g2 | "F"f4 c4 "D7"d2 c2 B2 A2 |
+"Gm"G8 G4 z4 |

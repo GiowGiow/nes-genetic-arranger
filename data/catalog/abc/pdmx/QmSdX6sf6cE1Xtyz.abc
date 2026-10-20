@@ -1,0 +1,30 @@
+%abc-2.1
+% Hic est Martinus electus, by Luca Marenzio. Score published on MuseScore (artist: Luca
+% Marenzio), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luca Marenzio (died 1599,
+% Wikidata Q316532).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/15/QmSdX6sf6cE1Xtyz8ji35FKGskQiW9PZZC784fSQGb22KE.mid (sha256
+% 1f9dcb53a9c5b71498e7e25022e316996a512d4a49dd4405e7904ef23149a188): melody track 0, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hic est Martinus electus
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z8 c8 "Bb"c4 c4 d8 | "Dm7"d8 c8- "F"c16 | "F"z4 c4 _B4 d4 "Gm7"g8 c8 | "C"c8 z4 c4 "Dm7"c4 c4 f8 |
+"C"e6 f2 g8 z4 c4 A4 B4 | "F"c8 c8 "G7"z4 c4 g8 | "C"g4 g4 e8 "Bb"c4 f6 e2 d2 c2 | "Dm7"d2 e2 f4 f8 "G"e4 c6 B A B4 |
+"C"c16 "Am7"z4 c4 c4 c4 | "Dm"f6 e2 d4 A4 "Am7"z4 c8 c4 | "C"c4 c4 c4 c4 "Bb"f8 d4 f4 | "Dm7"f2 e d c2 d2 e2 f2 g4- "Gm"g2 f e d8 d4 |
+"D"d8 d8- "G"d4 c4 d4 d4 | "C"c16 z4 g8 g4 | "G"g12 d4 "C"e4 c8 c4 | "F"c12 c4 "C"c16 |
+"G"B12 c4 "F"d4 d4 c8 | "F"c8 c16 c4 c4 | "F"d4 c4 c4 c4 d4 e4 c6 d2 | "C"e4 e4 f4 d4 e4 c4 c4 B4 |
+"C"c16 "F"z4 c4 c4 c4 | "D"_B8 A8 d12 d4 | "Gm7"c8 d8 d16 | "Bb"d8 c8- "F"c4 c4 c8 |
+"Dm"c8 z8 "C"z8 g8 | "C"g4 g4 e8 c16 | "Dm7"c8 g8- "C"g4 g4 e8 | "Am7"c16 "Dm"z8 f8 |
+"Bb"f4 f4 d8 "F"c8 c8 | "C"c16 "Gm"d16 | "Dm7"z16 "Am7"z16 | "Dm7"z16 "C"z16 |
+"C7"z8 d8- "Gm7"d8 c4 d4 | "Gm7"d4 c4 _B8- "C"_B16 | "Dm7"A8 z4 c6 A2 c4 c4 z2 g2 | "C"g2 e2 g4 g4 z2 d2- "Gm"d2 G2 _B3 c d2 _e2 d4 |
+"G"d8 z4 d4- "C"d2 c2 B4 c8 | "C"c16 "F"c16 | "Dm"d12 c4 "Gm"_B4 A4 _B4 c4 | "Gm"d12 d6 c2 c6 B A B4 |
+"C"c16- "F"c16 | "Dm"z8 d8- "Gm"d8 g8 | "C"g4 f4 e4 d4 "Bb"c8 d8 | "C"c16 "F"c4 c4 f6 e2 |
+"Bb"d12 _B4 "F"c16 | "F"c32 |

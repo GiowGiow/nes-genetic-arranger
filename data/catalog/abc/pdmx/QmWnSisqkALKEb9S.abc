@@ -1,0 +1,35 @@
+%abc-2.1
+% prelude in e, by Manuel Maria Ponce (1882-1948). Score published on MuseScore (artist: Manuel
+% María Ponce), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Manuel Maria Ponce (died 1948,
+% Wikidata Q360206).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/33/QmWnSisqkALKEb9SrQyLshxzo7cBzcU2aRisJdBaYxsMyd.mid (sha256
+% 74ad43eb9e6a9a248ae4105f82245751bd8bd26850c33e32ae2a2efe87bcf847): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:prelude in e
+M:6/8
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E,,2 B z B z E z ^F z B, z | "C"E2 _D B, A, z _A, z ^F, z =A, z | "C"_A,2 E, _A, B,2 ^F, =A, B,2 E,2 | "C"_E,2 =E, ^F, _A, =A, B,2 =E,2 _E,2 |
+"C"_D,2 _A,2 _D2 _E2 B,,2 =E2 | "C"A,,2 _D E ^F2 _D E _A2 _D E | "C"A2 E _E _D B, A,2 =E2 _E2 | "C"_D2 B,2 A,2 _A,2 ^F,2 =A,2 |
+"C"_A,2 B2 B2 E2 ^F2 B,2 | "C"E2 _E _D B,2 _B,2 _A,2 ^F,2 | "C"B,2 B, _D _E =E ^F2 B,2 _D2 | "C"_E2 =E2 ^F2 B,2 _D2 _E2 |
+"C"E2 _B, =B, _D _E =E2 _B,2 =B,2 | "C"_D2 _E2 =E2 _D2 _E,2 _B,2 | "C"B,2 _A,,2 _A,,2 _E,2 _D,2 =E,2 | "C"_A,2 B,2 B,2 _E2 _D2 =E2 |
+"C"_E2 _A, _B, =B, _D _E2 _A,2 _B,2 | "C"B,2 _D2 =D2 _D2 _D,2 _A,2 | "C"A,2 ^F,,2 ^F,,2 _D,2 B,,2 =D,2 | "C"^F,2 A,2 A,2 _D2 B,2 =D2 |
+"C"_D2 ^F, A, _D2 ^F, _A, B,2 ^F, =A, | "C"_D2 ^F,,2 ^F,,2 ^F, A, _E2 _A, _D | "C"E2 _D,2 _D,2 _A, _D E2 ^F,2 | "C"E2 B,,2 B,,2 ^F, B, _E2 =E,2 |
+"C"_E2 A,,2 A,,2 =E, A, _D2 _E,2 | "C"_D2 _A,,2 _A,,2 _E, _A, C2 _A,,2 | "C"_D,2 _d2 _d2 ^F2 _A2 _E2 | "C"E2 _A ^F E _E _D2 _A2 ^F2 |
+"C"E2 _D2 B,2 _B,2 ^F,,2 E2 | "C"B,,2 ^F,2 ^F,2 D,2 E,2 _D,2 | "C"D,2 B,, _D, =D, E, ^F,2 B,2 _D2 | "C"D2 E2 ^F2 _A2 =A2 B2 |
+"C"c2 A,,2 A,,2 c2 A,,2 c2 | "C"c2 D,2 D,2 c2 D,2 c2 | "C"_B2 G,,2 G,,2 _B2 G,,2 _B2 | "C"_B2 _D,2 _D,2 _B2 _D,2 A2 |
+"C"A2 ^F,2 ^F,2 A2 ^F,2 A2 | "C"A2 B,,2 B,,2 A2 B,,2 G2 | "C"G2 E,2 E,2 G2 E,2 G2 | "C"G2 _B,,2 _B,,2 ^F2 _B,,2 E2 |
+"C"E2 B,,2 B,,2 _E2 B,,2 _E2 | "C"E2 E,,2 E,,2 E, ^F, G, A, B,2 | "C"E,2 ^F,2 G,2 A,2 B,2 C2 | "C"G2 B,,2 B,,2 G, A, B, C D2 |
+"C"G,2 A,2 B,2 C2 D2 F2 | "C"C,2 C E G2 C D F2 C E | "C"G2 C,2 C,2 E2 B,,2 E2 | "C"A,,2 A, B, C D E2 A,2 B,2 |
+"C"C2 D2 E2 ^F2 G2 A2 | "C"E,,2 E G B2 E ^F A2 E G | "C"B2 E,,2 E,,2 G2 E,,2 G2 | "C"G2 C,2 C,2 F2 C,2 E2 |
+"C"E2 B,,2 B,,2 E2 B,,2 E2 | "C"E2 A,,2 A,,2 E2 _B,,2 E2 | "C"E2 _E =E ^F _A =A6 | "C"_A2 B2 B z E z ^F z B, z |
+"C"E2 _D B, A, z _A, z ^F, z =A, z | "C"_A,2 E, _A, B,2 ^F, =A, B,2 E,2 | "C"_E,2 =E, ^F, _A, =A, B,2 =E,2 _E,2 | "C"_D,2 B,2 _D2 A,2 _D2 _A,2 |
+"C"^F,2 _d2 _d2 ^F2 _A2 _D2 | "C"^F2 D _D B,2 A,2 _A,2 B,2 | "C"A,2 ^F, A, _D2 ^F, _A, B,2 ^F, =A, | "C"_D2 ^F, _A, =A, B, _D2 ^F,2 _A,2 |

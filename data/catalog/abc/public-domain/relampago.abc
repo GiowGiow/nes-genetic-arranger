@@ -1,0 +1,35 @@
+%abc-2.1
+% RELÂMPAGO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/relampago.html (file
+% https://www.beakauffmann.com/mpb_r/som/relampago.mid, sha256
+% 6f64b9f597329d9eaca20e84a0d7f1e1b251b17cf27cb1da193a6fb6633f53fb), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RELÂMPAGO
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"C"z5 d e f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"C D ^F A e e D,, e |
+"C"G,,3 d D, d e f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"_D A, _D E G B A G |
+"C"^F3 ^F D, d e =f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"C D ^F A e e ^F,, e |
+"C"G,, F G d F, F G d | "C"d E G d c _E G c | "C"B B _B A _A E _E D | "C"_D E B A C ^F B A |
+"C"G2 B,, G2 d e f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"C D ^F A e e D,, e |
+"C"G,,3 d D, d e f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"_D A, _D E G B A G |
+"C"^F3 ^F D, d e =f | "C"^f =f e _e d _d c B | "C"_B A _A G ^F =F E D | "C"C D ^F A e e ^F,, e |
+"C"G,, F G d F, F G d | "C"d E G d c _E G c | "C"B B _B A _A E _E D | "C"_D E B A C ^F B A |
+"C"G2 D, G B,, e e e | "C"e G B e ^f G B e | "C"_e ^F A B c =E A c | "C"B _E A B c _E A c |
+"C"B E G B G,, e e e | "C"e G B e ^f G B e | "C"d B d g D, B d ^f | "C"^f _B _d g _B,, _B _d ^f |
+"C"^f3 ^f _E, =e =e =e | "C"e G B e ^f G B e | "C"_e ^F A B c =E A c | "C"B _E A B c _E A c |
+"C"B E,,2 B E,, B c B | "C"A _A =A B c d e ^f | "C"g B e g a _B e g | "C"f A c f _e A B _e |
+"C"e3 e2 e e e | "C"e G B e ^f G B e | "C"_e ^F A B c =E A c | "C"B _E A B c _E A c |
+"C"B E G B G,, e e e | "C"e G B e ^f G B e | "C"d B d g D, B d ^f | "C"^f _B _d g _B,, _B _d ^f |
+"C"^f3 ^f _E, =e =e =e | "C"e G B e ^f G B e | "C"_e ^F A B c =E A c | "C"B _E A B c _E A c |
+"C"B E,,2 B E,, B c B | "C"A _A =A B c d e ^f | "C"g B e g a _B e g | "C"f A c f _e A B _e |

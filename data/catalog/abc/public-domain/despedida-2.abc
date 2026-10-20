@@ -1,0 +1,36 @@
+%abc-2.1
+% DESPEDIDA, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/despedida-2.html (file
+% https://www.beakauffmann.com/mpb_d/som/despedida-2.mid, sha256
+% 0972f4b2d523d0f43c89088eeff3ab9889cb40dbf424abd7e600c5c0316f4ede), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DESPEDIDA
+M:2/4
+L:1/16
+Q:1/4=76.000066
+% Exact tempo 76.00006586672374 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"z8 | "Gm"z3 G _B G _B d | "Gm"d4 z4 | "A7"z E G _d z G _d e |
+"A7"e4 _e2 z2 | "F7"z _e _e z5 | "D"z ^F2 A3 d z | "Gm"d3 _B G D A, _B, |
+"Gm"_B, _E2 D _D C =B, _B, | "Gm"_B,4 z3 G | "Gm"G3 F _E F G F | "Dm"F4 z4 |
+"Dm"z A2 A z A2 A | "Eb"g z3 G2 z2 | "A7"z G2 G z G2 E | "Dm"D2 F2 A2 d2 |
+"Dm"d z7 | "Gm"z _B G _B d _B d g | "Gm"g2 _b2 _b2 d'2 | "A"z2 a2 a2 _d'2 |
+"A7"E3 _D A, G, A, _D | "Cm"_E4 z g2 g | "D"z a2 a z a2 g | "Gm"g3 ^f =f e _e d |
+"G7"d D2 D z F2 F | "Cm"z G2 G c c2 c | "Cm7"z _E G c z C _E G | "C7"z G _B d g d g _b |
+"Gm"_b4 z4 | "A7"z E2 A z _d2 _d | "D"z ^F2 D3 z2 | "Gm"_B2 d2 g2 g2 |
+"G"z8 | "Gm"z3 G _B G _B d | "Gm"d4 z4 | "A7"z E G _d z G _d e |
+"A7"e4 _e2 z2 | "F7"z _e _e z5 | "D"z ^F2 A3 d z | "Gm"d3 _B G D A, _B, |
+"Gm"_B, _E2 D _D C =B, _B, | "Gm"_B,4 z3 G | "Gm"G3 F _E F G F | "Dm"F4 z4 |
+"Dm"z A2 A z A2 A | "Eb"g z3 G2 z2 | "A7"z G2 G z G2 E | "Dm"D2 F2 A2 d2 |
+"Dm"d z7 | "Gm"z _B G _B d _B d g | "Gm"g2 _b2 _b2 d'2 | "A"z2 a2 a2 _d'2 |
+"A7"E3 _D A, G, A, _D | "Cm"_E4 z g2 g | "D"z a2 a z a2 g | "Gm"g3 ^f =f e _e d |
+"G7"d D2 D z F2 F | "Cm"z G2 G c c2 c | "Cm7"z _E G c z C _E G | "C7"z G _B d g d g _b |
+"Gm"_b4 z4 | "A7"z E2 A z _d2 _d | "D"z ^F2 D3 z2 | "Gm"_B2 d2 g2 g2 |

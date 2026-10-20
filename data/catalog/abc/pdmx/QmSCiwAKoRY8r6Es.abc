@@ -1,0 +1,26 @@
+%abc-2.1
+% Menuet g-Moll (BWV 842), by Johann Sebastian Bach. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/14/QmSCiwAKoRY8r6EsmBqzJhvdyYTP5EqQnN3gdNAMfELbzw.mid (sha256
+% f20c63be6de78f106ebb3d38abad432e330b4bb3dd40b91942b100bc843040a8): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Menuet g-Moll (BWV 842)
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"G2 A _B A2 G2 ^F2 G2 | "Am7"_E2 D C c2 D2 _E4 | "D"_E2 C2 D2 ^F2 A2 c2 | "G7"_B2 A2 _B2 d2 G2 _B2 |
+"Cm"c2 d _e d2 c2 _B2 A2 | "C7"_e2 d2 _e2 f g c2 _e2 | "Dm"F2 _e2 d2 _B2 F2 A2 | "Bb"_B12 |
+"Gm"G2 A _B A2 G2 ^F2 G2 | "Am7"_E2 D C c2 D2 _E4 | "D"_E2 C2 D2 ^F2 A2 c2 | "G7"_B2 A2 _B2 d2 G2 _B2 |
+"Cm"c2 d _e d2 c2 _B2 A2 | "C7"_e2 d2 _e2 f g c2 _e2 | "Dm"F2 _e2 d2 _B2 F2 A2 | "Bb"_B12 |
+"Bb"d2 _e f _e2 d2 c2 d2 | "Bb7"c2 B2 _a2 d2 f f3 | "C7"f2 _A2 G2 B2 d2 f2 | "Cm"_e2 d2 _e2 g2 c2 _e2 |
+"Cm7"A2 _B c _B2 A2 G2 ^F2 | "F#m"_e2 c2 d2 ^f g a2 c2 | "D7"_B2 _e2 d2 A2 _B2 ^F2 | "Gm7"G12 |
+"Bb"d2 _e f _e2 d2 c2 d2 | "Bb7"c2 B2 _a2 d2 f f3 | "C7"f2 _A2 G2 B2 d2 f2 | "Cm"_e2 d2 _e2 g2 c2 _e2 |
+"Cm7"A2 _B c _B2 A2 G2 ^F2 | "F#m"_e2 c2 d2 ^f g a2 c2 | "D7"_B2 _e2 d2 A2 _B2 ^F2 | "G"G12 |

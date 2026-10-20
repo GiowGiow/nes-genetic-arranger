@@ -1,0 +1,32 @@
+%abc-2.1
+% Down by The Salley Gardens, by Ivor Gurney. Score published on MuseScore (artist: Ivor Gurney),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ivor Gurney (died 1937, Wikidata
+% Q323048).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/40/QmerCj3A7qCdYaZg6VccuguHCs2k426uSXNn2ywCJtXuSa.mid (sha256
+% 732601330c13a6486f74eea1fd5109c9b43b1d8083c4a7df760c4d24501fb668): melody track 0, bars 0-49
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Down by The Salley Gardens
+M:3/4
+L:1/16
+Q:1/4=82.000148
+% Exact tempo 82.00014760026568 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z12 | "Ab"_E4 _D2 _E2 F2 G2 | "Ab"_E4 _A4 _B c2 _d | "Ab"_e6 c2 _d c2 _B |
+"Eb"_A8 _B4 | "Fm7"c6 _e2 c2 _B2 | "Fm7"_A4 _B4 c4 | "Fm7"_B2 _E2 _E4 _D4 |
+"Gm7"_E8 _B2 c2 | "Eb7"_d6 _B2 c2 _e2 | "Bbm7"_d4 _A4 _B c2 _d | "Fm7"c2 G2 F4 _E4 |
+"Cm7"_A8 G2 F2 | "Cm"_E2 F2 _A4 _B4 | "Fm7"c4 _e2 c2 _d _e2 f | "Fm7"_e2 G2 G4 F4 |
+"Bbm7"_d8 c2 _B2 | "Db"c2 F2 F4 _E4 | "Ab"_A12 | "Fm7"_A4 z8 |
+"Fm"z12 | "Bbm7"z12 | "Eb7"z8 _E2 _E2 | "Bbm7"_E4 _D2 _E2 F2 G2 |
+"Fm7"_E4 _A4 _B c2 _d | "Fm7"_e6 c2 _d c2 _B | "Fm7"_A8 _B4 | "Fm7"c6 _e2 c2 _B2 |
+"Fm"_A4 _B4 c4 | "Gm"_B2 _E2 _E4 _D4 | "Eb"_E8 _B2 c2 | "Fm7"_d6 _B2 c2 _e2 |
+"Bbm7"_d4 _A4 _B c2 _d | "Cm"c2 G2 F4 _E4 | "Bbm7"_A8 G2 F2 | "Eb7"_E2 F2 _A4 _B4 |
+"Ab"c4 _e2 c2 _d _e2 f | "Cm"_e2 G2 G4 F4 | "Bbm7"_d8 c2 _B2 | "Fm7"c2 F2 F8 |
+"Eb7"F4 _E8 | "Ab"_A12 | "Fm7"_A4 z8 | "Db"z12 |
+"Bbm7"z12 | "Eb7"z12 | "Ab"z12 | "Fm7"z12 |
+"Ab"z12 |

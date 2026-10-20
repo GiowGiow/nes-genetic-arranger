@@ -1,0 +1,36 @@
+%abc-2.1
+% DUGENIR, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dugenir.html (file
+% https://www.beakauffmann.com/mpb_d/som/dugenir.mid, sha256
+% cc6a582a6b84d7a2bf662d06e65b4758133789f9dae35429339f1275402ed821), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DUGENIR
+M:3/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E4 C,2 A2 B2 c2 | "C"e4 G,2 _e2 d2 _d2 | "C"c4 A,4 E,4 | "C"F4 D,4 A,,4 |
+"C"_A,,2 B2 c2 B2 _B2 =B2 | "C"d4 B,,2 _d2 c2 B2 | "C"E4 A,,4 C,4 | "C"E4 _E4 D4 |
+"C"_D2 E2 F2 E2 _E2 =E2 | "C"A4 A,,4 E4 | "C"G4 F,4 F,4 | "C"F4 _D4 E4 |
+"C"_E2 ^F2 G2 _A2 =A2 _B2 | "C"B2 c2 _d2 =d2 _e2 =e2 | "C"f4 D,4 D,4 | "C"e4 D,4 e4 |
+"C"E4 C,2 A2 B2 c2 | "C"e4 G,2 _e2 d2 _d2 | "C"c4 A,4 E,4 | "C"F4 B,,2 C2 B,2 A,2 |
+"C"_A,2 B2 c2 B2 _B2 =B2 | "C"d4 B,,2 _d2 c2 B2 | "C"f4 _D,4 A,,4 | "C"e4 _A,4 G,4 |
+"C"F,4 d4 A4 | "C"F4 A4 B4 | "C"c4 B4 A4 | "C"e4 c4 A4 |
+"C"c4 A4 B4 | "C"E,,2 E2 F2 ^F2 G2 _A2 | "C"A4 C,4 C,4 | "C"C,6 E2 F2 ^F2 |
+"C"G4 e4 c4 | "C"B8 A4 | "C"A4 A,,4 C,4 | "C"F,6 F2 E2 D2 |
+"C"_A4 _e4 c4 | "C"_B4 _B,4 _A4 | "C"G4 C,4 E,4 | "C"E,2 E2 A2 G2 E2 C2 |
+"C"G4 d4 c4 | "C"B8 _B4 | "C"B4 G,,4 E,,4 | "C"C,,2 e2 B2 G2 E2 _E2 |
+"C"D6 E2 F2 ^F2 | "C"B6 A2 ^F2 D2 | "C"F4 B,,4 D,4 | "C"G,2 F,6 E2 F2 |
+"C"G4 e4 c4 | "C"B4 B,,4 A4 | "C"A4 B,,4 B,,4 | "C"D,6 F2 E2 _E2 |
+"C"E4 _A4 B4 | "C"d6 _d2 c2 B2 | "C"B4 E,4 _D,4 | "C"A4 _D,4 A4 |
+"C"A,2 D2 E2 F2 _A2 =A2 | "C"e4 G,,4 d4 | "C"B2 c2 B,2 C2 E2 G2 | "C"B6 _B2 A2 G2 |
+"C"F4 A4 c4 | "C"e8 G4 | "C"c8 C,,4 | "C"C,,8 e4 |

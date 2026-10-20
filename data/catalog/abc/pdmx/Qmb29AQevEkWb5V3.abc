@@ -1,0 +1,30 @@
+%abc-2.1
+% Reprise - Cest une dure despartie, by Tielman Susato. Score published on MuseScore (artist:
+% Tielman Susato), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/1/Qmb29AQevEkWb5V3VEYu3n4R3ecSsu2ws248njDmN2E1kR.mid (sha256
+% b51be28ae1006019049466b3582a4b06b31737fbaf47356a7cc6a266a247f300): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Reprise - Cest une dure despartie
+M:6/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G16 G16 G16 | "C"A16 c16 B8 A8 | "C"A32 _A16 | "C"A32 z16 |
+"C"E16 E8 D8 E8 F8 | "C"G16 A24 G8 | "C"G32 ^F16 | "C"G32 z16 |
+"C"G16 G16 G16 | "C"A16 c16 B8 A8 | "C"A32 _A16 | "C"A32 z16 |
+"C"E16 E8 D8 E8 F8 | "C"G16 A24 G8 | "C"G32 ^F16 | "C"G32 z16 |
+"C"c16 c16 B16 | "C"c16 B24 A8 | "C"A32 _A16 | "C"A16 c8 B8 A8 G8 |
+"C"F8 E8 F32 | "C"E24 F8 G8 A8 | "C"B8 c8 d16 B16 | "C"c32 z16 |
+"C"c16 c16 B16 | "C"A16 G16 G8 F8 | "C"E8 D8 E16 E16 | "C"D8 C8 D8 E8 F8 D8 |
+"C"G16 E16 F16 | "C"G16 A24 G8 | "C"G32 ^F16 | "C"G32 z16 |
+"C"c16 c16 B16 | "C"c16 B24 A8 | "C"A32 _A16 | "C"A16 c8 B8 A8 G8 |
+"C"F8 E8 F32 | "C"E24 F8 G8 A8 | "C"B8 c8 d16 B16 | "C"c32 z16 |
+"C"c16 c16 B16 | "C"A16 G16 G8 F8 | "C"E8 D8 E16 E16 | "C"D8 C8 D8 E8 F8 D8 |
+"C"G16 E16 F16 | "C"G16 A24 G8 | "C"G32 ^F16 | "C"G32 z16 |

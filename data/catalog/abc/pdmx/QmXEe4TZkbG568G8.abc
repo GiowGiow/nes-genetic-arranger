@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite in G minor HWV 432, by G. F. Handel (1685-1759). Score published on MuseScore (artist:
+% Georg Friedrich Händel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): G. F. Handel (died 1759,
+% Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/18/QmXEe4TZkbG568G87njLiw9tXJ3wdQKceVZ7B17Q6JjBYs.mid (sha256
+% 319e1ac6599e09c4013b89fa1ebfc368ebece9c3356838e56e970c9fdaf7ff5c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite in G minor HWV 432
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"d3 _e c3 d "Cm"_e3 _e d3 _e | "F"c3 f _e3 f "Bb"d3 d c3 d | "Eb"_B3 _B A3 _B "F7"c3 c _B3 c | "D"A3 d c3 d "G"c _B A2 G4 |
+"Gm"d3 _e c3 d "Cm"_e3 _e d3 _e | "F"c3 f _e3 f "Bb"d3 d c3 d | "Eb"_B3 _B A3 _B "F7"c3 c _B3 c | "D"A3 d c3 d "G"c _B A2 G4 |
+"G7"d6 d2 "Cm"_e6 d2 | "Dm7"c6 c2 "Bb"d6 c2 | "Cm7"_B6 _B2 "Am"c6 _B2 | "D7"A4 d4 "Gm"_B3 A G4 |
+"G7"d6 d2 "Cm"_e6 d2 | "Dm7"c6 c2 "Bb"d6 c2 | "Cm7"_B6 _B2 "Am"c6 _B2 | "D7"A4 d4 "Gm"_B3 A G4 |
+"Gm"_B2 d2 g2 f2 "Cm"_e2 d2 c2 _B2 | "F"A2 c2 f2 _e2 "Gm"d2 c2 _B2 A2 | "Eb"G2 _B2 _e2 d2 "D7"c2 _B2 A2 G2 | "D"^F2 A2 d2 c2 "G"c _B A2 G4 |
+"Gm"_B2 d2 g2 f2 "Cm"_e2 d2 c2 _B2 | "F"A2 c2 f2 _e2 "Gm"d2 c2 _B2 A2 | "Eb"G2 _B2 _e2 d2 "D7"c2 _B2 A2 G2 | "D"^F2 A2 d2 c2 "G"c _B A2 G4 |
+"Gm7"A A A F _B4 "Cm7"c4 _E4 | "F7"G G G _E A4 "D7"_B4 D4 | "Gm"F F F D G4 "C7"A4 C4 | "D7"_E _E _E C ^F4 "Gm"G4 G,4 |
+"Gm7"A A A F _B4 "Cm7"c4 _E4 | "F7"G G G _E A4 "D7"_B4 D4 | "Gm"F F F D G4 "C7"A4 C4 | "D7"_E _E _E C ^F4 "Gm"G4 G,4 |
+"Gm"_B2 d2 g2 f2 "Cm"_e2 d2 c2 _B2 | "F"A2 c2 f2 _e2 "Bb"d2 c2 _B2 A2 | "Eb"G2 _B2 _e2 d2 "Am"c2 _B2 A2 G2 | "D"^F4 d4 "C7"c _B c A G4 |
+"Gm"_B2 d2 g2 f2 "Cm"_e2 d2 c2 _B2 | "F"A2 c2 f2 _e2 "Bb"d2 c2 _B2 A2 | "Eb"G2 _B2 _e2 d2 "Am"c2 _B2 A2 G2 | "D"^F4 d4 "C7"c _B c A G4 |
+"Gm"z d2 c _B c2 d "Cm"_e f2 g c d2 _e | "F"A _B2 c F f2 _e "Bb"d _e2 f _B c2 d | "Eb"G A2 _B _E F2 G "Am7"C D2 _E A, _B,2 C | "D"z8 "Gm"z8 |
+"Gm"z d2 c _B c2 d "Cm"_e f2 g c d2 _e | "F"A _B2 c F f2 _e "Bb"d _e2 f _B c2 d | "Eb"G A2 _B _E F2 G "Am7"C D2 _E A, _B,2 C | "D"z8 "Gm"z8 |
+"Gm"d8 "Cm"g8 | "F7"c8 "Bb"d8 | "Cm"G4 c4 "D"c4 _B4 | "D7"A4 ^F4 "Gm"_B8 |
+"Gm"d8 "Cm"g8 | "F7"c8 "Bb"d8 | "Cm"G4 c4 "D"c4 _B4 | "D7"A4 ^F4 "Gm"_B8 |
+"Gm"g3 f f _e f d "Cm"c3 _B A3 G | "F"f3 _e _e d2 c "Gm7"_B3 A G3 F | "Eb"_e3 d c3 _B "F7"_B A2 G ^F3 G | "D"D3 A d3 c "Gm"c _B2 A G3 d |
+"Gm"g3 f f _e f d "Cm"c3 _B A3 G | "F"f3 _e _e d2 c "Gm7"_B3 A G3 F | "Eb"_e3 d c3 _B "F7"_B A2 G ^F3 G | "D"D3 A d3 c "Gm"c _B2 A G3 d |

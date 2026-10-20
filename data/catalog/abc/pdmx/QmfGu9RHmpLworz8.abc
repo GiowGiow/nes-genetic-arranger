@@ -1,0 +1,35 @@
+%abc-2.1
+% Chaconne in F minor P.43, by Johann Pachelbel. Score published on MuseScore (artist: Johann
+% Pachelbel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Pachelbel (died 1706,
+% Wikidata Q76485).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/22/QmfGu9RHmpLworz84xZoUpEgbKDLQaWkPdVVxEy2YSVSXg.mid (sha256
+% aef2827c1e0f01518765a794afb196249908d3aca6df5e2406113322cbf6b979): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chaconne in F minor P.43
+M:3/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"F2 G2 _A6 _A2 | "Cm"G2 g2 c6 _E2 | "Eb7"F5 F G _A G3 F | "C"E6 c2 E4 |
+"Fm"F2 G2 _A6 _A2 | "Cm"G2 g2 c6 c2 | "Eb7"f5 F G _A G3 F | "C7"c2 F3 E F G F3 E |
+"Fm"F4 _A4 _B4 | "Eb"c z c _A G4 _A4 | "Db"_B z _B G F4 G4 | "C"_A G _A _B _A4 E2 G2 |
+"Fm"F4 _A4 _B4 | "Eb"c z c _A G4 _A4 | "Db"_B z _B G F4 G4 | "C"_A G _A _B _A4 E2 G2 |
+"F"F4 c4 f4 | "Eb"g4 G4 c4 | "Bbm7"f4 F4 G4 | "C"_A4 G2 g2 e3 f |
+"F"f4 c4 f4 | "Eb"g4 G4 c4 | "Bbm7"f4 F4 G4 | "C"_A4 G2 g2 e3 f |
+"Db"f2 c2 _d4 _B4 | "Cm"G2 _B2 c4 _A4 | "Bbm"F2 _A2 _B4 G4 | "C"_A2 _B _A G6 F2 |
+"Db"F2 c2 _d4 _B4 | "Cm"G2 _B2 c4 _A4 | "Bbm"F2 _A2 _B4 G4 | "C"_A2 _B _A G6 F2 |
+"Fm"F2 C2 F2 G2 _A2 _B2 | "Eb"c2 G2 c2 d2 _e2 c2 | "Db"f2 e2 f2 g2 _a2 _b2 | "C"c'2 _b _a g2 _b2 _a3 g |
+"Fm"_a2 C2 F2 G2 _A2 _B2 | "Eb"c2 G2 c2 d2 _e2 c2 | "Db"f2 e2 f2 g2 _a2 _b2 | "C"c'2 _b _a g2 _b2 _a3 g |
+"Fm"_a2 g _a f2 F G _A2 _B _A | "Eb"G2 _e f g2 f g _e2 d c | "Db"f2 F G _A2 _A G F2 G F | "C"E G E C F G F G F G F E |
+"Fm"F2 _a g f2 F G _A2 _B _A | "Eb"G2 _e f g2 f g _e2 d c | "Db"f2 F G _A2 _A G F2 G F | "C"E G E C F G F G F G F E |
+"Fm"F G _A _B _A _B _A _B _A G _A _B | "Eb7"G G _A _B c _E F G C c _d _e | "Eb7"f e f g f F G _A G _A G F | "C7"E G E C F C F c E _B _A G |
+"Fm"_A G _A _B c c d e f F _A F | "Eb"c _B c d c G c d _e c _e g | "Db"f c _d _e _d _A _B c _B f g f | "C"e _B c G _A c f _A G f e _B |
+"G7"f4 _d8 | "F7"G4 c8 | "Eb7"F4 _B8 | "C7"_A4 G4 E4 |
+"G7"_A4 _d8 | "F7"G4 c8 | "Eb7"F4 _B8 | "C7"_A4 G4 E4 |

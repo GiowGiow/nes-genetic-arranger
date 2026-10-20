@@ -1,0 +1,36 @@
+%abc-2.1
+% ENCANTADOR, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/encantador.html (file
+% https://www.beakauffmann.com/mpb_e/som/encantador.mid, sha256
+% 50d639ac900bf29a7f6ed20d0a8e2fbacde30a24492f56822a55dd1c486f854a), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ENCANTADOR
+M:2/4
+L:1/16
+Q:1/4=70.00007
+% Exact tempo 70.00007000007 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bbm"_B,,3 F,, z3 _B,, | "F7"A,,3 C, F, z2 _E, | "Bb7"D,3 F, _B, z2 _A, | "Ebm"^F,3 _B, z4 |
+"Eb"E2 z _D _B, G,2 E, | "Bbm"F,3 E, F, z3 | "C7"C3 _B, G, E, C, _B,, | "F7"A,,3 F,, F, F, F,,2 |
+"Bbm"_B,,3 F,, _D, C,2 _B,, | "F7"A,,3 C, F, E,2 _E, | "Bb7"D,3 F, _B, z2 _A, | "Ebm"^F,3 _B, _E D2 _E |
+"Ebm7"E2 _D _B, _D2 z _d | "Bbm"F,3 E, F, _A,2 ^F, | "F7"F,3 E, F, C,2 _D, | "Bbm"_B,,2 z2 _B,,2 z2 |
+"Ebm7"_E,, _E2 _E z ^F,2 G, | "Ab7"_A, C z C _A,,2 C2 | "F"_D, _D z _D z _E,2 =E, | "Bbm7"F, _D z _D _A,,2 _A,2 |
+"Eb7"_B,, G, z G, _E,,2 _D2 | "Ab7"_A,, C z C _A,,2 C z | "C7"z _D z _d _d _d z _d | "Db"_d4 z4 |
+"Ebm7"_E,, _E z _E z ^F,2 G, | "Ab7"_A, C z C _A,,2 ^f'2 | "F"_D, _D z _D z _E,2 =E, | "Bbm7"F, _A, z _D _A,,2 _A,2 |
+"Fm7"_E, C z C C z C2 | "Cm7"_e' _D z _D _E,,2 _D2 | "Fm"z g z2 f z2 d | "Abm7"d B z2 ^F z3 |
+"Ebm7"_E,, _E2 _E z ^F,2 G, | "Ab7"_A, C z C _A,,2 C2 | "F"_D, _D z _D z _E,2 =E, | "Bbm7"F, _D z _D _A,,2 _A,2 |
+"Eb7"_B,, G, z G, _E,,2 _D2 | "Ab7"_A,, C z C _A,,2 C z | "C7"z _D z _d _d _d z _d | "Db"_d4 z4 |
+"Ebm"_E,, _E z _E z C2 _B, | "F7"A, _E z _E F,,2 _E2 | "Eb7"_B,, _B, z _B, z A,2 _A, | "Em"G, _D z _D _D z _D2 |
+"Ebm"_A, F z F _B,,3 _A | "Ab"_E, ^F2 _B _A,,2 ^F2 | "Db"_D, _A, z F _A,,2 C z | "Db"_A,3 z _D,2 z2 |
+"Bbm"_B,,3 F,, z3 _B,, | "F7"A,,3 C, F, z2 _E, | "Bb7"D,3 F, _B, z2 _A, | "Ebm"^F,3 _B, z4 |
+"Eb"E2 z _D _B, G,2 E, | "Bbm"F,3 E, F, z3 | "C7"C3 _B, G, E, C, _B,, | "F7"A,,3 F,, F, F, F,,2 |
+"Bbm"_B,,3 F,, _D, C,2 _B,, | "F7"A,,3 C, F, E,2 _E, | "Bb7"D,3 F, _B, z2 _A, | "Ebm"^F,3 _B, _E D2 _E |
+"Ebm7"E2 _D _B, _D2 z _d | "Bbm"F,3 E, F, _A,2 ^F, | "F7"F,3 E, F, C,2 _D, | "Bbm"_B,,2 z2 _B,,2 z2 |

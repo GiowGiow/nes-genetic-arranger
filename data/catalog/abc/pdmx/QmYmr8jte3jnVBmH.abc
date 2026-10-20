@@ -1,0 +1,32 @@
+%abc-2.1
+% Serse HWV 40, by G. F. Handel. Score published on MuseScore (artist: Georg Friedrich Händel),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): G. F. Handel (died 1759,
+% Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/31/QmYmr8jte3jnVBmH9si9HXGvnLYKJHfdzgmbqHRc6DKsdA.mid (sha256
+% 848f64da46928df9de5f1ecf6b9de95a70b1b33174628701b5641bb5e8bade33): melody track 0, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Serse HWV 40
+M:3/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F12 | "Gm"F4 E4 D3 C | "Dm"C12 | "Gm7"D4 E4 F G A2 |
+"C"G12 | "C7"d12 | "Dm"c8 z4 | "C7"_B12 |
+"F"A8 z4 | "F"f4 f4 e4 | "Bb"d6 c2 c4 | "Dm"c2 B2 c2 B2 c2 B2 |
+"C"c12 | "C7"_B2 A2 A G A A A A F2 | "F"F8 z4 | "F"z12 |
+"C"z12 | "Dm"F12 | "Am"F4 E4 D3 C | "F"C12 |
+"Gm7"D4 E4 F G A2 | "C"G6 F2 G4 | "C7"d4 d4 e4 | "Dm7"f6 c2 c4 |
+"Gm7"z2 d2 _B6 A2 | "F"A4 A4 A4 | "Gm7"_B4 _B4 _B4 | "Am"c4 F4 F4 |
+"Dm7"_B4 _B4 A4 | "Bb"G6 F2 F4 | "Gm7"e4 e4 d4 | "Em7"_d6 =d2 =d4 |
+"A7"D4 D4 _D4 | "Gm"D4 _B8 | "F"_B4 A2 G2 A4 | "C7"G3 F G4 d4 |
+"Gm7"d4 c4 _B3 A | "F"A8 z4 | "Am"f4 f4 e4 | "Bb"d6 c2 c4 |
+"Dm"c2 B2 B6 B2 | "C7"c6 d2 c4 | "Am7"_B2 A2 G6 e2 | "Dm"f12 |
+"C7"G A _B2 A4 G3 F | "F"F12 | "Dm7"f4 f4 e4 | "C7"d6 c2 c4 |
+"Dm"c2 B2 B4 B4 | "C"c6 d2 c4 | "C7"_B2 A2 A G A A A A F2 | "F"F12 |

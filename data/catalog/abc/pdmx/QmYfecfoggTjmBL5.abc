@@ -1,0 +1,35 @@
+%abc-2.1
+% 6 Études à Plusieurs Parties, by Heinrich Wilhelm Ernst. Score published on MuseScore (artist:
+% Heinrich Wilhelm Ernst), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Heinrich Wilhelm Ernst (died
+% 1865, Wikidata Q528748).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/19/QmYfecfoggTjmBL5XGcYQSV6rNPLkjZWGtWEpfyNr7yQWL.mid (sha256
+% 4d54d05a0f3352ca886953011b8d1722a831315cd169958db3d11b9236cd1ec7): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:6 Études à Plusieurs Parties
+M:3/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"d2 f z f2 _a z _a2 g z | "Bb"g2 c' z c'2 _b z _b2 z2 | "Bb"d2 f z f2 _a z _a2 g z | "Bb"g2 c' z c'2 _b z _b2 z2 |
+"Bb"_e2 _b z _b2 _e' z _e'2 _b z | "Bb"b2 d' z d'2 c' z _b2 g z | "Bb"g2 _b z _b2 _a2 _a2 g2 | "Bb"g2 f2 f2 _e2 _e2 d2 |
+"Bb"d2 f z f2 _a z _a2 g z | "Bb"g2 c' z c'2 _b z _b2 z2 | "Bb"d2 f z f2 _a z _a2 g z | "Bb"g2 c' z c'2 _b z _b2 z2 |
+"Bb"_e2 _b z _b2 _e' z _e'2 _b z | "Bb"b2 _d' z _d'2 c' z f'2 c' z | "Bb"_d'2 _e' z _e'2 =d' z _e'2 =d' z | "Bb"f'2 _e' z _a'2 _e' z _a'2 _e' z |
+"Bb"_a'6 f' d' _b =b _a f | "Bb"d _a f d _B =B _A F D _A F D | "Bb"_B,2 z2 d2 z2 f2 z2 | "Bb"_a2 z10 |
+"Bb"d2 f z f2 _a z _a2 g z | "Bb"g2 c' z c'2 _b z _b2 z2 | "Bb"d2 f z f2 _a z _a2 ^f z | "Bb"^f2 b z b2 _b z _b2 z2 |
+"Bb"_b2 _d' z _d'2 e' z e'2 _b z | "Bb"_b2 =b z =b2 ^f z ^f2 z2 | "Bb"^f2 g z g2 _a z _a2 e z | "Bb"e2 _e z _a2 ^f z _d'2 b z |
+"Bb"_b2 _d' z _d'2 e' z e'2 _b z | "Bb"_b2 _d' z _d'2 =b z _b2 _a z | "Bb"^f2 b z b2 _e' z _e'2 _d' z | "Bb"_e2 _d' z _d'2 b z b2 a z |
+"Bb"_a2 b z b2 d' z d'2 _a z | "Bb"_a2 =a z =a2 e z e2 z2 | "Bb"_a2 b z b2 d' z d'2 _d' z | "Bb"_d'2 ^f' z ^f'2 e' z e'2 z2 |
+"Bb"_b2 _d' z _d'2 e' z e'2 _b z | "Bb"_b2 =b z =b2 ^f z ^f2 z2 | "Bb"_b2 _d' z _d'2 e' z e'2 _e' z | "Bb"_e'2 _a' z _a'2 ^f' z ^f'2 z2 |
+"Bb"^F2 _e z _e2 c' z c'2 b z | "Bb"E2 e z e2 c' z c'2 b z | "Bb"B2 d z d2 a z a2 g z | "Bb"c2 g z g2 c' z c'2 g z |
+"Bb"A2 c z c2 g z g2 f z | "Bb"_B2 f z f2 g z g2 f z | "Bb"G2 _B z _B2 e z e2 _e z | "Bb"_A2 _e z _e2 _a z _a2 _e z |
+"Bb"_A2 _e z _e2 f z f2 _e z | "Bb"F2 d z d2 c' z c'2 _b z | "Bb"_A2 _e z _e2 f z f2 _e z | "Bb"F2 d z d2 c' z c'2 _b z |
+"Bb"G2 _e z _e2 d' z d'2 c' z | "Bb"_A2 f z f2 _e' z _e'2 d' z | "Bb"_B2 g z g2 f' z f'2 _e' z | "Bb"_B2 g z g2 f' z f'2 e' z |
+"Bb"_B2 _a z _a2 f' z _B2 e' z | "Bb"_B2 _a z _a2 f' z _B2 e' z | "Bb"_B2 _a z _a2 f' z _B2 e' z | "Bb"_B2 f' z _B2 ^f' z _d2 g' z |
+"Bb"_a'6 f' d' _b =b _a f | "Bb"d _a f d _B =B _A F D _A F D | "Bb"_B,2 z10 | "Bb7"z12 |

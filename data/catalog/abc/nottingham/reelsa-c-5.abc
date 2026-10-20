@@ -1,0 +1,24 @@
+%abc-2.1
+% Aiken Drum, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsa-c.abc,
+% tune X: 5 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Aiken Drum
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "A"E6 F2 A4 E4 |
+"B7"c4 B4 "E7"B4 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "E7"E4 E4 F4 G4 |
+"A"A12 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "A"E6 F2 A4 E4 |
+"B7"c4 B4 "E7"B4 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "E7"E4 E4 F4 G4 |
+"A"A12 A2 B2 | "A"c4 c4 c4 B2 A2 | "D"d4 d4 f6 d2 | "A"c4 e4 c4 A4 |
+"Bm"c4 B4 "E7"B4 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "E7"E4 E4 F4 G4 |
+"A"A12 A2 B2 | "A"c4 c4 c4 B2 A2 | "D"d4 d4 f6 d2 | "A"c4 e4 c4 A4 |
+"Bm"c4 B4 "E7"B4 A2 B2 | "A"c4 c4 d2 c2 B2 A2 | "D"F8 A6 F2 | "E7"E4 E4 F4 G4 |
+"A"A12 z4 |

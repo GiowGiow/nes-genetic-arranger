@@ -1,0 +1,29 @@
+%abc-2.1
+% MODINHA, by Alberto Nepomuceno, as performed by Alberto Nepomuceno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/modinha-1.html (file
+% https://www.beakauffmann.com/mpb_m/som/modinha-1.mid, sha256
+% 77b8d0245c171c727a8fe0fb20b062a9581e28c566c0a57de02ed679787fccdd), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-33 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MODINHA
+M:2/4
+L:1/16
+Q:1/4=69.999988
+% Exact tempo 69.99998833333528 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 | "F"A4 F3 C | "F"A4 F4 | "C"G4 G3 G |
+"F"d4 c4 | "F"A4 F3 C | "F"A4 F4 | "E"A2 _A =A B2 c B |
+"Am"A8 | "C7"G4 C2 C2 | "F"C3 D C4 | "C7"G4 C2 C2 |
+"F"C3 D C4 | "F"A4 A2 A2 | "Gm"c4 _B2 A G | "C"F4 G4 |
+"Dm7"_A4 =A4 | "Am"c A f e d c _B A | "Bb"G A _B c d2 _B G | "C"F4 A3 G |
+"F"F8 | "C7"G4 C2 C2 | "F"C3 D C4 | "C7"G4 C2 C2 |
+"F"C3 D C4 | "F"A4 A2 A2 | "Gm"c4 _B2 A G | "C"F4 G4 |
+"Dm7"_A4 =A4 | "Am"c A f e d c _B A | "Bb"G A _B c d2 _B G | "C"F4 A3 G |
+"F"F8 |

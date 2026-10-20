@@ -1,0 +1,34 @@
+%abc-2.1
+% O sacrum convivium, by Stefano Felis. Score published on MuseScore (artist: Stefano Felis), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Stefano Felis (died 1603,
+% Wikidata Q431549).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/47/QmSURRUFksBEExYVJRjwXDAFuVfU4Zyr4B3TtGoPBdDDf9.mid (sha256
+% ea993d6d3330e4b9c13e400c26dd53a8e2d4ae8edbaaf45574769a1979d6407a): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O sacrum convivium
+M:4/2
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"F"z32 | "F"c32 | "D7"d16 "E7"d8 f8 | "D7"f8 e4 d4 "C"e8 e8 |
+"F"f8 d8 c4 _B4 A4 G4 | "D"F16 "G7"F16 | "Dm7"G8 c8 "C"c12 c4 | "F"c8 f8 "Am"e4 d4 c4 d4 |
+"Am7"e4 f4 g8- "G"g8 d8 | "C"e8 f8 "C7"g16 | "Am7"z16 "Gm"z16 | "Dm7"z16 "Cm"z16 |
+"D"f16 "C"e16 | "Bb"d16 "F"c8 d8 | "Em"d4 c4 c8- "Dm"c8 _B8 | "C"c16 "Bb"d16 |
+"F"z16 "G7"z16 | "Bb"z16 "Am7"z16 | "Gm"z16 "F"z8 f8 | "C"f8 e8 "Gm"d16 |
+"F"f16 "C"g8 g8 | "Bb"f16 "Dm7"z8 c8 | "G"c8 _B8 "F"A8 c8 | "Bb"d8 d8 "F"c8 F8 |
+"C"G8 G8 "D"F12 G4 | "F"A16 "Gm"z16 | "F"z8 F12 G4 A8 | "Gm7"A8 _B8 "F"c8 c8 |
+"Bb"d16 f16 | "F"f8 f8 "C"_e16 | "Dm"d16 c16 | "C"c16 "F"c16 |
+"F"c16 z8 c8 | "Cm"c8 c8 "Gm"_B16 | "Am"A16 "C"G16 | "G"G16- "C"G8 F8 |
+"C"G16 "F"A16 | "C"z8 c8 "Dm7"_B8 A8 | "A"G8 A8- "C"A8 G8 | "Dm"A8 f8- "Am7"f8 e8 |
+"C7"d16 "Dm"c16 | "Gm7"z16 "Am"z8 c8 | "Gm"d8 e8 "F"f8 e4 d4 | "C"e8 e8 "D7"f12 f4 |
+"Gm"g8 d8 "Am"e8 ^f8 | "Gm"g16 "F"c8 d8 | "Em"d8 c4 _B4 "Dm"c16 | "C7"_B16 "Gm7"A8 _B8 |
+"F7"A8 G8 "Dm"F4 G4 A4 F4 | "C7"G12 G4 "F"F16 | "Am7"z16 "Gm"z16 | "Am"z8 c8 "Bb"_B8 A8 |
+"C"G8 A8 G12 G4 | "F"A8 c16 c8 | "Bb"d16 "Gm"d16 | "A7"c16- "C"c16 |
+"C"c16- "F"c8 f8 | "D"f8 f8 "Em"e16 | "G"d8 g12 f2 e2 d8 | "C"e4 f4 g4 e4 "Gm7"f8 d8 |
+"C"c16 "Gm7"z8 d8 | "C"e4 f4 g4 e4 "G7"f8 d8 | "Am7"e8 g8- "C"g4 f4 e4 d4 | "G7"c8 A8 "C"G16 |

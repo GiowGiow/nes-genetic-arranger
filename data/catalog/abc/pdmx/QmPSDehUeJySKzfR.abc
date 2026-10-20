@@ -1,0 +1,35 @@
+%abc-2.1
+% Requiem in D minor K.626, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist:
+% Wolfgang Amadeus Mozart), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/43/QmPSDehUeJySKzfRhGcyeFqV8ket1fRPuS6L11TXtnfryA.mid (sha256
+% 84db781fd501d1c144d8fa05b4ff6cf88a207770b9c09369658874f2ce921ad3): melody track 7, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Requiem in D minor K.626
+M:4/4
+L:1/16
+Q:1/4=37.000014
+% Exact tempo 37.00001418333877 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"z2 F2 z2 _B2 "F7"z2 _B2 z2 A2 | "Am"f5 g f _e "Eb"d f _e d c _e d c | "Bb"_B2 z14 | "Cm"z2 G3 F G A "Dm7"_B F _B4 A2 |
+"Bb"_B2 _b3 c' _b a "Cm7"g a g f e f e d | "Dm7"c4 z2 c'3 d' c' _b a _b a g | "Am7"^f4 g4- "D"g4 ^f4 | "Gm"g z d z _e4 "F"z2 c z f4 |
+"Bb"z2 f z _b4 "D"z2 d z a4 | "Gm"z2 d z _b4 "F7"z2 _b z d z _b z | "Bb"_b z d z _b4 "Gm"z2 g z d'4 | "C7"z2 g z c'4 "Cm7"z2 g z c'4 |
+"A7"z2 c'2 z2 _b2 "D"z2 d z g z c z | "Gm"g2 G2 z2 G2 "D7"z2 G2 z2 ^F2 | "F#m"d5 _e d c "Cm"_B d c _B A c _B A | "Gm"G _B2 _b z G2 g "A"z E2 e z A2 a |
+"Em7"z A2 a z _d2 _d' "Dm"z =d2 =d' z F2 f | "E"z E2 e z B2 b "Bm7"z c2 c' z _A2 _a | "D7"a2 c3 _B c d "Gm"_B5 A _B c | "D"A3 A A2 A2 "Gm"d2 d4 d2 |
+"Gm"d c _B c d c d e "F"f2 c2 f4 | "C"f2 f2 e2 e2 "C7"f4 g4 | "F"a4 _d2 _d2 "A7"=d4 e4 | "Dm7"f4 A2 A2 "F7"_B4 c4 |
+"Bb"d4 z5 c d _B F D _B, F | "Dm"A,4 z5 e f d A F D F | "E7"_A,2 f2 f2 f2 f2 f2 e2 d2 | "A"d2 _d2 z2 A2 "Dm"A4 A4 |
+"Dm7"A4 A4 "Bb"A4 _A2 =A2 | "A"F4 E2 D2 E8 | "A"z16 | "A"z8 "Gm7"z8 |
+"Dbm"z8 "Dm"z8 | "A7"z8 "Gm7"z8 | "A7"z8 "E7"d8 | "Dm7"c4 f4 "E"_A8 |
+"Am"A4 A2 A2 "Dm7"B6 A B | "Dm7"c2 B c d2 c d "E7"e2 d2 c2 B2 | "A"A2 g2 f2 e2 "Dm"d4 z2 D2 | "A7"G6 F E "Em7"A2 D2 d4 |
+"Em7"d4 d4 "Dm"d2 _d =d e4 | "A7"e4 d2 _d2 "Bm"=d4 z4 | "Dm7"z8 "E"z2 B2 B2 B2 | "Am"c d c B c d B c "G7"d e d c d e c d |
+"Dm7"e2 f e d c B A "E7"_A2 B2 e2 d2 | "F7"c B A3 _B G A "D"^F4 G2 A2 | "Gm7"D4 z4 "C"c8 | "F"A4 d4 "C"E8 |
+"Dm7"F4 F2 F2 "C7"G6 F G | "Gm7"A2 G A _B2 A _B "F7"c2 _B2 A2 G2 | "D7"^F4 G2 A2 "Cm7"_B4 z4 | "D"z2 A2 A2 A2 "Gm"_B c _B A _B c A _B |
+"Dm7"c d c _B c d _B c "F7"d2 _e d c _B A G | "D7"^F2 A2 d2 c2 "G"_B2 =B2 c2 d2 | "Fm7"_e d c2 z4 "Bm"z8 | "Fm7"z8 "Bb7"z8 |
+"Fm7"z8 "G7"z8 | "F7"z8 "Dm7"f8 | "Bb"d4 g4 "F"A8 | "F7"_B4 _B2 _B2 "F"c6 _B c |
+"Gm7"d2 c d _e2 d _e "Dm7"f2 c2 f2 _e2 | "Bb"d2 F2 _B4- "Cm7"_B4 A4 | "Gm7"_B2 _B2 _B4- "C"_B4 _A2 G2 | "Bbm7"_A4 G4 "C"G4 z4 |

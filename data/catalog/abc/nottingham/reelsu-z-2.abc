@@ -1,0 +1,24 @@
+%abc-2.1
+% Wiltshire Tempest, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsu-z.abc, tune X: 2 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 d104d7d1bb83eb1ca18f6b944dc22cf9f7bfe5f955d07cd573615985f69c2c1f).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Wiltshire Tempest
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"d4 A4 A2 B2 A4 | "D"f4 d4 d2 e2 d4 | "A7"e4 A4 B4 c4 |
+"D"d2 c2 d2 e2 "A7"f4 a4 | "D"d4 A4 "A"A2 B2 A4 | "Bm"f4 d4 d2 e2 d4 | "Em"e4 A4 "A7"B4 c4 |
+"D"d8 "A7"d4 f2 g2 | "D"a4 f4 f4 d4 | "G"e2 d2 c2 B2 "A7"A4 f2 g2 | "D"a4 f4 f4 d4 |
+"E7"e2 d2 c2 B2 "A7"A2 B2 c2 A2 | "D"d4 A4 "A"A2 B2 A4 | "Bm"f4 d4 d2 e2 d4 | "Em"e4 A4 "A7"B4 c4 |
+"D"d8 "A7"d4 A4 | "D"d4 f4 a4 f4 | "G"b4 g4 "D"a6 f2 | "Em"g4 f4 "E7"e4 d4 |
+"A7"c2 d2 e2 c2 A4 B2 c2 | "D"d4 f4 a4 f4 | "G"b4 g4 "D"a6 f2 | "A7"g4 e4 c4 A4 |
+"D"d8 d4 e2 f2 | "A7"g4 e4 c4 A4 | "D"d4 f4 a6 f2 | "A7"g4 e4 c4 A4 |
+"D"d2 e2 f2 g2 "A7"a6 f2 | "D"d4 f4 a4 f4 | "G"b4 g4 "D"a6 f2 | "A7"g4 e4 c4 A4 |
+"D"d8 d4 z4 |

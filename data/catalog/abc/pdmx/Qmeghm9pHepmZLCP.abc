@@ -1,0 +1,25 @@
+%abc-2.1
+% Magnificat Quia respexit humilitatem BWV 243, by Johann Sebastian Bach. Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/21/Qmeghm9pHepmZLCPLwGKPnqxi3Ekz8YPo5j86CcVv6jWNP.mid (sha256
+% 8bac062c16a4e19e83755cc619199aeba26663c418a463b0531db08ce3de56c5): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Magnificat Quia respexit humilitatem BWV 243
+M:4/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"B"z2 d _d e =d _d B "Dbm"_B3 =B _d z3 | "F#"z d _d B _B G ^F E "B"_E =E ^F G A4 | "B"A g ^f e _e c B A "E"G A B _d =d4 | "Db"d a _a ^f =f d _d B "F#"_B G ^F E =D c =B _B |
+"Bm"B G ^F =F =F ^F E D B, ^F _A _B =B4 | "Bm"z8 "F#7"z ^f e d _d B _B _A | "F#"_B =B _d =d e2 z2 "Bm"z2 g ^f a g ^f e | "B"_e3 =e ^f z3 "A7"z ^F =E _E =E c B _B |
+"Em"B ^f e d e d _d B "F#"_B3 =B _d z3 | "Bb"z d _d B _B G ^F E "Bm"=D ^F _A _B =B =d _d =d | "Bm"d _d B A G ^F E =D "Ebm7"E =d _d B _B G ^F E | "Cm"_E =E ^F G A2 z2 "Em"z c B A G ^F =E D |
+"A"_D =D E ^F G2 z2 "D"z B A G ^F E =D _D | "A7"D g ^f e d _d e G "D"G E ^F A =d2 z2 | "G"z ^f e d _d B =d ^F "Dbm"^F =D E G _d2 z2 | "F#m"z e d _d B A _d E "E"E _D =D ^F B ^F G E |
+"A"D B, _D E A E ^F _D "A7"=D3 G E3 =D | "D"D4 z4 "F#m7"z2 _d B =d _d B A | "Em"G3 A B z3 "G"z2 d _d e =d _d B | "F#7"_B3 =B _d z3 "E7"z2 A _A =B =A _A ^F |
+"A"E3 ^F _A z3 "Abm"z =A _A ^F =F D _D B, | "D"A, B, _D =D E4- "F#"E =d _d B _B G ^F E | "Bm"D E ^F _A =A4- "Ab"=A e _e _d c =A _A ^F | "Db"F d _d B A g ^f =f "F#m"^f =d _d c _d2 B A |

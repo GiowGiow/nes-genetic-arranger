@@ -1,0 +1,35 @@
+%abc-2.1
+% Les soirées d'Auteuil Op.23, by Napoleon Coste (1805-1883). Score published on MuseScore
+% (artist: Napoléon Coste), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Napoleon Coste (died 1883,
+% Wikidata Q1965046).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/6/QmU7PFdoMoJhc1XXNhBJK1NhawH1fkNQkQfTZEQcoJHQ6f.mid (sha256
+% c07f848c500dbace1d8cf039f64d2ea016299558a33a5f39329b1d5d1cef1fae): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Les soirées d'Auteuil Op.23
+M:3/8
+L:1/16
+Q:1/4=28.500002
+% Exact tempo 28.50000213750016 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A, B,, C, D, E, C, | "C"A, B, C D E C | "C"B, C, D, E, F, D, | "C"B, C D E F D |
+"C"_D _B,, A,, _D =D E | "C"G F E _A, =A, D | "C"C B, A, _D, =D, _E, | "C"E, F, C2 B,2 |
+"C"z6 | "C"A,,2 _D2 _D2 | "C"A,,2 _D2 _D2 | "C"E2 _D2 _D2 |
+"C"^F2 D _A =A2 | "C"E2 _D2 _D2 | "C"_d _A =A ^F E2 | "C"F2 B,2 E2 |
+"C"E,, d _d B A _A | "C"B2 E2 A2 | "C"A,, _A,, =A,, B,, _D, =A,, | "C"_D2 A,2 _D2 |
+"C"B,2 _A, _D B,2 | "C"B, ^F, A, D ^F A | "C"_A d _d B =A _A | "C"_A2 _D2 ^F2 |
+"C"F2 _D2 F2 | "C"^F2 _D,2 A,,2 | "C"^F,,2 z2 ^F2 | "C"^F D A, D ^F B |
+"C"A G, _D G E F | "C"^F D A, D ^F B | "C"A G, _D G E2 | "C"^F A, C ^F A _A |
+"C"^F ^F, A, _D ^F A | "C"_d2 c2 B2 | "C"A2 A4 | "C"A2 A2 A2 |
+"C"B2 B4 | "C"A3 C, A2 | "C"_A3 =A _A2 | "C"G2 G4 |
+"C"^F3 B d2 | "C"E3 ^F E2 | "C"D2 D4 | "C"D2 E2 D2 |
+"C"_D2 _D4 | "C"_D2 _D4 | "C"_D2 _D4 | "C"_E2 _D2 _E2 |
+"C"E E, _A, B, E ^F | "C"_A E, B, ^F E _E | "C"_E =E, A, _D =E _E | "C"^F _E, A, =E _E _D |
+"C"_D E, _A, B, E ^F | "C"_A E, B, ^F E _E | "C"C E, A, _D E _E | "C"^F E _E ^F =E _D |
+"C"B, _A, E, _A, B, E | "C"C A, E, C D C | "C"B, _A, E, _A, B, E | "C"_E A, ^F, _E _D _E |
+"C"E _A, E, _A, B, E | "C"C A, E, C D C | "C"B, _A, E, _A, B, E | "C"_E A, ^F, =F _A ^F |

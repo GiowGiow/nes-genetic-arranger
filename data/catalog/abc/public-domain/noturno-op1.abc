@@ -1,0 +1,36 @@
+%abc-2.1
+% NOTURNO (Op.1), by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/noturno-op1.html (file
+% https://www.beakauffmann.com/mpb_n/som/noturno-op1.mid, sha256
+% 4e1fbcfc6ad2b321a97dd86e3c2cfa7fa8e0ffce2324b5f06ed3b9bd62596dae), from Beatriz Kauffmann's Web
+% Site. Melody track 3, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NOTURNO (Op.1)
+M:6/8
+L:1/16
+Q:1/4=45.000011
+% Exact tempo 45.000011250002814 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#"_b2 _a ^f ^f =f ^f ^F =f C _e z | "F#7"_d3 _B, ^F, z _B _D, =B _D, _d _D, | "Eb7"_e6 _B2 =B2 _d z | "Abm"_e3 B, _E _A B _A _E B, z2 |
+"F7"_e6 d _e f4 | "Ebm7"_b2 f2 _a2 _a z _d2 _B2 | "Ab7"_B G _A =B c _e _b3 _a g ^f | "Db7"_e' _b' _d'' _b' _a' f' _e'' _d' _b _e =d f |
+"Db7"_b2 _a ^f ^f z ^f2 =f2 _e z | "Db7"_d3 _B, z2 _B _D, =B _D, _d _D, | "Eb7"_e2 g' =e' _d' _b g =e _d _B G _A | "Db"_d3 B, _E _A B _A _E B, z2 |
+"Db"d2 z ^f b a e'4 d'2 | "Bbm"_D,2 _D3 z7 | "Db7"z3 A, c z2 _A _a _a' _a' z | "F#"^f' _b' _d'' ^f'' _b' _d'' ^f''3 z3 |
+[M:3/4]"Db"f4 _d2 z2 _d4 | "Db"z _d A f f _d' a f' f _d' a f' | "Eb7"F4 _d z3 _d z3 | "Db7"_e4 _d4 B3 z |
+"F#"_B4 ^F2 z2 ^F4 | "F#"z12 | "Abm7"_B,4 _B2 z2 _B3 z | "Bm"z4 _d4 =d4 |
+"Ab7"_e4 c2 z2 c2 z2 | "Ab7"f4 ^f4 g4 | "Fm"_a4 f2 z2 f4 | "E"d2 z2 _b z3 =b2 z2 |
+"Fm7"c'2 _d'2 =d'2 _e'2 z2 _a z | "Eb7"a2 _b2 c'2 _d'2 f2 ^f2 | "Ab7"g2 _a2 =a2 c'2 _b2 ^f2 | "Ab7"_e2 c2 _B2 _A2 G2 ^F2 |
+"Db"f4 _d2 z2 _d4 | "Db"z _d A f f _d' a f' f _d' a f' | "Eb7"F4 _d z3 _d z3 | "Db7"_e4 _d4 B3 z |
+"F#"_B4 ^F2 z2 ^F4 | "F#"z ^F D _B _B ^f d _b _B ^f d _b | "Abm7"_B,4 _B4 _B z3 | "Bm"z4 _d4 =d4 |
+"Ab7"_e4 c2 z2 c2 z2 | "Ab7"f4 ^f4 g4 | "Db"_a3 z _b4 c'4 | "F#7"_d'4 _e'3 z =e'2 z2 |
+"Db"f'3 z _d'3 z _a3 z | "Ab7"_a5 z3 _e4 | "Db"_d2 f2 _a2 _d2 f'2 _a'2 | "Db7"_d''2 _d2 B2 g z _a z =a z |
+[M:6/8]"F#"_b2 _a _B, f ^F =A ^F _E C =A, ^F, | "F#7"_d4 z2 _B _D, =B _D, _d _D, | "Eb7"_e6 _B2 =B2 _d z | "Abm"_e3 B, _E _A B _A _E z3 |
+"F7"_e6 f4 ^f2 | "Ebm7"_b2 z4 ^F _D _B, ^F, =f2 | "Ab7"_B G _A =B c _e _b C _A, _a g ^f | "Db7"_e' _b' _d'' _b' _a' f' _e' _d' _b _e =d f |
+"Db7"_b2 _a ^f ^f z ^f2 =f2 _e z | "Db7"_d4 z2 _B _D, =B _D, _d _D, | "Eb7"_e2 g' =e' _d' _b g =e _d _B G _A | "Db"_d3 B, _E _A B _A _E B, z2 |
+"Db"d2 z ^f b a e'4 z d' | "Db"_e'' _d'' _b' _e' _d' ^f _e ^F _E _A, ^F, _B,, | "Db7"^F,, c A, z5 _A _a _a' _a' | "F#"^f' _b _d' ^f' _b _d' ^f'3 z3 |

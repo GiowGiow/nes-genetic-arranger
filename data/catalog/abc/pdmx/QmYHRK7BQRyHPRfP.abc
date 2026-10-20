@@ -1,0 +1,35 @@
+%abc-2.1
+% Preludio sobre un tema de Mendelssohn, by Francisco Tárrega (1852 - 1909). Score published on
+% MuseScore (artist: Francisco Tárrega), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/24/QmYHRK7BQRyHPRfPsQp2AjaN3RJrwaajzdRJkb5ZhvUfEq.mid (sha256
+% c275c86b457cd13b49808cdb79f8bc5d1f4cab9da36285e7c13f727ad83c160c): melody track 0, bars 0-62
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Preludio sobre un tema de Mendelssohn
+M:2/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"^F, D B6 | "C"z4 ^f e d _d | "C"d _d B _B =B A G ^F | "C"G ^F E _E =E D _D B, |
+"C"E ^F G E E D _D B, | "C"^F _D G _D ^F _D G _D | "C"^F B, _D =D E =D _D B, | "C"^F _D G _D ^F _D G _D |
+"C"^F G, ^F, =F, ^F, E, D, _D, | "C"B,,4 ^f e d _d | "C"d _d B _B =B A G ^F | "C"G ^F E _E =E D _D B, |
+"C"E ^F G E E D _D B, | "C"^F _D G _D ^F _D G _D | "C"^F B, _D =D E =D _D B, | "C"^F _D G _D ^F _D G _D |
+"C"^F G, ^F, =F, ^F, E, D, _D, | "C"B,, B, D, B, d _A, F, _A, | "C"_d _D _B, _D c ^F _E ^F | "C"B ^F G ^F E D _D B, |
+"C"^F G, ^F, =F, ^F, E, D, _D, | "C"B,, B, D, B, d _A, F, _A, | "C"_d _D _B, _D c ^F _E ^F | "C"B ^F G ^F E D _D B, |
+"C"^F G, ^F, =F, ^F, E, D, _D, | "C"B,, D, G, ^F, E, D, _D, B,, | "C"_D, E, A, G, ^F, E, _E, _D, | "C"_E, ^F, B, A, G, ^F, =E, _E, |
+"C"E, G, C G, E, D, C, D, | "C"E, G, C G, E, D, C, D, | "C"E, C, D, E, F, G, A, B, | "C"C D E F G F E D |
+"C"C G, E, D, C, D, E, G, | "C"B,, D, G, ^F, E, D, _D, B,, | "C"_D, E, A, G, ^F, E, _E, _D, | "C"_E, ^F, B, A, G, ^F, =E, _E, |
+"C"E, G, C G, E, D, C, D, | "C"E, G, C G, E, D, C, D, | "C"E, C, D, E, F, G, A, B, | "C"C D E F G F E D |
+"C"C G, A, B, C G, A, B, | "C"C G, A, B, C B, C D | "C"E _E =E _E =E _E =E _E | "C"E2 E2 E2 E2 |
+"C"_B2 ^F ^F ^F2 ^F2 | "C"^F4 _B4 | "C"B2 B, B, B,2 B,2 | "C"B,2 _D2 =D2 E2 |
+"C"D2 _E2 =E2 F2 | "C"^F4 _B4 | "C"B, B B, B, B,2 _D2 | "C"B,2 _D2 =D2 E2 |
+"C"D2 _E2 =E2 F2 | "C"^F4 _B4 | "C"^F, D B2 ^f e d _d | "C"d _d B _B =B G ^F =F |
+"C"^F E D _D =D _D B, _B, | "C"B, G, ^F, =F, ^F, E, D, _D, | "C"D, _D, B,, _B,, =B,,4 | "C"B,,8 |
+"C"^F4 z4 | "C"B4 z4 |

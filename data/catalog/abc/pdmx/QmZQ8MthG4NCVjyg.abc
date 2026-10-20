@@ -1,0 +1,35 @@
+%abc-2.1
+% ÐÐ ÑÐ¾ÐÐºÐÑ ÐÐÐ½ÑÑÐÑÑÐÐ, by Ilya Shatrov. Score published on MuseScore (artist: ÐÐÑÑ ÐÐÑÑÐ¾Ð²),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ilya Shatrov (died 1952,
+% Wikidata Q967916).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/39/QmZQ8MthG4NCVjygNU7ZipPZxNSSHZSdC2Aczkxg444hwF.mid (sha256
+% ca035046352fa2a57fed971a444a79ca7f190a1e93f92db0d27f5d36c8f96347): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:ÐÐ ÑÐ¾ÐÐºÐÑ ÐÐÐ½ÑÑÐÑÑÐÐ
+M:3/4
+L:1/16
+Q:1/4=187.999962
+% Exact tempo 187.99996240000752 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F4 _A2 z2 _A2 z2 | "Fm"_A4 _A2 z2 _A2 z2 | "C"G4 G2 z2 G2 z2 | "C"C4 G2 z2 G2 z2 |
+"C7"G4 c2 z2 c2 z2 | "C"C4 G2 z2 G2 z2 | "F"F4 _A2 z2 _A2 z2 | "Dm7"C4 _A2 z2 _A2 z2 |
+"Fm"F4 _A2 z2 _A2 z2 | "Db"_A4 _A2 z2 _A2 z2 | "Bbm"_B4 _B2 z2 _B2 z2 | "Db"_D4 _B2 z2 _B2 z2 |
+"Dm7"C4 _A2 z2 _A2 z2 | "C"C4 c2 z2 c2 z2 | "Fm"F2 z2 C2 z2 _A,2 z2 | "F"F,2 z10 |
+"F"F4 _A2 z2 _A2 z2 | "Fm"_A4 _A2 z2 _A2 z2 | "C"G4 G2 z2 G2 z2 | "C"C4 G2 z2 G2 z2 |
+"C7"G4 c2 z2 c2 z2 | "C"C4 G2 z2 G2 z2 | "F"F4 _A2 z2 _A2 z2 | "Dm7"C4 _A2 z2 _A2 z2 |
+"Fm"F4 _A2 z2 _A2 z2 | "Db"_A4 _A2 z2 _A2 z2 | "Bbm"_B4 _B2 z2 _B2 z2 | "Db"_D4 _B2 z2 _B2 z2 |
+"Dm7"C4 _A2 z2 _A2 z2 | "C"C4 c2 z2 c2 z2 | "Fm"F2 z2 C2 z2 _A,2 z2 | "F"F,2 z2 _d c B2 c2 _d2 |
+"C"c4 z2 G2 G4 | "C"z4 _A2 z2 _B2 z2 | "Fm"c12 | "Fm"c4 f _e d2 _e2 f2 |
+"Eb"_e4 z2 _B2 _B4 | "Eb7"z4 c4 _d4 | "Ab"_e12 | "G"_e4 _e4 =e4 |
+"Fm"f2 z4 c2 c4 | "Db"c _d2 c B4 c4 | "Bb"_e2 z6 _d2 z2 | "Db"z4 _A4 _B4 |
+"Dm7"c4 _B4 _A4 | "C"G8 _B4 | "Fm"_A12 | "F"_A4 _d c B2 c2 _d2 |
+"Fm"F2 z2 C2 z2 _A,2 z2 | "F"F,2 z2 _d c B2 c2 _d2 | "C"c4 z2 G2 G4 | "C"z4 _A2 z2 _B2 z2 |
+"Fm"c12 | "Fm"c4 f _e d2 _e2 f2 | "Eb"_e4 z2 _B2 _B4 | "Eb7"z4 c4 _d4 |
+"Ab"_e12 | "G"_e4 _e4 =e4 | "Fm"f2 z4 c2 c4 | "Db"c _d2 c B4 c4 |
+"Bb"_e2 z6 _d2 z2 | "Db"z4 _e4 _d4 | "Dm7"_a4 g4 f4 | "C"e8 g4 |

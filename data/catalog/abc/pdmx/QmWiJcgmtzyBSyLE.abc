@@ -1,0 +1,25 @@
+%abc-2.1
+% Lakmé, by Leo Delibes. Score published on MuseScore (artist: Léo Delibes), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Leo Delibes (died 1891, Wikidata
+% Q207951).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/25/QmWiJcgmtzyBSyLEo16jxeYw1EpmKLL6mq6QpH9Qa3SbDW.mid (sha256
+% 13fff474c0ff37ee1a3842c003410af877a8e69409d701d05053d1dce68e53e6): melody track 1, bars 0-26
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lakmé
+M:6/8
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Abm7"z2 B _B =B _B _A2 _B =B _d z | "Abm7"z2 B _B =B _B _A2 _B =B _d z | "B"z2 B _d B _d _e =e _e _d B _B | "Abm"_A _B _A _B _A _B ^F6 |
+"Abm7"z2 B _B =B _B _A2 _B =B _d z | "Abm7"z2 B _B =B _B _A2 _B =B _d z | "B"z2 B _d B _d _e =e _e _d B _B | "Abm"_A _B _A _B _A _B =B6 |
+"F#"z2 _B _A ^F _A _A2 _B ^F ^F _B | "Eb"z2 _B _A ^F _A _A2 _B ^F ^F _B | "F#"z2 _B _A ^F _A _A2 _B ^F ^F _B | "F#"z2 _B ^F ^F _B z2 ^F4 |
+"E"e6 e B _A E _A B | "E"e2 _a4 e4 _A z | "Em"_A6 _A _A E B, _E _A | "Em"B2 e4 B4 G2 |
+"Ab7"^F2 B _B _A _B =B6 | "Ab7"z2 A _A ^F _A =A6 | "F#7"z2 _A2 E2 z2 _A2 E2 | "F#7"z2 _A2 E2 _A2 E2 _A2 |
+"Abm7"z2 B _B =B _B _A2 _B =B _d z | "B"z2 B _B =B _B _A2 _B =B _d z | "B"z12 | "Dbm7"z6 E4 z2 |
+"B"z12 | "B"b4 z8 |

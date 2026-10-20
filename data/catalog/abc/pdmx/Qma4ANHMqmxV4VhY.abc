@@ -1,0 +1,35 @@
+%abc-2.1
+% Preghiera - Tu che ci cerde il prato, by Gioachino Rossini. Score published on MuseScore
+% (artist: Gioacchino Rossini), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gioachino Rossini (died 1868,
+% Wikidata Q9726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/3/Qma4ANHMqmxV4VhYmxjkoihYuYwqctM6t4XL3KGJdnBd8i.mid (sha256
+% 7bbb04208975bc6e0d226fd7e45350a9ace92815b36ab7727f90fc6938d3c2aa): melody track 4, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Preghiera - Tu che ci cerde il prato
+M:3/4
+L:1/16
+Q:1/4=94.000128
+% Exact tempo 94.00012846684224 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G,4 A, z G, z F, z E, z | "G"F,4 D,4 F,2 z2 | "D7"E,4 E, z E, z F, z ^F, z | "C"G,8 G,2 z2 |
+"C7"G,4 G, z G, z G, z G, z | "F"A,8 C2 z2 | "G7"z2 E,2 G,2 C2 A,2 F,2 | "G"F,8 E,2 z2 |
+"Em7"B,4 B,2 B,2 A,2 A,2 | "G"B,8 B,2 z2 | "Em7"B,4 B,2 B,2 A,2 A,2 | "E"_A,10 z2 |
+"A"G,4 G,2 G,2 G,2 G,2 | "Dm"F,8 F,4 | "G7"D,4 _D,2 =D,2 =D,2 F,2 | "C"E,4 z7 C |
+"F"A,7 A, _A,3 _A, | "Dm7"A,3 F, A,4 z3 C | "Dm7"C4 z G,2 A, _B, G,2 C | "Dm"C3 z8 A, |
+"D"F,7 F, G,3 G, | "Dm"F,3 D, F,4 z3 A, | "Am"A,5 E,2 E _A, =A,2 B, | "Am"A,2 z E, F,8 |
+"Abm"F,3 D, E,8 | "Am"E,2 z E, F,8 | "Abm"F,3 D, E,8 | "Am"E,4 z4 A,4 |
+"A7"A,6 A,2 A,2 A,2 | "Dm"A,4 A,2 z2 A,4 | "F#m7"C6 C2 C2 C2 | "Ab7"A,4 A,2 z2 C3 ^F, |
+"F7"^F,4 ^F,2 z2 C3 A, | "C"A,6 A, z B, z A, z | "E"_A,6 _A, z ^F, z _A, z | "B7"A,4 z8 |
+"D7"z12 | "C"G,4 G, z G, z D, z D, z | "G"F,4 D,4 F,2 z2 | "D7"E,4 E, z E, z F, z ^F, z |
+"C"G,8 G,2 z2 | "C7"G,4 G, z G, z G, z G, z | "F"A,8 C2 z2 | "G7"z2 E,2 G,2 C2 A,2 F,2 |
+"G"F,8 E,2 z2 | "Em7"B,4 B,2 B,2 A,2 A,2 | "G"B,8 B,2 z2 | "Em7"B,4 B,2 B,2 A,2 A,2 |
+"E"_A,10 z2 | "C7"G,4 G,2 G,2 G,2 G,2 | "Bbm7"F,8 F,4 | "Fm7"_E,4 _E,2 _E,2 _E,2 _D,2 |
+"Ab"C,4 z4 C,4 | "Gm"E,4 G,2 z2 D,4 | "Am"E,4 A,2 z2 E,4 | "B"^F,4 B,2 z6 |
+"G"E,12 | "Am"A,12 | "E7"_A,8 _A,2 _A,2 | "C"G,3 ^F, G,8 |
+"F#7"G,4 G,2 ^F,2 E,2 ^F,2 | "Dbm7"G,3 A, G,4 G,4 | "B7"^F,6 ^F, z E, z ^F, z | "Em"E,3 z9 |

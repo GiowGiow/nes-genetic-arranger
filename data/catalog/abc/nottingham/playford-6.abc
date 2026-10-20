@@ -1,0 +1,24 @@
+%abc-2.1
+% The Indian Queen, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/playford.abc, tune X: 6 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 070877bc37176e0dedbcd038268d6669399201cd7b58d88b4ab36127528f9c76).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Indian Queen
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 f2 g2 | "D"a4 f4 d4 f4 | "A7"e8 A8 | "D"F4 A4 A4 f4 |
+"Em"e8- "A7"e4 f2 g2 | "D"a4 f4 d4 f4 | "A7"e8 A8 | "D"F4 A4 A4 f4 |
+"D"d12 f2 g2 | "D"a4 f4 d4 f4 | "A7"e8 A8 | "D"F4 A4 A4 f4 |
+"Em"e8- "A7"e4 f2 g2 | "D"a4 f4 d4 f4 | "A7"e8 A8 | "D"F4 A4 A4 f4 |
+"D"d12 c2 d2 | "A"e2 d2 c2 B2 A4 e4 | "F#m"f4 c4 "Bm"d4 B4 | "D"f2 g2 a4 "E7"b4 ^g4 |
+"A7"a12 e2 f2 | "G"g2 f2 e2 d2 "A"c4 a4 | "Em"B4 g4 "A7"A4 f2 g2 | "G"e4 d4 "A7"e4 c4 |
+"D"d12 c2 d2 | "A"e2 d2 c2 B2 A4 e4 | "F#m"f4 c4 "Bm"d4 B4 | "D"f2 g2 a4 "E7"b4 ^g4 |
+"A7"a12 e2 f2 | "G"g2 f2 e2 d2 "A"c4 a4 | "Em"B4 g4 "A7"A4 f2 g2 | "G"e4 d4 "A7"e4 c4 |
+"D"d12 z4 |

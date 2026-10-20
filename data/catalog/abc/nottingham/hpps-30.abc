@@ -1,0 +1,24 @@
+%abc-2.1
+% Kitty O'Niel, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/hpps.abc,
+% tune X: 30 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Kitty O'Niel
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 e f2 g | "A"a4 g4 a4 A4 | "D"f2 e2 d2 f2 "A"e4 c2 A2 | "E7"B4 ^A4 B4 E4 |
+"E7"E2 A2 G2 B2 "A"A2 c2 e2 g2 | "A"a4 g4 a4 A4 | "D"f2 e2 d2 f2 "A"e4 c2 A2 | "E7"B4 ^A4 B4 E4 |
+"E7"E2 A2 G2 B2 "A"A8 | "A"c4 a4 c4 c2 d2 | "Bm"B4 b4 B4 B2 c2 | "D"d2 e2 f2 g2 a4 g2 f2 |
+"E7"e2 d2 c2 B2 "A"c4 A4 | "A"c4 a4 c4 c2 d2 | "Bm"B4 b4 B4 B2 c2 | "D"d2 c2 d2 e2 f2 g2 a2 f2 |
+"E7"e f2 e d c2 B "A"A4 e f2 g | "A"a4 g4 a4 A4 | "D"f2 e2 d2 f2 "A"e4 c2 A2 | "E7"B4 ^A4 B4 E4 |
+"E7"E2 A2 G2 B2 "A"A2 c2 e2 g2 | "A"a4 g4 a4 A4 | "D"f2 e2 d2 f2 "A"e4 c2 A2 | "E7"B4 ^A4 B4 E4 |
+"E7"E2 A2 G2 B2 "A"A8 | "A"c4 a4 c4 c2 d2 | "Bm"B4 b4 B4 B2 c2 | "D"d2 e2 f2 g2 a4 g2 f2 |
+"E7"e2 d2 c2 B2 "A"c4 A4 | "A"c4 a4 c4 c2 d2 | "Bm"B4 b4 B4 B2 c2 | "D"d2 c2 d2 e2 f2 g2 a2 f2 |
+"E7"e f2 e d c2 B "A"A4 z4 |

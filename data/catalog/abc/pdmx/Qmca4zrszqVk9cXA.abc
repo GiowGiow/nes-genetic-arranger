@@ -1,0 +1,30 @@
+%abc-2.1
+% Galliard 10, by Francis Cutting. Score published on MuseScore (artist: Francis Cutting), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francis Cutting (died 1596,
+% Wikidata Q3404004).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/9/Qmca4zrszqVk9cXADhS9nhPGiQAs89zHk3x4EtkWn5Xwpr.mid (sha256
+% be5ab63ea4a0ad10b27dadab52bbc01b60854fa5b49018038ce68885a907d676): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Galliard 10
+M:3/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"C"E3 ^F G2 E,2 G2 ^F2 | "C"E3 ^F, B,2 E,2 A,2 _E2 | "C"G3 _D ^F2 B,2 E2 _B,2 | "C"D3 _D, =D,2 B,,2 E2 A,2 |
+"C"B,3 _D =D2 B,,2 C2 ^F,2 | "C"B,3 A,, B,,2 G,,2 E2 ^F2 | "C"G3 ^F,, E3 A,, E2 _E2 | "C"E,,2 E2 E,2 A,2 E4 |
+"C"E _E =E ^F G2 =E2 G2 ^F2 | "C"E _E, =E, ^F, G,2 =E,2 A,2 _E2 | "C"G2 B, _D ^F2 B,2 E2 _B,2 | "C"D3 _D, =D,2 B,,2 E2 A,2 |
+"C"B, A, B, _D =D2 B,,2 C2 ^F,2 | "C"B, ^F, G, A,, B,,2 G,,2 E2 ^F2 | "C"G2 E,, ^F,, E2 A,,2 E2 _E2 | "C"E,,2 E2 E, A, _A, ^F, E4 |
+"C"D4 D2 _D2 B,2 A,2 | "C"G,2 E,2 B,2 D,2 E2 D2 | "C"_D2 A,2 E2 G,2 A2 G2 | "C"^F2 D2 ^F2 E2 D2 _D2 |
+"C"D2 B,2 D2 A,2 B,2 _D2 | "C"D2 ^F2 B,2 E2 A,2 _E2 | "C"E2 G2 B,2 ^F2 E2 E,,2 | "C"B,,2 _E2 ^F,2 =E2 _E4 |
+"C"D2 B, _D =D2 _D2 B,2 A,2 | "C"G, ^F, G, A, B,2 D,2 E2 D2 | "C"_D B, _D =D E2 G,2 A2 G2 | "C"^F E ^F G ^F2 E2 D2 _D2 |
+"C"D2 B, D D2 A,2 B,2 _D2 | "C"D2 ^F2 B,2 E2 A, E _E2 | "C"E2 G2 _E,2 ^F2 =E2 =E,,2 | "C"_E2 B, _D _E =E ^F G ^F4 |
+"C"E4 D2 G,2 C2 ^F,2 | "C"B,2 E,2 A,2 _E,2 G,2 G2 | "C"^F2 B,2 E2 A,2 D2 G,2 | "C"A,2 ^F,2 G,2 B2 A2 D2 |
+"C"G2 _D2 ^F2 B,2 E2 _B,2 | "C"_E2 A,,2 G,2 D2 C2 B,2 | "C"A,2 E,2 B,2 E,2 A,2 _E,2 | "C"E,,2 _A,2 B,,2 =A,2 _A,4 |
+"C"E2 G, A, D2 G,2 C2 ^F,2 | "C"B,2 E, B, A,2 _E,2 G,2 G2 | "C"^F2 B, ^F E2 A,2 D2 G,2 | "C"A,2 ^F, G, G,2 E B A2 D2 |
+"C"G2 _D G ^F2 B,2 E2 _B,2 | "C"_E2 A,,2 G,2 D2 C2 B,2 | "C"A,2 E,2 B,2 E,2 B,, ^F, _E, A, | "C"E,,2 _A,2 B,, =A, _A, ^F, _A,4 |

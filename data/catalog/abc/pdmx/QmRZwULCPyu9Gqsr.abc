@@ -1,0 +1,22 @@
+%abc-2.1
+% Chamber Concerto in D major RV 93, by Antonio Vivaldi. Score published on MuseScore (artist:
+% Antonio Vivaldi), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/57/QmRZwULCPyu9GqsrQLQfcUVRCfzNXSzwadHQGeDRpkSprp.mid (sha256
+% 0f4a5078edf443664ffa9f7de551159fdaabeaf30cba16c4354dca7ff4fd1de3): melody track 2, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chamber Concerto in D major RV 93
+M:4/4
+L:1/16
+Q:1/4=30
+K:none
+P:A
+"D"D z G z A z A z "A"^F z D z E z B z | "D"G z A z A z ^F z "A"E2 A,2 z2 A2 | "D"A z ^F z A z ^F z "G"B A B B B A B B | "Dbm7"B E ^F E B E ^F E "F#m7"A G A A A G A A |
+"Bm7"A D E D A D E D "E7"_A =A B =A _A ^F E D | "A"_D _D B, A, E _D B, A, A _D B, A, E _D B, A, | "A"A B A B A B A B A2 _A ^F E D _D B, | "F#m7"_D E A _D B,2 _A2 "A"=A8 |
+"D"D z G z A z A z "A"^F z D z E z B z | "D"G z A z A z ^F z "A"E2 A,2 z2 A2 | "D"A z ^F z A z ^F z "G"B A B B B A B B | "Dbm7"B E ^F E B E ^F E "F#m7"A G A A A G A A |
+"Bm7"A D E D A D E D "E7"_A =A B =A _A ^F E D | "A"_D _D B, A, E _D B, A, A _D B, A, E _D B, A, | "A"A B A B A B A B A2 _A ^F E D _D B, | "F#m7"_D E A _D B,2 _A2 "A"=A8 |

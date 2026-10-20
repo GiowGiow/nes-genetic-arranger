@@ -1,0 +1,35 @@
+%abc-2.1
+% ATLÂNTICO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/atlantico.html (file
+% https://www.beakauffmann.com/mpb_a/som/atlantico.mid, sha256
+% 62af1234b1c77d858c6430d4d0a97c54d7c626faa8eadd503f71186fe8e272ba), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ATLÂNTICO
+M:2/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"D"z3 B, E2 z D | "D"C2 z ^F B2 z A | "G"G2 z B ^f2 z e | "D"d c2 _A B =A2 ^F |
+"Em7"E D2 B, E2 z D | "F7"C2 z ^F B2 z A | "Dbm"G2 z B a2 z g | "D"^f d2 B _B G2 ^F |
+"Db7"B2 z B, E2 z D | "D"C2 z ^F B2 z A | "G"G2 z B ^f2 z e | "D"d c2 _A B =A2 ^F |
+"G"E D2 B, D G2 D | "C"_D G2 _D C G2 C | "Bb"B, G2 B, A G2 E | "D"D G2 B d2 ^F2 |
+"G"G2 z B, E2 z D | "D"C2 z ^F B2 z A | "G"G2 z B ^f2 z e | "D"d c2 _A B =A2 ^F |
+"Em7"E D2 B, E2 z D | "F7"C2 z ^F B2 z A | "Dbm"G2 z B a2 z g | "D"^f d2 B _B G2 ^F |
+"Db7"B2 z B, E2 z D | "D"C2 z ^F B2 z A | "G"G2 z B ^f2 z e | "D"d c2 _A B =A2 ^F |
+"G"E D2 B, D G2 D | "C"_D G2 _D C G2 C | "Bb"B, G2 B, A G2 E | "D"D G2 B d2 ^F2 |
+"G"G2 z B g2 z g | "A"_B2 z g A2 z ^f | "G7"G2 z e F2 z d | "E7"z E2 ^F _A =A2 B |
+"C"c2 z e c'2 z c' | "D"_e2 z c' d2 z b | "B"c2 z a B2 z g | "C7"_B2 ^f z ^F2 E z |
+"Abm"_E2 z B g2 z g | "A"_B2 z g A2 z ^f | "G7"G2 z e F2 z d | "E7"z B2 A _A F2 E |
+"C"A2 z d B2 z A | "Fm7"_e F _A c _e c _A F | "G"D B, C _D =D _A c B | "D"A _d ^f e =d ^f b a |
+"G"g2 z g2 a2 a | "G"f2 z f d2 z d | "G"g2 z g e2 z e | "G"c2 z c A2 z A |
+"G"d3 z A2 z A | "G"F2 z F D2 z C | "G"G2 z G E2 z E | "G"C2 z C A,2 z A, |
+"Gm"D6 z2 | "G7"z _a =a _a =a _a =a2 | "C"z e f e f e f2 | "E"z ^f g ^f g ^f g2 |
+"D"z _e =e _e =e _e =e2 | "F#m"z B c B c B c2 | "F"z _d =d _d =d _d =d2 | "Em"z _e =e _e =e _e =e2 |

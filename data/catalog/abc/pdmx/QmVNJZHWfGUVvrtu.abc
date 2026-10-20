@@ -1,0 +1,26 @@
+%abc-2.1
+% the star-spangled banner, by John Stafford Smith (1750-1836). Score published on MuseScore
+% (artist: John Stafford Smith), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Stafford Smith (died 1836,
+% Wikidata Q563098).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/34/QmVNJZHWfGUVvrtuYBNfWZ8Mxnn4bdpEqopPZmbfbpq6jP.mid (sha256
+% 9ac53fc33ab18491a8afb8381e25ff376f3a333ce691fc2c23f790eb7eb22db4): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:the star-spangled banner
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"f3 d _B4 d4 | "C"f4 _b8 | "C"d'3 c' _b4 d4 | "C"e4 f8 |
+"C"f2 f2 d'6 c'2 | "C"_b4 a8 | "C"g2 a2 _b4 _b4 | "C"f4 d4 _B4 |
+"C"f3 d _B4 d4 | "C"f4 _b8 | "C"d'3 c' _b4 d4 | "C"e4 f8 |
+"C"f2 f2 d'6 c'2 | "C"_b4 a8 | "C"g2 a2 _b4 _b4 | "C"f4 d4 _B4 |
+"C"d2 d2 d4 _e4 | "C"f4 f8 | "C"_e2 d2 c4 d4 | "C"_e4 _e8 |
+"C"_e2 _e2 d6 c2 | "C"_B4 A4 A4 | "C"G2 A2 _B4 d4 | "C"e4 f8 |
+"C"f2 f2 _b4 _b4 | "C"_b2 a2 g4 g4 | "C"g4 c'4 _e'2 d'2 | "C"c'2 _b2 _b4 a4 |
+"C"f2 f2 _b6 c'2 | "C"d'2 _e'2 f'8 | "C"_b2 c'2 d'6 _e'2 | "C"c'4 _b8 |

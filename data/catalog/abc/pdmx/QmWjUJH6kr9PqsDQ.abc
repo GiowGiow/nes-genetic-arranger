@@ -1,0 +1,34 @@
+%abc-2.1
+% Chaconne des Scaramouches, by Jean-Baptiste Lully. Score published on MuseScore (artist: Lully
+% Jean-Baptiste), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean-Baptiste Lully (died 1687,
+% Wikidata Q1192).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/26/QmWjUJH6kr9PqsDQLD8B3ek1v76goiU34ogKiiSAUPS8Si.mid (sha256
+% 57c4fd46229303ffb4b33f4271a4ec3e54fedfcb0cdfbde44f2b2d5fc4c73a20): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chaconne des Scaramouches
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"g g3 g2 a2 b2 g2 | "D"a4 d d5 d2 | "Em"d d3 d _d5 B =d | "D"d4 A A5 B2 |
+"A"B2 c2 c c5 d2 | "C"B B5 A2 B2 c2 | "G"c4 d2 d2 e2 f2 | "Am7"^f e5 e2 ^f2 g2 |
+"Bm7"g ^f5 ^f2 g g3 | "D"g2 a2 b a5 g a | "G"g4 G G A2 B2 c2 | "D"c4 d2 e2 d2 e2 |
+"C"d2 e2 d2 e2 d2 e2 | "D"d2 e2 d2 e2 d2 c2 | "G"c B3 B2 c2 d4 | "D"A2 B2 B2 c2 z4 |
+"F#m7"z4 G G A2 B4 | "D7"c c B2 A4 B2 c2 | "G"c B3 B2 c2 d2 e2 | "D"B A3 A2 B2 c2 d2 |
+"Em"G G ^F2 G2 A2 B2 c2 | "D7"d c2 B B A5 G2 | "G"G G3 g g5 g2 | "Am"g g3 ^f6 e2 |
+"F#m7"e _e5 _e2 =e =e3 | "B"e2 ^f2 g ^f5 e2 | "C"e4 g g5 g2 | "D"g g3 g ^f5 ^f2 |
+"G"^f ^f3 g2 ^f2 e2 d2 | "Em7"d _d3 a a3 b2 a2 | "A7"g2 ^f2 ^f e3 ^f2 g2 | "D"g ^f3 d d5 d2 |
+"C"d d3 d c5 c2 | "Em7"c c3 c B5 B2 | "F#m7"B B3 B A5 A2 | "E7"A11 z |
+"G"z4 d4 g g3 | "A7"^f e3 e4 a a3 | "D"g ^f5 ^f2 g2 a2 | "G"a4 b6 b2 |
+"C"b b3 b a5 a2 | "Bm"a a5 g ^f ^f2 g2 | "Em7"g2 a2 g ^f5 g2 | "G"g g3 G2 A2 B2 c2 |
+"D"c4 d2 e2 d2 e2 | "C"d2 e2 d2 e2 d2 e2 | "D"d2 e2 d2 e2 d2 c2 | "G"c B3 B2 c2 d4 |
+"D"A2 B2 B2 c2 z4 | "F#m7"z4 G G A2 B4 | "D7"c c B2 A4 B2 c2 | "G"c B3 B2 c2 d2 e2 |
+"D"B A3 A2 B2 c2 d2 | "Em"G G ^F2 G2 A2 B2 c2 | "D7"d c2 B B A5 G2 | "G"G G3 g g5 g2 |
+"Am"g g3 ^f6 e2 | "F#m7"e _e5 _e2 =e =e3 | "B"e2 ^f2 g ^f5 e2 | "C"e4 g g5 g2 |
+"D"g g3 g ^f5 ^f2 | "G"^f ^f3 g2 ^f2 e2 d2 | "Em7"d _d3 a a3 b2 a2 | "A7"g2 ^f2 ^f e3 ^f2 g2 |

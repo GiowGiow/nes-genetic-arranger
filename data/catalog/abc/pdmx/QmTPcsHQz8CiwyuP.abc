@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphony No.4 Op.36, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/37/QmTPcsHQz8CiwyuP7HhJRXLVDpiriVjpGhunZNVYSe5SQG.mid (sha256
+% 9d089ee745aed211aafff5074db3a1d9af29571809933f62b4b3fa928f301ff0): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.4 Op.36
+M:2/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F2 E2 D2 C2 | "F"D2 E2 F2 A2 | "Dm7"c2 z2 c2 d2 | "Dm7"c2 z2 c2 d2 |
+"Dm"c2 d2 c2 d2 | "Dm7"c2 d2 c2 f2 | "Dm7"e2 d2 c2 _B2 | "Bb"A2 G2 F2 E2 |
+"F"F2 E2 D2 C2 | "F"D2 E2 F2 A2 | "Dm7"c2 z2 c2 d2 | "Dm7"c2 z2 c2 d2 |
+"Dm"c2 d2 c2 d2 | "Dm7"c2 d2 c2 f2 | "Dm7"e2 d2 c2 B2 | "Am"A2 B2 e2 z2 |
+"A7"A2 A2 A2 A2 | "Dm"_B2 _B2 _B2 _B2 | "A7"c2 c2 _B2 _B2 | "F#m7"A2 A2 e2 A2 |
+"A7"A2 A2 A2 A2 | "Dm"_B2 _B2 _B2 _B2 | "A7"c2 c2 _B2 _B2 | "F#m7"A2 A2 e2 A2 |
+"Eb7"z2 g2 z2 _B2 | "Eb"z2 c2 z2 C2 | "Dm7"z2 F2 z2 A2 | "F"z2 c2 z2 f2 |
+"E7"z2 g2 z2 G2 | "Em7"z2 c2 z2 C2 | "Dm7"z2 A2 z2 c2 | "F"z2 f2 z2 a2 |
+"E7"z2 a2 _a2 _A2 | "E7"z2 A2 _A2 _A,2 | "E7"z2 B2 c2 d2 | "E7"e2 d2 c2 B2 |
+"Dm7"z2 c'2 a2 _e2 | "Dm7"z2 c2 A2 _E2 | "Dm7"z2 c2 d2 _e2 | "Dm7"e2 _e2 d2 c2 |
+"Am"z2 c'2 a2 e2 | "Am"z2 c2 A2 E2 | "E7"z2 C2 z2 A2 | "F"z2 c2 z2 a2 |
+"Am"z2 c'2 a2 e2 | "Am"z2 c2 A2 E2 | "E7"z2 C2 z2 A2 | "F"z2 c2 z2 a2 |
+"F7"f2 f2 f2 f2 | "Bbm"^f2 ^f2 ^f2 ^f2 | "F7"_a2 _a2 ^f2 ^f2 | "Dm7"f2 f2 c'2 f2 |
+"F7"f2 f2 f2 f2 | "Bbm"^f2 ^f2 ^f2 ^f2 | "F7"_a2 _a2 ^f2 ^f2 | "Dm7"f2 f2 c'2 f2 |
+"G7"g2 g2 d'2 g2 | "G7"z8 | "Cm"z8 | "Cm7"z4 _e2 b2 |
+"G7"g2 g2 d'2 g2 | "G7"z8 | "Cm"z8 | "Cm7"z4 _e2 c'2 |

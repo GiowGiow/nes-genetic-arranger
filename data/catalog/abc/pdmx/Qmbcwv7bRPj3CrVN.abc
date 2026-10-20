@@ -1,0 +1,32 @@
+%abc-2.1
+% Die Frau ohne Schatten Op.65, by Richard Strauss. Score published on MuseScore (artist: Richard
+% Strauss), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Strauss (died 1949,
+% Wikidata Q13894).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/13/Qmbcwv7bRPj3CrVN832kBWoxZ67qHMbnLVRGRDWSY6dYbz.mid (sha256
+% 52a667c028eceb2ad486c358f3e85baf6015ba73ce6e3ebe12c9c175c5813ad7): melody track 4, bars 0-50
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Die Frau ohne Schatten Op.65
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m"a A _A ^F _d ^f _d' ^f =a =A _A ^F | "G7"A F, D F d f d' f' a' b a B | "F#m"a A _A ^F _d ^f _d' ^f =a =A _A ^F | "G7"A F, D F d f d' f' a' b a B |
+"Ebm"_b _B _A ^F ^f _b ^f' _b _b _B _B _e | "C7"^f _B, G _B g _b g' _b' d'' e' d' e | "Ebm"_b _B _A ^F ^f _b ^f' _b _b _B _B _e | "C7"^f _B, G _B g _b g' _b' d'' e' d' e |
+"B"d z9 _d _B | "B"_A z11 | "B"z12 | "B"z12 |
+"B"z12 | "Abm7"z12 | "B"^f' ^f ^f _e b B =f _d ^f ^F B _e | "G7"g z b z3 _d2 =d e b _e' |
+"F#7"^f'2 _e =e _a2 _d' _b _a z =e _d | "F#7"B z _e =e _a2 _d' _b _a z =e _d | "F#"^f' ^f _a e d' d g d _a _A c _e | "F#7"_b z e' z3 g2 _a =b e' g' |
+"Abm"b'2 _E _A, _E _A B _e _a b ^f _e | "Abm"_d z _b ^f e z _B ^F E z =b g | "Dbm"^f z _e' b _b z _e =B _B z _a =e | "Dbm"_e z _a =e _e z _A =E _E z3 |
+"F#7"_D E _d e _b _e' z _d' =b _b z _a | "F#7"_d' ^f e ^F E _b z _a ^f e z _e | "F#7"_d ^F e ^f _d' _e' z _d' b _b z _a | "F#7"^f e z _e _d c z B _B _A z ^F |
+"B"_e2 ^f =e _d B z _B _A ^F z =E | "Abm7"_E2 _b _a =e _e z _d c _B z _A | "B"^F2 _a ^f _d B z _B _A ^F z E | "B"_E2 _b _a =e _e z _d =B _B z _A |
+"Abm7"^F2 z10 | "Abm7"z2 ^f' _e' _d' z ^f _e _d z3 | "B"z2 ^f' _e' _d' z ^f _e _d z3 | "B7"^f' b' _e'' z3 b _a ^f z3 |
+"Dbm7"z2 e _e B _B z _A ^F =E z _E | "Dbm7"_D e e _A E _a _a B _A b b e | "Dbm7"z2 _a ^f _e _d z B _B _A z ^F | "Dbm7"E e e _A E _a _a B _A b b e |
+"B"z2 _a ^f _e _d z B _B _A z ^F | "B7"E2 b _b ^f e z _e _d =B z A | "E"_A2 _a ^f _e _d z B _B _A z ^F | "Dbm7"E2 e _e B _B z _A ^F =E z _E |
+"F#7"_D2 z10 | "G"d d g z _A2 =A _B g d' g' d'' | "F#7"z2 e' _e' b _b z _a ^f =e z _e | "F#7"_d2 _d' b _a ^f z e _e _d z B |
+"Dbm7"_B2 _b _a e _e z _d =b _b z _a | "F#7"^f2 z10 |

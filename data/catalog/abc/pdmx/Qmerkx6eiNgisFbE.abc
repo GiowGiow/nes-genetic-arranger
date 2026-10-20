@@ -1,0 +1,30 @@
+%abc-2.1
+% here comes santa claus, by Nathan Pierce. Score published on MuseScore (artist: Gene Autry), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nathan Pierce (died 1793,
+% Wikidata Q75764726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/40/Qmerkx6eiNgisFbEBYJVv4tpgaq9VVnDKizLDVnn2Qs7G6.mid (sha256
+% 0efffe37160cecb22604c98fc771bd86d81938c227f5ed2d04d90285a8fee688): melody track 21, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:here comes santa claus
+M:4/4
+L:1/16
+Q:1/4=86
+% Exact tempo 85.99999999999852 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"z12 D2 D2 | "C7"E2 E2 C2 C D- "Dm7"D4 C C _B,2 | "F"A,2 G, F,2 C3 "Dm"D z E2 F2 z2 | "Dm7"z8 "C7"z8 |
+"C7"z16 | "C7"z16 | "Am"z5 A,3 "Bb"_B, z C2 D2 z2 | "Am"_B,2 z2 C2 z2 "Gm"A,2 z2 _B,2 z2 |
+"D"G,2 z2 A,4- "Dm7"A,2 C2 D2 z2 | "Am7"_B,2 z2 C2 z2 "Dm7"A,2 z2 C C _B,2 | "F"A,2 G, F, F, F, A, A, "C"C C E E G2 z c | "C"c2 e e e z2 c- "Am7"c2 e e e z2 d |
+"Dm"d2 f f f e3 "G7"d z A2 G2 z d | "G7"d2 f f f z2 d3 f f g2 g2 | "Em"g2 ^f g2 e3 "Am7"=f2 g2 a2 c' b | "G"b3 a g2 b a- "F"a3 g f2 f2 |
+"Em"a g f2 e4- "Am7"e2 g2 a2 c' b | "G"b3 a g2 b a- "A7"a3 e g g f2 | "C"e2 d c9 G G G G | "G"G G G G G G G G G G G G G G G G |
+"G"G G G G G G G G G G G G G z3 | "Cm"z8 "Cm7"z8 | "Gm7"G, F, _A, =A, _B,4- "C7"_B,4 C z C z | "Fm7"z8 "Gm7"z8 |
+"Bb"z8 "Cm7"z5 _e c _e | "Eb"c _A _E _A G6 z g _b2 g _e | "Eb"c d _e _b5- "C7"_b4 c' z c' z | "Fm7"z4 c' z c' z "C7"z4 _B2 _B2 |
+"Ab"_A =A _B _e _e _e _e _e "Cm"_e _e _e z c2 g g | "Cm"g3 f _e2 d c2 G3 c2 d2 | "Cm"_e2 f g2 c3 "C"c2 z2 f4 | "Fm7"f4 _e2 d c'- "Cm"c'4 c2 d2 |
+"Eb"_e2 f g5- "G"g4 z4 | "Gm"z8 "Cm"z3 F _E z C z | "G7"D z G F6 z7 | "G7"z4 G2 F2 "Cm"_E2 D C5 |
+"F7"_E D C2 F5 z7 | "Gm7"z8 "Cm"z8 | "Cm"z3 _B c2 d c2 _B _A2 G _A _A _A | "Bb"_A _A _A _B2 _A2 G2 F G G G G G G |
+"Ab"G G _A2 G2 F2 _E F F F F F F F | "Ab"F F F F F F F F F F F F F F F F | "Fm"F F F F F F F F F F F F F F F f | "F"f f f f f f f z2 f2 f3 f z |

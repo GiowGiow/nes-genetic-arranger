@@ -1,0 +1,31 @@
+%abc-2.1
+% Le feu couvert, by Cornelius Verdonck. Score published on MuseScore (artist: Cornelius
+% Verdonck), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Cornelius Verdonck (died 1625,
+% Wikidata Q1858617).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/19/QmSfT2wAqDCwyhXsHrDkmNAjvRGnNaLNLbyYP9yaE8j2Qq.mid (sha256
+% 8656e10957cef1c618c0fdf0800e1e138232913b1095782e8a4bd695446bf691): melody track 1, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le feu couvert
+M:4/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z4 D4- "Bm"D4 G4 | "D7"G4 F2 E2 "Bm7"F4 G4 | "G"D8 "C"E4 G4 | "D"F4 E4- "Am"E4 G4 |
+"Em7"G,2 A,2 B,2 C2 "Bm7"D4 D4 | "D7"z4 D4- "F#m"D4 D4 | "G"D2 C2 D2 E2 "Am7"F4 E4 | "Em"D4 E4- "F#m"E4 D2 C2 |
+"Em7"B,2 C2 D4- "E"D4 _D4 | "G7"D8 "D7"z4 E4 | "Em7"^F4 G4 "A7"A6 A,2 | "F"C4 D4- "Am7"D2 C2 A,4 |
+"G"B,8 "Dm"A,4 C4 | "G"C4 B,4 "D7"A,8 | "G"D4 D4 "A"E6 E2 | "D"^F8 z8 |
+"E7"z4 A4- "Dm7"A4 A4 | "A"c8 "Dbm"B4 B4 | "Am"A4 _A4 "D7"=A6 G2 | "D"F8 D8 |
+"Dm"D4 A4 "E7"c4 B2 A2 | "E"_A6 =A2 "Dbm7"B4 c4 | "F#m"A4 E4 "F#m7"F4 E4 | "D"^F4 G8 =F2 E2 |
+"Gm"D4 _B,4 "D"z4 A4 | "Dm7"A4 A4 "A"c8 | "Dbm"B4 B4 "E"A4 _A4 | "F#m7"A8 "Dm"A4 A4 |
+"Dm"A4 G4 "D"F6 G2 | "D7"A4 B4 "C"c8 | "E7"G8 "Am7"A8 | "Dm7"A4 G4 "D"F8 |
+"D"F8 F8 | "A"E16 | "A"E8 z8 | "Em"z4 B,4 "G"B,4 _D4 |
+"Dm"D8 "Dm7"A,4 A4 | "G"D8 "Em7"z4 D2 E2 | "Am"F4 E4 A8 | "Em"z8 "G"D4 E4 |
+"D"^F8- "D7"^F8 | "Bm"G8 "G"G8 | "Am"G4 ^F2 E2 ^F8 | "Cm"G8- "G"G8 |
+"G"G16 |

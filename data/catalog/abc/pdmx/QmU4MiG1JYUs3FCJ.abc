@@ -1,0 +1,25 @@
+%abc-2.1
+% Aria variata in A minor BWV 989, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/3/QmU4MiG1JYUs3FCJTYCmvrnVhhxcNCuofbhwqDaPu1YCAJ.mid (sha256
+% 5f86d7d6b28598be71856609851a5b79128c7c33e706b60385a78fc71519e468): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Aria variata in A minor BWV 989
+M:4/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"A A _A2 =A =A B2 "Dbm7"=A _A3 ^F E3 | "Am"A4 A B c B d c B A A4 | "Am"^f ^f g ^f a3 ^f "Em"e _e B2 _e =e G2 | "B"G ^F5 E2 "E"E E7 |
+"Am"A A _A2 =A =A B2 "Dbm7"=A _A3 ^F E3 | "Am"A4 A B c B d c B A A4 | "Am"^f ^f g ^f a3 ^f "Em"e _e B2 _e =e G2 | "B"G ^F5 E2 "E"E E7 |
+"C"c2 B2 c2 d2 "Em7"c B A G G4 | "Em"e2 _e2 =e2 ^f2 "Abm7"=e _e _d B B4 | "E"e d _d2 =d2 e2 "Dm"=d _d3 =d2 F2 | "A7"E6 D2 "D"D D7 |
+"Dm"f f g2 g a d2 "A"d _d B2 B A3 | "Am"c c d2 d e A2 "E"_A2 ^F2 E4 | "E7"e d f2 e d B2 "D7"A A E2 _A =A3 | "E7"A3 B c _A2 =A "A"=A8 |
+"C"c2 B2 c2 d2 "Em7"c B A G G4 | "Em"e2 _e2 =e2 ^f2 "Abm7"=e _e _d B B4 | "E"e d _d2 =d2 e2 "Dm"=d _d3 =d2 F2 | "A7"E6 D2 "D"D D7 |
+"Dm"f f g2 g a d2 "A"d _d B2 B A3 | "Am"c c d2 d e A2 "E"_A2 ^F2 E4 | "E7"e d f2 e d B2 "D7"A A E2 _A =A3 | "E7"A3 B c _A2 =A "A"=A8 |

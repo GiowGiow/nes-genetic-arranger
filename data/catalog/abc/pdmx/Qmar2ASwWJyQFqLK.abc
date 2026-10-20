@@ -1,0 +1,29 @@
+%abc-2.1
+% 7. Ronde, by Tielman Susato. Score published on MuseScore (artist: Tielman Susato), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/40/Qmar2ASwWJyQFqLK5VJ5zrsrtc1Q7YZb8dWDvGhKHmYwTH.mid (sha256
+% 192bfc56993c319db4fd770f2186e17bea88adc374cc539d0629232079f5edcf): melody track 0, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:7. Ronde
+M:4/2
+L:1/16
+Q:1/4=343.99922
+% Exact tempo 343.99922026843404 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"_B12 A4 _B8 A8 | "Gm"G12 F4 G8 D8 | "Cm7"G4 F4 G4 D4 "D7"G8 F8 | "Am7"G8 A8 "G"D16 |
+"Bb"_B12 A4 _B8 A8 | "Gm"G12 F4 G8 D8 | "Cm7"G4 F4 G4 D4 "D7"G8 F8 | "Am7"G8 A8 "G"D16 |
+"Gm"D8 D4 E4 "Dm"F8 G8 | "D"G8 ^F8 "Eb"G16 | "Bb"F8 F4 G4 "Gm7"A8 _B8 | "F"_B8 A8 "Bb"_B16 |
+"Gm"D8 D4 E4 "Dm"F8 G8 | "D"G8 ^F8 "Eb"G16 | "Bb"F8 F4 G4 "Gm7"A8 _B8 | "F"_B8 A8 "Bb"_B16 |
+"G7"A4 F4 _B4 c4 "Gm7"A4 F4 _B8 | "G7"A4 F4 _B4 c4 "Dm7"A4 F4 c8 | "Gm"F4 F4 G4 D4 F4 F4 G4 D4 | "D"D4 G4 G4 ^F4 "G"G16 |
+"G7"A4 F4 _B4 c4 "Gm7"A4 F4 _B8 | "G7"A4 F4 _B4 c4 "Dm7"A4 F4 c8 | "Gm"F4 F4 G4 D4 F4 F4 G4 D4 | "D"D4 G4 G4 ^F4 "G"G16 |
+"F"A8 A4 G4 "D"F12 F4 | "Dm7"F4 F4 E4 E4 "Bb"D16 | "Gm"D8 D4 E4 "Dm"F12 G4 | "Bb"A4 _B4 _B4 A4 _B16 |
+"F"A8 A4 G4 "D"F12 F4 | "Dm7"F4 F4 E4 E4 "Bb"D16 | "Gm"D8 D4 E4 "Gm7"F4 D4 G8 | "D"^F4 G8 ^F4 "G"G16 |
+"F"A8 A4 G4 "D"F12 F4 | "Dm7"F4 F4 E4 E4 "Bb"D16 | "Gm"D8 D4 E4 "Dm"F12 G4 | "Bb"A4 _B4 _B4 A4 _B16 |
+"F"A8 A4 G4 "D"F12 F4 | "Dm7"F4 F4 E4 E4 "Bb"D16 | "Gm"D8 D4 E4 "Gm7"F4 D4 G8 | "D"^F4 G8 ^F4 "G"G16 |

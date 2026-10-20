@@ -1,0 +1,26 @@
+%abc-2.1
+% Orphée aux enfers, by Jacques Offenbach. Score published on MuseScore (artist: Jacques
+% Offenbach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacques Offenbach (died 1880,
+% Wikidata Q41555).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/57/QmbZXPGEUdTSXBqe53jb8yeT8TnKAJSUp5NCSAc8czDZUm.mid (sha256
+% 81bad1b32bdf00d71cf3c7652884f12b987ccfae68685dfe539b437ee6e784d7): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Orphée aux enfers
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"C4 C4 | "C"D2 F2 E2 D2 | "C"G4 G4 | "C"G2 A2 E2 F2 |
+"C"D4 D4 | "C"D2 F2 E2 D2 | "C"C2 c2 B2 G2 | "C"G2 F2 E2 D2 |
+"C"C4 D2 F2 | "C"E2 D2 G4 | "C"G4 G2 A2 | "C"E2 F2 D4 |
+"C"D4 D2 F2 | "C"E2 D2 C2 G2 | "C"D2 E2 C4 | "C"G2 D2 D2 E2 |
+"C"D2 C2 C2 E2 | "C"F2 A2 c2 A2 | "C"A2 G2 G4 | "C"A2 D2 D2 A2 |
+"C"G2 C2 C2 E2 | "C"E2 D2 E2 D2 | "C"E2 D2 E2 D2 | "C"E2 D2 E2 D2 |
+"C"D2 C2 C2 E2 | "C"F2 A2 c2 A2 | "C"A2 G2 G4 | "C"A2 G2 A2 G2 |
+"C"A2 G2 A2 G2 | "C"A2 G2 A2 G2 | "C"A2 G2 A2 G2 |

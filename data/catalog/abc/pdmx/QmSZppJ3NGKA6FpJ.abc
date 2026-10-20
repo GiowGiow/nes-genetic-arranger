@@ -1,0 +1,28 @@
+%abc-2.1
+% Pagliacci, by Ruggero Leoncavallo. Score published on MuseScore (artist: Ruggiero Leoncavallo),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ruggero Leoncavallo (died 1919,
+% Wikidata Q189015).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/57/QmSZppJ3NGKA6FpJUFjcaWfiJbHAcBv5NjMY139BPXMn2r.mid (sha256
+% 522999f8ebbd2d214caea43831be025ae1879260ed59c349e6283f331c9d8352): melody track 0, bars 0-33
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pagliacci
+M:2/4
+L:1/16
+Q:1/4=46.000029
+% Exact tempo 46.000029133351795 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"e4 _e3 G | "C"B4 B2 B B | "C"B4 _B3 E | "C"G4 G4 |
+"C"z2 ^F2 G3 A | "C"B3 z B2 z B | "C"B2 B2 c2 d2 | "C"e8 |
+"C"g4 ^f3 ^f | "C"f6 e2 | "C"_e2 =e2 B2 d2 | "C"d4 c4 |
+"C"c4 G3 A | "C"B4 g2 z d | "C"e4 z D D D | "C"G4 z4 |
+"C"z2 G2 ^F2 G2 | "C"_B2 =B2 d2 g2 | "C"_a4 _A2 _A2 | "C"G4 G2 z2 |
+"C"z2 ^F2 B2 _B2 | "C"d4 _d2 B2 | "C"e e z2 _e3 _d | "C"^f4 ^f4 |
+"C"^f8 | "C"g4 ^f3 e | "C"g4 ^f4 | "C"z ^f2 g a g2 ^f |
+"C"a4 g4 | "C"^f4 e3 c | "C"B4 ^F G2 A | "C"B4 B2 B2 |
+"C"E8 |

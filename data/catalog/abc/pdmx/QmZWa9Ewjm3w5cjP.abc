@@ -1,0 +1,35 @@
+%abc-2.1
+% Sicilienne Op.78, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/51/QmZWa9Ewjm3w5cjP9a9gutRT7N58S4EMnBAonBd4iN5oMi.mid (sha256
+% d4798e27c9611cbc4dedc64491bda13b226b827f7c59e2182a7674d262d76963): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sicilienne Op.78
+M:6/8
+L:1/16
+Q:1/4=112.5
+% Exact tempo 112.49999999999702 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A7"z4 D,3 G,5 | "Gm7"G, _B,3 D6 G2 | "Em"G _B4 z A G3 A2 | "Bb"A4 D7 z |
+"C7"C E3 D4 z C E2 | "E7"E D11 | "G"D z3 D,3 G,5 | "Gm7"G, _B,3 D6 F2 |
+"Fm7"F _A4 z G F3 G2 | "Em7"G4 G,7 z | "F#m7"^F, A,3 G,4 z ^F, _B,2 | "Gm"_B, G,6 z5 |
+"Gm"z4 D3 G5 | "Gm7"G _B3 d6 g2 | "Em7"g _b4 z a g3 a2 | "Bb"a4 d3 d4 z |
+"C7"c e3 d4 z c e2 | "D"e d11 | "Gm"d z3 D3 G5 | "Gm7"G _B3 d6 f2 |
+"Fm7"f _a4 z g f3 g2 | "G7"g4 G3 G4 z | "D7"^F A3 G4 z ^F _B2 | "Gm"_B G9 z2 |
+"Em7"z7 B5 | "Eb"G A3 _B5 c _d2 | "Bb"_d =d5 _e f3 g2 | "Gm"g4 d3 _B5 |
+"Eb"G A3 _B5 c _d2 | "D"_d =d5 e ^f3 g2 | "Em7"g7 d5 | "Cm7"e ^f3 g8 |
+"Bb"g d5 e ^f3 g2 | "Gm"g7 d5 | "Cm7"e ^f3 g8 | "D"g d5 e ^f3 g2 |
+"Gm7"g7 g5 | "Gm7"g4 d z7 | "A7"_B6 A _B3 A2 | "Dm7"A3 G ^F3 g5 |
+"Gm7"g4 d z7 | "A7"z c5 A _B3 A2 | "Dm7"A C2 ^F A2 d c5 | "Gm7"A _B3 A3 C2 ^F A2 |
+"A7"d c5 A _B3 A2 | "Dm7"A C2 ^F A2 d c5 | "Gm7"A _B3 A3 C2 ^F A2 | "Bb7"d c5 A _B3 A2 |
+"D"A C2 ^F A2 d G5 | "Gm7"G _B3 d6 g2 | "Em7"g _b5 a g3 a2 | "Bb"a4 d3 d5 |
+"C7"c e3 d5 c e2 | "D"e d11 | "Gm"d z3 D3 G5 | "Gm7"G _B3 d6 f2 |
+"Fm7"f _a5 g f3 g2 | "G7"g4 G3 G5 | "D7"^F A3 G5 ^F _B2 | "Gm"_B G9 z2 |
+"Gm"z12 | "Gm7"z12 | "Em7"z12 | "Bb"z12 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% La fille du régiment, by Gaetano Donizetti. Score published on MuseScore (artist: Gaetano
+% Donizetti), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gaetano Donizetti (died 1848,
+% Wikidata Q101698).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/29/QmSKmX5HZtiqjtHVTptZ6QbLNTjZSw7jN75hhx9P56dvdQ.mid (sha256
+% 73220c8f916c8ee69c80e39c3d8e36bb6858708c19c3db0fd7908b991696ed03): melody track 11, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La fille du régiment
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb7"z5 _b c' d' | "Bb"_e' z f' d' _e' z f' d' | "Eb"_e'2 z3 g _a =a | "Eb"_b z c' z d' z _e' z |
+"Bb7"f'2 z3 _b d' _e' | "Bb"f' z g' e' f' z g' e' | "Bb"f'2 z3 _b d' _e' | "Bb7"f' z e' z f' z ^f' z |
+"Ab"g'2 z2 f'2 z2 | "Bb"_e'2 z2 d' z d' z | "Ab"g'2 z2 f'2 z2 | "Bb"_e'2 z2 d' z d' z |
+"Eb"_e'2 _e2 z4 | "Bb"z8 | "Bb7"z2 d z _e z d z | "Cm7"_e z4 G _A =A |
+"Cm7"_B z c z d z _e z | "Gm7"f z4 _B d _e | "Bb7"f z e z f z e z | "Gm7"f z4 A _B c |
+"Bb7"d z _e z f z ^f z | "Eb"g2 z6 | "G"z8 | "Cm"G4 _A4 |
+"Cm"G6 z2 | "Cm"z8 | "F"z d c _B A z3 | "F7"z8 |
+"F7"z8 | "F"z8 | "Gm7"z8 | "Bb"_B d _e d c _e f _e |
+"Bb7"d f g f _e g _a g | "Bb"f2 z6 | "B"B8 | "F#"_B8 |
+"Abm"_A8 | "Eb"G8 | "Eb"G8 | "B"B8 |
+"F#"_B8 | "Abm"_A4 =A4 | "Bb7"_B2 z6 | "Bb"z8 |
+"Bb"z8 | "Fm7"z2 d z _e z d z | "Cm7"_e z4 G _A =A | "Cm7"_B z c z d z _e z |
+"Gm7"f z4 _B d _e | "Bb7"f z e z f z e z | "Gm7"f z4 A _B c | "Bb7"d z _e z f z ^f z |
+"Fm"g z f f g g _a _a | "Cm7"_b2 g z _a z f z | "Fm7"g z _a z _b z c' z | "Bb"_b _b _b a a _a _a g |
+"Bb"g z7 | "Bb"z8 | "Dm"z8 | "Bb7"z8 |
+"Cm7"z2 _e' z _e' z _e'2 | "Eb7"_e'2 _d z c z _A z | "Eb7"F z _d z c z _A z | "Eb"F z7 |

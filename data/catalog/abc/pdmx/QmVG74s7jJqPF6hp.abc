@@ -1,0 +1,34 @@
+%abc-2.1
+% Musikalisches Würfelspiel K.516f, by Wolfgang Amadeus Mozart. Score published on MuseScore
+% (artist: Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/22/QmVG74s7jJqPF6hpNVRL5cC1ZrTKHskVunsiYikJnKSj2j.mid (sha256
+% 959e464df30b67e2168a14508f357325f0081b88ca89d63c6ac65b1490ca004d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Musikalisches Würfelspiel K.516f
+M:3/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em7"f2 d2 g2 | "Em"A2 ^F G B g | "C"g2 c2 e2 | "G"g2 e d e d |
+"G"g4 z2 | "C"G2 c2 e2 | "C"e c e f c' g | "C"c4 z2 |
+"G"e2 d2 z2 | "G"B A B c d B | "D7"e c B A G ^F | "C"c2 c2 c2 |
+"Em"c2 G2 E2 | "C"c4 z2 | "C"e2 g e c2 | "D7"a2 ^f2 d2 |
+"Em"c G c e G c | "C"G2 c2 e2 | "C"e c e2 g2 | "B"g2 b d' d2 |
+"D7"c e g d A ^f | "C"e2 c2 G2 | "Dm"f e d e f g | "G"g4 z2 |
+"D7"D ^F A d ^f a | "C"e2 e2 e2 | "G"f e f d c B | "D7"^f d c a ^f d |
+"G"B d g d B2 | "G"g4 z2 | "C"e c G2 e2 | "C"G2 c2 e2 |
+"G"g4 z2 | "G"e c d B G2 | "D7"A2 d2 ^f2 | "D7"D ^F A d ^f a |
+"Bm"g b g d B2 | "C"c2 G2 e2 | "G"g2 G2 G2 | "C"c B c e G c |
+"C"c B c e G2 | "C"B c d B A G | "C"g2 f e d c | "G7"A2 f d A B |
+"Em"c B c G E C | "Bm"g2 b g d B | "Bm"g2 g d b2 | "C"e2 c e g c' |
+"C"e2 c2 G2 | "Em"c2 e c G2 | "C"c G e c g e | "G7"d _d =d f G B |
+"C"e2 e f g2 | "C"c2 c2 c2 | "Bm"g2 b2 d2 | "G"d B G2 z2 |
+"C"e2 c2 G2 | "C"g2 e2 c2 | "C"g2 c2 e2 | "C"g2 f e d c |
+"Em"c2 e c G2 | "D7"e c B G A ^F | "C"e c B c G2 | "C"e g c' g e c |

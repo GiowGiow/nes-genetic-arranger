@@ -1,0 +1,31 @@
+%abc-2.1
+% andantino, by Matteo Carcassi. Score published on MuseScore (artist: Matteo Carcassi), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Matteo Carcassi (died 1853,
+% Wikidata Q469912).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/44/QmTtiJN97SLE1m6RMjwo8t51Ki39GV1bnEq1k1puzN8uFB.mid (sha256
+% b4734ba16023c7fb09e1232801288e6247643ebad39ed58d2c155d0d845925b8): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:andantino
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A,, A,2 _D ^F A,2 _D E A,2 _D A,, A,2 _D | "C"_A,, B,2 D ^F B,2 D E B,2 D _A,, B,2 D | "C"E,, B,2 D A B,2 D _A B,2 D E,, B,2 D | "C"A,, _D2 E B _D2 E A _D2 E A,, _D2 E |
+"C"A,, A,2 _D _A =A,2 _D ^F =A,2 _D =A,, =A,2 _D | "C"_B,, G,2 _D ^F G,2 _D E G,2 _D _B,, G,2 _D | "C"B,, ^F,2 A, E ^F,2 A, B,, ^F,2 A, _E ^F,2 A, | "C"E,, _A,2 B, E _A,2 B, E,4 z4 |
+"C"A,, A,2 _D ^F A,2 _D E A,2 _D A,, A,2 _D | "C"_A,, B,2 D ^F B,2 D E B,2 D _A,, B,2 D | "C"E,, B,2 D A B,2 D _A B,2 D E,, B,2 D | "C"A,, _D2 E B _D2 E A _D2 E A,, _D2 E |
+"C"A,, A,2 _D _A =A,2 _D ^F =A,2 _D =A,, =A,2 _D | "C"_B,, G,2 _D ^F G,2 _D E G,2 _D _B,, G,2 _D | "C"B,, ^F,2 A, E ^F,2 A, B,, ^F,2 A, _E ^F,2 A, | "C"E,, _A,2 B, E _A,2 B, E,4 z4 |
+"C"E,, _A,2 B, ^F _A,2 B, E _A,2 B, E, _A,2 B, | "C"E,, A,2 _D _A =A,2 _D ^F =A,2 _D E, =A,2 _D | "C"E,, _B,2 _D G _B,2 _D ^F _B,2 _D E, _B,2 _D | "C"E,, B,2 D A B,2 D _A B,2 D E, B,2 D |
+"C"F, B,2 D A B,2 D _A B,2 D F, B,2 D | "C"^F, A,2 _D A A,2 _D ^F, A,2 _D A A,2 _D | "C"D, D2 ^F B D2 ^F D, D2 ^F c D2 ^F | "C"_D, F2 _A _d F2 _A _D2 =D2 B,2 E2 |
+"C"A,, A,2 _D ^F A,2 _D E A,2 _D A,, A,2 _D | "C"A,, B,2 D A B,2 D _A B,2 D =A,, B,2 D | "C"A,, _A,2 B, ^F _A,2 B, E _A,2 B, =A,, _A,2 B, | "C"A,, _D2 E B _D2 E A _D2 E A, _D2 E |
+"C"^F, _D2 E B _D2 E _B _D2 E ^F, _D2 E | "C"D, D2 ^F _d =D2 ^F B =D2 ^F =d =D2 ^F | "C"_E, A,2 B, F A,2 B, =E, _A,2 D =E _A,2 D | "C"A,, _D2 E A _D2 E A,4 z4 |
+"C"E,, _A,2 B, ^F _A,2 B, E _A,2 B, E, _A,2 B, | "C"E,, A,2 _D _A =A,2 _D ^F =A,2 _D E, =A,2 _D | "C"E,, _B,2 _D G _B,2 _D ^F _B,2 _D E, _B,2 _D | "C"E,, B,2 D A B,2 D _A B,2 D E, B,2 D |
+"C"F, B,2 D A B,2 D _A B,2 D F, B,2 D | "C"^F, A,2 _D A A,2 _D ^F, A,2 _D A A,2 _D | "C"D, D2 ^F B D2 ^F D, D2 ^F c D2 ^F | "C"_D, F2 _A _d F2 _A _D2 =D2 B,2 E2 |
+"C"A,, A,2 _D ^F A,2 _D E A,2 _D A,, A,2 _D | "C"A,, B,2 D A B,2 D _A B,2 D =A,, B,2 D | "C"A,, _A,2 B, ^F _A,2 B, E _A,2 B, =A,, _A,2 B, | "C"A,, _D2 E B _D2 E A _D2 E A, _D2 E |
+"C"^F, _D2 E B _D2 E _B _D2 E ^F, _D2 E | "C"D, D2 ^F _d =D2 ^F B =D2 ^F =d =D2 ^F | "C"_E, A,2 B, F A,2 B, =E, _A,2 D =E _A,2 D | "C"A,, _D2 E A _D2 E A,4 z4 |

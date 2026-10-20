@@ -1,0 +1,35 @@
+%abc-2.1
+% Opus 38 Etude 22, by Napoleon Coste. Score published on MuseScore (artist: Napoléon Coste), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Napoleon Coste (died 1883,
+% Wikidata Q1965046).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/15/QmPdfB75bHLWRAXj5SWBtAsqtnVZ6Gq2qYAPwd4h9wWNJG.mid (sha256
+% 03f169f9433cf0a5e60933391124d7d7e290f2ae237e9df53a84f12a046a8c7c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Opus 38 Etude 22
+M:4/4
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A,,2 z2 E,,2 E,,2 A,,2 z2 E,,2 z2 | "C"A,,2 z2 E,,2 E,,2 A,,2 z2 E,,2 z2 | "C"_D E _D E _D E _D E _D E _D E _D A _D A | "C"D A D A D _A D _A D ^F D ^F D E D E |
+"C"_D E _D E _D E _D E E _d E _d _D A _D A | "C"D A D A D _A D _A D ^F D ^F D E D E | "C"_D E _D E _D E _D E _D ^F _D ^F _D ^F _D ^F | "C"D ^F D ^F D =F D =F D E D E D E D E |
+"C"_D E _D E _D E _D E A, =D A, =D A, _D A, _D | "C"A, B, A, B, A, B, A, B, A, B, A, B, A, B, A, B, | "C"A, B, A, B, A, B, A, B, A, B, A, B, A, ^F A, ^F | "C"_A, E _A, E _A, E _A, E =A, E =A, E D E D E |
+"C"_D E _D E _D E _D E _D E _D E _D A _D A | "C"D A D A D _A D _A D ^F D ^F D E D E | "C"_D E _D E _D E _D E E _d E _d _D A _D A | "C"D A D A D _A D _A D ^F D ^F D E D E |
+"C"_D E _D E B, E B, E _B, ^F _B, ^F _B, E _B, E | "C"A, _E A, _E A, _E A, _E _A, =E _A, =E _A, D _A, D | "C"A, D A, D A, _D A, _D A, =D A, =D A, _D A, _D | "C"A, ^F A, ^F B, =F B, =F _D E _D E =D _A =D _A |
+"C"C A C A C A C A C A C A C A C A | "C"_E A _E A _E A _E A _E A _E A _E A _E A | "C"E G E G E G E G E G E G E G E G | "C"E G E G E G E G E G E G E G E G |
+"C"E G E G D F D F D F D F D F D F | "C"D F D F D F D F D F D F D F D F | "C"D F D F C E C E C E C E C E C E | "C"C E C E C E C E C E C E C E C E |
+"C"C F C F C F C F C F C F _D G _D G | "C"D F D F D F D F D F D F D F D F | "C"D F D F D F D F D F D F D F D F | "C"D E D E D E D E D E D E D B D B |
+"C"_D A _D A _D A _D A E G E G E G E G | "C"_E ^F _E ^F _E ^F _E ^F D =F D =F D =F D =F | "C"_D E _D E _D E _D E C E C E C E C E | "C"B, E B, E B, E B, E A, E A, E A, D A, D |
+"C"A, D A, D A, C A, C A, D A, D A, D A, D | "C"A, D A, D A, C A, C A, B, A, B, A, B, A, B, | "C"_A, B, _A, B, _A, E _A, E _A, E _A, E _A, E _A, E | "C"A, E A, E A, E A, E A, E A, E A, E A, E |
+"C"_A, E _A, E _A, E _A, E _A, E _A, E _A, E _A, E | "C"A, E A, E A, E A, E A, E A, E A, E A, E | "C"_A, E _A, E _A, E _A, E G, E G, E G, E G, E | "C"_A, E _A, E _A, E _A, E G, E G, E G, E G, E |
+"C"_A, E _A, E _A, E _A, E _A, E _A, E _A, E _A, E | "C"A, E A, E A, E A, E _B, E _B, E _B, E _B, E | "C"B, E B, E B, E B, E C E C E C E C E | "C"_D E _D E _D E _D E _D E _D E _D A _D A |
+"C"D A D A D _A D _A D ^F D ^F D E D E | "C"_D E _D E _D E _D E E _d E _d _D A _D A | "C"D A D A D _A D _A D ^F D ^F D E D E | "C"_D E _D E B, E B, E _B, ^F _B, ^F _B, E _B, E |
+"C"A, _E A, _E A, _E A, _E _A, =E _A, =E _A, D _A, D | "C"A, D A, D A, _D A, _D A, =D A, =D A, _D A, _D | "C"A, ^F A, ^F B, =F B, =F _D E _D E =D _A =D _A | "C"_D E _D E _D E _D E E _d E _d _D A _D A |
+"C"D A D A D _A D _A D ^F D ^F D E D E | "C"_D E _D E _D E _D E _D E _D E _D E _D E | "C"D E D E D E D E D E D E D E D E | "C"_D E _D E _B, ^F _B, ^F =B, =D =B, =D _A, E _A, E |
+"C"A, _D A, _D _A, B, G, _D ^F, =D ^F, =D =F, B, =F, B, | "C"_D, A, _D, A, C, A, _D, A, E, _D E, _D =D, B, =D, B, | "C"_D, A, _D, A, E _d E _d _D A _D A =D B =D B | "C"_D A _D A E _d E _d _D A _D A =D B =D B |

@@ -1,0 +1,34 @@
+%abc-2.1
+% SAUDAÇÃO (Ao Sr. Prefeito Alaor Prata), by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/saudacao.html (file
+% https://www.beakauffmann.com/mpb_s/som/saudacao.mid, sha256
+% bb79b3d6f3334cec618f2f12cc6effb24e98919481abaf377d3009198e9c9687), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-56 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SAUDAÇÃO (Ao Sr. Prefeito Alaor Prata)
+M:4/4
+L:1/16
+Q:1/4=70.00007
+% Exact tempo 70.00007000007 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm7"c4 _B2 z _A "G7"_A4 _B3 c | "Ab"c2 z2 f2 z _e _e6 z2 | "Ab"f4 _e4 "Bb7"_d4 c4 | "Gm7"_B4 _A3 z "Cm7"G2 F2 _E4 |
+"Eb7"f4 g2 z2 "Ab"_a4 z2 c' z | "Eb"_e'5 z _d' z "Ab7"c'4 z2 _A2 | "Fm7"_A2 z2 c2 z2 f3 z _A3 z | "Eb"_d'2 z2 g2 z _a "Ab"_a2 z2 c3 _B |
+"Cm"_A4 G3 F _E3 F G3 _A | "Eb"_D4 _E,,3 z5 c3 z | "Fm"F,,8 "Bb7"_B,,8 | "Cm7"G3 _A F3 G "Eb"_E3 z _E3 =E |
+"Db"F z3 _d3 c "Eb"_B4 _A3 _B | "Ab"c4 C2 _A2 "Eb"_E3 z _E3 =E | "Eb"F z3 _e2 _d2 c2 _B2 _A2 _B2 | "Em"c4 G3 z G3 z c3 _d |
+"Ebm"_e3 z _d3 c "F7"c4 _B3 A | "D"c8 "Bb"_B3 z _B3 c | "Gm"_d4 c3 z "C"_B3 z _A3 G | "Dbm"_B7 z "F"_A3 z _A3 _B |
+"E7"B6 G2 "Db7"_A2 _B2 =B2 d2 | "Eb"z4 _A3 z "Cm7"_A2 _A z C3 z | "Bb"_d3 z _d3 _d "Eb"c4 _B3 _A | "Fm7"_A8- "Ab"_A4 z4 |
+"Db"F3 z F z2 F "C"_A3 z _A2 z _A | "Bb"_d3 z _d2 z _d "C"_A4 _A2 z ^F | "Db"F3 z F2 z _E "Eb"_E z2 C _D3 _E | "Fm7"C7 _e "Ab"_a4 z4 |
+"Eb"^F3 z ^F2 z ^F "D"=F3 z _B2 z _B | "Cm"_e4 ^F3 z "Eb"G3 _d c3 _B | "Ab7"_A4 C3 z5 E4 | "Db"F2 z2 c3 z "C7"_d2 z2 _e2 z2 |
+"Db"F3 z F z2 F "C"_A3 z _A2 z _A | "Bb"_d3 z _d2 z _d "C"_A4 _A2 z ^F | "Db"F3 z F2 z _E "Eb"_E z2 C _D3 _E | "Fm7"C7 _e "Ab"_a4 z4 |
+"Eb"^F3 z ^F2 z ^F "D"=F3 z _B2 z _B | "Cm"_e4 ^F3 z "Eb"G3 _d c3 _B | "Ab7"_A4 C3 z5 E4 | "Db"F2 z2 c3 z "C7"_d2 z2 _e2 z2 |
+"Db"F3 z F2 z F "C"_A3 z _A2 z _A | "Bb"_d3 z _d2 z _d "C"_A3 z _A2 z ^F | "Db"F3 z F2 z _E "Eb"_E z2 C _D3 _E | "Fm7"C7 _e "Ab"_a4 z4 |
+"Eb"^F3 z ^F2 z ^F "D"_B3 z _B2 z _B | "Ebm"_e4 ^F4 "C"=E2 _d2 c2 z _B | "Fm7"_A2 z2 _B3 z _d3 z c2 z2 | "Db"_d z7 _d'3 z5 |
+"Fm7"c4 _B2 z _A "G7"_A4 _B3 c | "Ab"c2 z2 f2 z _e _e6 z2 | "Ab"f4 _e4 "Bb7"_d4 c4 | "Gm7"_B4 _A3 z "Cm7"G2 F2 _E4 |
+"Eb7"f4 g2 z2 "Ab"_a4 z2 c' z | "Eb"_e'5 z _d' z "Ab7"c'4 z2 _A2 | "Fm7"_A2 z2 c2 z2 f3 z _A3 z | "Eb"_d'2 z2 g2 z _a "Ab"_a z3 _a z3 |

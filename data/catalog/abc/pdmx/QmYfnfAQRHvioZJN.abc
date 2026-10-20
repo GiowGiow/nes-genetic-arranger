@@ -1,0 +1,34 @@
+%abc-2.1
+% Cecen Kizi, by Tanburi Cemil Bey(1871-1916). Score published on MuseScore (artist: Tanburi Cemil
+% Bey), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tanburi Cemil Bey (died 1916,
+% Wikidata Q3514773).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/19/QmYfnfAQRHvioZJNSU6qP69yRsrurbrMdtMvPxd1i8CQQM.mid (sha256
+% ca43fb9c368e1f97bc7ea90caa45e97b7104103c79df353541aa366666652277): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Cecen Kizi
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"D E F G A2 A2 | "C"A8 | "C"A G A d A4 | "C"A G A d A4 |
+"C"A G A d A G A d | "C"A G A d A4 | "C"G2 F A G2 z2 | "C"G2 F A G2 z2 |
+"C"G2 c _B _B A A G | "C"G F F E E D E C | "C"D E F E F G E C | "C"D6 z2 |
+"C"D E F G A2 A2 | "C"A8 | "C"A G A d A4 | "C"A G A d A4 |
+"C"A G A d A G A d | "C"A G A d A4 | "C"G2 F A G2 z2 | "C"G2 F A G2 z2 |
+"C"G2 c _B _B A A G | "C"G F F E E D E C | "C"D E F G E D E C | "C"D6 z2 |
+"C"C D E F G A c c | "C"d8 | "C"d4 d4 | "C"d4 d4 |
+"C"c2 d c c _B _B A | "C"A G G F F E E D | "C"D C D E F G E C | "C"D6 D2 |
+"C"C D E F G A c c | "C"d8 | "C"d4 d4 | "C"d4 d4 |
+"C"c2 d c c _B _B A | "C"A G G F F E E D | "C"D C D E F G E C | "C"D6 D2 |
+"C"E F G2 G A F2 | "C"E F G2 G A F2 | "C"E F G2 G A F2 | "C"E2 F2 F2 E2 |
+"C"E F G2 G A F2 | "C"E F G2 G A F2 | "C"E F G2 G A F2 | "C"E2 F2 F2 E2 |
+"C"D E F G A2 A2 | "C"A d A2 z2 A G | "C"z2 D E F G A G | "C"A d A2 z2 A G |
+"C"F2 G2 G2 G F | "C"E2 F2 F2 F E | "C"D2 E2 E D C2 | "C"D6 z2 |
+"C"D E F G A2 A2 | "C"A8 | "C"A G A d A4 | "C"A G A d A4 |
+"C"A G A d A G A d | "C"A G A d A4 | "C"G2 F A G2 z2 | "C"G2 F A G2 z2 |

@@ -1,0 +1,21 @@
+%abc-2.1
+% She who lies here, by John Wall Callcott (1766-1821). Score published on MuseScore (artist: John
+% Wall Callcott), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Wall Callcott (died 1821,
+% Wikidata Q6262765).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/13/QmTcCzzoAH76hf3f7DfR843H3M5cwLXWjKud8JWR6A7ogC.mid (sha256
+% 7e211be1f0738110a69b194988dd84cdae334a1b9a84a27f56b0d39eb8bfad6e): melody track 2, bars 0-8
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:She who lies here
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 "G"z8 | "C"z4 C4 E4 C4 | "G7"G4 A2 B2 "C"c4 c4 | "Em7"B8 "F"z4 a4 |
+"C"g8 "Em7"g4 f4 | "Am"e4 f2 g2 "F"a4 f4 | "C"e8 "G7"d8 | "C"c8 c6 e2 |

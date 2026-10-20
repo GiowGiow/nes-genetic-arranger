@@ -1,0 +1,31 @@
+%abc-2.1
+% Sangerhilsen EG 170, by Edvard Grieg (1843-1907). Score published on MuseScore (artist: Edvard
+% Grieg), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/48/QmRv2ave6noKHiVVLTw7zpZArYGGc7w29STJzhGbGaQhCB.mid (sha256
+% db7c78453181915a26396b16f42dcb773589eb2508fea9cddb59712556a33ffd): melody track 2, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sangerhilsen EG 170
+M:4/4
+L:1/16
+Q:1/4=126.000126
+% Exact tempo 126.00012600012599 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"A,6 A,2 A,4 A,, _D,2 E, | "D"A,4 _A,4 "F#m7"^F,4 E,4 | "D"D,3 D, D,2 D,2 "Bm7"^F,6 ^F,2 | "A"E,10 z6 |
+"Db"_D6 _D2 "Dbm"_D4 _D, E,2 _A, | "Db"_D4 B,4 "Db7"A,4 _A,4 | "F#m"^F,3 ^F, ^F,2 ^F,2 "Ebm7"A,6 A,2 | "Dbm"_A,10 z6 |
+"E7"E,6 E,2 "D"E,2 z2 E,2 z2 | "A"E, z2 E, E,2 z2 "E"z4 E,4 | "E"E,3 E, E,2 _A,2 "D"=A,6 =A,2 | "B7"C12 z4 |
+"E7"B,4 E4 D4 _D4 | "G7"B,4 B,4 "D"B,4 B,4 | "E7"B,8 A,4 _A,4 | "A"A,12 z4 |
+"A"A,6 A,2 A,4 A,, _D,2 E, | "D"A,4 _A,4 "F#m7"^F,4 E,4 | "D"D,6 D,2 "Bm7"D,3 D, ^F,2 ^F,2 | "A"E,10 z6 |
+"Db"_D6 _D2 "Dbm"_D4 _D, E,2 _A, | "Db"_D4 B,4 "Db7"A,4 _A,4 | "F#m"^F,3 ^F, ^F,2 ^F,2 "Ebm7"A,6 A,2 | "Dbm"_A,10 z6 |
+"E7"E,6 E,2 "D"E,2 z2 E,2 z2 | "A"E, z2 E, E,2 z2 "E"z4 E,4 | "E"E,3 E, E,2 _A,2 "D"=A,6 =A,2 | "B7"C12 z4 |
+"E7"B,4 E4 D4 _D4 | "G7"B,4 B,4 "D"B,4 B,4 | "E7"B,8 A,4 _A,4 | "A"A,12 z4 |
+"A"A,6 A,2 A,4 A,, _D,2 E, | "D"A,4 _A,4 "F#m7"^F,4 E,4 | "D"z4 D,2 D,2 "Bm7"^F,6 ^F,2 | "A"E,3 E, E,4 z8 |
+"Db"_D6 _D2 "Dbm"_D4 _D, E,2 _A, | "Db"_D4 B,4 "Db7"A,4 _A,4 | "F#m"z4 ^F,2 ^F,2 "Ebm7"A,6 A,2 | "Dbm"_A,3 _A, _A,4 z8 |
+"E7"E,6 E,2 "D"E,2 z2 E,2 z2 | "A"E, z2 E, E,2 z2 "E"z4 E,4 | "E"E,3 E, E,2 _A,2 "D"=A,6 =A,2 | "B7"C12 z4 |
+"E7"B,4 E4 D4 _D4 | "G7"B,4 B,4 "D"B,4 B,4 | "E7"B,8 A,4 _A,4 | "A"A,12 z4 |

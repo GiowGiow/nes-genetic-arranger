@@ -1,0 +1,35 @@
+%abc-2.1
+% De profundis, by Constantijn Huygens. Score published on MuseScore (artist: Constantijn
+% Huygens), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Constantijn Huygens (died 1687,
+% Wikidata Q560746).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/31/QmbmqzcoTe5JUrgj5i5AkX5nw9oJLZYaosnFBPm4zhZicf.mid (sha256
+% fe885fd9dc98522816170ad6d61d5e0f89d6e965cf5a11fe9edf875ff15bc6e0): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:De profundis
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 D8 | "Em7"D8 "D"D8 | "G"D16 | "D"D8 D8 |
+"D"D8 "F#m7"A,8 | "Em7"D16 | "A"_D8 "D"=D8 | "Em"E8- "F#7"E8 |
+"Bm"^F8 "Bm7"z4 ^F4 | "G"G8 "D"A8 | "Em"B8- "F#m7"B4 _d4 | "Bm"d8- "Abm"d4 e4 |
+"A"_d4 e3 e "F#m"e2 e2 ^f4 | "Abm7"_e2 _e2 =e4- "A"=e6 A2 | "E"_A4 =A4 "E7"=A4 _A4 | "A"A16 |
+"D"z8 D8 | "Em7"D8 "D"D8 | "G"D16 | "D"D8 D8 |
+"D"D8 "F#m7"A,8 | "Em7"D16 | "A"_D8 "D"=D8 | "Em"E8- "F#7"E8 |
+"Bm"^F8 "Bm7"z4 ^F4 | "G"G8 "D"A8 | "Em"B8- "F#m7"B4 _d4 | "Bm"d8- "Abm"d4 e4 |
+"A"_d4 e3 e "F#m"e2 e2 ^f4 | "Abm7"_e2 _e2 =e4- "A"=e6 A2 | "E"_A4 =A4 "E7"=A4 _A4 | "A"A16 |
+"D"^F8 "Bm"B8 | "D"A8 "Bm"^F8 | "A"A8 "F#m"A8 | "Dbm7"B8 "F#7"_d8 |
+"Bm"d16 | "F#"_d8- "F#7"_d8 | "Bm"z8 "F#m"^f4 e4 | "F#m"d8 "F#m7"_d4 _d4 |
+"Bm"B8- "F#m7"B4 A4 | "Em7"G6 G2 "D"^F4 ^F4 | "G"E8 "Abm7"D8 | "E"G8- "E7"G4 A4 |
+"Em7"B6 A B ^F4 _A4 | "Em7"A8- "D"A8 | "D"^F8 "Bm"B8 | "D"A8 "Bm"^F8 |
+"A"A8 "F#m"A8 | "Dbm7"B8 "F#7"_d8 | "Bm"d16 | "F#"_d8- "F#7"_d8 |
+"Bm"z8 "F#m"^f4 e4 | "F#m"d8 "F#m7"_d4 _d4 | "Bm"B8- "F#m7"B4 A4 | "Em7"G6 G2 "D"^F4 ^F4 |
+"G"E8 "Abm7"D8 | "E"G8- "E7"G4 A4 | "Em7"B6 A B ^F4 _A4 | "Em7"A8- "D"A8 |
+"Dm"D8- "F#m7"D2 D2 E3 E | "Dm"F4 F4 "Am"E4 A4 | "Em7"A6 G2 "A"A8 | "F"c4 c c z2 "Dm7"c4 c2 c2 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% Allein Gott in der Höh sei Ehr BWV 663, by Johann Sebastian Bach (1685-1750). Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/16/QmTDTd2zjAtEchWhEoEA6XnN3rneFtgPTVE1pWr5ZYyzVb.mid (sha256
+% b418df56ffe403372c72aa072bf41b8a393bc7a7fb2e25ffc1713676f1a02825): melody track 3, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Allein Gott in der Höh sei Ehr BWV 663
+M:3/2
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.9999136000691 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am7"z24 | "Bm"z24 | "D7"z24 | "Em7"z24 |
+"F#m"z24 | "A7"z24 | "D"z24 | "D7"z24 |
+"G"z24 | "D7"z24 | "G"z24 | "Bm"z24 |
+"D7"z24 | "G"z24 | "G"z24 | "G"G,10 A,2 G,2 A,2 B,2 A,2 G,2 A,2 |
+"Am7"B,2 D,2 E,2 ^F,2 G,2 A,2 B,2 C2 C D D D D D B, C | "G"D24 | "Am"D2 F2 E2 D2 C2 B,2 A,2 G,2 A,2 C2 B,2 D C | "Am"C24 |
+"D"C2 B,2 A,2 G,2 ^F,2 E,2 D,2 C B, B,8 | "C"B,2 ^F2 G2 E2 =F2 _E2 =E2 C2 C z B, B, B, _B, =B,2 | "B7"B,24 | "B7"B,24 |
+"Am7"z24 | "Am7"z24 | "Em"B,20 C2 B,2 | "Em"B,10 D2 C2 B,2 A,2 C2 B,2 D C |
+"Am"C24 | "G"C2 ^F2 G2 A2 B,16 | "C"B,2 E,2 ^F,2 G,2 A,2 C2 B,2 A,2 ^F2 D2 E2 ^F2 | "Bm7"G2 ^F2 E2 D2 C2 B,2 A,2 G,2 ^F,2 E,2 D,2 C2 |
+"D7"B,2 E2 D2 C2 B,2 A,2 G,2 A,2 A, B, B, B, B, B, G,2 | "G"G,24 | "Bm"z24 | "D7"z24 |
+"Em7"z24 | "F#m"z24 | "A7"z24 | "D"z24 |
+"D7"z24 | "G"z24 | "D7"z24 | "G"z24 |
+"Bm"z24 | "D7"z24 | "G"z24 | "G"z24 |
+"G"G,10 A,2 G,2 A,2 B,2 A,2 G,2 A,2 | "Am7"B,2 D,2 E,2 ^F,2 G,2 A,2 B,2 C2 C D D D D D B, C | "G"D24 | "Am"D2 F2 E2 D2 C2 B,2 A,2 G,2 A,2 C2 B,2 D C |
+"Am"C24 | "D"C2 B,2 A,2 G,2 ^F,2 E,2 D,2 C B, B,8 | "C"B,2 ^F2 G2 E2 =F2 _E2 =E2 C2 C z B, B, B, _B, =B,2 | "B7"B,24 |
+"B7"B,24 | "Am7"z24 | "Am7"z24 | "Em"B,20 C2 B,2 |
+"Em"B,10 D2 C2 B,2 A,2 C2 B,2 D C | "Am"C24 | "G"C2 ^F2 G2 A2 B,16 | "C"B,2 E,2 ^F,2 G,2 A,2 C2 B,2 A,2 ^F2 D2 E2 ^F2 |

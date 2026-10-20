@@ -1,0 +1,23 @@
+%abc-2.1
+% Sangen, by Louis Spohr. Score published on MuseScore (artist: Louis Spohr), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Louis Spohr (died 1859, Wikidata
+% Q57226).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/57/QmSZ6oybiCjzTJrMEFZWM7CpJnaSrPrDDenJAQvDRuGR5L.mid (sha256
+% 0ae1676f1d323bec78120755bf6394c6b1b4c7216344af634d39333749626757): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sangen
+M:4/4
+L:1/16
+Q:1/4=132.000132
+% Exact tempo 132.000132000132 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"D,6 D,2 "F#m"^F,4 A,4 | "D"D8 "A"A,8 | "D"D6 D2 "B7"D4 E4 | "D"^F12 z4 |
+"D"A,6 A,2 "B"D4 D4 | "Db"_D8 "F#"A,4 _E4 | "F#m7"E6 A,2 "E7"_D4 B,4 | "A"A,12 z4 |
+"G"B,6 B,2 "F#"B,4 _D4 | "Bm"D8- "Abm7"D8 | "A"E6 _D2 =D4 E4 | "D"^F8- "F#m"^F8 |
+"D"D4 A,4 "F#m7"D4 E4 | "D"^F8 "B7"A4 G4 | "A"^F8 "A7"_D4 E4 | "D"D12 z4 |

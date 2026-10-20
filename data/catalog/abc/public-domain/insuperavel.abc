@@ -1,0 +1,35 @@
+%abc-2.1
+% INSUPERÁVEL, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_i/insuperavel.html (file
+% https://www.beakauffmann.com/mpb_i/som/insuperavel.mid, sha256
+% 25216e99e9101ddf87ebe20eaea975920a7e2855681df074465ad06b82628d28), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:INSUPERÁVEL
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E7"z e z _d A ^F z =F | "E7"E2 z B, E4 | "E7"e3 B e3 c | "A"e3 _d e _D2 E |
+"A"A _d2 e a _d'2 e' | "F7"b3 ^f b3 =f | "E7"e _d'2 b _a ^f2 =f | "Dbm7"e a2 ^f e _e2 d |
+"A"_d e z _d A ^F z =F | "E7"E3 B, E4 | "E7"e3 B e3 c | "A"e3 _d e _D2 E |
+"Eb7"G _B2 _d e g2 e' | "C7"b _d'2 _e' =e' =e2 ^f | "Abm7"_a =a2 _b =b _d'2 _e' | "E7"e' ^f'2 g' _a' ^f'2 =f' |
+"E7"e' e z _d A ^F z =F | "E7"E2 z B, E4 | "E7"e3 B e3 c | "A"e3 _d e _D2 E |
+"A"A _d2 e a _d'2 e' | "F7"b3 ^f b3 =f | "E7"e _d'2 b _a ^f2 =f | "Dbm7"e a2 ^f e _e2 d |
+"A"_d e z _d A ^F z =F | "E7"E3 B, E4 | "E7"e3 B e3 c | "A7"e3 _d e4 |
+"F#7"g3 _d ^f4 | "Abm7"_d'3 ^f b4 | "E7"^f'3 _a e'3 _d | "A"a3 E B3 E |
+"Db7"A3 _d _A3 _d | "F#m7"^F3 ^f _d3 ^f | "B7"d3 b _e3 a | "E7"d _a2 ^f e _e2 d |
+"Db7"_D3 _d _A3 _d | "F#m7"^F3 ^f _d3 ^f | "Bm"B3 b ^f3 a | "Ab7"z _a2 _b c' _d'2 _e' |
+"Db7"f'3 _d _A3 _d | "F#m7"^F3 ^f _d3 ^f | "B7"d3 b _e3 a | "E7"d _a2 ^f e _e2 d |
+"Db7"_d3 _d _A3 _d | "F#m7"^F3 _d E3 _d | "Bm"D3 B C3 A | "Db"_D3 _A B,3 _A |
+"F#"A, e z _d A ^F z =F | "E7"E3 B, E4 | "E7"e3 B e3 c | "A7"e3 _d e4 |
+"F#7"g3 _d ^f4 | "Abm7"_d'3 ^f b4 | "E7"^f'3 _a e'3 _d | "A"a3 E B3 E |
+"A"A4 a'4 | "A"G E2 ^F G A, z A, | "A"z E2 ^F G z B z | "D"A ^F2 G A A, z A, |
+"A"z ^F2 G A z ^f z | "E7"z e z e e e z e | "A7"A a z a a a z a | "D"d d' z d' d' d' z d' |

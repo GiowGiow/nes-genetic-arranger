@@ -1,0 +1,36 @@
+%abc-2.1
+% LAÇO AZUL, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/laco-azul.html (file
+% https://www.beakauffmann.com/mpb_l/som/laco-azul.mid, sha256
+% 336d84b6927582e9e8b787bacef10418595c7c5e6a9e05ded35fd65fba1eb39b), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LAÇO AZUL
+M:3/4
+L:1/16
+Q:1/4=148.000148
+% Exact tempo 148.000148000148 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bbm7"z12 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_A8 G4 | "Ab7"^F4 C4 C4 | "C7"_A,,4 ^F4 ^F4 | "Bbm7"F4 _D4 _D4 |
+"Bbm7"F,4 _A4 _A4 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_B,,4 F4 F4 | "Ab"C,4 F4 F4 | "C"C,,4 E4 E4 | "Fm"F,4 F4 F4 |
+"Bbm7"z12 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_A8 G4 | "Ab7"^F4 C4 C4 | "C7"_A,,4 ^F4 ^F4 | "Bbm7"F4 _D4 _D4 |
+"Bbm7"F,4 _A4 _A4 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Bbm"_D,4 F4 F4 |
+"C7"G,,4 E4 E4 | "Bbm7"_A,,4 F4 F4 | "Ebm"_A,,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm7"z12 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_A8 G4 | "Ab7"^F4 C4 C4 | "C7"_A,,4 ^F4 ^F4 | "Bbm7"F4 _D4 _D4 |
+"Bbm7"F,4 _A4 _A4 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_B,,4 F4 F4 | "Ab"C,4 F4 F4 | "C"C,,4 E4 E4 | "Fm"F,4 F4 F4 |
+"Bbm7"z12 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |
+"Bbm"_A8 G4 | "Ab7"^F4 C4 C4 | "C7"_A,,4 ^F4 ^F4 | "Bbm7"F4 _D4 _D4 |
+"Bbm7"F,4 _A4 _A4 | "Cm"E,4 G4 G4 | "Ab7"_E,4 ^F4 ^F4 | "Bbm"_D,4 F4 F4 |
+"C7"G,,4 E4 E4 | "Bbm7"_A,,4 F4 F4 | "Ebm"_A,,4 ^F4 ^F4 | "Db"_D,4 F4 F4 |

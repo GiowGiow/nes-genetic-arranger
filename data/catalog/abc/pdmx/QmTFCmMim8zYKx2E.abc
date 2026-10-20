@@ -1,0 +1,35 @@
+%abc-2.1
+% Chanson bohème de 'Carmen', by Georges Bizet. Score published on MuseScore (artist: Moritz
+% Moszkowski), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/20/QmTFCmMim8zYKx2EhVboauUxZpQCz26WXF1cNAHtHTm7KS.mid (sha256
+% a6a1d3c1c4f13d7a1ad525cc0f1d69abb17492e2950fe99030ee48aa8ba2d20a): melody track 0, bars 76-140
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chanson bohème de 'Carmen'
+M:3/4
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.9999136000691 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"e4 e4 e4 | "C"_a ^f e _e _d6 z2 | "C"_e4 _e4 _e4 | "C"^f e _e _d B6 z2 |
+"C"_d4 _d4 _d4 | "C"e _e _d B A4 z2 F2 | "C"^F2 _A2 =A2 B2 _d2 _e2 | "C"e12 |
+"C"e12 | "C"e2 z10 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"e4 e4 e4 | "C"_a ^f e _e _d6 z2 | "C"_e4 _e4 _e4 | "C"^f e _e _d B6 z2 |
+"C"_d4 _d4 _d4 | "C"e _e _d B A4 z2 F2 | "C"^F2 _A2 =A2 B2 _d2 _e2 | "C"e12 |
+"C"e12 | "C"e2 z10 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |
+"C"z12 | "C"z12 | "C"z12 | "C"z12 |

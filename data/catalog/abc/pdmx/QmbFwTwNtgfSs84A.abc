@@ -1,0 +1,23 @@
+%abc-2.1
+% Siciliano from L'Estro Armonico Op. 3 No. 11, by Antonio Vivaldi. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/20/QmbFwTwNtgfSs84AYUr58AYouQpZgEJ91qdzCHrGC5gHfC.mid (sha256
+% ba141e489205c60b03a2a7cf875875ad541eac208d28d300ac29d43a86100bd8): melody track 2, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Siciliano from L'Estro Armonico Op. 3 No. 11
+M:12/8
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"Dm"d3 e d2 d4 d2 "Eb7"e3 f e2 e4 e2 | "Gm7"f4 d2 _e3 f _e2 "F"_e4 _e2 d3 _e d2 | "Am7"d4 d2 _d4 _d2 "Dm"=d2 =d2 =d2 f2 f2 f2 | "C7"f2 f2 f2 e2 e2 e2 "Dm"e2 e2 e2 d2 d2 d2 |
+"C7"d2 d2 d2 _d2 _d2 _d2 "D7"c2 c2 c2 c2 c2 c2 | "E7"c2 c2 c2 c2 c2 c2 "Gm"_B2 _B2 _B2 A2 A2 A2 | "Em"G2 G2 G2 _B2 _B2 _B2 "Fm"_A2 _A2 _A2 _A2 _A2 _A2 | "Gm7"_d2 _d2 _d2 _d2 _d2 _d2 "C7"E2 E2 E2 E2 E2 E2 |
+"Fm"F2 F2 F2 f2 f2 f2 "D7"_e2 _e2 _e2 d2 d2 d2 | "Bb7"d2 d2 d2 c2 c2 c2 "Dbm"B2 B2 B2 B2 B2 B2 | "A"A2 A2 A2 _d2 _d2 _d2 "Dm"=d2 =d2 =d2 f2 f2 f2 | "C7"f2 f2 f2 e2 e2 e2 "Dm"e2 e2 e2 d2 d2 d2 |
+"C7"d2 d2 d2 _d2 _d2 _d2 "F"=d2 =d2 =d2 =d2 =d2 =d2 | "E7"d2 d2 d2 e2 e2 e2 "F"e2 e2 e2 d2 d2 d2 | "Gm7"d2 d2 d2 _d2 _d2 _d2 "Dm"=d2 =d2 =d2 =d2 =d2 =d2 | "E7"d2 d2 d2 e2 e2 e2 "F"e2 e2 e2 d2 d2 d2 |
+"Gm7"d2 d2 d2 _d2 _d2 _d2 "Dm"=d3 e =d2 =d4 =d2 | "Eb7"e3 f e2 e4 e2 "Gm7"f4 d2 _e3 f _e2 | "F"_e4 _e2 d3 _e d2 "Am7"d4 d2 _d4 _d2 | "Dm"d24 |

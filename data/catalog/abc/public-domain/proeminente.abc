@@ -1,0 +1,36 @@
+%abc-2.1
+% PROEMINENTE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/proeminente.html (file
+% https://www.beakauffmann.com/mpb_p/som/proeminente.mid, sha256
+% 760c568b97c7be079b4d73d11ab9935b53ec5ea127d3d3e3d408e65d7b4e5be9), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PROEMINENTE
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z5 E, E E, | "E"^F, E E, ^F, z E, E E, | "E"G, E E, G, z E, E E, | "E"_A, E E, =A, E E, _B, E |
+"E"B,4 z _E =E F | "E7"^F _A, D E z _E =E =F | "A"^F A, _D E z A _A ^F | "Db7"^F B, _D =F z =d _d B |
+"F#m"B _D ^F A z =f ^f _a | "F7"b c _e a z a _a ^f | "F#m7"^f A _d e z e =d _d | "E7"_d _E A B z =d ^F _A |
+"F#m7"B A _d _D =D _E =E F | "E7"^F _A, D E z _E =E =F | "A"^F A, _D E z A _A ^F | "Db"^F B, _D =F z =d _d B |
+"F#7"B _D E _B z g ^f e | "D"e ^F B d z d' _d' b | "E"b _d e a z a _a ^f | "E7"^f _A d e z e B _d |
+"A"A _D E A z _E =E F | "E7"^F _A, D E z _E =E =F | "A"^F A, _D E z A _A ^F | "Db7"^F B, _D =F z =d _d B |
+"F#m"B _D ^F A z =f ^f _a | "F7"b c _e a z a _a ^f | "F#m7"^f A _d e z e =d _d | "E7"_d _E A B z =d ^F _A |
+"F#m7"B A _d _D =D _E =E F | "E7"^F _A, D E z _E =E =F | "A"^F A, _D E z A _A ^F | "Db"^F B, _D =F z =d _d B |
+"F#7"B _D E _B z g ^f e | "D"e ^F B d z d' _d' b | "E"b _d e a z a _a ^f | "E7"^f _A d e z e B _d |
+"A"A _D E A z _d' _a b | "F#m"a f _a ^f _d _d _d _d | "F#m"_d _d _d _d z _d _A B | "F#m"A F _A ^F _D _D _D _D |
+"F#m"_D _D _D _D z ^F _A =A | "E7"B _d =d e ^f _a =a b | "F#m7"_d' =d' e' ^f' _a' =a' b' _d'' | "D7"b' a' _a' ^f' =f' ^f' _a' =a' |
+"Db"_b' =b' c'' _d'' z _d' _a =b | "F#m"a f _a ^f _d _d _d _d | "F#m"_d _d _d _d z _d _A B | "F#m"A F _A ^F _D _D _D _D |
+"F#m"_D _D _D _D z _d'' b' a' | "E7"_a' ^f' e' ^f'' e'' d'' _d'' b' | "A"a' _a' ^f' e' d' _d' b =a | "Bm"_a ^f b d _a B _d _A |
+"F#"^F A, _D ^F z _d' _a b | "F#m"a f _a ^f _d _d _d _d | "F#m"_d _d _d _d z _d _A B | "F#m"A F _A ^F _D _D _D _D |
+"F#m"_D _D _D _D z ^F _A =A | "E7"B _d =d e ^f _a =a b | "F#m7"_d' =d' e' ^f' _a' =a' b' _d'' | "D7"b' a' _a' ^f' =f' ^f' _a' =a' |
+"Db"_b' =b' c'' _d'' z _d' _a =b | "F#m"a f _a ^f _d _d _d _d | "F#m"_d _d _d _d z _d _A B | "F#m"A F _A ^F _D _D _D _D |

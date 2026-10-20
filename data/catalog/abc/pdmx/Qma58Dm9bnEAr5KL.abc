@@ -1,0 +1,26 @@
+%abc-2.1
+% 1. Pour quoy, by Tielman Susato. Score published on MuseScore (artist: Tielman Susato), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/4/Qma58Dm9bnEAr5KLYZZqA4a8pLt63uFaQVLhet8BrnDun5.mid (sha256
+% f81aba65394132e5f16b908cfbb7ab821fced20f68378c79b2d30e090ddaef42): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:1. Pour quoy
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A16 c8 c8 | "C"B8 A8 _B8 A8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |
+"C"A16 c8 c8 | "C"B8 A8 _B8 A8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |
+"C"A8 A8 A8 c8 | "C"c4 B2 A2 G8 A8 F8 | "C"A8 A8 A8 c8 | "C"c4 B2 A2 _A8 =A16 |
+"C"A12 B4 c8 A8 | "C"A4 G4 A4 B4 c8 F8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |
+"C"A12 B4 c8 A8 | "C"A4 G4 A4 B4 c8 F8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |
+"C"A8 A8 A8 c8 | "C"c4 B2 A2 G8 A8 F8 | "C"A8 A8 A8 c8 | "C"c4 B2 A2 _A8 =A16 |
+"C"A12 B4 c8 A8 | "C"A4 G4 A4 B4 c8 F8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |
+"C"A12 B4 c8 A8 | "C"A4 G4 A4 B4 c8 F8 | "C"G12 F4 G4 A4 G4 F4 | "C"E4 D4 E8 D16 |

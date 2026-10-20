@@ -1,0 +1,25 @@
+%abc-2.1
+% Kyrie (Misa Brevis Joannis de Deo), by Joseph Haydn. Score published on MuseScore (artist:
+% Joseph Haydn), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Haydn (died 1809,
+% Wikidata Q7349).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/53/QmSX17HzxRSfwJtbUDavV7165WdAAd5qRHdfWCZJeJCy9w.mid (sha256
+% eb8c0ff700875f884ee11639c42bfe24cf6b502ec6c5951905d0fe10da609dc6): melody track 1, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Kyrie (Misa Brevis Joannis de Deo)
+M:4/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"Bb"_B4 F4 "Cm7"G6 F2 | "Cm7"G2 _E D C2 F2 "Bb"F4 F4 | "Bb"z8 "Cm7"z8 | "F7"z8 "Bb"F3 F F4 |
+"Bb"z8 "Dm7"F3 F F4 | "Dm7"z6 F2 "Am7"G4 F2 z2 | "Am7"z8 "Am"G3 G F2 F2 | "Gm"F4 G4 "C7"G4 A4 |
+"C7"G4 F2 E2 "Dm7"F4 z4 | "G7"G3 G G2 G2 "C"G8 | "F"A4 z4 "C"z8 | "F"A8 A4 z2 A2 |
+"Bbm"_B4 _B2 _B2 "F"_B4 A4 | "Fm"_A4 _A2 _A G "Cm"F4 G4 | "Cm"G4 G2 G2 "Dm7"F4 F2 _B2 | "Cm7"_B4 _B2 G2 "F"F4 F4 |
+"Bb"F4 F4 "Cm7"G6 F2 | "Cm7"G2 _E D C2 F2 "Bb"F4 F4 | "Cm7"G3 G G4 "Bb"F3 F F2 _B2 | "Cm"_B4 F4 "Bb"F6 F2 |
+"F7"G4 F2 _E2 "Bb"D4 z4 | "Bb"D3 D D4 D2 F2 _B2 _B2 | "F"_B4 A4 "Bb"_B4 z4 | "F7"z8 "Cm7"z2 _B2 G2 A2 |
+"Bb"_B4 z12 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% COM QUE ROUPA?, by Noel Rosa, as performed by Noel Rosa.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Noel Rosa (died 1937, Wikidata Q281078).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/com-que-roupa.html (file
+% https://www.beakauffmann.com/mpb_c/som/com-que-roupa.mid, sha256
+% e71aa63c9022db82c55d89afd6e53c6307c818e3549e558bf227faaad9232554), from Beatriz Kauffmann's Web
+% Site. Melody track 9, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:COM QUE ROUPA?
+M:4/4
+L:1/16
+Q:1/4=97.999984
+% Exact tempo 97.9999836666694 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "C"z8 "Cm"z8 | "Cm"z8 "C"z8 | "C"z8 "Cm"z8 |
+"Em7"z8 "G7"z8 | "D7"z8 "B7"z8 | "E7"z8 "A7"z8 | "D"z8 "F#m7"z7 A |
+"D"z ^F z E2 z D z E2 ^F2 E ^F2 G | "F#m"G A3 z ^F z6 D D z E | "D"z ^F2 D z3 ^F- "Bm7"^F G A B2 A2 ^F | "Em"^F E5 z2 "B7"z8 |
+"Em"z2 G G z ^F2 E- "C"E G2 G z ^F2 E | "Em"E G5 E z "C"z8 | "A7"z2 _d B2 A2 B2 _d2 B z A z B | "D"B ^F2 d2 z B2 "A"A2 ^F2 E D2 A, |
+"D"A, D2 D3 D z "G"E2 ^F2 E ^F2 G | "D"G A2 ^F z4 "F#m"z6 ^F G | "F#m7"z A5 ^F z "B7"z7 B | "Em"B2 G6 "Em7"z7 B |
+"A7"B _d2 B2 z A2 G2 ^F2 E ^F2 G | "F#m7"G A7- "B7"A2 z4 E ^F | "G"z G5 G2- "G7"G3 z4 _A | "F#m7"z A4 z3 "B7"z7 A |
+"Em7"z B2 B3 B z "A7"B z A2 A E z ^F | "D"^F D2 z12 A | "D"z ^F z E2 z D z E2 ^F2 E ^F2 G | "F#m"G A3 z ^F z6 D D z E |
+"Bm7"z ^F2 D z3 ^F- "F#m7"^F G A B2 A2 ^F | "Em"^F E5 z2 "B7"z8 | "Em"z2 G G z ^F2 E2 G2 G z ^F2 E | "Em"E G5 E z9 |
+"F#m7"z2 _d B2 A2 B- "A7"B _d2 B z A z B | "D"B ^F2 d2 z B2 "A7"A2 ^F2 E D2 A, | "D"A, D2 D3 D z "Em7"E2 ^F2 E ^F2 G | "D"G A2 ^F z4 "F#m"z6 ^F G |
+"D7"z A5 ^F z "B7"z7 B | "Em7"B2 G6 z7 B | "A7"B _d2 B2 z A2 G2 ^F2 E ^F2 G | "F#m7"G A7- "B7"A2 z4 E ^F |
+"Em7"z G5 G2- "G7"G3 z4 _A | "F#m7"z A4 z3 "B7"z7 A | "Em7"z B2 B3 B z "A7"B z A2 A E z ^F | "D"^F D2 z5 "Bb"z8 |
+"Cm7"z8 "Eb"z7 _B | "Eb"z G z F2 z _E z "Fm"F2 G2 F G2 _A | "Gm"_A _B3 z G z2 "Ab"z4 _E _E z F | "Gm"z G2 _E z3 G- "C7"G _A _B c2 _B2 G |
+"Fm7"G F5 z2 "C7"z8 | "Fm7"z2 _A _A z G2 F- "E"F _A2 _A z G2 F | "Fm7"F _A5 F z9 | "Bb7"z2 d c2 _B2 c2 d2 c z _B z c |
+"Eb"c G2 _e2 z c2 "Bb7"_B2 G2 F _E2 _B, | "Eb"_B, _E2 _E3 _E z "Fm7"F2 G2 F G2 _A | "Eb"_A _B2 G z4 "Fm7"z6 G _A | "Gm7"z _B5 G z "C"z7 c |
+"Fm7"c2 _A6 z7 c | "Bb7"c d2 c2 z _B2 _A2 G2 F G2 _A | "Eb7"_A _B7- "C7"_B2 z4 F G | "Fm7"z _A5 _A2- "F7"_A3 z4 =A |
+"Eb7"z _B4 z3 "C7"z7 _B | "Fm7"z c2 c3 c z "Bb7"c z _B2 _B F z G | "Eb"G _E2 z5 "Bb7"z7 _B | "Eb"z G z F2 z _E z "Fm"F2 G2 F G2 _A |

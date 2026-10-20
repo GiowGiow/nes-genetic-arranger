@@ -1,0 +1,23 @@
+%abc-2.1
+% Montecarlo or Bust, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 29 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Montecarlo or Bust
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"B,4 G,4 B,4 D4 | "G"D4 B,8 D4 | "G"G4 D4 G4 B4 | "G"B16 |
+"G"B4 G4 A4 G4 | "G7"B4 G4 A4 G4 | "C"B4 A4 G4 E4 | "C"E12 =F4 |
+"D7"F8 F8 | "D7"F4 A8 D4 | "G"G4 A4 ^A4 B4 | "E7"B12 B4 |
+"A7"B4 A4 G4 E4 | "A7"B4 A4 G4 E4 | "D7"F4 G4 ^G4 A4 | "D7"A16 |
+"G"B,4 G,4 B,4 D4 | "G"D4 B,8 D4 | "G"G4 D4 G4 B4 | "G"B16 |
+"G"B4 G4 A4 G4 | "G7"B4 G4 A4 G4 | "C"B4 A4 G4 E4 | "C"E12 E4 |
+"C"E4 ^D4 E4 G4 | "A7"G4 A8 ^A4 | "G"B4 ^A4 B4 c4 | "E7"c4 ^D8 E4 |
+"A7"B8 B4 B4 | "A7"B4 G4 "D7"A8 | "G"G16 |

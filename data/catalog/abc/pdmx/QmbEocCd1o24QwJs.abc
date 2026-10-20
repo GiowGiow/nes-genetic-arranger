@@ -1,0 +1,34 @@
+%abc-2.1
+% Dies mei transierunt, by Jan Tollius. Score published on MuseScore (artist: Jan Tollius), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jan Tollius (died 1603, Wikidata
+% Q284127).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/18/QmbEocCd1o24QwJsdnTigMz61exBdcHFMZDLdmBUWvYY7T.mid (sha256
+% 46684b17a36633c7342cecb76af5b844ac6060494f3ac70152ff2d47fe0acada): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dies mei transierunt
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"D24 C8 | "A7"_E16 "Bb"D16 | "D"F12 E4 "D7"F4 G4 A8 | "Eb"A4 G4 G8- "D"G8 ^F8 |
+"G"G8 E8- "Dm"E8 C8 | "A7"C8 G8- "Gm"G4 F4 F4 E2 D2 | "D7"E8 E8 "Cm7"z16 | "Gm"z8 F8- "Dm"F4 E4 F4 G4 |
+"F"A8 F8 "Gm"G16 | "F#m"D16- "Gm"D16 | "Bb"D16 "C"z16 | "Dm7"z16 "C"z8 G8 |
+"Dm7"A8 c8- "Em7"c8 _B8 | "F"A8 G8 "Dm"A16 | "Gm"D16 "Dm7"z16 | "F"D12 F4 "Gm"_E4 D2 C2 _B,4 C4 |
+"F"D8 A,8 "Dm"D16 | "Bb"z16 "Am"z8 C8 | "Dm"D8 F8- "A7"F8 E8 | "F"D8 C8 "C7"D16 |
+"Gm7"D16 "Dm"F12 A4 | "Gm"G4 F2 E2 D4 E4 F8 G8 | "F"C8 c8 "G"_B12 G4 | "G7"A8 _B8 "Dm"A16 |
+"Dm7"z8 A8 "C"G12 E4 | "Gm"F8 G8 "Dm"C8 z8 | "Am"z16 "Eb"z8 G8 | "Bb"F12 D4 "D7"F8 G8 |
+"Gm"G16 "Dm"z8 D8 | "Gm"D8 G8- "D"G8 F8 | "G"_B12 _B4 "G7"A16 | "Gm"z16 "Dm"z16 |
+"Gm7"z16 "Dm"z16 | "Dm7"G16 "C7"F16 | "D7"E16 "C7"D16 | "Dm"C16 "E"_B,8 C8 |
+"Dm"_B,16 "C"z8 C8 | "Bb"D16 "Am"E16 | "C7"F12 F4 "D7"E16 | "C7"D16 "A"E16 |
+[M:3/2]"Bb"D16 D8 | "Eb"_E12 _E4 _E8 | "Cm"_E12 D2 C2 _B,4 A,4 | "C7"D8 G,8 C8 |
+"Dm"C4 C4 C8 D8 | "Eb"D4 C2 _B,2 C8 D8 | [M:4/2]"F"F16 "Am"E12 C4 | "Bb"D4 E4 F8- "C"F8 E8 |
+"F"F16 "Am"z16 | "Bb"z16 "C"z16 | "F"z12 F4 "Dm7"F6 F2 F4 F2 F2 | "Gm"G8 F4 _B4 "C7"A4 G4 F4 E4 |
+"Cm7"F8 G8 "D"^F16 | "F"z16 "C"z16 | "Dm"z16 "Em"z16 | "F"z16 "C"c16 |
+"Dm"_B8 A8 "C"G16 | "F"A12 A4 A6 A2 A4 A2 A2 | "Gm7"_B8 A4 G4 "Dm7"F4 E4 D4 C4 | "Cm"_B,8 C8 "D"A,8 D8 |
+"D"D8 G8 "D7"F12 F4 | "Gm7"F8 _B,4 C4 "D"D4 E4 F8 | "D"F8 G8 "F"C16 | "Bb"D16 "Gm7"F16 |

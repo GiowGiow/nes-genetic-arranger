@@ -1,0 +1,35 @@
+%abc-2.1
+% On Shore and Sea, by Arthur S. Sullivan. Score published on MuseScore (artist: Arthur Sullivan),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Arthur S. Sullivan (died 1900,
+% Wikidata Q212692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/42/Qmbs4hcYkUoeTDV2f8mxUqDGtzSyvUAMrnDEhzgrTWaGhS.mid (sha256
+% fd36caf31abcf5cd7f63a48ff5b537199ec2affdfbef7d891afff4bcb3f73fe4): melody track 4, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:On Shore and Sea
+M:4/4
+L:1/16
+Q:1/4=110.999906
+% Exact tempo 110.99990565008021 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"G8 G7 G | "E"G7 G G4 A4 | "D"B4 z4 G7 G | "D"G7 G "D7"B4 c4 |
+"B"d4 z4 G7 G | "F"G4 g4 "E7"a4 b3 G | "C"c3 e a3 g e3 c A c2 G | "C"c3 e a3 g e3 c A c2 G |
+"Dm7"d3 f c'3 a f3 d c f2 A | "Dm7"d3 f c'3 a f3 d c f2 c | "Dm7"f3 a e'3 d' c'3 a f a2 c | "Dm7"f3 a e'3 d' c'3 a f a2 c |
+"C"e3 g d'3 c' g3 e c e2 G | "C"c3 e a3 g e3 c G c2 a | "G7"g3 f d G2 a g3 f d G2 a | "C"g3 e c G2 A B c2 d e f2 a |
+"G7"g3 f d G2 a "C"g3 f d G2 a | "C"g3 e c G2 A B c2 d e f2 g | "Am"c'3 a e3 c "D7"^f3 a c'3 e' | "Em7"d'3 b g3 d "C"e3 c A3 E |
+"D"A3 c e3 d "D7"c3 A ^F A2 D | "G"G2 z2 D2 z2 D2 z2 B4 | "G"d11 z c4 | "G"B11 z d4 |
+"Cm"_e4 _e4 c4 _e4 | "G"d11 z d4 | "F#"^f11 z e4 | "Bm"d8- "Am"d3 z c4 |
+"Em7"B4 B4 "D7"c4 A4 | "G7"G4 G4 "E7"A4 B3 G | "C"c3 e a3 g e3 c A c2 G | "C"c3 e a3 g e3 c A c2 G |
+"Dm7"d3 f c'3 a f3 d c f2 A | "Dm7"d3 f c'3 a f3 d c f2 c | "Dm7"f3 a e'3 d' c'3 a f a2 c | "Dm7"f3 a e'3 d' c'3 a f a2 c |
+"C7"g3 _b g'3 f' e'3 _b g _b2 G | "C7"_B3 c g3 f e3 c G c2 G | "F"A3 c f z2 A "A7"_d3 e g z2 A | "Dm"d3 e f z2 A "E"_A3 B e z2 B |
+"Am"c3 e c'3 b "Am7"a3 e c e2 A | "D"c3 d c'3 b a3 d c d2 A | "C"c3 e a3 g e3 c A c2 G | "G7"d3 f a3 g f3 d B d2 G |
+"C"c c2 d e f2 ^f "G7"g G2 _a =a _b2 =b | "C"c'2 z2 c4 C4 z4 | "F"A,2 z2 C2 z2 A,2 z2 C2 z2 | "F"A,2 z2 C2 z2 A,2 z2 C2 z2 |
+"F"A,2 z2 C2 z2 A,2 z2 C2 z2 | "F"A,2 z2 C2 z2 "Dm7"A,2 z2 C2 z2 | "C"_B,2 z2 C2 z2 _B,2 z2 C2 z2 | "C"_B,2 z2 C2 z2 _B,2 z2 C2 z2 |
+"F"A,2 z2 C2 z2 A,2 z2 C2 z2 | "F"A,2 z2 C2 z2 "Dm"_B,2 z2 D2 z2 | "A"_D2 z2 G2 z2 _D2 z2 G2 z2 | "A"_D2 z2 G2 z2 _D2 z2 G2 z2 |
+"Dm"A,2 z2 F2 z2 B,2 z2 F2 z2 | "C"C2 z2 E2 z2 C2 z2 E2 z2 | "Dm"D2 z6 "F"c8 | "F"c8 B4 A4 |
+"C"G8 "Cm"^F8 | "G"F8 D8 | "C"C2 z2 c4 "C7"d2 z2 d4 | "D7"_e2 z2 _e4 "C7"=e2 z2 c2 z2 |

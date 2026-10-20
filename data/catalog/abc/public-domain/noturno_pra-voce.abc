@@ -1,0 +1,35 @@
+%abc-2.1
+% NOTURNO (Pra Você), by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/noturno_pra-voce.html (file
+% https://www.beakauffmann.com/mpb_n/som/noturno_pra-voce.mid, sha256
+% 1e0beebeeae5b1abed034754bbc2716b3322b7f82621a9d49bbffcc9cae16b26), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-61 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NOTURNO (Pra Você)
+M:2/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"Am"z E, A, B, C E A c | "F7"c4 B4 | "Em"z E _A B c _d =d f | "Dm"g z3 e4 |
+"Dm7"z E A E D C B, A, | "Em"z G, B, E G E B, G, | "Ebm"^F,3 A, B, C B, A, | "G"B,3 F G F E D |
+[M:1/4]"F"D E F G | [M:2/4]"E"G z3 E4 | "Am"z E, A, B, C E A c | "F7"c4 B4 |
+"Em"z E _A B c _d =d f | "Dm"g z3 e4 | "Dm"z D F D _B,3 D | "Am7"E5 c e f |
+"E7"_B4 _A4 | "Am"A E c A G F E D | "A7"_D3 e f e _d A | "F#m"e3 d5 |
+"G7"z F G B e d c B | "C"d4 c4 | "E7"z B, E _A B E _A =A | "Am"B3 A5 |
+"F"F c A F D4 | "E"E2 A,2 _B,2 =B,2 | "A"z G A _d f e _d A | "F#m"e3 d5 |
+"G7"z F G B e d c B | "C"d3 c3 G2 | "Ab"_A c _B _A F _E C _A, | "A7"E G ^F =F E4 |
+"G7"E D _D =D C B,2 =D | "A7"C G A _d f e _d A | "F#m"e3 d5 | "G7"z F G B e d c B |
+"C"d3 c3 C2 | "E7"z B, E _A B E _A =A | "Am7"B4 A4 | "F"F c A F D4 |
+"E7"E2 A,2 _B,2 =B,2 | "E"E7 z | "Am"z E, A, B, C E A c | "F7"c4 B4 |
+"Em"z E _A B c _d =d f | "Dm"g z3 e4 | "Dm7"z E A E D C B, A, | "Em7"z G, B, E G E B, G, |
+"Ebm"^F,3 A, B, C B, A, | "G"B,3 F G F E D | [M:1/4]"F"D E F G | [M:2/4]"E"G z3 E4 |
+"Am"z E, A, B, C E A c | "F7"c4 B4 | "Em"z E _A B c _d =d f | "Dm"g z3 e4 |
+"Dm"z D F D _B,3 D | "Am7"E5 c e f | "E7"_B4 _A4 | "Am"A E e c A2 A2 |
+"Am"A7 z |

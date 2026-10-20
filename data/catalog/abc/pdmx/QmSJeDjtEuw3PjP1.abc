@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite bergamasque, by Claude-Achille Debussy. Score published on MuseScore (artist: Claude
+% Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude-Achille Debussy (died
+% 1918, Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/27/QmSJeDjtEuw3PjP17fheDNXGojcQ76HmntyE2T84D5zJYY.mid (sha256
+% ff7035c76b9a6963ba5644bf5f5248735a41cefbca569497bf01f16469042dfc): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite bergamasque
+M:9/8
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z2 _A2 _a8 z6 | "Cm"A17 z | "Bbm"_A17 z | "Ab"^F17 z |
+"F#"_E11 z _E6 | "Ebm"_D11 z C6 | "Db"_B,12 ^F,6 | "Bbm7"_A,11 z ^F,3 _A,,3 |
+"Db"_D,,2 _A,2 _A13 z | "Ebm"_D,2 _D15 z | "Db"_D,2 _A,4 F6 _D6 | "F#"_D,2 _D15 z |
+"Db"_A,,2 B,4 F8 z4 | "Bbm"_B,,2 _E7 _D9 | "Eb7"_E,,3 _B5 _B2 _B2 _B2 _B2 _B2 | "Ebm7"_B2 _B2 _B2 _B3 _B3 ^F6 |
+"Ebm"_B,,3 _B5 _e2 _B2 _B2 _B2 _B2 | [M:8/8]"Cm7"_B2 _B2 _B2 _B2- "Ebm7"_B _B3 ^F4 | [M:6/8]"F#"_A,,2 ^F,2 _E2 C2 ^F2 ^F,2 | [M:9/8]"Ab7"A,,2 _E2 _E2 _E2 _E2 _E2 _E6 |
+[M:6/8]"F#"_B,,2 _D2 _A,2 _D2 ^F2 ^F,2 | [M:9/8]"Ebm"C,2 _E2 _E2 _E2 _E2 F2 _E6 | [M:6/8]"F#"_D,2 _D2 _A,2 _E2 _B2 _B,2 | [M:9/8]"F#"_E,2 ^F2 ^F2 ^F2 ^F2 _A2 ^F2 _B2 _B2 |
+"Db"_A f11 _A e5 | "Db"^F _e11 _E c5 | "Fm"_D,, _A,, _D, F, _A, _D F,, C, F, _A, C F _A,, E, _A, B, E _A | "Fm"_D,, _A,, _D, F, _A, _D F,, C, F, _A, C F _A,, E, _A, B, _A E |
+"Db"_D,, _A,, _D, F, _A, _D F _A F _D _A, F, _A, F, _D, _A,, _D, _A,, | "Bbm"_E,, _B,, _E, G, _B, _E G _E _B, G, _E, _B,, _E,, _B,, _E, G, _E, _B,, | "C7"_A,, _E, ^F, _B, C ^F ^F,, _D, ^F, _B, _D ^F =F,, C, =F, _A, C2 | "C7"_A,, _E, ^F, _B, C ^F ^F,, _D, ^F, _B, _D ^F =F,, C, =F, _A, C2 |
+[M:7/8]"F#"_E,, _B,, _E, ^F, _B, _E ^F z =F2 D2 _E2 | [M:9/8]"Bb7"D ^F _B _B ^f _b _E ^F _B _B ^f _b C =E _A c =e _a | "Fm"_D, _A, _D F _A _d _A, C F _A c f B, E _A B e _a | "Fm"_D, _A, _D F _A _d _A, C F _A c f B, E _A B _a e |
+"Dbm"_D E _A B3 E _A B _d3 _A B _d e3 | "Ab7"_A =A _d _a _d' =a ^F =A _d ^f _d' =a ^F =A _d ^f _d' =a | "F#m"^F A _d ^f _d' a ^F A _d ^f _d' a E A _d e _d'' _d' | "F#m"B, _E ^F ^F _d A A, _D =E ^F _d A _A, _D =E =A =e =a |
+"B7"^F, _D E ^F A _d e ^f e _d A ^F E ^F E _D A, ^F, | "A"^F,, _D, E, ^F, A, _D E _D A, ^F, E, _D, ^F,, _D, ^F,, _D, ^F,, _D, | "Ebm7"_A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, | "Ebm7"_A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, _A,, _E, |
+"Ebm7"_A,, _E,, _A,, _E, _A,, _E, _A, _E, _A, _E _A, _E, _A, _E, _A,, _E, _A,, _E,, | "Ebm7"_A,, _E,, _A,, _E, _A,, _E, _A, _E, _A, _E _A, _E, _A, _E, _A,, _E, _A,, _E,, | "Ebm"_D4 _A,2 _B,4 _D2 C _E ^F _B c _e | "Ebm"_D4 _A,2 _B,4 _D2 C _E ^F _B c _e |
+"Eb"^F _B _d _e ^f _b ^F _B _d _e ^f c' ^F _B _d _e ^f _b | "Eb7"^F A _d _e ^f a ^F A _d _e ^f b ^F A _d _e ^f a | "Fm"F _A c f _a c' z6 F6 | "Cm"F A c _e f a z6 F6 |
+"Bbm"F _A c _e f _a z6 F6 | "Ab"_E ^F _A c _e ^f z6 _E6 | "Bb7"_D E ^F _B _d e z6 E c5 | "F7"C, ^F, _B, C _E ^F _B6 _E6 |
+"Db"_A, _B, _D F _A _B z6 _B, _E5 | "Ab"F, _A, _B, _D F _A z6 C3 _A,,3 | "Db"_A,,2 _A,2 _A2 B,12 | "Ebm"_D,2 _D15 z |
+"Db"_A,,2 _A,4 F6 _D6 | "Bbm"_B,,2 _E9 z _D6 | "Bbm7"F,,17 z | "Ebm7"_E,,6 _E,6 _E6 |

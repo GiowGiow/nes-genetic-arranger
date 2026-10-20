@@ -1,0 +1,34 @@
+%abc-2.1
+% Search throughout the panorama ARTHUR SULLIVAN, by Arthur Sullivan. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Arthur Sullivan (died 1900,
+% Wikidata Q212692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/22/QmSGbTfPAGXWtso7HYedsjV21puX4V8osN3igDey6Cny59.mid (sha256
+% afa7fcc23713d575a7d39a803ede66a2b4cce5e0f670bf1d4cbe76f807baf975): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Search throughout the panorama ARTHUR SULLIVAN
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Eb"z8 | "Eb"z8 | "Eb"z8 | "Eb"z8 |
+"Eb"z8 | "Am"z8 | "Bb"z8 | "Bb"z8 |
+"Cm"z8 | "Cm"z8 | "Cm"z8 | "Cm"z8 |
+"Cm"z8 | "Ab7"z8 | "G"z8 | "G"z8 |
+"Fm7"z8 | "Fm7"z8 | "Fm7"z8 | "Fm7"z8 |
+"F7"z8 | "F7"z8 | "F7"z8 | "F7"z8 |
+"Fm7"z8 | "Fm7"z8 | "Bb7"z8 | "Bb7"z8 |
+"Eb"z8 | "Eb"z8 | "Eb"z8 | "Eb"_E2 z2 G2 z2 |
+"Cm7"c2 z2 _B2 z2 | "Eb"A2 z2 _B2 z2 | "Eb"G2 z2 _E2 z2 | "Eb"_E2 z2 G2 z2 |
+"Cm7"c2 z2 _B2 z2 | "Eb"A2 z2 _B2 z2 | "Eb"G2 z2 _E2 z2 | "Eb"_E2 z2 _E2 z2 |
+"Ab"_e6 c2 | "Ab"_e6 c2 | "Eb"_B2 z2 G2 z2 | "Eb"_E2 z2 _E2 z2 |
+"Ab"_e6 c2 | "Ab"_e6 c2 | "Eb"_B2 z2 G2 z2 | "Eb"z8 |
+"Bb"F8 | "Bb"_B8 | "Eb"d8 | "F7"c8 |
+"Bb"_B8 | "Bb"z8 | "C7"z8 | "Bbm"_B2 z2 _B2 z2 |
+"Db"_d6 _d2 | "Db"c2 z2 _d2 z2 | "Db"_d2 z2 _A2 z2 | "Db"_D2 z2 F2 z2 |
+"Ab"_A6 _A2 | "Ab"G2 z2 _A2 z2 | "Db"_A2 z2 F2 z2 | "Db"F2 z2 F2 z2 |

@@ -1,0 +1,27 @@
+%abc-2.1
+% Tantum Ergo Op. 65 No. 2, by Gabriel Fauré(1845-1924). Score published on MuseScore (artist:
+% Gabriel Fauré), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/39/QmQQ6uJ8YNEhZXgCyyQHspxZcnjAf51CYjKPnV7fcjhAqZ.mid (sha256
+% e286cabac40aad07745208ee2a3779c0763fbe90be02231261af2055f0bac231): melody track 2, bars 0-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tantum Ergo Op. 65 No. 2
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F#7"z8 "Dbm7"z8 | "E"B6 B2 "Dbm"_d2 _e2 =e4 | "B7"e2 _e2 _d2 B2 "Dbm7"B4 B4 | "B7"_d2 B2 A2 _d2 "Dbm7"B4 B4 |
+"B7"_d2 B2 A2 _d2 "Dbm7"B8 | "F#"e2 _e2 _d2 =e2 "Ebm"_e4 _e4 | "E"_e6 _d2 "B"B8 | "Em"z8 "Em7"z8 |
+"Am7"z8 "G"z8 | "G"d4 B4 "G7"G2 A2 B2 d2 | "Am7"g4 ^f2 e2 "G"d8 | "Em7"d2 c2 B2 d2 "D7"c4 c4 |
+"F#m7"e2 d2 c2 e2 "Em7"d4 d4 | "G7"f2 e2 d2 f2 "Dm7"f2 c2 A2 F2 | "G7"G4 A4 "B7"B8 | "E"B6 B2 "Dbm"_d2 _e2 =e4 |
+"B7"e2 _e2 _d2 B2 "Dbm7"B4 B4 | "B7"_d2 B2 A2 _d2 "Dbm7"B4 B4 | "B7"_d2 B2 A2 _d2 "Dbm7"B8 | "F#"e2 _e2 _d2 =e2 "B"_e6 _d2 |
+"Eb7"c4 _B2 _A2 "Ab"_A8 | "E"z8 "E7"z8 | "F#m7"z8 "E"z8 | "G"d4 B4 "G7"G2 A2 B2 d2 |
+"Am7"g4 ^f2 e2 "G"d8 | "Em7"d2 c2 B2 d2 "D7"c4 c4 | "F#m7"e2 d2 c2 e2 "Em7"d4 d4 | "G7"f2 e2 d2 f2 "Dm7"f2 c2 A2 F2 |
+"G7"G4 A4 "Abm7"B8 | "Dbm7"B2 e2 _e2 _d2 "Bb7"B2 _A2 B2 =A2 | "B7"_A6 ^F2 "E"E8 | "Dbm"_d2 B2 A2 _d2 "Abm7"B8 |
+"G7"B2 A2 _A2 B2 "F#m7"=A8 | "F7"A2 _A2 ^F2 =A2 "E"_A8 | "Dbm7"B8 "E"e8 |

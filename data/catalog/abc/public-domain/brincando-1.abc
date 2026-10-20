@@ -1,0 +1,31 @@
+%abc-2.1
+% BRINCANDO, by Alberto Nepomuceno, as performed by Alberto Nepomuceno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Alberto Nepomuceno (died 1920, Wikidata Q1391980).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/brincando-1.html (file
+% https://www.beakauffmann.com/mpb_b/som/brincando-1.mid, sha256
+% 992e803c00d72f7276029490e5c986b965880f521c659fad246bf18109035e59), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-41 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BRINCANDO
+M:6/8
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G z G3 z G z G3 z | "C"G z G4 A z A3 z | "C"B z B4 c z c3 z | "C"e2 d c B A G4 ^F z |
+"C"G z G4 ^F z ^F3 z | "C"G z G3 z _A z _A3 z | "C"A z A4 B z B3 z | "C"f z e d c B A4 G2 |
+"C"G z G3 z G z G3 z | "C"G z G4 A z A3 z | "C"B z B4 c z c3 z | "C"e z d c B A G4 ^F z |
+"C"G z G3 z _A z _A3 z | "C"A z A3 z B z B3 z | "C"d6 G ^F G _A =A B | "C"c11 z |
+"C"e c A2 e2 _e c A2 _e z | "C"d B _A2 d z c =A E2 c z | "C"B A B c d z d c d e f z | "C"E _E =E ^F _A z _A =A B z c d |
+"C"e c A2 e z _e c A2 _e z | "C"d B _A2 d z c =A E2 c z | "C"B A B c d z d c d e f z | "C"E _E =E ^F _A =A B c d =e ^f _a |
+"C"a4 z2 A z5 | "C"G z G3 z G z G3 z | "C"G z G4 A z A3 z | "C"B z B4 c z c3 z |
+"C"e2 d c B A G4 ^F z | "C"G z G4 ^F z ^F3 z | "C"G z G3 z _A z _A3 z | "C"A z A4 B z B3 z |
+"C"f z e d c B A4 G2 | "C"G z G3 z G z G3 z | "C"G z G4 A z A3 z | "C"B z B4 c z c3 z |
+"C"e z d c B A G4 ^F z | "C"G z G3 z _A z _A3 z | "C"A z A3 z B z B3 z | "C"d6 G ^F G _A =A B |
+"C"c11 z |

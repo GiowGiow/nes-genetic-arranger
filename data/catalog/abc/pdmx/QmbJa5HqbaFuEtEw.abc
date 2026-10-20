@@ -1,0 +1,35 @@
+%abc-2.1
+% Hungarian Dances No. 5 YG, by Brahms. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Brahms (died 1897, Wikidata
+% Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/27/QmbJa5HqbaFuEtEwdk1os8vzKmJnx1APtawGNE15ZWbfnj.mid (sha256
+% 51321e646fbb1c3605d344ce7f62fc8ff63866323e504fa6ff576af7a29ad703): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hungarian Dances No. 5 YG
+M:2/4
+L:1/16
+Q:1/4=126.000126
+% Exact tempo 126.00012600012599 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"D6 G2 | "Gm"_B6 G2 | "Cm"^F6 G A | "Gm"G8 |
+"Cm"_E6 F G | "Gm"D8 | "D7"C _B, _B, A, A,3 D | "Gm"G,8 |
+"Gm"D6 G _B | "Gm"d6 _B2 | "Cm"A6 _B c | "Gm"_B8 |
+"Gm7"_e f g _e d _e f d | "D7"c d _e c _B c d _B | "D"c _B _B A A3 d | "Gm"G4 g2 z2 |
+"Gm"d6 g2 | "Gm"_b6 g2 | "Cm"c6 c a | "Gm"_B8 |
+"Cm"c6 d _e | "Gm"_B8 | "D7"c _B _B A A3 d | "Gm"G8 |
+"Gm"D3 G _B d g _b | "Gm"_b6 g2 | "Cm"^f6 g a | "Gm"g8 |
+"Gm7"G4 F4 | "D7"_E4 D4 | "D"C2 _B,2 A,3 D | "Gm"G4 _B2 z2 |
+"G7"d4 d4 | "G"_e6 d2 | "C"z2 c4 B c | "C7"d c B d c2 z2 |
+"F7"c4 c4 | "F"d6 c2 | "Gm7"z2 _B4 A _B | "Gm7"c _B A c _B2 z2 |
+"D7"a4 a _b2 =b | "D7"c'2 _b4 a2 | "Eb"a2 g4 ^f g | "Eb"a g ^f a g2 z2 |
+"D"^f2 z5 d | "F#7"e2 z2 ^f2 z2 | "Gm"a g g4 ^f g | "Gm"a g g a g2 z2 |
+"G7"d4 d4 | "G"_e6 d2 | "C"z2 c4 B c | "C7"d c B d c2 z2 |
+"F7"c4 c4 | "F"d6 c2 | "Gm7"z2 _B4 A _B | "Gm7"c _B A c _B2 z2 |
+"D7"a4 a _b2 =b | "D7"c'2 _b4 a2 | "Eb"a2 g4 ^f g | "Eb"a g ^f a g2 z2 |
+"D"^f2 z5 d | "F#7"e2 z2 ^f2 z2 | "Gm"a g g4 ^f g | "Gm"a g g a g2 z2 |

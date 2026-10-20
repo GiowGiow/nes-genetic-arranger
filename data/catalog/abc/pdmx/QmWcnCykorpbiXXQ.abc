@@ -1,0 +1,25 @@
+%abc-2.1
+% Brahms - 51 Übungen für Klavier No. 1a, by Johannes Brahms. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/13/QmWcnCykorpbiXXQe3Lknhb1mkEL3EDp4qiWsKZ7BMqeQa.mid (sha256
+% e904e88d5e791c04fb79a9362ee0b7d63d4658c7febc0c02a1f5fa495a420bf0): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Brahms - 51 Übungen für Klavier No. 1a
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"^F D2 A, ^F, G, A, B, _D =D E ^F | "Em7"G E2 _D G, A, B, _D =D E ^F G | "F#m7"A ^F2 D A, B, _D =D E ^F G A | "G"B G2 D B, _D =D E ^F G A B |
+"A7"_d G2 E _D =D E ^F G A B _d | "Bm7"d B2 G D E ^F G A B _d =d | "F#m7"e _d2 G E ^F G A B _d =d e | "D"^f d2 A ^F G A B _d =d e ^f |
+"Em7"g e2 _d G A B _d =d e ^f g | "F#m7"a ^f2 d A B _d =d e ^f g a | "G"b g2 d B _d =d e ^f g a b | "A7"_d' g2 e _d =d e ^f g a b _d' |
+"Bm7"d' b2 g d e ^f g a b _d' =d' | "F#m7"e' _d'2 g e ^f g a b _d' =d' e' | "D"^f' d'2 a ^f g2 a b _d'2 =d' | "F#m7"e' _d'2 g e ^f2 g a b2 _d' |
+"Bm7"d' b2 ^f d e2 ^f g a2 b | "A7"_d' a2 ^f _d =d2 e ^f g2 a | "G"b g2 d B _d2 =d e ^f2 g | "F#m7"a ^f2 d A B2 _d =d e2 ^f |
+"Em7"g e2 _d G A2 B _d =d2 e | "D"^f d2 A ^F G2 A B _d2 =d | "F#m7"e _d2 G E ^F2 G A B2 _d | "Bm7"d B2 ^F D E2 ^F G A2 B |
+"A7"_d A2 ^F _D =D2 E ^F G2 A | "G"B G2 D B, _D2 =D E ^F2 G | "F#m7"A ^F2 D A, B,2 _D =D E2 ^F | "Em7"G E2 _D G, A,2 B, _D =D2 E |

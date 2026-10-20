@@ -1,0 +1,36 @@
+%abc-2.1
+% BRINCANDO, by Ernestina Índia do Brazil, as performed by Ernestina Índia do Brazil.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernestina Índia do Brazil (died 1930, Wikidata Q114871028).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/brincando-2.html (file
+% https://www.beakauffmann.com/mpb_b/som/brincando-2.mid, sha256
+% da1bea0e2948d358bf6e0440036929fc66a0b692e6eceabd0f316d46e08a0b2f), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BRINCANDO
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F7"g2 f e f d _B A | "F7"c _B G A2 A2 z | "F7"G2 F A2 A2 z | "Bb"G2 F _B2 _B2 z |
+"Gm7"g2 f e f d _B A | "Dm"c _B G A2 A2 z | "Dm"d2 f _b2 a2 z | "Dm"A2 _d g2 f2 z |
+"F7"g2 f e f d _B A | "F7"c _B G A2 A2 z | "F7"G2 F A2 A2 z | "Bb"G2 F _B2 _B2 z |
+"Gm7"g2 g z f2 _e g | "Gm7"f d _B _b2 _B2 z | "Gm7"B c _d =d =d g f _e | "F7"A d c _B2 _b2 z |
+"Eb"z3 g' _b' f'' _e'' _e' | "Cm7"c'' _b'2 _b _e' _a' g' g | "Cm7"f' _e'2 _e g c' _b _B | "F7"_e _a g =A4 z |
+"F7"A c _e g2 g2 g | "Bb7"g f2 f z4 | "Bb7"_A _B d g2 g2 g | "Eb"g f2 _e g _B _e G |
+"Eb"_B _E2 g' _b' f'' _e'' _e' | "Cm7"c'' _b'2 _b _e' _a' g' g | "Cm7"f' _e'2 _e g c' _b _B | "Abm"_B _B2 =b4 z |
+"Dbm7"z3 b4 e' | "Bb7"e' b2 _b4 _e' | "Gm7"_e' _e f d _e f g _a | "Cm7"_b c' d' _e'2 g'2 _e' |
+"Cm7"g2 f e f d _B A | "F7"c _B G A2 A2 z | "F7"G2 F A2 A2 z | "Bb"G2 F _B2 _B2 z |
+"Gm7"g2 f e f d _B A | "Dm"c _B G A2 A2 z | "Dm"d2 f _b2 a2 z | "Dm"A2 _d g2 f2 z |
+"F7"g2 f e f d _B A | "F7"c _B G A2 A2 z | "F7"G2 F A2 A2 z | "Bb"G2 F _B2 _B2 z |
+"Gm7"g2 g z f2 _e g | "Gm7"f d _B _b2 _B2 z | "Gm7"B c _d =d =d g f _e | "F7"A d c _B2 _b2 z |
+"Eb"z3 g _e _e _a =a | "Gm7"a _b2 c' _a _a _b =a | "Bb7"a _b2 c' _a d'2 _e' | "Eb"_e' f'2 _a' _e' _e' g' g' |
+"Cm7"g' _e'2 g' _e' _e' _b' _a' | "F7"_a' g'2 g' c' c' f' f' | "Bb7"c' c' _e' _e' _b _b d' d' | "Gm"_a _a c' c' _a _b2 =a |
+"Eb"a _a2 g _e _e _a =a | "Gm7"a _b2 c' _a _a _b =a | "Bb7"a _b2 c' _a d'2 _e' | "Eb"_e' f'2 _a' _e' _e' g' g' |
+"Cm7"g' _e'2 g' c' c' _b' _a' | "C7"_a' g'2 f'2 _e'2 c' | "Cm7"c' a2 z _B _e g _a | "Cm7"_a d2 _e2 g2 _e |

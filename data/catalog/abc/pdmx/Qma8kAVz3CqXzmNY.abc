@@ -1,0 +1,35 @@
+%abc-2.1
+% Clair de lune, by Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Debussy (died 1918, Wikidata
+% Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/7/Qma8kAVz3CqXzmNYKNQ7PKBmriYCZATLBExWyDcVWsqw6T.mid (sha256
+% d2b2f3ca3a9c1273c40f44aff194fc323445c6a39237cea296714328ef746086): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Clair de lune
+M:9/8
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z2 E2 _d8 z6 | "Abm"F17 z | "F#m"E17 z | "E"D17 z |
+"D"B,11 z B,6 | "Bm"A,11 z _A,6 | "A"^F,12 D,6 | "F#m7"E,11 z D,2 z E,,3 |
+"A"A,,,2 z2 E13 z | "Bm"A,,2 A,15 z | "F#m7"A,,2 E,4 _D6 A,6 | "D"A,,2 A,15 z |
+"F#m7"E,,2 G,4 _D8 z4 | "D"^F,,2 B,7 A,9 | "B7"B,,,3 ^F5 ^F2 ^F2 ^F2 ^F2 ^F2 | "D"^F2 ^F2 ^F2 ^F3 ^F3 D6 |
+"Bm"^F,,3 ^F5 B2 ^F2 ^F2 ^F2 ^F2 | "Bm7"^F2 ^F2 ^F2 ^F3 ^F3 D6 | "D"E,,3 D,3 B,3 _A,3 D3 D,3 | "E7"F,,2 B,2 B,2 B,2 B,2 B,2 B,6 |
+"D"^F,,3 A,3 E,3 A,3 D3 D,3 | "E7"_A,,2 B,2 B,2 B,2 B,2 B,2 B,6 | "D"^F,,3 A,3 E,3 A,3 D3 D,3 | "D"B,,2 D2 D2 D2 D2 E2 D2 ^F2 ^F2 |
+"F#m7"z18 | "Dbm7"z12 B, E e4 | "A7"A,,, E,, A,, _D, E, A, _D,, _A,, _D, E, _A, _D E,, C, E, G, C E | "Dbm"A,,, E,, A,, _D, E, A, _D,, _A,, _D, E, _A, _D E,, C, E, G, E C |
+"A"A,,, E,, A,, _D, E, A, _D E _D A, E, _D, E, _D, A,, E,, A,, E,, | "F#m"B,,, ^F,, B,, _E, ^F, B, _E B, ^F, _E, B,, ^F,, B,,, ^F,, B,, _E, B,, ^F,, | "Ab7"E,, B,, D, ^F, _A, D D,, =A,, D, ^F, =A, D _D,, _A,, _D, E, _A,2 | "Ab7"E,, B,, D, ^F, _A, D D,, =A,, D, ^F, =A, D _D,, _A,, _D, E, _A,2 |
+"D"B,,, ^F,, B,, D, ^F, B, D z2 _D3 _B,3 =B,3 | "F#7"_B, D ^F ^F d ^f =B, D ^F ^F d ^f _A, C E _A c e | "F#m7"A,, E, A, _D E A E, _A, _D E _A _d G, C E G c e | "Dbm"A,, E, A, _D E A E, _A, _D E _A _d G, C E G c e |
+"Am"A, C E G3 C E G A3 E G A c3 | "E7"E F A e a f D F A d a f D F A d a f | "Dm"D F A d a f D F A d a f C F A c a' a | "Dm"G, B, D D A F F, A, C D A F E, A, C F c f |
+"Dm7"D, A, C D F A c d c A F D C D C A, F, D, | "F"D,, A,, C, D, F, A, C A, F, D, C, A,, D,, A,, D,, A,, D,, A,, | "Bm7"E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, | "Bm7"E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, E,, B,, |
+"Bm7"E,, B,,, E,, B,, E,, B,, E, B,, E, B, E, B,, E, B,, E,, B,, E,, B,,, | "Bm7"E,, B,,, E,, B,, E,, B,, E, B,, E, B, E, B,, E, B,, E, B,, E, B,, | "Bm"A,4 E,2 ^F,4 A,2 _A, B, D ^F _A B | "Bm"A,4 E,2 ^F,4 A,2 _A, B, D ^F _A B |
+"B"D ^F A B d ^f D ^F A B d _a D ^F =A B d ^f | "B7"D F A B d f D F A B d g D F A B d f | "Dbm"_D E _A _d e _a z6 _D6 | "Db7"_D F _A B _d f z6 _D6 |
+"A"_D E ^F A _d e z6 _D6 | "Dbm"B, D E _A B d z6 B,6 | "F#7"A, B, D ^F A B z6 B, E _A4 | "Db7"_A,, D, ^F, _A, B, D ^F6 B,6 |
+"A"E, ^F, A, _D E ^F z6 ^F, B,5 | "E"_D, E, ^F, A, _D E z6 _A,3 E,,3 | "A"E,,2 _D,2 E2 G,11 z | "Bm"A,,2 A,15 z |
+"A"E,,2 E,4 _D6 z6 | "D"^F,,2 B,4 ^F,6 A,6 | "F#m7"_D,,17 z | "D"B,,,6 B,,6 B,6 |

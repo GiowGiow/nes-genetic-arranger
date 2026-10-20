@@ -1,0 +1,33 @@
+%abc-2.1
+% Cinq Mélodies Grexques, by Maurice Ravel. Score published on MuseScore (artist: Maurice Ravel),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/50/QmSwTpv4XzS5omR4xycpyhuYcGtksHQAnFkuGxox1QdpB5.mid (sha256
+% b9ace5438b0eb335e7aef8a3cd21d2835328882605b179a3e5a607b9104b34c7): melody track 1, bars 0-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Cinq Mélodies Grexques
+M:2/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d g G g d g G g | "D"d g G g d g G g | "D"d g G g d g G g | "Bb"d g G g c g G g |
+"F7"_e g G g _e g G g | "C7"c g G g _B g G g | "D"d g G g d g G g | "Bb"d g G g c g G g |
+"F7"_e g G g _e g G g | "C7"c g G g _B g G g | "Cm"d g G g _e g G g | "Gm"_B g G g c g G g |
+"Ab"_A g G g g g G g | "D"D g G g g g G g | "Cm"c g G g _e g c g | "Gm"_B g G g c g G g |
+"Ab"_A g G g g g G g | "G"D g G g d g g g' | "Cm"d' g' g g' _e' g' g g' | "Gm"_b g' g g' c' g' g g' |
+"Ab"_a g' g g' g' g' g g' | "D"d g' g g' g' g' g g' | "Cm"c' g' d' g' _e' g' c' g' | "Gm"_b g' g g' c' g' g g' |
+"Ab"_a g' g g' g' g' g g' | "G"d g' g g' g' g' g g' | "G"d g G g d g G g | "G"d g G g d g G g |
+"Bb"d g F g d g F g | "Bb"d g F g c g F g | "Cm"_B g F g A g F g | "C7"c g F g _B g F g |
+"D"d g F, g d g F, g | "Bb"d g F, g c g F, g | "Cm"_B g F, g A g F, g | "C7"c g F, g _B g F, g |
+"Cm"D g _B,, g _E g _B,, g | "Gm"F g _B,, g G g _B,, g | "Ab"_A g _B, g _B g _B, g | "Eb"z d g d G D G, G |
+"Cm"C g _A,, g C g _A,, g | "Gm"D g _A,, g _E g _A,, g | "Ab"_A g F, g c g F, g | "G"D g G, g G g d d' |
+"Cm"d' g' g g' _e' g' g g' | "Gm"_b g' g g' c' g' g g' | "Ab"_a g' g g' g' g' g g' | "D"d g G g G g D d' |
+"Cm"C G D G _E G C G | "Gm"_B, G G, G C G G, G | "Ab"_A, G G, G G G G, G | "G"D, G G, G D g G g |
+"G"z4 d''4 |

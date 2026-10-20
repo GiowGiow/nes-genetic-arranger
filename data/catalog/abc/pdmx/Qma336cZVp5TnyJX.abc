@@ -1,0 +1,34 @@
+%abc-2.1
+% Donna bella, by Cornelius Verdonck. Score published on MuseScore (artist: Cornelius Verdonck),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Cornelius Verdonck (died 1625,
+% Wikidata Q1858617).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/2/Qma336cZVp5TnyJXmVBXMYwy5QorWLw2AR5VkYsJN3Jm7c.mid (sha256
+% fe2b5a645639d27b35eee09517e2240383bda3acb54a6823a313b0686dd69820): melody track 0, bars 0-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Donna bella
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bm7"D4 E4 F8 | "Am"F4 E4- "G"E4 D4 | "A"E8 E4 c4 | "A7"c4 B4 "F"A8 |
+"D7"G4 F4 "E"E8 | "A"E8 "Dm"z4 A4 | "C"A4 A4 "Bb"_B8 | "Gm7"A4 G4 "D"^F8 |
+"D"^F4 =F4 "Am"G4 A4 | "G7"_B8 "F"A8 | "F"c4 B2 A2 "Am"G6 A2 | "G"B2 c2 d2 c2 "Em7"B2 A2 G2 F2 |
+"A"E4 D4 E8 | "D"^F16 | "Dm"A16 | "Dm"A16 |
+"A"A8 "D"z4 ^F4 | "Dbm7"_A4 =A4 "G"B8 | "G"B4 B4 "C"e8 | "Bm"e4 d4 "Am"c2 B2 c2 d2 |
+"C"c4 B4 "Am"A8 | "Am"A8 "A"E8 | "Dm"F2 G2 A2 G2 "D7"F2 D2 E2 F2 | "Bb"G2 A2 _B2 A2 G4 F4 |
+"C"E4 F8 E4 | "F"F16 | "G7"z8 "Am"z4 A4 | "G7"A4 B4 "G"c4 B4 |
+"D"A8 "G"B8 | "E7"z8 "Dm"A8 | "E7"F4 G4 "Am"A4 G4 | "Dm7"d8 "C"G8 |
+"Am"G8 "Em7"z4 c4 | "C"c4 B2 A2 "G"G2 F2 E2 D2 | "Am"C4 F4- "Bb"F4 E2 D2 | "A"_D4 =D4 E6 F2 |
+"A"C4 D4 E8 | "Dm"D8 z8 | "G7"z4 A4- "F"A4 G2 F2 | "C"E2 D2 C2 B,2 "Dm"A,4 D4 |
+"C"B,4 E4 "F"C4 D4 | "E"E6 ^F2 "Am"_A6 =A2 | "Am7"B4 A4- "E"A4 _A4 | "A"A4 c4- "F#m7"c4 B2 A2 |
+"C"G2 F2 E2 D2 "A"C4 C4 | "F"F4 A4 "D7"G4 ^F4 | "G"G8 "C"E4 e4 | "Am7"e4 d2 c2 "C"B2 A2 G2 F2 |
+"C"E4 G4 c6 c2 | "Em7"A4 G4 "D"A8 | "Gm"G8 "Em7"z4 d4 | "Dm"d4 c2 B2 A2 G2 F2 E2 |
+"Dm7"D4 A4- "Am"A4 G2 F2 | "Am"E2 D2 C2 B,2 "F"A,4 c4 | "F"c6 _B2 "E7"A4 G4 | "A"A8- "Am"A8 |
+"D7"A8- "A"A8 | "D"A16 |

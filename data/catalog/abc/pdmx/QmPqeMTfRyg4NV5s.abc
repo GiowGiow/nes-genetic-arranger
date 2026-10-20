@@ -1,0 +1,26 @@
+%abc-2.1
+% Go crystal tears, by John Dowland (1563-1626). Score published on MuseScore (artist: John
+% Dowland), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Dowland (died 1626,
+% Wikidata Q207355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/38/QmPqeMTfRyg4NV5siHm3bXacMbbSALnRfQSoxJetKMm3gW.mid (sha256
+% 03599515dc330193138f0f323479f5ae6525eb3a9bd4c4ac6a039d92ad113299): melody track 2, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Go crystal tears
+M:4/4
+L:1/16
+Q:1/4=85.000163
+% Exact tempo 85.00016291697891 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"C16 | "Cm"C6 B, A, "Em7"B,6 A, B, | "Cm7"C4 _B,4 "Fm"_A,6 _A,2 | "G"G,8 "Cm"C8 |
+"Cm"G,4 _A,4 G,8 | "G7"G,8 "Cm"_A,2 G,2 G,4 | "Ab"G,2 C,2 C4- "G"C4 B,2 A,2 | "G"B,8 "Eb"_B,8 |
+"Gm7"z2 _E2 C2 D2 "Eb"_E2 _B,4 _E2 | "Bb7"C2 _A,4 F,2 "Cm7"_B,8 | "Cm"C4 _B,4- "Gm"_B,2 A,2 G,2 A,2 | "Gm"_B,2 C2 D2 D2 "Cm"C8 |
+"C"C8 "Cm"C3 D _E3 F | "Gm"G6 _B,2 "Cm7"C2 D2 _E4 | "Eb"_E2 _B,2 C2 _A,2 "Cm"_B,2 G,2 G,2 =A,2 | "G"B,4 C4 "Em7"G,4 _E4 |
+"Cm"D4 G4 "G"G2 G,4 A,2 | [M:2/4]"G"B,2 C4 B,2 | [M:4/4]"Fm"C2 _A,3 _A, G,2 "C"C3 D _E3 F | "Gm"G6 _B,2 "Cm7"C2 D2 _E4 |
+"Eb"_E2 _B,2 C2 _A,2 "Cm"_B,2 G,2 G,2 =A,2 | "G"B,4 C4 "Em7"G,4 _E4 | "Cm"D4 G4 "G"G2 G,4 A,2 | [M:2/4]"G"B,2 C4 B,2 |
+[M:4/4]"Fm"C2 _A,3 _A, G,2 "C"C3 D _E3 F |

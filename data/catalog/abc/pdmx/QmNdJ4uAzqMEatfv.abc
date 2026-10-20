@@ -1,0 +1,34 @@
+%abc-2.1
+% Keyboard Sonata in D minor K.213, by Domenico Scarlatti. Score published on MuseScore (artist:
+% Domenico Scarlatti), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Scarlatti (died 1757,
+% Wikidata Q167837).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/15/QmNdJ4uAzqMEatfvqR7AoHKzE6sXYFEsw2VPkYsSRXsW5h.mid (sha256
+% 5451645b5b145a31695279d650a0dd1599e9286be7abbc973cb6c4e5c75782f3): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Keyboard Sonata in D minor K.213
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Eb7"d4 f4 a4 d'4 | "Eb7"d' c' _b3 a g2- "Bb"g e e f2 e f g | "A7"g f e3 e d _d "D"=d f a _d' _d'2 =d'2 | "Eb7"d' c' c' _b _b a a g "Bb"g f f e e f f g |
+"A7"g f f e e d d _d "D"_d4 =d4 | "B"d' b _a f d B _A d "A"d2 c B B2 c2 | "A"c' a ^f _e c A ^F c "G"c2 _B A A2 _B2 | "G"_b g e _d _B G _D G "D"G2 F E E2 F2 |
+"Bb7"z7 d' "A"d'2 _d' b b2 _d'2 | "Bb7"z7 d' "A"d'2 _d' b b2 _d'2 | "A7"z e f e a z2 f2 e f e a z2 f | "A7"e _b2 a2 g2 f- "Dm"f e2 d2 c =B A |
+"E7"z B c B e z2 c2 B c B e z2 c | "E7"B e f e _A e f e "Bm"=A e f e B e f e | "A7"c4 a4 "E7"a4 a4 | "Bm7"a4 a4- "E7"a b c' d' c' b a _a |
+"A7"a4 z2 a2 "E7"z2 a2 z2 a2 | "Bm7"z2 a2 z2 a2- "E7"a b c' d' c' b a _a | "Am"a c' _a =a z b _e =e "E7"z f =e d c B =A B | "Ab"c3 A B3 c c d2 c B3 d |
+"Am"c B A e c B A B "Ab"c3 A B3 c | "Ab"c d2 c B3 d "Am"c B A e d c B d | "Am"c c' _a =a z b e f "E7"z g B c z d =A _A | "Am"z c' _a =a z b e f "E7"z g B c z d =A _A |
+"D7"A B c E F B A _A "E7"=A E F D C =A B, _A | "A"_A2 =A2 z12 | "A"d4 f4 a4 d'4 | "Eb7"d' c' _b3 a g2- "Bb"g e e f2 e f g |
+"A7"g f e3 e d _d "D"=d f a _d' _d'2 =d'2 | "Eb7"d' c' c' _b _b a a g "Bb"g f f e e f f g | "A7"g f f e e d d _d "D"_d4 =d4 | "B"d' b _a f d B _A d "A"d2 c B B2 c2 |
+"A"c' a ^f _e c A ^F c "G"c2 _B A A2 _B2 | "G"_b g e _d _B G _D G "D"G2 F E E2 F2 | "Bb7"z7 d' "A"d'2 _d' b b2 _d'2 | "Bb7"z7 d' "A"d'2 _d' b b2 _d'2 |
+"A7"z e f e a z2 f2 e f e a z2 f | "A7"e _b2 a2 g2 f- "Dm"f e2 d2 c =B A | "E7"z B c B e z2 c2 B c B e z2 c | "E7"B e f e _A e f e "Bm"=A e f e B e f e |
+"A7"c4 a4 "E7"a4 a4 | "Bm7"a4 a4- "E7"a b c' d' c' b a _a | "A7"a4 z2 a2 "E7"z2 a2 z2 a2 | "Bm7"z2 a2 z2 a2- "E7"a b c' d' c' b a _a |
+"Am"a c' _a =a z b _e =e "E7"z f =e d c B =A B | "Ab"c3 A B3 c c d2 c B3 d | "Am"c B A e c B A B "Ab"c3 A B3 c | "Ab"c d2 c B3 d "Am"c B A e d c B d |
+"Am"c c' _a =a z b e f "E7"z g B c z d =A _A | "Am"z c' _a =a z b e f "E7"z g B c z d =A _A | "D7"A B c E F B A _A "E7"=A E F D C =A B, _A | "A"_A2 =A2 z12 |
+"Dbm"z e ^f e b d e d _d e ^f e b =d e =d | "A7"_d a b a _d a b a "F#m7"=d a b a e g a g | "Bm7"^f4 ^f e3 "A7"d4 d c3 | "Em7"B4 B A3 "E"d' b _a f d B _A d |
+"A"d2 c B B2 c2 c' a ^f _e c A ^F c | "G"c2 _B A A2 _B2 _b g e c _B G E _B | "F"c2 A G G2 A2 "Gm7"z7 g | "F"g2 f e e2 f2 "Gm7"z7 g |
+"F"g2 f e e2 f2 "G7"z7 d | "Dm"B2 d c B z c2 "G7"z7 d | "Dm"B2 d c B z c2 "C7"a2 g3 f e d | "Em"_d2 e =d _d z =d2 "C7"a2 g3 f e =d |

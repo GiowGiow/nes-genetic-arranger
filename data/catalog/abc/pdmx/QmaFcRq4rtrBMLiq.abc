@@ -1,0 +1,31 @@
+%abc-2.1
+% Le content est riche, by Claudin de Sermisy. Score published on MuseScore (artist: Claudin de
+% Sermisy), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudin de Sermisy (died 1562,
+% Wikidata Q968593).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/20/QmaFcRq4rtrBMLiqcZqwFxKnVAb2YWpfHkJHrTEZ2Ra7oy.mid (sha256
+% efbf6a5f01ad2c1dbaa1196a64c804c6842052f7fd06ae8d920f7210ec7cb87d): melody track 0, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le content est riche
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z8 d8 | "Dm"d4 d4 A4 A4 | "C7"c4 c4 _B2 A2 G2 F2 | "Gm7"G8 A4 A2 G2 |
+"F"A2 _B2 c6 _B2 A4 | "Gm"A4 G4 A8 | "A7"z4 A4 _B4 c4 | "Gm"d4 c4 A4 _B4 |
+"Cm"_B4 A4 G4 A4 | "D7"A2 G2 G8 ^F4 | "G"G16 | "G"z8 d8 |
+"Dm"d4 d4 A4 A4 | "C7"c4 c4 _B2 A2 G2 F2 | "Gm7"G8 A4 A2 G2 | "F"A2 _B2 c6 _B2 A4 |
+"Gm"A4 G4 A8 | "A7"z4 A4 _B4 c4 | "Gm"d4 c4 A4 _B4 | "Cm"_B4 A4 G4 A4 |
+"D7"A2 G2 G8 ^F4 | "Gm"G16 | "Am7"z16 | "Gm7"z4 d4 c4 _B4 |
+"A"_B4 d4 d4 c4 | "Em7"d4 _B4 _B4 _B4 | "Dm7"A16 | "Bb"d6 c2 d4 c4 |
+"Gm7"c2 _B2 _B8 A4 | "Bb"_B16 | "Gm"d8 d4 d4 | "Dm"A4 A4 c8 |
+"Gm"_B2 A2 G2 F2 G8 | "Dm"A4 A2 G2 A2 _B2 c4 | "Gm7"c2 _B2 A8 G4 | "Dm"A8 z4 A4 |
+"Am7"_B4 c4 d4 c4 | "Dm7"A4 _B8 A4 | "Cm7"G4 A6 G2 G4 | "D"G4 F4 G8 |
+"Gm"d8 d4 d4 | "Dm"A4 A4 c8 | "Gm"_B2 A2 G2 F2 G8 | "Dm"A4 A2 G2 A2 _B2 c4 |
+"Gm7"c2 _B2 A8 G4 | "Dm"A8 z4 A4 | "Am7"_B4 c4 d4 c4 | "Dm7"A4 _B8 A4 |
+"Cm7"G4 A6 G2 G4 | "D"G4 F4 G8 | "Em7"G4 F4 G8 | "G"G16 |

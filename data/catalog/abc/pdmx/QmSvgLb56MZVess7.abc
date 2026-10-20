@@ -1,0 +1,34 @@
+%abc-2.1
+% Exaudi me Domine, by Orlando di Lasso. Score published on MuseScore (artist: Orlando di Lasso),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Orlando di Lasso (died 1594,
+% Wikidata Q154792).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/48/QmSvgLb56MZVess7f9kKhYWPcnAuv3F1ssrBD2aCegWVng.mid (sha256
+% 25a7409b2b51fba3d828c3da9d70ac85538601a4e03321f3368e1e7fe1923077): melody track 1, bars 0-62
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Exaudi me Domine
+M:2/2
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"E"C16 | "E"B,8 C8 | "E"A,8 z4 C4 | "Em"C2 B,2 B,2 A, G, A,4 B,4 |
+"C"G,16 | "Bm"z8 E,8 | "Am"E,8 F,8 | "Am"E,8 G,8 |
+"C"z4 C4 B,4 C4 | "Bm"A,8 z4 E,2 F,2 | "Am"G,2 E,2 C8 B,2 A,2 | "Am7"C4 B,4 A,4 C4 |
+"Em"C4 B,8 C4 | "E"C4 A,8 G,2 F,2 | "Am7"E,4 E8 F4 | "G"E4 D2 C2 B,4 B,4 |
+"C"G,6 G,2 G,8 | "A7"z4 C4 B,4 C4 | "Em7"A,4 C6 B, A, B,2 C2 | "A7"D2 C2 C2 B, A, B,4 B,4 |
+"Dm"A,8 C8 | "F"C4 C4 D6 C2 | "Em7"B,2 A,2 B,8 G,4 | "C"A,4 B,4 C8 |
+"F"z4 C4 D6 F2 | "C"E4 D4 C8 | "F"C4 C4 D8 | "A7"z4 B,4 C6 E2 |
+"Em"D4 C4 B,4 C4 | "Am"F,4 C4 D6 F2 | "Em7"E4 D4 C4 B,4 | "Dm"C8 z4 C4 |
+"G"D8 E4 E4 | "Am"F4 D6 D2 A,4 | "Am7"E12 D4 | "G"B,4 C4 G,2 A,2 B,2 C2 |
+"Dm"D8 C4 B,4 | "G7"C8 A,8 | "C"z4 G,4 A,8 | "E7"B,4 B,8 C4 |
+"Dm"A,6 A,2 B,4 C4 | "Em7"C4 B,4 G,4 A,4 | "G"G,6 A,2 B,2 C2 D4 | "Am7"A,4 E2 D2 C2 B,2 E4 |
+"Am7"E2 D2 C4 B,8 | "F"A,8 C8 | "Em"C4 C4 B,4 D4 | "Am"D2 C B, C2 D2 E2 F2 E4 |
+"B"A,4 E8 D4 | "E7"B,4 D6 C B, C4 | "F"A,2 B,2 C2 D2 C8 | "Em"z4 E6 E2 D4 |
+"Am"F4 E4 z4 C4 | "Em"C4 C4 B,8 | "D"D16 | "Dm7"E16 |
+"Am"z4 C8 C4 | "G"B,8 D8 | "C"E8 E6 E2 | "G7"D6 C B, A,6 B,2 |
+"E"C4 B,4 B,8 | "E"B,16 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% RETUMBANTE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/retumbante.html (file
+% https://www.beakauffmann.com/mpb_r/som/retumbante.mid, sha256
+% 7895ab8ed3998805db34c6088e8a3ae87fc9d85bd3fd7e4e82702c8cc1a014c2), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RETUMBANTE
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z6 _d2 | "Bm7"d z ^F2 z2 ^F2 | "G"z E2 E z A2 A | "F"z A2 A z _A2 _A |
+"A"z G2 G G2 _d2 | "Bm7"d z ^F2 z2 ^F2 | "F#m7"z _d2 _d z2 _d2 | "D"z B2 B z B2 B |
+"A"z A2 _B =B c _d2 | "Bm7"d z ^F2 z2 ^F2 | "G"z E2 E z A2 A | "F"z A2 A z _A2 _A |
+"C7"z G2 G G2 ^f z | "B"d z _d z B z A z | "E"G z ^F z E z B z | "A7"A z _B2 _E2 A2 |
+"D"D4 z2 _d2 | "Bm7"d z ^F2 z2 ^F2 | "G"z E2 E z A2 A | "F"z A2 A z _A2 _A |
+"A"z G2 G G2 _d2 | "Bm7"d z ^F2 z2 ^F2 | "F#m7"z _d2 _d z2 _d2 | "D"z B2 B z B2 B |
+"A"z A2 _B =B c _d2 | "Bm7"d z ^F2 z2 ^F2 | "G"z E2 E z A2 A | "F"z A2 A z _A2 _A |
+"C7"z G2 G G2 ^f z | "B"d z _d z B z A z | "E"G z ^F z E z B z | "A7"A z _B2 _E2 A2 |
+"D"D3 z2 ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "Dbm7"_d =d _e =e ^f g ^f' =e' | "A7"d'3 _d' z g =d' _d' |
+"F#m7"b3 a z ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "F#m"c _d f ^f _a =a ^f' =d' | "Db7"_d' b _a f =d _d c B |
+"F#7"_B =B c _d ^F ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "Dbm7"_d =d _e =e ^f g ^f' =e' | "A7"d'3 _d' z g =d' _d' |
+"Bm7"b3 a z c' b ^f | "Em"a g e B A g ^f _e | "E7"^f e B G =F d _d _A | "A7"B A ^F D _D B A _D |
+"D"D3 d z ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "Dbm7"_d =d _e =e ^f g ^f' =e' | "A7"d'3 _d' z g =d' _d' |
+"F#m7"b3 a z ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "F#m"c _d f ^f _a =a ^f' =d' | "Db7"_d' b _a f =d _d c B |
+"F#7"_B =B c _d ^F ^f =f ^f | "Bm"_d =d _B =B F ^F _B =B | "Dbm7"_d =d _e =e ^f g ^f' =e' | "A7"d'3 _d' z g =d' _d' |
+"Bm7"b3 a z c' b ^f | "Em"a g e B A g ^f _e | "E7"^f e B G =F d _d _A | "A7"B A ^F D _D B A _D |

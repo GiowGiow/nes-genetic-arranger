@@ -1,0 +1,35 @@
+%abc-2.1
+% 24 Studien op. 21, by Joachim Andersen. Score published on MuseScore (artist: Joachim Andersen),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joachim Andersen (died 1909,
+% Wikidata Q785596).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/38/QmWq6KsmtKq5j5e1E7cEm9TrynjAfbDCB43Yi5gRjxyDsE.mid (sha256
+% 1f728b032f367703d73f2dabdfa83351087f4d5400ce7f5965750aaa93199f14): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:24 Studien op. 21
+M:3/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 _d'2 b2 =a2 | "C"_a e2 _d e2 _e2 ^f z2 _e | "C"_d2 B A A6 _A2 |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 e'2 _e'2 d'2 | "C"_e' b2 _a =e d2 _e b3 _b | "C"_a4 _A3 =A _B =B2 c |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 _d'2 b2 =a2 | "C"_a e2 _d e2 _e2 ^f z2 _e | "C"_d2 B A A6 _A2 |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 e'2 _e'2 d'2 | "C"_e' b2 _a =e d2 _e b3 _b | "C"_a8 _a2 =a2 |
+"C"a2 _a2 =a6 _a2 | "C"_a _d'2 b =a2 g4 _a2 | "C"z ^f2 g e'4 _e'2 _d'2 | "C"c'2 _e'4 _A2 _A2 =A2 |
+"C"A2 _A2 z2 B3 =A2 _A | "C"G _A _d B z =A _A _A =A _B =B c | "C"_d3 _e =e2 _a3 =e2 _d | "C"e8 _e4 |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 _d'2 b2 =a2 | "C"_a e2 _d e2 _e2 ^f z2 _e | "C"_d2 B A A6 _A2 |
+"C"_d4 _e2 f2 ^f2 _a2 | "C"a2 e'2 _e' _d'2 b a _a2 g | "C"a _a2 e _e c2 _d =e3 _e | "C"_d8 z4 |
+"C"B _a g _a _e =e _B =B _d =B _A =E | "C"c2 ^F A c e ^f a _a3 ^f | "C"b _a' g' _a' _e' =e' _b =b _d' =b _a =e | "C"c'2 e' c' a ^f e c _B3 =B |
+"C"_d B G _A _B =B _e =e _a3 ^f | "C"a _a _B =B _d =d g _a =b3 =a | "C"_d' c' _e' _d' _a b =a c _e _d _a ^f | "C"e _e _e _d' _d' _e _e c' b a ^f _e |
+"C"B _a g _a _e =e _B =B _d =B _A =E | "C"c2 ^F A c e ^f a _a3 ^f | "C"b _a' g' _a' _e' =e' _b =b _d' =b _a =e | "C"c'2 e' c' a ^f e c _B3 =B |
+"C"d _d g _a b _b f' ^f' e' _e' _d' =b | "C"c B f ^f a _a e' _e' _d' b =a _a | "C"f ^f _e' ^f _e =e _d' c' _d' a _a g | "C"_a4 _b2 c'2 _d' _e'2 =e' |
+"C"_e'2 ^f2 a _a z ^f =e _e z _d | "C"c z _A2 _B2 c2 _d _e2 =e | "C"_e2 ^F2 A _A z ^F =E _E z _D | "C"_A8 _A3 =A |
+"C"A6 _A2 =A3 _A | "C"A2 _A2 B z6 _A | "C"a2 _a2 ^f2 _e2 c2 =A2 | "C"G2 _A2 e6 _e2 |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 _d'2 b2 =a2 | "C"_a e2 _d e2 _e2 ^f z2 _e | "C"_d2 B A A6 _A2 |
+"C"_d4 _e2 =e2 ^f2 _a b | "C"_a6 e'2 _e'2 d'2 | "C"_e' b2 _a =e d2 _e b3 _b | "C"_a8 _a2 =a2 |

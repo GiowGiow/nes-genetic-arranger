@@ -1,0 +1,27 @@
+%abc-2.1
+% Fantasia TWV 33, by Georg Philipp Telemann. Score published on MuseScore (artist: Georg Philipp
+% Telemann), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Philipp Telemann (died
+% 1767, Wikidata Q75854).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/29/QmXKQprYKsniLeV6ayimejoKVBvCASH397YUZ5h7L3rSms.mid (sha256
+% 44adbfca6425212cf372050ee2de20e40b7a1b42b23c61fd64b73c2f68e6c3e3): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantasia TWV 33
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"E7"d4 d4 "D"d _d B A =d _d B A | "Db7"e4 e4 "A"e _d B A e _d B A | "Bm7"^f2 e2 g2 ^f2 "F#"b2 a2 z4 | "Em7"^f e d2 a2 d2 "D"d _d =d2 z4 |
+"D"e ^f3 g a3 e ^f3 g a3 | "Db"A B _d =d e2 a2 A B _d =d e2 a2 | "E"d _d =d2 b2 z2 "A"_d B _d2 a2 z2 | "Bm7"B2 A2 d2 _d2 "E7"_d B3 z4 |
+"Db7"A4 A4 "A"A _A ^F E =A _A ^F E | "Ab7"B4 B4 "E"B _A ^F E B _A ^F E | "F#m7"_d2 B2 =d2 _d2 "Db"^f2 e2 z4 | "Bm7"_d B A2 e2 A2 "A"A _A =A2 z4 |
+"G"B4 c A3 G6 c2 | "G"B2 e2 d2 g2 B G3 z4 | "E"B4 g _e3 =e6 d c | "E"B2 e2 B2 A2 G E3 z4 |
+"E"g ^f g b g ^f g b "Db7"g ^f g a g ^f g a | "D"^f e ^f a ^f e ^f a "Bb"^f e ^f g ^f e ^f g | "Em7"e2 d4 ^f2 "Em"e2 d3 e ^f g | "D"a2 b a g2 ^f2 "A"^f e3 z4 |
+"E7"d4 d4 "D"d _d B A =d _d B A | "Db7"e4 e4 "A"e _d B A e _d B A | "Bm7"^f2 e2 g2 ^f2 "F#"b2 a2 z4 | "Em7"^f e d2 a2 d2 "D"d _d =d2 z4 |
+"D"^F4 G E3 D6 G2 | "D"^F2 B2 A2 d2 ^F D3 z4 | "A"d e3 ^f d3 e2 _a4 =a2 | "A"e _d3 =d B3 _d A3 z4 |
+"D"D E ^F G A2 d2 "F#m7"A B _d =d e2 a2 | "D"^f e ^f a ^f e ^f a "Db"^f e ^f a ^f e ^f a | "B"f e f g f e f g "A"f e f g f e f g | "E"e d e2 b2 z2 "A"_d B _d2 g2 z2 |
+"Bm7"^f2 e2 g2 ^f2 "F#"b2 a2 z4 | "Em7"^f2 e d A2 _d2 "A7"=d2 e2 A2 _d2 | "Ab7"d2 _d =d e =d _d B "F#m7"=d _d B A B2 _d2 | "A"D E ^F G A2 A,2 "D"D4 z4 |

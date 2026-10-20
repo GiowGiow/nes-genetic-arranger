@@ -1,0 +1,33 @@
+%abc-2.1
+% Oboe Concerto in D minor Op.9 No.2, by Tomaso Albinoni. Score published on MuseScore (artist:
+% Tomaso Albinoni), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tomaso Albinoni (died 1751,
+% Wikidata Q174606).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/52/QmVxg1JKtNGqRXPVquwoXmRrdh7zpa8q1Xuycv35fg6CME.mid (sha256
+% 7f5eea7c92f37b54daad4cb71cbe86369ab900331ed7b8eaf9c62953b4498b42): melody track 1, bars 12-68
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Oboe Concerto in D minor Op.9 No.2
+M:4/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 "Db"z8 | "C"z8 "Gm7"z8 | "C"z8 "Db"z8 | "C"z8 "Gm7"z8 |
+"C"z8 "Db"z8 | "C"z8 "Gm7"z8 | "C"z8 "Db"z8 | "C"z8 "Gm7"z8 |
+"C"z8 "Bbm7"z8 | "C"z8 "Bbm"z8 | "C"z8 "Bbm7"z8 | "C"z8 "Bbm"z8 |
+"C"z3 C3 z2 "Bbm7"z3 _D3 z2 | "C"z3 C3 z2 "Bbm"z3 E3 C z | "C"z3 C3 z2 "Bbm7"z3 _D3 z2 | "C"z3 C3 z2 "Bbm"z3 E3 C z |
+"Cm"E,3 G,2 C3 "Bbm"_A,3 _D2 F3 | "Ab"_E6 =E ^F "F#"_A8 | "Fm"F2 C2 F,2 G2 "Eb"C2 F,2 _A2 C2 | "Bb7"F,2 _B2 F2 _B,2 "Db7"=B4 _A =A _B =B |
+"C"c4 z12 | "C"z14 G, A, | "C"C8- "Bbm7"C8 | "C"C2 _D2 C2 G,2 "Bbm"_B,2 C2 E2 G, _B, |
+"C"_B,8- "Bbm7"_B,8 | "C"z3 C _D C2 _D- "Bbm"_D C3 _B,2 E, _B, | "C"_B,8- "Bbm7"_B,8 | "Cm7"z3 C B, _B,2 A,- "E"A, _A,3 G,2 E, F, |
+"Fm"F,16 | "Fm7"F,8 "Eb7"z6 G, A, | "C"C8- "Bbm7"C8 | "C"C2 _D2 C2 G,2 "Bbm"_B,2 C2 E2 G, _B, |
+"C7"_B,8- "Bbm7"_B,8 | "C"z3 C _D C2 _D- "Bbm"_D C3 _B,2 E, _B, | "C"_B,8- "Db"_B,8 | "C7"z3 C B, _B,2 A,- "E"A, _A,3 G,2 E, F, |
+"Fm"F,12 ^F, A, C _E | "F"F12 z4 | "F"z8 "D7"z8 | "Gm7"z2 A, F G A G E "Fm7"F G F E _D C B, _B, |
+"Bb"_B,8- "Gm7"_B,4 z4 | "Fm7"z C _D =D F G F _B _e _d c _B G F _E F | "Eb7"_E8 z8 | "Eb7"_B,2 _D2 F2 _B2 "Fm7"C2 _E2 F2 =B c |
+"Cm"c2 G _B _A F _D _E- "Cm7"_E7 z | "C"C2 z4 C z "Db"z8 | "C"z3 C3 z2 "Bbm7"z3 _D3 z2 | "C"z3 C3 z2 "Bbm"z3 E3 C z |
+"C7"z3 C3 z2 "Bbm7"z3 _D3 z2 | "C"z3 C3 z2 "Bbm7"z3 _D3 z2 | "C7"z3 C2 z C2 "Db"_D3 _D2 _D3 | "C7"z2 C z _D z =D z "Db"_E F ^F G _A4 |
+"C"G16 | "G"G16 | "Db"z2 _E2 z2 _E2 "Eb7"z2 _E2 z2 _E2 | "C"G2 z14 |

@@ -1,0 +1,21 @@
+%abc-2.1
+% God rest you, merry gentlemen, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/xmas.abc, tune X: 4 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 05ebc4b856c8c5186bb828641e8f88f723c109d47ba7e3f1e5048b536e091249).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:God rest you, merry gentlemen
+M:4/4
+L:1/16
+Q:1/4=140
+K:Em
+P:A
+"Em"z12 E4 | "Em"E4 B4 B4 A4 | "Em"G4 F4 E4 D4 | "Em"E4 F4 G4 A4 |
+"B7"B12 E4 | "Em"E4 B4 B4 A4 | "Em"G4 F4 E4 D4 | "Em"E4 F4 G4 A4 |
+"B7"B12 B4 | "D7"c4 A4 B4 c4 | "G"d4 e4 "B7"B4 A4 | "Em"G4 E4 "A7"F4 G4 |
+"D7"A8 G4 A4 | "G"B8 "C"c4 B4 | "D"B4 A4 "B7"G4 F4 | "Em"E8 "A7"G3 F2 E3 |
+"D7"A8 G4 A4 | "G"B4 c4 "Em7"d4 e4 | "A"B4 A4 "B7"G4 F4 | "Em"E16 |
+"Em"E12 z4 |

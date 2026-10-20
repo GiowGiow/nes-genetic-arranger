@@ -1,0 +1,36 @@
+%abc-2.1
+% Russisches Zigeunerlied und Thüringer Volkslied Op.88, by Wilhelm Popp. Score published on
+% MuseScore (artist: Johann Kaspar Mertz), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wilhelm Popp (died 1903,
+% Wikidata Q324692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/8/QmS9knqbakFqmj2EKezui7zoiUGMSU24zEp24ew6jTYTtN.mid (sha256
+% e1d807010d297fbced86f98572c79d629eddaf0eddf60aaede3154cc1d13e4b9): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Russisches Zigeunerlied und Thüringer Volkslied Op.88
+M:2/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"a4 a4 | "D"b d'5 a a | "A"d'2 _d'2 _b2 a2 | "Em7"g2 f2 e2 d2 |
+"A"e3 a e3 a | "A"e6 a a | "A"f'2 e'2 d'2 _d'2 | "Em7"_b2 a2 g2 f2 |
+"A"e3 a e3 a | "Dm"f3 a f3 a | "A7"g3 a e3 a | "Dm"f3 a d3 a |
+"A"_d2 e2 a z a z | "Dm"d2 f2 a z a z | "A7"e2 g2 _b z _b z | "A7"_b8 |
+"Dm"a _b a _a =a2 f2 | "Dm"d6 e f | "Dm"a _a _a b d'3 _a | "Dm"a6 a _a |
+"Dbm"_b a2 g g a2 _b | "Dm"a g2 f f g2 a | "A"e3 a f a f a | "A"e A B _d =d e f g |
+"Dm"a _b a _a =a2 f2 | "Dm"d5 f a d' | "Em"c' b c' _d' =d'3 _b | "F"a6 a _a |
+"Gm"_b g2 e e g2 _b | "Dm"a d'2 f a d z f | "A7"A _A2 =A f3 e | "Dm"d6 z2 |
+"Dm"a z a z c'3 b | "Dm"a z a z c'3 b | "Am"a _a =a b c' b c' d' | "E7"e' z e z e2 ^f _a |
+"Dm"a z a z c'3 b | "Fm"a z a z c'3 d' | "G7"e' d' c' e' d' c' b d' | "E7"c' b a c' b a _a b |
+"Dm"a e a e c' d f b | "Dm"a e a e c' d f b | "Am"a c e a c' e a c' | "E7"e' f' e' _e' =e' d' c' b |
+"Dm"a e a e c' d f b | "F"a _a =a _a =a _a =a b | "E"c' e e' e b e e' e | "Am"a4 z4 |
+"Dm"d e2 f _a =a2 d | "Dm"f e2 d a4 | "Dm"d e2 f _a =a2 d | "A"e f2 e A4 |
+"Gm"g a2 _b d' c'2 _b | "Dm"a _a2 =a d'4 | "Dm"e' _d'2 a g e2 =d | "A"e _a2 =a _b =a2 f |
+"A"e a2 _d' =d' a2 f | "A"e2 z6 | "A"z8 | "A"z4 _d'4 |
+"Dm"d'4 f'4 | "A"e' z a2 _b2 a2 | "A"_b2 a2 _b2 a2 | "C7"g z _b z g z _b z |

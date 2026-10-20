@@ -1,0 +1,28 @@
+%abc-2.1
+% Verily Verily I Say Unto You, by Thomas Tallis. Score published on MuseScore (artist: Thomas
+% Tallis), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Tallis (died 1585,
+% Wikidata Q207789).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/47/QmNUsXypukSn7J2SKCk4ZySYg6xEy8w8dhaVFXZBRUwzKk.mid (sha256
+% b08676f4102dd13934c2fc4b27219954e3e8534541a84c3db9b313a191b50545): melody track 2, bars 0-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Verily Verily I Say Unto You
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"G,6 G,2 "Em"E,4 B,4 | "B"B,2 B,2 B,8 D4 | "B7"D4 _D4 "Em7"B,4 B,4 | "F#"_B,8 "D"z4 A,4 |
+"D"A,4 B,4 "F#m7"_D4 _D4 | "B"D8 "E7"_D2 B,2 B,4 | "F#m"B,4 _B,4 "Bm"=B,6 _D2 | "Em7"D4 E4- "Em"E2 D2 B,4 |
+"F#"_D8 "D"_D4 ^F4 | "Em"D4 G4- "Em7"G2 ^F2 D4 | "A"E8 "D"D8 | "D"z8 "G"D8 |
+"Em"D4 E4 "G"D8 | "Em7"B,4 B,4 "F#m"_D8 | "B7"_D4 =D4 "Em"B,4 B,2 B,2 | "B"B,8 "Bm"B,4 B,2 _D2 |
+"F#m"D2 E2 ^F4 "G"E2 D2 B,4 | "F#"_D8 "B"B,8 | "E"z4 G,4 "Em"E,2 ^F,2 G,2 A,2 | "Bm"B,4 E,2 E,2 "B"B,8 |
+"Em"B,4 E4 E4 E4 | "Em"D2 D2 G4 "B7"^F2 ^F2 ^F4 | "E"E8 z8 | "Em"E4 E4 "Bm"D4 B,4 |
+"F#"^F4 ^F4 "B"^F8 | "B"z8 "Em"E4 E4 | "Bm"D4 B,4 "F#m"^F4 ^F4 | "B"^F8 "D"z4 D4 |
+"F#m7"D4 E4 "Bm"^F4 D2 D2 | "A"E8 "F#m7"E4 G4 | "Em"G2 ^F2 E2 D2 "F#"_D8 | "D"z4 ^F4 "Em"E6 D2 |
+"F#m"_D8 "Bm"B,8 | "E"G,8 "B"^F,8 | "E"_A,16 |

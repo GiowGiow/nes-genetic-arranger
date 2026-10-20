@@ -1,0 +1,24 @@
+%abc-2.1
+% Tochter Zion, by Georg Friedrich Händel. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Friedrich Händel (died
+% 1759, Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/50/Qmbw25NUuax8p6mhE2vJtXsy3JRs5fLbMa6L5Lgngb9tJs.mid (sha256
+% a3d6edbf6465b0a0936cabcb58a1ed565d0ce743dcf46cc520924cf24df2041f): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tochter Zion
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A8 ^F6 G2 | "C"A8 D8 | "C"E2 ^F2 G2 A2 G4 ^F4 | "C"E15 z |
+"C"^F2 G2 A2 B2 A4 A4 | "C"d8 A8 | "C"G4 ^F2 G2 E6 D2 | "C"D15 z |
+"C"^F2 E2 ^F2 G2 ^F4 ^F4 | "C"E8 D8 | "C"G4 ^F4 E4 D4 | "C"_D15 z |
+"C"D2 _D2 =D2 E2 =D4 =D4 | "C"B8 _A8 | "C"A4 B2 A2 _A6 =A2 | "C"A15 z |
+"C"A8 ^F6 G2 | "C"A8 D8 | "C"E2 ^F2 G2 A2 G4 ^F4 | "C"E15 z |
+"C"^F2 G2 A2 B2 A4 A4 | "C"d8 A8 | "C"G4 ^F2 G2 E6 D2 | "C"D15 z |

@@ -1,0 +1,29 @@
+%abc-2.1
+% Oboe Concerto in A minor RV 461, by Antonio Vivaldi (1678-1741). Score published on MuseScore
+% (artist: Antonio Vivaldi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/15/QmZd3jsf5fQnmiCj6UXWJu9RbN393Dz217rFUgjvhAeHNu.mid (sha256
+% 53861d79b90322b247878989a849b9d45db8774889c0a5012b8518a29cbdb27d): melody track 0, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Oboe Concerto in A minor RV 461
+M:3/4
+L:1/16
+Q:1/4=35.999993
+% Exact tempo 35.99999280000144 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z12 | "G"z12 | "C"z12 | "F"z12 |
+"G"z12 | "G"z12 | "C"z12 | "G"z12 |
+"G7"z12 | "C"c4 z2 g f f f f f | "G"f z5 f e e e e e | "C"e z5 e d d d d d |
+"G"d d3 g a3 e f3 | "Am"e c c d e f g a b c' e2 | "D"d2 e ^f a g ^f e d c B A | "G"B G2 B d B2 d g d2 g |
+"Am7"e c2 e a e2 a c' a2 c' | "D"^f d2 ^f a d2 a ^f c2 a | "G"g2 d e g2 d e g2 d e | "D"g B A G B B B B B B B z |
+"G"G4 z2 d2 e e e d | "D7"e z5 c2 d d d c | "G"d z5 B2 c c c B | "D"c z4 A d e f d B A |
+"E"_A2 ^F _A B2 =A B e e e e | "Am"c A3 z A A c c e e f | "G"f g a g f e d c B d e f | "C"e c d d d c e d g e d c |
+"G"d B c c c B d c g d c B | "C"e c d d g c d d g _B c c | "F"c z4 B c e f a a2 | "G"B A d c f e d c B A f e |
+"C"e2 d2 c8 | "G"d e g c e e e e e e e z | "C"c4 z8 | "G"z12 |
+"G7"z12 | "C"z12 |

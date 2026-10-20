@@ -1,0 +1,24 @@
+%abc-2.1
+% Marche funèbre Op.72 No.2, by Frederic Chopin. Score published on MuseScore (artist: Frédéric
+% Chopin), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frederic Chopin (died 1880,
+% Wikidata Q15970295).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/3/Qmb4Y5GJS7bNthovYyMzBp1Upktw1Qs89K74zHpBdReXsL.mid (sha256
+% e7f40822e0925bb5d3520cf112f78fa8cb1c78839418663618c42405fe5f0d16): melody track 0, bars 0-22
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Marche funèbre Op.72 No.2
+M:4/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"C"A,4 A,3 A, A,4 F,4 | "C"A,4 A,3 A, A,4 F,4 | "C"A,4 A,3 A, A,4 C3 B, | "C"B,3 A, A,3 A, A,4 F,4 |
+"C"C4 C3 C C4 E3 D | "C"D3 C C3 C C4 A,4 | "C"A2 G2 F3 E E4 C4 | "C"A2 G2 F3 E E4 C4 |
+"C"A,4 A,3 A, A,4 C3 B, | "C"B,3 A, A,3 A, A,4 F,4 | "C"A2 G2 F3 E E4 C4 | "C"A2 G2 F3 E E4 C4 |
+"C"A,4 A,3 A, A,4 C3 B, | "C"B,3 A, A,3 A, A,4 B,4 | "C"C4 F,3 G, A,3 B, C2 C2 | "C"E4 B,3 A, D3 G, G,3 F, |
+"C"E,4 E,3 ^F, _A,3 =A, B,3 C | "C"C4 ^F,4 B,4 E,3 ^F, | "C"G4 G3 G, G4 C2 E,2 | "C"E4 E3 E, A,4 E,2 C,2 |
+"C"A,4 A,3 A, A,4 C3 B, | "C"B,3 A, A,3 A, A,8 |

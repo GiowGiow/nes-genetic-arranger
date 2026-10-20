@@ -1,0 +1,27 @@
+%abc-2.1
+% Mirate in sul matin, by Piero Benedetti. Score published on MuseScore (artist: Piero Benedetti),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Piero Benedetti (died 1649,
+% Wikidata Q106989081).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/44/QmStDJFff8Fk9tetGwUXRc2es3ZqwMG5XR7hhtCSawJnZx.mid (sha256
+% 51cfd0ca08f81d3e957b1161c60630ec32f3c7935806726f046a860d1077b2cc): melody track 0, bars 0-29
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mirate in sul matin
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z4 G4 _B8 | "G"_B8 _B8 | "G"z2 d2 _B2 A2 _B8 | "C"z4 _e8 d2 c2 |
+"G"d8 d8 | "F"z4 A2 A2 "E"c4 _B2 A2 | "F"A8 A8 | "G"z2 d2 _B2 G2 "D"A8 |
+"Bb"z4 d2 d2 e8 | "Eb"f4 _e2 d2 "F"c8 | "F"c8 z2 A2 A2 A2 | "F#"d6 G2 "D"A8 |
+"Db"A4 A2 A2 "D"A8 | "G"G8 z8 | "F"z4 c4 F2 F2 F2 G2 | "F"A8 z2 A2 c2 F2 |
+"C"G8 G8 | "G"d6 c2 _B4 A2 G2 | "D"A8 A4 z2 A2 | "E7"d6 c2 "F"c6 A2 |
+"F"F8 F8 | "Bb"z4 d2 d2 "F#"d8 | "G"d4 _B3 A "D"A8 | "D"A8 "A"z2 E2 F2 D2 |
+"A"E8 E8 | "F"z2 c2 c2 d2 "G"_B8 | "G"_B4 z2 A2 "Dbm7"c6 d2 | "Db"A6 A2 "D"A8 |
+"G"G16 |

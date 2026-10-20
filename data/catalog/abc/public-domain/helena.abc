@@ -1,0 +1,36 @@
+%abc-2.1
+% HELENA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_h/helena.html (file
+% https://www.beakauffmann.com/mpb_h/som/helena.mid, sha256
+% 1e85cd0377d36d8ccb02529d946360ee695e6c3a02cd30de984f26141406e2b6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:HELENA
+M:3/4
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab7"C2 _B2 _A2 z5 ^F | "Ab7"f8 _e4 | "Db"_D2 _B2 _A2 z5 F | "Db"_e8 _d4 |
+"Eb7"G2 f2 _e3 f' _e'4 | "Ab7"^F2 =f2 _e3 =f' _e'4 | "Db"f2 _e'2 _d'2 _d2 _b2 _a2 | "Db"_A2 ^f2 =f2 =F2 _e2 _d2 |
+"Ab7"C2 _B2 _A2 z5 =A | "Dm7"f8 _e4 | "Bbm"_D2 ^F2 =F2 z5 =F | "Bbm"_e8 _d4 |
+"Fm"c2 _b2 _a2 z6 | "C"_B2 _a2 g2 z6 | "F"f6 C, z E, z F, z | "F"^F, z G, z _A, z =A, z _B, z =B, z |
+"Ab7"C2 _B2 _A2 z5 ^F | "Ab7"f8 _e4 | "Db"_D2 _B2 _A2 z5 F | "Db"_e8 _d4 |
+"Eb7"G2 f2 _e3 f' _e'4 | "Ab7"^F2 =f2 _e3 =f' _e'4 | "Db"f2 _e'2 _d'2 _d2 _b2 _a2 | "Db"_A2 ^f2 =f2 =F2 _e2 _d2 |
+"Ab7"C2 _B2 _A2 z5 =A | "Dm7"f8 _e4 | "Bbm"_B,2 ^F2 =F2 z5 E | "C7"c8 _B3 _A |
+"Db"_B z G2 _A2 _b2 _a2 _A2 | "Ab"f2 _e2 d2 _d2 c2 _e2 | "Db"_d4 z4 _a4 | "Db"_d'4 z8 |
+"Ab7"C2 _B2 _A2 z5 ^F | "Ab7"f8 _e4 | "Db"_D2 _B2 _A2 z5 F | "Db"_e8 _d4 |
+"Eb7"G2 f2 _e3 f' _e'4 | "Ab7"^F2 =f2 _e3 =f' _e'4 | "Db"f2 _e'2 _d'2 _d2 _b2 _a2 | "Db"_A2 ^f2 =f2 =F2 _e2 _d2 |
+"Ab7"C2 _B2 _A2 z5 =A | "Dm7"f8 _e4 | "Bbm"_D2 ^F2 =F2 z5 =F | "Bbm"_e8 _d4 |
+"Fm"c2 _b2 _a2 z6 | "C"_B2 _a2 g2 z6 | "F"f6 C, z E, z F, z | "F"^F, z G, z _A, z =A, z _B, z =B, z |
+"Ab7"C2 _B2 _A2 z5 ^F | "Ab7"f8 _e4 | "Db"_D2 _B2 _A2 z5 F | "Db"_e8 _d4 |
+"Eb7"G2 f2 _e3 f' _e'4 | "Ab7"^F2 =f2 _e3 =f' _e'4 | "Db"f2 _e'2 _d'2 _d2 _b2 _a2 | "Db"_A2 ^f2 =f2 =F2 _e2 _d2 |
+"Ab7"C2 _B2 _A2 z5 =A | "Dm7"f8 _e4 | "Bbm"_B,2 ^F2 =F2 z5 E | "C7"c8 _B3 _A |
+"Db"_B z G2 _A2 _b2 _a2 _A2 | "Ab"f2 _e2 d2 _d2 c2 _e2 | "Db"_d4 z4 _a4 | "Db"_d'4 _e f _e f f _e3 |

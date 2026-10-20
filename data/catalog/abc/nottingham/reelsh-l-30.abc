@@ -1,0 +1,24 @@
+%abc-2.1
+% Jacob (or Enrico), from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 30 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Jacob (or Enrico)
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"d4 f2 e2 d2 c2 d2 B2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e2 f2 "Em"g2 f2 g2 f2 |
+"A7"e4 a4 a2 g2 f2 e2 | "D"d4 f2 e2 d2 c2 d2 B2 | "D"A2 B2 A2 G2 F4 A4 | "G"B4 g2 f2 "A7"e2 d2 e2 c2 |
+"D"d4 d4 d4 A4 | "D"d4 f2 e2 d2 c2 d2 B2 | "D"A2 B2 A2 G2 F4 A4 | "D"d4 e2 f2 "Em"g2 f2 g2 f2 |
+"A7"e4 a4 a2 g2 f2 e2 | "D"d4 f2 e2 d2 c2 d2 B2 | "D"A2 B2 A2 G2 F4 A4 | "G"B4 g2 f2 "A7"e2 d2 e2 c2 |
+"A7"d4 d4 d4 z4 | "F#m"a4 a2 g2 f2 g2 f2 e2 | "Bm"d2 e2 d2 c2 B4 B4 | "Em"g2 a2 g2 f2 e2 f2 e2 d2 |
+"A"c2 d2 c2 B2 "A7"A8 | "D"d4 d4 "A"c2 e2 c2 A2 | "D"d4 d4 "A"c2 e2 c2 A2 | "D"d4 f4 "A7"e2 d2 e2 c2 |
+"D"d4 d4 d4 z4 | "F#m"a4 a2 g2 f2 g2 f2 e2 | "Bm"d2 e2 d2 c2 B4 B4 | "Em"g2 a2 g2 f2 e2 f2 e2 d2 |
+"A"c2 d2 c2 B2 "A7"A8 | "D"d4 d4 "A"c2 e2 c2 A2 | "D"d4 d4 "A"c2 e2 c2 A2 | "D"d4 f4 "A7"e2 d2 e2 c2 |
+"D"d4 d4 d4 z4 |

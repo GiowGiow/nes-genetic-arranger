@@ -1,0 +1,23 @@
+%abc-2.1
+% Waltzing Matilda, by Banjo Paterson. Score published on MuseScore (artist: Banjo Paterson), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Banjo Paterson (died 1941,
+% Wikidata Q436699).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/21/QmcgB3DYZQbaR69BEWWBMmhjHsjv8sYP5XwRbfCDWAaYS8.mid (sha256
+% 72b0240037fcf94eecc851988f940e03d455d3b943ac43379a840780035fd834): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Waltzing Matilda
+M:4/4
+L:1/16
+Q:1/4=113.999954
+% Exact tempo 113.99995440001827 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"^F2 ^F2 ^F2 ^F2 "Em7"E4 E4 | "D"D2 E2 ^F2 D2 B,2 _D2 =D4 | "D"A,4 D2 ^F2 A4 A2 A2 | "D"A4 G2 ^F2 "F#m"E4 D2 E2 |
+"D"^F4 ^F2 ^F2 "G"E4 E4 | "D"D2 E2 ^F2 D2 B,2 _D2 =D4 | "D"A,4 D2 ^F2 A4 G2 ^F2 | "A7"E4 E2 E2 "F#7"D8 |
+"D"A4 A2 A2 A4 ^F4 | "Em7"d4 d2 d2 _d4 B4 | "D"A4 A2 A2 B4 A2 A2 | "D"A4 G2 ^F2 "F#m"E4 D2 E2 |
+"D"^F4 ^F2 ^F2 "A7"E4 E4 | "F#m"D2 E2 ^F2 D2 "G"B,2 _D2 =D4 | "D"A,4 D2 ^F2 A4 G2 ^F2 | "A7"E4 E2 E2 "D"D8 |

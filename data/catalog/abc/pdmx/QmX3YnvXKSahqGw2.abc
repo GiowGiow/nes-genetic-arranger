@@ -1,0 +1,35 @@
+%abc-2.1
+% the magic flute - der hölle rache kocht in meinem herzen - the queen of the night, by Wolfgang
+% Amadeus Mozart. Score published on MuseScore (artist: Wolfgang Amadeus Mozart), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/2/QmX3YnvXKSahqGw2fjBgBxGCA2gXNjEW4tW5nKNTwqSptM.mid (sha256
+% 2214a531d14d57c1d0c0eaa60d4d16f95d2786a46e48cdf3f63c3c36a31c84a6): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:the magic flute - der hölle rache kocht in meinem herzen - the queen of the night
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am"z16 | "Am"z10 E,2 E,2 E,2 | "Am"A,6 E,2 C2 C2 D C D z | "Am"A,4 E,4 z8 |
+"Bm"D12 B,2 _A,2 | "C"E4 A,12 | "Gm7"_B,8 "A7"_D6 _D2 | "Db"D4 E4 "Dm"F8 |
+"Dm"F4 D4 "D7"_B,4 A,4 | "Em"_A,8 "D"z8 | "C"C,8 E,4 G, ^F, G, A, | "C"C12 z2 G,2 |
+"C"E2 D2 C2 B,2 A,2 G,2 F,2 E,2 | "Dm7"F,4 D8 z2 D2 | "Bm"F2 E2 D2 C2 "B"B,2 A,2 G,2 F,2 | "C7"E,4 C8 z4 |
+"F"z4 F,4 "Am"A,4 C4 | "Dm7"F F F F F F F F "C"E E E E E E E E | "Ab7"_E6 C2 _E6 C2 | "G"B,8 "G7"z4 G,4 |
+"C"C8 "G"E D E E E E C D | "C"E8 "G7"z4 G,2 G,2 | "C"C6 C2 "G"E D E E E E C D | "C"E8 z4 F D E F |
+"Em7"G z G z G z G z G z G z G z G z | "Am"C8 z4 D B, C D | "Em"E z E z E z E z E z E z E z E z | "F"A,8 z4 B, G, A, B, |
+"C"C z C z C z G, z "Bm"D z D z D z G, z | "C"E z C z E z G z c z G z A z F z | "C"G z C z E z G z c z G z A z F z | "C"G4 z4 "Am"C6 C2 |
+"F"D8 "Dm"F8 | "G"A, G, A, A, A, A, A, G, A, A, A, A, A,2 B,2 | "C"C8 z4 F D E F | "Em7"G z G z G z G z G z G z G z G z |
+"Am"C8 z4 D B, C D | "Em"E z E z E z E z E z E z E z E z | "F"A,8 z4 B, G, A, B, | "C"C z C z C z G, z "Em7"D z D z D z G, z |
+"C"E z C z E z G z c z G z A z F z | "C"G z C z E z G z c z G z A z F z | "C"G4 z4 C8 | "F"D6 D2 "F#m"_E6 _E2 |
+"C"E8 C8 | "C"G,8 "G7"A, G, A, G, A, z B,2 | "C"C4 z4 "G"z4 B,4 | "C"C4 z4 "G"z4 B,4 |
+"Am"C4 A,2 D2 "Dm"F,2 A,2 D,2 F,2 | "C"B,,4 G,4 "G7"F,4 D,4 | "C"C,4 z12 | "C"z8 "Dm7"z6 C2 |
+"C"C6 C2 "F"C6 C2 | "C"C4 C,4 "Dm7"z6 C2 | "C"C6 C2 "F"C6 C2 | "C"C4 C,4 "Dm7"z6 C2 |
+"C"C6 C2 "F"C6 C2 | "C"C4 C,4 "Dm7"z4 C,2 C,2 | "Dbm"_B,8 G,8 | "Dbm"E,8 "F#m"A,8 |
+"Dm"D,4 z4 "C7"z6 D2 | "Dm"D4 D,4 "Em"z6 D2 | "Dm"D4 D,4 "C7"z4 D2 D2 | "Dm"D4 D,4 "Em"z4 D,2 D,2 |

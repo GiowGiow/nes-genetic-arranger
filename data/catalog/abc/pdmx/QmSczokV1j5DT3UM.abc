@@ -1,0 +1,35 @@
+%abc-2.1
+% Lohengrin WWV 75, by Richard Wagner. Score published on MuseScore (artist: Richard Wagner), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Wagner (died 1883,
+% Wikidata Q1511).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/13/QmSczokV1j5DT3UMtm4YQG2ZGvU4UsC8bCA9kbeAMtoXW4.mid (sha256
+% 4dde0cb4750d5834afb1b65df511ff058e54adf8850bbd5414f135766dafcf46): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lohengrin WWV 75
+M:4/4
+L:1/16
+Q:1/4=37.000014
+% Exact tempo 37.00001418333877 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"e'8 e'8 | "Dbm"e''15 z | "A"e'8 e'8 | "Dbm"e''15 z |
+"A"e'7 z "F#m"a' z3 e'3 z | "F#"^f' z7 "A"e'2 e'4 e' ^f' | "Abm"^f'4 e'3 b "F#m7"d'5 _d'2 b | "E"b6 _d'2 "A"e'5 e'2 z |
+"Db7"^f' z4 e'2 b "F#m"d'8 | "E"_d'5 b2 a "B7"_d'4 b3 ^f' | "Bb7"^f'4 _d' e'2 _d' "B7"e'2 =d'6 | "Db"_d'4 _d' b2 a "F"e'6 =d'2 |
+"F"e'4 e'3 z "F#m"^f' z4 a _d' ^f' | "Db"f'8 "Dbm7"e'4 b3 _a | "B"_a8 "Dbm7"b4 z2 e'2 | "B"e'4 _e'3 ^f' "E"=e'4 d'3 z |
+"A"a' z7 e'4 e'3 ^f' | "Ab7"_a'8 "Eb"c'6 ^f'2 | "Dbm"_d'2 e'2 _a4- "C7"_a2 e'2 _e'2 _d'2 | "E"b2 _b4 a2- "Dbm7"a2 _a4 e'2 |
+"Dbm"e'2 _a2 e2 _a2- "E"_a2 b2 e2 e'2 | "Ebm7"^f'2 ^f4 b2 "F#m7"a2 e'2 _e'2 b2 | "Ab7"a2 ^f2 b2 e2- "E"e2 _a2 e2 e'2 | "Ebm7"e'2 _d'2 a2 ^f2- "F#m7"^f2 _e2 =e2 a2 |
+"Dbm"_a2 ^f2 e2 _d2- "F#7"_d2 e2 ^f2 _d'2 | "F7"_d'2 ^f2 _a B2 _A "F#7"B2 =A2 =a e2 _d | "Ab"c2 _a2 e2 _d2 "B7"B2 b2 _e2 b2 | "A7"e2 b2 A2 b z "D"d' z d'2 d2 a e |
+"Dm7"f2 c'3 e c' e "F"f2 c'2 d2 a d | "E"e'2 b4 b2 "B"^f'4 _e'3 b | "E"e'4 e2 z e "F"c2 a2 d2 a2 | "E"e'2 b4 b2 "B"^f'4 _e'3 b |
+"Db"e'4 e2 z e "E"B2 _a2 _d2 e2 | "Eb7"_e2 _e'2 _e2 _e _d' "Ab"_d'2 _e2 b =e2 f | "B7"b A2 _A =a4- "C"=a2 =a2 _a3 ^f | "Dbm7"e2 _e4 d2 "F#m7"A z _d2 =E2 A2 |
+"F#"A2 _d2 A2 ^F2 "A"E2 e2 _d2 a2 | "Abm7"b2 B2 e2 b2 "E7"d2 a2 _a2 d'2 | "E"d'2 d2 d'2 _d'2- "A"_d'2 _a2 =a2 ^f'2 | "Abm7"^f'2 _d'2 =d'2 b2- "Bm7"b2 =d4 b2 |
+"Db"b2 _d4 _d'2- "B7"_d'2 a2 B2 ^f ^F | "Bb7"^F2 ^f3 E e _D "B7"E2 =d2 A2 ^F2 | "Db"F2 _d2 A2 ^f2 "E"e2 e'4 =d'2 | "F#m7"_d'2 e2 c'4 "G"b2 =d2 _b3 A |
+"Dm7"_B2 f3 a g a "Bb"_b2 f2 d2 d'2 | "A"_d'2 e2 a3 e "Dbm7"=d'2 e4 e2 | "A"_d'2 a2 e2 _d A "Bb"F2 =d2 G2 =d'2 | "A"_d'2 e2 a3 e "E"=d'2 e4 e2 |
+"F#m7"_d'2 a2 e2 _d A "Gm7"=d2 _B2 G4 | "F"A2 F4 A2 "F#m7"A7 z | "D"d z7 "Bm7"A5 z2 B | "Bm"B5 z3 "F#"_d3 z =d3 z |
+"A"e5 z2 ^f "Bm7"^f3 z ^f'3 _a | "A7"^f'4 e'2 _d'2 "Bm7"e'2 =d'2 a4 | "Db"_d'4 ^f b2 a "B7"_d'4 b3 ^f' | "Bb7"^f'4 _d' e'2 _d' "Bm"e'2 =d'2 b4 |
+"F#m"_d'4 ^f b2 a "E7"e'6 _a e' | "F#m"a'6 _a'2 "F#m7"^f'4 e'3 d' | "Db7"_d'6 b2 "B7"a4 =d2 _a2 | "Db"^f4 =f4 "E"e6 _e2 |
+"F#m"d4 _d3 B "Ab"A6 _A2 | "A"^F6 E2 "B"E4 _E3 =E | "F#m7"E4 A3 _A "D"_A4 ^F3 ^F | "Ebm"B4 C2 A2 "Ab"_A6 ^F2 |

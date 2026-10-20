@@ -1,0 +1,25 @@
+%abc-2.1
+% Symphony No.5 Op.64, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/47/QmYUQxh5AGLmf4jjCdGdQtrq3J2cTxzfzYJ9vcmkbC5dGZ.mid (sha256
+% 6b6056e22d881f3b7bd6ce3623af1cec748adc2ff73f20d16d5b11476940a597): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.5 Op.64
+M:2/2
+L:1/16
+Q:1/4=240
+K:none
+P:A
+"G"z4 e2 z2 _e2 z2 =e2 z2 | "Am7"B2 z2 A z A z G z G z ^F z ^F z | "G"E z3 e2 z2 _e2 z2 =e2 z2 | "Am7"B2 z2 A z A z G z G z ^F z ^F z |
+"Am7"E z3 E2 z2 A2 z2 ^F2 z2 | "G"G2 z2 E z E z ^F z ^F z _E z _E z | "G"E z3 E2 z2 A2 z2 ^F2 z2 | "G"G2 z2 E z E z ^F z ^F z _E z _E z |
+"Em"E2 z2 e'2 z2 _e'2 z2 =e'2 z2 | "Am7"b2 z2 a2 z2 g2 z2 ^f2 z2 | "Em"e2 z2 e'2 z2 _e'2 z2 =e'2 z2 | "Am7"b2 z2 a2 z2 g2 z2 ^f2 z2 |
+"C"e2 z2 c d2 c d e2 d d e2 d | "C"c d2 c c d2 c A B2 A A B2 A | "C"G A2 B c d2 c d e2 d d e2 d | "C"c d2 c c d2 c A B2 A A B2 A |
+"Am"G2 z2 e'2 z2 d'2 z2 e'2 z2 | "D7"b2 z2 a2 z2 g2 z2 a2 z2 | "Am7"e2 z2 e'2 z2 d'2 z2 e'2 z2 | "D7"b2 z2 a2 z2 g2 z2 a2 z2 |
+"G"e2 z2 A A2 A B B2 B c c2 c | "Am7"d d2 d _e _e2 _e =e =e2 =e ^f ^f2 ^f | "Em"g g2 g a a2 a b b2 b c' c'2 c' | "Em7"d' d'2 d' _e' _e'2 _e' =e' =e'2 =e' ^f' ^f'2 ^f' |
+"Em"g'2 z14 |

@@ -1,0 +1,25 @@
+%abc-2.1
+% Concerto No. 2 in Sol Minore RV315 L'Estate, by Antonio Vivaldi. Score published on MuseScore
+% (artist: Antonio Vivaldi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/50/QmXwmh1rwkP91cREpvFXdbekJH8HWoPNrbnevDEdhMYrsG.mid (sha256
+% 61eb0d144b98991a5873bd43d2d597a0e8e197f734f0d9cfb81f10a774249b6e): melody track 0, bars 0-22
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Concerto No. 2 in Sol Minore RV315 L'Estate
+M:4/4
+L:1/16
+Q:1/4=43.999979
+% Exact tempo 43.99997946667626 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"g13 z _b2 | "D"c8 a6 d2 | "Gm"_b3 a g4 "G"G,2 G, G, G, G, G, G, | "G"G, G, G, G, G, G, G, G, G,4 z4 |
+"Bb"g6 _b2 "Cm"a6 c'2 | "Dm"_e6 c'2 "Bb"d6 _B2 | "Bb"f6 _b2 "Cm7"g6 _b2 | "Gm"d4 d d d d "Bb"d z _B, _B, _B, _B, _B, _B, |
+"Bb"_B, _B, _B, _B, _B, _B, _B, _B, _B,4 z4 | "Bb"f6 _B2 "Bm"_a6 f2 | "Cm"f f f f c4 g6 c2 | "Dbm"_b6 g2 "D"g g g g d4 |
+"G"_b6 g2 "Cm"_a6 g2 | "D7"^f6 d2 "F#m"_e6 d2 | "F#m"c'6 d2 "Dbm"_b2 a g g g g g | "G"g4 z12 |
+"G"z8 "Gm"d8 | "F"d7 z "Eb"g6 c'2 | "D"c6 a2 "Dbm"_b2 a g g g g g | "G"z16 |
+"G"z8 "Gm"z8 | "Gm"z16 |

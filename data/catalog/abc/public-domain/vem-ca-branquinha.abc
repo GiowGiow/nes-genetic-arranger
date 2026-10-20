@@ -1,0 +1,36 @@
+%abc-2.1
+% VEM CÁ, BRANQUINHA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_v/vem-ca-branquinha.html (file
+% https://www.beakauffmann.com/mpb_v/som/vem-ca-branquinha.mid, sha256
+% 04201b1dd4484fd975642eadcfb5e88ffa850bae3207a6fbccff250cd6ea7afe), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:VEM CÁ, BRANQUINHA
+M:2/4
+L:1/16
+Q:1/4=133.333333
+% Exact tempo 133.33333333333334 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z3 _A,, _A,, F,,2 _A,, | "Fm7"^F, C _A, C ^F, C _A, C | "Ebm7"F, _D _A, _D F, _D _A, _D | "Ab"^F, C _A, C ^F, C _A, C |
+"Fm"F, _D _A, _D F, _D _A, _D | "Fm7"^F, C _A, C ^F, C _A, C | "Bbm"F, _D _A, _D _B,, _B, F, _B, | "Cm"C, _A, _E, _A, _D, G, _E, G, |
+"Ab"z3 _a _a f2 _a | "Ab7"_e3 _a _a _e2 _a | "Db"z _d2 _e f ^f2 g | "Ab7"_a3 _e _a4 |
+"Db7"z3 _d' _d' _a2 _d' | "Ebm7"z ^f2 _d' z =f2 _b | "D"z _e2 _b z d2 a | "Ab7"z _d2 _a z c2 _a |
+"Db"_d3 _A,, _A,, F,,2 _A,, | "Fm7"^F, C _A, C ^F, C _A, C | "Ebm7"F, _D _A, _D F, _D _A, _D | "Ab"^F, C _A, C ^F, C _A, C |
+"Fm"F, _D _A, _D F, _D _A, _D | "Fm7"^F, C _A, C ^F, C _A, C | "Bbm"F, _D _A, _D _B,, _B, F, _B, | "Cm"C, _A, _E, _A, _D, G, _E, G, |
+"Ab"z3 _a _a f2 _a | "Ab7"_e3 _a _a _e2 _a | "Db"z _d2 _e f ^f2 g | "Ab7"_a3 _e _a4 |
+"Db7"z3 _d' _d' _a2 _d' | "Ebm7"z ^f2 _d' z =f2 _b | "D"z _e2 _b z d2 a | "Ab7"z _d2 _a z c2 _a |
+"Db"_d4 z f' c' _e' | "Bb7"_d' a c' _b f _a ^f =d | "F#7"f _e A c _B4 | "Ab7"z _A2 _B c _d2 _e |
+"Db"f3 f z f' c' _e' | "Bbm"_d' _a c' _b f e f g | "Fm"_a g _a _b c'3 c' | "C7"z c'2 c' c' c'2 c' |
+"F7"c'3 f z f' c' _e' | "Bbm7"_d' a c' b f _a ^f =d | "F#7"f _e A c _B4 | "Ab7"z _A2 _B c _d2 _e |
+"Db"f3 f z f' c' _e' | "Bb7"_d' a c' _b f _a ^f =d | "F#7"f _e _B c _d c _d _e | "F"e f _d F _d2 c2 |
+"Bb"_B3 _B, z f' c' _e' | "Bb7"_d' a c' _b f _a ^f =d | "F#7"f _e A c _B4 | "Ab7"z _A2 _B c _d2 _e |
+"Db"f3 f z f' c' _e' | "Bbm"_d' _a c' _b f e f g | "Fm"_a g _a _b c'3 c' | "C7"z c'2 c' c' c'2 c' |
+"F7"c'3 f z f' c' _e' | "Bbm7"_d' a c' b f _a ^f =d | "F#7"f _e A c _B4 | "Ab7"z _A2 _B c _d2 _e |
+"Db"f3 f z f' c' _e' | "Bb7"_d' a c' _b f _a ^f =d | "F#7"f _e _B c _d c _d _e | "F"e f _d F _d2 c2 |

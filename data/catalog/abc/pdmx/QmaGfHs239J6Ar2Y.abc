@@ -1,0 +1,34 @@
+%abc-2.1
+% Tico-Tico no Fubá, by Zequinha de Abreu. Score published on MuseScore (artist: Zequinha de
+% Abreu), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Zequinha de Abreu (died 1935,
+% Wikidata Q167752).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/22/QmaGfHs239J6Ar2YXjJDENtT3vpv7FN3FeCTL1MW4eqQoH.mid (sha256
+% 382931fb5adef1fdf2c4642877a433909bb5c1a07614a16d58a609b44cfa852c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tico-Tico no Fubá
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"e' d'2 c' b2 a2 | "C"_a2 b2 c'2 d'2 | "C"e'2 z2 e'2 z2 | "C"z5 E _E =E |
+"C"F E A2 A E _E =E | "C"F E _A2 _A E _E =E | "C"F E d B _A E D _D | "C"C4 C A _A G |
+"C"F A d2 d c A F | "C"E A c2 c c B _B | "C"B B, _E ^F B _e b a | "C"_a4 z E _E =E |
+"C"F E A2 A E _E =E | "C"F E _A2 _A E _E =E | "C"F E d B _A E D _D | "C"C4 C A _A G |
+"C"F A d2 d c A F | "C"E A c2 c B A _B | "C"B E _A B e d c B | "C"A2 e2 a E _E =E |
+"C"F E A2 A E _E =E | "C"F E _A2 _A E _E =E | "C"F E d B _A E D _D | "C"C4 C A _A G |
+"C"F A d2 d c A F | "C"E A c2 c c B _B | "C"B B, _E ^F B _e b a | "C"_a4 z E _E =E |
+"C"F E A2 A E _E =E | "C"F E _A2 _A E _E =E | "C"F E d B _A E D _D | "C"C4 C A _A G |
+"C"F A d2 d c A F | "C"E A c2 c B A _B | "C"B E _A B e d c B | "C"A2 e2 a A _d e |
+"C"a A _d _a _a =A _d ^f | "C"^f A _d e e A _d ^f | "C"^f A _d e e A _d ^f | "C"^f B d e e d e ^f |
+"C"a d e _a _a d e ^f | "C"^f B d e e d e ^f | "C"a d e _a _a d e ^f | "C"^f A _d e e A _d e |
+"C"a A _d _a _a =A _d ^f | "C"^f A _d e e A _d e | "C"^f e _d _B ^f e _d _B | "C"B _B =B _d =d2 z2 |
+"C"D _D =D E ^F _A =A B | "C"_d =d _e =e ^f =e =d _d | "C"B A _A ^F E D _D B, | "C"A,2 E2 A A _d e |
+"C"a A _d _a _a =A _d ^f | "C"^f A _d e e A _d ^f | "C"^f A _d e e A _d ^f | "C"^f B d e e d e ^f |
+"C"a d e _a _a d e ^f | "C"^f B d e e d e ^f | "C"a d e _a _a d e ^f | "C"^f A _d e e A _d e |
+"C"a A _d _a _a =A _d ^f | "C"^f A _d e e A _d e | "C"^f e _d _B ^f e _d _B | "C"B _B =B _d =d2 z2 |

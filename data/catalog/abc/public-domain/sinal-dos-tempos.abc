@@ -1,0 +1,36 @@
+%abc-2.1
+% SINAL DOS TEMPOS, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sinal-dos-tempos.html (file
+% https://www.beakauffmann.com/mpb_s/som/sinal-dos-tempos.mid, sha256
+% 90e808e7fed33e7d632b260fdfdf7070886e1558e0760a91d1f461ae5c1282d0), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SINAL DOS TEMPOS
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z _D, _A, _E C _D F _A | "E"c F, F, B2 E,, A,, _B | "E"z _d B ^F _E _D _B, ^F, | "E"D, _A2 E2 C ^F, D, |
+"E"F _A F C _B, F, _D, _A,, | "E"_D G,, G,, G,, G,, _E2 F | "E"z _B F _D _B, F, _D, _A,, | "E"_D G,, G,, G,, G,, _E2 F |
+"E"z _B F _D _B, F, _D, _A,, | "E"_E2 F2 D2 _E2 | "E"G2 _A2 C2 _D2 | "E"F2 ^F2 _B2 =B2 |
+"E"_e2 ^f3 _e B G | "E"_D A, E,2 A,2 _e2 | "E"f2 f2 A2 z _e | "E"z _e _d _B _A F _D _B, |
+"E"_E2 F C2 _D2 _E | "E"_E _A,,2 _B F _E C G, | "E"_D _D _E _B,2 =B,2 _D | "E"^F,, ^F,,2 _A _E _D _B, =F, |
+"E"_D2 _E =E ^F2 _A =A | "E"_B2 _d2 =B2 =B2 | "E"^F2 A2 =F3 _E | "E"z _D, _A, _E C _D F _A |
+"E"c F, F, B2 E,, A,, _B | "E"z _d B ^F _E _D _B, ^F, | "E"D, _A2 E2 C ^F, D, | "E"F _A F C _B, F, _D, _A,, |
+"E"_D G,, G,, G,, G,, _E2 F | "E"z _B F _D _B, F, _D, _A,, | "E"_D G,, G,, G,, G,, _E2 F | "E"z _B F _D _B, F, _D, _A,, |
+"E"_E2 F2 D2 _E2 | "E"G2 _A2 C2 _D2 | "E"F2 ^F2 _B2 =B2 | "E"_e2 ^f3 _e B G |
+"E"_D A, E,2 A,2 _e2 | "E"f2 f2 A2 z _e | "E"z _e _d _B _A F _D _B, | "E"_E2 F C2 _D2 _E |
+"E"_E _A,,2 _B F _E C G, | "E"_D _D _E _B,2 =B,2 _D | "E"^F,, ^F,,2 _A _E _D _B, =F, | "E"_D2 _E =E ^F2 _A =A |
+"E"_B2 _d2 =B2 =B2 | "E"^F2 A2 =F3 _E | "E"z C, _D, _A, G, _A, ^F, _D, | "E"C, ^F ^F ^F B,, ^F, =F, _B,, |
+"E"A,, F F F _A,, D, _D, G,, | "E"^F,, _D _D _D ^F,, _D, C, =F,, | "E"E,, C C C2 E,, _D, E, | "E"_A, C E,, E, _A, B, _E _D |
+"E"E ^F,, _D, E, A, _D _E =E | "E"_A ^F,, E,, G2 G2 _A | "E"_A E,, B,, _A, _E _A =E,, _A, | "E"B, _D E _A B _B _A ^F |
+"E"E _B,, _D E _E A,, A,, =E | "E"E _B,, _B,, _E2 A,, A,, _E | "E"_E A,, A,, A,, A,, A,, A,, A,, | "E"_E C, _D, _A, G, _A, ^F, _D, |
+"E"C, ^F ^F ^F B,, ^F, =F, _B,, | "E"A,, F F F _A,, D, _D, G,, | "E"^F,, _D _D _D ^F,, _D, C, =F,, | "E"E,, C C C2 E,, _D, E, |

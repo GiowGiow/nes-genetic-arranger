@@ -1,0 +1,30 @@
+%abc-2.1
+% Ave maris stella, by Edvard Grieg (1843-1907). Score published on MuseScore (artist: Edvard
+% Grieg), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/31/QmamJVnnLKpk7n4J4xnefEtNesov13aYP8T15RQmC5awxr.mid (sha256
+% 18217fb4f5121fbb379b09704a9d75cfb122e8580d62be0e981062c15f97e0a3): melody track 0, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave maris stella
+M:4/4
+L:1/16
+Q:1/4=62.999997
+% Exact tempo 62.99999685000016 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"B6 A2 G4 A4 | "G"B4 d4 d8 | "Em7"B6 A2 "A7"G4 A4 | "D7"B4 d4 "G"d8 |
+"Abm7"_e6 _d2 "F#"B4 _d4 | "B7"_e4 B4 "E"=e4 _e4 | "Dbm7"_d8- "F#7"_d4 _e4 | "Dbm7"B8 "B"B8 |
+"F#"z8 "F#7"z8 | "Dbm7"z8 "B"z8 | "D7"A6 B2 "D"B4 c4 | "D"c4 B4 "G"B8 |
+"C"G6 A2 A4 B4 | "C"B4 A4 "D7"A8 | "B7"^F6 G2 "Abm7"G4 A4 | "E7"B4 e4 e8 |
+"Am7"e4 E4 G4 B4 | "C"A8- "D7"A4 B4 | "G"G4 B4 d4 g4 | "Am"g8 ^f8 |
+"G"g12 z4 | "G"B6 A2 G4 A4 | "G"B4 d4 d8 | "Em7"B6 A2 "A7"G4 A4 |
+"D7"B4 d4 "G"d8 | "Abm7"_e6 _d2 "F#"B4 _d4 | "B7"_e4 B4 "E"=e4 _e4 | "Dbm7"_d8- "F#7"_d4 _e4 |
+"Dbm7"B8 "B"B8 | "F#"z8 "F#7"z8 | "Dbm7"z8 "B"z8 | "D7"A6 B2 "D"B4 c4 |
+"D"c4 B4 "G"B8 | "C"G6 A2 A4 B4 | "C"B4 A4 "D7"A8 | "B7"^F6 G2 "Abm7"G4 A4 |
+"E7"B4 e4 e8 | "Am7"e4 E4 G4 B4 | "C"A8- "D7"A4 B4 | "G"G4 B4 d4 g4 |
+"Am"g8 ^f8 | "G"g12 z4 | "G"G8- "Am7"G8 | "G"G16 |

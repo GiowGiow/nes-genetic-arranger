@@ -1,0 +1,35 @@
+%abc-2.1
+% Toccata in E minor BWV 914, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/16/QmaDECJnBTDT8H7Zx2Zvw9QJgD7m17qsxxEkRXKKUkvGfT.mid (sha256
+% 0a2b2b1baf0912261b7fe99530f43c7fbe1c58123daaa01973d7c986c76bb2c3): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Toccata in E minor BWV 914
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B7"z B A B G A ^F G E e B e G B E c | "B7"_E c _E c _E c _E c D ^F B ^F D ^F B ^F | "B7"_D B _D B _D B _D B C E A E C E A E | "B7"B, A G A ^F B A B G A ^F G E G ^F E |
+"B7"D ^f e ^f d e _d =d B b ^f b =d ^f B g | "B7"_B g _B g _B g _B g A _d ^f _d A _d ^f _d | "B7"_A ^f _A ^f _A ^f _A ^f G B e B G B e B | "B7"^F e d e _d ^f e ^f =d e _d =d B B _e B |
+"B7"e A ^F G E e d e c d B c A B G A | "B7"^F2 B2 _d2 _e2 "Em"=e4 z2 =e2 | "Cm"^f4 z4 "Bm"z2 d2 _d2 =d2 | "Db7"e4 z4 "Am"z2 A2 _A2 =A2 |
+"B7"B2 E2 A2 ^F2 "D"G2 A2 B2 ^F2 | "G"e2 d2 c2 B2 "E"A B G A G ^F _E2 | "E"G B A B G e d e "F#7"_d =d B _d B B _B2 | "F#7"B ^f e ^f d e _d e "Ebm"=d e _d e =d e _d e |
+"Bm"d2 _d2 =d2 e2 =d4 z2 =d2 | "C7"d d _d2 z4 "F#m"z2 ^f2 =f2 ^f2 | "Ab7"B4 z4 "Em"z2 e2 _e2 =e2 | "F#7"_B2 =B2 E2 _B2 "D"=B ^f =B ^f =B ^f A ^f |
+"Em"G ^f G ^f G e G e "B7"^F e ^F e ^F _e ^F _e | "F#m7"E d E d E c E c "A7"_E B _E B =E B A G | "Ebm"A B G A ^F A G ^F "Em"G A G ^F E G ^F E | "F#m"^F G E ^F _E ^F =E _E =E B _E B =E B _E B |
+"Dbm"E e B d c d B d c d B d c d B d | "Am"c a g a ^f g e ^f "B"_e B _e B =e A ^f G | "B"g e B e G B g c g g ^f c _E c _E c | "B"D ^F b ^F _b ^F =b ^F ^f ^f e =B _D =B _D =B |
+"B"C E a E _a E =a E _e =A =e =A ^F B _e B | "B"e A ^F G E b a b g e ^f e e d d _d | "F#7"_d4 ^f B e _B "Bm"=d2 z4 =d2 | "C7"d d _d2 z4 "F#m"z2 _d2 =d2 _d2 |
+"Ab7"B4 z4 "Em"z2 B2 _d2 B2 | "F#7"_B2 =B4 _B2 "Bm7"^f =B e _B d G _d ^F | "Em7"B E A _E G _D ^F B, "Dbm7"=E _B, =D =B, =D _A, _B, =E, | "Dbm7"_E, B, ^F, A, G, =E B, D "B7"C ^F _D =E =D G _E ^F |
+"Am7"E e B d c2 z2 "Ebm"z d A c B2 ^F A | "Dbm7"G A ^F A G A ^F A "Em7"G B ^F A G2 D =F | "C"E F D F E F D F "A7"F F E E ^F G E G | "B7"G G ^F ^F G A ^F A "Db7"A A _A _A =A B _A B |
+"Dbm7"_B2 =B D D =B, _D =B, "Bb"=B, ^f e ^f =d e _d =d | "Bm"B b ^f b d ^f B g "Dbm"_B g _B g _B g _B g | "D"A _d ^f _d A _d ^f _d "B"_A ^f _A ^f _A ^f _A ^f | "C"G B e B G B e B "Abm7"^F e d e _d ^f e ^f |
+"B"d e _d =d B B =d B "E"_A =A ^F _A E e =d e | "D"c d B c A2 c2 "Em"D2 c2 B2 E2 | "B7"c2 ^F2 d2 G2 "D7"e ^f d e ^f g e ^f | "F#7"g a ^f g a b g a "D7"b c' a b g a ^f g |
+"Em7"g4 z4 "D7"z a g a ^f g e ^f | "Db7"d4 z e d e "F#m"c4 z d c d | "Eb"B e _e =e ^f A B A "Bm"G c B c d =F G =F | "Ab"E A _A =A B D E D "A"C =A G =A ^F G E ^F |
+"Am7"_E2 ^F2 B =E A _E "Bm7"G =E ^F D =E C D B, | "F#m7"C A B, G A, ^F G, E "B7"^F, ^F G, E ^F, E ^F, _E | "Em"E2 z3 B A B G4 z2 G2 | "Cm"^F E ^F E ^F E ^F E "Bm"^F2 z B _B2 =B2 |
+"Db7"E _E =E _E =E _E =E _E "Am"=E2 z A _A2 =A2 | "B7"_E2 =E2 A2 _E2 "D7"B2 =E2 c2 ^F2 | "D7"d E G E e ^F A ^F ^f G B G g A _d A | "D7"a B _e B b c =e c c' b a _a =a b g =a |
+"D7"^f g e ^f _e ^f =e _e =e b _e b =e b _e b | "D7"e b B d c d B c A c B c A B G A | "B7"^F2 _e2 =e2 ^f2 "Em"g4 z2 =e2 | "Cm"^f e ^f e ^f e ^f e "Bm"^f2 B2 _B2 ^f2 |

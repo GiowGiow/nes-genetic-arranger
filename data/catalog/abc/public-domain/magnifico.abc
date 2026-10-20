@@ -1,0 +1,36 @@
+%abc-2.1
+% MAGNÍFICO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/magnifico.html (file
+% https://www.beakauffmann.com/mpb_m/som/magnifico.mid, sha256
+% 9bd523e503955eb5ef750a8fdfad87053fb0efea0ff1c6742a9abfde30de5c4e), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MAGNÍFICO
+M:2/4
+L:1/16
+Q:1/4=97.999984
+% Exact tempo 97.9999836666694 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z G G d d d d z | "F"z c c f z f f f | "C7"z e e g z d d d | "Db"z c c c z c z c |
+"C"z G G d d d d z | "F"z c c f z f f f | "G7"z d d a z a a a | "C"z g e c _B G E C |
+"C7"z G G d d d d2 | "F"z c c f z f f f | "C7"z e e g z d d d | "Db"z c c c z c z c |
+"C"z G G d d d d z | "D7"z c c c z _B _B _B | "C7"z A A A z G G G | "F"F A, _B, =B, D C A, F, |
+"C"z G G d d d d z | "F"z c c f z f f f | "C7"z e e g z d d d | "Db"z c c c z c z c |
+"C"z G G d d d d z | "F"z c c f z f f f | "G7"z d d a z a a a | "C"z g e c _B G E C |
+"C7"z G G d d d d2 | "F"z c c f z f f f | "C7"z e e g z d d d | "Db"z c c c z c z c |
+"C"z G G d d d d z | "D7"z c c c z _B _B _B | "C7"z A A A z G G G | "Dm"F3 z _D3 z |
+"D7"z d'2 e' ^f' g'2 a' | "Gm"_b'2 _b _b g2 g g | "C7"e2 e e d2 d d | "F7"c2 c c _d2 _d _d |
+"D7"z d'2 _d' c' _b2 a | "Gm"g z g g f2 f f | "C7"e2 e e d2 d d | "A7"c2 c c _B2 A A |
+"D7"z d2 e' ^f' g'2 a' | "Gm"_b'2 _b _b g2 g g | "A7"e2 e e A2 A A | "D7"f z f f ^F z ^F ^F |
+"C7"z d z c _B A z G | "A7"F z F F _E z _E _E | "Ab"D2 D D _D2 _D _D | "Dm"D3 z d2 z2 |
+"D7"z d'2 e' ^f' g'2 a' | "Gm"_b'2 _b _b g2 g g | "C7"e2 e e d2 d d | "F7"c2 c c _d2 _d _d |
+"D7"z d'2 _d' c' _b2 a | "Gm"g z g g f2 f f | "C7"e2 e e d2 d d | "A7"c2 c c _B2 A A |
+"D7"z d2 e' ^f' g'2 a' | "Gm"_b'2 _b _b g2 g g | "A7"e2 e e A2 A A | "D7"f z f f ^F z ^F ^F |
+"C7"z d z c _B A z G | "A7"F z F F _E z _E _E | "Ab"D2 D D _D2 _D _D | "Db"D3 z5 |

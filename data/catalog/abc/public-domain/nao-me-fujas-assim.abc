@@ -1,0 +1,36 @@
+%abc-2.1
+% NÃO ME FUJAS ASSIM, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nao-me-fujas-assim.html (file
+% https://www.beakauffmann.com/mpb_n/som/nao-me-fujas-assim.mid, sha256
+% 59e75a6bb30070d3c23b4f8dc2a1846889115edad3f75d37b1955b7dcc170af2), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NÃO ME FUJAS ASSIM
+M:2/4
+L:1/16
+Q:1/4=85.000163
+% Exact tempo 85.00016291697892 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dbm7"z B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "Dbm7"z B,2 B B2 B2 |
+"E"z B,2 B B2 B2 | "Abm"z B,2 B B2 B2 | "Eb"z D2 _B _D2 _B2 | "Abm"_A b2 =a ^f _e B =A |
+"Dbm7"_A B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "E7"z B,2 _A _A2 _A2 |
+"C7"A _D E A _B E G e | "Dbm7"B B, z _D _E =E ^F _A | "Db7"^F ^F2 ^F B2 B2 | "E"E E2 E z4 |
+"Dbm7"z B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "Dbm7"z B,2 B B2 B2 |
+"E"z B,2 B B2 B2 | "Abm"z B,2 B B2 B2 | "Eb"z D2 _B _D2 _B2 | "Abm"_A b2 =a ^f _e B =A |
+"Dbm7"_A B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "E7"z B,2 _A _A2 _A2 |
+"C7"A _D E A _B E G e | "Dbm7"B B, z _D _E =E ^F _A | "Db7"^F ^F2 ^F B2 B2 | "E"E E2 E z4 |
+"Dbm"_A, _D _E =E _A2 =e z | "F#m"A, _D ^F _A =A2 =a z | "Db"C ^F _A _B c2 c' z | "Dbm"_d' e' _e' _d' _a =e _e _d |
+"Db"_A E _A _d _e2 =e2 | "Eb7"_e3 _b _B z3 | "Ab7"z ^F A c e2 _e2 | "Dbm"_A3 _a _A z3 |
+"Dbm"_A, _D _E =E _A2 =e z | "F#m"A, _D ^F _A =A2 =a z | "Db"C ^F _A _B c2 c' z | "Dbm"_d' e' _e' _d' _a =e _e _d |
+"Db"_A E _A _d _e2 =e2 | "Eb7"_e3 _b _B z3 | "Ab7"z ^F A c e2 _e2 | "Dbm7"_d2 z2 B4 |
+"Dbm7"z B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "Dbm7"z B,2 B B2 B2 |
+"E"z B,2 B B2 B2 | "Abm"z B,2 B B2 B2 | "Eb"z D2 _B _D2 _B2 | "Abm"_A b2 =a ^f _e B =A |
+"Dbm7"_A B,2 B B2 B2 | "B"z B,2 B B2 B2 | "B"z B,2 e _e2 _d2 | "E7"z B,2 _A _A2 _A2 |
+"C7"A _D E A _B E G e | "Dbm7"B B, z _D _E =E ^F _A | "Db7"^F ^F2 ^F B2 B2 | "E"E E2 E z2 E2 |

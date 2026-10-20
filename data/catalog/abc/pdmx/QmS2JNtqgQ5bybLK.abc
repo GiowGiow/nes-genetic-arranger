@@ -1,0 +1,25 @@
+%abc-2.1
+% Oh Canada, by Calixa Lavallée (1842-1891). Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Calixa Lavallée (died 1891,
+% Wikidata Q1027051).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/1/QmS2JNtqgQ5bybLKz2LAnyNC6dFyutHBzdcaMExTDU1iQk.mid (sha256
+% b0a96c20382f3441be29e2658c66de85eb24532f22087d930108a9b2a043a805): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Oh Canada
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A8 c6 c2 | "C"F11 z G4 | "C"A4 _B4 c4 d4 | "C"G11 z5 |
+"C"A8 B6 B2 | "C"c11 z d4 | "C"e4 e4 d4 d4 | "C"c11 z G3 A |
+"C"_B6 A2 G4 A3 _B | "C"c6 _B2 A4 _B3 c | "C"d4 c4 _B4 A4 | "C"G11 z G3 A |
+"C"_B6 A2 G4 A3 _B | "C"c6 _B2 A4 A4 | "C"G4 c4 c2 B2 A2 B2 | "C"c11 z5 |
+"C"A8 c6 c2 | "C"F11 z5 | "C"_B8 d6 d2 | "C"G11 z5 |
+"C"c8 _d6 _d2 | "C"d4 _B4 A4 G4 | "C"F8 G8 | "C"A11 z5 |
+"C"c8 f6 f2 | "C"d4 _B4 A4 G4 | "C"c8 E8 | "C"F11 z5 |

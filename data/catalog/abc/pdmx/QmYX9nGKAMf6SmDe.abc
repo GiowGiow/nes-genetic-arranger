@@ -1,0 +1,23 @@
+%abc-2.1
+% Deilig er Jorden, by Johan Halvorsen. Score published on MuseScore (artist: Johan Halvorsen),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johan Halvorsen (died 1935,
+% Wikidata Q449172).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/53/QmYX9nGKAMf6SmDeruF52MHfZ2Q5gA2XpAvBJRShqpyZ5t.mid (sha256
+% 4a2f7f80dfa975723e556fffb283cc1448f2919cd448031ce6ea0ab9ae2c9f73): melody track 0, bars 0-15
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Deilig er Jorden
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm7"_A,8 "Bbm7"_A,4 _A,4 | "Eb7"_B,4 G,4 "Ab"_A,8 | "C7"C4 C4 "Fm7"C4 C4 | "Eb7"_D4 _B,4 "Ab"C8 |
+"Bbm7"_E8 "Db"_A4 F4 | "Eb"_E8 "Gm7"_D4 C4 | "Bb"_D8 "Fm7"C8 | "Eb"_B,12 z4 |
+"C7"_E8 "Dm7"F4 _E4 | "Bb"_E4 C4 _D8 | "Eb"_D8 _E4 _D4 | "Ab"_D4 _B,4 "Fm"C4 C4 |
+"Fm7"C4 C4 "Cm7"_E4 _D4 | "Fm7"C8 "Eb"_B,8 | "Ab"_A,8 z8 |

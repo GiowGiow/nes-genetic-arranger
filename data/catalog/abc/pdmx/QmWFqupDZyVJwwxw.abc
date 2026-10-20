@@ -1,0 +1,26 @@
+%abc-2.1
+% Dir Herr dir will ich mich ergeben WAB 12, by Anton Bruckner(1824-1896). Score published on
+% MuseScore (artist: Anton Bruckner), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Anton Bruckner (died 1896,
+% Wikidata Q81752).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/20/QmWFqupDZyVJwwxwd3pXiSJrPqPxemgRUWw2ByevYmcJVi.mid (sha256
+% 490492e865143fd0aa40eaeec13cda515b391242e3ba38e85f3e3adc9a876b17): melody track 1, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dir Herr dir will ich mich ergeben WAB 12
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"_D8 _D8 | "D"D8 _D4 _D4 | "E7"^F4 _A4 =A8 | "A"A4 _A4 =A8 |
+"E7"D8 E4 D4 | "E"_D8 =D8 | "Db7"_D8 _D8 | "Bm7"D4 ^F4 ^F8 |
+"Dbm7"E16 | "A"_D16 | "Abm7"_D8 F8 | "F#m"^F16 |
+"F#m"^F16 | "Abm"E8 _E8 | "Dbm"E8 _E4 _D4 | "Fm7"C16 |
+"Dbm"_D16 | "F#7"B,8 _B,8 | "Dbm7"_A,8 E8 | "Ebm7"_A8 =A8 |
+"Fm7"_A16 | "E"z8 _A8 | "A"A8 _A4 ^F4 | "E"E16 |
+"F#m"z8 ^F8 | "Db7"^F8 =F8 | "D"^F16 | "D"z8 D8 |
+"A"E8 ^F4 _A4 | "F#m7"A8 A8 | "Dbm7"A8 _A8 | "A"A16 |

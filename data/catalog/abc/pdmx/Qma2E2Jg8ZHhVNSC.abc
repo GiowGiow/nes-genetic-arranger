@@ -1,0 +1,28 @@
+%abc-2.1
+% Come again, by John Dowland (1562-1626). Score published on MuseScore (artist: John Dowland),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Dowland (died 1626,
+% Wikidata Q207355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/1/Qma2E2Jg8ZHhVNSCCDSrfGHZHez1AtXGn5xjQQQdqtuHyR.mid (sha256
+% 012e5a73d55d7b2eddea3a5901d50448842af855422ec2656f9b98e1ebc27616): melody track 2, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Come again
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"D12 D4 | "G"B,16 | "G"z8 B,8 | "Bm"C8 D8 |
+"Am"E12 D2 C2 | "G"D16 | "G"z8 B,8 | "G"B,8 A,8 |
+"G"G,8 D8 | "D"D16 | "D"z8 D8 | "G"D12 D4 |
+"A"D8 _D8 | "D"D16 | "Bm"G,16 | "C"G,8 z4 C4 |
+"D"A,8 z4 D4 | "Em"B,8 z4 E4 | "F#m"D12 C4 | "G"B,4 G,4 G,4 A,4 |
+"G"B,8 C8 | "Bm"D8 z4 G,4 | "Bm7"D12 D4 | "C"C4 B,4 B,4 A,2 G,2 |
+"D"A,12 A,4 | "G"G,16 | "Bm"G,16 | "C"G,8 z4 C4 |
+"D"A,8 z4 D4 | "Em"B,8 z4 E4 | "F#m"D12 C4 | "G"B,4 G,4 G,4 A,4 |
+"G"B,8 C8 | "Bm"D8 z4 G,4 | "Bm7"D12 D4 | "C"C4 B,4 B,4 A,2 G,2 |
+"D"A,12 A,4 | "G"G,16 |

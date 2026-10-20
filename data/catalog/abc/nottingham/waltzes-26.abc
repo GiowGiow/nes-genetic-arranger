@@ -1,0 +1,24 @@
+%abc-2.1
+% M.T.B., from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/waltzes.abc, tune
+% X: 26 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:M.T.B.
+M:3/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z8 D4 | "G"G4 B4 d4 | "G"g6 g2 f2 g2 | "C"a4 g4 e4 |
+"G"e4 d4 d4 | "D"D4 F4 A4 | "D"d6 d2 ^c2 d2 | "D7"e4 d4 c4 |
+"G"B8 B2 A2 | "G"G4 B4 d4 | "G"g6 g2 f2 g2 | "C"a4 g4 e4 |
+"G"e4 d4 d4 | "D"D4 F4 A4 | "D"d6 d2 ^c2 d2 | "D7"c4 B4 A4 |
+"G"G8 B2 A2 | "G"G4 B4 e4 | "G"d8 d4 | "G"G4 B4 e4 |
+"G"d8 d4 | "D"D4 F4 A4 | "D"d6 d2 ^c2 d2 | "D7"e4 d4 c4 |
+"G"B8 B2 A2 | "G"G4 B4 e4 | "G"d8 d4 | "G"G4 B4 e4 |
+"G"d8 d4 | "D"D4 F4 A4 | "D"d6 d2 ^c2 d2 | "D7"c4 B4 A4 |
+"G"G8 z4 |

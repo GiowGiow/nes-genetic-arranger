@@ -1,0 +1,36 @@
+%abc-2.1
+% SAMBA DE VERDADE, by Brancura e Francisco Alves, as performed by Francisco Alves.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Brancura (died 1935, Wikidata Q9663473); Francisco Alves (died 1952,
+% Wikidata Q10284562).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/samba-de-verdade.html (file
+% https://www.beakauffmann.com/mpb_s/som/samba-de-verdade.mid, sha256
+% 3b025a743fedadeb787275e349707295cb3c8b16462f83eef9abc51b1eb5c582), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SAMBA DE VERDADE
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"C"F _D2 _D _D2 _D2 | "C"_B, F2 G _A G2 F | "C"_E C2 C C,2 C2 | "C"_A,, _E2 F G F C _E |
+"C"_D _B,2 _B, _B,2 _A,,2 | "C"G,, _E2 F G F _D _E | "C"C _E,2 F, G, _A,2 _B, | "C"C _B,2 _A, G, F,2 _E, |
+"C"F _D2 _D _D2 _D2 | "C"_B, F2 G _A G2 F | "C"_E C2 C C,2 C2 | "C"_A,, _E2 F G F C _E |
+"C"_B, F,2 F, F,,2 F,2 | "C"_B,,, C2 _D _E _B,2 C | "C"_A, C,2 _E, F, _E,2 C, | "C"_E,4 z2 _e2 |
+"C"_a _e2 _e C,2 g f | "C"_e f2 g _E,, f C c | "C"_e c2 c c _A, c _B, | "C"C _B,2 _A, G, F, _e _E, |
+"C"_a C2 _E, _E,,2 g2 | "C"f _e2 _e f2 f2 | "C"f _d _D _d _e2 _e C, | "C"_d2 _B, _B,, _A,,2 f _A,, |
+"C"_d'2 _D _E, _E,,2 c'2 | "C"_b g _D _b _E,, g _D f | "C"g _e _D g _E,, f _D _e | "C"g2 z4 _e2 |
+"C"g f2 e _e2 _d2 | "C"_B,, _D2 _D _E,,2 _e'2 | "C"_e' _E,2 F, G, _A,2 _B, | "C"C _B,2 _A, G, F, _e _E, |
+"C"_a _e2 _e C,2 g f | "C"_e f2 g _E,, f C c | "C"_e c2 c c _A, c _B, | "C"C _B,2 _A, G, F, _e _E, |
+"C"_a C2 _E, _E,,2 g2 | "C"f _e2 _e f2 f2 | "C"f _d _D _d _e2 _e C, | "C"_d2 _B, _B,, _A,,2 f _A,, |
+"C"_d'2 _D _E, _E,,2 c'2 | "C"_b g _D _b _E,, g _D f | "C"g _e _D g _E,, f _D _e | "C"g2 z4 _e2 |
+"C"g f2 e _e2 _d2 | "C"_d _D2 _D _e2 _D2 | "C"_a C,2 _E, F, _E,2 C, | "C"_A,,2 _E,,2 _A,,2 z2 |
+"C"c _A2 _A _e2 c2 | "C"_B _E2 _E _A2 _B2 | "C"_A _E2 _E _E _A, _E _B, | "C"C _E2 _E _E F, _E _E, |
+"C"_e c2 c c2 _A2 | "C"^F _E2 _E _A2 c2 | "C"_B F2 F _A,,2 F2 | "C"F _D2 _D _A,,2 _D2 |
+"C"_A _D2 _D F,2 _A2 | "C"_B _D _A _D G2 _A2 | "C"c2 z6 | "C"G4 F2 _E2 |
+"C"_B, F,2 F, _B,,2 F,2 | "C"_e G2 G _B2 c2 | "C"_A _E2 _E _E _E, _E C, | "C"_E2 _E,,2 _A,,,2 z2 |

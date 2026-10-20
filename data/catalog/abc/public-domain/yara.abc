@@ -1,0 +1,35 @@
+%abc-2.1
+% YARA (Rasga o Coração), by Anacleto de Medeiros e Catulo da Paixão Cearense, as performed by
+% Anacleto de Medeiros e Catulo da Paixão Cearense.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Anacleto de Medeiros (died 1907, Wikidata Q483486); Catulo da Paixão
+% Cearense (died 1946, Wikidata Q16337108).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_y/yara.html (file
+% https://www.beakauffmann.com/mpb_y/som/yara.mid, sha256
+% f675d036a0ec9d7fd2fc7f823c198bf1ca6e23cc55793a2037046c0bcd346dcf), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-56 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:YARA (Rasga o Coração)
+M:4/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Am"e2 A2 A2 A2 c2 d c B2 A2 | "Dm"g2 f2 d2 e2 "Dm7"f2 z6 | "E7"_a2 e2 e2 ^f2 _a2 =a2 b2 c'2 | "Am"b2 a2 e2 b2 "A7"a2 z6 |
+"Dm"g2 f2 d2 e2 "Bm"f6 z2 | "Am"f2 e2 c2 d2 e6 z2 | "E7"e2 d2 B2 c2 "Abm"e2 d2 B2 c2 | "Am"A2 c2 e2 c2 "A"a3 z5 |
+"Am"e2 A2 A2 A2 c2 d c B2 A2 | "Dm"g2 f2 d2 e2 "Dm7"f2 z6 | "E7"_a2 e2 e2 ^f2 _a2 =a2 b2 c'2 | "Am"b2 a2 e2 b2 "A7"a2 z6 |
+"Dm"g2 f2 d2 e2 "Bm"f6 z2 | "Am"f2 e2 c2 d2 e6 z2 | "E7"e2 d2 B2 c2 "Abm"e2 d2 B2 c2 | "Am"A2 c2 e2 c2 "A"a3 z5 |
+"G7"a2 g2 B2 d2 g5 z a2 | "C"e2 g2 c2 e2 "Am7"g3 z5 | "E7"f2 e2 _A2 B2 f2 e2 _A2 B2 | "Am"f2 e2 A2 c2 "C"e3 z5 |
+"Dm"e2 d2 F2 A2 "D"d5 z e2 | "C"d2 c2 E2 G2 c5 z d2 | "G7"c2 B2 D2 E2 F2 G2 A2 B2 | "C"c2 B2 c2 d2 e2 f2 ^f2 g2 |
+"G7"a2 g2 B2 d2 g5 z a2 | "C"e2 g2 c2 e2 "Am7"g3 z5 | "E7"f2 e2 _A2 B2 f2 e2 _A2 B2 | "Am"f2 e2 A2 c2 "C"e3 z5 |
+"Dm"e2 d2 F2 A2 "D"d5 z e2 | "C"d2 c2 E2 G2 c5 z d2 | "G7"c2 B2 D2 E2 F2 G2 A2 B2 | "C"c2 G2 e2 G2 c3 z5 |
+"Am"e2 A2 A2 A2 c2 d c B2 A2 | "Dm"g2 f2 d2 e2 "Dm7"f2 z6 | "E7"_a2 e2 e2 ^f2 _a2 =a2 b2 c'2 | "Am"b2 a2 e2 b2 "A7"a2 z6 |
+"Dm"g2 f2 d2 e2 "Bm"f6 z2 | "Am"f2 e2 c2 d2 e6 z2 | "E7"e2 d2 B2 c2 "Abm"e2 d2 B2 c2 | "Am"A2 c2 e2 c2 "A"a3 z5 |
+"A"a2 _d2 c2 _d2 "F#m7"e5 z ^f2 | "E7"^f2 e2 d2 B2 _A3 z5 | "Am"B2 A2 _A2 =A2 "F7"d2 c2 B2 =A2 | "E7"A2 _A2 B2 _A2 E2 e2 ^f2 _a2 |
+"A"a2 _d2 c2 _d2 "F#7"g5 z ^f2 | "Bm"e2 d2 _d2 =d2 ^F5 z =d2 | "F#m7"_d2 e2 e2 _d2 "E7"B2 =d2 =d2 B2 | "A"A2 _d2 e2 _d2 a3 z5 |
+"A"a2 _d2 c2 _d2 "F#m7"e5 z ^f2 | "E7"^f2 e2 d2 B2 _A3 z5 | "Am"B2 A2 _A2 =A2 "F7"d2 c2 B2 =A2 | "E7"A2 _A2 B2 _A2 E2 e2 ^f2 _a2 |
+"A"a2 _d2 c2 _d2 "F#7"g5 z ^f2 | "Bm"e2 d2 _d2 =d2 ^F5 z =d2 | "F#m7"_d2 e2 e2 _d2 "E7"B2 =d2 =d2 B2 | "A"A2 _d2 e2 _d2 a3 z5 |

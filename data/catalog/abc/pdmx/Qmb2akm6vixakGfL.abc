@@ -1,0 +1,27 @@
+%abc-2.1
+% O primavera (Prima parte), by Giaches de Wert. Score published on MuseScore (artist: Giaches de
+% Wert), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giaches de Wert (died 1596,
+% Wikidata Q591939).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/1/Qmb2akm6vixakGfLUPVfeT5eXLyWTJp7LnLD8mVRhaaU8B.mid (sha256
+% 1af5d8c78920b02416a797a81732647c7aff7f97af651b4ae3cd5f8a6d9faa81): melody track 0, bars 1-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O primavera (Prima parte)
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am"e4 e2 e2 e4 e4 e4 e4 e8 | "D7"e4 d4 c8 "E"B8 z4 B4 | "Em"B4 B4 B4 B2 c2 "G"d16 | "G"d8 d4 d2 d2 "Am7"d4 d4 e2 d2 c2 B2 |
+"D"A4 G4 A8 "G"B8 z4 d4 | "G"d12 c4 "C"B8 z4 e4 | "C"e8 e4 e4 "Am7"e6 e2 d4 c4 | "C"d4 d4 z4 e4 "Em7"d4 e4 f4 d4 |
+"C"e24 z4 c4 | "C"d4 e4 f4 e2 d2 "Dm7"c4 d4 e4 d2 c2 | "E"B4 A4 B8 "A"A8 z4 c4 | "Am"c6 c2 c4 c4 "G"B16 |
+"G"B8 z4 B4 B4 B6 B2 A4 | "E"_A16 _A8 z4 G4 | "Dbm7"G4 G4 G4 A4 "Am"_A8 =A8 | "Em"B8 B8 "B"B16 |
+"E"_A8 z4 G4 G4 G4 G6 =A2 | "G"B16- "Bm7"B8 A8 | "Dm"A4 A4 A8- "E"A8 _A8 | "Em"z4 B4 B4 B4 "Bm"B6 c2 d8 |
+"A"d8 _d8 "Am7"c8 c8 | "B"B8 B8 "E"z4 _A4 _A4 _A4 | "Em"_A6 =A2 B8- "Em7"B8 =A8 | "A"A16 "C"G8 A8 |
+"E"A8 _A8 "Am"=A16 | "A"z12 _d4 "Dm"_d6 _d2 _d4 =d4 | "Am"_d4 _d4 e4 e2 e2 e6 =d2 c4 B4 | "Am7"c4 c4 d8 "Am"e8 c4 c2 c2 |
+"Am7"c6 B2 A4 _A4 =A2 B2 c8 B4 | "C"c16 z4 c4 c4 c4 | "D"A8 A8 "C"G4 G4 G8 | "Dm"^F4 E8 D4 "E"E16 |
+"Bm"z16 "C"z4 ^F4 G4 A4 | "B7"B4 c4 B8 "Em"B4 E4 ^F4 G4 | "Bm7"A4 G2 ^F2 E4 ^F4 "Dbm7"_A4 =A8 _A4 | "A"A32 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Götterdämmerung WWV 86D, by Richard Wagner. Score published on MuseScore (artist: Richard
+% Wagner), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Wagner (died 1883,
+% Wikidata Q1511).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/17/QmQeKzqntPVcKZ91miAwLeFubQDpUq4R5d7fjDoqAFeXfL.mid (sha256
+% 5c8b6adcf36c8612ac828df94c12d06d085daa2266b3f6001b7b6571862af5ce): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Götterdämmerung WWV 86D
+M:4/4
+L:1/16
+Q:1/4=54.000005
+% Exact tempo 54.00000540000054 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z16 | "Db"z16 | "Db"z12 D, E, ^F, A, | "G"G, z7 "C"z4 ^F,3 G, |
+"E"E8- "C"E3 z C4 | "Ab"_A,8- "Bb7"_A, z G,2 _B,2 _A,2 | "G"z16 | "G"_D, _D, z5 _D, "Db"_D,2 z2 =D, E, ^F, A, |
+"G"G, z7 "G7"z4 ^F,3 =F, | "Db"_D8- "A"_D3 z A,4 | "F"F,8- "G7"F, z E,2 G,2 F,2 | "E"E,2 z6 "C"z4 E,, D,, C,, C,, |
+"E"E,,2 z14 | "E"z8 "F"F, z7 | "F#"^F, z7 "G"G, z7 | "C"C G,6 G, "Cm"G,2 z2 D, F, G, _B, |
+"C"G, _E,6 _E, "Cm"_E,2 z2 D, F, G, _B, | "C"G, _E, z5 _E, "Cm"_E, z3 D, F, G, _B, | "C"C11 z G,3 G, | "Cm"C3 D _E6 D2 G4 |
+"Cm"G4 ^F3 G "C"_B4 E2 c2 | "C"_B8 "Em"_A4 G, _B, C F | "F"_A C6 C "Fm"C z3 G, _B, C _E | "F"F _A,6 _A, "Fm"_A,2 z2 G, _B, C _E |
+"F"C C z5 C "Fm"C2 z2 G, _B, C _D | "Db"_d F, _D F, _D F, _D F, _D _A, _D _A, _A _A, _D _B | "Fm7"c _E _A _E _A _E _A _E "C"_B =E c =E _B =E c =E | "F7"_e _A _A _A _A _A _A _A "F"d8 |
+"G"c8 "Gm"F4 B4 | "C"c6 C2 "B"E2 G2 _B3 _A | "Bb"G6 E2 "Gm"G2 _B2 _d2 C c | "Em"_B2 G2 _B2 d2 "E7"g4 _B2 f2 |
+"Db"f4 e3 _B "Bb7"_d2 _E2 _D2 _B,2 | "Cm"_B2 d2 _e3 _B "Ab"_d _A3 c4 | "Ab7"c4 _d4 "D"=d6 A2 | "G"c4 _B4- "Gm"_B2 G,2 A, C D F |
+"G"D z _B,4 _B,2 "F#"D _B, C D F _E _D G | "Eb"_B2 _E4 _E2 "B"_E _B, =B, _D =D ^F =F _E | "Abm7"B2 ^F4 ^F2 ^F B, D =F ^F B, _E B | "G7"_A,2 B,4 B,2 "E7"B, D E F D F =A =A |
+"Dm"B2 F4 F2 "G7"F2 _B,2 D G e _a | "C"c'8 C6 E2 | "C"G3 c e2 c2- "Am7"c2 G2 c ^F B e | "G7"g z e4 e4 d6 |
+"C"g g z2 F e _e' d'' "F"g'' z3 c' g c' d' | "C"a g z2 F e _e' d'' "F"g'' z3 c' g c' d' | "C"a g z d g g z D G G z D G G z G, | "C"C G, G, G, G, G, G, C "Cm"_E C C C C C C D |
+"Fm7"_A _E _E _E _E _E _E _E "Fm"_E _A, _A, _A, _B, D, F, _A, | "G"_E C C C C C A, _E "Ab"F D D D D C _B, _E | "Em7"g g z2 _D c _d' c'' g'' z3 c' =d a c' | "Em7"a g z2 _D c _d' c'' g'' z3 c' =d a c' |
+"G"a g z d g g z D G G z D G G z D | "Gm"G5 z2 G "Eb"_B5 z2 A | "Cm"_e8 "Fm7"F z3 G3 _A | "Eb"_B6 G2 "Bb7"_A6 z G |
+"Cm7"_E _B5 z G _E4 z F z G | "Bb7"_A G F4 _B5 C F _A d c | "Gm7"_b _b z5 f "Bb"_b2 C F _B _e _a d' | "Gm7"_b _b z5 f "Bb"_b2 C F _B _e _a d' |
+"Cm7"g' z _B5 z "Gm"z G _E z F z G z | "Fm7"_A G F z _B _A _A G "Dm7"F4 z4 | "F7"f f z2 A f _e' a' f' f' z4 _e a | "F7"f f z2 _E2 z6 D2 _E2 |

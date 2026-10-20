@@ -1,0 +1,28 @@
+%abc-2.1
+% Mon cueur elist, by Nicolas Gombert. Score published on MuseScore (artist: Nicolas Gombert), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nicolas Gombert (died 1560,
+% Wikidata Q549689).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/33/QmTnGNDyyFt3sqS9TRSCztkmrpfAtxYMG5riZRdazzgx9e.mid (sha256
+% 3991df345d594ce8261308af5a8cd693ca995e9a405c4246a46c95842901d346): melody track 2, bars 0-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mon cueur elist
+M:2/2
+L:1/16
+Q:1/4=97.999824
+% Exact tempo 97.99982360031753 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"E12 E4 | "A"E8 C8 | "F"F6 E2 F2 E2 D2 C2 | "A7"D8 C6 B, A, |
+"Em"B,4 C4 B,4 C4 | "Dm7"A,4 F6 E2 D2 C2 | "Dm"D8 C8 | "G7"z8 G,8 |
+"Am"C6 D2 E2 C2 E4 | "F"D4 C8 B,2 A,2 | "Am"B,8 A,8 | "Am7"z4 E4 E4 E4 |
+"G7"B,5 C3 D4 D4 | "A"C4 A,4 C6 B, A, | "A7"B,4 C6 A,2 D4 | "F"C2 D2 E2 F2 E2 C2 F4 |
+"F"F2 E2 E8 D4 | "Em"E8 E,6 F,2 | "Em7"G,4 A,4 E,8 | "Dm7"A,16 |
+"Dm7"z16 | "Am7"z4 G,4 A,4 F,2 G,2 | "Am7"A,2 B,2 C2 D2 E4 F4 | "F"F2 E2 E8 D4 |
+"Em"E4 C4 C4 C4 | "Em7"G,6 A,2 B,4 C4 | "Dm7"G,4 G4 E4 F4 | "C"F2 E2 D2 C2 D8 |
+"Am7"C8 z8 | "Am7"z4 F,4 A,6 F,2 | "Em"G,4 A,4 E,4 E4 | "Am"E2 D2 C4 B,4 C4 |
+"A"C2 B, A, B,4 C2 B,2 A,2 G,2 | "E"A,8 G,8 | "E"G,16 |

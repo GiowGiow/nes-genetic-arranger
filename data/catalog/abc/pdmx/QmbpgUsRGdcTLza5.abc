@@ -1,0 +1,25 @@
+%abc-2.1
+% Brahms - 51 Übungen für Klavier No. 2b, by Johannes Brahms. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/36/QmbpgUsRGdcTLza5xQNBt89BowzfZL6wJjR3yW14sMytU8.mid (sha256
+% 4de2873593e33a2b69634091e4c2e46bf4a19475ba771ec01edc768bb66d15f2): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Brahms - 51 Übungen für Klavier No. 2b
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"_D B,2 A, _A, ^F,2 E, =D,2 z6 | "Dbm"E D2 _D B, A,2 _A, "F#m7"^F,2 z6 | "E"B A2 _A ^F E2 D "Dbm7"_D2 z6 | "Bm"d _d2 B A _A2 ^F "E7"E2 z6 |
+"D"^f e2 d _d B2 A "Dbm7"_A2 z6 | "F#m"a _a2 ^f e d2 _d "Bm7"B2 z6 | "A"_d' b2 a _a ^f2 e "D"=d2 z6 | "D"_D B,2 A, _A, ^F,2 E, =D,2 z6 |
+"Dbm"E D2 _D B, A,2 _A, "F#m7"^F,2 z6 | "E"B A2 _A ^F E2 D "Dbm7"_D2 z6 | "Bm"d _d2 B A _A2 ^F "E7"E2 z6 | "D"^f e2 d _d B2 A "Dbm7"_A2 z6 |
+"F#m"a _a2 ^f e d2 _d "Bm7"B2 z6 | "A"_d' b2 a _a ^f2 e "D"=d2 z6 | "D"e ^f2 _a =a b2 _d' "Bm7"=d'2 z6 | "A"_d =d2 e ^f _a2 =a "Dbm7"b2 z6 |
+"F#m"A B2 _d =d e2 ^f "E7"_a2 z6 | "D"^F _A2 =A B _d2 =d "Dbm7"e2 z6 | "Bm"D E2 ^F _A =A2 B "F#m7"_d2 z6 | "Abm"_A, =A,2 B, _D =D2 E "D"^F2 z6 |
+"Dbm"E, ^F,2 _A, =A, B,2 _D "Bm7"=D2 z6 | "Bm7"e ^f2 _a =a b2 _d' =d'2 z6 | "A"_d =d2 e ^f _a2 =a "Dbm7"b2 z6 | "F#m"A B2 _d =d e2 ^f "E7"_a2 z6 |
+"D"^F _A2 =A B _d2 =d "Dbm7"e2 z6 | "Bm"D E2 ^F _A =A2 B "F#m7"_d2 z6 | "Abm"_A, =A,2 B, _D =D2 E "D"^F2 z6 | "Dbm"E, ^F,2 _A, =A, B,2 _D "Bm7"=D2 z6 |

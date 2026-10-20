@@ -1,0 +1,35 @@
+%abc-2.1
+% RECORDAÇÕES DO PASSADO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/recordacoes-do-passado.html (file
+% https://www.beakauffmann.com/mpb_r/som/recordacoes-do-passado.mid, sha256
+% 496a7ba7ef4ca58545cbe948931fed380ec58ca38713a033f59fa5509ea32506), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RECORDAÇÕES DO PASSADO
+M:3/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 | "Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 |
+"F7"c6 c2 c _e _d c | "Bbm"c6 _B2 F2 G2 | "Fm"_A6 _B2 G2 G2 | "F"F4 f4 z4 |
+"Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 | "Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 |
+"F7"c6 c2 c _e _d c | "Bbm"c6 _B2 F2 G2 | "Fm"_A6 _B2 G2 G2 | "F"F4 f4 z4 |
+"F7"f6 c2 f2 _e2 | "Bbm"_e2 z2 _d8 | "Eb7"_e6 _B2 _e2 _d2 | "Ab"_d2 z2 c8 |
+"C7"c6 G2 c2 _B2 | "Fm"_B2 z2 _A8 | "Db"G6 F2 G F E F | "C"G4 c2 z6 |
+"F7"f6 c2 f2 _e2 | "Bbm"_e2 z2 _d8 | "Eb7"_e6 _B2 _e2 _d2 | "Ab"_d2 z2 c8 |
+"C7"c6 G2 c2 _B2 | "Fm"_B2 z2 _A8 | "Db"G6 F2 G F E F | "C"G4 c2 z6 |
+"Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 | "Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 |
+"F7"c6 c2 c _e _d c | "Bbm"c6 _B2 F2 G2 | "Fm"_A6 _B2 G2 G2 | "F"F4 f4 z4 |
+"F"A6 c2 A2 c2 | "F"A4 c8 | "Bb"d6 f2 _d2 f2 | "F"c12 |
+"F"z2 F2 G2 A2 G2 F2 | "C7"c3 G c4 c4 | "C7"z2 G2 A2 _B2 A2 G2 | "F"c3 f c4 C4 |
+"F"A6 c2 A2 c2 | "F"A4 c8 | "Gm7"d6 f2 _d2 f2 | "F"c12 |
+"F"z2 F2 G2 A2 G2 F2 | "C7"c3 G c4 c4 | "G7"D6 F2 E2 G2 | "F"F4 f2 z6 |
+"Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 | "Fm"c6 _A2 G2 F2 | "C7"F4 E F ^F G C4 |
+"F7"c6 c2 c _e _d c | "Bbm"c6 _B2 F2 G2 | "Fm"_A6 _B2 G2 G2 | "F"F4 f4 z4 |

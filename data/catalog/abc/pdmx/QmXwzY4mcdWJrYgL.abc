@@ -1,0 +1,28 @@
+%abc-2.1
+% Miserere mei Deus, by Gregorio Allegri. Score published on MuseScore (artist: Gregorio Allegri),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gregorio Allegri (died 1652,
+% Wikidata Q216695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/50/QmXwzY4mcdWJrYgLYetKhQGShYTk5VrCVZLZBcHT38oBd3.mid (sha256
+% 20fa67fbbd0d9a0537fbf6bac8058fb139d0c8ec12da053f689d8198c9195b9a): melody track 3, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Miserere mei Deus
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"_B,12 _B,4 _B,8 _B,8 | "Dm"F,8 A,8 "Bb"D16 | "Eb"D8 C4 _B,4 "Bb"A,8 _B,8 | "F"C32 |
+"Bb"D16 "F"C8 A,4 A,4 | "F"A,16 A,8 z8 | "Cm"G,16 G,12 F,4 | "Eb"_E,8 _E8 "Gm"D8 D8 |
+"Gm"D16 "Bb"C8 _B,8 | "Cm7"G,8 A,8 "D"A,16 | "Gm"A,8 G,4 ^F,4 G,16 | "D"A,32 |
+"D"_B,4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 | "D"_B,4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 | "D"C8 _B,8 _B,4 _B,4 _B,4 _B,4 | "D"_B,4 _B,4 _B,4 F,8 G,8 z4 |
+"Gm"z32 | "Gm"z32 | "Bb"z16 "F"z16 | "Gm"z16 "Eb"z16 |
+"Eb"z16 "Cm"z16 | "Gm"z16 "D"z16 | "D"z32 | "Cm"z32 |
+"Gm"z16 "D"z16 | "Cm"z32 | "Ab"z32 | "Fm"z16 "Ab"z16 |
+"Cm"z32 | "G"z32 | "G"z4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 | "G"_B,4 _B,4 _B,4 _B,4 _B,4 _B,4 C8 |
+"G"_B,8 _B,4 _B,4 _B,4 _B,4 _B,4 _B,4 | "G"_B,4 _B,4 _B,4 _B,4 F,8 G,8 | "Gm"_B,4 _B,4 _B,2 _B,2 _B,4 _B,4 _B,8 _B,4 | "Dm"F,8 A,8 "Bb"D16 |
+"Eb"D8 C4 _B,4 "Bb"A,8 _B,8 | "F"C32 | "Bb"D16 z16 | "F"C4 C4 C4 C4 C4 C4 C4 C4 |

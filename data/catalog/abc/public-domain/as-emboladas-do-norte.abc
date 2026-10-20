@@ -1,0 +1,31 @@
+%abc-2.1
+% AS EMBOLADAS DO NORTE, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/as-emboladas-do-norte.html (file
+% https://www.beakauffmann.com/mpb_a/som/as-emboladas-do-norte.mid, sha256
+% 6810a29017100e28696778845d549caeff5301dfa283b8166af0132c13dd29b2), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-48 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AS EMBOLADAS DO NORTE
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"E, D E F, ^F, D E G, | "C"_A, D E G, ^F, D E =F, | "C"E, _D E F, ^F, _D E G, | "C"_A, _D E E, =A, _A, E ^F, |
+"C"E, D E F, ^F, D E G, | "C"_A, D E G, ^F, D E E, | "C"A,,2 _D _D, E, A,, _D, E, | "C"A, A ^F E _D A, ^F, =F, |
+"C"E, D E F, ^F, D E G, | "C"_A, D E G, ^F, D E =F, | "C"E, _D E F, ^F, _D E G, | "C"_A, _D E E, =A, _A, E ^F, |
+"C"E, D E F, ^F, D E G, | "C"_A, D E G, ^F, D E E, | "C"A,,2 _D _D, E, A,, _D, E, | "C"A, e _D _d =d B B E |
+"C"E2 D F, ^F,2 D G, | "C"_A, d E,, B _A ^F ^F E | "C"E2 _D F, ^F,2 _D _A, | "C"A, e _D _d =d B B E |
+"C"E2 D F, ^F,2 D G, | "C"_A, d E,, B _A ^F ^F E | "C"E2 _D F, ^F,2 _D _A, | "C"A,, E _D A, ^F _D A, E |
+"C"D2 B, _A, _A D B, _A | "C"_A,, D B, _A, E B, _A, D | "C"_D2 A, E, ^F, _D E A, | "C"A,, E _D A, ^F _D A, E |
+"C"D2 B, _A, _A D B, _A | "C"_A,, D B, _A, E B, _A, D | "C"_D2 A, E, ^F, _D E A, | "C"A, e _D _d =d B B E |
+"C"E2 D F, ^F,2 D G, | "C"_A, d E,, B _A ^F ^F E | "C"E2 _D F, ^F,2 _D _A, | "C"A, e _D _d =d B B E |
+"C"E2 D F, ^F,2 D G, | "C"_A, d E,, B _A ^F ^F E | "C"E, _D E F, ^F, _D E G, | "C"_A, _D E E, E _A, E ^F, |
+"C"E, D E F, ^F, _D E G, | "C"_A, D E G, ^F, D E =F, | "C"E, _D E F, ^F, _D E G, | "C"_A, _D E E, E G, E ^F, |
+"C"E, D E F, ^F, _D E G, | "C"_A, D E B,, =A,, D E B,, | "C"A,,2 _D _D, E, A, _D E | "C"_D A7 |

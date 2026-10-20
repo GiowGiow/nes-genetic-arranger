@@ -1,0 +1,29 @@
+%abc-2.1
+% JORGE DE FUSA (Bom de Dedo), by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_j/jorge-de-fusa.html (file
+% https://www.beakauffmann.com/mpb_j/som/jorge-de-fusa.mid, sha256
+% ef4d7c1573322a362b44d7c2de3b1f5bf55907e4ef3ad5591956f7a85154b23c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-33 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:JORGE DE FUSA (Bom de Dedo)
+M:4/4
+L:1/16
+Q:1/4=63.000063
+% Exact tempo 63.00006300006301 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z5 C, _D, B,, ^F,, _D2 A, B, =D, _B,, =B,, | "C"E,, ^F E G A G, _D _B =B A =B =d =B _B A _A | "C"G D _B, C, =B,, ^F2 _B,, =B,, A G ^F =B, _B, _D E | "C"B,, A, D _D A _d _A,2 B _A, _B =B c _d =B F |
+"C"_E A, G, _D, A,, G,, _D2 A, B, A, _B,, =B,, =E,, ^F =E | "C"A A G, _D _B =B A =B =d =B _B A _A G =D E, | "C"C, B,, ^F2 B,, E,, A2 G ^F C, E, E _D =D ^F | "C"A c B,, _E B A =E, D G _E A,, _D ^F =E A,, ^F, |
+"C"E z _D,2 B,, ^F,, _D2 A, B, =D, _B,, =B,, E,, ^F E | "C"A A G, _D _B =B A =B =d =B _B A _A G =D E, | "C"C, B,, ^F2 B,, E,, A G ^F B, _B, _D E ^F, A, =D | "C"D ^F _d _A, =D B _A, _B =B c _d =A G _D =B, =F, |
+"C"_E, A,, G,, _D2 A, B, =D, _B,, =B,, =E,, ^F =E G A G, | "C"_D A B A B =d B _B A _A G =D _B, C, =B,, ^F | "C"^F _B,, =B,, A2 G ^F C, _B, E _D =D ^F A c =B,, | "C"_E B A =E, D G _E A,, _D ^F =E A,, ^F, =E z A,, |
+"C"z A,, D, e2 d e F D A,2 G, _D F A _D | "C"A,, D, C A G F F E D F G,, D, F E G,, _B, | "C"C G,, F, _B, E, C, D E C A, F,, E, C F,, =B, C | "C"_E =E =E,, B,, B, =E,, =E ^F _A =A D =A _E =A =E =A |
+"C"A,, D, e2 d e F D A,2 G, _D F A _D A,, | "C"D, C A G F F E D F G,, F, _B, F G,, _B, _E | "C"A,, G, C D2 E G A _B _E G, D, C, _A,, =A,, =A, | "C"G F B, E _D F =D3 _B,, _D, =B,, A,, G,, ^F,, _D |
+"C"_D A, B, =D, _B,, =B,, E,, ^F E G A G, _D _B =B A | "C"B d B _B A _A G D _B, C, =B,, ^F2 _B,, =B,, =A | "C"A G ^F B, _B, _D E =B,, A, =D _D =D ^F A _d E,, | "C"_A, B _A, _B =B c =B =A G _D =B, F, _E, =A,, G,, _D |
+"C"_D A, B, =D, _B,, =B,, E,, ^F E G A G, _D _B =B A | "C"B d B _B A _A G D _B, C, =B,, ^F2 _B,, =B,, =A | "C"A G ^F C, _B, E _D =D A c2 =B,, _E =B A =E, | "C"D G _E A,, _D =E B G, =E A F B,, C ^F A =E,, |
+"C"B, G ^F ^F2 A, z ^F, B, _A B4 z2 |

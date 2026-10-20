@@ -1,0 +1,27 @@
+%abc-2.1
+% Romanian Folk Dances Sz.56, by Bela Bartok. Score published on MuseScore (artist: Béla Bartók),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Bela Bartok (died 1888, Wikidata
+% Q791022).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/51/QmSWCj5WV88TGPGbpzY6iXUMwmWhPaUzeCRN9ScGbnu78Q.mid (sha256
+% c4e8ebb998575c634e0c013ea2c00673871d6a6582db62e9132773f36f5ed977): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Romanian Folk Dances Sz.56
+M:2/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"D z E z F z G z | "Em7"A z G z D z G z | "Dm"A2 z2 A z2 B | "Dm"A8 |
+"G7"G z A z B z G z | "Dm7"c4 c B A F | "G"G2 z2 G z2 A | "Bm"G8 |
+"G7"G z A z B z G z | "E"c4 c B A G | "F"F2 E2 F z G z | "Bb"F z E z D4 |
+"G"D z E z F z A z | "A7"G z F z E z F z | "Dm"D2 z2 D z2 A, | "Dm"D8 |
+"Dm"D z E z F z G z | "Em7"A z G z D z G z | "Dm"A2 z2 A z2 B | "Dm"A8 |
+"G7"G z A z B z G z | "Dm7"c4 c B A F | "G"G2 z2 G z2 A | "Bm"G8 |
+"G7"G z A z B z G z | "E"c4 c B A G | "F"F2 E2 F z G z | "Bb"F z E z D4 |
+"G"D z E z F z A z | "A7"G z F z E z F z | "Dm"D2 z2 D z2 A, | "Dm"D8 |

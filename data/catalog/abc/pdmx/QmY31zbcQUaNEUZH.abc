@@ -1,0 +1,35 @@
+%abc-2.1
+% Études Op.25, by Frédéric Chopin. Score published on MuseScore (artist: Frédéric Chopin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frédéric Chopin (died 1849,
+% Wikidata Q1268).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/2/QmY31zbcQUaNEUZH8A5JKxU3JucV4g14cY2NYSbKjqXLFU.mid (sha256
+% e43605417699c0b763afd5264f43d973561007c88958eba80fb11c5f03b9e8c2): melody track 1, bars 0-63
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études Op.25
+M:2/2
+L:1/16
+Q:1/4=137.999876
+% Exact tempo 137.99987580011177 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dbm7"z16 | "Dbm7"z16 | "Dbm7"_A,,2 _E,2 B,2 G,,2 _A,,2 _E,2 B,2 _E,,2 | "Dbm7"_A,,2 _E,2 B,2 _D,2 B,,2 _E,2 B,2 _E,,2 |
+"B7"_A,, z _A2 _A2 ^F2 ^F2 E2 E2 _E2 | "E"_E2 _D2 _D2 B,2 B,2 _B,2 _B,2 _A,2 | "F#m7"_A,,2 E,2 B,2 G,,2 _A,,2 E,2 _D2 _A,,,2 | "Dbm"_A,,2 E,2 _D2 _E,2 _D,2 =E,2 _D2 _A,,,2 |
+"E7"_A,, z _d2 _d2 =A2 =A2 _A2 _A2 ^F2 | "A"^F2 E2 E2 _E2 _E2 _D2 _E2 ^F =E | "Dbm7"_E, z B2 B2 _B2 _A2 G2 z4 | "Eb7"_A,,2 B,2 _B,,2 _A,,2 G,, z _E z _A,, z _E z |
+"Dbm7"_E,,2 B,2 B,2 _B,2 _A,2 G,2 z4 | "Bb7"_A,,2 B,2 _B,,2 _A,,2 G,,2 =B,2 =A,,2 G,,2 | "Ebm7"^F,, z ^F, z b2 ^F2 _b2 ^F2 _a2 ^F ^f | "Dbm7"e2 ^F z ^F, z ^F,, z ^F,,, z ^F,, z ^F, z ^F z |
+"B7"B,,2 ^F,2 B,2 _E2 _D,2 =E,2 _B,2 _D2 | "Ab7"_E,2 _A,2 B,2 _E2 _E,2 G,2 _D2 _E2 | "Dbm7"_A,,2 _E,2 B,2 G,,2 _A,,2 _E,2 B,2 _E,,2 | "Dbm7"_A,,2 _E,2 B,2 _D,2 B,,2 _E,2 B,2 _E,,2 |
+"B7"_A,, z _A2 _A2 ^F2 ^F2 E2 E2 _E2 | "E"_E2 _D2 _D2 B,2 B,2 _B,2 _B,2 _A,2 | "Em7"_A,,2 D,2 B,2 G,,2 _A,,2 D,2 B,2 _E,,2 | "Em7"_A,,2 D,2 B,2 _D,2 B,,2 =D,2 B,2 =D,,2 |
+"Dm7"_A,, z B2 B2 _B2 _B2 _A2 _A2 ^F2 | "F#7"^F2 =F2 =F2 E2 E2 D2 C2 B,2 | "G7"G,, z A2 A8 G2 A2 | "G7"A6 G2 z4 G, z C, z |
+"F7"F,, z G2 G8 F2 G2 | "F7"G6 F2 z4 F, z _B,, z | "Dbm7"E,, z g _d' g _d' ^f c' =f b e _b _e a =d _a | "Ebm7"_d g c ^f B =f _B e A _e _A =d G _d ^F c |
+"Am7"F B E _B _E A D _A _D G C ^F C =F C =F | "G7"B, F B, E B, E B, E _B, E _B, _E _B, _E _B, _E | "Dbm7"_A,,2 _E,2 B,2 G,,2 _A,,2 _E,2 B,2 _E,,2 | "Dbm7"_A,,2 _E,2 B,2 _D,2 B,,2 _E,2 B,2 _E,,2 |
+"B7"_A,, z _A2 _A2 ^F2 ^F2 E2 E2 _E2 | "E"_E2 _D2 _D2 B,2 B,2 _B,2 _B,2 _A,2 | "Ab7"_A,,2 _E,2 C2 G,,2 _A,,2 _E,2 C2 _E,,2 | "Ab7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 |
+"Ebm7"_A,, z _e2 _e2 _d2 _d2 c2 c2 =A2 | "Ebm"A2 _A2 _A2 ^F2 ^F2 E2 E2 _E2 | "Dbm7"_D,,2 _D,2 _A,2 _E2 =E2 _D2 _A2 _B2 | "B"B z _A,,2 _E,2 _B,2 =B,2 z6 |
+"Abm7"E,,2 B,,2 E,2 ^F,2 _A,2 E,2 B,2 _D2 | "Ebm7"_E2 B,,,2 ^F,,2 _D,2 _E,2 z6 | "Dbm7"E,2 z _D, E3 z9 | "G"z8 _E,4 _D,4 |
+"Dbm7"_A,,,2 _E,2 B,2 G,,2 _A,,2 _E,2 B,2 _E,,2 | "Ab7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 | "B"_A,,2 E,2 _D2 _E,2 _D,2 =E,2 _D2 _A,,,2 | "Em7"_A,,2 E,2 _D2 _E,2 _D,2 =E,2 _D2 _A,,,2 |
+"Eb7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 | "Ab7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 | "B"_A,,2 E,2 _D2 _E,2 _D,2 =E,2 _D2 _A,,,2 | "Em7"_A,,2 E,2 _D2 _E,2 _D,2 =E,2 _D2 _A,,,2 |
+"Eb7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 | "Am7"_A,,2 _E,2 C2 _D,2 C,2 _E,2 C2 _E,,2 | "Fm7"_A,,2 z4 _E,,2 _A,,2 z4 _E,,2 | "C"_A,,2 z6 _A,,2 z2 _A,,2 z2 |
+"C7"_A,,4 z4 _A,,8 | "Eb7"_A,,4 z4 G,8 | "Cm"_A,15 z |

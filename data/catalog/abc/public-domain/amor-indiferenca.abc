@@ -1,0 +1,36 @@
+%abc-2.1
+% AMOR INDIFERENÇA, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/amor-indiferenca.html (file
+% https://www.beakauffmann.com/mpb_a/som/amor-indiferenca.mid, sha256
+% 86a607e0a03fa92c78d31881ccf4343cf87a01b4715e6a18c0bb6839d6769aaf), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AMOR INDIFERENÇA
+M:2/4
+L:1/16
+Q:1/4=55.000005
+% Exact tempo 55.000004583333705 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z5 _B, D C | "Gm"G, _E2 G, ^F, _E B, C | "Ab"F, G C F, _B, _A E F | "Gm"_E, _B, D _E _B _A G ^F |
+"E"F _A F _D C G2 C | "F7"F, _A2 C F G,2 G, | "Cm"C, G, C D _E G c2 | "Am7"F, A2 F, F, A C F, |
+"Eb"d2 z2 _B ^F E _B, | "Eb"_A, D2 G, ^F, B,2 C | "Fm7"F, G2 C _B, _A2 _B, | "Cm7"_E, _B, D _E _B _A G ^F |
+"Dbm7"F _A F D C G2 C | "G"F, _A C F, F3 z | "Cm7"_E, _B, D _E C _B2 C | "Cm7"F, _A C F, _B,, D2 _B,, |
+"Gm7"D D D D z A, C D | "F#"_E F F _E F z2 _E | "Eb7"_B, _D _D _B, _D z2 =B, | "Ab7"_E, _B, C ^F =F _E D _E |
+"Dm7"_A, ^F2 _A, _B, _A2 _B, | "F#"^F _A, ^F2 =F2 _D,2 | "Gm"z ^F, _D ^F _B2 ^F,2 | "F7"z A, _E G c2 F,2 |
+"C7"z _A2 _A z _A2 _B, | "F#"_E F F _E F z2 _E | "Eb7"_B, _D _D _B, _D z2 =B, | "Ab7"_E, _B, C ^F =F _E D _E |
+"Dm7"_A, ^F2 _A, _B, _A2 _B, | "Eb"_B, _A _d2 _E, _D G2 | "Db7"B2 _A2 _d B E _D | "Ebm"_B,2 _B,,2 _A2 D2 |
+"Ebm"^F ^F ^F ^F z _A, D C | "Db7"B2 _A2 _d B E _D | "Ebm"_B,2 _B,,2 _A2 D2 | "Ebm"^F ^F ^F ^F z _A, D C |
+"Gm"G, _E2 G, ^F, _E B, C | "Ab"F, G C F, _B, _A E F | "Gm"_E, _B, D _E _B _A G ^F | "E"F _A F _D C G2 C |
+"F7"F, _A2 C F G,2 G, | "Cm"C, G, C D _E G c2 | "Am7"F, A2 F, F, A C F, | "Eb"d2 z2 _B ^F E _B, |
+"Eb"_A, D2 G, ^F, B,2 C | "Fm7"F, G2 C _B, _A2 _B, | "Cm7"_E, _B, D _E _B _A G ^F | "Dbm7"F _A F D C G2 C |
+"G"F, _A C F, F3 z | "Cm7"_E, _B, D _E C _B2 C | "Cm7"F, _A C F, _B,, D2 _B,, | "Gm7"D D D D z A, C D |
+"F#"_E F F _E F z2 _E | "Eb7"_B, _D _D _B, _D z2 =B, | "Ab7"_E, _B, C ^F =F _E D _E | "Dm7"_A, ^F2 _A, _B, _A2 _B, |
+"F#"^F _A, ^F2 =F2 _D,2 | "Gm"z ^F, _D ^F _B2 ^F,2 | "F7"z A, _E G c2 F,2 | "C7"z _A2 _A z _A2 _B, |
+"F#"_E F F _E F z2 _E | "Eb7"_B, _D _D _B, _D z2 =B, | "Ab7"_E, _B, C ^F =F _E D _E | "Dm7"_A, ^F2 _A, _B, _A2 _B, |

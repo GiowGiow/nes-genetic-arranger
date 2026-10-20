@@ -1,0 +1,27 @@
+%abc-2.1
+% Adoramus te Christe, by Giovanni Pierluigi da Palestrina. Score published on MuseScore (artist:
+% Giovanni Pierluigi da Palestrina), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Pierluigi da Palestrina
+% (died 1594, Wikidata Q179277).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/1/Qmd2vMK1FxjZ2B6hZmtnqQZgMLLCg6XsXvHhW3u46tcWWm.mid (sha256
+% 0417c08e05bb1f7b2106cb8b413aeaf7e0cabdc720152d7b7120e57c260229cd): melody track 1, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Adoramus te Christe
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_E,16 | "F"A,8 "Bbm"_B,8 | "Ab"_E,8 _A,4 _A,4 | "Db"_A,2 G,2 F,2 _E,2 "Bbm"F,8 |
+"Cm"G,8 "C"z4 C4 | "Fm"C6 C2 "Fm7"C4 C4 | "Fm"_D4 C4- "Db"C4 _B,4 | "Cm"C8 "Ab"z8 |
+"C7"z8 "Ab"z4 F,4 | "Fm"C8- "Cm"C4 C4 | "C7"_E4 D4 "Cm"C4 _E4 | "Fm"_E2 D2 C4- "G"C4 B,4 |
+"Cm"C4 C4 "C"C4 C4 | "C"_E6 D2 "Cm"C8 | "Eb"_B,8 "Ab"_E8 | "Eb"_E8 "Bb7"C8 |
+"Eb"C4 _B,2 _A,2 _B,8 | "Ab"_A,4 C4- "Cm"C4 _B,4 | "F7"_A,4 G,4 "F"_A,8 | "F7"G,8 "C7"z4 C4 |
+"Db"C4 _B,4 "Cm"_A,4 G,4 | "C7"F,4 _E,4 "Eb7"F,8 | "Ab"G,4 _E8 _E4 | "Fm7"C4 C4- "Db"C2 _B, _A, _B,4 |
+"Fm"C8- "C"C8 | "F"A,8 z4 C4 | "Cm"C4 C4 "C"C8 | "Eb"C8 "Ab"C8 |
+"Eb"_B,4 G,4 "Fm"_A,2 _B,2 C2 D2 | "Fm7"_E8- "Eb"_E8 | "Ab"C4 _E6 D2 C4 | "Bbm7"C4 _B,2 _A,2 "C7"G,4 F,4 |
+"C"G,16 | "F"A,16 |

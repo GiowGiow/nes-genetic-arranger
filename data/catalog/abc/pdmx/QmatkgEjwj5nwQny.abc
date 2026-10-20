@@ -1,0 +1,24 @@
+%abc-2.1
+% Studentersang, by Conradin Kreutzer. Score published on MuseScore (artist: Conradin Kreutzer),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Conradin Kreutzer (died 1849,
+% Wikidata Q458732).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/44/QmatkgEjwj5nwQnyWz2iN6pTPCAzujoBj2hXge5BsnmmHe.mid (sha256
+% c477d1dae1df2f2d17637e0efc7afda5d8ec608892d78165d8d1bd2556b154fc): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Studentersang
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"D6 D2 D3 E ^F3 E | "D"D8 z4 ^F3 E | "Bm7"D2 z2 _D2 z2 "Eb"B,2 z2 A,2 z2 | "Abm7"A,8 "Em"G,4 B,3 B, |
+"Em"E6 E2 "Gm"E4 E4 | "A7"E8 E6 E2 | "G"^F2 D2 B,2 E2 "A"D4 _D4 | "D"D8 z8 |
+"A"E4 _D4 "E7"E6 B,2 | "E"D2 _D2 =D2 E2 "F#m"_D4 z4 | "F#m"E4 E4 "D"^F2 ^F2 E2 D2 | "F#m7"_D4 B,4 "A"A,4 z4 |
+"D"^F6 ^F2 "G"D2 z2 D2 z2 | "B7"_E2 z2 _E2 z2 "Em"=E8 | "Em"E4 ^F4 G2 B,2 ^F2 E2 | "A"D4 _D4 "D"=D4 z4 |
+"A"E4 A,4 z8 | "D"^F4 D4 z4 D2 D2 | "G"E8 "A"_D8 | "D"D8 z8 |

@@ -1,0 +1,34 @@
+%abc-2.1
+% MORRO ALTO, by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/morro-alto.html (file
+% https://www.beakauffmann.com/mpb_m/som/morro-alto.mid, sha256
+% 9e9f8b171c6271ca98fb938598dedcfcc48efd7951c148a51dc782b8ec4bb537), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-58 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MORRO ALTO
+M:6/8
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"D"z12 | "D"z8 ^f z e z | "D"d z _d z B z A3 z _d z | "A7"A5 z _a =a2 z =A2 |
+"A7"G5 z ^f g2 z G2 | "D"^F3 z5 ^f z e z | "D"d z _d z B z A3 z B2 | "F#m"_d5 z ^f3 z _a2 |
+"Db7"a z _a z ^f z =f3 z _a2 | "F#m"^f5 z3 ^f z ^f z | "A7"^f g e z e z ^f g e z e z | "D"d2 A3 z3 ^f z ^f z |
+"A7"^f g e z e z ^f g e z e z | "D"d2 A3 z3 d2 c2 | "Em7"B2 e2 d2 _d2 ^f2 e2 | "Bm7"d2 g2 ^f2 e2 a2 g2 |
+"D"^f2 ^f2 g2 _a2 =a2 b2 | "A7"e8 ^f' z e' z | "D"d' z _d' z b z a2 z2 _d' z | "A7"a5 z _a' =a'2 z =a2 |
+"A7"g5 z ^f' g'2 z g2 | "D"^f3 z5 d z d z | "D7"d z ^f z d z d z ^f z d z | "Bb7"g2 d'3 z _a2 d'3 z |
+"A7"a2 a3 z a2 ^f'2 e'2 | "D"d'2 z4 d' z5 | "Bm"^f z d z B z _d3 z _B2 | "Bm"B3 z ^F2 ^F6 |
+"Bm"^F2 B z _d z =d z _d z B z | "C7"_d =d e4 _d' =d' e'4 | "C7"e'2 e2 ^f2 g2 ^f2 =f2 | "C7"^f3 z _d2 ^f4 _d'2 |
+"C7"^f'2 ^F2 _d2 e2 =d2 _d2 | "Bm"B2 z4 b z ^f z e z | "D"d z _d z B z A3 z _d z | "A7"A5 z _a =a2 z =A2 |
+"A7"G5 z ^f g2 z G2 | "D"^F3 z5 ^f z e z | "D"d z _d z B z A3 z B2 | "F#m"_d5 z ^f3 z _a2 |
+"Db7"a z _a z ^f z =f3 z _a2 | "F#m"^f5 z3 ^f z ^f z | "A7"^f g e z e z ^f g e z e z | "D"d2 A3 z3 ^f z ^f z |
+"A7"^f g e z e z ^f g e z e z | "D"d2 A3 z3 d2 c2 | "Em7"B2 e2 d2 _d2 ^f2 e2 | "Bm7"d2 g2 ^f2 e2 a2 g2 |
+"D"^f2 ^f2 g2 _a2 =a2 b2 | "A7"e8 ^f' z e' z | "D"d' z _d' z b z a2 z2 _d' z | "A7"a5 z _a' =a'2 z =a2 |
+"A7"g5 z ^f' g'2 z g2 | "D"^f3 z5 d z d z | "D7"d z ^f z d z d z ^f z d z | "Bb7"g2 d'3 z _a2 d'3 z |
+"A7"a2 a3 z a2 ^f'2 e'2 | "D"d'2 z4 d' z5 |

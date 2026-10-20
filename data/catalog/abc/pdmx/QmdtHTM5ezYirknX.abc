@@ -1,0 +1,35 @@
+%abc-2.1
+% Scarlatti Sonate en mi majeur K531-L430, by Domenico Scarlatti. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Scarlatti (died 1757,
+% Wikidata Q167837).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/44/QmdtHTM5ezYirknXMW19bu7nDt5ckKKMFYQ463AmhZiKpe.mid (sha256
+% 7d12ed3ae1c1decf78b91c3352e9953187b2d9c0b61a93da1399dbf26e9e1aaf): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Scarlatti Sonate en mi majeur K531-L430
+M:6/8
+L:1/16
+Q:1/4=227.999909
+% Exact tempo 227.99990880003654 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"b2 _a2 e2 B2 _A2 B2 | "A"_d6 a6 | "B"a2 a2 _a2 _a ^f e2 _e2 | "E"e2 B2 _A2 E2 z4 |
+"E"b2 _a2 e2 B2 _A2 B2 | "A"_d6 a6 | "B"a2 a2 _a2 _a ^f e2 _e2 | "E"e2 B2 _A2 E2 B,2 _A,2 |
+"E"z12 | "E"E2 B,2 ^F2 _A2 B,2 =A2 | "B7"B11 z | "B"B2 ^F2 _d2 _e2 ^F2 =e2 |
+"F#7"^f11 z | "F#7"^f2 A2 _A2 =A2 _A2 =A2 | "Ebm7"^f2 A2 _A2 =A2 _A2 =A2 | "B"^f2 A2 _A2 =A2 _A2 =A2 |
+"B"^f2 c'2 b2 a2 g2 ^f2 | "C"e2 G2 ^F2 G2 ^F2 G2 | "Dbm7"e2 G2 ^F2 G2 ^F2 G2 | "C7"e2 G2 ^F2 G2 ^F2 G2 |
+"F#7"e2 g2 ^f2 e2 d2 _d2 | "G"B2 D2 _D2 =D2 _D2 =D2 | "Abm7"B2 D2 _D2 =D2 _D2 =D2 | "Db7"B2 D2 _D2 =D2 _D2 =D2 |
+"Db7"B2 d2 _d2 B2 _B2 =B2 | "F#"^f2 _d2 _B2 ^F2 _D2 _B,2 | "F#"z12 | "F#"^f2 _d2 _B2 ^F2 _B2 ^f2 |
+"F#7"g2 G2 _B2 _b2 _B2 _d2 | "Bm"b2 B2 d2 ^f2 e2 d2 | "Em"_d2 =d2 e2 =d2 _d2 B2 | "F#"^f2 _d2 _B2 ^F2 _D2 _B,2 |
+"F#"z12 | "F#"^f2 _d2 _B2 ^F2 _B2 ^f2 | "F#7"g2 G2 _B2 _b2 _B2 _d2 | "Bm"b2 B2 d2 ^f2 e2 d2 |
+"F#7"_d2 =d2 e2 =d2 e2 _d2 | "G"_d6 B6 | "G"z12 | "G"d2 B2 e2 d2 B2 e2 |
+"G"d2 B2 e2 d2 B2 e2 | "Em7"d2 B2 e2 d2 B2 e2 | "F#"d2 B2 ^f2 d2 B2 d2 | "F#"_d2 =d2 e2 B2 _d2 _B2 |
+"G"_B6 =B6 | "G"z12 | "G"d2 B2 e2 d2 B2 e2 | "G"d2 B2 e2 d2 B2 e2 |
+"Em7"d2 B2 e2 d2 B2 e2 | "F#"d2 B2 ^f2 d2 B2 d2 | "F#"_d2 =d2 e2 B2 _d2 _B2 | "Dbm7"B2 b2 ^f2 _a2 e2 _d2 |
+"F#"_e2 =e2 ^f2 B2 _d2 _B2 | "Dbm7"B2 B2 ^F2 _A2 E2 _D2 | "F#"_E2 =E2 ^F2 B,2 _D2 _B,2 | "B"_B,8 =B,4 |
+"E"b2 _a2 e2 B2 _A2 B2 | "A"_d6 a6 | "B"a2 a2 _a2 _a ^f e2 _e2 | "E"e2 B2 _A2 E2 z4 |
+"E"b2 _a2 e2 B2 _A2 B2 | "A"_d6 a6 | "B"a2 a2 _a2 _a ^f e2 _e2 | "E"e2 B2 _A2 E2 B,2 _A,2 |

@@ -1,0 +1,32 @@
+%abc-2.1
+% Scots Wha Hae, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 40 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Scots Wha Hae
+M:3/4
+L:1/16
+Q:1/4=140
+K:F
+P:A
+"F"z8 C4 | "F"C8 C4 | "C7"C8 D4 | "F"C8 D4 |
+"F"F12 | "Bb"D8 D4 | "Bb"D8 C4 | "Bb"D8 E4 |
+"Bb"F8 G4 | "F"A8 A4 | "A7"G8 F4 | "Dm"F8 G4 |
+"A7"A8 G4 | "Dm"F8 D4 | "Bb"D8 C4 | "F"C12 |
+"C7"C12 | "F"A8 A4 | "F"A8 G4 | "F"A8 B4 |
+"F"c12 | "C"G8 G4 | "G7"G8 F4 | "C"G8 A4 |
+"C7"B12 | "F"c8 A4 | "A7"G8 F4 | "Dm"F8 G4 |
+"Dm"A12 | "Bb"F8 D4 | "Bb"D8 C4 | "F"C12 |
+"F"C8 C4 | "F"C8 C4 | "C7"C8 D4 | "F"C8 D4 |
+"F"F12 | "Bb"D8 D4 | "Bb"D8 C4 | "Bb"D8 E4 |
+"Bb"F8 G4 | "F"A8 A4 | "A7"G8 F4 | "Dm"F8 G4 |
+"A7"A8 G4 | "Dm"F8 D4 | "Bb"D8 C4 | "F"C12 |
+"C7"C12 | "F"A8 A4 | "F"A8 G4 | "F"A8 B4 |
+"F"c12 | "C"G8 G4 | "G7"G8 F4 | "C"G8 A4 |
+"C7"B12 | "F"c8 A4 | "A7"G8 F4 | "Dm"F8 G4 |
+"Dm"A12 | "Bb"F8 D4 | "Bb"D8 C4 | "F"C12 |
+"F"C8 z4 |

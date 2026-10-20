@@ -1,0 +1,28 @@
+%abc-2.1
+% Prelude and Fugue in C major BWV 846, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/9/QmWaQcc71PMV8qF5iS9HdbLUFbWgyet6EV8bDevqTVR2n9.mid (sha256
+% d46021f48d76ce60af1b9a31a683ac1b99269afb7c20c6850a6abe0b31992ab6): melody track 1, bars 0-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prelude and Fugue in C major BWV 846
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"C8 C8 | "Dm"C8 C8 | "Dm"B,8 B,8 | "Em"C8 C8 |
+"F#m7"C8 C8 | "D"C8 C8 | "Em7"B,8 B,8 | "C"B,8 B,8 |
+"C"A,8 A,8 | "D7"D,8 D,8 | "Bm"G,8 G,8 | "Bbm"G,8 G,8 |
+"D"F,8 F,8 | "Abm"F,8 F,8 | "C"E,8 E,8 | "F"E,8 E,8 |
+"F"D,8 D,8 | "G7"G,,8 G,,8 | "Em"C,8 C,8 | "C7"C,8 C,8 |
+"F"F,,8 F,,8 | "Cm"^F,,8 ^F,,8 | "F"_A,,8 _A,,8 | "G7"G,,8 G,,8 |
+"Em"G,,8 G,,8 | "Dm7"G,,8 G,,8 | "G7"G,,8 G,,8 | "Ebm"G,,8 G,,8 |
+"Em"G,,8 G,,8 | "Dm7"G,,8 G,,8 | "G7"G,,8 G,,8 | "C7"C,,8 C,,8 |
+"Dm7"C,,16 | "C"C,,16 | "C"C,16 |

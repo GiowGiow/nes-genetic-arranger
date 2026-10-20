@@ -1,0 +1,35 @@
+%abc-2.1
+% Trumpet Concerto in E-flat major Hob.VIIe:1, by Joseph Haydn. Score published on MuseScore
+% (artist: Joseph Haydn), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Haydn (died 1809,
+% Wikidata Q7349).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/1/QmR2dhNjnxxSqm4cLXTjdMGQigBAps57K4MnnniVSB2Qd6.mid (sha256
+% 764b67698ff2707fd0a2f869eeb89de2b708ab243cf0f15246c578a465200bd6): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Trumpet Concerto in E-flat major Hob.VIIe:1
+M:4/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"F8 G8 | "C"A4 z2 C2 F2 G2 A2 _B2 | "C"c8 d2 e2 f2 d2 | "C"c4 z12 |
+"C"z6 c2 d2 e2 f2 d2 | "C"c4 d e f g a2 f2 e2 d2 | "C"c8 c c c c c c c c | "C"A4 z12 |
+"C"z6 f2 e2 f2 d2 _B2 | "C"A2 c2 f4 z8 | "C"z6 f2 e2 _e2 d2 _d2 | "C"c2 A2 c4 z8 |
+"C"z8 C2 C C C2 C2 | "C"F4 z12 | "C"z16 | "C"a8 g8 |
+"C"f4 z12 | "C"f8 e8 | "C"d12 _d4 | "C"d4 _d4 =d4 z4 |
+"C"z12 _d4 | "C"d4 _d4 =d4 c4 | "C"B4 z12 | "C"c8 e d e e e e c d |
+"C"e8 g f g g g g e f | "C"g16 | "C"g4 z2 d e f2 e2 f2 g2 | "C"e4 z12 |
+"C"z6 d e f2 e2 f2 g2 | "C"e4 a8 g4 | "C"^f8 g4 z4 | "C"c4 f8 e4 |
+"C"_e4 =e4 _d4 =d4 | "C"B4 c4 f4 e4 | "C"d4 z12 | "C"z16 |
+"C"g16 | "C"g8 ^f8 | "C"f8 e8 | "C"d3 e f2 d2 c4 B4 |
+"C"c4 z12 | "C"z4 c4 c4 c4 | "C"c6 d e f2 g2 a2 b2 | "C"c'4 z12 |
+"C"g12 f e d c | "C"e e e e e e e e e e e e e e e e | "C"c4 z12 | "C"z16 |
+"C"z16 | "C"z16 | "C"z16 | "C"z16 |
+"C"z16 | "C"z16 | "C"z16 | "C"z16 |
+"C"d8 e8 | "C"f4 z2 A2 d2 e2 f2 g2 | "C"a16 | "C"_b4 z12 |
+"C"z16 | "C"z6 f2 e2 f2 g2 a2 | "C"_b4 z12 | "C"z16 |

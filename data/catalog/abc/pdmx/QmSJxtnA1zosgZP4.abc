@@ -1,0 +1,34 @@
+%abc-2.1
+% the yankee doodle boy, by George M. Cohan. Score published on MuseScore (artist: George M.
+% Cohan), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): George M. Cohan (died 1942,
+% Wikidata Q563017).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/27/QmSJxtnA1zosgZP4kWep6iiNPkZEmsKZNJnsZ9m5pmawj6.mid (sha256
+% e3b03a280dba68608907a78792c42b24db4b9964c6dbc9b564531a5312f89ab1): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:the yankee doodle boy
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm7"z8 | "C7"z8 | "Dm7"z8 | "C7"z8 |
+"C"z8 | "Db7"z8 | "C"z8 | "Db7"z8 |
+"C7"z8 | "C7"z8 | "C7"z8 | "C"z8 |
+"Dm7"z8 | "Dm7"z8 | "Dm7"F2 F2 G2 A2 | "C7"F2 A2 G2 C2 |
+"Dm7"F2 F2 G2 A2 | "C7"F2 A2 G2 C2 | "G7"D2 G4 D2 | "G7"G8 |
+"C7"E2 c4 G2 | "C7"c8 | "Dm7"F2 F2 G2 A2 | "C7"F2 A2 G2 C2 |
+"Dm7"F2 F2 G2 A2 | "C7"F2 A2 G2 C2 | "Dm7"F2 F2 G2 A2 | "Bb"_B2 A2 G2 F2 |
+"C7"E2 G2 C2 G2 | "F"F4 F2 C2 | "Dm7"F3 F F G A _B | "Dm7"c2 c2 c3 d |
+"Dm7"c2 A2 _B A G F | "G7"G2 F2 D2 F F | "C7"E2 c4 E2 | "C7"c4 _B2 G2 |
+"Dm7"F2 c4 A2 | "Dm7"c4 c2 A2 | "F"F8 | "Am"A4 c4 |
+"F"f8 | "G7"f4 G2 F2 | "C7"E2 c2 B2 c2 | "C7"d2 c2 E2 A2 |
+"C7"G8 | "F"F4 z4 | "F"z8 | "Am"z8 |
+"F"z8 | "F"z8 | "Gm7"d6 c2 | "Bb"c2 _B2 A2 _B2 |
+"Cm"c8 | "C7"G6 c2 | "F7"c6 d2 | "F7"c2 A2 G2 F2 |
+"Bb"_B8 | "Gm7"_B6 d2 | "G7"d4 d4 | "G7"B2 c2 d2 f2 |
+"Cm"_e4 d4 | "Cm"c4 z4 | "C7"d2 c4 _B2 | "C7"G2 _B4 d2 |

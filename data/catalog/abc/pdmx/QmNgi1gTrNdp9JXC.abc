@@ -1,0 +1,35 @@
+%abc-2.1
+% Piano Concerto Op.16, by Edvard Grieg. Score published on MuseScore (artist: Edvard Grieg), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/21/QmNgi1gTrNdp9JXCZCMysjRRwNK1HmHBqZa2WSzPB1QwNF.mid (sha256
+% 537bc28583193c95589db8829554cac459691d61454914fe43df5029320d5651): melody track 10, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Piano Concerto Op.16
+M:3/8
+L:1/16
+Q:1/4=20.999999
+% Exact tempo 20.99999895000005 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ebm7"F,2 ^F,4 | "Bbm7"_A,2 ^F,4 | "Bbm"F,2 _A,2 _D2 | "Ab"_D2 C3 z |
+"Abm"^F,2 _A,4 | "Ebm"z2 _A,4 | "Cm7"^F,2 _B,2 ^F2 | "Bbm"_E2 _D3 z |
+"F#"z4 _E,2 | "Db"^F,2 =F,2 z2 | "F#m"z4 ^F,2 | "Dbm7"A,2 _A,2 z2 |
+"Am"z4 A,2 | "Cm7"G,2 D2 _D2 | "Ab7"C2 B,2 _B,2 | "F7"A,2 _A,2 G,2 |
+"Ab7"^F,4 _B,2 | "Fm7"_A, _B, ^F,4 | "Ebm"F,2 _B,4 | "Fm7"_A, _B, ^F,4 |
+"Ebm7"F,2 ^F,4 | "Fm7"_A, _B, ^F,4 | "Db7"F, F, F, F, ^F, ^F, | "Bbm7"G, G, G, G, G, ^F, |
+"Db7"^F, =F, =F, =F, ^F, ^F, | "Ab7"G, G, G, G, G, ^F, | "Db"^F, z ^F,4 | "F#m"F,2 ^F,4 |
+"Db"F,6 | "Db"_E,6 | "Db"F,6 | "Db"_E,6 |
+"Db"F, z _E, z F, z | "Db"_E, z F, z _E, z | "Db"F, z5 | "Bb"z6 |
+"Db"_E,2 =E,2 _E,2 | "Dbm7"E,2 _A,2 =A, z | "E"_A,6 | "E"^F,6 |
+"E"_A,6 | "E"^F,6 | "E"_A, z ^F, z _A, z | "E"^F, z _A, z ^F, z |
+"E"_A, z5 | "Db"z6 | "E"^F,2 G,2 ^F,2 | "Em7"G,2 B,2 C2 |
+"G7"D D D D D D | "Bm"D D D D D D | "G7"D D D D D D | "E7"E E E E E E |
+"Ab7"^F z5 | "Ab7"z6 | "F#"F, F, ^F, ^F, ^F, ^F, | "Bbm7"_A, _A, _B, _B, _B, C |
+"Bbm7"C _A, _A, _A, _A, _A, | "Fm7"_A, G, _A, _A, _A, _A, | "Abm"_A, ^F, ^F, =F, B, B, | "Fm7"B, _B, C C C D |
+"Cm7"D _B, _B, _B, _B, _B, | "Bbm"_B, A, _B, _B, _B, _B, | "Bbm"_B, z5 | "F#m"_D,4 _D,2 |

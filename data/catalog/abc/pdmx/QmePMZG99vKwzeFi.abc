@@ -1,0 +1,35 @@
+%abc-2.1
+% Carmen, by Georges Bizet. Score published on MuseScore (artist: Georges Bizet), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/37/QmePMZG99vKwzeFiQY5vD1JSohQk3ypPqNY8jSkU2cHTa1.mid (sha256
+% 893f4b65ee832ef4d418e8d8ab7bf2eefb01803668ff55b51ef5dd2933f10761): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Carmen
+M:2/4
+L:1/16
+Q:1/4=115.999861
+% Exact tempo 115.99986080016704 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"a2 a a a e d e | "E7"a2 a a a b _d' b | "F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b |
+"D"d'2 d' d' d' a g a | "D"d'2 d' d' d' e' ^f' e' | "Bm7"d'2 d' _d' b2 b a | "Db7"a a a a a a a _a |
+"A"a2 a a a e d e | "E7"a2 a a a b _d' b | "F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b |
+"C"e'2 e' e' e' d' c' d' | "C"e'2 e' e' e' d' c' d' | "E7"e'2 e ^f _a2 e _d' | "A"b4 a2 z2 |
+"A"a2 a a a e d e | "E7"a2 a a a b _d' b | "F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b |
+"D"d'2 d' d' d' a g a | "D"d'2 d' d' d' e' ^f' e' | "Bm7"d'2 d' _d' b2 b a | "Db7"a a a a a a a _a |
+"A"a2 a a a e d e | "E7"a2 a a a b _d' b | "F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b |
+"C"e'2 e' e' e' d' c' d' | "C"e'2 e' e' e' d' c' d' | "E7"e'2 e ^f _a2 e _d' | "A"b4 a2 z2 |
+"F#"_d2 ^f2 _d2 B2 | "Db7"A2 _A ^F _A2 _D2 | "F#m"^F2 _A2 =A2 _d2 | "Dbm"f2 _e f _d2 _D2 |
+"F#"_d2 ^f2 _d2 B2 | "Db7"A2 _A ^F _A2 _D2 | "F#m"^F2 _A2 =A2 _d2 | "Db"f2 _e f _d2 z2 |
+"E7"d d d2 e e e2 | "D"^f ^f ^f2 d d d2 | "Db"z _d' z _a z _d' z =d' | "Db"z _d' z _a _d'2 z2 |
+"E7"d d d2 e e e2 | "D"^f ^f ^f2 d d d2 | "Ab"_a _A _a _A _a _A _a _A | "Bb"_a _A _a _A _a _A _a _A |
+"C"_a _A _a _A _a _A _a _A | "E7"_a _A _a _A _a z _a2 | "A"a2 a a a e d e | "E7"a2 a a a b _d' b |
+"F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b | "D"d'2 d' d' d' a g a | "D"d'2 d' d' d' e' ^f' e' |
+"Bm7"d'2 d' _d' b2 b a | "Db7"a a a a a a a _a | "A"a2 a a a e d e | "E7"a2 a a a b _d' b |
+"F#m7"a2 a a b a _a =a | "E"_d' _d' _d' _d' _d' _d' _d' b | "C"e'2 e' e' e' d' c' d' | "C"e'2 e' e' e' d' c' d' |

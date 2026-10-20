@@ -1,0 +1,30 @@
+%abc-2.1
+% The Seasons Op.37a, by Pyotr Ilyich Tchaikovsky. Score published on MuseScore (artist: Pyotr
+% Ilyich Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pyotr Ilyich Tchaikovsky (died
+% 1893, Wikidata Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/36/QmNpKpq82DUBdAwPxBR1iK4gK7p5jZDPDaJH1aU3fAiWsH.mid (sha256
+% f33d0a30e864822a1874774c88c394fbb962c5524a600b1ce1d8ee46a8341df2): melody track 0, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Seasons Op.37a
+M:2/4
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"Cm7"z8 | "Gm"z8 | "Cm7"z2 G A G z2 A | "Gm"G _B d ^f g3 ^f |
+"F#"d2 D2 z2 D2 | "Gm"z2 D2 z2 D2 | "D7"z2 G A G z2 A | "Em7"G _B d ^f g3 =f |
+"Cm"f2 _e2 d2 c2 | "Gm"c ^F G A _B3 A | "Ebm"G2 d2 _e z2 A | "Bb"_B _d =d _e f ^f _b a |
+"Bb"c'3 _b d' a d' a | "Cm7"d' g2 _b2 ^f2 a | "Ebm"a d2 g _e z2 A | "Bb"_B _d =d _e f ^f _b a |
+"Bb"c'3 _b _b ^f _b ^f | "Bb"a d2 g d A d A | "Bb"d G2 D _E z2 A, | "Bb"_B, _D =D _E F ^F _B A |
+"Bb"c3 _B d A d A | "A7"d D2 G G _D G _D | "Gm"G A,2 ^F z _E D z | "D7"_A =A d2 z g =a z |
+"D7"d' d2 D z _E D z | "D7"_A =A d2 z g =a z | "D7"d' d2 D z g a z | "D7"d' d2 D z _d2 _D |
+"D"z d2 D z _d2 _D | "D"z d2 D z d2 D | "Cm7"z2 G A G z2 A | "Gm"G _B d ^f g3 ^f |
+"Gm"d2 D2 z2 D2 | "Gm"z2 D2 z2 D2 | "D7"z2 G A G z2 A | "Em7"G _B d ^f g3 =f |
+"Cm"f2 _e2 d2 c2 | "Gm"c ^F G A _B3 A | "Gm"G2 G A G z2 A | "Gm"G _B d ^f g3 ^f |
+"F#"d2 D z3 D z | "Gm"z2 D z3 D z | "G"z2 D z3 D z | "G"z2 D z3 D z |
+"G"z2 D4 D2 | "G"D2 D4 D2 |

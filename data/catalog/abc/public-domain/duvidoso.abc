@@ -1,0 +1,36 @@
+%abc-2.1
+% DUVIDOSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/duvidoso.html (file
+% https://www.beakauffmann.com/mpb_d/som/duvidoso.mid, sha256
+% 6ee60d94af3cd2d8666b482b76e721e82a02fbdff0dacc946fa0a04c286adb7b), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DUVIDOSO
+M:2/4
+L:1/16
+Q:1/4=85.000163
+% Exact tempo 85.00016291697892 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 E2 | "A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 E2 |
+"A"^F A, E A, ^F G, E G, | "Abm"A B, _A _A z2 _A2 | "Abm7"_d _E B B z2 B2 | "E"^f e2 d2 B2 _A |
+"A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 e2 | "A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 e2 |
+"A7"^F A, E A, B _D A _D | "F"B D A D B C A C | "E7"d E _d E ^f _A e _A | "A"a4 a'4 |
+"A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 E2 | "A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 E2 |
+"A"^F A, E A, ^F G, E G, | "Abm"A B, _A _A z2 _A2 | "Abm7"_d _E B B z2 B2 | "E"^f e2 d2 B2 _A |
+"A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 e2 | "A"^F A, E A, ^F G, E G, | "Dbm7"^F _A, E E z2 e2 |
+"A7"^F A, E A, B _D A _D | "F"B D A D B C A C | "E7"d E _d E ^f _A e _A | "A"a4 a'4 |
+"F#m"d' ^f _d' ^f b _d a _d | "F#m"_a =A ^f =A d ^F _d ^F | "F#m"B _D A _D _A =A, ^F =A, | "Bm"E ^F, D ^F, _D ^F, =D ^F, |
+"Abm7"e' ^f d' ^f _d' =d b =d | "Db7"a B _a B g B _a B | "Db"d F _d F c F _d F | "F#m"_a =A ^f =A =f =A ^f =A |
+"F#m"d' ^f _d' ^f b _d a _d | "F#m"_a =A ^f =A d ^F _d ^F | "F#7"B E _B E A E _B E | "Bm"_d =D B =D _B =D =B =D |
+"Bm"_a' b ^f' b e' ^f d' ^f | "F#m"d' ^f _d' ^f b _d a _d | "Db7"a c _a c =a B _a B | "F#m"^f4 ^f'4 |
+"F#m"d' ^f _d' ^f b _d a _d | "F#m"_a =A ^f =A d ^F _d ^F | "F#m"B _D A _D _A =A, ^F =A, | "Bm"E ^F, D ^F, _D ^F, =D ^F, |
+"Abm7"e' ^f d' ^f _d' =d b =d | "Db7"a B _a B g B _a B | "Db"d F _d F c F _d F | "F#m"_a =A ^f =A =f =A ^f =A |
+"F#m"d' ^f _d' ^f b _d a _d | "F#m"_a =A ^f =A d ^F _d ^F | "F#7"B E _B E A E _B E | "Bm"_d =D B =D _B =D =B =D |
+"Bm"_a' b ^f' b e' ^f d' ^f | "F#m"d' ^f _d' ^f b _d a _d | "Db7"a c _a c =a B _a B | "F#m"^f4 ^f'4 |

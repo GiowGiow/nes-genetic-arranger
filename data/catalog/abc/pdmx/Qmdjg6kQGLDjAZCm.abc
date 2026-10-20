@@ -1,0 +1,35 @@
+%abc-2.1
+% Dolly Suite Op.56, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/26/Qmdjg6kQGLDjAZCmbewUZqabGCEvJtB7VCdVcafhU5Dq6S.mid (sha256
+% ebd928c8f1c48a9b8ba13a4735721964397914d70b3db23695e69979aef68977): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dolly Suite Op.56
+M:2/4
+L:1/16
+Q:1/4=67.000179
+% Exact tempo 67.00017866714312 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 |
+"E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 |
+"Dbm7"_A, B, E B, _A4 | "B"_B, E ^F E _E4 | "B"_E ^F B _A _B4 | "B"_E ^F B _A _B4 |
+"B"_E ^F B _A _B4 | "B"_E ^F B _A _B4 | "B7"_E ^F B ^F _d4 | "Dbm"^F _A c _A _d2 z2 |
+"Abm7"E ^F _d ^F B2 z2 | "Eb7"B, _E ^F _E _A4 | "Abm"_A =A, B, =A, ^F4 | "E"E B, E _D _E4 |
+"E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 | "E"_A, B, E _D _E4 |
+"Dbm7"_A, B, E B, _A4 | "B"_B, E ^F E _E4 | "Dbm"B, _E ^F _E =E4 | "A"_D F _A F ^F4 |
+"Dbm7"D G A G _A4 | "Dbm7"E _A B _A =A2 z2 | "Abm"^F _B _d _B =B4 | "Dbm7"z _A B _A _d4 |
+"B7"_D _A _d _A B4 | "E"z _A, E B, _A E B, _A, | "C"z3 G, E C G E | "Am"z3 A, E C A E |
+"C"z3 G, E C G E | "Em"z3 G, E C G E | "G"z3 B, G D B G | "Em"z3 B, G E B G |
+"Em"z3 _B, G E _B G | "A"z3 A, G _D A G | "Dm"z3 A, F D A F | "Bb"z3 _B, F D _B F |
+"Dm"z3 A, F D A F | "F"z3 A, F D A F | "Am"z3 A, E C A E | "Dm"z3 A, F D A F |
+"Am"z3 A, E C A E | "B"z3 A, _E B, A _E | "Em"z3 B, G E B G | "C"z3 C G E c G |
+"Em"z3 B, G E B G | "G"z3 B, G E B G | "Bm"z3 B, ^F D B ^F | "Em"z3 B, E _D G E |
+"B"z B, ^F _E B ^F A =E | "B7"_A _E ^F _D _E =A, B, ^F, | "E"B4 B4 | "E"B2 _A2 =A2 B2 |
+"E"_A2 E2 ^F2 _A2 | "E"E2 _A,2 =A,2 B,2 | "E"B4 B4 | "E"B2 _A2 =A2 B2 |

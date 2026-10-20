@@ -1,0 +1,33 @@
+%abc-2.1
+% JANOTA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_j/janota.html (file
+% https://www.beakauffmann.com/mpb_j/som/janota.mid, sha256
+% 490f9890ceba90273bd6608b11e906eebef14459a5bd2121dc78c95a24de8e52), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-49 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:JANOTA
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"z4 A _B =B c | "Dm7"d c g f _b a g ^f | "Gm7"a g ^f g d e =f g | "C7"f e d' c' _b g e a |
+"F"g f c _B A _B =B c | "Dm7"d c g f _b a _a =a | "Bb7"c' _b a _b e' d' _d' =d' | "C7"f' a d' c' _b g e c |
+"F"f3 A G F E D | "A7"_D E G _B _d e g _b | "D7"_b a d' _d' e' =d' _a =a | "C7"c' _b _d =d a g =B c |
+"F"g f c A G F E D | "C7"_D E G _B A c _e ^f | "Gm7"^f g a _b _d' =d' _e' =e' | "Dm"f' d' a f f G A e |
+"Dm"d4 A _B =B c | "Dm7"d c g f _b a g ^f | "Gm7"a g ^f g d e =f g | "C7"f e d' c' _b g e a |
+"F"g f c _B A _B =B c | "Dm7"d c g f _b a _a =a | "Bb7"c' _b a _b e' d' _d' =d' | "C7"f' a d' c' _b g e c |
+"F"f4 z f' g' a' | "Gm7"c'' _b' f' d' =b _a g f | "Cm7"_e g c' _e' g' a' _b' =b' | "F7"d'' c'' a' f' _e' f' a' d'' |
+"Bb"c'' _b' f' d' _b f g a | "Gm7"c' _b f d c _B A G | "Dm"F A d f a d' f' a' | "A7"_b' a' g' e' _d' a g e |
+"Dm7"d _e =e f ^f g _a =a | "Gm7"c'' _b' f' d' =b _a g f | "Cm7"_e g c' _e' g' a' _b' =b' | "F7"d'' c'' a' f' _e' f' a' d'' |
+"Bb"c'' _b' f' d' _b f g a | "Gm7"c' _b f d _e' d' =b g | "Eb7"f' _e' c' g _d'' _b' ^f' =e' | "F7"g' f' _b' _b d' c' f' f |
+"Bb"_b4 A _B =B c | "Dm7"d c g f _b a g ^f | "Gm7"a g ^f g d e =f g | "C7"f e d' c' _b g e a |
+"F"g f c _B A _B =B c | "Dm7"d c g f _b a _a =a | "Bb7"c' _b a _b e' d' _d' =d' | "C7"f' a d' c' _b g e c |
+"F"f4 f'4 |

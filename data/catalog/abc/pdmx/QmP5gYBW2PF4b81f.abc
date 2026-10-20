@@ -1,0 +1,28 @@
+%abc-2.1
+% Herz und Mund und Tat und Leben BWV 147, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/4/QmP5gYBW2PF4b81fjC2EoqQSVDXttVachpszaBNv9acMW5.mid (sha256
+% 1c4ee85be08785bd0f835a0d32beeb1f2861cc80e3cd70b564c9c8fa8bd9c3a3): melody track 2, bars 1-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Herz und Mund und Tat und Leben BWV 147
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"D8 E4 | "D"A,8 B,4 | "Em7"B,4 A,4 G,4 | "D"^F,4 A,4 z4 |
+"D"z12 | "Em"D8 E4 | "Em7"D4 B,4 B,4 | "D7"C2 A,2 D2 B,2 C4 |
+"G"B,8 z4 | "G"z12 | "Em"D8 E4 | "D"A,8 B,4 |
+"Em7"B,4 A,4 G,4 | "D"^F,4 A,4 z4 | "D"z12 | "Em"D8 E4 |
+"Em7"D4 B,4 B,4 | "D7"C2 A,2 D2 B,2 C4 | "G"B,8 z4 | "G"z12 |
+"Bm7"D8 D4 | "Am"E8 F4 | "Bm7"F4 D4 E4 | "A"C4 C4 z4 |
+"A"z12 | "Am"E8 D4 | "Am7"C8 C4 | "Dm"A,8 B,4 |
+"C"E4 E4 z4 | "C"z12 | "Em"D8 E4 | "Em7"D4 B,4 B,4 |
+"Am7"C4 D4 E4 | "D"A,8 z4 | "D"z12 | "Em"D8 E4 |
+"Em7"D4 B,4 B,4 | "D7"C2 A,2 D2 B,2 C4 | "G"B,12 |

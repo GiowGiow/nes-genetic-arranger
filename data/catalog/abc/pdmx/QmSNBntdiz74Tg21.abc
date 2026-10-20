@@ -1,0 +1,35 @@
+%abc-2.1
+% L'Arlésienne, by Georges Bizet. Score published on MuseScore (artist: Georges Bizet), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/34/QmSNBntdiz74Tg21KinZjQb5g2QoXFjt6iHwZuu6FAJy1S.mid (sha256
+% c278b8931b280f9735ffed76d237c19fc7631e5394e34a0563b90f4de1092d81): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:L'Arlésienne
+M:3/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z12 | "Db"z12 | "Db"f4 f3 _e _d _e f ^f | "Db"_a2 f2 _d'2 _a2 f'2 z2 |
+"Ab"_e4 _e3 f _e _d c _B | "Ab"_A2 c2 _e2 c2 _a2 z2 | "Bbm"_d2 z2 _d2 z2 _e _d c _d | "F#"_e2 f2 ^f2 _a2 _b2 z2 |
+"Ab"_e2 z2 _e2 z2 f d _e f | "Db"_d8 z4 | "Db"f4 f3 _e _d _e f ^f | "Db"_a f _a f _d' _a _d' _a f'2 z2 |
+"Ab"_e4 _e3 f _e _d c _B | "Ab"_A _E _A c _e c _e c _a2 z2 | "Bbm"_d2 z2 _d2 z2 _e _d c _d | "F#"_e f ^f _a _b5 _a ^f =f |
+"Ab"_e2 _e z _e z _e z f d _e f | "Db"_d8 z4 | "Ab"_e2 f2 ^f6 _e2 | "Db"f2 ^f2 _a6 =f2 |
+"Ab"^f2 _a2 _b6 c'2 | "Bbm7"_a2 _d'2 _b2 _a2 f2 _d2 | "Ab"_e2 _e f ^f6 _e2 | "Db"f2 f ^f _a6 =f2 |
+"C"g2 g _a _b6 g2 | "Fm"c'2 _b2 a2 _a2 g2 ^f2 | "Db7"f2 f z f z f z ^f =f _e =f | "Ebm7"^f _a ^f _a _b5 _a ^f =f |
+"Ab7"_e2 _e z _e z _e z f d _e f | "Db"_d6 z6 | "Ab"_e f _e f ^f6 _e2 | "Db"f ^f =f ^f _a6 =f2 |
+"Ab"^f _a ^f _a _b6 c'2 | "Bbm7"_a f' f' _d' _d' _b _b _a _a f f _d | "Ab"_e f _e f ^f =f ^f =f _a ^f =f _e | "Db"f ^f =f ^f _a g _a g _b _a g =f |
+"C"g _a g _a _b _a _b _a c' _b _a g | "Fm"c' b b _b _b a a _a _a g g ^f | "Db7"^f =f =f =f =f =f =f =f ^f =f _e =f | "F#"^f _a _b =a c' _b _d' c' _b _a ^f =f |
+"Ab"_e _e _e _e _e _e _e _e f d _e f | "Db"_d6 z6 | "F#"^f4 ^f4 _a4 | "F#"_b3 _a ^f =f _e _d =B _B _A ^F |
+"Db7"_d4 _d c _d f _e ^f =f _a | "F#"^f =f ^f _b ^f =f ^f _b ^f2 z2 | "F#"^f4 ^f4 _a4 | "F#"_b3 _a ^f =f _e _d =B _B _A ^F |
+"Db7"_d4 _d c _d f _e ^f =f _a | "F#"^f =f ^f _b ^f =f ^f _b ^f2 z2 | "Bb"_e4 _e4 f4 | "Ebm"^f _a _b _a ^f _a ^f =f _e ^f =f _e |
+"Ab"_d4 _d2 f2 _e2 ^f2 | "Db"f ^f _a ^f =f _e _d c _d =d _e =f | "F#"^f4 ^f4 _a4 | "F#"_b3 _a ^f =f _e _d =B _B _A ^F |
+"Db"_d4 _d c _d f _e ^f =f _a | "F#"^f =f ^f _b ^f =f ^f _b ^f2 z2 | "Bb"_e4 _e4 f4 | "Ebm"^f _a _b _a ^f _a ^f =f _e ^f =f _e |
+"Ab"_d4 _d2 f2 _e2 ^f2 | "Db"f ^f _a ^f =f _e _d c _d =d _e =f | "F#"^f4 ^f4 _a4 | "F#"_b3 _a ^f =f _e _d =B _B _A ^F |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Rêverie, by Debussy. Score published on MuseScore (artist: Claude Debussy), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Debussy (died 1918, Wikidata
+% Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/51/QmbWhYRPux1RcQo4smQvKFinUE6DoPYXmg9Qy4U5qpy1Ue.mid (sha256
+% 3a59fb9b020472982c183e063977bc5dac0e2424e90f834f0c86124129c45b39): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Rêverie
+M:4/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"_B,2 C2 D2 G4 D2 C2 _B,2 | "G"_B,2 C2 D2 G4 D2 C2 _B,2 | "G"_B,2 C2 D2 G2- "D"G2 D2 C2 _B,2 | "Dm"_B,2 C2 D2 G2- "Em7"G2 D2 C2 _B,2 |
+"C"_B,2 C2 D2 G2- "D"G2 D2 C2 _B,2 | "D"_B,2 C2 D2 G2- "Bb"G2 D2 C2 _B,2 | "E"A,2 _B,2 C2 F2- "C"F2 C2 _B,2 A,2 | "C"G,2 A,2 _B,2 E2- "G"E2 _B,2 A,2 G,2 |
+"A"F,,2 C,6- "Am"C,7 z | "A"F,,2 C,6- "Am"C,7 z | "A"D,,2 A,,2 D,2 F,2 "E"A,2 C2 E2 C2 | "C"A,2 F,2 A,2 C2 "Gm"G,,2 D,2 G,2 _B,2 |
+"A"D,,2 A,,2 D,2 F,2 "E"A,2 C2 E2 C2 | "C"A,2 F,2 A,2 C2 "Gm"G,,2 D,2 G,2 _B,2 | "G"C,,2 G,,2 E,2 G,2 "D"_B,2 D2 E2 D2 | "Bb"_B,2 D2 _B,2 G,2 "Am7"F,,2 C,2 F,2 A,2 |
+"Am"A,,2 E,2 A,2 E,2 "Dm"D,2 A,2 F,2 D,2 | "D"G,,2 F,2 G,2 _B,2 "C"C,,2 G,,2 E,2 _B,2 | "Cm"F,,,2 F,,2 C,2 _E,2 G,2 A,2 C2 _E2 | "A7"G2 _E2 C2 A,2 "Am7"G,2 _E,2 C,2 F,,2 |
+"F7"F,,,2 F,,2 C,2 _E,2 "Cm"G,2 A,2 C2 _E2 | "Eb"G2 _E2 C2 A,2 "Cm"G,2 _E,2 C,2 F,,2 | "D"_B,,,2 F,,2 _B,,2 D,2 "Dm"F,2 _B,2 D2 F2 | "Dm"D2 _B,2 F,2 D,2 "D"_B,,2 F,,2 _B,,,2 F,,2 |
+"Dm7"_B,,,2 F,,2 _B,,2 D,2 "Dm"F,2 _B,2 D2 F2 | "D"D2 _B,2 F,2 D,2 "Bb"_B,,2 F,,2 _B,,,2 F,,2 | "Db"G,,,2 G,,2 _D,2 F,2 A,2 _D2 F2 A2 | "A"G,,2 D,2 F,2 A,2 "Dm"D2 A,2 F,2 D,2 |
+"Db"G,,,2 G,,2 _D,2 F,2 A,2 _D2 F2 A2 | "A"G,,2 D,2 F,2 A,2 "Dm"D2 A,2 F,2 D,2 | "Dm"G,,2 D,2 F,2 A,2 "F"D2 A,2 F,2 D,2 | "F"G,,2 D,2 F,2 A,2 "D"B,2 A,2 G,2 F,2 |
+"Bm"C,,2 G,,2 C,2 E,2 "C"G,2 C2 E2 G2 | "C"z16 | "Cm"C4 _B,2 A,2 G,8 | "Cm"G,4 A,2 _B,2 C4 C2 _E2 |
+"D"^F4 A,2 z2 D,2 z2 A,,2 z2 | "D"D,,4 z4 D,,,8 | "Cm"C4 _B,2 A,2 G,8 | "Cm"G,4 A,2 _B,2 C4 C2 _E2 |
+"Ab"E16 | "Ab"E7 z _E4 =E4 | "Am"G4 F2 E2 D8 | "Am"D8 E4 F4 |
+"Db7"F4 E2 D2 "C7"C8 | "C7"C8 D4 E4 | "Am7"E4 D2 C2 "D"D, _B,7 | "D"_B,7 z "A7"C,,2 C,2 _B,2 E2 |
+"F"F,,,2 F,,2 C,2 A,6 z4 | "F"z8 "A"z8 | "E7"A4 _A4 _A4 =A4 | "E7"A4 _A4 "Dbm7"_A8 |
+"E7"A,4 _A,4 _A,4 =A,4 | "E7"F,4 E,4 "C"A,4 F,,,4 | "E7"A4 _A4 "Em7"_A4 =A4 | "E7"A4 _A4 _A8 |
+"A"_A,4 ^F,4 "Dbm7"G,4 _A,4 | "Ab7"A,4 B,4 "Dbm7"_A,4 E,,4 | "Abm7"B,,,4 B,,4- "Dbm7"B,,4 B,4 | "F#m"B,4 B,,4- "E"B,,4 B,4 |
+"Dbm7"B,4 B,,8 B,4 | "B7"B,4 B,,4- "Eb7"B,,4 ^F,4 | "Ebm7"A4 B4 "Dbm7"_A4 B4 | "Ebm7"A4 B4 "Dbm7"_A4 B4 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% SUITE QUILOMBO (Final), by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/suite-quilombo_final.html (file
+% https://www.beakauffmann.com/mpb_s/som/suite-quilombo_final.mid, sha256
+% 726fca70d0313facffc0d86d8f834ebe985aff51f137d99295298a58413d6248), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SUITE QUILOMBO (Final)
+M:2/4
+L:1/16
+Q:1/4=103.000048
+% Exact tempo 103.0000480666891 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"G z B z B z3 | "D"A z c z c z3 | "G"B z B z d z B z | "D"A z A z A z3 |
+"G"G z B z B z3 | "D"A z c z c z3 | "D7"d z d z e z ^f z | "G"g z g z g z3 |
+"G"g2 b2 b2 z2 | "D7"a2 c'2 c'2 z2 | "G"b2 b2 d'2 b2 | "D"a2 a2 a2 z2 |
+"G"g2 b2 b2 z2 | "D7"a2 c'2 c'2 z2 | "D7"d'2 d'2 e'2 ^f'2 | "G"g'2 g'2 g'2 z2 |
+"D"^f'2 ^f'2 a'2 ^f'2 | "A7"^f'3 z e'2 a2 | "A7"g'2 g'2 b'2 g'2 | "D"g'3 z ^f'2 ^f'2 |
+"A7"e'2 e'2 a2 a2 | "D"^f'3 z3 ^f'2 | "A7"e'2 e'2 a2 a2 | "D"d'3 z3 ^f'2 |
+"D"d'2 z4 ^f'2 | "D"d'2 z4 ^f'2 | "A7"e'2 e'2 a2 a2 | "D"d'3 z3 d'2 |
+"D7"c''2 c''2 e''2 c''2 | "G"c''3 z b'2 b'2 | "F#m7"a'2 a'2 d'2 d'2 | "G"g'2 z2 g'2 z2 |
+"G"G z B z B z3 | "D"A z c z c z3 | "G"B z B z d z B z | "D"A z A z A z3 |
+"G"G z B z B z3 | "D"A z c z c z3 | "D7"d z d z e z ^f z | "G"g z g z g z3 |
+"G"g2 b2 b2 z2 | "D7"a2 c'2 c'2 z2 | "G"b2 b2 d'2 b2 | "D"a2 a2 a2 z2 |
+"G"g2 b2 b2 z2 | "D7"a2 c'2 c'2 z2 | "D7"d'2 d'2 e'2 ^f'2 | "G"g'2 g'2 g'2 z2 |
+"D"^f'2 ^f'2 a'2 ^f'2 | "A7"^f'3 z e'2 a2 | "A7"g'2 g'2 b'2 g'2 | "D"g'3 z ^f'2 ^f'2 |
+"A7"e'2 e'2 a2 a2 | "D"^f'3 z3 ^f'2 | "A7"e'2 e'2 a2 a2 | "D"d'3 z3 ^f'2 |
+"D"d'2 z4 ^f'2 | "D"d'2 z4 ^f'2 | "A7"e'2 e'2 a2 a2 | "D"d'3 z3 d'2 |
+"D7"c''2 c''2 e''2 c''2 | "G"c''3 z b'2 b'2 | "F#m7"a'2 a'2 d'2 d'2 | "G"g'2 z2 g'2 z2 |

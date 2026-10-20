@@ -1,0 +1,35 @@
+%abc-2.1
+% Alcina HWV 34, by Handel. Score published on MuseScore (artist: Georg Friedrich Händel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Handel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/37/QmNPw9sReWEZiCZwfXLVxsqZcsp8eDn1DTQFMYPGyHAfyp.mid (sha256
+% 6992ab6dcf0e0a55498801b5d8edbcdf05118f577721c4374ba9170d024dda08): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Alcina HWV 34
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"z12 | "G"z12 | "Cm"z12 | "Bb"z12 |
+"C7"z12 | "Fm"z12 | "G"z12 | "G7"z12 |
+"Cm"z12 | "G7"z12 | "Cm"z12 | "C7"z12 |
+"Fm"z12 | "G7"z12 | "G"z12 | "Cm"z4 c8 |
+"Cm"c8 _A2 G2 | "Cm"G12 | "Cm"z8 G4 | "G"g4 f8 |
+"Cm"_e2 d2 c8 | "Bb"z12 | "Eb"z12 | "C7"g4 c4 z4 |
+"Fm"_a2 g2 f4 z4 | "Bb7"f4 _A6 _A2 | "Cm7"_A4 G4 z4 | "Eb"z4 _e6 _e2 |
+"Bb"_e4 d4 z4 | "Em7"z4 f6 f2 | "Cm"f2 _e2 _e4 z4 | "Cm"_e2 d2 c2 _B2 A2 G2 |
+"D"G4 ^F4 z4 | "D7"^f12 | "Gm"g4 d4 z4 | "Em7"g4 f8 |
+"D7"_e4 d8 | "Eb"g4 c8 | "D"d8 z4 | "D7"_e8 _e4 |
+"Gm"_e2 d2 d4 z4 | "D"c8 d4 | "Gm"_B2 A2 G4 z4 | "Cm"g2 ^f2 g4 z4 |
+"Gm"G2 ^F2 G4 z4 | "Eb7"_a4 g8 | "D"g4 ^f8 | "Gm"z4 g4 f4 |
+"Cm"_e4 d4 c4 | "D"_B2 c2 A8 | "G"G12 | "Eb"z12 |
+"G7"z12 | "Cm"z12 | "Em7"z12 | "C7"e8 g4 |
+"C7"_B12 | "C7"g4 e4 c4 | "Fm"_A4 f4 z4 | "F7"^f8 =f4 |
+"Bbm"_d2 c2 _B4 z4 | "C7"_d4 c6 _B2 | "Fm"_A2 G2 F4 z4 | "G7"z4 B6 B2 |

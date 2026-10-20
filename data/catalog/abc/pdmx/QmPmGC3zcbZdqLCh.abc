@@ -1,0 +1,30 @@
+%abc-2.1
+% Deh Vieni Alla Finestra, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/31/QmPmGC3zcbZdqLChCTD846b2jREKrzNHAqL6S7K7W5e9VF.mid (sha256
+% d56f26b5b7c2e4519ceb1074895f5a5e12aba0ee9383e7508d17541817eb1a93): melody track 0, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Deh Vieni Alla Finestra
+M:6/8
+L:1/16
+Q:1/4=67.999764
+% Exact tempo 67.99976426748387 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d e ^f g a ^f d z ^f z a z | "Em7"g a b _d' =d' b g z b z =d' z | "A"A B _d =d e ^f g ^f g e _d e | "D"d ^f d A ^F A D3 z3 |
+"D"d e ^f g a ^f d z ^f z a z | "Em7"g a b _d' =d' b g z b z =d' z | "A"A B _d =d e _d A z _d z e z | "D"E ^F G A B _d =d _d =d A ^F =D |
+"D"d e ^f g a ^f d z ^f z A z | "E7"_A B e B _A B =A _d e _d =A _d | "Bm7"^F A d A ^f d _d e a _d B _a | "A"A _d e a e _d A _d e _d A _d |
+"E7"A d ^f d A d _A B e B _A B | "A"A e _d A E _D E A A, z A, z | "B7"^F _d a _d ^F _d ^F B _e B ^F B | "Am7"G B e B G B c e a e c e |
+"D7"D d g a g d D d ^f a ^f d | "G"g a b c' d' b g z b z d' z | "Bm7"d e ^f g a d g z b z d' z | "D"^F d a d a d ^F d _b d _b d |
+"G7"G d b d b d A d ^f d g _d | "A7"d A ^F D ^f d _d =d e ^f g e | "A7"d e ^f g a ^f e ^f g a b _d' | "D"d' a ^f d A ^F D3 z3 |
+"D"d e ^f g a ^f d z ^f z a z | "Em7"g a b _d' =d' b g z b z =d' z | "A"A B _d =d e _d A z _d z e z | "D"E ^F G A B _d =d _d =d A ^F =D |
+"Bm"d e ^f g a ^f d z ^f z A z | "A"_A B e B _A B =A _d e _d =A _d | "Bm7"^F A d A ^f d _d e a _d B _a | "A"A _d e a e _d A _d e _d A _d |
+"E7"A d ^f d A d _A B e B _A B | "A"A e _d A E _D E A A, z A, z | "B7"^F _d a _d ^F _d ^F B _e B ^F B | "Am7"G B e B G B c e a e c e |
+"D7"D d g a g d D d ^f a ^f d | "G"g a b c' d' b g z b z d' z | "Bm7"d e ^f g a d g z b z d' z | "D"^F d a d a d ^F d _b d _b d |
+"G7"G d b d b d A d ^f d g _d | "A7"d A ^F D ^f d _d =d e ^f g e | "A7"d e ^f g a ^f e ^f g a b _d' | "D"d'3 z9 |

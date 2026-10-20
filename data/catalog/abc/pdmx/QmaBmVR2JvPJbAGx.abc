@@ -1,0 +1,35 @@
+%abc-2.1
+% Fuge in g-Moll, by Johann Sebastian Bach. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/12/QmaBmVR2JvPJbAGxP1xRCnf5rcpzPbdkCvKQgJJ5jEs6AF.mid (sha256
+% 1affb10d345eb1e7f5dd0ef0e1ba7f5b3c0fac6a9a7434394051d6054eb82659): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fuge in g-Moll
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"G4 d4 _B _B5 A2 | "G"G2 _B2 A2 G2 ^F2 A2 D4 | "G"G2 D2 A2 D2 _B2 A G A2 D2 | "G"G2 D G A2 D A _B2 A G A D d c |
+"G"_B A G _B A G ^F A G D G A _B c d e | "G"f e d f e d _d e =d2 A2 =d2 e2 | "G"f g f g a g a f a g a _b a g f e | "G"f a g a _d a g a =d a g a _d a g a |
+"G"f d _d =d g =d _d =d a =d _d =d g =d _d =d | "G"A E f F G D e E F A, A E d G f B | "G"_e _B a d c d _e c d A g c _B A d _B | "G"c _B c d c a g a _B g ^f g A ^f e ^f |
+"C7"g2 D2 G2 A2 "Gm"_B c _B c d c d _B | "D"d c d _e d c _B A _B d c d ^F d c d | "D"G d c d ^F d c d "A7"_B G ^F G c G ^F G | "D7"d G ^F G c G ^F G "F#m"D2 _B2 C2 A2 |
+"D7"_B,2 D2 G A _B G "Dm"A2 d2 _d2 e2 | "Dm"a _b a g f e d _d =d2 z2 _b2 z2 | "A7"e2 z4 a2 "A"_b _b _b _b _b _b _b _b | "A7"_b _b _b _b _b _b _b _b "Em7"_b _b _b _b _b _b _b _b |
+"A"_b _b _b _b _b _b _b _b "Dm"_b g a _b a g f e | "D7"f2 A2 d2 c2 "G7"_B2 d2 g2 f2 | "C7"_e2 G2 c2 _B2 "F7"A2 c2 f2 _e2 | "Cm7"d4 G g ^f g "D"c4 ^F _B A c |
+"G"_B A G _B A G ^F A "C7"G D E ^F G D G A | "Em"_B G _B c d A d c "G7"_B6 A2 | "Cm7"G2 _B2 A2 G2 "D"^F2 A2 z4 | "D7"G2 D z A2 d2 _B2 A G A2 D z |
+"Cm7"G2 D G A2 D A "D"_B2 A G A D d c | "Cm7"_B A G _B A G ^F A G _B c d _e _B A G | "D7"^F A _B c d A G =F "A7"_E G A _B c G =F _E | "Gm7"D F G A _B d c _B "F7"A c d _e f g f _e |
+"Bb"d f _e d c _B A c "Am"_B F G A _B c _B A | "Gm"d e d e f e f d "F"f _e f g f _e d c | "F"d f _e f A f _e f "Dm7"_B f _e f A f _e f | "F"d _B A _B _e _B A _B "F7"f _B A _B _e _B A _B |
+"D7"_B c d _B _e d c _e "Gm"d c d _e d c _B d | "F"c _B c d c _B A c "C"_B A _B c _B A G _B | "C"A _E f G F _E _A F G D _e F _E D G _E | "C"F C d _E D C F D _E G c _B A G F _E |
+"Bb"D _E F G A _B c A "D7"_B F G A _B c _B c | "Bb"d e d e f e f d "F"f e f g f G f _E | "F"g g g g g g g g "Dm7"g g g g g g g g | "F"g g g g g g g g "Dm7"g g g g g g g g |
+"F7"g _e f g c G F a "Bb"_b a _b c' _b a g f | "C7"_e d _e f _e d c _B "F"a g a _b a g f _e | "Bb"d c d _e d c _B A "Eb"g f g _a g f _e d | "Ab"c B c d c d _e c "G7"f _E D C B, _a g f |
+"Cm"_e8- "Fm"_e c d _e f g _a f | "G"B c d B G F _E D "C"c D C F g C B, D | "C"_e G, C D _E F d F "F7"c _E _e G d F c _A | "C"B _E d C G2 D2 "G7"c2 G2 d2 G2 |
+"C"_e2 d c d2 G2 "Cm"c2 G c d2 G d | "G"_e2 d c d G g f "Cm"_e d c _e d c B d | "Cm"c g _e g c _e G _B "F"A c A c F A C _E | "Bb"D f d f _B d F A "Eb"G _B G _B _E G _B, D |
+"Am"C _e c _e A c =E G "D"^F A ^F A D ^F A, C | "Gm"_B,2 G2 A,2 ^F2 G4 z4 | "F#"G _B A G d A D c "A7"_B d c _B f c F _e | "Bb"d f _e d g d G f "C"=e g f =e a =e A g |
+"D"^f _e d c g d a d "Gm"_b _a g =f g =f _e d | "F7"_e4 a4 "Cm7"d4 g4 | "D7"c4 ^f4 "Gm"g d c _B A _B G A | "C7"_B c d c g _e a c "Gm"_b a g a ^f g ^f g |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphony No.9 Op.95, by Antonin Dvorak. Score published on MuseScore (artist: Antonín DvoÅák),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonin Dvorak (died 1881,
+% Wikidata Q20820820).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/24/QmPHP97a7i9e2GnRnZGrr4paPXL7K7stXMP1UBuwKK1svs.mid (sha256
+% cce9aef78459b04095c301ac0f86909a2a0af2f42b0fac4a56651dba629a2ff9): melody track 17, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.9 Op.95
+M:4/4
+L:1/16
+Q:1/4=52.000007
+% Exact tempo 52.00000693333426 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z8 "Gm7"z8 | "E"z8 "Db"z8 | "A"z8 "F#m"z8 | "Dbm"z16 |
+"Db"_A,6 F,2 _A,8 | "Bbm7"_A,2 _A,2 _A,4- "Db"_A,8 | "Db"_A,8 F,8 | "Db"^F,16 |
+"Db"F,8 F,8 | "F#"^F,8 "Db"=F,8 | "Ebm7"_D,16 | "F#"_D,16 |
+"F#"_D,16 | "F#"_D,16 | "Db"F,16 | "Db"^F,4 _E,3 =F, ^F,8 |
+"Db"F,4 _E,4 "Bbm7"F,8 | "Ab"^F,8 "Db"=F,8 | "Ebm7"z8 "Db"z8 | "Ebm7"z16 |
+"Db"z16 | "Db"z8 "Em7"z8 | "Db"z8 "Bb"z8 | "F#"z8 "Ebm"z8 |
+"Db"z16 | "Db"z8 _A,8 | "Db"_A,16 | "Db"_B,2 _D2 C2 _A,2 "Bbm"_B,8 |
+"Db"_A,16 | "Db"_B,2 _D2 C2 _A,2 "Bbm"_B,8 | "Db"_B,2 _D2 C2 _A,2 "Bbm"_B,8 | "Db"_B,2 _D2 C2 _A,2 _B,2 ^F,2 _A,2 =F,2 |
+"Db"_B,2 _D2 C2 _A,2 _B,2 ^F,2 _A,2 =F,2 | [M:2/4]"Db"_B,2 ^F,2 _A,2 =F,2 | [M:4/4]"F#m"_B,4 A,4- "A7"A,8 | "Db"_A,16 |
+"Db"^F,4 _B,3 _A, ^F,2 _B,2 _A,2 ^F,2 | "Db"F,4 _E,4 "Bbm7"F,8 | "F#"_D,8 "Db"_E,8 | "Ebm7"z8 "Db"z8 |
+"F#"_D8- "Ebm"_D8 | "Db"_A,16 | "Db"_A,2 z14 | "Db"z16 |
+"Db"z8 "Ab"z8 | "Dbm"_D _D _D _D _D _D _D _D "F#7"A, A, A, A, A, A, A, A, | "Dbm"_D _D _D _D _D _D _D _D "F#7"A, A, A, A, A, A, A, A, | "Dbm7"_A, _A, _A, _A, _A, _A, _A, _A, ^F, ^F, ^F, ^F, B, B, B, B, |
+"Abm"E E E E E E E E "Db"E E E E E E E E | "Dbm"_D _D _D _D _D _D _D _D "F#7"A, A, A, A, A, A, A, A, | "Dbm"_D _D _D _D _D _D _D _D "F#7"A A A A A A A A | "Dbm"_D _D _D _D _D B, B, B, "A"B, A, A, A, A, A, A, A, |
+"Dbm"_D, _A,2 _D E _A2 _d _d8 | "Dbm"_d2 z14 | "F#m7"z8 "D7"z8 | "Bbm7"z8 "Ab7"z8 |
+"F#m7"z8 "Abm7"z8 | "Dbm"z8 "E"z8 | "Dbm"z8 "A"z8 | "B"z8 "E"z8 |
+"D"z8 "F#m7"z8 | "F#m7"z8 "Ab7"z8 | "Dbm"z16 | "Dbm"_D _D _D _D _D _D _D _D "Ebm7"A, A, A, A, A, A, A, A, |

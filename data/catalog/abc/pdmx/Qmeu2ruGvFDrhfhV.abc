@@ -1,0 +1,22 @@
+%abc-2.1
+% Jesus Loves Me, by William B. Bradbury. Score published on MuseScore (artist: William Batchelder
+% Bradbury), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): William B. Bradbury (died 1868,
+% Wikidata Q322931).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/46/Qmeu2ruGvFDrhfhVQ96C7T2KoLk1rReE7fSWeZfZMoimgA.mid (sha256
+% 4aeb2d088684aa251758a50e30fe82bf2fc1461fabbd52f762c89ccc91660bdb): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jesus Loves Me
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G2 E2 E2 D2 | "C"E2 G2 G4 | "C"A2 A2 c2 A2 | "C"A2 G2 G4 |
+"C"G2 E2 E2 D2 | "C"E2 G2 G4 | "C"A2 A2 G2 C2 | "C"E2 D2 C4 |
+"C"G4 E2 G2 | "C"A2 c6 | "C"G4 E2 C2 | "C"E2 D6 |
+"C"G4 E2 G2 | "C"A2 c4 A2 | "C"G2 C2 E2 D2 | "C"C8 |

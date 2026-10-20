@@ -1,0 +1,21 @@
+%abc-2.1
+% Zu Rauch, by Johannes Brahms. Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/45/QmSTeyJDLdrHYKmo169ZcZVgRZ498AGpMt18dzoWXeafG8.mid (sha256
+% b853214206393a333dc56395b7e49c575ac228549fce9c8751cff642bbacc829): melody track 0, bars 0-11
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Zu Rauch
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb7"z14 _e'2 | "Bb7"d'4 z4 "D"z2 g2 _b2 f2 | "Bb"g2 d2 _e2 f2 "Fm7"g2 _e2 f2 _a2 | "Dm7"g2 _e'2 f'2 _e'2 "Bb7"d'4 c'4 |
+"Gm"_e'4 f'2 ^f'2 "C7"g'4 =f'2 _e'2 | "Fm"d'4 z4 "G7"z2 g2 _b2 f2 | "Bb7"g2 d2 _e2 f2 "Eb"g2 _e2 f2 _a2 | "Dm7"g2 _e'2 f'2 _e'2 "Bb7"d'4 c'4 |
+"Gm"_e'4 f'2 ^f'2 "C7"g'4 =f'2 _e'2 | "Fm"d'4 z4 "G7"z2 g2 _b2 f2 | "Bb7"g2 d2 _e2 f2 "Eb"g2 _e2 f2 _a2 |

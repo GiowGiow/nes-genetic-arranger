@@ -1,0 +1,34 @@
+%abc-2.1
+% Pour remercier la pluie au matin 6 épigraphes antiques 6, by Claude Debussy. Score published on
+% MuseScore (artist: Claude Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/44/QmZtBw4yJTosH6YfKkyWAf9RFTPXac6esriXSP73xCoTCj.mid (sha256
+% cc40bed876e4f9ea8aab4152fb4e3e9041a5bb11244cea820f1d295d22461e1b): melody track 0, bars 0-62
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pour remercier la pluie au matin 6 épigraphes antiques 6
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "G"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "G"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "F#"B _B A _B =B _B A _B "B"=B _B A _B =B _B A _B |
+"Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Cm"B _B A _B =B _B A _B "Eb7"=B _B A _B =B _B A _B |
+"Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb"_e' _e _e _e B _e _e _e "Bbm7"B _e _e _e _d' _d _d _d | "Cm7"_e' _e _e _e f' f f f "Dm7"g' g g g f' f f f |
+"Eb"_e' _e _e _e _B _e _e _e "B"=b =B =B =B ^F =B =B =B | "C"c' c c c G c c c "E"e' e e e d e e e | "G"g' g d G B _B _A _B _B _B _A _B _B _B _A _B | "G7"B _B _A _B _B _B _A _B _B _B _A _B _B _B _A _B |
+"C"B _B _A _B _B _B _A _B "G7"_B _B _A _B _B _B _A _B | "Em"B _B _A _B f _B _A _B "Eb"e _B _A _B _e _B _A _B | "G"B _B _A _B _B _B _A _B "G7"_B _B _A _B _B _B _A _B | "Em"B _B _A _B ^f _B _A _B "Em7"e _B _A _B d _B _A _B |
+"Ab"z16 | "C"z16 | "C"z4 f' e'2 d' c'4 d' e'2 f' | "C"g'15 z |
+"Ab"z4 f' e'2 d' c'4 d' e'2 f' | "C"g'2 f'2 e'2 d'2 c'4 d' e'2 f' | "Ab"g' _a'2 g' f' e'2 d' c' e' f' _a' _b' _a' f' e' | "C"c' e' f' _a' _b' _a' f' e' c' e' f' _a' _b' _a' _a' _b' |
+"Em"b' g' b g B _B A _B "Em7"=B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B "Em"=B _B A _B =B _B A _B | "A7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "G"B _B A _B =B _B A _B "Em"=B _B A _B =B _B A _B |
+"Eb"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "F#"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "F#"B _B A _B =B _B A _B "Eb"=B _B A _B =B _B A _B |
+"A7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Em7"B _B A _B =B _B A _B "E7"=B _B A _B =B _B A _B | "Em"B _B A _B =B _B A _B "F#7"=B _B A _B =B _B A _B | "Dm"B _B A _B =B _B A _B "E7"=B _B A _B =B _B A _B |
+"B"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "B"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "A"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Fm7"B _B A _B =B _B A _B "Abm"=B _B A _B =B _B A _B |
+"G"B _B A _B =B _B A _B "C"=B _B A _B =B _B A _B | "G"B _B A _B =B _B A _B "C"=B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Cm"B _B A _B =B _B A _B "Eb7"=B _B A _B =B _B A _B |
+"Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B =B _B A _B =B _B A _B | "Db"B _B A _B =B _B A _B "Eb7"=B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B "Eb"=B _B A _B =B _B A _B |
+"Db"B _B A _B =B _B A _B "Eb7"=B _B A _B =B _B A _B | "Eb7"B _B A _B =B _B A _B "G"=B _B A _B =B _B A _A | "G"G5 A2 c "Bm7"d3 f g4 | "Dm7"g2 f2 d2 f2 "Dm"d4 c A2 c |
+"F7"A8 "Dm7"G4 F4 | "G"G4 z4 "Am"z8 | "Dm"z8 "G"z4 b _b a _b | "Am"z8 "Dm"B2 _B2 A2 _B2 |
+"Dm"z4 G B3 z8 | "G"z16 |

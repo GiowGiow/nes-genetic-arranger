@@ -1,0 +1,25 @@
+%abc-2.1
+% Lou plang de Nosto Damo, by Trad.. Score published on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/30/QmTLks8AnJ28hpQLTnRVgaSBHE86H6FZLpmMu8F4qTvUzM.mid (sha256
+% cbcbd6efe76336966b374391689efc854698a93367f15de493fba421c37dca32): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lou plang de Nosto Damo
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"d8 c4 | "C"_e4 d4 c4 | "C"_B12 | "C"f8 _e4 |
+"C"g4 f4 _e4 | "C"d12 | "C"_B4 _e4 d4 | "C"G4 G4 c4 |
+"C"A8 _B4 | "C"c4 d8 | "C"c8 z4 | "C"_e12 |
+"C"d12 | "C"c12 | "C"_B8 c4 | "C"d8 G4 |
+"C"c8 _B4 | "C"A12 | "C"_B12 | "C"c8 _e4 |
+"C"d12 | "C"c4 _B4 A4 | "C"_B4 A8 | "C"G12 |
+"C"d4 c4 _B4 | "C"c4 _B4 A4 | "C"G12 | "C"G12 |

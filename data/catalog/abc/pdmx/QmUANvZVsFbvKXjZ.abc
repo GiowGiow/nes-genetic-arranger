@@ -1,0 +1,30 @@
+%abc-2.1
+% La Fille Aux Cheveux De Lin, by Claude Debussy. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/10/QmUANvZVsFbvKXjZkpuC2eJaaAgu48wmPdrjQfiqhW98eG.mid (sha256
+% 10f5958dcc12457c5662c5351fc1de9980065f3e54c7d882647192d89275028e): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La Fille Aux Cheveux De Lin
+M:3/4
+L:1/16
+Q:1/4=43.999979
+% Exact tempo 43.99997946667626 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"_B6 G _E C2 _E G | "Ab"_B2 G _E C2 _E G _E2 _E C | "Eb"_E2 D C _B,8 | "Eb"_B,8 C2 _E2 |
+"Gm7"F6 _B2 G2 _E G | "Gm7"F2 _B2 G4 c4 | "C"c4 G6 _A2 | "Eb7"_B6 G _E C2 _E G |
+"Cm7"_B2 G _E C2 _E G _E2 _E C | "Eb"_E2 D C _B,8 | "Eb"_B,8 z2 G, _B, | "Eb"z12 |
+"Eb"C2 _E F _A2 _B2 c2 _e2 | "Eb"_e2 d c _B5 _A G F | "Fm7"_E F G3 F _E3 D C2 | "Fm7"C _B, _A,3 _B, _D F _A _B _d f |
+"Fm7"_a2 g f _e8 | "Bb7"g2 f _e c6 _B _A | "G7"G2 F _E C6 C A, | "C"C8 A,2 C A, |
+"C"C8 A2 c A | "Am7"c2 G A c d e g c'4 | "F"c'2 _b c' g2 f3 _e d c | "Fm7"c2 _B c G2 F4 _E F |
+"Bb"z12 | "Cm7"G3 _E C2 _E2 G2 _B2 | "Ab"G2 _E2 C4 _E4 | "Cm7"G3 _E G2 _B2 c2 _e2 |
+"Fm7"g2 _e2 G4 _B,4 | "Fm7"z12 | "Ab"z8 _b4 | "Ab"_b6 g _e c2 _e g |
+"Ab"_b2 g _e c2 _e g _e2 _e c | "Cm"_e4 d4 c4 | "Eb"_B6 _A2 G2 F2 | "Fm7"_E F G3 F _E3 D C2 |
+"Bb7"C _B, C3 _B, C3 _B, C2 | "Fm"z _E F _A _B c _e f _a _b z c' | "Eb"_e'12 | "Eb"_e'12 |
+"Eb"_e4 z8 | "Eb"z12 |

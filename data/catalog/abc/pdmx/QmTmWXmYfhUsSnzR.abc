@@ -1,0 +1,28 @@
+%abc-2.1
+% King Arthur Z.628, by Henry Purcell (1659 - 1695). Score published on MuseScore (artist: Henry
+% Purcell), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/31/QmTmWXmYfhUsSnzRmSHW64Zhg2VwLW6XrQSPLDaVFfRSLn.mid (sha256
+% ee209b2e98728cb07c7f1c4751995d5f9b7e94a4b5c9f89cbccc82edf51af40e): melody track 3, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:King Arthur Z.628
+M:2/2
+L:1/16
+Q:1/4=55.999978
+% Exact tempo 55.99997760000896 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z16 | "Cm7"z16 | "Am"z16 | "Cm"z16 |
+"Gm"z16 | "Dm"z16 | "Eb"z16 | "G7"z16 |
+"Cm"z4 C, z C, z D, D, D, D, D, D, D, z | "G7"_E, _E, _E, _E, _E, _E, _E, z _E, _E, _E, _E, _E, _E, _E, z | "Cm7"F, F, F, F, F, F, F, z F, F, F, F, F, F, F, z | "Ab"G, G, G, G, G, G, G, z ^F, z ^F, z ^F, z ^F, z |
+"G"G, z G, z G,4 z4 A, z A, z | "G7"C C C C C C C z C C C C C C C z | "Em7"D D D D D D D D D D D D D D D z | "Fm7"C z C z C4 z8 |
+"D7"z16 | "C"z8 D D D D D D D z | "Dm7"D D D C C C C z C C C C C C C z | "G7"_B, z A, z A, z A, z _B, _B, _B, _B, _B, _B, _B, z |
+"C7"_A, _A, _A, _A, _A, _A, C z C z F, z F, z F, z | "G7"F, F, F, F, F, F, F, z G, G, G, G, G, G, G, z | "Fm"C, z C, z C, z C, z G, G, G, G, G, G, G, G, | "C7"G, z15 |
+"Dm7"z4 F, z F, z G, G, G, G, G, G, G, z | "Cm7"_A, _A, _A, _A, _A, _A, _A, z _B, _B, _B, _B, _B, _B, _B, z | "Bb"C C C C C C C z C C C C C C C z | "G"D D D D D D D z _E _E _E _E _E _E _E z |
+"D7"F F F F F F F z5 _E z D z | "Gm7"D z D z D z C z _E _E _E _E _E _E _E z | "G7"C C C C C C C C C z3 C z C z | "Dm7"C z _B, z C C C C C C C z _A, z _A, z |
+"Dm7"_A,4 G,4 G, z G, z G, z F, z | "Am7"F, z _E, z _E, z _E, z D,6 C, z | "Cm"C,8 z8 | [M:2/4]"C"z8 |

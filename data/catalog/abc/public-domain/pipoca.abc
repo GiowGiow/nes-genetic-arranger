@@ -1,0 +1,35 @@
+%abc-2.1
+% PIPOCA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/pipoca.html (file
+% https://www.beakauffmann.com/mpb_p/som/pipoca.mid, sha256
+% cd5e987765797978c0d715a7ac9f88c9d1ca2d8f997fb041df2361c9de7ac6e2), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PIPOCA
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"B"z6 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "F7"a2 a2 g'2 g'2 |
+"Gm7"f'3 f z2 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "C7"a2 c'2 g2 c'2 |
+"Dm7"f a2 c' f'2 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "F7"a2 a2 g'2 g'2 |
+"Gm7"f'3 f z2 _B2 | "F7"_A _d2 _d _d2 ^F2 | "F#"F _B2 _B _B _B,2 C | "F"D2 F2 C2 D2 |
+"Bb"_B,4 z2 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "F7"a2 a2 g'2 g'2 |
+"Gm7"f'3 f z2 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "C7"a2 c'2 g2 c'2 |
+"Dm7"f a2 c' f'2 D2 | "F"_E4 z2 =E2 | "F"F4 z2 _b2 | "F7"a2 a2 g'2 g'2 |
+"Gm7"f'3 f z2 _B2 | "F7"_A _d2 _d _d2 ^F2 | "F#"F _B2 _B _B _B,2 C | "F"D2 F2 C2 D2 |
+"Bb"_B,4 z _B2 c | "A7"d2 d2 c2 d2 | "Bb"_B3 d z _B,2 C | "Bb"D2 D2 D2 G,2 |
+"C"_E3 _E z c2 d | "D7"_e2 _e2 d2 d2 | "Eb"c2 c2 _B2 _B2 | "Dm7"A2 A2 G2 G2 |
+"F"F4 z _B2 c | "A7"d2 d2 c2 d2 | "Bb"_B3 d z _B,2 C | "Bb"D2 D2 G2 G2 |
+"C"G3 G z ^f2 g | "C"a g _e c A G _E C | "Gm"_B, D G _B d g _b d' | "D7"_d a e'2 c =d' a _b |
+"Gm"g4 z _B2 c | "A7"d2 d2 c2 d2 | "Bb"_B3 d z _B,2 C | "Bb"D2 D2 D2 G,2 |
+"C"_E3 _E z c2 d | "D7"_e2 _e2 d2 d2 | "Eb"c2 c2 _B2 _B2 | "Dm7"A2 A2 G2 G2 |
+"F"F4 z _B2 c | "A7"d2 d2 c2 d2 | "Bb"_B3 d z _B,2 C | "Bb"D2 D2 G2 G2 |
+"C"G3 G z ^f2 g | "C"a g _e c A G _E C | "Gm"_B, D G _B d g _b d' | "D7"_d a e'2 c =d' a _b |

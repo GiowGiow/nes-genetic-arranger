@@ -1,0 +1,27 @@
+%abc-2.1
+% Sechs kleine Präludien BWV 933-938, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/4/Qma58kekAvv9TsecniR4ja9nDEv3GD4os1aDq9r8ZfzvD8.mid (sha256
+% 5c0171b3be4a6d208f8aaabe2ed6f166831bf465dd13ab42943869e5d893968a): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sechs kleine Präludien BWV 933-938
+M:4/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E E3 z2 F z G G3 z2 c z | "G"F F F z d z F z "C"F2 E z5 | "G"D D3 z2 E z G F F2 z2 F2 | "C"E z G z G F G A "G"E E D D z G B d |
+"C"e d c B A G ^F E "D7"^F D ^F A ^F D ^F A | "B"d c B A G ^F E D "C"E C E G E C E G | "A7"c B A G ^F G A ^F "D"D E ^F G A B c A | "E7"d z G z B A G ^F "G"G D B, z5 |
+"C"E E3 z2 F z G G3 z2 c z | "G"F F F z d z F z "C"F2 E z5 | "G"D D3 z2 E z G F F2 z2 F2 | "C"E z G z G F G A "G"E E D D z G B d |
+"C"e d c B A G ^F E "D7"^F D ^F A ^F D ^F A | "B"d c B A G ^F E D "C"E C E G E C E G | "A7"c B A G ^F G A ^F "D"D E ^F G A B c A | "E7"d z G z B A G ^F "G"G D B, z5 |
+"G"B G3 z2 c z d B3 z2 e2 | "E"f z f z f2 e z "Am"d2 c z5 | "Em"g4 z2 _B z "F"A A3 z2 a z | "C"b2 c' z f z e z "G"f f e z2 G B d |
+"C"g f e d c _B A G A F A c A F A c | "D7"f e d c B A G F "E7"G F G d G F G d | "Dm7"e d c B A G F E "G7"D F A c B G B d | "Em"g z c z e d c B "C"c G E C z4 |
+"G"B G3 z2 c z d B3 z2 e2 | "E"f z f z f2 e z "Am"d2 c z5 | "Em"g4 z2 _B z "F"A A3 z2 a z | "C"b2 c' z f z e z "G"f f e z2 G B d |
+"C"g f e d c _B A G A F A c A F A c | "D7"f e d c B A G F "E7"G F G d G F G d | "Dm7"e d c B A G F E "G7"D F A c B G B d | "Em"g z c z e d c B "C"c G E C z4 |

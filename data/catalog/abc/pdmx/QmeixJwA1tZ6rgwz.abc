@@ -1,0 +1,35 @@
+%abc-2.1
+% le chanteur, by Balavoine. Score published on MuseScore (artist: Daniel Balavoine), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Balavoine (died 1914, Wikidata
+% Q16273156).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/25/QmeixJwA1tZ6rgwzucP9BYPjdd9meAMCkZULpgpqcnatCx.mid (sha256
+% c6ec11c941fa7d9bc387cae9eb65cb11ede213612b9d8f1e140ad39d80399f2c): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:le chanteur
+M:4/4
+L:1/16
+Q:1/4=124.000248
+% Exact tempo 124.000248000496 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F,4 F,4 "Dm7"F,4 F,4 | "E"E,4 E,4 E,4 E,4 | "F"F,4 F,4 "Dm7"F,4 F,4 | "E"E,4 E,4 E,4 E,4 |
+"A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 "Dbm7"A,,4 A,,4 |
+"Dbm7"E,4 E,4 E,4 E,4 | "Dbm7"E,4 E,4 E,4 E,4 | "D"D,4 D,4 D,4 D,4 | "D"D,4 D,4 D,4 D,4 |
+"Dm"F,4 F,4 F,4 F,4 | "Dm"F,4 F,4 F,4 F,4 | "A"A,,4 A,,4 A,,4 A,,4 | "A"C,4 C,4 "F#m7"C,4 C,4 |
+"F#m7"D,4 D,4 "D"D,4 D,4 | "B7"E,4 E,4 "Dbm7"E,4 E,4 | "B7"E,4 E,4 "Dbm7"E,4 E,4 | "A"A,,4 A,,4 A,,4 A,,4 |
+"A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 "Dbm7"A,,4 A,,4 | "Dbm7"E,4 E,4 E,4 E,4 |
+"Dbm7"E,4 E,4 E,4 E,4 | "D"D,4 D,4 D,4 D,4 | "D"D,4 D,4 D,4 D,4 | "Dm"F,4 F,4 F,4 F,4 |
+"Dm"F,4 F,4 F,4 F,4 | "A"A,,4 A,,4 A,,4 A,,4 | "A"C,4 C,4 "F#m7"C,4 C,4 | "F#m7"D,4 D,4 "D"D,4 D,4 |
+"B7"E,4 E,4 "Dbm7"E,4 E,4 | "B7"E,4 E,4 "Dbm7"E,4 E,4 | "D"D,,4 D,2 D,,2 D,,4 D,2 D,,2 | "F#m"^F,,4 ^F,2 ^F,,2 "D"^F,,4 ^F,2 ^F,,2 |
+"D"D,,4 D,2 D,,2 "D7"C,,4 C,2 C,,2 | "F#m"_D,,4 _D,2 _D,,2 "D7"_D,,4 _D,2 _D,,2 | "D7"C,,4 C,2 C,,2 C,,4 C,2 C,,2 | "D7"C,,4 C,2 C,,2 C,,4 C,2 C,,2 |
+"F#m"_D,,4 _D,2 _D,,2 "Db"_D,,4 _D,2 _D,,2 | "Db"_D,,4 _D,2 _D,,2 _D,,4 _D,2 _D,,2 | "D"D,,4 D,2 D,,2 D,,4 D,2 D,,2 | "F#m"^F,,4 ^F,2 ^F,,2 "D"^F,,4 ^F,2 ^F,,2 |
+"D"D,,4 D,2 D,,2 "D7"C,,4 C,2 C,,2 | "F#m"_D,,4 _D,2 _D,,2 "D7"_D,,4 _D,2 _D,,2 | "D7"C,,4 C,2 C,,2 C,,4 C,2 C,,2 | "D7"C,,4 C,2 C,,2 C,,4 C,2 C,,2 |
+"F#m"_D,,4 _D,2 _D,,2 "Db"_D,,4 _D,2 _D,,2 | "Db"_D,,4 _D,2 _D,,2 _D,,4 _D,2 _D,,2 | "A"A,,,4 A,,2 A,,,2 A,,,4 A,,2 A,,,2 | "A"A,,,4 A,,2 A,,,2 A,,,4 A,,2 A,,,2 |
+"A"A,,,4 A,,2 A,,,2 A,,,4 A,,2 A,,,2 | "A"A,,,4 A,,2 A,,,2 A,,,4 A,,2 A,,,2 | "A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 A,,4 A,,4 |
+"A"A,,4 A,,4 A,,4 A,,4 | "A"A,,4 A,,4 "Dbm7"A,,4 A,,4 | "Dbm7"E,4 E,4 E,4 E,4 | "Dbm7"E,4 E,4 E,4 E,4 |
+"D"D,4 D,4 D,4 D,4 | "D"D,4 D,4 D,4 D,4 | "Dm"F,4 F,4 F,4 F,4 | "Dm"F,4 F,4 F,4 F,4 |

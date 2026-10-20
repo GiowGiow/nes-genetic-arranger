@@ -1,0 +1,36 @@
+%abc-2.1
+% MARIQUINHAS, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/mariquinhas.html (file
+% https://www.beakauffmann.com/mpb_m/som/mariquinhas.mid, sha256
+% 17413b814b2c6018cd6517a44edc2ef7d71f78447449ac3e7f255fb785f81024), from Beatriz Kauffmann's Web
+% Site. Melody track 4, bars 2-66 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MARIQUINHAS
+M:4/4
+L:1/16
+Q:1/4=140.00014
+% Exact tempo 140.00014000014 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm7"z16 | "G7"z16 | "Cm"g2 _e2 c2 G2 "D7"^F8 | "G7"d2 B2 G2 F2 "Ab"_E8 |
+"Cm7"G2 c2 _e2 _a2 "Fm"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Cm"F2 _E2 C2 G2 | "Eb7"g2 _e2 c2 G2 "D7"^F8 | "E7"d2 B2 G2 F2 "Cm7"_E8 |
+"Cm"G2 c2 _e2 _a2 "Bb7"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Cm"C8 | "Cm"g2 _e2 c2 G2 "D7"^F8 | "G7"d2 B2 G2 F2 "Cm"_E8 |
+"Cm7"G2 c2 _e2 _a2 "Bb7"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Ab"F2 _E2 C2 G2 | "Bb"g2 _e2 c2 G2 "D7"^F8 | "E7"d2 B2 G2 F2 "Cm7"_E8 |
+"Ab"G2 c2 _e2 _a2 "Dm7"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Cm"C8 | "Cm7"c2 _e2 g2 _b2 "Bb7"_a2 f2 _B2 _a2 | "Cm7"g2 c2 d2 _e2 "Bb7"f8 |
+"Bb7"_B2 d2 f2 _a2 "Am7"g2 _e2 c2 g2 | "Bb7"f2 d2 _B2 f2 "Cm7"_e8 | "G7"G2 B2 d2 f2 "Cm7"_e2 c2 G2 _e2 | "G7"d2 G2 B2 d2 "Ab"c8 |
+"Cm7"c2 B2 c2 d2 "Ab7"_e2 c'2 _a2 _e2 | "Ab7"c2 _A2 _E2 C2 "G7"B,8 | "Cm7"c2 _e2 g2 _b2 "Bb7"_a2 f2 _B2 _a2 | "Cm7"g2 c2 d2 _e2 "Bb7"f8 |
+"Bb7"_B2 d2 f2 _a2 "Am7"g2 _e2 c2 g2 | "Bb7"f2 d2 _B2 f2 "Cm7"_e8 | "G7"G2 B2 d2 f2 "Cm7"_e2 c2 G2 _e2 | "G7"d2 G2 B2 d2 "Cm"c8 |
+"Cm7"c2 B2 c2 d2 "Ab7"_e2 c'2 _a2 _e2 | "Ab7"c2 _A2 _E2 C2 "G7"B,8 | "Cm"g2 _e2 c2 G2 "D7"^F8 | "G7"d2 B2 G2 F2 "Ab"_E8 |
+"Cm7"G2 c2 _e2 _a2 "Fm"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Cm"F2 _E2 C2 G2 | "Eb7"g2 _e2 c2 G2 "D7"^F8 | "E7"d2 B2 G2 F2 "Cm7"_E8 |
+"Ab"G2 c2 _e2 _a2 "Dm7"g2 f2 d2 B2 | "G7"G2 F2 _E2 D2 "Ab"C8 | "C"e10 a2 g2 _d2 | "G7"d4 c'4 b8 |
+"Bm7"f10 a2 g2 _e2 | "C"e4 d'4 c'8 | "C"e10 a2 g2 _d2 | "G"d4 c'4 b8 |
+"D7"d2 d'2 c'2 a2 ^f2 d2 c2 A2 | "G7"G2 g2 b2 a2 e2 g2 f2 d2 | "C"e10 a2 g2 _d2 | "F"d4 c'4 b8 |
+"G"f10 a2 g2 _e2 | "C"e4 d'4 c'8 | "Gm"e8- "A"e2 g2 f2 e2 | "Fm"e2 d2 _d2 =d2 e4 =d4 |
+"C"d2 c2 G2 E2 "G7"A2 F2 D2 E2 | "C"C2 E2 G2 B2 c8 | "C"e10 a2 g2 _d2 | "G7"d4 c'4 b8 |
+"G7"f10 a2 g2 _e2 | "C"e4 d'4 c'8 | "C"e10 a2 g2 _d2 | "G"d4 c'4 b8 |

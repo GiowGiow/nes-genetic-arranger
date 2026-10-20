@@ -230,29 +230,51 @@ def write_catalog(entries: list[CatalogEntry], path: Path, retrieved: str) -> Pa
 
 
 def add_catalog_parser(commands: argparse._SubParsersAction) -> argparse.ArgumentParser:
-    """Add the `catalog` command (contracts/cli.md) to the subcommands of `main.py`."""
+    """Add the `catalog` command and its subcommands (contracts/cli.md) to `main.py`.
+
+    `catalog crawl` refreshes the MPB links from the site; the other subcommands write the
+    per-source catalog files of the song browser and the redistributable ABC collections.
+    """
+    # Imported here: those modules import this one's neighbors, and the crawl stays usable alone.
+    from catalog.analysis import add_analyze_parser
+    from catalog.authors import add_authors_parser
+    from catalog.collections import add_collection_parsers
+
     catalog = commands.add_parser(
-        "catalog", help="build the app's MPB MIDI catalog (metadata and links only)"
+        "catalog", help="build the song browser's catalogs and the redistributable lead sheets"
     )
-    catalog.add_argument("--out", type=Path, default=DEFAULT_OUT, help="output file")
-    catalog.add_argument(
+    catalog_commands = catalog.add_subparsers(dest="catalog_command", required=True)
+    add_crawl_parser(catalog_commands)
+    add_analyze_parser(catalog_commands)
+    add_authors_parser(catalog_commands)
+    add_collection_parsers(catalog_commands)
+    return catalog
+
+
+def add_crawl_parser(catalog_commands: argparse._SubParsersAction) -> argparse.ArgumentParser:
+    """Add `catalog crawl`: walk the MPB site and write its links (metadata and links only)."""
+    crawl_parser = catalog_commands.add_parser(
+        "crawl", help="crawl the MPB MIDI catalog site (metadata and links only)"
+    )
+    crawl_parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="output file")
+    crawl_parser.add_argument(
         "--cache", type=Path, default=DEFAULT_CACHE, help="folder for downloaded pages, to resume"
     )
-    catalog.add_argument(
+    crawl_parser.add_argument(
         "--delay",
         type=float,
         default=MINIMUM_DELAY_SECONDS,
         metavar="SECONDS",
         help="pause between requests (values below 1.0 are refused)",
     )
-    catalog.add_argument(
+    crawl_parser.add_argument(
         "--letters",
         type=parse_letters,
         default=list(ALL_LETTERS),
         help='only these index pages, e.g. "0-9,a,m" (default: all 27)',
     )
-    catalog.set_defaults(handler=run_catalog)
-    return catalog
+    crawl_parser.set_defaults(handler=run_catalog)
+    return crawl_parser
 
 
 def run_catalog(

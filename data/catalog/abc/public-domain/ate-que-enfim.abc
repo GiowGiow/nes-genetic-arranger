@@ -1,0 +1,35 @@
+%abc-2.1
+% ATÉ QUE ENFIM (Time Is Money), by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/ate-que-enfim.html (file
+% https://www.beakauffmann.com/mpb_a/som/ate-que-enfim.mid, sha256
+% fdb962fcf96093cfe78c94a0fe38faef441117f365da1aa41a00ac0378df1cba), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ATÉ QUE ENFIM (Time Is Money)
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"B4 B2 B2 z2 B2 B4 | "E"z4 e4 d4 B4 | "F#m7"A4 A2 A2 z2 A2 A4 | "Eb"_B4 _B2 _B2 z2 _B2 _B4 |
+"Em7"d4 d2 d2 z2 d2 d4 | "D"z4 d4 B4 A4 | "Gm"G4 _D2 E2 G2 _B2 _d2 e2 | "G"g8 g'4 z4 |
+"Em7"B2 B,2 D2 B z3 e2 z2 d2 | "Em7"z2 B2 z2 G z E2 ^F4 _A2 | "D7"A4 z2 _A2 z2 =A2 z2 B2 | "A7"c2 C2 E2 c z5 c4 |
+"D7"c2 C2 D2 c z3 ^f2 z2 e2 | "D7"z2 c2 z2 A z D2 E4 ^F2 | "Am7"G4 z2 ^F2 z2 G2 z2 A2 | "Em"B2 B,2 D2 B z5 B4 |
+"E7"B6 B2 z2 E4 ^F2 | "E7"_A2 =A4 _B2 =B8 | "A7"_d6 _d2 z2 A4 B2 | "A7"_d2 =d4 _e2 =e8 |
+"D7"^f6 ^f2 z2 d4 e2 | "D7"^f2 g4 _a2 =a4 _b4 | "Em7"b2 ^f4 a2 g2 B4 e2 | "D7"e2 d4 _A2 B2 =A4 D2 |
+"Em7"B2 B,2 D2 B z3 e2 z2 d2 | "Em7"z2 B2 z2 G z E2 ^F4 _A2 | "D7"A4 z2 _A2 z2 =A2 z2 B2 | "A7"c2 C2 E2 c z5 c4 |
+"D7"c2 C2 D2 c z3 ^f2 z2 e2 | "D7"z2 c2 z2 A z D2 E4 ^F2 | "Am7"G4 z2 ^F2 z2 G2 z2 A2 | "Em"B2 B,2 D2 B z5 B4 |
+"E7"B6 B2 z2 e2 z2 d2 | "E7"d2 B4 _A2 E2 _E4 D2 | "A7"_D6 _D2 z2 a2 z2 g2 | "A7"g2 e4 _d2 A2 _A4 G2 |
+"D7"^F6 e'6 b4 | "D7"b2 d'4 c'2 _a2 b4 =a2 | "D7"g2 B4 e4 d4 D2 | "G"G8 g'4 z4 |
+"Em"z4 b2 c'2 b2 c'2 b4 | "B"z2 a4 g2 ^f2 g2 a4 | "C"z4 g2 a2 g2 a2 g4 | "Bb"z2 ^f4 e2 d2 e2 ^f4 |
+"D7"z4 e2 ^f2 e2 ^f2 e4 | "G"z2 d4 c2 B2 c2 d4 | "C"z2 A4 B2 c2 G4 A2 | "F#"B16 |
+"Em"z4 b2 c'2 b2 c'2 b4 | "B"z2 a4 g2 ^f2 g2 a4 | "C"z4 g2 a2 g2 a2 g4 | "Bb"z2 ^f4 e2 d2 e2 ^f4 |
+"D7"z4 e2 ^f2 e2 ^f2 e4 | "Am7"z2 d2 B2 G2 ^F2 A2 c2 e2 | "Em"B2 e2 g2 _b2 =b4 z4 | "Em"z8 e'4 z4 |
+"Em"z4 b2 c'2 b2 c'2 b4 | "B"z2 a4 g2 ^f2 g2 a4 | "C"z4 g2 a2 g2 a2 g4 | "Bb"z2 ^f4 e2 d2 e2 ^f4 |
+"D7"z4 e2 ^f2 e2 ^f2 e4 | "G"z2 d4 c2 B2 c2 d4 | "C"z2 A4 B2 c2 G4 A2 | "F#"B16 |

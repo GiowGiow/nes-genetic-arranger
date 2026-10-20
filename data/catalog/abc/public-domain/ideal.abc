@@ -1,0 +1,36 @@
+%abc-2.1
+% IDEAL, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_i/ideal.html (file
+% https://www.beakauffmann.com/mpb_i/som/ideal.mid, sha256
+% aa0a2d030322bed46aab4f6b95ac1d609eef34883881c60e8e1c8aa8a3301ac3), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:IDEAL
+M:2/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 | "Db"G,, F2 F F2 F2 | "C7"C,, E2 E E2 E2 | "Am"F,, F2 F F2 F2 |
+"Dm7"A,, F2 F F2 F2 | "C7"G,, E2 E E2 E2 | "C7"C,, E2 E E2 E2 | "Dm7"F,, F2 F F2 F2 |
+"F"A,, F2 F F2 F2 | "Db"G,, F2 F F2 F2 | "C7"C,, E2 E E2 E2 | "Am"F,, F2 F F2 F2 |
+"Dm7"A,, F2 F F2 F2 | "Db"F F2 F F2 F2 | "C7"z _D2 _D C2 C2 | "C7"C _D,2 _D, C,2 C,2 |
+"Dm7"C,4 z4 | "Db"G,, F2 F F2 F2 | "C7"C,, E2 E E2 E2 | "Am"F,, F2 F F2 F2 |
+"Dm7"A,, F2 F F2 F2 | "C7"G,, E2 E E2 E2 | "C7"C,, E2 E E2 E2 | "Dm7"F,, F2 F F2 F2 |
+"F"A,, F2 F F2 F2 | "Db"G,, F2 F F2 F2 | "C7"C,, E2 E E2 E2 | "Am"F,, F2 F F2 F2 |
+"Dm7"A,, F2 F F2 F2 | "Db"F F2 F F2 F2 | "C7"z _D2 _D C2 C2 | "C7"C _D,2 _D, C,2 C,2 |
+"Am"C,4 z4 | "A"E, G2 G G2 G2 | "Dm"F, F2 F F2 F2 | "Eb"G, G2 G G2 G2 |
+"B"_A, E2 E E2 F2 | "Dm"A, F2 F F2 F2 | "A7"E, G2 G G2 G2 | "A"D, A,2 A, G,2 G,2 |
+"Dm"F,4 z4 | "A"E, G2 G G2 G2 | "Dm"F, F2 F F2 F2 | "Eb"G, G2 G G2 G2 |
+"B"_A, E2 E E2 F2 | "Dm"A, F2 F F2 F2 | "A7"E, G2 G G2 G2 | "Dm"D3 A,, D,3 A,, |
+"Dm"D,4 z4 | "A"E, G2 G G2 G2 | "Dm"F, F2 F F2 F2 | "Eb"G, G2 G G2 G2 |
+"B"_A, E2 E E2 F2 | "Dm"A, F2 F F2 F2 | "A7"E, G2 G G2 G2 | "A"D, A,2 A, G,2 G,2 |
+"Dm"F,4 z4 | "A"E, G2 G G2 G2 | "Dm"F, F2 F F2 F2 | "Eb"G, G2 G G2 G2 |
+"B"_A, E2 E E2 F2 | "Dm"A, F2 F F2 F2 | "A7"E, G2 G G2 G2 | "Dm"D3 A,, D,3 A,, |

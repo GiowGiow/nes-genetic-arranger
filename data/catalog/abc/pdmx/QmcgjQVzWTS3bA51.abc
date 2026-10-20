@@ -1,0 +1,35 @@
+%abc-2.1
+% Études Op.25, by Frédéric Chopin. Score published on MuseScore (artist: Frédéric Chopin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frédéric Chopin (died 1849,
+% Wikidata Q1268).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/21/QmcgjQVzWTS3bA51emSjoVANNB8B6uCZ6mQMA5qG7jbKWD.mid (sha256
+% e744c2350f18fc1723ab0479d7779ecfaeeaaedf1c6994eaf43bba3f94d14fc0): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études Op.25
+M:2/2
+L:1/16
+Q:1/4=60.499789
+% Exact tempo 60.49978875490427 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"E4 E3 E E4 F4 | "F"E4 C4 E8 | "F"E4 E3 E E4 F4 | "Dm7"E4 C4 E4 D4 |
+"Am"f'' e'' a' _e'' d'' _d'' a' c'' b' _b' c' a' _a' g' c' ^f' | "Am"f' e' a _e' d' _d' a c' b _b c a _a g c ^f | "A"f e A _e d _d A c B _B C A _A G C ^F | "A"F E A, _E D _D A, C B, _B, C, A, _A, =A, =E, C |
+"Dm7"E D F e d e' b d' d' c' f d c F A, C | "Dm7"E D F e d e' b d' d' c' e d c E A, C | "B"A _A B =a _a =a' e' _a' _a' ^f' b _a ^f B _E ^F | "E"A _A B =a _a =a' e' _a' e''4 z4 |
+"Am"f'' e'' a' _e'' d'' _d'' a' c'' b' _b' c' a' _a' g' c' ^f' | "Am"f' e' a _e' d' _d' a c' b _b c a _a g c ^f | "C"f e G _e d _d _B c =B _B =E A _A G C ^F | "C"F E _B, _E D _D _B, C =B, C _B, _D _D _E G, =E |
+"Eb7"A G _B a g a' e' g' a' g' _b a g _B _E G | "Eb7"A G _B a g a' d' g' a' g' _b a g _B _D G | "C"A G _B, c _B a c g c' _b g a' g' c'' a' _b' | "F"d'' c'' f' _a' =a' e' c' f' _d' =d' f _a =a e =d f |
+"G7"e d f e' d' e'' b' d'' a' g' b a g e' g d' | "C"b c' e _e' =e' ^f' =e' g' _b' =b' =e' c'' _d'' =d'' g' _e'' | "Em"e'' _e'' g' d'' _d'' c'' g' b' _b' a' =e' _a' g' ^f' c' =f' | "Em"e' _e' g d' _d' c' g b _b a =e _a g ^f c =f |
+"E"e _e G d _d c G B _B A =E _A G ^F C =F | "E"E _E G, D _D C G, B, _B, A, =B,, _A, G, ^F, =E, G, | "Cm"B, A, C B A b ^f a a g c A G C E, G, | "Abm"B, A, C B A b ^f a a g B A G B, E, G, |
+"F#"E _E ^F =e _e =e' b _e' _e' _d' ^f _e _d ^F _B, _D | "B"E _E ^F =e _e =e' b _e' b'2 z6 | "Em"c'' b' e' _b' a' _a' e' g' ^f' =f' g e' _e' d' g _d' | "Em"c' b e _b a _a e g ^f =f G e _e d G _d |
+"G"c B E _B A _A F G ^F =F G, E _E D G, _D | "G"C B, F, _B, A, _A, F, G, ^F, G, =B,, _A, =A, _B, G, =B, | "Gm"E D F e d e' b d' e' d' f e d F _B, D | "Bb7"E D F e d e' a d' e' d' f e d F _A, D |
+"G"E D F, G F e G d g f d e' d' g' e' f' | "Fm"a' f' c' e'' d'' c'' _a' b' _b' _a' _d' ^f' =f' _e' _a _d' | "G"_d' c' e g _a ^f c g =a ^f =f g b e' g =d' | "C"d' c' e a g f c e a g c f e a e g |
+"A7"g4 g3 g g4 a4 | "C7"g4 e4 g8 | "C7"_b4 _b3 _b _b4 c'4 | "Gm7"_b4 g4 _b8 |
+"Fm7"c'' _b' _d' _a' g' f' _d' _e' f' _e' _a _d' c' _b _e _a | "Ab"c' _b _d a _b _d' _e g _b _a c g _a _b _e _a | "Dbm7"_a' ^f' =a e' _e' _d' =a b =e' _e' =e _d' b =a =e _a | "Em"_a ^f =A =f ^f =a B _e ^f =f _A =e _e d B _d |
+"E"_d B =D _d B _d' _a =d' _d'' b' =d' _d' b =d _A B | "Cm"d c C f _e _a _e g c' b _e _b =a _a _e g | "Ab"f _e ^F =f _e =f' c' ^f' =f'' _e'' ^f' =f' _e' ^f c _e | "Em"^f e E a g c' g b e' _e' g d' _d' c' g b |
+"Dm7"_b a _B _a g =a e g g ^f =A =f ^f g =B ^f | "Em7"^f =f G e e =f A e e _d =F =d =d B A c | "G7"c B F c B c' a f' c'' b' f' c' b f A B | "D7"B A C B A b ^f c' b' a' c' b a c ^F A |
+"E7"A _A B =a _a =a' e' _a' _a' ^f' b _a ^f B D ^F | "E"^F E _A ^f e ^f' _d' e' e' =d' ^f e =d ^F B, =D | "Em"_D B, F, E =D G =D F A _A =D c B e B =d | "E7"g f B a _a c' _a b e' d' _a g' f' =a' f' _a' |
+"E7"f'' e'' _a' _e'' d'' _d'' _a' c'' b' _b' =d' =a' _a' g' =d' ^f' | "E7"f' e' _a _e' d' _d' _a c' b z7 | "Db7"b' _b' d' a' _a' g' d' ^f' =f' e' _a _e' d' _d' _a c' | "G7"b _b d a _a g d ^f =f z7 |

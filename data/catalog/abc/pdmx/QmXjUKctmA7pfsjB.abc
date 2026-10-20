@@ -1,0 +1,35 @@
+%abc-2.1
+% Organ Symphony No.5 Op.42 No.1, by Charles Marie Widor. Score published on MuseScore (artist:
+% Widor Charles-Marie), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Charles Marie Widor (died 1937,
+% Wikidata Q215161).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/26/QmXjUKctmA7pfsjBLikD7B5bfVrAbn4JYTBSs9mtdn7PyY.mid (sha256
+% 1ce83c1e8733e7ec427531fab6db48941d1df869fc4f234e1f49ba663bcc664a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Organ Symphony No.5 Op.42 No.1
+M:4/2
+L:1/16
+Q:1/4=118.000134
+% Exact tempo 118.00013373348487 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"f' e' f' c' a f a c' e' d' e' c' a f a c' d' c' d' c' a f a c' e' d' e' c' a f a c' | "F"f' e' f' c' a f a c' e' d' e' c' a f a c' d' c' d' c' a f a c' e' b e' b g f g b | "C"c' b c' g e c e g b a b g e c e g a g a g e c e g b a b g e c e g | "C"c' b c' g e c e g b a b g e c e g a g a g e c e g b ^f b ^f d c d ^f |
+"G"g ^f g d B G B d a _a =a e _d =A _d e "A7"=a =f =a =f =d =A =d =f =a _a =a e _d =A _d e | "G7"a f a f d A d f b _b =b ^f _e =B _e ^f "B7"=b g =b g =e =B =e g =b _b =b ^f _e =B _e ^f | "C7"b g b g e B e g c' b c' g e c e g "Dm7"c' f c' f d c d f c' a c' a f c f a | "Eb7"c' g c' g e c e g _d' _b _d' _b g _d g _b "C7"=d' _d' =d' _b g =d g _b e' _e' =e' c' _b g _b =e' |
+"F"f' e' f' c' a f a c' e' d' e' c' a f a c' "Dm7"d' c' d' c' a f a c' e' d' e' c' a f a c' | "F"f' e' f' c' a f a c' e' d' e' c' a f a c' "Em7"d' c' d' c' a f a c' e' b e' b g f g b | "C"c' b c' g e c e g b a b g e c e g a g a g e c e g b a b g e c e g | "C"c' b c' g e c e g b a b g e c e g "Bm7"a g a g e c e g b ^f b ^f d c d ^f |
+"G"g ^f g d B G B d g ^f g e c G c d g ^f g d B G B d a _a =a e _d =A _d e | "A7"a _a =a e _d =A _d e =a _a =a e _d =A _d e "Em"b f b f =d B =d f _d' =a _d' =a _a _d _a =a | "Dm"d' _d' =d' a f =d f a =d' _d' =d' a f =d f a b a b a f =d f a c' b c' a f =d f a | "B7"b _b =b ^f _e =B _e ^f =b _b =b ^f _e =B _e ^f "F#m"_d' g _d' g =e _d =e g _e' =b _e' =b _b _e _b =b |
+"Em"e' _e' =e' b g =e g b =e' _e' =e' b g =e g b c' b c' b g =e g b d' b d' b g =e g b | "C7"c' b c' g e c e g c' b c' g e c e g "Am7"d' _d' =d' a f =d f a e' _e' =e' c' _b g _b =e' | "Gm7"f' e' f' d' g f g d' e' _e' =e' _d' _b g _b _d' "Am"_e' _d' _e' a f =e f a c' a c' a =e c =e a | "Em7"_b a _b a f _B f a _b g _b g e _B e g "Db"a g a g e A e g a f a f d A d f |
+"Bb"A ^F A ^F D _B, D ^F _B G _B G D _B, D G "C"G =F G =F D C D =F G E G E D C D E | "F"f e f c A F A c e d e c A F A c "Am"d c d c A F A c e c e c A F A c | "F"F E F C A, F, A, C F E F C A, F, A, C "Dm7"D C D C A, F, A, C D B, D B, A, F, A, B, | "E"e _e =e B _A =E _A B _e _d _e B _A =E _A B "Abm"_d B _d B _A =E _A B _e B _e B _A =E _A B |
+"E"E _E =E B, _A, =E, _A, B, _E _D _E B, _A, =E, _A, B, "F#7"_D B, _D B, _A, =E, _A, B, _D _B, _D _B, _A, =E, _A, _B, | "Eb"_e d _e _B G _E G _B d _B d _B G _E G _B "Eb7"_d _B _d _B G _E G _B g ^f g c _B G _B c | "G"g ^f g d B G B d ^f d ^f d B G B d "G7"=f d =f d B G B d b _b =b =f d =B d =f | "B"b _b =b ^f _e =B _e ^f _b ^f _b ^f _e =B _e ^f "B7"a ^f a ^f _e =B _e ^f _e' a _e' a ^f _e ^f a |
+"Bb"d' _d' =d' _b f =d f _b _e' a _e' a ^f _e ^f a =d' _d' =d' _b =f =d =f _b _e' a _e' a ^f _e ^f a | "Bb"d' _d' =d' _b f =d f _b =d' _d' =d' _b f =d f _b "Gm7"=d' _d' =d' _b f =d f _b =d' _d' =d' _b f =d f _b | "Dm"d' _d' =d' a f =d f a =d' _d' =d' a f =d f a =d' _d' =d' a f =d f a =d' _d' =d' a f =d f a | "Bb7"d' _d' =d' _a f =d f _a =d' _d' =d' _a f =d f _a =d' _d' =d' _a f =d f _a =d' _d' =d' _a f =d f _a |
+"D"d _d =d A ^F =D ^F A _d B _d A ^F =D ^F A B A B A ^F =D ^F A _d A _d A ^F =D ^F A | "D"d _d =d A ^F =D ^F A _d B _d A ^F =D ^F A B A B A ^F =D ^F A _d _A _d _A E =D E _A | "Dbm"a _a =a e _d =A _d e _a ^f _a e _d =A _d e ^f e ^f e _d =A _d e _a e _a e _d =A _d e | "A"A _A =A E _D =A, _D E _A ^F _A E _D =A, _D E ^F E ^F E _D =A, _D E _A _E _A _E B, =A, B, _E |
+"Abm7"e _e =e B _A =E _A B ^f z ^f z3 ^f z ^f d ^f d B ^F B d ^f z ^f z3 ^f z | "E7"^f d ^f d B ^F B d _a z _a z3 _a z "E"_a e _a e _d _A _d e _a z _a z3 _a z | "Dbm"_a ^f _a e _d _A _d e =a e =a e _d =A _d e "Bm7"=a =d =a =d B =A B =d =a ^f =a ^f =d =A =d ^f | "A7"a e a e _d A _d e b g b g e B e g c' g c' g e c e g _d' g _d' g e _d e _d |
+"Db7"_d B _d B _A F _A B _e B _e B _A _E _A B =e _d =e _d B =E B _d f _d f _d B F B _d | "Bbm"^f _d ^f _d _B ^F _B _d =f e =f _d _B =F _B _d "F#7"e _e =e _d _B =E _B _d _b =e _b =e _d _B _d =e | "Dm"_b f _b f d _B d f a _a =a f d =A d f "Bb7"_a g _a f d _A d f d' _a d' _a f d f _a | "F#m"d' a d' a ^f d ^f a _d' c' _d' a ^f _d ^f a "D7"c' b c' a ^f c ^f a ^f' c' ^f' c' a ^f a c' |
+"F"f' e' f' _d' b f b _d' ^f' c' ^f' c' a ^f a c' =f' e' =f' _d' b =f b _d' ^f' c' ^f' c' a ^f a c' | "Db"f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' | "Fm"f' e' f' c' _a f _a c' f' e' f' c' _a f _a c' f' e' f' c' _a f _a c' f' e' f' c' _a f _a c' | "Db7"f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' |
+"Db7"f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' f' e' f' _d' b f b _d' | "E"f' e' f' c' a f a c' e' d' e' c' a e a c' "E7"d' c' d' c' a d a c' e' d' e' c' a e a c' | "E"f' e' f' c' a f a c' e' d' e' c' a e a c' "Em7"d' c' d' c' a d a c' e' b e' b g f g b | "C"c' b c' g e c e g b a b g e c e g a g a g e c e g b a b g e c e g |
+"B"c' b c' g e c e g b a b g e B e g "Bm7"a g a g e A e g b ^f b ^f d c d ^f | "G"g ^f g d B G B d g ^f g e c G c e g ^f g d B G B d a _a =a e _d =A _d e | "A7"a _a =a e _d =A _d e =a _a =a e _d =A _d e "Em"b f b f =d B =d f _d' =a _d' =a g _d g =a | "Dm"d' _d' =d' a f =d f a =d' _d' =d' a f =d f a b a b a f =d f a c' b c' a f =d f a |
+"B7"b _b =b ^f _e =B _e ^f =b _b =b ^f _e =B _e ^f "F#m"_d' g _d' g =e _d =e g _e' =b _e' =b a _e a =b | "Em"e' _e' =e' b g =e g b =e' _e' =e' b g =e g b c' b c' b g =e g b d' b d' b g =e g b | "C7"c' b c' g e c e g c' b c' g e c e g "Am7"d' _d' =d' a f =d f a e' _e' =e' c' _b g _b =e' | "Gm7"f' e' f' d' a f a d' e' _e' =e' _d' _b g _b _d' "E"_e' _d' _e' a f =d f a c' a c' a =e c =e a |
+"Em7"_b a _b a f _B f a _b g _b g e _B e g "Db"a g a g e A e g a f a f d A d f | "Bb"a z a z3 a a d' z d' z3 d' z "C"g z g z3 g z g z g z3 g z | "F"f' d' f' d' c' f c' d' f' d' f' d' _b f _b d' f' c' f' c' _b f _b c' f' c' f' c' a f a c' | "Dm7"d' c' d' c' f d f c' d' _b d' _b f d f _b "F"c' _b c' _b f c f _b c' a c' a f c f a |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Moments Musicaux Op.16, by Sergei Rachmaninoff. Score published on MuseScore (artist: Sergei
+% Rachmaninoff), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sergei Rachmaninoff (died 1943,
+% Wikidata Q131861).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/41/QmTRPZhYJzrAhjguwW93X9djKmqXbW4je5uv15yoRf7GBu.mid (sha256
+% 2b6e5cde7c5e77af609f40952d6eff5707a3c9daea329229d74b0710b2fe635f): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Moments Musicaux Op.16
+M:4/4
+L:1/16
+Q:1/4=103.999834
+% Exact tempo 103.99983360026624 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z8 "Dbm7"z8 | "Em7"z8 "Dbm7"z7 B, | "Em"G8- "Dbm7"G7 B, | "Em"G8- "Dbm7"G7 B, |
+"Em"G7 A B4 A G2 A | "Em7"B8- "Dbm7"B2 z5 E | "Am7"G7 B, "B7"_E7 =E | "Em"E4 G E G _E "Dbm7"=E D =E _D _D C C B, |
+"Em7"E, G ^F G G E G _E "Dbm7"=E D =E _D _D C C B, | "Em7"G4 G E G _E "Dbm7"=E D =E _D _D C C B, | "Em7"G4 G E G _E "Dbm7"=E D =E _D _D C C B, | "Em"G7 A "Em7"B4 A G2 A |
+"G7"B3 z B G B ^F "Em7"G =F G E E _E z A | "Am7"c7 B "B7"_e7 =e | "Em"e4 G g ^f g d' g c' g G g ^f g | "Am"b e a e E e _e =e b =e a =e =E =e _e =e |
+"Am"g c f c z c B c "F#m7"e A _e A z A _A =A | "Em"e4 z G ^F G d G c G z G ^F G | "Am"B E A E z E _E =E B =E A =E z =E _E =E | "Am"G C F C z C B, C "E"E A, _E A, z A, _A, =A, |
+"Em7"E2 z6 "Dbm7"z8 | "Em"z2 g2 ^f2 e2 "Bm7"d2 c2 B2 A2 | "F#m7"G2 e2 d2 c2 "B7"B2 A2 G3 ^F | "Am7"E6 ^F2 "C"G4 _A =A2 B |
+"Am7"c8- "F#m7"c6 z b | "Am7"c'4 c A c _A "F#m7"=A G =A ^F ^F =F =F E | "Am7"z2 b2 a2 g2 "D7"^f2 e2 d2 c2 | "G"B2 a2 g2 ^f2 "D7"e2 d2 c2 B2 |
+"B7"A2 g2 g2 A2 A2 g2 ^f2 A2 | "Bm7"A2 f2 f2 _A2 =A2 f2 e2 _A2 | "Am7"G2 e2 _e2 ^F2 "Abm7"^F2 _e2 d2 =F2 | "E"E2 d2 _d2 E2 "F#m7"E2 _d2 c2 _E2 |
+"Em"B2 E2 _B2 E2 "C"A2 A,2 _A2 _A,2 | "Bb"G2 G,2 G2 G,2 "A7"G2 G,2 G2 G,2 | "F#7"G g' ^f' g' g' e' g' _e' "Eb7"g' d' =e' _b _b g g =e | "E"e _B _B G G E E _B, _B, G, G, E, ^F, _B, _E ^F |
+"B"G7 ^F "C7"G7 ^F | "Eb7"G3 ^f g3 ^f' "Em"g'7 ^F | "E7"G7 ^F "Eb"G7 ^F | "Em"G ^f2 g g ^f'2 g' g'8 |
+"C"G g' g' e' g' _e' g' d' "G"g _d g c G B, B, A, | "C"G g' g' e' g' _e' g' d' "G"g _d g c G B, B, A, | "Bm"G z G z G z G z "Bbm"G z G z G z G z | "A"G _E G D G _D G =D "Bb"G C G _D G B, G C |
+"Em"E, G ^F G g e g _e "C7"g d G _D _D C C B, | "Em"E, G ^F G g e g _e "C7"g d G _D _D C C B | "Em"g2 ^F G g e g _e "C7"g d G _D _D C C B | "Em"g2 ^F G g e g ^f "C7"g d g e g c c _e |
+"Em"g7 a b4 a g2 a | "Em"b2 ^F G g e g _e "C7"g d G _D _D C C =E | "Am7"G7 B, "B7"_E7 =E | "Em"E2 g2 ^f2 e2 "Bm7"d2 c2 B2 A2 |
+"F#m7"G2 e2 d2 c2 "B7"B2 A2 G2 ^F b | "Em"g' g ^f g g' e' g' _e' "C7"g' d' g _d _d c c b | "Em"g' g ^f g g' e' g' ^f' "C7"g' e' g' _e' g' c' g' z | "Em"g' g ^f g g2 z a "Em7"b4 a g2 a |
+"G"b B A B b g b ^f "Dbm7"b =f B E E _E z A | "Am7"c7 B "B7"_e7 =e | "Em"e4 g g' ^f' g' d'' g' c'' g' g g' ^f' g' | "C"b' e' a' e' e e' _e' =e' b' =e' a' =e' =e =e' _e' =e' |
+"Am"g' c' f' c' c c' b c' "B7"e' a _e' a A a _a =a | "Em"e'4 G g ^f g d' g c' g G g ^f g | "Am"b e a e E e _e =e b =e a =e =E =e _e =e | "Am"g c f c z c B c "F#m7"e A _e A z A _A =A |

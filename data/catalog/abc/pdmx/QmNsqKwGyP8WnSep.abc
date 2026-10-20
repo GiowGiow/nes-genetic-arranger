@@ -1,0 +1,34 @@
+%abc-2.1
+% Gallo Ciego, by Agustin Bardi. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Agustin Bardi (died 1941,
+% Wikidata Q4694654).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/42/QmNsqKwGyP8WnSepWjJAgvBQStxEEFi3qQjXHobL1P5W4R.mid (sha256
+% a108291dec322dda114a8e0025bb7ec092e9f14a207f5f18dc880264a6f8bb2d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Gallo Ciego
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A7"A _B2 A _B2 A _B | "Dm"A _B2 A _B2 A _B | "A7"A _B2 A _B2 A _B | "Dm"A _B2 A _B2 A _B |
+"D"d _e2 d _e2 d _e | "Gm"d _e2 d _e2 d _e | "D7"d _e2 d _e2 d _e | "Gm"d g2 d _B A G _A |
+"A7"A _B2 A _B2 A _B | "Dm"A _B2 A _B2 A _B | "A7"A G2 F F z D _D | "D"D2 z2 d2 z2 |
+"C"E G _B d _d =d _B2 | "C7"z d _d =d _B4 | "F"E F A d _d =d A2 | "Dm7"z d _d =d A4 |
+"C7"E G _B d _d e =d z | "C7"z f e a g2 e c | "Dm7"f _b2 a g f e d | "Dm7"c B _B A G F E _E |
+"C"E G _B d _d =d _B2 | "C7"z d _d =d _B4 | "F"E F A d _d =d A2 | "Dm7"z d _d =d A2 z2 |
+"F7"z A c _e g ^f g2 | "Gm7"z _B g ^f =f4 | "C7"e c d _B A c _B G | "F"F2 z2 f2 z2 |
+"C"E G _B d _d =d _B2 | "C7"z d _d =d _B4 | "F"E F A d _d =d A2 | "Dm7"z d _d =d A4 |
+"C7"E G _B d _d e =d z | "C7"z f e a g2 e c | "Dm7"f _b2 a g f e d | "Dm7"c B _B A G F E _E |
+"C"E G _B d _d =d _B2 | "C7"z d _d =d _B4 | "F"E F A d _d =d A2 | "Dm7"z d _d =d A2 z2 |
+"F7"z A c _e g ^f g2 | "Gm7"z _B g ^f =f4 | "C7"e c d _B A c _B G | "F"F2 z2 f2 z2 |
+"Gm7"f'4 F d _d =d | "C7"e' E2 _E =E _E =E2 | "F7"_e'4 _E c B c | "Gm7"d' D2 _D =D A G A |
+"Gm7"G F2 A G3 A | "F7"G2 F3 A G A | "F7"G F2 G G3 A | "Bb"G2 F3 D _E =E |
+"Gm7"f'4 F d _d =d | "C7"e' E2 _E =E _E =E2 | "F7"_e'4 z c B c | "Gm7"d' D2 _D =D A G A |
+"Gm7"G F2 A G3 A | "F7"G2 F3 A G A | "F7"G F2 _e d2 c2 | "Bb"_B2 z2 _b2 z2 |
+"Gm7"f'4 F d _d =d | "C7"e' E2 _E =E _E =E2 | "F7"_e'4 _E c B c | "Gm7"d' D2 _D =D A G A |

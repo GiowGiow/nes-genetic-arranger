@@ -1,0 +1,35 @@
+%abc-2.1
+% FLORAUX, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/floraux.html (file
+% https://www.beakauffmann.com/mpb_f/som/floraux.mid, sha256
+% 0bb7d47cb1ee9d1f86f226677284ae83ce7db1ffee226ab19242c07a27c0269d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FLORAUX
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F#7"z5 ^F ^F ^F | "F#7"d d d d _d _d _d _d | "Bm"^F3 ^F z B B B | "Ebm7"g g g g ^f ^f ^f ^f |
+"Em"B3 B z b _b =b | "Dbm7"_d' b g e _d B G E | "F#"D3 ^F z ^F ^F ^F | "Db"z _A _A _A z _B2 =B |
+"F#"z _d _d ^f z ^F ^F ^F | "F#7"d d d d _d _d _d _d | "Bm"^F3 ^F z B B B | "Ebm7"g g g g ^f ^f ^f ^f |
+"Em"B3 B z b _b =b | "Dbm7"_d' b g e _d B G E | "F#"D3 ^F z ^F ^F ^F | "F#"z G G ^F z _D2 =D |
+"B"B,4 z ^F ^F ^F | "F#7"d d d d _d _d _d _d | "Bm"^F3 ^F z B B B | "Ebm7"g g g g ^f ^f ^f ^f |
+"Em"B3 B z b _b =b | "Dbm7"_d' b g e _d B G E | "F#"D3 ^F z ^F ^F ^F | "Db"z _A _A _A z _B2 =B |
+"F#"z _d _d ^f z ^F ^F ^F | "F#7"d d d d _d _d _d _d | "Bm"^F3 ^F z B B B | "Ebm7"g g g g ^f ^f ^f ^f |
+"Em"B3 B z b _b =b | "Dbm7"_d' b g e _d B G E | "F#"D3 ^F z ^F ^F ^F | "F#"z G G ^F z _D2 =D |
+"B"B,4 z B, B, B, | "B"_D z _E z =E z ^F z | "E"z G G G z A A A | "A7"B z _d z =d z e z |
+"D"z ^f ^f ^f z ^f ^f ^f | "F#7"_a z _b z =b z _d' z | "Bm"d' _d' b ^f =d _d B ^F | "Dbm7"E _D G B, E G, _D E, |
+"F#"z ^F ^F ^F z B, B, B, | "B"_D z _E z =E z ^F z | "E"z G G G z A A A | "A7"B z _d z =d z e z |
+"D"z ^f ^f ^f z ^f ^f ^f | "F#7"_a z _b z =b z _d' z | "G"e' d' _b _d' =b ^f a g | "A7"^f A _A =A ^f2 e2 |
+"D"d4 z B, B, B, | "B"_D z _E z =E z ^F z | "E"z G G G z A A A | "A7"B z _d z =d z e z |
+"D"z ^f ^f ^f z ^f ^f ^f | "F#7"_a z _b z =b z _d' z | "Bm"d' _d' b ^f =d _d B ^F | "Dbm7"E _D G B, E G, _D E, |
+"F#"z ^F ^F ^F z B, B, B, | "B"_D z _E z =E z ^F z | "E"z G G G z A A A | "A7"B z _d z =d z e z |
+"D"z ^f ^f ^f z ^f ^f ^f | "F#7"_a z _b z =b z _d' z | "G"e' d' _b _d' =b ^f a g | "A7"^f A _A =A ^f2 e2 |

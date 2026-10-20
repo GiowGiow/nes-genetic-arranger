@@ -1,0 +1,26 @@
+%abc-2.1
+% DORA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dora.html (file
+% https://www.beakauffmann.com/mpb_d/som/dora.mid, sha256
+% bea04a20f15f9d0d6b392e44a08b78827ec23ffccd6b286b523f9af7edd2616f), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-23 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DORA
+M:3/4
+L:1/16
+Q:1/4=98.999936
+% Exact tempo 98.99993565004183 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_D4 _D4 _D3 z | "C"_D4 F4 F4 | "C"C4 C4 C3 z | "C"_A,,2 _A,2 _B,2 C2 _D2 _E2 |
+"C"F4 _D4 _D4 | "C"_d4 _B4 _B4 | "C"c4 _B4 _B4 | "C"F,2 F2 G2 A2 _B2 c2 |
+"C"_d4 _B4 _B4 | "C"e4 _d4 _d4 | "C"_e4 _d4 _d4 | "C"_E,,2 _e2 f2 g2 _a2 _b2 |
+"C"_d'4 ^f4 c'4 | "C"^f4 _b4 ^f3 _a | "C"g2 _b2 _a2 f2 _d2 _B2 | "C"_A2 F2 _D2 _A,2 G,2 ^F,2 |
+"C"_D4 _D4 _D3 z | "C"_D4 F4 F4 | "C"C4 C4 C3 z | "C"_A,,2 _A,2 _B,2 C2 _D2 _E2 |
+"C"F4 _D4 _D4 | "C"_d4 _B4 _B4 | "C"c4 _B4 _B4 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Louise's New Parlor, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 93 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Louise's New Parlor
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 F4 E4 | "D"D8 F4 G4 | "F#"F8 E4 D4 | "G"G6 G2 B4 d4 |
+"D"A12 G4 | "D"F6 F2 A4 d4 | "Bm"g4 f4 e4 d4 | "Em"e6 d2 e4 f4 |
+"A"e8 d4 e4 | "D"f6 f2 d4 B4 | "D"A8 F4 D4 | "G"G6 G2 B4 d4 |
+"D"A12 G4 | "D"F4 A8 F4 | "A"G4 E4 D4 C4 | "D"D8 "G"D6 E2 |
+"D"D8 A4 G4 | "D"F6 F2 A4 B4 | "D"A4 z8 =f4 | "D"f6 f2 d4 B4 |
+"D"A4 z8 G4 | "D"F6 A2 d4 f4 | "Bm"a4 g4 f4 d4 | "Em"g4 f8 d4 |
+"A"d4 e4 f4 g4 | "D"a6 a2 f4 d4 | "D"A8 F4 D4 | "G"G6 G2 B4 d4 |
+"D"A12 G4 | "D"F4 A8 F4 | "A"G4 E4 D4 C4 | "D"D8 "G"D6 E2 |
+"D"D8 z8 |

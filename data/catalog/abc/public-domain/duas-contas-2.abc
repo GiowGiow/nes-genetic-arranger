@@ -1,0 +1,36 @@
+%abc-2.1
+% DUAS CONTAS, by Garoto, as performed by Garoto.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/duas-contas.html (file
+% https://www.beakauffmann.com/mpb_d/som/duas-contas-2.mid, sha256
+% 83f62aaa162a9a817d027082819dc625bb619e5d230372c9d47434ad75c9d1ce), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DUAS CONTAS
+M:2/4
+L:1/16
+Q:1/4=56.00003
+% Exact tempo 56.000029866682596 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z A, B B B A, _B A | "F#m7"E8 | "E"z ^F2 ^F ^F E2 ^F | "C"D E, _B, D _B, E,2 D |
+"B"_D E, A, _D _A E, =A, _D | [M:1/4]"A"z E ^F A | [M:2/4]"Em7"z _E, B, B G,,2 B2 | "Em7"^F,, A, E B C, E D2 |
+"Em7"A2 e2 d4 | "Em7"a2 e'2 d'4 | "E"z ^F2 ^F z E2 E | "F#"z _A2 _A z ^F3 |
+"E"z ^F2 ^F z E2 E | "F#"z _A2 _A z ^F3 | "Ab"z _B2 _B z A2 A | "F#"z _A2 _A z F2 F |
+"Dbm"z ^F3 E B, _D _E | "A7"F2 _A, F _E3 _E | "Abm7"_B3 _B _A4 | "Abm7"z _B _A _B _A _A F _D |
+"F#m7"_A3 _A ^F4 | "F#m7"z _A ^F _A ^F ^F _E B, | "Abm"^F3 ^F E4 | "C7"^F E2 ^F _E3 _E |
+"B7"B,5 B, B, _E | "Eb7"F2 _A, F _E3 _E | "Abm7"_B3 _B _A4 | "Abm7"z _B _A _B _A _A F _D |
+"F#m7"_A3 _A ^F4 | "F#m7"z _A ^F _A ^F ^F _A =A | "Ab7"B4 B3 _D | "Db7"_A,,4 F,4 |
+"A"z4 E4 | "D"z C E A2 A _A2 | "Ab"^F ^F2 ^F2 E ^F _E | "C7"G,,3 _E3 C _D |
+"F#m7"_A3 _A ^F4 | "F#m7"z _A ^F _A ^F ^F _A =A | "Abm7"B4 B3 F | "Db7"F2 z6 |
+"A"A8 | "Bm7"z _A6 z | "E"z ^F2 ^F z E2 E | "F#"z _A2 _A z ^F3 |
+"E"z ^F2 ^F z E2 E | "F#"z _A2 _A z ^F3 | "Ab"z _B2 _B z A2 A | "F#"z _A2 _A z F2 F |
+"Dbm"z ^F3 E B, _D _E | "Eb7"F2 _A, F _E4 | "Cm7"z B, _A6 | "Ab"z _E _A _B, _A, F, _E, _D, |
+"Db"z A, ^F6 | "Ab7"z E, A, B, z E, z _E, | "Ebm7"z _A, E6 | "C7"z _E ^F _E2 _E ^F _E |
+"F#m7"z _A2 ^F _D =D _E _A | "Bbm7"z c2 _B F ^F G c | "Db7"_d B _B _A ^F =F _E =D | "G7"_D2 B, _D =D2 B, _E |
+"B7"E z A, _D _A z2 G | "F#m7"_D _E =E ^F _A ^F _A _B | "Ab"B D ^F B _d =D ^F _d | "E7"d F A d e3 e |

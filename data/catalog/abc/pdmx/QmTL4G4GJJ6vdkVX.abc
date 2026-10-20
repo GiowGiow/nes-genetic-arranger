@@ -1,0 +1,28 @@
+%abc-2.1
+% Con guancia'intenerita, by Claudio Saracini. Score published on MuseScore (artist: Claudio
+% Saracini), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudio Saracini (died 1630,
+% Wikidata Q2333985).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/30/QmTL4G4GJJ6vdkVXKPzak2ToUJs3gtCgBLixuPWyEWowP1.mid (sha256
+% 1219e5822e8b44f41cc0f0d27ecd5cf68ca06e92745ec8b40e53998101a5a9c0): melody track 0, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Con guancia'intenerita
+M:3/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 D4 | "D"D8 E4 | "D"F8 E4 | "Dm"D4 D4 A4 |
+"Dm7"A8 G4 | "D7"F8 E4 | "C7"D C D E F E F G E4 | "Dm"E2 E E F4 A4 |
+"F"G8 F4 | "D"z8 D4 | "D"D8 E4 | "D"F8 E4 |
+"Dm"D4 D4 A4 | "Dm7"A8 G4 | "D7"F8 E4 | "C7"D C D E F E F G E4 |
+"Dm"E2 E E F4 A4 | "F"G8 F4 | "F"c6 _B2 A4 | "D7"G4 F4 E4 |
+"D7"E4 F4 G4 | "F"A8 A4 | "F"z4 c6 A2 | "F"G8 F4 |
+"F"z4 A6 F2 | "D"E8 D4 | "F"c6 _B2 A4 | "D7"G4 F4 E4 |
+"D7"E4 F4 G4 | "F"A8 A4 | "F"z4 c6 A2 | "F"G8 F4 |
+"F"z4 A6 F2 | "D"E8 D4 |

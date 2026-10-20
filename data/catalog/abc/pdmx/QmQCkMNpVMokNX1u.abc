@@ -1,0 +1,27 @@
+%abc-2.1
+% Aura Lea, by George R. Poulton. Score published on MuseScore (artist: George R. Poulton), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): George R. Poulton (died 1867,
+% Wikidata Q5543660).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/14/QmQCkMNpVMokNX1udKkpf6b4AYwP42gWnTJwHHPoaKuKy9.mid (sha256
+% ae942ae10d4c8848ea80e5e57cfa39c825dd87beba756d83d1f59a5d1168e01e): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Aura Lea
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"A4 d4 _d4 =d4 | "Ab"e4 B4 "Abm"e8 | "A"d4 _d4 "Dbm"B4 _d4 | "Em7"d8- "F#7"d8 |
+"F#"A4 d4 "D"_d4 =d4 | "Ab"e4 B4 "E7"e8 | "A"d4 _d4 "E"B4 _d4 | "Em7"d8- "F#7"d8 |
+"D"^f4 ^f4 "Bb"^f4 ^f4 | "B"^f4 ^f4 "Am"^f8 | "G"^f4 e4 "Bb"d4 e4 | "D"^f8- "F#7"^f8 |
+"D"^f4 ^f4 "B"g4 ^f4 | "F#"e4 B4 "E7"e8 | "Db"d4 _d4 "A"B4 _d4 | "D"d8- "A"d8 |
+"D"A4 d4 _d4 =d4 | "Ab"e4 B4 "Abm"e8 | "A"d4 _d4 "Dbm"B4 _d4 | "Em7"d8- "F#7"d8 |
+"F#"A4 d4 "D"_d4 =d4 | "Ab"e4 B4 "E7"e8 | "A"d4 _d4 "E"B4 _d4 | "Em7"d8- "F#7"d8 |
+"D"^f4 ^f4 "Bb"^f4 ^f4 | "B"^f4 ^f4 "Am"^f8 | "G"^f4 e4 "Bb"d4 e4 | "D"^f8- "F#7"^f8 |
+"D"^f4 ^f4 "B"g4 ^f4 | "F#"e4 B4 "E7"e8 | "Db"d4 _d4 "A"B4 _d4 | "D"d16 |

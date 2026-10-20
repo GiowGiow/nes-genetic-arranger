@@ -1,0 +1,29 @@
+%abc-2.1
+% Well-Tempered Clavier Book 1, by Johann Sebastian Bach(1685 - 1750). Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/31/QmQmxCfft8FrQC5YyRdnucv3SypmxbVBrGDm1WwGwAZeoq.mid (sha256
+% 94c45b13aa0f892f09baaa9e6533826a1fb95d4dd0bf15dc01ee35b0f87644ee): melody track 0, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Well-Tempered Clavier Book 1
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Cm"c _E D _E C _E D _E c _E D _E C _E D _E | "Fm"_A F E F C F E F _A F E F C F E F | "Fm"B F _E F D F _E F B F _E F D F _E F | "Cm"c G F G _E G F G c G F G _E G F G |
+"C7"_e _A G _A _E _A G _A _e _A G _A _E _A G _A | "Am7"d ^F E ^F D ^F E ^F d ^F E ^F D ^F E ^F | "Bb"d G ^F G D G ^F G d G ^F G D G ^F G | "Gm7"c E D E C E D E c E D E C E D E |
+"Ab"c F E F C F E F c F E F C F E F | "Dm7"_B F _E F D F _E F _B F _E F D F _E F | "Cm"_B G F G _E G F G _B G F G _E G F G | "Cm"_A G F G _E G F G _A G F G _E G F G |
+"Fm7"_A D C D _B, D C D _A D C D _B, D C D | "Eb"G _B, _A, _B, _E _B, _A, _B, G _B, _A, _B, _E _B, _A, _B, | "F7"F C _B, C A, C _B, C F C _B, C A, C _B, C | "Fm7"F D C D B, D C D F D C D B, D C D |
+"Fm"F D C D B, D C D F D C D B, D C D | "Cm"_E C B, C G, C B, C "Bb"_E C B, C G, C B, C | "Ab"F, _E D _E F _E D _E F, _E D _E F _E D _E | "F7"^F, C B, C _E C B, C ^F, C B, C _E C B, C |
+"G7"_E C B, C G, C B, C _E C B, C G, C B, C | "Cm"^F C B, C A, C B, C ^F C B, C A, C B, C | "G7"G C B, C D C B, C G C B, C D C B, C | "G7"_A C B, C D C B, C _A C B, C D C B, C |
+"G"z3 F, _A, F, E, F, B, F, D B, _A, F, E, F, | "Cm"z3 G, C G, ^F, G, z4 C _A, G, _A, | "D"z3 C _E C B, C ^F C A ^F _E C B, C | "G"z d c d _e c B c A c B c d B A B |
+"G"G B A B c A G A "Bm7"^F A G A B G ^F G | "G"D g f g _a f _e f "G7"d f _e f g _e d _e | "Fm7"c _e d _e f d c d "Dm"B d c d _e c B c | "Dm7"G c B c _A f _e f "B7"G _e d _e F d c d |
+"F7"_E c B c _A F _E F "D7"G _E D _E F D C D | "D7"E z C D _A c _A G F z G F G _A G F | "C"F z2 D, F, _A, G, F, B, F, D F, B, _A, G, F, | "C"E, _D _B, G, C _A, F, _A, G, _B, G, E, _A, F, =D, F, |
+"C"E, G, E, C, F, D, B,, D, z3 D, E, G, _B, G, | "C"_A, C F D F _A c B c G F D E4 |

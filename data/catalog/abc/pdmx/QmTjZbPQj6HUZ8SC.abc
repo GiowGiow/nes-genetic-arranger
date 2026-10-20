@@ -1,0 +1,26 @@
+%abc-2.1
+% Lord Arbuthnot, by Nathaniel Gow (1763-1831). Score published on MuseScore (artist: Nathaniel
+% Gow), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nathaniel Gow (died 1831,
+% Wikidata Q6969638).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/26/QmTjZbPQj6HUZ8SCZWQgKizjRq7cEfEGrUHcZXqgcZA8PF.mid (sha256
+% 1f0c8194e4d57ac09de5bd18b052323740b9068d4b18eb0dd3618f83f3f557ba): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lord Arbuthnot
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_B3 A G3 ^F G2 A2 _B4 | "C"G2 A2 _B2 =B2 c2 _d2 =d2 A2 | "C"_B3 A G3 ^F G2 A2 _B4 | "C"A c d e f3 d d c d _B A2 F2 |
+"C"_B3 A G3 ^F G2 A2 _B4 | "C"G2 A2 _B2 =B2 c2 _d2 =d2 A2 | "C"c _B c A G3 ^F G2 A2 _B4 | "C"A c d e f3 d d c d _B A2 F2 |
+"C"d2 _b2 a2 ^f2 g2 d2 g4 | "C"d2 g2 ^f2 a2 g2 d2 _b2 g2 | "C"d2 _b2 a2 ^f2 g2 d2 g4 | "C"g f g e f2 g2 a2 f2 c2 A2 |
+"C"d2 _b2 a2 ^f2 g2 d2 g4 | "C"d2 g2 ^f2 a2 g2 d2 _b2 g2 | "C"d _b2 g a ^f2 a g d2 g =f e2 _e | "C"d c2 _B f3 d c3 _B A2 F2 |
+"C"d3 _B G2 G2 G2 A2 _B4 | "C"G3 A _B2 G2 c2 A2 d2 _B2 | "C"d3 _B G2 G2 G2 A2 _B4 | "C"A2 c2 d e g g a2 f2 c2 A2 |
+"C"d3 _B G2 G2 G2 A2 _B4 | "C"G3 A _B2 G2 c2 A2 d2 _B2 | "C"d3 _B G2 G2 G2 A2 _B4 | "C"A2 c2 d e g g a2 f2 c2 A2 |
+"C"_b3 a g2 g2 g2 d2 g4 | "C"d2 g2 ^f2 a2 g2 d2 _b2 g2 | "C"_b3 a g2 g2 g2 d2 g4 | "C"a2 f2 g2 e2 f3 c A2 F2 |
+"C"_b3 a g2 g2 g2 d2 g4 | "C"d2 g2 ^f2 a2 g2 d2 g3 a | "C"_b a2 g a g2 ^f g =f2 _e d c2 _B | "C"A _B2 c d e2 f c2 F2 A2 c2 |

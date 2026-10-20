@@ -1,0 +1,35 @@
+%abc-2.1
+% Jump Van Halen, by Van Halen. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Van Halen (died 1687, Wikidata
+% Q21345653).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/13/QmSc872T69cYWgLdS2kgnL4EmertQTVNvPhZ8YZEMxKAq5.mid (sha256
+% 04019c5aa195e44f41ac950ee6746caad45ccf3dcf74391b6b6743c7429894eb): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jump Van Halen
+M:4/4
+L:1/16
+Q:1/4=133.000242
+% Exact tempo 133.00024161710562 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 c'2 z4 c'2 z4 | "C"c'2 z4 c'2 z4 g4 | "C"z4 c2 z2 "F"z2 A2 z2 A2 | "G7"A2 G2 z2 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"G"c6 B6 c4 | "G"c2 B6 c4 B4 | "G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"e4 d12 |
+"G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"e4 d12 | "G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"a4 g12 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"C"z4 d2 z4 e2 z4 | "C"c2 z4 c2 z2 d2 z2 d2 | "C"d4 e2 z2 "F"z2 c2 z2 A2 | "G7"A2 G4 G2- "G"G8 |
+"G"c6 B6 c4 | "G"c2 B6 c4 B4 | "G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"e4 d12 |
+"G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"e4 d12 | "G"F2 A2 c2 A2 E2 G2 c2 E2 | "G"a4 g12 |

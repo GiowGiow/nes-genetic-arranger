@@ -1,0 +1,38 @@
+%abc-2.1
+% VASSOURINHAS, by Joana Batista Ramos e Mathias da Rocha, as performed by Joana Batista Ramos e
+% Mathias da Rocha.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joana Batista Ramos (died 1952, Wikidata Q115206173); Mathias da Rocha
+% (died 1907, Wikidata Q129458800).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_v/vassourinhas.html (file
+% https://www.beakauffmann.com/mpb_v/som/vassourinhas.mid, sha256
+% d26e5e8c88ddffba8b67bc0007670744648c514489716c453558c29aceaf7c04), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:VASSOURINHAS
+M:4/4
+L:1/16
+Q:1/4=159.930057
+% Exact tempo 159.93005725496047 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm7"F3 F D z F _B, _B,,2 F z _B,, z F z | "Gm7"_B,,2 F _B,, F z F z _B,, z F z _B,, z F z | "Cm"C,2 G C,2 z G z "F7"C,2 G z C,2 G z | "Cm"F,2 A z F,2 A z "Dm7"F, z A z F, z A z |
+"Gm7"_B,,2 F _B,,2 z F z _B,,2 F z _B,, z F z | "Bb7"_B,,2 F z _B,, z F z "G7"=B,, z G z =B,,2 G z | "Cm"C, C G2 C, z G z "Eb"_E,2 G z _E, z G z | "Gm7"_B,,2 F z _B,, z F z "Dm7"C,2 G z F,2 A z |
+"Gm7"F, z F4 F z _B,, z F z _B,, z F z | "Gm7"_B,,2 F _B,,2 z F z "Bb"_B,, z F z _B,, z F z | "Cm"C,2 G2 C, z G z "Eb"C,2 G z C, z G z | "Cm"C z A z F,2 A z "Dm7"C z A z F, z A z |
+"Gm7"z _B,, F2 _B,, z F z _B,,2 F z _B,, z F z | "Bb7"_B,,2 F z _B,,2 F z "G7"=B,, z G z =B,, z G z | "Cm"C, z G z C, z G z "Cm7"_E,2 G z _E, z G z | "C7"_B,,2 F z _B,,2 F z C,2 G z F,2 A z |
+"C7"_B,, z3 F _B,,3- "Gm7"_B,,3 z F D z2 | "F7"G2 z2 G2 C2 "Dm7"A C F,2 A2 C z | "Gm7"_B,,2 D F _B,, z F z "C7"G,, z D z G,, z D z | "F7"C,2 G z C,2 G z "Dm"F, C A z F, z A z |
+"Bb"_B,, z F z _B,, z _A z "Dm"_B,,2 _A z _B,, z _A z | "Cm7"_E,2 G _B _E,2 _B z "Dm7"_E,2 _B z _E,2 _B z | "Gm7"D,2 A z D, z A z "C7"G,,2 D z G,, z D z | "Cm"C, z G z C,2 G z "Dm"F,2 A z F,2 A C |
+"C7"_B,,2 z2 F _B,,3- "Gm7"_B,,3 z D F2 z | "F7"G _E2 z G _E C,2 "Dm7"A F,3 A C F, z | "Gm7"_B,,2 F z _B,, z F z "C7"G,,2 D z G,, z D z | "F7"C,2 G z C,2 G z "Dm"F,2 A z F, z A z |
+"Bb"_B,,2 F z _B,,2 F z "Dm"_B,,2 _A F _B,,2 _A z | "Cm"_E,2 _B G _E,2 _B z _E,2 _B z _E,2 _B z | "Gm7"_B,,2 F z _B,,2 F z "C7"G,,2 D2 G,, z D z | "Am7"C,2 G z C,2 G z "Dm"F,2 A2 F,2 A C |
+"Gm7"_B,,2 F D2 z F z _B,,2 F z _B,, z F2 | "Gm7"z2 F _B,, F z F z _B,, z F z _B,, z F z | "Cm"C,2 G C,2 z G z "F7"C,2 G z C,2 G z | "Cm"F,2 A z F,2 A z "Dm7"F, z A z F, z A z |
+"Gm7"_B,,2 F _B,,2 z F z _B,,2 F z _B,, z F z | "Bb7"_B,,2 F z _B,, z F z "G7"=B,, z G z =B,,2 G z | "Cm"C, C G2 C, z G z "Eb"_E,2 G z _E, z G z | "Gm7"_B,,2 F z _B,, z F z "Dm7"C,2 G z F,2 A z |
+"Gm7"F, z F4 F z _B,, z F z _B,, z F z | "Gm7"_B,,2 F _B,,2 z F z "Bb"_B,, z F z _B,, z F z | "Cm"C,2 G2 C, z G z "Eb"C,2 G z C, z G z | "Cm"C z A z F,2 A z "Dm7"C z A z F, z A z |
+"Gm7"z _B,, F2 _B,, z F z _B,,2 F z _B,, z F z | "Bb7"_B,,2 F z _B,,2 F z "G7"=B,, z G z =B,, z G z | "Cm"C, z G z C, z G z "Cm7"_E,2 G z _E, z G z | "C7"_B,,2 F z _B,,2 F z C,2 G z F,2 A z |
+"C7"_B,, z3 F _B,,3- "Gm7"_B,,3 z F D z2 | "F7"G2 z2 G2 C2 "Dm7"A C F,2 A2 C z | "Gm7"_B,,2 D F _B,, z F z "C7"G,, z D z G,, z D z | "F7"C,2 G z C,2 G z "Dm"F, C A z F, z A z |
+"Bb"_B,, z F z _B,, z _A z "Dm"_B,,2 _A z _B,, z _A z | "Cm7"_E,2 G _B _E,2 _B z "Dm7"_E,2 _B z _E,2 _B z | "Gm7"D,2 A z D, z A z "C7"G,,2 D z G,, z D z | "Cm"C, z G z C,2 G z "Dm"F,2 A z F,2 A C |
+"C7"_B,,2 z2 F _B,,3- "Gm7"_B,,3 z D F2 z | "F7"G _E2 z G _E C,2 "Dm7"A F,3 A C F, z | "Gm7"_B,,2 F z _B,, z F z "C7"G,,2 D z G,, z D z | "F7"C,2 G z C,2 G z "Dm"F,2 A z F, z A z |
+"Bb"_B,,2 F z _B,,2 F z "Dm"_B,,2 _A F _B,,2 _A z | "Cm"_E,2 _B G _E,2 _B z _E,2 _B z _E,2 _B z | "Gm7"_B,,2 F z _B,,2 F z "C7"G,,2 D2 G,, z D z | "Am7"C,2 G z C,2 G z "Dm"F,2 A2 F,2 A C |

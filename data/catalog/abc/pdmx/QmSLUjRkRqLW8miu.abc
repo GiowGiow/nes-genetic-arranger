@@ -1,0 +1,23 @@
+%abc-2.1
+% Summoned my labour to renew, by Joel Thorne. Score published on MuseScore (artist: Joel Thorne),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joel Thorne (died 1955, Wikidata
+% Q552331).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/30/QmSLUjRkRqLW8miuhtc7LfXyGvCiyLrUCzJbdNMwy8ARQh.mid (sha256
+% c92de3e68eedf9985bf8361520ab22b0eb2944d0753760dd3d6bbadba0dd72bb): melody track 0, bars 0-18
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Summoned my labour to renew
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Cm7"z8 _E8 | "Gm7"_E8 D8 | "Eb"_E8 F8 | "Ab"G8 _A4 G4 |
+"Bb"F8 _B8 | "Gm7"_B4 c4 d4 _B4 | "F7"c8 _B4 A4 | "Gm7"_B16 |
+"Cm"z8 _B8 | "Ab"c8 c8 | "Cm7"_B8 _e8 | "Bb"_e8 d8 |
+"Cm7"_e12 g4 | "Eb"f4 _e4 d4 c4 | "Bb"_B12 _A4 | "Eb"G4 _A4 _B4 _e4 |
+"Bb"_e8 d8 | "Cm7"_e16 |

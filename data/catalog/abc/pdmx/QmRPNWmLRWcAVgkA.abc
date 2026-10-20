@@ -1,0 +1,27 @@
+%abc-2.1
+% Morgan Megan, by Turlough O'Carolan. Score published on MuseScore (artist: Turlough Carolan),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Turlough O'Carolan (died 1738,
+% Wikidata Q335838).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/37/QmRPNWmLRWcAVgkAzWwAt72vo8nKfpAE7PwsY5Ni5hhQB6.mid (sha256
+% 4e5676f4b4dee56207668aa0abd1e7b86cf8c865feb1cead698febb2d39397f6): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Morgan Megan
+M:2/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"D,2 G,2 G,2 A,2 | "C"C B, A, G, A, B, C D | "C"E2 A,2 A,2 G,2 | "C"^F, A, ^F, E, D,4 |
+"C"G,2 G, ^F, G,2 B,2 | "C"A, G, ^F, E, D,4 | "C"^F, G, A,2 A,2 E,2 | "C"^F,2 D,2 ^F,,2 E,2 |
+"C"G,2 G,2 A, G, A, ^F, | "C"G,4 D,2 A, B, | "C"C3 B, A,2 G,2 | "C"D4 E4 |
+"C"D2 B,2 C B, A, G, | "C"^F, G, ^F, E, D,2 E, ^F, | "C"G,2 G,2 A, G, A, ^F, | "C"G,4 D,2 D C |
+"C"B,2 D2 E2 ^F2 | "C"G2 E,2 B, C D2 | "C"G2 E,2 B, C D2 | "C"E D C B, A,4 |
+"C"B, A, B, C D2 G,2 | "C"E2 C2 D2 B,2 | "C"C2 A,2 D2 B,2 | "C"^F,2 D,2 D,2 G,2 |
+"C"E,2 C,2 C,3 D, | "C"E,2 C,2 C,3 G, | "C"^F,2 D,2 D,2 A, G, | "C"^F, G, ^F, E, D,2 ^F,,2 |
+"C"D2 D,2 E D C B, | "C"C B, A, G, ^F, G, ^F, E, | "C"D,2 G,2 A, G, A, ^F, | "C"G,8 |

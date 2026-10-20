@@ -1,0 +1,35 @@
+%abc-2.1
+% Jugend-Lieder, by Mathilde Kralik. Score published on MuseScore (artist: Mathilde Kralik), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Mathilde Kralik (died 1944,
+% Wikidata Q89972).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/21/QmXgWhqvKDtoawYnwZw7QYnciaTiJjB6RE4zNFRbQ3ycGH.mid (sha256
+% bec72ac3d7beac3f9c09f5df1aed783e2951cdaf3c8846c8d19acc7035650bd5): melody track 1, bars 7-71
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jugend-Lieder
+M:6/8
+L:1/16
+Q:1/4=199.95
+% Exact tempo 199.94999999999203 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 | "G"z12 | "D7"z12 | "G"z12 |
+"G"z12 | "G"z12 | "D"z12 | "G"z12 |
+"G"z12 | "G"z12 | "D7"z12 | "Gm"z12 |
+"G"z12 | "G"z12 | "Bm7"z12 | "G"z12 |
+"G"g2 a2 b2 b2 a2 g2 | "G"g2 a2 b2 b2 a2 g2 | "D7"e2 ^f2 g2 g2 ^f2 e2 | "Gm"d2 z2 g2 b6 |
+"G"g2 a2 b2 b2 a2 g2 | "G"g2 a2 b2 b2 a2 g2 | "Bm7"d2 e2 ^f2 ^f2 e2 d2 | "G"g12 |
+"G"z12 | "G"z12 | "G"z12 | "G"z12 |
+"G"z12 | "G"z12 | "G"z12 | "G"z12 |
+"G"z12 | "G"z12 | "G"z12 | "G"z12 |
+"G"z12 | "G"z12 | "G"z12 | "D"z12 |
+"G"z12 | "G"z12 | "Am"z12 | "G"z12 |
+"G"z12 | "G"z12 | "D"z12 | "G"z12 |
+"G"g2 a2 b2 b2 a2 g2 | "G"g2 a2 b2 b2 a2 g2 | "Am7"e2 ^f2 g2 g2 ^f2 e2 | "G"d2 z2 g2 b6 |
+"G"g2 a2 b2 b2 a2 g2 | "G"g2 a2 b2 b2 a2 g2 | "Bm7"d2 e2 ^f2 ^f2 e2 d2 | "D"z12 |
+"Bm7"d2 e2 ^f2 ^f2 e2 d2 | "D"z12 | "Bm7"d2 e2 ^f2 ^f2 e2 d2 | "Bm7"d2 e2 ^f2 ^f2 e2 d2 |
+"Bm7"d2 e2 ^f2 ^f2 e2 d2 | "Bm7"d2 e2 ^f2 ^f2 e2 d2 | "G"g2 a2 b2 b2 a2 g2 | "G"g2 a2 b2 b2 a2 g2 |

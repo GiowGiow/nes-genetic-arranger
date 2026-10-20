@@ -1,0 +1,34 @@
+%abc-2.1
+% over the waves, by Juventino Rosas (1888). Score published on MuseScore (artist: Juventino
+% Rosas), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Juventino Rosas (died 1894,
+% Wikidata Q461403).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/38/QmUqe5AYCrg1Ygjgdgi9ob2BpLA96W55z5c7KBuW7YdGER.mid (sha256
+% 34ae40e2c24d56115f51517dbe87816fb1b5dc5629b868957fb75e223c2d71bc): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:over the waves
+M:6/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"B,6 _B,2 =B,2 D2 | "C"G8 ^F2 G2 | "C"A2 G2 ^F2 G2 B,2 D2 | "C"^F6 z6 |
+"C"C6 B,2 C2 D2 | "C"^F8 =F2 ^F2 | "C"G2 ^F2 =F2 ^F2 C2 ^F2 | "C"B,6 z6 |
+"C"B,6 _B,2 =B,2 D2 | "C"G8 ^F2 G2 | "C"A2 G2 ^F2 G2 B,2 D2 | "C"E6 z6 |
+"C"E6 A2 c2 e2 | "C"d8 c2 B2 | "C"A2 G2 ^F2 E2 ^F2 A2 | [M:4/8]"C"G6 z2 |
+[M:2/8]"C"z4 | [M:6/8]"C"B,6 _B,2 =B,2 D2 | "C"G8 ^F2 G2 | "C"A2 G2 ^F2 G2 B,2 D2 |
+"C"^F6 z6 | "C"C6 B,2 C2 D2 | "C"^F8 =F2 ^F2 | "C"G2 ^F2 =F2 ^F2 C2 ^F2 |
+"C"B,6 z6 | "C"B,6 _B,2 =B,2 D2 | "C"G8 ^F2 G2 | "C"A2 G2 ^F2 G2 B,2 D2 |
+"C"E6 z6 | "C"E6 A2 c2 e2 | "C"d8 c2 B2 | "C"A2 G2 ^F2 E2 ^F2 A2 |
+[M:4/8]"C"G6 z2 | [M:6/8]"C"z12 | [M:2/8]"C"z2 B2 | [M:6/8]"C"c B _B2 =B2 g2 ^f3 e |
+"C"g8 ^f2 e2 | "C"c B _B2 =B2 e2 d3 c | "C"^F6 z6 | "C"G ^F =F2 ^F2 e2 d3 _d |
+"C"e8 d2 c2 | "C"G ^F =F2 ^F2 c2 B2 A2 | "C"G6 z6 | "C"c B _B2 =B2 g2 ^f3 e |
+"C"g8 ^f2 e2 | "C"c B _B2 =B2 e2 d3 c | "C"E6 z6 | "C"^F E _E2 =E2 c2 B2 A2 |
+"C"G8 ^F2 =F2 | "C"^F2 A2 c2 e4 d2 | [M:4/8]"C"G6 z2 | [M:2/8]"C"z2 B2 |
+[M:6/8]"C"c B _B2 =B2 g2 ^f3 e | "C"g8 ^f2 e2 | "C"c B _B2 =B2 e2 d3 c | "C"^F6 z6 |
+"C"G ^F =F2 ^F2 e2 d3 _d | "C"e8 d2 c2 | "C"G ^F =F2 ^F2 c2 B2 A2 | "C"G6 z6 |
+"C"c B _B2 =B2 g2 ^f3 e | "C"g8 ^f2 e2 | "C"c B _B2 =B2 e2 d3 c | "C"E6 z6 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Johnny MacGill, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc,
+% tune X: 149 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Johnny MacGill
+M:6/8
+L:1/16
+Q:1/4=140
+K:F
+P:A
+"F"z10 d2 | "F"c2 A2 A2 A2 G2 F2 | "F"c2 A2 A2 A4 d2 | "Dm7"c2 A2 A2 A2 G2 A2 |
+"Dm7"F2 D2 D2 D4 d2 | "F"c2 A2 A2 A2 G2 F2 | "F"c2 A2 A2 A2 G2 F2 | "A7"G6 A2 G2 A2 |
+"Dm"F2 D2 D2 D4 d2 | "F"c2 A2 A2 A2 G2 F2 | "F"c2 A2 A2 A4 d2 | "Dm7"c2 A2 A2 A2 G2 A2 |
+"Dm7"F2 D2 D2 D4 d2 | "F"c2 A2 A2 A2 G2 F2 | "F"c2 A2 A2 A2 G2 F2 | "A7"G6 A2 G2 A2 |
+"Dm"F2 D2 D2 D6 | "Dm7"f6 g6 | "F"a2 f2 d2 c2 A2 F2 | "Dm7"f6 g6 |
+"Dm7"a2 f2 d2 d2 f2 g2 | "Dm7"a2 f2 a2 g2 e2 g2 | "Dm7"f2 d2 e2 f4 d2 | "F"c2 A2 F2 G4 A2 |
+"Dm"F2 D2 D2 D6 | "Dm7"f6 g6 | "F"a2 f2 d2 c2 A2 F2 | "Dm7"f6 g6 |
+"Dm7"a2 f2 d2 d2 f2 g2 | "Dm7"a2 f2 a2 g2 e2 g2 | "Dm7"f2 d2 e2 f4 d2 | "F"c2 A2 F2 G4 A2 |
+"Dm"F2 D2 D2 D6 |

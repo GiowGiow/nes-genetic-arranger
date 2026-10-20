@@ -1,0 +1,35 @@
+%abc-2.1
+% Puer natus in Bethlehem, by Josef Gabriel Rheinberger (1839-1901). Score published on MuseScore
+% (artist: Josef Gabriel Rheinberger), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josef Gabriel Rheinberger (died
+% 1901, Wikidata Q365555).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/8/QmY9ts2arF7NRgRaKmKy6Yir1ZzeWgSGpwCrDw8sV7feYK.mid (sha256
+% 650d185711689ca7d2e03f05773c5212de451937824200728f62ecc71fe5aecc): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Puer natus in Bethlehem
+M:2/2
+L:1/16
+Q:1/4=137.999876
+% Exact tempo 137.99987580011177 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"B8 E8 | "F#m"A8 G4 ^F4 | "C"G12 c4 | "C"c16 |
+"Am"c8 A4 c4 | "D"^F8 ^F4 ^F4 | "G"B8 G4 B4 | "C"E12 G4 |
+"Am7"c8 B8 | "A7"A6 E2 ^F4 G4 | "D7"^F16 | "B7"z12 B4 |
+"Em"B8 G4 E4 | "Am7"A4 G4 ^F4 E4 | "Em"E12 _E4 | "B7"_E8 z8 |
+"Em"B8 E4 E4 | "Am7"A8 G4 ^F4 | "Em"G12 c4 | "Am"c16 |
+"B"^F8 E4 _E4 | "Em"E8 E8 | "Am"F12 F4 | "B"_E12 z4 |
+"G"B8 B4 B4 | "F#"B8 _B8 | "Bm"B4 ^F4 B4 A4 | "E"_A8 z4 _A4 |
+"Am"c4 B4 A4 G4 | "D"^F4 E4 D4 c4 | "G"B4 A4 G4 ^F4 | "C"E12 z4 |
+"D"z4 A4 G4 ^F4 | "Em7"G8 D8 | "D7"z4 c4 d4 A4 | "Em7"B12 z4 |
+"D7"z4 A4 G4 ^F4 | "Em7"G8 A4 B4 | "A7"A8 G8 | "Bm7"^F8 G4 A4 |
+"G"B8 A8 | "Em7"G12 F4 | "C"E4 B4 A4 G4 | "Bm7"^F8 z8 |
+"G"B8 A4 A4 | "B"G8 ^F8 | "C"E16 | "C7"E4 G4 ^F4 E4 |
+"B"_E12 z4 | "B"z12 B4 | "Em"B8 E8 | "F#m"A8 G4 ^F4 |
+"C"G12 c4 | "Am7"c8 z4 c4 | "Ab7"c8 ^F8 | "Dm"B8 A4 _A4 |
+"Am"A12 E4 | "Dbm7"E12 z4 | "Am"c8 A4 c4 | "D"^F8 ^F8 |
+"G"B8 G4 B4 | "C"E16 | "D7"A8 ^F4 A4 | "B"_E12 _E4 |

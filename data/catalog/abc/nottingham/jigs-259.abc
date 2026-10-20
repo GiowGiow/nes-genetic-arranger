@@ -1,0 +1,24 @@
+%abc-2.1
+% The Rocking Horse, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/jigs.abc, tune X: 259 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Rocking Horse
+M:6/8
+L:1/16
+Q:1/4=140
+K:C
+P:A
+"G7"z6 E4 D2 | "Dm7"C4 c2 A2 B2 c2 | "C"G2 A2 G2 G2 F2 E2 | "Dm7"F4 A2 G2 F2 E2 |
+"G7"F2 E2 F2 D2 E2 D2 | "Dm7"C4 c2 A2 B2 c2 | "Am7"G2 A2 G2 G2 F2 E2 | "G7"D2 E2 F2 G2 A2 B2 |
+"C"c6 E4 D2 | "Dm7"C4 c2 A2 B2 c2 | "C"G2 A2 G2 G2 F2 E2 | "Dm7"F4 A2 G2 F2 E2 |
+"G7"F2 E2 F2 D2 E2 D2 | "Dm7"C4 c2 A2 B2 c2 | "Am7"G2 A2 G2 G2 F2 E2 | "G7"D2 E2 F2 G2 A2 B2 |
+"C"c6 c2 B2 c2 | "G"d4 d2 d2 c2 d2 | "Am7"e4 e2 e2 d2 e2 | "G7"f4 f2 d2 e2 f2 |
+"C"g6 e2 f2 g2 | "F"a4 a2 f2 g2 a2 | "Am7"g4 e2 c2 d2 e2 | "Dm"f2 e2 d2 c2 B2 A2 |
+"G7"G6 e4 d2 | "C"c4 c2 G2 A2 _B2 | "F"A4 c2 F2 G2 A2 | "D7"G2 E2 C2 C2 B,2 C2 |
+"G"D6 G4 F2 | "C"E4 G2 C2 D2 E2 | "Dm7"F4 A2 D2 d2 c2 | "G"B2 A2 G2 F2 E2 D2 |
+"C"C6 z6 |

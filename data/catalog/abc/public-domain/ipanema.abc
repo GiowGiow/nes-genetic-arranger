@@ -1,0 +1,36 @@
+%abc-2.1
+% IPANEMA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_i/ipanema.html (file
+% https://www.beakauffmann.com/mpb_i/som/ipanema.mid, sha256
+% 7a37d0acec5c1528fc2506193381621adb56e57bddbec9997b20f3c8c6710917), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:IPANEMA
+M:4/4
+L:1/16
+Q:1/4=118.000366
+% Exact tempo 118.00036580113397 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"a6 _a2 ^f2 e2 d2 _d2 | "C"B2 _d2 =d2 _e2 =e2 f2 ^f2 g2 | "C"_a _a _a2 D,,2 ^f'2 e' e' e'2 =F,2 d'2 | "C"_d' _d' _d'2 E,,2 b2 a4 a'4 |
+"C"_d2 A2 e2 A2 =d2 _A2 B2 _A2 | "C"A2 ^F2 _d2 ^F2 B2 =F2 _A2 _D2 | "C"^F2 D2 ^F2 E2 ^F2 D2 =F2 D2 | "C"_A,, D E _A B e _a b _d' =a _d' e =a _d e =A |
+"C"_d2 A2 e2 A2 =d2 _A2 B2 _A2 | "C"A2 ^F2 _d2 ^F2 B2 =F2 _A2 _D2 | "C"^F2 D2 A2 =F2 _d2 A2 ^f e _d A | "C"B A F D _D2 B,2 A,4 a4 |
+"C"_d2 A2 e2 A2 =d2 _A2 B2 _A2 | "C"A2 ^F2 _d2 ^F2 B2 =F2 _A2 _D2 | "C"^F2 D2 ^F2 E2 ^F2 D2 =F2 D2 | "C"_A,, D E _A B e _a b _d' =a _d' e =a _d e =A |
+"C"_d2 A2 e2 A2 =d2 _A2 B2 _A2 | "C"A2 ^F2 _d2 ^F2 B2 =F2 _A2 _D2 | "C"^F2 D2 A2 =F2 _d2 A2 ^f e _d A | "C"B A F D _D2 B,2 A,4 a4 |
+"C"a b a2 _a =a _a2 ^f _a ^f2 e ^f e2 | "C"d e d2 _d =d _d2 B _d B2 A B A2 | "C"B,, _A =A _B _d =B _A E _D, _d =d _e ^f =e _d =A | "C"^F, _a =a _b _d' =b _b =a _a =b _b =a _a =f =d _d |
+"C"a b a2 _a =a _a2 ^f _a ^f2 e ^f e2 | "C"d e d2 _d =d _d2 B _d B2 A B A2 | "C"B,, _A =A _B _d =B _A E e ^f e2 =b _d' =b2 | "C"b _d' b2 b _d' b2 a4 a'4 |
+"C"a b a2 _a =a _a2 ^f _a ^f2 e ^f e2 | "C"d e d2 _d =d _d2 B _d B2 A B A2 | "C"B,, _A =A _B _d =B _A E _D, _d =d _e ^f =e _d =A | "C"^F, _a =a _b _d' =b _b =a _a =b _b =a _a =f =d _d |
+"C"a b a2 _a =a _a2 ^f _a ^f2 e ^f e2 | "C"d e d2 _d =d _d2 B _d B2 A B A2 | "C"B,, _A =A _B _d =B _A E e ^f e2 =b _d' =b2 | "C"b _d' b2 b _d' b2 a4 a'4 |
+"C"D,2 ^f2 A,,2 e d e z _d2 A,,2 =d2 | "C"_e2 =e2 A,,2 =e2 _B2 D,2 A4 | "C"^F,,2 a2 _D,,2 _a ^f g z =f2 _D,,2 ^f2 | "C"g2 _a2 _D,,2 _a2 =d2 ^F,2 _d4 |
+"C"D,2 ^f2 _D,2 ^f2 B,,2 ^f2 A,,2 ^f2 | "C"G,,2 e2 _e2 =e2 _d'2 =E2 b2 =D2 | "C"_D2 e2 A,2 e2 _A,2 e2 G,2 e2 | "C"^F,2 d2 _d2 =d2 b4 a4 |
+"C"D,2 ^f2 A,,2 e d e z _d2 A,,2 =d2 | "C"_e2 =e2 A,,2 =e2 _B2 D,2 A4 | "C"^F,,2 a2 _D,,2 _a ^f g z =f2 _D,,2 ^f2 | "C"g2 _a2 _D,,2 _a2 =d2 ^F,2 _d4 |
+"C"G,,2 _e2 G,,2 =e2 _d'2 F,2 b2 F,2 | "C"A,,2 _d2 A,,2 =d2 b2 =D2 a2 =D2 | "C"_A,2 E2 _A,2 E2 G,2 E2 G,2 E2 | "C"D2 B, z A, z ^F, z D,2 z6 |
+"C"D,2 ^f2 A,,2 e d e z _d2 A,,2 =d2 | "C"_e2 =e2 A,,2 =e2 _B2 D,2 A4 | "C"^F,,2 a2 _D,,2 _a ^f g z =f2 _D,,2 ^f2 | "C"g2 _a2 _D,,2 _a2 =d2 ^F,2 _d4 |
+"C"D,2 ^f2 _D,2 ^f2 B,,2 ^f2 A,,2 ^f2 | "C"G,,2 e2 _e2 =e2 _d'2 =E2 b2 =D2 | "C"_D2 e2 A,2 e2 _A,2 e2 G,2 e2 | "C"^F,2 d2 _d2 =d2 b4 a4 |
+"C"D,2 ^f2 A,,2 e d e z _d2 A,,2 =d2 | "C"_e2 =e2 A,,2 =e2 _B2 D,2 A4 | "C"^F,,2 a2 _D,,2 _a ^f g z =f2 _D,,2 ^f2 | "C"g2 _a2 _D,,2 _a2 =d2 ^F,2 _d4 |

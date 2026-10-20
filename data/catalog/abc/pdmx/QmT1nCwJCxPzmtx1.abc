@@ -1,0 +1,25 @@
+%abc-2.1
+% Vo tsartsvii Tvoem, by Dobri Hristov. Score published on MuseScore (artist: Dobri Hristov), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Dobri Hristov (died 1941,
+% Wikidata Q1233402).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/0/QmT1nCwJCxPzmtx1sBSrStzWRHdLjbmKCX9aNh7tsTRotR.mid (sha256
+% edd9d09c276a4d019664326253cc9f6710c772fa1d260a16df8da58eae5cad99): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Vo tsartsvii Tvoem
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"A"z12 _d4 | "A"e6 _d2 _d4 _d4 | "A"_d8 z4 _d2 _d2 | "F#m7"^f4 e4 e4 _d4 |
+"A"e6 _d2 "F#m7"_d8 | "F#m"z4 ^F4 A4 _d4 | "Bm"_d6 B2 B4 A4 | "E"_A6 _A2 "E7"=A4 B4 |
+"A"B4 A4 z8 | "E"z4 B4 "Dbm7"d4 B4 | "F#m7"e4 e2 e2 "E7"^f4 e4 | "A"e4 A4 "Bm7"e4 d4 |
+"F#m7"_d4 A2 A2 "E7"_d4 B4 | "A"A8 "F#m"z8 | "Db"z4 _d4 _a2 f2 _d2 B2 | "Db"d4 _d2 B2 "F#7"A4 _B2 _B2 |
+"Bm"_d2 B2 A2 _A2 "Db7"=A6 _A2 | "F#m"^F8 "E"z8 | "E"z8 "E7"z8 | "A"e2 e2 e2 e2 e4 e2 e2 |
+"A"^f6 e2 e4 e2 e2 | "E7"e4 e2 e2 "Bm7"e4 d4 | "F#m7"_d4 ^f4 e4 _d4 | "E7"B4 e8 e4 |
+"A"e16 |

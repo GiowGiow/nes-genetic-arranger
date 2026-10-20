@@ -1,0 +1,34 @@
+%abc-2.1
+% Benedicamus Domino! - Domenico Bellando - da 6 Composizioni, by Domenico Bellando. Score
+% published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Bellando (died 1922,
+% Wikidata Q100054690).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/39/QmSQC8MEzBkacyP6rT2mNBsEC1KrVS5U9QLJByingB5Hwy.mid (sha256
+% d120bb87dcabed5ef917c05fbb84bf81794f086255d9a45ec2c56e420031602b): melody track 0, bars 0-59
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Benedicamus Domino! - Domenico Bellando - da 6 Composizioni
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb"z16 | "Cm7"z8 "F7"z8 | "F7"z4 _B2 C2 "Bb"_B4 _B4 | "F"_B4 _e2 G2 _e2 F2 _e2 A2 |
+"Bb"_e4 d2 c2 d2 f2 _b2 a2 | "Cm"g2 _B2 _e2 d2 "Am"c2 _e2 a2 g2 | "Dm"f2 A2 d2 c2 "Gm"_B2 d2 g2 f2 | "Cm"_e2 G2 c2 _B2 "F"A2 c2 f2 _e2 |
+"Bb"d2 F2 _B2 A2 "B"_A2 d2 e2 f2 | "C"c2 _e2 d2 c2 _B2 d2 c2 _B2 | "D7"A2 E2 F2 E2 "Bb"D2 ^F2 G2 =F2 | "C"E4 F8 E4 |
+"F"F2 z14 | "Gm7"z8 "C7"z8 | "C7"z4 F4 "F"F4 F4 | "C"F4 _B2 D2 _B2 C2 _B2 E2 |
+"Gm7"_B4 A2 G2 "Dm7"A2 c2 d2 _e2 | "D7"f2 d2 _B2 _A2 "B"G2 d2 g2 f2 | "B"_e2 f2 d2 _e2 "C"c2 d2 _e2 f2 | "D"g2 _e2 c2 _B2 "Db"g2 =e2 a2 g2 |
+"A"f2 g2 e2 f2 "D"d2 f2 g2 a2 | "Bb"_b8- "Eb"_b2 g2 a2 _b2 | "Cm"c'8- "F"c'2 a2 _b2 c'2 | "Dm"d'8- "Gm"d'2 _B2 c2 d2 |
+"C"_e2 d2 c2 _B2 "Dm7"A2 c2 f2 _e2 | "Bb"d2 c2 _B2 A2 "Cm7"G2 _B2 _e2 d2 | "A"c2 _B2 A2 G2 "D7"^F2 A2 d2 c2 | "G"_B2 A2 G2 F2 "C7"E2 G2 c2 _B2 |
+"F"A2 _B2 c2 d2 "Am7"_e2 c2 f2 _e2 | "Bb"_e2 _d2 =d2 _A2 "Eb"G2 B2 c2 ^F2 | "Dm"z2 A2 _B4 "F"_B2 G2 A2 F2 | "Gm"_B2 z6 "G"z8 |
+"C"z8 "D7"z8 | "D7"z4 G4 "Gm"G4 G4 | "D"G4 c4 c4 c4 | "G"c4 _B2 A2 _B2 d2 _B2 G2 |
+"C7"E8- "C"E2 G2 c2 _B2 | "F"A2 _B2 G2 A2 "Am"F2 c2 _A2 F2 | "Bb7"D8- "Bb"D2 F2 _B2 _A2 | "Eb"G2 _A2 F2 G2 "Gm"_E2 _B2 c2 d2 |
+"Cm"_e2 d2 c2 _B2 "F7"_e2 c2 d2 _e2 | "Dm"f2 _e2 d2 c2 "G7"f2 d2 _e2 f2 | "Eb"g2 f2 _e2 f2 "C"g2 ^f2 g2 a2 | "Gm"_b2 c2 _B2 c2 "F#"_d2 =d2 _e2 =e2 |
+"Gm7"f8- "F"f2 d'2 _b2 _a2 | "F"a2 c'2 a2 ^f2 g2 _b2 g2 e2 | "F"f2 a2 f2 d2 _e2 g2 _e2 _d2 | "F"d2 f2 d2 B2 c2 _e2 c2 A2 |
+"F"_B2 D2 _E2 F2 G2 F2 _E2 D2 | "F"_B4 c4 d4 _e4 | "F"f4 g4 a4 _b4 | "F7"d8 "F"c8 |
+"Bb"_B2 z14 | "Gm"z4 _E4 "F"_E4 _E4 | "Bb"_E4 _B2 C2 _B2 _B,2 _B2 D2 | "F"_B4 A2 G2 A A7 |
+"Bb"_B2 z6 D F _B d f _b d' f' | "Bb"_b'4 z4 _b8 | "Bb"_b4 z12 |

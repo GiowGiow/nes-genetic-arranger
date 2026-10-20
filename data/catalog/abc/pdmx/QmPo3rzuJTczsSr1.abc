@@ -1,0 +1,29 @@
+%abc-2.1
+% Jupiter The Bringer Of Jollity, by Gustav Holst. Score published on MuseScore (artist: Gustav
+% Holst), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Holst (died 1934,
+% Wikidata Q200867).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/35/QmPo3rzuJTczsSr1twR2G4vFrqabsRx5iRvKjw8Ngn6ggm.mid (sha256
+% a7fdceb002e819a3f8f0a2486913a6ee2c831fb15e0c8668a28fb1e67a637288): melody track 0, bars 0-43
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jupiter The Bringer Of Jollity
+M:3/4
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"C"z8 G,2 _B,2 | "C"C4 C2 _E2 D3 _B, | "C"_E2 F2 _E4 D4 | "C"C2 D2 C4 _B,4 |
+"C"G,8 G,2 _B,2 | "C"C4 C2 _E2 D3 _B, | "C"_E2 F2 G4 G4 | "C"G2 F2 _E4 F4 |
+"C"_E8 _B2 G2 | "C"F4 F4 _E2 G2 | "C"F4 _B,4 _B2 G2 | "C"F4 F4 G2 _B2 |
+"C"c8 c2 d2 | "C"_e4 d4 c4 | "C"_B4 _e4 G4 | "C"F2 _E2 F4 G4 |
+"C"_B8 G2 _B2 | "C"c4 c2 _e2 d3 _B | "C"_e2 f2 _e4 d4 | "C"c2 d2 c4 _B4 |
+"C"G8 G2 _B2 | "C"c4 c2 _e2 d3 _B | "C"_e2 f2 g4 g4 | "C"g2 f2 _e4 f4 |
+"C"_e8 _B2 G2 | "C"F4 F4 _E2 G2 | "C"F4 _B,4 _B2 G2 | "C"F4 F4 G2 _B2 |
+"C"c8 c2 d2 | "C"_e4 d4 c4 | "C"_B4 _e4 G4 | "C"F2 _E2 F4 G4 |
+"C"_B8 G2 _B2 | "C"c4 c2 _e2 d3 _B | "C"_e2 f2 _e4 d4 | "C"c2 d2 c4 _B4 |
+"C"G8 G2 _B2 | "C"c4 c2 _e2 d3 _B | "C"_e2 f2 g4 g4 | "C"g2 f2 _e8 |
+"C"f12 | "C"_e12 | "C"_e4 z8 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% O BOÊMIO, by Anacleto de Medeiros, as performed by Anacleto de Medeiros.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Anacleto de Medeiros (died 1907, Wikidata Q483486).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-boemio.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-boemio.mid, sha256
+% ac9e5d308f868f9741d639c2e6e7caec4fba2ccfd66a4c2f8ef9f39b2c4bd152), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O BOÊMIO
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m7"A5 B2 A | "D7"A5 B2 A | "F#m7"A B2 A A B2 A | "F#m7"A6 z2 |
+"D"A2 z A z B2 A | "Bm7"A5 A B A | "A7"g g g g g ^f2 _d | "Bm7"e d2 ^F2 ^F G _A |
+"Bm7"A3 z2 B2 A | "Dbm"_d3 z2 e e ^f | "Dbm7"e B B _d =d e2 B | "F#m7"d _d2 B _d B2 _B |
+"D"A2 z A z B2 A | "A"A5 A B A | "A7"g g g g g ^f2 _d | "D7"e d2 d d _d =d e |
+"Em7"e B2 B B _B =B d | "D"d A2 A A _A =A _d | "Em"_d B2 ^F A G2 E | "D"D ^F2 A d2 z2 |
+"D"A2 z A z B2 A | "Bm7"A5 A B A | "A7"g g g g g ^f2 _d | "Bm7"e d2 ^F2 ^F G _A |
+"Bm7"A3 z2 B2 A | "Dbm"_d3 z2 e e ^f | "Dbm7"e B B _d =d e2 B | "F#m7"d _d2 B _d B2 _B |
+"D"A2 z A z B2 A | "A"A5 A B A | "A7"g g g g g ^f2 _d | "D7"e d2 d d _d =d e |
+"Em7"e B2 B B _B =B d | "D"d A2 A A _A =A _d | "Em"_d B2 ^F A G2 E | "D"D ^F2 A d2 z2 |
+"Ebm7"^f3 z _d =d2 e | "Bm"e d2 _d B3 z | "Dbm"_d3 z _A _B2 =B | "Ebm7"B _B2 _A ^F3 z |
+"F#m7"a3 z e ^f2 g | "Bm7"g ^f2 e d3 z | "F#m7"e3 z B _d2 =d | "F#m7"d _d2 B A3 z |
+"F#m7"z8 | "Bm"z8 | "Db"z8 | "D"z8 |
+"F#m7"z8 | "Bm"z8 | "Dbm7"z8 | "A7"z8 |
+"A7"A5 B2 A | "F#m"A5 B2 A | "A7"A B2 A A B2 A | "A7"A6 z2 |
+"D"A2 z A z B2 A | "Bm7"A5 A B A | "A7"g g g g g ^f2 _d | "Bm7"e d2 ^F2 ^F G _A |
+"Bm7"A3 z2 B2 A | "Dbm"_d3 z2 e e ^f | "Dbm7"e B B _d =d e2 B | "F#m7"d _d2 B _d B2 _B |

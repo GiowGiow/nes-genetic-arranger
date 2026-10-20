@@ -1,0 +1,29 @@
+%abc-2.1
+% A CAMINHO (Marcha Infantil - No Jardim I), by Ernesto Nazareth, as performed by Ernesto
+% Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-caminho.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-caminho.mid, sha256
+% 8a3cd49af153d993397b41663e00239660301d6d8ad7620c44c5b51695eaf1bb), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-32 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A CAMINHO (Marcha Infantil - No Jardim I)
+M:3/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"f2 e2 g2 f2 e2 f2 | "Gm"d4 g4 z4 | "A7"g2 ^f2 a2 g2 =f2 e2 | "D"g4 f4 F4 |
+"Bb7"f2 z2 g2 f2 e2 f2 | "Dm7"a2 e2 g2 f2 c2 _d2 | "C7"e2 d2 A2 c2 _B2 E2 | "F"F3 z F4 z2 A2 |
+"F"c2 A2 G2 z2 C4 | "G"_B3 z _B4 D4 | "C7"A2 G2 ^F2 G2 E2 C2 | "Dm7"c3 z c4 z4 |
+"D7"_B2 A2 _A2 =A2 ^F2 D2 | "Gm"d3 z d4 z4 | "G"F2 ^F2 B,3 z B,4 | "C7"d4 c4 z2 A2 |
+"F"c2 A2 G2 z2 C4 | "G"_B3 z _B4 D4 | "C7"A2 G2 ^F2 G2 E2 C2 | "Dm7"c3 z c5 z3 |
+"Db7"_d3 _A F2 _A2 _B _A _B =B | "Dm7"c3 z c4 z4 | "Gm"z2 _B z _B3 _B A2 G2 | "F"F3 z F4 z4 |
+"F"F2 G2 F3 z F4 | "Bb"_B2 c2 d3 z d4 | "C"c2 _B2 G2 _B2 A2 c2 | "Bb"G4 F4 z4 |
+"D"D2 E2 F2 ^F2 A2 d2 | "Bb"c4 _B4 z4 | "Dm7"z4 C3 z _E4 | "Bb"z4 _B,3 z5 |

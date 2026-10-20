@@ -1,0 +1,35 @@
+%abc-2.1
+% COMIGO, É NA MADEIRA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/comigo-e-na-madeira.html (file
+% https://www.beakauffmann.com/mpb_c/som/comigo-e-na-madeira.mid, sha256
+% 744df9ce01016e69f2a9dbe09d218ab494edebdef00accb668297ab8801add18), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-57 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:COMIGO, É NA MADEIRA
+M:2/4
+L:1/16
+Q:1/4=69.999988
+% Exact tempo 69.99998833333528 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z G g G g G g G | "F"z G g G g G g G | "Bm"z G g G g G g G | "G"z5 D2 E |
+"G7"F2 z F A2 z A | "C"G z2 G z c2 c | "G7"B2 z B A2 z A | "Em"G2 z G z D z E |
+"G7"F2 z F A2 z A | "C"G z2 G z c z c | "D"B2 z B A2 z A | "G"d3 G z D z E |
+"G7"F2 z F A2 z A | "C"G z2 G z c2 c | "G7"B2 z B A2 z A | "C"G2 z G z G z A |
+"A7"_B2 z _B A2 z A | "D7"e2 z d z d z c | "G7"B2 z B z G z G | "C"c2 z c z c2 _d |
+"C7"d2 z d G2 z G | "Am"c2 z c z _A2 =A | "A7"_B2 z _B E2 z E | "F"A2 z A z _B2 A |
+"Bb"G2 z G e2 z d | "D7"d3 c z _B2 A | "Bb"G2 z D E3 z | "Ab"F A2 _B =B c2 _d |
+"C7"d2 z d G2 z G | "Am"c2 z c z _A2 =A | "A7"_B2 z _B E2 z E | "F"A2 z A z _B2 A |
+"Db7"G _B, z G e2 z d | "D7"d3 c z _B z A | "C"z A2 G C, A2 G | "F"F z3 f z3 |
+"G"z G g G g G g G | "F"z G g G g G g G | "Bm"z G g G g G g G | "G"z5 D2 E |
+"G7"F2 z F A2 z A | "C"G z2 G z c2 c | "G7"B2 z B A2 z A | "Em"G2 z G z D z E |
+"G7"F2 z F A2 z A | "C"G z2 G z c z c | "D"B2 z B A2 z A | "G"d3 G z D z E |
+"G7"F2 z F A2 z A | "C"G z2 G z c2 c | "G7"B2 z B A2 z A | "C"G2 z G z G z A |
+"A7"_B2 z _B A2 z A | "D7"e2 z d z d z c | "G7"B2 z B z G z G | "C"c2 z c z c2 _d |
+"C"c2 z2 c' z3 |

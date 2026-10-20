@@ -1,0 +1,36 @@
+%abc-2.1
+% ESTÁ CHUMBADO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/esta-chumbado.html (file
+% https://www.beakauffmann.com/mpb_e/som/esta-chumbado.mid, sha256
+% db353eb01ea1977f95019c44ae41673f0ab7bf34e72e3796a86af3347816370e), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESTÁ CHUMBADO
+M:2/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000065 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bbm7"z _A2 _A z2 _A2 | "Eb"z _A2 _A z2 _A2 | "Bbm7"z _A2 _A z2 _A2 | "Eb"z _A2 _A z2 _A2 |
+"Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 | "Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 |
+"Eb7"z2 f2 _e2 _d2 | "F7"c3 c z2 c2 | "Eb"z2 _d2 c2 _B2 | "Ab7"_A3 _A z2 _A2 |
+"Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 | "Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 |
+"F7"z2 _d2 z _A2 =A | "Gm7"_B A2 _B _d c2 _d | "Db"f e2 f _a2 _a2 | "Ab7"_d'3 z _A3 z |
+"Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 | "Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 |
+"Eb7"z2 f2 _e2 _d2 | "F7"c3 c z2 c2 | "Eb"z2 _d2 c2 _B2 | "Ab7"_A3 _A z2 _A2 |
+"Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 | "Bbm7"z2 _d2 c2 _B2 | "Eb"_A3 _A z2 _A2 |
+"F7"z2 _d2 z _A2 =A | "Gm7"_B A2 _B _d c2 _d | "Db"f e2 f _a2 _a2 | "Db"_d'3 z _d''3 z |
+"Bbm"f3 f' z _d' _b f | "C7"e3 e' z _d' _b _e | "D7"_e3 _e' z c' ^f _e | "Bbm"_d3 _d' z _b f _d |
+"Bbm"_B A _B c _d c _d _e | "Fm"f3 _d' c' _a f _d | "C7"c3 _d' c' _d' c' _d' | "F7"c' ^f _B _A _e =A c =F |
+"Bbm"f3 f' z _d' _b f | "C7"e3 e' z _d' _b _e | "D7"_e3 _e' z c' ^f _e | "Bbm"_d3 _d' z _b f _d |
+"Abm7"B3 _a z ^f _e B | "Bbm"_B3 ^f =f _d _B =F | "F7"E G _d c A c ^f =f | "Bbm"_B3 z _b3 z |
+"Bbm"f3 f' z _d' _b f | "C7"e3 e' z _d' _b _e | "D7"_e3 _e' z c' ^f _e | "Bbm"_d3 _d' z _b f _d |
+"Bbm"_B A _B c _d c _d _e | "Fm"f3 _d' c' _a f _d | "C7"c3 _d' c' _d' c' _d' | "F7"c' ^f _B _A _e =A c =F |
+"Bbm"f3 f' z _d' _b f | "C7"e3 e' z _d' _b _e | "D7"_e3 _e' z c' ^f _e | "Bbm"_d3 _d' z _b f _d |

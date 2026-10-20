@@ -1,0 +1,24 @@
+%abc-2.1
+% Up Jumped The Devil, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsu-z.abc, tune X: 1 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 d104d7d1bb83eb1ca18f6b944dc22cf9f7bfe5f955d07cd573615985f69c2c1f).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Up Jumped The Devil
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 B2 c2 | "A"e4 e2 e2 f4 f4 | "A"a4 a4 f4 e4 | "A"e4 a4 f4 e4 |
+"E"g12 e4 | "E"e2 g2 b2 e2 g2 b2 e2 g2 | "E"b2 e2 g2 b2 g4 f4 | "E7"e2 f2 g2 e2 f4 e4 |
+"A"a8- "E7"a4 e4 | "A"e2 c2 e2 c2 f2 c2 f2 c2 | "A"a2 c2 a2 c2 f4 e4 | "A7"=g4 ^g8 ^g4 |
+"D"f12 a4 | "D"a6 b2 a4 f4 | "A"e6 f2 e4 e2 f2 | "Bm"g2 f2 e2 d2 "E7"c4 B4 |
+"A"A8 "E7"G4 F4 | "A"E4 A2 A2 F4 A4 | "A"E4 A2 A2 F4 A4 | "A"E4 A2 A2 F4 A4 |
+"E"B4 e4 e8 | "E"e2 f2 g2 e2 f2 g2 e2 f2 | "E"g2 e2 f2 g2 f4 e4 | "E7"e2 f2 g2 e2 f4 e4 |
+"A"a8- "E7"a8 | "A"E4 A2 A2 F4 A4 | "A"E4 A2 A2 F4 A4 | "A7"E4 A4 c4 A4 |
+"D"d12 a4 | "D"a6 b2 a4 f4 | "A"e6 f2 e4 a4 | "Bm"g2 f2 e2 d2 "E7"c4 B4 |
+"A"A12 z4 |

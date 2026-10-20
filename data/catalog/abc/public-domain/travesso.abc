@@ -1,0 +1,36 @@
+%abc-2.1
+% TRAVESSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/travesso.html (file
+% https://www.beakauffmann.com/mpb_t/som/travesso.mid, sha256
+% c24029db160d818956448bcedea2aa68377679bdb5847b64530fd23b96711c4b), from Beatriz Kauffmann's Web
+% Site. Melody track 7, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TRAVESSO
+M:2/4
+L:1/16
+Q:1/4=86.000052
+% Exact tempo 86.00005160003096 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb7"z8 | "Dm"F,2 z F, A,2 z A, | "Em7"E,2 z E, F,2 z F, | "A7"_D2 z _D G,2 z G, |
+"Dm"F,2 z F, A,2 z A, | "Dm"F,2 z F, A,2 z A, | "Am"C2 z C A,2 z A, | "Bb7"F,2 z F, _B,2 _B,2 |
+"A7"_D2 z _D G,2 z G, | "Dm"F,2 z F, A,2 z A, | "Em7"E,2 z E, F,2 z F, | "A7"_D2 z _D G,2 z G, |
+"D7"^F,2 z ^F, A,2 z A, | "Gm"_B,2 z _B, G,2 z G, | "Dm"F,2 z F, A,2 z A, | "Em"E,2 z E, G,2 z G, |
+"Dm"F,2 z F, A,2 z A, | "Dm"F,2 z F, A,2 z A, | "Em7"E,2 z E, F,2 z F, | "A7"_D2 z _D G,2 z G, |
+"Dm"F,2 z F, A,2 z A, | "Dm"F,2 z F, A,2 z A, | "Am"C2 z C A,2 z A, | "Bb7"F,2 z F, _B,2 _B,2 |
+"A7"_D2 z _D G,2 z G, | "Dm"F,2 z F, A,2 z A, | "Em7"E,2 z E, F,2 z F, | "A7"_D2 z _D G,2 z G, |
+"D7"^F,2 z ^F, A,2 z A, | "Gm"_B,2 z _B, G,2 z G, | "Dm"F,2 z F, A,2 z A, | "Em"E,2 z E, G,2 z G, |
+"Bb"F,2 z F, _B,2 z _B, | "C7"E,2 z E, G,2 z G, | "Dm"D,2 z D, G,2 z G, | "Gm"D,2 z D, G,2 z G, |
+"Dm"D,2 z D, G,2 z G, | "Bb"F,2 z F, _B,2 z _B, | "Dm7"A,2 z A, C2 z C | "C7"E,2 z E, G,2 z G, |
+"Am"A,2 z A, C2 z C | "C7"E,2 z E, G,2 z G, | "Dm"D,2 z D, G,2 z G, | "Gm"D,2 z D, G,2 z G, |
+"Dm"D,2 z D, G,2 z G, | "Bb"F,2 z F, _B,2 z _B, | "Dm7"F,2 z F, A,2 z A, | "Gm"D,2 z D, _B,2 z _B, |
+"Dm"A,2 z A, F,2 z F, | "C7"E,2 z E, G,2 z G, | "Dm"D,2 z D, G,2 z G, | "Gm"D,2 z D, G,2 z G, |
+"Dm"D,2 z D, G,2 z G, | "Bb"F,2 z F, _B,2 z _B, | "Dm7"A,2 z A, C2 z C | "C7"E,2 z E, G,2 z G, |
+"Am"A,2 z A, C2 z C | "C7"E,2 z E, G,2 z G, | "Dm"D,2 z D, G,2 z G, | "Gm"D,2 z D, G,2 z G, |
+"Dm"D,2 z D, G,2 z G, | "Bb"F,2 z F, _B,2 z _B, | "Dm7"F,2 z F, A,2 z A, | "Gm"D,2 z D, _B,2 z _B, |

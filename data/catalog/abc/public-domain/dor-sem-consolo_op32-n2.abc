@@ -1,0 +1,32 @@
+%abc-2.1
+% DOR SEM CONSOLO (Op.32 Nº 2), by Affonso Celso e Alberto Nepomuceno, as performed by Affonso
+% Celso e Alberto Nepomuceno.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Affonso Celso (died 1938, Wikidata Q1788745); Alberto Nepomuceno (died
+% 1920, Wikidata Q1391980).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dor-sem-consolo_op32-n2.html (file
+% https://www.beakauffmann.com/mpb_d/som/dor-sem-consolo_op32-n2.mid, sha256
+% 1b9971fb0dd21b0e5a4b2516fe63179634211a2a7b15b0ec08d3e55ff4712988), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-44 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DOR SEM CONSOLO (Op.32 Nº 2)
+M:2/4
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"Gm"z6 _B2 | "Cm7"_B3 _B _B A2 G | "D7"_B4 A2 _E2 | "G7"_E3 D D G2 G |
+"Cm"G4 G2 G2 | "Eb7"_B2 _B2 A2 G2 | "D7"_B4 A2 D2 | "D7"_E2 _E2 _E _E2 _E |
+"Gm"_E2 D2 G G2 G | "A7"d4 _d3 E | "Am7"G8 | "A7"z8 |
+"Cm"z2 _e2 _e2 _e2 | "Bb"_e d2 d d3 d | "Am7"z A A A c2 c _B | "Am7"A4 A A2 A |
+"Gm"_B4 G3 F | "Gm"F4 _E2 z2 | "Fm7"_A2 _A _A _A2 _A _A | "G7"G4 G2 D2 |
+"Cm"G2 _E2 D3 C | "D7"^F8 | "D7"z8 | "Dm7"z F F F F2 _E D |
+"Dm7"F F F F F _E _E D | "Dm7"c4 B2 z2 | "Eb7"z G G G G F F _E | "Eb7"G G G G G F F _E |
+"C7"_d4 c2 z2 | "Bbm"z2 _d2 c2 _B2 | "Gm7"d2 D D D2 z D | "F#m"D2 c c _B2 A2 |
+"Gm"c2 _B2 z2 A2 | "Bb"A2 G G G2 F2 | "Cm"_E8 | "Cm"z _E2 _E _E2 _E _E |
+"Eb7"G2 G2 G G2 G | "Eb7"G4 G2 G2 | "Gm"_B2 d2 c2 _B2 | "D"_e3 ^F ^F2 ^F2 |
+"Cm7"G8 | "Gm7"z8 | "D7"z8 | "Gm"z8 |

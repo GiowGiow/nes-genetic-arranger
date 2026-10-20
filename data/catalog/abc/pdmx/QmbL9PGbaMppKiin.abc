@@ -1,0 +1,34 @@
+%abc-2.1
+% La poule Suite en sol, by Jean-Philippe Rameau. Score published on MuseScore (artist:
+% Jean-Philippe Rameau), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean-Philippe Rameau (died 1764,
+% Wikidata Q1145).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/30/QmbL9PGbaMppKiinnANtR7pz1pTVfpi3NYuLvMztEkLfQD.mid (sha256
+% 4b3275d123e9b14c6554e26743383c7dad5dffe2b2a06759093db2e20e8d9c2e): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La poule Suite en sol
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"z2 G2 G2 G2 G2 G2 | "Gm"_B d G2 G2 G2 G2 G2 | "Gm"_B d g z7 d2 | "C"_e2 _e2 _e2 _e2 _e3 a |
+"A7"c' z c2 c2 c2 c3 ^f | "D7"a z _e2 d2 c2 c _B A2 | "G"A2 _B _B _B2 A2 G4 | "G"_e2 _B2 _e2 _B2 _B2 g _d |
+"G"_d2 A2 =d2 A2 A2 A2 | "G"d2 A2 d2 A2 A2 f B | "G"B2 G2 c2 G2 G2 G2 | "G"c2 _e2 d2 c2 c _B A2 |
+"G"_B A _B d _B A _B d A G A c | "G"_B A _B d _B A _B d A G A c | "G"_B A _B c _B2 d2 d c _B2 | "G"_B _B _B _B _B _B _B _B z4 |
+"G"z2 F2 F2 F2 F2 F2 | "G"_B d F2 F2 F2 F2 F2 | "Bb"_B d f z9 | "Cm7"G2 G2 G2 G2 G3 _e |
+"Bb"g z F2 F2 F2 F3 d | "Cm7"f z G2 G2 G2 G3 _e | "Bb"g z F2 F2 F2 F3 d | "Am"f z c _B A2 G2 F2 _E2 |
+"Bb"F F F F D4 z4 | "Eb"G2 G2 G2 G2 G2 _B _B | "D"_B F _E D F D C _B, D D C _B, | "Eb"G2 G2 G2 G2 G2 _B _B |
+"D"_B F _E D F D C _B, D D C _B, | "Eb"G2 G2 G2 G2 G2 _B _B | "Bb"_B2 F2 d8 | "F"_B3 c _B _B _B _B z2 _B2 |
+"Bb"_B2 _B2 _B2 _B2 _B2 _B2 | "Bb"d f _B2 _B2 _B2 _B2 _B2 | "Bb"d f _b6 _a4 | "Em7"_a2 _a g _a g _a g _a z3 |
+"Cm"f2 f _e f _e f z c4 | "Cm"z2 c2 c2 c2 c2 c2 | "Cm"_e g c2 c2 c2 c2 c2 | "Cm"_e g c'6 _b4 |
+"F#m7"_b2 _b a _b a _b a _b z3 | "D"g2 g ^f g ^f g z d4 | "Bb"z2 A2 A2 A2 A2 A2 | "Bb"_B A _B c d2 d2 _B2 d c |
+"Bb"A G A _B c2 c2 A2 c _B | "Bb"_B A _B c d2 d2 _B2 d c | "Bb"_B _B _B _B _B _B _B _B z4 | "Bb"_B A _B d _B A _B d =B A =B d |
+"Bb"c B c _e c B c _e _d B _d =e | "Bb"d _d =d f =d _d =d f e =d e g | "Bb"f2 g e g2 f2 f e d2 | "Bb"d d d d d d B2 A2 A,,2 |
+"A"z2 E2 E2 E2 E2 E2 | "A"G A _d z9 | "A"z2 G2 G2 G2 G2 G2 | "A"G _d e10 |
+"A7"e8 d _d B F | "D7"F2 A2 d2 F2 E2 _d2 | "D"_d4 =d A ^F =D5 | "D"z2 G2 G2 G2 G2 G2 |
+"D"_B d G2 G2 G2 G2 G2 | "Gm"_B d g z7 d2 | "C"_e2 _e2 _e2 _e2 _e3 a | "A7"c' z c2 c2 c2 c3 ^f |

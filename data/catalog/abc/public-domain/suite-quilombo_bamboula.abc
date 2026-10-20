@@ -1,0 +1,35 @@
+%abc-2.1
+% SUITE QUILOMBO (Bamboula), by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/suite-quilombo_bamboula.html (file
+% https://www.beakauffmann.com/mpb_s/som/suite-quilombo_bamboula.mid, sha256
+% fc46b074d8e9d43412370995bf354556082f356d99e01fd08a8f9d167645796d), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SUITE QUILOMBO (Bamboula)
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"B D z A A2 A2 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"B D z A A2 A2 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"B7"b B z ^f a2 g2 | "Em"e E z B B2 B2 | "B7"c _E z B B2 B2 | "Em7"c E z B _b2 z2 |
+"A7"a A z e g2 ^f2 | "D"d D z A A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"B7"b B z ^f a2 g2 | "Em"e E z B B2 B2 | "B7"c _E z B B2 B2 | "Em7"c E z B _b2 z2 |
+"A7"a A z e g2 ^f2 | "D"d D z A A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"D7"d D D D A2 z B | "G"A B G2 D3 z | "D7"d D D D A2 z B | "G"A B G2 D3 z |
+"Em7"g G G G d2 z e | "Am"d e d c B c B A | "D7"G A B _d =d e ^f g | "D7"a d' d d' g2 z2 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"B D z A A2 A2 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"B D z A A2 A2 |
+"A7"a A z e g2 ^f2 | "D"d D z ^F A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |
+"B7"b B z ^f a2 g2 | "Em"e E z B B2 B2 | "B7"c _E z B B2 B2 | "Em7"c E z B _b2 z2 |
+"A7"a A z e g2 ^f2 | "D"d D z A A2 A2 | "A7"B _D z A A2 A2 | "D"d D z6 |

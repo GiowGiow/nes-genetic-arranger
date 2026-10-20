@@ -1,0 +1,36 @@
+%abc-2.1
+% les sauvages nouvelles suites de pieces de clavecin, by Jean-Philippe Rameau. Score published on
+% MuseScore (artist: Jean-Philippe Rameau), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean-Philippe Rameau (died 1764,
+% Wikidata Q1145).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/48/QmSvXfRbaQtNjmRjXXXutCbTT7DyAzvGT2QievCepmG4nE.mid (sha256
+% 83e43431b1b4c8b45a04d1507101f2c82159a857f996834a68a3779274bad634): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:les sauvages nouvelles suites de pieces de clavecin
+M:4/4
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"_B8 D2 G2 _B2 c2 | "D"A4 D4 "D7"^F4 A4 | "F#m"c8 "D"D2 A2 c2 d2 | "G"_B4 D4 "Gm"G4 _B4 |
+"C7"d8 "Bb"G2 _B2 d2 g2 | "C7"_e2 _e2 d2 d2 "D"c2 c2 _B2 _B2 | "C7"A2 A2 G2 G2 "Eb"^F2 G2 A A A ^F | "D"A2 G2 ^F2 E2 "Am"D2 z6 |
+"G"_B8 D2 G2 _B2 c2 | "D"A4 D4 "D7"^F4 A4 | "F#m"c8 "D"D2 A2 c2 d2 | "G"_B4 D4 "Gm"G4 _B4 |
+"C7"d8 "Bb"G2 _B2 d2 g2 | "C7"_e2 _e2 d2 d2 "D"c2 c2 _B2 _B2 | "Cm"A2 d2 c2 _B2 "D"A2 G2 A2 ^F2 | "Gm"G2 D13 z |
+"Bb"d8 F2 _B2 d2 _e2 | "F"c4 F4 "Dm7"A4 c4 | "Am"_e8 "F"A2 c2 _e2 f2 | "Bb"d4 F4 "Gm7"_B4 d4 |
+"Dm"f8 "Bb"_B2 d2 f2 _b2 | "F7"g2 g2 f2 f2 "C7"_e2 _e2 d2 d2 | "Eb"c2 c2 _B2 _B2 "C7"A2 _B2 c c c A | "F"c2 _B2 A2 G2 F2 _E2 D2 C2 |
+"Gm"_E8 _B,2 _E2 _B2 G2 | "Gm"_E8 _B,2 _E2 _B2 G2 | "Am"_E8 C2 _E2 c2 _E2 | "Bb"F F F F F F F F D8 |
+"Eb"G8 C2 _E2 G2 A2 | "D"F4 D4 "Bb"_B4 D4 | "F"_B8 A2 _B2 c2 A2 | "Bb"_B8- "Gm"_B7 z |
+"G"_B8 D2 G2 _B2 c2 | "D"A4 D4 "D7"^F4 A4 | "F#m"c8 "D"D2 A2 c2 d2 | "G"_B4 D4 "Gm"G4 _B4 |
+"C7"d8 "Bb"G2 _B2 d2 g2 | "C7"_e2 _e2 d2 d2 "D"c2 c2 _B2 _B2 | "C7"A2 A2 G2 G2 "Eb"^F2 G2 A A A ^F | "D"A2 G2 ^F2 E2 "Am"D2 z6 |
+"G"_B8 D2 G2 _B2 c2 | "D"A4 D4 "D7"^F4 A4 | "F#m"c8 "D"D2 A2 c2 d2 | "G"_B4 D4 "Gm"G4 _B4 |
+"C7"d8 "Bb"G2 _B2 d2 g2 | "C7"_e2 _e2 d2 d2 "D"c2 c2 _B2 _B2 | "Cm"A2 d2 c2 _B2 "D"A2 G2 A2 ^F2 | "Gm"G2 D13 z |
+"Gm"_b8 d2 g2 _b2 c'2 | "Gm"_b ^F a2 g2 =f2 e2 d2 c2 =B2 | "Gm"a a a a a a a a A2 _d2 e2 a2 | "D"g2 f2 e2 d2 _d2 B2 _d2 A2 |
+"D"f8 A2 d2 f2 g2 | "C"f2 e2 d2 c2 B2 A2 G2 ^F2 | "Bb"d8 _E2 G2 _B2 _e2 | "A"d d d d d d d d B4 A4 |
+"A"f8 A2 d2 f2 g2 | "Abm"e2 B2 b2 z2 "Bb7"z8 | "A"f8 A2 d2 f2 g2 | "Abm"e2 B2 b2 z2 "D"z8 |
+"G"e8 "A7"A2 _d2 e2 f2 | "F#m"d2 A2 a4- "E7"a8 | "G7"a3 z a g f2 "A"e2 d2 e2 _d2 | "D"d2 c2 _B2 A2 G2 ^F2 E2 D2 |

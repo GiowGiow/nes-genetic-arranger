@@ -1,0 +1,35 @@
+%abc-2.1
+% Pieta mercede aita, by Francesca Caccini. Score published on MuseScore (artist: Francesca
+% Caccini), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francesca Caccini (died 1641,
+% Wikidata Q232035).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/28/QmSkFfZRNF5V3zssRHt2VaHr2cnMymGmo7tZQdirfgisfu.mid (sha256
+% c9a356fe45d5362390940db7584059b36fa91b965de49b9a718c22fbd082e581): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pieta mercede aita
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 _B4 | "D"^F8 z4 A4 | "E"A6 _B2 "F"c4 A4 | "G"z2 A2 _B3 c "B"d4 G4 |
+"C"z4 c2 c2 c8 | "D"c4 c B c z A8 | "B"_B A _B _B _B _B _A2 "A"=A8 | "A"c6 F2 "F"A8 |
+"F"A8 "D"z8 | "G"d6 G2 G3 A G3 A | "G"_B A A2 _B A _B G "D"A4 z2 A2 | "D"c B c c c c A2 "Dbm7"A z c2 z4 |
+"D7"z4 E2 ^F2 "F#7"G4 A ^F z A | "G"_B3 c _B4 "D"A8 | "G"G16 | "Eb"z4 _B3 _B c3 d _e4 |
+"C"_e4 G2 A2 "G"B8 | "G"B4 z2 B2 "B"d8 | "D"d2 A2 A2 A2 "E"c6 c2 | "F"c4 d4 "G"G2 A3 _B c2 |
+"A7"A8 "Dm"A4 A2 _B2 | "C7"c8 "A7"c8 | "E"d4 d2 e2 "Bb"f6 _B2 | "Eb"c3 d c d d c "D"d8 |
+"G"z4 _B4 "D"F8 | "D"^F8 z4 d4 | "E"G8 _A8 | "E"z4 c4- "C"c4 _A3 =A |
+"B"B12 ^F4 | "B"z4 ^F4 "G"G6 A2 | "D7"A4 _B A _B G- "B"G8 | "C"z4 c4- "E"c4 c _B c A |
+"F#"A8 z4 d4 | "G"d4 d c d _B "A7"_B2 c _B A G F E | "Bb"D E F D E F A _B "C7"d2 c _B A3 _B | "D"^F6 G2 A8 |
+"G"G16 | "G"z12 _B4 | "D"^F8 z4 A4 | "E"A6 _B2 "F"c4 A4 |
+"G"z2 A2 _B3 c "B"d4 G4 | "C"z4 c2 c2 c8 | "D"c4 c B c z A8 | "B"_B A _B _B _B _B _A2 "A"=A8 |
+"A"c6 F2 "F"A8 | "F"A8 "D"z8 | "G"d6 G2 G3 A G3 A | "G"_B A A2 _B A _B G "D"A4 z2 A2 |
+"D"c B c c c c A2 "Dbm7"A z c2 z4 | "D7"z4 E2 ^F2 "F#7"G4 A ^F z A | "G"_B3 c _B4 "D"A8 | "G"G16 |
+"Eb"z4 _B3 _B c3 d _e4 | "C"_e4 G2 A2 "G"B8 | "G"B4 z2 B2 "B"d8 | "D"d2 A2 A2 A2 "E"c6 c2 |
+"F"c4 d4 "G"G2 A3 _B c2 | "A7"A8 "Dm"A4 A2 _B2 | "C7"c8 "A7"c8 | "E"d4 d2 e2 "Bb"f6 _B2 |
+"Eb"c3 d c d d c "D"d8 | "G"z4 _B4 "D"F8 | "D"^F8 z4 d4 | "E"G8 _A8 |

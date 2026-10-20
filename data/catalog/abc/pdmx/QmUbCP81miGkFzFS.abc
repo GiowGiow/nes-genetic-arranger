@@ -1,0 +1,26 @@
+%abc-2.1
+% Invention in A minor BWV 784, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/11/QmUbCP81miGkFzFSk3cTqCXyNV4psQm4UM33sjmc4Twpae.mid (sha256
+% 9a8e12eb29da145e4e07ff791af60eec82755f77845acf0061433f8028175554): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Invention in A minor BWV 784
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z E A c B E B d "E7"c z e z _A z e z | "Am"A E A c B E B d "E7"c z A z5 | "Am"z e c e A c E G "Dm7"F z A z d z f2 | "Em7"f d B d G B D F "Em"E z G z c z e2 |
+"Dm7"e c A c F z d2- "Am7"d B G B E z c2 | "G7"c A F A D z B z "C"c2 z E D z3 | "C"z G c e d G d f "G7"e z g z B z g z | "C"c G c e d G d f e z c z g z e z |
+"Am7"c' a e a c e A c "D"d z ^f z a z c' z | "G"b g d g B d G B "C"c z e z g z b z | "B7"a ^f _e ^f B _e ^F A "Am7"G z g3 =e c =e | "G"A z ^f3 d B d "D7"G z e3 c A c |
+"B7"^F g ^f e _e ^f B _e "Em"=e2 z6 | "C7"z g _b g e g _d e "A7"g e _d e A z3 | "Bb7"z f a f d f B d "E7"f d B d G z3 | "C"z e g e c e A c "A"_e c A c ^F z3 |
+"G7"z d f d B d _A B "E7"d B _A B E z3 | "Am"z E A c B E B d "E7"c z A z _A z E z | "Am"A c e c A c ^F A "D7"c A ^F A _E c B A | "E"_A B d B _A B D F G F D F B, F E D |
+"Am"C E A E C E A, C "F7"_E C A, C ^F, C B, A, | "E7"_A, z B z _A z E z "C"z E =A c B E B d | "Abm7"c A c e d B d f "D7"e c e g f e d c | "Db7"B c d e f d _a d "E7"b d c =a f d B d |
+"C"_A B c =A E =A B _A "A"=A E C E =A,4 |

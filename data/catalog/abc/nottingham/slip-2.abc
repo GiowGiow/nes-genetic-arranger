@@ -1,0 +1,19 @@
+%abc-2.1
+% Dublin Streets, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/slip.abc,
+% tune X: 2 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% da686b3a0de20aab38e64f8c8ec57edace980bab6450a6c388d79a2866e5b16a).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Dublin Streets
+M:9/8
+L:1/16
+Q:1/4=140
+K:Em
+P:A
+"Em"z16 B2 | "Em"G4 A2 B2 G2 E2 B2 G2 E2 | "D"F4 G2 A2 F2 D2 A2 F2 D2 | "Em"G4 A2 B2 G2 E2 B2 G2 E2 |
+"Em"d2 c2 B2 A2 G2 F2 E4 B2 | "Em"G4 A2 B2 G2 E2 B2 G2 E2 | "D"F4 G2 A2 F2 D2 A2 F2 D2 | "Em"G4 A2 B2 G2 E2 B2 G2 E2 |
+"Em"d2 c2 B2 A2 G2 F2 E6 | "Em"e4 f2 g4 a2 b2 g2 e2 | "D"d4 e2 f4 g2 a2 f2 d2 | "Em"e4 f2 g4 a2 b2 g2 e2 |
+"Em"d2 c2 B2 A2 G2 F2 E4 z2 |

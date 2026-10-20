@@ -1,0 +1,24 @@
+%abc-2.1
+% Waters of Tyne, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 49 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Waters of Tyne
+M:3/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 F2 G2 | "D"A4 F4 F4 | "A"A4 F4 E4 | "G"D4 D6 D2 |
+"D"D8 E2 F2 | "G"G4 G4 F4 | "A"E4 F4 A4 | "G"B4 B6 B2 |
+"A"A8 F2 E2 | "D"D4 d6 d2 | "D"d4 e4 f4 | "D"d4 A6 B2 |
+"G"B8 c2 d2 | "D"A4 F4 A4 | "A"A8 F2 E2 | "G"D4 D6 D2 |
+"D"D8 F2 G2 | "D"A4 F4 F4 | "A"A4 F4 E4 | "G"D4 D6 D2 |
+"D"D8 E2 F2 | "G"G4 G4 F4 | "A"E4 F4 A4 | "G"B4 B6 B2 |
+"A"A8 F2 E2 | "D"D4 d6 d2 | "D"d4 e4 f4 | "D"d4 A6 B2 |
+"G"B8 c2 d2 | "D"A4 F4 A4 | "A"A8 F2 E2 | "G"D4 D6 D2 |
+"D"D8 z4 |

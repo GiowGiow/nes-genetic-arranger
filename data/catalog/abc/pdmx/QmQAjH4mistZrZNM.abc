@@ -1,0 +1,35 @@
+%abc-2.1
+% Come again! Sweet love doth now invite, by John Dowland. Score published on MuseScore (artist:
+% John Dowland), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Dowland (died 1626,
+% Wikidata Q207355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/10/QmQAjH4mistZrZNMFLaptTo1DxgSzXAgfDH7GjJnLVrr9N.mid (sha256
+% 8ea6b6c7dfa44265199772b684621c0d10886ce9e6f550abd968f890f014606a): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Come again! Sweet love doth now invite
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"D6 D2 | "G"B,8 | "G"z4 B,4 | "Em7"C4 D4 |
+"Am7"E6 D C | "G"D8 | "G"z4 B,4 | "Am7"B,4 A,4 |
+"G"G,4 D4 | "D"D8 | "D"z4 D4 | "G"D6 D2 |
+"A"D4 _D4 | "D"D8 | "Bm"G,8 | "C"G,4 z2 C2 |
+"D"A,4 z2 D2 | "Em"B,4 z2 E2 | "F#m"D6 C2 | "G"B,2 G,2 G,2 A,2 |
+"G"B,4 C4 | "Bm"D4 z2 G,2 | "Bm7"D6 D2 | "C"C2 B,2 B,2 A, G, |
+"D"A,6 A,2 | "G"G,8 | "Bm"G,8 | "C"G,4 z2 C2 |
+"D"A,4 z2 D2 | "Em"B,4 z2 E2 | "F#m"D6 C2 | "G"B,2 G,2 G,2 A,2 |
+"G"B,4 C4 | "Bm"D4 z2 G,2 | "Bm7"D6 D2 | "C"C2 B,2 B,2 A, G, |
+"D"A,6 A,2 | "G"G,8 | "G"D6 D2 | "G"B,8 |
+"G"z4 B,4 | "Em7"C4 D4 | "Am7"E6 D C | "G"D8 |
+"G"z4 B,4 | "Am7"B,4 A,4 | "G"G,4 D4 | "D"D8 |
+"D"z4 D4 | "G"D6 D2 | "A"D4 _D4 | "D"D8 |
+"Bm"G,8 | "C"G,4 z2 C2 | "D"A,4 z2 D2 | "Em"B,4 z2 E2 |
+"F#m"D6 C2 | "G"B,2 G,2 G,2 A,2 | "G"B,4 C4 | "Bm"D4 z2 G,2 |
+"Bm7"D6 D2 | "C"C2 B,2 B,2 A, G, | "D"A,6 A,2 | "G"G,8 |

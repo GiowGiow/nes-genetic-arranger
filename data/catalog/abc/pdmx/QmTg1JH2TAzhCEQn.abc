@@ -1,0 +1,35 @@
+%abc-2.1
+% Ye Gentle Spirits of the Air - Purcell, by Henry Purcell. Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/21/QmTg1JH2TAzhCEQnudHQmK5GJNWZQ8ksuEJqKwwPbrfqnN.mid (sha256
+% d1753d17a2d8614a76f523e83354f8b82d893fe6a4a9403292b46651dc8fbd53): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ye Gentle Spirits of the Air - Purcell
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"D,6 E,2 "Gm7"D,3 F, E,3 G, | "Dm"F,6 A,2 "Dbm"G,3 _B, A,3 A,, | "D"D,8- "Em7"D,8 | "F"D,8- "Em7"D,6 z2 |
+"Dm"C,4 _B,,4 "F#m7"A,,8 | "D"D,6 E,2 "Gm7"D,3 F, E,3 G, | "Dm"F,6 A,2 "Dbm"G,3 _B, A,3 A,, | "Dm"D,8- "Em7"D,8 |
+"F"D,8- "Em7"D,6 z2 | "Dm"C,4 _B,,4 "A"A,,6 A,,2 | "Dm"_D,3 A,, =D,4 "C"z6 C,2 | "Dm7"E,3 C, F,4 "D"z6 D,2 |
+"D7"F,3 D, A,4 "Gm7"z2 F,2 _B,4 | "G"z2 G,2 B,3 G, "C"C8 | "C"C,16 | "C"C,11 z4 C, |
+"F"F, C _B, C A, C _B, C "Dm7"A, _B, G, A, F, A, G, A, | "Dm7"F, G, E, F, D, E, C, D, _B,, C, A,, _B,, G,, A,, F,, A,, | "Dm"_B,,8- "Dm7"_B,,7 z | "Dm7"A,,8 C,8 |
+"Dm"F,,8 "C"z6 C,2 | "Dm7"E,3 C, F,4 "D"z6 D,2 | "D7"F,3 D, A,4 "F"z2 F,2 A,3 F, | "Dm"_B,8 "G"G,8 |
+"F#m7"A,4 z A, G, A, "D"F, A, G, A, F, G, E, F, | "D"D, F, E, F, D, E, C, D, "Dm7"_B,, D, C, D, _B,, C, A,, _B,, | "C7"G,,15 z | "A"A,,8- "A7"A,,7 z |
+"Dm"D,15 z | [M:3/4]"Dm"D4 _D4 A,4 | "A"D8 D4 | "Dm"A,4 F,4 D,4 |
+"F#m7"A,8 F,4 | "A"D4 _D4 A,,4 | "D"D11 z | "F"D8 z4 |
+"Dm"A,4 F,4 D,4 | "C"A,8 A,4 | "Em"C11 z | "Gm"z8 G,4 |
+"Dm"_B,11 z | "D7"z8 F,4 | "D7"A,11 z | "A"z8 A,4 |
+"D"D8 D,4 | "C7"G,8 A,4 | "Dm"_B,4 A,4 A,4 | "Dm"F,4 E,4 D,4 |
+"D"G,4 F,4 E,4 | "F#m7"A,11 z | "F#m7"z8 A,4 | "F#m7"D8 z4 |
+"A"z8 A,4 | "D"D8 D,4 | "C7"G,8 A,4 | "Dm"_B,4 A,4 G,4 |
+"Dm"F,4 E,4 D,4 | "Em7"G,4 E,4 A,4 | "Em7"_B,4 A,4 A,,4 | "Dm"D,6 E,2 F,3 E, |
+"Dm"D,6 E,2 F,3 E, | "Gm7"D,2 _D,2 =D,2 A,,2 _B,,2 G,,2 | "F#m7"A,,2 E,,2 F,,2 G,,2 A,,4 | "Dm"D,,4 _B,4 A,4 |

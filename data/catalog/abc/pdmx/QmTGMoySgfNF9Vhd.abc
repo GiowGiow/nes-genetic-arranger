@@ -1,0 +1,33 @@
+%abc-2.1
+% Alleluia, by William Smith. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): William Smith (died 1645,
+% Wikidata Q8018546).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/22/QmTGMoySgfNF9VhdN2XCMjdrkCArYEV9TXnRnRxHhYqGxC.mid (sha256
+% 72879a5351756fb1d5da4612b887140a846a737de7442a92169090093b6ca5da): melody track 1, bars 0-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Alleluia
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G16 | "E7"G16 | "Am"A16 | "G"B16 |
+"F"A16 | "Em"c16 | "Dm7"c16 | "Em7"B16 |
+"C"G16 | "E7"G16 | "Am"A8- "F#m7"A8 | "G"B8- "C"B8 |
+"F"A16 | "Em"c16 | "Dm7"c16 | "Em7"B16 |
+"C"z4 c4 G4 E4 | "E7"z4 B4 G4 D4 | "Am"z4 c4 A4 E4 | "G"z4 B4 G4 E4 |
+"F"z4 c4 A4 F4 | "Em"z4 c4 G4 E4 | "Dm7"z4 c4 A4 F4 | "Em7"z4 B4 G4 D4 |
+"C"G16 | "E7"G8- "G"G8 | "Am"A16 | "G"B16 |
+"F"A16 | "Em"c16 | "Dm7"c8- "D7"c8 | "Em7"B8- "G"B8 |
+"C"G8- "Em"G8 | "D"G8- "Dm"G8 | "Am7"A8- "C"A8 | "G7"B8- "Em"B8 |
+"Dm"A8- "Dm7"A8 | "Em7"c8- "C"c8 | "F"c8- "Dm7"c8 | "Em7"B16 |
+"C"z4 c4 "Em"G4 E4 | "D"z4 B4 "Em7"G4 D4 | "Em"z4 c4 "Dm"A4 E4 | "C"z4 B4 "E"G4 E4 |
+"Dm"z4 c4 "D"A4 F4 | "Em7"z4 c4 "C"G4 E4 | "F"z4 c4 "D7"A4 F4 | "Em7"z4 B4 "G"G4 D4 |
+"C"G16 | "E7"G16 | "Am"A16 | "G"B16 |
+"F"A16 | "Em"c16 | "Dm7"c16 | "Em7"B16 |
+"C"G16 |

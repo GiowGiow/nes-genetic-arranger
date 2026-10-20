@@ -1,0 +1,35 @@
+%abc-2.1
+% Children's Corner, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/42/Qmbs6AsQ1EcraYkW8kJK6RxdrYGU2R1qA4iCV87Lg32MDD.mid (sha256
+% c30bc342bd2a41cfdb2e7a18898997a824b9c03d5a7b9e497447386b2a3f0a64): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Children's Corner
+M:4/4
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z G, C D E G, C E D F, C D F A, B, F | "C"E G, C E G B, C G F A, C F A B, F A | "C"G C E G c E G c "Am"d E G d c E G c | "C"B E G B A E G A "B7"G C E G F C E F |
+"G7"E B, C E D A, C D "F#m7"G B, E G A C E A | "G7"E A, C E D A, C D "E7"C G, A, C B, F, G, B, | "F"z C, D, E, F, A, C D E D C A, F, E, D, C, | "F"z C, D, E, F, A, C D E D C A, F, E, D, C, |
+"F"z C, D, E, F, _A, C D E D C _A, F, E, D, C, | "F"z C, D, E, F, _A, C D E D C _B, F, E, D, C, | "F"E,, B,, E, _A, B,, E, _A, B, E, _A, B, E _A, B, E _A | "E"z16 |
+"E"E A F D z F D B, z A F D z F D B, | "Em"z c A F z A F D "Am"z F D B, z D B, G, | "E"z A F D z F D B, z A F D z F D B, | "Em"z c A F z A F D "Am"z F D B, z D B, G, |
+"G7"z B, _A, E, z _D _B, ^F, z =B, _A, E, z _D _B, ^F, | "F"z B, _A, E, z B, _A, E, z B, _A, E, z B, _A, E, | "Em"z A, F, D, z C _A, F, z =A, F, D, z C _A, F, | "E"z A, F, D, z A, F, D, z A, F, D, z A, F, D, |
+"E"z B, _A, D, z B, _A, D, z B, _A, D, z B, _A, D, | "C"z G, C D E G, C E D F, C D F A, B, F | "Am"E G, C E G B, C G "Bm"^F A, C ^F A B, ^F A | "E"G D G B e B G D z E G c ^f A G E |
+"E"z D G B e B G D "Db"z E G _B ^f _B G E | "B"z E G d ^f d G E "Bb"z E G _d ^f _d G E | "A"z E G c g c G E ^f c G E e c G E | "Bb"z E G c d c e E ^f c G E2 c G E |
+"B"z E G B d B e E ^f B G E2 B G E | "C"z E G _B d _B G E e _B G E c _B G E | "G"d _B A G F E D C D _B, A, G, F, E, D, C, | "Em"z4 D _B, G, _B, "D7"E _B, G, _B, C _B, G, F |
+"Bb"F z F,2 _B,2 C2 D2 F2 _B2 c2 | "Bb"d4 z4 C2 ^F,2 _B,2 C2 | "Bb"_E8- "Cm7"_E8 | "Cm7"_E16 |
+"Ab"z2 _E,2 _A,2 _B,2 C2 _E,2 _A,2 C2 | "Bb7"_B,2 _E,2 G,2 _B,2 _D2 _E,2 G,2 _D2 | "Ab"z2 _E,2 _A,2 _B,2 C2 _E,2 _A,2 C2 | "Bb7"_B,2 _E,2 G,2 _B,2 _D2 _E,2 G,2 _D2 |
+"Ab"z2 G,2 C2 _D2 _E2 G,2 C2 _E2 | "Ab"_D2 G,2 _B,2 _D2 F2 G,2 _B,2 F2 | "Ab"F2 G,2 C2 _D2 _E2 G,2 C2 _E2 | "Ab"_D2 G,2 _B,2 _D2 F2 G,2 _B,2 z2 |
+"G"z G, C D E G, C E D F, C D F A, B, F | "G"E G, C E G B, C G F A, C F A B, F A | "C"G C E G c E G c "B7"d E G d c E G c | "C"B E G B A E G A "B7"G C E G F C E F |
+"G7"E A, C E D A, C D "F#m7"G _B, E G A C E A | "G7"E A, C E D A, C D "E7"C G, A, C B, F, G, B, | "F"z C, D, E, F, A, C D E D C A, F, E, D, C, | "F"z C, D, E, F, A, C D E D C B, A, E, D, C, |
+"F"z C, D, E, F, _A, C D E D C _A, F, E, D, C, | "F"z C, D, E, F, _A, C D E D C _B, _A, E, D, C, | "F"E,, C, E, _A, C, E, _A, C E, _A, C E _A, C E _A | "F"_A, C E _A C E _A c E _A c e _A c e _a |
+"C"c e g c' z e g c' "D7"z e g d' z e g c' | "F7"z _a c' f' z _a c' _e' "D7"z _e _a d' z _e _a c' | "D7"z e g d' z e g c' "B7"z c g c' z c e a | "G7"z A c g z A c f "E7"z F _A e z F _A d |
+"D7"z E G d z E G c z E G d z E G c | "F7"z _A c f z _A c _e "D7"z _E _A d z _E _A c | "D7"z E G d z E G c "B7"z C E B z C E A | "G7"z A, C G z A, C F "E7"z F, _A, E z F, _A, D |

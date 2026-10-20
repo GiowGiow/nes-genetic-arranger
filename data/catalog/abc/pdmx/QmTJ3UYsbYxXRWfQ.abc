@@ -1,0 +1,34 @@
+%abc-2.1
+% Scheherazade Op.35, by Nikolai Rimsky-Korsakov (1844-1908). Score published on MuseScore
+% (artist: Nikolay Rimsky-Korsakov), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nikolai Rimsky-Korsakov (died
+% 1908, Wikidata Q93227).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/27/QmTJ3UYsbYxXRWfQFyTcLRkpqQ3mbnMTeSabREMfYFsaaa.mid (sha256
+% be3c0e6f0be20233651e9f1f890c671cbd377978dd43911fd45967069d999c15): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Scheherazade Op.35
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"B"b' _b' a' _a' =a' _a' g' ^f' | "B"g' ^f' =f' e' _e' d' _d' c' | "B7"b _b a _a =a _a g ^f | "B7"g ^f =f e _e d _d c |
+"F#m"b2 z6 | "F#m"z8 | "Em"b _b a _a g c' =b _b | "Em"b _b a _a g _a =a _b |
+"Em"b _b a _a g c' =b _b | "Em"b _b a _a g _a =a _b | "Em"b _b a _a =a _a g ^f | "B7"g _a =a _b =b c' =b _b |
+"Em"b _b a _a =a _a g ^f | "B7"g _a =a _b =b _d' =d' _e' | "E7"e' _e' d' _d' c' f' =e' _e' | "Am"e' _e' d' _d' c' _d' =d' _e' |
+"Am"e' _e' d' _d' c' f' =e' _e' | "Am"e' _e' d' _d' c' _d' =d' _e' | "Dm7"e' _e' d' _d' =d' _d' c' b | "E7"c' _d' =d' _e' =e' f' =e' _e' |
+"Am"e' _e' d' _d' =d' _d' c' b | "E7"c' _d' =d' _e' =e' f' =e' _e' | "Am"e' e e e e e e e | "F7"f e f _e f =e f _e |
+"E"e e e e e e e e | "F7"f e f _e f =e f _e | "E"e f e _e =e f =e _e | "Dbm"e f e _e =e f =e _e |
+"C"e f ^f g _a g ^f =f | "C"e f ^f g _a g ^f =f | "F#m7"e a a a a a a a | "Bb7"_b a _b _a _b =a _b _a |
+"A"a a a a a a a a | "Bb7"_b a _b _a _b =a _b _a | "Bb7"a _b a _a =a _b =a _a | "F#m"a _b a _a =a _b =a _a |
+"F"a _b =b c' _d' c' =b _b | "F"a _b =b c' _d' c' =b _b | "Dm"a _a g ^f =f _b =a _a | "Dm"a _a g ^f =f ^f g _a |
+"Gm7"a _a g ^f g ^f =f e | "Dm7"f ^f g _a g _a =a _b | "B"b _b a _a =a _a g ^f | "B"g ^f =f e _e d _d c |
+"G"b c' b _b =b c' =b _b | "Em"b c' b _b =b c' =b _b | "G"b c' b _b =b c' =b _b | "Em"b c' b _b =b c' =b _b |
+"B"b _b a _a =a _a g ^f | "B"g ^f =f e _e d _d c | "Db7"b2 z2 b2 g2 | "Db7"e2 c2 e2 g2 |
+"Db7"b4 b2 g2 | "Db7"e2 c2 e2 g2 | "B"b8 | "G"b'8 |
+"Eb"b'4 b'4 | "C7"b4 z4 | "Em"b _b a _a g c' =b _b | "Dbm7"b _b a _a g _a =a _b |
+"Em"b _b a _a g c' =b _b | "Dbm7"b _b a _a g _a =a _b | "C"b _b a _a =a _a g ^f | "B7"g _a =a _b =b c' =b _b |

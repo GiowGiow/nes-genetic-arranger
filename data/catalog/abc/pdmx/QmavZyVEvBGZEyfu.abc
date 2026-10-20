@@ -1,0 +1,35 @@
+%abc-2.1
+% New York 1:12, by Domenico Scarlatti. Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Domenico Scarlatti (died 1757,
+% Wikidata Q167837).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/48/QmavZyVEvBGZEyfu7RZCShAcUqRNo7yTjJUtjnWnweZzDg.mid (sha256
+% 1000f9a970c0ba63d279ed0d1e78fef0746ddef355c5a274c265e6ca81f80471): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:New York 1:12
+M:3/8
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"a2 A2 _A2 | "E"a2 ^F2 E2 | "E"^F D A _A ^F d | "A"_d B A _A =A2 |
+"A"a2 A2 _A2 | "A"a2 ^F2 E2 | "E"^F D A _A ^F d | "A"_d B A _A =A2 |
+"F#m7"_d E =d E _d E | "Abm"d E _d E B E | "A"_d E =d E _d E | "Abm"d E _d E B E |
+"D"_d A =d B e _d | "D"a ^f _a e ^f d | "D"e _d =d B _d A | "E"_A3 ^F E2 |
+"B"z3 _E =E ^F | "E"G E _E =E A ^F | "B"z B c _e =e ^f | "E"g e _e =e a ^f |
+"B"z B c _e =e ^f | "E"_a f e d c B | "E"c B A G ^F E | "B7"z6 |
+"C"z6 | "B"z6 | "B"z2 ^F2 G2 | "B"z2 ^f2 g2 |
+"B"z6 | "B"z2 ^F2 G2 | "E"z2 ^f2 g2 | "B"_a2 ^f4 |
+"B"z B c _e =e ^f | "E"g e _e =e a ^f | "B"z B _d _e =e ^f | "E"_a e _e =e =a ^f |
+"B"z B _d _e =e ^f | "E"_a e ^f d e B | "B7"^F _d E B _E A | "E"_A E _E =E =A ^F |
+"B"z B, _D _E =E ^F | "E"_A E _E =E =A ^F | "B"z B, _D _E =E ^F | "E"z6 |
+"A"_D E ^F A B _e | "B"e _a ^f ^f3 | "E"z6 | "A"_D E ^F A B _e |
+"B"e _a ^f ^f3 | "E"e B B _A =A ^F | "E"z6 | "C"z6 |
+"C"b2 e2 _e2 | "C"b2 _d2 B2 | "B7"_d A ^F e _e a | "E"_a ^f e _e =e2 |
+"E"g2 G2 ^F2 | "E"g2 E2 D2 | "F#"_D ^F E B _B e | "B"d _d B _B =B2 |
+"B"^f2 ^F2 E2 | "B7"^f2 D2 _D2 | "Em"B, E D A _A d | "A"_d B A _A =A2 |

@@ -1,0 +1,31 @@
+%abc-2.1
+% Etudes Op.60, by Matteo Carcassi (1792 -1853). Score published on MuseScore (artist: Matteo
+% Carcassi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Matteo Carcassi (died 1853,
+% Wikidata Q469912).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/46/QmWuztsTspp3qPMRcNunknxeMrB7qE7DKv4sYVmawjTVUu.mid (sha256
+% d6d06f3661bfc47ac624163300e0a2c5271c7bc48c5d8f4bd225956e7100274a): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Etudes Op.60
+M:2/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E, _A, _D B, E, _A, _D B, | "C"^F, A, E _E ^F, A, =E _E | "C"_A, B, ^F E _A, B, ^F E | "C"A, _D _A ^F =A, _D _A ^F |
+"C"_B, _D _A ^F _B, _D _A ^F | "C"B, _E _A ^F B, _E _A ^F | "C"_D E B _B _D E =B _B | "C"_E ^F _d B B,2 z2 |
+"C"E, _A, _D B, E, _A, _D B, | "C"^F, A, E _E ^F, A, =E _E | "C"_A, B, ^F E _A, B, ^F E | "C"A, _D _A ^F =A, _D _A ^F |
+"C"_B, _D _A ^F _B, _D _A ^F | "C"B, _E _A ^F B, _E _A ^F | "C"_D E B _B _D E =B _B | "C"_E ^F _d B B,2 z2 |
+"C"_E, ^F, _D B, _E, ^F, _D B, | "C"E, G, D C E, G, D C | "C"^F, A, E _E ^F, A, =E _E | "C"G, B, ^F E G, B, ^F E |
+"C"A, C G ^F A, C G ^F | "C"_B, _D _A ^F _B, _D _A ^F | "C"^F, B, E _E ^F, _B, _E _D | "C"B,, _E, _D B, B,,2 z2 |
+"C"E, _A, _D B, E, _A, _D B, | "C"_E, A, _D B, B,, A, ^F A, | "C"_E, A, _D B, _E, A, _D B, | "C"E, _A, _D B, E,, B, _A B, |
+"C"E, _A, ^F E D, _A, ^F E | "C"_D, A, E A, C, _B, E _B, | "C"B,, _A, _D B, B,, =A, _E B, | "C"E, _A, ^F E E,,2 z2 |
+"C"_E, ^F, _D B, _E, ^F, _D B, | "C"E, G, D C E, G, D C | "C"^F, A, E _E ^F, A, =E _E | "C"G, B, ^F E G, B, ^F E |
+"C"A, C G ^F A, C G ^F | "C"_B, _D _A ^F _B, _D _A ^F | "C"^F, B, E _E ^F, _B, _E _D | "C"B,, _E, _D B, B,,2 z2 |
+"C"E, _A, _D B, E, _A, _D B, | "C"_E, A, _D B, B,, A, ^F A, | "C"_E, A, _D B, _E, A, _D B, | "C"E, _A, _D B, E,, B, _A B, |
+"C"E, _A, ^F E D, _A, ^F E | "C"_D, A, E A, C, _B, E _B, | "C"B,, _A, _D B, B,, =A, _E B, | "C"E, _A, ^F E E,,2 z2 |

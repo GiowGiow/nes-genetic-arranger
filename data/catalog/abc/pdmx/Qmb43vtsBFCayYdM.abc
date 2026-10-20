@@ -1,0 +1,34 @@
+%abc-2.1
+% Solo e pensoso, by Giovanni Battista Moscaglia. Score published on MuseScore (artist: Giovanni
+% Battista Moscaglia), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Battista Moscaglia
+% (died 1589, Wikidata Q60441032).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/3/Qmb43vtsBFCayYdMK8bGNVAKMdbHxgg16Paka9LJYuNSr5.mid (sha256
+% c2d5ebbbe029f06494e1b2a1e54bb599e31ddf414c0b2de81bba4dc314437684): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Solo e pensoso
+M:4/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"G"d16 | "G"d8 d8 | "G"e16 | "G"d8 z4 d4 |
+"G"B6 c2 d4 B4 | "A"c16 | "G"B4 G4 B4 d4 | "E"c4 B2 A2 "Em"B4 c4 |
+"F"A8 A4 A4 | "C"c8 "Em"B8 | "Dm"A4 G2 F2 "E"G4 A4 | "D"B4 A2 G2 A8 |
+"F"D4 A4 "E"c8 | "D"c8 "Em7"B8 | "Em7"A4 A4 "D"A8 | "C"G4 B4- "A7"B4 c4 |
+"G"d4 B2 c2 d2 c2 d2 e2 | "G"d2 c2 B2 A2 B2 A2 G2 F2 | "Am"E8 E4 ^F4 | "G"G2 A2 B2 c2 d4 B4 |
+"Em"e8 d4 G4 | "F"A8- "Dm"A8 | "C"G8- "Em7"G8 | "Dm"z8 "Am7"z8 |
+"Gm7"z4 D4 "D"F8 | "F"C8 "Em"E8 | "Am"E4 C4 c8 | "G"c4 B2 A2 B8 |
+"C"c16 | "C"z8 "A7"z8 | "Dbm7"G8- "Am"G4 A4 | "C"B4 G2 A2 "G"B2 A2 B2 c2 |
+"G"B8 G4 G4 | "C"G8 "G"G8 | "A"E4 F4 E8 | "A"E8 "D"z4 A4 |
+"D"^F8 "G"z4 G4 | "G"E8 "Dm"A8 | "E"_A4 _A4 "Dm"=A8 | "E"A4 _A2 F2 _A8 |
+"A"A16 | "Dm"z4 A4 "F#7"c4 A4 | "Em"B4 _d4 "Em7"=d4 B4 | "F#"A4 G4 "D"A8 |
+"Em"B8 "Bm7"z8 | "D"z8 "C"G8 | "Dm7"E4 C4 "C"D4 E4 | "A7"D8 "C"E8 |
+"G7"z8 "Am"z8 | "G"z8 d8 | "G"z4 B6 B2 B4 | "C"c16 |
+"G"B8 d8 | "E7"c4 B4 "F#7"G4 A4 | "G"B8 "D"A8 | "E7"z8 "F#m7"z8 |
+"G"z8 "F#m"A8 | "G7"B4 A4 "E7"B4 c4 | "F"d8 "A"c8 | "G7"z4 A4- "Dbm7"A4 G4 |
+"Dm"F2 G2 A2 B2 "Am"c8 | "G"B8 "C"z4 G4 | "Dm7"G4 F4 "Em7"E2 F2 G4 | "A"G4 F4 E8 |

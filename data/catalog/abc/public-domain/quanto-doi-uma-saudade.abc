@@ -1,0 +1,36 @@
+%abc-2.1
+% QUANTO DÓI UMA SAUDADE, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_q/quanto-doi-uma-saudade.html (file
+% https://www.beakauffmann.com/mpb_q/som/quanto-doi-uma-saudade.mid, sha256
+% 712ab1b79862835afa55a4dc111d45af0d548987fc1c6a5f941859037d456798), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:QUANTO DÓI UMA SAUDADE
+M:2/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z6 B,2 | "Gm"E d2 d _B =B e ^f | "Em"g5 ^f2 e | "Am7"e5 d2 c |
+"Em"c B A ^F E A, B, _D | "Am7"D3 C E _E D _D | "Em7"C3 B,2 D2 C | "D7"B, A,2 B, C D ^F A |
+"F#m7"A G A _B =B d e f | "Am7"^f A ^f _A G _e =e G | "Bm7"e3 d c B G D | "Am"B, _B, _D _E F =E2 _A |
+"Am7"B A A B d c d c | "B7"d A ^F =F _E ^F2 c | "Em"B G E G, E, B, G e | "Gm"_e z G _e _d B ^F G |
+"Em"E z7 | "Gm"z8 | "Em"z8 | "Am7"z8 |
+"Em"z8 | "Am7"z8 | "Em7"z8 | "D7"z8 |
+"F#m7"z8 | "Am7"z8 | "Bm7"z8 | "Am"z8 |
+"Am7"z8 | "B7"z8 | "Em"z8 | "Gm"z8 |
+"Em"z8 | "Dbm7"z8 | "E"z8 | "F#m"z8 |
+"Db7"z8 | "B7"z8 | "Dbm7"z8 | "F#7"z8 |
+"E"z8 | "F#7"z8 | "Ab7"z8 | "Db7"z8 |
+"F#7"z8 | "F#m7"z8 | "B7"z8 | "A"z8 |
+"E"z8 | "Dbm7"z8 | "E"z8 | "F#m"z8 |
+"Db7"z8 | "B7"z8 | "Dbm7"z8 | "F#7"z8 |
+"E"z8 | "F#7"z8 | "Ab7"z8 | "Db7"z8 |
+"F#7"z8 | "F#m7"z8 | "B7"z8 | "A"z8 |

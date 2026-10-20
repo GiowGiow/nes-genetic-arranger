@@ -1,0 +1,26 @@
+%abc-2.1
+% Jupiter, by Gustav Holst. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Holst (died 1934,
+% Wikidata Q200867).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/24/QmeH78WykY1m7gEzafGnyFswBdpeCkDxX5xeGGaNGFirah.mid (sha256
+% 6bba0e8f8af3ce9aa789f3956bcb6861d8ac0b5c01cccbfc3c1e0b475a704d84): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jupiter
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 D2 F2 | "C"G4 G2 _B2 A3 F | "C"_B2 c2 _B4 A4 | "C"G2 A2 G4 F4 |
+"C"D8 D2 F2 | "C"G4 G2 _B2 A3 F | "C"_B2 c2 d4 d4 | "C"d2 c2 _B4 c4 |
+"C"_B8 f2 d2 | "C"c4 c4 _B2 d2 | "C"c4 F4 f2 d2 | "C"c4 c4 d2 f2 |
+"C"g8 g2 a2 | "C"_b4 a4 g4 | "C"f4 _b4 d4 | "C"c2 _B2 c4 d4 |
+"C"f8 d2 f2 | "C"g4 g2 _b2 a3 f | "C"_b2 c'2 _b4 a4 | "C"g2 a2 g4 f4 |
+"C"d8 d2 f2 | "C"g4 g2 _b2 a3 f | "C"_b2 c'2 d'4 d'4 | "C"d'2 c'2 _b4 c'4 |
+"C"_b11 z |

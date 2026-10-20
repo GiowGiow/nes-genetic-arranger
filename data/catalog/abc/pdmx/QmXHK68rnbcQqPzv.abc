@@ -1,0 +1,34 @@
+%abc-2.1
+% Rondinella, by Alberto Castilla. Score published on MuseScore (artist: Alberto Castilla), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Alberto Castilla (died 1937,
+% Wikidata Q4711968).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/24/QmXHK68rnbcQqPzv2Kjh9mi7G5FYVYfHP96wNTTE793ZJu.mid (sha256
+% 7a337dfb3956e221abada8dcdd753f6d731d7aa361ed033fd03b117c02509073): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Rondinella
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z2 G2 ^F2 G2 A2 G2 | "C"E2 G2 c2 e2 g4 | "A7"z4 g4 f2 e2 | "Dm"g8 f4 |
+"G7"z2 G2 ^F2 G2 A2 G2 | "Em7"F2 G2 B2 d2 f4 | "Em7"z4 f4 e2 d2 | "C"g8 e4 |
+"G7"z2 G2 ^F2 G2 A2 G2 | "C"E2 G2 c2 e2 g4 | "A"z4 g4 f2 e2 | "Dm7"g8 f4 |
+"Db7"z2 g2 f2 e2 f2 g2 | "Em"z2 e2 e2 _e2 =e2 f2 | "Em7"z2 d2 d2 _d2 =d2 e2 | "C"c4 z2 c2 c4 |
+"Eb"z4 G4 G4 | "G"G4 G2 G2 A4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"Eb"z4 c4 c4 | "Em7"B4 B2 d2 B4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"C"z4 G4 G4 | "G"G4 G2 _A2 =A4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"B"z4 c4 c4 | "E"B2 F2 B2 c2 B4 | "B"z2 B2 c2 B2 _B2 =B2 | "E"e4 z2 e2 e4 |
+"Eb"z4 G4 G4 | "G"G4 G2 G2 A4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"Eb"z4 c4 c4 | "Em7"B4 B2 d2 B4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"C"z4 G4 G4 | "G"G4 G2 _A2 =A4 | "G"z4 B4 B4 | "C"A4 A2 c2 A4 |
+"B"z4 c4 c4 | "E"B2 F2 B2 c2 B4 | "B"z2 B2 c2 B2 _B2 =B2 | "E"e4 z2 e2 e4 |
+"C"z4 e4 e4 | "D"e4 d2 e2 f4 | "G7"z4 d4 d4 | "C"d4 c2 d2 e4 |
+"Eb"z4 c4 c4 | "Em7"c2 B2 d2 B2 A4 | "G"z4 A4 A4 | "C"A2 G2 c2 A2 G4 |
+"C"z4 e4 e4 | "D"e2 e2 d2 e2 f4 | "G7"z4 d4 d4 | "Em"d2 d2 c2 d2 e4 |
+"C"z4 c4 z4 | "Dm"z4 A4 z4 | "G"z4 f4 z4 | "C"c4 z2 c2 c4 |

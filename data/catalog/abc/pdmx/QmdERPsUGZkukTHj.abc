@@ -1,0 +1,35 @@
+%abc-2.1
+% Toccata, by Mily Balakirev. Score published on MuseScore (artist: Mily Balakirev), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Mily Balakirev (died 1910,
+% Wikidata Q185040).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/18/QmdERPsUGZkukTHj9tVuYbNFfNSvAf74Aag1muEL18eStN.mid (sha256
+% f06754c7dffa50885d043a5cdc5efbcb4566b50a0864d0f80fa32371674b7f96): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Toccata
+M:2/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z8 | "Ab"z8 | "Ab7"_A, _A, _A =A _A _A _a =a | "Cm7"_a _a _a' =a' _a' _a _a =a |
+"Dbm"z _A _a =a _a _A _a =a | "F#m"_a =A ^f =A e =A _e =e | "Dbm"z _A _a =a _a _A _a =a | "F#m"_a =A ^f =A e =A _e =e |
+"Dbm"z _A _a =a _a _A _a =a | "F#m7"_a =A ^f =A e =A _e =e | "F#"z E e E _e _A _d _e | "B"z _E _e _E _d =E B _d |
+"E7"z _A _a =a _a _A ^f _a | "B7"^f _E =e =E _e =F _d _e | "E7"z _A _a =a _a _A ^f _a | "B7"^f _E =e =E _e =F _d _e |
+"Db7"z D B _d B _D B _d | "F#m"B _D A _D _A B, ^F _A | "Ab"z _A, E ^F E ^F, _E =E | "F#"_E ^F, _D _E _D _E, C _D |
+"Ab"C _E, _e' f' _e' _e d' _e' | "Bb7"d' _e _d' =d' _d' _e c' _d' | "Ab"c' _e _a _b _a _B _e f | "Ab"_e _B d _e _d F ^F _d |
+"Fm7"c F _E =E _E3 z | "Eb7"F3 _A G z _B z | "Fm7"_A z2 c _e z _a z | "Eb7"f g _a z _b z c' z |
+"Ab"_a2 z6 | "Ab"_A,, _A,, _A, _B, _A, _A,, _A, =A, | "Ab7"_A, _A, _A =A _A _A _a =a | "C7"_a _a _a' =a' _a' _a _a =a |
+"E7"z _A _a =a _a _A ^f _a | "B7"^f _E =e =E _e =F _d _e | "E7"z _A _a =a _a _A ^f _a | "B7"^f A e A _e ^F _d _e |
+"E"z B, B _d B2 z2 | "B7"_d z2 e _e z ^f z | "E"e z2 _a b z e' z | "Abm7"d' e' d' z _d' z _a z |
+"F#7"z _B _b =b _b _B _a _b | "Db7"_a B ^f B =f _A _e =f | "F#7"z _B _b =b _b _B _a _b | "Db7"_a B ^f B =f _A _e =f |
+"F#"z _D _d _e _d2 z2 | "Db7"_e2 z ^f =f z _a z | "F#"^f z2 _b _d' z ^f' z | "Bbm7"e' ^f' e' z _e' z _b z |
+"Ab7"z _e c' _d' c' c _b c' | "Abm"_b _A _a _A ^f ^F =f =F | "Ab"z c _a _b _a _A ^f _a | "Ab"^f _A e E _e _E _d _D |
+"Dbm"z _A e ^f e E d e | "Bb7"d E _d _D B B, A A, | "Db"z F _d =d _d _D B _d | "Abm7"B _D A _A ^F c _e _d |
+"Fm7"c z3 _E4 | "Bb"_E2 z2 A4 | "Ab7"A2 z2 _A _A _a =a | "C7"_a _a e' ^f' e' _a _a =a |
+"Dbm"z _A _a =a _a _A _a =a | "F#m"_a =A ^f =A e =A _e =e | "Dbm"z _A _a =a _a _A _a =a | "F#m"_a =A ^f =A e =A _e =e |

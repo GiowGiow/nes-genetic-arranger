@@ -1,0 +1,23 @@
+%abc-2.1
+% Julian's Jig, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc,
+% tune X: 154 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Julian's Jig
+M:6/8
+L:1/16
+Q:1/4=140
+K:C
+P:A
+"C"c2 e2 g2 c2 e2 g2 | "F"a4 a2 a6 | "Am7"g2 e2 c2 c2 B2 c2 | "G7"d6 e4 d2 |
+"C"c2 e2 g2 c2 e2 g2 | "F"a4 a2 a6 | "C"g4 e2 f2 d2 B2 | "C"c6 e4 d2 |
+"C"c2 e2 g2 c2 e2 g2 | "F"a4 a2 a6 | "Am7"g2 e2 c2 c2 B2 c2 | "G7"d6 e4 d2 |
+"C"c2 e2 g2 c2 e2 g2 | "F"a4 a2 a6 | "C"g4 e2 f2 d2 B2 | "C"c6 B6 |
+"Am"A2 _A2 =A2 c2 B2 =A2 | "E7"_A2 =A2 B2 E2 ^F2 G2 | "Am"A2 _A2 =A2 c2 B2 =A2 | "E7"B10 B2 |
+"Am"A2 _A2 =A2 c2 B2 =A2 | "E7"_A2 =A2 B2 e4 d2 | "Dm7"c4 g2 f2 e2 d2 | "C"e6 e6 |
+"Am"e2 _e2 =e2 a2 _a2 =a2 | "E7"_a2 e2 _e2 =e2 B2 d2 | "D7"c2 z4 A2 z4 | "Em7"G6 _A6 |
+"A7"A2 c2 e2 g4 ^f2 | "Dm"f4 A2 A2 B2 c2 | "G7"B4 G2 e4 d2 | "C"c10 z2 |

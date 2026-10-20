@@ -1,0 +1,33 @@
+%abc-2.1
+% Prome novas, by Cornelius Verdonck. Score published on MuseScore (artist: Cornelius Verdonck),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Cornelius Verdonck (died 1625,
+% Wikidata Q1858617).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/2/QmT36Kf3Di32dmK84TnAbgpkhXpA1yGJ5b1zZzy1RV3THp.mid (sha256
+% 9802bca15716d957fd1bb786826171849779965d7afff6217199b2d9474f5dc5): melody track 1, bars 0-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prome novas
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F"z16 | "A7"z16 | "Dm"F12 G4 | "C"A8 G8 |
+"Dm"A12 B4 | "Am7"c8 c8 | "Dm7"d8 G4 A4 | "Dm"A4 B4 c4 c4 |
+"Dm7"d8 G4 F4 | "C7"F4 G6 F2 E4 | "C"D8 E8 | "Gm7"z8 D4 G4 |
+"G"^F6 ^F2 G8 | "Gm7"A2 _B2 c2 A2 _B8 | "G"A8 B4 B4 | "C"c6 c2 A4 d4 |
+"D"d4 _d4 z4 =d4 | "G"B4 c6 c2 A4 | "D"A8 A8 | "Bb"z8 _B8 |
+"Bb"_B4 _B4 _B4 _B4 | "Bb"_B6 _B2 d8 | "Dm"d4 c8 B4 | "C"c16 |
+"F"c12 _B2 A2 | "C"G4 F4 E4 F4 | "C"G4 A2 _B2 c8 | "F"c8 c8 |
+"C"c16 | "F"c16 | "Dm7"c8 A4 d4 | "Cm7"d4 c4 _B4 A4 |
+"Bb"_B8 _B8 | "F7"_B4 G4 F4 F4 | "Gm"F8 _B8 | "Dm7"G8 A4 A4 |
+"Dm7"d6 d2 c4 c4 | "C"c4 B4 c8 | "F"z16 | "F"f16 |
+"Gm7"z4 d8 c4 | "Gm7"_B8 A8 | "Dm7"z4 A8 G4 | "Dm"F6 F2 E8 |
+"Dm"z4 A8 A4 | "Bb"d16 | "F"c16 | "F"c16 |
+"F"f16 | "Gm7"f16 | "Gm7"z4 d8 d4 | "Dm7"c8 c8 |
+"Dm"z4 A8 A4 | "Dm"F6 F2 D4 F4 | "Bb"F4 F4 _B8 | "F"_B8 A4 G4 |
+"F"A16 |

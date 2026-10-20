@@ -1,0 +1,23 @@
+%abc-2.1
+% Lynote, by Claudin de Sermisy. Score published on MuseScore (artist: Dominique Phinot), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudin de Sermisy (died 1562,
+% Wikidata Q968593).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/32/QmTMmYwaZpUphb9FHPejqnAqdswi26yvzbxw95zZYx993J.mid (sha256
+% e61db88eaca940b86844db1b88fa83de5c0f0ecf5a880c7e6d4d70849ddc5ebf): melody track 0, bars 0-17
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lynote
+M:3/2
+L:1/16
+Q:1/4=200
+K:none
+P:A
+"Gm"G16 ^F8 | "Bb"G8 A8 _B8 | "Dm7"A8 G8 F8 | "C"G8 _E16 |
+[M:2/2]"D"D8 ^F6 ^F2 | "Gm7"G4 A4 _B4 _B2 _B2 | "Dm7"A4 F2 _B2 A4 G4 | "G"^F4 G4 z8 |
+"Dm7"F6 D2 E4 F4 | "Dm7"F8 E4 z2 G2 | "Gm7"G4 A4 _B6 A2 | "Bb"G4 F4 _B4 A2 A2 |
+"C7"G4 A4 _B4 G4 | "Dm"^F8 z4 A4 | "Gm7"_B4 _B2 _B2 A2 _B2 c2 A2 | "Gm7"_B4 A2 G2 A4 G4 |
+"G"G4 ^F4 G8 |

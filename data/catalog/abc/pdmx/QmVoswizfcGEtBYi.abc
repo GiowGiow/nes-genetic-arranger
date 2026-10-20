@@ -1,0 +1,25 @@
+%abc-2.1
+% Études ou caprices, by Rodolphe Kreutzer. Score published on MuseScore (artist: Rodolphe
+% Kreutzer), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Rodolphe Kreutzer (died 1831,
+% Wikidata Q336692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/35/QmVoswizfcGEtBYiBJUYvxy8ZCxfvRZjdjDv2C1cwHiz7P.mid (sha256
+% bdb4e66f53c27c38355e15a7a3f6b0487d89ae2c2839dd8bc9dc00f9e75280c8): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études ou caprices
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c e g f e f d e c e g f e f d e | "C"c e g f e f d e c d e d c d B c | "C"A c e d c d B c A c e d c d B c | "C"A c e d c d B c A B c B A B G A |
+"C"F A c _B A _B G A F A d c =B c A =B | "C"G B d c B c A B G B e d c d B c | "C"A c e d c d B c A c f e d e c d | "C"B d f e d e c d B d g f e f d e |
+"C"c e g f e f g e a A B c d e f d | "C"g G A B c d e c f F G A B c d B | "C"e E F G A B c A d D E F G A B G | "C"c C D E F A B c d D E F G B c d |
+"C"e E F G A c d e f F G A B d e f | "C"g G A B c e f g a A B c d f g a | "C"b B c d e g a b c' c d e f a b c' | "C"d' d e f g G g f e c d e f F f e |
+"C"d B c d e E e d c A B c d D d c | "C"B G A B c d e c f d e f g G A B | "C"c g ^f g e g d g c e d e c e B e | "C"A a _a =a f =a e =a d f e f d f c f |
+"C"B b _b =b g =b f =b e g ^f g e g d g | "C"c E F G A D E F G g e c B G F D | "C"C F E A G B c f e g e c B G F D | "C"C F E A G B c f e g e c B G F D |
+"C"C E G B c e g c' c8 |

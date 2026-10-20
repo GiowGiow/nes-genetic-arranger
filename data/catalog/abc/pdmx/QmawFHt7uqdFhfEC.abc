@@ -1,0 +1,27 @@
+%abc-2.1
+% Ballet, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist: Wolfgang Amadeus
+% Mozart), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/50/QmawFHt7uqdFhfECEYcqmGg4riCoQwXirZpBq6LjHjdMui.mid (sha256
+% 657566d53d0ddd2f20295aa41a2e1dd155e9174131b2e375990cf87b9e90cc12): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ballet
+M:3/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "F"a2 a f _b2 _b g c' a g f | "C7"e2 e c f2 f d g e d c |
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "Dm7"a2 a f _b2 _b g c'2 f2 | "C7"a g f e e4 f4 |
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "F"a2 a f _b2 _b g c' a g f | "C7"e2 e c f2 f d g e d c |
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "Dm7"a2 a f _b2 _b g c'2 f2 | "C7"a g f e e4 f4 |
+"D7"g3 a c'2 f2 g f e f | "C"a g g f f e e d e2 c2 | "D7"g3 a c'2 f2 g f e f | "C"a8 g2 z2 |
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "Dm7"a2 a f _b2 _b g c'2 f2 | "C7"a g f e e4 f4 |
+"D7"g3 a c'2 f2 g f e f | "C"a g g f f e e d e2 c2 | "D7"g3 a c'2 f2 g f e f | "C"a8 g2 z2 |
+"F"c2 f4 a g g f e f | "C7"c2 g4 _b a a g ^f g | "Dm7"a2 a f _b2 _b g c'2 f2 | "C7"a g f e e4 f4 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% 38 - Kreutzer 42 Studies for the Violin, by Rodolphe Kreutzer. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Rodolphe Kreutzer (died 1831,
+% Wikidata Q336692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/55/QmYYF16HGXFZ45P2YWJEBQquGP4sh9WmoZ5QDqRBQigRoi.mid (sha256
+% 9b8bd469049ee06ae9922c9e0fe02884eb9f8f69d0ded3d7ef37195a02cece77): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:38 - Kreutzer 42 Studies for the Violin
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"d4 d E2 D d _d2 B _d B2 A | "C"B G2 ^F e ^F2 E e d2 _d =d _d2 B | "C"_d A2 _A ^f G2 ^F ^f e2 =d e ^f2 e | "C"e d2 _d =d e2 =d =d _d2 =d f e2 =d |
+"C"_d4 a B2 A a g2 ^f g _d2 A | "C"g ^f2 e ^f d2 d d c2 B c ^F2 D | "C"c B2 _B =B e2 d d _d2 =d e ^f2 g | "C"^f4 E G2 B A G2 ^F E D2 _D |
+"C"D4 ^F E2 D E _D2 B, E A2 G | "C"G ^F2 E ^F E2 D E _D2 B, E A2 G | "C"G ^F2 E ^F G2 ^F ^F =F2 ^F _A _d2 B | "C"B A2 _A =A B2 =A =A _A2 =A B e2 d |
+"C"d _d2 B _d =d2 e e ^F2 E B _d2 =d | "C"d E2 D A B2 _d _d _E2 _D _A _B2 =B | "C"B _D2 B, ^F _A2 =A =A E2 E E _D2 B, | "C"E B,2 A, ^F _A2 =A =A E2 E E _D2 B, |
+"C"E B,2 A, _d B2 A B _A2 ^F e ^F2 E | "C"e d2 _d =d _d2 B _d _B2 _A e _A2 _B | "C"e _e2 _d _e =e2 ^f B _A2 ^F =d ^F2 _A | "C"d _d2 B _d =d2 e e =d2 _d B _d2 =d |
+"C"_d =d2 e ^f _a2 =a e =d2 _d B =A2 _A | "C"A4 _d B2 A B _A2 ^F B e2 =d | "C"d _d2 B _d B2 A B _A2 ^F B e2 =d | "C"d _d2 B a B2 A a g2 ^f g A2 G |
+"C"g ^f2 e ^f G2 ^F ^f e2 d e ^F2 E | "C"e d2 _d =d E2 =D =d _d2 =d e ^f2 g | "C"g ^f2 e ^f d2 d d _d2 =d e ^f2 g | "C"g ^f2 e ^f D2 E d E2 ^F d e2 d |
+"C"d _d2 B _d A2 B a B2 c a b2 a | "C"a g2 ^f g E2 ^F e ^F2 G e ^f2 e | "C"e d2 _d =d B2 _d b _d2 =d b _d'2 b | "C"b _b2 _a _b =b2 _d' ^f _e2 _d ^f =b2 =a |
+"C"a _a2 ^f _a =a2 b e _d2 B e =a2 g | "C"g ^f2 e ^f g2 ^f e _d2 B e a2 g | "C"g ^f2 e ^f g2 ^f e _d2 B e a2 g | "C"g f2 e f g2 f f e2 f g a2 _b |
+"C"_b a2 _a =a _b2 =a =a _a2 =a =b c'2 d' | "C"c'4 c B2 A B _A2 ^F B e2 d | "C"d c2 B c B2 A B _A2 ^F B e2 d | "C"d c2 B c d2 c c B2 c d e2 f |
+"C"f e2 _e =e f2 =e =e _e2 =e ^f g2 a | "C"a g2 ^f g a2 b b _d2 B ^f _a2 =a | "C"a B2 A e ^f2 g g A2 G d e2 ^f | "C"^f _A2 ^F _d _e2 =e =e _e2 =e =f =e2 =d |
+"C"d c2 B c d2 _e _e d2 _d =d A2 c | "C"c B2 A B c2 B A ^F2 E A d2 c | "C"c B2 A B c2 B A ^F2 E A d2 c | "C"c _B2 A _B c2 _B _B A2 _B c d2 _e |
+"C"_e d2 _d =d =e2 =d =d _d2 =d =e f2 g | "C"f4 a e2 d _b c'2 d' d' c'2 _b | "C"a _b2 c' c' _b2 a g a2 _b _b a2 g | "C"f4 F E2 D D4 f e2 d |
+"C"D4 f e2 d D4 f e2 d | "C"A4 A, B,2 _D =D E2 ^F _A =A2 B | "C"_d =d2 e ^f _a2 =a b _d'2 =d' e' ^f'2 _a' | "C"a'16 |
+"C"a'4 a B2 A a g2 ^f g A2 G | "C"g ^f2 e ^f G2 ^F ^f e2 d e ^F2 E | "C"e d2 _d =d E2 =D =d _d2 B _d B2 A | "C"B G2 ^F e ^F2 E e d2 _d =d _d2 B |
+"C"_d A2 _A ^f G2 ^F ^f e2 =d e ^f2 e | "C"e d2 _d =d e2 =d =d _d2 =d f e2 =d | "C"_d4 a B2 A a g2 ^f g _d2 A | "C"g ^f2 e ^f e2 d d c2 B c ^F2 D |

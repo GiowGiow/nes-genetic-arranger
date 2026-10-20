@@ -1,0 +1,28 @@
+%abc-2.1
+% Strange problem, by Luigi Cherubini. Score published on MuseScore (artist: André Papillon), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luigi Cherubini (died 1842,
+% Wikidata Q20721).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/51/QmaWvx7hABnZQmBRi3iRYfVi1ofwU257PeH9DSXpT1DCwT.mid (sha256
+% aa815ec70ec7239c2daaf2553923ec77c548e85a1aa310d85c523c3f9e7e1415): melody track 1, bars 0-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Strange problem
+M:4/2
+L:1/16
+Q:1/4=200
+K:none
+P:A
+"C"z16 "Dm7"z8 C8 | "C"C3 z D4 E4 F4 "B7"G8 c8 | "G"B8 c4 d4 "C"e15 z | "Bm"d8 c4 B4 "E"A8 G8 |
+"Bm"^F8 G8- "A7"G4 z4 =F8 | "C"E8 c4 B4 "F"A4 G4 A4 B4 | "E"c30 z2 | "E"z32 |
+"C"z16 "Dm7"z8 C8 | "C"C3 z D4 E4 F4 "B7"G8 c8 | "G"B8 c4 d4 "C"e15 z | "Bm"d8 c4 B4 "E"A8 G8 |
+"Bm"^F8 G8- "A7"G4 z4 =F8 | "C"E8 c4 B4 "F"A4 G4 A4 B4 | "E"c30 z2 | "E"z32 |
+"E"c15 z "D"B8 G4 d4 | "Am"e8 c8 "Dm"d4 c4 B4 A4 | "E7"G16- "A"G3 z F2 E2 F4 E4 | "G7"D16- "E"D3 z C2 B,2 C8 |
+"D"C7 z B,8 C15 z | "D"z32 | "D"c15 z B8 G4 d4 | "Am"e8 c8 "Dm"d4 c4 B4 A4 |
+"E7"G16- "A"G3 z F2 E2 F4 E4 | "G7"D16- "E"D3 z C2 B,2 C8 | "D"C7 z B,8 C15 z | "D"c15 z B8 G4 d4 |
+"Am"e8 c8 "Dm"d4 c4 B4 A4 | "E7"G16- "A"G3 z F2 E2 F4 E4 | "G7"D16- "E"D3 z C2 B,2 C8 | "D"C7 z B,8 C15 z |
+"D"c15 z B8 G4 d4 | "Am"e8 c8 "Dm"d4 c4 B4 A4 | "E7"G16- "A"G3 z F2 E2 F4 E4 | "G7"D16- "E"D3 z C2 B,2 C8 |
+"D"C7 z B,8 C15 z |

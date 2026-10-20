@@ -1,0 +1,21 @@
+%abc-2.1
+% Kimigayo, by Hiromori Hayashi. Score published on MuseScore (artist: Hiromori Hayashi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Hiromori Hayashi (died 1896,
+% Wikidata Q3783782).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/32/QmSMWrXLehG2Y3Ls8Es3qAiUCeM5gYtVWMVRPSx6pQpKLc.mid (sha256
+% 963b5e010a4df7b8c0614d9faac084612329a52f4f1ed663110234f38485536d): melody track 0, bars 0-11
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Kimigayo
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"D7"D4 C4 "E7"D4 E4 | "Em"G4 E4 "D"D8 | "C"E4 G4 "Dm7"A4 G2 A2 | "D"d4 B4 "E7"A4 G4 |
+"C"E4 G4 "Dm7"A8 | "Dm"d4 c4 d8 | "Am7"E4 G4 "C"A4 G4 | "C"E6 G2 "G"D8 |
+"F"A4 c4 "Dm"d8 | "Dm"c4 d4 "A7"A4 G4 | "A7"A4 G2 E2 "D"D8 |

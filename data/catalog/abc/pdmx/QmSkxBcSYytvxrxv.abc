@@ -1,0 +1,25 @@
+%abc-2.1
+% Weg Venus weg, by Johann Nauwach(ca 1595-1630). Score published on MuseScore (artist: Johann
+% Nauwach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Nauwach (died 1630,
+% Wikidata Q1695639).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/28/QmSkxBcSYytvxrxv2FduLVowSYQHqrN94xhhVycCcRDx5k.mid (sha256
+% 10e412af14853a742c2a6254dc901ad4f065e7e9ea235deefbfdf1e44c7c707b): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Weg Venus weg
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 _B2 c2 | "Gm"d6 c2 _B4 A2 _B2 | "C"c4 _B4 "D"A6 G2 | "G"G8 "F"z8 |
+"D"F G A G A F G A "G"_B8 | "Eb"_B4 c4 "F"c6 c2 | "Bb"_B8 "Gm"z4 d2 c2 | "G"_B6 c2 "Gm"d8 |
+"Cm7"d2 c d _e d c _B "C"A _B c _B A G ^F =E | "D"^F2 D E ^F G A _B "D7"c4 _B _B c _B | "D"A6 G2 "G"G8 | "Dm"z4 A4 _B A _B G A _B c _B |
+"C7"c A _B c d4 "Gm"_B8 | "A"_d4 =d8 _d4 | "D7"d8 "Bb"z4 c c d2 | "Gm"_B A _B c d c d _B "F"c6 _B2 |
+"Dm"c4 d4 "C"_e6 d _e | "Bb"f _e d c _B A G A "Cm7"_B c d _e f2 d2 | "F"c4 A2 _B2 c4 d4 | "C"_e2 d2 c2 _B2 "D"A4 A4 |
+"Gm"_B c d c d _B c _B "F7"c A _B A _B G A _B | "Dm"c F G A _B c d _B "Dm7"c d _e d c _B A f | "Cm"_e d c _B A _B c _B "D"A6 G2 | "G"G16 |

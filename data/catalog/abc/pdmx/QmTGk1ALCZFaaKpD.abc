@@ -1,0 +1,33 @@
+%abc-2.1
+% Domine quinque talenta tradidisti mihi, by Jan Tollius. Score published on MuseScore (artist:
+% Jan Tollius), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jan Tollius (died 1603, Wikidata
+% Q284127).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/22/QmTGk1ALCZFaaKpDtU6HcsaqiKYNxerdgBNGLz3ShfcDFM.mid (sha256
+% b398fe80b3ce2b279db459f5ef19a6de618f2a93696a58ae6e9f931009ca614d): melody track 1, bars 0-55
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Domine quinque talenta tradidisti mihi
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"c12 A4 | "F"A8 c8 | "F"c4 A4 A8 | "F"c8 c8 |
+"C"c8 "F"c8 | "G"c8 "C"C3 D E3 F | "Em"G3 A B3 c "G"d c c4 B2 | "C"c4 C3 D E3 F G3 G |
+"F"A3 _B c4 "Dm"A8 | "Dm"D3 E F3 G "F"A3 _B c3 d | "Dm"c4 F4 z4 F,3 G, | "C"A,3 _B, C3 D E3 F G4 |
+"C"C4 F,3 G, "Dm7"A,3 _B, C3 D | "C"E3 F G4 E4 C3 D | "G7"E3 F G3 A "G"B2 c2 B4 | "C"c8 z8 |
+"Dm7"A8- "C"A4 G4 | "F"A8 "C"G8 | "F"z8 "Dm7"z2 C4 c2 | "Dm"c2 B A B2 B2 "C"c3 B A z2 G |
+"Dm"F8 "F"z4 C4 | "F"C4 C4 "C"C4 C4 | "E7"z2 G,4 G2- "D7"G2 ^F E ^F2 ^F2 | "Am7"G ^F E D E3 E "G"D8 |
+"C"z8 "Dm7"A8 | "C"A4 G4 "F"A8 | "C"G8 "F"z8 | "Dm7"z2 C4 c2- "Dm"c2 c A c2 c2 |
+"C"c3 _B A z2 G "Dm"F8 | "F"z4 C4 C4 C4 | "C"C4 C4 "E7"z2 G,4 G2 | "D7"G2 ^F E ^F2 ^F2 "Am7"G ^F E D E3 E |
+"G"D16 | "Dm"z4 F4- "Dm7"F2 E D F4 | "C"C4 z2 G G "Dm7"F4 G4 | "F"z2 F4 D2 D C F4 E2 |
+"F"F8 "Dm"z4 F4 | "Dm7"F2 E D F4 "C"C4 z2 G G | "Dm7"F4 G4 "F"z2 F4 D2 | "F"D C F4 E2 F8 |
+"F"z2 C2 C2 C2 F4 E2 E2 | "G"E2 D C B,4 "Am"C4 z2 G2 | "G"G2 F E D4 "C"E4 z2 E F | "C"G3 G G2 A2 G3 G G2 F G |
+"Dm7"A3 A A2 _B2 "D"A3 A A4 | "D"z4 A4 "Gm7"D4 E4 | "F"F4 G4 "Dm7"A4 z2 A2 | "Em"G2 F2 G4 "F"C4 z2 A2 |
+"E7"B2 c2 B4 "Am7"c2 _B2 A G F E | "C7"D2 d2 c _B A G "D"F4 z2 _B,2 | "Am"C2 D2 C4 "Bb"D4 z2 F2 | "A"E2 D2 E4 "Em7"D2 F2 E D C _B, |
+"F"A,2 A2 G F E D "A"C4 z2 F2 | "G7"G2 A2 D4 "C"E8 | "C"E16 |

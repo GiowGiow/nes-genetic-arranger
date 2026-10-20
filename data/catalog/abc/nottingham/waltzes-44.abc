@@ -1,0 +1,26 @@
+%abc-2.1
+% So Long, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/waltzes.abc,
+% tune X: 44 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:So Long
+M:3/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z4 B4 c4 | "G"d12 | "G"B8 d4 | "G"d4 e6 d2 |
+"G"d4 B8 | "D7"c12 | "D7"A8 d4 | "G"d4 e6 d2 |
+"G"d4 B8 | "G"d12 | "G"g8 f4 | "C"e4 e6 e2 |
+"C"g4 f4 e2 e2 | "G"d12 | "G"d4 c4 B4 | "D7"A12 |
+"D7"A4 B4 c4 | "G"d6 e2 d4 | "D7"c4 B4 A4 | "G"G12 |
+"G"G4 B4 c4 | "G"d12 | "G"B8 d4 | "G"d4 e6 d2 |
+"G"d4 B8 | "D7"c12 | "D7"A8 d4 | "G"d4 e6 d2 |
+"G"d4 B8 | "G"d12 | "G"g8 f4 | "C"e4 e6 e2 |
+"C"g4 f4 e2 e2 | "G"d12 | "G"d4 c4 B4 | "D7"A12 |
+"D7"A4 B4 c4 | "G"d6 e2 d4 | "D7"c4 B4 A4 | "G"G12 |
+"G"G4 z8 |

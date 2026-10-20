@@ -1,0 +1,32 @@
+%abc-2.1
+% Salve oh patria!, by Antonio Neumane. Score published on MuseScore (artist: Antonio Neumane),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Neumane (died 1871,
+% Wikidata Q603834).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/31/QmZmHoMJKvabPrhzXCsZQSzuy7zYRfrEXhGEngjWMqQKdC.mid (sha256
+% ee94afb37833315ce8f6bb016df82b6316aace6b72536eb3873252b17b47fc2c): melody track 13, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Salve oh patria!
+M:4/4
+L:1/16
+Q:1/4=78
+% Exact tempo 77.99999999999898 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"D2 D G2 A B2 "Bm"c d7 | "D7"z2 _e z2 =e z2 "Em7"^f z2 g5 | "Am7"g3 e c2 A G- "Em7"G5 ^F z2 | "Am"E2 E A2 B c2 "C"d e7 |
+"Am7"z2 _e3 d z2 "Em"c3 B5 | "F#m7"B A5 G ^F "D"D D D D2 D D2 | "D7"D D2 D2 ^F G2 _A =A3 D3 D | "G"D _E =E2 ^F G3 "D7"G2 A G3 ^F2 |
+"D7"G ^F3 E2 ^F E- "Em7"E3 D2 E D2 | "G"B, G,2 D2 ^F G2 "Bm7"_A =A3 _B3 =B | "E7"B2 d3 _B3 "Am7"_e3 =B z2 G2 | "Em7"G D E3 D A, B,- "G"B,2 z6 |
+"G"D2 D G3 B2 G d3 e d _d =d | "G"d5 B z2 "D7"c2 B A3 z2 | "G"z4 B2 A G3 z6 | "G"D2 D G3 B2 G d3 e d _d =d |
+"G"d5 B z2 "Bm"G2 G ^F3 B2 | "Bm"^F d3 _d =d _d B6 B, z2 | "D"D2 D A3 _A =A B c3 _d2 _d =d | "Em7"d5 B z2 "D"D2 D A3 _A =A |
+"D"B c3 _d2 _d =d- "Em7"=d5 B z2 | "G"D2 D G3 B2 "G7"G d3 G2 G g | "C"g5 e z2 "Em7"c2 A d3 G2 | "D"B c3 D2 ^F G- "G"G2 z6 |
+"D"D2 D A3 _A =A B c3 _d2 _d =d | "Em7"d5 B z2 "D"D2 D A3 _A =A | "D"B c3 _d2 _d =d- "Em7"=d5 B z2 | "G"D2 D G3 B2 "G7"G d3 G2 G g |
+"C"g5 e z2 "Em7"c2 A d3 G2 | "D"B c3 D2 ^F G- "G"G2 B2 B B3 | "C"z12 C2 E G | "C"G2 G2 G ^F2 G A2 G c5 |
+"C"c G z2 G2 c B- "G7"B2 F2 A G3 | "Em7"D2 F E3 D2- "C"D C z2 C2 E G | "C"G2 G2 G ^F2 G "Am"A2 G e5 | "Am"e c z2 c2 c B- "Em"B2 A3 G3 |
+"Em"^F3 E3 E2 E E3 G2 _A =A | "G7"A2 B,2 D A3 "Dm7"A2 A A2 G ^F2 | "C"G c z2 c2 c B- "G"B d A2 c G2 B | "C"F2 c A2 G ^F2 G E z2 C2 E G |
+"C"G2 G2 G ^F2 G "E"A2 G e4 d | "Dm7"d c z2 B2 A G- "G"G2 E2 A G2 F | "C"E2 D C3 c2 "Am7"c c z2 G2 _A =A | "G7"A2 B,2 D A3 "Dm7"A2 A A2 G ^F2 |
+"C"G c z2 c2 c B- "G"B d A2 c G2 B | "C"F2 c A2 G ^F2 G E z2 C2 E G | "C"G2 G2 G ^F2 G "E"A2 G e4 d | "Dm7"d c z2 B2 A G- "G"G2 E2 A G2 F |
+"C"E2 D C C C E C E G E G c G c e | "G"z2 G2 c B3 "Am7"A2 B c E E G E | "C"G c G c e c e g "G"z2 G2 A G2 F | "C"E2 D C3 c2 c c3 D2 D z |

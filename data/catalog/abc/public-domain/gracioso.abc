@@ -1,0 +1,36 @@
+%abc-2.1
+% GRACIOSO (Filho do Furinha), by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gracioso.html (file
+% https://www.beakauffmann.com/mpb_g/som/gracioso.mid, sha256
+% d6ffee4fdac97864179a978933e0d9e2ee91bb398446f627aa781ba3990f92d3), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GRACIOSO (Filho do Furinha)
+M:2/4
+L:1/16
+Q:1/4=71.000036
+% Exact tempo 71.00003550001774 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A, ^F ^F ^F2 A, ^F A, | "C"_A, F F F2 _A, F _A, | "C"G, E E E2 G, E G, | "C"G, E E G, G, E E G, |
+"C"G, E2 ^F, ^F,, ^F, _B, _D | "C"E D _D =D E ^F A B | "C"_d B _d B E,, _d2 B | "C"A B G A ^F G ^F G |
+"C"E ^F E ^F A A2 A, | "C"D, ^F ^F ^F2 A, ^F A, | "C"_A, F F F2 _A, F _A, | "C"G, E E E2 G, E G, |
+"C"G, E E G, G, E E G, | "C"G, E2 ^F, ^F,, ^F, _B, _D | "C"E D _D =D C, G B,, ^F | "C"A G G, D ^F2 ^F2 |
+"C"D E E E3 _D ^F,, | "C"A A A A2 A A A | "C"A ^F,, C, _A B,, ^F2 =F | "C"_A =A, _D ^F =A,, E2 =D |
+"C"D ^F, B, D _D A,, _A,, ^F,, | "C"E,, _D2 _D ^F,, ^F2 _D | "C"E D A ^F D B, ^F, E, | "C"_E, _A2 ^F _A,, =E2 _E |
+"C"D, ^F _D, =F B,, =D _A,, _D | "C"A A A A2 A A A | "C"A ^F,, C, _A B,, ^F2 =F | "C"_A =A, _D ^F =A,, E2 =D |
+"C"D ^F, B, D _D A,, _A,, ^F,, | "C"E,, _D2 _D ^F,, ^F2 _D | "C"E D A ^F D B, ^F, E, | "C"D, B2 A _D, A2 _A |
+"C"^F3 A,, G, B, _D ^F | "C"A, ^F ^F ^F2 A, ^F A, | "C"_A, F F F2 _A, F _A, | "C"G, E E E2 G, E G, |
+"C"G, E E G, G, E E G, | "C"G, E2 ^F, ^F,, ^F, _B, _D | "C"E D _D =D E ^F A B | "C"_d B _d B E,, _d2 B |
+"C"A B G A ^F G ^F G | "C"E ^F E ^F A A2 A, | "C"D, ^F ^F ^F2 A, ^F A, | "C"_A, F F F2 _A, F _A, |
+"C"G, E E E2 G, E G, | "C"G, E E G, G, E E G, | "C"G, E2 ^F, ^F,, ^F, _B, _D | "C"E D _D =D C, G B,, ^F |
+"C"A G G, D ^F2 ^F2 | "C"D E E E3 D,2 | "C"D, B, B, B,2 F, B, F, | "C"E, B, B, B,2 E, B, E, |
+"C"E, B, B, B,2 A,2 D | "C"D B,, D, G, A,, _A,, G,, ^F,, | "C"F,, _B,, D, _A, C3 G,, | "C"G,, _E, _B, D C2 _B,2 |
+"C"A,, G, B, _D ^F3 ^F, | "C"^F, ^F, C E D2 D G, | "C"B B B B2 D B D | "C"E E E E2 _D E _D |
+"C"B B B B B B A A | "C"d _d =d _e =E,, =e2 B | "C"d c d c B,, B2 ^F | "C"A G A G A,, ^F2 =F |

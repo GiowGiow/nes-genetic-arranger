@@ -1,0 +1,35 @@
+%abc-2.1
+% Domine Deus meus in te speravi, by Philippe de Monte. Score published on MuseScore (artist:
+% Philippe de Monte), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Philippe de Monte (died 1603,
+% Wikidata Q277029).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/47/QmbUMdKduyvfxEWZy9otEEhRXBEwhsCLTp6jnnfm85SBhm.mid (sha256
+% 44b87984c3c16b1855dc3ed2f54c33487a773fa95011e44376bca9191276cba2): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Domine Deus meus in te speravi
+M:4/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z16 "Dm"z16 | "Dm7"z8 D8- "Dm"D4 D4 D8 | "Cm"_B,8 C8 "Gm7"D4 G,4 z4 C4 | "Gm7"_E4 D8 C4- "Dm"C4 F,4 F,8 |
+"Bb"z16 "Dm7"z4 A,6 A,2 A,4 | "Cm"G,4 F,4 C8 C4 D4 _E8 | "Gm7"D8 C8- "Cm7"C8 C4 D4 | "Bb"_E4 D4 C8 "F"_B,2 C2 D2 _E2 F8 |
+"Gm7"z12 F4- "Dm7"F4 _E4 D4 C4 | "Gm7"z20 D4 F4 F4 | "Gm7"_B,4 C4 D4 _E4- "F"_E2 D2 D2 C _B, C8 | "Cm7"F,4 G,4 _B,8 "Dm7"z4 D4 F4 F4 |
+"F"C4 D4 E4 F4- "Am7"F2 _E D C4 D4 =E4 | "F"F4 C4 D8 F12 _E4 | "G"D8 F4 F4 "Cm7"F4 G4 F4 E4 | "Dm"F4 F,4 G,2 A,2 _B,2 G,2 "Cm7"C4 G,4 z8 |
+"Dm7"z16 "Cm7"z4 G,4 D4 _E4 | "Bb"D4 C4 D4 F4 "Cm7"_B,4 G,4 z8 | "Gm7"z12 D4 "F"D4 _E4 D4 C4 | "Dm"D4 F4 _E4 D4 "F"_E6 _E2 D4 C2 F2 |
+"Gm7"F2 _E2 F8 _B,4 "Dm7"z16 | "Gm"z12 G,2 A,2 "Cm7"_B,2 A,2 _B,2 C2 D4 _E4 | "Dm7"C8 C8 "F"A,4 F8 D4 | "F"D4 F4 F2 _E2 D2 C2 "Dm7"_B,4 A,4 D8 |
+"Gm7"F8 D4 D4 "Gm"G4 F2 _E2 D2 C2 _B,2 C2 | "Cm7"D2 C2 _B,2 A,2 G,2 A,2 _B,4- "Gm7"_B,4 A,4 _B,4 F,4 | "Bb"G,4 G,4 F,8 "F"z4 F4 _E4 C4 | "Dm"D8 G,8 "Bb"A,6 A,2 D,4 D4 |
+"Cm"D4 A,4 C6 C2 "G"B,16 | "A"z16 "Am"z16 | "D"z16 "Dm"z16 | "Gm7"z4 G,4 A,4 _B,4 "G7"C4 _B,2 A,2 _B,8 |
+"Dm"A,16 F,8 z8 | "Dm"z4 G,4 A,6 _B,2 "F"C8 F,6 G,2 | "Dm7"A,2 _B,2 C4 G,4 G4- "Gm"G4 F8 _E4 | "Gm7"D8 C6 D2 "Gm"_E4 D8 D,4 |
+"D"F,4 G,4 A,4 D,4 "G"z4 D4 D4 D4 | "A7"C6 C2 _B,4 _E4 "Dm"D4 _B,4 F8 | "Cm7"_E6 D C D4 _B,4 "Gm7"z4 D4 D4 D4 | "Eb"C6 C2 _B,4 _E4 "Dm"D4 _B,4 F8 |
+"Cm7"_E6 D C F4 _B,4- "Bb"_B,2 A,2 _B,4 A,4 G,4 | "Gm"G,2 F,2 G,2 A,2 _B,8 "F7"A,8 z8 | "Bb"z4 D4 C6 C2 "Gm7"_B,4 G,4 C4 D4 | "C7"_E4 F4 D4 _E4- "Bb"_E4 _B,4 C4 F,4 |
+"Bb"z4 C8 F,4- "Dm7"F,4 F,4 G,4 D4 | "Dm"C6 C2 _B,8- "Gm"_B,4 A,4 D4 _E4 | "Dm"F4 F4 _E4 D2 C2 "Dm7"D4 G,4 A,4 _B,4 | "Am7"C12 F,4 "Cm7"z16 |
+[M:2/2]"Em7"z8 D6 D2 | [M:3/2]"F"_E8 C12 C4 | "Eb"_B,4 G,8 G,4 _B,8 | "F"A,12 A,4 G,4 D4 |
+"Eb"D4 D4 _E8 C8 | "G7"C4 C4 _B,8 _B,8 | "Dm"G,12 _B,4 _A,8 | "Cm7"G,8 D8 _B,8 |
+"Bb"_B,4 D4 C8 _B,8 | "Bb"_B,8 F16 | "Cm7"D8 z8 _E8 | "Dm"C12 _E4 D8 |
+"Bb"F8 _E8 D8 | "Bb"z8 D16 | "Gm"D24 | "D"D24 |

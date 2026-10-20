@@ -1,0 +1,34 @@
+%abc-2.1
+% Praeambulum, by Johann Sebastian Bach. Score published on MuseScore (artist: Johann Sebastian
+% Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/27/QmTJKghVmxXxyegobkEp98YD7rLxkymqVp32UACXjbEatz.mid (sha256
+% 8163bbf254d694af0be6077377e6b394e4e968f966b0b9e08d9cacf231cabda7): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Praeambulum
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"z12 | "Gm"d4 z8 | "Gm"z2 d2 _B2 G2 g2 _B2 | "D"A2 g2 f2 e2 f2 _A2 |
+"Eb"z12 | "Bb"z12 | "Cm"z12 | "F#m7"z12 |
+"D7"z12 | "Bb"z12 | "Eb"_B _B _B c c c5 d2 | "Gm"z2 A2 _B2 ^F2 G4 |
+"D7"G2 G4 E2 ^F4 | "Gm"z2 ^F2 G2 D6 | "D"z2 G2 ^F ^F3 G4 | "D"z2 A2 ^F2 D6 |
+"Gm"z12 | "Gm"d4 z8 | "Gm"z2 d2 _B2 G2 g2 _B2 | "D"A2 g2 f2 e2 f2 _A2 |
+"Eb"z12 | "Bb"z12 | "Cm"z12 | "F#m7"z12 |
+"D7"z12 | "Bb"z12 | "Eb"_B _B _B c c c5 d2 | "Gm"z2 A2 _B2 ^F2 G4 |
+"D7"G2 G4 E2 ^F4 | "Gm"z2 ^F2 G2 D6 | "D"z2 G2 ^F ^F3 G4 | "D"z2 A2 ^F2 D6 |
+"D"z12 | "D7"c4 z8 | "G"_B2 d2 _B2 G2 _B2 d2 | "G"f4 G2 B2 c2 f2 |
+"C"_e2 g2 _e2 c2 _a2 c2 | "C7"_B2 _a2 g2 f2 g2 _B2 | "Cm"_A2 c2 _A2 F2 f2 _A2 | "C"G2 f2 _e2 d2 _e2 G2 |
+"Fm"F2 _e2 d2 f2 _a2 c2 | "G7"z12 | "Cm"z12 | "Cm"d c3 z8 |
+"C"z12 | "C"c _B3 c _B c c c c z2 | "F"z12 | "F"f _e3 f _e f f f f d _e |
+"Bb"d2 _B2 d2 f2 _b2 a2 | "D7"g g ^f2 g2 _b2 a2 g2 | "D"^f2 a2 ^f2 d2 a2 c2 | "Gm"_B2 d2 _B2 G2 _e2 G2 |
+"D"z12 | "Gm"z12 | "Ebm"z2 D2 A4 A G3 | "D7"z4 ^F8 |
+"Cm"z2 D2 _E2 C2 A,4 | "G"_E D11 | "D"z12 | "D7"c4 z8 |
+"G"_B2 d2 _B2 G2 _B2 d2 | "G"f4 G2 B2 c2 f2 | "C"_e2 g2 _e2 c2 _a2 c2 | "C7"_B2 _a2 g2 f2 g2 _B2 |

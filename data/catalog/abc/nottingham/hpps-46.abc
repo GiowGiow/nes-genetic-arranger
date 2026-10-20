@@ -1,0 +1,24 @@
+%abc-2.1
+% Mrs Willis, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/hpps.abc,
+% tune X: 46 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Mrs Willis
+M:4/4
+L:1/16
+Q:1/4=140
+K:F
+P:A
+"F"z12 F E2 D | "F"C2 A2 G2 F2 C2 A2 G2 F2 | "Bb"D E2 D G2 B2 "G7"d8 | "C7"c2 =B2 _B2 G2 A2 G2 D2 E2 |
+"F"F A2 G F E2 D "C7"C8 | "F"C2 A2 G2 F2 C2 A2 G2 F2 | "Bb"D E2 D G2 B2 "G7"d8 | "C7"c2 =B2 _B2 G2 A2 G2 D2 E2 |
+"F"F4 A4 F4 F E2 D | "F"C2 A2 G2 F2 C2 A2 G2 F2 | "Bb"D E2 D G2 B2 "G7"d8 | "C7"c2 =B2 _B2 G2 A2 G2 D2 E2 |
+"F"F A2 G F E2 D "C7"C8 | "F"C2 A2 G2 F2 C2 A2 G2 F2 | "Bb"D E2 D G2 B2 "G7"d8 | "C7"c2 =B2 _B2 G2 A2 G2 D2 E2 |
+"F"F4 A4 "G7"F4 G4 | "C"e d2 c G4 e d2 c G4 | "Dm"f e2 d A4 f e2 d A4 | "G7"=B2 G2 _G2 =G2 A2 =G2 e2 d2 |
+"C"c e2 d c =B2 A "G7"G8 | "C"e d2 c G4 e d2 c G4 | "Dm"f e2 d A4 f e2 d A4 | "G7"=B2 G2 _G2 =G2 A2 =G2 e2 d2 |
+"C"c4 e4 c4 G4 | "C"e d2 c G4 e d2 c G4 | "Dm"f e2 d A4 f e2 d A4 | "G7"=B2 G2 _G2 =G2 A2 =G2 e2 d2 |
+"C"c e2 d c =B2 A "G7"G8 | "C"e d2 c G4 e d2 c G4 | "Dm"f e2 d A4 f e2 d A4 | "G7"=B2 G2 _G2 =G2 A2 =G2 e2 d2 |
+"C"c4 e4 c4 z4 |

@@ -1,0 +1,22 @@
+%abc-2.1
+% Air du branle couppé appellé Charlotte., by Trad.. Score published on MuseScore (artist: Misc
+% Traditional), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/25/QmTior36BzABvqxaUCinSSH7n4y1Ys1R5pqvTt1pDUGvZn.mid (sha256
+% d2fd4c01abe97f11f3bc7a45d1f58154fb6d0d570e8538c29b3ac6fbb133c2a7): melody track 0, bars 0-13
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Air du branle couppé appellé Charlotte.
+M:8/2
+L:1/16
+Q:1/4=400
+K:none
+P:A
+"C"G8 G8 _B8 _B8 c8 c8 d16 | [M:4/2]"C"g8 z8 d8 z8 | [M:8/2]"C"c8 A8 _B8 c8 d16 G16 | "C"G8 G8 _B8 _B8 c8 c8 d16 |
+[M:4/2]"C"g8 z8 d8 z8 | [M:8/2]"C"c8 A8 _B8 c8 d16 G16 | "C"G8 d8 d8 d8 c8 d8 _B16 | [M:4/2]"C"d8 z8 c8 z8 |
+[M:6/2]"C"G8 A8 _B8 c8 A8 G8 | [M:4/2]"C"d8 z8 c8 z8 | [M:6/2]"C"G8 A8 _B8 c8 A8 G8 | [M:4/2]"C"d8 z8 e8 z8 |
+[M:8/2]"C"d8 c8 _B8 _B8 A8 A8 G16 |

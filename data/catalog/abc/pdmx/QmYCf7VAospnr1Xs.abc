@@ -1,0 +1,23 @@
+%abc-2.1
+% Francisco Tárrega - Oremus, by Francisco Tárrega (1852 - 1909). Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/14/QmYCf7VAospnr1Xscr3X8YpQh16CKykPbczhbk4GUAEDmX.mid (sha256
+% 4042186bc0f9f8e186028e28762826d49f658fb10af3583a99357022170ea643): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Francisco Tárrega - Oremus
+M:2/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A D, _A D, =A D, f D, | "C"f G, e G, d F, c F, | "C"_B G, A C, G D, ^F D, | "C"G G, F _A, F =A, E =A,, |
+"C"F D, E D, F D, _B D, | "C"_B C, E C, A C, E C, | "C"A _B,, _D _B,, =D _B,, G _B,, | "C"F A,, F A, E A, A,, z |
+"C"A D, _A D, =A D, f D, | "C"f G, e G, d F, c F, | "C"_B G, A C, G D, ^F D, | "C"G G, F _A, F =A, E =A,, |
+"C"F D, E D, F D, _B D, | "C"_B C, E C, A C, E C, | "C"A _B,, _D _B,, =D _B,, G _B,, | "C"F A,, E G, D D, D,, z |

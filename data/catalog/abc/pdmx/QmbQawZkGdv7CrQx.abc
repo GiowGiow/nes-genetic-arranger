@@ -1,0 +1,31 @@
+%abc-2.1
+% Bagpipe Dance, by Leopold Mozart. Score published on MuseScore (artist: Leopold Mozart), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Leopold Mozart (died 1787,
+% Wikidata Q156280).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/39/QmbQawZkGdv7CrQxAg8eKsixALQeYP1XC7ma5r4zQAUx1y.mid (sha256
+% 0b1d47b071f7c077355da01a5296b2dd1a7ed9c242bdd207c57ec922882bdd7b): melody track 0, bars 0-48
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Bagpipe Dance
+M:2/4
+L:1/16
+Q:1/4=93.000042
+% Exact tempo 93.00004185001885 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"c4 G4 | "C"z2 E F G4 | "C"c B c d c B c d | "C"c B c d c4 |
+"B"c2 c d B2 B c | "A7"A2 A B G4 | "E"F2 F G E2 E F | "D7"D2 D E C4 |
+"C"C D E F G2 G2 | "C"C D E F G4 | "C"C D E F G2 G2 | "C"C D E F G4 |
+"G7"A2 A c B2 B d | "C"c4 c4 | "C"c4 G4 | "C"z2 E F G4 |
+"C"c B c d c B c d | "C"c B c d c4 | "B"c2 c d B2 B c | "A7"A2 A B G4 |
+"E"F2 F G E2 E F | "D7"D2 D E C4 | "C"C D E F G2 G2 | "C"C D E F G4 |
+"C"C D E F G2 G2 | "C"C D E F G4 | "G7"A2 A c B2 B d | "C"c4 c4 |
+"Cm"_e2 c G _e2 c G | "Cm"_e2 c G _e4 | "Am"^f2 c A ^f2 c A | "Am"^f2 c A ^f4 |
+"G"g2 d B g2 d B | "G"g2 d B g4 | "G"g4 d4 | "G"B2 B c d4 |
+"G"g ^f g a g ^f g a | "G"g ^f g a g4 | "F#"g2 g a ^f2 ^f g | "E7"e2 e ^f d4 |
+"B"c2 c d B2 B c | "A7"A2 A B G4 | "G"G A B c d2 d2 | "G"G A B c d4 |
+"G"G A B c d2 d2 | "G"G A B c d4 | "F#7"e2 e g ^f2 ^f a | "G"g4 g4 |

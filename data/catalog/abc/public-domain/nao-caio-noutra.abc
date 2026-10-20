@@ -1,0 +1,35 @@
+%abc-2.1
+% NÃO CAIO N'OUTRA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nao-caio-noutra.html (file
+% https://www.beakauffmann.com/mpb_n/som/nao-caio-noutra.mid, sha256
+% f0ec9f3d366e34c08af46c5ab8b477adae0b51e20d89fe436d48e3d1f468cfbb), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NÃO CAIO N'OUTRA
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"z8 | "C7"F,2 z F A,2 F2 | "G7"_B,2 z G =B,2 G2 | "E7"C2 z G _B,2 G2 |
+"Am"A,2 z F F2 F2 | "C7"F,2 z F A,2 F2 | "F#m7"E,2 z E A,2 E2 | "E"E,2 z E _A,2 E2 |
+"Am"A,2 z E G,2 E2 | "C7"F,2 z F A,2 F2 | "G7"_B,2 z G =B,2 G2 | "E7"C2 z G _B,2 G2 |
+"Am"A,2 z F F2 F2 | "F"D,2 z _B, _D,2 =B,2 | "Am"C,2 z C C2 C2 | "C7"C,2 z E E2 E2 |
+"Am7"F,2 F2 F4 | "Dm"D,2 z B, G,,2 B,2 | "Am7"C,2 z C G,,2 C2 | "G7"D,2 z B, B,,2 B,2 |
+"C"C,2 z C E,2 C2 | "Dm"D,2 z B, G,,2 B,2 | "C"C,2 z C G,,2 C2 | "D7"D,2 z B, D,,2 C2 |
+"G"G,2 z D, G,,4 | "Dm"D,2 z B, G,,2 B,2 | "Am7"C,2 z C G,,2 C2 | "G7"D,2 z B, B,,2 B,2 |
+"C"C,2 z C E,2 C2 | "Dm"D,2 z B, G,,2 B,2 | "Db7"E,2 z C F,2 D2 | "Em7"G,2 z E G,,2 B,2 |
+"C"C,2 C2 C4 | "Dm"D,2 z B, G,,2 B,2 | "Am7"C,2 z C G,,2 C2 | "G7"D,2 z B, B,,2 B,2 |
+"C"C,2 z C E,2 C2 | "Dm"D,2 z B, G,,2 B,2 | "C"C,2 z C G,,2 C2 | "D7"D,2 z B, D,,2 C2 |
+"G"G,2 z D, G,,4 | "Dm"D,2 z B, G,,2 B,2 | "Am7"C,2 z C G,,2 C2 | "G7"D,2 z B, B,,2 B,2 |
+"C"C,2 z C E,2 C2 | "Dm"D,2 z B, G,,2 B,2 | "Db7"E,2 z C F,2 D2 | "Em7"G,2 z E G,,2 B,2 |
+"Am7"C,2 C2 C,4 | "C7"F,2 z F A,2 F2 | "G7"_B,2 z G =B,2 G2 | "E7"C2 z G _B,2 G2 |
+"Am"A,2 z F F2 F2 | "C7"F,2 z F A,2 F2 | "F#m7"E,2 z E A,2 E2 | "E"E,2 z E _A,2 E2 |
+"Am"A,2 z E G,2 E2 | "C7"F,2 z F A,2 F2 | "G7"_B,2 z G =B,2 G2 | "E7"C2 z G _B,2 G2 |
+"Am"A,2 z F F2 F2 | "F"D,2 z _B, _D,2 =B,2 | "Am"C,2 z C C2 C2 | "C7"C,2 z E E2 E2 |

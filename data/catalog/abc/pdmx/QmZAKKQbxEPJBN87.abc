@@ -1,0 +1,34 @@
+%abc-2.1
+% Guillaume Tell, by Gioachino Rossini. Score published on MuseScore (artist: Gioacchino Rossini),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gioachino Rossini (died 1868,
+% Wikidata Q9726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/10/QmZAKKQbxEPJBN87mZ32wwdu4kQ4R9qDcGoSSqGev4kBku.mid (sha256
+% 905a6fc0c4c5468d2e2a99558a34e4cbb807484c20ded3e199dc33403d6941df): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Guillaume Tell
+M:4/4
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"B"B3 z3 B B B3 z3 B B | "B"B2 _A2 E2 _A2 B2 _A2 B2 e2 | "B"B2 _A2 E2 _A _A B2 _A2 B2 e _A | "B"B2 ^F2 E2 B B B2 B2 A2 B B |
+"B"B2 _A2 ^F2 B B B2 ^F2 E2 B2 | "B"B2 B B B2 B2 B2 B B B2 B2 | "B"B2 B B B2 B2 B2 B B B2 B2 | "B"B15 z |
+"B"z14 B, B, | "E"B,2 B, B, B,2 B, B, E2 ^F2 _A2 B, B, | "E"B,2 B, B, E2 _A _A "B"^F2 _E2 B,2 B, B, | "E"B,2 B, B, B,2 B, B, E2 ^F2 _A2 E _A |
+"B"B5 A _A ^F "E"E2 _A2 E2 B B | "E"B2 B B B2 B B e2 ^f2 _a2 B B | "E"B2 B B e2 _a _a "B"^f2 _e2 B2 B B | "E"B2 B B B2 B B e2 ^f2 _a2 e _a |
+"B"b5 a _a ^f "E"e2 _a2 e2 _a _a | "Db"_a2 _a _a _a2 _a _a _a2 _d'2 _a2 _d'2 | "Db"_a2 _d'2 _a2 ^f2 e2 _e2 _d2 _a _a | "Db"_a2 _a _a _a2 _a _a _a2 _d'2 _a2 _d'2 |
+"F#"_a2 _d'2 b2 _b2 "Abm"=b6 _a _a | "Db"_a2 _a _a _a2 _a _a _a2 _d'2 _a2 _d'2 | "Db"_a2 _d'2 _a2 ^f2 e2 _e2 _d2 _a _a | "Db"_a2 _a _a _a2 _a _a _a2 _d'2 _a2 _d'2 |
+"F#"_a2 _d'2 b2 _b2 "B"=b _d' =b _b =b _d' =b _b | "Ebm"b _d' b _b =b _d' =b _b "B7"=b _d' =b _b =b _d' =b _b | "Dbm7"b _d' b _b =b _d' =b _b "Ebm"=b _d' =b _b =b _d' =b _b | "Ebm"b _d' b _b =b _d' =b _b "B7"=b _d' =b _b =b _d' =b _b |
+"Dbm7"b _d' b _b =b _d' =b _b "Ebm"=b _d' =b _b =b2 =B, =B, | "E"B,2 B, B, B,2 B, B, E2 ^F2 _A2 B, B, | "E"B,2 B, B, E2 _A _A "B"^F2 _E2 B,2 B, B, | "E"B,2 B, B, B,2 B, B, E2 ^F2 _A2 E _A |
+"B"B5 A _A ^F "E"E2 _A2 E2 B B | "E"B2 B B B2 B B e2 ^f2 _a2 B B | "E"B2 B B e2 _a _a "B"^f2 _e2 B2 B B | "E"B2 B B B2 B B e2 ^f2 _a2 e _a |
+"B"b5 a _a ^f "E"e E ^F _A =A B _d _e | "E"e3 e e2 e2 "Ab"_a6 ^f2 | "A"e2 _e2 =e2 _d2 "E"B _B =B =e =B _B =B =e | "F#m"A _A =A B =A _A =A B "Dbm7"_A G _A =A _A G _A =A |
+"F#7"^F =F ^F _A ^F _A ^F E "B"z E ^F _A =A B _d _e | "E"e3 e e2 e2 "Ab"_a6 ^f2 | "A"e2 _e2 =e2 _d2 "E"B _B =B =e =B _B =B =e | "F#m"A _A =A B =A _A =A B "Dbm7"_A G _A =A _A G _A =A |
+"F#7"^F =F ^F _A ^F =F ^F _A "Dbm7"z4 _d4 | [M:2/4]"Dbm7"z c _e _d B A _A ^F | [M:4/4]"Dbm7"_A _A _A _A _A _A _A _A ^F ^F ^F ^F ^F ^F ^F ^F | "Dbm7"E4 _d4 z c _e _d B A _A ^F |
+"Dbm7"_A _A _A _A _A _A _A _A ^F ^F ^F ^F ^F ^F ^F ^F | [M:2/4]"Db"E8 | [M:4/4]"Ab"_e6 =e2 _e6 =e2 | "Fm7"_e4 _e4 "Ab"_e8 |
+"E"z ^F z _E _D _E z ^F z ^F z _E _D _E z ^F | "Dbm7"z ^F z ^F z _E _B, _E "E"z G _A =A =B _d _e =e | "B7"z _A ^F _A =A B _d _e "Dbm"z ^F =E ^F _A =A B _d | "Ebm7"z _A =A _A ^F E _E =E "B"z _A ^F =E ^F2 B _E |
+"E"z ^F z _E _D _E z ^F z ^F z _E _D _E z ^F | "Dbm7"z ^F z ^F z _E _B, _E "E"z G _A =A =B _d _e =e | "B7"z _A ^F _A =A B _d _e "Dbm"z ^F =E ^F _A =A B _d | "Ebm7"z _A =A _A z E _E ^F "E"=E ^F _A =A B _d =d _e |
+"E"e3 e e2 e2 "Ab"_a6 ^f2 | "A"e2 _e2 =e2 _d2 "E"B _B =B =e =B _B =B =e | "F#m"A _A =A B =A _A =A B "Dbm7"_A G _A =A _A G _A =A | "F#7"^F =F ^F _A ^F _A ^F E "B"z E ^F _A =A B _d _e |

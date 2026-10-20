@@ -1,0 +1,31 @@
+%abc-2.1
+% Stabat Mater Dolorosa, by Giovanni Battista Pergolesi. Score published on MuseScore (artist:
+% Giovanni Battista Pergolesi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Battista Pergolesi
+% (died 1736, Wikidata Q185312).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/7/Qma8QSMHa8zMXxXKRqN9gKa8xgd6fQwUmRMsWoofmT26oV.mid (sha256
+% 68ab84568aceea19bb47816bf07155702d305d0df5f7c572f530b1adb0f1a8f9): melody track 0, bars 0-47
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Stabat Mater Dolorosa
+M:4/4
+L:1/16
+Q:1/4=34.999974
+% Exact tempo 34.999973750019684 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z8 "C"g8 | "Fm"g4 f4 "Eb"_b8 | "Ab"_b4 _a4 "Bbm"_d'8 | "C7"_d'4 c'2 _b2 "F7"_b2 a2 c'4 |
+"Bbm"c'4 _b4 "C"G2 _b z g z e z | "C"C2 _B2 _A2 G2 "Dm7"_A2 c' z _a z f z | "C7"C2 c2 _B2 _A2 G2 g2 _a2 _A2 | "C"_A4 G4 "Bbm7"z2 _a z3 _a z |
+"C7"z2 _d2 c2 E2 "Bbm7"F2 _a z3 _a z | "Bb7"z2 _d2 c2 E2 "Gm7"F f e g f c _d _B | "C7"_B2 _A2 _A _A _A _A "Fm"_A z C2 _A,4 | "Fm"z8 "C"G8 |
+"Fm"G4 F4 "Eb"_B8 | "Ab"_B4 _A4 "Bbm"_d8 | "Gm7"_d4 c2 _B2 "Ebm7"_B4 A4 | "Bbm"_B4 _d4- "C"_d4 c2 _B2 |
+"G7"_A2 _A2 _A2 _A2 "C"_A2 G2 z4 | "F7"f4 _e4 "Bbm"_d2 c2 _B4 | "Cm7"_B2 ^F2 =F2 _e2 "Bbm"_e _d c4 _d2 | "Eb7"z4 _B4 "Ab"_B2 G2 _A2 _E2 |
+"Db"F2 _A4 _B _A "Cm7"G _A _A6 | "Fm"c'6 _d'2 "C7"c'2 _b4 c'2 | "G7"_b _b _b _b _b _b _b _b "C"_b z7 | "Cm"z8 "Fm"d8 |
+"D7"d8 "Cm"d4 _e4 | "G"d8 "Cm"z2 _e z3 _e z | "Fm"z2 F2 _E2 D2 "Fm7"C2 c2 z2 c2 | "G7"z2 F2 _E2 D2 "Cm"_E4 z4 |
+"G"d8- "Cm"d4 c4 | "Bb"f8- "Eb"f4 _e4 | "Fm"_a8- "G7"_a4 g2 f2 | "Cm"f4 _e4 "Em7"d4 z4 |
+"C7"z8 "F"f4 _e4 | "Bb7"_d4 =d4 "Eb"_e4 _d4 | "Ab"c8 "Db"_d4 c4 | "Gm7"_B8 "C"c4 _B4 |
+"G7"_A2 _A2 _A2 _A2 "C"G2 _b z g z e z | "C7"C2 _B2 _A2 G2 _A2 c' z _a z f z | "C7"C2 c2 _B2 _A2 G2 g2 _a2 _B2 | "C7"_A2 _A2 G2 G2 "Fm"z2 _a z3 _a z |
+"C7"z2 _d2 c2 E2 "Bbm7"F2 _a z3 _a z | "Bbm7"z2 _d2 c2 E2 "Db"E2 F2 z4 | "Fm"z8 "Bbm"G8 | "G7"G8- "Bb7"G4 _A4 |
+"C"G8 "Fm"F2 _a z3 _a z | "C7"z2 _d2 c2 E2 "Bbm7"F2 _a z3 _a z | "C7"z2 _d2 c2 E2 "Fm"E4 F4 |

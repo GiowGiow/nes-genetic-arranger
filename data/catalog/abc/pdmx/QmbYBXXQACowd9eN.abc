@@ -1,0 +1,30 @@
+%abc-2.1
+% Après un Rêve, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/55/QmbYBXXQACowd9eNEwbFAK11A11KZNS65MDYBECeeGL1rJ.mid (sha256
+% 415f34c8d7bbb86f4628e574467366a38290f4991a3db5d83e76614e2502e690): melody track 0, bars 1-47
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Après un Rêve
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G,4 C4 D4 | "C"_E5 D2 C _E D2 C | "C"C8 _B,4 | "C"_D2 F,2 _D4 C2 B,2 |
+"C"C4 z2 C2 _B,3 _A, | "C"G,5 _A,2 _B, _A, _B,2 C | "C"G,12 | "C"G,4 _E,3 F, G,2 _A,2 |
+"C"_B,4 z F,2 F, F, E,2 F, | "C"_A,8 G,4 | "C"C4 C6 B,2 | "C"_B,2 z2 _E,4 _E,3 F, |
+"C"F,4 z ^F,2 _A, ^F, _A,2 _B, | "C"_B,12 | "C"z12 | "C"G4 c4 d4 |
+"C"_e5 d2 c _e d2 c | "C"c8 _B4 | "C"_d2 F2 _d4 c2 B2 | "C"c4 z2 c2 _B2 _A2 |
+"C"G5 _A2 _B _A _B2 c | "C"G12 | "C"G4 _E3 F G2 _A2 | "C"_B4 z F2 F F E2 F |
+"C"_A4 G4 C4 | "C"_D5 _E2 F _E F2 G | "C"G4 C4 E4 | "C"F2 F2 F G2 _A _B _A2 _B |
+"C"c4 C4 c4 | "C"f6 z2 F4 | "C"F3 F F G2 A _B c2 _d | "C"_d5 c2 _e _d c2 _B |
+"C"_d4 z4 _B3 _B | "C"_e6 z2 _d4 | "C"_d5 c2 _B _A G2 F | "C"G5 _A2 G F G2 _A |
+"C"G4 z4 G4 | "C"c6 z2 c3 c | "C"c8 c3 d | "C"_e12 |
+"C"d8 d4 | "C"d8 c3 _B | "C"_B6 G2 _E2 F2 | "C"G5 F2 _E F G2 _A |
+"C"G12 | "C"C8 z4 |

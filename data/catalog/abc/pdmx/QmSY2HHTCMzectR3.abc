@@ -1,0 +1,35 @@
+%abc-2.1
+% Lieder ohne Worte Op.30, by Felix Mendelssohn Bartholdy. Score published on MuseScore (artist:
+% Felix Mendelssohn), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Felix Mendelssohn Bartholdy
+% (died 1847, Wikidata Q46096).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/55/QmSY2HHTCMzectR34ecNX6y1sGJbYbvzUuzrfmY9puMerY.mid (sha256
+% edd18545aaa0ef3314479f62c94abf797e077091779c06350ed79679703b406a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lieder ohne Worte Op.30
+M:4/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"z G,2 _B, _E _B,2 G, z G,2 _B, _E _B,2 G, | "Eb"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, D _E, | "Ab"C6 F2 "Fm"_A6 F2 |
+"Bb7"_e4 d F2 D _A F c D _B F _A D | "Eb"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, _E _E, | "C"F F,2 G, B, _E2 D "Cm"C2 _E2 G2 c2 |
+"C"f F2 G B _e2 d "Cm"c2 G2 A2 _B2 | "Gm7"_B _B,2 D F D2 _B, "F7"F A,2 C F C2 A, | "Gm7"c D2 _E F D2 _E "Bb7"_B D2 _E F _A2 G | "Bb"F _A2 G F _E2 D "Dm"C _B,2 =A, _B, G,2 _A, |
+"Eb"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, D _E, | "Ab"C6 F2 "Fm"_A6 F2 | "Bb7"_e4 d F2 D _A F c D _B F _A D |
+"Eb"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, _E _E, | "C"F F,2 G, B, _E2 D "Cm"C2 _E2 G2 c2 | "C"f F2 G B _e2 d "Cm"c2 G2 A2 _B2 |
+"Gm7"_B _B,2 D F D2 _B, "F7"F A,2 C F C2 A, | "Gm7"c D2 _E F D2 _E "Bb7"_B D2 _E F _A2 G | "Bb"F _A2 G F _E2 D "Bb7"C _B,2 =A, _B, ^F2 _A | "Ab7"_B _B,2 _E =B _E2 _A "Bb"F F,2 _B, F ^F z _A |
+"Bb"z16 | "Bb"_B _E2 ^F _e _A2 =B "Db"_A =B,2 _D =F ^F z _A | "Ab7"_B _B,2 _D =B F2 _A "Bb"F F,2 _B, =D ^F z _A | "Bb"_B _E2 ^F _e _A2 =B "Db"_A =B,2 _D =F _B z =B |
+"Ebm7"_d4 _B3 ^f "Db7"^f4 =f4 | "Ebm7"_d4 _B3 ^f "E7"^f4 =f4 | "Ebm"_B4 ^F3 _e "Abm"_e5 _d2 =B | "Ebm"_B4 ^F3 _e "Abm"_e5 _d2 =B |
+"Abm"_e5 _d2 B _e8 | "Abm"_e5 z d2 f2 _e2 B2 _A2 | "Cm7"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, D _E, |
+"Ab"C6 F2 "Fm"_A2 c2 g3 f | "Bb7"_e4 d F2 D _A F2 D d c2 _B | "Eb"_B4 G3 _e "Bb7"_e4 d4 | "Eb"_B4 G3 _e "Db7"_e4 d4 |
+"Cm"G4 _E3 _B "Bb7"_B2 _A2 G2 F2 | "Eb"F8 _E4 z ^F2 _A | "Bb"_B _E2 ^F _e _A2 =B "Db"_A =B,2 _D =F ^F z _A | "Ab7"_B _B,2 _D =B F2 _A "Bb"F F,2 _B, =D ^F z _A |
+"Bb"_B _E2 ^F _e _A2 =B "Db"_A =B,2 _D =F _B z =B | "Ebm7"_d4 _B3 ^f "Db7"^f4 =f4 | "Ebm7"_d4 _B3 ^f "E7"^f4 =f4 | "Ebm"_B4 ^F3 _e "Abm"_e5 _d2 =B |
+"Ebm"_B4 ^F3 _e "Abm"_e5 _d2 =B | "Abm"_e5 _d2 B _e8 | "Abm"_e5 z d2 f2 _e2 B2 _A2 | "Cm7"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, |
+"Bb"_A _A,2 _B, D _B,2 _A, "Cm"_E _E,2 G, C G, D _E, | "Ab"C6 F2 "Fm"_A2 c2 g3 f | "Bb7"_e4 d F2 D _A F2 D d c2 _B | "Eb"_B4 G3 _e "Bb7"_e4 d4 |
+"Eb"_B4 G3 _e "Db7"_e4 d4 | "Cm"G4 _E3 _B "Bb7"_B2 _A2 G2 F2 | "Cm7"F G2 _A _B G2 _A "Eb7"_B G2 _A _B _d2 c | "Eb"_B _d2 c _e G2 _A "Eb7"_B _A2 G G _E2 _D |
+"Eb"_B C2 _D _A C2 _D "Cm7"_E C _A _D _A _D F C | "Eb"_E _A,2 _B, =B, _A,2 _B, "Fm7"D2 z _B, _B, G,2 _A, | "Eb"G G,2 _B, _E _B, _A G, _B G,2 _B, _E _B,2 G, | "Eb"_A _A,2 _B, D F2 _B "Gm7"d f2 _a _b2 d'2 |

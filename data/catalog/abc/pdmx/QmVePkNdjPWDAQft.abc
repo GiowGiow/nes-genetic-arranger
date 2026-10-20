@@ -1,0 +1,34 @@
+%abc-2.1
+% O vos omnes Tenebræ Responsory, by Tomás Luis de Victoria. Score published on MuseScore (artist:
+% Tomás Luis de Victoria), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tomás Luis de Victoria (died
+% 1611, Wikidata Q215128).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/17/QmVePkNdjPWDAQftvFgd4NCj4pbm6Ep8j29KhF2y7zdnn4.mid (sha256
+% 0510c66e21935c4c318b907d17bb7acd87aaac8b8a86c9775b5fafb3cfea4537): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O vos omnes Tenebræ Responsory
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"A,16 | "A"C16 | "Am"B,8 A,6 G,2 | "Dm7"A,2 B,2 C8 B,2 A,2 |
+"C"B,8 C8 | "C"C8 B,8 | "Em"B,4 B,4 B,8 | "D"D4 D,2 E,2 ^F,2 G,2 A,4 |
+"Bm"A,4 _A,2 ^F,2 _A,8 | "A"A,16 | "E"z8 B,8 | "A"C12 C4 |
+"A"C16 | "Dm"D8 B,4 C4 | "Dm"C2 B,2 A,2 G,2 A,8 | "E"B,8 z8 |
+"A"C16 | "Dm"B,8 A,8 | "Em"B,16 | "Dm"D6 C2 B,4 A,4 |
+"E"_A,4 C4 B,4 C4 | "F"C4 B,4 A,8 | "E"A,4 _A,2 ^F,2 _A,4 E,4 | "Dbm7"E,4 E,4 E,4 E,4 |
+"C"A,12 G,4 | "E7"F,8 E,4 B,4 | "E"B,4 B,4 B,4 B,4 | "F"C6 B,2 C4 D4 |
+"G"D2 C2 C8 B,4 | "Am"C8 z4 A,4 | "E7"A,4 _A,4 =A,4 =A,4 | "E7"B,4 A,8 _A,2 ^F,2 |
+"E"_A,8 z8 | "Am"z8 A,8 | "Em"E12 _E4 | "B"_E16 |
+"Em"E6 E2 E4 D4 | "F"C6 B,2 A,4 A,4 | "E"B,8 z8 | "Am"A,16 |
+"E"_A,8 =A,6 _A,2 | "Dm7"A,2 B,2 C8 B,4 | "C"C8 B,8 | "Dm"C12 B,4 |
+"E7"A,12 _A,2 ^F,2 | "Em"G,4 E,4 E8 | "A7"E4 D4 C8 | "C"B,4 B,4 E8 |
+"Dm7"A,8 D8 | "E"C4 B,2 A,2 B,8 | "A"A,8 z8 | "A"C16 |
+"Dm"B,8 A,8 | "Em"B,16 | "Dm"D6 C2 B,4 A,4 | "E"_A,4 C4 B,4 C4 |
+"F"C4 B,4 A,8 | "E"A,4 _A,2 ^F,2 _A,4 E,4 | "Dbm7"E,4 E,4 E,4 E,4 | "C"A,12 G,4 |
+"E7"F,8 E,4 B,4 | "E"B,4 B,4 B,4 B,4 | "F"C6 B,2 C4 D4 | "G"D2 C2 C8 B,4 |

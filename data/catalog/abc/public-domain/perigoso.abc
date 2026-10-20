@@ -1,0 +1,35 @@
+%abc-2.1
+% PERIGOSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/perigoso.html (file
+% https://www.beakauffmann.com/mpb_p/som/perigoso.mid, sha256
+% feec3d65a7364bcd421532a5f00f63d38ed18525dcc356b1242ec89829108161), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PERIGOSO
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"C"z5 e2 B | "C"G E E, ^F G A G, B | "C"c2 ^F, c B,,, B B,, ^F | "C"A G E, ^F E ^F ^F,, _D |
+"C"E2 _E C B, =e2 B | "C"G E E, ^F G A G, B | "C"d2 ^F d ^F _d ^F B | "C"_d _A F B _B2 ^f2 |
+"C"^f3 b B,,, e'2 b | "C"g e z ^f g a E b | "C"c' E2 c' B,, b _E ^f | "C"a g2 ^f e ^f E _d |
+"C"e _e2 c B _b2 a | "C"_a b2 d' f' e' D _a' | "C"b' C a' C G ^F2 E | "C"B _B,,2 =B,, G2 ^F z |
+"C"E B,,2 G,, E,, e z B | "C"G E E, ^F G A G, B | "C"c2 ^F, c B,,, B B,, ^F | "C"A G E, ^F E ^F ^F,, _D |
+"C"E2 _E C B, =e2 B | "C"G E E, ^F G A G, B | "C"d2 ^F d ^F _d ^F B | "C"_d _A F B _B2 ^f2 |
+"C"^f3 b B,,, e'2 b | "C"g e z ^f g a E b | "C"c' E2 c' B,, b _E ^f | "C"a g2 ^f e ^f E _d |
+"C"e _e2 c B _b2 a | "C"_a b2 d' f' e' D _a' | "C"b' C a' C G ^F2 E | "C"B _B,,2 =B,, G2 ^F z |
+"C"E B,,2 G,, E,, _d2 =d | "C"_e2 C d ^F, _d C =d | "C"e2 B, d G, _B =B, =B | "C"c2 A, B _E, _B A, =B |
+"C"^f2 G, e E, _e G, =e | "C"a2 _D g _B, ^f _D g | "C"e'2 D d' B, b D g | "C"e ^f _D g a2 =d' ^F, |
+"C"d2 B, d' G, _d' _B, =d' | "C"_e'2 ^F d' D _d' ^F =d' | "C"e'2 G d' G _b G =b | "C"c'2 _E b B, _b _E =b |
+"C"^f'2 E e' E _e' =E =e' | "C"a'2 E g' _B, ^f' E g' | "C"e'' d'' G b' g' e' G d' | "C"_d' e' G a' ^f' a' ^F =d'' |
+"C"g'2 g'' z2 _d2 =d | "C"_e2 C d ^F, _d C =d | "C"e2 B, d G, _B =B, =B | "C"c2 A, B _E, _B A, =B |
+"C"^f2 G, e E, _e G, =e | "C"a2 _D g _B, ^f _D g | "C"e'2 D d' B, b D g | "C"e ^f _D g a2 =d' ^F, |
+"C"d2 B, d' G, _d' _B, =d' | "C"_e'2 ^F d' D _d' ^F =d' | "C"e'2 G d' G _b G =b | "C"c'2 _E b B, _b _E =b |
+"C"^f'2 E e' E _e' =E =e' | "C"a'2 E g' _B, ^f' E g' | "C"e'' d'' G b' g' e' G d' | "C"_d' e' G a' ^f' a' ^F =d'' |

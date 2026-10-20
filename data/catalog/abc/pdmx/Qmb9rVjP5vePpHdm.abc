@@ -1,0 +1,35 @@
+%abc-2.1
+% 60 Lessons for 2 Guitars Op.168, by Joseph Küffner (1776 - 1856). Score published on MuseScore
+% (artist: Joseph Küffner), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Küffner (died 1856,
+% Wikidata Q106000).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/8/Qmb9rVjP5vePpHdma6AuLrdowLrAdEpD81YyyZgyt7GjAp.mid (sha256
+% cda9c89dac956d6febff5d326d4c801b1f4255ca3f5551197a0f0fff5c8964b6): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:60 Lessons for 2 Guitars Op.168
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z12 | "F#m7"_D6 _D =D B,2 B, _D | "A"A,2 _D2 E,4 z4 | "E"D6 B,2 _D2 =D2 |
+"E"_D4 B,2 B,2 _D2 =D2 | "A"E6 _D2 =D2 E2 | "D"^F2 A4 _A ^F E D _D B, | "F#m7"A, _D E3 A _A ^F E =D _D B, |
+"F#m7"B,8 A,4 | "E"_A6 _A2 ^F2 E2 | "B"E3 _E _E4 z4 | "B"A6 A2 _A2 ^F2 |
+"E"G3 _A _A4 z4 | "Dbm7"B5 A _A ^F E _E _D C | "A"_D z ^F =F _A ^F =A _A B =A _A ^F | "B7"B _B A _A ^F E _E _D =B, =A, _A, ^F, |
+"E"E,4 z8 | "E7"z2 F z E z7 | "E7"z2 F z E z7 | "E7"d2 z2 d2 z2 d2 z2 |
+"E7"d6 B z _A z E z | "E7"F6 D z B, z A, z | "E7"_A, B, F E _E =E _A ^F =E D _D B, | "E7"A, _A, ^F, E, _E, =E, ^F, _A, =A, _B, =B, C |
+"F#m7"_D6 _D =D B, z B, _D | "A"A,2 _D2 E,4 z4 | "E"D6 B,2 _D2 =D2 | "E"_D4 B,2 B,2 _D2 =D2 |
+"A"E6 _D2 =D2 E2 | "D"^F2 A4 _A ^F E D _D B, | "F#m7"A, _D E3 A _A ^F E =D B, _A, | "A"A, _D E, _D A, _D E, _D A, _D E, _D |
+"E7"E,, _A, B, _A, E B, _A ^F E D _D B, | "A"A, _D E, _D A, _D E, _D A, _D E, _D | "E7"E,, _A, B, _A, E B, _A ^F E D _D B, | "A"A, _D E, _D A, _D E, _D A, _D E, _D |
+"Bm"D, A, D A, ^F =F _A ^F E D _D B, | "Dbm7"E,, A, _D E A _A ^F E E =D _D B, | "F#m7"A,2 E, _D E2 A, E A2 _A2 | "F#m7"A2 E, _D E2 A, E A2 _A2 |
+"A"A4 A,4 z4 | "E"_A6 _A2 ^F2 E2 | "B"E3 _E _E4 z4 | "B"A6 A2 _A2 ^F2 |
+"E"G3 _A _A4 z4 | "Dbm7"B5 A _A ^F E _E _D C | "A"_D z ^F =F _A ^F =A _A B =A _A ^F | "B7"B _B A _A ^F E _E _D =B, =A, _A, ^F, |
+"E"E,4 z8 | "E7"z2 F z E z7 | "E7"z2 F z E z7 | "E7"d2 z2 d2 z2 d2 z2 |
+"E7"d6 B z _A z E z | "E7"F6 D z B, z A, z | "E7"_A, B, F E _E =E _A ^F =E D _D B, | "E7"A, _A, ^F, E, _E, =E, ^F, _A, =A, _B, =B, C |
+"F#m7"_D6 _D =D B, z B, _D | "A"A,2 _D2 E,4 z4 | "E"D6 B,2 _D2 =D2 | "E"_D4 B,2 B,2 _D2 =D2 |
+"A"E6 _D2 =D2 E2 | "D"^F2 A4 _A ^F E D _D B, | "F#m7"A, _D E3 A _A ^F E =D B, _A, | "A"A, _D E, _D A, _D E, _D A, _D E, _D |

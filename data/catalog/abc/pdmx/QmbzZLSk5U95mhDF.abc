@@ -1,0 +1,29 @@
+%abc-2.1
+% Son presa disse, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio Massaino),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/56/QmbzZLSk5U95mhDF1msvYkGqKQ4CrTWRc41GUoVemwPmHJ.mid (sha256
+% 8ba86e296840f799ce1e589ba1eeb7e38e152147e6ea9bc04a9802cfc0146fe8): melody track 0, bars 2-41
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Son presa disse
+M:4/2
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B7"z4 e8 d4- "C"d4 c4 B8 | "D7"c8 z16 B8 | "C"A4 G4 A4 B4 "G"c8 B8 | "Am"z16 "Am7"z8 B8 |
+"A7"B4 B4 c8 "Am"A8 z4 G2 A2 | "Em"B4 B4 G8 "E7"A8 z4 e2 d2 | "Am"c4 c4 A8 "Em"e8 z4 e2 d2 | "E"c4 A4 e8 "Am7"e4 c2 d2 e4 e4 |
+"C"z12 G2 A2 "Em"B4 B4 z8 | "E"z8 e8 "A"_d16 | "Am"z16 "Em"z4 B4 e6 d2 | "Am"c4 B4 A4 G4 "B"G4 A4 B8 |
+"C"B8 z8 "Am"z4 e4 c6 B2 | "Dm"A4 _A4 =A4 B4 "F#m7"c4 c4 B8 | "Dm7"A8 z8 "Dm"z4 A8 _A4 | "Am"A8 B8 "C"z16 |
+"Am"z4 e8 _e4 =e4 c8 B4 | "Am"B6 B2 G4 c4 "B"B8 B8 | "Em7"z16 "C"z8 G8 | "D7"A6 B2 G4 A4 "C"B8 z4 c4 |
+"D7"B6 G2 A4 F4 "C"E8 z4 G4 | "Em7"G2 A2 B2 c2 d8 "A"d4 d4 c8 | "Em7"B16 z8 G8 | "Em7"B8 c4 B8 A4 G4 G4 |
+"Am7"E6 ^F2 G8- "Em7"G8 ^F8 | "G"z8 B8 "B"d8 e4 d4 | "G"d4 c4 B8 "Em7"B4 B4 E4 ^F4 | "Em"G4 A4 B6 G2 "Am"c4 B4 z8 |
+"G"z20 c8 B4 | "C"c8 G4 A4 "Em7"B8 c4 B4 | "Em"B4 A4 _A8 "D7"=A4 =A4 =A4 =A4 | "E"e16 "Am"_d8 e8 |
+"Am7"d8 e4 c4- "C"c4 B4 e8 | "Bm7"z4 B4 E8 "C"^F4 G8 A4 | "Am7"B8 z4 e8 d8 c4 | "C"B8 e4 e4- "Am7"e4 d8 c4 |
+"Am"B8 A8 "E7"z16 | "D7"E8 ^F8 "E"G4 A6 _A ^F _A4 | "A"A32 |

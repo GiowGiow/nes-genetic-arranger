@@ -1,0 +1,23 @@
+%abc-2.1
+% Spanish Dance, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/ashover.abc, tune X: 38 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6586eea8dca53866b42721050d11fc1408bdb2cf31a902b41c5c13504139b164).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Spanish Dance
+M:2/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"Em7"D A F A D B G B | "D"D2 e f g f f e | "Em7"D A F A D e f g | "D"f e d c d4 |
+"D"e c A g f d A a | "D"e c A g f2 e A | "Em7"a f d A B c d G | "D"F2 E2 D4 |
+"Em7"D A F A D B G B | "D"D2 e f g f f e | "Em7"D A F A D e f g | "D"f e d c d4 |
+"D"e c A g f d A a | "D"e c A g f2 e A | "Em7"a f d A B c d G | "D"F2 E2 D4 |
+"D"A B c d d c B A | "Em7"e f g f f2 e2 | "E7"f3 f e ^G A B | "F#m7"c B A ^G A4 |
+"D"A B c d d c B A | "Em7"e f g f f2 e2 | "E7"f3 f e ^G A B | "F#m7"c B A ^G A4 |
+"D"e3 c A2 d2 | "A7"B A G F E4 | "G"B e g f e c d g | "D"f e d c d4 |
+"D"e3 c A2 d2 | "A7"B A G F E4 | "G"B e g f e c d g | "D"f e d c d4 |

@@ -1,0 +1,27 @@
+%abc-2.1
+% Nocturnes Op.9, by Frederic Chopin (1810-1849). Score published on MuseScore (artist: Frédéric
+% Chopin), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frederic Chopin (died 1880,
+% Wikidata Q15970295).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/30/QmdLc2evqhNAmuyUBAVJMLDiaCgJ3SoyXv6yvkd1wC7JPd.mid (sha256
+% 2208518318f3d987295f4348881ffc0ec063125191b9b2ba1c58b823f3ad1174): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Nocturnes Op.9
+M:12/8
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Eb"z22 _B2 | "Eb"g8 f2 g2 f6 _e4 _B2 | "C"g4 _d c c'4 g2 "Fm"_b6 _a4 g2 | "Bb"f6 g4 d2 "Am7"_e6 c6 |
+"Bb"_B2 d'2 c'2 _b _a g _a c d "Eb"_e6 z4 _B2 | "Eb"g6 f g g f f g f2 _e4 _e f f _e _e f | "C"g B c _d c f e _a g _d' c' g "Fm"_b6 _a4 g2 | "Bb"g f g g g g f g g2 d2 "Am"_e6 c6 |
+"Bb"_B2 d'2 c'2 _b _a g _a c d "Eb"_e6 z2 d2 _e2 | "Bb"f6 g4 f2 "Dm7"f6 c6 | "Ab"_e z _e z _e z _e2 d _e f z "Eb"_e z5 _B6 | "Em"_b6 a4 g2 "Gm7"f6 d6 |
+"F7"_e6 d2 c2 d2 "Bb7"_B2 =B z =B z c z c z d z | "Eb"_e g3 A _B =B _B _d =d g z f z3 _e3 f f _e _e f | "C"g B c _d c f e _a g _d' c' g "Fm"_b6 _a4 g2 | "Bb"g f g g g g f g g2 d2 "Am"_e6 c6 |
+"Bb"_B2 d'2 _d'2 c' _b a =d =d g "Eb"_e z7 =d2 _e2 | "Bb"f6 g4 f2 "Dm7"f6 c6 | "Ab"_e z _e _e _e2 _e2 d _e f z "Eb"_e z5 _B6 | "Em"_b6 a4 g2 "Gm7"f6 d6 |
+"F7"_e6 d2 c2 d2 "Bb7"_B2 =B z =B z c z c z d z | "Eb"_e g3 A _B =B _B _d =d g z f z3 _e3 f f _e _e f | "C"g B c _d c f e _a g _d' c' g "Fm"_b6 _a4 g2 | "Bb"g f g g g g f g g2 d2 "Am"_e6 c6 |
+"Bb"_B d'2 _d' c' z =b a _a =B =d g "Eb"_e z11 | "Abm"_e6 f2 _e2 f2 "Eb"g11 z | "Abm"_e7 f _e f _e f "Eb"g4 f _e _e'2 d'2 c'2 | "Eb"_b4 a2 _a2 c2 d2 "F7"_e2 f f _e _e _e g' f' _e' d' c' |
+"Bb"b2 _b2 a2 a _a _a g g z "Eb"f z11 | "Abm"_e7 f f f _e f "Eb"g11 z | "Abm"_e2 _A _B _B _A _A =B _e _a _e' z "Eb"g'2 _e'2 _e'4 d'2 c'2 | "Bb7"b2 _b2 a2 _a2 g2 d2 "F7"_e2 _e'6 f2 c'2 |
+"Bb7"b11 z "Gm"_b11 z | "Gm"b c' b c' b c' b c' b c' b c' b c' b c' b d' c' _a g _e c c | "Eb"_e11 z _b11 z | "Eb"_e'11 z13 |

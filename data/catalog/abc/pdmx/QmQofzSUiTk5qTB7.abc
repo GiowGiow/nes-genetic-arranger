@@ -1,0 +1,26 @@
+%abc-2.1
+% Joshua, by Georg Friedrich Händel. Score published on MuseScore (artist: Georg Friedrich
+% Händel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Friedrich Händel (died
+% 1759, Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/35/QmQofzSUiTk5qTB7b3mkHbYqFCtCDUVERwmAWsXERZm66U.mid (sha256
+% 12718384d69aebba5df41957ef0acc5aa4027861c132bb6ce253d46f057e6bc5): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Joshua
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"d8 B6 c2 | "G"d8 G8 | "D7"A2 B2 c2 d2 c4 B4 | "D"A16 |
+"Em7"d2 c2 d2 e2 d4 d4 | "G"g8 d8 | "D7"c4 B4 A8 | "G"G16 |
+"G"d8 B6 c2 | "G"d8 G8 | "D7"A2 B2 c2 d2 c4 B4 | "D"A16 |
+"Em7"d2 c2 d2 e2 d4 d4 | "G"g8 d8 | "D7"c4 B4 A8 | "G"G16 |
+"G"B2 A2 B2 c2 B4 B4 | "D7"A8 G8 | "Em"c4 B4 A4 G4 | "B"^F16 |
+"E"G2 ^F2 G2 A2 G4 G4 | "A7"e8 _d8 | "Em7"d4 e2 d2 _d6 =d2 | "D"d16 |
+"G"d8 B6 c2 | "G"d8 G8 | "D7"A2 B2 c2 d2 c4 B4 | "D"A16 |
+"Em7"d2 c2 d2 e2 d4 d4 | "G"g8 d8 | "D7"c4 B4 A8 | "G"G16 |

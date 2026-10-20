@@ -1,0 +1,35 @@
+%abc-2.1
+% Hungarian Dance in G. Minor No. 1 for Cello, by Johannes Brahms. Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/22/QmbGvWijNxNVwCq9tRLcNAZgV9PvxozEjQaAqXDJdqahC9.mid (sha256
+% e9695756e6490e7f8b849eb2e4d8f255ecf457ab8e5b9ac14892262682cac651): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hungarian Dance in G. Minor No. 1 for Cello
+M:2/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z8 | "Gm"z8 | "B7"z8 | "D"z8 |
+"G"z8 | "G"z8 | "Gm"z8 | "Gm"z8 |
+"F7"z8 | "G"z8 | "C"z8 | "C"z8 |
+"D"z8 | "D"z8 | "A7"z8 | "Am7"z8 |
+"D"z8 | "D"z8 | "Am7"z8 | "Am7"z8 |
+"D"z8 | "D"z8 | "G"z8 | "G"z8 |
+"G"G,,2 D,2 G,2 D,2 | "G"G,,2 D,2 G,2 D,2 | "G"G,,2 D,2 A,2 D,2 | "G"G,,2 D,2 ^F,2 D,2 |
+"G"G,,2 D,2 G,2 _B,2 | "G"D2 _B,2 G,2 D,2 | "G"G,,2 D,2 G,2 D,2 | "G"G,,2 D,2 G,2 _B,,2 |
+"G"F,,2 C,2 F,2 F,,2 | "G"G,,2 D,2 G,2 G,,2 | "G"C,,2 G,,2 C,2 _E,2 | "G"C2 G,2 _E,2 C,2 |
+"G"D,,2 A,,2 A,2 D,2 | "G"D,,2 A,,2 A,2 D,2 | "G"_E,,2 A,,2 A,2 _E,2 | "G"C,,2 A,,2 A,2 C,2 |
+"G"D,,2 A,,2 D,2 ^F,2 | "G"D2 A,2 ^F,2 D,2 | "G"C,,2 A,,2 A,2 _E,2 | "G"C,,2 A,,2 A,2 _E,2 |
+"G"D,,2 D,2 A,2 ^F,2 | "G"D,,2 D,2 A,2 ^F,2 | "G"G,,2 _E,2 G,2 _B,2 | "G"D2 _B,2 G,2 D,2 |
+"G"G,,2 D,2 z2 D,2 | "G"G,,2 D,2 z2 D,2 | "G"G,,2 G,2 z2 G,2 | "G"C,,2 C,2 z2 C,2 |
+"G"A,,2 A,2 z2 C2 | "G"C,2 C2 z2 C2 | "G"D,,2 D,2 z4 | "G"G,,2 G,2 z4 |
+"Gm"z8 | "Em7"z8 | "D"z8 | "Em7"z8 |
+"Em7"G,,2 D,2 z2 D,2 | "Em7"G,,2 D,2 z2 D,2 | "Em7"G,,2 G,2 z2 G,2 | "Em7"C,,2 C,2 z2 C,2 |

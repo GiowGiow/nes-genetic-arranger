@@ -1,0 +1,35 @@
+%abc-2.1
+% Lied ohne Worte Op.109, by Felix Mendelssohn Bartholdy (1809-1847). Score published on MuseScore
+% (artist: Felix Mendelssohn), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Felix Mendelssohn Bartholdy
+% (died 1847, Wikidata Q46096).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/49/QmRV9cFTWHJ8Tpv3jbgy1pYtKe3TS6yzGoDjWvmqfAaheL.mid (sha256
+% 703ac82ae26a6edf080c09141cc85346b348fbfa57f50272074f928102aed156): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lied ohne Worte Op.109
+M:4/4
+L:1/16
+Q:1/4=67.999764
+% Exact tempo 67.99976426748387 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z2 A, A, A,2 D2 z2 A, A, A,2 D2 | "D"z2 A, A, A,2 D2 z2 A, A, A,2 D2 | "D"z2 A, A, A,2 D2 z2 B, B, B,2 E2 | "Em7"z2 B, B, B,2 E2 "Db7"z2 G, G, G,2 E2 |
+"A"z2 G, G, G,2 _D2 "D"z2 A, A, A,2 =D2 | "D"z2 A, A, A,2 D2 z2 A, A, A,2 D2 | "D"z2 B, B, B,2 ^F2 "Db"z2 B, B, B,2 _D2 | "Db"z2 _D _D _D2 _A2 z2 _D _D _D2 _D2 |
+"Db"_D2 _D2 _D2 _D2 "F#"z2 _D _D _D2 ^F2 | "F#"z2 C C C2 ^F2 "B"z2 B, B, B,2 ^F2 | "B"B,2 B, B, B,2 B,2 "Em"z2 B, B, B,2 E2 | "F#7"z2 B, B, z2 _E _E "E7"z2 =E =E z2 D D |
+"Bm7"z2 _D _D z2 B, B, "F#m"z2 A, A, A,2 E2 | "D"z2 A, A, A,2 ^F2 z2 A, A, A,2 ^F2 | "D"z2 _B, _B, _B,2 ^F2 "C"z2 _D _D _D2 E2 | "Dbm"z2 B, B, B,2 E2 "D"z2 D2 D2 D2 |
+"A"D4 _D4 "D"z2 A, A, A,2 =D2 | "F#"z2 C C C2 ^F2 "B"z2 B, B, B,2 ^F2 | "B"B,2 B, B, B,2 B,2 "Em"z2 B, B, B,2 E2 | "F#7"z2 B, B, z2 _E _E "E7"z2 =E =E z2 D D |
+"Bm7"z2 _D _D z2 B, B, "F#m"z2 A, A, A,2 E2 | "D"z2 A, A, A,2 ^F2 z2 A, A, A,2 ^F2 | "D"z2 _B, _B, _B,2 ^F2 "C"z2 =B, =B, =B,2 E2 | "Dbm"z2 B, B, B,2 E2 "D"z2 D2 D2 D2 |
+"A"D4 _D4 "D"z2 A, A, A,2 =D2 | "Dm"z A, F A, z _B, F _B, "A"z _B, G _B, z A, _D A, | "Dm"z A, F A, z _B, F _B, "A"z _B, G _B, z A, _D A, | "D"z A, F A, z _B, F _B, "F"z _B, G _B, z C A C |
+"Bb"z D G D z D E D z D F E _D _B, G, F, | "Dm"z A, F A, z _B, F _B, "A"z _B, G _B, z A, _D A, | "Dm"z A, F A, z A, F A, "Abm"z D E D z D E D | "B7"z E F E z E _A E "Ab"z =A c B z D E D |
+"B7"z E F E z E _A E "Ab"z =A c B z D E D | "Bm7"z E F E z F G F "D7"z G A G z A _B A | "E"z A c A D F D C "Am"z C E C z C E C | "Am"z A, E A, z C E C "Cm"z C A C z D G D |
+"D"G C ^F C G _E A _E "Gm7"_B D G D z D G D | "Em7"z _B, G _B, z _B, F _B, "Dbm"z _B, E _B, z _B, E _B, | "C7"z2 G _B d2 c _B "F"_B2 A A d2 A2 | "E7"z2 B d f2 e d "F"_d E A E A, F A F |
+"Bb"z F G F z E _A E "F"z E =A E =A, F =A F | "Bb"z F G F z E _A E "A"z E =A E =A,2 F F | "A"E2 z4 D D _D2 z4 _B, _B, | "A7"A,2 z4 C C "B7"C2 z4 C C |
+"D"C2 z6 "Gm"z2 _B, _B, D2 z2 | "C"z2 C C G2 z2 "F"z2 C C C2 z2 | "Dm"z2 A A A2 z2 "E7"_A2 z2 G2 z2 | "Dbm"G2 z6 "A7"z8 |
+"D"z2 A, A, A,2 D2 z2 A, A, A,2 D2 | "D"z2 A, A, A,2 D2 z2 A, A, A,2 D2 | "Em7"z2 B, B, B,2 E2 "Db"z2 G, G, G,2 _D2 | "A"z2 G, G, G,2 _D2 "D"z2 A, A, A,2 =D2 |
+"Bm"z2 ^F ^F ^F2 _E2 "E"z2 _E _E =E2 _A2 | "Dbm"z2 _A _A _A2 F2 "F#"z2 F F ^F2 _B2 | "C"z2 _B _B _B4 "F#m"z2 A A D2 D2 | "A"z2 D2 z2 _D2 "D"z2 _D _D =D2 ^F2 |
+"Bm"z2 ^F ^F ^F2 _E2 "E"z2 _E _E =E2 _A2 | "Dbm"z2 _A _A _A2 F2 "F#"z2 F F ^F2 _B2 | "C"z _D B _D z _D B _D "F#"z _D E _D z _D E _D | "C"z _D B _D z _D B _D "F#"z _D E _D z _D E _D |
+"C"z _D _B _D _B _D _B _D _B _D _B _D A _D A _D | "F#m"z2 D D z2 B, B, "A"z2 D2 z2 _D2 | "D"z2 A, D ^F2 E D D2 _D =D E2 A,2 | "D"z2 A, D ^F2 E D D2 _D =D E2 A,2 |

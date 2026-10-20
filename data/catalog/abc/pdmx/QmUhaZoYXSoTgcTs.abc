@@ -1,0 +1,30 @@
+%abc-2.1
+% Tant que vivray, by Miguel de Fuenllana. Score published on MuseScore (artist: Claudin de
+% Sermisy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Miguel de Fuenllana (died 1579,
+% Wikidata Q600102).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/23/QmUhaZoYXSoTgcTsFzfYEeHd7nC99YBcHfms1ffMyRsJse.mid (sha256
+% 369dc9200f67b20676f7111f408330e42d60b2944218d6f408871afb312350b5): melody track 0, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tant que vivray
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c16 | "C"c8 _B4 E4 | "C"A8 C8 | "C"A4 _B4 A4 G2 F2 |
+"C"G8 c8 | "C"G4 B2 A2 c4 B4 | "C"c8 C8 | "C"A8 A,4 C4 |
+"C"G4 A4 G8 | "C"A16 | "C"A4 E4 F4 E4 | "C"_B12 A4 |
+"C"G8 F4 A,4 | "C"C8 E4 D4 | "C"E4 F4 G4 E4 | "C"F16 |
+"C"F8 G8 | "C"A4 G4 F4 E4 | "C"F8 G8 | "C"_B,4 F4 F4 =B,4 |
+"C"F4 E2 D2 F4 E4 | "C"F12 _B,4 | "C"F8 A,8 | "C"F8 G8 |
+"C"A4 G4 F4 E4 | "C"F8 G8 | "C"D4 E4 F4 D4 | "C"E4 F4 G,4 E4 |
+"C"F16 | "C"F8 F4 G4 | "C"A8 F8 | "C"F8 F4 G4 |
+"C"A8 F8 | "C"c6 _B2 c4 _B4 | "C"A8 F8 | "C"c6 _B2 c4 _B4 |
+"C"A8 G4 _B,4 | "C"A,4 F4 F8 | "C"C4 F4 E8 | "C"F8 C8 |
+"C"c6 _B2 c4 _B4 | "C"A8 G4 _B,4 | "C"A,4 F4 F8 | "C"F4 E2 D2 F4 E4 |
+"C"F16 |

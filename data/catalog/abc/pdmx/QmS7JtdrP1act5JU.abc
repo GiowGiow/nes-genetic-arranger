@@ -1,0 +1,30 @@
+%abc-2.1
+% J'aime le cueur, by Claudin de Sermisy. Score published on MuseScore (artist: Claudin de
+% Sermisy), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudin de Sermisy (died 1562,
+% Wikidata Q968593).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/6/QmS7JtdrP1act5JUNxF1Niih1SceHGn1edZx4iZ442gAYi.mid (sha256
+% 6be564a754dffe221146576aefec9b496ffe60cb951f94890388696cbf095534): melody track 0, bars 0-41
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:J'aime le cueur
+M:2/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z12 F4 | "Gm"F4 _B4 _B4 G4 | "F"G4 c6 _B2 A2 G2 | "Gm7"F4 f6 e2 d2 c2 |
+"Am7"_B2 A2 G4 c8 | "Dm"A4 d8 c4 | "Gm7"_B4 A4 G8 | "F"F4 A8 G2 F2 |
+"F"E8 z4 F4 | "Gm"F4 _B4 _B4 G4 | "F"G4 c6 _B2 A2 G2 | "Gm7"F4 f6 e2 d2 c2 |
+"Am7"_B2 A2 G4 c8 | "Dm"A4 d8 c4 | "Gm7"_B4 A4 G8 | "F"F4 A8 G2 F2 |
+"F"F8 z8 | "Bb"F8 F4 A4 | "Dm"A4 G4 A4 _B4 | "Am7"c12 _B4 |
+"C7"A6 G F E2 F2 G4 | "Dm7"G2 F2 D2 E2 F2 E2 D2 C2 | "C7"D8 C6 D2 | "Gm7"E2 F2 G2 A2 _B2 c2 d4 |
+"G"d2 c2 c8 _B4 | "Am"c8 z4 c4 | "F"A4 F4 z4 c4 | "Bb"A4 F8 G4 |
+"G7"A4 _B4 c4 _B4 | "C7"_B4 A8 G4 | "Bb"A8 z4 d4 | "Bb"d4 d4 c4 c4 |
+"Em7"c4 _B4 A8 | "G"G8 z8 | "Gm"c12 _B4 | "Am7"A4 G4 F4 E4 |
+"F"F2 G2 A2 F2 G8 | "Gm7"c12 _B4 | "Am7"A4 G4 F4 E4 | "Dm7"F2 G2 A2 F2 G8 |
+"F"F16 |

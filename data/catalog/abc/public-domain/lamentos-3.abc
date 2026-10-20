@@ -1,0 +1,36 @@
+%abc-2.1
+% LAMENTOS, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/lamentos-3.html (file
+% https://www.beakauffmann.com/mpb_l/som/lamentos-3.mid, sha256
+% aa4994665161f9698436abd9b0fdf3105cea0ea842d16e2a05e49938dd00a057), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LAMENTOS
+M:2/4
+L:1/16
+Q:1/4=77.999977
+% Exact tempo 77.99997660000703 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E7"z _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D _E =E _E | "F#m"_D B, _B, =B, _D _E =E F |
+"Abm7"^F _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D =D _E =E | "Abm"E _E B,3 _A, B, _E |
+"E"_A, _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D _E =E _E | "F#m"_D B, _B, =B, _D _E =E F |
+"Dbm7"^F E B, _A, B, _A _A _A | "E"E3 E G _B _d ^f | "E"e B _A E B, _A E B, | "Em"C G c e B, ^F B _e |
+"E"e _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D _E =E _E | "F#m"_D B, _B, =B, _D _E =E F |
+"Abm7"^F _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D =D _E =E | "Abm"E _E B,3 _A, B, _E |
+"E"_A, _A =A _B =B =B =B _d | "B7"B A F ^F _A ^F _D _E | "Dbm"^F E B, C _D _E =E _E | "F#m"_D B, _B, =B, _D _E =E F |
+"Dbm7"^F E B, _A, B, _A _A _A | "E"E3 E G _B _d ^f | "E"e B _A E B, _A E B, | "Em"C G c e B, ^F B _e |
+"E"e _A =A _B =B E ^F G | "Dbm"_A2 _A4 _A2 | "Eb7"G2 G6 | "Ab"^F6 ^F2 |
+"Bbm7"E8 | "Dbm"_A2 _A4 _A2 | "Abm"B2 B6 | "Eb7"_B6 _B2 |
+"Ab"_A7 z | "E7"z2 _A4 d2 | "Ebm7"z2 ^F4 _d2 | "B7"z2 ^F4 _e2 |
+"Dbm"z2 E4 f2 | "F#m"^f2 ^F =F ^F _A =A _d | "Dbm"A4 _A4 | "Ab7"G4 _A _E _A c |
+"Dbm"_d2 _D _E =E F ^F G | "Dbm"_A2 _A4 _A2 | "Eb7"G2 G6 | "Ab"^F6 ^F2 |
+"Bbm7"E8 | "Dbm"_A2 _A4 _A2 | "Abm"B2 B6 | "Eb7"_B6 _B2 |
+"Ab"_A7 z | "E7"z2 _A4 d2 | "Ebm7"z2 ^F4 _d2 | "B7"z2 ^F4 _e2 |
+"Dbm"z2 E4 f2 | "F#m"^f2 ^F =F ^F _A =A _d | "Dbm"A4 _A4 | "Ab7"G4 _A _E _A c |

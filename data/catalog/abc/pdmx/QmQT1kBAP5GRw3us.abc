@@ -1,0 +1,30 @@
+%abc-2.1
+% Your shining eyes, by Thomas Bateson (ca. 1570-1630). Score published on MuseScore (artist:
+% Thomas Bateson), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Bateson (died 1630,
+% Wikidata Q3524896).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/45/QmQT1kBAP5GRw3usRc3aUR2ARjwQx3ryRWW3cg9NEi72Q9.mid (sha256
+% a3aa2a8b1011bb4ede5116429ee01b4f640d61d7ebb29ebf4ef3b87bfed34e0a): melody track 1, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Your shining eyes
+M:2/2
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Dm"F4 F2 E2 D4 D4 | "F"D4 D4 _D8 | "Am"C4 E2 D2 E4 F4 | "Dm7"F4 E4 F8 |
+"A7"F4 C2 D2 E4 D4 | "Dm"D4 _D4 =D4 F4 | "D7"F4 F4 E4 C4 | "Gm7"D12 _D2 B,2 |
+"Am"_D4 E4 E6 F2 | "Gm"G4 F2 E2 D4 D4 | "Am"_D8 F4 E2 =D2 | "C7"E4 A4 F4 G4 |
+"Am7"A4 F4 F4 E4 | "Dm"F8 F4 C2 D2 | "Dm"E4 D4 D4 _D4 | "D"D8 z4 F4 |
+"D7"F6 G2 A4 G2 F2 | "C"E4 F8 E4 | "Dm7"F6 F2 E4 D4 | "A"_D4 A4 F4 =D4 |
+"Am7"G6 F2 E2 D2 E4 | "F"F4 D4 _D4 E4 | "Dm"F8 D8 | "Gm"G6 F2 E4 D4 |
+"A"_D4 A4 F4 =D4 | "C7"G6 F2 E2 D2 C4 | "F"C2 D2 E4 F6 E2 | "G7"D4 F4 E4 D4 |
+"A"_D4 A,4 =D8 | "A"D8 _D8 | "D"D8 z4 F4 | "D7"F6 G2 A4 G2 F2 |
+"C"E4 F8 E4 | "Dm7"F6 F2 E4 D4 | "A"_D4 A4 F4 =D4 | "Am7"G6 F2 E2 D2 E4 |
+"F"F4 D4 _D4 E4 | "Dm"F8 D8 | "Gm"G6 F2 E4 D4 | "A"_D4 A4 F4 =D4 |
+"C7"G6 F2 E2 D2 C4 | "F"C2 D2 E4 F6 E2 | "G7"D4 F4 E4 D4 | "A"_D4 A,4 =D8 |
+"A"D8 _D8 | "D"D16 |

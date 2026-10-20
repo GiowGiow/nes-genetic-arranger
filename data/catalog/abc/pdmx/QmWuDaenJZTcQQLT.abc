@@ -1,0 +1,35 @@
+%abc-2.1
+% Violin Concerto No.1 Op.34, by Oscar Rieding. Score published on MuseScore (artist: Oskar
+% Rieding), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Oscar Rieding (died 1916,
+% Wikidata Q64959).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/46/QmWuDaenJZTcQQLTWSMLb66y8LW1EmSbqz2sxGzMVcLjM6.mid (sha256
+% 8e0cfa2b8450e86164d5feb9b2f979e6cd00120ca6f2307e048025ef27f5d87d): melody track 0, bars 3-67
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Violin Concerto No.1 Op.34
+M:4/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z12 D4 | "C"G2 ^F2 G2 A2 B2 A2 B2 c2 | "C"d4 _d2 e2 =d4 b4 | "C"a4 g4 ^f4 g4 |
+"C"a8 e4 a2 g2 | "C"^f2 e2 d2 c2 B2 c2 B2 A2 | "C"G4 B4 e4 d2 B2 | "C"A2 B2 _d2 =d2 e2 ^f2 g2 e2 |
+"C"d4 D4 E4 ^F4 | "C"G2 ^F2 G2 A2 B2 A2 B2 c2 | "C"d4 _d2 e2 =d4 b4 | "C"a4 g4 ^f4 g4 |
+"C"a8 e4 a2 g2 | "C"^f2 e2 d2 c2 d2 c2 B2 A2 | "C"G4 F4 E4 e2 c2 | "C"B2 c2 d2 _d2 =d2 ^f2 b2 a2 |
+"C"a8 g4 z4 | "C"G6 ^F2 E2 ^F2 G2 E2 | "C"A6 G2 ^F2 G2 A2 ^F2 | "C"G4 B4 e4 B4 |
+"C"e6 c2 c8 | "C"B6 _d2 _e2 B2 _d2 _e2 | "C"e6 B2 d2 c2 B2 c2 | "C"e6 B2 d2 c2 B2 A2 |
+"C"B4 G4 ^F4 A4 | "C"G6 ^F2 E2 ^F2 G2 E2 | "C"A6 G2 ^F2 G2 A2 ^F2 | "C"G4 B4 e4 B4 |
+"C"d6 _d2 _d8 | "C"^f6 _d2 e2 =d2 _d2 =d2 | "C"^f6 _d2 =d2 _d2 =d2 ^f2 | "C"b4 a4 _a4 ^f4 |
+"C"a2 _a2 ^f2 e2 _a2 ^f2 e2 d2 | "C"_d2 e2 a2 _a2 b2 =a2 g2 e2 | "C"d2 ^f2 a2 _a2 b2 =a2 ^f2 d2 | "C"_d2 b2 a2 _d2 B2 a2 g2 B2 |
+"C"A2 g2 ^f2 A2 _d2 B2 A2 G2 | "C"^F2 A2 d2 _d2 e2 =d2 c2 A2 | "C"G2 B2 d2 _d2 e2 =d2 B2 G2 | "C"^F2 e2 d2 ^F2 E2 d2 c2 E2 |
+"C"D2 c2 B2 D2 C4 A4 | "C"G2 ^F2 G2 A2 B2 A2 B2 c2 | "C"d4 _d2 e2 =d4 b4 | "C"a4 g4 ^f4 g4 |
+"C"a8 e4 a2 g2 | "C"^f2 e2 d2 c2 B2 c2 B2 A2 | "C"G4 B4 e4 d2 B2 | "C"A2 B2 _d2 =d2 e2 ^f2 g2 e2 |
+"C"d4 D4 E4 ^F4 | "C"G2 ^F2 G2 A2 B2 A2 B2 c2 | "C"d4 _d2 e2 =d4 b4 | "C"a4 g4 ^f4 g4 |
+"C"a8 e4 a2 g2 | "C"^f2 e2 d2 c2 d2 c2 B2 A2 | "C"G4 F4 E4 e2 c2 | "C"B2 c2 d2 _d2 =d2 ^f2 b2 a2 |
+"C"a8 g4 b2 a2 | "C"g4 b2 g2 ^f4 b2 ^f2 | "C"e4 a4 g4 e4 | "C"d2 e2 d2 B2 c2 d2 c2 A2 |
+"C"B2 c2 d2 e2 d4 b2 a2 | "C"g4 b2 g2 ^f4 b2 ^f2 | "C"e4 a4 g4 e4 | "C"d2 c2 B2 A2 B2 A2 G2 ^F2 |

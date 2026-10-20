@@ -1,0 +1,30 @@
+%abc-2.1
+% Ie changeray, by Pierre de Manchicourt. Score published on MuseScore (artist: Pierre de
+% Manchicourt), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pierre de Manchicourt (died
+% 1564, Wikidata Q2132795).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/21/QmTgNP1UYhxmcc54LUKNhZcr5PJ9YMCSj3MoiCtiNH84Aq.mid (sha256
+% 022ab887f172a743a1ea94351bd28fae8b29a7bcadf0b62156becacf6f0699a9): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ie changeray
+M:2/2
+L:1/16
+Q:1/4=97.000267
+% Exact tempo 97.00026675073356 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"A8 d4 d4 | "D"d4 f4 e6 d2 | "Bm7"c2 d2 e2 c2 d2 e2 f4 | "Dm"f4 e2 d2 c2 B2 A B c d |
+"Am7"e4 A4 B4 c4 | "Am7"A4 d8 c4 | "Dm"d16 | "G7"z4 d4 d4 d4 |
+"F"c4 c4 c8 | "Am7"c4 f4 e4 d4 | "Am"c16 | "Dm"z4 A4 c4 d4 |
+"Am7"A2 B2 c2 d2 e4 f4 | "Dm"c4 d8 c4 | "Dm7"B2 A2 c4 B4 A4 | "E7"A4 G4 A8 |
+"Dm7"A8 z4 A4 | "Bm7"A4 G4 A4 c4 | "Bm7"d4 d4 f4 e4 | "Dm7"d4 f8 e2 d2 |
+"Am"c2 d2 e2 c2 d4 e4 | "Gm7"d2 c2 B2 A2 B8 | "F"A8 z8 | "Dm7"z12 c4 |
+"Am7"B4 A4 c4 c4 | "C"d4 e4 f4 e4 | "Dm7"e4 d4 e8 | "F"e8 z4 A4 |
+"Dm7"c4 c4 A4 c4 | "Am7"c4 e4 d4 c4 | "Bm7"d4 f8 e2 d2 | "Dm"c8 z4 A4 |
+"Dm"d4 d4 d4 f4 | "Am"e4 d4 c2 d2 e2 c2 | "Dm"d2 e2 f8 e2 d2 | "Am"c2 B2 A B c d e4 A4 |
+"G7"B4 c4 A4 B4 | "Dm7"c4 d8 c4 | "G7"d4 z2 A2 d4 d4 | "Dm"d4 f4 e4 d4 |
+"Dm"d4 c4 d8 | "A"c16 |

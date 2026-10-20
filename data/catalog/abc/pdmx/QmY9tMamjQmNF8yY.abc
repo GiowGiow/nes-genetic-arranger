@@ -1,0 +1,32 @@
+%abc-2.1
+% King Arthur Z.628, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/8/QmY9tMamjQmNF8yYKq2pbACJkvwPaKDnr4DcKfrb5wUTAk.mid (sha256
+% ac82ee7a882a8d3d241e136597824a9d50cc2ba381b8554531033ba05e967430): melody track 1, bars 0-50
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:King Arthur Z.628
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z8 B8 | "F#m7"A6 G2 "B7"A4 B4 | "Em"G6 ^F2 E4 ^F3 G | "Am"^F8 "B"z8 |
+"Em"z8 e8 | "Bm"d6 c2 "E7"d4 e4 | "Am"c6 B2 A4 B3 c | "Dm"B8 "E7"B8 |
+"Am"A6 G2 "Dm7"A4 B4 | "C"G4 A4 "D"^F6 ^F2 | "G"G8 z4 B4 | "Am"c4 B4 "A"A4 G4 |
+"B"^F4 G2 A2 "Bm"G6 ^F2 | "E7"E4 B4 "E"e4 d4 | "F#"_d4 =d2 B2 _B4 =B4 | "F#"B4 _B4 "Bm"=B8 |
+"B"z16 | "B"B4 ^F4 G4 ^F4 | "B"^F G A2 G2 ^F2 "Em7"G6 G2 | "B"A4 B4 "Am"c8 |
+"E"e4 B4 c4 B4 | "E"c4 _A4 =A4 _A4 | "E"_A =A B2 =A2 _A2 "Am7"=A4 E4 | "F"E2 F2 E2 D2 "E"E8 |
+"E7"z8 "C"z4 e4 | "Dm"e2 A2 A4 "E"A8 | "Dm"A6 B2 "E"B4 A2 _A2 | "Am"A8 z8 |
+"D"d4 A4 B4 A4 | "D"B4 ^F4 G4 ^F4 | "D7"G4 A4 "D"^F8 | "B"G4 _E4 =E4 _E4 |
+"B"_E =E ^F2 =E2 _E2 "A7"=E4 _D4 | "D"^F3 G ^F3 A "G"G3 ^F E3 D | "D"_D4 =D3 E "A"=D4 _D3 =D | "D"D8 z8 |
+"D"z4 D4 A4 ^F4 | "D"^F4 D4 "Bm"D4 B,4 | "G"B8 z4 G4 | "G"d4 B4 B4 G4 |
+"Em"G4 E4 "C"e8 | "Am"z4 e4 d2 c2 B2 c2 | "Dm"B2 A2 _A2 =A2 "E"_A2 =A2 B2 _A2 | "Am"A2 G2 ^F2 G2 A2 G2 ^F2 E2 |
+"B7"_E8 "F#m7"z4 B4 | "Em"A2 G2 ^F2 G2 "Am7"^F2 E2 _E2 =E2 | "F#m7"_E2 _D2 B,2 _D2 "Am7"_E2 =E2 ^F2 _E2 | "Em"E2 ^F2 G2 ^F2 "Em7"E2 ^F2 G2 E2 |
+"Am7"A2 G2 ^F2 E2 "B"E4 _E4 | "Em"E16 |

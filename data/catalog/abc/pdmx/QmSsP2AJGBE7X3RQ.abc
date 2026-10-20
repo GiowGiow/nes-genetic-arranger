@@ -1,0 +1,26 @@
+%abc-2.1
+% Ave Maria D.839, by Schubert. Score published on MuseScore (artist: Franz Schubert), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Schubert (died 1828, Wikidata
+% Q7312).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/42/QmSsP2AJGBE7X3RQKPjPEqAQNVMwGWtFCckBUNjjwwRLqd.mid (sha256
+% 08d9bb5975d24f82b113309a720e5e648fc2e2b33134192f724b895c86a0267d): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave Maria D.839
+M:4/4
+L:1/16
+Q:1/4=56.999977
+% Exact tempo 56.999977200009134 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_B,, F,2 _B, D _B,2 F, _B,, F,2 _B, D _B,2 F, | "C"_B,, _B,2 D F D2 _B, _B,, D2 F _A F2 D | "C"_B,, _B,2 _E G _E2 _B, _B,, A,2 _E ^F _E2 A, | "C"_B,, _B,2 D F D2 _B, _B,, D,2 F, _B, F,2 D, |
+"C"_B,, D,2 F, _B, F,2 D, G,, D,2 E, _B, E,2 D, | "C"F,, D,2 F, _B, F,2 D, F,, _E,2 A, C A,2 _E, | "C"G,, G,2 _B, D _B,2 G, G,, G,2 _B, D _B,2 G, | "C"_E,, _E,2 G, C G,2 _E, F,, _E,2 F, A, F,2 _E, |
+"C"_B,, F,2 _B, D _B,2 F, _B,, D,2 F, _B, F,2 D, | "C"_B,, D,2 ^F, _B, ^F,2 D, _B,, D,2 G, _B, G,2 D, | "C"A,, G,2 _B, D _B,2 G, A,, G,2 A, _D A,2 G, | "C"^F,, A,2 C _E C2 A, ^F,, _E,2 A, C A,2 _E, |
+"C"G,, G,2 _B, D _B,2 G, G,, E,2 _B, D _B,2 E, | "C"A,, C,2 F, A, F,2 C, D, G,2 B, F B,2 G, | "C"C, A,2 C F C2 A, C, _B,2 C E C2 _B, | "C"F,, A,2 C F C2 A, F,, A,2 C F C2 A, |
+"C"F,, _E,2 A, C A,2 _E, F,, _E,2 A, C A,2 _E, | "C"F,, _B,2 D F D2 _B, F,, _B,2 D F D2 _B, | "C"F,, _E,2 A, C A,2 _E, F,, _E,2 A, C A,2 _E, | "C"G,, G,2 _B, D _B,2 G, G,, _B,,2 D, G, D,2 _B,, |
+"C"F,, F,2 A, C A,2 F, D, ^F,2 A, D A,2 ^F, | "C"C, G,2 C _E C2 G, C, G,2 C _E C2 G, | "C"_E,, C,2 _E, G, _E,2 C, G,, _D,2 _E, _B, _D,2 _E, | "C"F,, F,2 A, C A,2 F, F,, _E,2 A, C A,2 _E, |
+"C"_B,, F,2 _B, D _B,2 F, G,, E,2 _B, D _B,2 E, | "C"F,, F,2 _B, D _B,2 F, F,, _E,2 A, C A,2 _E, | "C"_B,, D,2 F, _B, F,2 D, _B,, D,2 F, _B, D2 F | "C"_B8 z8 |

@@ -1,0 +1,28 @@
+%abc-2.1
+% Miserere mei Deus, by John Wall Callcott (1766-1821). Score published on MuseScore (artist: John
+% Wall Callcott), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Wall Callcott (died 1821,
+% Wikidata Q6262765).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/49/QmSVbRd5PuAbnhYqZmU9qDBf9FBoUjUESZvXkkyyWL4hWa.mid (sha256
+% 9ae3039f3c1d0b03f87277739cd8770d2d2ed91e7fe2f548a7447c7e58771664): melody track 0, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Miserere mei Deus
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"A"z16 | "Ab"z4 B4- "G"B4 c4 | "F#"d4 A4- "F"A4 B4 | "E"c8 B8 |
+"Dm"A8 "D7"d8 | "Em"z4 B4- "E7"B4 B4 | "Am"c4 A4 "D"B4 c4 | "F#m7"B8- "Dbm7"B4 B4 |
+"D"A8 f8 | "Am"e4 c4 B4 A4 | "E7"B8 "Dm"A8 | "E"e6 d2 "Dbm"c4 B4 |
+"Am"c4 A4 "E7"z8 | "Dm"A6 B2 "E"c4 B4 | "Dm"z8 "D7"z8 | "C"z8 "E"A4 B4 |
+"F#m7"c4 c4 "D7"z8 | "E"z4 B4- "Em"B4 _d4 | "F#m"d4 A4- "Dm"A4 B4 | "C"c8 "E"B8 |
+"Dm"A8 "D7"d8 | "Em"z4 B4- "E7"B4 B4 | "Am"c4 A4 "D"B4 c4 | "F#m7"B8- "Dbm7"B4 B4 |
+"D"A8 f8 | "Am"e4 c4 B4 A4 | "E7"B8 "Dm"A8 | "E"e6 d2 "Dbm"c4 B4 |
+"Am"c4 A4 "E7"z8 | "Dm"A6 B2 "E"c4 B4 | "Dm"z8 "D7"z8 | "C"z8 "E"A4 B4 |
+"F#m7"c4 c4 "D7"z8 | "E"z4 B4- "Em"B4 _d4 | "F#m"d4 A4- "Dm"A4 B4 | "C"c8 "E"B8 |
+"Dm"A8 "D7"d8 | "Em"z4 B4- "E7"B4 B4 | "Am"c4 A4 "D"B4 c4 | "F#m7"B8- "Dbm7"B4 B4 |

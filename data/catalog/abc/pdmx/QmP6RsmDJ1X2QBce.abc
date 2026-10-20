@@ -1,0 +1,27 @@
+%abc-2.1
+% Kleine Orgelmesse or Missa brevis Sancti Joannis de Deo Mass No. 7 in Bb Major, by Joseph Haydn
+% (1732-1809). Score published on MuseScore (artist: Joseph Haydn), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Haydn (died 1809,
+% Wikidata Q7349).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/5/QmP6RsmDJ1X2QBceE43K81D3WU2pD1A1g1n3E41QqU7SvT.mid (sha256
+% d410a5329272be3501e1e190d374a7c5515a7fc4f7942ebab368f062b9f8587a): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Kleine Orgelmesse or Missa brevis Sancti Joannis de Deo Mass No. 7 in Bb Major
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb"_b2 _B2 _B2 _B2 _e d c _B | "F"A z3 F z7 | "F7"c'2 _e2 _e2 _e2 f _e d c | "Bb"d z3 _B, z7 |
+"Cm7"g2 G2 G2 G2 A G F _E | "Bb"D2 f2 f2 f2 g f _e d | "F7"_e2 _E2 _E2 _e2 d2 _b2 | "F"d4 c4 z4 |
+"F"a2 A2 A2 A2 _B A G A | "Dm"a2 A2 A2 A2 _B A G A | "Gm7"g2 G2 G2 G2 G F E F | "C"E2 e2 c'2 e2 f2 c2 |
+"C7"e d c _B A2 f2 G2 e2 | "F"f2 F2 F2 F2 G F E F | "F7"f z3 A z7 | "Gm7"_b2 _B2 _B2 _B2 c _B A _B |
+"Bb7"_a z3 _B z5 _A2 | "Eb"G2 g2 _a g f g f _e d _e | "Dm7"d c _B c A2 _e2 d2 _b2 | "F7"a g f _e d2 _b2 c2 a2 |
+"Bb"_b2 f z f z f z f z f z | "F7"g z g z _e z _e z c z c z | "Bb"d _e d _e f8 | "F7"_e4 d4 c4 |
+"Bb"_B2 F z F z F z F z F z | "F7"G z G z _E z _E z C z C z | "Bb"D _E D _E F8 | "F7"_E4 D4 C4 |
+"Bb"_B,2 f z _b z f z f _e d _e | "Gm7"d2 f2 _b2 d2 d c _B A | "Bb"_B4 z8 |

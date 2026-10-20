@@ -1,0 +1,36 @@
+%abc-2.1
+% RECORDANDO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/recordando.html (file
+% https://www.beakauffmann.com/mpb_r/som/recordando.mid, sha256
+% f5924f079c3ce8f5f2f37c0f4e42bde95b2eeb8c085e381b592852edf3babce3), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RECORDANDO
+M:2/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z4 c4 | "E7"B3 B2 _A c B | "Am"B3 A2 A, G F | "Dbm7"F E A, _A, E2 D2 |
+"Am"C4 z2 c2 | "E7"B3 B2 _A c B | "Am"B3 A2 A, G F | "B"F E _A G ^F B3 |
+"E7"B6 z2 | [M:1/4]"E"c4 | [M:2/4]"E7"B3 B2 _A c B | "Am"B3 A2 A, G F |
+"E7"F E D C F F2 F | "A7"E5 A, A _A | "D"G ^F =F E D C B, A, | "Am"E C A, E A,3 D |
+"E7"C3 C B,2 B,2 | "A"A,6 z2 | [M:1/4]"E"c4 | [M:2/4]"E7"B3 B2 _A c B |
+"Am"B3 A2 A, G F | "Dbm7"F E A, _A, E2 D2 | "Am"C4 z2 c2 | "E7"B3 B2 _A c B |
+"Am"B3 A2 A, G F | "B"F E _A G ^F B3 | "E7"B6 z2 | [M:1/4]"E"c4 |
+[M:2/4]"E7"B3 B2 _A c B | "Am"B3 A2 A, G F | "E7"F E D C F F2 F | "A7"E5 A, A _A |
+"D"G ^F =F E D C B, A, | "Am"E C A, E A,3 D | "E7"C3 C B,2 B,2 | "Am"A,7 z |
+"G7"G,2 _A,2 =A,2 B,2 | "C"D3 C5 | "A7"_D5 A, _D E | "Dm"G3 F C A, F, A, |
+"Ebm"A, C ^F A c B c B | "C"A G E C A,4 | "D7"A, G, A, B, C D E A | "G7"A4 G4 |
+"G7"G,2 _A,2 =A,2 B,2 | "C"D3 C5 | "A7"_D5 A, _D E | "Dm"G3 F C A, F, A, |
+"Ebm"A, C ^F A c B c B | "C"A G E C A,3 G, | "Dm7"^F,3 G, _A, =A, _B, =B, | "Am7"C7 z |
+"G7"G,2 _A,2 =A,2 B,2 | "C"D3 C5 | "A7"_D5 A, _D E | "Dm"G3 F C A, F, A, |
+"Ebm"A, C ^F A c B c B | "C"A G E C A,4 | "D7"A, G, A, B, C D E A | "G7"A4 G4 |
+"G7"G,2 _A,2 =A,2 B,2 | "C"D3 C5 | "A7"_D5 A, _D E | "Dm"G3 F C A, F, A, |

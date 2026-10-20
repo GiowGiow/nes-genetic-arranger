@@ -1,0 +1,24 @@
+%abc-2.1
+% The Girl With The Green Hat On, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 79 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Girl With The Green Hat On
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A B2 c | "D"d4 A4 "A7"A2 B2 A2 G2 | "D"F2 G2 A2 B2 "A7"A4 A2 G2 | "D"F2 A2 d2 e2 f4 d4 |
+"A7"e4 A4 A4 A B2 c | "D"d4 A4 "A7"A2 B2 A2 G2 | "D"F2 G2 A2 B2 A2 B2 c2 d2 | "E7"e2 f2 e2 d2 "A7"c2 A2 B2 c2 |
+"D"d4 D4 c2 d2 e4 | "A"A4 e2 c2 "D"d2 e2 f4 | "D"d4 f4 "Em7"e2 f2 g4 | "Em"f4 e4 "A7"d4 c4 |
+"A"B4 A4 c2 d2 e4 | "A"A4 e2 c2 "D"d2 e2 f4 | "D"d4 f4 "Em7"e2 f2 g4 | "A7"f4 e4 "D"c4 e4 |
+"D"d4 d4 A B2 c d4 | "D"A4 A2 B2 A2 G2 F2 G2 | "D"A2 B2 A4 A2 G2 F2 A2 | "D"d2 e2 f4 d4 e4 |
+"A7"A4 A4 "D"A B2 c d4 | "D"A4 A2 B2 A2 G2 F2 G2 | "D"A2 B2 A2 B2 "E7"c2 d2 e2 f2 | "E7"e2 d2 c2 A2 "D"B2 c2 d4 |
+"D"D4 c2 d2 "A"e4 A4 | "A"e2 c2 d2 e2 "D"f4 d4 | "D"f4 e2 f2 "Em"g4 f4 | "Em"e4 d4 "A"c4 B4 |
+"A"A4 c2 d2 e4 A4 | "A"e2 c2 d2 e2 "D"f4 d4 | "D"f4 e2 f2 "Em"g4 f4 | "A7"e4 c4 "D"e4 d4 |
+"D"d4 z12 |

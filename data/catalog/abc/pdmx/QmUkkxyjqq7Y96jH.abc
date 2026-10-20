@@ -1,0 +1,30 @@
+%abc-2.1
+% tears, by Django Reinhardt. Score published on MuseScore (artist: Django Reinhardt), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Django Reinhardt (died 1953,
+% Wikidata Q44122).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/28/QmUkkxyjqq7Y96jHdcyZrcicoh5aSdL7SK58ms1R3GDAk3.mid (sha256
+% b7a1a454568364a239268351e1bc3fa2b096676c8d16a9df44e3732179cd1e24): melody track 0, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:tears
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"C,2 G,2 _E2 G,2 _E,2 G,2 _E2 G,2 | "C"D,2 F2 _B2 _A2 G,2 D2 _A2 G2 | "C"C,2 G,2 _E2 G,2 _E,2 G,2 _E2 G,2 | "C"D,2 F2 _B2 _A2 G,2 D2 _A2 G2 |
+"C"G2 G2 G2 G2 G4 _A4 | "C"F6 F10 | "C"F2 F2 F2 F2 F4 G4 | "C"_E6 _E10 |
+"C"_E2 _E2 _E2 _E2 _E4 F4 | "C"D6 D6 _E2 D2 | "C"z4 _E2 D2 z4 B,2 C2 | "C"C,2 G,2 C2 G,2 G,,2 F,2 B,2 F,2 |
+"C"C,2 G,2 _E2 G,2 _E,2 G,2 _E2 G,2 | "C"D,2 F2 _B2 _A2 G,2 D2 _A2 G2 | "C"C,2 G,2 _E2 G,2 _E,2 G,2 _E2 G,2 | "C"D,2 F2 _B2 _A2 G,2 D2 _A2 G2 |
+"C"G2 G2 G2 G2 G4 _A4 | "C"F6 F10 | "C"F2 F2 F2 F2 F4 G4 | "C"_E6 _E10 |
+"C"_E2 _E2 _E2 _E2 _E4 F4 | "C"D6 D6 _E2 D2 | "C"z4 _E2 D2 z4 B,2 C2 | "C"C,2 G,2 C2 G,2 G,,2 F,2 B,2 F,2 |
+"C"E2 F E _E2 =E2 B4 _B4 | "C"A8 D4 _E4 | "C"E2 F E _E2 =E2 B4 _B4 | "C"A8 D4 _E4 |
+"C"e2 d2 c2 _B2 A4 G4 | "C"A2 c14 | "C"A2 A2 A4 e2 e6 | "C"_A2 _A2 _A4 _e2 _e6 |
+"C"E2 F E _E2 =E2 B4 _B4 | "C"A8 D4 _E4 | "C"E2 F E _E2 =E2 B4 _B4 | "C"A8 D4 _E4 |
+"C"e2 d2 c2 _B2 A4 G4 | "C"A2 c14 | "C"_A2 _A2 _A2 _A2 G4 B,2 C2 | "C"C,2 G,2 C2 G,2 G,,2 F,2 B,2 F,2 |
+"C"C,2 G,2 _E2 G,2 _E,2 G,2 _E2 G,2 | "C"_D,2 _A,2 F2 _A,2 _d2 _d2 _d2 _d2 | "C"_d2 A2 C2 G,2 _E,2 G,2 _E2 G,2 | "C"_D,2 _A,2 F2 _A,2 _d2 _d2 _d2 _d2 |
+"C"_d2 _d2 z2 =d2 _e2 =e2 f2 ^f2 | "C"g16 |

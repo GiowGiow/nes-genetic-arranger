@@ -1,0 +1,25 @@
+%abc-2.1
+% Star Spangled Banner_Violin Duet, by John Stafford Smith. Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Stafford Smith (died 1836,
+% Wikidata Q563098).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/33/Qmanck93QDc6Mn3i8W1cpr4vfddHWiAFFCbdb1J1v4VcLM.mid (sha256
+% c3dcf308ed8679fe5b02329b4874ced7e01ad2dce0ecdbcd2c20a0498b878e2a): melody track 0, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Star Spangled Banner_Violin Duet
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb"F2 D2 _B,4 "Dm"D4 F4 | "Bb"_B8 d2 c2 _B4 | "E7"D4 E4 "F"F8 | "Dm"F2 F2 d4- "Bb"d2 c2 _B4 |
+"A"A8 "Gm"G2 A2 _B4 | "Gm7"_B4 F4 "Bb"D4 _B,4 | "Bb"F2 D2 _B,4 "Dm"D4 F4 | "Bb"_B8 d2 c2 _B4 |
+"E7"D4 E4 "F"F8 | "Dm"F2 F2 d4- "Bb"d2 c2 _B4 | "A"A8 "Gm"G2 A2 _B4 | "Gm7"_B4 F4 "Bb"D4 _B,4 |
+"D"d2 d2 d4 "F7"_e4 f4 | "F"f8 "Cm"_e2 d2 c4 | "D"d4 _e4 "Eb"_e8 | "D"_e4 d4- "Bb"d2 c2 _B4 |
+"A"A8 "Gm"G2 A2 _B4 | "E7"D4 E4 "F"F8 | "Gm7"F4 _B4 "C7"_B4 _B2 A2 | "G"G4 G4 G4 c2 d2 |
+"Cm7"_e2 d2 c2 _B2 "Bb"_B8 | "A"A16 | "Gm7"F2 F2 _B4- "Cm7"_B2 c2 d2 _e2 | "F"f16 |
+"Bb"_B2 c2 d4- "Cm"d2 _e2 c4 | "C7"c4 _B4- "Bb"_B8 | "Bb"_B16 |

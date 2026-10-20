@@ -1,0 +1,35 @@
+%abc-2.1
+% 60 Lessons for 2 Guitars Op.168, by Joseph Küffner (1776 - 1856). Score published on MuseScore
+% (artist: Joseph Küffner), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Küffner (died 1856,
+% Wikidata Q106000).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/54/QmQyL6YwZq399aH3KxwMe3cp49D8vgPFt6V8BbucahaKHZ.mid (sha256
+% a738b9f2d27507b0cbfa8747427953f2b3ace30151b4d04625fba04d34471038): melody track 3, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:60 Lessons for 2 Guitars Op.168
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"z16 | "Em7"z16 | "C"G16 | "C"E8 G8 |
+"C"G8 G8 | "G"F8- "G7"F8 | "G"z16 | "Em7"d16 |
+"G"z8 d8 | "Em7"d8 G8 | "C"E16 | "C"z16 |
+"C"G16 | "C"E8 G8 | "C"G8 G8 | "G"F8- "G7"F8 |
+"G"z16 | "Em7"d16 | "G"z8 d8 | "Em7"d8 G8 |
+"C"E16 | "C"z16 | "C"c6 c2 c4 B4 | "C"B6 G2 "Am7"G4 E4 |
+"Em7"z8 G8 | "G"z8 "G7"z8 | "G"B6 B2 B4 A4 | "Em7"A4 z4 G4 z4 |
+"C"G4 E4 E8 | "C"z16 | "C"c6 c2 c4 B4 | "C"B6 G2 "Am7"G4 E4 |
+"Em7"z8 G8 | "G"z8 "G7"z8 | "G"B6 B2 B4 A4 | "Em7"A4 z4 G4 z4 |
+"C"G4 E4 E8 | "C"z16 | "C"G4 G4 z8 | "C"G8- "Am7"G8 |
+"C"G6 G2 G4 z4 | "Em7"B8 d8 | "G"e8 z8 | "F"A8 "G"z4 d4 |
+"G"D8 "Bm"A4 G4 | "C"E16 | "C"G8 "Em7"z8 | "C"G16 |
+"C"G6 G2 z8 | "G"B8 d8 | "G"e4 z4 d4 z4 | "G7"A4 z4 "Em7"e4 z4 |
+"G"z8 A4 G4 | "C"c16 | "D"z16 | "D"z16 |
+"D"z4 A4 G4 ^F4 | "D"E8 D8 | "D"D4 E4 ^F4 D4 | "Em"_D8 B,8 |
+"Em"B,4 _D4 =D4 E4 | "A"_D4 B,4 B,8 | "Dbm"B,4 _D4 =D4 E4 | "D"B,8 A,8 |

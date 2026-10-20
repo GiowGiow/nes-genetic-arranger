@@ -1,0 +1,29 @@
+%abc-2.1
+% VOLTAREI, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_v/voltarei.html (file
+% https://www.beakauffmann.com/mpb_v/som/voltarei.mid, sha256
+% 461408b3e3604bfda8b61abebfb5c5952d5d27f60c7c050a4457d6e51882b9f4), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-36 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:VOLTAREI
+M:4/4
+L:1/16
+Q:1/4=62.00006
+% Exact tempo 62.00005993339127 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"_D,2 _A2 _A2 _A2 _A4 _D,4 | "A"C,2 _A2 _A2 _A2 _A4 C,4 | "A"B,,2 _A2 _A2 _A2 ^F2 _A2 D =A _A ^F | "A"_D E,,2 =D, _A, _D2 E C F,, _B,, =D, _A, _D2 E |
+"A"_D,2 _A2 _A2 _A2 _A2 E,,2 _D, =A,2 _A | "A"C,2 _A2 _A2 _A2 _A2 E,,2 C, =A,2 _A | "A"B,,2 _A2 _A2 _A2 ^F2 _A2 =A2 _A ^F | "A"_D E,,2 B,, =D, _A, _D E B, E,,2 B,, =D, _A,2 B, |
+"A"^F,,2 A,2 B,2 _D2 E2 E,2 B,2 E2 | "A"A,,2 _D2 =D2 E2 ^F2 _A,2 =D2 ^F2 | "A"_D,2 E2 ^F2 _A2 =A2 =D2 ^F2 =A2 | "A"_d2 _B,2 ^F2 _d2 c2 =F2 c2 =D,2 |
+"A"_D,2 B2 B2 B2 _B C,2 G, =B, E2 =B | "A"B,,2 A2 A2 A2 _A2 F,2 D2 _A2 | "A"A,,2 _A2 _A2 _A2 ^F2 D2 ^F,,2 _D2 | "A"D2 E2 ^F2 A2 B2 ^F2 =F2 B2 |
+"A"_D,2 _A2 _A2 _A2 _A2 E2 F, _A,2 ^F, | "A"C,2 _A2 _A2 _A2 _A2 _E2 F, _A,2 ^F, | "A"B,,2 _A2 _A2 _A2 ^F2 _A2 D =A _A ^F | "A"_D E,,2 B,, =D, _A, _D E C F,, _B,, =D, _A, _D2 E |
+"A"_D,2 _A2 _A2 _A2 _A2 E2 F, _A,2 ^F, | "A"C,2 _A2 _A2 _A2 _A2 _E2 F, _A,2 ^F, | "A"B,,2 _A2 _A2 _A2 ^F2 _A2 D =A _A ^F | "A"_D E,,2 =D, _A, _D2 E B, F,,2 B,, =D, _A,2 B, |
+"A"^F,,2 A,2 B,2 _D2 E2 E,2 B,2 E2 | "A"A,,2 _D2 =D2 E2 ^F2 _A,2 =D2 ^F2 | "A"_D,2 E2 ^F2 _A2 =A2 =D2 ^F2 =A2 | "A"_d2 _B,2 ^F2 _d2 c2 =F2 c2 =D,2 |
+"A"_D,2 B2 B2 B2 _B C,2 G, =B, E2 =B | "A"B,,2 A2 A2 A2 _A2 F,2 D2 _A2 | "A"A,,2 _A2 _A2 _A2 ^F2 D2 ^F,,2 _D2 | "A"D2 E2 ^F2 z2 B2 ^F2 =F2 _d2 |
+"A"A,,2 A2 A2 A2 A2 ^F,2 C E2 A | "A"G,,2 A2 A2 A2 A F,, C, E, _E A =E, G, | "A"_B,,2 A2 A2 A2 E,,2 _d2 E,,2 c _d | "A"A,,2 B2 B2 B2 _A B7 |

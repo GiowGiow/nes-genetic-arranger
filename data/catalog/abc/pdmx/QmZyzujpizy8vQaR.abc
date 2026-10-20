@@ -1,0 +1,23 @@
+%abc-2.1
+% Old German Dance, by Michael Praetorius (1571 - 1621). Score published on MuseScore (artist:
+% Michael Praetorius), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Michael Praetorius (died 1621,
+% Wikidata Q108278).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/54/QmZyzujpizy8vQaR7acjN5TB6FDJsWsVd4hLDwYjV2TF9P.mid (sha256
+% 0cb17946e2e824a920d5bc40c7a73416b088904f380b8555b2c7518f56f90af0): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Old German Dance
+M:4/4
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"C4 D4 "G"E4 E4 | "D"F4 D4 "C"E4 E4 | "E"C4 D4 "C"E4 G4 | "D"F8 "C"E8 |
+"C"C4 D4 "G"E4 E4 | "D"F4 D4 "C"E4 E4 | "E"C4 D4 "C"E4 G4 | "D"F8 "C"E8 |
+"Em7"G8 "C"G8 | "G"G2 F2 E2 D2 E4 C4 | "Em7"G8 "C"G8 | "Em"G2 F2 E2 D2 "C"C8 |
+"Em7"G8 "C"G8 | "G"G2 F2 E2 D2 E4 C4 | "Em7"G8 "C"G8 | "Em"G2 F2 E2 D2 "C"C8 |

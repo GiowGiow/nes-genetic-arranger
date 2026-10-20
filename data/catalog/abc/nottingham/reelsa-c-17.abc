@@ -1,0 +1,23 @@
+%abc-2.1
+% The Ballydesmond Polkas No 1, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 17 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Ballydesmond Polkas No 1
+M:2/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"Am"E2 A2 A2 B2 | "Am"c2 d2 e4 | "G"G3 F G2 A2 | "G"G2 E2 E2 D2 |
+"Am"E2 A2 A2 B2 | "Am"c2 d2 e3 f | "G"g2 e2 d2 B2 | "Am"A4 a3 g |
+"Am"a2 b2 a2 g2 | "Em7"e2 f2 g3 f | "G"g2 a2 g2 e2 | "Am7"e2 d2 e2 a2 |
+"Am"a2 b2 a2 g2 | "Em7"e2 f2 g2 e2 | "Am7"d2 B2 A4 | "Am"A4 E2 A2 |
+"Am"A2 B2 c2 d2 | "Am7"e4 G3 F | "G"G2 A2 G2 E2 | "Am7"E2 D2 E2 A2 |
+"Am"A2 B2 c2 d2 | "Am7"e3 f g2 e2 | "Am7"d2 B2 A4 | "Am"a3 g a2 b2 |
+"D7"a2 g2 e2 f2 | "G"g3 f g2 a2 | "G"g2 e2 e2 d2 | "Am"e2 a2 a2 b2 |
+"D7"a2 g2 e2 f2 | "G"g2 e2 d2 B2 | "Am"A4 A4 |

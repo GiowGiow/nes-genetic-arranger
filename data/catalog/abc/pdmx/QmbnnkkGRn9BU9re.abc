@@ -1,0 +1,34 @@
+%abc-2.1
+% Romanian National Anthem, by Anton Pann. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Anton Pann (died 1854, Wikidata
+% Q592355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/33/QmbnnkkGRn9BU9reNLSLDV8v1j3VmiVPFBgDiSY7rHEBV5.mid (sha256
+% e48819a9212c5cc2c623e54090b54a2d90cee7b0634471315028c0016216dfe1): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Romanian National Anthem
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm7"z16 | "Dm7"z16 | "Dm7"z16 | "C"z12 C3 C |
+"Dm7"F6 G2 _A4 _B4 | "Dm7"F c7 F4 F4 | "Db"F _d5 c2 "Cm7"_B4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 |
+"Bbm"f6 _e2 _d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F11 z F4 | "Db"F6 f2 f4 f4 | "Cm7"f8 "Ab"_e4 _e4 |
+"Db"f6 _e2 "Cm7"_d4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 | "Db"f6 _e2 "Cm7"_d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F11 z C3 C |
+"Dm7"F6 G2 _A4 _B4 | "Dm7"F c7 F4 F4 | "Db"F _d5 c2 "Cm7"_B4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 |
+"Bbm"f6 _e2 _d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F11 z F4 | "Db"F6 f2 f4 f4 | "Cm7"f8 "Ab"_e4 _e4 |
+"Db"f6 _e2 "Cm7"_d4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 | "Db"f6 _e2 "Cm7"_d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F11 z C3 C |
+"Dm7"F6 G2 _A4 _B4 | "Dm7"F c7 F4 F4 | "Db"F _d5 c2 "Cm7"_B4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 |
+"Bbm"f6 _e2 _d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F11 z F4 | "Db"F6 f2 f4 f4 | "Cm7"f8 "Ab"_e4 _e4 |
+"Db"f6 _e2 "Cm7"_d4 _B4 | "Ab"_e6 _d2 "Db"c4 c4 | "Db"f6 _e2 "Cm7"_d2 c2 _B2 _d2 | "Dm7"c4 _A8 _B4 |
+"C"c6 _B2 _A4 G4 | "Dm7"F6 G2 _A4 _B4 | "C"c6 _B2 _A4 G4 | "Dm7"F11 z C3 C |

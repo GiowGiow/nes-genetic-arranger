@@ -1,0 +1,36 @@
+%abc-2.1
+% AMOR NÃO SE COMPRA, by Bonfiglio de Oliveira, as performed by Bonfiglio de Oliveira.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Bonfiglio de Oliveira (died 1940, Wikidata Q9661385).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/amor-nao-se-compra.html (file
+% https://www.beakauffmann.com/mpb_a/som/amor-nao-se-compra.mid, sha256
+% daf8008f197b0ad26fd6dadd0eb046d91f78f1aae976929ad77519fe2728e889), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AMOR NÃO SE COMPRA
+M:2/4
+L:1/16
+Q:1/4=93.999981
+% Exact tempo 93.99998120000376 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C7"G2 z A G A G A | "G7"G2 F E D3 z | "Eb"z C D E G A c A | "G7"G2 F E D3 z |
+"E7"E2 z F E F E F | "Am"E _A =A B c3 z | "D7"z B A G ^F A d c | "G7"B c A B G A F A |
+"C7"G2 z A G A G A | "G7"G2 F E D3 z | "Eb"z C D E G A c A | "G7"G2 F E D3 z |
+"C"z C D E G A c A | "Dm"G2 F G _A2 G F | "Em7"E G c e d c B d | "D7"c2 z6 |
+"C7"G2 z A G A G A | "G7"G2 F E D3 z | "Eb"z C D E G A c A | "G7"G2 F E D3 z |
+"E7"E2 z F E F E F | "Am"E _A =A B c3 z | "D7"z B A G ^F A d c | "G"B c A B G A F A |
+"C7"G2 z A G A G A | "G7"G2 F E D3 z | "Eb"z C D E G A c A | "G7"G2 F E D3 z |
+"C"z C D E G A c A | "Dm"G2 F G _A2 G F | "Em7"E G c e d c B d | "Cm"c2 z6 |
+"Eb"z3 G A B c d | "D7"_e3 z d3 z | "G7"z3 G A B c _d | "Cm"d3 z c3 z |
+"Eb"z3 G A B c d | "Dm7"_e d c _e d c B d | "Eb"c _B _A c _B _A G _B | "Fm"_B G F G _A3 z |
+"Fm"z3 E F G _A G | "Fm"_B _A F G _A3 z | "Dm7"z3 B d c _B _A | "Cm"c G _E F G3 z |
+"Cm"z3 G ^F G _A G | "D7"^F4 z A2 c | "Ab7"_e4 z d2 c | "G7"B c _d =d G2 z2 |
+"Em7"z8 | "Eb"z3 G A B c d | "D7"_e3 z d3 z | "G7"z3 G A B c _d |
+"Cm"d3 z c3 z | "C7"z3 c _d c _B _A | "Db"_A G _B _A G3 z | "C7"C D E F G _A _B _A |
+"Fm"G F _A G F3 z | "Fm"z3 E F G _A G | "Fm"_B _A F G _A3 z | "Fm"z3 B d c B _A |
+"Cm"c G _E F G3 z | "Eb"z _e2 d c _B _A G | "D7"^F4 z A d c | "G7"B4 z G _e d |

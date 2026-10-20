@@ -1,0 +1,30 @@
+%abc-2.1
+% Ich wandelte unter den Bäumen JWV 106, by Joseph Rheinberger. Score published on MuseScore
+% (artist: Josef Gabriel Rheinberger), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Rheinberger (died 1901,
+% Wikidata Q365555).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/33/QmbnbhGgK25p6kjG7hPLd5RUT4Kfu7jnxQWVXBTdLr1Uhj.mid (sha256
+% 221994bb70153119a1afe1c3f692faa4ddb9932dc406e3824b39f886a961644b): melody track 1, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ich wandelte unter den Bäumen JWV 106
+M:2/4
+L:1/16
+Q:1/4=55.000005
+% Exact tempo 55.000004583333705 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ebm"z _b _a g ^f =f _e =B | "Ebm"B z B z _B z ^F z | "Ebm7"^F z _E z ^F z _A z | "Db7"B z B, z _D z B, z |
+"Bb7"_D z _B, z F z _B, z | "Bb"_E z _A z B z _A z | "Gm"D z G z _B z _A z | "Bb7"c z F z _B z F z |
+"Gm"_B z F z _E z F z | "Ab7"_E z F z _E z F z | "Gm7"_E z _E z G z _E z | "Eb"F z _b z g z f z |
+"Ebm"B z B z _B z ^F z | "Ebm7"^F z _E z ^F z _A z | "Db7"B z B, z _D z B, z | "Bb7"_D z _B, z F z _B, z |
+"Bb"_E z _A z B z _A z | "Gm"D z G z _B z _A z | "Bb7"c z F z _B z F z | "Gm"_B z F z _E z F z |
+"Ab7"_E z F z _E z F z | "Gm7"_E z _E z G z _E z | "Eb"F z _b z g z f z | "Bbm7"B z _B z ^f z _a z |
+"Ebm7"_d' z _b z _e' z =b z | "F#"_d' z _b z ^f' z _d' z | "Abm7"f' z b z _e' z b z | "F#"_d' z b z _d' z b z |
+"Ebm7"_d' z _b z _e' z =b z | "F#"_d' z _b z _b z ^f z | "Abm7"_b z =b z _d' z =b z | "Gm7"_b z a z f z =B z |
+"Bb7"A z F z B, z _A, z | "Ebm7"^F, z _E z ^F z _E z | "Db7"_A z B, z _D z B, z | "Bb7"_D z _B, z F z _B, z |
+"Bb"^F z _A z B z _A z | "Gm"D z _B, z F z _B, z | "Bb7"^F z _B, z =F z _B, z | "Gm"^F z =F z _E z =F z |
+"Ab7"_E z G z c z G z | "Gm7"c z _E z G z _E z | "Cm7"F _B, _E G _B2 F F | "Eb"G6 z2 |

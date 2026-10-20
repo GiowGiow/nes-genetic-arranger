@@ -1,0 +1,24 @@
+%abc-2.1
+% Good Night and Joy be with you, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 47 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Good Night and Joy be with you
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 f2 e2 | "D"d4 d4 A4 A2 d2 | "G"B4 B4 b4 b2 a2 | "D"f2 a2 b2 a2 f2 a2 b2 a2 |
+"Em"f4 e4 "A7"e4 f2 e2 | "D"d4 d4 A4 A2 d2 | "G"B4 B4 b4 b2 a2 | "D"f2 a2 b2 a2 f2 a2 b2 a2 |
+"D"f4 d4 d4 f2 e2 | "D"d4 d4 A4 A2 d2 | "G"B4 B4 b4 b2 a2 | "D"f2 a2 b2 a2 f2 a2 b2 a2 |
+"Em"f4 e4 "A7"e4 f2 e2 | "D"d4 d4 A4 A2 d2 | "G"B4 B4 b4 b2 a2 | "D"f2 a2 b2 a2 f2 a2 b2 a2 |
+"D"f4 d4 d4 f4 | "Em"e2 f2 e2 d2 "A7"B4 B2 d2 | "D"A2 B2 d2 e2 f4 e2 d2 | "G"e2 d2 e2 f2 g2 f2 g2 a2 |
+"A"b4 e4 e4 e2 f2 | "G"g2 f2 g2 a2 b4 a2 g2 | "D"f2 e2 f2 g2 a4 g2 f2 | "Em"e2 f2 g2 a2 f2 g2 e2 f2 |
+"Bm"d4 B4 B4 f4 | "Em"e2 f2 e2 d2 "A7"B4 B2 d2 | "D"A2 B2 d2 e2 f4 e2 d2 | "G"e2 d2 e2 f2 g2 f2 g2 a2 |
+"A"b4 e4 e4 e2 f2 | "G"g2 f2 g2 a2 b4 a2 g2 | "D"f2 e2 f2 g2 a4 g2 f2 | "Em"e2 f2 g2 a2 f2 g2 e2 f2 |
+"Bm"d4 B4 B4 z4 |

@@ -1,0 +1,22 @@
+%abc-2.1
+% Composition 2, by HS. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): HS (died 1868, Wikidata
+% Q26356928).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/1/QmT2y1JCJLUs46A7pffxECUCKLay5scBREAka8gwT5KVVd.mid (sha256
+% 0ce5521f44b308808879e771a9d9c0e1269f84c8978243088a749997c6765734): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Composition 2
+M:9/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"_d2 G2 A2 _d6 =d6 | "D"_d2 B2 G2 _E6 =E6 | "Em"E6 G6 d6 | "Bm7"B11 z7 |
+"D"^f2 d2 _d2 E6 A6 | "Em"^F2 G2 A2 G2 A2 B2 _d6 | "Em7"e6 ^f6 g6 | "D"d11 z7 |
+"D"^f2 d2 _d2 e6 a6 | "Em"^f2 g2 a2 ^f2 G2 B2 _d6 | "Em7"e2 _d2 e2 g11 z | "Bm7"^f11 z7 |
+"D"^f2 d2 _d2 E6 A6 | "Em"^F2 G2 A2 G2 A2 B2 _d6 | "D"e11 z ^f6 | "D"d11 z7 |

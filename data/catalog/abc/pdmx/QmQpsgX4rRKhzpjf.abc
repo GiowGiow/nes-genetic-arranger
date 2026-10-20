@@ -1,0 +1,35 @@
+%abc-2.1
+% Caprice No. 24 for Double Bass, by Niccolò Paganini. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Niccolò Paganini (died 1840,
+% Wikidata Q66075).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/36/QmQpsgX4rRKhzpjfCduATyhXtg2dn71Wqe6AdyMd32aof4.mid (sha256
+% 2b78b549fcd2c88b87bac1fcebc043c506223cbd3af83844062fec4df9c75ad7): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Caprice No. 24 for Double Bass
+M:2/4
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A,,2 z A,, A,, C, B,, A,, | "C"E,2 z E,, E,, _A,, ^F,, E,, | "C"A,,2 z A,, A,, C, B,, A,, | "C"E,4 E,,2 z2 |
+"C"A,,2 z A,, A,, C, B,, A,, | "C"E,2 z E,, E,, _A,, ^F,, E,, | "C"A,,2 z A,, A,, C, B,, A,, | "C"E,4 E,,2 z2 |
+"C"A,2 z A, A, _B, A, G, | "C"F,2 z D, D, F, E, D, | "C"G,2 z G, G, A, G, F, | "C"E,2 z C, C, E, D, C, |
+"C"F,2 z B,, B,, D, C, B,, | "C"E,2 z A,, A,, C, B,, A,, | "C"F,,2 z _E, =E,, =E, D, B,, | "C"A,,4 A,,,2 z2 |
+"C"z8 | "C"C E z A, E, C, z A,, | "C"_B, =B, z E, =B,, _A,, z E,, | "C"C E z A, E, C, z A,, |
+"C"E,4 E,,2 z2 | "C"C E z A, E, C, z A,, | "C"_B, =B, z E, =B,, _A,, z E,, | "C"C E z A, E, C, z A,, |
+"C"E,4 E,,2 z2 | "C"E A z _D A, E, z _D, | "C"F,, D, z F, A, D z F | "C"D G z B, G, D, z B,, |
+"C"E,, C, z E, G, C z E | "C"F B, z F, D, B,, z _A,, | "C"E B, z C, A,, E,, z C,, | "C"F,, D, z F, E,, E, z _A,, |
+"C"A,,4 A,,,2 z2 | "C"z8 | "C"A, _A, =A, _A, _B, =B, C D | "C"E _E =E _E F D C B, |
+"C"A, _A, =A, _A, _B, =B, C D | "C"E _E =E _E F =E =E,2 | "C"A, _A, =A, _A, _B, =B, C D | "C"E _E =E _E F D C B, |
+"C"A, _A, =A, _A, _B, =B, C D | "C"E _E =E _E F =E =E,2 | "C"A, _A, =A, _A, _B, G, F, E, | "C"D, _D, E, _D, _E, =E, F, =D, |
+"C"G, ^F, G, ^F, _A, =F, E, D, | "C"C, B,, C, B,, _D, =D, E, C, | "C"F, E, F, E, G, D, C, B,, | "C"E, _E, =E, _E, F, C, B,, A,, |
+"C"B,, _B,, =B,, _B,, C, F, E, _A,, | "C"A,, _A,, =A,, _A,, B,, =A,, z2 | "C"z8 | "C"C6 A,2 |
+"C"_A,2 B,2 E4 | "C"C6 A,2 | "C"B,2 _E2 F2 =E2 | "C"C6 A,2 |
+"C"_A,2 B,2 E4 | "C"C6 A,2 | "C"B,2 _E2 F2 =E2 | "C"A,6 _D,2 |
+"C"D,2 E,2 F,2 ^F,2 | "C"G,6 B,,2 | "C"C,2 D,2 _E,2 =E,2 | "C"F,6 B,,2 |

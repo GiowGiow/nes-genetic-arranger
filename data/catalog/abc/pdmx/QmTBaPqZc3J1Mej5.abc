@@ -1,0 +1,23 @@
+%abc-2.1
+% Musikalisches Opfer BWV 1079, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/12/QmTBaPqZc3J1Mej5WFSXnaxBSkk5m2xzfvvS67g1D6bCVr.mid (sha256
+% 815646e71f317aba37a7787b1a968ca33d4df1ad2d579f9c2a96c7c6f429bd13): melody track 0, bars 0-18
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Musikalisches Opfer BWV 1079
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"C4 _E4 G4 c4 | "C"B2 c2 d2 _e2 f2 _e2 d2 c2 | "C"d2 G2 d2 f2 _e2 d2 c2 B2 | "C"A2 B2 c2 _e2 d2 c2 B2 A2 |
+"C"G2 _A2 _B2 _d2 c2 _B2 _A2 G2 | "C"F2 G2 _A2 _B2 _A2 G2 F2 _E2 | "C"D2 _E2 F2 G2 F2 _E2 D2 _A2 | "C"G2 F2 _E2 c2 B2 A2 G2 F2 |
+"C"_E2 D2 _E2 G2 c2 G2 F2 G2 | "C"_E2 F,2 G,2 C2 C2 _E,2 D,2 _E,2 | "C"D2 G,2 A,2 B,2 _E2 _E,2 F,2 G,2 | "C"F2 D,2 C2 F,2 G,2 F,2 B,2 D,2 |
+"C"C2 F,2 _D2 _A,2 =D2 _A,2 _E2 F,2 | "C"G,2 _A,2 E2 C2 _D2 _B,2 F2 G,2 | "C"A,2 B,2 ^F2 D2 _E2 C2 G2 A,2 | "C"B,2 C2 D2 _E2 F2 D2 G,2 D2 |
+"C"_A2 D2 _E2 F2 G2 D2 C2 B,2 | "C"_E4 G,4 C4 C,4 |

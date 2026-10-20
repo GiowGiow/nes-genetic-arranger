@@ -1,0 +1,35 @@
+%abc-2.1
+% Sound the trumpet, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/23/QmRhi9UpP4GudfrfCPsJJLsFxSL5qBFCCeZJ8kwaJrpvCv.mid (sha256
+% d1c1272befb1b2c626d62d70065ffb1cf1398b3c23050bd22bbfbc2dab346149): melody track 1, bars 0-61
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sound the trumpet
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 "Bm7"z8 | "F#m7"z8 "A7"z8 | "D"z8 "Bm7"z8 | "F#m7"z8 "A7"z8 |
+"D"A8- "Bm7"A8 | "F#m7"A8- "A7"A2 G ^F E2 ^F G | "D"^F4 D4 "Bm7"z4 A3 A | "F#m7"A2 E2 ^F G ^F2 "A7"z4 E ^F E2 |
+"D"z4 ^F G A G "Bm7"^F2 ^F2 E3 D | "F#m7"_D3 E =D E =D E "A7"=D z E2 E2 E2 | "D"^F2 E2 ^F2 G2 "Bm7"A3 B A B A B | "F#m"A4 z4 "A7"z2 E2 E2 E2 |
+"D"^F2 E2 ^F2 G2 A3 B A B A B | "F#m"A2 E2 E2 E2 "A7"^F2 E D D3 _D | "D"D8 "Bm7"z8 | "F#m7"z8 "A7"z8 |
+"D"z8 "Bm7"z8 | "F#m7"z8 "A7"z8 | "D"A8- "Bm7"A8 | "F#m7"A8- "A7"A2 G ^F E2 ^F G |
+"D"^F4 D4 "Bm7"z4 A3 A | "F#m7"A2 E2 ^F G ^F2 "A7"z4 E ^F E2 | "D"z4 ^F G A G "Bm7"^F2 ^F2 E3 D | "F#m7"_D3 E =D E =D E "A7"=D z E2 E2 E2 |
+"D"^F2 E2 ^F2 G2 "Bm7"A3 B A B A B | "F#m"A4 z4 "A7"z2 E2 E2 E2 | "D"^F2 E2 ^F2 G2 A3 B A B A B | "F#m"A2 E2 E2 E2 "A7"^F2 E D D3 _D |
+"D"D8 "A"z4 E2 E2 | "F#m7"E ^F E ^F E ^F E ^F _A2 E2 z2 =A2 | "E7"^F _A =A2 =A3 _A "A"=A4 z2 =A2 | "Dbm"A B A B _d2 B A "Dbm7"_A2 E2 _D2 E2 |
+"E7"_D6 B, A, "A"A,4 z4 | "F#m7"z6 ^F E "Bm"D2 B,2 D2 ^F2 | "Bm"B4 z2 G2 "Ebm7"^F2 E2 D2 ^F2 | "F#"_D =D E2 =D3 _D "Bm"=D4 z2 E2 |
+"Bm"^F4 z2 _A2 _B2 ^F2 ^F2 =B2 | "F#7"B4 _B3 =B "G"=B4 z2 G2 | "Bm7"G2 ^F2 ^F4 z2 ^F2 ^F2 E2 | "F#m"E2 ^F E D2 D2 "A7"D2 _D2 _D =D E2 |
+"D"D4 z4 "Bm7"z6 A2 | "F#m7"A B A B A2 G ^F "A7"E2 E2 z2 A2 | "D"A B A G ^F G ^F G "Bm7"A2 B A G ^F E D | "F#m"_D =D E ^F =D E ^F2 "A7"=D6 _D2 |
+"D"D8 "A"z4 E2 E2 | "F#m7"E ^F E ^F E ^F E ^F _A2 E2 z2 =A2 | "E7"^F _A =A2 =A3 _A "A"=A4 z2 =A2 | "Dbm"A B A B _d2 B A "Dbm7"_A2 E2 _D2 E2 |
+"E7"_D6 B, A, "A"A,4 z4 | "F#m7"z6 ^F E "Bm"D2 B,2 D2 ^F2 | "Bm"B4 z2 G2 "Ebm7"^F2 E2 D2 ^F2 | "F#"_D =D E2 =D3 _D "Bm"=D4 z2 E2 |
+"Bm"^F4 z2 _A2 _B2 ^F2 ^F2 =B2 | "F#7"B4 _B3 =B "G"=B4 z2 G2 | "Bm7"G2 ^F2 ^F4 z2 ^F2 ^F2 E2 | "F#m"E2 ^F E D2 D2 "A7"D2 _D2 _D =D E2 |
+"D"D4 z4 "Bm7"z6 A2 | "F#m7"A B A B A2 G ^F "A7"E2 E2 z2 A2 | "D"A B A G ^F G ^F G "Bm7"A2 B A G ^F E D | "F#m"_D =D E ^F =D E ^F2 "A7"=D6 _D2 |
+"D"D8 z8 |

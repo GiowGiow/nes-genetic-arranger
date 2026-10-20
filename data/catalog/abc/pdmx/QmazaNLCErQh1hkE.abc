@@ -1,0 +1,26 @@
+%abc-2.1
+% Sonata nr. 1, by Georg Philipp Telemann. Score published on MuseScore (artist: Georg Philipp
+% Telemann), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Philipp Telemann (died
+% 1767, Wikidata Q75854).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/56/QmazaNLCErQh1hkELmXABaUmD2rH9kfpNuio42PMKzRecV.mid (sha256
+% b3378af9470f62f1eaa8db4f1250080dce0d0f31d048e11496e0ef0c599dbe81): melody track 1, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonata nr. 1
+M:4/4
+L:1/16
+Q:1/4=85.999805
+% Exact tempo 85.99980506710851 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 "Db"F, G, A, _B, C2 D E | "Dm7"F2 F,2 z2 E,2 "D7"D, E, F, G, A,2 _B, C | "Bb"D2 D,2 z2 C2 "C7"_B, C D E F2 G A | "Gm"_B _B, A, G, D _B, A, G, "Em"_B E D C G E D C |
+"F"F, C _B, A, A C _B, A, D C _B, A, _B, A, G, F, | "Gm"E, D, C,2 z2 F, E, "E7"F, C, D, _B,, C,2 C,2 | "F"F,4 z4 "Db"F, G, A, _B, C2 D E | "D7"F2 F,2 z2 E2 "G"D C D _B, C _B, C A, |
+"G"B, A, G,2 z2 G,2 "G7"A, G, A, F, A, G, A, C | "G7"B, C D2 z C D B, "C"G, B, C G, C B, C C | "E7"F5 E F D "Am7"E C E F G2 G,2 | "C"C2 E F G E F D "Dm"E D C2 z2 B,2 |
+"Dbm"C D E F G A _B G "Dm"F E D2 z2 ^F,2 | "D"G,2 ^F,2 G,2 A,2 "A7"_B, D A, D _B, D ^F, D | "D"G,2 ^F,2 G,2 ^F,2 "A7"G, D, _E, C, D,2 D,2 | "G"G, A, B, C D E F G "C7"E F G2 z F, G, E, |
+"C7"F, G, A, _B, C2 D E "F"F2 F,2 z2 E,2 | "Db"D, E, F, G, A,2 _B, C "Dm7"D2 D,2 z2 C2 | "D7"_B, C D E F2 G A "Bb"_B2 _B,2 z2 A2 | "Bb"G F z E F E z D "G7"E D C2 z2 B,2 |
+"C"C B, z G, C B, z C "Bb"C A, _B,2 z2 _B,2 | "Em"_B, A, z C, _B, A, _B, _B, "F"_B, G, A,2 z2 A,2 | "Gm"A G A D G F G E "A7"F C D _B, C2 _D2 | "Bm"D F E F B, B A G "Am"C E D E A, A G F |
+"Gm"_B, D C D G, G F E "F"A, C _B, C F, F E D | "Bb"G, G ^F G _B G ^F G "Em"C4 z G =F E | "Dm"F C D _B, C2 C2 "F"F,4 z4 |

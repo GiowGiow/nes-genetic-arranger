@@ -1,0 +1,33 @@
+%abc-2.1
+% Swan Lake (ballet) Op.20, by Pyotr Ilyich Tchaikovsky (1840-1893). Score published on MuseScore
+% (artist: Pyotr Ilyich Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pyotr Ilyich Tchaikovsky (died
+% 1893, Wikidata Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/9/Qmbanq14Staet8XrMCqZChGfZUyNXb7G6QRkjLSKdprWom.mid (sha256
+% 30632d85c18bcedc0b42858eb9c4ff95e35cc3ec37f63cf31622d255a93aed7d): melody track 2, bars 0-55
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Swan Lake (ballet) Op.20
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"c G2 c _e g2 c' _e' c'2 g _e c2 G | "G"c G2 c _e g2 c' "Ab"F _A2 c f _a2 c' | "G"c G2 c _e g2 c' _e' c'2 g _e c2 G | "G"c G2 c _e g2 c' "Fm7"c2 c'2 c2 c'2 |
+"Fm7"g'2 _e2 c'2 _A2 "F7"g2 _E2 c2 F2 | "Eb"c G2 _E c G2 _e "F7"c'2 z6 | "Cm"_e _e2 _e _e _e2 _e B B2 B c c2 c | "Cm"B B2 B c c2 c "Fm7"c c2 c c2 B2 |
+"Cm"c c2 c _e _e2 _e "C"G G2 G _E _E2 _E | "Bb"z d2 f _B f2 d "Bb7"z d2 f _B f2 d | "Bb"z _B2 d G _B2 d "C7"g2 z6 | "C"z4 _A c2 f "Fm"_a2 z6 |
+"D"z4 ^f a2 d' "G"g'2 z6 | "Bb"z d2 f _B f2 d "Bb7"z d2 f _B f2 d | "Bb"z _B2 d G _B2 d "C7"g2 z6 | "C"z4 _A c2 f "Fm"z4 _A c2 ^f |
+"Db"_d f2 _a _d f2 _a _d'2 z6 | "D"^f8 =f8 | "C"_e8 "Cm"f8 | "Eb"g15 z |
+"C"_e8 "Fm7"_a4 _a4 | "Cm"c'8- "F"c'7 z | "Eb"g8 "F"_a8 | "Eb"g16 |
+"Eb"g7 z "Fm7"_a4 _a4 | "Cm"g11 z g g2 g | "D"_b _b2 _b _b _b2 _b "Dm"_b _b2 _b _b _b2 _b | "Bb7"_b _b2 _b _b _b2 _b "Gm"_b _b2 _b _b _b2 _b |
+"F"c' c'2 c' c' c'2 c' "Fm"c' c'2 c' c' c'2 c' | "D7"d' d'2 d' d' d'2 d' "Cm"d' d'2 d' c' c'2 g | "D"_b _b2 _b _b _b2 _b "Dm"_b _b2 _b _b _b2 _b | "Bb7"_b _b2 _b _b _b2 _b "Gm"_b _b2 _b _b _b2 _b |
+"Dm7"c' c'2 c' _a _a2 _a "Fm"_a _a2 _a _a _a2 _a | "Db"_a _a2 _a _a _a2 _a "C"_a _a2 _a _a _a2 _a | "Em"g g2 g g g2 g "C"_a _a2 _a _a _a2 _a | "Db"_a _a2 _a _a _a2 _a "C"_a _a2 _a _a _a2 _a |
+"Em"g g2 g g g2 g "C"_a _a2 _a _a _a2 _a | "Db"_A8 _A8 | "Fm"_A8 "G7"G5 G3 | "Db"_A8 _A8 |
+"Dm"_A15 z | "G"B15 z | "Cm"B8- "G"B7 z | "Cm"B8 B8 |
+"G7"z16 | "G7"z16 | "C"_e'8 "Dm7"z8 | "Cm"z4 _e'4 z4 _e'4 |
+"Cm"z2 _e'2 z2 c'2 z2 g2 z2 _e2 | "Cm"z2 c'2 z2 g2 z2 _e2 z2 c2 | "G"z8 "Dm7"z8 | "Eb"z16 |
+"G"G8 "Dm7"C2 D2 _E2 F2 | "Eb"G6 _E2 G6 _E2 | "C"C15 z |

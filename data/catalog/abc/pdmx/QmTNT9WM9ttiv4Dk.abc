@@ -1,0 +1,31 @@
+%abc-2.1
+% Water Music HWV 348-350, by Handel. Score published on MuseScore (artist: Georg Friedrich
+% Händel), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Handel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/34/QmTNT9WM9ttiv4DkjB52TAtWYCjq6LBtwXAerrYgCBgVEQ.mid (sha256
+% 5677326ae3de0937ca78e713628e16b1f6edec53e318a6797e138d5fb65661ce): melody track 0, bars 0-47
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Water Music HWV 348-350
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z6 A2 d4 d4 | "C"d4 z2 d2 ^f4 ^f4 | "C"^f4 z2 ^f2 a4 a4 | "C"a6 g ^f e d e ^f e2 e2 |
+"C"z6 D2 ^F4 ^F4 | "C"^F4 z2 A2 d4 d4 | "C"d4 z2 d2 ^f4 ^f4 | "C"^f6 e d A2 A2 A2 A2 |
+"C"A4 z4 a4 ^f4 | "C"A4 d4 a4 ^f4 | "C"A4 d4 a2 ^f2 ^f2 a2 | "C"g2 e2 e2 g2 ^f2 d2 d2 ^f2 |
+"C"e4 z4 ^f2 d2 d2 ^f2 | "C"e2 A2 A2 e2 d2 A2 ^F2 D2 | "C"A4 z4 e3 ^f e3 ^f | "C"g3 a g3 a ^f3 g ^f3 g |
+"C"a6 b2 a6 b2 | "C"a6 g ^f e2 ^f g e3 d | "C"e4 z4 A3 d A3 d | "C"e3 ^f e3 ^f d3 e d3 e |
+"C"^f6 g2 ^f6 g2 | "C"^f6 e d A2 d2 G2 G2 | "C"^F4 z2 e2 ^f2 e2 d2 e2 | "C"^f2 e d e2 A2 d2 B2 ^F2 A2 |
+"C"d2 ^F2 A2 a2 a8 | "C"a8 a3 b _a2 =a2 | "C"a4 z2 e2 ^f2 e d ^f2 A2 | "C"^f2 e d e2 A2 ^f3 ^f e3 e |
+"C"e4 z2 a2 e ^f e ^f e ^f e ^f | "C"g a g a g a g a ^f g ^f g ^f g ^f g | "C"a8 a2 a2 a2 a2 | "C"a6 ^f g e2 ^f g e3 d |
+"C"d4 z2 d2 A2 A2 A2 d2 | "C"e ^f e ^f e ^f e ^f d e d e d e d e | "C"^f8 ^f2 ^f2 ^f2 ^f2 | "C"^f6 e d A2 d2 A2 A2 |
+"C"^F4 z2 ^f2 a4 a4 | "C"a6 b2 g4 g4 | "C"g6 a2 ^f4 ^f4 | "C"^f6 g2 a2 g ^f e4 |
+"C"d4 d e ^f g a2 a2 a2 a2 | "C"a6 b2 g2 g2 g2 g2 | "C"g6 a2 ^f2 ^f2 ^f2 ^f2 | "C"^f6 g2 a2 g ^f e4 |
+"C"d4 z4 e4 z4 | "C"^f4 z4 e4 z4 | "C"d16 |

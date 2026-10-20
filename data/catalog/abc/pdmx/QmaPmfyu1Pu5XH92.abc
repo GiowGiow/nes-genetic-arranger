@@ -1,0 +1,35 @@
+%abc-2.1
+% The Light (DCI Project), by Joseph Montgomery. Score published on MuseScore (artist: jmont2019),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Montgomery (died 1794,
+% Wikidata Q6285613).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/37/QmaPmfyu1Pu5XH92LtoLZP1n2KRTBzLuPyngHuZ7CvBNwx.mid (sha256
+% 85bc8b36224aa970bcf56fe14e96ec1db97b800705c959bb0bf0b7975678f1e0): melody track 10, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Light (DCI Project)
+M:4/4
+L:1/16
+Q:1/4=180
+% Exact tempo 179.99999999999318 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z16 | "F"z5 c3- "Gm7"c3 _B5 | "Db"_B _A3 _A3 G3 G3 _A3 | "Db"_A3 c2 _B _A2 "Eb7"G _B3 _B3 F |
+"Db"F2 F3 G3- "Eb7"G8 | "Db"G c7- "Fm"c5 _d3 | "Bbm"_d8- "Fm"_d _A7 | "Fm"_A5 f3- "F"f8 |
+"Ab"f f2 _e2 f2 _e2 _d2 _e2 _d2 c | "Ab"c _d2 c2 _B2 c2 G2 _A2 _B2 _A | "Ab"_A _B2 c2 _B2 c2 _e7 | "Dbm"_e =e7- "E"=e5 f3 |
+"F"f8- "F7"f _e3 _d3 _e | "Eb7"_e5 _d3 "C7"c3 _B3 G2 | "C7"G c3 _B3 _d- "Eb7"_d2 _B3 _e3 | "Eb7"_d3 G5- "Bb7"G _A6 _B |
+"F7"_B c _d2 _e g2 f "Eb7"_e2 _d _e2 _d c2 | "Cm7"_B c2 _B F2 G _A- "Ab"_A8 | "Ab"_A3 z5 "Fm"z F2 G _A2 _B c | "Gm7"c _B _A2 F G2 _A "Gm"_B2 c _d2 c _B2 |
+"Bbm7"G _A2 _B c2 _d _e2 _d c2 _A _B2 c | "Bbm"_d2 _e f2 _e _d2 "Cm"_B c2 _d _e2 f _e | "Cm"_e f g2 _a g2 _a "C"_b2 c' _d'2 c' _b2 | "Cm"_a z7 "Ab"z8 |
+"Ab"z16 | "Ab"z16 | "Ab"z16 | "Ab"z16 |
+"Ab"z16 | "Ab"z _E3 F3 G- "Eb7"G2 F3 _E3 | "Eb7"F3 G3 F3 _E3 F3 G | "Eb"G2 F3 _E3 "Cm7"F3 G3 F2 |
+"Bbm7"F z7 "Db"z8 | "Db"z16 | "Db"z8 "Fm7"z8 | "Bbm7"z _d2 c _B2 _A c- "Ab"c _B _A2 G _A2 _B |
+"Eb7"c2 _d c2 _d c2 "Fm"_e f7 | "Bb"f5 _B3- "Bb7"_B3 _A5 | "Cm7"_A z7 "Bb"z8 | "Bb"z8 "Bbm"z _A6 _A |
+"Bbm"_A5 _A6 _A5 | "Fm7"_A _B7- "Ebm"_B5 _B2 _A | "Ebm"_A G2 _A2 _d2 c- "Ebm7"c _d7 | "Ebm7"_d5 z3 "Fm7"z8 |
+"Gm7"z8 "F"z5 c2 _B | "Fm"_B _A2 _B2 _e2 c- "Fm7"c _e7 | "F7"_e5 z11 | "Eb"z13 c2 _B |
+"Ebm"_B _d2 _A2 _B2 _d2 _e2 _d2 _B2 c | "Eb"c _d2 _e2 G2 _A2 _B2 _d2 c2 _d | "Ebm7"_d f2 _e2 _d2 _A- "Db"_A _B2 c2 _A2 c | "Db"c _e2 G2 _B2 f2 F G _A G _A _B _A |
+"Db"_B c _B c _d c _d _e _d _e f _e f g _b _a | "Cm"c' z15 | "Cm"z16 | "Cm"z16 |
+"Fm7"z g2 f _e2 _d _A- "Bbm"_A _B c2 _d _E2 F | "Fm"G2 c _A2 _d c2 "Db"_B c2 c2 c2 c | "Db"c c2 c2 c2 c2 c2 c2 c2 c | "Cm"c g6 g- "C"g5 g3 |
+"C"g3 g5- "Fm7"g _e6 _e | "Fm7"_e5 _e6 _e5 | "Am"_e c' _b g f c _d _A "F"_B _d c F _A G _B _d | "F7"c _e c _a g f _e _B "A7"c _d _A _B G _E F _B |

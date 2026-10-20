@@ -1,0 +1,32 @@
+%abc-2.1
+% Dolce nemica mia, by Giovanni Gabrieli. Score published on MuseScore (artist: Giovanni
+% Gabrieli), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giovanni Gabrieli (died 1612,
+% Wikidata Q34624).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/30/QmSL9LNVDxM2bHLJNiRUdNaukBD9iA72vp8eP7CZxg4FF7.mid (sha256
+% 38011cba77d864d16220eaa891872d578f3f7b99689e462eeb2fb651fdfb6d27): melody track 2, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dolce nemica mia
+M:4/2
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"z16 "A"z16 | "Dm"z16 "E"z16 | "A"z32 | "G"z16 "F"z16 |
+"Am7"z16 "C"z16 | "F"z16 "Em7"z16 | "Em7"z16 "F"z16 | "E"z16 "A"A,16 |
+"F"D,8 D12 D4 C8 | "D"B,16 "F#m7"A,8 z4 A,4 | "F#m"A,4 A,4 D8 "Em7"G,4 B,4 C4 G,4 | "Am"A,4 G,4 F,8 "Db"E,4 A,4 D,8 |
+"Dbm"A,8 z4 A,4 "F#m7"B,4 C4 D4 D4 | "G"D2 D2 C4 B,8 "Bm7"A,8 z8 | "A"z4 A,4 B,4 C4 "F#m"D4 D6 D2 C4 | "D7"B,8 A,8 "E"z16 |
+"A"z16 "Bm7"z12 D4 | "G"D4 D4 B,4 B,4 "A7"C6 B,2 A,4 A,4 | "Dm"A,4 D8 _D4 "D"=D8 =D,8 | "G"D,4 D,4 G,8 "F"G,4 F,4 E,8 |
+"F"F,8 z8 "Bb"z8 F,6 E,2 | "Gm"D,4 D4 D8 "A"_D4 =D8 _D4 | "D"D4 D8 D4 "Em"G,8 G,4 A,4 | "D"_B,8 A,4 D4- "B7"D4 D,4 G,8 |
+"D"D,16 "Em7"z8 G,8 | "Dm"G,8 D,8 "C"E,12 F,4 | "Em7"G,16 "Am7"C,8 F,8 | "Dm"F,8 G,8 "A"A,16 |
+"D"D,16 z16 | "Em7"z16 "Em"z16 | "Em7"z16 "Am"z4 E,4 E,8 | "Dbm7"E,8 z4 E,8 A,4 _A,8 |
+"E"A,8 z4 E4 "Am"E4 E4 C2 A,2 C2 D2 | "Am"E16 "A"A,8 z8 | "D"z8 D,8 "G"D,6 D,2 D,4 A,4 | "E"E,8 E,8 "D"z12 D,4 |
+"G"D,6 D,2 D,4 A,4 "E"E,8 E,4 E,4 | "Bm7"E,2 E,2 A,4 G,4 F,4 "D"E,8 D,8 | "Bm7"z16 "Am7"z12 G,4 | "C"G,4 G,4 G,2 F,2 E,2 D,2 "Am"E,4 E,8 E,4 |
+"Am"E,16 "A"E,8 z4 A,4 | "Em7"^F,4 G,4 A,8- "D"A,8 D,8 | "Bm7"z16 "G"z16 | "D"z8 D,8 "G"D,6 D,2 D,4 A,4 |
+"E"E,8 E,8 "D"z12 D,4 | "G"D,6 D,2 D,4 A,4 "E"E,8 E,4 E,4 | "Bm7"E,2 E,2 A,4 G,4 F,4 "D"E,8 D,8 | "Bm7"z16 "Am7"z12 G,4 |
+"C"G,4 G,4 G,2 F,2 E,2 D,2 "Am"E,4 E,8 E,4 | "Am"E,16 "A"E,8 z4 A,4 | "Em7"^F,4 G,4 A,8- "D"A,8 D,8 | "D"z32 |

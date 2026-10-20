@@ -1,0 +1,22 @@
+%abc-2.1
+% The Lad with the Plaidie, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/hpps.abc, tune X: 32 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Lad with the Plaidie
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 d2 e2 | "D"f2 g2 f2 e2 "G"d2 e2 d2 B2 | "D"A2 F2 A2 d2 "A7"c e3 e4 | "D"f2 g2 f2 e2 "G"d2 e2 d2 B2 |
+"A7"c2 d2 e2 a2 "D"f d3 d2 e2 | "D"f2 g2 f2 e2 "G"d2 e2 d2 B2 | "D"A2 F2 A2 d2 "A7"c e3 e4 | "D"f2 g2 f2 e2 "G"d2 e2 d2 B2 |
+"A7"c2 d2 e2 a2 "D"f d3 d2 e2 | "D"A4 F E2 D F A3 A2 d2 | "G"B2 A2 B2 d2 "A7"c e3 e4 | "D"A4 F E2 D F A3 A2 d2 |
+"A7"c2 d2 e2 a2 "D"f d3 d2 e2 | "D"A4 F E2 D F A3 A2 d2 | "G"B2 A2 B2 d2 "A7"c e3 e4 | "D"A4 F E2 D F A3 A2 d2 |
+"A7"c2 d2 e2 a2 "D"f d3 d4 | "D"f4 a g2 f "A"e4 g f2 e | "Bm"d4 f e2 d "F#m"c4 e d2 c | "G"B4 d c2 B "D"A2 d2 f2 a2 |
+"Em"g2 f2 e2 d2 "A7"c a3 a4 | "D"f e2 f a g2 f "A"e d2 e g f2 e | "Bm"d c2 d f e2 d "F#m"c B2 c e d2 c | "G"B A2 B d c2 B "D"A2 d2 f2 a2 |
+"A7"g2 f2 e2 a2 "D"f d3 d2 z2 |

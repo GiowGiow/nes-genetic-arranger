@@ -1,0 +1,24 @@
+%abc-2.1
+% Rolling Off A Log, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/jigs.abc, tune X: 263 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Rolling Off A Log
+M:6/8
+L:1/16
+Q:1/4=140
+K:C
+P:A
+"Dm7"z8 c2 e2 | "Dm7"g4 ^f2 a4 =f2 | "C"g2 e2 c2 c2 B2 c2 | "G7"d2 B2 G2 G2 A2 B2 |
+"C"c2 d2 _e2 =e2 f2 ^f2 | "Dm7"g4 ^f2 a4 =f2 | "C"g2 e2 c2 c2 B2 c2 | "G7"d2 B2 G2 G2 A2 B2 |
+"C"c2 g2 e2 c2 c2 e2 | "Dm7"g4 ^f2 a4 =f2 | "C"g2 e2 c2 c2 B2 c2 | "G7"d2 B2 G2 G2 A2 B2 |
+"C"c2 d2 _e2 =e2 f2 ^f2 | "Dm7"g4 ^f2 a4 =f2 | "C"g2 e2 c2 c2 B2 c2 | "G7"d2 B2 G2 G2 A2 B2 |
+"C"c4 z2 c4 z2 | "G"B2 d2 g2 g2 ^f2 g2 | "G"B2 d2 g2 g2 ^f2 g2 | "D"^f2 g2 a2 a2 g2 ^f2 |
+"D"a2 g2 e2 d2 _d2 c2 | "G"B2 d2 g2 g2 ^f2 g2 | "G"B2 d2 g2 g2 ^f2 g2 | "D"^f2 g2 a2 a2 g2 ^f2 |
+"D7"g4 z2 e2 d2 c2 | "G"B2 d2 g2 g2 ^f2 g2 | "G"B2 d2 g2 g2 ^f2 g2 | "D"^f2 g2 a2 a2 g2 ^f2 |
+"D"a2 g2 e2 d2 _d2 c2 | "G"B2 d2 g2 g2 ^f2 g2 | "G"B2 d2 g2 g2 ^f2 g2 | "D"^f2 g2 a2 a2 g2 ^f2 |
+"G"g6 g2 z4 |

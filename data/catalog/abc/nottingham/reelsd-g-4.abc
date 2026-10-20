@@ -1,0 +1,24 @@
+%abc-2.1
+% Devil Among the Tailors, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 4 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Devil Among the Tailors
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 e2 g2 | "A"a4 e2 g2 a4 e2 g2 | "A"a4 e2 a2 "F7"f2 e2 d2 c2 | "Bm"d2 f2 B2 f2 d2 f2 B2 f2 |
+"Bm"d2 f2 b2 a2 "E7"g2 e2 f2 g2 | "A"a4 e2 g2 a4 e2 g2 | "A"a4 e2 a2 f2 e2 d2 c2 | "D"d2 e2 f2 d2 "A"e2 c2 B2 A2 |
+"E7"E4 G4 "A"A4 e2 g2 | "A"a4 e2 g2 a4 e2 g2 | "A"a4 e2 a2 "F7"f2 e2 d2 c2 | "Bm"d2 f2 B2 f2 d2 f2 B2 f2 |
+"Bm"d2 f2 b2 a2 "E7"g2 e2 f2 g2 | "A"a4 e2 g2 a4 e2 g2 | "A"a4 e2 a2 f2 e2 d2 c2 | "D"d2 e2 f2 d2 "A"e2 c2 B2 A2 |
+"E7"E4 G4 "A"A4 e2 d2 | "A"c2 e2 A2 e2 c2 e2 A2 e2 | "A"c2 e2 a2 g2 f2 e2 d2 c2 | "Bm"d2 f2 B2 f2 d2 f2 B2 f2 |
+"Bm"d2 f2 b2 a2 "E7"g2 f2 e2 d2 | "A"c2 e2 A2 e2 c2 e2 A2 e2 | "A"c2 e2 a2 g2 f2 e2 d2 c2 | "D"d2 e2 f2 d2 "A"e2 c2 B2 A2 |
+"E7"E4 G4 "A"A4 e2 d2 | "A"c2 e2 A2 e2 c2 e2 A2 e2 | "A"c2 e2 a2 g2 f2 e2 d2 c2 | "Bm"d2 f2 B2 f2 d2 f2 B2 f2 |
+"Bm"d2 f2 b2 a2 "E7"g2 f2 e2 d2 | "A"c2 e2 A2 e2 c2 e2 A2 e2 | "A"c2 e2 a2 g2 f2 e2 d2 c2 | "D"d2 e2 f2 d2 "A"e2 c2 B2 A2 |
+"E7"E4 G4 "A"A4 z4 |

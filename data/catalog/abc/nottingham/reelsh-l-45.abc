@@ -1,0 +1,32 @@
+%abc-2.1
+% The Jolly Coppersmith, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 45 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Jolly Coppersmith
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"A7"z12 F2 G2 | "D"A4 B4 A4 F4 | "D"A4 B4 A4 F4 | "A7"A4 G8 F4 |
+"A7"G12 d4 | "A7"c6 c2 c4 e4 | "A7"B6 B2 B4 c4 | "D"B4 A4 A4 ^G4 |
+"A7"A12 F2 G2 | "D"A4 B4 A4 F4 | "D"A4 B4 A4 F4 | "E7"A4 ^G8 =G4 |
+"E7"^G12 E4 | "A"A6 A2 A4 B4 | "A"c6 c2 c4 d4 | "E7"e4 d4 c4 B4 |
+"A7"A8 F6 G2 | "D"A4 B4 A4 F4 | "D"A4 B4 A4 F4 | "A7"A4 G8 F4 |
+"A7"G12 d4 | "A7"c6 c2 c4 e4 | "A7"B6 B2 B4 c4 | "D"B4 A4 A4 ^G4 |
+"A7"A12 F2 G2 | "D"A4 B4 A4 F4 | "D"A4 B4 A4 F4 | "E7"A4 ^G8 =G4 |
+"E7"^G12 E4 | "A"A6 A2 A4 B4 | "A"c6 c2 c4 d4 | "E7"e4 d4 c4 B4 |
+"A7"A8 F6 G2 | "D"A8 f8 | "D"f8 e8 | "A7"d4 c4 c4 =c4 |
+"A7"c8 E6 F2 | "A7"G8 d8 | "A7"d8 c8 | "D"B4 A4 A4 ^G4 |
+"D"A8 F6 G2 | "D"A8 f8 | "D"f8 e8 | "A7"d4 c4 c4 =c4 |
+"A7"c8 E6 F2 | "A7"G8 c6 B2 | "A7"A8 f6 e2 | "D"d4 A4 "A7"c4 A4 |
+"D"d8 "D7"d8 | "D"A8 f8 | "D"f8 e8 | "A7"d4 c4 c4 =c4 |
+"A7"c8 E6 F2 | "A7"G8 d8 | "A7"d8 c8 | "D"B4 A4 A4 ^G4 |
+"D"A8 F6 G2 | "D"A8 f8 | "D"f8 e8 | "A7"d4 c4 c4 =c4 |
+"A7"c8 E6 F2 | "A7"G8 c6 B2 | "A7"A8 f6 e2 | "D"d4 A4 "A7"c4 A4 |
+"D"d8 "D7"d8 |

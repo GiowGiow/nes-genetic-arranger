@@ -1,0 +1,27 @@
+%abc-2.1
+% The celebrated March in Alceste, by Gluck. Score published on MuseScore (artist: Gluck), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gluck (died 1787, Wikidata
+% Q130759).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/12/QmSBbRfM1J2HhKgaqH15HTw14nrnAz96eu3SfVFmuSYuzb.mid (sha256
+% cfd3e87ff95ec8de0acf70ccea7bb32f21760ad2cd3fabd0c0acab95b4e94a19): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The celebrated March in Alceste
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E7"G4 A G A2 | "Bm"^F4 G2 B2 | "F#7"A2 B A A2 B2 | "A7"c4 B4 |
+"B7"d4 e d e2 | "F#7"c4 d c d2 | "A7"B4 G2 c2 | "C"B4 A2 z2 |
+"Db"G4 G2 A2 | "Bm"^F4 G2 B2 | "F#7"A4 B A B2 | "A7"c4 B4 |
+"F#m"d4 e d ^f2 | "G"e4 ^f e g2 | "Db"^f4 e3 d | "D"d4 z4 |
+"Ab7"d4 d3 e | "Abm"d4 c2 B2 | "F#m"c4 c2 d2 | "A7"c4 B2 d2 |
+"Db7"g4 g2 a2 | "A"^f2 e2 d2 c2 | "G"B2 d2 c2 B2 | "C"B4 A2 z2 |
+"C"B4 B2 A2 | "E"G4 G4 | "A7"c4 c2 B2 | "F#"A4 A4 |
+"G"d4 e2 d2 | "A7"d2 c2 c2 B2 | "B7"d2 c2 B2 A2 | "F#m"A4 B2 d2 |
+"Db7"g4 g2 a2 | "G"^f4 g4 | "B7"d2 c2 B2 A2 | "F#"A4 G2 z2 |

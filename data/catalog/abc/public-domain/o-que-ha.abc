@@ -1,0 +1,35 @@
+%abc-2.1
+% O QUE HÁ, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-que-ha.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-que-ha.mid, sha256
+% 679d6c335d6e879ccd0fe2d1dae66eb57e8cd86ca6db3b709966abae11d079a1), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O QUE HÁ
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G7"z5 e g G | "G7"f g G d z d g G | "C"e g G c z c g G | "Dm7"B d f G A c _e ^F |
+"C"G c e E z e g G | "G7"f g G d z d g G | "Am7"e g G c z e c' c | "B7"B g e G ^F B A B, |
+"E"E G G, B, z e g G | "G7"f g G d z d g G | "C"e g G c z c g G | "Dm7"B d f G A c _e ^F |
+"Am7"G c e E z e a A | "G7"a d' d d' z d g G | "C"g c' c c' _a _d' _d _d' | "G7"a d' d d' b g' g g' |
+"C"c'3 c'' z e' d'' c'' | "E7"z _e' c'' b' z d' c'' b' | "Am"z c' b' a' z a g' f' | "G7"e' e f ^f a g d _e |
+"C"e c G E z e' d'' c'' | "E7"z _e' c'' b' z _e' c'' b' | "Am"z c' b' a' z a g' f' | "E7"e' a' b' c'' e'' f'' ^f'' _a'' |
+"Am"a''4 z e' d'' c'' | "E7"z _e' c'' b' z d' c'' b' | "Am"z c' b' a' z a g' f' | "G7"e' e f ^f a g d _e |
+"C"e c G E z e' d'' c'' | "E7"z _e' c'' b' z _e' c'' b' | "Am"z c' b' a' z a g' f' | "E7"e' a' b' c'' e'' f'' ^f'' _a'' |
+"Am"a''4 z e' g' g | "G7"f g G d z d g G | "C"e g G c z c g G | "Dm7"B d f G A c _e ^F |
+"C"G c e E z e g G | "G7"f g G d z d g G | "Am7"e g G c z e c' c | "B7"B g e G ^F B A B, |
+"E"E G G, B, z e g G | "G7"f g G d z d g G | "C"e g G c z c g G | "Dm7"B d f G A c _e ^F |
+"Am7"G c e E z e a A | "G7"a d' d d' z d g G | "C"g c' c c' _a _d' _d _d' | "G7"a d' d d' b g' g g' |
+"C"c'3 c'' z c c' b | "C7"_b g e c _B G E C | "Dm7"A, C F A z c _b a | "G7"z g e' d' z _b a' g' |
+"F"z a g' f' z c c' b | "Am7"_b g e c _d A G E | "Dm"D F A d z a g' f' | "E7"z e d' c' z d c' b |
+"Am"a e c _A =A c c' b | "C7"_b g e c _B G E C | "Dm7"A, C F A z c _b a | "G7"z g e' d' z _b a' g' |
+"F7"z a g' f' z f d' c' | "D7"z _b g' f' z d _b a | "Bb7"z g _e' d' z f =e' d' | "Dm7"z f d' c' z _B a g |

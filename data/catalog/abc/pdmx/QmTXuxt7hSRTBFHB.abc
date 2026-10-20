@@ -1,0 +1,35 @@
+%abc-2.1
+% Piano Concerto in G major, by Maurice Ravel. Score published on MuseScore (artist: Maurice
+% Ravel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/53/QmTXuxt7hSRTBFHBFQHUamTcXKNKdiWeTAmCbqzHncNMd7.mid (sha256
+% 412e768d564c62c12bcab24acbe4eeaac0751090ccb4c52525a21e40838c2135): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Piano Concerto in G major
+M:3/4
+L:1/16
+Q:1/4=37.999985
+% Exact tempo 37.99998480000608 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z12 | "E"_A4 =A8 | "Dbm"_A4 ^F4 E4 | "Abm"B6 A B _d B3 |
+"Abm"B10 B2 | "F#m7"B4 _d4 B4 | "F#m7"_A9 ^F E ^F | "F#m7"_A ^F9 ^F2 |
+"Eb7"^F2 _A2 B2 _A2 ^F2 _E2 | "Dbm7"_E6 =E2 B,2 _E2 | "Dbm7"_D5 E ^F A _d4 | "F#m7"_d4 A4 _A4 |
+"F#m7"^F9 _A ^F _A | "F#m7"A4 _A4 E4 | "B"_E =E ^F6 ^F3 =E | "B7"_E4 B,5 _D _E ^F |
+"Abm7"^F2 E2 B3 A _d2 B A | "Ab7"_A11 z | "Dbm"_A4 e4 _A4 | "B7"_A3 ^F E ^F7 |
+"Ebm7"^F2 _e2 _d2 c2 _e2 _A2 | "Db7"^F3 E _E =E ^F =E5 | "Dbm7"E4 B,4 A,4 | "E"_A,3 =A, _A, =A, B,6 |
+"F#m7"B,2 _D2 E2 =D2 _D2 B,2 | "A"B,4 _D8 | "Ebm7"^F4 _D4 E4 | "B7"_E3 =E ^F2 _A6 |
+"Dbm7"_A4 _d4 _e4 | "F#7"^f3 e _e _d ^f3 =e _d2 | "E7"_d4 B4 _d4 | "A"E2 z4 ^F2 _A4 |
+"F#m7"_A6 =A2 ^F2 E2 | "B7"_A _A _A _A _A _A _A _A _A _A _A _A | "E7"_A _A _A _A _A _A _A _A _A _A _A _A | "A"e6 ^f2 _a4 |
+"Dbm7"e'2 _e'2 =e'4 _a2 =a2 | "Abm"b2 z2 _a4 _e'4 | "E"b6 _b2 _d'4 | "Dbm7"b4 _b4 ^f4 |
+"Abm"_d2 _e2 _a2 b2 _e'2 _a'2 | "Fm7"_b'4 _a'2 _e'2 _d'2 _e'2 | "Ebm"_e'2 _b2 ^f2 _e2 =f2 ^f2 | "Bb"_e8 _d4 |
+"Eb"_e8 z ^f _e ^f | "Ab7"B6 A2 z ^f _e ^f | "Ab7"B2 A2 _A2 ^F2 B =A _A ^F | "Dbm"_e6 _d2 B2 _A2 |
+"Dbm7"^F2 _A4 z3 e _d e | "F#7"A6 G2 z e _d e | "F#7"A2 G2 ^F2 E2 A G ^F E | "Bm"_d5 =d _d A _d B A ^F |
+"Bm"E2 ^F6 ^F3 G | "D7"A4 B2 d2 B2 A2 | "G"^F2 D3 E ^F6 | "Em"^F G E2 D4 B,2 _D2 |
+"D"_D4 =D8 | "Fm"z _a' _a' f' b _d' _d' _d' ^f _a _a =f | "Bb7"B _a ^f _d' _b =f' _e' _d' _a ^f' _e' =f' | "F#m"_b a' a' ^f' c' d' d' d' g a a ^f |
+"B7"c a g d' b ^f' e' d' a g' e' ^f' | "G7"a2 b2 z c d3 e g e | "Am7"d2 B2 G2 E A B4 | "Am"B c A2 G4 E2 ^F2 |

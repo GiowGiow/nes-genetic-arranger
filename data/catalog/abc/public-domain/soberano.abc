@@ -1,0 +1,36 @@
+%abc-2.1
+% SOBERANO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/soberano.html (file
+% https://www.beakauffmann.com/mpb_s/som/soberano.mid, sha256
+% 302dc7eb07e907f7645c950677cc1a3194b8443ba99a1c38f16f9072f3b9497f), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SOBERANO
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E7"z _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "E7"D2 e E D2 e E |
+"A"_D _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "B7"B,2 b B A,2 b B |
+"E"z _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "E7"D2 e E D2 e E |
+"A7"_D2 a A G2 a A | "Bm7"^F2 a A B2 b A | "Dbm7"_A2 b B _d2 _d' B | "F#m7"A2 _d' _d e'2 b _d' |
+"A"a _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "E7"D2 e E D2 e E |
+"A"_D _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "B7"B,2 b B A,2 b B |
+"E"z _d2 =d _e ^f =e A | "E7"_A =A _B _d =B _A E =D | "A7"_D2 e E _D2 e E | "E7"D2 e E D2 e E |
+"A7"_D2 a A G2 a A | "Bm7"^F2 a A B2 b A | "Dbm7"_A2 b B _d2 _d' B | "F#m7"A2 _d' _d e'2 b _d' |
+"A"a4 a'4 | "F#m"z a' _a' ^f' _d' =a ^f _d | "D"c4 z4 | "Db7"z _a' f' _d' b _a f _d |
+"F#"A4 z4 | "Ebm7"z A _d ^f a _d' ^f' a' | "Dbm"_a'3 _d'' _a'4 | "Ab7"z a' _a' g' _a' _e' =e' ^f' |
+"Db7"_a' f' _d' f' b _d' _a _d' | "F#m"z a' _a' ^f' _d' =a ^f _d | "D"c4 z4 | "Db7"z _a' f' _d' b _a f _d |
+"F#"_B4 z4 | "C7"z e g _b _d' e' g' _b' | "Bm"b' _b' =b' _d'' =d''4 | "Db7"_d'' ^f'' ^f' a' _a' _d'' _d' _a' |
+"F#m"^f'4 ^f''4 | "F#m"z a' _a' ^f' _d' =a ^f _d | "D"c4 z4 | "Db7"z _a' f' _d' b _a f _d |
+"F#"A4 z4 | "Ebm7"z A _d ^f a _d' ^f' a' | "Dbm"_a'3 _d'' _a'4 | "Ab7"z a' _a' g' _a' _e' =e' ^f' |
+"Db7"_a' f' _d' f' b _d' _a _d' | "F#m"z a' _a' ^f' _d' =a ^f _d | "D"c4 z4 | "Db7"z _a' f' _d' b _a f _d |
+"F#"_B4 z4 | "C7"z e g _b _d' e' g' _b' | "Bm"b' _b' =b' _d'' =d''4 | "Db7"_d'' ^f'' ^f' a' _a' _d'' _d' _a' |

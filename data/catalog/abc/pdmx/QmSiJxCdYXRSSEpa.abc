@@ -1,0 +1,22 @@
+%abc-2.1
+% Branle simple, by Jacques Moderne. Score published on MuseScore (artist: Jacques Moderne), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacques Moderne (died 1560,
+% Wikidata Q547935).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/25/QmSiJxCdYXRSSEpacAYATBE5djxaqR4ew7QoYyFDbAb6PY.mid (sha256
+% 4963127a2a7bb6220bcbb5792ae30d712611c1dcdd5f82680eb9db7d569b111c): melody track 0, bars 0-15
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Branle simple
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c4 d2 e2 f4 e2 f2 | "C"g2 f2 e2 d2 e4 c4 | "C"d2 e2 f2 e d c8 | "C"c4 d2 e2 f4 e2 f2 |
+"C"g2 f2 e2 d2 e4 c4 | "C"d2 e2 f2 e d c8 | "C"c4 c2 c2 c4 d2 f2 | "C"e2 d2 c2 _B2 A4 F4 |
+"C"G2 A2 _B2 A G F8 | "C"c4 d2 e2 f4 e2 f2 | "C"g2 f2 e2 d2 e4 c4 | "C"d2 e2 f2 e d c8 |
+"C"c4 c2 c2 c4 d2 f2 | "C"e2 d2 c2 _B2 A4 F4 | "C"G2 A2 _B2 A G F8 |

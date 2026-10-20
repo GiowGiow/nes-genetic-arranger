@@ -1,0 +1,26 @@
+%abc-2.1
+% O Canada, by Calixa Lavallée. Score published on MuseScore (artist: not given), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Calixa Lavallée (died 1891,
+% Wikidata Q1027051).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/1/QmT2Y7G2ArVw17aMKPamdpPKVh1SHhS6PVtYsvwhJ7pZS6.mid (sha256
+% 97cbeba686cdd85bf80c537f1ecd19f0dd83178811ba59c9ad1e430e1d68c57a): melody track 0, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O Canada
+M:4/4
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"B8 d6 d2 | "C"G12 A4 | "C"B4 c4 d4 e4 | "C"A12 z4 |
+"C"B8 _d6 _d2 | "C"d12 e4 | "C"^f4 ^f4 e4 e4 | "C"d12 A3 B |
+"C"c6 B2 A4 B3 c | "C"d6 c2 B4 c3 d | "C"e4 d4 c4 B4 | "C"A12 A3 B |
+"C"c6 B2 A4 B3 c | "C"d6 c2 B4 B4 | "C"A4 d4 d2 _d2 B2 _d2 | "C"d16 |
+"C"B8 d6 d2 | "C"G12 z4 | "C"c8 e6 e2 | "C"A12 z4 |
+"C"d8 _e6 _e2 | "C"e4 c4 B4 A4 | "C"G8 A8 | "C"B12 z4 |
+"C"d8 g6 g2 | "C"e4 c4 B4 A4 | "C"d8 ^F8 | "C"G16 |

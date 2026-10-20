@@ -1,0 +1,36 @@
+%abc-2.1
+% GRITOS D'ALMA, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gritos-d-alma.html (file
+% https://www.beakauffmann.com/mpb_g/som/gritos-d-alma.mid, sha256
+% 4228f7d5dbbbba3745bbcc7872527e6a5fb0e0fe2c5cc9843ea3aa82ee316f4a), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GRITOS D'ALMA
+M:2/4
+L:1/16
+Q:1/4=61.999996
+% Exact tempo 61.999995866666936 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"F f2 e ^F d2 c | "C7"G _B2 A G D _D F | "A"E E, _B, _D G, =D _D _B, | "Dm"A,3 A d2 A,2 |
+"Dm"D f2 e D e F d | "Am"A c2 c d c B A | "Abm"_A B _A D e2 D e | "A7"e2 _B2 A2 A,2 |
+"D"F f2 e ^F d2 c | "C7"G _B2 A G D _D F | "F#m7"E E, _B, _D G, _d _B E | "F#m"A3 c c2 c2 |
+"Em7"B, D B D _B, _D _B _D | "Eb"A, C A ^F G _e2 _e | "F#m7"D, d A, d _B, _d G, _d | "Dm"d2 A2 d4 |
+"D"F f2 e ^F d2 c | "C7"G _B2 A G D _D F | "A"E E, _B, _D G, =D _D _B, | "Dm"A,3 A d2 A,2 |
+"Dm"D f2 e D e F d | "Am"A c2 c d c B A | "Abm"_A B _A D e2 D e | "A7"e2 _B2 A2 A,2 |
+"D"F f2 e ^F d2 c | "C7"G _B2 A G D _D F | "A7"E E, _B, _D G, _d _B E | "F#m"A3 c c2 c2 |
+"Em7"B, D B D _B, _D _B _D | "Eb"A, C A ^F G _e2 _e | "F#m7"D, d A, d _B, _d G, _d | "Dm"d2 A2 d4 |
+"D"^F d A, B D A2 ^F | "E7"D2 B, D B,2 _d _A, | "F#m7"_D B E A E G2 _D | "F#m"C2 A, C ^F, B _E A |
+"Em"G A B, G E B, _D _E | "G"^F E _E =E D2 A,2 | "E7"z E2 E2 E2 E | "A7"A, A,2 B, _D2 A2 |
+"D"^F B A, B D B D ^F | "A7"G B _D B B A _D2 | "Bm7"^F D2 ^F A,2 D2 | "F#m7"E G2 G E,2 _D2 |
+"D7"D ^F A, ^F D B ^F A | "G"E d A, _d B =d B G | "A7"^F d A ^F B2 _d2 | "D"d ^F B z d4 |
+"D"^F d A, B D A2 ^F | "E7"D2 B, D B,2 _d _A, | "F#m7"_D B E A E G2 _D | "F#m"C2 A, C ^F, B _E A |
+"Em"G A B, G E B, _D _E | "G"^F E _E =E D2 A,2 | "E7"z E2 E2 E2 E | "A7"A, A,2 B, _D2 A2 |
+"D"^F B A, B D B D ^F | "A7"G B _D B B A _D2 | "Bm7"^F D2 ^F A,2 D2 | "F#m7"E G2 G E,2 _D2 |
+"D7"D ^F A, ^F D B ^F A | "G"E d A, _d B =d B G | "A7"^F d A ^F B2 _d2 | "D"d ^F B z d4 |

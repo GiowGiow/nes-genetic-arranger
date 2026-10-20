@@ -1,0 +1,38 @@
+%abc-2.1
+% FLOR AMOROSA, by Catulo da Paixão Cearense e Joaquim Callado, as performed by Catulo da Paixão
+% Cearense e Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Catulo da Paixão Cearense (died 1946, Wikidata Q16337108); Joaquim
+% Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/flor-amorosa.html (file
+% https://www.beakauffmann.com/mpb_f/som/flor-amorosa.mid, sha256
+% 31bc3c14bb2f6b5fcccb6a886d76705bb6e0b47059503bb3f53e53e8b6b24066), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FLOR AMOROSA
+M:4/4
+L:1/16
+Q:1/4=140.00014
+% Exact tempo 140.00014000014 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z16 | "E"d2 e2 _a z e z d2 e2 d' z e z | "Dbm"_d2 e2 e' z e z "F#m7"_d2 e2 e' z e z | "E7"d2 e z d' z e z "E"d2 e2 e' z e z |
+"A7"_d2 e2 e'2 e z "Dbm"_d2 e2 _d'2 e z | "D"A2 d2 a z d z "Dm"A2 d2 d' z d z | "F#m7"A2 _d2 _d' z _d z "F#"_B2 _b2 ^f2 e z | "B"_e4 a z b z "E"d2 =e2 d' z =e z |
+"D7"_d z e2 _d' z e z "Db"_d z _a' z ^f' z =f' z | "E"e'2 _a'2 ^f' z =f' z e'2 _a'2 ^f'2 =f'2 | "A"e'2 _d''2 e'2 _d z "F#m7"_d z3 _d z _d z | "E7"d2 d''2 e'2 d z "E"d3 z d z d z |
+"Em"_d2 e''2 e' z e' z "A7"e2 e'' z e' z e'' z | "D"e''2 d z d''2 d z "Dm"d2 d'' z d'' z d'' z | "F#m7"e'' z3 _d''2 _d z "F#"e z ^f'' z _d'' z _b' z | "Ebm7"_d''2 b'2 f'2 ^f' z "E7"a'2 _a'2 ^f'2 e'2 |
+"F#m7"a' z _e' z ^f' z =e'2 "A"a z7 | "F#m"_d2 ^f2 A2 _d z "F#m7"A2 _d2 _B4 | "Bm"B2 d2 ^f2 b2 "D"d'2 ^F2 B z d z | "Db"_A,2 F2 d2 _d z B2 f2 _d'2 f z |
+"F#m"A z a z _d' z ^f' z "Dbm"_d'' z3 _D z3 | "F#m"a6 ^F2 "F#m7"^f'6 ^F z | "Bm"d z d'' z b' z ^f'2 d'2 B4 B, z | "F#m"A6 z2 "Db"z4 _d' z3 |
+"D7"^f' z7 "F#m"^F, z _d'' z c'' z b' z | "F#m"_b' z a' z _a' z g' z "Bb"^f' z =f' z e' z _e' z | "Bm"d' z B z ^F z D z B, z b z _d'2 =d' z | "Db"d' z d' z3 f4 _a2 =a2 _a z |
+"F#m"_a2 ^f4 _d z3 _d'' z c'' z b' z | "F#m"_b' z a' z _a' z g' z "Ebm7"^f' z =f' z e' z _e' z | "Bm"d'8 ^F z d' z _d' z b z | "A"b2 a2 _a z =a z "Db7"z6 f z |
+"F#m"^f8 "Ab7"z2 _a2 ^f2 =f z | "E"e z d'2 _a z _a z "E7"d'2 _a2 e z e'2 | "F#m7"a2 e2 e'2 a2 "A"e2 _d'2 a2 e2 | "E7"_a2 e2 d'2 _a2 e z _a2 e2 d2 |
+"A"_d2 a2 _d2 A2 "A7"_d2 g2 _d2 A2 | "D"d z d2 d'2 ^f2 "Dm"d2 A2 a2 =F z | "A"_d2 a2 _d'2 a' z "F#"_b'4 e z ^F2 | "B7"_e2 a'2 b'2 a' z "E7"^f' z =e'2 _e' d d' z |
+"F#m"_d' z7 "Fm"z8 | "E"z2 e'4 _e'2 "E7"d'7 z | "A"z2 _d'2 E2 A2 "F#m7"_d2 e2 a2 _d'2 | "E7"d'9 z E2 _A2 e2 |
+"Dbm7"a8 "A7"A2 a2 _a2 g2 | "D"^f8 "Dm"=f6 z2 | "A"z2 _d2 e2 _d2 "F#"^f4 _d2 e z | "B"_e6 B, z "E"d8 |
+"B7"_d z3 A z3 "A"A z7 | "D"^f2 =f2 ^f2 a2 "F#m7"g2 ^f2 e2 d z | "F#m7"_d8 "A"G z7 | "A"b2 a z _d z3 "A7"b2 a z _d z3 |
+"Bm7"b2 a2 ^f D d z "B7"A4 z4 | "D"A2 ^f' ^f' =f'2 ^f'2 "Em7"g' z ^f' z e'2 d' z | "B7"_d' z b' z a'2 _D2 "F#m"A6 _D z | "Db"_a' z f' z _d' z3 _a' z f' z _d' z _D z |
+"A7"^f'2 _d'2 a z7 a z3 | "D"d'2 z4 ^f' z "Em7"e' z d' z _d' z b z | "Bm7"a z _a z g2 e2 _d2 =A2 G2 E2 | "A7"A,2 A2 _d2 g2 "G"G2 A2 _d G3 |
+"Bm7"A2 d2 ^f2 A2- "D"A2 A2 d z3 | "D"z2 d'2 _d'2 =d'2 "D7"c'8 | "Em7"c'2 b4 d'2 "Gm"_b8 | "Bb"_b16 |

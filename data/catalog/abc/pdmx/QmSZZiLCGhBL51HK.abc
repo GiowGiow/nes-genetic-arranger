@@ -1,0 +1,35 @@
+%abc-2.1
+% Ferma Signore attesta, by Francesca Caccini. Score published on MuseScore (artist: Francesca
+% Caccini), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francesca Caccini (died 1641,
+% Wikidata Q232035).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/57/QmSZZiLCGhBL51HKLVqyVKtpsstUhtNiDHGpB1UopC1gHH.mid (sha256
+% f3ff7a80c0d837436c2af3664a7232002cf75125a5f7f0c3369e43f54ea94f50): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ferma Signore attesta
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z4 c4- "F"c4 A3 A | "F"B3 c d4 "D"A4 z2 B2 | "E"c3 d e8 B4 | "E"z4 G2 G2 "Dbm7"B4 B2 B2 |
+"G"d8 "C"c8 | "C"z4 G2 G2 "A"A4 A2 A2 | "A"c6 c2 "B7"c2 d c B c A B | "B"G A F G E F G F "E"A B c A B z c z |
+"Dm"d6 B2 "E"B8 | "A"A16 | "A"z4 c8 B3 A | "F#"A8 z4 d4 |
+"G"d4 c3 B "E"c6 G2 | "Db"A8 "D"A2 G3 A F2 | "E"E4 G2 _A2 B8 | "E"z4 B2 B2 "B"d8 |
+"D"d4 F2 ^F2 "E"G3 A ^F3 G | "F#"A3 B c A A2 "Em"B ^F ^F G E ^F G2 | "D"A16 | "G"G8 z4 B4 |
+"G"B3 B B2 A2 "E"A3 B c4 | "F"c4 A4 z4 c4 | "E"c3 c c2 B2 "D"B3 c d4 | "E"d2 B2 B4- "B"B A G2 ^F ^F G E |
+"B"^F16 | "E"E16 | "E"z4 E4 G6 _A2 | "E"B8 z4 B4 |
+"A"c6 _d2 _d3 =d e4 | "Db"e4 z2 A2 "A"A6 B c | "D"A8 z4 A4 | "D"B3 c d4- "E"d2 B2 B4 |
+"C"B6 A2 "B"B4 A G ^F2 | "E"z2 G E ^F G A B "A"c B c d c B A G | "F"A E F G A B c d "E"c d e d d z2 c | "G"d16 |
+"C"c16 | "C"z4 c4- "D"c4 ^F4 | "B"B3 c d4- "E"d4 G2 _A2 | "E"B8- "Db"B4 A G G2 |
+"D"F3 G E4 E2 F G F3 E | "A"E8 z4 A4 | "Ab"B8 "A"A3 B z4 | "E"z4 _A4 "A"z4 =A4 |
+"Ab"B8 "A"c3 d e4 | "F#"e4 A4 z4 A4 | "G"B6 B2 B3 c d3 c | "E"c8- "F"c B A2 G G2 F |
+"C"G8 z4 G4 | "G"B6 B2 "B"B3 c d4 | "D"d4 A4 z4 A4 | "A"c6 c2 "C"c3 d e4 |
+"D"e4 d4 "E"c2 B c B B A G | "F#"A6 A2 B3 c d4 | "E"d6 c2 c B B2 c A A2 | "E"B16 |
+"A"A16 | "A"z4 A4 "Ab"B8 | "A"c3 d e4- "E"e4 _A4 | "A"z4 c4 "C"e8 |
+"D"d3 e f4- "A"f4 _d4 | "A"z4 A4 c6 _d2 | "F#"d6 A2 "G"B3 A z ^F E ^F | "G"G A A2 A3 G "D"A4 z2 A2 |

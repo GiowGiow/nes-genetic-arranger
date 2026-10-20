@@ -1,0 +1,36 @@
+%abc-2.1
+% BOMBOM, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/bombom.html (file
+% https://www.beakauffmann.com/mpb_b/som/bombom.mid, sha256
+% 075a1128107bd3b1736023b23555ae6aa47c08192d2f8281a0713122391ac2ea), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BOMBOM
+M:2/4
+L:1/16
+Q:1/4=76.999978
+% Exact tempo 76.99997818333952 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am7"z8 | "Dm7"A,, d2 D B,, z F z | "C"C, E z E E z E z | "G7"z F z F G,, z F z |
+"Am7"C, E2 z5 | "Bm7"A,, d z D B,, z F z | "Am7"C, E2 E _D,2 _D2 | "D7"D, D z D D,, z ^F z |
+"G"G z2 e2 f z e | "Bm"A,, d z d a2 _a z | "C"C, E z E E z E z | "G7"D, F z F G,, z F z |
+"Am7"C, E z2 g z3 | "Bm7"A,, d z D B,, z F z | "C7"C, E z E F,, z F z | "Em7"G,, E z a G,,2 F2 |
+"Am7"C, E2 z5 | "Dm7"A,, d2 D B,, z F z | "C"C, E z E E z E z | "G7"z F z F G,, z F z |
+"Am7"C, E2 z5 | "Bm7"A,, d z D B,, z F z | "Am7"C, E2 E _D,2 _D2 | "D7"D, D z D D,, z ^F z |
+"G"G z2 e2 f z e | "Bm"A,, d z d a2 _a z | "C"C, E z E E z E z | "G7"D, F z F G,, z F z |
+"Am7"C, E z2 g z3 | "Bm7"A,, d z D B,, z F z | "C7"C, E z E F,, z F z | "Em7"G,, E z a G,,2 F2 |
+"C"C, E2 z C,,4 | "E7"E, E2 z _A, z _A z | "Dbm7"A, A2 A A z A2 | "E7"B, _A2 _A D z _A z |
+"E7"C A2 A A4 | "G7"F,, D2 D D z D z | "G7"G,, E2 E E z E2 | "D7"D,, D,2 D, D,, z D,2 |
+"G7"G,,, G,, z G,, G,,,4 | "E7"E, z3 _A, z _A z | "Dbm7"A, A2 A A2 A z | "E7"B, _A2 _A D z _A z |
+"E7"C A2 A A4 | "G7"F,, D2 D D2 D2 | "G7"G,, E z E E z E z | "G7"D,, D, z A G,,,2 G,, z |
+"Am"A,, E,,2 C,, A,,, z3 | "E7"E, E2 z _A, z _A z | "Dbm7"A, A2 A A z A2 | "E7"B, _A2 _A D z _A z |
+"E7"C A2 A A4 | "G7"F,, D2 D D z D z | "G7"G,, E2 E E z E2 | "D7"D,, D,2 D, D,, z D,2 |
+"G7"G,,, G,, z G,, G,,,4 | "E7"E, z3 _A, z _A z | "Dbm7"A, A2 A A2 A z | "E7"B, _A2 _A D z _A z |
+"E7"C A2 A A4 | "G7"F,, D2 D D2 D2 | "G7"G,, E z E E z E z | "G7"D,, D, z A G,,,2 G,, z |

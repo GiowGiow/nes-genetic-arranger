@@ -1,0 +1,36 @@
+%abc-2.1
+% MAROCAS, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/marocas.html (file
+% https://www.beakauffmann.com/mpb_m/som/marocas.mid, sha256
+% b87af3d6390ad9ad6db164ecac2ea9a5dc62d3fe560896738d505b18de24894e), from Beatriz Kauffmann's Web
+% Site. Melody track 5, bars 2-66 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MAROCAS
+M:4/4
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"z8 "Am7"z8 | "Bm7"z8 "Am7"z8 | "G"D8 "C"E6 B,2 | "G"E z9 B,2 D2 G2 |
+"G"B4 B4 "E7"B4 B4 | "Am"d6 _d2 c8 | "Am7"z2 c2 B2 _B2 A2 G2 ^F2 =F2 | "D7"E6 _E2 D8 |
+"D7"z2 ^F4 D2 ^F2 D2 ^F2 D2 | "G"E6 _E2 "D7"D8 | "Em7"D8 "C"E6 B,2 | "G"D10 B,2 D2 G2 |
+"Em7"B4 B4 "Dbm7"B4 B4 | "Am"d6 _d2 c8 | "Am"z2 e2 c2 A2 e8 | "Em7"z2 d2 B2 G2 d8 |
+"D7"z2 c2 A2 ^F2 "D"d2 c2 A2 ^F2 | "G"G4 B4 G4 z4 | "G"D8 "C"E6 B,2 | "G"E z9 B,2 D2 G2 |
+"G"B4 B4 "E7"B4 B4 | "Am"d6 _d2 c8 | "Am7"z2 c2 B2 _B2 A2 G2 ^F2 =F2 | "F#m"E6 _E2 "D"D8 |
+"D7"z2 ^F4 D2 ^F2 D2 ^F2 D2 | "G"E6 _E2 "D7"D8 | "G"D8 "C"E6 B,2 | "G"D10 B,2 D2 G2 |
+"Em7"B4 B4 "Dbm7"B4 B4 | "Am"d6 _d2 c8 | "Am"z2 e2 c2 A2 e8 | "Em7"z2 d2 B2 G2 "Bm"d8 |
+"D7"z2 c2 A2 ^F2 "D"d2 c2 A2 ^F2 | "G"G4 B4 G4 z4 | "D"A8 d8 | "Em"_d12 B2 G2 |
+"A7"E8 B8 | "D"A12 A2 ^F2 | "D"D8 "Bm7"^F8 | "Em7"E10 G2 B2 d2 |
+"F#m7"_d8- "A"_d2 B2 G2 B2 | "D"A8 d2 d2 A2 ^F2 | "D"A8 "E7"d8 | "A"_d8- "A7"_d4 B2 G2 |
+"A7"E8 "F#m7"B8 | "D"A12 A4 | "E7"d2 _d2 =d2 _d2 =d2 _d2 =d2 e2 | "D"^f4 e4 d4 ^F4 |
+"Em7"B4 A4 "A7"G4 E4 | "D"D8 d4 z4 | "D"A8 d8 | "Em7"_d12 B2 G2 |
+"A7"E8 B8 | "D"A12 A2 ^F2 | "D"D8 ^F8 | "Em7"E10 G2 B2 d2 |
+"F#m7"_d8- "A7"_d2 B2 G2 B2 | "D"A8 d2 d2 A2 ^F2 | "D"A8 "E7"d8 | "A7"_d12 B2 G2 |
+"A7"E8 B8 | "D"A8- "F#m"A4 A4 | "E7"d2 _d2 =d2 _d2 =d2 _d2 =d2 e2 | "D"^f4 e4 d4 ^F4 |

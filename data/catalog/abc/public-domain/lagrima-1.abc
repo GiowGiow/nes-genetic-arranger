@@ -1,0 +1,36 @@
+%abc-2.1
+% LÁGRIMA, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/lagrima-1.html (file
+% https://www.beakauffmann.com/mpb_l/som/lagrima-1.mid, sha256
+% 6710dab5702453fcb1662c4534a1bb114a147cc023ab6d749ecd67b3bd75f033), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LÁGRIMA
+M:2/4
+L:1/16
+Q:1/4=61.999996
+% Exact tempo 61.999995866666936 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"A A C A A G F E | "Bm7"F F A, F F E D C | "G7"D D F, D D C B, A, | "E7"E2 B E A C B B, |
+"Am"c ^F, A, =F E A, D _A, | "Am"C z E2 A E, ^F, z | "Am"A,2 C z F z E B, | "G7"D A, _A, =A, E3 =A, |
+"E7"_A, d B _A F E B, E | "Am"C3 _A, E B,2 C | "Am"C E ^F _A =A B c _d | "E7"d3 _A c2 B2 |
+"E7"_A, B, D _A e2 d B, | "Am"d c A E C A, E, C, | "Am"E,2 C z F z E B, | "G7"D A, _A, =A, E3 =A, |
+"E7"_A, d B _A F E D _A | "A7"G G, _B, _D E G E _D | "F"D E, F, G, A, B, D _D | "Am"E A, E, C, E, A, E, C, |
+"B7"^F2 A, z _A2 D2 | "Am"A E ^F z A2 E,2 | "Am"A,2 C z F z E B, | "G7"D A, _A, =A, E3 =A, |
+"E7"_A, d B _A F E B, E | "Am"C3 _A, E B,2 C | "Am"C E ^F _A =A B c _d | "E7"d3 _A c2 B2 |
+"E7"_A, B, D _A e2 d B, | "Am"d c A E C A, E, C, | "Am"E,2 C z F z E B, | "G7"D A, _A, =A, E3 =A, |
+"E7"_A, d B _A F E D _A | "A7"G G, _B, _D E G E _D | "F"D E, F, G, A, B, D _D | "Am"E A, E, C, E, A, E, C, |
+"B7"^F2 A, z _A2 D2 | "Am"A E ^F z A2 E,2 | "F#m7"E, _d _d _d _d _d _d _d | "A"A, _d ^F E _d ^F2 _D |
+"F#m7"A, _d _d _d _d _d _d _d | "E"E d d d d _A,2 D | "Abm7"B, d d d d d d d | "E"_A d d d d D2 =A, |
+"E7"_A, _A d _A ^F _A B _A | "A"^F3 E, E _D2 =D | "F#m7"E _d _d _d _d _d _d _d | "A"A, _d ^F E _d E2 A, |
+"F#m7"E, _d E _d F _d F _d | "D"_d3 A, B A,2 =D | "D"B _B =B _d =d _d =d _e | "A"e _d A ^F E _D A, E, |
+"E7"_A, E _E =E F ^F G _A | "F#m7"A B, _A D =A =A,, ^F, =A, | "F#m7"^F, _d _d _d _d _d _d _d | "A"A, _d ^F E _d ^F2 _D |
+"F#m7"A, _d _d _d _d _d _d _d | "E"E d d d d _A,2 D | "Abm7"B, d d d d d d d | "E"_A d d d d D2 =A, |
+"E7"_A, _A d _A ^F _A B _A | "A"^F3 E, E _D2 =D | "F#m7"E _d _d _d _d _d _d _d | "A"A, _d ^F E _d E2 A, |

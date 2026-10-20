@@ -1,0 +1,36 @@
+%abc-2.1
+% FAMOSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/famoso.html (file
+% https://www.beakauffmann.com/mpb_f/som/famoso.mid, sha256
+% 1df978e90b1e34001f1d5cbf74e19a771e6f1498c5a54e6e259000bd0a1c882c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FAMOSO
+M:4/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A7"z2 ^F,4 A,2 D2 ^F2 A2 d2 | "A7"_d6 B2 A6 g2 | "D"^f6 e2 d2 A4 _B2 | "E7"_d6 B2 "A7"A6 G2 |
+"F#"^F2 ^F,4 A,2 "F"D2 ^F2 A2 d2 | "A7"_d6 B2 A6 g2 | "D"^f6 e2 d2 A4 _B2 | "E7"_d6 B2 "A7"A6 G2 |
+"D"^F4 A,2 ^F2 "C"A4 D2 A2 | "Bm"_A4 D2 _A2 "Bb"G4 D2 G2 | "D"^F4 D2 ^F2 "E7"=F4 _B,2 =F2 | "Cm7"z2 _E4 D2 "A7"_D4 A4 |
+"D"D4 D,4- "Bm"D,4 z4 | "Dbm7"B,,4 D4 "F#"_D,4 E4 | "F#"D4 d2 D2 "B"_E4 A4 | "F#m7"E,,4 B,4 "Eb7"^F,,4 _E4 |
+"F#7"G,,2 E4 E2 "Em"E4 E4 | "F#m7"E,,4 B,4 "B"^F,,4 _E4 | "G"G,,4 E2 G,,2 "D"_A,,4 E2 _A,,2 | "Dbm7"A,,4 _D2 A,,2 "A7"A,,4 _D2 A,,2 |
+"F#m"D,4 D4 "F#"_D,2 _B,2 _D2 =D2 | "B"D _D B,2 =D,2 E,2 "Db"^F,4 ^F,4 | "Eb"^F,6 ^F,2 "B7"z2 A,2 G,2 _E,2 | "Em"^F,2 E,2 G,2 C2 "B7"B,2 _E2 ^F2 B2 |
+"Em"A6 G2 "G"z2 _E2 =E2 ^F2 | "E"A2 G2 E2 B,2 "F"G,2 _B,2 =B,2 _D2 | "Bm"E2 D2 B,2 ^F,2 D,2 E2 =F2 ^F2 | "F#7"G2 ^F2 E2 _D2 "F#"_B,2 ^F,2 =D2 _D2 |
+"B"B,4 ^F,4 "Bm"B,,8 | "Dbm7"B,,4 D4 "F#"_D,4 E4 | "F#"D4 d2 D2 "B"_E4 A4 | "F#m7"E,,4 B,4 "Eb7"^F,,4 _E4 |
+"F#7"G,,2 E4 E2 "Em"E4 E4 | "F#m7"E,,4 B,4 "B"^F,,4 _E4 | "G"G,,4 E2 G,,2 "D"_A,,4 E2 _A,,2 | "Dbm7"A,,4 _D2 A,,2 "A7"A,,4 _D2 A,,2 |
+"F#m"D,4 D4 "F#"_D,2 _B,2 _D2 =D2 | "B"D _D B,2 =D,2 E,2 "Db"^F,4 ^F,4 | "Eb"^F,6 ^F,2 "B7"z2 A,2 G,2 _E,2 | "Em"^F,2 E,2 G,2 C2 "B7"B,2 _E2 ^F2 B2 |
+"Em"A6 G2 "G"z2 _E2 =E2 ^F2 | "E"A2 G2 E2 B,2 "F"G,2 _B,2 =B,2 _D2 | "Bm"E2 D2 B,2 ^F,2 D,2 E2 =F2 ^F2 | "F#7"G2 ^F2 E2 _D2 "F#"_B,2 ^F,2 =D2 _D2 |
+"B7"A,2 ^F,4 A,2 D2 ^F2 A2 d2 | "Dbm7"_d6 B2 "A"A6 g2 | "D"^f6 e2 d2 A4 _B2 | "E7"_d6 B2 "A7"A6 G2 |
+"D"^F2 ^F,4 A,2 "F"D2 ^F2 A2 d2 | "A7"_d6 B2 A6 g2 | "D"^f6 e2 "Bm"d2 ^F4 _A2 | "F#m"A2 _D4 =D2 "Db"_E2 =E4 F2 |
+"A"^F2 ^F,4 A,2 D2 ^F2 A2 d2 | "A7"_d6 B2 A6 g2 | "D"^f6 e2 d2 A4 _B2 | "E7"_d6 B2 "A7"A6 G2 |
+"D"^F4 A,2 ^F2 "D7"A4 D2 A2 | "Bm"_A4 D2 _A2 "Bb"G4 D2 G2 | "D"^F6 ^F2 "E7"=F6 =F2 | "Cm7"z2 _E4 D2 "A7"_D4 A4 |
+"D"D8 D8 | "G"B4 G4 "F#"z4 A4 | "E7"z2 G4 A2 "D"_A B7 | "C"e4 c4 "Bm"z4 d4 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite Española No.1 Op.47, by Isaac Albéniz (1860 - 1909). Score published on MuseScore (artist:
+% Isaac Albéniz), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Isaac Albéniz (died 1909,
+% Wikidata Q185812).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/30/QmaLDCYfKBhtTExETwMKDn77nXwFHMhDPAF5ERLVFzMyAs.mid (sha256
+% de4544fa173836e047415a1d0728e9d039b2ea69a42c8b83824b5f6eaec2252c): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite Española No.1 Op.47
+M:3/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E, B, B, B, C B, A, B, B, B, G, B, | "C"E, B, B, B, C B, A, B, B, B, G, B, | "C"E, B, B, B, C B, A, B, B, B, G, B, | "C"A, B, ^F, B, G, B, A, B, ^F, B, G, B, |
+"C"E, B, B, B, C B, A, B, B, B, G, B, | "C"E, B, B, B, C B, A, B, B, B, G, B, | "C"E, B, B, B, C B, A, B, B, B, G, B, | "C"A, B, ^F, B, G, B, E, B, D, B, C, B, |
+"C"B,, B, B, B, C B, A, B, B, B, ^F, B, | "C"B,, B, B, B, C B, A, B, B, B, ^F, B, | "C"B,, B, ^F, B, A, B, B, B, C B, D B, | "C"B, B, C B, A, B, B, B, G, B, ^F, B, |
+"C"B,, B, B, B, C B, A, B, B, B, ^F, B, | "C"B,, B, B, B, C B, A, B, B, B, ^F, B, | "C"B,, B, A, B, B, B, C B, D B, B, B, | "C"C B, A, B, B, B, G, B, A, B, ^F, B, |
+"C"E, B B, B C B A, B B, B G, B | "C"E, B B, B C B A, B B, B G, B | "C"E, B B, B C B A, B B, B G, B | "C"A, B ^F, B G, B A, B ^F, B G, B |
+"C"E, B B, B C B A, B B, B G, B | "C"E, B B, B C B A, B B, B G, B | "C"E, B B, B C B A, B B, B G, B | "C"A, B ^F, B G, B E, B D, B C, B |
+"C"B2 B, B, C B, A, B, B, B, ^F, B, | "C"B2 B, B, C B, A, B, B, B, ^F, B, | "C"B2 ^F, B, A, B, B, B, C B, D B, | "C"B, B, C B, A, B, B, B, G, B, ^F, B, |
+"C"B2 B, B, C B, A, B, B, B, ^F, B, | "C"B2 B, B, C B, A, B, B, B, ^F, B, | "C"B2 ^F, B, A, B, B, B, C B, D B, | "C"B, B, C B, A, B, B, B, G, B, B, B, |
+"C"e2 B, B, C B, A, B, B, B, G, B, | "C"e2 B, B, C B, A, B, B, B, G, B, | "C"e2 B, B, C B, A, B, B, B, G, B, | "C"A, B, ^F, B, G, B, A, B, ^F, B, G, B, |
+"C"e2 C c D c B, c C c G, c | "C"e2 C c D c B, c C c G, c | "C"e2 C c D c B, c C c G, c | "C"A, c ^F, c G, c A, c E, c ^F, c |
+"C"B2 B, B C B _B, =B =B, =B ^F, =B | "C"c2 C c D c B, c C c G, c | "C"B2 B, B C B _B, =B =B, =B ^F, =B | "C"c2 C c D c B, c C c G, c |
+"C"B2 B, B C B A, B B, B G, B | "C"A, B ^F, B G, B A, B ^F, B G, B | "C"E, B ^F, B G, B A, B ^F, B G, B | "C"E, B ^F, B G, B E, B D, B C, B |
+"C"B,, B, B, B, C B, A, B, B, B, G, B, | "C"A, B, ^F, B, G, B, A, B, ^F, B, G, B, | "C"E, B, ^F, B, G, B, A, B, ^F, B, G, B, | "C"E, B, ^F, B, G, B, E, B, D, B, C, B, |
+"C"B,, ^F ^F, ^F B, ^F C ^F _B, ^F =B, ^F | "C"B,, G G, G C G D G B, G C G | "C"B,, ^F ^F, ^F B, ^F C ^F _B, ^F C ^F | "C"B,, G G, G C G D G B, G C G |
+"C"B,, ^F ^F, ^F B, ^F C ^F _B, ^F C ^F | "C"B, ^F C ^F _B, ^F C ^F =B, ^F ^F, ^F | "C"B,,2 _E,2 ^F,2 B,2 _E2 ^F2 | "C"B2 _E2 ^F2 B2 _e2 ^f2 |
+"C"b12 | "C"B,4 z8 | "C"B8 A2 B2 | "C"d8 c B A2 |

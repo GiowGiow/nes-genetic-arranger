@@ -1,0 +1,34 @@
+%abc-2.1
+% Menuet and Trio from String Quintet in C major (Lauterbach), by Boccherini. Score published on
+% MuseScore (artist: Luigi Boccherini), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Boccherini (died 1805, Wikidata
+% Q189766).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/14/QmSCZhjvhuKgwUxKEFujW11yZDFyz9KegGjyLJahh6Cjxk.mid (sha256
+% a0587fc258af290d4c9383eac175c62861c7a8d38816f5d0dd5740e2cd8fea99): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Menuet and Trio from String Quintet in C major (Lauterbach)
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"B12 | "D7"c4 d c2 B c4 | "G"B12 | "Am"c4 d c2 B c4 |
+"Em7"d12 | "C"d2 c2 B2 A2 _A2 =A2 | "D7"c3 B G4 ^F4 | "G"^F4 G8 |
+"G"B12 | "D7"c4 d c2 B c4 | "G"B12 | "Am"c4 d c2 B c4 |
+"Em7"d12 | "C"d2 c2 B2 A2 _A2 =A2 | "D7"c3 B G4 ^F4 | "G"^F4 G8 |
+"G"B c B c d2 G2 A2 ^F z | "Em7"G2 G4 G2 A2 A z | "G"B c B c d2 G2 A2 ^F z | "Bm"G B2 A A4 z4 |
+"Bm7"b c' b c' d'2 g2 a2 ^f z | "Bm"g2 g4 g2 a2 a z | "A7"b g2 e d4 _d4 | "D"e4 d8 |
+"G"B12 | "D7"c4 d c2 B c4 | "G"B12 | "Am"c4 d c2 B c4 |
+"Em7"d12 | "C"e ^f2 g g ^f2 e e d2 c | "Em7"e d e e B4 B A B A | "G"B z11 |
+"G"B c B c d2 G2 A2 ^F z | "Em7"G2 G4 G2 A2 A z | "G"B c B c d2 G2 A2 ^F z | "Bm"G B2 A A4 z4 |
+"Bm7"b c' b c' d'2 g2 a2 ^f z | "Bm"g2 g4 g2 a2 a z | "A7"b g2 e d4 _d4 | "D"e4 d8 |
+"G"B12 | "D7"c4 d c2 B c4 | "G"B12 | "Am"c4 d c2 B c4 |
+"Em7"d12 | "C"e ^f2 g g ^f2 e e d2 c | "Em7"e d e e B4 B A B A | "G"B z11 |
+"Gm7"d8 d c2 B | "Cm"A4 A4 A4 | "D7"c8 c B2 A | "Gm"G4 G4 G4 |
+"Gm"d8 d c2 B | "D7"A4 A4 A4 | "A7"a8 e2 g2 | "D"^f2 d2 d4 z4 |
+"G7"f8 f _e2 d | "Cm"c4 c4 c4 | "G7"f8 f _e2 d | "Cm"c4 c4 c4 |
+"F7"_e8 _e d2 c | "Bb"_B4 _B4 _B4 | "F7"_e8 _e d2 c | "Bb"_B4 _B4 _B3 d |

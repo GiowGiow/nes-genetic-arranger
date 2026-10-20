@@ -1,0 +1,24 @@
+%abc-2.1
+% Log Cabin, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsh-l.abc,
+% tune X: 86 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Log Cabin
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z8 G4 B4 | "G"d8 "D7"e4 d4 | "G"d4 B8 G4 | "C"A4 G4 G4 E4 |
+"G"D8- "D7"D8 | "G"G4 G4 G4 B4 | "Em"d4 d4 d4 B4 | "Am"A4 d2 d2 "Am7"d4 d4 |
+"D7"e4 d4 B4 c4 | "G"d8 "D7"e4 d4 | "G"d4 B8 G4 | "C"A4 G4 G4 E4 |
+"G"D8 "D7"G4 A4 | "G"B4 d4 "Em"d4 B4 | "Am"A4 c4 "D7"B4 A4 | "G"G6 A2 "D7"B4 A4 |
+"G7"G4 G4 A4 B4 | "C7"c8 c8 | "C7"e4 e8 e4 | "G"d4 d4 d4 B4 |
+"D7"d8 B4 A4 | "G"G4 G4 G4 B4 | "Em"d4 d4 d4 B4 | "Am"A4 d2 d2 "Am7"d4 d4 |
+"D7"e4 d4 B4 c4 | "G"d8 "D7"e4 d4 | "G"d4 B8 G4 | "C"A4 G4 G4 E4 |
+"G"D8 "D7"G4 A4 | "G"B4 d4 "Em"d4 B4 | "Am"A4 c4 "D7"B4 A4 | "G"G6 A2 "D7"B4 A4 |
+"G"G8 z8 |

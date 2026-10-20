@@ -1,0 +1,35 @@
+%abc-2.1
+% mars the bringer of war, by Gustav Holst. Score published on MuseScore (artist: Emerson Lake &
+% Palmer), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Holst (died 1934,
+% Wikidata Q200867).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/3/QmV4rSUAfKDr9sSQqUF6VZniWLk4ASD5Ee55jY4jwzGueW.mid (sha256
+% 94cb8c65d161b13ec5b2ea0d13e80aec9b94155462592ed59ca4e5fad1ff2a46): melody track 3, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:mars the bringer of war
+M:5/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z20 | "G"z20 | "G"G,, G,, z G,, G,,3 z G,,3 z G,, z G,, z G,,3 z | "G"G,, G,, z G,, G,,3 z G,,3 z "Em7"G,, z G,, z G,,3 z |
+"Eb7"z20 | "Eb7"z12 "G"z8 | "G"G, G, z G, G,3 z G,3 z G, z G, z G,3 z | "G"G, G, z G, G,3 z G,3 z G, z G, z G,3 z |
+"G"z12 "Em7"z8 | "Eb7"z12 "Fm7"z8 | "G"G, G, z G, G,3 z G,3 z G, z G, z G,3 z | "Eb7"G, G, z G, G,3 z G,3 z "Fm7"G, z G, z G,3 z |
+"G"z12 D8 | "G7"_D20 | "G7"_D20 | "G7"_D4 z8 "G"z8 |
+"Db"G,, G,, z G,, G,,3 z G,,3 z G,, z G,, z G,,3 z | "Db"G,, G,, z G,, G,,3 z G,,3 z "Bb"G,, z G,, z G,,3 z | "A7"z20 | "A7"z12 "G"z8 |
+"Db"F,,12 "Gm7"_B,,8 | "A7"_D,12 E,8 | "Db"F,12 "Gm7"_B,8 | "A7"A,12 A,8 |
+"Cm"_A,12- "C"_A,4 z4 | "Gm7"z20 | "Fm7"z20 | "Gm7"z12 "Db"F8 |
+"G"_E2 z18 | "G"z12 "Db"F8 | "G"_E2 z18 | "G"z12 "Db"F8 |
+"G"_E2 z10 "Db"F8 | "G"_E2 z18 | "G"z20 | "G"z20 |
+"G"z12 "Cm"B,8 | "Cm"B,20 | "Cm"B,20 | "Fm"z20 |
+"Fm"z20 | "Fm"z20 | "Dm7"_A,6 G,2 ^F,6 G,2 _A,4 | "Dm7"_A,2 _B,2 C6 D2 "C"_E6 D2 |
+"Cm"z12 "C"z8 | "Dm7"z12 "Cm"z8 | "C"G6 ^F2 G6 E2 ^F2 z2 | "C"G6 ^F2 G6 E2 _E4 |
+"C"_E2 =E2 B,6 C2 "D7"^F,6 G,2 | "Fm7"z20 | "Dm7"z12 "Cm"z8 | "F7"_A,6 G,2 ^F,6 G,2 _A,4 |
+"Dm7"_A,2 _B,2 C6 D2 "C"_E6 D2 | "C"z20 | "D7"z20 | "C7"_d6 c2 _d4- "Dm7"_d2 B2 c4 |
+"Cm"c2 A2 _B6 G2 "F"_A6 G2 | "G"z12 "Gm7"z8 | "G"z12 "Gm"z8 | "A7"_A,6 =A,2 _B,6 =B,2 D4 |
+"A"D2 E2 F6 E2 "Bb"_D6 B,2 | "C"z12 "Bbm"z8 | "C"z12 "Bbm"z8 | "C"z12 "C7"z8 |

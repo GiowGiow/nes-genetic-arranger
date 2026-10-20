@@ -1,0 +1,36 @@
+%abc-2.1
+% CACIQUE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cacique-2.html (file
+% https://www.beakauffmann.com/mpb_c/som/cacique-2.mid, sha256
+% 144ceb504ec2d75c86745af5653800973a4a6426eeb07b5560f8a057cc61173c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CACIQUE
+M:4/4
+L:1/16
+Q:1/4=82.000036
+% Exact tempo 82.00003553334874 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, _A, ^F, | "C"E, _A ^F, _A _A ^F, _A _E, _D, =E _E, =E =E =D, =E B,, |
+"C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, B, C | "C"_D _d =d _e =e f ^f _a =a4 =a'4 |
+"C"z _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, _A, ^F, | "C"E, _A ^F, _A _A ^F, _A _E, _D, =E _E, =E =E =D, =E B,, |
+"C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, B, C | "C"_D _d =d _e =e f ^f _a =a4 =a'4 |
+"C"_d'2 A, _D _D2 B,2 A,, _E A, F ^F =F A, ^F | "C"_A G B, _A _d2 _A2 _d2 =A, =A, e2 =D2 | "C"e'2 _D E E2 =D2 _D, ^F _D _A =A _A _D =A | "C"B _B _E =B ^f2 _a2 ^f2 =E =E =e2 =E2 |
+"C"e2 _D e G, _e _D =e b2 =D a ^f =d B A | "C"_B2 _B, _B _D, A _B, _B g2 A, ^f _e c A ^F | "C"G, _B E =B =b2 _A,2 =A, _A D =A =a2 D2 | "C"c _d a A G A a A ^F A a ^f =d A ^F =D |
+"C"e2 _D e G, _e _D =e b2 =D a ^f =d B A | "C"_B2 _B, _B _D, A _B, _B g2 A, ^f _e c A ^F | "C"G, _B E =B =b2 _A,2 =A, _A D =A =a2 D2 | "C"E, _A _D =A =A,, ^f _D e =d2 =D2 =d'4 |
+"C"_d'2 A, _D _D2 B,2 A,, _E A, F ^F =F A, ^F | "C"_A G B, _A _d2 _A2 _d2 =A, =A, e2 =D2 | "C"e'2 _D E E2 =D2 _D, ^F _D _A =A _A _D =A | "C"B _B _E =B ^f2 _a2 ^f2 =E =E =e2 =E2 |
+"C"e2 _D e G, _e _D =e b2 =D a ^f =d B A | "C"_B2 _B, _B _D, A _B, _B g2 A, ^f _e c A ^F | "C"G, _B E =B =b2 _A,2 =A, _A D =A =a2 D2 | "C"c _d a A G A a A ^F A a ^f =d A ^F =D |
+"C"e2 _D e G, _e _D =e b2 =D a ^f =d B A | "C"_B2 _B, _B _D, A _B, _B g2 A, ^f _e c A ^F | "C"G, _B E =B =b2 _A,2 =A, _A D =A =a2 D2 | "C"E, _A _D =A =A,, ^f _D e =d2 =D2 =d'4 |
+"C"z _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, _A, ^F, | "C"E, _A ^F, _A _A ^F, _A _E, _D, =E _E, =E =E =D, =E B,, |
+"C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, B, C | "C"_D _d =d _e =e f ^f _a =a4 =a'4 |
+"C"E, A g _e ^f =e _d A ^F A =d ^f a2 a2 | "C"a2 _D A A2 _D2 a2 =D A A2 =D2 | "C"E, A g _e ^f =e _d A ^F A =d ^f a _a =a b | "C"_d' =d' _d' =d' _d' =d' _d' =d' _d' a ^f _d A ^F _D A, |
+"C"E, A g _e ^f =e _d A ^F A =d ^f a2 a2 | "C"a2 _D A A2 _D2 a2 C A A2 C2 | "C"G, g ^f e _e =e _B =e ^F A d ^f =b4 | "C"_A B e d _d e b =a =d2 =D2 =d'4 |
+"C"z _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, _A, ^F, | "C"E, _A ^F, _A _A ^F, _A _E, _D, =E _E, =E =E =D, =E B,, |
+"C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D B, B,2 B, A, A,2 A, B, E,, ^F,, _A,, | "C"A,, _D2 _D F _D, _E, F, ^F,, ^F2 ^F A A, B, C | "C"_D _d =d _e =e f ^f _a =a4 =a'4 |

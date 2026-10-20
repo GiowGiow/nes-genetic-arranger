@@ -1,0 +1,23 @@
+%abc-2.1
+% 17 sinterklaasliedjes, by Trad.. Score published on MuseScore (artist: Misc Children), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/11/QmYbEC61P3MveoJPJdETDTHQ66fuPottErVxLKnymN34qN.mid (sha256
+% 6da6ae68b6e614b299f8feecfa84ad53828e6f74abc9e6e30703a0bc1e291233): melody track 1, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:17 sinterklaasliedjes
+M:6/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"z12 | "G7"z12 | "Dm7"A,4 A,2 _B,4 _B,2 | "F"A,6 F,6 |
+"Dm7"A,4 A,2 _B,4 _B,2 | "F"A,6 F,6 | "Gm7"D4 D2 D4 _B,2 | "Gm7"D6 D6 |
+"Gm"C,4 C2 C,4 C2 | "Em"_B,6 A,4 z2 | "Gm"z12 | "G7"z12 |
+"Dm7"A,4 A,2 _B,4 _B,2 | "F"A,6 F,6 | "Dm7"A,4 A,2 _B,4 _B,2 | "F"A,6 F,6 |
+"Gm7"D4 D2 D4 _B,2 | "Gm7"D6 D6 | "Gm"C,4 C2 C,4 C2 | "Em"_B,6 A,4 z2 |

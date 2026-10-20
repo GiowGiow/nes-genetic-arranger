@@ -1,0 +1,23 @@
+%abc-2.1
+% The Fruits Of Newbury - A New Bourree, from the Nottingham Music Database as cleaned by
+% Jukedeck: ABC_cleaned/reelsd-g.abc, tune X: 56 (https://github.com/jukedeck/nottingham-dataset;
+% source file sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Fruits Of Newbury - A New Bourree
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"G"d6 c2 B4 G4 | "A7"A8 A8 | "G"d6 c2 B4 F4 | "Em"G2 A2 G2 F2 G8 |
+"G"d6 c2 B4 G4 | "A7"A8 B4 c4 | "Bm"d6 c2 B4 F4 | "Em"G8 G8 |
+"G"d6 c2 B4 G4 | "A7"A8 A8 | "G"d6 c2 B4 F4 | "Em"G2 A2 G2 F2 G8 |
+"G"d6 c2 B4 G4 | "A7"A8 B4 c4 | "Bm"d6 c2 B4 F4 | "Em"G8 G8 |
+"D"A4 F4 "G"B4 G4 | "D"A2 B2 A2 G2 F2 E2 D4 | "D"A4 F4 "G"B4 G2 F2 | "A7"E8 E8 |
+"D"A4 F4 "G"B4 G4 | "D"A2 B2 A2 G2 F2 E2 D4 | "D"F4 A4 "A7"G2 E2 C4 | "D"D8 D8 |
+"D"A4 F4 "G"B4 G4 | "D"A2 B2 A2 G2 F2 E2 D4 | "D"A4 F4 "G"B4 G2 F2 | "A7"E8 E8 |
+"D"A4 F4 "G"B4 G4 | "D"A2 B2 A2 G2 F2 E2 D4 | "D"F4 A4 "A7"G2 E2 C4 | "D"D8 D8 |

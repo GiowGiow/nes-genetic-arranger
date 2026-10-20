@@ -1,0 +1,35 @@
+%abc-2.1
+% Préludes Livre 1, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/46/Qmaug5pXs59BJq1VTdXhrKAU3DHxRqusrDgXraMS6xDtYk.mid (sha256
+% 140840c4bf871716d7bbdb0fb4bc326bb47e95110c2f0f9eaeeb031c78367494): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Préludes Livre 1
+M:6/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"G,,4 G,4 A,4 E4 G4 A3 z | "Em7"z4 D,,4 G,,,8 D,,8 | "Em7"F,,4 G,4 A,4 E4 G4 A3 z | "Em7"z4 C,,4 F,,,8 C,,8 |
+"Em7"E,,4 G,4 A,4 E4 G4 E4 | "E"E4 E12 E8 | "E"E8 E8 _d8 | "E"E8 _e8 _A8 |
+"E"E8 _d8 _A8 | "E"_A8 _B8 _e8 | "E"B8 _A8 _B8 | "E"_e8 _d8 _e8 |
+"E"B8 E,,4 B,,4 D,,8 | "Em7"C,,4 A,4 B,8 A,4 B,4 | "Em7"C,,4 A,4 B,8 A,4 B,4 | "Ebm7"B,,, ^F,,2 B,,, ^F,, B,,,2 ^F,, B,,, ^F,,2 ^F, B, ^F,2 B,,2 ^F,,2 B,,, ^F,, B,,,2 ^F,, |
+"Abm7"_A B,,,,2 B,,, ^F,, B,,,2 ^F,, B,,, ^F,,2 ^F, B, ^F,2 B,,2 ^F,,2 B,,, ^F,, B,,,2 ^F,, | "Abm7"_A B,,,,2 B,,, ^F,, B,,,2 ^F,, B,,, ^F,,2 ^F, B, ^F,2 B,,2 ^F,,2 B,,, ^F,, B,,,2 ^F,, | "Cm7"_E,,, _E,,2 _B,,2 _B,,2 _E,2 _E,2 _B, D C _B,2 z _B,,2 _E,,2 _B,,,2 _E,,, | "Cm7"F _E C2 z _E,2 _B,,2 _E,,2 _B,,, D C _B,2 z _B,,2 _E,,2 _B,,,2 _E,,, |
+"Cm7"F _E D C z _B,2 _E,2 _B,,2 _E,, F _E D C z _B,2 _E,2 _B,,2 _E,, | "G"G,,8 D8 A,8 | "Dm7"c8 G8 A8 | "Dm"d8 G8 A8 |
+"Dm"c8 z4 D,4 C,4 B,,4 | "Dm7"A,,4 B,,4 A,,4 G,,4 F,,4 E,,4 | "G7"D,,4 C,4 A,,4 G,,4 F,,4 D,,4 | "Dm7"C,,8 G,8 A,8 |
+"G7"D12 C4 B,4 A,4 | "Am7"A,8 E,8 B,8 | "Dm7"B,4 C4 A,12 G,4 | "Am7"G,8 C,,8 E,8 |
+"Bb"F,8 A,8 C8 | "Am7"G,8 C,,8 E,8 | "Bb"F,8 A,8 C8 | "Gm7"D8 C,,4 C4 D4 F4 |
+"Gm"D8 C,,8 E8 | "F"C8 C,,8 C8 | "Dm7"C8 A,8 B,8 | "C"G,8 C,,16 |
+"C"z24 | "G"D8 _B,,12 z4 | "G"D8 _B,,12 z4 | "G"D8 _A,,12 z4 |
+"G"D8 _A,,16 | "G"_A,,7 z _A,,16 | "Dbm"_A,,24 | "Db"_A,,24 |
+"Dbm"_A,,5 z19 | "Ab"_A,,,24 | "Dbm7"_A,,,8 _A,,8 _B,,8 | "E"_E,8 _D,8 _E,8 |
+"Dbm7"_A,,,8 E8 _B,8 | "Eb7"_B8 _D8 _E8 | "F#m"_A,,8 _D8 _E8 | "F#m"^F8 _E8 _D8 |
+"F#m"_A,,8 _D8 _E8 | "Ab7"_A8 _E8 _D4 _A,,,4 | "Ebm7"_d8 _A8 ^F8 | "B"B4 _A,,,4 _A,,4 _E,4 ^F4 =A2 _A,,,2 |
+"Ebm7"_d8 _A8 ^F8 | "Ebm7"B8 ^F8 _D8 | "Db7"B,8 A,8 G,4 B,4 | "Ab7"^F,16 _D,8 |

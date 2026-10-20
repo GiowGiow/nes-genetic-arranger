@@ -1,0 +1,29 @@
+%abc-2.1
+% Orchestral Suite No.3 in D major BWV 1068, by Johann Sebastian Bach. Score published on
+% MuseScore (artist: Johann Sebastian Bach), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/56/QmQzXNiBJ387BiCHTqizWLNseTyvj4yotn5gzAfxhm1nZw.mid (sha256
+% d579ed20704f1fd29b8d0c67e6db89374fb4db1805116886e7f2a1349976ec94): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Orchestral Suite No.3 in D major BWV 1068
+M:4/4
+L:1/16
+Q:1/4=34.000017
+% Exact tempo 34.0000170000085 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"^F,8- "Bm7"^F,8 | "G"^F,2 B, G, ^F, D, _D, =D, "A7"_D,4 B,, A,,3 | "F#m7"A,8- "Abm7"A, ^F, C, B,, E, _E, A, G, | "Em7"G,8- "F#m7"G, E, B,, A,, D, _D, G, ^F, |
+"D"^F,6 _A, =A, "Bm7"D,2 E, ^F,2 E, E, D, | "F#m7"_D, B,, _D, =D,3 _D, B,, "A"A,,8 | "D"^F,8- "Bm7"^F,8 | "G"^F,2 B, G, ^F, D, _D, =D, "A7"_D,4 B,, A,,3 |
+"F#m7"A,8- "Abm7"A, ^F, C, B,, E, _E, A, G, | "Em7"G,8- "F#m7"G, E, B,, A,, D, _D, G, ^F, | "D"^F,6 _A, =A, "Bm7"D,2 E, ^F,2 E, E, D, | "F#m7"_D, B,, _D, =D,3 _D, B,, "A"A,,8 |
+"A7"_D,5 =D, _D, A,, "F#m7"A,6 C,2 | "Abm7"B,,2 B,3 A, G, ^F, "E7"^F,2 G,2 ^F, E, D, B,, | "Dbm7"_B,, =B,, _D,3 =D, E,2- "Bbm"E, ^F, G,4 ^F,2 | "Bm"E, D, _D, B,, _D, =D, E, z "Bm7"_D,2 B,,6 |
+"F#m7"D,5 ^F, E, D, "Em7"B,6 A, _A, | "Dbm7"^F, A, A,,2 B,,3 _D, "A7"=D, z2 B,, A,,4 | "Bm7"D,6 ^F, E, "Dbm7"E,6 G, ^F, | "Ebm7"^F,6 A, G, "Em7"G,8 |
+"F#m7"A,,5 _D, E, G, "D7"G, E, ^F,4 ^F, G, | "Bm7"A, z4 ^F, A, C "Em7"B,6 D,2 | "Em7"_D, E, G,4 =D,2 "A7"A,,2 E, ^F, G, ^F,2 E, | "A7"D, B,,2 _D, =D,2 E, =D, "D"=D,8 |
+"A7"_D,5 =D, _D, A,, "F#m7"A,6 C,2 | "Abm7"B,,2 B,3 A, G, ^F, "E7"^F,2 G,2 ^F, E, D, B,, | "Dbm7"_B,, =B,, _D,3 =D, E,2- "Bbm"E, ^F, G,4 ^F,2 | "Bm"E, D, _D, B,, _D, =D, E, z "Bm7"_D,2 B,,6 |
+"F#m7"D,5 ^F, E, D, "Em7"B,6 A, _A, | "Dbm7"^F, A, A,,2 B,,3 _D, "A7"=D, z2 B,, A,,4 | "Bm7"D,6 ^F, E, "Dbm7"E,6 G, ^F, | "Ebm7"^F,6 A, G, "Em7"G,8 |
+"F#m7"A,,5 _D, E, G, "D7"G, E, ^F,4 ^F, G, | "Bm7"A, z4 ^F, A, C "Em7"B,6 D,2 | "Em7"_D, E, G,4 =D,2 "A7"A,,2 E, ^F, G, ^F,2 E, | "A7"D, B,,2 _D, =D,2 E, =D, "D"=D,8 |

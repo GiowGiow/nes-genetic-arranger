@@ -1,0 +1,28 @@
+%abc-2.1
+% Sperar non si potea, by Andrea Gabrieli. Score published on MuseScore (artist: Andrea Gabrieli),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Andrea Gabrieli (died 1585,
+% Wikidata Q217317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/42/QmasRmxYD49HmyWT9hNLQhwC3kogftsWLQfAXc8wRAbrSw.mid (sha256
+% 29a7b8597334df515e2d695aedc8347a5ea7cdc96905fd12a7c720d4c173ac84): melody track 0, bars 2-35
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sperar non si potea
+M:4/2
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z16 "Gm"z16 | "D"z12 d4 "Bm7"d4 _e4 d8 | "G"d8 B8 "Gm7"z16 | "F#m"d8 d8- "Gm"d8 G8 |
+"D7"_B8 A8 "Gm"G4 G4 G4 _B4 | "Dm"A16- "Em7"A8 G8 | "Dm7"z4 A8 c4- "D"c4 _B4 A8 | "D"A8 A4 d4 "C"d8 _e8 |
+"D"d16 d16 | "Gm"z4 d4 f4 f4 "F"e4 c4 g8 | "F"z16 "Gm"d16 | "Gm"d8 f8 "F"f16 |
+"Bb"f8 z4 d4- "Gm7"d4 c4 _B8 | "Bb"A8 z8 "Gm7"z12 d4 | "D"d4 A4 d4 g4- "Dm7"g2 f2 e2 d2 c6 _B2 | "Dm7"A8 A8 "Dm"A4 d8 _d4 |
+"D"d8 _B8 "G7"_B8 A8 | "Eb"G16 "Bb"F16 | "Bb"z8 d8 "Dm"d8 c8 | "Bb"_B16 "F"A16 |
+"Cm7"z16 "D"z16 | "Gm"d8 d4 d4 "C"d4 e4 f8 | "Dm7"f4 c4 c4 c4 "C"B8 c8 | "Dm7"e8 f4 d4- "Gm7"d2 d2 c4 _B8 |
+"F"A8 z8 "Gm7"z12 G4 | "Dm7"c4 A6 A2 G4 "C"F8 E8 | "Cm"z12 g4 "C"g6 f2 _e4 _e4 | "Em7"d12 B4 "Bb"z16 |
+"Gm7"z16 "F"c8 f4 d4 | "Gm7"d2 d2 c4 _B8 "Dm7"A8 c4 c4 | "C"c4 B4 c6 _B2 "Cm"A8 G4 c4 | "Cm"d4 G4 g8- "D"g4 ^f2 e2 ^f8 |
+"G"g32 |

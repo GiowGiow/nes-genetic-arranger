@@ -1,0 +1,35 @@
+%abc-2.1
+% Isaac Albéniz - Capricho Catalan, by Isaac Albéniz(1860 - 1909). Score published on MuseScore
+% (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Isaac Albéniz (died 1909,
+% Wikidata Q185812).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/36/QmUpEZ3bDSCmRhzEYNdANJmc89hiRpJcvQkTNz6y4ykQka.mid (sha256
+% e99765ace4e1e4ed0636f8013ed888b4be9f314bba2359bae98aada9194a2ff2): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Isaac Albéniz - Capricho Catalan
+M:2/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A,,2 A,,4 A,,2 | "C"A,,2 A,,4 A,,2 | "C"^F2 A,,4 E2 | "C"G2 A,,2 E2 ^F2 |
+"C"D2 A,,2 B,2 A,,2 | "C"A,2 A,,4 A,,2 | "C"B,2 A,,2 _D2 E2 | "C"_D2 A,,2 A,2 A,,2 |
+"C"B,2 _D2 ^F2 B,2 | "C"A,2 A,,4 A,,2 | "C"_D2 _D,4 A,2 | "C"B,2 D,2 F2 _A2 |
+"C"^F2 _D2 B,2 _D2 | "C"A,2 _D,4 _D,2 | "C"E2 E,,4 ^F2 | "C"D2 E2 ^F2 _A2 |
+"C"E2 _D2 =D2 C2 | "C"_D2 B,2 _B,2 A,2 | "C"^F2 A,,4 E2 | "C"G2 A,,2 E2 ^F2 |
+"C"D2 A,,2 B,2 A,,2 | "C"A,2 A,,4 A,,2 | "C"B,2 A,,2 _D2 E2 | "C"_D2 A,,2 A,2 A,,2 |
+"C"B,2 _D2 ^F2 B,2 | "C"A,2 A,,4 A,,2 | "C"_D2 _D,4 A,2 | "C"B,2 D,2 F2 _A2 |
+"C"^F2 _D2 B,2 _D2 | "C"A,2 _D,4 _D,2 | "C"A,2 _D,2 B,2 =D2 | "C"B,2 D2 F2 d2 |
+"C"_d2 E2 B2 _d2 | "C"A2 _B,,2 _D, z A,,2 | "C"E2 A,,4 B,2 | "C"D2 A,,2 _D2 A,2 |
+"C"_D2 A,,2 B,2 A,,2 | "C"G,2 A,,4 A,,2 | "C"G2 A,,4 ^F2 | "C"_E2 ^F2 =E2 _D2 |
+"C"E2 D2 B,2 G,2 | "C"E,2 A,,2 C, z A,,2 | "C"F2 A,2 _B,2 F2 | "C"F2 E2 _E2 =E2 |
+"C"C2 E,2 F,2 C2 | "C"C2 B,2 _B,2 =B,2 | "C"B,2 B,,2 C2 E2 | "C"C2 B,,2 A,2 B,,2 |
+"C"^F,2 G,2 A,2 C2 | "C"B,2 E,,4 _E,,2 | "C"B,2 D,2 D2 G2 | "C"E2 D,2 C2 D,2 |
+"C"A,2 B,2 C2 _E2 | "C"D2 D,2 G,2 ^F,2 | "C"B,2 B,4 B,2 | "C"B,2 B,2 _B,,2 =B,2 |
+"C"E,2 B,2 ^F,2 B,2 | "C"^F,2 B,2 E,2 B,2 | "C"B,2 B,4 B,2 | "C"B,2 B,2 _B,,2 =B,2 |
+"C"E,2 B,2 G,2 B,2 | "C"^F,2 B,2 E,2 B,2 | "C"B2 A,,4 ^F2 | "C"A2 A,,2 G2 E2 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Études d'exécution transcendante S.139, by Franz Liszt. Score published on MuseScore (artist:
+% Franz Liszt), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Franz Liszt (died 1886, Wikidata
+% Q41309).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/31/QmcmpFpH9ugeoR9Djq7Ndk8DcPWg1LiBg7S4cNaLS9n4ys.mid (sha256
+% 1d08864dc51ccb1fa4b38562c366b6f1341496c1947a0c12e3f759647ae13f09): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études d'exécution transcendante S.139
+M:6/8
+L:1/16
+Q:1/4=58.000043
+% Exact tempo 58.000042533364514 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z12 | "Dm7"z12 | "C7"z12 | "F"z6 a6 |
+"Dm7"a6 _b4 c'2 | "C7"d'4 f'2 e'4 g'2 | "Dm"a'6 a'6 | "A7"a'4 a'2 b'4 _d''2 |
+"Dm7"d''4 e''2 f''6 | "G7"f''4 e''2 d''2 e''3 d'' | "C7"c''4 z8 | "C7"z12 |
+"F"a'2 a2 a'2 g'2 f'2 f2 | "F"f'2 e'2 d'2 f2 d'2 c'2 | "C"b2 d2 g2 _b2 c2 c'2 | "F"a2 A2 a2 g2 f2 F2 |
+"F"f2 e2 d2 F2 d2 c2 | "C"B2 D2 G2 _B2 E2 c2 | "F"A z A,2 ^F2 A2 _E2 A,2 | "F"_E2 A,2 ^F2 A2 _E2 A,2 |
+"F"_B2 F2 _B,2 c2 F2 C2 | "G7"_d2 _E2 _D2 _D2 c2 _B2 | "Bb7"_B2 _A,2 _A2 _B2 _A,2 _A2 | "Ab"_B2 _A2 ^F2 ^F2 _A z _E2 |
+"Db"_D2 z4 f6 | "Bbm7"f6 ^f4 _a2 | "A7"_b4 _d'2 c'2 _e'2 _a'2 | "Db"f'2 z4 f'6 |
+"Bbm7"f'6 ^f'4 _a'2 | "Dbm"_b'4 _d''2 c''4 _e''2 | "Db"f''2 z4 f''6 | "F7"f''2 z4 f''6 |
+"Bbm"f''2 z4 f''6 | "F7"f''3 z3 f'6 | "F"f'3 z3 f6 | "F7"f5 z f6 |
+"F"a z c z a z g z f z _B z | "Gm7"f z e z d z F z d z c z | "C7"B2 G2 F2 _B2 E2 c2 | "F"A z c2 a z g z f z _B z |
+"F"f z e z d z F z d z c2 | "C7"B2 G2 F2 _B2 E2 c2 | "A"A2 A z A z A z A z A z | "A"A z B z A z A z A z A z |
+"A"A z A z A z A z A z A z | "A"A z _B z A z A z A z A z | "Dm"A2 G2 _A2 =A2 _D2 C2 | "G"B,2 _A2 G2 ^F2 G2 =F2 |
+"C7"E2 _B2 A2 d2 G2 F2 | "C"E2 _d2 c2 B2 c2 _B2 | "F"A2 A z a z g z f z _B z | "Gm7"f z e z d z F z d z c z |
+"C7"B2 G2 _B2 C2 _d2 c2 | "F"A2 A2 a z g2 f2 _B2 | "Gm7"f2 e2 d2 F2 d2 d2 | "C7"B2 G2 _B2 C2 _d z c z |
+"F"A2 c z c z c z c z c z | "F"c z d z d z d z d z d z | "F"d z f z f z f z f z f z | "F"f z a z g z f z g z f z |
+"G7"e z _b z a z g z a z g z | "Dm7"f z d' z c' z _b z d' z c' z | "F"a z f' z f' z f' z f' z f' z | "F"f' z _b' z a' z g' z _b' z a' z |

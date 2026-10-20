@@ -1,0 +1,35 @@
+%abc-2.1
+% Pater noster cum 5 vocibus, by Costanzo Porta. Score published on MuseScore (artist: Costanzo
+% Porta), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Costanzo Porta (died 1601,
+% Wikidata Q1136470).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/18/QmSELV6csMvXXSxEX5JzzKY76zMgEH3aBtW7skVC1xAieU.mid (sha256
+% 1e4aad110b1d7796bb7316da19650265726c7a3a44c96ae523e3b6782c1e2e41): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pater noster cum 5 vocibus
+M:4/2
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"F32 | "Gm"G16- "C"G16 | "F"A16 A16 | "Gm"z8 D8 D8 D8 |
+"F"F4 G4 A4 _B4 c8 _B4 A4 | "Bb"_B16 F16 | "Cm"z32 | "Dm"z8 A16 F8 |
+"Gm"F8 _B8- "Dm"_B8 A8 | "Dm"A16 "Bb"d8 d8 | "Eb"_B12 A2 G2 _B8 c8 | "Dm"d16 z16 |
+"F"z8 c8 c8 A8 | "D"F16- "Bb"F16 | "Bb"F16 "G"_B16 | "Dm7"A8 A8 "Dm"F4 G4 A4 _B4 |
+"Cm7"c8 F8 "Eb"z16 | "Gm"z8 G8- "D"G8 F8 | "Eb"G8 _B8- "Dm"_B8 A8 | "Dm7"z8 G8- "D"G4 ^F2 E2 ^F8 |
+"Gm"G8 _B8- "Dm"_B4 A4 A8 | "Gm"A8 G8 "Dm"z8 A8 | "Dm"A8 _B8- "Eb"_B8 G8 | "Eb"G8 _B8- "Dm"_B4 A4 A4 G2 F2 |
+"C"G16 "Dm"F8 A8 | "Gm7"A4 G2 F2 G8 "Dm7"A16 | "Dm"z16 "C"z16 | "Bb"D16 "Dm"F16 |
+"Am"F8 E8 "C"E8 E8 | "F"F8 A8- "C"A8 G8 | "Dm"G4 F4 F8- "D7"F8 E8 | "Bb"F16- "D"F16 |
+"F7"z8 G8 "D"G8 F8 | "Gm"_B8 A4 G4 "F"A4 _B4 c8 | "G"_B8 _B8- "C"_B4 A4 A8 | "Gm"A4 G2 F2 G8 "Dm"A16 |
+"Dm7"z16 "Gm"z16 | "D7"z16 "Cm"z16 | "Bb"z16 "Gm7"z8 G8 | "Am"E8 ^F8 "Gm"G16 |
+"C7"A8 _B8 "Dm7"G8 _B8 | "Eb"_B8 G8- "D"G8 F8 | "Gm"_B8 G8 "Am"A16 | "Gm"D8 G8 F8 G8 |
+"F"A16 "Cm"G16 | "Bb"z8 F8 "D7"G8 A8 | "Cm7"A8 G8- "D"G8 F8 | "Eb"G16 "D7"z8 c8 |
+"Dm"A8 _B8- "Eb"_B8 G8 | "D"G8 ^F8 "F"z8 C8 | "Bb"C8 D8- "C7"D8 E8 | "Dm7"E4 D2 E2 F8 "Dm"D16 |
+"Dm7"z16 "Eb"z16 | "Dm"z8 F8- "Bb"F8 G8 | "Am"A16 "Dm"A8 A8 | "C"c8 G8 "A"c16 |
+"F"A8 A8 "Bb"_B8 _B8 | "Cm"G16 "Dm"F16 | "Dm"z16 "Gm"z16 | "Dm"z16 "C"z16 |
+"Dm"z16 "C"G16 | "Gm"G16 "D"F16 | "C"G16 "F"A16 | "F"A8 A8 "Cm"G16 |

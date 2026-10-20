@@ -1,0 +1,35 @@
+%abc-2.1
+% QUEBRA CABEÇAS, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_q/quebra-cabecas.html (file
+% https://www.beakauffmann.com/mpb_q/som/quebra-cabecas.mid, sha256
+% 4524ab10590558b6bea2273b48661d1de06e8c83913b65be88ace4753dadd166), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:QUEBRA CABEÇAS
+M:2/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"Bm7"z2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A | "Bm7"A2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A |
+"Bb7"a2 d' d' b b _d' _d' | "A7"a2 b b g g a a | "Bm7"^f2 e e d d _d _d | "E7"_B2 =B =B _d _d =d =d |
+"Bm7"_e =e ^f ^f g g ^f ^f | "A7"e e B B _d _d A A | "Bm7"A2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A |
+"B7"e2 d d c c B B | "E"^f2 e e d d B B | "B7"b2 a a g g ^f ^f | "E"^f2 e e B B _d _d |
+"Bm7"d2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A | "Bm7"A2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A |
+"Bb7"a2 d' d' b b _d' _d' | "A7"a2 b b g g a a | "Bm7"^f2 e e d d _d _d | "E7"_B2 =B =B _d _d =d =d |
+"Bm7"_e =e ^f ^f g g ^f ^f | "A7"e e B B _d _d A A | "Bm7"A2 ^f ^f g g ^f ^f | "A7"e e B B _d _d A A |
+"B7"e2 d d c c B B | "E"^f2 e e d d B B | "B7"b2 a a g g ^f ^f | "E"^f2 e e B B _d _d |
+"D"d2 ^f ^f2 ^f2 ^f | "F#"z2 g ^f c _d e =d | "Bm"B2 a a2 a2 a | "A7"z2 b a _e =e g ^f |
+"D"d2 g ^f c _d e =d | "Bm"z2 _d' b f ^f a g | "Em"z2 ^f' e' _b =b e' d' | "Db7"z _d' b _d' f _a _d' b |
+"F#"_b2 ^f ^f2 ^f2 ^f | "F#"z2 g ^f c _d e =d | "Bm"B2 a a2 a2 a | "A7"z2 b a _e =e g ^f |
+"D"d2 g ^f c _d e =d | "Bm"z2 _d' b f ^f a g | "Em"z2 ^f e b g e _d' | "Bm"b f ^f b d'2 _d'2 |
+"Bm"b2 ^f ^f2 ^f2 ^f | "F#"z2 g ^f c _d e =d | "Bm"B2 a a2 a2 a | "A7"z2 b a _e =e g ^f |
+"D"d2 g ^f c _d e =d | "Bm"z2 _d' b f ^f a g | "Em"z2 ^f' e' _b =b e' d' | "Db7"z _d' b _d' f _a _d' b |
+"F#"_b2 ^f ^f2 ^f2 ^f | "F#"z2 g ^f c _d e =d | "Bm"B2 a a2 a2 a | "A7"z2 b a _e =e g ^f |
+"D"d2 g ^f c _d e =d | "Bm"z2 _d' b f ^f a g | "Em"z2 ^f e b g e _d' | "Bm"b f ^f b d'2 _d'2 |

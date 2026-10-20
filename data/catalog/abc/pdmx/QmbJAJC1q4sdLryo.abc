@@ -1,0 +1,25 @@
+%abc-2.1
+% Christum wir sollen loben schon BWV 696, by Johann Sebastian Bach (1685-1750). Score published
+% on MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/27/QmbJAJC1q4sdLryo4ht1esBtfbAk1iWcMDNxXdKjSM5mR6.mid (sha256
+% c6cca2b00f5bc81c088041dd17c108079e7e1a0f9fb222eb0e74bb03edc9e8e6): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Christum wir sollen loben schon BWV 696
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z8 "F"z8 | "A7"z8 "Dm"z8 | "Dm7"z8 "C"z8 | "Dm"z8 "Dbm"z8 |
+"G"z4 D4 "Dm"F4 F4 | "Gm"G4 A4- "D"A2 D2 G2 F2 | "Cm"E2 D2 _E4 "D7"D8 | "E7"D2 B,2 E2 D2 "Dm7"C4 A4 |
+"Am"c2 E2 c2 G2 "G7"d2 D2 e2 F2 | "A7"E2 A2 d2 c2 "G7"B2 A F _B2 D2 | "A7"_D2 A2 =d2 c2 "Gm7"_B2 =D2 G2 F2 | "Dm"A2 A,2 D2 C2 "G"B,4 G4 |
+"A7"A,2 _D2 F4- "A"F2 E2 A2 G2 | "Dm"F2 A,2 _B,4- "F"_B,2 A,2 D2 C2 | "Gm7"_B,2 G,2 C2 _B,2 "Dm"A,2 ^F,2 _B,2 A,2 | "Am7"z2 A, _B, C4 "Gm"D6 _B,2 |
+"Dm7"F4 F4 "Gm7"G4 A4 | "D7"A2 D A, G2 F2 "Dbm7"E8 | "A"E2 E,2 A,2 G,2 "Am"^F,2 A,2 E2 _E2 | "E"E16 |

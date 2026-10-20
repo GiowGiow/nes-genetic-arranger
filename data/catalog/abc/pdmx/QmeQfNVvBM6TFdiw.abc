@@ -1,0 +1,35 @@
+%abc-2.1
+% Requiem, by Giuseppe Verdi. Score published on MuseScore (artist: Giuseppe Verdi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giuseppe Verdi (died 1901,
+% Wikidata Q7317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/39/QmeQfNVvBM6TFdiwz22NTscFGoDkr5g7fgGJfeYPhH6xXg.mid (sha256
+% e7723534c7c81e9e9a76109ec3751cdb6f0f4aab8a0bc2c3b783f7aabbc583de): melody track 32, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Requiem
+M:4/4
+L:1/16
+Q:1/4=137.999876
+% Exact tempo 137.99987580011177 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "C"z16 | "C"z16 | "C"z16 |
+"C"z16 | "C7"g g g g g g g g g g g g g g g g | "C7"g g g g g g g g g g g g g g g g | "C7"g2 z14 |
+[M:2/2]"F"z16 | "F"z2 A z _B z =B z c z F z G z A z | "C7"_B z ^F z A z G z E2 z2 C2 z2 | "Dm"F4 D4 F4 D4 |
+"C"E2 _E2 =E z G z c4 =e4 | "C"C8 z8 | "G7"z4 f8 e2 d2 | "C7"c12 _B4 |
+"F"A4 f8 e4 | "F"e4 d8 c4 | "C7"c4 _B4 G4 c4 | "Dm"c4 d4 c4 d4 |
+"C"c6 C2 E4 G4 | "C"c8 B8 | "G7"A8 G4 F4 | "C7"E4 F4 D4 E4 |
+"Dm7"C6 A,2 C8 | "F"A8 G8 | "C7"F4 G8 C4 | "Dm"C4 F8 F4 |
+"C"E16 | "Am7"z16 | "G7"z4 f8 e2 d2 | "C"c14 C2 |
+"Dm7"F6 F2 A4 c4 | "Dm7"f z f2 g2 a2 a4 a4 | "Dm7"a2 d2 e2 f2 f4 f4 | "C7"f8 e6 d2 |
+"Dm7"c6 F2 A4 c4 | "Dm7"f z f2 g2 a2 a4 a4 | "Dm7"a2 d2 e2 f2 f4 f4 | "A7"f8 f e f f f f d e |
+"Dm"d4 z12 | "D7"z2 ^F z G z _A z =A z D z E z ^F z | "Gm7"G z ^F z G z D z =F z E z =F z D z | "Dm"E z _E z =E z A z D z _D z =D z A z |
+"A"_D2 C2 _D z E z A4 _d4 | "A"A,4 z12 | "Dm"z16 | "E7"z16 |
+"E"z16 | "E"z16 | "F"z16 | "F"z16 |
+"Bb"z16 | "Bb"z16 | "Eb"z16 | "G"z2 G2 ^F2 G z g z =f z _e z d z |
+"Cm"c z _E2 F2 G2 C4 z4 | "Cm7"z2 c2 _d2 =d2 _e z _e2 f2 g2 | "Fm7"_a z _a2 _b2 =b2 c' z c'2 d'2 _e'2 | "G7"f' z _e' z d' z c' z b4 g'4 |
+"Cm"c'2 _E2 F2 G2 C4 z4 | "Cm7"z2 c2 _d2 =d2 _e z _e2 f2 g2 | "Fm7"_a z _a2 _b2 =b2 c' z c'2 d'2 _e'2 | "G7"f' z _e' z d' z c' z b4 g'4 |

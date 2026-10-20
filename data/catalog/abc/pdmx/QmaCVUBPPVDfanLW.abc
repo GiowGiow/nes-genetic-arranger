@@ -1,0 +1,35 @@
+%abc-2.1
+% Fantasia and Fugue in G minor BWV 542, by Bach. Score published on MuseScore (artist: Johann
+% Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Bach (died 1953, Wikidata
+% Q1861386).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/14/QmaCVUBPPVDfanLW5gqxF8S5Qt437uECxc7pv53aj3si16.mid (sha256
+% b2f6f69f0028595f4e3bb6a782d6dd88d588625e53a3bf965c48b1c5598d3696): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantasia and Fugue in G minor BWV 542
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z6 d2 _B c A _B G2 g2 | "G"^f g e ^f d2 g d _e2 c2 =F2 =f2 | "G"d _e c d _B2 _e _B c2 A2 D2 d2 | "G"_B c A _B G A _B c "Dm"d2 e2 f g f g |
+"A"a2 e2 f4- "C7"f4 e4 | "F"e4 d4- "A7"d4 _d4 | "G7"d4 z2 d2 "F#m7"c d _B c A _B c d | "G7"_B c A _B G A _B c "C"A _B G A ^F A G _B |
+"F#"A c _B d c _e d f "D7"=e ^f g3 g ^f2 | "C7"g4 z2 _b2 "D"a2 g2 ^f2 g2 | "F7"c d _e3 _e d c "Cm7"_B c d3 d c _B | "D7"A _B c3 c _B A "Gm"G2 d2 g4 |
+"Dm7"g2 f2 _b6 a4 g2 | "Am"g2 g2 ^f4 "Gm"g4 z2 d e | "Dm"f2 g2 a2 _b2 "A"a5 g f e | "C7"d4 z2 e2 "F"f5 f g a |
+"A7"_b a g f e3 d "Dm"d4 z4 | "Gm"z8 "Cm"z8 | "Dm7"z8 "Bb"z8 | "Cm7"z8 "D7"z8 |
+"Gm"z14 d2 | "Cm7"_B c A _B G2 g2 "Gm"^f g e ^f d2 g d | "Am7"_e2 c2 F2 f2 "Gm"d _e c d _B2 _e _B | "F#"c2 A2 D2 d2 "Em"_B c A _B G A =B _d |
+"Bb"d2 e2 f g f g "A"a2 e2 f4 | "C7"f4 e4- "F"e4 d4 | "A7"d4 _d4 "Gm7"=d4 z2 =d2 | "F7"c4 f4 "Gm"_B4 z g ^f g |
+"D7"A2 _e2 d c _B A "Gm"G2 A2 _B c _B c | "Gm"d4 z d _e d "F7"c d _e3 _e d c | "Cm7"_B c d3 d c _B "D7"A _B c3 c _B A | "Gm"_B2 c2 d e d e "Gm7"f8 |
+"Dm7"f8- "Bb"f g _e f d _e f g | "Dm7"_e8- "Am"_e f d _e c d _e f | "Dm7"d8- "C7"d _e c d _B A G _B | "F"A _B G A _B d c _e "F7"d c _B c A3 _B |
+"Bb"_B2 c2 d f _e d "F"c d _B c A2 d2 | "A7"d4 c4- "Dm"c4 _B4 | "F7"_B4 A4 "Bb"z2 F2 _B2 _B2 | "Dm7"A4 _B2 =B2 "Am"c2 G2 c2 c2 |
+"G7"_B2 =B2 c2 _d2 "D7"=d2 A2 =d2 =d2 | "Dm"_d2 z2 =d4- "A7"=d4 _d4 | "Dm"d2 f2 G2 e2 "A7"F A d2 _d e a2 | "G7"z8 "A7"z8 |
+"C7"z8 "F"z8 | "A7"z6 A2 "Dm"F G E F D F A d | "A"_d =d B _d A _d e g "Dm"f g e f =d f a c' | "Gm"_b c' a _b g a f g "C"e f d e c e g _b |
+"F"a _b g a f g e f d e c d _B d f a | "Dbm7"g a f g e f d e "F"_d =d B _d A _d e g | "Dm"z8 "A"z8 | "C7"z8 "F"z8 |
+"A7"z8 "Dm"z8 | "Gm"z6 _B2 "C"c e G c E G C G | "F"A2 _B2 c2 d2 "Dm7"G2 g3 e d c | "Em7"_b c d3 d c _B "Am7"a _B c3 c _B A |
+"C7"g A _B3 _B A G "F"F4 z4 | "Gm7"z2 c2 f2 e2 "Am7"f _e d f _e c _B d | "Cm"c2 z6 "F7"z2 g2 c'2 b2 | "Em7"c' _b a c' _b g ^f a "Gm"g2 d2 g2 ^f2 |
+"D7"g2 ^f a g a =f g "F"_e =f d =f _e =f d _e | "Dm"c d _B d c d _B d "Dm7"A _B G _B A _B G _B | "D7"^F G E ^F D2 d2 "Eb"_B c A _B G4 | "D"z16 |

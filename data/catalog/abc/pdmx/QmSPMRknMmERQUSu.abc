@@ -1,0 +1,33 @@
+%abc-2.1
+% Bist du bei mir, by Gottfried Heinrich Stölzel. Score published on MuseScore (artist: Stozel H.
+% Gottfried), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gottfried Heinrich Stölzel (died
+% 1749, Wikidata Q544385).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/37/QmSPMRknMmERQUSumXtB9hUJEndL9F2dTbbPY6iNFvqKDK.mid (sha256
+% 103bf89e6c651e6f9f29ca5a79d98bacf76dbf47b9853af2f6e4f7cef8aeada2): melody track 0, bars 0-54
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Bist du bei mir
+M:3/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"_B4 _e6 f2 | "Bb7"d8 z4 | "Eb"_e4 _A4 _A4 | "Bb7"_A8 G4 |
+"Em7"z2 _B2 d2 _B2 A2 _B2 | "Gm7"F2 _B2 d2 _B2 A2 _B2 | "F7"_E4 c6 d _e | "F7"d3 c _B3 c F3 A |
+"Bb"_B8 z4 | "Cm"_B4 _e6 f2 | "Bb7"d8 z4 | "Eb"_e4 _A4 _A4 |
+"Bb7"_A8 G4 | "Em7"z2 _B2 d2 _B2 A2 _B2 | "Gm7"F2 _B2 d2 _B2 A2 _B2 | "F7"_E4 c6 d _e |
+"F7"d3 c _B3 c F3 A | "Bb"_B8 z4 | "Eb"_e4 g2 _e2 _d2 c2 | "Fm7"c12 |
+"Fm"_a4 f6 _e2 | "Bb"_e _e _e _e _e _e _e _e _e4 | "Am7"z2 _e2 g2 _e2 d2 _e2 | "Cm7"_B2 _e2 g2 _e2 d2 _e2 |
+"Bb7"_A4 f6 g _a | "Ab"g3 f _e3 f _B3 d | "Eb"_e8 z4 | "Cm"g4 _e6 d2 |
+"F7"c8 z4 | "Gm7"f4 _B6 c2 | "F"A4 G2 A2 F4 | "Ab7"z2 c2 _e2 c2 B2 c2 |
+"Cm"G2 c2 _e2 c2 B2 c2 | "Fm"F2 E2 F4 d3 _e | "Cm"f z2 d c3 d G3 B | "Cm7"c12 |
+"F"F4 _e6 f2 | "Bb7"d8 z4 | "Eb"_e4 _A4 _A4 | "Bb7"_A8 G4 |
+"Em7"z2 _B2 d2 _B2 A2 _B2 | "Gm7"F2 _B2 d2 _B2 A2 _B2 | "F7"_E2 D2 _E4 c3 d | "Gm7"_e z2 c _B3 c F3 A |
+"Bb7"_B12 | "Eb"_e4 g2 _e2 _d2 c2 | "Fm7"c12 | "Fm"_a4 f6 _e2 |
+"Bb"_e _e _e _e _e _e _e _e _e4 | "Cm"z2 _e2 g2 _e2 d2 _e2 | "Cm7"_B2 _e2 g2 _e2 d2 _e2 | "Bb7"_A4 f6 g _a |
+"Ab"g3 f _e3 f _B3 d | "Eb"_e12 |

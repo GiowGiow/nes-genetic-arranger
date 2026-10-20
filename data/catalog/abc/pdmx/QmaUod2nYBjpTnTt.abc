@@ -1,0 +1,34 @@
+%abc-2.1
+% The Blue Bells of Scotland, by Arthur Pryor. Score published on MuseScore (artist: Misc
+% Traditional), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Arthur Pryor (died 1942,
+% Wikidata Q1043029).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/47/QmaUod2nYBjpTnTtxC44f2mMF5HTk1d1z5SB1MyFYoRYKz.mid (sha256
+% 2be112eab65f8a848207bd4fac53b6ca275b92e965a804f090a4e32e701d66d5): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Blue Bells of Scotland
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z2 C2 c4 A2 F D C A, F, D, | "C"C,2 _B,, _B, A,, A, G,, G, F,,2 z6 | "C"z2 A2 G2 A,2 G,2 A,,2 G,,2 A,,,2 | "C"G,,,6 D, G, B, D G B3 A G |
+"C"F E D C10 C2 D | "C"D C2 C4 G,3 A, _B,2 F2 E | "C"E D2 D4 A,3 _B, C2 A2 G | "C"G F2 F3 E _B A G F E F G F E |
+"C"D C _B, A,10 C2 D | "C"D C2 C4 G,3 A, _B,2 F2 E | "C"E D2 D4 A,3 _B, C2 A2 G | "C"G F2 E2 c2 B2 A2 ^F =F D B, G, |
+"C"F, D, C,10 z4 | "C"z4 C, E, G, C E G c6 | "C"c A F D C A, F, D, C,8 | "C"C, E, G, F, E, G, _B, A, G, _B, E D C _B, A, G, |
+"C"A, E, F, A, C F E D C4 z4 | "C"F3 _D _A, F, _D, _A,, F,,2 z6 | "C"A3 F D C A, F, C,2 z6 | "C"z2 C, E, G, F, E, G, _B, A, G, _B, E D C E |
+"C"G F E2 G2 _B6 A2 G F | "C"E D C4 _D4 =D4 E2 | "C"E2 F8 z6 | "C"z12 C4 |
+"C"F8 E4 D4 | "C"C8 D4 E2 F2 | "C"A,4 A,4 _B,4 G,4 | "C"F,12 C4 |
+"C"F8 E4 D4 | "C"C8 D4 E2 F2 | "C"A,4 A,4 _B,4 G,4 | "C"F,12 z4 |
+"C"C3 C F F,2 A, C A,2 F E D2 _D | "C"D _B,2 D C F,2 G, A, _B,2 C D _D2 =D | "C"F E2 D C A2 G F E2 D C D2 C | "C"_B, A,2 G, F,3 E, F, E,2 F, A, F,2 A, |
+"C"C A,2 C F F,2 A, C A,2 F E D2 _D | "C"D _B,2 D C F,2 G, A, _B,2 C D _D2 =D | "C"F E2 D C A2 G F E2 D C D2 C | "C"_B, A,2 G, F, C,2 A, F, C2 A, F4 |
+"C"C3 _B, A, F,2 E, F, A,2 F, A, F,2 A, | "C"C D2 E F E2 D _D =D2 A, F, E,2 =D, | "C"D E2 F E G2 F E D2 C B, A,2 G, | "C"F, E,2 D, C, E,2 G, C E2 G c2 C2 |
+"C"D2 E2 F F,2 A, C A,2 F E D2 _D | "C"D _B,2 D C F,2 G, A, _B,2 C D _D2 =D | "C"F E2 D C A2 G F E2 D C D2 C | "C"_B, A,2 G, F, C,2 A, F, C2 A, F4 |
+"C"C3 _B, A, F,2 E, F, A,2 F, A, F,2 A, | "C"C D2 E F E2 D _D =D2 A, F, E,2 =D, | "C"D E2 F E G2 F E D2 C B, A,2 G, | "C"F, E,2 D, C, E,2 G, C E2 G c2 C2 |
+"C"D2 E2 F F,2 A, C A,2 F E D2 _D | "C"D _B,2 D C F,2 G, A, _B,2 C D _D2 =D | "C"F E2 D C c2 _B A G2 F E D2 C | "C"_B, A,2 G, F, C,2 A, F, C2 A, F2 z2 |
+"C"C3 C F F,2 E, F, A, C F E F, E, F, | "C"C F,2 E, F, A, C _D =D F,2 E, F, _B, =D F | "C"A, C B, C D C B, C G, C B, C D C B, C | "C"F,2 F,, F, G,, G, A,, A, _B,, _B, C, C D, D E, E |
+"C"F F,2 E, F, A, C F E F, E, F, D F, E, F, | "C"C F,2 E, F, A, C _D =D F, E, F, _B,2 =D2 | "C"F2 A, C B, C D C B, C G, C B, C D C | "C"B, C F,2 E, F, A, F, C A, F4 C2 |

@@ -1,0 +1,32 @@
+%abc-2.1
+% De mon malheur a 3, by Tielman Susato. Score published on MuseScore (artist: Tielman Susato),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/5/QmS6R9baajGzxUd4TqM8e7XtSq5A8HzbDGjmdeqF46PhGU.mid (sha256
+% 2245890a9fddcc93068493a6ce3631b78a7502449513cfefac408be2ce3b3baf): melody track 1, bars 0-56
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:De mon malheur a 3
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"D,6 E,2 F,4 G,4 | "Dm"G,4 F,2 E,2 D,2 E,2 F,2 G,2 | "Dm"A,4 _B,4 A,4 _B,4 | "C"C8 B,4 G,4 |
+"E7"A,6 G,2 F,8 | "A"E,8 A,6 B,2 | "F"C4 D4 C4 A,4 | "Am7"B,4 C6 B,2 A,4 |
+"Dm"G,4 F,6 E,2 F,2 G,2 | "G7"A,4 _B,4 A,4 D,4 | "G7"D,4 E,4 F,4 G,4 | "A"E,16 |
+"Gm7"D,6 E,2 F,4 G,4 | "Dm"G,4 F,2 E,2 D,2 E,2 F,2 G,2 | "Dm"A,4 _B,4 A,4 _B,4 | "Am7"C4 C4 B,4 G,4 |
+"Dm7"A,6 G,2 F,8 | "A"E,8 A,6 B,2 | "Dm"C4 D8 C4 | "A7"B,4 C6 B,2 A,4 |
+"Dm"G,4 F,2 E,2 F,2 G,2 A,2 F,2 | "Am7"G,2 A,2 _B,4 A,8 | "D7"G,4 F,4 E,8 | "D"D,8 z8 |
+"C"G,8 G,4 G,4 | "Dm7"A,4 F,2 G,2 A,2 B,2 C4 | "A"C4 B,2 A,2 B,4 A,4 | "E7"A,4 G,4 F,8 |
+"A"E,4 A,4 A,4 A,4 | "D"C8 z4 D4 | "D"D4 D4 F6 E D | "Am7"C4 A,4 C8 |
+"Dm"D4 E4 C4 D4 | "A7"D2 C2 C2 B, A, B,8 | "A7"A,4 F,4 G,4 A,4 | "A"D,2 E,2 F,2 G,2 A,8 |
+"A"z4 F,4 G,4 A,4 | "Em7"B,4 C4 D4 C2 B,2 | "Dm7"A,4 F,2 G,2 A,2 B,2 C4 | "Dm"C4 B,4 A,4 G,2 F,2 |
+"Dm7"G,8 F,4 F,4 | "Dm"F,4 G,4 A,4 F,4 | "Dm"G,4 A,4 _B,4 _B,4 | "F"A,2 G,2 F,2 E,2 D,4 A,4 |
+"Em7"B,4 C4 D8 | "Am7"C4 B,4 C2 B,2 A,2 G,2 | "Dm7"F,4 A,4 G,4 F,4 | "D7"G,2 F,2 F,2 E, D, E,8 |
+"D"D,4 F,4 F,4 G,4 | "G7"A,12 B,4 | "Dm"C4 D8 C4 | "G7"B,4 C4 A,4 _B,4 |
+"C"G,4 C6 B,2 A,2 G,2 | "Dm7"F,4 A,8 F,4 | "Am"G,2 F,2 F,2 E, D, E,8 | "D"D,16 |

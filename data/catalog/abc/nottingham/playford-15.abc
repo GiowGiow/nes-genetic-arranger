@@ -1,0 +1,20 @@
+%abc-2.1
+% Staines Morris, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/playford.abc, tune X: 15 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 070877bc37176e0dedbcd038268d6669399201cd7b58d88b4ab36127528f9c76).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Staines Morris
+M:4/4
+L:1/16
+Q:1/4=140
+K:Dm
+P:A
+"Dm"A4 d4 "A"=B4 _d4 | "Gm"d4 c2 B2 "Dm"A6 B2 | "Dm"c2 d2 c2 B2 "Gm"A4 G2 F2 | "A7"E2 D2 E2 F2 "Dm"D8 |
+"Dm"A4 d4 "A"=B4 _d4 | "Gm"d4 c2 B2 "Dm"A6 B2 | "Dm"c2 d2 c2 B2 "Gm"A4 G2 F2 | "A7"E2 D2 E2 F2 "Dm"D8 |
+"F"F2 G2 A2 B2 A4 G2 F2 | "C"E2 D2 E2 F2 "Dm"D8 | "F"F2 G2 A2 B2 A4 G2 F2 | "C"E2 D2 E2 F2 "Dm"D8 |
+"F"F4 F4 C4 C4 | "Bb"D2 E2 F2 G2 "F"A6 B2 | "Dm"c2 d2 c2 B2 "Gm"A4 G2 F2 | "A7"E2 D2 E2 F2 "Dm"D8 |
+"F"F4 F4 C4 C4 | "Bb"D2 E2 F2 G2 "F"A6 B2 | "Dm"c2 d2 c2 B2 "Gm"A4 G2 F2 | "A7"E2 D2 E2 F2 "Dm"D8 |

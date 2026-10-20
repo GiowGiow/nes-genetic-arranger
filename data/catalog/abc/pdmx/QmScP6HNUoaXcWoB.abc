@@ -1,0 +1,30 @@
+%abc-2.1
+% Pour souhaitter, by Josquin des Prez. Score published on MuseScore (artist: Josquin des Prez),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josquin des Prez (died 1521,
+% Wikidata Q143100).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/13/QmScP6HNUoaXcWoB5N4Qj8zqMQd14XZMjg9cyoke5AZ67C.mid (sha256
+% 933b468bd213dd3a73ac1e0a8cde0773091fce0762d282393ffa0e38565ff95b): melody track 0, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pour souhaitter
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"A"D8 F8 | "B"E8 D8 | "Dm"z4 A4 A4 A4 | "E7"G6 E2 F2 G2 A4 |
+"Dm"A2 G2 F2 E2 D2 E2 F2 D2 | "Em7"E8 z8 | "Am"A,2 B,2 C2 D2 E2 D2 E2 F2 | "Dm"G2 A2 B2 G2 A8 |
+"C"z4 G4 c4 c4 | "Am7"B8 A8 | "Em"G16 | "Am"z12 E4 |
+"G"F4 F4 G8 | "Em7"z4 G4 G4 G4 | "Dm"F2 E2 F2 G2 A2 G2 A2 B2 | "G"c4 A6 G2 G2 F2 |
+"Dm"A8 z4 E4 | "Dm"F2 E2 F2 G2 A2 G2 A2 B2 | "Am"c4 A6 G2 G2 F2 | "Am"A8 z4 E4 |
+"Dm"G8 F8 | "Am7"E8 z8 | "Am"z4 A4 A4 A4 | "Em7"B4 c8 B2 A2 |
+"Em"G4 E2 F2 G2 A2 B2 G2 | "Am"A4 c8 B2 A2 | "Em"G16 | "Am"z12 E4 |
+"G"F4 F4 G8 | "Em7"z4 G4 G4 G4 | "Bm7"F8 z4 D4 | "Am7"E4 F4 G8 |
+"Am"z4 A4 c6 B2 | "Em7"A4 G4 A8 | "Am"z4 A4 B4 c4 | "Am"c2 B2 G4 A8 |
+"Em"G16 | "Am"z12 E4 | "G"F4 F4 G8 | "Em7"z4 G4 G4 G4 |
+"Dm"F2 E2 F2 G2 A2 G2 A2 B2 | "G7"c4 A6 G2 G2 F2 | "Dm"A4 F4 E4 A4 | "Dm7"A2 G2 E4 F8 |
+"Am"E16 |

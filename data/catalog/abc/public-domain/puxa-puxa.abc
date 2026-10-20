@@ -1,0 +1,35 @@
+%abc-2.1
+% PUXA-PUXA, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/puxa-puxa.html (file
+% https://www.beakauffmann.com/mpb_p/som/puxa-puxa.mid, sha256
+% bde88364ef52da546373fc2a8fd14581d67a46ea3c894f806533c44efc0e91d1), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PUXA-PUXA
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"C"z5 G ^F G | "C"A ^F G A ^F G A ^F | "C"G A ^F G A ^F G A | "Em"A G2 ^F =F E D _D |
+"Dm"E D _D E =D A _A =A | "Gm"_B _A =A =B _A =A _B _A | "Gm"A B _A =A _B _A =A =B | "G7"B A G F E D C B, |
+"C"D C B, C G G ^F G | "C"A ^F G A ^F G A ^F | "C"G A ^F G A G ^F G | "C7"d c _B ^F A G E C |
+"Dm"G3 F G F E F | "D7"d c A ^F c A ^F _E | "Em"A G2 ^F =F E D _D | "G7"E D A, D C B, A, B, |
+"C"C2 G3 G ^F G | "C"A ^F G A ^F G A ^F | "C"G A ^F G A ^F G A | "Em"A G2 ^F =F E D _D |
+"Dm"E D _D E =D A _A =A | "Gm"_B _A =A =B _A =A _B _A | "Gm"A B _A =A _B _A =A =B | "G7"B A G F E D C B, |
+"C"D C B, C G G ^F G | "C"A ^F G A ^F G A ^F | "C"G A ^F G A G ^F G | "C7"d c _B ^F A G E C |
+"Dm"G3 F G F E F | "D7"d c A ^F c A ^F _E | "Em"A G2 ^F =F E D _D | "G7"E D A, D C B, A, B, |
+"Ab"C3 z5 | "Am"z8 | "F7"z8 | "Am"z8 |
+"G7"z8 | "Am7"z8 | "Dm"z8 | "F7"z8 |
+"Em"z8 | "Am"z8 | "Dm7"z8 | "Am"z8 |
+"F"z8 | "Bb7"z8 | "Gm"z8 | "Dbm7"z8 |
+"Am"z8 | "Am"z8 | "F7"z8 | "Am"z8 |
+"G7"z8 | "Am7"z8 | "Dm"z8 | "F7"z8 |
+"Em"z8 | "Am"z8 | "Dm7"z8 | "Am"z8 |
+"F"z8 | "Bb7"z8 | "Gm"z8 | "Dbm7"z8 |

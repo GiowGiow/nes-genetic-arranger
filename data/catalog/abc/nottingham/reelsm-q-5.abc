@@ -1,0 +1,24 @@
+%abc-2.1
+% Mairie's Wedding, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 5 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Mairie's Wedding
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 d2 B2 | "D"A6 A2 A4 B4 | "D"d4 e4 f8 | "G"e4 d4 B4 d4 |
+"A7"f4 e4 f8 | "D"A6 A2 A4 B4 | "D"d4 e4 f8 | "G"e4 d4 B4 G4 |
+"A7"A12 d2 B2 | "D"A6 A2 A4 B4 | "D"d4 e4 f8 | "G"e4 d4 B4 d4 |
+"A7"f4 e4 f8 | "D"A6 A2 A4 B4 | "D"d4 e4 f8 | "G"e4 d4 B4 G4 |
+"A7"A12 f2 g2 | "D"a6 a2 a4 b4 | "Bm"a4 g4 f8 | "E7"e4 d4 B4 d4 |
+"A"f4 e4 f8 | "F#m"a6 a2 a4 b4 | "Bm"a4 g4 f8 | "Em"e4 d4 B4 G4 |
+"A7"A12 f2 g2 | "D"a6 a2 a4 b4 | "Bm"a4 g4 f8 | "E7"e4 d4 B4 d4 |
+"A"f4 e4 f8 | "F#m"a6 a2 a4 b4 | "Bm"a4 g4 f8 | "Em"e4 d4 B4 G4 |
+"A7"A12 z4 |

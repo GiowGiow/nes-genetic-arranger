@@ -1,0 +1,35 @@
+%abc-2.1
+% Adagio form Clarinet Concerto in A (K.622), by Wolfgang Amadeus Mozart. Score published on
+% MuseScore (artist: Wolfgang Amadeus Mozart), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/47/QmbUn1kSCXgwKEBqk8w4AjF6X1yUnNfzzLEedyvE4HAGUN.mid (sha256
+% f06c10fd72ccd8599ee7479375fa5533f6743760011fb220913577eafc2b6d9f): melody track 8, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Adagio form Clarinet Concerto in A (K.622)
+M:3/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"D"D2 A,2 D2 A,2 D2 A,2 | "D"_D2 A,2 =D2 A,2 =D2 A,2 | "D"D2 A,2 D2 A,2 D2 A,2 | "D"_D2 A,2 =D2 A,2 =D2 A,2 |
+"A"_D2 A,2 _D2 A,2 =D2 A,2 | "A"_D2 A,2 _D2 A,2 B,2 =D2 | "F#m7"A,2 _D2 A,2 _D2 _A,2 B,2 | "A"_D2 B2 A2 G2 ^F2 E2 |
+"D"^F2 A2 ^F2 A2 ^F2 A2 | "D"G2 A2 ^F2 A2 ^F2 A2 | "D"^F2 A2 ^F2 A2 ^F2 A2 | "D"E2 A2 ^F2 A2 ^F2 A2 |
+"A"E2 A2 E2 A2 ^F2 A2 | "D"E2 A2 E2 A2 D2 ^F2 | "F#m7"_D2 E2 _D2 E2 =D2 E2 | "A"_D2 G2 ^F2 E2 =D2 _D2 |
+"D"D2 A,2 D2 A,2 D2 A,2 | "G"B,2 G4 ^F2 E2 _E2 | "Em"E2 B,2 E2 B,2 E2 B,2 | "A"_D2 A4 _A2 ^F2 =F2 |
+"F#m"^F2 A,2 B,4 A,2 B,2 | "Bm"D2 B,2 A,2 E2 A,2 D2 | "A7"B,2 E2 D2 ^F2 A,2 _D2 | "D"D2 B2 A2 G2 ^F2 E2 |
+"D"^F2 D2 ^F2 E2 D2 _D2 | "G"B,2 B4 A2 G2 ^F2 | "Em"G2 E2 G2 ^F2 E2 D2 | "A"_D2 _d4 B2 A2 _A2 |
+"F#m"A2 _D2 A2 G2 ^F2 E2 | "Bm"D2 B,2 E2 A2 D2 A2 | "A7"B2 G2 ^F2 A2 G2 A2 | "D"^F2 G2 ^F2 E2 D2 _D2 |
+"D"z2 D2 D2 D2 D2 D2 | "A"z2 _D2 _D2 _D2 _D2 _D2 | "E"z2 B,4 D2 _D2 B,2 | "A"_A,4 =A,4 z4 |
+"F#m7"z2 E z _D z E z _D z E z | "D"z2 D z B, z D z B, z D z | "F#m7"z2 A, z _D z A, z _D z A, z | "F#m"z2 ^F z D z ^F z D z ^F z |
+"E"z2 D z B, z D z B, z E z | "A"A,2 z2 E2 z2 D2 z2 | "E"z2 _D2 A,2 _D2 B,2 _A,2 | "D"D4 _D2 A,4 B,2 |
+"F#m7"_D z A z E z A z E z A z | "D"z2 ^F z D z B z ^F z B z | "F#m7"z2 G z E z _d z ^F z B z | "F#m"z2 A z ^F z d z A z d z |
+"Abm"z2 E z B, z B z E z d z | "A"z2 A,2 _D2 E2 A2 _d2 | "D"z2 B,2 D2 ^F2 B2 d2 | "F#m7"z2 A,2 A,2 A,2 A,2 A,2 |
+"E"A, A, A, A, _A, _A, _A, _A, _A, _A, _A, _A, | "F#m7"A,2 E4 A4 _d2 | "A"e2 A,2 A,2 A,2 A,2 A,2 | "E7"B,2 D4 _A4 B2 |
+"Bm7"d2 _A,2 _A,2 _A,2 _A,2 _A,2 | "A7"G,2 E4 G4 _d2 | "A7"e4 z8 | "D"D2 A,2 D2 A,2 D2 A,2 |
+"D"_D2 A,2 =D2 A,2 =D2 A,2 | "D"D2 A,2 D2 A,2 D2 A,2 | "D"_D2 A,2 =D2 A,2 =D2 A,2 | "A"_D2 A,2 _D2 A,2 =D2 A,2 |

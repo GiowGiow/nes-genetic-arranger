@@ -1,0 +1,32 @@
+%abc-2.1
+% Jig from the Water Music, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/jigs.abc, tune X: 325 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Jig from the Water Music
+M:6/8
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"D7"z10 D2 | "D7"G4 B2 A4 c2 | "D7"B2 c2 d2 G4 A2 | "C"B2 c2 d2 c2 d2 e2 |
+"D"d6 d4 d2 | "D7"e4 A2 A2 B2 c2 | "G"d4 G2 G2 A2 B2 | "C"c2 d2 c2 B2 A2 B2 |
+"D"A6 A4 D2 | "D7"G4 B2 A4 c2 | "D7"B2 c2 d2 G4 A2 | "C"B2 c2 d2 c2 d2 e2 |
+"D"d6 d4 d2 | "D7"e4 A2 A2 B2 c2 | "G"d4 G2 G2 A2 B2 | "C"c2 d2 c2 B2 A2 B2 |
+"D"A6 A4 A2 | "Am"A4 A2 A4 B2 | "Am"c2 d2 e2 A4 c2 | "D7"e4 e2 e4 f2 |
+"D7"g4 G2 G4 A2 | "C"B2 A2 G2 c6 | "D7"c2 B2 A2 d4 c2 | "D7"B2 c2 B2 A2 G2 A2 |
+"G"G6 G4 A2 | "Am"A4 A2 A4 B2 | "Am"c2 d2 e2 A4 c2 | "D7"e4 e2 e4 f2 |
+"D7"g4 G2 G4 A2 | "C"B2 A2 G2 c6 | "D7"c2 B2 A2 d4 c2 | "D7"B2 c2 B2 A2 G2 A2 |
+"G"G6 G4 d2 | "Gm"g4 G2 g4 G2 | "Gm"g2 a2 ^a2 g4 =f2 | "D7"^d2 =d2 c2 ^A2 c2 =A2 |
+"Gm"^A2 c2 d2 G2 =A2 ^A2 | "F7"c2 d2 ^d2 A2 ^A2 c2 | "Eb"=F4 ^a2 =a4 g2 | "F7"=f2 ^d2 =d2 c2 ^A2 c2 |
+"Bb"^A6 ^A4 d2 | "Gm"g4 G2 g4 G2 | "Gm"g2 a2 ^a2 g4 =f2 | "D7"^d2 =d2 c2 ^A2 c2 =A2 |
+"Gm"^A2 c2 d2 G2 =A2 ^A2 | "F7"c2 d2 ^d2 A2 ^A2 c2 | "Eb"=F4 ^a2 =a4 g2 | "F7"=f2 ^d2 =d2 c2 ^A2 c2 |
+"Bb"^A6 ^A4 =f2 | "Bb"^a4 ^A2 ^a4 ^A2 | "F"A2 ^A2 c2 =F4 d2 | "Gm"g4 G2 g4 G2 |
+"D7"F2 G2 A2 D4 d2 | "Cm7"^d2 =d2 c2 ^A2 =A2 G2 | "D7"f2 e2 =f2 g2 =f2 ^d2 | "D7"d2 c2 ^A2 =A2 G2 =A2 |
+"Gm"G6 G4 =f2 | "Bb"^a4 ^A2 ^a4 ^A2 | "F"A2 ^A2 c2 =F4 d2 | "Gm"g4 G2 g4 G2 |
+"D7"F2 G2 A2 D4 d2 | "Cm7"^d2 =d2 c2 ^A2 =A2 G2 | "D7"f2 e2 =f2 g2 =f2 ^d2 | "D7"d2 c2 ^A2 =A2 G2 =A2 |
+"Gm"G6 G4 z2 |

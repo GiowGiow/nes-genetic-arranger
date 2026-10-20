@@ -1,0 +1,35 @@
+%abc-2.1
+% PALPITE INFELIZ, by Noel Rosa, as performed by Noel Rosa.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Noel Rosa (died 1937, Wikidata Q281078).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/palpite-infeliz.html (file
+% https://www.beakauffmann.com/mpb_p/som/palpite-infeliz.mid, sha256
+% 707be654bbbca9132bb092441f477e807c7164454935e043c8133a4d7d3149f6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-57 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PALPITE INFELIZ
+M:4/4
+L:1/16
+Q:1/4=102.8
+% Exact tempo 102.79999999999757 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E7"z10 E, _D z B, z A, | "F#m7"A,4 _D z B, z "D"A,3 _A, z ^F, z =A, | "F#m7"A,8 z2 _A, _D2 _A, z ^F, | "A7"^F,4 E,2 ^F, z "Cm7"G,2 ^F,2 z E, _A,2 |
+"E7"_A,9 z D2 z D z _D | "Db7"_D4 B, _A,2 z _D3 B, z _D2 =A, | "F#m"^F,2 z _D z B, z A, _D2 z B, z A, z _E, | "B7"_E,2 z3 A,2 z A,2 z B, z _D z B, |
+"E7"z A, z _A, =A, z B,6 z E, z E, | "F#m7"E,2 z E, z E, z ^F, _A,2 =A, B, z _D z ^F, | "F#7"^F,8 z2 E, ^F, z E,2 _D | "Bm7"_D4 B, z A,2 "Abm7"B,3 A, z _A,2 =A, |
+"F#m7"A,8 z2 A, B,2 A, z _A, | "E7"z ^F, E,2 z _E, z D,2 =E, z _D z B, A,2 | "F#m7"A,9 z E, E2 D2 _D | "A7"_D B,2 A, _A,2 z G,2 =A,2 ^F z E =D2 |
+"D"D8 z2 ^F, ^F2 E2 D | "Dm"z D2 ^F E2 D3 z D E2 D z _D | "F#m7"z _D z2 =D z _E z "F#7"=E2 _D =D2 =E2 _D | "B7"_D4 B,2 A, z "E7"B,3 A, z _A, z =A, |
+"F#m7"z _D z _A, _D z _A, z "E7"^F, z E, _D2 B, z =A, | "F#m7"A,4 _D2 B,2 "E7"A,3 _A,2 ^F,2 =A, | "F#m7"A,9 z _A, _D2 _A,2 ^F, | "A7"^F,4 E,2 ^F,2 "Cm7"G,3 ^F,2 E,2 _A, |
+"E7"_A,9 z2 D z D2 _D | "Db7"_D4 B, z _A, z _D3 B, z _D2 =A, | "F#m"z ^F, z _D z B, z A, _D2 z B, z A, z _E, | "B7"_E,2 z3 A,2 z A,2 z B, z _D z B, |
+"E7"z A, z _A, =A, z B,7 E, z E, | "F#m7"E,2 z E, z E, z ^F, _A,2 =A, B,2 _D2 ^F, | "F#7"^F,9 z E, ^F,2 E,2 _D | "D"_D4 B,2 A,2 "B7"B,3 A,2 _A, z =A, |
+"F#m7"A,8 z2 A, B,2 A,2 _A, | "E7"_A, ^F,2 E, _E,2 z D, z =E,2 _D2 B, z =A, | "F#m7"A,9 z E, z E D2 _D | "A7"_D B,2 A,2 _A, G,3 =A,2 ^F2 E2 =D |
+"D"D8 z2 ^F, ^F2 E2 D | "D"z2 D ^F E2 D2- "Dm"D z D E2 D z _D | "A"z _D3 =D2 _E2 "F#7"=E2 _D =D2 =E2 _D | "E7"_D4 B,2 A,2 B,3 A,2 _A,2 =A, |
+"F#m7"A, _D z _A, _D z _A, z "E7"^F, z E, _D2 z B,2 | "F#m7"A,3 z _D2 B,2 "D"A,3 _A, z ^F, =A,2 | "F#m7"A,8- "A"A, z _A, _D2 _A,2 ^F, | "Am"^F,4 E,2 ^F,2 "Cm7"G,3 ^F, z E, _A,2 |
+"E7"_A,10 z D z D2 _D | "Db7"_D4 B,2 _A,2 _D3 B,2 _D2 =A, | "F#m"z ^F, z _D z B, z A, _D2 z B, z A, z _E, | "B7"_E,3 z2 A,2 z A,2 z B, z _D z B, |
+"E7"z A, z _A, =A, z B,7 E, z E, | "F#m7"E, z2 E, z E, z ^F, _A,2 =A, B,2 _D2 ^F, | "F#7"^F,9 z E, ^F,2 E,2 _D | "B7"_D4 B,2 A, z "E7"B,3 A,2 _A,2 =A, |
+"F#m7"A,8 z2 E, ^F,2 E,2 _D | "F#m7"_D4 B,2 A,2 "E7"B,3 A,2 _A,2 =A, | "F#m7"A,8- "A"A,3 z5 | "Bb"z8 "F#m7"z8 |
+"A"z16 |

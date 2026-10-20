@@ -1,0 +1,35 @@
+%abc-2.1
+% Baci affammati e ingordi, by Luca Marenzio. Score published on MuseScore (artist: Luca
+% Marenzio), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luca Marenzio (died 1599,
+% Wikidata Q316532).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/7/QmS8Ui4yc3VH5HTpGjbibRASucfY1fp39674gujXtAHZZZ.mid (sha256
+% a3ba48f2074b949c13f17e568233566e95f4e13754ab84107021ff9b7b9ede58): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Baci affammati e ingordi
+M:4/4
+L:1/16
+Q:1/4=118.000134
+% Exact tempo 118.00013373348487 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "Cm"z8 c8 | "G"c8 B8 | "C"c4 c2 c2 "Fm"c6 d2 |
+"Eb"_e16 | "Ab"_e16 | "Ab"z8 "Gm"z8 | "Ab"_e6 d2 c4 _B2 _A2 |
+"Gm"_B4 G4 z8 | "Fm"c6 _B2 _A4 G2 F2 | "Eb"G4 _E4 z8 | "Db"f6 g2 f4 _e2 _d2 |
+"Cm"_e4 c4 z8 | "Bb"z8 "Cm"z4 _e4 | "Gm"d4 d4 "Ab"c4 c4 | "Eb"_B4 _B4 "Fm"_A4 _A4 |
+"Cm"G8 "Bb"F4 f4 | "Cm"_e4 _e4 "Gm"d4 d4 | "Ab"c4 c4 "Eb"_B4 _B4 | "Fm"_A8 "Cm"G4 g4 |
+"Bb"f4 f4 "Cm"_e4 _e4 | "Gm"d4 d4 "Ab"c4 c4 | "Eb"_B8 "Fm"_A8 | "Cm"z4 G4 "Fm"_A2 _B2 c2 d2 |
+"Eb"_e4 _e4 "Ab"z4 c4 | "G"c2 _B2 _B4 "Ab"_e6 d c | "Gm"d4 d4 "Eb"g6 f _e | "Gm"d4 _e4- "Bb"_e4 d4 |
+"Eb"_e16 | "Eb"_E12 F4 | "Eb"G8 "F7"G8 | "G"z4 _B4 "Gm"_E2 F2 G2 _A2 |
+"Eb"_B4 _E4 z8 | "Eb"_B8- "Cm"_B4 c4 | "Bb"d8 d8 | "Bb"z4 f4 _B2 c2 d2 _e2 |
+"Bb"f4 _B4 z4 f4 | "Bb"_B2 c2 d2 _e2 f4 _B4 | "Bb"z8 "Cm7"z8 | "Ab"z4 c2 d2 _e4 _e4 |
+"Eb"z4 _E2 F2 G4 G2 G2 | "Eb"G2 F2 G2 _A2 G4 G4 | "Gm"z4 G2 _A2 _B4 _B4 | "Bb"z8 "Fm7"z8 |
+"Bb"z4 _B2 c2 d4 d2 d2 | "Bb"d2 c2 d2 _e2 d4 d4 | "Fm"z8 "Cm"z8 | "Cm"z8 "G"z8 |
+"C"z8 G8 | "F"_A8 "C"G8 | "Fm"z8 "G"z4 d4 | "C"_e6 _e2 "G"d6 d2 |
+"Cm"c6 c2 "G"d8 | "Cm"z4 g4 "Em7"z4 d4 | "Cm"_e8 "G"d8 | "Cm"z4 c4 "G"z4 d4 |
+"Cm"_e8 "Fm"c6 _B _A | "Eb"_B16 | "Ab"c16 | "C"z8 "F"f4 _e4 |
+"B"d8 "Fm"c8 | "Ab"z8 "Db"_d4 c4 | "G"_B8 "Ab"_A8 | "Cm"z8 "Fm"_A4 _A4 |

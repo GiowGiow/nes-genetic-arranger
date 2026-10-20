@@ -1,0 +1,26 @@
+%abc-2.1
+% Hine E Hine, by Princess Te Rangi Pai (1886-1919). Score published on MuseScore (artist:
+% Princess Te Rangi Pai), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Princess Te Rangi Pai (died
+% 1916, Wikidata Q15437737).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/13/QmacKA3qAyjxJBxDdB2nRvAhRHNVKCFz2wmN9KrWuJ4FC4.mid (sha256
+% c7025d3ae907a028fa9ba7c07bd54f39abae7842c2283ed94bd1d37c8fa6fff8): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Hine E Hine
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G8 G4 G4 | "C"^F8 E4 ^F4 | "C"G16 | "C"A16 |
+"C"B8 c4 B4 | "C"A8 E4 ^F4 | "C"G16 | "C"z16 |
+"C"G8 G4 G4 | "C"^F8 E4 ^F4 | "C"G16 | "C"A16 |
+"C"B8 c4 B4 | "C"A8 E4 ^F4 | "C"G16 | "C"z16 |
+"C"B8 B4 B4 | "C"c8 G4 A4 | "C"B16 | "C"z16 |
+"C"B8 B4 B4 | "C"c8 d4 c4 | "C"B16 | "C"z12 B4 |
+"C"G8 G4 G4 | "C"^F8 E4 ^F4 | "C"G16 | "C"c16 |
+"C"B8 c4 B4 | "C"A8 E4 ^F4 | "C"G16 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% BRASILEIRINHO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/brasileirinho-1.html (file
+% https://www.beakauffmann.com/mpb_b/som/brasileirinho-1.mid, sha256
+% 0595e36652a308d567b4374c330260432509ce37cf2cd6f865177b57a8653940), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BRASILEIRINHO
+M:2/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m"D ^F E c D ^F E c | "G"D G, E B D G, E B | "B7"^F, A, B, _E ^F, A, B, _E | "E7"F, _A, B, D F, _A, B, D |
+"A7"E3 G, _B, _D E G | "Em7"B, ^F E D C B, A, G, | "A"_D E2 A G,2 _d2 | "D7"C ^F2 A ^F2 d2 |
+"F#m"D ^F E c D ^F E c | "G"D G, E B D G, E B | "B7"^F, A, B, _E ^F, A, B, _E | "E7"F, _A, B, D F, _A, B, D |
+"A7"E3 G, _B, _D E G | "Em7"B, ^F E D C B, A, G, | "D7"A,2 E, D B,2 A,2 | "G"B,2 D2 G4 |
+"F#m"D ^F E c D ^F E c | "G"D G, E B D G, E B | "B7"^F, A, B, _E ^F, A, B, _E | "E7"F, _A, B, D F, _A, B, D |
+"A7"E3 G, _B, _D E G | "Em7"B, ^F E D C B, A, G, | "A"_D E2 A G,2 _d2 | "D7"C ^F2 A ^F2 d2 |
+"F#m"D ^F E c D ^F E c | "G"D G, E B D G, E B | "B7"^F, A, B, _E ^F, A, B, _E | "E7"F, _A, B, D F, _A, B, D |
+"A7"E3 G, _B, _D E G | "Em7"B, ^F E D C B, A, G, | "D7"A,2 E, D B,2 A,2 | "G"B,2 D2 G4 |
+"Em"B e e g B e e g | "B7"^F A B _e ^F A B _e | "Abm"F _A B d F _A B d | "G"E G B _d E G B _d |
+"Am"c2 C A _A =A B =A | "D7"c B _B =B e =B A G | "F#7"^F _B e _d E _B e _d | "Abm7"_E ^F c B _E ^F c B |
+"Em"B e e g B e e g | "B7"^F A B _e ^F A B _e | "Abm"F _A B d F _A B d | "G"E G B _d E G B _d |
+"Am"c2 C A _A =A B =A | "D7"c B _B =B e =B A G | "B7"^F _B =B _e ^f =e _e ^f | "Em"e2 B2 e4 |
+"Em"B e e g B e e g | "B7"^F A B _e ^F A B _e | "Abm"F _A B d F _A B d | "G"E G B _d E G B _d |
+"Am"c2 C A _A =A B =A | "D7"c B _B =B e =B A G | "F#7"^F _B e _d E _B e _d | "Abm7"_E ^F c B _E ^F c B |
+"Em"B e e g B e e g | "B7"^F A B _e ^F A B _e | "Abm"F _A B d F _A B d | "G"E G B _d E G B _d |
+"Am"c2 C A _A =A B =A | "D7"c B _B =B e =B A G | "B7"^F _B =B _e ^f =e _e ^f | "Em"e2 B2 e4 |

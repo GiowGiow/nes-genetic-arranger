@@ -1,0 +1,24 @@
+%abc-2.1
+% Nottingham Knees Up !, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 50 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Nottingham Knees Up !
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"A7"z4 A4 d4 f4 | "D"a6 a2 a4 f4 | "D"d6 e2 d4 B4 | "D"A16 |
+"D"A4 A4 d4 f4 | "D"a6 a2 a4 b4 | "D"a6 f2 d4 f4 | "A"e8- "Em"e8 |
+"A"e4 A4 d4 f4 | "D"a6 a2 a4 b4 | "D"a6 f2 e4 d4 | "G"G16 |
+"G"B4 d8 B4 | "D"A8 "Bm"d8 | "A7"e4 f4- "A"f4 A4 | "D"d16 |
+"D"d4 d4 "D7"e4 f4 | "G"g6 g2 g4 a4 | "G"g4 e4 d4 e4 | "G"g4 a8 d4 |
+"G"g4 a8 d4 | "D"f6 f2 =f4 ^f4 | "Bm"g4 f4 d4 A4 | "Em"e16 |
+"A"e4 A4 d4 f4 | "D"a6 a2 a4 f4 | "D7"d6 d2 e4 d4 | "G"G16 |
+"G"B4 d8 B4 | "D"A8 "Bm"d8 | "A7"e4 f4- "A"f4 A4 | "D"d16 |
+"D"d4 z12 |

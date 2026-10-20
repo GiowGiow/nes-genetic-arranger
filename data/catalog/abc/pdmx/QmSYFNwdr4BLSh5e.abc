@@ -1,0 +1,32 @@
+%abc-2.1
+% The Stars and Stripes Forever, by John Philip Sousa. Score published on MuseScore (artist: John
+% Philip Sousa), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Philip Sousa (died 1932,
+% Wikidata Q295935).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/55/QmSYFNwdr4BLSh5e1VzpTwRh3u162GV6QNrKVgF6UuYkbh.mid (sha256
+% c72925f63f5d22160cda6f315558f65196143dc6d470157a1594ae40ee43c75a): melody track 5, bars 0-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Stars and Stripes Forever
+M:2/2
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Bb7"_b z _B2 g g g g g g _a _a f g f _e | "Cm7"_e c d _B _b _b _b _b _b _b =b =b c' _e' d' c' | "Cm7"b3 B _B _B _e c _B A _B G F _B, _B, _B, | "Gm7"F _B, _B, _B, _B _B _e c _B A _B ^F =F A A A |
+"Bb7"_B, z _B2 g g g g g g _a _a f g f _e | "Cm7"_e c d _B _b _b _b _b _b _b =b =b c' _e' d' c' | "Cm7"b3 B _B _B _e c _B A _B G F _B, _B, _B, | "Gm7"F _B, _B, _B, _B _B _e c _B A _B ^F =F A A A |
+"Bb7"_B, z _b _a g2 c' _b d d' c c' _B _b _A _a | "Cm7"G g f g _a c' z _e' f f' _e _e' G g g g | "Bb7"F f _b _a g2 c' _b d d' c c' _B _b _A _a | "Bbm7"G g f g _a c' f' _e' g _b _e g F f f f |
+"Bb7"_e z _b _a g2 c' _b d d' c c' _B _b _A _a | "Cm7"G g f g _a c' z _e' f f' _e _e' G g g g | "Bb7"F f _b _a g2 c' _b d d' c c' _B _b _A _a | "Bbm7"G g f g _a c' f' _e' g _b _e g F f f f |
+"Fm7"_e z _e2 _e2 _d c c2 B c c4 | "Fm7"c2 B c c2 B c _e2 c _e _d4 | "Eb7"_B3 _B _B2 A _B _B2 A _B _d4 | "Eb7"_d2 c _B c _e3 f3 f _B4 |
+"Fm7"_B2 _e2 _e2 _d c c2 =B c c4 | "Cm7"c2 B c c2 B c _d c _B g _B4 | "E"_A3 _A _A2 G _A B2 _B _A _a4 | "Ab"_a _A _B c _e _A _B c _e _E F c _B4 |
+"Bbm7"_A z _A, _A, _A, G, G, F, F, E, f e F, E, f g | "C7"e z C C C _B, _B, _A, _A, G, _a g _A, G, _a _b | "Eb7"g z G _d e e e e e _e =d _d c B _B A | "Fm7"_A ^F B _e ^f ^f ^f ^f ^f =f =e _e d _d c B |
+"Eb"_B _A _B g _b _b _b _b _b _b _B g _b _b _b _b | "Gm7"_b _b _B g _b _b a a _a _a g g ^f ^f =f =f | "Fm7"e _e f _e _e2 _d c c2 B c c4 | "Fm7"c2 B c c2 B c _e2 c _e _d4 |
+"Eb7"_B3 _B _B2 A _B _B2 A _B _d4 | "Bbm7"_d2 c _B c _e3 f3 f _B4 | "Fm7"_B2 _e2 _e2 _d c c2 =B c c4 | "C7"c2 B c c2 B c _d c _B g _B4 |
+"E"_A3 _A _A2 G _A B2 _B _A _a4 | "Cm7"_a _A _B c _e _A _B c _e _E F c _B4 | "Bbm7"_A z _A, _A, _A, G, G, F, F, E, f e F, E, f g | "C7"e z C C C _B, _B, _A, _A, G, _a g _A, G, _a _b |
+"Eb7"g z G _d e e e e e _e =d _d c B _B A | "Fm7"_A ^F B _e ^f ^f ^f ^f ^f =f =e _e d _d c B | "Eb"_B _A _B g _b _b _b _b _b _b _B g _b _b _b _b | "Gm7"_b _b _B g _b _b a a _a _a g g ^f ^f =f =f |
+"Fm7"e _e f _e _e2 _d c c2 B c c4 | "Fm7"c2 B c c2 B c _e2 c _e _d4 | "Eb7"_B3 _B _B2 A _B _B2 A _B _d4 | "Bbm7"_d2 c _B c _e3 f3 f _B4 |
+"Fm7"_B2 _e2 _e2 _d c c2 =B c c4 | "C7"c2 B c c2 B c _d c _B g _B4 | "E"_A3 _A _A2 G _A B2 _B _A _a4 | "Cm7"_a _A _B c _e _A _B c _e _E F c _B4 |
+"Ab"_A z _a z13 |

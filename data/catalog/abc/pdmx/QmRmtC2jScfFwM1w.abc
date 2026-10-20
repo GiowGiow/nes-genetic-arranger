@@ -1,0 +1,34 @@
+%abc-2.1
+% Suite bergamasque, by Claude-Achille Debussy. Score published on MuseScore (artist: Claude
+% Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude-Achille Debussy (died
+% 1918, Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/31/QmRmtC2jScfFwM1wA6Ec2qZaW154XWedsPocpFjAURubTG.mid (sha256
+% f5d466030d2ed3da8164ecaf143200f58ff9e81716b9e152a71d5417f0e89da5): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite bergamasque
+M:3/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"D"A, F C A B,2 A A, B, z A2 | "D"B, C c E ^F G c D C D c2 | "F#m7"E ^F _A =A ^F z _A E ^F z =A z | "E"_A =A _A3 =A B3 c _A2 |
+"C"g f g e d c d3 c d _B | "Dm7"A G A2 g f g e d c d2 | "C"E c d _B A G A3 G A E | "G7"D G A3 B d B A B E G |
+"G7"A G A2 A B d B A B A F | "C"E9 z3 | "Bm"E9 z3 | "Dm"A, B, A D B, z A A, B, z A2 |
+"D"B, C c E ^F G c D C D c2 | "Dm"A B c d B2 c A B2 c2 | "Em7"B c d e ^f g ^f d c d e2 | "Ab7"c d e2 A B c2 G2 _A2 |
+"E7"F2 E2 C2 B,2 D2 z2 | "A"z2 A E E A A E E A B z | "A"a2 A E E A A E E A B z | "C"c'2 c G G c c G G c d z |
+"C7"c'2 c G G c c G G c d2 | "Bbm"_e d _e3 d _e3 d _e2 | "D"c d _e g d A G =E G A G =E | "Dm"d c d3 c d3 c d2 |
+"C"_B c d f _B _E D _E F _E D _E | "F"_E D C _E A D C _E G B, A, C | "Gm7"F _B, A, C _B, D G D _B F d G | "F"_B D C _E A D C _E G _B, A, C |
+"Gm7"F _B, A, C _B, D G D _B F d G | "Gm7"e G f A d G _B G c G d G | "Am"g _B a c a c e A e A c A | "Gm7"e G f A d G _B G c G d G |
+"Am"g _B a c a c e A e A _b d | "C"_b d c' e c' e a c a c c' e | "Bb"d' e d' f d' d d' d d' c d' c | "Bb"d' g d' a d' a d' e d' e d' e |
+"Bb"d' e d' f d' d d' d d' c d' d | "Em"e' e e E e E E E, E E, E E, | "F"E E, E E, E E, E E, F2 A2 | "Em"e' e e E e E E E, E E, E E, |
+"Am"E E, E E, E E, E E, E E, E E, | "D"A B c d B2 c A B z c z | "D"B c d e ^f g ^f d c d e2 | "Dm7"a b c' d' b2 c' a b2 c'2 |
+"D7"b c' d' e' ^f' g' ^f' d' c' d' e'2 | "C"b d' b a b g e d e2 A2 | "D7"B d B A B G E D E2 A,2 | "C"G, ^F G A E z ^F D E z G z |
+"A"B z A z9 | "F"a g f c B z4 c B d | "Bm7"c e d f e c B G F2 G2 | "F"a g f c B z4 c B d |
+"Bm7"c e d f e c B G F2 G2 | "Eb"g f _e _B A z4 _B A c | "Am7"_B d c _e d _B A F _E2 F2 | "Eb"g f _e _B A z4 _B A c |
+"Am7"_B d c _e d _B A F _E2 F2 | "D"^F3 G ^F3 G ^F2 A2 | "Gm"G2 ^F G E4 G _D B, _D | "G"^F2 A2 c4 B2 d2 |
+"Em"^f4 e2 d2 B D G B, | "D"^F3 G ^F3 G ^F2 A2 | "A7"G2 ^F G E2 B2 A2 G2 | "F#m"^F2 d2 _d2 B2 A2 a2 |

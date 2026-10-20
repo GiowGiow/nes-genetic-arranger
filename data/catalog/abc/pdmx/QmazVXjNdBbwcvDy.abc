@@ -1,0 +1,23 @@
+%abc-2.1
+% This spacious earth is all the Lord's, by Samuel Arnold. Score published on MuseScore (artist:
+% Samuel Arnold), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Samuel Arnold (died 1802,
+% Wikidata Q1379741).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/56/QmazVXjNdBbwcvDyFKychKKTcVWgZy17kjBCBLdSNC2Y7C.mid (sha256
+% b84ae116f8b3727020cf721f87380c087dedb69457a4826194ce385701344029): melody track 0, bars 0-17
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:This spacious earth is all the Lord's
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z12 c4 c8 d8 | "C"e8 z4 c4 c8 d8 | "C"e8 z4 e4 "D"d8 c8 | "Em7"B6 c2 A8 "Em"G8 z4 G4 |
+"F"A4 G4 A4 B4 "C"c8 c8 | "D7"_B4 A4 _B4 G4 "Dm"A8 d8 | "Em7"d4 _d4 =d4 e4 "A"=d8 _d8 | "Dm"d8 z4 d4 d8 _d8 |
+"Dm"d8 d8 "Em"c8 d8 | "C"e8 z4 e4 "E7"d8 c8 | "Dbm"c8 B8 "Am"A8 z4 A4 | "E"B4 A4 B4 _d4 "Db"=d12 c4 |
+"G7"B4 G4 A4 B4 "C"c8 c8 | "Dm"A8 d8 "C"c8 B8 | "Am"c16 "G"d16 | "Am7"e8 c8 "G7"d8 B8 |
+[M:2/2]"C"c16 |

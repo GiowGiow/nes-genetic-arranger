@@ -1,0 +1,30 @@
+%abc-2.1
+% el dia que me quieras, by Carlos Gardel. Score published on MuseScore (artist: Carlos Gardel),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carlos Gardel (died 1935,
+% Wikidata Q229613).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/29/QmPKomdgeZt1224Xj9MAXBvQbmMQhA2R82MUxo91wQocar.mid (sha256
+% e6423ec1d8b39f10f04c606fb106fad0caae3dc492a6bb1b883bb429d703f789): melody track 1, bars 0-45
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:el dia que me quieras
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z2 G,2 C E G B | "G"A4 G4 | "G"G G E2 D D C2 | "G"C C A, C G4 |
+"G"z2 G,2 C E G B | "A7"A4 G4 | "C"G G E2 D D C2 | "Am7"C C A, C G4 |
+"Em"F G F2 E F E2 | "D"D8 | "E7"D D C A, E2 D2 | "Ab"C C _A,2 _A,2 D2 |
+"G"z2 G,2 C E G B | "A7"A4 G4 | "Em"E G ^F E G2 G2 | "Em"G G ^F E B4 |
+"Dbm7"z2 B c B2 _E =E | "B7"B4 A4 | "Bm7"z2 A B A2 _D =D | "A7"A2 _A2 G4 |
+"C"G, E E E D F E2 | "C"E E D D E D C2 | "D7"C D C2 B, C A2 | "Gm"z2 A A G2 _B2 |
+"A"A4 A4 | "A7"A A G2 _D2 =D2 | "A7"A4 G4 | "Bb"F F E2 _B,2 =B,2 |
+"D7"D4 C4 | "C"z C D C B, C E E | "Em7"z C D C B, B, G2 | "G"G8 |
+"C"G,2 E2 E E D F | "E"E8 | "E7"E E D D E D2 C | "C"C8 |
+"D7"z C D C B, C A2 | "A"A8 | "D"A A G _A =A2 =A2 | "Abm"A A _A B =A =A _A2 |
+"G7"G G ^F A G G =F2 | "Dm7"z2 F2 G F C D | "Em"E2 G2 B2 A2 | "Am7"G2 E C A,2 F2 |
+"D7"D4 C4 |

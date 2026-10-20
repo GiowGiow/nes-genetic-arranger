@@ -1,0 +1,28 @@
+%abc-2.1
+% Maulgré moy vis, by Tielman Susato. Score published on MuseScore (artist: Tielman Susato), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/14/QmaCY2KanwCNmkxVACCMc9k7DCd1TmapBEx7BVoDsvXfff.mid (sha256
+% b7fbbd98f4a9ef8c0c86543774c1cc8526919df687a29cbe143f921d54740821): melody track 1, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Maulgré moy vis
+M:2/2
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B7"A,6 B,2 C4 D4 | "D"D4 C2 B,2 C4 D4 | "G7"D4 E4 F6 E D | "A7"C6 D2 E4 D4 |
+"Dm7"z4 A,4 C4 D4 | "Dm"F12 E4 | "Am7"E4 A,4 A,2 B,2 C2 D2 | "Dm"E2 D2 F8 E4 |
+"Dm7"E2 D2 D8 _D4 | "Dm"D8 z4 A4 | "Dm"B4 A4 A4 D4 | "Dm"D4 F8 E2 D2 |
+"Bm7"E4 D4 D4 D4 | "Am7"G12 F4 | "D7"E4 D4 C4 A,4 | "Am7"E6 D2 C4 B,4 |
+"F"A,8 z4 F4 | "F"F4 F4 E8 | "F"D4 F6 E2 C2 D2 | "Dm"E4 D2 E2 F2 G2 A4 |
+"F"z4 c4 c4 c4 | "F"B4 A4 c6 B2 | "Em"G2 A2 B8 A4 | "Dm"A4 G4 F8 |
+"Dm7"E8 z4 D4 | "Dm"D4 C4 D4 A,4 | "Am"A,4 G,4 A,4 C4 | "Dm"C4 C4 D4 C4 |
+"Am7"B,4 B,4 A,4 E4 | "D7"E4 E4 F6 E2 | "A7"D4 C4 B,8 | "Dm"A,4 D4 D4 D4 |
+"D7"F8 C4 E4 | "Dm"D6 C2 A,4 D4 | "Dm"D4 E4 F8 | "A"E16 |

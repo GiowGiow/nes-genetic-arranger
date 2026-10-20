@@ -1,0 +1,26 @@
+%abc-2.1
+% Swan Lake (ballet) Op.20, by Pyotr Ilyich Tchaikovsky. Score published on MuseScore (artist:
+% Pyotr Ilyich Tchaikovsky), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pyotr Ilyich Tchaikovsky (died
+% 1893, Wikidata Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/21/QmPgMNcBd5ozzUrUffL8ocPSzTA68EPU2UNqG38zbsfY4L.mid (sha256
+% 9c496649e73ab7141816bb7e8d9f355e3649e8390020b5644e3943f68b60f5c0): melody track 1, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Swan Lake (ballet) Op.20
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 | "F#"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 | "F#"B,2 D2 ^F2 D2 "Dbm7"B,2 E2 G2 E2 | "D"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 |
+"B"B,2 D2 ^F2 D2 "Bm"G,2 B,2 ^F,2 _B,2 | "B"B,2 D2 ^F2 D2 "Dbm"B,2 E2 G2 E2 | "F#"B,2 D2 ^F2 D2 "Dbm7"B,2 E2 G2 E2 | "D"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 |
+"B"B,2 D2 ^F2 D2 "Bm"G,2 B,2 ^F,2 _B,2 | "B"B,2 D2 ^F2 D2 B,4 z4 | "Db"A,2 _D2 E2 _D2 "Em"G,2 _D2 E2 _D2 | "A7"^F,2 A,2 _D2 A,2 "F#m"^F,2 A,2 _D2 A,2 |
+"B7"E,2 G,2 B,2 G,2 "G"E,2 G,2 B,2 G,2 | "Db7"_D,2 F,2 _A,2 F,2 "Bm"^F,2 _B,2 _D2 _B,2 | "Db"A,2 _D2 E2 _D2 "Em"G,2 _D2 E2 _D2 | "A7"^F,2 A,2 _D2 A,2 "F#m"^F,2 A,2 _D2 A,2 |
+"B7"E,2 G,2 B,2 G,2 "G"E,2 G,2 B,2 G,2 | "C"C,2 E,2 G,2 E,2 C,2 E,2 G,2 E,2 | "Db"_D,2 F,2 _A,2 F,2 "F#"^F,2 _B,2 _D2 _B,2 | "F#"B,2 D2 ^F2 D2 "Dbm7"B,2 E2 G2 E2 |
+"D"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 | "B"B,2 D2 ^F2 D2 "Bm"G,2 B,2 ^F,2 _B,2 | "B"B,2 D2 ^F2 D2 "Dbm"B,2 E2 G2 E2 | "F#"B,2 D2 ^F2 D2 "Dbm7"B,2 E2 G2 E2 |
+"D"B,2 D2 ^F2 D2 B,2 D2 ^F2 D2 | "B"B,2 D2 ^F2 D2 "Bm"G,2 B,2 ^F,2 _B,2 | "B"B,2 D2 ^F2 D2 B,8 |

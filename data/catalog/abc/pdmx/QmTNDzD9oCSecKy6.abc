@@ -1,0 +1,35 @@
+%abc-2.1
+% Canonic Sonata Number One, by Georg Philipp Telemann. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Philipp Telemann (died
+% 1767, Wikidata Q75854).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/34/QmTNDzD9oCSecKy6CykTaDKGGc9BmSduwf8hUgHBNDe5XD.mid (sha256
+% 067c1181fc8602ef522eb2afcecbc0b4cbe6fb2d2a2a5698b9a66e735338a6e1): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Canonic Sonata Number One
+M:6/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"z4 c4 f8 e2 d2 c z _B z | "Dm7"A2 _B2 A z G z A z F z G4 C4 z4 | "C7"z4 c4 f8 e2 f2 g z a z | "Dm7"_b4 a2 g2 a2 _b2 _b a _b _b _b _b f z e z f z |
+"C7"g4 f2 e2 f2 g2 e z c d e z f z g z a z | "C"_b4 a2 g2 a2 _b2 _b _b _b _b _b _b _b _b z4 | "Gm"z2 c z c z c z c z c z c z C z c z C z c _B A G | "C"A _B A G A z F z _B z G z A _B A G A z F z G z E z |
+"A7"F6 f z g z e z f6 A z _B z G z | "F"A _B A G A z d z e z _d z =d e =d _d =d z f z e z =d z | "Gm"_d z e z _d _B _d _B _d z3 A z f z _d _B _d _B _d z3 | "Bbm"A z g4 a g f z e z f z a4 g f e z d z |
+"A7"e4 A4 e d e d e z3 D4 z4 | "D"z8 g8 ^f2 g2 a4 | "A7"d4 _b2 a2 _b z g z a4 d2 z2 c2 z2 | "D7"d c d z G4 z12 ^f4 |
+"D"g z d z B z G z d z c B c z G z E z C z c z B A | "C"B4 d4 f4 e2 d2 c4 z4 | "Dm7"z2 G z G z G z G A B G c z C z c z c z c d e c | "C"f4 z4 f8 e2 d2 c z _B z |
+"Bb"A2 _B2 A z G z A z F z G4 C4 z4 | "C7"z4 c4 f8 e2 f2 g z a z | "Dm7"_b4 a2 g2 a2 _b2 _b a _b _b _b _b f z e z f z | "C7"g4 f2 e2 f2 g2 e z c d e z f z g z a z |
+"C"_b4 a2 g2 a2 _b2 _b _b _b _b _b _b _b _b z4 | "Gm"z2 c z c z c z c z c z c z C z c z C z c _B A G | "C"A _B A G A z F z _B z G z A _B A G A z F z G z E z | "A7"F6 f z g z e z f6 A z _B z G z |
+"F"_A _B2 G _A2 z6 =A _B2 G =A2 z6 | "Gm"f g2 e f g2 e f g2 e f6 e d c z _b z | "Gm7"a _b2 g a _b2 g a _b2 g a2 g f g4 g f g e | "Gm7"f z c z f z c z f z c z f z A z _B4 _B A _B A |
+"Gm7"_B z A G F2 A G F2 A G F4 G4 G F G F | "F"G z23 | [M:2/4]"F"D2 a z _D2 g z | "Db"F2 f z E2 e z |
+"E7"D2 _B2 z2 A z | "D"G z d z e e e e | "Dm"d z f z g g a z | "Dm"f z e z3 c2 |
+"Dm7"c2 B z B B B z | "Am"D2 d3 z c z | "D7"f z f z _a2 =a2 | "Dm"z2 d z3 c z |
+"Bm7"B2 B B B z e2 | "A"e2 d4 _d z | "E7"F2 a z E2 g z | "Em"D2 f z _D2 e z |
+"Db"z2 _B4 A z | "Gm"G z d z e e e e | "Dm"e z f z g g g g | "G7"g z D2 G2 A2 |
+"D"D4 z4 | "D"c z f4 e z | "F"A z d4 c z | "D"F z _B4 A z |
+"Bb"d4 c4 | "D7"_B2 A G A z F z | "Gm7"E4 F4 | "E"G z c z A z F z |
+"F"C4 z4 | "C"c z f4 e z | "F"A z d4 c z | "D"F z _B4 A z |

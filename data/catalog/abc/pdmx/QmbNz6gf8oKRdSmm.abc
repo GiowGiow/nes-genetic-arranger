@@ -1,0 +1,21 @@
+%abc-2.1
+% Preludium in D minor, by Johann Sebastian Bach. Score published on MuseScore (artist: Johann
+% Sebastian Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/34/QmbNz6gf8oKRdSmmsy3SDreiSDcyvXfsdzBsToBtPrtUg7.mid (sha256
+% b0ee547d648b80e04f352222e808341b20a89da2c087985818504d3e92ccd83e): melody track 1, bars 0-10
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Preludium in D minor
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm"z d c _B z4 "A7"z8 | "Dm"F8 "A7"E8 | "F"d a g f e f _d =d "G"e3 f =d3 _d | "A"z8 "C"z4 A4 |
+"E7"A4 _A4- "Am"_A _A ^F E z4 | "Em"z4 F E3- "A7"E4 D4 | "C7"D6 _D =D "Dm"_D4 =D4 | "Db7"D2 z3 E F D "A7"z E F D z D E _D |
+"D"z E D C _B, D3 "F#7"z5 _B A G | "D"F16 |

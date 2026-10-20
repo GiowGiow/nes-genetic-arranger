@@ -1,0 +1,32 @@
+%abc-2.1
+% Filli non voi ch'io dica, by Pomponio Nenna. Score published on MuseScore (artist: Pomponio
+% Nenna), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pomponio Nenna (died 1608,
+% Wikidata Q3907903).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/30/QmTLtkv7RAiqDtg9Sp6MaxTm9fyXuWa7AnNHWCZcMnV7G2.mid (sha256
+% 57f66800ec1834b44dd47d7565ec8d7566c871d95f04879879e289c750d37ee4): melody track 0, bars 2-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Filli non voi ch'io dica
+M:4/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"A"z16 | "A"A16 | "Dm7"A6 D2 "Am"F2 E2 e4 | "E"e4 d2 c2 "Em"B8 |
+"Am"A8 A2 E2 c2 A2 | "Am"e8- "E"e4 c2 B2 | "F"A8 "Dm7"f8 | "Dm7"f4 e2 d2 "Dm"d8 |
+"Dm"B8- "E"B4 z2 _A2 | "C"A2 _A2 c8 B2 =A2 | "E"_A4 B4- "C"B4 B2 =A2 | "D7"A8- "Dbm7"A4 _A2 _A2 |
+"A"A2 E2 c4- "Am"c4 A2 E2 | "Dm"F2 D2 d4 "Bb"A6 G2 | "Am"A8 "A"c8 | "Dm"c4 _B2 A2 "Bb"A8 |
+"Bb"A8 G8 | "Dm"A8- "A"A4 E4 | "D"F8 "A7"E4 e4 | "Dm"e4 d4 "Am"c8 |
+"Am7"A8- "Dm7"A8 | "Am"z8 "E"z8 | "Em7"z8 "Em"z8 | "Em7"z8 "Am"A4 c4 |
+"G"c2 B2 d2 B2 "Dm"A4 c2 A2 | "C"G2 c2 A2 B2 "Em"c8 | "G"c4 B4 "C"c4 e4 | "C"e2 d2 g2 e2 "G"d2 e2 e2 d2 |
+"Am"e4 c4 "G"z8 | "Dm"A4 c4- "G"c2 B2 d2 B2 | "D"A2 d2 B3 c d8 | "G"d8 z4 d4 |
+"C"e6 B2 "Am7"c4 d4 | "Dm"A8 A8 | "Am7"z8 "Dm"z8 | "Dm7"z8 "Am"z8 |
+"G"z8 "Bm7"z8 | "E"z4 B4 "Am"c2 e2 c2 B2 | "Dm"A2 A2 B2 B2 "C"c4 B2 A2 | "Em"d4 e4- "C"e4 E2 E2 |
+"Gm"E8- "A"E8 | "D"^F8 z4 d4 | "Em"B6 d2 "G"G4 G4 | "D"^F8 ^F8 |
+"A7"z4 c4 "E7"d2 f2 e2 d2 | "Dm"c2 c2 d2 d2 "Am"e4 d2 c2 | "G"B4 B4- "A7"B4 B2 B2 | "E"B8 "F"A8 |
+"Em"z4 A4 "G"B2 d2 B2 A2 | "C"G2 G2 d2 d2 "Bm"d4 G2 G2 | "D"F8 "G7"z8 | "Em7"z8 "D"z4 d4 |
+"D"A4 c4 "B"B8 | "E"B8 "F#m7"c3 d e4 | "E"_A2 _A2 =A8 _A4 | "A"A16 |

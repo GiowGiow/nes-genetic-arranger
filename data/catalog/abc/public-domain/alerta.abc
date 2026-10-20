@@ -1,0 +1,36 @@
+%abc-2.1
+% ALERTA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/alerta.html (file
+% https://www.beakauffmann.com/mpb_a/som/alerta.mid, sha256
+% 3dcacf83e3dd4d751a799b146514aa847830ba6abbb0b3d0f32fa4c8f198fa0d), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ALERTA
+M:2/4
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.99991360006914 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F7"z4 _e' f' _e' _b | "F7"z4 _E F _E _B, | "Cm7"z4 _E,, F,, _E,, _B,,, | "Cm"z8 |
+"Fm7"z8 | "Fm7"_A,,2 C2 _E,,2 C2 | "Gm7"_A,,2 C2 _E,,2 C2 | "A7"_B,,2 _D2 _E,,2 _D2 |
+"Eb7"_B,,2 _D2 _E,,2 _D2 | "Eb7"_B,,2 _D _D _D2 _D2 | "Db"_B,,2 _D2 _E,,2 _D2 | "Cm"_A,,2 C2 _E,,2 C2 |
+"Fm7"_A,,2 C2 _E,,2 C2 | "Ab7"_A,,2 C C C2 C2 | "F7"C,2 _E2 F,,2 _E2 | "Bbm"_B,,2 _D _D _D2 _D2 |
+"Eb7"z8 | "Cm7"_E,,2 C C C2 C2 | "Gm7"_B,,2 D2 _E,,2 _D2 | "Fm"_A,,2 C2 z4 |
+"Fm7"z8 | "Fm7"_A,,2 C2 _E,,2 C2 | "Gm7"_A,,2 C2 _E,,2 C2 | "A7"_B,,2 _D2 _E,,2 _D2 |
+"Eb7"_B,,2 _D2 _E,,2 _D2 | "Eb7"_B,,2 _D _D _D2 _D2 | "Db"_B,,2 _D2 _E,,2 _D2 | "Cm"_A,,2 C2 _E,,2 C2 |
+"Fm7"_A,,2 C2 _E,,2 C2 | "Ab7"_A,,2 C C C2 C2 | "F7"C,2 _E2 F,,2 _E2 | "Bbm"_B,,2 _D _D _D2 _D2 |
+"Eb7"z8 | "Cm7"_E,,2 C C C2 C2 | "Gm7"_B,,2 D2 _E,,2 _D2 | "Fm"_A,,2 C2 C4 |
+"C7"F,2 D2 E,2 _D2 | "Bb7"F,2 D D D2 D2 | "D"_E,2 G2 _B,,2 G2 | "C7"G,2 G G G2 _B2 |
+"Bb7"_A,2 _A _A _A2 _A2 | "Db7"_A,2 _A _A _A2 _A2 | "Cm7"G,2 G G G2 G2 | "Bb"z G2 _E C _B,2 G, |
+"C7"F,2 D2 E,2 _D2 | "Bb7"F,2 D D D2 D2 | "D"_E,2 G2 _B,,2 G2 | "Bb"_E,2 G G _D2 G2 |
+"Cm"C2 _A2 _B,2 G2 | "Cm"_A,2 F2 =A,2 ^F2 | "Cm7"_B,2 G2 z2 _B,2 | "Eb"_E,2 _B,,2 _E,,4 |
+"C7"F,2 D2 E,2 _D2 | "Bb7"F,2 D D D2 D2 | "D"_E,2 G2 _B,,2 G2 | "C7"G,2 G G G2 _B2 |
+"Bb7"_A,2 _A _A _A2 _A2 | "Db7"_A,2 _A _A _A2 _A2 | "Cm7"G,2 G G G2 G2 | "Bb"z G2 _E C _B,2 G, |
+"C7"F,2 D2 E,2 _D2 | "Bb7"F,2 D D D2 D2 | "D"_E,2 G2 _B,,2 G2 | "Bb"_E,2 G G _D2 G2 |

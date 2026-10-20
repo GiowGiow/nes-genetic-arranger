@@ -1,0 +1,35 @@
+%abc-2.1
+% Il trovatore, by Giuseppe Verdi. Score published on MuseScore (artist: Giuseppe Verdi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giuseppe Verdi (died 1901,
+% Wikidata Q7317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/25/QmWiZMMJfGgaBPkqydkAvH6VeKemuETuGjVnbkEMVTeNUC.mid (sha256
+% bfd8a1ddd5cb118fe9271666a6d6eb8721ec135a900aff2007394318ef9340b7): melody track 5, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Il trovatore
+M:3/8
+L:1/16
+Q:1/4=35.999993
+% Exact tempo 35.99999280000144 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z6 | "Gm"z6 | "Gm"z6 | "Gm"G2 z2 A z |
+"Gm"_B z3 A z | "Cm"_B z3 A2 | "D"D z _E z3 | "Gm"G4 A z |
+"Gm"_B z3 A z | "F7"d4 c2 | "Bb"_B z c z3 | "D7"_e4 c z |
+"D"A z G z3 | "Eb7"_B4 A z | "D"A4 D2 | "D7"_e4 c z |
+"D"A z G z3 | "Dbm"_B4 A z | "D"G z5 | "G"z6 |
+"G"z6 | "G"z6 | "G"z6 | "D"z6 |
+"G"z6 | "A7"z6 | "D"z6 | "D"z6 |
+"Em7"z6 | "D"z6 | "G"z6 | "G"B2 G2 D2 |
+"G"G3 A G z | "G"B2 G2 D2 | "G"G3 A G z | "D7"c2 A2 ^F2 |
+"Em7"d3 e d z | "D7"c2 E2 ^F2 | "G"G4 D2 | "G"B z G z D z |
+"G"G3 A G z | "G"B z G z D z | "G"G3 A G z | "D7"c2 A2 ^F2 |
+"G"e3 _e d2 | "A7"A z B z _d z | "D"d6 | "G"d2 z4 |
+"G"z6 | "G"z6 | "G"z6 | "D7"z6 |
+"G"z6 | "D7"z6 | "G"z4 d z | "F#7"d2 _d z c z |
+"G"c2 B z B z | "Eb7"B2 _B z A2 | "Em"A2 G2 z2 | "D"D2 E2 ^F2 |
+"Em7"G4 c z | "D7"B z A2 D2 | "G"B,2 z2 d z | "F#7"d2 _d z c z |

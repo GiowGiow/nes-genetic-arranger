@@ -1,0 +1,35 @@
+%abc-2.1
+% Organ Sonata No.1 in E-flat major BWV 525, by Johann Sebastian Bach (1685 - 1750). Score
+% published on MuseScore (artist: Johann Sebastian Bach), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/22/QmWGbsQPK4g8niXhmTHbcDJdL1K94tTrbaRg3z2CDQdMCy.mid (sha256
+% 136e5ec7d23934853193306dd9c6941af5cf003686c350d38f4e0e5c923b1bc7): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Organ Sonata No.1 in E-flat major BWV 525
+M:3/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"Eb"z12 | "Cm"z12 | "Gm"z12 | "Eb"z12 |
+"Bb"_B,2 _B2 C2 _B2 D2 _B2 | "Bb"_E2 _B2 F2 _B2 G2 _B2 | "Bb"F _B A G F d c _B A G F _E | "Bb"D _E F D _B, D F _B D F _A _B |
+"Eb"G F G _B _A G _A c _B _A _B _d | "Ab"c _B c _e G F G _e _A G _A _e | "Bb7"G2 _B2 _e2 G2 F2 _B2 | "Fm7"z _E F G _A _B c _B _A G F _A |
+"Fm7"G2 _B,2 C2 _A,2 F4 | "G7"F _A G F _E D C _B, _A, G, _A, F | "Fm7"G, F _E D C _B, _A, G, F,4 | "G"F, _A, G, F, _E,2 G, z =A,2 B,2 |
+"Cm"C2 z10 | "Fm"z F _E F C F _E F _A F _E F | "Bb"D2 z2 _A2 z2 _A2 z2 | "Eb7"z _E _D _E _B, _E _D _E G _E _D _E |
+"Ab"C F E F C F E F _A F _E F | "Bb7"D2 F2 _B z7 | "Eb"z _B, _A, _B, _E _B, _A, _B, G _E D _E | "F7"A _B A G F d c _B A G F _E |
+"Bb"D C D F _E D _E G F _E F _A | "Cm7"G F G _B D C D _B _E D _E _B | "Eb"D4 z d c _B A G F _E | "Gm7"D _B A _B _E _B D _B _E _B C _B |
+"Bb"D2 F2 G2 F2 G2 _E2 | "Gm7"F _B, C D _E5 D _E C | "Dm7"F2 D2 _E2 z2 C4 | "Bb"D12 |
+"Eb"z12 | "Cm"z12 | "Gm"z12 | "Eb"z12 |
+"Bb"_B,2 _B2 C2 _B2 D2 _B2 | "Bb"_E2 _B2 F2 _B2 G2 _B2 | "Bb"F _B A G F d c _B A G F _E | "Bb"D _E F D _B, D F _B D F _A _B |
+"Eb"G F G _B _A G _A c _B _A _B _d | "Ab"c _B c _e G F G _e _A G _A _e | "Bb7"G2 _B2 _e2 G2 F2 _B2 | "Fm7"z _E F G _A _B c _B _A G F _A |
+"Fm7"G2 _B,2 C2 _A,2 F4 | "G7"F _A G F _E D C _B, _A, G, _A, F | "Fm7"G, F _E D C _B, _A, G, F,4 | "G"F, _A, G, F, _E,2 G, z =A,2 B,2 |
+"Cm"C2 z10 | "Fm"z F _E F C F _E F _A F _E F | "Bb"D2 z2 _A2 z2 _A2 z2 | "Eb7"z _E _D _E _B, _E _D _E G _E _D _E |
+"Ab"C F E F C F E F _A F _E F | "Bb7"D2 F2 _B z7 | "Eb"z _B, _A, _B, _E _B, _A, _B, G _E D _E | "F7"A _B A G F d c _B A G F _E |
+"Bb"D C D F _E D _E G F _E F _A | "Cm7"G F G _B D C D _B _E D _E _B | "Eb"D4 z d c _B A G F _E | "Gm7"D _B A _B _E _B D _B _E _B C _B |
+"Bb"D2 F2 G2 F2 G2 _E2 | "Gm7"F _B, C D _E5 D _E C | "Dm7"F2 D2 _E2 z2 C4 | "Bb"D12 |

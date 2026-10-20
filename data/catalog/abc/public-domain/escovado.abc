@@ -1,0 +1,35 @@
+%abc-2.1
+% ESCOVADO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/escovado.html (file
+% https://www.beakauffmann.com/mpb_e/som/escovado.mid, sha256
+% 65869579f51892149d49c53cb6458f966745021af1543297f7a7fa423a696e73), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ESCOVADO
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"C"_d2 A, E e2 A, A | "C"B,, d _A, _d B =A _A, B | "C"_d2 E, E E,, A, E, _B, | "C"B,2 _A, B, D2 _A, D |
+"C"_d2 A, E e2 A, A | "C"_A,, =a E _a ^f e E ^f | "C"_a2 ^f _A, ^f z ^f _A, | "C"e c E _d e2 e _A, |
+"C"_d2 A, E e2 A, A | "C"B,, d _A, _d B =A _A, B | "C"_d2 E, E E,, A, E, _B, | "C"B,2 _A, B, D2 _A, D |
+"C"_d2 A, E e2 G, A | "C"a3 a F,2 a z | "C"E, _a2 ^f e B _A _d | "C"A2 A z a'3 z |
+"C"_d2 A, E e2 A, A | "C"B,, d _A, _d B =A _A, B | "C"_d2 E, E E,, A, E, _B, | "C"B,2 _A, B, D2 _A, D |
+"C"_d2 A, E e2 A, A | "C"_A,, =a E _a ^f e E ^f | "C"_a2 ^f _A, ^f z ^f _A, | "C"e c E _d e2 e _A, |
+"C"_d2 A, E e2 A, A | "C"B,, d _A, _d B =A _A, B | "C"_d2 E, E E,, A, E, _B, | "C"B,2 _A, B, D2 _A, D |
+"C"_d2 A, E e2 G, A | "C"a3 a F,2 a z | "C"E, _a2 ^f e B _A _d | "C"A2 A z a'3 z |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f e =A, d | "C"_A,, _d B, _A _d z _d _D, | "C"^F,, A A, _A ^F _A =A, =A |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f _a =A, =a | "C"E,, _a _A _a _a ^f _A ^f | "C"^f e E e =f _A, =f _D, |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f e =A, d | "C"_A,, _d B, _A _d2 _d _D, | "C"^F,, A A, A =F, _B _B, _B |
+"C"D, B B, B _D, _d _B, _d | "C"B,, d B, d C, ^f C ^f | "C"_D, a _D a _D, _d' F _d' | "C"^f'2 ^F2 ^f''3 z |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f e =A, d | "C"_A,, _d B, _A _d z _d _D, | "C"^F,, A A, _A ^F _A =A, =A |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f _a =A, =a | "C"E,, _a _A _a _a ^f _A ^f | "C"^f e E e =f _A, =f _D, |
+"C"^F,, _d A, _D _A,, _d B, _D | "C"A,, a A, _a ^f e =A, d | "C"_A,, _d B, _A _d2 _d _D, | "C"^F,, A A, A =F, _B _B, _B |
+"C"D, B B, B _D, _d _B, _d | "C"B,, d B, d C, ^f C ^f | "C"_D, a _D a _D, _d' F _d' | "C"^f'2 ^F2 ^f''3 z |

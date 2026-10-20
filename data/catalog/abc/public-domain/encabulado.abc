@@ -1,0 +1,36 @@
+%abc-2.1
+% ENCABULADO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/encabulado.html (file
+% https://www.beakauffmann.com/mpb_e/som/encabulado.mid, sha256
+% 624dcdbb5bf2dd1466d64605335be3ee9cd0fb6f93ef858dbe2a22788b3b4da6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ENCABULADO
+M:2/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e | "Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e |
+"Dm"e d e d3 z2 | "C7"z A d c z _B c _B | "Em7"z A _B A z4 | "Dm"A A F A3 z2 |
+"Gm"z ^F G A _B =f2 e | "Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e | "D7"A3 z2 _B2 A |
+"Gm"A G A G z F E G | "Dm"G F G F z E D F | "A"F _A B d f e d _d | "Dm"d5 z3 |
+"Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e | "Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e |
+"Dm"e d e d3 z2 | "C7"z A d c z _B c _B | "Em7"z A _B A z4 | "Dm"A A F A3 z2 |
+"Gm"z ^F G A _B =f2 e | "Dm"A A F A3 z2 | "Gm"z ^F G A _B =f2 e | "D7"A3 z2 _B2 A |
+"Gm"A G A G z F E G | "Dm"G F G F z E D F | "A"F _A B d f e d _d | "Dm"d7 z |
+"D"z ^F A _d e2 z =d | "Em"z E G B d B d B | "A7"_d2 A _A G _d2 B | "D"B _B2 A3 z2 |
+"D"z ^F A _d e2 z =d | "A"_d E ^F _A =A B _d =d | "E7"e _d =d B _d A B _A | "A7"A3 z5 |
+"D"z G A _d e2 z =d | "Em"z E G B d B d B | "A7"_d2 A _A G _d2 B | "F#m"z A _B =B c d e ^f |
+"Gm"a g2 a g ^f e e | "D"e d2 e d _d B A | "Em"A G B _d ^f2 z A | "D"d7 z |
+"D"z ^F A _d e2 z =d | "Em"z E G B d B d B | "A7"_d2 A _A G _d2 B | "D"B _B2 A3 z2 |
+"D"z ^F A _d e2 z =d | "A"_d E ^F _A =A B _d =d | "E7"e _d =d B _d A B _A | "A7"A3 z5 |
+"D"z G A _d e2 z =d | "Em"z E G B d B d B | "A7"_d2 A _A G _d2 B | "F#m"z A _B =B c d e ^f |
+"Gm"a g2 a g ^f e e | "D"e d2 e d _d B A | "Em"A G B _d ^f2 z A | "D"d7 z |

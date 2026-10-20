@@ -1,0 +1,35 @@
+%abc-2.1
+% SORRISO DE ANJO, by José Garcia de Christo, as performed by José Garcia de Christo.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): José Garcia de Christo (died 1919, Wikidata Q119847139).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sorriso-de-anjo.html (file
+% https://www.beakauffmann.com/mpb_s/som/sorriso-de-anjo.mid, sha256
+% 4716b0a8a6616d84a7cc6613959e947c6f5d569344770fd9afba53d90c788cb8), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SORRISO DE ANJO
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bb"G4 _A4 _A4 | "Bb7"_A4 c4 D4 | "Eb"D4 F4 _E4 | "C7"_E12 |
+"Cm7"F4 G4 _A4 | "Fm"_B4 c4 _e4 | "Bb7"z4 _e4 _e4 | "Cm7"_e12 |
+"Cm7"d4 c d2 c _B4 | "Bb7"_B2 F2 _A8 | "Bb7"d4 c d2 c _B4 | "C7"_B2 _E2 G8 |
+"Eb7"A4 G4 F4 | "Gm7"_B4 _e4 d4 | "Bb"A4 c4 _B4 | "Bb"_B2 _B2 _B4 _B4 |
+"Bb"g4 _b4 _a4 | "Bb7"_a4 c'4 d4 | "Eb"d4 f4 _e4 | "C7"_e12 |
+"Cm7"f4 g4 _a4 | "Fm"_b4 c'4 _e'4 | "Ab7"d'4 c'4 g'4 | "Em7"g'2 g'2 g8 |
+"Ab"^f4 g4 _b4 | "Fm"_b2 _a2 c4 z4 | "Bb7"B4 c4 _a4 | "Cm7"_a2 g2 _B4 z4 |
+"F7"A4 _B4 c4 | "F7"B4 c4 d4 | "Bb7"_b6 d2 _e4 | "Eb"z4 _b4 _e'4 |
+"Bb"G4 _B4 _A4 | "Bb7"_A4 c4 D4 | "Eb"D4 F4 _E4 | "C7"_E12 |
+"Cm7"F4 G4 _A4 | "Fm"_B4 c4 _e4 | "Bb7"z4 _e4 _e4 | "Cm7"_e12 |
+"Cm7"d4 c d2 c _B4 | "Bb7"_B2 F2 _A8 | "Bb7"d4 c d2 c _B4 | "C7"_B2 _E2 G8 |
+"Eb7"A4 G4 F4 | "Gm7"_B4 _e4 d4 | "Bb"A4 c4 _B4 | "Bb"_B2 _B2 _B4 _B4 |
+"Bb"g4 _b4 _a4 | "Bb7"_a4 c'4 d4 | "Eb"d4 f4 _e4 | "C7"_e12 |
+"Cm7"f4 g4 _a4 | "Fm"_b4 c'4 _e'4 | "Ab7"d'4 c'4 g'4 | "Em7"g'2 g'2 g8 |
+"Ab"^f4 g4 _b4 | "Fm"_b2 _a2 c4 z4 | "Bb7"B4 c4 _a4 | "Cm7"_a2 g2 _B4 z4 |
+"F7"A4 _B4 c4 | "F7"B4 c4 d4 | "Bb7"_b6 d2 _e4 | "Eb"z4 _b4 _e'4 |

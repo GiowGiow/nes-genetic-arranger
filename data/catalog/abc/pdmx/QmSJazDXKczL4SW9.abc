@@ -1,0 +1,28 @@
+%abc-2.1
+% Ain't Misbehavin', by Fats Waller. Score published on MuseScore (artist: Fats Waller), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Fats Waller (died 1943, Wikidata
+% Q310476).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/27/QmSJazDXKczL4SW9mMfhkFqvCd3hn7QcBDrm6jrsX568Wh.mid (sha256
+% a4846082c7d4176f897f03ce872f7719dc8be200af706000ed44724a2d5be0d5): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ain't Misbehavin'
+M:4/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"_e2 ^F2 G2 _B2 "C7"d2 c6 | "Fm7"_B2 _A2 z2 _E2 "Bb7"G2 F6 | "Eb"_e2 ^F2 G2 _B2 "G"d2 c4 _B2 | "Fm"_B2 _A2 z2 _E2 "Db7"G2 F6 |
+"Eb"z2 F _E z2 _E2 "C7"_B2 _B6 | "Fm7"z2 G F z2 F2 "Bb7"c8 | "Eb"z2 c _B z2 _B2 "G"_e2 _e4 d2 | "Fm"e f2 _e2 c3 "Db7"_A3 _A G2 F2 |
+"Eb"_B3 G2 _E3 "C7"_E D2 C5 | "Fm7"c2 F2 _E2 C2 "Bb"G4 ^F2 G2 | "Eb"G2 F E z2 _D2 "C7"C2 c6 | "F7"z C2 _E C2 _E ^F "Bb7"G _B ^F G _B ^F G _B |
+"Eb"z2 F _E z2 _E2 "C7"_B2 _B6 | "Fm7"z2 G F z2 F2 "Bb7"c8 | "Eb"z2 c _B z2 _B2 "G"_e2 d2 _e2 =e2 | "Fm"f2 _e2 c2 _A _B "Db7"G2 ^F2 =F4 |
+"Eb"z ^f' g' d' =f' c' _e' _b "C7"d' _a c' g _b ^f =a =f | "Fm7"_a c g4 f2 "Bb"_e2 d2 c2 d2 | "Eb"_e2 c2 _B2 G2 "C7"_B2 _A2 C2 _E2 | "F7"G4 G2 _E2- "Bb7"_E2 _E6 |
+"Cm"_E4 z g' c'' g'' _e'' c'' g' _e' G4 | "Ab"_A4 z2 c f "Cm"_a2 f2 f d _e z | "F"A4 A _e g c "F7"G C _E _e C _e c c | "C7"_B4 G A g _b a'4 a g3 |
+"Gm7"z4 f' d' _b f "G7"d2 _B2 A2 _B2 | "Cm7"_e2 _E2 G2 _B2 "F7"_E8 | "Bb7"c z _B z3 G z "C7"F z3 _E z C2 | "F7"C2 _E,2 F,2 C2 "Bb"_B,2 _A,2 G,2 F,2 |
+"Eb"_E,2 F _E z2 _E2 "C7"c2 _B2 G2 C2 | "Fm7"G4 z2 ^F G- "Bb7"G2 z6 | "Eb"z2 C2 _E2 G2 "G"c2 ^F G3 _E2 | "Fm"F4 z2 G2- "Db7"G2 z6 |
+"Eb"z2 C2 _E2 G2 "C7"c2 _B2 G2 C2 | "Fm7"G4 z2 ^F G- "Bb"G2 _B, C z2 _E2 | "Eb"_E2 G2 _A2 =A2 "C7"_B2 _A2 ^F2 =F2 | "F7"_E4 B,2 _B,2- "Bb7"_B,4 z4 |

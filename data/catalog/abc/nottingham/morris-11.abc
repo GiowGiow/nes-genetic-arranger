@@ -1,0 +1,27 @@
+%abc-2.1
+% Cuckoo's Nest, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/morris.abc, tune X: 11 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 cbf60b212c87748dea226c76b72a15db5b4f606bb35a580763e9cd8f7294e7da).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Cuckoo's Nest
+M:4/4
+L:1/16
+Q:1/4=140
+K:Gm
+P:A
+"Gm"z12 G2 A2 | "Gm"B4 B4 G4 f4 | "Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 |
+"Gm"B4 G4 G4 G2 A2 | "Gm"B4 B4 G4 f4 | "Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 |
+"Gm"B4 G4 G4 d4 | "Gm"g4 g4 g4 a4 | "Gm"g4 d4 "C7"d4 d2 =e2 | "F"f4 f4 f4 g2 f2 |
+"C"=e2 f2 _e2 d2 c8 | "Gm"B2 c2 B2 A2 G4 f4 | "Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 |
+"Gm"B4 G4 G4 d4 | "Gm"g4 g4 g4 a4 | "Gm"g4 d4 "C7"d4 d2 =e2 | "F"f4 f4 f4 g2 f2 |
+"C"=e2 f2 _e2 d2 c8 | "Gm"B2 c2 B2 A2 G4 f4 | "Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 |
+"Gm"B4 G4 G4 d4 | "D7"d8 "Gm"g8 | "Cm"g8 "Gm"g8 | "Gm"a4 g4 "Dm"f8 |
+"Gm"d8 "Dm"d8 | "C7"d4 =e4 "F"f8 | "Bb"f8 "F"f4 a2 g2 | "C"=e2 f2 _e2 d2 c8 |
+"Gm"B2 c2 B2 A2 G4 f4 | "Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 | "Gm"B4 G4 G4 d4 |
+"D7"d8 "Gm"g8 | "Cm"g8 "Gm"g8 | "Gm"a4 g4 "Dm"f8 | "Gm"d8 "Dm"d8 |
+"C7"d4 =e4 "F"f8 | "Bb"f8 "F"f4 a2 g2 | "C"=e2 f2 _e2 d2 c8 | "Gm"B2 c2 B2 A2 G4 f4 |
+"Gm"d4 c2 B2 "F"c4 c4 | "Gm"B2 A2 G4 "F"F4 G2 A2 | "Gm"B4 G4 G4 z4 |

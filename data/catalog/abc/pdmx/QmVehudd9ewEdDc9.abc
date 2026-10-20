@@ -1,0 +1,32 @@
+%abc-2.1
+% Pelléas et Mélisande, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/17/QmVehudd9ewEdDc9HDxZKduekQWrQMteZw41h8d3hDTRYw.mid (sha256
+% 710c36cc57a1ec966d5b754c696b8d3920a2fec94aa02f7bab12505722fc095b): melody track 1, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pelléas et Mélisande
+M:4/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z8 "Fm"z8 | "E"z8 "Db"z8 | "E"z8 "Fm"z8 | "E"z8 "F#m"z8 |
+"Bb7"z16 | "Dm7"z16 | "Bb7"z8 "Dm7"z8 | "Am"z16 |
+"E"z8 "Bbm7"z8 | "E"z8 "Db7"z8 | "A"z8 "D"z8 | "A"z8 "G"z8 |
+"A"z8 "D"z8 | "F#m7"z16 | "A"z8 "Bb"z8 | "A"z8 "F#7"z8 |
+"Em7"z8 "Am7"z8 | "Em7"z8 "Am7"z8 | "F"z8 "E"z8 | "Bb"z8 "F"z8 |
+"Gm7"z8 "Dm"z8 | "Gm"z16 | "C7"z8 "D"z8 | "F"z8 "D7"z8 |
+"Dbm7"z8 "G7"z8 | "Db7"z16 | "Dbm7"z8 "E7"z8 | "Bb7"z16 |
+"Dm7"z16 | "Bb7"z16 | "G7"z8 "G"z8 | "G7"z8 "Ab7"z8 |
+"Ab"E,2 E,2 ^F, E,2 _A, "Ab7"_A,4 z4 | "F#m"z ^F,2 _E, A, A,2 B, _A, _A, _A, =A, _D =A,2 ^F, | "F#m"_E4 _D4 z8 | "Ebm7"z ^F,2 ^F, ^F, ^F,2 ^F, "E7"E,2 E, E, D, D, ^F, A, |
+"D7"_A,4 z4 "Db7"_A,2 _A,2 _A, _A,2 =A, | "Bb7"B,4 z4 "G"z7 B,, | "F#"C,4 z4 "Fm"C,2 C, C, E,3 z | "Fm"z5 E,2 E, "Eb7"F, _B,2 _D _D2 C C |
+"Dbm"C4 C2 _B,2 _B, _A,2 ^F, ^F,4 | "Bb7"z8 "Fm"z8 | "Dm7"z16 | "Am"z8 "F"z8 |
+"B7"z16 | "F#m"z8 "A"z8 | "Ebm7"z16 | "F#"z8 "Ab"z8 |
+"Fm"z16 | "Ebm"z8 "A"z8 | "D7"z8 "E7"z8 | "F7"z16 |

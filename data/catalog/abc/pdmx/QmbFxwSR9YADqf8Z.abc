@@ -1,0 +1,27 @@
+%abc-2.1
+% Sorgendo l'Alba, by Claudio Saracini. Score published on MuseScore (artist: Claudio Saracini),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudio Saracini (died 1630,
+% Wikidata Q2333985).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/20/QmbFxwSR9YADqf8ZTDk5gS5KdLdeJNKuov3gKzSEhmSRYM.mid (sha256
+% 16d4c8102fae6bfaab2775a75f2c1209b8328c8a79f286f99148536c58573e1f): melody track 0, bars 0-30
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sorgendo l'Alba
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"c4 F G A _B c4 A4 | "Bb"d8 d8 | "C"z4 _e4 "G"d6 d2 | "C"c8 c8 |
+"F"z4 A4 "A7"_B4 c4 | "Gm"d6 d2 "A"e8 | "A"e8 "D"d8 | "F"c4 F G A _B c4 A4 |
+"Bb"d8 d8 | "C"z4 _e4 "G"d6 d2 | "C"c8 c8 | "F"z4 A4 "A7"_B4 c4 |
+"Gm"d6 d2 "A"e8 | "A"e8 "D"d8 | "F"A G A _B c A _B c "Bb"d4 d4 | "Bb"d c d e f4 "Gm7"e d c _B c _B c d |
+"Bb"_B16 | "G"_B A _B c d4 "C"_B6 c2 | "D"A6 A2 "G"G4 G4 | "F"A G A _B c4 A6 _B2 |
+"C"G6 A2 "F"F8 | "F"F16 | "F"A G A _B c A _B c "Bb"d4 d4 | "Bb"d c d e f4 "Gm7"e d c _B c _B c d |
+"Bb"_B16 | "G"_B A _B c d4 "C"_B6 c2 | "D"A6 A2 "G"G4 G4 | "F"A G A _B c4 A6 _B2 |
+"C"G6 A2 "F"F8 | "F"F16 |

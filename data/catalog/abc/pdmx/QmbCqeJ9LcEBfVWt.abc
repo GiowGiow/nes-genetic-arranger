@@ -1,0 +1,35 @@
+%abc-2.1
+% Suite bergamasque, by Claude-Achille Debussy. Score published on MuseScore (artist: Claude
+% Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude-Achille Debussy (died
+% 1918, Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/14/QmbCqeJ9LcEBfVWtEGHMz8KS96dzXCCCAZWSdYRdEuD7qP.mid (sha256
+% 89e060f03c7f7760ddd9751cf93d00f0630afde3fe03383adf92081ed8162883): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Suite bergamasque
+M:4/4
+L:1/16
+Q:1/4=183.999975
+% Exact tempo 183.99997546666992 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m"z8 "Db7"z8 | "F#m"z8 "Bm"z8 | "F#m"^F2 z2 _d2 z2 "Db7"B8 | "F#m"B4 A z _A z "Bm"^F2 z2 E z D z |
+"F#m"_D4 =D2 E2 ^F4 A4 | "Dbm"_A8- "Db7"_A8 | "F#m"_A z ^F z _A z =A2 "Db7"B4 =F4 | "F#"_D2 A2 B2 _d2 "E7"=d4 _A4 |
+"A"E2 _d2 =d2 e2 "D"^f8 | "D"^f8 "Bm"^F8 | "F#m"^F3 z _d2 z2 "Dbm7"B8 | "E"B4 A z _A z "E7"^F2 z2 E z D z |
+"A"z2 _D2 =D2 E2 "D"^F4 A4 | "Fm7"_A16 | "Fm7"_A7 z "F#m7"=A4 _a z3 | "Fm7"_A8 "E7"^F4 e z3 |
+"A"E4 z4 "Abm7"_E4 _d z3 | "Db"_D16 | "Db"_D8 "B7"=D4 A z3 | "E7"_A8- "Dbm7"_A2 =A2 B4 |
+"E"B4 _d4 "B7"=D4 A z3 | "E7"_A8- "Dbm7"_A2 =A2 B4 | "E"B4 _A4 "E7"=A4 B4 | "A"_d3 _d2 e3 "D"_d3 B2 _d3 |
+"F#m"A4 _d4 "B"B8 | "Em"B4 _d4 "A7"A4 B,4 | "F#m"A3 D2 B,3 "F#m7"_D3 =D2 E3 | "D"^F3 _A2 E3 ^F3 _A2 =A3 |
+"D"B3 _d2 A3 B3 _d2 =d3 | "Bm"^f2 z2 _d'2 z2 "Db7"b8 | "Bm"^f4 A z _A z "Abm7"^F2 z2 E z D z | "D"_D4 =D2 E2 "F#m"^F2 z2 A2 z2 |
+"D7"_A8- "F#7"_A8 | "Ab7"_A2 ^F2 _A2 =A2 "F#7"B8 | "Ab7"B2 A2 B2 A2 "Ab"_A8 | "E7"_A2 ^F2 E2 D2 _D8 |
+"Dbm"z8 "Db"z8 | "Db7"z16 | "F#m"^f4 _d'4 "D7"c'8 | "F#7"_d'4 e'4 "B"_e'3 b2 a3 |
+"F#m"^f4 _d'4 "D7"c'8 | "F#7"_d'4 e'4 "B"_e'3 b2 _e'3 | "F#7"_d4 e4 "B"_e3 B2 _e3 | "F#m"_d8 "Dbm"B4 _A4 |
+"F#"E3 ^F2 _A3 "B"^F4 _E4 | "E"_A4 B,4 "Dbm7"z8 | "A7"_d4 e4 "Abm"_e3 B2 _e3 | "Db"_d8 "Ab"B4 _A4 |
+"F#"E3 ^F2 _A3 "Dbm"_B4 _D4 | "Abm7"_D4 B4 "B"_e4 ^f4 | "Dbm"_a4 _d4 "Dbm7"_e4 _d4 | "Bb7"_e4 _d4 "Dbm7"b3 _e'2 b3 |
+"Dbm"_a4 _d4 "Dbm7"_e4 _d4 | "Bb7"_e4 _d'4 "F#"_b4 _a4 | "Bm"^f4 B4 "D"_d4 B4 | "Ab7"_d4 B4 "D"a3 _d'2 a3 |
+"Bm"^f4 B4 "D"_d4 B4 | "Ab7"_d4 b4 "E"_a4 ^f4 | "A"e4 _d z _d z _d2 z2 e4 | "F#"^f4 ^f z _a z ^f z _a z ^f4 |
+"A"e4 _d z _d z _d2 z2 A2 z2 | "D"_d16 | "G"B4 G z G z G2 z2 B2 z2 | "Dm"A4 A z B z "F"A z B z c2 z2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% My Home, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/waltzes.abc,
+% tune X: 31 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:My Home
+M:3/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z8 e2 d2 | "A"c6 B2 A4 | "A"A4 c4 e4 | "D"a4 g4 f4 |
+"A"e8 e2 d2 | "A"c6 B2 c4 | "F#m"A4 B4 c4 | "Bm"d6 c2 d4 |
+"E7"B4 e4 d4 | "A"c6 B2 A4 | "A"A4 c4 e4 | "D"a4 g4 f4 |
+"A"e8 d4 | "A"c6 A2 c4 | "G"B6 =G2 B4 | "A"A6 B2 A4 |
+"F#m7"A8 E4 | "A"A6 B2 c4 | "A"c4 B4 c4 | "A"e6 d2 c4 |
+"F#m"c8 e4 | "Bm"d6 c2 d4 | "E7"B4 c4 d4 | "A"e6 c2 A4 |
+"A7"A4 c2 e2 c2 e2 | "D"f6 d2 f4 | "D"a4 g4 f4 | "A"e6 d2 c4 |
+"F#m7"a8 d4 | "A"c6 A2 c4 | "G"B6 =G2 B4 | "A"A6 B2 A4 |
+"A"A8 z4 |

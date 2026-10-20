@@ -1,0 +1,35 @@
+%abc-2.1
+% Rigoletto, by Verdi. Score published on MuseScore (artist: Giuseppe Verdi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Verdi (died 1901, Wikidata
+% Q7317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/41/QmQRF4EZJDsYgCJsZU44zQQarvY2wpUf5fgY7bSWBfokFL.mid (sha256
+% f60707f48aa0881f0b9cf3cf9b78d2af54616ab265b35b95951321feff099973): melody track 6, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Rigoletto
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm7"z6 G, _A, "Bbm"_B,4 z2 _B, C | "Db"_D8 z8 | "Gm7"z6 G, _A, "Bbm"_B,4 z2 _B, C | "Db"_D8 z8 |
+"Fm"z6 F, G, "Bb7"_A,4 z2 _A, _B, | "Db7"B,8 z8 | "Fm"z6 F, G, "Bb7"_A,4 z2 _A, _B, | "Db7"B,8 z8 |
+"Fm"C,7 F, _A,7 _A, | "Fm"C8 "C"z8 | "C"z16 | "B"C,16 |
+"C"C,8 z8 | "Dm7"z2 A,2 A,2 z2 "Gm7"z2 _B,2 _B,2 z2 | "Dm7"z2 A,2 A,2 z4 A,2 A,2 z2 | "C7"z2 _B,2 _B,2 z2 "Fm"z2 _A,2 _A,2 z2 |
+"C"z2 G,2 G,2 z2 "C7"z2 G,2 G,2 z2 | "F"z2 A,2 A,2 z2 "Gm7"z2 _B,2 _B,2 z2 | "F"z2 A,2 A,2 z2 "Dm7"z2 A,2 A,2 z2 | "C7"z2 _B,2 _B,2 z4 _B,2 _B,2 z2 |
+"F"z2 A,2 A,2 z4 A,2 A,2 z2 | "C"z2 G,2 G,2 z2 "Fm"z2 _A,2 _A,2 z2 | "C"z2 C2 C2 z4 C2 C2 z2 | "Eb"z2 _B,2 _B,2 z2 "Fm7"z2 C2 C2 z2 |
+"Eb"z2 _B,2 _B,2 z2 "C"z2 _B,2 _B,2 z2 | "F"z2 A,2 A,2 z2 "Gm7"z2 _B,2 _B,2 z2 | "E7"z2 D2 D2 z2 "G7"z2 B,2 B,2 z2 | "Am"z2 C2 C2 z2 "C7"z2 _B,2 _B,2 z2 |
+"F"A,2 D2 C2 _B,2 A,4 z4 | "C"C z3 C z C z "Dm7"C z C z C B, A, G, | "G"G,2 z4 C C C z5 B, B, | "C"B, z3 A, z A, z "F#m7"A, z A, z A, _A, ^F, E, |
+"E"E,2 z4 A, A, A, z5 _A, _A, | "Dm7"A,2 z2 F, z F, z "Gm7"F, z F, z F, E, D, C, | "D7"C,2 z4 C C "E7"C z5 _B, _B, | "Db"_B, z _A, _A, _D2 _A, _A, _D4 z4 |
+"G7"z8 "Db"z8 | "C"z16 | "C"G16 | "C7"F8 "Fm"C8 |
+"Fm"G4 F4 "Bbm7"_E4 _D4 | "C"C2 z14 | "F"z A, _B, =B, C z A, z "Gm7"z _B, C _D =D z _B, z | "F"z A, _B, =B, C z A, z "Dm7"z A, _B, =B, C z A, z |
+"C7"z G, _A, =A, _B, z G, z "Fm"z _A, _B, =B, C z _A, z | "C"z G, _A, =A, _B, z G, z "C7"z G, _A, =A, _B, z G, z | "F"z A, _B, =B, C z A, z "Gm7"z _B, C _D =D z _B, z | "F"z A, _B, =B, C z A, z "Dm7"z A, _B, =B, C z A, z |
+"C7"z G, _A, =A, _B, z G, z2 G, _A, =A, _B, z G, z | "F"z A, _B, =B, C z A, z "Fm7"z F, ^F, G, C z A, z | "G7"z F, ^F, G, _A, z =F, z "Bbm"z =F, ^F, G, _A, z =F, z | "Fm"z F, ^F, G, _A, z =F, z "Db7"z =F, ^F, G, _A, z =F, z |
+"F#"z _D _D _D z _E _E _E "Ab"z _E _E _E z F F F | "Bb"z F F F z _A _A _A "Dm7"F4 C4 | "Dm7"A,4 F,4 "Db"_A,8 | "D"B,8 "E"_B,8 |
+"Dm7"A,2 z6 "Gm7"z8 | "Cm"C8 "C7"_B,8 | "A"A,8 "Bb"_B,8 | "Dm7"C4 B,4 "C"_B,8 |
+"F"A,2 z14 | "Eb"C8 "C"_B,8 | "A"A,8 "Bb"_B,8 | "Dm7"C4 B,4 "C"_B,8 |

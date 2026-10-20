@@ -1,0 +1,35 @@
+%abc-2.1
+% DIRCE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dirce-1.html (file
+% https://www.beakauffmann.com/mpb_d/som/dirce-1.mid, sha256
+% 6d8599114a26d94a1654a2c3206548fbb13ad0367e6a0a86294d43cf0cbe9e96), from Beatriz Kauffmann's Web
+% Site. Melody track 5, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DIRCE
+M:3/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Bm"D11 z | "F#7"E11 z | "Bm"^F11 z | "Em"G11 z |
+"Bm"^F11 z | "Db7"B11 z | "Ebm7"_B12 | "Ebm7"_B11 z |
+"A7"_D,4 G4 G4 | "A7"z4 G4 G4 | "D"D,4 ^F4 ^F4 | "D"z4 ^F4 ^F4 |
+"C7"_B,,4 E4 E4 | "C7"z4 E4 E4 | "Bm"B,,4 D4 D4 | "Bm"z4 D4 D4 |
+"E7"_A,,4 B,4 B,4 | "Bb7"_A,,4 B,4 B,4 | "D"A,,4 D4 D4 | "Bm7"A,,4 D4 D4 |
+"Bb7"^F,4 D4 D4 | "A7"A,,4 _D4 _D4 | "D"D,4 D4 D4 | "Bm7"A,,4 D4 D4 |
+"A7"_D,4 G4 G4 | "A7"z4 G4 G4 | "D"D,4 ^F4 ^F4 | "D"z4 ^F4 ^F4 |
+"C7"_B,,4 E4 E4 | "C7"z4 E4 E4 | "Bm"B,,4 D4 D4 | "Bm"z4 D4 D4 |
+"Cm7"G,,4 _E4 _E4 | "E7"_A,,4 E4 E4 | "D"A,,4 ^F4 ^F4 | "D"A,,4 ^F4 ^F4 |
+"A"A,,4 _A4 _A4 | "A7"A,,4 G4 G4 | "F#m7"^F4 z4 _D4 | "D"^F,4 z8 |
+"A"A,,2 _D2 A,2 ^F,2 E,2 z2 | "F#m7"E,,2 _D2 A,2 ^F,2 E,2 z2 | "Bm"B,,2 D2 _A,2 ^F,2 E,2 z2 | "E7"E,,2 D2 _A,2 ^F,2 E,2 z2 |
+"A"A,,2 _D2 A,2 ^F,2 E,2 z2 | "F#m7"E,,2 _D2 A,2 ^F,2 E,2 z2 | "Bm"B,,2 D2 _A,2 ^F,2 E,2 z2 | "E7"E,,2 D2 _A,2 ^F,2 E,2 z2 |
+"Db7"_D,,2 B2 _A2 ^F2 =F2 =D2 | "Db7"_D2 C2 B,2 _A,2 F,2 _D,2 | "F#m"^F,,2 _D,2 ^F,2 A,2 _D2 ^F2 | "F#m7"z2 ^F2 _D2 A,2 ^F,2 _D,2 |
+"B7"B,,2 _E2 B,2 _B,2 A,2 ^F,2 | "B7"_E,2 B,2 A,2 ^F,2 _E,2 B,,2 | "Bm"E,,2 B,,2 D,2 E,2 _A,2 B,2 | "Bb7"D2 B,2 _A,2 E,2 D,2 E,,2 |
+"A"A,,2 _D2 A,2 ^F,2 E,2 z2 | "F#m7"E,,2 _D2 A,2 ^F,2 E,2 z2 | "Bm"B,,2 D2 _A,2 ^F,2 E,2 z2 | "E7"E,,2 D2 _A,2 ^F,2 E,2 z2 |
+"A"A,,2 _D2 A,2 ^F,2 E,2 z2 | "F#m7"E,,2 _D2 A,2 ^F,2 E,2 z2 | "Bm"B,,2 D2 _A,2 ^F,2 E,2 z2 | "E7"E,,2 D2 _A,2 ^F,2 E,2 z2 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Serenata Op.6, by Enrico Toselli. Score published on MuseScore (artist: Enrico Toselli), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Enrico Toselli (died 1926,
+% Wikidata Q1150461).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/55/QmdYppgG3iFNd9zkAQUqCBZP2DUYNCB3jBdvq2gMj8i6nx.mid (sha256
+% 9d59a75c2ffbc6ce19775233858e954fa1403957208738ffdd286dd7cfe3049d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Serenata Op.6
+M:3/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bm7"z12 | "D"z12 | "D"z12 | "B7"z12 |
+"A7"z12 | "F#m7"z12 | "F#m7"z12 | "D"z12 |
+"D"z12 | "D"d6 A2 B2 ^F2 | "D"A8 D4 | "D"D4 ^F4 _d4 |
+"A7"B8 A4 | "A7"e6 ^f2 g2 d2 | "A7"_d6 =d2 e2 B2 | "A7"A2 B2 _d2 A2 E2 ^F2 |
+"D"D12 | "D"D3 z9 | "D"d'6 a2 b2 ^f2 | "D"a8 d4 |
+"D"d4 ^f4 _d'4 | "A7"b8 a4 | "A7"e'6 ^f'2 g'2 d'2 | "A7"_d'6 =d'2 e'2 b2 |
+"A7"a2 b2 _d'2 a2 e2 ^f2 | "D"d12 | "D"d3 z9 | "D"D2 E2 ^F6 A2 |
+"A7"A2 E2 E8 | "A7"E2 ^F2 G6 B2 | "D"B2 ^F2 ^F6 D2 | "G"d8 _d2 B2 |
+"D"A2 ^F2 D2 E2 ^F2 A2 | "D"^F8 E4 | "A7"A11 z | "G"B6 d2 e2 d2 |
+"D"^f12 | "D"^f z d2 _d2 B2 A2 =D2 | "A7"G8 E2 ^F G | "F#m"A6 B2 _d e2 =d |
+"Bm7"^F6 G2 A _d2 B | "C"B2 E2 E4 ^F G _d =d | "D"^f6 a2 g ^f e d | "A"e ^f ^f ^f ^f ^f ^f ^f ^f ^f ^f z |
+"D"d2 e2 ^f6 a2 | "A7"a2 e2 e8 | "A7"e2 ^f2 g6 b2 | "D"b2 ^f2 ^f6 d2 |
+"G"d'8 _d'2 b2 | "D"a2 ^f2 d2 e2 ^f2 a2 | "D"^f8 e4 | "A7"a11 z |
+"G"b6 d'2 e'2 d'2 | "D"^f'12 | "D"^f' z d'2 _d'2 b2 a2 =d2 | "A7"g12 |
+"B"g z ^f2 e2 d2 B2 G2 | "F#m"^F12 | "Db"^F z a2 ^f2 _d2 B2 A2 | "G"E4 ^F4 G4 |
+"E7"B8 A2 G2 | "A7"^F8 E2 ^F G | "F#m"A6 B2 _d e2 =d | "Bm7"^F6 G2 A _d2 B |

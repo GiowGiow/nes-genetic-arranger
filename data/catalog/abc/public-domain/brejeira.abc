@@ -1,0 +1,36 @@
+%abc-2.1
+% BREJEIRA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_b/brejeira.html (file
+% https://www.beakauffmann.com/mpb_b/som/brejeira.mid, sha256
+% 9ddd9cc0e5ee319aaaa2ab54b830e337e9f97c60ce29271be88ef51a03188641), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:BREJEIRA
+M:3/4
+L:1/16
+Q:1/4=109.999908
+% Exact tempo 109.99990833340973 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z12 | "Bm7"z12 | "A7"z12 | "A7"z12 |
+"D"z12 | "B7"z12 | "A7"z12 | "A7"z12 |
+"D"a d'3 z4 ^f d'2 z | "Bm7"z4 ^f b3 d b2 z | "A7"a _d'3 z4 g _d'2 z | "A7"z4 g a3 _d a3 |
+"D"^f b3 z4 d b3 | "D"z4 d ^f3 A ^f3 | "A7"z12 | "A7"z8 _d e g _d' |
+"D"z8 a d'3 | "Bm7"z4 ^f b3 ^f b3 | "A7"a _d'3 z4 a _d'3 | "A7"z4 g a3 g a3 |
+"Bm7"^f b3 z4 ^f b3 | "D"z4 d ^f3 d ^f3 | "A7"z12 | "A7"z8 A B _e =e |
+"F#7"f z7 _d' ^f'2 z | "F#7"z12 | "Bm"z12 | "Bm7"z12 |
+"E"b e'2 z5 _a e'2 z | "Dbm7"z12 | "A7"g d'3 z8 | "A7"z12 |
+"D"d'4 z8 | "D"z12 | "G"z12 | "Gm"_e _b7 z4 |
+"A7"z8 a3 z | "A7"z12 | "D"z12 | "D"z12 |
+"D"a d'3 z4 ^f d'2 z | "Bm7"z4 ^f b3 d b2 z | "A7"a _d'3 z4 g _d'2 z | "A7"z4 g a3 _d a3 |
+"D"^f b3 z4 d b3 | "D"z4 d ^f3 A ^f3 | "A7"z12 | "A7"z8 _d e g _d' |
+"D"z8 a d'3 | "Bm7"z4 ^f b3 ^f b3 | "A7"a _d'3 z4 a _d'3 | "A7"z4 g a3 g a3 |
+"Bm7"^f b3 z4 ^f b3 | "D"z4 d ^f3 d ^f3 | "A7"z12 | "A7"z8 A B _e =e |
+"F#7"f z7 _d' ^f'2 z | "F#7"z12 | "Bm"z12 | "Bm7"z12 |
+"E"b e'2 z5 _a e'2 z | "Dbm7"z12 | "A7"g d'3 z8 | "A7"z12 |

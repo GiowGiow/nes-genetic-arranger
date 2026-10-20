@@ -1,0 +1,35 @@
+%abc-2.1
+% JACARÉ, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_j/jacare.html (file
+% https://www.beakauffmann.com/mpb_j/som/jacare.mid, sha256
+% a8f5924825c6357af92ad6f58d8caff575564c1fbd9ebb4bb54274aa9335b707), from Beatriz Kauffmann's Web
+% Site. Melody track 5, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:JACARÉ
+M:2/4
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"Dm7"z8 | "C7"E,2 z E, G,2 z G, | "F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, |
+"F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, | "F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, |
+"F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, | "F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, |
+"F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, | "F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, |
+"F"C2 z C A,2 z A, | "F"C2 z C F,2 z F, | "C7"E,2 z E, G,2 z G, | "C7"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "F"F,2 z F, A,2 z A, | "C7"E,2 z E, G,2 z G, | "C7"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "A7"E,2 z E, G,2 z G, | "Dm"D2 z D F,2 z F, | "C7"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "Gm"_B,2 z _B, G,2 z G, | "F"C2 z C A,2 z A, | "C7"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "A7"E,2 z E, G,2 z G, | "Dm"D2 z D F,2 z F, | "C7"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "Gm"_B,2 z _B, G,2 z G, | "F"C2 z C A,2 z A, | "Gm"_B,2 z _B, G,2 z G, |
+"F"C2 z C A,2 z A, | "Gm7"_B,2 z _B, F,2 z F, | "F7"C2 z C A,2 z A, | "F7"_E,2 z _E, A,2 z A, |
+"Gm7"_B,2 z _B, F,2 z F, | "Gm7"D,2 z D, _B,2 z _B, | "F7"_E,2 z _E, A,2 z A, | "F7"_E,2 z _E, A,2 z A, |
+"Gm7"_B,2 z _B, F,2 z F, | "G7"F,2 z F, B,2 z B, | "Cm"_E,2 z _E, G,2 z G, | "F7"_E,2 z _E, A,2 z A, |
+"Gm7"_B,2 z _B, F,2 z F, | "F#7"_B,2 z _B, E,2 z E, | "Gm7"D,2 z D, F,2 z F, | "C7"_B,2 z _B, G,2 z G, |
+"F7"C2 z C A,2 z A, | "Gm7"_B,2 z _B, F,2 z F, | "F7"C2 z C A,2 z A, | "F7"_E,2 z _E, A,2 z A, |
+"Gm7"_B,2 z _B, F,2 z F, | "Gm7"D,2 z D, _B,2 z _B, | "F7"_E,2 z _E, A,2 z A, | "F7"_E,2 z _E, A,2 z A, |

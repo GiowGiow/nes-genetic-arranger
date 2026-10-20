@@ -1,0 +1,36 @@
+%abc-2.1
+% DENGOSO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dengoso-2.html (file
+% https://www.beakauffmann.com/mpb_d/som/dengoso-2.mid, sha256
+% c2fa839f67c7dea53f71b0591759cb800f9b671f582182efd9cea6920b005c48), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DENGOSO
+M:2/4
+L:1/16
+Q:1/4=88.000023
+% Exact tempo 88.00002346667293 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bm7"z D2 E ^F E2 D | "A"A3 A G3 G | "Bm7"^F3 ^F =F3 E | "A"A, E2 E2 G, ^F, E, |
+"D"D D,2 E, A, E,2 D, | "F#m7"_D3 A, E3 G, | "E7"D3 ^F, B,3 E, | "F#m"A, _D2 =D E2 A2 |
+"D"d2 A2 ^f2 d e | "A"G,4 A E, ^F, G, | "D"D2 A,2 ^F2 D E | "A"E A,2 D _D E ^F G |
+"D"A D2 _D B, G A, ^F | "A7"A _D2 B, A, _D ^F _D | "F#m"E D2 _D B,2 A,2 | "F#m7"B, G,2 G, _D2 A,2 |
+"D"D A,2 A, ^F2 C2 | "C7"E _D2 _D2 G _d e | "E"d d2 d _d2 B2 | "A7"e G2 G B2 A2 |
+"D"A D2 _D B, G A, ^F | "A7"A _D2 B, A, _D ^F _D | "F#m"E D2 _D B,2 A,2 | "F#m7"B, G,2 G, _D E A _d |
+"D7"d ^F2 ^F _e2 c2 | "G"e2 d _d e =d B G | "A7"^F d A ^F E _d G E | "D"d A, D ^F G ^F G _A |
+"D"A D2 _D B, G A, ^F | "A7"A _D2 B, A, _D ^F _D | "F#m"E D2 _D B,2 A,2 | "F#m7"B, G,2 G, _D2 A,2 |
+"D"D A,2 A, ^F2 C2 | "C7"E _D2 _D2 G _d e | "E"d d2 d _d2 B2 | "A7"e G2 G B2 A2 |
+"D"A D2 _D B, G A, ^F | "A7"A _D2 B, A, _D ^F _D | "F#m"E D2 _D B,2 A,2 | "F#m7"B, G,2 G, _D E A _d |
+"D7"d ^F2 ^F _e2 c2 | "G"e2 d _d e =d B G | "A7"^F d A ^F E _d G E | "D"d A2 A d4 |
+"Dm"A A f A A A f A | "Gm"G G e G G G e G | "Dm"F F d F F F d F | "A7"E _d _d e G, _B A G |
+"D7"^F C _E ^F A ^F c A | "Gm7"d _B G D G D _B G | "E7"_A D B _A d B f d | "A"e A, _B, =B, _D =d _d _B |
+"Dm"A A f A A A f A | "Gm"G G e G G G e G | "Gm7"F F d F F F d D | "F#m7"E _d =d _e =e2 A2 |
+"Gm"d G2 E F G A _B | "C7"_B A _A =A d _B G E | "F"F d A F E _d G E | "Dm"D G, _A, =A,2 _B, =A, G, |
+"Dm"A A f A A A f A | "Gm"G G e G G G e G | "Dm"F F d F F F d F | "A7"E _d _d e G, _B A G |

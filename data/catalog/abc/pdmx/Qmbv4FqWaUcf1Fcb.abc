@@ -1,0 +1,27 @@
+%abc-2.1
+% Rejoice in the Lord, by Thomas Weelkes. Score published on MuseScore (artist: Thomas Weelkes),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Weelkes (died 1623,
+% Wikidata Q553908).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/48/Qmbv4FqWaUcf1FcbVvzQWtSZyHdiSSaoRWDRqNdEy7ki9v.mid (sha256
+% 10099eca90f287c5c5b50199087148120a8a42dcccf398f36a253b0f90773d8d): melody track 1, bars 0-29
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Rejoice in the Lord
+M:4/4
+L:1/16
+Q:1/4=94.000128
+% Exact tempo 94.00012846684224 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"D8 D8 | "Gm"D4 F4 "Eb"_B,4 C4 | "D"D8 "Dm"z4 D4 | "Bb"D4 D4 "A"D4 _D4 |
+"D"D8 z4 F4 | "Gm7"G8- "Cm7"G4 F4 | "C"_E4 _E4 "Bb"D4 F4 | "Cm"_E4 G2 G2 "D"G4 ^F4 |
+"G"G8 "C"z4 _E4 | "C7"_E4 D4 "D"C4 D4 | "Eb"_B,4 C4 "D"D8 | "D7"z8 "Bb"z4 D4 |
+"A"D4 C2 C2 "Em7"D4 _B,2 _B,2 | "D"D4 D4 "Eb"D4 C4 | "D"D6 C2 "Gm"B,4 D4 | "F#m"D8 "Gm"D8 |
+"D"D8 z4 D4 | "D"D4 D4 "Em"D8 | "Cm"C4 C4 "Gm"_B,8 | "D"A,8 "G"B,8 |
+"G7"z8 "Cm"z4 G4 | "D"G4 F4 "C7"F4 _E4 | "Gm"D4 D4- "F"D2 E2 F4 | "Eb"_B,4 C4 "D"D4 F4 |
+"C"F4 _E4 "Gm"D8 | "Gm7"_B,4 C4 "D"D8 | "G"B,8 z4 B,4 | "Cm"C8 "G"B,4 D4 |
+"C"_E8 "G"D8 |

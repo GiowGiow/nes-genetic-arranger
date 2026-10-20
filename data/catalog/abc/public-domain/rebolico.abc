@@ -1,0 +1,36 @@
+%abc-2.1
+% REBOLIÇO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/rebolico.html (file
+% https://www.beakauffmann.com/mpb_r/som/rebolico.mid, sha256
+% fa606b6af7b62aa121b930bc82bd7f9f45ecdec6a7e7cc10af48a05c726659f4), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:REBOLIÇO
+M:2/4
+L:1/16
+Q:1/4=87.000022
+% Exact tempo 87.00002175000542 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#7"z E,2 ^F, _A, ^F,2 E, | "E7"e3 d G, _A, =A, _B, | "E7"B, d2 d ^f2 e2 | "F#m7"^f3 e5 |
+"A"_D _d A ^F E _D A, E, | "E7"e3 d G, _A, =A, _B, | "E7"B, d2 d ^f2 e2 | "A"e _d A ^F E _D A, E, |
+"F#m7"_D, E,2 ^F, _A, ^F =A _d | "E7"e3 d2 ^F, _A, ^F, | "Db7"_D F B _d B F _D c | "F#m"_d A2 ^F _D ^F, E, _D |
+"D7"C A, C _E ^F A c _e | "A"e A ^F E _D A, ^F, E, | "E"d E _E B F ^F G _A | "F#m7"A E2 ^F _A ^F2 E |
+"E7"e3 d G, _A, =A, _B, | "E7"B, d2 d ^f2 e2 | "F#m7"^f3 e5 | "A"_D _d A ^F E _D A, E, |
+"E7"e3 d G, _A, =A, _B, | "E7"B, d2 d ^f2 e2 | "A"e _d A ^F E _D A, E, | "F#m7"_D, E,2 ^F, _A, ^F =A _d |
+"E7"e3 d2 ^F, _A, ^F, | "Db7"_D F B _d B F _D c | "F#m"_d A2 ^F _D ^F, E, _D | "D7"C A, C _E ^F A c _e |
+"A"e A ^F E _D A, ^F, E, | "E"d E _E B F ^F G _A | "F#m7"A _D2 _D2 _A, =A, _B, | "E"B, E ^F G _A B2 B |
+"F#"_B _D2 e2 _B A _A | "B7"^F _E ^F _A =A B _d _e | "E"^f3 e2 B, e _E | "E"e F ^F G _A ^F _A B |
+"F#"B _A ^F _E B, _B, ^F, _E, | "F#7"E, _D2 _d2 _d2 _D | "Abm"^F, B,2 B2 B A, _D | "E"B, E ^F G _A B2 B |
+"F#"_B _D2 e2 _B A _A | "Ab7"^F _A, _B, C _E ^F =A _A | "Dbm"B _A e _d _A2 _D G | "F#7"^F e _d _B _A ^F2 _A |
+"E"^F E ^F G _A B2 B | "Abm7"_B _D2 e _e _d =B ^F | "E"E _A,2 E,2 _A, =A, _B, | "E"B, E ^F G _A B2 B |
+"F#"_B _D2 e2 _B A _A | "B7"^F _E ^F _A =A B _d _e | "E"^f3 e2 B, e _E | "E"e F ^F G _A ^F _A B |
+"F#"B _A ^F _E B, _B, ^F, _E, | "F#7"E, _D2 _d2 _d2 _D | "Abm"^F, B,2 B2 B A, _D | "E"B, E ^F G _A B2 B |
+"F#"_B _D2 e2 _B A _A | "Ab7"^F _A, _B, C _E ^F =A _A | "Dbm"B _A e _d _A2 _D G | "F#7"^F e _d _B _A ^F2 _A |
+"E"^F E ^F G _A B2 B | "Abm7"_B _D2 e _e _d =B ^F | "E"_A, E2 E E E2 _D | "Dbm7"D E2 _D =D E2 _D |

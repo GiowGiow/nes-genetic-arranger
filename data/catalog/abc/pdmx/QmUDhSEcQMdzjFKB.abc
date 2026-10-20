@@ -1,0 +1,34 @@
+%abc-2.1
+% C Minor Mass - Gloria, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist:
+% Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/16/QmUDhSEcQMdzjFKBzAtMQizJGhkXEWy24nxTcKAhFnteCD.mid (sha256
+% ba0a29e4469348b82fe914f1bde63a4b4f68754bc873ff301c1bf041793864ef): melody track 2, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:C Minor Mass - Gloria
+M:4/4
+L:1/16
+Q:1/4=118.000134
+% Exact tempo 118.00013373348487 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E8 "Dm7"F7 F | "C"E4 z12 | "G"z4 B,4 "Dm"D8 | "F#m7"D2 C B, C2 B, A, "G7"B,2 E2 A,2 B,2 |
+"C"z2 G, z G,2 C2 "G"D E D C B, D C B, | "Em7"A,2 B,2 C2 D2 "Am7"G,2 E D C E D C | "G"B,4 C2 D2 "C"C4 z4 | "C"z4 G4- "F"G2 F E F4 |
+"C"F2 E D E4- "G7"E2 D C D2 D2 | "C"D2 C2 z4 "F"z8 | "C"z8 "G7"z4 G4 | "C"G2 G G E2 C2 G,2 E2 C2 G,2 |
+"C"E,2 C2 G,2 E,2 C,2 G,2 E,2 C,2 | "C"G,8 E,2 F, G, A, B, C D | "C"E4 C4 "Am7"z8 | "G"z2 B,4 B,2 "C"C5 D B, C |
+"G"D5 F E D "C"C5 B, C D | "G"B,2 B,2 z4 "C"z2 C4 C2 | "G7"C B, C A, B,4 "C"C2 G,2 E,2 C,2 | "G"G,2 G,2 z2 G, G, G,2 G,2 z2 B, B, |
+"G"C2 B,2 z2 D D E2 D2 z4 | "D"z8 "Bm"z8 | "G7"z16 | "G"z4 F8 E2 D2 |
+"C7"C _B,5 _B,2 "C"A,4 E,4 | "Gm7"E,6 E,2 "F"F,4 z4 | "A"z8 "A7"z8 | "Ab7"z8 "D7"z8 |
+"G7"_A,8 G,8 | "F#7"G,8- "A"G,8 | "Dm7"F,8 "Fm"C,8 | "G7"D,8 "Ab7"C,8 |
+"G"G,8 G,2 z2 G4 | "C"G2 G G E2 C2 G,2 E2 C2 G,2 | "C"E,2 C2 G,2 E,2 C,2 G,2 E,2 C,2 | "C"G,8 E,2 F, G, A, B, C D |
+"C"E4 C4 "Am7"z8 | "G"z2 B,4 B,2 "C"C5 D B, C | "G"D5 F E D "C"C5 B, C D | "G"B,2 B,2 z4 "C"z2 C4 C2 |
+"G7"C B, C A, B,4 "C"C2 G,2 E,2 C,2 | "G"G,2 G,2 z2 G, G, G,2 G,2 z2 B, B, | "G"C2 B,2 z2 D D E2 D2 z4 | "D"z8 "Bm"z8 |
+"G7"z16 | "G"z4 F8 E2 D2 | "C7"C _B,5 _B,2 "C"A,4 E,4 | "Gm7"E,6 E,2 "F"F,4 z4 |
+"A"z8 "A7"z8 | "Ab7"z8 "D7"z8 | "G7"_A,8 G,8 | "F#7"G,8- "A"G,8 |
+"Dm7"F,8 "Fm"C,8 | "G7"D,8 "Ab7"C,8 | "G"G,12 F,4 | "C"E,8 "C7"z8 |
+"Dm7"z8 "Fm"z8 | "C"z8 "Fm"z8 | "C"z16 | "C"z16 |

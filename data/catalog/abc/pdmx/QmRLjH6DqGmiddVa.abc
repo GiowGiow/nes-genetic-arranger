@@ -1,0 +1,30 @@
+%abc-2.1
+% Stabat Mater Gloriosa, by Pergolesi. Score published on MuseScore (artist: Giovanni Battista
+% Pergolesi), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pergolesi (died 1736, Wikidata
+% Q185312).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/30/QmRLjH6DqGmiddVaqwn4N3J7Mg5RCT58YGwfyWPuiStu47.mid (sha256
+% 5cfa1cd971bc3a51f78d060ae166e95b3bad47493f81f97ebba216c34b9b3c23): melody track 2, bars 0-47
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Stabat Mater Gloriosa
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"G2 A2 _B2 G2 "F#m"D2 E2 ^F2 D2 | "Gm"G2 A2 _B2 G2 "Am"F2 G2 A2 F2 | "Bb"_B2 c2 d2 _B2 "Cm"c2 d2 _e2 c2 | "Ab7"d2 c2 _B2 A2 "G7"G2 _A2 G2 F2 |
+"Cm"_E2 D2 _E2 C2 "D"D4 z4 | "D7"z2 D2 D2 D2 "Gm"z8 | "D7"z2 D2 D2 D2 "F#"D2 c2 _B2 c2 | "F#"d2 d2 D2 D2 "Gm"_E2 z2 _B,2 z2 |
+"D7"C2 z2 D2 z2 "Gm"_E2 z2 _B,2 z2 | "D7"C2 z2 D2 z2 "Gm"_B2 A2 _B2 c2 | "F#"d2 d2 D2 D2 "Gm"G4 z4 | "G"G,2 A,2 _B,2 G,2 "F#m"D2 E2 ^F2 D2 |
+"Gm"G2 A2 _B2 G2 "Am"F2 G2 A2 F2 | "Bb"_B2 c2 d2 _B2 "Cm"c2 d2 _e2 c2 | "Ab7"d2 c2 _B2 A2 "G7"G2 _A2 G2 F2 | "Cm"_E2 D2 _E2 C2 "Ab7"D2 C2 _B,2 A,2 |
+"C7"G,2 G2 _D2 _D2 "F#m"=D2 _E2 =D2 C2 | "G7"B,2 A,2 B,2 G,2 "G"C2 D2 _E2 C2 | "Fm"F,2 F2 _E2 D2 "G"C2 c2 c2 _B2 | "F7"A2 G2 A2 F2 "F"_B2 c2 d2 _B2 |
+"Cm7"_E2 _e2 d2 c2 "F7"_B2 _B2 _B2 A2 | "Bb"G2 G2 G,4 "Gm"z2 A2 ^F4 | "C7"z2 G2 _D2 _D2 "F#m"=D4 z4 | "D"D2 E2 F2 D2 "E7"G2 A2 _B2 A2 |
+"E7"_A2 _A2 _A2 _A2 =A2 =A2 F2 _A2 | "E7"A2 A2 A,2 A,2 "Dm"D2 z2 F2 z2 | "A7"G2 z2 A2 z2 "Dm"_B2 z2 F2 z2 | "A7"G2 z2 A2 z2 "D7"D2 E2 F2 D2 |
+"E7"A,2 B,2 _D2 A,2 "Dm"=D2 E2 F2 =D2 | "G7"C2 D2 E2 C2 "F"F2 G2 A2 F2 | "C7"G2 A2 _B2 G2 "Eb7"A2 G2 F2 E2 | "Dm"D2 D2 _A,2 _A,2 "Dbm"=A,2 =A2 =A2 G2 |
+"D7"^F8 "G7"G8 | "C7"C8 "F7"F8 | "D"_B,8 "G"_E8 | "Am7"A,8 "D7"D8 |
+"Gm"D2 _D2 _D2 _D2 "F#m"=D2 c z A z ^F z | "D7"D z D2 D2 D2 "Am7"D2 d z _B z G z | "Gm"D z D2 D2 D2 "F#m"D2 C2 _B,2 C2 | "C7"D2 D2 D2 D2 "Gm"_E2 z2 _B,2 z2 |
+"D7"C2 z2 D2 z2 "Eb"_E2 z2 _B,2 z2 | "D7"C2 z2 D2 z2 "C"_E4 z4 | "G"G2 A2 _B2 G2 "A7"C2 D2 _E2 D2 | "A7"_D2 _D2 _D2 _D2 "F#"=D2 C2 _B,2 C2 |
+"F#m"D8 "Gm"G2 z2 _B,2 z2 | "D7"C2 z2 D2 z2 "Gm"_E2 z2 _B,2 z2 | "D7"C2 z2 D2 z2 "G"G,4 z4 |

@@ -1,0 +1,25 @@
+%abc-2.1
+% La pastorella, by Francesca Caccini. Score published on MuseScore (artist: Francesca Caccini),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francesca Caccini (died 1641,
+% Wikidata Q232035).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/53/QmeXf17KgH6yeL9SX8gnEJHeNiPQqDhLKW2zgsjsMM4ivG.mid (sha256
+% 83d0c99c9193e4501272e65f998412cfac2ce504e63408159205b260a1bca546): melody track 0, bars 0-21
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La pastorella
+M:4/4
+L:1/16
+Q:1/4=79.000174
+% Exact tempo 79.00017380038237 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z12 G4 | "G7"G6 G2 "E"G6 G2 | "D"A8- "E7"A8 | "F#"z4 _B4 "D7"c8 |
+"A"c4 d c3 "E"_B8 | "A"A8- "Am"A4 z4 | "Gm"z8 "F"z8 | "E"z4 c4- "D"c4 d c d z |
+"C"c8 "D7"c8 | "A"c _B c c c c A2 "D7"A8 | "C"A8 "D"A8 | "G"G4 z4 "Gm"z8 |
+"Em7"z8 "F"z4 A _B2 _d | "Dm"d8- "E"d4 d c d _B | "D"_B3 c d4 "D7"A8 | "Gm"A4 _B4 "D7"c3 d _B3 c |
+"C"d A3 c _B3 "D"A8 | "G"G6 z2 "Gm7"z8 | "D7"z16 | "C7"z8 "D"z8 |
+"G"z16 |

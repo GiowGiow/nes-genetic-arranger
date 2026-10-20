@@ -1,0 +1,34 @@
+%abc-2.1
+% Bolero, by Maurice Ravel. Score published on MuseScore (artist: Maurice Ravel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/11/Qmabsy67fizwpB61PBPd1gMsLevTuh8a2nBnxhH8QrteMN.mid (sha256
+% 98da5d11eaed514fb393f503b6755193178dc6770ac2c22c15ade91c540707df): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Bolero
+M:3/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"c6 B c d c B A | "C"c2 c A c6 B c | "C"A G E F G8 | "C"G F E D E F G A G4 |
+"C"G5 A B A G F E D | "C"E D C4 C D E z F z | "C"D4 G8 | "C"G10 z2 |
+"C"d7 c B A B c | "C"d c B3 c B A c B A F | "C"F2 F F F2 A2 c A B G | "C"F2 F F F2 A2 B G A F |
+"C"D2 D C D6 D D | "C"D2 F2 A F G E D2 D C | "C"D6 D C D2 E F | "C"G9 F E D |
+"C"C2 z10 | "C"c6 B c d c B A | "C"c2 c A c6 B c | "C"A G E F G8 |
+"C"G F E D E F G A G4 | "C"G5 A B A G F E D | "C"E D C4 C D E z F z | "C"D4 G8 |
+"C"G10 z2 | "C"d7 c B A B c | "C"d c B3 c B A c B A F | "C"F2 F F F2 A2 c A B G |
+"C"F2 F F F2 A2 B G A F | "C"D2 D C D6 D D | "C"D2 F2 A F G E D2 D C | "C"D6 D C D2 E F |
+"C"G9 F E D | "C"C2 z10 | "C"_B5 A G F _B c A G | "C"_B2 A G _B4 A _B A G |
+"C"G5 F E D E4 | "C"E4 z2 _B z c z _d2 | "C"_d z _d3 z _d z _d z _d z | "C"_d _d z _d _d2 c _B _d2 c _B |
+"C"_d c _B _A G F E6 | "C"E10 z2 | "C"D2 z2 E2 D E F4 | "C"F4 G2 _A2 F G z E |
+"C"D E D C3 _B,6 | "C"_B, C _B, C D E D C D C _B, _A, | "C"_B, _A, G,4 F6 | "C"F5 G F _E5 |
+"C"_E4 F _E F _D5 | "C"_D5 _D _E _D F _E _D C | "C"C4 z8 | "C"_B5 A G F _B c A G |
+"C"_B2 A G _B4 A _B A G | "C"G5 F E D E4 | "C"E4 z2 _B z c z _d2 | "C"_d z _d3 z _d z _d z _d z |
+"C"_d _d z _d _d2 c _B _d2 c _B | "C"_d c _B _A G F E6 | "C"E10 z2 | "C"D2 z2 E2 D E F4 |
+"C"F4 G2 _A2 F G z E | "C"D E D C3 _B,6 | "C"_B, C _B, C D E D C D C _B, _A, | "C"_B, _A, G,4 F6 |

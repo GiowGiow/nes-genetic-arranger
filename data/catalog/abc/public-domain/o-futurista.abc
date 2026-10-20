@@ -1,0 +1,36 @@
+%abc-2.1
+% O FUTURISTA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-futurista.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-futurista.mid, sha256
+% e179c5f89d24d57fbb0bb44bcac5ea89724420a20fe57cc94633ed4df4198a04), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O FUTURISTA
+M:2/4
+L:1/16
+Q:1/4=56.00003
+% Exact tempo 56.000029866682596 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B"B B z B G z ^F _E | "C7"E2 z2 B, E2 G | "Eb7"g2 z2 _d4 | "Abm7"^f4 B2 b2 |
+"Abm7"A,6 z2 | "Em"_B2 G z3 e2 | "F#7"^f z3 _b4 | "B"^F2 _b' z5 |
+[M:1/4]"E"B,,2 D,2 | [M:2/4]"Db7"_D,, _A,,2 _D, _E, z F,2 | "F#m7"^F,, _D,2 =F, _D2 E2 | "Abm7"_E3 _D B,2 A,2 |
+"E7"E,, B,, z2 D,2 z2 | "Db7"_D, _D2 B, A,2 _A,2 | "Am7"^F, _D,2 ^F,, G, ^F,2 E, | "Dbm7"B,,6 z2 |
+"Dbm7"z4 B,,2 D, z | "Db7"_D,, _A,,2 _D, _E, z F,2 | "F#m7"^F,, _D,2 =F, _D2 E2 | "Abm7"_E3 _D B,2 A,2 |
+"E7"E,, B,, z2 D,2 z2 | "Db7"_D, _D2 B, A,2 _A,2 | "Am7"^F, _D,2 ^F,, G, ^F,2 E, | "Dbm7"B,,6 z2 |
+"Dbm"E2 z2 _A _d z _A | "Fm7"B z B z ^F A z A | "A"_A z _A z ^F ^F z ^F | "Ab"E z E z _D _D z _D |
+"Fm7"_A2 _A,,2 _d _d z _d | "Abm"c z c z B _D z _A | "F#m7"A z G z ^F ^F z ^F | "D7"a z G z A z _A z |
+"Dbm"_d2 z2 _d _A2 _A | "Fm7"B z B z ^F A z A | "A"_A z _A z ^F ^F z ^F | "Ab"E z E z _D _D z _D |
+"Fm7"_A2 _A,,2 _d _d z _d | "Abm"c z c z B _D z _A | "F#m7"A z G z ^F ^F z ^F | "D7"a z G z A z _A z |
+"Dbm7"_d2 z2 B,,2 =D,2 | "Db7"_D,, _A,,2 _D, _E, z F,2 | "F#m7"^F,, _D,2 =F, _D2 E2 | "Abm7"_E3 _D B,2 A,2 |
+"E7"E,, B,, z2 D,2 z2 | "Db7"_D, _D2 B, A,2 _A,2 | "Am7"^F, _D,2 ^F,, G, ^F,2 E, | "Dbm7"B,,6 z2 |
+"Dbm7"E4 z E _E D | "F#m7"_D2 A, z E2 _B, z | "B"_E3 B, B, B, _B, A, | "E7"_A,2 E,2 D2 _A, z |
+"A"_D3 A, A, E, ^F, _A, | "Dbm"A, B, A,, _A,, ^F,, E,, D,, _D,, | "Bm7"B,,, A,, _A,, ^F,, E,, D,, _D,, B,,, | "Dbm7"E,,3 D D2 D2 |
+"E"A,,3 _D _D E _E =D | "F#m7"_D2 A, z ^F,,2 _B, _b' | "B"_E3 _b' z =B,, z _E, | "E7"_A,2 E,2 D2 _A, z |
+"A"_D3 A, A, A B _d | "D"^F, E, D, _D, B,, A,, _A,, ^F,, | "E7"E,, D,, _D,, B,,, A,,, _A,,, ^F,,, E,,, | "Dm"D,,,4 E,,,2 D2 |

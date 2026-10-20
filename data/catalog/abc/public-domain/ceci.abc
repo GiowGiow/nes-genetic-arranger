@@ -1,0 +1,36 @@
+%abc-2.1
+% CECI, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/ceci.html (file
+% https://www.beakauffmann.com/mpb_c/som/ceci.mid, sha256
+% 0cf40b64b2059bcecbed8f292967564edb857b8f30c5b02ac2ea4c709c07c838), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CECI
+M:3/4
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z2 _D2 E2 A2 _d2 e2 | "E"_d5 z B2 e2 _d2 | "E7"B7 z _A4 | "A"^F11 z |
+"F#m7"^F2 E2 _E2 =E2 B2 A2 | "Db7"D11 z | "E"_D2 B,2 _B,2 =B,2 _D2 =B,2 | "A"E11 z |
+"A"z2 _D2 E2 A2 _d2 e2 | "E"_d5 z B2 e2 _d2 | "E"B7 z _A4 | "A"^F11 z |
+"F#m7"^F2 E2 _E2 =E2 B2 A2 | "Dbm"_A11 z | "Ebm"c11 z | "Dbm"_d5 z _d2 B4 |
+"A"z2 _D2 E2 A2 _d2 e2 | "E"_d5 z B2 e2 _d2 | "E"B7 z _A4 | "A"^F11 z |
+"F#m7"^F2 E2 _E2 =E2 B2 A2 | "Db7"D11 z | "E"_D2 B,2 _B,2 =B,2 _D2 =B,2 | "A"E11 z |
+"A7"A,2 B,2 _D2 =D2 E2 ^F2 | "D"A7 z A4 | "F"A7 z _A4 | "E"A _A5 ^F2 E2 _E2 |
+"F#7"D5 z _D2 C2 _D2 | "Abm7"^F11 z | "E7"E7 z _d4 | "E"A7 z B4 |
+"F#m7"A11 z | "E"B,11 z | "A7"_D7 z _E2 _D2 | "B7"B,11 z |
+"B"_D7 z _E4 | "E"^F7 z E2 _E2 | "Dbm7"E7 z _A4 | "F#m"B11 z |
+"B"^F11 z | "E"B11 z | "E"e7 z _d4 | "A"B11 z |
+"F#7"A11 z | "F#"_A11 z | "Eb7"_A4 E4 ^F4 | "B"E4 _E4 _D4 |
+"B"B,4 _B,4 A,4 | "E"B,11 z | "A7"_D7 z _E2 _D2 | "B7"B,11 z |
+"B"_D7 z _E4 | "E"^F7 z E2 _E2 | "Dbm7"E7 z _A4 | "F#m"B11 z |
+"B"^F11 z | "E"B11 z | "E"e7 z _d4 | "A"B7 z A4 |
+"F#m7"C11 z | "Dbm7"B,8 G,2 _A,2 | "B7"_A7 z ^F4 | "Dbm7"E12 |

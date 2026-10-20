@@ -1,0 +1,34 @@
+%abc-2.1
+% If the Lord himself had not been on our side, by William Knapp. Score published on MuseScore
+% (artist: William Knapp), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): William Knapp (died 1768,
+% Wikidata Q18531446).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/49/QmSVsazaQacU2hGfrLFEJFQXobafJArENAVfmEPztzPNrt.mid (sha256
+% 948a1300a72eaf4724f544d22d9b84a95956813061ac979bd09e8a66951f5227): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:If the Lord himself had not been on our side
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z24 | "D"z24 | "Gm"z24 | "D"d6 _d2 =d8 =D8 |
+"Gm"G24 | "Gm"_B12 A4 _B8 | "Cm"G8 A12 G4 | "Dm"^F16 d4 d4 |
+"Dm7"c16 A8 | "Gm7"_B16 z8 | "Gm7"_B6 _B2 _B4 c4 d8 | "D"d24 |
+"Gm"d12 c4 _B8 | "Cm"c8 c12 _B4 | "D"A16 _B8 | "Cm"A8 G8 A4 _B2 c2 |
+"F"c16 A8 | "Bb"_B8 _B8 z8 | "Dm"z24 | "C7"z24 |
+"G"z24 | "D"z16 G6 A2 | "D"_B12 A4 _B8 | "D"A8 A8 G4 A4 |
+"D"_B4 A4 G4 ^F4 G4 A4 | "D"_B12 A4 G8 | "D"F12 G4 E6 D2 | [M:2/2]"D"D16 |
+[M:1/2]"Em7"_B6 _B2 | [M:3/2]"Gm"_B12 A4 _B6 c2 | "D"d8 d8 d4 d4 | "D7"G4 A4 _B4 c4 _B4 A4 |
+"Bb"G4 F4 G4 A4 _B8 | "D7"A12 G4 ^F8 | [M:2/2]"G"G16 | [M:1/2]"Em7"_B6 _B2 |
+[M:3/2]"Gm"_B12 A4 _B6 c2 | "D"d8 d8 d4 d4 | "D7"G4 A4 _B4 c4 _B4 A4 | "Bb"G4 F4 G4 A4 _B8 |
+"D7"A12 G4 ^F8 | "G"G24 | [M:2/2]"A"z16 | "Am"z16 |
+"F"z16 | "Dm"z16 | "Bb"z16 | "Bb"z16 |
+"Gm7"z16 | "Gm7"z16 | "Cm7"z16 | "F"z16 |
+"Bb"z12 _B4 | "Bb"G4 A4 _B4 G4 | "Bb"^F6 _E2 D8 | "Bb"G4 ^F4 G4 A4 |
+"Bb"D8 ^F8 | "Bb"G16 | "F#"_B8 A8 | "Gm"_B4 c4 d4 c4 |
+"Gm7"d16 | "Gm7"d8 c8 | "Bb"d4 c4 _B4 A4 | "Dm"_B4 c4 d4 c4 |

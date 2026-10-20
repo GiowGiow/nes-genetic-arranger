@@ -1,0 +1,23 @@
+%abc-2.1
+% Jackson's Breakdown, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 29 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Jackson's Breakdown
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"A6 d2 f2 g2 f2 e2 | "D"d4 F4 A6 d2 | "A"c4 E4 G6 B2 | "D"A4 D4 F8 |
+"D"A6 d2 f2 g2 f2 e2 | "D"d4 F4 A6 d2 | "A"c4 A4 B4 c4 | "D"d8 d8 |
+"D"A6 d2 f2 g2 f2 e2 | "D"d4 F4 A6 d2 | "A"c4 E4 G6 B2 | "D"A4 D4 F8 |
+"D"A6 d2 f2 g2 f2 e2 | "D"d4 F4 A6 d2 | "A"c4 A4 B4 c4 | "D"d8 d8 |
+"A"e6 f2 e6 f2 | "A"e4 a4 e8 | "Bm"b4 b2 a2 "E"f4 ^g4 | "A"a4 c4 e8 |
+"A"e6 f2 e6 f2 | "A"e4 a4 e8 | "Bm"b4 b2 a2 "E"f4 ^g4 | "A"a8 a8 |
+"A"e6 f2 e6 f2 | "A"e4 a4 e8 | "Bm"b4 b2 a2 "E"f4 ^g4 | "A"a4 c4 e8 |
+"A"e6 f2 e6 f2 | "A"e4 a4 e8 | "Bm"b4 b2 a2 "E"f4 ^g4 | "A"a8 a8 |

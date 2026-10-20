@@ -1,0 +1,27 @@
+%abc-2.1
+% Benedicta et venerabilis, by Costanzo Porta. Score published on MuseScore (artist: Costanzo
+% Porta), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Costanzo Porta (died 1601,
+% Wikidata Q1136470).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/21/QmagVZVWhdtEXA6ZHZiadwJataca4hn3RCKAUAjSGfHWSj.mid (sha256
+% 923e9a088bf7547161f56695dbf75bda71937338b3c814e1c61ea44f174fda52): melody track 2, bars 2-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Benedicta et venerabilis
+M:4/2
+L:1/16
+Q:1/4=156.000156
+% Exact tempo 156.00015600015604 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z32 | "F"z16 "G"z16 | "A"z16 "D"A,16 | "F"A,8 A,8 "F#m7"C16 |
+"G7"D16 "C"E16 | "D"z8 D8 F8 F8 | "Am"E12 A4 "Bm"G8 F8 | "Am"E16 A,16 |
+"D7"z8 E8 "Dm"F8 F8 | "Am"E12 A4 "E"G8 G8 | "D7"F4 D4 A8- "E"A4 G2 F2 G8 | "F"A8 D8 "Am"A,16 |
+"Em7"C8 D8 "E7"A,16 | "Dm"A,8 A,8 "Am"C12 D4 | "Dm7"E8 F8 "D7"z8 F8 | "Gm"F8 D8 "F"C16 |
+"Dm7"A,16 "C"C16 | "Gm"D16 "Dm"z8 D8 | "C"A16 "Am"A8 F8 | "C"G8 A8 "A"F12 E2 D2 |
+"Am"C4 D4 E8- "F"E8 D8 | "Em"z8 E8 "Am"E8 C8 | "G"B,16 "Am"z16 | "F"z8 A8 "E"A8 G8 |
+"Am"E16 "D"F16 | "Am"E8 C8- "F"C8 D8 | "Em"E12 F4 G8 E8 | "Em"E4 D4 C8 "E"B,16 |
+"A"A,32 |

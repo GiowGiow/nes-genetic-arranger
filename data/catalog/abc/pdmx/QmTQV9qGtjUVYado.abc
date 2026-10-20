@@ -1,0 +1,34 @@
+%abc-2.1
+% O Holy Night, by Adolphe Adam. Score published on MuseScore (artist: Adolphe Adam), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Adolphe Adam (died 1856,
+% Wikidata Q189544).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/39/QmTQV9qGtjUVYadoownpF64tD7CKzdEyHgZhdhWFHwocr1.mid (sha256
+% c0452f58b19f24922d437ed616f90a8f71a865659bdf83b39f7240d23506526f): melody track 1, bars 0-62
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:O Holy Night
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, "F"F, C2 A, F C2 A, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, |
+"C"E, C2 G, E C2 G, "G"F, B,2 G, D B,2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, "F"F, C2 A, F C2 A, |
+"C"E, C2 G, E C2 G, E, _B,2 G, E _B,2 G, | "B"E, B,2 G, E B,2 G, ^F, B,2 A, _E B,2 A, | "E"E, B,2 G, E B,2 G, "Em"E, B,2 G, E B,2 G, | "Em"F, B,2 G, D B,2 G, "G"F, B,2 G, D B,2 G, |
+"C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "Em"F, B,2 G, D B,2 G, "G"F, B,2 G, D B,2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "Am"E, C2 A, E C2 A, E, C2 A, E C2 A, |
+"E"E, B,2 G, E B,2 G, E, B,2 G, E B,2 G, | "D"F, D2 A, F D2 A, F, D2 A, F D2 A, | "Am"E, C2 A, E C2 A, E, C2 A, E C2 A, | "C"E, C2 G, E C2 G, "G7"D, B,2 G, D B,2 G, |
+"C"G, E2 C G E2 C "F"F, C2 A, F C2 A, | "G"E, C2 G, E C2 G, F, B,2 G, D B,2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "G"D, B,2 G, D B,2 G, "G7"D, B,2 G, D B,2 G, |
+"E"G, E2 C G E2 C "F"F, D2 A, F D2 A, | "C"E, C2 G, E C2 G, "G7"D4 z4 | "C"C4 z4 c7 B | "F"B8 "Dm"A4 A3 A |
+"Em7"f8 "G7"e4 d4 | "C"c8 "G7"B c c c c c c d | "C"c8 z8 | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, |
+"C"E, C2 G, E C2 G, "F"F, C2 A, F C2 A, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, "G"F, B,2 G, D B,2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, |
+"C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "C"E, C2 G, E C2 G, "F"F, C2 A, F C2 A, | "C"E, C2 G, E C2 G, E, _B,2 G, E _B,2 G, | "B"E, B,2 G, E B,2 G, ^F, B,2 A, _E B,2 A, |
+"E"E, B,2 G, E B,2 G, "Em"E, B,2 G, E B,2 G, | "Em"F, B,2 G, D B,2 G, "G"F, B,2 G, D B,2 G, | "C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "Em"F, B,2 G, D B,2 G, "G"F, B,2 G, D B,2 G, |
+"C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "Am"E, C2 A, E C2 A, E, C2 A, E C2 A, | "E"E, B,2 G, E B,2 G, E, B,2 G, E B,2 G, | "D"F, D2 A, F D2 A, F, D2 A, F D2 A, |
+"Am"E, C2 A, E C2 A, E, C2 A, E C2 A, | "C"E, C2 G, E C2 G, "G7"D, B,2 G, D B,2 G, | "C"G, E2 C G E2 C "F"F, C2 A, F C2 A, | "G"E, C2 G, E C2 G, F, B,2 G, D B,2 G, |
+"C"E, C2 G, E C2 G, E, C2 G, E C2 G, | "G"D, B,2 G, D B,2 G, "G7"D, B,2 G, D B,2 G, | "E"G, E2 C G E2 C "F"F, D2 A, F D2 A, | "C"E, C2 G, E C2 G, "G7"D4 z4 |
+"C"C4 z4 c7 B | "F"B8 "Dm"A4 A3 A | "Em7"f8 "G7"e4 d4 | "C"c8 "G7"B c c c c c c d |
+"C"c8 z8 | "C"z16 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% La plus que lente, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/55/QmbYCixEYiqqLRZmHY18yk2pitQ4oMjzLmuLGN8EMFPRAx.mid (sha256
+% 392b2ac6d21f4446815b314784b4e93a8ad12e8adeacc74dc861779ad3cc8472): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La plus que lente
+M:3/4
+L:1/16
+Q:1/4=85.500047
+% Exact tempo 85.50004702502586 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ebm7"z4 _D2 z2 _E2 z2 | "Ebm7"F4 _D2 _A2 F4 | "Ebm7"F2 _A2 F2 _A2 F2 _A2 | "Ebm7"F2 z2 _D4 F4 |
+"Ebm7"F4 _D6 _E2 | "Ebm7"F4 _D2 _A2 F4 | "F#"F2 _A2 F2 _A2 ^F2 _B2 | "Ebm7"_e4 _B6 z2 |
+"Ebm7"z4 _e6 _e2 | "Abm"^f4 B2 =f2 _e2 _A2 | "Db7"^F4 _d4 =f4 | "Abm7"_e2 _d2 B4 F4 |
+"B"z4 _B4 _A4 | "Ab"^F2 =F2 _E2 ^F2 =F2 _E2 | "Bb7"^F2 =F2 _E2 ^F2 =F2 _E2 | "G"_D2 _E2 F8 |
+"Bbm7"F z3 _D2 z2 _E2 z2 | "Ebm7"F4 _D2 _A2 F4 | "Ebm7"F2 _A2 F2 _A2 F2 _A2 | "Ebm7"F2 z2 _D4 F4 |
+"Ebm7"F4 _D6 _E2 | "Ebm7"F4 _D2 _A2 F4 | "F#"F2 _A2 F2 _A2 ^F2 _B2 | "Ebm7"_e4 _B6 z2 |
+"Ebm7"z4 _e6 _e2 | "B"_b4 _e2 _a2 ^f4 | "Abm7"^f2 _b2 _a2 ^f2 _b2 _a2 | "Abm7"^f2 _e2 _d2 B2 _e2 _d2 |
+"Abm7"B2 _A2 ^F2 =F2 _A2 ^F2 | "Db7"_E2 _D2 B,2 _B,2 _D2 =B,2 | "Dm"_E2 F2 B2 _B2 F2 D2 | "F#"F2 _A2 ^F4 _D4 |
+"F#"_D2 _B,2 =B,2 _D2 _E2 F2 | "E7"_B4 ^F4 =F4 | "D"z2 _B,2 =B,2 _D2 _E2 F2 | "Fm7"_B4 ^F4 =F4 |
+"Eb"z2 _B,2 =B,2 _D2 _E2 F2 | "Db7"_B2 =B,2 _D2 _E2 F2 ^F2 | "Abm"B2 _D2 _E2 F2 ^F2 _A2 | "Db7"_d2 _E2 F2 ^F2 _A2 _B2 |
+"F#"_e2 _B2 =B2 _d2 _e2 f2 | "Abm"_b4 ^f4 =f4 | "Abm"z2 _B2 =B2 _d2 _e2 f2 | "Bb7"_b4 ^f4 =f4 |
+"Bb"_b4 _b6 c'2 | "Eb"c'4 G2 _b2 _a2 g2 | "Gm"f4 _B2 _e2 d2 c2 | "B7"B4 A2 _d2 _A2 =A2 |
+"Bb7"_B4 _A4 _b4 | "Eb"c'4 G2 _b2 _a2 g2 | "Gm"f4 _B2 _e2 d2 c2 | "F#m"B4 A2 _d2 _A2 =A2 |
+"Fm"_B4 _A4 d4 | "Db7"_d4 B2 _e2 _B2 =B2 | "C7"c4 _B4 e4 | "Bbm"_e4 _d2 f2 _e2 f2 |
+"Ebm7"^f4 _d2 _a2 ^f2 _a2 | "Abm"a4 _d2 b2 a2 b2 | "Ebm7"_d'2 _A z =A z B z _d z _e z | "Db7"f4 _e2 _a2 f4 |
+"Dm7"f2 _a2 f2 _a2 f2 _a2 | "Db7"f4 _e4 f4 | "Db"f4 _d6 _e2 | "Dm7"f4 c2 _a2 f4 |

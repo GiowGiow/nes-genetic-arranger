@@ -1,0 +1,34 @@
+%abc-2.1
+% Messiah HWV 56, by Handel. Score published on MuseScore (artist: Georg Friedrich Händel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Handel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/57/QmSZV3KZ5bx3dpgXLvHbjpHCPpUggUhrpeAWfZcLXL5uYP.mid (sha256
+% 3b1cd34a8d811d315e36d34679d3ec787ee9ef52b8becd5810fee421e3071a85): melody track 0, bars 0-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Messiah HWV 56
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"z6 d2 G4 A4 | "D7"_B2 c2 A4 "Gm"G4 z2 d2 | "Gm"g2 g2 g2 g2 "Dm"f g f _e f d c d | "F7"_e f _e d _e c _B c "Gm"d2 G2 g4 |
+"A"g2 f2 e4 "Em7"d4 z4 | "Em7"z8 "Dm"z8 | "Dm"z8 "D7"z8 | "C7"z8 "Dm"z8 |
+"A7"z8 "Dm"z8 | "A7"z8 "Dm"z8 | "Dm"z8 "D7"z8 | "C7"z8 "Dm"z8 |
+"Cm"z8 "Gm7"z8 | "F7"z8 "Gm"z8 | "Am7"z6 d2 "Gm"g2 g2 g2 g2 | "Gm7"f g f _e f d c d "Cm7"_e f _e d _e c _B c |
+"Gm"d _e d c d _B A _B "F#m"c d c _B c A G A | "Eb"B2 G2 c2 c2 "G7"c4 B4 | "Fm7"c4 z4 "Bb7"z6 G2 | "Ab"c6 c2 "Em7"B4 B4 |
+"Cm"z2 c2 c2 _B2 "F7"A6 c2 | "Dm"d4 d2 c2 "G7"B6 d2 | "Eb"_e2 _e2 _e2 d2 "Fm7"c6 c2 | "Cm"B4 c4 "G"c4 B4 |
+"Cm"c4 z2 g2 "Fm7"c4 d4 | "G7"_e2 f2 d4 "Cm"c4 z4 | "G7"z8 "F"z8 | "C7"z8 "Dm"z8 |
+"C7"z8 "Dm7"z8 | "C7"z6 c2 "Dm7"f2 f2 f2 f2 | "F7"_e f _e d _e c _B c "Dm"d _e d c d _B A _B | "Dm7"c d c _B c A G A "Cm7"_B4 c4 |
+"Gm7"d2 _e2 c4 "Dm"_B4 z4 | "Dm7"z6 f2 "Gm7"_B4 c4 | "F7"d2 _e2 c4 "Bb"_B4 z4 | "Bb"z6 _B2 "F"f2 f2 f2 f2 |
+"Cm"_e2 d2 _e2 c2 "Gm"d2 c2 d2 =e2 | "D"^f3 e d4 "Gm"z8 | "D7"z6 ^f2 "Gm"g4 ^f4 | "Am7"g2 _e2 c4 "Gm"_B4 z4 |
+"D7"z8 "Gm"z8 | "Gm7"z8 "Bb7"z8 | "Gm"z8 "D7"z6 d2 | "Eb"g2 g2 g2 g2 "Dm"f g f _e f d c d |
+"Fm"_e f _e d _e c _B c "Bb7"d _e d c d _B A _B | "D7"c d c _B c A G A "Gm"_B c _B A _B d c _B | "Dm"A4 z4 "F7"z6 A2 | "Eb"d2 d2 d2 d2 "D7"c d c _B c A G A |
+"Gm"_B c _B A _B G F G "Cm7"A2 A2 d4 | "Cm7"d4 c4- "D"c4 _B4 | "Gm"A4 _B4 "D"A4 A4 | "Gm"z2 g2 g2 f2 "C7"e6 g2 |
+"Am"a4 a2 g2 "D7"^f4 d4 | "Gm7"d2 d2 d2 d2 "Eb"d4 c4 | "Gm"c4 _B4 "D"A6 A2 | "Gm"G8 "Cm"z8 |
+"Gm"z8 "D"z8 | "Gm"z16 |

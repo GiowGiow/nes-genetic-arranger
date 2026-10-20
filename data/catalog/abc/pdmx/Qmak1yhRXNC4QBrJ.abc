@@ -1,0 +1,23 @@
+%abc-2.1
+% The gods have heard my vows, by Thomas Weelkes. Score published on MuseScore (artist: Thomas
+% Weelkes), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Weelkes (died 1623,
+% Wikidata Q553908).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/28/Qmak1yhRXNC4QBrJhqyhLhFuZHFzp8C7PfZXxbk7RSs3S5.mid (sha256
+% 5e982c391d8867625de6f77a615238d014c6cd76303c0b029b8892e5c780023f): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The gods have heard my vows
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"z4 D4 "C"E4 D4 | "Am7"C4 B,4 "D"A,8 | "Dm"A,4 F4 "A"E8 | "Em7"D4 D4 "E"G8 |
+"Em7"^F4 D4 "C"E6 E2 | "A7"D4 C4 "E"B,8 | "A"z4 C4 "D"A,8 | "G"z4 D4 B,8 |
+"C"C8 "F"D8 | "G7"D8 "C"C8 | "G"C8 B,8 | "C"C16 |
+"C"C8 "G"B,8 | "D7"B,8 "C"A,8 | "D7"A,8 "E7"G,8 | "D"G,8 ^F,8 |
+"G"G,8- "Em7"G,8 | "Am"z4 C4 "Dm"D2 C2 B,2 A,2 | "Em"G,4 G,4- "D"G,4 ^F,4 | "G"G,16 |

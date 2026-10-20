@@ -1,0 +1,34 @@
+%abc-2.1
+% californication, by Andy Leonard. Score published on MuseScore (artist: Red Hot Chili Peppers),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Andy Leonard (died 1903,
+% Wikidata Q4760936).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/39/QmYQKq9oKBS6piB5MMCw19rUUjQAUayKK1XP2UiWgAeGsF.mid (sha256
+% b91a94a9241f71238c73cad5ac7b09394da822df393e0e4c96ba89bf6c7b2f1a): melody track 3, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:californication
+M:4/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"E"A,4 A,2 E2- "C"E2 E2 D E C2 | "Am7"F,4 F,2 F2- "A"F2 F2 D4 | "E"A,4 A,2 E2- "C"E2 E2 D E C2 | "Am7"F,4 F,2 F2- "Dm"F2 F2 D4 |
+"Am"A,4 A,2 E4 E2 D E C2 | "Dm7"F,4 F,2 D2- "Dm"D2 D2 C4 | "Am"A,4 A,2 E4 E2 D E C2 | "Dm7"F,4 F,2 F2- "F"F2 F2 D4 |
+"Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 D2- "Am"D2 D2 C4 | "Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 F2- "Am"F2 F2 D4 |
+"C"C,4 C,2 C,2 "G"G,,4 G,,2 G,,2 | "F"F,,2 F,,2 F,,4 "Dm"D,4 D,2 z2 | "Am"A,4 A,2 E4 E2 D E C2 | "Dm7"F,4 F,2 D2- "Dm"D2 D2 C4 |
+"Am"A,4 A,2 E4 E2 D E C2 | "Dm7"F,4 F,2 F2- "Dm"F2 F2 D4 | "Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 D2- "Dm"D2 D2 C4 |
+"Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 F2- "Dm"F2 F2 D4 | "C"C,4 C,2 C,2 "G"G,,4 G,,4 | "F"F,,4 F,,4 "Dm"D,4 D,2 z2 |
+"Am"A,2 z2 A,2 A, A, z A, A,2 B,2 C2 | "Am"F,2 F, F, F,2 F, F, "F"z F, C2 B,2 G,2 | "Am"A,2 A, A, A,2 A, A, z A, A,2 B,2 C2 | "Am"F,2 F, F, F,2 F, C "F"E2 D2 C2 B,2 |
+"Am"A,2 A, A, A,2 A, A, z A, A,2 B,2 C2 | "Dm7"F,2 F, F, F,2 F, F, "F"z F, C2 B,2 G,2 | "Am"A,2 A, A, A,2 A, A, z A, A,2 B,2 C2 | "Dm7"F,2 F, F, F,2 F, F, "F"z F, C2 B,2 G,2 |
+"Am"A,2 A, A, A,2 A, A,2 A, A,2 B,2 C2 | "Dm7"F,2 F, F, F,2 F, F, "F"z C B,2 A,2 F, E, | "Am"A,2 z2 A,2 A, A, z A, A,2 B,2 C2 | "Dm7"F,2 F, F, F,2 F, F, "F"z F, F, z F, z F, z |
+"C"C,4 C,4 "G"G,,4 G,,4 | "Dm"D,4 D,2 D, E, "Am"A,,4 A,,4 | "C"C,4 C,3 E,, "G"G,,2 B,,2 C,2 D,2 | "Dm7"D,8- "Dm"D,7 z |
+"E"A,4 A,2 E2- "C"E2 E2 D E C2 | "C"F,4 F,2 D2- "Am"D2 D2 C4 | "E"A,4 A,2 E2- "C"E2 E2 D E C2 | "C"F,4 F,2 F2- "Am"F2 F2 D4 |
+"Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 D2- "Dm"D2 D2 C4 | "Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 F4 F2 D4 |
+"Am7"C,4 C,4 "G"G,,4 G,,4 | "F"F,,4 F,,4 "Dm"D,4 D,2 z2 | "Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "F"F,4 F,2 D2- "Dm"D2 D2 C4 |
+"Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "F"F,4 F,2 F2- "Dm"F2 F2 D4 | "Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 D2- "Am"D2 D2 C4 |
+"Am"A,4 A,2 E2- "D7"E2 E2 D E C2 | "Dm7"F,4 F,2 F2- "F"F2 F2 D4 | "Am7"C,4 C,2 C,2 "G"G,,4 G,,4 | "F"F,,4 F,,4 "Dm"D,4 D,2 B,2 |
+"Am"A,2 A, A, A,2 A, A,2 A, A,2 B,2 C2 | "Am"F,2 F, F, F,2 F, F, "F"z F, C2 B,2 G,2 | "Am"A,2 A, A, A,2 A, A, z A, A,2 B,2 C2 | "Am"F,2 F, F, F,2 F, C- "F"C2 B,2 A,2 G,2 |

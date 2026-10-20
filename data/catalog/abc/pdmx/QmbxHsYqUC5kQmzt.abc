@@ -1,0 +1,28 @@
+%abc-2.1
+% Air on the G string (D major), by Johann Sebastian Bach. Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/52/QmbxHsYqUC5kQmztWiveAqfwc7Jh2PKV3akUDzxSJrLeLP.mid (sha256
+% bf5e603778d9df25c2e7138dc31a696d14f975f6df8df20ab7efc7c9f581b489): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Air on the G string (D major)
+M:4/4
+L:1/16
+Q:1/4=52.000007
+% Exact tempo 52.00000693333426 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"^f8- "Bm7"^f8 | "Bm7"^f2 b g e d _d =d "F#m7"=d =d =d =d B z3 | "Am"a8- "Abm7"a ^f c B e _e a g | "Em7"g8- "F#m7"g e B A d _d g ^f |
+"D"^f6 _a =a "Bm7"d2 e ^f ^f e e d | "F#m7"_d B _d =d =d2 _d B "A"A8 | "D"^f8- "Bm7"^f8 | "Bm7"^f2 b g e d _d =d "F#m7"=d =d =d =d B z3 |
+"Am"a8- "Abm7"a ^f c B e _e a g | "Em7"g8- "F#m7"g e B A d _d g ^f | "D"^f6 _a =a "Bm7"d2 e ^f ^f e e d | "F#m7"_d B _d =d =d2 _d B "A"A8 |
+"F#m7"_d5 =d _d A a6 c2 | "Abm7"B2 b3 a g ^f "Dbm7"g z3 ^f e d B | "Em"_B =B _d2 _d =d e2 "Ebm7"e ^f g4 e2 | "Bm"e d _d B _d =d e z _d z7 |
+"F#m7"d5 ^f e d "E7"b6 a _a | "Dbm7"e a A2 B3 _d "F#m7"=d =d =d =d A4 | "Em7"d6 ^f e "E7"e6 g ^f | "F#7"^f6 a g "Em7"g8 |
+"F#m7"A5 _d e g "Bm7"g e ^f4 ^f g | "Bm7"a z4 ^f a c' "Em7"c'2 b4 d2 | "Em7"c d g4 B2 "A"A2 e ^f g ^f2 e | "A7"d B2 _d =d =d =d =d "D"=d8 |
+"F#m7"_d5 =d _d A a6 c2 | "Abm7"B2 b3 a g ^f "Dbm7"g z3 ^f e d B | "Em"_B =B _d2 _d =d e2 "Ebm7"e ^f g4 e2 | "Bm"e d _d B _d =d e z _d z7 |
+"F#m7"d5 ^f e d "E7"b6 a _a | "Dbm7"e a A2 B3 _d "F#m7"=d =d =d =d A4 | "Em7"d6 ^f e "E7"e6 g ^f | "F#7"^f6 a g "Em7"g8 |
+"F#m7"A5 _d e g "Bm7"g e ^f4 ^f g | "Bm7"a z4 ^f a c' "Em7"c'2 b4 d2 | "Em7"c d g4 B2 "A"A2 e ^f g ^f2 e | "A7"d B2 _d =d =d =d =d "D"=d8 |

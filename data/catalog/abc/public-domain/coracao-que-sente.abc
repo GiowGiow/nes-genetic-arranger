@@ -1,0 +1,35 @@
+%abc-2.1
+% CORAÇÃO QUE SENTE, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/coracao-que-sente.html (file
+% https://www.beakauffmann.com/mpb_c/som/coracao-que-sente.mid, sha256
+% 4fdc4b6ce94719b80f14c1d6f1482ada69af67f9b35f104d57b8d2c5ddbbe958), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CORAÇÃO QUE SENTE
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z G4 _E5 _E4 z D, | "C"D, ^F3 G2 ^F2 z G2 _e2 d3 | "C"d2 G4 z G4 z c4 | "C"G E4 G5 c5 F |
+"C"F3 z F4 z G,,2 B2 c3 | "C"B2 c3 _a2 g5 c4 | "C"z c4 f5 c4 z c | "C"c3 z _e5 ^F4 ^F3 |
+"C"^F2 A,,3 d2 _e2 d3 _e2 d'2 | "C"z c'4 d5 d4 z _b | "C"_b4 d4 z d4 d3 | "C"d2 _B4 z _B4 z _B,,,2 _d2 |
+"C"z d2 _d2 =d3 =d'2 c'5 _E | "C"_E _b3 g2 _e3 c2 _B2 G3 | "C"_E2 C3 _B,2 G5 _E4 | "C"z _E4 D,3 ^F2 G3 ^F2 G |
+"C"G _e3 d5 G4 G3 | "C"G2 c5 G4 z G4 | "C"z c4 F5 F4 z G,, | "C"G,, B2 z c2 B3 c2 _a2 g3 |
+"C"g2 c4 z c4 z f4 | "C"f c4 c5 _e5 ^F | "C"^F3 z ^F4 z A,,2 d2 _e3 | "C"d2 _e3 d'2 c'5 G4 |
+"C"z g _b3 C,,3 =B2 c3 =B2 c | "C"c _a2 z g5 _E4 =A f2 | "C"f2 _B,,3 A2 _B2 A3 _B2 g2 | "C"z _e2 G2 _B3 _e2 g3 _b2 _e' |
+"C"_e'3 z10 G3 | "C"G2 _E4 z _E4 z D,2 ^F2 | "C"^F G2 ^F2 G3 _e2 d5 G | "C"G3 z G4 z c4 G3 |
+"C"G2 G4 z c5 F4 | "C"z F4 G,,3 B2 c3 B2 c | "C"c _a3 g5 c4 c3 | "C"c2 f5 c4 z c4 |
+"C"z _e4 ^F5 ^F4 z A,, | "C"A,, d2 z _e2 d3 _e2 d'2 c'3 | "C"c'2 d4 z d4 z _b4 | "C"_b d4 d5 d5 _B |
+"C"_B3 z _B4 z _B,,,2 _d2 =d3 | "C"_d2 =d3 =d'2 c'5 _E2 _b2 | "C"_b g2 _e2 c3 _B2 G3 _E2 C | "C"C _B,3 G5 _E4 _E3 |
+"C"_E2 D,3 ^F2 G2 ^F3 G2 _e2 | "C"_e d4 G5 G4 z c | "C"c4 G4 z G4 c3 | "C"c2 F4 z F4 z G,,2 B2 |
+"C"z c2 B2 c3 _a2 g5 c | "C"c3 z c4 z f4 c3 | "C"c2 c4 z _e5 ^F4 | "C"z ^F4 A,,3 d2 _e3 d2 _e |
+"C"_e d'3 c'5 G4 _B g _b | "C"_b2 C,,3 =B2 c2 =B3 c2 _a2 | "C"z g4 _E5 A f4 _B,, | "C"_B,, A3 _B2 A3 _B2 g2 _e3 |
+"C"G2 _B3 _e2 g2 _b3 _e'4 | "C"z D2 F2 _B3 d2 f5 D | "C"D g3 f2 g3 f2 g2 f3 | "C"g2 f3 g2 f4 z D4 |
+"C"z d'4 F,,3 a2 c'3 _b2 f | "C"f ^f3 a5 _E2 g2 c3 | "C"d2 f5 _E2 _e3 G2 A2 | "C"z A A G A A A A A G A z4 F,, |

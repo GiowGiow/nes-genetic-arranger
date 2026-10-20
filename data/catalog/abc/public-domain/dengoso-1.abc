@@ -1,0 +1,36 @@
+%abc-2.1
+% DENGOSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dengoso-1.html (file
+% https://www.beakauffmann.com/mpb_d/som/dengoso-1.mid, sha256
+% ce43c9943cfb8bce849624668a74f85ac1ce6337e6a535a19e5e900d801843c7), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DENGOSO
+M:2/4
+L:1/16
+Q:1/4=91.999988
+% Exact tempo 91.99998773333496 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z8 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "Bb"_B,, D2 D F,,2 D z | "F7"A,, _E2 _E F,,2 _E z | "F7"A,, _E2 _E F,,2 _E z |
+"Gm7"_B,, D2 D D z3 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "G7"G,, F2 F B,,2 F2 | "F7"C, _E2 _E C,2 _E2 | "Dm7"F, D2 D F,2 _E2 |
+"Gm7"D2 D2 z4 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "Bb"_B,, D2 D F,,2 D z | "F7"A,, _E2 _E F,,2 _E z | "F7"A,, _E2 _E F,,2 _E z |
+"Gm7"_B,, D2 D D z3 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "G7"G,, F2 F B,,2 F2 | "F7"C, _E2 _E C,2 _E2 | "Dm7"F, D2 D F,2 _E2 |
+"Gm7"D2 D2 z4 | "C7"C E2 E _B,2 E2 | "F"A, F2 F F,2 F2 | "C7"E, C2 C C,2 C2 |
+"F"F, F,2 G, F, E,2 _E, | "F#"D,2 z2 C4 | "Gm7"_B,2 z2 _A,4 | "Dm7"C, C2 C C,2 C2 |
+"F"C2 C2 z4 | "C7"C E2 E _B,2 E2 | "F"A, F2 F F,2 F2 | "C7"E, C2 C C,2 C2 |
+"F"F, F,2 G, F, E,2 _E, | "F#"D,2 z2 C4 | "Gm7"_B,2 z2 _A,4 | "Dm7"C, C2 C C,2 C2 |
+"F"C2 C2 z4 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "Bb"_B,, D2 D F,,2 D z | "F7"A,, _E2 _E F,,2 _E z | "F7"A,, _E2 _E F,,2 _E z |
+"Gm7"_B,, D2 D D z3 | "C"A,, _E2 _E F,,2 _E z | "F"_B,, D2 D D,2 D z | "C"A,, _E2 _E F,,2 _E z |
+"F"_B,, D2 D D,2 D z | "G7"G,, F2 F B,,2 F2 | "F7"C, _E2 _E C,2 _E2 | "Dm7"F, D2 D F,2 _E2 |

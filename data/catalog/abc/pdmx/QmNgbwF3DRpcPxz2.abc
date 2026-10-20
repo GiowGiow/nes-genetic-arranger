@@ -1,0 +1,33 @@
+%abc-2.1
+% Vado ben spesso cangiando loco, by Salvator Rosa (1615 - 1673). Score published on MuseScore
+% (artist: Salvator Rosa), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Salvator Rosa (died 1673,
+% Wikidata Q359421).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/21/QmNgbwF3DRpcPxz2VxcU1rb3MQDZtQbzDRPrxZWsTTgD7r.mid (sha256
+% 09a64b6e04dd0f57b56fa6a5dd3fbc2c2d0c6a39a56bc741d811fe44289181d6): melody track 0, bars 0-56
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Vado ben spesso cangiando loco
+M:3/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"z12 | "Am7"z12 | "C7"z12 | "F"z12 |
+"Am7"z12 | "Dm7"z12 | "C"z12 | "F"z12 |
+"Gm7"z4 A,4 _B,4 | "Am7"C4 G,4 A,4 | "C7"_B,4 _B,6 _B,2 | "F"C2 _B,2 A,4 z4 |
+"Dm7"z4 F,4 G,4 | "Am"A,4 F,4 G,4 | "Bb"A,4 _B,2 A,2 G,2 F,2 | "C"F,4 E,4 z4 |
+"Dm"z4 F,4 G,4 | "Am7"A,4 _B,2 A,2 G,4 | "C"A,4 _B,2 A,2 G,2 _B,2 | "Dm7"A,2 C2 _B,2 A,2 A, G, A, F, |
+"F"A,4 A,4 C z A, _B, | "Dm"C4 F,4 F,2 G,2 | "Dm7"A,4 C,4 F, G,3 | "F"F,4 z4 C,4 |
+"F"C,12 | "F"C,8 C,4 | "F"C12 | "Dm7"C6 D C _B, A, G, F, |
+"Dm7"C,4 A,6 G,2 | "F"F,8 z4 | "F"z12 | "Dm7"z12 |
+"C"z12 | "F"z12 | "F"z4 A,4 _B,4 | "Am7"C4 G,4 A,4 |
+"C7"_B,4 _B,6 _B,2 | "F"C2 _B,2 A,4 z4 | "Dm7"z4 F,4 G,4 | "Am"A,4 F,4 G,4 |
+"Bb"A,4 _B,2 A,2 G,2 F,2 | "Dbm7"F,4 E,4 z4 | "Dm"z4 F,4 G,4 | "Am7"A,4 _B,2 A,2 G,4 |
+"C"A,4 _B,2 A,2 G,2 _B,2 | "Dm7"A,2 C2 _B,2 A,2 A, G, A, F, | "F"A,4 A,4 C z A, _B, | "Dm7"C4 F,4 F,2 G,2 |
+"Dm7"A,4 C,4 F, G,3 | "F"F,2 z2 C,4 C,2 z2 | "F"C,12 | "F"C,8 C,4 |
+"F"C12 | "Dm7"C2 F3 E D C _B, A, G, F, | "Dm7"C,4 A,6 G,2 | "F"F,8 z4 |

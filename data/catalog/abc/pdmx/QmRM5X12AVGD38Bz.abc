@@ -1,0 +1,35 @@
+%abc-2.1
+% Sonata in E minor HOB XVI 34, by Joseph Haydn(1732-1809). Score published on MuseScore (artist:
+% Joseph Haydn), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Haydn (died 1809,
+% Wikidata Q7349).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/32/QmRM5X12AVGD38BzeaGrh5385ttBHqssiWLYbQLGYfX41w.mid (sha256
+% d61808f8511c5008dd2c167fee6b29447245c855380602c2dd7c11094228ba2a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonata in E minor HOB XVI 34
+M:6/8
+L:1/16
+Q:1/4=187.000358
+% Exact tempo 187.00035841735362 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z8 G2 _E2 | "Em"E2 z6 B2 A2 | "Em"G2 z6 g2 ^f2 | "C"e8 c2 A2 |
+"Abm7"^F8 B2 A2 | "C7"A4 G2 ^F z _B2 =B2 | "C7"A4 G2 ^F z _B2 =B2 | "E"A4 A G ^F2 z4 |
+"Em"z8 G2 _E2 | "Em"E2 z6 B2 A2 | "Em"G2 z6 e2 d2 | "Am"c2 z6 c2 e2 |
+"D"d2 z6 A2 c2 | "G"B2 z5 D d B A G | "D7"^F2 z5 D d c B A | "G"B2 z5 d d' b a g |
+"D7"g4 ^f z2 d d' c' b a | "Bm"a4 b z2 d d' b a g | "D7"e' e c' e' b e' a b c' d' e' c' | "Em"d' d b d' a d' g a b c' d' b |
+"F#m7"c' c a c' g c' ^f c' g c' a c' | "Am7"b2 d' d' d'2 a2 a2 a2 | "Am7"b2 d' d' d'2 a2 a2 a2 | "Am7"b2 d' d' d'2 a2 a2 a2 |
+"D"g2 g2 g2 ^f2 ^f2 ^f2 | "Em"_d2 _d2 _d2 =d A B _d =d e | "A7"^f d e ^f g a b a g a b _d' | "D"d'2 a2 ^f2 d2 A2 ^F2 |
+"D"D4 z8 | "G"z2 d2 c2 B2 b2 g2 | "D7"^f2 c'2 b2 a2 e'2 c'2 | "G"b2 d'2 d2 e2 _a2 c'2 |
+"Am7"_e2 d2 b2 a2 b2 c'2 | "Bm7"g6 c2 a2 ^f2 | "G"g2 z10 | "G"z2 d2 c2 B2 b2 g2 |
+"D7"^f2 c'2 b2 a2 e'2 c'2 | "G"b2 d'2 d2 e2 _a2 c'2 | "Eb"_e2 d2 b2 c2 a2 B2 | "C"g2 g2 g2 g2 g2 g2 |
+"Bm7"g6 c2 a2 ^f2 | "G"g d B d c d B d g d a d | "G"b d B d c d B d g d a d | "G"b d B d c d B d g d a d |
+"G"b2 b2 d'2 b2 z4 | "Em"z8 G2 _E2 | "Em"E2 z6 B2 A2 | "Em"G2 z6 g2 ^f2 |
+"C"e8 c2 A2 | "Abm7"^F8 B2 A2 | "C7"A4 G2 ^F z _B2 =B2 | "C7"A4 G2 ^F z _B2 =B2 |
+"E"A4 A G ^F2 z4 | "Em"z8 G2 _E2 | "Em"E2 z6 B2 A2 | "Em"G2 z6 e2 d2 |
+"Am"c2 z6 c2 e2 | "D"d2 z6 A2 c2 | "G"B2 z5 D d B A G | "D7"^F2 z5 D d c B A |
+"G"B2 z5 d d' b a g | "D7"g4 ^f z2 d d' c' b a | "Bm"a4 b z2 d d' b a g | "D7"e' e c' e' b e' a b c' d' e' c' |

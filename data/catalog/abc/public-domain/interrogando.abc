@@ -1,0 +1,36 @@
+%abc-2.1
+% INTERROGANDO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_i/interrogando.html (file
+% https://www.beakauffmann.com/mpb_i/som/interrogando.mid, sha256
+% 4352d3af9a785cf7ffed7050017334d431dba3b53988ea3a07f30e06b8aff75b), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:INTERROGANDO
+M:2/4
+L:1/16
+Q:1/4=104.000014
+% Exact tempo 104.00001386666852 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z8 | "D"z d2 ^F z _d2 ^F | "A7"z A2 _D z ^F2 _D | "D"z D2 A, z _D2 B, |
+"Em"z2 A,2 z2 A,2 | "Abm"z2 A,2 z2 A,2 | "Em"z8 | "Dbm"z2 D2 z2 D2 |
+"C"z4 _D E A E | "D"z d2 ^F z _d2 ^F | "A7"z A2 _D z ^F2 _D | "D"z D2 A, z _D2 B, |
+"Em"z2 A,2 z2 A,2 | "F7"z C A2 z C A2 | "E7"z B, _A2 z B, _A2 | "Eb7"z _B, G2 z _B, G2 |
+"D7"z A, ^F2 z A, ^F2 | "Db7"z2 F2 z2 F2 | "F#m7"z4 B, B, A,2 | "Em"z2 A,2 z2 A,2 |
+"D"z4 D3 z | "D"z d2 ^F z _d2 ^F | "A7"z A2 _D z ^F2 _D | "D"z D2 A, z _D2 B, |
+"Em"z2 A,2 z2 A,2 | "Abm"z2 A,2 z2 A,2 | "Em"z8 | "Dbm"z2 D2 z2 D2 |
+"C"z4 _D E A E | "D"z d2 ^F z _d2 ^F | "A7"z A2 _D z ^F2 _D | "D"z D2 A, z _D2 B, |
+"Em"z2 A,2 z2 A,2 | "F7"z C A2 z C A2 | "E7"z B, _A2 z B, _A2 | "Eb7"z _B, G2 z _B, G2 |
+"D7"z A, ^F2 z A, ^F2 | "Db7"z2 F2 z2 F2 | "F#m7"z4 B, B, A,2 | "Em"z2 A,2 z2 A,2 |
+"D"z4 D3 z | "D"z2 A,2 z2 B,2 | "Em"z2 A,2 z2 A,2 | "D"z2 A,2 z2 B,2 |
+"Em"z2 A,2 z2 A,2 | "Abm"z2 A,2 z2 A,2 | "Em"z8 | "Db"z2 B,2 z2 B,2 |
+"F#"z A, _E A, z A, _E A, | "G"z _B, E _B, z _B, E _B, | "A"z D B D z D _d =D | "A"z _D B _D z _D A _D |
+"D"e e d G B A A z | "D"z2 A,2 z2 B,2 | "Em"z2 A,2 z2 A,2 | "D"z2 A,2 z2 B,2 |
+"Em"z2 A,2 z2 A,2 | "Abm"z2 A,2 z2 A,2 | "Em"z8 | "Db"z2 B,2 z2 B,2 |
+"F#"z A, _E A, z A, _E A, | "G"z _B, E _B, z _B, E _B, | "A"z D B D z D _d =D | "A"z _D B _D z _D A _D |

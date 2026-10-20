@@ -1,0 +1,30 @@
+%abc-2.1
+% Plaisir nay plus, by Nicolas Gombert. Score published on MuseScore (artist: Nicolas Gombert),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nicolas Gombert (died 1560,
+% Wikidata Q549689).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/9/QmbaxfekUoGPSDY1DL37pYSm4FUcpYNHWJcMeH5jip3nWT.mid (sha256
+% c1246f482af48d3ef089965fe742897039a853f666c73ae95127d582335f36cb): melody track 3, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Plaisir nay plus
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm7"C8 F8 | "Dm7"F4 E4 D4 C2 _B,2 | "Dm7"A,4 G,4 A,8 | "Gm7"z4 G,2 A,2 _B,2 G,2 C4 |
+"Dm7"C2 _B,2 A,2 G,2 F,8 | "C"z4 C4 G,2 A,2 _B,2 C2 | "Gm7"D4 D4 A,4 _B,4 | "Am7"C8 z4 G,4 |
+"C"G,4 A,4 F,4 G,4 | "C"A,4 _B,4 G,8 | "F"z4 F,4 G,4 A,4 | "Dm7"_B,4 A,4 z4 A,4 |
+"Dm7"A,4 F,4 G,4 A,4 | "Bb"_B,8 A,8 | "Cm7"z4 G,4 G,4 _B,4 | "C"G,6 A,2 _B,2 C2 D2 _B,2 |
+"C7"C4 A,8 G,4 | "Dm7"F,8 z4 G,4 | "Dm7"A,4 _B,4 C4 F,4 | "F"G,8 A,4 F,2 G,2 |
+"Dm7"A,2 _B,2 C4 A,4 _B,4 | "Dm7"G,8 A,8 | "F"z16 | "Gm7"z16 |
+"F"z4 C4 C4 C4 | "Dm"A,4 A,4 D6 C2 | "C"_B,2 A,2 G,4 G,4 C4 | "F"C4 C4 A,4 F4 |
+"Bb"D4 F6 E2 D4 | "Dm"D2 C2 A,4 _B,8 | "Dm"A,16 | "Gm"G,4 _B,4 C8 |
+"Am7"D8 C4 C4 | "Gm7"D4 F8 E4 | "Dm7"F4 F4 _B,2 C2 D2 E2 | "F"F4 _B,4 C4 D4 |
+"C"C8 z4 A,4 | "C7"D4 _B,4 C8 | "Dm7"C4 C4 D4 D4 | "Dm7"G,8 z4 F,4 |
+"Em7"_B,8 _B,4 G,4 | "Dm7"A,4 _B,4 A,4 G,2 F,2 | "Dm7"G,8 F,8 | "Bb"F,16 |
+"Bb"F,16 | "F"F,16 |

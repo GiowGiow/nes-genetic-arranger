@@ -1,0 +1,34 @@
+%abc-2.1
+% The Arrival of the Queen of Sheba, by G. F. Händel (1685-1759). Score published on MuseScore
+% (artist: Georg Friedrich Händel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): G. F. Händel (died 1759,
+% Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/29/QmTKdPpR2beDZ5Uij5uhhyVnHNR8huLrF4w1Y8FLoV1Gtd.mid (sha256
+% 0f21977b83bcd40cd587dcedf091cb87659f5834c4df30550384c0ea367fed30): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Arrival of the Queen of Sheba
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm7"_b f d f _b f d f "Gm"_b f d f _b f d f | "Cm7"c _b a g f _e d c "Dm"d _B c d _e f g a | "Gm7"_b f d f _b f d f "Em"_b g c g _b g c g | "Gm"a g f g c2 e2 "F"f2 c d c d c d |
+"F"c A z A c A z A "Dm"f d _B d f d _B d | "Cm"_e c A c _e c A c "Bb"d F G A _B c d _e | "Dm"f d _B d f d _B d "Dm7"f c A c f c A c | "Bb"d _B G _B d _B G _B "D"d A F A d A F A |
+"Gm"_b g _e g _b g _e g "Gm7"_b f d f _b f d f | "G"_e f g f _e d c _B A _B c _B A G F _E | "Cm7"D F _E G F A G _B "Gm7"A c _B d c _e d f | "G"_e f _e f g f _e d "A"c d c d _e f _e f |
+"A"g f g f _e d _e d c d c d _e f _e f | "A"g f g f _e d _e d c d c d _e d _e c | "Gm"d f _e g f a g _b "Gm7"a2 g f _b2 _e2 | "F7"d2 c _B z2 A2 "D"_B4 z4 |
+"D"_B c d _e d2 c2 _B2 f4 _e2 | "D"d2 _e d _e2 c2 d _e f g f2 _e2 | "D"d2 _e d _e2 c2 d2 c2 _B4 | "Dm"_b f d f _b f d f "Gm"_b f d f _b f d f |
+"A7"c _b a g f _e d c "Bb"d z7 | "Bb"f4 g f _e d "Cm"_e2 g4 g2 | "D7"f _e d f _e d c _e "Bb"d2 f4 f2 | "C7"_e d c _e d c _B d "F"c2 f2 A _B c d |
+"Dm"c2 f2 A _B c d "A"c2 f2 f2 f2 | "F"f c A c f c A c f c A c f c f a | "C7"g f e d c _B A G "F"A F G A _B c d e | "A7"f4 z4 "C7"z8 |
+"Gm"z8 "Am"z8 | "Gm7"z8 "F"z8 | "F"z8 "C"z8 | "F"a f d f a f d f "F#m7"a e c e a e c e |
+"Dm"f d _B d f d _B d "Dm7"f c A c f c A c | "Dm7"_B c d c _B A G F E4 z2 g2 | "Dm7"a2 g2 g2 f2 _b2 a2 a2 g2 | "Dm"a _b a g g a g f "E7"g a g f f g f e |
+"F"d e d c _B c _B A "C"G A G A _B c _B c | "E"d c d c _B A _B A G A G A _B c _B c | "E"d c d c _B A _B A G A G A _B c _B c | "G7"A2 f2 z2 e2 "F"f2 c2 F4 |
+"D7"d _e f g f2 _e2 "Bb"d2 f4 _e2 | "Am"d2 _e d _e2 c2 "Gm7"d2 c2 _B4 | "Dm"_b f d f _b f d f "Gm"_b f d f _b f d f | "A7"c _b a g f _e d c "Bb"d _B c d _B D _E F |
+"Bb"_B4 z12 | "Bb"z16 | "Bb"z16 | "Bb"z16 |
+"Bb"g d _B d g d _B d "Cm7"g d _B d g d g _b | "D7"a g ^f e d c _B A "Gm"_B G A _B c d e ^f | "Gm"g4 z4 g _e c _e g _e c _e | "Gm"f4 z4 f d _B d f d _B d |
+"Gm"_e4 z4 _e c A c _e c A c | "Gm"d4 z4 g d _B d g d _B d | "Gm"^f4 z4 d _B G _B d _B G _B | "Gm"z8 a ^f d ^f a ^f d ^f |
+"G"g d _B d g d _B d "Eb"g2 f _e d2 c2 | "D7"_B4 A4 "Bb"G4 z4 | "Gm"_b g _e g _b g _e g "Gm7"_b f d f _b f d f | "Eb"g _e c _e g _e c _e "Em7"g d _B d g d _B d |
+"Cm"_e c _A c _e c _A c "Cm7"_e _B G _B _e _B G _B | "F"_a g f _e d c _B _A G4 z4 | "G7"G _A _B c _B2 _A2 "Eb"G2 g4 f2 | "Fm"_e2 f _e f2 d2 "G7"_e2 _b4 _a2 |

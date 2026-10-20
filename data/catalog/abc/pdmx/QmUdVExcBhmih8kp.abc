@@ -1,0 +1,34 @@
+%abc-2.1
+% por una cabeza, by Carlos Gardel. Score published on MuseScore (artist: Carlos Gardel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carlos Gardel (died 1935,
+% Wikidata Q229613).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/15/QmUdVExcBhmih8kpm7zCrQBhLbnAXmtPHnEWy3pPvcNkWu.mid (sha256
+% 6b06e95d21386b0ad58441f81a2a4d1f56f5405bbf333bea099a357e375f2b68): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:por una cabeza
+M:4/8
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"z2 a4 _b c' | "D"_b c' _b _b a a g g | "D"^f z _e2 d2 c2 | "Cm"_B4 "Em7"z4 |
+"G"z4 B, C _D =D | "G"E2 D2 "Em7"_D =D E ^F | "G"A2 G2 "Em7"B c A B | "G"G A2 ^F "Em7"G ^F2 D |
+"D"C4 "A"c B d c | "D"A4 A _A B =A | "D"^F4 ^F G _A =A | "D"B A ^F E D ^F D C |
+"G"B,4 "Em7"B c _d =d | "G"e2 d2 "Em7"_d =d e ^f | "G"a2 g2 "Em7"g a b g | "G"a g a b "Em7"a2 g2 |
+"C"e4 a g e c | "Cm"B A B c "C"_e g f _e | "B7"g2 d2 "G"g a b g | "A"a2 e2 "D7"^f g a ^f |
+"Gm"g4 "D"z4 | "G"z2 _B2 _B2 c d | "F"d4 "Db"A4 | "Eb"z2 G2 G2 A _B |
+"D"_B4 F4 | "C"z2 _E2 _E2 F G | "Gm"G2 D2 "D"G A _B G | "A"A2 E2 "Em"G A _B G |
+"A"_B4 "D"A4 | "Em7"z2 _b2 "G"_b2 c' d' | "F"d'4 "E"a4 | "Eb"z2 g2 g2 a _b |
+"D"_b4 "Db"f4 | "C"z2 _e2 _e2 f g | "G"g2 d2 "G7"g a _b g | "E"a2 e2 "D"^f g a ^f |
+"G"g2 z2 B c _d =d | "G"e2 d2 "Gm"_d =d e ^f | "G"a2 g2 "Bm"b c' a b | "G"g a2 ^f "Gm"g ^f2 d |
+"F#m"c4 "A"c' b d' c' | "Dm"a4 "D"a _a b =a | "B7"^f4 "Am"^f g _a =a | "D"b a ^f e "D7"d ^f d c |
+"G"B4 "Em7"B c _d =d | "G"e2 d2 "Em7"_d =d e ^f | "G"a2 g2 "Em7"g a b g | "G"a g a b "Em7"a2 g2 |
+"C"e4 a g e c | "E"B A B c "G"_e g f _e | "D"g2 d2 "G"g a b g | "A"a2 e2 "D7"^f g a ^f |
+"Gm"g4 "D"z4 | "G"z2 _B2 _B2 c d | "F"d4 "Db"A4 | "Eb"z2 G2 G2 A _B |
+"D"_B4 F4 | "C"z2 _E2 _E2 F G | "Gm"G2 D2 "G"G A _B G | "A"A2 E2 "F#m7"G A _B G |
+"Em7"_B4 "D"_B c e f | "G"g2 _b2 _b2 c' d' | "F"d'4 "E"a4 | "Eb"z2 g2 g2 a _b |

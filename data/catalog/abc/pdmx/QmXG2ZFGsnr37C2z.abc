@@ -1,0 +1,34 @@
+%abc-2.1
+% Tiplecito de mi vida, by Alejandro Wills. Score published on MuseScore (artist: Alejandro
+% Wills), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Alejandro Wills (died 1943,
+% Wikidata Q42727696).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/22/QmXG2ZFGsnr37C2zgkHR8icAyPsMqGQrxbjQTWfkmRGSyT.mid (sha256
+% b8b59d9572e7228d42884aea7a7abbca26586cdc85800db6424e21a0738792e1): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Tiplecito de mi vida
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F"F2 A2 G2 _B2 A2 d2 | "C"c4 z2 C2 D2 E2 | "F"F2 A2 G2 _B2 A2 d2 | "C7"c4 c4 z4 |
+"F"F8 z4 | "F"f8 e2 c2 | "F"c4 e3 d c4 | "C7"_B2 z2 d4 c2 _B2 |
+"Dm7"A4 c3 _B A4 | "C7"G4 z2 _B2 _B2 d2 | "Dm7"d4 A2 A2 c4 | "C7"G4 z2 _B2 _B2 d2 |
+"Dm7"d4 A2 A2 c4 | "C7"G4 _B4 A2 G2 | "Dm7"F2 A4 G2 F2 z2 | "C"E4 z8 |
+"F"F2 A2 G2 _B2 A2 d2 | "C"c4 z2 C2 D2 E2 | "F"F2 A2 G2 _B2 A2 d2 | "C7"c4 z2 c2 d2 e2 |
+"Gm7"f2 f4 d2 f4 | "C7"e4 z2 c2 d2 e2 | "Gm7"f2 f4 d2 f4 | "C7"e4 z2 _B2 _B2 d2 |
+"Dm7"d4 A2 A2 c4 | "C7"G4 z2 _B2 _B2 d2 | "Dm7"d4 A3 A c4 | "C7"G4 d4 c2 _B2 |
+"Dm7"A2 c4 _B2 A4 | "C"G2 z2 _B4 A2 G2 | "C7"F4 A4 G2 F2 | "C"E4 z8 |
+"F"F2 A2 G2 _B2 A2 d2 | "C"c4 z2 C2 D2 E2 | "F"F2 A2 G2 _B2 A2 d2 | "C7"c4 z2 c2 d2 e2 |
+"Gm7"f2 f4 d2 f4 | "C7"e4 z2 c2 d2 e2 | "Gm7"f2 f4 d2 f4 | "C7"e4 z2 _B2 _B2 d2 |
+"Dm7"d4 A2 A2 c4 | "C7"G4 z2 _B2 _B2 d2 | "Dm7"d4 A3 A c4 | "C7"G4 d4 c2 _B2 |
+"Dm7"A2 c4 _B2 A4 | "C"G2 z2 _B4 A2 G2 | "C7"F4 A4 G2 F2 | "C"E4 z8 |
+"F"F2 A2 G2 _B2 A2 d2 | "C"c4 z2 C2 D2 E2 | "F"F2 A2 G2 _B2 A2 d2 | "C7"c4 c4 z4 |
+"Dm7"c2 c4 _B2 A4 | "C7"c3 _B G4 E4 | "C7"_B2 d4 c2 G4 | "F"_B2 A2 F2 z2 F4 |
+"Dm7"c2 c4 _B2 A4 | "C7"c3 _B G4 E4 | "C7"_B2 d4 c2 G4 | "F"_B2 A2 F2 z2 F4 |
+"F"z2 A4 _B2 c4 | "Bb"d2 z2 d2 z2 d2 z2 | "Bb"f2 f4 e2 d4 | "Dm7"e2 d2 c4 c4 |

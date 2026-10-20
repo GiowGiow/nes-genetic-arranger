@@ -1,0 +1,34 @@
+%abc-2.1
+% Prelude and Fugue in C-sharp major BWV 848, by Johann Sebastian Bach. Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/14/QmbCtmrZm7C3kfVCkRZMw4YWErwcwdSPXzfWpT2xSv3uQu.mid (sha256
+% 03b42b83e08c39030233a99bc36e3fbd9eae176afe1a72a92bd5e012d7c39d43): melody track 0, bars 0-55
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prelude and Fugue in C-sharp major BWV 848
+M:4/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z6 _A2 _B _A ^F _A =f z _d z | "Db"_A2 ^F =F ^F z _e z =F z _d z _E z c z | "Db"_D2 _d c _d _e f ^f "Fm7"_a g =f g _a ^f =f _e | "Cm7"f5 _e _d f "C7"_e _d c _e _d c _d _B |
+"Ab"c z _e z ^f4- "Bbm7"^f4 =f4 | "Bb7"f4 _e4- "Ebm7"_e2 _d2 c2 _e2 | "Db"_e2 _A z f4- "Eb7"f2 f _d _B4 | "Cm"_B2 _B z _e4- "Fm"_e2 _e c _A4 |
+"Bbm"_A2 _A2 _d4 "Eb"_d c _d _B _b4 | "Ab"_b _a g _b _a _e f ^f "Cm"=f _e _d _e c' z _a z | "Gm7"_e2 _d c _d z _b z "Eb7"c z _a z _B z g z | "Ab"_A _B c _d c _B _A c "Fm"f _e =d f _a ^f =f _a |
+"G7"_b =b _b _a ^f =f _e d "Bb7"_e ^f =f _e _d =f _B _A | "Eb"^F =F _E D _E =F ^F _A "Ebm7"_B _A ^F _A _B _A ^F =F | "F7"^F5 =F _E ^F "C7"=F _E _D =F _E _D _E C | "Bbm"z F ^F =F _d4- "Eb"_d c _d _B _b4 |
+"Ab"_b _E F _E c4- "Db"c _B c _A _a4 | "Gm7"_a _D _E _D _B4- "C"_B _A _B G g4 | "Fm"g e f _d _B4- "C7"_B4 _A4 | "Bbm"_A4 G4- "C7"G2 F2 E2 G2 |
+"G7"c _B _A c _B _A G _B "Bbm7"_A F _d _B c _A g e | "C"e f b c' e3 f "Fm"f4 z2 f2 | "Bb7"B _B _A _B f z d z "Ebm"_A2 ^F =F ^F z _e z | "Ab"_B _A ^F _A _e z c z "Db"^F2 =F _E =F _A _d _e |
+"Cm"f _e _d _e c' z _a z "Bbm"_e2 _d c _d z _b z | "Bbm7"c z _a z _B z g z "Ab7"_A _E F G _A _B c _A | "Fm"_d c _B c _d c _B _A "Fm7"_B5 _A ^F _B | "Ab"_A ^F =F _A ^F =F _E ^F "Db"=F2 _A2 _d4 |
+"Eb7"z2 f _d _B4 "A7"z2 _B _d f4 | "Db7"_e z _a z _d z g z "Abm"_A2 _a ^f _a _b =b _a | "Db7"f ^f _a =f _d _e =f _d "Ebm"_B =B _d _B ^f _a _b ^f | "Ab7"_e f ^f _e c _d _e c "Bb7"_A _B c _A =f ^f _a =f |
+"Bb7"d _e f _d _B c =d _B "Ab7"^F _A _B ^F _e =f ^f _e | "Fm7"c _d _e c _A _B c _A "Db"F ^F _A =F _D =F _A _B | "Db7"B _B _A _B ^f z _d z "Db"_B2 _A ^F _A _D =F _A | "Db"_B _A ^F _A =f z _d z _A2 ^F =F ^F C _E ^F |
+"Ab7"_A ^F =F ^F _e z c z "Ab"^F2 =F _E =F _A _B c | "Bb7"_d _e f _e ^f =f _e _d "Ab"^f _b _a _b _b _b _a _b | "Db"z _a ^f _a =f _a _e _a "Fm7"_d _a c _B c _e =f ^f | "Fm7"_a ^f =f _a _e _a _d _a "Ab"c _a _B _A _B _d _e =f |
+"Db"^f =f _e =f _d _e c _e "Ab"_B _e _A G _A c _d _e | "Ebm7"f ^f _a _b c z _A z "Ab7"_B _A ^F _A =f z _d z | "F#"_A2 ^F =F ^F z _e z "Ab7"=F z _d z _E z c z | "Bbm7"_D2 _d c _d _e f ^f "Cm"_a ^f =f ^f _a ^f =f _e |
+"Cm7"f4 f _e _d f "Eb"_e _d c _e _d c _d _B | "Ab"c2 _e2 ^f4- "Bbm7"^f4 =f4 | "Bb7"f4 _e4 "Ebm7"_e2 _d2 c2 _e2 | "Db"_e2 _A2 _d2 B2 "F#"_B8 |
+"Ab7"_B2 _B ^F _E4- "Fm"_E2 _E2 _A4 | "Bb"_A2 _A F D4- "Ebm"D2 _B,2 ^F4 | "Ab"^F =F ^F _E _e4- "Db"_e _d c _e _d _A _B =B | "Fm"_B _A ^F _A =f z _d z "Cm7"_A2 ^F =F ^F z _e z |
+"Ab7"F z _d z _E z c z "Bbm7"_D F ^F _A _B c _d _e | "Cm7"e _e _d _e f g _a _b "Ab"_d c _B _A _e z ^F z | "Fm7"F2 _d2 _B2 c2 "Db"_d8 |

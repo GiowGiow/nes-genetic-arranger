@@ -1,0 +1,35 @@
+%abc-2.1
+% Messiah HWV 56, by Handel. Score published on MuseScore (artist: Georg Friedrich Händel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Handel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/16/QmRDF12N9nsamidXXf3xTcxdMtLiVUatxyipZhx2mDmLXQ.mid (sha256
+% 69ba042c2c2b55095a25f8b6dad794b82942a3b04507680b9a5ef540ed5fcf04): melody track 7, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Messiah HWV 56
+M:4/4
+L:1/16
+Q:1/4=97.000267
+% Exact tempo 97.00026675073356 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"d'4 g2 g2 "Am7"c'2 c'2 c'2 c'2 | "Em7"c'2 b2 z4 "Am7"z2 e2 a2 ^f2 | "G"d2 d2 g2 ^f2 "C"e d e ^f e g ^f g | "Am"a g a b a b g a "D"^f e ^f g ^f a g a |
+"Bm"b a b c' b c' a b "Am7"g2 e4 a2 | "Bm7"^f2 d2 g4- "D7"g2 ^f g z4 | "Em7"g4 z4 "Am7"z8 | "G"z2 d2 g2 d2 B4 z4 |
+"C"z2 e2 g2 e2 "Am7"a4 z4 | "D"z2 ^F2 A2 ^F2 "Bm7"B4 z4 | "Em"z2 G2 B2 G2 "Am7"c4 z4 | "D"z2 d2 ^f2 d2 "Em7"z2 G2 g4 |
+"Am7"z2 e2 a4 "G"z2 d2 g4 | "Am7"z8 "G"z8 | "C"z4 G4 "Am"z4 c4 | "D7"z4 A4 "Bm"z4 d4 |
+"Em7"z4 B4 "C"z4 e4 | "D"z4 A4 "Bm7"z4 a4 | "Em7"z2 g2 g2 g2 "Bm7"z2 A2 d4 | "Em7"z8 "D"z8 |
+"G"z4 B4 "Em"z4 e4 | "A"z4 _d4 "F#m"z4 ^f4 | "Bm"z4 d4 "G"z4 g4 | "A7"z4 e4 "D"z4 d4 |
+"Em7"d4 z4 "Em"e4 z4 | "F#m"e4 z4 "Em"z8 | "F#m7"z8 "Em7"z8 | "D"z8 "A7"z8 |
+"F#m7"z8 "D"z8 | "A"z8 "Bm7"z8 | "D"z8 "Em7"z8 | "D"z8 "A"z _d =d e ^f e ^f g |
+"D"a g a g ^f g ^f g "E7"a g a g ^f g ^f g | "D"a g a g ^f g ^f g "E7"a g a g ^f g ^f g | "D"a g a g ^f g ^f g a g a g ^f a g a | "G"b a b _d' b _d' b _d' "D"=d'2 a2 =d'4 |
+"A7"d'4 _d'4 "D"=d'4 z4 | "A7"z8 "G"z2 d2 g4 | "Am7"z2 e2 a2 d2 "G"d4 g4 | "C"z4 e4 "Am"z4 a4 |
+"Bm7"A4 z4 "Am7"z8 | "G"z8 "Am"z8 | "G"z8 "D7"z8 | "Bm7"z8 "Am7"z8 |
+"G"z8 "D7"z8 | "Bm7"z8 "Am7"z8 | "D"z8 "G"z8 | "G"z8 "D"z d e ^f g a b c' |
+"G"d' c' d' c' b c' b c' "A7"d' c' d' c' b c' b c' | "G"d' c' d' c' b c' b c' "A7"d' c' d' c' b c' b c' | "G"d' c' d' c' b c' b c' d' c' d' c' b c' b c' | "G"d' c' d' c' b a b a "C"g a g a b a b g |
+"Am7"c' b a b c' b c' d' "Em7"b4 z4 | "Am7"z8 "Em7"z8 | "Am7"z8 "C"z2 d2 e2 g2 | "F"a2 g2 a2 b2 "C"c'2 c2 g4 |
+"G7"z2 c2 c2 B2 "C"z2 G2 c4 | "F"z4 a4 "Dm"z4 f4 | "G"z4 d4 "Em"z4 e4 | "Am"z4 e4 z2 d2 c3 B |
+"Bm7"A2 D2 d4 "Em7"z8 | "Em7"z8 "Am"z8 | "G"z8 "Dm7"z8 | "Em7"z8 "Am7"z8 |

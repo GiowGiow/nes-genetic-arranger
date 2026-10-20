@@ -1,0 +1,34 @@
+%abc-2.1
+% Maxglaner Zigeunermarsch, by Oskar Rieding (1840-1918). Score published on MuseScore (artist:
+% Franz Dorfer), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Oskar Rieding (died 1916,
+% Wikidata Q64959).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/30/QmaLjkPgAPj3ni8JcaooQmey4QQzVAd75NLYKBWguV6mXG.mid (sha256
+% 78df7fa24b049dff3ec62ffd0569d8405551f5dc2c916a07fd85f5133eb55e69): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Maxglaner Zigeunermarsch
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am"z8 | "Am"z6 A B | "Am"c2 A2 c2 A2 | "Am"c2 A2 c2 c d |
+"E7"e2 B2 e2 B2 | "E7"e2 B2 e2 e d | "Am"c2 A2 c2 A2 | "F#m"c2 A2 c2 c d |
+"G"e2 c2 d2 B2 | "C"c2 d B c2 e d | "Am"c2 A2 c2 A2 | "Am"c2 A2 c2 c d |
+"E7"e2 B2 e2 B2 | "E7"e2 B2 e2 e d | "Am"c2 A2 c2 A2 | "Dm"c2 A2 _B4 |
+"E"A2 c2 B2 e2 | "Am"c d c B A2 z2 | "Dm"f4 f4 | "F"a4 a4 |
+"Dm"f g a2 a g f2 | "A"a4 e4 | "Em"g4 g4 | "G"b4 b4 |
+"Em"g a b2 b a g2 | "B"b4 ^f4 | "C"e2 g2 _e2 g2 | "C"e2 g2 _e2 g2 |
+"C"e _e =e2 =e _e =e2 | "Dm"g4 f4 | "Gm7"D2 F2 _D2 F2 | "Gm7"D2 F2 _D2 F2 |
+"C7"D2 D2 E2 E2 | "F"F2 E G F2 z2 | "Dm"f4 f4 | "F"a4 a4 |
+"Dm"f g a2 a g f2 | "A"a4 e4 | "Em"g4 g4 | "G"b4 b4 |
+"Em"g a b2 b a g2 | "B"b4 ^f4 | "C"e2 g2 _e2 g2 | "C"e2 g2 _e2 g2 |
+"C"e _e =e2 =e _e =e2 | "Dm"g4 f4 | "Gm7"D2 F2 _D2 F2 | "Gm7"D2 F2 _D2 F2 |
+"Bb7"D2 D2 d2 c2 | "G"B2 G ^F G2 z2 | "C"z8 | "C"z8 |
+"C"g4 e2 f2 | "C"g4 e2 f2 | "C"g2 e2 a2 e2 | "C"b2 e2 c'2 e2 |
+"G"d'4 c'2 a2 | "G"c'4 b2 g2 | "G"b4 a2 f2 | "G"a2 g2 ^f2 g2 |
+"C"g4 e2 f2 | "C"g4 e2 f2 | "C"g2 e2 a2 e2 | "C"b2 e2 c'2 e2 |

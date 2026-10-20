@@ -1,0 +1,35 @@
+%abc-2.1
+% Joaquín Turina - Fandanguillo, by Joaquín Turina Pérez (1882 - 1949). Score published on
+% MuseScore (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joaquín Turina Pérez (died 1949,
+% Wikidata Q318077).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/8/Qmc9vnh3J2TCfbqLK8f8cT1wP9CiB2fvVf9uWwumFvw5YS.mid (sha256
+% b4f4c74c8ce7fb098f2176446f172f1ca6f1189394a46c718a92d4bd964647d2): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Joaquín Turina - Fandanguillo
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z2 E, E, E,2 E, E, E,2 E,2 | "C"E2 F2 G2 A2 B2 A2 | "C"E,2 E, E, E,2 E, E, E,2 E,2 | "C"B,2 C2 D2 E2 C2 D2 |
+"C"E,2 E, E, E,2 E, E, E,2 E,2 | "C"E, F,, G,, A,, B,, C, D, E, F, G, A, B, | "C"C D E F G2 F2 G z A z | "C"B z c z d2 e z f z g z |
+[M:2/4]"C"z8 | [M:3/4]"C"B,2 C2 D2 _E2 F2 =E _E | "C"E2 B, B, B,2 B, B, B,2 B,2 | "C"E2 F2 G2 _A2 =A2 B c |
+"C"B G E F G A B2 E2 _E c | "C"B G E F G A G2 E2 _E A | "C"G2 E A G2 _E A G A B A | "C"E2 _A,2 =A,2 B,2 =A,2 B, D |
+"C"E2 _A,2 =A,2 B,2 =A,2 B, D | "C"E2 E,, F,, G,, A,, B,, C, D, E, F, G, | "C"E,4 e2 B,2 C2 D2 | "C"E2 E F E2 E F E F G2 |
+"C"E2 E F E F G A _B A G F | "C"E2 E F E2 E F E F G2 | "C"E2 E F E F G A c _B A G | "C"A _B A _B A2 A2 _A2 G2 |
+"C"E2 E,, E,, E,,2 E,, E,, E,,2 E,,2 | "C"E,,2 E,, E,, E,,2 E,, E,, E,,2 E,,2 | "C"E2 E ^F E2 E ^F E2 E2 | "C"G A G ^F G E,, A,, D, G, B, D G |
+"C"E2 E ^F E2 E ^F E2 E2 | "C"G A G ^F G2 d2 e2 d2 | "C"c d c _B A A,, C, D, ^F, C D A | "C"_B c _B A G G,, _B,, C, E, _B, C E |
+"C"^F G ^F G A2 A2 G2 A2 | "C"^F G ^F G A2 A2 G2 A2 | "C"B c B c B c d c B A _A =A | "C"B c d c B c B A G A B c |
+"C"B c B A G A G F E F G A | "C"G A G F E F E D E D E F | "C"E2 E ^F E2 E ^F E2 E2 | "C"G A G ^F G E,, A,, D, G, B, D G |
+"C"E2 E ^F E2 E ^F E2 E2 | "C"F G F G A _B A _B c2 F2 | "C"_E F _E F G A G A _B2 _B,2 | "C"D E D E A ^F A ^F =F G =F _E |
+"C"D E D E A ^F A ^F =F G =F G | "C"E2 E,, E,, E,,2 E,, E,, E,,2 E,,2 | "C"B,2 C2 D2 _E2 F2 =E _E | "C"E2 B, B, B,2 B, B, B,2 B,2 |
+"C"E2 F2 G2 _A2 =A2 B c | "C"B G E F G A B2 E2 _E c | "C"B G E F G A G2 E2 _E A | "C"G2 E A G2 _E A G A B A |
+"C"E2 _A,2 =A,2 B,2 =A,2 B, D | "C"E2 _A,2 =A,2 B,2 =A,2 B, D | "C"E2 E,, F,, G,, A,, B,, C, D, E, F, G, | "C"E,4 E8 |
+"C"E4 e8 | "C"A,2 B,2 _D2 =D2 _D2 C2 | "C"_D2 E2 _D2 ^F2 _D2 _A,2 | "C"A,2 B,2 _D2 =D2 _D2 C2 |
+"C"_D2 ^F2 _D2 G2 _D2 A,2 | "C"D2 E2 D2 E2 F2 G2 | "C"F2 G2 F2 G2 E2 F2 | "C"D2 E2 D2 E2 F2 G2 |

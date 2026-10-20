@@ -1,0 +1,35 @@
+%abc-2.1
+% TENEBROSO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/tenebroso.html (file
+% https://www.beakauffmann.com/mpb_t/som/tenebroso.mid, sha256
+% 94961eef677a15871b9fc37a693bf47f374555b501bce1a3c41e6f767d745460), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TENEBROSO
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"Gm7"z _D,2 =D, _B,,2 z A,, | "Em7"_A,, G,,2 _A,, =A,,2 z G,, | "D"^F,, _D,2 =D, _B,,2 z A,, | "Em7"_A,, G,,2 _A,, =A,,2 z G,, |
+"D"^F,, A,,2 D, ^F,2 z E, | "B7"_E,2 z ^F, B,2 z A, | "Em"G, E,2 ^F, G, ^F, E, D, | "A7"_D,2 z E, A,2 z G, |
+"D"^F,5 G,2 ^F, | "Cm7"_B,,5 F,2 _E, | "D"A,,5 E,2 D, | "A7"E,,2 z E,, B,,2 z A,, |
+"D7"_E,,2 z ^F,, A,, C, G, ^F, | "Cm7"_B,,5 F,2 _E, | "D"A,,3 z A,, E,2 D, | "A7"E,,2 z E,, B,,2 z A,, |
+"D"D,,3 z D,,,3 z | "Bm"d D ^F d z _d B A | "Dbm"G B, E G z ^F E D | "F#"_D2 _D2 ^F2 ^F2 |
+"Bm"^F ^F, B, ^F z ^f2 e | "Abm"d D ^F d z _d2 B | "Db"A A, _D A z _A2 ^F | "Db"F B, _D F z A2 _A |
+"F#"^F A, _D ^F z ^f2 e | "Bm"d D ^F d z _d B A | "Dbm"G B, E G z ^F E D | "F#"_D2 _D2 ^F2 ^F2 |
+"Bm"^F ^F, B, ^F z ^f2 e | "Abm"d D ^F d z _d2 B | "Db"A A, _D A z _A2 ^F | "Db"F B, _D F z A2 _A |
+"F#"^F A, _D ^F z =F2 ^F | "F#7"G _B, E ^F z =F2 ^F | "D"G B, D ^F z =F2 ^F | "Ebm7"G _B, E G z F2 ^F |
+"Bm"d D ^F d z _d2 B | "Dbm"G B, E G z ^F2 E | "F#"D ^F, B, D z _B,2 =B, | "F#"D F, _A, D z _D2 B, |
+"F#"^F ^F, _B, ^F z =f2 ^f | "F#7"g e e ^f z =f2 ^f | "Bm"g d d ^f z =f2 ^f | "Bm"g ^f =f ^f _a _b =b _d' |
+"Bm"e' ^f b d' z _d'2 b | "Em"a B e g z ^f2 e | "Bm"d D B, G, ^F, B G E | "F#7"D D2 D _D2 _D2 |
+"D"B,, _D,2 =D, _B,,2 z A,, | "Em7"_A,, G,,2 _A,, =A,,2 z G,, | "D"^F,, _D,2 =D, _B,,2 z A,, | "Em7"_A,, G,,2 _A,, =A,,2 z G,, |
+"D"^F,, A,,2 D, ^F,2 z E, | "B7"_E,2 z ^F, B,2 z A, | "Em"G, E,2 ^F, G, ^F, E, D, | "A7"_D,2 z E, A,2 z G, |
+"D"^F,5 G,2 ^F, | "Cm7"_B,,5 F,2 _E, | "D"A,,5 E,2 D, | "A7"E,,2 z E,, B,,2 z A,, |
+"D7"_E,,2 z ^F,, A,, C, G, ^F, | "Cm7"_B,,5 F,2 _E, | "D"A,,5 E,2 D, | "A7"E,,2 z E,, B,,2 z A,, |

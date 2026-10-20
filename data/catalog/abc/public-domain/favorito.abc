@@ -1,0 +1,36 @@
+%abc-2.1
+% FAVORITO (Amor Avacalhado), by Ernesto Nazareth, as performed by Lyric.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/favorito.html (file
+% https://www.beakauffmann.com/mpb_f/som/favorito.mid, sha256
+% 3c0a49610fb50e3bbdb62560333378d5a9bc21a12891c931074a32fb43a18a43), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FAVORITO (Amor Avacalhado)
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z4 A3 B | "A"_d _D A _d z B2 A | "E"d D _A d z B2 _d | "E7"d D _A d z _d2 B |
+"F#m7"e E A e z _d2 =d | "F#7"e E _B e z d2 _d | "Bm"^f ^F B ^f z4 | "B7"^f B B ^f z _a2 =a |
+"E7"b d e e' z A2 B | "A"_d _D A _d z B2 A | "E"d D _A d z _d B =A | "E"_A D _A d z _d2 B |
+"F#m7"e E A e z d _d B | "F#7"_B E _B e z d2 _d | "Bm"^f ^F B ^f z e d _d | "E7"B A _A ^F E D _D B, |
+"A"A, _D, E, A, z A2 B | "A"_d _D A _d z B2 A | "E"d D _A d z B2 _d | "E7"d D _A d z _d2 B |
+"F#m7"e E A e z _d2 =d | "F#7"e E _B e z d2 _d | "Bm"^f ^F B ^f z4 | "B7"^f B B ^f z _a2 =a |
+"E7"b d e e' z A2 B | "A"_d _D A _d z B2 A | "E"d D _A d z _d B =A | "E"_A D _A d z _d2 B |
+"F#m7"e E A e z d _d B | "F#7"_B E _B e z d2 _d | "Bm"^f ^F B ^f z e d _d | "E7"B A _A ^F E D _D B, |
+"A"A, _D, E, A, z4 | "F#m"a A _d a z _a2 ^f | "Db7"f F B f z d2 _d | "F#m"^f ^F _d ^f z e2 =d |
+"Db7"_d F B _d z4 | "F#m"a A _d a z _a2 ^f | "Db7"f F B f z d2 _d | "F#m"^f ^F _d ^f z e2 =d |
+"Db7"_d F B _d z4 | "F#7"_d E ^F _d z =d2 _d | "B7"^f ^F B ^f z4 | "E7"B D E B z _d2 B |
+"F#m7"e E A e z4 | "Db7"_A B, _D _A z =A2 _A | "F#m"_d _D ^F _d z B2 A | "D"_A B, D _A z _A2 ^F |
+"Db"F B, _D _d z4 | "F#m"a A _d a z _a2 ^f | "Db7"f F B f z d2 _d | "F#m"^f ^F _d ^f z e2 =d |
+"Db7"_d F B _d z4 | "F#m"a A _d a z _a2 ^f | "Db7"f F B f z d2 _d | "F#m"^f ^F _d ^f z e2 =d |
+"Db7"_d F B _d z4 | "F#7"_d E ^F _d z =d2 _d | "B7"^f ^F B ^f z4 | "E7"B D E B z _d2 B |
+"F#m7"e E A e z4 | "Db7"_A B, _D _A z =A2 _A | "D"_d _D ^F _d z2 B z | "Db"A _D ^F A z2 _A2 |

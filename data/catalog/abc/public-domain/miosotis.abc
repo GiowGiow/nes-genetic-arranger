@@ -1,0 +1,36 @@
+%abc-2.1
+% MIOSOTIS, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/miosotis.html (file
+% https://www.beakauffmann.com/mpb_m/som/miosotis.mid, sha256
+% 13f2a6e37622bfd21fb33cd60cd5725921c76e7e6135dcc5d8143c30dcce29ed), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MIOSOTIS
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.99995500002248 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C7"z8 | "F"E z C G, _E z A, F, | "Gm7"D z _B, F, D z _B, F, | "F"_E z A, F, _E z A, F, |
+"C7"D z _B, F, D z _B, F, | "F"E z C G, _E z A, F, | "Gm7"D z _B, F, D z _B, F, | "F7"_E z A, F, _E z A, F, |
+"D7"z d z d d f _e d | "G7"d3 z g z3 | "C7"z c z c c e d c | "F7"c3 z f z3 |
+"Gm7"z _B z c d c z _B | "Ebm"B z _e z ^f z3 | "Dm7"C, A, z6 | "Bb"_B,, _B, z _B, _B3 z |
+"C7"_B,3 z5 | "F"E z C G, _E z A, F, | "Gm7"D z _B, F, D z _B, F, | "F"_E z A, F, _E z A, F, |
+"C7"D z _B, F, D z _B, F, | "F"E z C G, _E z A, F, | "Gm7"D z _B, F, D z _B, F, | "F7"_E z A, F, _E z A, F, |
+"D7"z d z d d f _e d | "G7"d3 z g z3 | "C7"z c z c c e d c | "F7"c3 z f z3 |
+"Gm7"z _B z c d c z _B | "Ebm"B z _e z ^f z3 | "Dm7"C, A, z6 | "Bb"_B,, _B, z _B, _B3 z |
+"Gm"z d z d d _d z =d | "D7"_b3 z a3 z | "D7"z a z a a _a z =a | "Gm"_e'3 z d' z3 |
+"Gm"z d' z d' d' _d' z =d' | "F7"g'3 z f'3 z | "F7"z c' z c' c' b z c' | "Dm7"g'3 z f' z3 |
+"G7"z f' z f' f' g' z d' | "Cm"f'3 z _e' z3 | "G7"z d' z d' d' f' z b | "Cm"d'3 z c' z3 |
+"Cm7"z _b z _b _b a z _b | "Gm7"f' _e' z f' _b' a' z g' | "F7"f' e' z _e' a d' z c' | "Bb"_b d z g f c z d |
+"Gm"_B d z d d _d z =d | "D7"_b3 z a3 z | "D7"z a z a a _a z =a | "Gm"_e'3 z d' z3 |
+"Gm"z d' z d' d' _d' z =d' | "F7"g'3 z f'3 z | "F7"z c' z c' c' b z c' | "Dm7"g'3 z f' z3 |
+"G7"z f' z f' f' g' z d' | "Cm"f'3 z _e' z3 | "G7"z d' z d' d' f' z b | "Cm"d'3 z c' z3 |
+"Cm7"z _b z _b _b a z _b | "Gm7"f' _e' z f' _b' a' z g' | "F7"f' e' z _e' a d' z c' | "Bb"_b d z g f c z d |

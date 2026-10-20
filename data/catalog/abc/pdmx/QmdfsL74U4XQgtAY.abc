@@ -1,0 +1,27 @@
+%abc-2.1
+% la Donna 'e Mobile, by Giuseppe Verdi. Score published on MuseScore (artist: Giuseppe Verdi),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Giuseppe Verdi (died 1901,
+% Wikidata Q7317).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/19/QmdfsL74U4XQgtAYTms7HRUXNc1AWJSuy3DSZzNg6CCR81.mid (sha256
+% 283d99b69e3de66e24b49b16aafc6e69ab7a79e57a58d4005b0467afd2e04792): melody track 0, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:la Donna 'e Mobile
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"A4 A4 A4 | "C"c2 _B2 G8 | "C"G4 G4 G4 | "C"_B2 A2 F8 |
+"C"A4 G4 F4 | "C"F2 E2 E8 | "C"G4 F4 D4 | "C"D2 C2 C8 |
+"C"A4 A4 A4 | "C"c2 _B2 G8 | "C"G4 G4 G4 | "C"_B2 A2 F8 |
+"C"A4 G4 F4 | "C"F2 E2 E8 | "C"G4 F4 D4 | "C"D2 C2 C8 |
+"C"G2 A2 G4 G4 | "C"c4 G8 | "C"A2 _B2 A4 A4 | "C"d4 A8 |
+"C"c2 d2 c4 c4 | "C"d8 c4 | "C"_B4 A4 G4 | "C"F8 C2 c2 |
+"C"c8 C2 c2 | "C"c8 C2 c2 | "C"_B4 A4 G4 | "C"F12 |
+"C"c12 | "C"c12 | "C"c12 | "C"c8 _d4 |
+"C"e2 d2 c2 _B2 A2 G2 | "C"F4 F8 |

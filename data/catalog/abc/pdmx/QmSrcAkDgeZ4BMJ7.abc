@@ -1,0 +1,29 @@
+%abc-2.1
+% Missa Filiae Ierusalem, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio
+% Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/40/QmSrcAkDgeZ4BMJ7RpEBJ6TCFAqoTmxq6EgzyyiWh69mkn.mid (sha256
+% 29da3c10f13ddddcff6f11bb154819ef95798777a6c94dc1d0d00bac23716e1b): melody track 2, bars 1-39
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Missa Filiae Ierusalem
+M:4/2
+L:1/16
+Q:1/4=132.000132
+% Exact tempo 132.000132000132 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z16 "G"z16 | "Am7"z16 "G"z16 | "Em7"G,12 G,4 "E"G,8 A,8 | "G"B,8 G,8 "Em7"D16 |
+"Am7"z16 "G"D12 D4 | "G"D8 G,8 "A7"B,8 C8 | "G"D12 C2 B,2 "D"A,16 | "D7"z16 "G"D12 D4 |
+"G"B,8 G,8 "Am"C8 A,8 | "G"B,8 B,12 C4 D8 | "Am7"D8 C8 "G"B,8 B,8 | "D"A,8 B,8 A,12 A,4 |
+"G"G,32 | "E7"G,16 "Em7"C8 B,8 | "F#m7"C8 D8 "G"G,8 D,8 | "C"E,8 D,8 "D7"E,8 ^F,8 |
+"G"G,4 A,4 B,4 C4 D16 | "Am"z16 "G"D16 | "C"C8 G,8 "D"A,12 A,4 | "G"G,8 z4 G,4 "D7"G,8 ^F,8 |
+"G"G,8 B,8 "Em"A,8 G,8 | "C"A,12 A,4 "G"G,8 D8 | "Em"C8 B,8 "D"A,12 A,4 | "G"G,16 "Am7"z8 D8 |
+"D7"C8 A,8 "G"B,8 G,8 | "D"A,32 | "D"G,12 G,4 G,8 A,8 | "Em"B,8 C8- "F#m7"C8 A,8 |
+"G"G,8 E,8- "Am7"E,8 ^F,8 | "C"G,8 E,8 "D7"A,12 A,4 | "Em"G,8 G,8- "Am"G,8 A,8 | "Em"B,8 G,8 "F#m7"C12 C4 |
+"Em"B,16 "Am"z16 | "G"z8 B,8- "F#m7"B,8 C8 | "G"D8 B,8 "Am7"E12 E4 | "G"D8 C8- "Am7"C8 C8 |
+"G"D8 D8 "C"C12 C4 | "G"B,32 |

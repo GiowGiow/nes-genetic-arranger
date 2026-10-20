@@ -1,0 +1,30 @@
+%abc-2.1
+% Pour presenter, by Jacobus Clemens non Papa. Score published on MuseScore (artist: Jacobus
+% Clemens non Papa), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jacobus Clemens non Papa (died
+% 1555, Wikidata Q438090).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/52/Qmaxg5g4cDHEpudqG75Z5W9FnUHCBN6pLbqHyMH5RD92fd.mid (sha256
+% f6f9c901da734c68ae5425ee5568de5f75bc52f1f63a0a35126b3eee9c62c08e): melody track 1, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pour presenter
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"C16 | "C"E8 "Dm"D8 | "Bb"F4 F4 "Eb"G4 G4 | "C7"F2 E2 D2 C2 "Dm"D4 C4 |
+"C"C8 "Bb"z4 D4 | "Cm7"D4 _B,4 "Gm7"D6 E2 | "Gm7"F4 F4- "Gm"F4 G4 | "Bb"F8 "C7"F4 D4 |
+"Dm7"E4 C4 "C"C8 | "F"z4 C4 "Bb"D8 | "Bb"D4 D4 "Dm"C4 _B,4 | "C"C8 "Bb"F,4 F4 |
+"F"F4 F4 "Dm7"E4 D4 | "Eb"D4 C4 "Dm"D8 | "Dm"z4 D4 "D"E4 F4 | "C7"D4 F4 "Bb"z4 F4 |
+"F"F4 F4 "Dm7"E4 C4 | "Bb"F6 E2 D2 C2 D4 | "C"C6 _B,2 C8 | "Bb"A,4 D4 "F"D4 C4 |
+"Bb"D8 "F"C4 C4 | "Bb"D4 _B,4 "Dm7"F8 | "Gm"D8 "Dm"z4 C4 | "Gm7"D4 _B,4 "F"F4 F4 |
+"Gm"D8 "C"E8 | "C"E16 | "Bb"z4 D4 "Dm"D4 _B,4 | "Dm7"C4 D4 "C"C6 _B,2 |
+"Dm"A,4 F,4- "F"F,2 G,2 A,2 F,2 | "C"G,8 "F"A,8 | "F"z4 F,4 "D7"C4 F4 | "Dm7"F4 E4 "Dm"D4 C2 _B,2 |
+"Em"C8 "Dm7"z4 G,4 | "C7"G,4 G,4 "Dm"A,4 _B,4 | "C"C8 "F"A,8 | "F"C4 C4 "D7"C4 A,4 |
+"F"A,2 G,2 F,4 z4 F4 | "Dm"F4 F4 "Bb"D6 C2 | "Em"_B,4 _B,4 "C"_E8 | "Dm"D4 C2 _B,2 "Em"A,4 C4 |
+"Bb"D8 "C"C8 | "F"A,16 |

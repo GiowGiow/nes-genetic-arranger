@@ -1,0 +1,29 @@
+%abc-2.1
+% Mazurka Op.1 No.1, by Juan Alais (1844 - 1914). Score published on MuseScore (artist: Juan
+% Alais), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Juan Alais (died 1914, Wikidata
+% Q3187546).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/2/Qma3dQtLa8ZKrGWXd8pTSV1a2BWSHtUxs1Go97KEaZ6HXU.mid (sha256
+% 4e3b6801787da0ff8869c2ba6e3d5691142db80d8fd244169f5826d490bebe60): melody track 0, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mazurka Op.1 No.1
+M:3/4
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.9999136000691 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E3 C A,4 F4 | "C"E3 C A,4 A4 | "C"_A3 E D4 B4 | "C"A3 E C4 A,4 |
+"C"A3 _A =A4 E4 | "C"G4 F4 F4 | "C"E2 F2 E2 D2 C2 B,2 | "C"A,4 A4 z4 |
+"C"E3 C A,4 F4 | "C"E3 C A,4 A4 | "C"_A3 E D4 B4 | "C"A3 E C4 A,4 |
+"C"A3 _A =A4 E4 | "C"G4 F4 F4 | "C"E2 F2 E2 D2 C2 B,2 | "C"A,4 A4 z4 |
+"C"G2 _A2 =A4 F4 | "C"F4 E4 E4 | "C"E4 D4 D4 | "C"F2 E2 E4 E4 |
+"C"G2 _A2 =A4 F4 | "C"F4 E4 E4 | "C"C2 B,2 C4 D4 | "C"E4 e4 z4 |
+"C"G2 _A2 =A4 F4 | "C"F4 E4 E4 | "C"E4 D4 D4 | "C"F2 E2 E4 E4 |
+"C"G2 _A2 =A4 F4 | "C"F4 E4 E4 | "C"C2 B,2 C4 D4 | "C"E4 e4 z4 |
+"C"E3 C A,4 F4 | "C"E3 C A,4 A4 | "C"_A3 E D4 B4 | "C"A3 E C4 A,4 |
+"C"A3 _A =A4 E4 | "C"G4 F4 F4 | "C"E2 F2 E2 D2 C2 B,2 | "C"A,4 A4 z4 |

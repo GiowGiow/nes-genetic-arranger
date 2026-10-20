@@ -1,0 +1,32 @@
+%abc-2.1
+% Oratorio de Noël Op.12, by Camille Saint-Saëns (1835-1921). Score published on MuseScore
+% (artist: Camille Saint-Saëns), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Camille Saint-Saëns (died 1921,
+% Wikidata Q150445).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/21/QmRgJawJt6RoKpXxFkqtYb6q2xQ2sUB3E2Tg6p7zQTasLb.mid (sha256
+% 391e59823a97fdc13ced6f1051440e4dcb68a46fcfe45cad5bb9d5252b99e9a6): melody track 1, bars 0-50
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Oratorio de Noël Op.12
+M:4/4
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"D8 G4 ^F4 | "G"G6 B2 B8 | "Em"B8 "D"A4 A4 | "G"G8 "D"^F8 |
+"Em7"G4 A4 "G"G6 G2 | "C"G6 A2 "Em7"D8 | "D7"A4 A4 "C"G4 A4 | "D"^F12 z4 |
+"G"D8 G4 ^F4 | "G"G6 B2 B8 | "Em"B8 "D"A4 A4 | "G"G8 "D"^F8 |
+"Em7"G4 A4 "G"G6 G2 | "C"G6 A2 "Em7"D8 | "D7"A4 A4 "C"G4 A4 | "D"^F12 z4 |
+"D"^F8 "Bm"^F4 ^F4 | "Em"E8 "F#m7"E4 D4 | "G"D8 "C"G4 G4 | "D"^F8 "G"G8 |
+"Am7"G4 ^F2 E2 "Bm7"D4 G2 A2 | "Bm7"B4 c2 d2 "F#m7"e4 d2 c2 | "C"B4 G4 "D"G4 ^F4 | "G"D12 z4 |
+"D"^F8 "Bm"^F4 ^F4 | "Em"E8 "F#m7"E4 D4 | "G"D8 "C"G4 G4 | "D"^F8 "G"G8 |
+"Am7"G4 ^F2 E2 "Bm7"D4 G2 A2 | "Bm7"B4 c2 d2 "F#m7"e4 d2 c2 | "C"B4 G4 "D"G4 ^F4 | "G"D12 z4 |
+"G"z4 E4 E4 D4 | "C"C4 c4 "G"c4 B4 | "D7"A4 A4 "G"A4 G4 | "D"^F4 ^F4 "D7"^F4 E4 |
+"Bm7"D4 D4 "Am7"D4 C4 | "G"B,4 D4 "F#m"E4 ^F4 | "Em"G4 A4 "Em7"B8 | "A7"B4 B4 "Em7"A4 G4 |
+"Bm7"^F4 B4 "F#m7"A4 A4 | "D"A8 z8 | "D"^F8 "Bm"^F4 ^F4 | "Em"E8 "F#m7"E4 D4 |
+"G"D8 "C"G4 G4 | "D"^F8 "G"G8 | "Am7"G4 ^F2 E2 "Bm7"D4 G2 A2 | "Bm7"B4 c2 d2 "F#m7"e4 d2 c2 |
+"C"B4 G4 "D"G4 ^F4 | "G"D16 |

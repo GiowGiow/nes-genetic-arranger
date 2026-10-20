@@ -1,0 +1,31 @@
+%abc-2.1
+% Here O my Lord I see Thee face to face, by Percy Whitlock (1903-1946). Score published on
+% MuseScore (artist: Percy Whitlock), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Percy Whitlock (died 1946,
+% Wikidata Q4351560).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/43/QmbSEKSxRBMvhHv7QBP7supN9Df3pwrkUfQ3wxdrYPpqij.mid (sha256
+% 7d0e9c468fd89169e7fe2a9021813738bac10fc350395e2d835da3e1b631c421): melody track 3, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Here O my Lord I see Thee face to face
+M:4/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"_E4 D4 _E4 D4 | "F"_E8 "Gm7"_B,4 D4 | "Eb"_E,8 "Cm7"z8 | "Gm7"z8 "G7"z8 |
+"Cm"z8 "Fm"z8 | "Fm7"z8 "Gm7"z8 | "Cm7"z8 "Fm7"z8 | "Bbm"z8 "Fm"z8 |
+"Fm"C8 C4 F,4 | "Fm7"_E4 z4 "C7"z8 | "Fm"z8 "Gm7"z8 | "Gm7"z8 "Cm"z8 |
+"Ab"z8 "Gm7"z8 | "Ebm"z8 "Bb7"z8 | "Eb"z8 "Am7"z8 | "Cm7"z8 "Bb"z8 |
+"Gm7"z8 "C7"z8 | "Cm7"z8 "Fm7"z8 | "Gm7"z8 "Dm7"z8 | "Cm"z8 "Eb"G,4 _A,4 |
+"Eb"_B,8- "Gm7"_B,8 | "Db"_A,8 "Cm7"z8 | "Bbm7"z8 "Cm7"z8 | "B"z8 "Db7"z8 |
+"Ebm"z4 _E,4 "Bb7"_B,4 _E4 | "B"B,8- "Bbm7"B,4 z4 | "Db7"z8 "Ebm7"z8 | "Ebm"z8 "Fm7"z8 |
+"Ebm7"z8 "Abm7"z8 | "F#"z8 ^F,8 | "Ebm"C4 F,4 "Ab7"^F,4 _A,4 | "F7"F,8 "Gm7"_B,8 |
+"Cm7"_B,8 "Gm7"_A,4 _B,4 | "Fm7"_E8 "Gm7"D4 C4 | "Cm7"_B,8 "Fm"C8 | "Gm7"D4 C4 "Cm7"C8 |
+"Fm7"_A,8 "Eb7"G,8 | "Db"_A,8 "Fm"C,4 z4 | "C"z16 | "Fm"z8 "Bb7"z8 |
+"B"z8 "Abm7"z8 | "F#"^F,,16 | "Fm7"F,,8- "Bb7"F,,8 | "Cm7"_E,,8- "Eb"_E,,8 |
+"Eb"_E,,16 | "Eb"_E16 |

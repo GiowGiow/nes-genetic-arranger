@@ -1,0 +1,36 @@
+%abc-2.1
+% GAROTO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/garoto.html (file
+% https://www.beakauffmann.com/mpb_g/som/garoto.mid, sha256
+% ef3da34b58edd3bc5cf0dd6dd35ef9b25e992af7980d492773535c15e320f405), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GAROTO
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"z5 f3 | "Dm"_d e =d2 A c2 _B | "A7"_B A3 A z A =B | "Dm"_d =d _d =d e f e f |
+"A7"g a3 a z f2 | "Dm"_d e =d2 _A =A2 B | "Am"B c E A c e c' b | "E7"a _a f e d c B =A |
+"A"_A _B =A G _D z f2 | "Dm"_d e =d2 A c2 _B | "A7"_B A3 A z A =B | "Dm"_d =d _d =d e f e f |
+"A7"g a3 a z _b a | "D7"g ^f _e d c _B A G | "Gm"^F G D G _B d g a | "Dm"_b a _a =a f' e' g =a |
+"Dm"e' d'4 z f2 | "Dm"_d e =d2 A c2 _B | "A7"_B A3 A z A =B | "Dm"_d =d _d =d e f e f |
+"A7"g a3 a z f2 | "Dm"_d e =d2 _A =A2 B | "Am"B c E A c e c' b | "E7"a _a f e d c B =A |
+"A"_A _B =A G _D z f2 | "Dm"_d e =d2 A c2 _B | "A7"_B A3 A z A =B | "Dm"_d =d _d =d e f e f |
+"A7"g a3 a z _b a | "D7"g ^f _e d c _B A G | "Gm"^F G D G _B d g a | "Dm"_b a _a =a f' e' g =a |
+"Dm"e' d'4 z c2 | "C7"d e3 e g3 | "F"g d3 d z c2 | "C7"d e c2 d e f g |
+"Dm7"_a =a3 =a z _b2 | "Em7"^f a3 g z a2 | "Dm"e g3 f z e2 | "Am"d c E A c B D E |
+"Am"B A3 A z c2 | "C7"d e3 e g3 | "F"g d3 d z c2 | "C7"d e c2 d e f g |
+"Dm7"_a =a3 =a z _b2 | "Em7"^f a3 g z e'2 | "Dm7"b d'3 c' z _d' =d' | "C7"a c' _b d _e =e c a |
+"F"g f3 f' z c2 | "C7"d e3 e g3 | "F"g d3 d z c2 | "C7"d e c2 d e f g |
+"Dm7"_a =a3 =a z _b2 | "Em7"^f a3 g z a2 | "Dm"e g3 f z e2 | "Am"d c E A c B D E |
+"Am"B A3 A z c2 | "C7"d e3 e g3 | "F"g d3 d z c2 | "C7"d e c2 d e f g |
+"Dm7"_a =a3 =a z _b2 | "Em7"^f a3 g z e'2 | "Dm7"b d'3 c' z _d' =d' | "C7"a c' _b d _e =e c a |

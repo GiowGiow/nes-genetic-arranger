@@ -1,0 +1,21 @@
+%abc-2.1
+% Preludio No. 11, by Francisco Tárrega(1852 - 1909). Score published on MuseScore (artist:
+% Francisco Tárrega), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/55/QmPYJNG1M6ZSX1JDmKoASZ1K6hwEF6mYR1bT7JxfpaCS1P.mid (sha256
+% d34eb35fe59f1a943b548fb5d6fc77fd8ee1805061bea6e5cd1630c082b2f23e): melody track 0, bars 0-12
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Preludio No. 11
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"^f ^F2 A e G2 A | "C"d ^F2 A D ^F2 B | "C"A _D2 G E A,2 _D | "C"D ^F,2 B, D,, ^F,,2 B,, |
+"C"_D, G,2 A, A,, G,2 A, | "C"D, ^F,2 A, D ^F2 A | "C"B G,2 B, _d E2 ^F | "C"d D2 ^F B D2 =F |
+"C"A B2 A ^F G2 ^F | "C"D E2 D B,4 | "C"B,4 _D4 | "C"D8 |

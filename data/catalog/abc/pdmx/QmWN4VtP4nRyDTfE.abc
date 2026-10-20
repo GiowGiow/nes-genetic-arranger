@@ -1,0 +1,32 @@
+%abc-2.1
+% Elegy Op.24, by Gabriel Fauré. Score published on MuseScore (artist: Gabriel Fauré), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gabriel Fauré (died 1924,
+% Wikidata Q104919).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/34/QmWN4VtP4nRyDTfE2DvVc8DHEnKETurWarQd5PMXA1QjU2.mid (sha256
+% bcdb9b02375d328c39ff95f790a66b7c2ee05856596d7e68f49c793081889f1c): melody track 1, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Elegy Op.24
+M:4/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G z G z G z G z G z G z G z G z | "Cm"G z G z G z G z G z G z G z F z | "C7"_E z _E z _E z _E z "Cm7"_E z _E z C z C z | "Fm7"z16 |
+"Fm7"z8 "Cm"z8 | "D7"g z g z g z g z "Dm7"g z g z g z g z | "Ab"_e z _e z _e z _e z "Eb"_e z _e z _e z _e z | "A7"c z c z c z c z "Cm"c z c z c z c z |
+"G7"c z c z B z B z "Cm"c z c z c z c z | "C"G z G z G z G z "Cm"G z G z _A z _A z | "Db7"_A2 _A2 _A2 _A2 "Cm"_A2 _A2 _A2 _E2 | "A7"E2 E2 E2 E2 "Bb7"E2 F2 G2 _A2 |
+"Ab"_d2 c2 _B2 _A2 "Eb"_A2 G2 ^F2 =F2 | "Ebm"_E2 _E2 F2 ^F2 "Gm7"G2 =F2 _E2 =F2 | "Db7"G2 G2 A2 _B2 "Dm7"=B2 c2 d2 _e2 | "Ab7"c4 B2 g2 c4 B2 g2 |
+"Ab7"c4 B2 G z "G"G z G z G z3 | "D7"g z g z g z g z "Dm7"g z g z g z g z | "Ab"_e z _e z _e z _e z "Eb"_e z _e z _e z _e z | "A7"c z c z c z c z "Cm"c z c z c z c z |
+"G7"c z c z B z B z "Fm7"c8 | "G7"c2 c2 B2 B2 "Fm7"c8 | "Fm7"C _E _D _E _D _E C _E C _E C _E C _E C _E | "Fm7"C _e2 _d2 _e c _e "Cm7"_e G2 _A2 G F f |
+"Cm7"f _B2 c _d _d =d =d "Eb"_e3 _B _d2 c2 | "Eb7"z A2 c A c _d f "Fm7"f =d2 f =d f g _a | "Eb7"c A2 c A c _d f "Fm7"f =d2 f =d g _a c' | "Gm7"c A2 c A d _e f "Cm7"c A2 c A d _e g |
+"Gm"G E2 F A d _e g "Gm7"G =E2 F G A _B _d | "Eb7"C _E _D _E _D _E C _E "Cm7"_D _E _D _E _D _E _D _E | "Gm7"C _E C _E C _D B, =D "Eb7"B, _D _B, _D G, _E _A, _E | "Eb7"_A, _E G, _E G, _E G, _E "Fm7"_A, _E _A, _E _A, _E _A, _E |
+"D7"F _A F G _E G _E G "Ab"F _A F _A F _A F _A | "Fm"F _A C F _a2 z2 "D7"C =A C ^F c'2 z2 | "Em7"d g d _a d g d d "G"g2 z6 | "C7"_d g _d _a _d g _d _d "A7"g2 z6 |
+"Am7"c g c e f2 z2 "D7"G f G d e2 z2 | "Dm7"d'2 z6 "G7"g'2 z6 | "Dm7"C c g G C c g G C c g G C c g G | "Cm7"G, G _e _E G, G _e _E G, G _e _E G, G _e _E |
+"Bb7"_E, _E c C _E, _E c C "Cm7"_E, _E c C _E, _E c C | "Db"C _D C _A, _D _E _D _A, "Ab"_E F _E _D _E F _E _D | "Db"C _D C _A, _D _E _D _A, "Ab"_E F _E _D _E F _E _D | "Eb7"C _D C G, _B, C _B, F, "C"_D, c'2 _d'2 c' _b _d' |
+"Cm"_d' _e'2 f' f' _a' _e' c' "C"_b c'2 _d2 c _B _d | "Cm"_d _e2 f f _a _e c "C7"_B G =E G =E G =E G | "Fm7"E _A _E _A _E _A _E _E "C"C D B, D B, D B, D | "Cm"C _E C _E C _E C _E "C"C D B, D B, D B, D |
+"Cm"C _E C _E C _E C _E C _E C _E C _E C _E | "Cm"C _E C _E _e g _e g d' _e'2 c'2 g2 f | "Cm"d2 _e2 z8 _E4 | "Cm"_E4 _E4 _E8 |

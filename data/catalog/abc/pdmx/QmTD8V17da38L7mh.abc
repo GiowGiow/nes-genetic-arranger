@@ -1,0 +1,35 @@
+%abc-2.1
+% Salve Regina, by Rudolph di Lasso. Score published on MuseScore (artist: Rudolph di Lasso), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Rudolph di Lasso (died 1626,
+% Wikidata Q3940013).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/16/QmTD8V17da38L7mhqXWfurzyWHmZpiX2VnERR1uAoRnFvg.mid (sha256
+% 546ea9755c88c55699d58ce62bd5154239cf0fb1a35ca1afc5ad988805f81833): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Salve Regina
+M:2/2
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"c12 B2 A2 | "G"B16 | "A"A16 | "Em7"A8 z2 B2 c2 d2 |
+"Am7"e12 d c B A | "E"_A4 =A8 _A4 | "A"A16 | "D"^F8 ^F4 G4 |
+"Dm"A8 A8 | "G"G6 F2 E4 E4 | "D"A16 | "G"B2 A2 B A B c d4 B4 |
+"Bm7"z4 d4 A2 B2 A2 B2 | "F#m7"_d2 A2 =d6 _d B _d4 | "Em7"d8 B4 B4 | "Em"B2 c2 B2 c2 d8 |
+"D"d4 B4 A8 | "G"B8 z4 d4 | "C"e8 z4 c4 | "C"B4 d4 c8 |
+"Am7"B8 z4 A4 | "C"B8 c8 | "C"e12 _A4 | "Em7"_A4 _A2 =A2 B2 =A2 B2 c2 |
+"C"d4 e4 B4 c4 | "G"c4 B2 A2 B8 | "C"c16 | "G"z16 |
+"Dm7"z16 | "C"z8 G8 | "Am7"E8 z4 e4 | "E"e4 c4 B8 |
+"Dm"_d8 z4 =d4 | "Bb"d16 | "C"_B8 z4 G4 | "F"c16 |
+"C"c16 | "F"A16 | "C"z8 c8 | "Dm7"c8 A8 |
+"Am"A12 A4 | "Am"A8 E4 e4 | "Am"e4 d4 c4 B4 | "Am"A4 E4 A8 |
+"E"A8 _A8 | "A"z8 A4 E4 | "G"^F8 G8 | "Em7"z8 d8 |
+"D"d4 c4 B4 B4 | "D"A16 | "C"B8 c8 | "Am"c4 c4 B8 |
+"A"e8 A8 | "Dbm7"A8 B8 | "A"A16 | "D"A8 D8 |
+"C"z4 G6 F2 E4 | "G"z4 A4 B8 | "A"_d4 =d6 _d B _d4 | "D"d16 |
+"B"z8 _e8 | "B"e8 _e8 | "Em"z4 e4 _e8 | "E"e16 |

@@ -1,0 +1,26 @@
+%abc-2.1
+% a new ground in em, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/2/Qmc3CFRP9UrwhThAHgRjDb6sp36pApUK6ikBNNymngoL1k.mid (sha256
+% 5f0d0440499c9d881ffbf7f46984366ab319fd07c268c0fb195313876a1289cc): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:a new ground in em
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"z E2 G2 B2 G "Abm7"B ^F2 A2 G2 ^F | "Db7"z E2 G2 ^F2 E- "B7"E _E2 _D2 _E2 B, | "F#7"z E2 B, z ^F2 A, "Em"z G3 b3 b | "Em"a g2 g a g ^f e "Abm7"b4 g g ^f2 |
+"F#m"z4 a3 a "A7"e _e2 _e =e _e _d B | "F#7"^f ^f e ^f ^f2 e ^f "Em"g8 | "Em"g a ^f g g g ^f ^f "D"^f6 z ^F | "Db7"z E2 G2 ^F2 E- "B7"E _E2 _D2 _E2 B, |
+"F#7"z E2 B, z ^F2 A, "Em"z G3 b3 b | "Em"a g2 g a g ^f e "Abm7"b4 g g ^f2 | "F#m"z4 a3 a "A7"e _e2 _e =e _e _d B | "F#7"^f ^f e ^f g g ^f ^f "Em"g8 |
+"Em"g a ^f g g g ^f ^f "D"^f6 z ^F | "F#m"z E E2 ^f ^f e e "A7"e e d z c3 d | "F#7"c c B G b b a b "Em"a g ^f e g ^f e _e | "Em"^f ^f e z b2 ^f ^f "Abm7"g g ^f4 b2 |
+"F#m"b2 a g ^f g ^f e "A7"e e _e2 =e _e _d B | "F#7"^f ^f e2 ^f e B2 "Em"g2 ^f e _e _d B A | "Em"G2 ^F E a a g g "Abm7"g2 ^f4 _a2 | "F#m"a3 g ^f g ^f e "A7"b4 e e _e B |
+"F#7"e2 ^f g a g a ^f "Em"g a b2 a a g e | "Em"e4 z G3 "Abm7"z ^F2 A2 G2 ^F | "F#m"z E3 ^f ^f e e "A7"e e d z c2 d2 | "F#7"c c B A b b a b "Em"a g ^f e g ^f e _e |
+"Em"^f ^f e z b2 ^f ^f "Abm7"g g ^f4 b2 | "F#m"b2 a g ^f g ^f e "A7"e e _e2 =e _e _d B | "F#7"^f ^f e2 g ^f B2 "Em"g2 ^f e _e _d B A | "Em"A A G E g3 g "Abm7"g2 ^f4 _a2 |
+"F#m"a3 g ^f g ^f e "A7"b4 _e2 _d B | "F#7"e2 ^f g a g a ^f "Em"g2 a b a a g e | "E"e16 |

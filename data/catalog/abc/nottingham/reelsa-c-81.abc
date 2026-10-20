@@ -1,0 +1,24 @@
+%abc-2.1
+% Little Czech Number, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 81 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Little Czech Number
+M:4/4
+L:1/16
+Q:1/4=140
+K:Am
+P:A
+"Am"z12 E4 | "Am"A4 _A4 "E7"=A4 B4 | "Am"c4 B4 "E7"c4 d4 | "Am"e4 _e4 "Dm7"=e4 f4 |
+"Am"e16 | "Dm"d4 _d4 =d4 e4 | "Am"c4 B4 c4 d4 | "E7"B4 _B4 =B4 c4 |
+"Am"A12 E4 | "Am"A4 _A4 "E7"=A4 B4 | "Am"c4 B4 "E7"c4 d4 | "Am"e4 _e4 "Dm7"=e4 f4 |
+"Am"e16 | "Dm"d4 _d4 =d4 e4 | "Am"c4 B4 c4 d4 | "E7"B4 _B4 =B4 c4 |
+"Am"A16 | "Am"a8 "G7"e8 | "C"e4 f4 g8 | "D"d4 d4 "E7"e4 d4 |
+"Am"c4 B4 A8 | "Am"a8 "G7"e8 | "C"e4 f4 g8 | "D"d4 d4 "E7"e4 d4 |
+"Am"c4 B4 A8 | "Am"A4 B4 "Am7"c8 | "D"A4 B4 "F"c8 | "E7"e4 d4 B4 c4 |
+"Am"A16 | "Am"A4 B4 "Am7"c8 | "D"A4 B4 "F"c8 | "E7"e4 d4 B4 c4 |
+"Am"A16 |

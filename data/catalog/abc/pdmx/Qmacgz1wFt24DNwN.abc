@@ -1,0 +1,27 @@
+%abc-2.1
+% 1er cantique Du désert les arides terres, by César Malan. Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): César Malan (died 1864, Wikidata
+% Q670768).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/13/Qmacgz1wFt24DNwNxJEzXTS5YR9LvbMbr3qPVitA4FkEbz.mid (sha256
+% e396a28853b5b3c271c2c58f5c62349a499714b6159480155de50626b7c01f73): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:1er cantique Du désert les arides terres
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_B8 _B4 _A4 | "C"G8 G8 | "C"G4 _A4 G4 F4 | "C"F8 _E8 |
+"C"G8 G4 _A4 | "C"_B8 _B8 | "C"_A8 G8 | "C"F12 z4 |
+"C"_B8 _B4 _A4 | "C"G8 G8 | "C"G4 _A4 G4 F4 | "C"F8 _E8 |
+"C"F8 G4 F4 | "C"F8 _B8 | "C"A8 c8 | "C"_B12 z4 |
+"C"_A8 G4 F4 | "C"G4 _A4 _B4 _A4 | "C"G8 F8 | "C"_A8 G4 F4 |
+"C"G4 F4 G4 _A4 | "C"c8 _B8 | "C"G8 _A4 _B4 | "C"c8 _B8 |
+"C"_A8 G8 | "C"F12 z4 | "C"c8 c4 c4 | "C"_B4 _A4 G4 _A4 |
+"C"_B8 G8 | "C"c8 c4 c4 | "C"_B4 _A4 G4 _A4 | "C"_B8 G8 |
+"C"_E8 F8 | "C"G8 _B4 _A4 | "C"G8 F8 | "C"_E12 z4 |

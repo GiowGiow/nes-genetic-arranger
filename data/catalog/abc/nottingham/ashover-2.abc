@@ -1,0 +1,24 @@
+%abc-2.1
+% Barry's Favourite, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/ashover.abc, tune X: 2 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6586eea8dca53866b42721050d11fc1408bdb2cf31a902b41c5c13504139b164).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Barry's Favourite
+M:2/2
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"a3 b a3 g f4 d e2 f | "A7"g3 a g3 f e4 A4 | "D"f3 g f3 e d4 f4 |
+"A7"B3 c d3 e c4 A4 | "D"a3 b a3 g f4 d e2 f | "A7"g3 a g3 f e4 A4 | "D"f3 g f3 e d3 e f3 A |
+"D"B3 d d3 c d4 A4 | "D"a3 b a3 g f4 d e2 f | "A7"g3 a g3 f e4 A4 | "D"f3 g f3 e d4 f4 |
+"A7"B3 c d3 e c4 A4 | "D"a3 b a3 g f4 d e2 f | "A7"g3 a g3 f e4 A4 | "D"f3 g f3 e d3 e f3 A |
+"D"B3 d d3 c d4 A4 | "Em7"B3 A B3 g d4 A4 | "A7"e3 d e3 f e4 a4 | "Em7"b3 a g a2 b a3 g f g2 a |
+"F#m7"f3 e d e2 f e4 A4 | "Em7"B3 A B3 g d4 A4 | "A7"e3 d e3 f e4 a4 | "A7"b3 a g3 f a3 g f3 e |
+"D"d4 f4 d4 A4 | "Em7"B3 A B3 g d4 A4 | "A7"e3 d e3 f e4 a4 | "Em7"b3 a g a2 b a3 g f g2 a |
+"F#m7"f3 e d e2 f e4 A4 | "Em7"B3 A B3 g d4 A4 | "A7"e3 d e3 f e4 a4 | "A7"b3 a g3 f a3 g f3 e |
+"A"d4 f4 d4 z4 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% PENSA SÓ QUE VOCÊ VERÁ, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/pensa-so-que-voce-vera.html (file
+% https://www.beakauffmann.com/mpb_p/som/pensa-so-que-voce-vera.mid, sha256
+% b2b8da3cfd7f3fa0eda6f8dbbe173ecdbcf6a6edaece7821f962c923c5aef3af), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PENSA SÓ QUE VOCÊ VERÁ
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"d' _d'2 =d' a g2 ^f | "Em"e4 b4 | "A"d'6 _d'2 | "D"z8 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 _d'2 a2 | "D"d'8 |
+"D"z ^f'2 _d' e' =d' ^f b | "F#m7"a3 g e4 | "A"e2 _d' b ^f2 e a | "D"z _a _a _a _a z3 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 _d'2 a2 | "D"^f'8 |
+"G"z e'2 d' _d' e' =d' b | "D"a3 b g2 a2 | "A"^f2 g z e2 a z | "D"d3 a d'2 z2 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 _d'2 a2 | "D"d'8 |
+"D"z ^f'2 _d' e' =d' ^f b | "F#m7"a3 g e4 | "A"e2 _d' b ^f2 e a | "D"z _a _a _a _a z3 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 _d'2 a2 | "D"^f'8 |
+"G"z e'2 d' _d' e' =d' b | "D"a3 b g2 a2 | "A"^f2 g z e2 a z | "D"z2 ^f'2 g'2 ^f'2 |
+"E7"e' b2 _d' =d'2 e'2 | "A"d' _d'2 b a2 =d'2 | "Dbm7"_d' b2 _a e2 =d2 | "A"_d ^f2 e b a =d' _d' |
+"E7"e' b2 _d' =d'2 e'2 | "A"d' _d'2 b a2 ^f'2 | "E"_d' b2 _a e2 b2 | "A"a3 e a2 z2 |
+"E7"e' b2 _d' =d'2 e'2 | "A"d' _d'2 b a2 =d'2 | "Dbm7"_d' b2 _a e2 =d2 | "A"_d ^f2 e b a =d' _d' |
+"E7"e' b2 _d' =d'2 e'2 | "A"d' _d'2 b a2 ^f'2 | "E"_d' b2 _a e2 b2 | "A"a3 e a2 z2 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 b2 a2 | "D"d'8 |
+"D"z ^f'2 _d' e' =d' ^f b | "F#m7"a3 g e4 | "A"e2 _d' b ^f z e a | "D"z _a _a _a _a z3 |
+"D"z2 ^f2 a2 ^f2 | "D"^f8 | "D"z2 a2 _d'2 a2 | "D"^f'8 |

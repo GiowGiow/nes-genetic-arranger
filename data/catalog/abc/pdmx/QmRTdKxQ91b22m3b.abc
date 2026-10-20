@@ -1,0 +1,26 @@
+%abc-2.1
+% Schweizerpsalm, by Alberich Zwyssig (1808-1854). Score published on MuseScore (artist: Alberich
+% Zwyssig), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Alberich Zwyssig (died 1854,
+% Wikidata Q667651).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/45/QmRTdKxQ91b22m3bE2R6gnEB38WoKVdbMuZzqLhYiQWVcM.mid (sha256
+% 8b2a37ce0257b484a057fba672c83e4ccdff0c0c56f24efd5cb872f4e0c051ce): melody track 0, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Schweizerpsalm
+M:3/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"_B3 _B _B4 _e4 | "Bb7"_e3 d d4 z4 | "Bb"_B3 _B _B4 f4 | "Eb"f3 _e _e4 z4 |
+"Cm7"g6 g2 f2 f2 | "Dm7"f6 _e2 d4 | "F7"c8 A4 | "Bb"_B8 z4 |
+"Bb"d3 d d4 d4 | "Cm7"_e6 d2 c2 _B2 | "Bb"_B12 | "Bb"_B8 z4 |
+"Bb"d3 d d4 d4 | "Eb"_e6 f2 g4 | "Gm"f8 _e4 | "Bb"d8 z4 |
+"Eb"_B3 _B _B4 _e4 | "Ab"_d3 c c4 z4 | "Fm7"c3 c c4 f4 | "Bb"_e3 d d4 z4 |
+"Ab"g6 g2 _a2 f2 | "Bb"_e8 d4 | "Cm"_e8 z4 | "Ab"g6 g2 _a2 f2 |
+"C7"_e8 _e4 | "Bb"_e4 d2 c2 d4 | "Eb"_e8 z4 |

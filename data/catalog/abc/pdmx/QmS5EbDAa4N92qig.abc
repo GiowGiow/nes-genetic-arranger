@@ -1,0 +1,35 @@
+%abc-2.1
+% Verbum caro factum est, by Jan Tollius. Score published on MuseScore (artist: Jan Tollius), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jan Tollius (died 1603, Wikidata
+% Q284127).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/4/QmS5EbDAa4N92qigeFhAP3e9cjcFBujWdLEtj4b1xtMCkc.mid (sha256
+% 04a9ca2ab0e9391423af2545b78ff3305162f7bc340b7cd7a6d3d2fa4f0a6049): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Verbum caro factum est
+M:4/2
+L:1/16
+Q:1/4=180.00018
+% Exact tempo 180.00018000018 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"c24 c8 | "F"A16 _B16 | "F"c24 c8 | "D"F8 f8- "Cm"f8 _e8 |
+"Bb"_e8 d8 "Bb7"c16 | "Gm"_B8 _B8 "Fm"f12 c2 d2 | "C"_e4 d4 c4 _B4 "Fm"c8 _A8 | "Eb"_A8 G8 "Fm"_A16 |
+"Fm"z16 "Dm"z16 | "Cm"z16 "Bb"z16 | "Fm"z8 f8- "Gm"f8 _e8 | "Bb7"_e8 d8 "Cm"c16 |
+"Bb"_B8 _B8 "Cm"c12 d4 | "Gm"_e8 _B8 "C"c12 _B4 | "F"_A4 _B4 c4 d4 "Cm"_e16 | "Cm"c16- "Ab"c16 |
+"Bb7"z16 "C7"c16 | "C"c8 c8 "F"A16 | "Cm7"_B16 "Fm7"c16 | "Eb"c8 c8 "Gm7"F8 f8 |
+"C"f8 _e8- "Bb"_e8 d8 | "Fm7"c16 "Gm7"_B12 F4 | "Cm"_A8 G4 F4 "Bb"G8 F8 | "Cm"z16 "Fm7"z8 c8 |
+"C"c12 c4 "F"c16 | "C"_e12 _e4 "Ab"_e8 _e8 | "Ab"_e4 d4 c4 _B4 _A12 _B4 | "Ab"c16 c16 |
+"Ab"z8 _A8 _A12 _A4 | "Ab"_A16 c12 c4 | "Ab"c8 c12 _B4 _A4 G4 | "Cm"_A16 G16 |
+"Ab"z16 "Eb"z16 | "Ab"z16 "Cm"_E12 _E4 | "Fm"F8 _A8 "Eb"G16 | "Fm"c12 c4 "Cm7"_B8 G8 |
+"Fm"_A4 _B4 c4 d4 "Cm"_e8 _e8 | "Gm"_e8 d8- "Fm"d4 c4 c8 | "G"c8 B8 "Cm"c16 | "Fm"F12 F4 "G"G8 G8 |
+"Fm"_A16 "Gm"G12 G4 | "Ab"_E8 _A8 "Eb"G8 G8 | "Bb7"_A8 F8 "Cm"c12 _B4 | "Cm"_A4 G4 G8- "Ab"G8 F8 |
+"G"G16 "F"A16 | "F"A16 "Bb"_B16 | "Eb"_B12 _B4 "Ab"_B8 c8 | "Fm7"_B8 _A8 "Bbm"_B16 |
+"Bbm"_B16 "C"G16 | "C"c32 | "F"c16 "Bb"d12 d4 | "Gm7"d8 _e8 "Bb7"c12 d4 |
+"C"c32 | "F"A16 c16 | "F"c16 "Bb"d16 | "Eb"_e12 _e4 "Ab"_e8 _e8 |
+"Eb"_e8 c8 "Bb"_d16 | "Bb"_d16 "C"c16 | "C"z8 c8 A12 _B4 | "D7"c8 c8 "Ab"_e8 f8 |
+"Ab"c16 z8 c8 | "Ab"c12 _B4 _A8 G8 | "Ab"G4 F4 F8- "C"F8 E8 | "Fm"F32 |

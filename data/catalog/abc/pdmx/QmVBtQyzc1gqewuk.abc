@@ -1,0 +1,35 @@
+%abc-2.1
+% Csikos Post, by Hermann Necke. Score published on MuseScore (artist: Hermann Necke), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Hermann Necke (died 1912,
+% Wikidata Q5740867).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/12/QmVBtQyzc1gqewukF6d2QgngwvEkPAEL9G2B2rkVx4fnLk.mid (sha256
+% 56d2ab0e86229369fb67cceedb1c91827b2d5b281d7af45907b4909037800592): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Csikos Post
+M:2/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B"b ^f b b2 g b b | "B"b B _e ^f b b2 b | "Em"e' z7 | "Em"z8 |
+"Em"e z e ^f g ^f g b | "Am7"c' e'2 b5 | "A7"a ^f c' g2 e b ^f | "B7"^f _e b g2 ^f =e _e |
+"Em"e z e ^f g ^f g b | "Am7"c' e'2 b5 | "Bm"b _b =b _d' =d' _d' =d' e' | "B"^f' _d' ^f' b z b z B |
+"Em"e z e ^f g ^f g b | "Am7"c' e'2 b5 | "A7"a ^f c' g2 e b ^f | "B7"^f _e b g2 ^f =e _e |
+"Em"e z e ^f g ^f g b | "Am7"c' e'2 b5 | "Bm"b _b =b _d' =d' _d' =d' e' | "B"^f' _d' ^f' b z b z B |
+"Em"b B b B b B b B | "C"c' c c' c c' c c' c | "B7"b z b _d' _e' b ^f' =e' | "Em"z b e' ^f' g' e' b' e' |
+"Em"b B b B b B b B | "C"c' c c' c c' c c' c | "Em"b e' b g2 b e' g' | "Em"^f' b' _e' ^f' =e' z =e' z |
+"Em"b B b B b B b B | "C"c' c c' c c' c c' c | "B7"b z b _d' _e' b ^f' =e' | "Em"z b e' ^f' g' e' b' e' |
+"Em"b B b B b B b B | "C"c' c c' c c' c c' c | "Em"b e' b g2 b e' g' | "Em"^f' b' _e' ^f' =e' z =e' z |
+"Em"g' g ^f' ^f =f' =f e' e | "D7"d' d c' c b B a A | "G7"g a b d'2 c' b c' | "C"c' d' e' g'2 f' e' f' |
+"G7"f' a' d' f' b d' g b | "C"c' e' g c' e g c e | "G7"g a b d'2 c' b c' | "C"c' d' e' g'2 f' e' g' |
+"Em"g' b' e' g' b e' g b | "E"^f' b' _e' ^f' =e' z =e'' z | "G7"g a b d'2 c' b c' | "C"c' d' e' g'2 f' e' f' |
+"G7"f' a' d' f' b d' g b | "C"c' e' g c' e g c e | "G7"g a b d'2 c' b c' | "C"c' d' e' g'2 f' e' g' |
+"Em"g' b' e' g' b e' g b | "E"^f' b' _e' ^f' =e' z =e'' z | "F"c' g e g c' g e g | "Dm"d' a f a d' a f a |
+"G7"a d _e =e f d a g | "C"g c d _e =e c g c | "F"c' g e g c' g e g | "Dm"d' a f a d' a f a |
+"C"c' b a g2 c' e' g' | "C"a' z b z c' z c' z | "F"c' g e g c' g e g | "Dm"d' a f a d' a f a |

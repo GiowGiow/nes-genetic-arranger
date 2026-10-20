@@ -1,0 +1,24 @@
+%abc-2.1
+% Dixie Hoedown, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsd-g.abc, tune X: 9 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 33f535569116ec8cfb530c112f4cdc3bfb7fc042c271e0317cf6458bad30dfae).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Dixie Hoedown
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 d2 c2 | "G"B4 B2 c2 B2 A2 G2 F2 | "C"E2 C2 E2 G2 c4 d2 c2 | "G"B2 A2 B2 c2 B2 A2 G2 B2 |
+"D7"A2 B2 A2 F2 D4 d2 c2 | "G"B4 B2 c2 B2 A2 G2 F2 | "C"E2 C2 E2 G2 "Am"c2 c2 d2 c2 | "G"B2 A2 G2 B2 "D7"A2 G2 F2 A2 |
+"G"G4 G2 G2 G4 d2 c2 | "G"B4 B2 c2 B2 A2 G2 F2 | "C"E2 C2 E2 G2 c4 d2 c2 | "G"B2 A2 B2 c2 B2 A2 G2 B2 |
+"D7"A2 B2 A2 F2 D4 d2 c2 | "G"B4 B2 c2 B2 A2 G2 F2 | "C"E2 C2 E2 G2 "Am"c2 c2 d2 c2 | "G"B2 A2 G2 B2 "D7"A2 G2 F2 A2 |
+"G"G4 G2 G2 G4 d4 | "G"g12 g4 | "Bm"f12 f4 | "C"e6 d2 c4 A4 |
+"G"B4 d12 | "D"D4 D2 D2 F4 F2 F2 | "D"A2 A2 A4 "D7"d8 | "G"G4 G2 G2 B4 B2 B2 |
+"G"d2 d2 d4 "D7"g4 d4 | "G"g12 g4 | "Bm"f12 f4 | "C"e6 d2 c4 A4 |
+"G"B4 d4- "Eb7"d8 | "D"D4 D2 D2 F4 F2 F2 | "D"A2 A2 A4 "D7"d4 d2 c2 | "G"B2 A2 G2 B2 "D7"A2 G2 F2 A2 |
+"G"G4 G2 G2 G2 z6 |

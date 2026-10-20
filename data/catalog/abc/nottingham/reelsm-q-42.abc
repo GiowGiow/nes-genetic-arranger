@@ -1,0 +1,24 @@
+%abc-2.1
+% The New Year's Resolution, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 42 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The New Year's Resolution
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 D4 | "G"G6 A2 "D7"B4 A4 | "G"G4 D4 G4 B4 | "Am"A6 B2 c4 B4 |
+"D7"A4 D4 F4 A4 | "G"B6 c2 d4 c4 | "G"B4 G4 "D7"A4 c4 | "G"B4 A4 "D7"G4 F4 |
+"G"G8 "D7"D8 | "G"G6 A2 "D7"B4 A4 | "G"G4 D4 G4 B4 | "Am"A6 B2 c4 B4 |
+"D7"A4 D4 F4 A4 | "G"B6 c2 d4 c4 | "G"B4 G4 "D7"A4 c4 | "G"B8 "D7"A8 |
+"G"G8 B4 c4 | "G"d6 e2 "D7"d4 c4 | "G"B4 G4 B4 d4 | "Am"c6 d2 c4 B4 |
+"D7"A4 D4 F4 A4 | "G"B6 c2 B4 A4 | "Em"G4 A4 B4 G4 | "A7"A4 g4 f4 e4 |
+"D7"d4 c4 B4 c4 | "G"d6 e2 "D7"d4 c4 | "G"B4 G4 B4 d4 | "Am"c6 d2 c4 B4 |
+"D7"A4 D4 F4 A4 | "G"B4 G4 "Am"c4 A4 | "G"B4 d4 "C"e4 d2 c2 | "G"B8 "D7"A8 |
+"G"G12 z4 |

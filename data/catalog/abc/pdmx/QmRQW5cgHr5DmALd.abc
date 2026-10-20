@@ -1,0 +1,35 @@
+%abc-2.1
+% Feitiço Da Vila, by Noel Rosa. Score published on MuseScore (artist: Noel Rosa), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Noel Rosa (died 1937, Wikidata
+% Q281078).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/39/QmRQW5cgHr5DmALdnV3uigTSopmxeEEih5aZbccm3na9Py.mid (sha256
+% 24a3e8a3652918a55f8734b6f768c4c9d687718764f712e702498a1ccee3acf4): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Feitiço Da Vila
+M:2/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z7 E | "C"E8 | "C"F2 G F2 E2 D | "E7"D4 B,4 |
+"E7"E2 F E2 D2 C | "Am"C3 A,3 C2 | "Am"D C2 D2 C2 E | "E7"E8 |
+"E7"B,8 | "F"A8 | "G7"B2 c2 B A2 G | "C"G c3 G2 F2 |
+"Am"E A2 E2 D2 C | "D7"C3 A,3 C2 | "G7"E5 E2 C | "C"C4 C4 |
+"G7"z7 E | "C"z8 | "C"F2 G F2 E2 D | "E7"D4 B,4 |
+"E7"E2 F E2 D2 C | "Am"C3 A,3 C2 | "Am"D C2 D2 C2 E | "E7"E8 |
+"E7"B,8 | "F"A8 | "G7"B2 c2 B A2 G | "C"G c3 G2 F2 |
+"Am"E A2 E2 D2 C | "D7"C3 A,3 C2 | "G7"E5 E2 C | "C"C4 C4 |
+"C"z2 C2 D E2 F | "Dm"F8 | "A7"F2 E2 F G2 A | "Dm"A A2 D3 D2 |
+"Dm"z2 E2 F G2 _A | "Fm"_A _A2 D5 | "G7"z2 E F2 E2 G | "C"G8 |
+"C7"z7 c | "F"c A3 G2 F2 | "E7"E5 D2 C | "Am"C E2 A3 c2 |
+"B7"B4 z A2 G | "Em"G3 E z G G2 | "D7"A3 ^F3 D2 | "G7"B2 B B A _A2 G |
+"G7"G4 G2 z E | "C"z8 | "C"F2 G F2 E2 D | "E7"D4 B,4 |
+"E7"E2 F E2 D2 C | "Am"C3 A,3 C2 | "Am"D C2 D2 C2 E | "E7"E8 |
+"E7"B,8 | "F"A8 | "G7"B2 c2 B A2 G | "C"G c3 G2 F2 |
+"Am"E A2 E2 D2 C | "D7"C3 A,3 C2 | "G7"E5 E2 C | "C"C4 C4 |

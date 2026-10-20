@@ -1,0 +1,35 @@
+%abc-2.1
+% MATUTO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/matuto.html (file
+% https://www.beakauffmann.com/mpb_m/som/matuto.mid, sha256
+% 366993f3d4401faea2f6fc835e66ea2e87bca128f51938d690f6a60cf3e81e14), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MATUTO
+M:2/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"A7"z5 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, | "C"G, F,2 B, G, E,2 C |
+"A7"G, G,,2 C G, C,2 C | "Gm"G, _D,2 _B, G, =D,2 =D | "Dbm7"B, G,2 D B, G, A,2 | "Dm7"G, ^F, A,2 D B, G,,2 |
+"A7"z5 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, | "C"G, F,2 B, G, E,2 C |
+"C7"G, G,,2 C G, _D,2 _D | "Dm"A, G,2 _D A, F,2 =D | "Em"A, ^F,2 _E A, G,2 =E | "C"C G,,2 B, G, C3 |
+"A7"C2 z3 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, | "C"G, F,2 B, G, E,2 C |
+"A7"G, G,,2 C G, C,2 C | "Gm"G, _D,2 _B, G, =D,2 =D | "Dbm7"B, G,2 D B, G, A,2 | "Dm7"G, ^F, A,2 D B, G,,2 |
+"A7"z5 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, | "C"G, F,2 B, G, E,2 C |
+"C7"G, G,,2 C G, _D,2 _D | "Dm"A, G,2 _D A, F,2 =D | "Em"A, ^F,2 _E A, G,2 =E | "C"C G,,2 B, G, C3 |
+"C"C C,4 B,, D2 | "E7"D D,2 D2 C, C2 | "Am7"C F,,2 ^F,,2 E,, C2 | "Em"C D,2 B,2 A,, C2 |
+"E7"C C2 C2 B,, D2 | "E7"D D,2 D2 C, C2 | "D7"C C,2 C2 _E, _E2 | "E"_E B,,2 _E2 =E, B,2 |
+"E7"B, B,2 B,2 B,, D2 | "E7"D D,2 D2 A,, C2 | "Am7"C F,2 ^F,2 G,, C2 | "Em"C D,2 B,2 C, G,2 |
+"E7"G, G,2 G,2 B,, D2 | "E7"D D,2 D2 C, C2 | "Am7"C D,2 B,2 E,2 E | "F#m7"E _E2 D z C3 |
+"Am"C A,,4 C3 | "A7"C2 z3 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, |
+"C"G, F,2 B, G, E,2 C | "A7"G, G,,2 C G, C,2 C | "Gm"G, _D,2 _B, G, =D,2 =D | "Dbm7"B, G,2 D B, G, A,2 |
+"Dm7"G, ^F, A,2 D B, G,,2 | "A7"z5 C,2 C | "G7"G, E,2 C G, D,2 B, | "F"G, B,,2 B, G, D,2 B, |
+"C"G, F,2 B, G, E,2 C | "C7"G, E,2 C G, C,2 C | "Dm"A, G,,2 C A, F,,2 D | "Cm"A, ^F,,2 _E A, G,2 =E |

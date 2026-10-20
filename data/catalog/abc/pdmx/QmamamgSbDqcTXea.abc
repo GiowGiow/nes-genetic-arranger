@@ -1,0 +1,34 @@
+%abc-2.1
+% All'hor saranno i miei pensier, by Luca Marenzio. Score published on MuseScore (artist: Luca
+% Marenzio), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luca Marenzio (died 1599,
+% Wikidata Q316532).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/31/QmamamgSbDqcTXeaix9ZR6XyfdN3EfCpF1VdfMMS1WETbK.mid (sha256
+% 4b2b6974a9cfbaae6b8f428a0253e65103f57daf13180f4e6a650e186e3260c1): melody track 0, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:All'hor saranno i miei pensier
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"G16 | "G"G8- "Em"G8 | "Em"G8- "Em7"G8 | "C"G16 |
+"Dm7"A8 "C"G8 | "Am"G8 "D"F8 | "E"E8 "F#m"e8 | "Dm"e8 d8 |
+"A"d8 _d8 | "D"z8 d8 | "G"B8 B8 | "C"c8- "F"c8 |
+"Dm"A8 "Em"c8 | "D"c8 "Em7"B8 | "C"A8- "Dm7"A8 | "C"G8 A8 |
+"E"A8 _A8 | "A"A16 | "Dm"z8 D8 | "Dm"D8 "C"E8 |
+"Bb"F16 | "Bb"F8 F8 | "Bb"F16 | "Bb"F16 |
+"F"z8 F8 | "F"F8 "G"D8 | "A"_D16 | "A"_D16 |
+"D"z8 A8 | "D"A8 "Em7"B8 | "B"B16 | "E"B8 "F#m7"c8 |
+"E"c8 B8 | "Am"B8 A8 | "Bm"A8 G8 | "Bm"^F8 G8 |
+"D"G8 ^F8 | "G"G16 | "G"z8 B8 | "G"B8 "C"c8 |
+"C"c8 "A"_d8 | "A"_d4 _d4 _d8 | "Dm"d12 c4 | "Dm"_B4 A4 "Am"A8 |
+"Bb"A8 G8 | "Dm"A8 "A"z4 A4 | "G"_B12 A2 G2 | "Bb"F8 "Dm"A8 |
+"Dm7"G8- "C"G8 | "F"A8- "Dm"A8 | "Gm7"z8 "Dm"z8 | "Dm7"z8 "Am"z8 |
+"Am7"z8 "Em"z8 | "F"z8 A8 | "F#m7"c8 "E"B8 | "Dm"d12 c2 B2 |
+"F"A4 B4 "Em"c8 | "G"c8 B8 | "C"z8 "F"A8 | "F"A8 "Dm"d8 |
+"Dm"d8 "A"c8 | "Em"B8 "Am7"e8 | "Bm"e8 "Em7"d8 | "C"d8 "Am"c8 |

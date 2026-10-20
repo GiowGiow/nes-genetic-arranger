@@ -1,0 +1,32 @@
+%abc-2.1
+% Messiah HWV 56, by Handel. Score published on MuseScore (artist: Georg Friedrich Händel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Handel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/43/QmcSWzgaJLYN4BM2rMJhUdkCsfBwVXdpWvsLheN1MWmbgo.mid (sha256
+% 90c0d214ecb0dd147226c011799ad06777526ebce0a68dd25976ee153bbdb338): melody track 7, bars 0-51
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Messiah HWV 56
+M:6/8
+L:1/16
+Q:1/4=76.999781
+% Exact tempo 76.99978055062543 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z4 a b a g ^f2 A2 | "D"B2 A2 G2 ^F2 E2 D2 | "D7"A ^f a ^f c ^f A ^f a ^f c ^f | "D7"A ^f a ^f c ^f A ^f a ^f A ^f |
+"Em7"D6 z6 | "A"z12 | "D"z10 a2 | "A"d4 e2 _d2 =d2 e2 |
+"F#m7"^f4 g2 e4 _D2 | "F#m7"D4 E2 _D2 =D2 E2 | "F#m7"^F2 G2 ^F2 E6 | "E7"z10 e2 |
+"D"A4 B2 _A2 =A2 B2 | "F#m7"_d4 =d2 B2 _d2 =d2 | "E7"e2 ^f2 e2 d2 _d2 _d =d | "F#m7"_d4 _d' =d' _d' b a4 |
+"A"z4 e ^f e d _d2 ^f g | "Bm7"^f e d ^f _a =a _a ^f e _a =a b | "F#m7"a _a ^f =a b _d' b =a _a b _d' =d' | "F#m7"_d' b a2 _d' =d' _d' b a4 |
+"A"z4 e ^f e d _d2 a2 | "A"a10 a2 | "E7"a _a ^f2 =a2 _a =a b =a _a ^f | "F#m7"e2 a8 _a2 |
+"A"a2 e d _d B A2 e2 a2 | "F#m7"d4 e2 _d2 =d2 e2 | "F#m7"^f2 g2 ^f2 ^f2 e e ^f e | "Em7"a b a A B A g a g A B A |
+"A"^f g ^f A B A _d =d _d2 e2 | "Bm7"z4 ^f g ^f e d4 | "D"z4 a b a g ^f a b _d' | "D"d'2 _d'2 b2 a2 g2 ^f2 |
+"E7"E8 e2 e2 | "A"e a _d' a e a _d =d e _d A a | "D"b2 a2 g2 ^f2 e2 d2 | "D7"C A c A ^F A C A c A ^F A |
+"D7"C A c A ^F A C A c A ^F A | "A7"B4 g2 e4 _d'2 | "D"d'2 A G ^F E D2 ^f2 a2 | "Em7"d4 e2 _d2 =d2 e2 |
+"F#m7"^f2 g2 ^f2 g e ^f z A2 | "Em7"a b a _d =d _d g a g _d =d _d | "D"^f g ^f _d =d _d e ^f e a b _d' | "Bm7"d' _d' =d' A, B, C B, A, G, B _d =d |
+"Dbm7"e d e B, _D =D _D B, A, _d =d e | "Bm"^f e ^f _D =D E =D _D B, =D E ^F | "A7"E D _D E ^F G ^F E =D a b _d' | "D"d'2 _d'2 b2 a2 g2 ^f2 |
+"E7"^F E ^F E ^F D ^F E ^F E ^F D | "E7"^F E ^F D d2 _d e A g ^f =d | "Bm7"e G ^F d E _d =d6 |

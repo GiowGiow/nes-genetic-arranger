@@ -1,0 +1,36 @@
+%abc-2.1
+% Premier Livre de Pièces de Clavecin 9 Menuet, by Jean Philippe Rameau (1683-1764). Score
+% published on MuseScore (artist: Jean-Philippe Rameau), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean Philippe Rameau (died 1764,
+% Wikidata Q1145).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/39/QmTQN5KCPreMiocEaciuUajey2AF8Kj8NioMLJCnTPULok.mid (sha256
+% a5b0ee000bf58afd4d56ae2faa7f47e747aac611439343df7cab6469a33acb3a): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Premier Livre de Pièces de Clavecin 9 Menuet
+M:3/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z12 | "E"z12 | "E7"A, z E z c2 E z B z E z | "C"A, z E z A z E z _A z E z |
+"C"A, z E z G z E z ^F z E z | "E7"A, z E z F z E z B, z E z | "Bm7"A,, z E, z ^F, z E, z _A, z E, z | "Am7"A,, z E, z A, z E, z C z A,, z |
+"F#m7"D,, z A,, z D, z ^F, z C z E z | "E"E,, z B,, z _A, z D z D C B, z | "C"A, z E z c2 E z B z E z | "C"A z E z A, z E z _A z E z |
+"C"G z E z A, z E z ^F z E z | "Bm7"F z E z A, z E z B, z E, z | "E7"A,, z E, z ^F, z E, z _A, z E, z | "Am"A,, z E, z A, z E, z C z A,, z |
+"F#m7"D,, z A,, z D, z ^F, z C z E z | "E"E,, z B,, z _A, z B,, z E,,4 | "E"E, z B, z E2 B, z _E, z =E, z | "E"D, z E, z E z E, z C, z E, z |
+"F"B,, z E, z E z E, z A,, z E, z | "E7"_A,, z E, z B, z E, z _A,,4 | "Bm"_A,2 D z B z E z _A, z F z | "D7"A, z E z A z E z _A, z E z |
+"B"G,2 E2 B2 _B2 A2 F,2 | "Am"_A2 =A2 B2 E,2 ^F,2 _A,2 | "Am7"A, A, B, z C z B, z C z _D z | "Dm7"D2 E, z F, z E, z F, z ^F, z |
+"G7"G,2 A, z _B, z A, z _B, z =B, z | "C"C2 B,2 A,2 G,2 ^F,2 E,2 | "D7"_E,8 C4 | "Abm"D,4 C,4 B,,4 |
+"E7"C,, A,3 D,, A,3 E,, B,3 | "D7"A,, z E, z C2 E, z A,,4 | "E"E, z B,, z E,, z B,, z E, z _E, z | "Dbm7"E, z _E, z D, z C, z B,, z =E,2 |
+"E7"_A, z =A, z G, z F, z E, z F, z | "E7"E, B,, E,, B,, E, _A, B, E e4 | "E7"B, z C z D2 E, z D2 E, z | "Bm7"A, z B, z C2 E, z C2 E, z |
+"B7"B,2 E,2 E2 B,,2 _E2 F,2 | "Dbm7"E2 ^F,2 _A,2 E,2 ^F2 _A2 | "Am7"A2 e2 B2 _a2 _d2 =D2 | "Dm"D,2 A2 E2 _d2 ^F2 G2 |
+"Em7"G,2 d2 A2 ^f2 B2 C2 | "C"C,2 G2 D2 B2 E2 F2 | "Dm7"F,2 c2 G2 e2 A2 _B,2 | "Gm7"_B,,2 F2 C2 A2 D2 E,2 |
+"Bb7"B,,2 E,2 D2 F2 D2 A,2 | "Bb7"B,,2 E,2 D2 F2 D2 A,2 | "Bb7"B,,2 E,2 D2 F2 D2 F2 | "Dm"D2 F2 D2 F2 D2 E2 |
+"Abm"E,4 z8 | "E7"z12 | "C"E2 E, z A,, z E, z E2 E, z | "Am"E2 E, z A,, z E, z E2 E, z |
+"C"E2 E, z A,, z E, z E2 E, z | "E7"E2 E, z A,, z E, z E2 E, z | "D7"E2 E, z A,, z E, z E2 E, z | "C"E2 E, z A,, z E, z E2 E, z |
+"Am"E2 ^F, z A,, z ^F, z E2 ^F, z | "E7"E2 E, z E,, z E, z E2 B, z | "C"E2 E, z A,, z E, z E2 E, z | "Am"E2 E, z A,, z E, z E2 E, z |

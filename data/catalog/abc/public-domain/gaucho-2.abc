@@ -1,0 +1,36 @@
+%abc-2.1
+% GAÚCHO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gaucho-2.html (file
+% https://www.beakauffmann.com/mpb_g/som/gaucho-2.mid, sha256
+% 6fb99f1888c7d69c825e073c9090434d22c261507fc325ee6ce0c7c298275979), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GAÚCHO
+M:2/4
+L:1/16
+Q:1/4=98.999936
+% Exact tempo 98.99993565004183 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z | "F#7"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z |
+"F#m7"z ^f2 ^f g g z _b | "Bbm7"_b _a g _a _d' _a f _d | "Ab7"f _e d _e _b _a ^f c | "Db7"_e _d b _a f _d c B |
+"F#"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z | "F#7"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z |
+"Ebm7"z ^f2 _b _d' =b2 _b | "B7"_a b2 _e' ^f' _a'2 =a' | "Db7"_b' ^f'2 _e' _d' _a2 _b | "F#"^f3 z ^f'3 z |
+"Ebm"z _b2 _e' ^f' _b' _b'2 | "Dm7"z a2 c' f' a' a'2 | "E7"z _a2 b d' _a' _a'2 | "Ebm"z ^f2 _b _e' ^f' ^f'2 |
+"Abm"z f' _e' b _a f _e B | "Ebm"_B _e ^f _b _e' ^f' =b' _b' | "F7"a' f'' _e'' c'' a' f' =e' _e' | "Bb7"d' _b' _a' f' d' _b =a _a |
+"Ebm"z _b2 _e' ^f' _b' _b'2 | "Dm7"z a2 c' f' a' a'2 | "E7"z _a2 b d' _a' _a'2 | "Ebm"z ^f2 _b _e' ^f' ^f'2 |
+"Dbm7"z e' _d'' b' _a' e' b _a | "Ebm"z ^f _a =a _b3 z | "Bb7"z c' d' _e' =e' f' d' _b | "Ebm"_e'3 z _e''3 z |
+"F#"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z | "F#7"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z |
+"F#m7"z ^f2 ^f g g z _b | "Bbm7"_b _a g _a _d' _a f _d | "Ab7"f _e d _e _b _a ^f c | "Db7"_e _d b _a f _d c B |
+"F#"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z | "F#7"z _e2 _e _e _e z _e | "Db7"_e _d B _A _D3 z |
+"Ebm7"z ^f2 _b _d' =b2 _b | "B7"_a b2 _e' ^f' _a'2 =a' | "Db7"_b' ^f'2 _e' _d' _a2 _b | "F#"^f2 z ^f' z ^f _a _b |
+"Abm7"b _d' _e' =e' ^f' _a' _b' =b' | "F#7"_d'' b' _b' _a' ^f' e' _e' _d' | "Abm"b _b _a ^f e _e _d =B | "Eb7"_B _A G E z4 |
+"Ab7"z ^f _a c' _e' ^f' _a' c'' | "Db7"_e' _d' b _a f _d B _A | "F#7"z e ^f _b _d' e' ^f' _b' | "F#7"_d'' b' _e' _a' ^f' ^f _a _b |
+"Abm7"b _d' _e' =e' ^f' _a' _b' =b' | "F#7"_d'' b' _b' _a' ^f' e' _e' _d' | "Abm"b _b _a ^f e _e _d =B | "Eb7"_B _A G E z4 |
+"Ab7"z _a c' _e' ^f' _a' c'' _e'' | "Db7"^f'' e'' _e'' _d'' b' _b' =b' =f' | "Abm7"_a' ^f' b' b _e' _d' ^f' _b | "B"b2 z b' z ^f _a _b |

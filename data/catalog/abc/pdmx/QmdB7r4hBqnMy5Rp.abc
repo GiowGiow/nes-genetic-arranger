@@ -1,0 +1,23 @@
+%abc-2.1
+% belle qui tiens ma vie, by Thoinot Arbeau (1520-1595). Score published on MuseScore (artist:
+% Thoinot Arbeau), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thoinot Arbeau (died 1595,
+% Wikidata Q919152).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/12/QmdB7r4hBqnMy5Rpqjn8WGr6gSGdpfEksQmRd5YjTJ7FFx.mid (sha256
+% d60ba49d3be810f41145139c2d1f9e4dd27c9b68686ae9db9e2fbcd548293336): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:belle qui tiens ma vie
+M:4/4
+L:1/16
+Q:1/4=64.999783
+% Exact tempo 64.99978333405555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"G8 G4 ^F4 | "Gm7"G4 A4 "Bb"_B8 | "Bb"_B4 d4 "G7"c4 _B4 | "F7"_B4 A4 "Bb"_B8 |
+"Gm"G8 G4 ^F4 | "Gm7"G4 A4 "Bb"_B8 | "Bb"_B4 d4 "G7"c4 _B4 | "F7"_B4 A4 "Bb"_B8 |
+"Gm7"_B8 "Dm7"A4 A4 | "Cm7"G4 G4 "D"^F8 | "Bb"F8 "C7"E2 F2 G4 | "D"G4 ^F4 "G"G8 |
+"Gm"_B8 "Dm7"A4 A4 | "Cm7"G4 G4 "D"^F8 | "Bb"F8 "C7"E2 F2 G4 | "D"G4 ^F4 "G"G8 |

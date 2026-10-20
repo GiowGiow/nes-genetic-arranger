@@ -1,0 +1,36 @@
+%abc-2.1
+% DOLENTE, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dolente.html (file
+% https://www.beakauffmann.com/mpb_d/som/dolente.mid, sha256
+% 0055c804eef2583146a3ceabaf424c7883ce231a7d91f73f23c8b54a10466e3e), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DOLENTE
+M:2/4
+L:1/16
+Q:1/4=98.000144
+% Exact tempo 98.00014373354414 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E7"z5 F G _A | "Db"A _A2 =A5 | "Gm7"z D2 F A d2 e | "Ab"f8 |
+"G"e6 d2 | "A"d3 _d e _d3 | "A7"_B3 A _B c2 _B | "A7"_B5 A c _B |
+"F"A8 | "F"A8 | "E"z2 _A2 =A2 B2 | "Am"c5 e e e |
+"C7"e c A E F E2 D | "Ebm"D4 B A3 | "E"_A2 B2 c2 d2 | "Eb7"e e _d e _d _d _B _d |
+"A7"_B _B G _B G G E G | "Db"A _A2 =A5 | "Gm7"z D2 F A d2 e | "Ab"f8 |
+"G"e6 d2 | "A"d3 _d e _d3 | "A7"_B3 A _B c2 _B | "A7"_B5 A c _B |
+"D"A6 D2 | "Gm"G5 ^F G A | "Gm"_B3 c d e3 | "Gm7"g4 f2 d2 |
+"F"A6 f2 | "Abm"e3 e2 B e d | "D"_d3 =d e f3 | "F"d8 |
+"Cm"D2 E2 F2 ^F2 | "E"G6 G2 | "Bb"d6 d2 | "A"c8 |
+"A7"c3 F E D3 | "A"_D4 E2 G2 | "G"_B6 _B2 | "F"A3 c2 A E A |
+"C"_E6 D2 | "C7"G4 ^F G3 | "Bb7"_A4 B d3 | "F"c3 c2 d d d |
+"D7"d c A F D C3 | "Db7"z A A A A A3 | "A"z G G G G _A =A F | "A"F8 |
+"A"F2 F2 G2 _A2 | "Db"A _A2 =A5 | "Gm7"z D2 F A d2 e | "Ab"f8 |
+"G"e6 d2 | "A"d3 _d e _d3 | "A7"_B3 A _B c2 _B | "A7"_B5 A c _B |
+"F"A8 | "F"A8 | "E"z2 _A2 =A2 B2 | "Am"c5 e e e |
+"C7"e c A E F E2 D | "Ebm"D4 B A3 | "E"_A2 B2 c2 d2 | "Eb7"e e _d e _d _d _B _d |

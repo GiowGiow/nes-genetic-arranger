@@ -1,0 +1,23 @@
+%abc-2.1
+% Hannah Onestep, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 2 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Hannah Onestep
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"D16 | "D7"B12 F4 | "G"A4 G4 F4 G4 | "G"G12 F4 |
+"G"A4 G4 F4 A4 | "G"A4 G4 E8 | "Am"F16 | "D7"F16 |
+"Am"E16 | "E7"c12 ^G4 | "Am"B4 A4 ^G4 A4 | "Am"A12 E4 |
+"D7"G4 F4 =F4 ^F4 | "D7"F4 A8 F4 | "G"E4 D4 B,4 D4 | "D7"D16 |
+"G"D16 | "D7"B12 F4 | "G"A4 G4 F4 G4 | "G"G12 G4 |
+"G7"A4 G4 F4 G4 | "G7"G4 A4 B8 | "C"A16 | "C"A16 |
+"Am"c4 B4 A4 c4 | "D7"c4 B4 A8 | "G"B4 A4 G4 B4 | "Em"B4 A4 G8 |
+"Am"G4 E4 G4 B4 | "D7"B8 B8 | "G"G16 | "G"G16 |

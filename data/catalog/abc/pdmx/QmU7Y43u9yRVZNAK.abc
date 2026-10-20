@@ -1,0 +1,33 @@
+%abc-2.1
+% Casta Diva for String Quartet, by Vincenzo Bellini. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Vincenzo Bellini (died 1835,
+% Wikidata Q170209).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/6/QmU7Y43u9yRVZNAK5YyPHdKNmD4CjYa88owR4qtRNM8enK.mid (sha256
+% 86f88704bd796c33c236e2bd1161f4819bb3c0b1974599d65adde50ed6993f5e): melody track 2, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Casta Diva for String Quartet
+M:12/8
+L:1/16
+Q:1/4=75
+K:none
+P:A
+"Bbm"_B,2 _D2 ^F2 _B2 ^F2 _D2 "Eb7"_B,2 _D2 ^F2 _B2 ^F2 _D2 | "Fm"_A,2 C2 F2 _A2 F2 C2 "C7"G,2 _B,2 E2 G2 E2 _B,2 | "F"A,2 C2 F2 A2 F2 C2 A,2 C2 F2 A2 F2 C2 | "F"A,2 C2 F2 A2 F2 C2 "C7"_B,2 C2 E2 G2 E2 C2 |
+"C7"_B,2 C2 E2 G2 E2 C2 "F"A,2 C2 F2 A2 F2 C2 | "F"A,2 C2 F2 A2 F2 C2 "D7"A,2 C2 D2 ^F2 D2 C2 | "Gm"_B,2 D2 G2 _B2 G2 D2 _B,2 D2 G2 _B2 G2 D2 | "Gm"_B,2 D2 G2 _B2 G2 D2 "D7"C2 D2 ^F2 A2 ^F2 D2 |
+"D7"z2 C2 D2 A2 ^F2 D2 "Gm"_B,2 D2 G2 _B2 G2 D2 | "C"_B,2 C2 E2 G2 E2 C2 _B,2 C2 E2 G2 E2 C2 | "Fm"z12 "Dm"z6 A4 d2 | "C7"e z _d2 e2 _B6 "Dm"z2 _A2 =A2 f2 e2 =d2 |
+"C7"e z _d2 e2 _B6 "G"=B6 c2 z2 c z | "Am"c4 _d2 =d2 A2 _B2 "C7"c2 _B2 ^F2 G4 _A2 | "F"A,2 C2 F2 A2 F2 C2 "Dm7"A,2 C2 F2 A2 F2 C2 | "F"F12 "C7"_B12 |
+"Am7"_B12 "F"A12 | "F"A12 "D7"^F12 | "Gm"G24 | "Gm"G12 "D7"^F12 |
+"D7"^F12 "Gm"G12 | "C7"E24 | "Fm"F12 "Dm"z6 A4 d2 | "C7"e z _d2 e2 _B6 "F"z2 _A2 =A2 f2 e2 =d2 |
+"C7"e z _d2 e2 _B6 "G"z6 c5 c | "F"d4 c2 d4 c2 "C7"B4 c2 B c d e f g | "F#m"a2 a6 a6 a6 a4 | "Dm"_b3 a g f g3 f e d "Gm"e3 d c _B c3 _B A G |
+"Dm7"d3 c B c e3 f c A "C"A3 G ^F G B3 c _B G | "F"F4 z2 F5 F A5 F F5 F | "F"A5 F E5 F G5 F E5 D | "C"F5 E G5 F F5 E _B5 A |
+"C"A5 G _B5 c e5 d c5 _B | "F"A2 z4 A5 A c5 A A5 A | "F"c5 A G5 A _B5 A G5 F | "C"F5 E G5 F F5 E _B5 A |
+"C"A5 G _B5 c "C7"e5 d c5 _B | "F"A2 z10 "G"F12 | "C7"F12- "C"F6 F z D2 E2 | "F"F6 z6 "Dm7"z12 |
+"F"A,2 C2 F2 A2 F2 C2 "C7"_B,2 C2 E2 G2 E2 C2 | "C7"_B,2 C2 E2 G2 E2 C2 "F"A,2 C2 F2 A2 F2 C2 | "F"A,2 C2 F2 A2 F2 C2 "D"A,2 C2 D2 ^F2 D2 C2 | "Gm"_B,2 D2 G2 _B2 G2 D2 _B,2 D2 G2 _B2 G2 D2 |
+"Gm"_B,2 D2 G2 _B2 G2 D2 "D7"C2 D2 ^F2 A2 ^F2 D2 | "D7"C2 D2 ^F2 A2 ^F2 D2 "Gm"_B,2 D2 G2 _B2 G2 D2 | "C7"_B,2 C2 E2 G2 E2 C2 _B,2 C2 E2 G2 E2 C2 | "F"z2 A,2 C2 A2 F2 C2 "Dm"z2 A,2 D2 F2 D2 A,2 |
+"C7"z2 G,2 _B,2 _D2 _B,2 G,2 "F"z2 A,2 =D2 F2 =D2 A,2 | "C7"z2 G,2 _B,2 _D2 _B,2 G,2 =B,2 G,2 =B,2 C2 _B,2 G,2 | "Dm7"A,2 C2 F2 A2 F2 C2 "C7"_B,2 C2 E2 G2 E2 C2 | "F#m"z2 A6 A6 A6 A4 |
+"Dm"_B3 A G F G3 F E D "Gm"E3 D C _B, C3 _B, A, G, | "Dm7"D3 C B, C z6 "C7"E12 | "F"F2 z10 "G7"G12 | "Bbm"G12 "C7"G4 z8 |
+"C7"E20 z2 F2 | "Dm7"F12- "Am"F12 | "F"F4 z20 | "F"z24 |

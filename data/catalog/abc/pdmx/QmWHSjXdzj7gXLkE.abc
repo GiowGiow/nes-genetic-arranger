@@ -1,0 +1,35 @@
+%abc-2.1
+% Far and Beyond, by Charles Bolt. Score published on MuseScore (artist: Charles Bolt), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Charles Bolt (died 1902,
+% Wikidata Q94642310).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/24/QmWHSjXdzj7gXLkExbQXL9ygt56GwnvV1h9KEyqr4jtCXz.mid (sha256
+% f2fe6e2e98a2dfc78d122939a1a5f1d21343edef29205250200b5039091ecb08): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Far and Beyond
+M:4/4
+L:1/16
+Q:1/4=151.999939
+% Exact tempo 151.99993920002433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"_E,4 _B,2 _E4 _B,2 _E4 | "F"_E,4 _B,2 _E4 _B,2 _E4 | "F"_E,4 _B,2 _E4 _B,2 _E4 | "F"_E,4 _B,2 _E4 _B,2 _E4 |
+"F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E2- "Ab"_E2 _B,2 _E4 |
+"Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bbm"^F,4 _D2 ^F2- "F#"^F2 _D2 ^F4 |
+"Bb7"_D,4 _A,2 _D2- "Ab"_D2 _A,2 _D4 | "Ab"_D,4 _A,2 _D4 _A,2 _D4 | "Ab"_D,4 _A,2 _D4 _A,2 _D4 | "Bb7"_D,4 _A,2 _D2- "Gm7"_D2 _A,2 _D4 |
+"D"_E,4 _B,2 _E2- "Eb"_E2 _B,2 _E4 | "Eb"_E,4 _B,2 _E4 _B,2 _E4 | "Eb"_E,4 _B,2 _E4 _B,2 _E4 | "Eb"_B,4 _E4 "F"_E8 |
+"F#"_E,,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E2- "Db"_E2 _B,2 _E4 |
+"Bb"^F,,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bbm"^F,4 _D2 ^F2- "Db"^F2 _D2 ^F4 |
+"Bb7"_D,,4 _A,2 _D2- "Ab"_D2 _A,2 _D4 | "Ab"_D,4 _A,2 _D4 _A,2 _D4 | "Ab"_D,4 _A,2 _D4 _A,2 _D4 | "Bb7"_D,4 _A,2 _D2- "Gm7"_D2 _A,2 _D4 |
+"F#"_E,,4 _B,2 _E2- "D"_E2 _B,2 _E4 | "Eb"_E,4 _B,2 _E4 _B,2 _E4 | "Eb"_E,4 _B,2 _E4 _B,2 _E4 | "Eb"_E,4 _B,2 _E2- "Db"_E2 _B,2 _E4 |
+"Eb"B,,4 ^F,2 B,4 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,2- "Db"B,2 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,4 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,2- "Ebm7"B,2 ^F,2 B,4 |
+"Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F2- "Db"^F2 _D2 ^F4 | "Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bb"^F,4 _D2 ^F2- "Db"^F2 _D2 ^F4 |
+"Eb"B,,4 ^F,2 B,4 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,2- "Db"B,2 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,4 ^F,2 B,4 | "Eb"B,,4 ^F,2 B,2- "Ebm7"B,2 ^F,2 B,4 |
+"Bb"^F,4 _D2 ^F4 _D2 ^F4 | "Bbm"^F,4 _D2 ^F2- "Db"^F2 _D2 ^F4 | "Bb7"_D,4 _A,2 _D2- "Ab"_D2 _A,2 _D4 | "Ab"_D,8- "Gm7"_D,7 z |
+"Ab7"_E,4 _B,2 _E2- "F#"_E2 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E4 _B,2 _E4 | "F#"_E,4 _B,2 _E2- "Db"_E2 _B,2 _E4 |
+"Ebm"_E,,4 _B,2 _E4 _B,2 _E4 | "Ebm"_E,4 _B,2 _E4 _B,2 _E4 | "Ebm"_E,4 _B,2 _E4 _B,2 _E4 | "Ebm"_E,4 _B,2 _E2- "Fm"_E2 _B,2 _E4 |
+"F#"^F,4 _D2 ^F4 _D2 ^F4 | "F#"^F,4 _D2 ^F4 _D2 ^F4 | "F#"^F,4 _D2 ^F4 _D2 ^F4 | "F#"^F,4 _D2 ^F2- "Ebm7"^F2 _D2 ^F4 |

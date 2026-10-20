@@ -1,0 +1,36 @@
+%abc-2.1
+% TRAPALHADAS DO GAROTO, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/trapalhadas-do-garoto.html (file
+% https://www.beakauffmann.com/mpb_t/som/trapalhadas-do-garoto.mid, sha256
+% fdddeb8c10abfd13d89d74c655499ef401eb87f8f00ebfe6ec5e92d65d4d93e5), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TRAPALHADAS DO GAROTO
+M:2/4
+L:1/16
+Q:1/4=75.99997
+% Exact tempo 75.99996960001216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 | "Cm"z G2 _E z G F _E | "G7"D3 F G2 B2 | "Cm"_A F _A c2 c c G |
+"G7"G3 d2 d B d | "C7"e4 g2 g2 | "Fm"z _a f c z G F _E | "D7"D ^F A d2 A A2 |
+"G7"b z2 G2 _A =A _B | "Cm"z G2 _E z G F _E | "G7"D3 F G2 B2 | "Cm"_A F _A c2 c c G |
+"G7"G3 d2 d B d | "C7"e4 g2 g2 | "Fm"z _a f c z G F _E | "Cm"_E _E C z D D B, z |
+"Cm"z _E2 G2 _A =A _B | "Cm"z G2 _E z G F _E | "G7"D3 F G2 B2 | "Cm"_A F _A c2 c c G |
+"G7"G3 d2 d B d | "C7"e4 g2 g2 | "Fm"z _a f c z G F _E | "D7"D ^F A d2 A A2 |
+"G7"b z2 G2 _A =A _B | "Cm"z G2 _E z G F _E | "G7"D3 F G2 B2 | "Cm"_A F _A c2 c c G |
+"G7"G3 d2 d B d | "C7"e4 g2 g2 | "Fm"z _a f c z G F _E | "Cm"_E _E C z D D B, z |
+"Cm"z _E2 G2 _A =A _B | "C"z c2 B A G F E | "G7"D C D E F F B2 | "Am7"z c2 G z B2 _A |
+"Am"z3 c e d c B | "A7"A E _E =E z =E _E =E | "A7"z A _A =A _B2 _d2 | "Dm"C _B, A, _B, D C =B, C |
+"Dm"E D C D G F E F | "Dm"z f2 f z c2 d | "D7"z c2 c z A2 B | "Em"z G B ^F2 e2 e |
+"A7"E3 G _d _d e2 | "D7"d3 A d2 ^f2 | "Bm7"^f3 d3 z2 | "F"D F2 D F D2 F |
+"G7"B G G G2 _A =A _B | "C"z c2 B A G F E | "G7"D C D E F F B2 | "Am7"z c2 G z B2 _A |
+"Am"z3 c e d c B | "A7"A E _E =E z =E _E =E | "A7"z A _A =A _B2 _d2 | "Dm"C _B, A, _B, D C =B, C |
+"F"E D C D G F E F | "Dm"z f2 f z c2 d | "D7"z c2 c z A2 B | "Em"z G B ^F2 e2 e |
+"A7"E3 G _d _d e2 | "D7"z d d A z ^F2 ^F | "G7"z g g B z G G G | "C"c3 c2 G2 G |

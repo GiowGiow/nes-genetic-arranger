@@ -1,0 +1,36 @@
+%abc-2.1
+% PULADORA, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/puladora.html (file
+% https://www.beakauffmann.com/mpb_p/som/puladora.mid, sha256
+% d5da234a5fb9d0695f34baff9eadbf6d8df0881d52c329cbcf885b0f7034e5a2), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PULADORA
+M:2/4
+L:1/16
+Q:1/4=93.999981
+% Exact tempo 93.99998120000376 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"z3 e e f ^f g | "G7"a B G g f b g d' | "Am7"a c G g e c' g e' | "G7"e' f g b d' g f d' |
+"Am7"d' c' g e e f ^f g | "G7"a B G g f b g d' | "Am7"c' c G g e c' g e' | "G7"e' f g b d' g f b |
+"Am7"c' e e e e f ^f g | "G7"a B G g f b g d' | "Am7"a c G g e c' g e' | "G7"e' f g b d' g f d' |
+"Am7"d' c' g e e f ^f g | "G7"a B G g f b g d' | "Am7"c' c G g e c' g e' | "G7"e' f g b d' g f b |
+"Am7"c' c c c c _d =d _e | "E"e B _A e B _a e b | "Am"e c A e c a e c' | "E"d c' b f e b _a e |
+"Am"c b a e c _d =d _e | "E"e B _A e B _a e b | "Am"e c A e c a e c' | "E"d c' b f e e' b c' |
+"Am"a c c c c _d =d _e | "E"e B _A e B _a e b | "Am"e c A e c a e c' | "E"d c' b f e b _a e |
+"Am"c b a e c _d =d _e | "E"e B _A e B _a e b | "Am"e c A e c a e c' | "E"d c' b f e e' b c' |
+"Am"a e e e e f ^f g | "G7"a B G g f b g d' | "Am7"a c G g e c' g e' | "G7"e' f g b d' g f d' |
+"Am7"d' c' g e e f ^f g | "G7"a B G g f b g d' | "Am7"c' c G g e c' g e' | "G7"e' f g b d' g f b |
+"Am"c' c c c c _d =d _e | "Eb7"_e _d _B _e _d g _e _b | "Fm7"_e c _A _e c _a _e c' | "Eb7"d c' _b d _d c' _b _d |
+"Fm7"c _b _a _e c _d =d _e | "Cm7"_e _d _B _e _d g _e _b | "Fm7"_e c _A _e c _a _e c' | "Eb7"d c' _b d _d _e c' _b |
+"Fm7"_a c c c c _d =d _e | "Eb7"_e _d _B _e _d g _e _b | "Fm7"_e c _A _e c _a _e c' | "Eb7"d c' _b d _d c' _b _d |
+"Fm7"c _b _a _e c _d =d _e | "Cm7"_e _d _B _e _d g _e _b | "Fm7"_e c _A _e c _a _e c' | "Eb7"d c' _b d _d _e c' _b |
+"Am7"_a e e e e f ^f g | "G7"a B G g f b g d' | "Am7"a c G g e c' g e' | "G7"e' f g b d' g f d' |
+"Am7"d' c' g e e f ^f g | "G7"a B G g f b g d' | "Am7"c' c G g e c' g e' | "G7"e' f g b d' g f b |

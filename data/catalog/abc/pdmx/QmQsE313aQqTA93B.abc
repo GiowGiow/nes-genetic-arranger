@@ -1,0 +1,35 @@
+%abc-2.1
+% Elegie in F minor op. 30, by Henri Vieuxtemps. Score published on MuseScore (artist: Henri
+% Vieuxtemps), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henri Vieuxtemps (died 1881,
+% Wikidata Q312790).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/42/QmQsE313aQqTA93BaKfJ8yD88p8AaG2ySzBJQpRMFBAYDY.mid (sha256
+% 8f58c88c14d6231baf81b777f7ac5c4a6aab232e87f6013988e7ba47e6e8d29a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Elegie in F minor op. 30
+M:4/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z16 | "F7"z16 | "F7"z8 "Bbm"z8 | "Gm7"z8 "C7"z8 |
+"Fm"z16 | "Fm"z16 | "Fm"C12 _D3 C | "Fm"C12 F3 G |
+"Db"_A12 G3 F | "G7"G16 | "Bbm"G12 F3 E | "Fm"G4 F8 _E4 |
+"Db7"_D10 _D2 _E2 _D2 | "C"C12 C2 B,2 | "Fm"_D2 C2 C6 F2 G2 _A2 | "C7"_A4 G8 c4 |
+"Fm"c6 _A2 F2 C2 _A,2 F,2 | "C"C,12 c4 | "Fm"c12 f3 g | "Db"_a12 _a4 |
+"Eb7"_a8- "Ab7"_a2 ^f2 _a ^f z e | "Db"f12 f3 f | "Ebm7"f4 _e4- "F#"_e4 a3 _b | "Ebm7"_b4 _e4- "F#"_e2 _d'2 _d' z _d' z |
+"Ebm7"_d' _b f ^f _e8 _e =f _e =f | "Ab7"^f8 c _d _d _d _d _d _d c | "Db"_d8 z4 _D2 C2 | "F#m"D2 _D2 _D6 ^F2 _A2 =A2 |
+"Db7"A4 _A8 _d2 c2 | "F#m"d2 _d2 _d5 A2 ^F _D A,2 ^F, | "Db"_D,12 f4 | "Db7"f12 g3 _a |
+"Fm7"_a10 g2 f2 _e2 | "Eb7"_e4 _d _e z2 c3 _e2 _d3 | "Fm"c12 c3 c | "A7"c4 _B4- "Bbm"_B4 e3 f |
+"G7"f4 _B4- "Eb7"_B2 _a2 _a2 _a2 | "Gm7"_a f c _d _B8 _B2 c2 | "Bbm"_d2 c2 _d2 _e2 "Gm7"f2 g2 _a2 _b2 | "Fm"c'9 c' g _a f c G _A |
+"Fm"F C G, _A, F,2 C,2 _D,8 | "C7"_D,4 C,3 _A, _A,4 G,4 | "F7"F,16 | "F7"F,8- "Bbm"F,8 |
+"Bbm"F,8- "C7"F,8 | "Fm"F,8 "E7"E,8 | "Fm7"_E,16 | "Eb7"_E,9 _E, _B, D _E F _D G, |
+"Eb7"D, G, _D =D G _E _D G, =D, G, _D G c _d =e f | "Ab"_a12 g3 f | "Ab"f3 _e _e3 _d _d3 c c3 _B | "Ab"_A4 c4 "Fm"_e4 f4 |
+"C"g8- "G"g4 _a3 g | "C"g4 G,4- "G"G,4 _B, _A,2 G, | "C"C,4 g4- "Em7"g8 | "Ab"_a12 g3 f |
+"Ab"f3 _e _e3 _d c2 =d2 _e2 f2 | "Cm7"g8- "Bb"g4 f4 | "Cm7"_b8- "Bb7"_b8 | "Cm7"_b g2 _e _B G2 _E "Bb7"_B,2 C C G3 F |
+"Eb"_E8 "Cm"_e2 f2 g2 _a2 | "Cm7"_a4 _d4 "Ab"c2 _d2 _e2 f2 | "Cm"f4 _B4 _e2 f2 g _b2 _a | "Cm7"_d'8- "Ab"_d' c' c' _a =d _e g f |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Barren Rocks of Aden, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 4 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Barren Rocks of Aden
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 d2 e2 | "D"f6 g2 f4 e4 | "D"d4 f4 A4 d4 | "A7"c4 e4 A4 d2 e2 |
+"D"f4 A4 "A7"d4 e4 | "D"f6 g2 f4 e4 | "D"d4 f4 A4 d4 | "A7"c4 e4 A4 B2 c2 |
+"D"d12 d2 e2 | "D"f6 g2 f4 e4 | "D"d4 f4 A4 d4 | "A7"c4 e4 A4 d2 e2 |
+"D"f4 A4 "A7"d4 e4 | "D"f6 g2 f4 e4 | "D"d4 f4 A4 d4 | "A7"c4 e4 A4 B2 c2 |
+"D"d12 f2 g2 | "D"a6 f2 d4 f4 | "Em"e4 f4 A4 e2 f2 | "A7"g4 e4 c4 e4 |
+"D"d4 f4 "A7"A4 f2 g2 | "D"a6 f2 d4 f4 | "Em"e4 f4 A4 e2 f2 | "A7"g4 e4 c4 e4 |
+"D"d6 c2 d2 e2 f2 g2 | "D"a2 f2 d2 f2 a2 f2 d2 f2 | "Em"e4 f4 A4 e2 f2 | "A7"g2 e2 c2 e2 g2 e2 c2 e2 |
+"D"d4 f4 "A7"A4 f2 g2 | "D"a2 f2 d2 f2 a2 f2 d2 f2 | "Em"e4 f4 A4 e2 f2 | "A7"g4 e4 c4 e4 |
+"D"d12 z4 |

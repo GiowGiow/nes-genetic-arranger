@@ -1,0 +1,31 @@
+%abc-2.1
+% Preludes Op.28, by Frédéric Chopin. Score published on MuseScore (artist: Frédéric Chopin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Frédéric Chopin (died 1849,
+% Wikidata Q1268).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/39/QmcQoygH7hjNEjjC1zEwfc6AZm9tAGMrb2wbxLiCphymsP.mid (sha256
+% 77b4d900535dc9333d3f3b80ce2ba4d3fef8210f4107ccdf2a8b2a93b352661d): melody track 0, bars 0-46
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Preludes Op.28
+M:2/2
+L:1/16
+Q:1/4=94.999842
+% Exact tempo 94.99984166693055 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"^f3 =f2 e3 _e3 _d2 c3 | "Bbm"f c _e _d F A _B c _d _e f g a _b c' _d' | "Bbm"_e' f' g' a' _b' c'' _d'' _e'' =e'' f'' _e'' _d'' c'' _b' a' _b' | "Bbm"_a' ^f' =f' e' =f' _e' _d' c' _b =a _b _a ^f =f =e _d |
+"Ebm"c _d _e f ^f _a _b c' _b _a ^f =f _e _d c _e | "Ebm"^f d =f _e c ^F B c _d c =d _e =f _e =e =f | "Ebm"_a ^f =a _b _d' c' _d' =d' =f' _e' =e' =f' =a' _b' _a' g' | "B7"^f' =f'' _e'' _e' _d'' c'' c' _b' a' a _a' ^f' ^f =f' _e' ^f |
+"Bbm"f _e' _d' f _d' c' _e c' _d _b _a c _a ^f _B ^f | "Ebm7"A _B c _d _e =e f ^f =e =f =d _e c _d c _B | "Ebm7"A _B c _d _e =e f ^f =e =f =d _e c _d c _B | "Fm7"B c d _e =e f g _a ^f g =e =f d _e d c |
+"Fm7"B c d _e =e f g _a ^f g =e =f d _e d c | "F"_d _e f ^f _a _b =b c' _d' =d' =f' _e' c' =a ^f _e | "Bbm7"_d _e f ^f _a _b =b c' _d' c' _e' _d' _b g =e _d | "F7"c _d =d _e =e f ^f g _a =a c' _b ^f =f _e _d |
+"F7"c _B A c ^F =F E =F ^F =F _B A _d c _a ^f | "Bbm"f c _e _d F A _B c _d _e f g a _b c' _d' | "Bbm"_e' f' g' a' _b' c'' _d'' _e'' =e'' f'' _e'' _d'' c'' _b' a' _b' | "Bbm"_a' ^f' =f' e' =f' _e' _d' c' _b =a _b _a ^f =f =e _d |
+"F7"c _d _e f ^f _a _b c' _b _a ^f =f _e _d c _e | "B7"^f d e _e c ^F B c _d c =d _e =e _e =e =f | "B7"_a ^f b c' _d' c' =d' _e' =e' _e' =e' =f' _a' _b' _a' g' | "Ab7"^f' =f'' _e'' ^f' _e'' _d'' =f' _d'' c'' _e' c'' _b' _d' _b' _a' c' |
+"Db"_a' ^f' _b ^f' =f' _a =f' _e' ^f _e' _d' =f _b _a =f _d | "Ab"c _d _e =e f ^f _a =a g _a _e =e _A =e _e _d | "Dbm"c _d _e =e f ^f _a =a g _a _e =e _A =e _d B | "F#"_B =B _d =d _e =e ^f g =f ^f _e =e _d =d =B A |
+"E"_A =A B c _d =d e f _e =e _d =d B c B =A | "Fm7"_A =A _d c _B =A ^f =f _e _d c' _b _a ^f =f _e | "F#"_d c _b _a ^f =f _e _d c _B _a ^f =f _e _d c | "Ebm7"_B A _A G _A G ^F =F G ^F =F E ^F =F E _E |
+"Eb7"F E _E D =E _E D _D _E =D _D C _E _D C _B, | "Ebm7"A, _B, C _D _E =E F ^F =E =F =D _E C _D C _B, | "Ebm7"A, _B, C _D _E =E F ^F =E =F =D _E C _D C _B, | "Ebm7"C _D _E F ^F c _B C _B, C _D _E =F c _B ^F |
+"Db"E F ^F =F _B A ^f =f _e _d _B =F _E _D _B, =F, | "Ebm7"A, _B, C _D _E =E F ^F =E =F =D _E C _D C _B, | "Ebm7"A, _B, C _D _E =E F ^F =E =F =D _E C _D C _B, | "Ebm7"B, _D _E =E ^F _A _B =B _d _e =e ^f _a _b =b _d' |
+"B"e' _e' b _a ^f _e B _A ^F _E B, _A, ^F, _E, B,, _A,, | "Dm7"E,, F,, _B,, A,, ^F,, =F,, _D, C, _B,, A,, ^F, =F, _D, C, _B, A, | "F"^F, =F, _D C _B, A, ^F =F _D C _B A ^F =F _d c | "D7"_B A ^f =f _d c _b a ^f =f _d' c' _b a ^f' =f' |
+"F"_d' c' _b' a' ^f' =f' _d'' c'' =f'' z3 =f4 | "Bbm"z3 _b2 z11 |

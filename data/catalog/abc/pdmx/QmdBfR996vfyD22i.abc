@@ -1,0 +1,35 @@
+%abc-2.1
+% Sechs kleine Präludien BWV 933-938, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/12/QmdBfR996vfyD22i7aR5N2i94XcBU71KfneDWcgTrKM1t1.mid (sha256
+% dfac2d38e06a16ddabdf209f1a6c805c4e2b53409efcb041a729310fbf5d2644): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sechs kleine Präludien BWV 933-938
+M:3/8
+L:1/16
+Q:1/4=100.499987
+% Exact tempo 100.49998743750156 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"D _D =D A, =D F | "Dm"E D E A, E G | "Dm"F2 A z A z | "A7"_B _B _B _B _B G |
+"Dm"A _B A f d A | "G"_B A _B G _B d | "C"e f e c g _B | "F"A G A F A c |
+"Gm"d _e d c d _B | "F"c d c _B c A | "Em"_B c _B A _B G | "F7"A _B A G A F |
+"Bb"_B2 g z G z | "D7"A z f z F z | "C7"d2 f z _B z | "F"c z f z A z |
+"G7"G A B c d e | "G"f _a g f e d | "C"e g f e d c | "C"_B d c _B A G |
+"Dm7"A _B A G A F | "Gm"D z G3 A | "Gm"_B z F F F D | "F"F6 |
+"F"D _D =D A, =D F | "F"E D E A, E G | "Dm"F2 A z A z | "A7"_B _B _B _B _B G |
+"Dm"A _B A f d A | "G"_B A _B G _B d | "C"e f e c g _B | "F"A G A F A c |
+"Gm"d _e d c d _B | "F"c d c _B c A | "Em"_B c _B A _B G | "F7"A _B A G A F |
+"Bb"_B2 g z G z | "D7"A z f z F z | "C7"d2 f z _B z | "F"c z f z A z |
+"G7"G A B c d e | "G"f _a g f e d | "C"e g f e d c | "C"_B d c _B A G |
+"Dm7"A _B A G A F | "Gm"D z G3 A | "Gm"_B z F F F D | "F"F6 |
+"F"a _b a c' a f | "Am"g a g c' g e | "G"f a g f e d | "C"e d c d e f |
+"D7"g2 ^f g a ^f | "Gm"g2 d z _e z | "D7"c _e d c _B A | "C7"_B A G A _B G |
+"D"A G A d _B d | "D"^F E ^F d G d | "D7"A G A d G d | "D"^F E ^F d A c |
+"C7"_B A _B d e g | "A"A4 a z | "F"d f2 e d _d | "Dm"d e f e f d |

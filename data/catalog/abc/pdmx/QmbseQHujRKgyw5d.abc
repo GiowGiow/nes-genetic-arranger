@@ -1,0 +1,27 @@
+%abc-2.1
+% Una sañosa porfía, by Juan del Encina (1468-1529). Score published on MuseScore (artist: Juan
+% del Encina), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Juan del Encina (died 1529,
+% Wikidata Q1191258).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/42/QmbseQHujRKgyw5dfbtqoJKG5AX8RE3nCJtuN1UaPzJsz6.mid (sha256
+% 1851c2da395b745b60ceb9c12f56599ca3c479e2c7f563c47d3cbb491857fad5): melody track 0, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Una sañosa porfía
+M:2/2
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"D"D8 D8 | "A"E12 E4 | "D"F8 F8 | "C"G16 |
+"D"F16 | "A"E16 | "A"E8 E8 | "D"F12 F4 |
+"C"G8 G8 | "Dm"A16 | "Am7"B8 c8 | "G7"c8 B8 |
+"Dm7"A16 | "C"G16 | "D"F16 | "A"E16 |
+"Dm7"A8 A8 | "D"F12 F4 | "C"G8 G8 | "C"E16 |
+"G"D16 | "C"C16 | "C"C8 C8 | "G"D8 F8 |
+"Am"E8 E8 | "D"D16 | "D"D16 | "A"E16 |
+"D7"F8 G8 | "Dm7"A16 | "Am7"B8 c8 | "G7"c8 B8 |
+"Dm7"A16 | "C"G16 | "D"F4 E4 F8 | "A"E16 |

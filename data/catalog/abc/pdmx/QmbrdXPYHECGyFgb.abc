@@ -1,0 +1,34 @@
+%abc-2.1
+% The School of Velocity Op.299, by Carl Czerny. Score published on MuseScore (artist: Carl
+% Czerny), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carl Czerny (died 1857, Wikidata
+% Q215333).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/40/QmbrdXPYHECGyFgbkL8adrnPH8qec9VqGVxxjjTPDyXzGS.mid (sha256
+% c846ba8144b566d2ed065f2430c3a129c649a9c4b1248d6d38a977a9a807d58e): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The School of Velocity Op.299
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"C D E F G F E D C D E F G F E D | "Em"C D E F G F E D C D E F G A B c | "F"D E F G A G F E D E F G A B c d | "G"B A B c d c B A G A B c d e f g |
+"C"e d e f g f e d c d e f g f e d | "Em"c d e f g f e d c d e f g a b c' | "F"d e f g a g f e d e f g a b c' d' | "G"b a b c' d' c' b a g a b c' d' e' f' g' |
+"C"e'2 z14 | "C"e'2 z10 e'2 z2 | "D"^f'2 z10 a2 z2 | "D"d'2 z6 "D7"z4 c'2 z2 |
+"G"b2 z6 b g a b c' d' e' ^f' | "Em7"g' a' b' c'' d'' c'' b' a' g' ^f' e' d' c' b a g | "D7"^f g a b c' b a g ^f e d c B A G ^F | "D7"A D E ^F G A B c "D"d e ^f g a b c' d' |
+"G"b g a b c' d' e' ^f' g' d' e' ^f' g' d' e' ^f' | "Em7"g' a' b' c'' d'' c'' b' a' g' ^f' e' d' c' b a g | "D7"^f g a b c' b a g ^f e d c B A G ^F | "D7"A D E ^F G A B c d e ^f g a b c' d' |
+"G"b2 z7 B c d e ^f g a | "G"b2 z6 b a g ^f e d c B | "Am7"c2 z6 "A"z c d e ^f g a b | "Am7"c'2 z6 "A"c' b a g ^f e d c |
+"Bm7"d2 z6 "B"z d e ^f g a b c' | "Bm7"d'2 z6 "B"d' c' b a g ^f e d | "C"e ^f g a b c' d' e' "D7"^f' e' d' c' b a g ^f | "Em7"g a b c' d' e' ^f' g' "D7"a' g' ^f' e' d' c' b a |
+"G"b b' a' g' ^f' e' d' _d' =d' b' a' g' ^f' e' =d' _d' | "G"b b' a' g' ^f' e' d' _d' "D7"e' =d' c' b a b c' =d' | "Em7"b b' a' g' ^f' e' d' _d' =d' b' a' g' ^f' e' =d' _d' | "Em7"d' b' a' g' ^f' e' d' _d' "D7"e' =d' c' b a b c' =d' |
+"G"b d' c' b a c' b a "Dbm7"g b a g f a g f | "Ab"e g f e d f e d "D"c e d c B d c B | "Dm7"A c B A _A B =A _A =A c B =A _A B =A _A | "C"A B c d e ^f _a =a "A7"g e =f g =a g =f e |
+"Em7"d e ^f g a b c' d' "G"g a b c' d' e' ^f' g' | "D"d' e' ^f' g' a' b' c'' d'' "D7"z4 ^f4 | "G"g4 z12 | "G"z4 B4 B4 B4 |
+"D"d8 c8 | "D"z4 ^f4 "D7"^f4 ^f4 | "G"g8 d8 | "G"z4 b4 b4 b4 |
+"D"d'8 c'8 | "D"z4 ^f'4 "D7"^f'4 ^f'4 | "G"g'2 z6 "D"d' e' ^f' g' a' b' c'' d'' | "G"b'2 z2 g'2 z2 "D"d' e' ^f' g' a' b' c'' d'' |
+"G"b'2 z2 g'2 z2 "Am"f' g' a' b' c'' d'' e'' f'' | "G"e'' d'' c'' b' a' g' f' e' "F"d' e' f' g' a' b' c'' d'' | "Em"c'' b' a' g' f' e' d' c' "Dm"b c' d' e' f' g' a' b' | "C"a' g' f' e' d' c' b a "Bm"g a b c' d' e' f' g' |
+"Am"f' e' d' c' b a g f "G"e f g a b c' d' e' | "F"d' c' b a g f e d "Em"c d e f g a b c' | "G7"b g' f' e' d' c' b a g f e d c B A G | "G7"F E D C B, A, G, A, B, C D E F G A B |
+"C"c2 z10 B2 z2 | "C"c2 z2 c4- "C7"c4 _B4 | "F"A2 z10 c2 z2 | "F"f2 z2 f8 a4 |
+"G"B2 z10 d2 z2 | "G"g2 z2 g4- "G7"g4 f4 | "C"e f g a b c' d' e' "Em"d' e' d' c' b a g f | "C"e f g a b c' d' e' "Em"d' e' d' c' b a g f |

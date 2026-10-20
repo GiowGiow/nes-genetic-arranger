@@ -1,0 +1,29 @@
+%abc-2.1
+% Dignare me, by Carlo Gesualdo. Score published on MuseScore (artist: Carlo Gesualdo), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carlo Gesualdo (died 1613,
+% Wikidata Q192958).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/23/Qmahax4LNNxvsfxDjdbHQB1hduWN5xy7dUEUXyFWGo5yXi.mid (sha256
+% b3b4bd427b101b4c74fa830d6b7569ab139e15ec7403fdc6c7944962dfb0e2aa): melody track 3, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dignare me
+M:2/2
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z16 | "Gm"z16 | "Eb"z16 | "Bb"z16 |
+"Dm"z8 D,8 | "Cm"G,4 A,4 _B,2 C2 D4 | "Cm7"D4 C2 _B,2 _E8 | "Gm7"D4 D4 D4 F4 |
+"Dm7"C8 z8 | "Gm7"z8 A,8 | "Dm7"A,4 _B,4 G,8 | "Bb"z16 |
+"Gm"z4 C4 _B,8 | "Cm7"A,2 G, A, _B,8 G,4 | "Dm"G,4 G,4 C4 D4 | "Gm"_E8 D4 G,4 |
+"Dm"F,4 E,2 D,2 G,2 F,2 G,2 A,2 | "Am7"_B,4 _B,4 F,8 | "Dm7"F,4 E,4 A,4 _B,4 | "Bb"C4 F,8 _B,4 |
+"C7"G,8 F,4 G,4 | "C"A,8 G,4 _B,4 | "Dm"_B,4 C8 _B,2 A,2 | "Gm"G,2 F,2 G,4 F,8 |
+"A7"z8 G,6 G,2 | "Dm7"F,4 A,4 G,6 A,2 | "Gm7"_B,4 G,4 z4 C,4 | "C"G,8 G,4 C4 |
+"Cm7"C2 F,2 A,6 G,2 _B,4 | "Bb"_B,4 A,8 G,4 | "Dm7"A,8 z4 A,4 | "Cm"C8 _B,4 C4 |
+"Dm"D4 D4 A,6 A,2 | "F"G,4 F,4 E,8 | "Dm"D,4 A,4 F,8 | "A"D,4 D,4 E,8 |
+"Dm"D,8 G,4 D4 | "Dm"D4 C4 F6 C2 | "Gm"C4 D4 D8 | "G"D8 D8 |

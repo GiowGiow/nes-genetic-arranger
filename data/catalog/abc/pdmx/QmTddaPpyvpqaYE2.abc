@@ -1,0 +1,34 @@
+%abc-2.1
+% Fernando Sor - Opus 31.12 - Andante, by Fernando Sor. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Fernando Sor (died 1839,
+% Wikidata Q254110).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/15/QmTddaPpyvpqaYE2xc6dqegQ697j4pCyavRPWu1xWYYdBj.mid (sha256
+% e3f15a6bc084efd9a850eb7cc269852e721a76f1d181d6647eaa693e808c967f): melody track 0, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fernando Sor - Opus 31.12 - Andante
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"D F D F D z F2 E2 F2 G2 A2 | "C"G _B G _B G z _B2 A2 _B2 G2 F2 | "C"_D E _D E _D z E2 F2 G2 A2 G2 | "C"D F D F D z F2 G2 _A2 =A2 =A2 |
+"C"G _B G _B G z _B2 A2 _B2 c2 _B2 | "C"F A F A F z A2 _A2 =A2 _B2 =A2 | "C"E G E G E z E2 D F D F D z G2 | "C"_D E _D E _D z A, _B, _B, A, A, G, G, F, F, E, |
+"C"D F D F D z F2 E2 F2 G2 A2 | "C"G _B G _B G z _B2 A2 _B2 G2 F2 | "C"_D E _D E _D z E2 F2 G2 A2 G2 | "C"D F D F D z F2 G2 _A2 =A2 =A2 |
+"C"G _B G _B G z _B2 A2 _B2 c2 _B2 | "C"F A F A F z A2 _A2 =A2 _B2 =A2 | "C"E G E G E z E2 D F D F D z G2 | "C"_D E _D E _D z A,2 A,,2 A,2 _B,2 G,2 |
+"C"C F C F C z F2 E2 F2 G2 F2 | "C"C E C E C z C2 B,2 C2 E2 F2 | "C"C G C G C z G2 ^F2 G2 A2 G2 | "C"C F C F C z C2 B,2 C2 D2 C2 |
+"C"C F C F C z A2 G2 F2 G2 A2 | "C"_B, D _B, D _B, z F2 E2 F2 E2 D2 | "C"A, C A, C A, z F2 E2 F2 G2 E2 | "C"C F C F C z C2 F,,4 z4 |
+"C"C F C F C z C2 F2 C2 F2 A2 | "C"G c G c G z G2 G2 G2 G2 G2 | "C"^F c ^F c ^F z c2 c2 c2 c2 c2 | "C"G _B G _B G z _B2 _B2 _B2 _B2 _B2 |
+"C"E A E A E z A2 A2 A2 A2 A2 | "C"D A D A D z A2 A2 A2 A2 A2 | "C"D _A D _A D z _A2 _A2 _A2 _A2 _A2 | "C"_D A _D A _D z A2 =D A =D A =D z A2 |
+"C"_D A _D A _D z A2 =D A =D A =D z A2 | "C"_D A _D A _D z A2 A,,2 A2 _A2 G2 | "C"D F D F D z F2 E2 F2 G2 A2 | "C"G _B G _B G z _B2 A2 _B2 G2 F2 |
+"C"_D E _D E _D z E2 F2 G2 A2 G2 | "C"D F D F D z F2 G2 _A2 =A2 =A2 | "C"G _B G _B G z _B2 A2 _B2 c2 _B2 | "C"F A F A F z A2 _A2 =A2 _B2 =A2 |
+"C"E G E G E z E2 D F D F D z G2 | "C"_D E _D E _D z A, _B, _B, A, A, G, G, F, F, E, | "C"D F D F D z F2 E2 F2 G2 A2 | "C"G _B G _B G z _B2 A2 _B2 G2 F2 |
+"C"_D E _D E _D z E2 F2 G2 A2 G2 | "C"D F D F D z G2 A2 A2 _B2 =B2 | "C"A c A c A z c2 c2 c2 c2 c2 | "C"G _B G _B G z _B2 _B2 _B2 _B2 _B2 |
+"C"E _B E _B E z _B2 _B2 _B2 _B2 _B2 | "C"E A E A E z A2 A2 A2 A2 A2 | "C"D G D G D z E,2 _D G _D G _D z A,,2 | "C"D F D F D z D,2 D F D F D z _B,,2 |
+"C"D E D E D z G,,2 _D E _D E _D z A,,2 | "C"D A D A D z F,2 D _A D _A D z E,2 | "C"E G E G E z _D,2 =D F =D F =D z =D,2 | "C"D E D E D z G,2 D E D E D z _A,2 |
+"C"D F D F D z F2 _D E _D E _D z E,2 | "C"F, D F, D F, z A,2 F, D F, D F, z A,2 | "C"F, D F, D F, z A,2 D2 A,,2 D2 A,,2 | "C"D16 |

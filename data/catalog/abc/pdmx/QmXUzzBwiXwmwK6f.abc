@@ -1,0 +1,34 @@
+%abc-2.1
+% Guillaume Tell, by Rossini. Score published on MuseScore (artist: Gioacchino Rossini), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Rossini (died 1868, Wikidata
+% Q9726).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/47/QmXUzzBwiXwmwK6fm8cajzxXXtc56f2o2ovjcVh213twxD.mid (sha256
+% 5b3442360e70175fb8941a3a3ec344e34dd8eee4cf58b838d6ff9404cc358795): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Guillaume Tell
+M:3/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"Em"z12 | "G"z12 | "Em"E4 _E4 =E4 | "B"G3 z ^F z7 |
+"B"z12 | "Abm7"z12 | "Abm7"z12 | "B7"_E4 =E4 ^F4 |
+"E"A3 z G z7 | "B"z12 | "Am7"z8 E3 ^F | "G"G6 z2 F4 |
+"Dm7"B,2 z10 | "B7"z12 | "B"z12 | "Db7"z12 |
+"E"E12 | "A"E12 | "B"_E12 | "Dbm7"E8 _E4 |
+"E"D4 B,4 E4 | "A"E12 | "A"z12 | "Dbm7"B,2 E2 _E2 =E2 ^F2 =E2 |
+"B7"E3 _E _E8 | "Dbm7"B,2 E2 _E2 =E2 ^F2 =E2 | "B7"E3 _E _E8 | "Db7"F12 |
+"F#m"^F12 | "B"_E12 | "F#7"E8 _E4 | "E7"D4 E4 F4 |
+"Am"E6 z2 F4 | "C"E2 z10 | "E"E3 B, _A,2 z6 | "F#m"z12 |
+"Ebm"E3 _E _E2 z6 | "Ab7"z12 | "D7"z12 | "B"_E12 |
+"E"E2 E4 E4 _E2 | "E"E2 z10 | "E"z2 _A,4 _A, z _A, z _A, z | "E"_A, z _A,4 _A, z _A, z _A, z |
+"E"_A, z _A,4 _A, z _A, z _A, z | "E"_A,2 z10 | "E"_A, _A,2 z _A,2 z2 _A,2 z2 | "E"_A,2 z10 |
+"C"z12 | "F"z12 | "F"z8 A,4 | "F"z2 A, A, A,4 z2 A, A, |
+"Dm7"A,2 F,2 C,2 F,2 A,2 A,2 | "Am"_B,2 A,2 A,2 F,2 C,2 F,2 | "C"A,2 F,2 A,2 C2 G,2 G, G, | "C"G,2 G,2 G,2 G, G, G,2 G,2 |
+"C"G,2 G, G, G,2 G,2 G,2 G, G, | "Am7"C2 C2 C2 C C C2 D2 | "Am7"E2 D2 C2 C C C2 _B,2 | "C7"E,2 F,2 G,2 z2 _B,4 |
+"C"A,4 G,4 z4 | "C"z2 C C C2 C C C2 C C | "Dm7"F2 G2 A2 C C C2 C C | "C"F2 G A G2 E2 C2 C C |

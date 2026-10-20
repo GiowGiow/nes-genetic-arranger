@@ -1,0 +1,33 @@
+%abc-2.1
+% Geistliches Lied Op.30, by Johannes Brahms (1833-1897). Score published on MuseScore (artist:
+% Johannes Brahms), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johannes Brahms (died 1897,
+% Wikidata Q7294).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/36/Qmap8LaDNCJNEB2epueGheSDQdJaYJjHTnrPKNyKGKdhVJ.mid (sha256
+% 8361f4a0998ce47af63ed131f018de8c95bd6c583dada8ef075d6d9041df284d): melody track 0, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Geistliches Lied Op.30
+M:4/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Cm"z16 "Fm7"z8 F8 | "Cm"F8 _E8 "Cm7"F8 G8 | "Dm"_A16 "Eb"G8 z8 | "Cm"z16 "F"z8 _e8 |
+"Bb"d16 _A16 | "Cm"G16 "C"z16 | "Dm"z4 F3 z c4 c4 "Dm7"z8 c8 | "Eb"_e16 "Cm7"G16 |
+"Dm"F16 "Fm"z8 _B8 | "Fm7"_A8 _e8 "Ab"d8 c8 | "Eb7"_B16 "Cm7"_A4 z4 G8 | "Bb7"F16 "Eb"_E16 |
+"Eb"z16 "Cm7"z16 | "Fm7"z16 "Ab"z16 | "C"z16 "G"z8 G8 | "F"G8 _A8 "Fm7"G8 F8 |
+"G7"c16 "Cm"B4 z4 c8 | "Cm7"_e16 "Dm7"_e4 z4 f8 | "Bb"f16 "Cm7"_B4 z4 _A8 | "Ab"c8 c8 "G"z8 _e8 |
+"Bb"d16 "Gm7"d16 | "Ab"_e16 "Fm7"z8 c8 | "G"c8 B8 "Bb"z8 G8 | "F"c8 F8 "Gm7"z16 |
+"Eb"z16 "Ab"z8 c8 | "G"d8 _B8 "Bb7"c8 d8 | "Fm"_e8 f8 "C7"d8 c8 | "Eb"B8 c8 "G7"d16 |
+"G7"d16 "Cm"c16 | "Cm"z16 "F"z16 | "Dm7"z16 "Fm"z16 | "Eb"z32 |
+"Eb"z16 "Dm7"z16 | "Cm"z16 "Fm7"z8 F8 | "Cm"F8 _E8 "Cm7"F8 G8 | "Dm"_A16 "Eb"G8 z8 |
+"Cm"z16 "F"z8 _e8 | "Bb"d16 _A16 | "Cm"G16 "C"z16 | "Dm"z4 F3 z c4 c4 "Dm7"z8 c8 |
+"Eb"_e16 "Cm7"G16 | "Dm"F16 "Fm"z8 _B8 | "Fm7"_A8 _e8 "Ab"d8 c8 | "Eb7"_B16 "Cm7"_A4 z4 G8 |
+"Bb7"F16 "Eb"_E16 | "Db"z32 | "C"z32 | "Cm7"z16 "Eb"z16 |
+"Db"z32 | "Ab"z32 | "Gm"z8 G8 _B8 _e8 | "Fm"_e8 g8 f8 _e8 |
+"Fm"d16 "G7"z8 d8 | "Cm"d16 "Cm7"c16 | "Bb7"c16 "G7"_B16 | "Cm"_B16 "F7"_A16 |
+"Gm7"_A16 "Cm7"G16 | "Eb7"G24 z8 | "Fm7"_A16- "Ab"_A16 | "Eb"G32 |

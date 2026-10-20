@@ -1,0 +1,27 @@
+%abc-2.1
+% Puri 10B, by Johann Sebastian Bach (1685 - 1750). Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/26/QmTjSfWYErf2odme6Sg7BBjcjvQMJjRQzWMyMKG3vrxxvd.mid (sha256
+% 320178053cd3b226d0aefbe71f313ede2335ecc1cd89fb5144b592dbef377cdc): melody track 0, bars 0-31
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Puri 10B
+M:4/4
+L:1/16
+Q:1/4=76.000162
+% Exact tempo 76.00016213367923 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z2 c B c2 G2 _A2 c B c2 d2 | "C"G2 c B c2 d2 F G _A4 G F | "C"_E c g ^f g =F c D _e2 g ^f g2 a2 | "C"d2 g ^f g2 a2 c d _e2 A2 d c |
+"C"_B2 _e d _e C G _E _A G f _e f D =A F | "C"_B A g f g _E =B G c G d _e f2 c =B | "C"c2 _e d c _B _A G "Ab"F2 _a2 g2 f2 | "G"_e2 d2 _e2 f2 "Fm"B2 c _E d2 B2 |
+"Dm7"c2 g ^f g2 d2 "Gm"_e2 c B c2 =e2 | "Fm7"f2 f e f2 c2 "Fm"d2 _B A _B2 d2 | "Eb7"_e2 _e d _e2 _B2 "Ab"c2 _e d _e2 f2 | "Fm"_B2 _e d _e2 f2 "Bb7"_A _B c4 _B _A |
+"Eb"G _E F G _A _B c d "Cm7"_e d c d _e f g =a | "Gm7"_b F G _A _B c d e "Fm7"f _e d _e f g =a =b | "Eb"c'2 b a g f _e d "Am"c2 _e ^F d2 c2 | "Cm"_B2 A G _B2 c2 "D7"^F _E G2 A2 ^F _D |
+"Gm"G2 d c d D E ^F "C7"G A e d e E =F G | "D7"A _B ^f e ^f ^F G A "G"_B2 G =F G2 G,2 | "Cm7"_A,2 =A G =A2 =A,2 "Dm7"_B,2 =B =A =B2 =B,2 | "Eb"C F c B c _B, G G, "Dm"_A2 c =B c2 d2 |
+"Fm"G2 c B c2 d2 "G7"F G _A2 D2 G F | "Gm"_E2 c B c2 G2 "Fm7"_A2 F =E F2 =A2 | "Fm"_B2 _B A _B2 F2 "Eb"G2 _E D _E2 G2 | "Eb"C2 _A _B c =B c _A "Dm7"F2 D _E F _E F D |
+"G"B,2 d c d2 F2 "G7"_E2 _e d _e2 G2 | "Cm"F2 f _e f2 _A2 "G"G f _e d c B =A G | "Ab"c2 f2 _e2 d2 "G"_E2 _A2 G2 F2 | "Fm"G2 F _E F2 D2 "Eb"_A2 G2 z2 =A2 |
+"G"B D c C F _E D C "C"C2 c B c2 G2 | "C"_A2 c B c2 d2 G2 c B c2 d2 | "C"F G _A2 D2 G F E8 |

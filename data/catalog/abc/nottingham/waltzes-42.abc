@@ -1,0 +1,32 @@
+%abc-2.1
+% She Was a ..., from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 42 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:She Was a ...
+M:3/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z4 a4 a4 | "D"a4 ^g4 b4 | "D"a4 f4 d4 | "G"B8 ^A4 |
+"D"A12 | "D"a8 a4 | "D"a8 d4 | "A7"c12 |
+"A"c12 | "Em"b12 | "Em"e4 g4 b4 | "D"a8 f4 |
+"Bm"e8 d4 | "E7"B8 f4 | "E7"f4 e4 d4 | "A7"e12 |
+"A7"e4 f4 e4 | "D"d12 | "E7"e12 | "A7"c12 |
+"A7"c4 B4 A4 | "D"d4 e4 f4 | "G"g8 b4 | "A7"e12 |
+"A7"e4 f4 g4 | "D"a8 g4 | "D"f4 e4 d4 | "G"b8 a4 |
+"Em"g8 e4 | "A7"a8 a4 | "A7"g4 f4 e4 | "D"d12 |
+"D"d4 a4 a4 | "D"a4 ^g4 b4 | "D"a4 f4 d4 | "G"B8 ^A4 |
+"D"A12 | "D"a8 a4 | "D"a8 d4 | "A7"c12 |
+"A"c12 | "Em"b12 | "Em"e4 g4 b4 | "D"a8 f4 |
+"Bm"e8 d4 | "E7"B8 f4 | "E7"f4 e4 d4 | "A7"e12 |
+"A7"e4 f4 e4 | "D"d12 | "E7"e12 | "A7"c12 |
+"A7"c4 B4 A4 | "D"d4 e4 f4 | "G"g8 b4 | "A7"e12 |
+"A7"e4 f4 g4 | "D"a8 g4 | "D"f4 e4 d4 | "G"b8 a4 |
+"Em"g8 e4 | "A7"a8 a4 | "A7"g4 f4 e4 | "D"d12 |
+"D"d4 z8 |

@@ -1,0 +1,29 @@
+%abc-2.1
+% Études enfantines Op.37, by Henry Lemoine. Score published on MuseScore (artist: Henry Lemoine),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Lemoine (died 1854,
+% Wikidata Q1606982).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/14/QmQCN43DjjA1iKpUXEWGqPKiXWosDSqV25RQAnaYsJbVKq.mid (sha256
+% 2b68a3d729a4c2199c33dcc8d9c527b7e0a61de64422053f15b66ae329e89731): melody track 0, bars 0-40
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études enfantines Op.37
+M:2/4
+L:1/16
+Q:1/4=124.99974
+% Exact tempo 124.99973958387586 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"B e _e =e B _A =E _A | "B7"B5 A ^F _A | "E"E ^F _A =A B _d _e =e | "B7"f ^f a _a ^f e _e _d |
+"E"B e _e =e B _A =E _A | "B7"B5 A ^F _A | "B7"E ^F _A =A _B =B _d _e | "B7"_e4 =e z3 |
+"F#7"e _e _d B _B =B _d _B | "Abm7"B _d _e =e ^f _a _b =b | "F#7"_b ^f e _d _B _d ^f ^f | "Abm7"^f4 _e z3 |
+"F#7"e _e _d B _B =B _d _B | "Abm7"B _d _e =e ^f _a _b =b | "F#7"_b _d' _b ^f e _d _B ^f | "B"B8 |
+"Em"B c B _B =B _e =e g | "B"^f z B5 z | "Em"z c B _B =B _e =e g | "B"^f z B5 z |
+"Ebm"z _d _e =e ^f _a _b =b | "Em"c'2 e' c' g e c B | "F#7"_B z =B z _d z _B2 | "B"B z3 B z B z |
+"Dbm7"B _d B _d B _d B _d | "Ebm"B _e ^f _e B z B2 | "Ab7"z _d B _d B _d B _d | "F#m"B _e ^f _e B z B2 |
+"F#m7"z _d B _d B _d B _d | "Ebm7"B _d B _d B _d B _d | "B7"B _d B _d B _d B _d | "Abm7"B _d B _d B _d B _d |
+"E"B e _e =e B _A =E _A | "B7"B5 A ^F _A | "E"E ^F _A =A B _d _e =e | "B7"f ^f a _a ^f e _e _d |
+"E"B e _e =e B _A =E _A | "B7"B5 A ^F _A | "B7"E ^F _A =A _B =B _d _e | "B7"_e4 =e z3 |

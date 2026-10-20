@@ -1,0 +1,33 @@
+%abc-2.1
+% Avec du vin endormons-nous RCT 18, by Jean-Philippe Rameau (1683-1764). Score published on
+% MuseScore (artist: Jean-Philippe Rameau), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean-Philippe Rameau (died 1764,
+% Wikidata Q1145).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/38/QmQqnRrd66wXeQoaTZUvzjHaWehebdY4LbF4XcVH4i42Dw.mid (sha256
+% 53ac81687c74384b43f67e70f398286a74c53662ca6247023cd73f81cc811b9e): melody track 1, bars 0-51
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Avec du vin endormons-nous RCT 18
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em"z16 | "F#m"z8 "Abm"z8 | "E"z8 "A"A,4 B,2 C2 | "A"B,4 D4 "G"_D4 E4 |
+"G"A,4 A,4 "Dm"D8 | "C7"D8 "D"C8 | "D"C8 "Gm"_B,4 G,4 | "Am7"_E8 "G7"D8 |
+"G7"B,8 "Cm"C4 D2 _E2 | "Fm"D4 F4 "C7"E4 G4 | "C7"C4 C4 "Fm"F8 | "Eb7"F8 "D7"_E8 |
+"Dm"_E8 "Bbm"_D4 _B4 | "Cm7"^F8 "Bb7"=F8 | "Bb7"D8 "Ebm"_E4 F2 ^F2 | "Abm"F4 _A4 "Eb7"G4 _B4 |
+"Eb7"_E4 _E4 "Abm"_A8 | "F#7"_A8 "Cm"^F8 | "Fm"^F8 "Dbm"E4 _D4 | "Ebm7"A8 "Db7"_A8 |
+"Db7"F8 "F#m"^F4 _A2 =A2 | "D"_A4 B4 "Dbm"_B4 _d4 | "C7"^F4 ^F4 "Bm"B8 | "A7"B8 "Ebm"A8 |
+"Abm"A8 "Em"G4 E4 | "F#m7"C8 "E7"B,8 | "E7"_A,8 "Am"=A,4 B,2 C2 | "Dm"B,4 D4 "C"_D4 E4 |
+"Eb7"A,4 A,4 "Dm"D8 | "C7"z8 "D"C8 | "D"C8 "Gm"_B,4 G,4 | "Am7"_E8 "G7"D8 |
+"G7"B,8 "Cm"C4 D2 _E2 | "Fm"D4 F4 "C7"E4 G4 | "C7"C4 C4 "Fm"F8 | "Eb7"F8 "D7"_E8 |
+"Dm"_E8 "Bbm"_D4 _B4 | "Cm7"^F8 "Bb7"=F8 | "Bb7"D8 "Ebm"_E4 F2 ^F2 | "Abm"F4 _A4 "Eb7"G4 _B4 |
+"Eb7"_E4 _E4 "Abm"_A8 | "F#7"_A8 "Cm"^F8 | "Fm"^F8 "Dbm"E4 _D4 | "Ebm7"A8 "Db7"_A8 |
+"Db7"F8 "F#m"^F4 _A2 =A2 | "D"_A4 B4 "Dbm"_B4 _d4 | "C7"^F4 ^F4 "Bm"B8 | "A7"B8 "Ebm"A8 |
+"Abm"A8 "Em"G4 E4 | "F#m7"c8 "B"B8 | "E"_A16 |

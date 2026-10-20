@@ -1,0 +1,36 @@
+%abc-2.1
+% MOLEQUE SARADO, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_m/moleque-sarado.html (file
+% https://www.beakauffmann.com/mpb_m/som/moleque-sarado.mid, sha256
+% 4f9b3f16c8fb5fbdcbcb2c67bf771d9d50be1fbde3820d1dcfcce3c79f8e196a), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:MOLEQUE SARADO
+M:2/4
+L:1/16
+Q:1/4=107.999914
+% Exact tempo 107.9999136000691 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z2 c2 z2 c2 | "C"z c2 _B G E2 C | "Fm"z2 c2 z2 c2 | "C"z c2 _B G E2 C |
+"Bbm"z G2 _B _d _a2 g | "Fm"f c2 _A c2 _d2 | "C7"_d c2 _B _B _A2 G | "Dm7"F2 c2 f2 z2 |
+"Fm"c _A2 _A _A F2 z | "Bbm"_d _B2 _B _B2 _B2 | "C7"_B G2 G G E2 z | "Fm"c _A2 _A _A2 _A2 |
+"Fm"F G2 _A2 G2 F | "C7"G6 z2 | "C7"E F2 G2 F2 E | "Fm"F6 z2 |
+"Fm"c _A2 _A _A F2 z | "Gm7"_d _B2 _B _B2 _B2 | "C7"_B G2 G G E2 z | "Fm"c _A2 _A _A2 _A2 |
+"Bbm"G _B2 _d _a f2 _d | "Fm"c _A2 _B c4 | "C7"c G2 _A _B _A2 G | "Dm7"F2 c2 f2 z2 |
+"Fm"c _A2 _A _A F2 z | "Bbm"_d _B2 _B _B2 _B2 | "C7"_B G2 G G E2 z | "Fm"c _A2 _A _A2 _A2 |
+"Fm"F G2 _A2 G2 F | "C7"G6 z2 | "C7"E F2 G2 F2 E | "Fm"F6 z2 |
+"Fm"c _A2 _A _A F2 z | "Gm7"_d _B2 _B _B2 _B2 | "C7"_B G2 G G E2 z | "Fm"c _A2 _A _A2 _A2 |
+"Bbm"G _B2 _d _a f2 _d | "Fm"c _A2 _B c4 | "C7"c G2 _A _B _A2 G | "Dm7"F2 c2 f2 z2 |
+"Eb"_e3 z _e3 z | "Eb7"_e5 z _e2 | "Fm7"f3 z f3 z | "Ab"f5 z _a2 |
+"Eb7"_a g2 f _a2 g2 | "Eb7"_d5 z g2 | "Fm7"g f2 _e g2 f2 | "Ab"c6 z2 |
+"Eb"_e3 z _e3 z | "Eb7"_e5 z _e2 | "Fm7"f3 z f3 z | "Ab"f5 z _a2 |
+"Db"_a f2 _d _A2 _a2 | "Eb"_a _e2 c _A2 f2 | "Eb7"f _e2 _d c2 _B2 | "Fm7"_A2 _e2 _a2 z2 |
+"Eb"_e3 z _e3 z | "Eb7"_e5 z _e2 | "Fm7"f3 z f3 z | "Ab"f5 z _a2 |
+"Eb7"_a g2 f _a2 g2 | "Eb7"_d5 z g2 | "Fm7"g f2 _e g2 f2 | "Ab"c6 z2 |

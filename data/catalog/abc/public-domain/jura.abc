@@ -1,0 +1,36 @@
+%abc-2.1
+% JURA, by Sinhô, as performed by Sinhô.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Sinhô (died 1930, Wikidata Q7129006).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_j/jura.html (file
+% https://www.beakauffmann.com/mpb_j/som/jura.mid, sha256
+% f1e9513b350e776121661eb7c8332a07c7be32290098d15917a38b4803b6f321), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:JURA
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D7"e2 z c z d b ^f | "Em7"a2 z g z B d ^f | "D7"e2 z c z d b ^f | "Em7"a g e d B G E D |
+"D7"e2 z c z d b ^f | "Em7"a2 z g z B ^f _d | "D7"e d2 _d c B2 A | "Em7"G2 z6 |
+"D7"e2 z c z d b ^f | "Em7"a2 z g z B d ^f | "D7"e2 z c z d b ^f | "Em7"a g e d B G E D |
+"D7"e2 z c z d b ^f | "Em7"a2 z g z B ^f _d | "Am"e d2 _d c B2 A | "G"G2 z2 g2 z2 |
+"Em"z5 B c _d | "Em7"d3 z5 | "D7"z5 c d _e | "D7"e e c' _a b =a ^f d |
+"D7"z5 A d _d | "D7"c3 z5 | "Bm7"z d2 e ^f g2 a | "Bm7"b a2 g ^f e2 d |
+"Em"e3 z2 d B G | "Em7"E2 z e3 z ^f | "D7"^f2 z3 ^F G _A | "D7"A2 z2 A z3 |
+"F#m7"z e _d' b a g e _d | "A7"_d2 z2 _d3 z | "D7"c2 B2 A2 ^F2 | "D7"d2 c2 A2 ^F2 |
+"G"D3 z2 d B G | "Em7"E3 z d z d d | "D7"d2 z c z c A ^F | "D7"E3 z d z d d |
+"D7"z c d _e =e _A =A B | "D7"c ^F G _A =A3 z | "D"z d2 e ^f g2 a | "Bm7"b a2 g ^f e2 d |
+"G7"g6 z2 | "G7"f6 z2 | "C"e6 z2 | "C7"E G c e g f e d |
+"G"d4 z4 | "D7"d'3 z5 | "Bm7"z d2 _d c B2 A | "G"G2 z6 |
+"D7"z d2 e ^f g2 _a | "D7"a2 z6 | "G"z d2 e ^f g2 a | "Em7"b2 z6 |
+"D7"d' d' z a c' c' z ^f | "D7"a a z c e e z A | "D"z d2 e ^f g2 a | "G"b2 z6 |
+"D7"z a2 b c' b a g | "D7"^f2 z6 | "G"z b z ^f d B ^f e | "Em7"e2 z2 ^f g z _a |
+"D7"a a z e g g z c | "D7"e e z A d3 z | "Bm7"z d2 _d c B2 A | "G"G2 z6 |

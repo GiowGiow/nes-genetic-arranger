@@ -1,0 +1,26 @@
+%abc-2.1
+% Minuet in F major K.2, by Wolfgang Amadeus Mozart(1756-1791). Score published on MuseScore
+% (artist: Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/18/QmaENucP3iVPGGeUtgdj959VJEx116ke3SYH4X5s993nhN.mid (sha256
+% 871ee9eb25cab1353a2db0507f50f1fe55bc15b0b19efb3dd9a46a83655b9585): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Minuet in F major K.2
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F"f2 a2 c4 c4 | "Bb"d2 f2 _B4 _B4 | "C"A2 c2 F4 E4 | "F"E8 F4 |
+"C"C2 E2 G4 G4 | "C"C2 F2 A4 A4 | "C"z3 C E G2 _B4 A | "C"A8 G4 |
+"F"f2 a2 c4 c4 | "Bb"d2 f2 _B4 _B4 | "C"A2 c2 F4 E4 | "F"E8 F4 |
+"C"C2 E2 G4 G4 | "C"C2 F2 A4 A4 | "C"z3 C E G2 _B4 A | "C"A8 G4 |
+"F#"c2 _e2 A4 A4 | "G"_B2 d2 G4 G4 | "D7"A2 c2 ^F4 ^F4 | "G"^F8 G4 |
+"E"_B2 d2 G4 G4 | "F"A2 c2 F4 F4 | "C7"G2 _B2 E4 E4 | "F"E8 F4 |
+"A"f2 a2 c4 c4 | "Bb"d2 f2 _B4 _B4 | "C"A2 c2 F4 E4 | "D"E8 F4 |
+"A"f2 a2 c4 c4 | "Bb"d2 f2 _B4 _B4 | "C"A2 c2 F4 E4 | "F"E8 F4 |

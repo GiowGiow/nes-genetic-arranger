@@ -1,0 +1,34 @@
+%abc-2.1
+% String Quartet in F major, by Maurice Ravel. Score published on MuseScore (artist: Maurice
+% Ravel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/10/QmPAisUnxVQjm9G5ejKQ76pjFup5siUm2daBA61uC3Ko7q.mid (sha256
+% 7747f5810c21e7a3578c16a2fce1f8f71089c2bda653db2cd9fa6884bf48374d): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:String Quartet in F major
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"F"A,4 _B,4 "Gm7"C4 D4 | "C7"E4 F4 "Gm7"G4 A4 | "G7"_B4 c4 "C7"d4 e4 | "C7"f4 g4 d2 a2 g4 |
+"Eb"f4 _e4 "Db"c4 _B4 | "Bbm7"_A4 G4 F4 _D4 | "Fm7"D4 C4 _E4 C4 | "Ab"_B,4 _A,4 "G"_B,8 |
+"G7"A,4 B,4 "Bb7"C4 D4 | "E7"C8 "Bb"_B,4 F4 | "G7"d'4 a4 "Bb7"g4 f4 | "D7"e4 d2 e2 "Bb"f2 g2 a4 |
+"G7"A,4 B,4 "Bb7"C4 D4 | "G7"d'4 a4 "Bb7"g4 f4 | "G7"A,4 B,4 "Bb7"C4 D4 | "G7"d'4 a4 "C7"g4 f4 |
+"F"A4 F4 "Gm7"A4 D4 | "C7"A4 F4 "Gm7"G4 A4 | "A7"_B4 c4 "C7"d4 e4 | "Bb"f4 g4 "Gm7"a4 e4 |
+"A"z4 B4 "Db7"_d8 | "G7"z4 B4 "Db7"_d8 | "B7"z4 B4 "G7"_d8 | "Am7"_D _E =E ^F =E ^F G A "Am"G A _B c _B c _d _e |
+"Dm7"d e d A D E D A, "Am7"_D _E =E ^F =E ^F G A | "Am7"G A _B c _B c _d _e "Dm7"=d =e =d A =D =E =D A, | "Dm7"F G F G _A c _A c "F7"_A =A B c B c d _e | "E7"^f _a ^f e e ^f e d "E"d d D D D D _A, _A, |
+"E"C D C B, B, C B, A, C6 B,2 | "E7"C6 _A,2 "Dm7"_A,2 =A,2 C2 F2 | "Db7"E4 D2 E2 "F#7"B,4 A, D2 E | "Bb7"E4 z4 "E7"z8 |
+"Db7"e4 d2 e2 "F7"B4 A c2 d | "Bb7"e4 z4 "Db7"z8 | "Dbm"e8 "Em"_d8 | "Dbm"e8 "Em"_d8 |
+"Dbm"e e e e ^f ^f ^f ^f "F#7"g g g g g ^f ^f ^f | "A7"_b _b _b _b _b a a a "C7"a _a _a _a _a g g g | "Dbm7"b4 b _d' b g "Em"g z3 e ^f e B | "G"B z3 G B G E "A7"E z3 B, _D B, _D |
+"C7"D E D E D E D E "A7"D E D _D B, _D B, _D | "C7"D E D E D E D E "A7"D E D _D B, _D B, _D | "C7"D8 "Eb"_B,8 | "A7"_D8 z8 |
+"A7"z8 "E"z8 | "A"_D4 _B,4 "A7"_A,4 _B,4 | "A"_D4 z4 "E"z8 | "A7"_d4 _B4 "Em7"_A4 _B4 |
+"A7"_d4 _B4 "Em7"_A4 _B4 | "A"_d z A z A z A z "Eb"A z A z G A2 _B | "A"A z A z A z A z "F7"A z A z G A2 _B | "A"A z A z A z A z "F7"A z A z G A2 _B |
+"A"A z A z A z A z A z A z A z A z | "A"A z A z A2 A2 A2 A2 A2 A2 | "A"A2 F2 A2 F2 "E7"A2 F2 A2 F2 | "C"A2 F2 A2 F2 "Bb"A2 F2 G E G E |
+"A"A2 F2 A2 F2 "E7"A2 F2 A2 F2 | "C"A2 F2 A2 F2 "Bb"A2 F2 G E G E | "Bb"G2 _E2 G2 _E2 "Cm7"G2 _E2 G2 _E2 | "D"G2 _E2 G2 _E2 "G7"A2 _E2 A2 _E2 |
+"D"B, F A f f A F B, "A7"B, F A f f A F B, | "A"_D G A f f A G _D "Dm"_D G A f f A G _D | "A"A,4 E4- "Dm"E4 D E2 F | "F"E4 D2 C2 "G"_B,4 C2 D2 |

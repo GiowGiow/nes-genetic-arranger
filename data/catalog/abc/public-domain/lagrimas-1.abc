@@ -1,0 +1,35 @@
+%abc-2.1
+% LÁGRIMAS, by Cândido das Neves, as performed by Orlando Silva.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Cândido das Neves (died 1934, Wikidata Q10263002).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/lagrimas-1.html (file
+% https://www.beakauffmann.com/mpb_l/som/lagrimas-1.mid, sha256
+% ea828e2d8eb6b6ffd127831179ddb8fdbd44e782a1dcbc00b19e039db90b4b1c), from Beatriz Kauffmann's Web
+% Site. Melody track 4, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LÁGRIMAS
+M:3/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"G"z12 | "Cm"c _e g3 z7 | "G7"z12 | "Cm"G c _e3 z7 |
+"G7"z12 | "Cm"_e g c'6 z4 | "Cm"z12 | "G7"z12 |
+"G7"d g b6 z4 | "G7"d f _a6 z4 | "Em7"z12 | "G7"B d f6 z4 |
+"Em7"z12 | "G7"g b d'6 z4 | "Em7"z12 | "Cm"z12 |
+"Cm"g c' _e'6 z4 | "Cm"c _e g6 z4 | "G7"z12 | "Cm"g c' _e'6 z4 |
+"G7"z12 | "Cm"_e g c'6 z4 | "C"z12 | "C7"z12 |
+"Fm7"f _a c'6 z4 | "Fm7"z12 | "Fm7"z12 | "Cm"z12 |
+"Cm"_e g c'6 z4 | "Dm"d f a6 z4 | "G7"z12 | "Cm"_e g c'6 z4 |
+"Cm"z12 | "Cm"c _e g3 z7 | "G7"z12 | "Cm"G c _e3 z7 |
+"G7"z12 | "Cm"_e g c'6 z4 | "Cm"z12 | "G7"z12 |
+"G7"d g b6 z4 | "G7"d f _a6 z4 | "Dm"z12 | "G7"B d f6 z4 |
+"Dm"z12 | "G7"g b d'6 z4 | "Dm"z12 | "Cm"z12 |
+"Cm"g c' _e'6 z4 | "Cm"c _e g6 z4 | "G7"z12 | "Cm"g c' _e'6 z4 |
+"G7"z12 | "Cm"_e g c'6 z4 | "C"z12 | "C7"z12 |
+"Fm7"f _a c'6 z4 | "Fm7"z12 | "Fm7"z12 | "Cm"z12 |
+"Cm"_e g c'6 z4 | "Dm"d f a6 z4 | "G7"z12 | "Cm"_e g c'6 z4 |

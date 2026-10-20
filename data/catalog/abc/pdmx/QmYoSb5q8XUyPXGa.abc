@@ -1,0 +1,36 @@
+%abc-2.1
+% Piano Concerto No.21 in C major K.467, by Wolfgang Amadeus Mozart (1756 - 1791). Score published
+% on MuseScore (artist: Wolfgang Amadeus Mozart), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/35/QmYoSb5q8XUyPXGaizifu1QRsVLToY1aCQV5gDrMUa99vw.mid (sha256
+% 3c780bfd6438095d6b7f968896f0016e4d0a3c5395d6ab09cddc711520f66b3e): melody track 8, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Piano Concerto No.21 in C major K.467
+M:4/4
+L:1/16
+Q:1/4=62.999997
+% Exact tempo 62.99999685000016 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"C C2 C C C2 C "Dm7"C C2 C C C2 C | "F"C C2 C C C2 C "Dm7"C C2 C C C2 C | "F"C C2 C C C2 C C C2 C C C2 C | "C7"C C2 C C C2 C C C2 C C C2 C |
+"C7"C C2 C C C2 C C C2 C C C2 C | "C7"C C2 C C C2 C C C2 C C C2 C | "F"C C2 C C C2 C "Dm7"C C2 C C C2 C | "F7"F F2 F F F2 F F F2 F F F2 F |
+"Bb"F F2 F F F2 F "Gm7"F F2 F F F2 F | "Bb7"F F2 F F F2 F "G7"F F2 F F F2 F | "Fm"F F2 F F F2 F "Ab"F F2 F F F2 F | "C7"F F2 F E E2 E G G2 G G G2 G |
+"Fm"G G2 G F F2 F _A _A2 _A _A _A2 _A | "C7"_A _A2 _A G G2 G _B _B2 _B _B _B2 _B | "Fm"_B _B2 _B _A _A2 _A "Ab"=B =B2 =B =B =B2 =B | "C"c c2 c _d _d2 _d "C7"c c2 c E E2 E |
+"Dm7"F F2 F F F2 F "Gm"F F2 F F F2 F | "C7"F F2 F F F2 F "C"F F2 F E E2 E | "Gm7"E E2 E A A2 A "C7"A A2 A _B _B2 _B | "F"F F2 F F F2 F "Gm7"F F2 F F F2 F |
+"Am7"F F2 F F F2 F "C"F F2 F E E2 E | "F"F4 z12 | "F"z8 "Dm7"z8 | "F"z8 "Dm7"z8 |
+"F"z16 | "C7"z16 | "C"z8 "C7"z8 | "C7"z16 |
+"F"z8 "Dm7"z8 | "F7"z16 | "Bb"z8 "Gm7"z8 | "G7"z16 |
+"Dm7"z16 | "C7"z16 | "F"z8 "Dm7"z8 | "C7"z8 "A7"z8 |
+"Dm"z D2 E F F2 F z D2 F z _D2 E | "Dm"z D2 E F F2 F z D2 E F F2 F | "C"z G,2 A, _B, _B,2 _B, z C2 D E E2 E | "F"z C2 E F F2 F F F2 F F F2 F |
+"C"G G2 G G G2 G G G2 G G G2 G | "Dm7"A A2 A A A2 A A A2 A A A2 A | "D7"A A2 A A A2 A A A2 A A A2 A | "G"G G2 G G G2 G "Cm"_E _E2 _E C C2 C |
+"G7"C C2 C B, B,2 B, D D2 D D D2 D | "Cm"D D2 D C C2 C _E _E2 _E _E _E2 _E | "G7"_E _E2 _E D D2 D F F2 F F F2 F | "Cm"F F2 F _E _E2 _E "F7"^F ^F2 ^F ^F ^F2 ^F |
+"G"G G2 G _A _A2 _A "G7"G G2 G D D2 D | "C"G4 z4 "G7"z8 | "G7"z8 "G"z8 | "E"z8 "G7"z8 |
+"C"z8 "Dm"z8 | "Em7"z8 "G"z8 | "C"G, G,2 G, G, G,2 G, "C7"G, G,2 G, G, G,2 G, | "D7"A, C2 C C C2 C "Am7"C C2 C _E _E2 _E |
+"D7"D D2 D D D2 D D D2 D D D2 D | "Gm"D4 z4 "Gm7"z8 | "Eb"z8 "Gm"z8 | "F#m7"z8 "A"z8 |
+"Dm"F8 "F7"_e6 A2 | "Bb"_B _B2 c d d2 d z D2 _E F F2 F | "Cm"z A,2 _B, C C2 C z A2 _B c c2 c | "F"z F2 G A A2 A z f2 g a a2 a |

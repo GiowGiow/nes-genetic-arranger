@@ -1,0 +1,23 @@
+%abc-2.1
+% Ved Rondane, by Edvard Grieg. Score published on MuseScore (artist: Edvard Grieg), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/57/QmNZjVgDvD3pHgTz3vKxtLmZoXKxyP1S3fy3KGcV437NFi.mid (sha256
+% 5f38901f5dbbbb2e81bbdc1c84d624f0c42b8a94c005cdab14a09810a730f85a): melody track 1, bars 0-17
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ved Rondane
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"z10 C2 C2 D2 | "C"E6 E2 "Am"E2 E2 A3 E | "B7"D4 D4- "Em"D4 z2 D2 | "Am7"C2 C2 C2 D2 "D7"E3 E E2 E2 |
+"E"_A8 z2 E2 E2 ^F2 | "E"_A6 _A2 "C"_A2 _A2 _A3 _A | "E"_A4 _A4- "Dbm7"_A4 z2 E2 | "Dbm7"_A3 _A _A2 _A2 "Abm"=A3 =A _A2 G2 |
+"E"_A8 "Dbm7"z2 E2 E2 E2 | "Am"E2 A2 _A2 G2 "D7"^F2 ^F2 =F2 =F2 | "D7"E2 A2 _A2 G2 ^F2 ^F2 =F2 =F2 | "Dm7"A3 A A4- "F7"A2 A2 ^F2 A2 |
+"E"_A4 G4 "Em7"^F4 =F2 =F2 | "C"E2 G2 c2 B2 "Dm7"A2 _A2 =A2 F2 | "C"G4 C8 z2 C2 | "Bm7"F2 F2 F2 F2 "G"F2 F2 D2 B,2 |
+"C"E4 C8 z4 |

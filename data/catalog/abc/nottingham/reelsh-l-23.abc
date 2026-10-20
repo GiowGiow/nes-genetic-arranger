@@ -1,0 +1,24 @@
+%abc-2.1
+% Imitiation Reel, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsh-l.abc, tune X: 23 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Imitiation Reel
+M:4/4
+L:1/16
+Q:1/4=140
+K:A
+P:A
+"A"z12 e4 | "A"a6 g2 a2 e2 c2 A2 | "E"B4 G4 E6 E2 | "D"F4 A4 d4 c4 |
+"Bm"B2 A2 G2 F2 "E"E4 e4 | "A"a6 g2 a2 e2 c2 A2 | "E"B4 G4 E4 d4 | "Bm"c6 B2 "E"A4 G4 |
+"A"A12 e4 | "A"a6 g2 a2 e2 c2 A2 | "E"B4 G4 E6 E2 | "D"F4 A4 d4 c4 |
+"Bm"B2 A2 G2 F2 "E"E4 e4 | "A"a6 g2 a2 e2 c2 A2 | "E"B4 G4 E4 d4 | "Bm"c6 B2 "E"A4 G4 |
+"A"A12 c2 d2 | "A"e6 c2 e4 f2 g2 | "F#m"a4 f4 c4 f2 e2 | "B7"^d4 B4 a4 g2 f2 |
+"E"g12 b4 | "A"a6 e2 c4 e4 | "D"d4 F4 "Bm"B4 d4 | "A"c2 e2 A2 c2 "E"B4 G4 |
+"A"A12 c2 d2 | "A"e6 c2 e4 f2 g2 | "F#m"a4 f4 c4 f2 e2 | "B7"^d4 B4 a4 g2 f2 |
+"E"g12 b4 | "A"a6 e2 c4 e4 | "D"d4 F4 "Bm"B4 d4 | "A"c2 e2 A2 c2 "E"B4 G4 |
+"A"A12 z4 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Giustino RV 717, by Antonio Vivaldi. Score published on MuseScore (artist: Antonio Vivaldi), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Vivaldi (died 1741,
+% Wikidata Q1340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/25/QmViWNDLpNdwA8tvPjcXmFKfiNBo8pdPimUg2rURmcr9WE.mid (sha256
+% 4849e265aedcd241e96495c156f7b79a0056971e94a3c7941d17c841b822e366): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Giustino RV 717
+M:3/4
+L:1/16
+Q:1/4=115.000249
+% Exact tempo 115.00024916720655 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ebm"z12 | "Bb"z12 | "Ebm"z12 | "Gm7"z12 |
+"Bb"z12 | "Eb"z12 | "Ab"z12 | "Db"z12 |
+"F#"z12 | "B"z12 | "F"z12 | "Bb"z12 |
+"Bb"z12 | "Bb"z12 | "Ebm"z12 | "Db7"z12 |
+"Ebm"z12 | "Eb"z4 _E2 F2 ^F2 _A2 | "Ebm"_B6 =B2 _B4 | "Bb"_B6 =B2 _B4 |
+"Ebm"_B2 _A2 ^F2 =F2 _E4 | "Bb"_B6 =B2 _B4 | "Ebm"_B2 _A2 ^F2 =F2 _E4 | "Bb7"z12 |
+"Eb"z4 _B4 _e4 | "Ab"c2 _d2 _e4 ^F4 | "Db"F4 _d4 B4 | "F#"_B2 =B2 _d4 F4 |
+"B"_E4 B4 _B4 | "F"A2 _B2 c4 _E4 | "Bb"D4 _B4 _A4 | "Ebm"^F2 =F2 _E4 z4 |
+"Bbm"z4 _B4 _B4 | "Bbm"A4 F4 _B4 | "F"_B6 c2 A4 | "Bbm"_B4 z8 |
+"F"z12 | "Bbm"z4 _d4 _B4 | "Eb"G4 _A4 _B4 | "Eb"_E4 _B4 _d4 |
+"Abm"B6 _B2 _A4 | "Abm"z4 B4 _A4 | "Db"F4 ^F4 _A4 | "Db"_D4 B4 _A4 |
+"F#"_B6 _A2 ^F4 | "Ebm"z4 _B4 _B4 | "Ebm"_B7 =B _B3 =B | "Ebm"_B7 =B _B3 =B |
+"Ebm"_B4 _A2 ^F2 =F2 _E2 | "Bb"_E6 F2 D4 | "Ebm"_E8 z4 | "Bb"z4 _B4 _B4 |
+"Ebm"_e4 _d2 B2 _B2 _A2 | "Ab7"^F6 _A2 =F4 | "Ebm"_E4 z8 | "Eb"z12 |
+"Ab"z12 | "Db"z12 | "F#"z12 | "B"z12 |
+"F"z12 | "Bb"z12 | "Bb"z12 | "Bb"z12 |

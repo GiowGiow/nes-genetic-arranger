@@ -1,0 +1,24 @@
+%abc-2.1
+% Carmen, by Georges Bizet. Score published on MuseScore (artist: Georges Bizet), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/52/QmexDKqvS5iT9qZdigt6JjNqsStFFjXpTpgNMczZZrbp6E.mid (sha256
+% 74ac614c192c846e13345e98de7e9aa60a6241eccc74369e80b91b13d8d264e7): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Carmen
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"g4 a3 g e4 e4 | "C"e3 d e3 f e8 | "G7"f4 d3 g "C"e8 | "D7"c4 A3 d "G"G4 z4 |
+"Dm"d10 a2 g2 f2 | "C"e2 d2 e2 f2 "Am7"e8 | "Em"B4 e4 "B"e4 _e3 ^f | "Dbm7"b8- "E"b4 z4 |
+"F"z2 a2 _a2 =a2 "Dm"d2 e2 f2 z2 | "C"z2 e2 c2 a2 "Am"g8 | "C"z2 c2 G2 f2 e4 d4 | "C"c8 z8 |
+"C"g4 a3 g e4 e4 | "C"e3 d e3 f e8 | "G7"f4 d3 g "C"e8 | "D7"c4 A3 d "G"G4 z4 |
+"Dm"d10 a2 g2 f2 | "C"e2 d2 e2 f2 "Am7"e8 | "Em"B4 e4 "B"e4 _e3 ^f | "Dbm7"b8- "E"b4 z4 |
+"F"z2 a z _a2 =a2 "Dm"d z e z f4 | "C"z2 e z c2 a2 "Am"g8 | "C"z2 c z G2 f2 "G"e4 d4 | "C"c16 |

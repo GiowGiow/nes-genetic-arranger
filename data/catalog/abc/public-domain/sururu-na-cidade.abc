@@ -1,0 +1,35 @@
+%abc-2.1
+% SURURU NA CIDADE, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/sururu-na-cidade.html (file
+% https://www.beakauffmann.com/mpb_s/som/sururu-na-cidade.mid, sha256
+% 05e1117b1f97fe0849f86ca0abf52d6e41e22d9a93a611405e540c4037d28efa), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SURURU NA CIDADE
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"D"z8 | "D"z8 | "D"z8 | "Gm"z d _B G d4 |
+"Cm7"d d _B G _e4 | "D7"_e _e c A ^f4 | "F#m"^f ^f d _B g4 | "Cm7"g g f e _e4 |
+"Am7"_e g f _e d4 | "Gm"d _B _B _B A A _d e | "F#m7"g _b a g ^f d' c' a | "D"^f d _B G d4 |
+"Gm"d d _B G _e4 | "D7"_e _e c A ^f4 | "D7"^f ^f d _B g4 | "Gm"g g f e _e4 |
+"Am7"_e g f _e d4 | "D"d _b a g ^f d ^f a | "D"d' c' _b a g4 | "Gm7"g4 f f z2 |
+"F"g z a6 | "F7"z g g f f z g2 | "Bb"g z g z g z3 | "F7"z f d _B A2 g z |
+"F7"g z g z g g3 | "F7"g f d _B F z g z | "Bb"g z g z g4 | "F"g3 z f4 |
+"F"g z a6 | "Gm7"a g g f f2 g z | "Bb"g z g z g4 | "Eb"g f2 _e G4 |
+"Eb"G _e2 d F4 | "Gm7"F d d c E2 F A | "F"d c A F _B2 z2 | "Gm7"z d _B G d4 |
+"Cm7"d d _B G _e4 | "D7"_e _e c A ^f4 | "F#m"^f ^f d _B g4 | "Cm7"g g f e _e4 |
+"Am7"_e g f _e d4 | "Gm"d _B _B _B A A _d e | "F#m7"g _b a g ^f d' c' a | "D"^f d _B G d4 |
+"Gm"d d _B G _e4 | "D7"_e _e c A ^f4 | "D7"^f ^f d _B g4 | "Cm7"g g f e _e4 |
+"Am7"_e g f _e d4 | "Gm"d _b a g ^f d ^f a | "D"d' c' _b a g4 | "G"g d _d =d b =d _d =d |
+"D"a d _d =d g4 | "G"g2 ^f2 a2 g2 | "G"^f2 e2 c4 | "Am"c e _e =e c' =e _e =e |
+"D7"b e _e =e a4 | "D"a2 _a2 b2 =a2 | "D7"^f2 e2 d4 | "Em7"d d _d =d b =d _d =d |
+"Em7"a d _d =d g4 | "G"g2 ^f2 a2 g2 | "C"^f2 g2 e4 | "C"e e g c' e' c' g e |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Dixit Tobias, by Philippe de Monte. Score published on MuseScore (artist: Philippe de Monte),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Philippe de Monte (died 1603,
+% Wikidata Q277029).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/15/QmadfcYiApoNyaRrtP3nZ67mjnj7HEyAzGa51GNWUzFQeK.mid (sha256
+% 8813b8896ded238a93bca1be6367789ae4765327fde5a2af879df9d05f627fd8): melody track 1, bars 0-61
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Dixit Tobias
+M:4/2
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B"z16 "A7"z8 E8 | "B7"E4 E4 D8 "Bm"B,4 E6 E2 D4 | "Em7"G4 E4 G4 ^F4- "Bm7"^F2 E2 D2 _D2 B,2 _D2 =D2 E2 | "Bm7"^F2 G2 A2 E2 ^F4 G2 D2 E2 ^F2 G4 ^F4 G4 |
+"Em7"G4 D4 D6 D2 "Em"B,4 G8 E4 | "Em7"^F12 G4 E4 ^F4 D4 E4 | "F#m7"E4 A6 G2 ^F2 E2 "Em"D8 B,4 B,4 | "Bm7"B,4 D8 D4 "Em7"z12 G4 |
+"Em"^F4 G8 E4- "Dbm7"E4 _E4 =E4 =E4 | "A"E4 E4 E8 "Em7"^F8 G4 G4 | "A"E4 D4 E8 "Bm7"^F4 ^F,4 B,2 _D2 =D2 _D2 | "Bm7"B,4 E8 D4 "Em"G8 ^F8 |
+"G"z16 "Bm"z4 _D4 =D6 =D2 | "G"D4 D6 D2 E4 "Bm7"^F4 G4 ^F2 G4 ^F2 | "G"G8 z4 E4 "E"G6 G2 G4 G4 | "Bm"G2 G2 ^F4 B,4 ^F4 G4 ^F8 E4 |
+"F#"^F16- "Bm"^F8 G8 | "E7"G4 ^F4 A4 G4 "G"^F8 B,6 D2 | "Em7"B,4 A,4 E2 ^F2 G2 D2 ^F2 G2 A2 ^F2 G6 ^F2 | "F#m"E4 D4 _D8 "B"B,16 |
+"Em"B,8 D8 "Em7"D4 C8 B,4 | "C"G6 G2 G4 G4 "G"^F4 ^F8 E4 | "Bm7"E2 D2 D6 E2 ^F2 D2 "Am"E2 A,2 E8 D2 E2 | "Bm"^F2 D2 ^F2 G2 A2 B2 A4- "Bm7"A4 G6 ^F2 ^F2 E D |
+"E"E8 E4 E4 "Em7"^F4 G8 ^F4 | "Bm"^F4 E6 _E2 _E4 "G"=E2 G4 =E2 ^F4 z4 | "Em"E4 D4 G6 ^F2 "Em7"E4 ^F4 A4 A,2 B,2 | "Abm7"_D2 =D2 E2 B,2 =D4 _D4 "B7"_E8 =E4 =E4 |
+"Em7"G4 ^F4 E8 "D"A,4 D4 D8 | "G"B,4 B,4 G4 ^F4 "Em7"E4 D4 G4 ^F4 | "Bm7"^F2 D2 E2 ^F2 G2 E2 A4 "Em7"D4 G6 ^F2 E4 | "Em"E4 D4 E4 B,4 "Em7"z12 ^F4 |
+"Bm7"^F2 E2 D2 _D2 =D4 A,4 "F#m7"B,4 _D4 =D4 ^F4 | "Bm7"G2 D2 ^F6 E D E2 ^F2 "Em7"G4 ^F4 G4 E4 | "Bm7"E2 D _D B,6 _D2 =D4- "Em7"=D4 _D4 =D4 ^F4 | "F#"^F4 ^F4 ^F8 "B"_E4 _E4 =E8 |
+"Bm7"^F8 G8 "Em"D4 E4 E8 | "B"_E32 | "Bm"z12 ^F4- "G"^F4 G4 A4 D4 | "Em7"D4 G8 ^F4 "G"^F4 G4 A4 D4 |
+"A7"D4 D8 _D4 "D7"=D8 E4 E4 | "C"E4 D4 B,4 E4- "Bm7"E4 ^F8 E4 | "Bm"_E6 =E2 ^F8 "Bm7"^F8 =E4 =E4 | "Bm"E4 G4 ^F6 E2 "B7"D4 _D4 B,4 ^F4 |
+"Em"^F2 E2 E8 D4 G4 G4 ^F8 | "Bm"^F4 G6 ^F2 E4 "Em7"^F4 A4 D4 z4 | "B"z2 G4 ^F4 E4 _E2 =E2 ^F2 =E8 D4 | "Bm"_D6 _D2 ^F4 G4- "A"G2 ^F2 E4 ^F4 A4 |
+"Bm"^F2 ^F4 ^F2 D4 _D4 "Em7"B,8 z2 G4 ^F2 | "Em"^F2 E4 _E2 =E4 B,4 "Em7"z4 G8 ^F4 | "Bm7"E4 ^F4 A4 ^F4- "F#"^F4 D6 B,2 _D2 =D2 | "E7"^F4 G8 ^F4 "Em"G2 ^F2 E2 D2 E8 |
+"D"_D4 E4 ^F4 A4- "Am"A4 G4 E4 ^F4 | "Bm"^F4 E8 _E4 "Em"=E8 B,8 | "Em7"z12 ^F4- "Bm7"^F2 E2 D2 _D2 =D4 A,4 | "F#m7"B,4 _D4 =D4 ^F4 "Bm7"G2 =D2 ^F6 E =D E2 ^F2 |
+"Bm"G4 ^F4 G4 E4- "Bm7"E2 D _D B,6 _D2 =D4 | "Em7"D4 _D4 =D4 ^F4- "F#"^F4 ^F4 ^F8 | "B"_E4 _E4 =E8 "D"^F8 G4 G4 | "Em"D4 E6 D _D B,2 _D2 "B"_E4 =E8 _E4 |
+"E"E32 |

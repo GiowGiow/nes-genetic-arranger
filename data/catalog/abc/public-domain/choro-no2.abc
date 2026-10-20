@@ -1,0 +1,36 @@
+%abc-2.1
+% CHORO Nº 2, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/choro-no2.html (file
+% https://www.beakauffmann.com/mpb_c/som/choro-no2.mid, sha256
+% ed3d52f16e40e233c9958d14b480bddf27f868c1f1e5b6ee27a38bdcd2746ea2), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-62 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CHORO Nº 2
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"_d E2 E2 e _D e | "E"d3 E D E ^F _A | "Dbm7"d E2 E2 e E D | "F#m7"_d _D2 =D E B2 _B |
+"Dbm7"B A _E _A ^F _A B _B | "B7"A ^F _E _D B, A ^F _E | "E"E _A2 e B, _A, =A, B, | "A"_d E2 E2 e _D e |
+"E"d3 E D E ^F _A | "Dbm7"d E2 E2 e E D | "A"_d _D2 =D E _E =E ^F | "A"G5 A D E |
+"D"^F3 A2 _A2 ^F | "F#m7"E2 _D2 =D2 _A,2 | "A"A,4 A4 | "A"_d E2 E2 e _D e |
+"E"d3 E D E ^F _A | "Dbm7"d E2 E2 e E D | "F#m7"_d _D2 =D E B2 _B | "Dbm7"B A _E _A ^F _A B _B |
+"B7"A ^F _E _D B, A ^F _E | "E"E _A2 e B, _A, =A, B, | "A"_d E2 E2 e _D e | "E"d3 E D E ^F _A |
+"Dbm7"d E2 E2 e E D | "A"_d _D2 =D E _E =E ^F | "A"G5 A D E | "D"^F3 A2 _A2 ^F |
+"F#m7"E2 _D2 =D2 _A,2 | "A"A,4 A4 | "F#m7"G E2 E A2 E2 | "D"^F D2 A d _d A, B |
+"Em"_d G, _d E B _D B G, | "Bm7"A D2 ^F E D A ^F | "F#m7"G E2 E A2 E2 | "D"^F D2 A d _d A, B |
+"F#m7"_d2 _d2 B2 B2 | "Bm7"d ^F, A, D E D G, A, | "F#m7"G E2 E A2 E2 | "D"^F D2 A d _d A, B |
+"Em"_d G, _d E B _D B G, | "Bm7"A D2 ^F E D A ^F | "F#m7"G E2 E A2 E2 | "D"^F D2 A d _d A, B |
+"F#m7"_d2 _d2 B2 B2 | "Bm"d ^F,2 ^F, B4 | "A"_d E2 E2 e _D e | "E"d3 E D E ^F _A |
+"Dbm7"d E2 E2 e E D | "F#m7"_d _D2 =D E B2 _B | "Dbm7"B A _E _A ^F _A B _B | "B7"A ^F _E _D B, A ^F _E |
+"E"E _A2 e B, _A, =A, B, | "A"_d E2 E2 e _D e | "E"d3 E D E ^F _A | "Dbm7"d E2 E2 e E D |
+"A"_d _D2 =D E _E =E ^F | "A"G5 A D E | "D"^F3 A2 _A2 ^F | "F#m7"E2 _D2 =D2 _A,2 |
+"A"A,4 A4 | "A"A8 |

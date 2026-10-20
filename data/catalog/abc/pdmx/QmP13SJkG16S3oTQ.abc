@@ -1,0 +1,33 @@
+%abc-2.1
+% Canon and Gigue in D major P.37, by Johann Pachelbel (1653-1706). Score published on MuseScore
+% (artist: Johann Pachelbel), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Pachelbel (died 1706,
+% Wikidata Q76485).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/0/QmP13SJkG16S3oTQB45TW1Uk8opXCJjTfMFm7BNeFuoDop.mid (sha256
+% a62469db6415f18f33d9f7a27969e8633808844fe6de0ad11c68403cd48f66f8): melody track 0, bars 2-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Canon and Gigue in D major P.37
+M:4/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"^f4 e4 d4 _d4 | "C"B4 A4 B4 _d4 | "C"d4 _d4 B4 A4 | "C"G4 ^F4 G4 E4 |
+"C"D2 ^F2 A2 G2 ^F2 D2 ^F2 E2 | "C"D2 B,2 D2 A2 G2 B2 A2 G2 | "C"^F2 D2 E2 _d2 =d2 ^f2 a2 A2 | "C"B2 G2 A2 ^F2 D2 e e e z2 _d |
+"C"d _d =d =D _D A E ^F =D =d _d B _d ^f a b | "C"g ^f e g ^f e d _d B A G ^F E G ^F E | "C"D E ^F G A E A G ^F B A G A G ^F E | "C"D B, B _d =d _d B A G ^F E B A B A G |
+"C"^F2 ^f2 e4 z2 d2 ^f4 | "C"b4 a4 b4 _d'4 | "C"d'2 d2 _d4 z2 B2 =d4 | "C"d6 d2 d2 g2 e2 a2 |
+"C"a ^f a ^f a B e ^f g d ^f ^F B A A G | "C"A B A ^F ^F D G A B B B _d =d _d ^f g | "C"a d ^f e e d ^f d d B d D G ^F d _d | "C"d d _d A A ^F B _d =d =d =d _d =d e =d B |
+"C"d2 z2 _d2 z2 B2 z2 =d2 z2 | "C"D2 z2 D2 z2 D2 z2 E2 z2 | "C"z2 A2 z2 A2 z2 ^F2 z2 A2 | "C"z2 G2 z2 ^F2 z2 G2 z2 e2 |
+"C"^f ^F G ^F E e ^f e d ^F D B A A, G, A, | "C"B, B _d B A A, G, A, B, B A B _d _D B, _D | "C"D d e d _d _D =D _D B, B A B _d _D ^F E | "C"D d e g ^f ^F A ^f d g ^f g e A G A |
+"C"^F A A A A A A A ^F ^F ^F ^F ^F ^F A A | "C"G G G d d d d d d d B B A A e _d | "C"A ^f ^f ^f e e e e d d d d a a a a | "C"b b b b a a a a b b b b _d' _d _d _d |
+"C"d D ^F D _D _d e _d B B, =D B, _D A G E | "C"D G ^F G ^F D ^F A G B A ^F E A G E | "C"^F d d ^F A A _d A ^F =d ^f =d ^f ^f e _d | "C"B B B _d =d ^f e ^f g =d _d B A E A A |
+"C"A6 A2 D6 A2 | "C"G4 A4 G2 D2 D3 _D | "C"D2 d2 _d4 B4 A4 | "C"D3 E ^F4 B4 E3 E |
+"C"^F3 ^f ^f g ^f e d3 d d e d _d | "C"B4 d4 d c B c A3 A | "C"A3 a a b a g ^f3 ^f ^f g ^f e | "C"d c B c A3 A G2 d2 _d3 _d |
+"C"d2 d4 _d4 B4 A2 | "C"A2 G4 ^F2 ^F3 E E4 | "C"^F2 ^f4 e2 d2 d'4 c'2 | "C"b4 d'2 a2 b4 a4 |
+"C"a4 A3 G ^F4 ^f3 e | "C"d6 d2 d4 _d4 | "C"d2 D2 _D2 _d2 B2 B,2 A,2 A2 | "C"G2 g2 ^f2 ^F2 E2 B2 E2 e2 |
+"C"^f2 ^F2 E2 e2 d2 D2 _D2 _d2 | "C"B2 b2 a4 A3 e A2 A2 | "C"A4 z12 |

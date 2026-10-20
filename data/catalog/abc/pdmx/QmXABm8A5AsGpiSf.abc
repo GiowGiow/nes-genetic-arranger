@@ -1,0 +1,35 @@
+%abc-2.1
+% rumores de la caleta, by Isaac Albéniz(1860 - 1909). Score published on MuseScore (artist: Isaac
+% Albéniz), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Isaac Albéniz (died 1909,
+% Wikidata Q185812).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/10/QmXABm8A5AsGpiSfZ41nUnzmWeEZmKeprdUSimms4PYKeo.mid (sha256
+% c488e3daf61b6ebea0bf370f6460157fc46e2c9bac3d5a8bfa2d3678538d1516): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:rumores de la caleta
+M:3/4
+L:1/16
+Q:1/4=40.000027
+% Exact tempo 40.000026666684434 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E,, E, B, _A e8 | [M:3/8]"C"E,,2 _A, E E,2 | "C"C, A, D, B, B,, A, | "C"E,,2 _A, E E,2 |
+"C"C, A, D, B, B,, A, | "C"E,,2 _A, E E,2 | "C"A,, C, B, F, G, F, | "C"E,,2 _A, E E,2 |
+"C"C, A, D, B, B,, A, | "C"E,,2 _A, E E,2 | "C"A,, C, B, F, G, F, | "C"A,, C, B, F, G, F, |
+"C"A,, C, B, F, G, F, | "C"E,,2 _A, E E,2 | "C"A,, C, A,2 B,2 | "C"E,,2 _A, E E,2 |
+"C"A,, C, A,2 B,2 | "C"E,,2 _A, E E,2 | "C"A,, B,, B, D, B, F, | "C"D, E, B, D, B, C, |
+"C"A,, B,, B, A,, B, G,, | "C"E,,2 _A, E E,2 | "C"C,2 B,2 D, B,, | "C"E,,2 _A, E E,2 |
+"C"C,2 B,2 D, B,, | "C"E,,2 B B, d2 | "C"E,,2 c2 B,, d | "C"c z E, B, A B |
+"C"c2 B,2 d2 | "C"c d B B, B,2 | "C"A B G2 F2 | "C"E,,2 _A, E E,2 |
+"C"A,, C, A,2 B,2 | "C"E,,2 _A, E E,2 | "C"A,, C, B, F, G, F, | "C"E,,2 _A, E E,2 |
+"C"A,, B,, B, D, B, F, | "C"D, E, B, D, B, C, | "C"A,, B,, B, A,, B, G,, | "C"E,,2 _A, E E,2 |
+"C"A,, C, B, F, G, F, | "C"A,, C, B, F, G, F, | "C"A,, C, B, F, G, F, | "C"E,,2 B B, d2 |
+"C"E,,2 c2 B,, d | "C"c z E, B, A B | "C"c2 D2 d2 | "C"c d B B, B,2 |
+"C"A B G2 F2 | "C"E,,2 _A, E E,2 | "C"E,, _A =A B d c | "C"B c A C E2 |
+"C"A B G2 F2 | "C"E,,2 _A, E E,2 | "C"_A =A B c e d | "C"B c A C E2 |
+"C"G A F C G, F, | "C"E,,2 _A, E E,2 | "C"C, A, D, B, B,, A, | "C"E,,2 _A, E E,2 |
+"C"C, A, D, B, B,, A, | "C"E,,2 _A, E E,2 | "C"A,, C, B, F, G, F, | "C"E,,2 _A, E E,2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% McCusker, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/hpps.abc, tune
+% X: 43 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 6d035c6972ac0c204ba79d8128e2d71978ece2214a29ffceeb3e053e27f17db5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:McCusker
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"A B2 A F2 A2 f4 d4 | "D"A B2 A F2 A2 f4 d2 a2 | "G"g2 f2 e2 d2 "A"c4 c2 d2 |
+"E7"e f2 e d c2 B "A7"A8 | "D"A B2 A F2 A2 f4 d4 | "D"A B2 A F2 A2 f4 d2 a2 | "G"g2 f2 e2 d2 "A7"c2 A2 B2 c2 |
+"D"d4 f4 d4 A4 | "D"A B2 A F2 A2 f4 d4 | "D"A B2 A F2 A2 f4 d2 a2 | "G"g2 f2 e2 d2 "A"c4 c2 d2 |
+"E7"e f2 e d c2 B "A7"A8 | "D"A B2 A F2 A2 f4 d4 | "D"A B2 A F2 A2 f4 d2 a2 | "G"g2 f2 e2 d2 "A7"c2 A2 B2 c2 |
+"D"d4 f4 d4 A B2 c | "D"d2 A2 d2 f2 a4 f4 | "D"d2 A2 d2 f2 a4 f2 a2 | "G"g2 f2 e2 d2 "A"c4 c2 d2 |
+"E7"e f2 e d c2 B "A7"A4 A B2 c | "D"d2 A2 d2 f2 a4 f4 | "D"d2 A2 d2 f2 a4 f2 a2 | "G"g2 f2 e2 d2 "A7"c2 A2 B2 c2 |
+"D"d4 f4 d4 A B2 c | "D"d2 A2 d2 f2 a4 f4 | "D"d2 A2 d2 f2 a4 f2 a2 | "G"g2 f2 e2 d2 "A"c4 c2 d2 |
+"E7"e f2 e d c2 B "A7"A4 A B2 c | "D"d2 A2 d2 f2 a4 f4 | "D"d2 A2 d2 f2 a4 f2 a2 | "G"g2 f2 e2 d2 "A7"c2 A2 B2 c2 |
+"D"d4 f4 d4 z4 |

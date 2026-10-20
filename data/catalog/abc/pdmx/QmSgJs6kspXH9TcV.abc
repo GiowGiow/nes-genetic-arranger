@@ -1,0 +1,34 @@
+%abc-2.1
+% Lay a garland, by Robert Lucas Pearsall (1795-1856). Score published on MuseScore (artist:
+% Robert Lucas Pearsall), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Robert Lucas Pearsall (died
+% 1856, Wikidata Q3816877).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/21/QmSgJs6kspXH9TcVsfCxyAES98uMaf8eEzC8LJvXYmfsBX.mid (sha256
+% 93db324acdde5e6fa5f51ae661b98ef455891b04dd04bd92da5237b77f3c27f0): melody track 1, bars 0-58
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lay a garland
+M:2/2
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Eb"z8 _B8 | "Gm7"_B16 | "Cm7"_B4 _B4 _B8 | "Ab"_B8 _A4 G4 |
+"Bb"F8 G8 | "Bb"C8 z8 | "Eb"z16 | "Fm7"z8 _A8 |
+"Gm7"_A8 G8 | "Fm"G8 F4 _E4 | "G7"D8 z8 | "Dm"z16 |
+"Cm"z16 | "G"z12 d4 | "Cm"d4 d4 c4 c4 | "Bb7"f16 |
+"Eb"f8 _e6 d2 | "Fm"c12 d2 c2 | "Cm"B4 c2 d2 _e4 G4 | "G7"_A8 G8 |
+"Eb"z4 G8 G4 | "Dm7"_A8 _B8 | "Eb"_B4 _B4 _e8 | "Cm"_e8 c8 |
+"D"c4 c4 _B8 | "D"_B4 A8 G4 | "D"^F8 z8 | "Ab7"z16 |
+"Gm"z8 G8 | "Ab7"c16 | "Eb"c8 _B8 | "Bbm7"_A16 |
+"Ab"G8 c8 | "Db"c8 _B8 | "C"_B8 _A8 | "C"G16 |
+"Fm"z16 | "Eb"z4 _B4 _B8 | "Cm"_B8 A8 | "Bb"_B16 |
+"F7"z16 | "Bb"z4 _B4 _B4 _B4 | "Bb"c12 c4 | "Bb"d8 _e8 |
+"Bb7"_e8 d4 c4 | "Cm7"_B16 | "Bb"_B12 _A4 | "Gm7"_B4 _A4 G8 |
+"Bb7"F16 | "Ab"_E16 | "Bb"z8 _B8 | "Bb"F12 G4 |
+"Fm7"_A12 _A4 | "Cm7"G4 _A4 _B8 | "Ab"c4 _B4 _A8 | "Bb"_A8 G4 _A4 |
+"Bb"_B8 _B8 | "Eb"_B16 |

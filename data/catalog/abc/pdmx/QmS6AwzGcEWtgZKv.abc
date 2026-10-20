@@ -1,0 +1,30 @@
+%abc-2.1
+% Sinfonia in E minor BWV 793, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/5/QmS6AwzGcEWtgZKvUUJeNRw7iFNgNcHRVzndYQeRjBh9ud.mid (sha256
+% 9e078bd5d22a1ada98d41ee63c0518864130764a4032d21f92474a3fd6a061bb): melody track 0, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sinfonia in E minor BWV 793
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E7"z2 B2 e2 ^f2 g4 | "Am"g2 ^f2 a2 g2 ^f2 e2 | "B7"_e _d B _d =d2 =e2 ^f4 | "Em"^f2 e2 g2 ^f2 e2 d2 |
+"Ebm"_d _A _d _A ^f2 g2 =a4 | "F7"a2 ^f2 a2 g2 ^f2 e2 | "Em"_e2 ^f2 g2 a2 b2 g2 | "Em"e6 e2 ^f2 g2 |
+"Dbm7"a4 g2 B2 e2 d2 | "Bb"_d2 e2 g2 ^f2 e2 =d2 | "Em7"_d6 =d2 e2 ^f2 | "F#"g2 d2 ^f2 e2 d2 ^F2 |
+"F#"B2 _d2 e2 =d2 _d2 B2 | "Bm"B4 E2 ^F2 G4 | "Am7"G2 ^F2 A2 G2 ^F2 E2 | "Bm7"_E2 ^F2 B2 _d2 =d A G ^F |
+"Em7"E2 _d2 e2 =d2 _d2 B2 | "F#"_B ^f e d _d ^f _d =B _B _d _B _A | "Bm"^F G ^F E D ^F D _D ^f ^F B, A, | "E7"G, b g ^f e g e d _d g _d B |
+"A"A G E D _D E _D B, e E A, G, | "E7"^F, a ^f e d ^f d _d B ^f B A | "Em7"G2 E D _D E _D B, A,2 B,2 | "F#m7"_D2 A, B, _D2 E2 A,2 _D2 |
+"D"^F2 A E, d D, e G, ^f D, A, B, | "D"_D A, e =D g A, ^f ^F e A =d G | "D"_d e a g ^f a ^f e =d a =d _d | "D"B d g ^f e g e d _d g _d B |
+"Bm"A G ^F E D ^F D _D B, A G ^F | "Dbm7"G E _B =B _d ^F _d =d e ^f g e | "Bb"^f g ^f e d ^f d _d B =f B A | "C"_A ^F _A =A B _A B c d _A d e |
+"D7"f b e d c e c B A e A G | "D7"^F E ^F G A ^F A B c ^F c d | "D"_e a _e d c _e c _B A c A G | "F#m7"^F E _E =E ^F _E ^F G A _E A B |
+"B"c2 B2 e2 ^f2 g2 B2 | "C"e2 ^f2 a2 g2 ^f2 e2 | "E7"_e2 c2 d2 A2 _A2 B2 | "Am7"E2 _A2 =A2 B2 c2 E2 |
+"D7"A2 e2 a2 b2 c'2 g2 | "Eb"^f b a g ^f a _e =e ^f c B A | "E"^f b _e =e =e2 G2 _e4 | "E"e12 |

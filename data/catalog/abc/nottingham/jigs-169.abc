@@ -1,0 +1,31 @@
+%abc-2.1
+% The Lark In The Morning, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/jigs.abc, tune X: 169 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Lark In The Morning
+M:6/8
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"A2 F2 A2 A2 F2 A2 | "G"B2 G2 B2 B2 d2 B2 | "D"A2 F2 A2 A2 d2 e2 | "G"f2 e2 d2 B2 d2 B2 |
+"D"A2 F2 A2 A2 F2 A2 | "G"B2 G2 B2 B2 d2 B2 | "D"d2 e2 f2 a2 f2 e2 | "Bm"f2 d2 B2 B2 d2 d2 |
+"D"e2 f2 a2 f2 a2 b2 | "D"a2 f2 a2 f2 e2 d2 | "D"e2 f2 a2 f2 e2 f2 | "Em7"d2 B2 B4 A2 d2 |
+"D"e2 f2 a2 f2 a2 b2 | "Em7"a2 f2 a4 f2 g2 | "Em7"a2 g2 f2 g2 f2 e2 | "Em7"d2 B2 B2 d2 d4 |
+"D"f2 f2 e2 f2 f2 e2 | "Bm7"f2 f2 e2 f2 d4 | "Em7"f2 f2 e2 f2 e2 d2 | "Em7"B2 B4 A2 d4 |
+"D"f2 f2 e2 f2 f2 e2 | "D"f2 f2 e2 f2 g2 a2 | "Em7"g2 f2 g2 f2 e2 d2 | "Em7"B2 B2 A2 A2 d2 d2 |
+"D"f2 d2 d2 e2 d2 d2 | "D"f2 d2 B2 A2 d2 d2 | "Em7"f2 d2 d2 e2 d2 B2 | "Em7"B4 A2 A2 d2 d2 |
+"D"f2 d2 d2 e2 d2 e2 | "Em7"f4 f2 g2 a2 g2 | "Em7"f2 g2 f2 e2 d2 B2 | "Em7"B2 d2 B2 A2 F2 A2 |
+"Em7"A2 F2 A2 B2 G2 B2 | "Em7"B2 d2 B2 A2 F2 A2 | "Bm7"A2 d2 e2 f2 e2 d2 | "Em7"B2 d2 B2 A2 F2 A2 |
+"Em7"A2 F2 A2 B2 G2 B2 | "Em7"B2 d2 B2 d2 e2 f2 | "Bm7"a2 f2 e2 f2 d2 B2 | "Bm7"B2 d2 d2 e2 f2 a2 |
+"Em7"f2 a2 b2 a2 f2 a2 | "D"f2 e2 d2 e2 f2 a2 | "Bm"f2 e2 f2 d2 B2 B2 | "D"B2 A2 d2 e2 f2 a2 |
+"Em7"f2 a2 b2 a2 f2 a2 | "Em7"a2 f2 g2 a2 g2 f2 | "Em7"g2 f2 e2 d2 B2 B2 | "D"d2 d4 f2 f2 e2 |
+"D"f2 f2 e2 f2 f2 e2 | "Bm"f2 d4 f2 f2 e2 | "Em7"f2 e2 d2 B2 B4 | "D"A2 d4 f2 f2 e2 |
+"D"f2 f2 e2 f2 f2 e2 | "Em7"f2 g2 a2 g2 f2 g2 | "Em7"f2 e2 d2 B2 B2 A2 | "D"A2 d2 d2 f2 d2 d2 |
+"D"e2 d2 d2 f2 d2 B2 | "D"A2 d2 d2 f2 d2 d2 | "Em"e2 d2 B2 B4 A2 | "D"A2 d2 d2 f2 d2 d2 |
+"D"e2 d2 e2 f4 f2 | "Em7"g2 a2 g2 f2 g2 f2 | "Em7"e2 d2 B2 B2 d2 B2 |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Just as the Sun was Setting, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/waltzes.abc, tune X: 46 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 ffa773d012756be17784ab4a84e0e4618f316be5c6f244f9d60c06b23cd812c6).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Just as the Sun was Setting
+M:3/4
+L:1/16
+Q:1/4=140
+K:Am
+P:A
+"Am"z8 E4 | "Am"A6 B2 A4 | "Am"e8 a4 | "Em"g6 a2 g4 |
+"Em"e8 d4 | "Am"c6 B2 A4 | "G"B4 A4 G4 | "F"A6 B2 A4 |
+"E7"E8 E4 | "Am"A6 B2 A4 | "Am"e8 a4 | "C"g6 a2 g4 |
+"Em"e8 d4 | "Am"c6 B2 A4 | "E7"e6 d2 e4 | "Am7"A8 G4 |
+"Am"A8 e4 | "Am"a6 b2 a4 | "E7"_a8 e2 ^f2 | "G"g6 a2 g4 |
+"D"^f8 d2 e2 | "F"f6 g2 f4 | "C"e8 d4 | "F"c6 d2 c4 |
+"E7"B8 E4 | "Am"A6 B2 A4 | "Am"e8 a4 | "C"g6 a2 g4 |
+"Em"e8 d4 | "Am"c6 B2 A4 | "E7"e6 d2 e4 | "Am7"A8 G4 |
+"Am"A8 z4 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% waltz in e minor, by Ferdinando Carulli. Score published on MuseScore (artist: Ferdinando
+% Carulli), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ferdinando Carulli (died 1841,
+% Wikidata Q332596).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/13/QmeceqXerwVfGjbPdNHrXxpzijLmqUFQCUxQ6imLLZSn7p.mid (sha256
+% 38c5f76895045e1cfa76e5a60718979c2a54673c6ce0f64b1ef45ef5c70637b6): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:waltz in e minor
+M:3/8
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"E B, G, B, E B, | "C"E B, G, B, E B, | "C"^F B, G B, ^F B, | "C"G B, ^F B, G B, |
+"C"E B, G, B, E B, | "C"E B, G, B, E B, | "C"^F B, G B, ^F B, | "C"E4 z2 |
+"C"E B, G, B, E B, | "C"E B, G, B, E B, | "C"^F B, G B, ^F B, | "C"G B, ^F B, G B, |
+"C"E B, G, B, E B, | "C"E B, G, B, E B, | "C"^F B, G B, ^F B, | "C"E4 z2 |
+"C"_E, B, B,, B, _E, B, | "C"E, B, G, B, E B, | "C"^F B, G B, ^F B, | "C"G B, ^F B, G B, |
+"C"_E, B, B,, B, _E, B, | "C"E, B, G, B, E B, | "C"^F B, G B, ^F B, | "C"E4 z2 |
+"C"_E, B, B,, B, _E, B, | "C"E, B, G, B, E B, | "C"^F B, G B, ^F B, | "C"G B, ^F B, G B, |
+"C"_E, B, B,, B, _E, B, | "C"E, B, G, B, E B, | "C"^F B, G B, ^F B, | "C"E4 z2 |
+"C"B,2 B,2 C2 | "C"D B, D, B, D B, | "C"C A, D, A, C A, | "C"B, G, D, G, B,, G, |
+"C"B,2 B,2 C2 | "C"D B, D, B, D B, | "C"C A, D, A, C A, | "C"G,4 z2 |
+"C"B,2 B,2 C2 | "C"D B, D, B, D B, | "C"C A, D, A, C A, | "C"B, G, D, G, B,, G, |
+"C"B,2 B,2 C2 | "C"D B, D, B, D B, | "C"C A, D, A, C A, | "C"G,4 z2 |
+"C"D D, D D, E D, | "C"^F D, ^F D, G D, | "C"C A, D, A, C A, | "C"B, G, D, G, B, G, |
+"C"D D, D D, E D, | "C"^F D, ^F D, G D, | "C"C A, D, A, C A, | "C"G,6 |
+"C"D D, D D, E D, | "C"^F D, ^F D, G D, | "C"C A, D, A, C A, | "C"B, G, D, G, B, G, |
+"C"D D, D D, E D, | "C"^F D, ^F D, G D, | "C"C A, D, A, C A, | "C"G,6 |

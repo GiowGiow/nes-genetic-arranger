@@ -1,0 +1,24 @@
+%abc-2.1
+% Preston Tally-Ho !, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 73 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Preston Tally-Ho !
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"D7"z4 G4 A4 ^A4 | "G"B4 G4 A4 G4 | "G"B4 G4 A4 G4 | "E7"F4 E4 F4 E4 |
+"E7"E4 E F2 E ^D4 E4 | "Am"B4 A4 B4 A4 | "A7"B4 A4 G2 E6 | "D7"A8- "Am"A8 |
+"D"A4 G4 "D7"A4 ^A4 | "G"B4 G4 A4 G4 | "G"B4 G4 A4 G4 | "E7"F4 E4 F4 E4 |
+"E7"E4 E F2 E ^D4 E4 | "Am"B6 A2 G4 E4 | "D7"B8 B8 | "G"G16 |
+"G"G4 G4 F4 =F4 | "C"E4 G4 G4 G4 | "Cm"A4 G8 A4 | "G"B4 B4 A4 G4 |
+"Em"G4 G4 A4 B4 | "A"^c6 =c2 B4 A4 | "Em"B4 d4 "A"^c4 A4 | "D"d8- "Am"d8 |
+"D"d4 D4 "D7"E4 G4 | "G"B4 G4 A4 G4 | "G"B4 G4 A4 G4 | "E7"F4 E4 F4 E4 |
+"E7"E4 E F2 E ^D4 E4 | "Am"B6 A2 G4 E4 | "D7"B8 B8 | "G"G16 |
+"G"G4 z12 |

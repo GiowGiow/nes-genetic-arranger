@@ -1,0 +1,34 @@
+%abc-2.1
+% Reír llorando, by Carlos Amable Ortiz. Score published on MuseScore (artist: Carlos Amable
+% Ortiz), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Carlos Amable Ortiz (died 1937,
+% Wikidata Q2939292).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/6/QmR7gCGaBUcL1BgMfw8127EjX7BtNMkW4SDK5gRJE3RgGs.mid (sha256
+% eeec8826bb2b7649826a274aee0e5722ec9a2170005a3f957051870e5354af04): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Reír llorando
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G7"z2 ^f g _a6 g2 | "G7"g f d2 B2 G2 D2 d2 | "Em7"z2 e f g6 g f | "Cm"_e2 c2 G2 _E2 C2 c2 |
+"Eb"z2 d _e f6 _e2 | "G7"d2 d c B2 c2 d2 d c | "G"B2 B _A G2 ^F2 G2 G =F | "Cm"_E2 D2 _E2 F2 G2 _B _A |
+"Cm"G2 ^f g _a6 g2 | "G7"g f d2 B2 G2 z2 d2 | "Em7"z2 e f g6 f2 | "Cm"_e2 c2 G2 _E2 C2 c2 |
+"Eb"z2 d _e f6 _e2 | "G7"d2 d c B2 c2 d2 d c | "G"B2 B _A G2 ^F2 G2 G =F | "Cm"_E4 c3 c C2 c2 |
+"C"z2 ^f g _a6 g2 | "G7"g f d2 B2 G2 D2 d2 | "Em7"z2 e f g6 g f | "Cm"_e2 c2 G2 _E2 C2 c2 |
+"Eb"z2 d _e f6 _e2 | "G7"d2 d c B2 c2 d2 d c | "G"B2 B _A G2 ^F2 G2 G =F | "Cm"_E2 D2 _E2 F2 G2 _B _A |
+"Cm"G2 ^f g _a6 g2 | "G7"g f d2 B2 G2 z2 d2 | "Em7"z2 e f g6 f2 | "Cm"_e2 c2 G2 _E2 C2 c2 |
+"Eb"z2 d _e f6 _e2 | "G7"d2 d c B2 c2 d2 d c | "G"B2 B _A G2 ^F2 G2 G =F | "Cm"_E4 c3 c C2 c2 |
+"C"z4 G4 _A4 | "Eb"_B c _B A _B c d _e f g d f | "Cm7"_e _B G c _B G _E G _B2 =B2 | "Fm"c d c B c d _e f g _a f c |
+"Fm"_A F _A c f c _A F C F _A c | "Bb7"_B c _B A _B c d _e f g _a g | "Bb7"_b _a f d _B _A F D F _A c _B | "Eb"_B c _B G _e _B g _e _B G _E _B, |
+"G"z4 g6 g2 | "G7"g f3 d8 | "G"z2 f2 d2 B2 G2 d2 | "Cm"f _e3 c8 |
+"Cm"z2 _e2 c2 G2 _E2 c2 | "G7"d4 B8 | "G"z2 d2 B2 G2 F2 D2 | "Cm"_E4 c3 c C2 c2 |
+"C"z4 G4 _A4 | "Eb"_B c _B A _B c d _e f g d f | "Cm7"_e _B G c _B G _E G _B2 =B2 | "Fm"c d c B c d _e f g _a f c |
+"Fm"_A F _A c f c _A F C F _A c | "Bb7"_B c _B A _B c d _e f g _a g | "Bb7"_b _a f d _B _A F D F _A c _B | "Eb"_B c _B G _e _B g _e _B G _E _B, |
+"G"z4 g6 g2 | "G7"g f3 d8 | "G"z2 f2 d2 B2 G2 d2 | "Cm"f _e3 c8 |
+"Cm"z2 _e2 c2 G2 _E2 c2 | "G7"d4 B8 | "G"z2 d2 B2 G2 F2 D2 | "Cm"_E4 c3 c C2 c2 |

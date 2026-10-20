@@ -1,0 +1,24 @@
+%abc-2.1
+% The Chickadee's Polka, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 59 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Chickadee's Polka
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 G2 A2 | "G"B4 G4 D4 G2 A2 | "G"B4 G4 D4 G2 A2 | "G"B4 G4 E4 G4 |
+"C"E8 "G"D8 | "C"C4 E4 E6 C2 | "G"B,4 D4 G4 B4 | "A7"B4 A4 E4 B4 |
+"D7"B8 A4 G2 A2 | "G"B4 G4 D4 G2 A2 | "G"B4 G4 D4 G2 A2 | "G"B4 G4 E4 G4 |
+"C"E8 "G"D8 | "C"E4 G4 c4 e4 | "G"e4 d4 B4 d2 c2 | "A7"B4 A4 "D7"G4 F4 |
+"G"G12 d2 c2 | "G"B4 B4 B4 d2 c2 | "G"B4 B4 B4 d2 c2 | "G"B4 d4 g4 a4 |
+"G"b8 g8 | "Am"a6 b2 "G"a4 g4 | "C"e6 g2 "G"d4 B4 | "C"e4 d4 "G"c4 B4 |
+"D7"A12 d2 c2 | "G"B4 B4 B4 d2 c2 | "G"B4 B4 B4 d2 c2 | "G"B4 d4 g4 a4 |
+"G"b8 g8 | "D"a2 b2 a2 g2 f4 e2 f2 | "G"g2 a2 g2 e2 d4 B2 d2 | "C"e4 g4 "D7"f4 a4 |
+"G"g12 z4 |

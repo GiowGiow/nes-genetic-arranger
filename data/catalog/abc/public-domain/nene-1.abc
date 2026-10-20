@@ -1,0 +1,38 @@
+%abc-2.1
+% NENÊ (Sertaneja), by Catulo da Paixão Cearense e Ernesto Nazareth, as performed by Catulo da
+% Paixão Cearense e Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Catulo da Paixão Cearense (died 1946, Wikidata Q16337108); Ernesto
+% Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nene-1.html (file
+% https://www.beakauffmann.com/mpb_n/som/nene-1.mid, sha256
+% 312309c8637e2a1726eb97d3e5b090c3787472243e2f5c10c6797655367db73c), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NENÊ (Sertaneja)
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C7"z6 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "F"g2 z f z f2 e | "G7"d _d2 =d e f2 ^f |
+"C7"g3 z3 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "Dm7"g2 z f z e2 d | "C7"f c2 d c G2 A |
+"F"F A2 c f2 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "F"g2 z f z f2 e | "G7"d _d2 =d e f2 ^f |
+"C7"g3 z3 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "Dm7"g2 z f z e2 d | "C7"f c2 d c G2 A |
+"Dm"F3 z f d2 f | "F"e B2 e _d A2 _d | "Dm"d A2 d A F2 A | "C7"_B G2 _B E _D2 E |
+"Dm"A F2 A a f2 a | "Dm"_a f2 _a g e2 g | "Dm"f d2 f d _B2 d | "Dm"A F2 A E2 F2 |
+"Dm"D3 z f d2 f | "F"e B2 e _d A2 _d | "Dm"d A2 d A F2 A | "C7"_B G2 _B E _D2 E |
+"Dm"A F2 A a f2 a | "Dm"_a f2 _a g e2 g | "Dm"f d2 f d _B2 d | "Dm"A F2 A E2 F2 |
+"Dm"D3 z3 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "F"g2 z f z f2 e | "G7"d _d2 =d e f2 ^f |
+"C7"g3 z3 e2 | "C7"d2 z c2 c a e | "F"g2 z f z e2 d | "C7"f e2 d c2 _B2 |
+"Dm7"A _B2 =B c2 e2 | "C7"d2 z c2 c a e | "Dm7"g2 z f z e2 d | "C7"f c2 d c G2 A |

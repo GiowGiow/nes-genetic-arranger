@@ -1,0 +1,34 @@
+%abc-2.1
+% 24 Caprices for Solo Violin Op.1, by Niccolò Paganini. Score published on MuseScore (artist:
+% Niccolò Paganini), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Niccolò Paganini (died 1840,
+% Wikidata Q66075).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/3/QmZ4juQpXtHVJStEFs1bKSMGgXXpKZKNqGU58Hu1xhQ3Ed.mid (sha256
+% 9aa27aa309586b6099754bd1fa64de066c920cdf87dff7ab07521dd80447be0a): melody track 0, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:24 Caprices for Solo Violin Op.1
+M:3/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"G _B d g a _b ^f a g d _B G | "C"^F A _E A D d' c' a ^f d c A | "C"^F A c _e ^f c' a ^f _e c _B A | "C"_B d A d G =B d g =b f' d' =b |
+"C"c' g _e c C A c f a _e' c' a | "C"_b f d _B _B, _b a g ^F c' a ^f | "C"_b g G _b F _b _E _b D _b _D _b | "C"D a ^f d' a ^f' d' a ^f d c A |
+"C"G _B d g a _b ^f a g d _B G | "C"^F A _E A D d' c' a ^f d c A | "C"^F A c _e ^f c' a ^f _e c _B A | "C"_B d A d G =B d g =b f' d' =b |
+"C"c' g _e c C A c f a _e' c' a | "C"_b f d _B _B, _b a g ^F c' a ^f | "C"_b g G _b F _b _E _b D _b _D _b | "C"D a ^f d' a ^f' d' a ^f d c A |
+"C"B, G B d f _a g f d B _a g | "C"f _e d c C _e D f C _e _B, d | "C"A, F A c _e ^f =f _e c A ^f =f | "C"_e d c _B _B, d D f F _b D f |
+"C"a g _E G g f D F f _e C D | "C"_e d _B, D F _B d f _b d' f' _b' | "C"a _b _d' _b g f e _d' _b g f e | "C"g f e ^f =f e g =f e =f _e c |
+"C"d _B A =B _B A c _B A _B ^F E | "C"G F e' ^f' =f' e' g' =f' e' =f' _e' c' | "C"d' _b a =b _b a c' _b a _b ^f e | "C"g f e ^f =f _e c A =F =E _E C |
+"C"_B, D F _B _d =d A c _B F =D _B, | "C"A, c' a c' f c' _e c' c c' A c' | "C"C _E A c d _e B d c A _E C | "C"D d' _b d' f d' d d' _B d' F d' |
+"C"G _e' d' _e' F d' _d' =d' =E _d' c' _d' | "C"F d' _d' =d' _E c' b c' =D _b a _b | "C"_E G G _B _B _e _e g g _b _b _e' | "C"_E _A _A c c _e _e _a _a c' c' _e' |
+"C"_E A A c c _e _e a a c' c' _e' | "C"d' f' a c' _b d' ^f a g _b d =f | "C"_e g B d c _b a _a g ^f =f =e | "C"g f d _B G E ^F =F E =F _E C |
+"C"_B, _b a _a g ^f =f e g ^f =f e | "C"g ^f =f e _e d c _B A _A G ^F | "C"G _b D g C _e _B, d A, c G, _B | "C"D A ^F d A ^f d a ^f d' a ^f' |
+"C"A c' _E a D ^f C _e _B, d A, c | "C"G, _B G d _B g d _b g d' _b g' | "C"f' d' b g b g f d B G F D | "C"C _E D F _E G ^F A G _B A c |
+"C"_B d c _e d ^f =e g ^f a g _b | "C"a c' _b d' g _b a c' f a g _b | "C"_e g f a d f _e g c _e d f | "C"_B d c _e A _B =B c _d =d _e c |
+"C"_B d' A c' G _b D g ^f C _B, A, | "C"G, _b a _a g ^f =f e _e d D ^f | "C"G, _B A _A G ^F =F E _E D d' ^f' | "C"G, _B A _A G ^F =F E _E D d' ^f' |
+"C"G, z g' d' G, z d' _b G, z _b g | "C"G, z g d G, z d _B G, z _B G | "C"G,4 G, A, _B, =B, C _D =D _B, | "C"_B g7 z4 |

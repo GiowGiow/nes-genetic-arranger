@@ -1,0 +1,35 @@
+%abc-2.1
+% Passacaglia for Violin and Viola, by Johan Halvorsen. Score published on MuseScore (artist:
+% Johan Halvorsen), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johan Halvorsen (died 1935,
+% Wikidata Q449172).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/32/QmcMF7zhLai37n5i1GK4uFimeeysZx7xV9K6conDJaX7Qr.mid (sha256
+% 9629ecb5952222b80dc7c20103c333d080342c96fd4e2898336d0412af470e36): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Passacaglia for Violin and Viola
+M:4/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D7"G8 "Cm7"_E8 | "F7"F8 "D7"_B,8 | "F#"_E8 "Am7"C8 | "D7"D4 D,4 "Gm"G,8 |
+"Bb"G2 F2 _E2 D2 "Cm7"C2 D2 _E2 D2 | "Am"F2 _E2 D2 C2 "Gm"_B,2 C2 D2 _B,2 | "Gm"_E2 D2 C2 _B,2 "Am7"A,2 _B,2 C2 A,2 | "D"D2 C2 _B,2 A,2 "Gm"G,2 D2 _B,2 A,2 |
+"C7"G,4 _B,4 "Cm7"C z3 _E, z3 | "F7"F,4 A,4 "D7"_B, z3 D, z3 | "G"_E,4 G,4 "C7"A, z3 C, z3 | "Dm7"D,4 ^F,4 "Gm"G,6 A,2 |
+"A7"_B,2 D2 G2 F2 "Cm"_E2 D2 C2 _B,2 | "G7"A,2 C2 F2 _E2 "Bb"D2 C2 _B,2 A,2 | "F7"G,2 _B,2 _E2 D2 "Am"C2 _B,2 A,2 G,2 | "D"^F,2 G,2 C2 _B,2 "A7"_B,2 A,2 G,4 |
+"D7"D2 z2 D2 z2 "Cm"G2 z2 _E2 z2 | "F7"F2 z2 F2 z2 "Bb"F2 z2 F2 z2 | "Cm7"G A z _B _E F z G "Am7"C D z _E _B, C z D | "D7"^F, G, z A, D, D z C "G"_B, C z D G,4 |
+"Gm7"G, D2 C _B, C2 D "Cm"_E F2 G C, D,2 _E, | "F"F, C2 _B, A, _B,2 C "Dm"D _E2 F _B, C2 D | "Cm"C4 _E D2 C "D"D3 G _B,3 A | "D7"G4 ^F4 "Gm"G6 z2 |
+"Cm"G, D _B D _B, G d G "Am7"C G _e G _E c F c | "G7"F, C A C A, F c F "Gm7"_B, F d F D _B _E _B | "Gm"_E, _B, G _B, G, _E _B _E "Cm"A, _E c _E C A D A | "D"D _e d c _B c _B A "Gm"G A G D _B, C _B, A, |
+"Cm"G, D _B D _B, G d G "Am7"C G _e G _E c F c | "G7"F, C A C A, F c F "Gm7"_B, F d F D _B _E _B | "Gm"_E, _B, G _B, G, _E _B _E "Cm"A, _E c _E C A D A | "D"D _e d c _B c _B A "Gm"G A G D _B, C _B, A, |
+"F7"G,2 _B2 z2 _B,2 "Cm"G F _E D C _B, A, G, | "F7"F,2 A2 z2 A,2 "Gm7"F _E D C _B, A, G, F, | "Dm7"_E,2 G2 z2 G,2 "Am7"_E D C _B, A, G, ^F, G, | "Am7"D,2 ^F2 z2 ^F,2 "Gm"G, A, _B, C D C _B, A, |
+"G"G, _B, C _E F A _B d "Cm7"_e2 z2 _E,4 | "A7"F, A, _B, D _E G A c "Am7"d2 z2 D,4 | "G"_E, G, A, C D F G _B "Eb"c2 z2 d _B D _B, | "C7"C _E C _E D2 D,2 "G"G, _B, C _B, G,4 |
+"G"G, _B, C _E F A _B d "Cm7"_e2 z2 _E,4 | "A7"F, A, _B, D _E G A c "Am7"d2 z2 D,4 | "G"_E, G, A, C D F G _B "Eb"c2 z2 d _B D _B, | "C7"C _E C _E D2 D,2 "G"G, _B, C _B, G,4 |
+"Gm7"G, D _B, D G, D _B, D "Bb"C G _E G C G _E G | "A"F, _B, G, _B, F, _B, G, _B, "Am"A, _E C _E A, _E C _E | "G"_E, _B, G, _B, _E, _B, G, _B, "Gm"A, _E C _E A, _E C _E | "A7"D c A c D c A c "G"_B D C D _B, C A, _B, |
+"Gm7"G, D _B, D G, D _B, D "Bb"C G _E G C G _E G | "A"F, _B, G, _B, F, _B, G, _B, "Am"A, _E C _E A, _E C _E | "G"_E, _B, G, _B, _E, _B, G, _B, "Gm"A, _E C _E A, _E C _E | "A7"D c A c D c A c "G"_B D C D _B, C A, _B, |
+"Gm"G, _B, D _B, D G _B d "C7"_d _B A E _D _B, G, E, | "F"_E, F, A, C _E F A c "E7"B _A F D B, _A, F, D, | "C7"_D, E, G, _B, _D E =D _D "Gm"C =D ^F A _B, =D G =d | "Cm"c _B A G ^F D E ^F "Gm"G D _B, D G,4 |
+"G7"_B6 =B2 "G"c4 _B4 | "F7"_B4 A4 "Dm"A4 _A4 | "Dm7"G8 "Eb"G4 _B,4 | "D"G4 ^F4 "C7"D8 |
+"G7"_B6 =B2 "G"c4 _B4 | "F7"_B4 A4 "Dm"A4 _A4 | "Dm7"G8 "Eb"G4 _B,4 | "D"G4 ^F4 "C7"D8 |

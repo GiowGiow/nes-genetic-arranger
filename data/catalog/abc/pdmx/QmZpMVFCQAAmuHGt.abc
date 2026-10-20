@@ -1,0 +1,23 @@
+%abc-2.1
+% Lagrime mie d'affanno, by Fernando Sor (1778-1839). Score published on MuseScore (artist:
+% Fernando Sor), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Fernando Sor (died 1839,
+% Wikidata Q254110).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/36/QmZpMVFCQAAmuHGthBDrpGJAWALHjwKSqgjVePpBoM8eLB.mid (sha256
+% 4a7e1d49f0d433cd0342347814e7ae2c5e3b0bddb4b5bc9b7345393c0d9ae094): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Lagrime mie d'affanno
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Am"c2 c B _A2 =A B | "Am"A4 E2 z E | "Dm"A2 c2 B2 d c | "E"B z3 _A2 z E |
+"Am7"c2 B A A2 G G | "C"G2 e4 _d2 | "G7"d2 A A B c c z | "C"d z7 |
+"Ab7"e2 e z e z2 _e | "Dbm7"e4 B2 z B | "F7"d2 d B A z B A | "E"B6 B2 |
+"A"_d2 =d z _d A _A =A | "E7"_B3 _d =B z3 | "Bm7"_d2 =d z _d B A _A | "Db7"F8 |
+"E7"E4 E2 _A ^F | "Em7"E A e4 d2 | "E"e _d A z2 ^F E _d | "A"B z7 |

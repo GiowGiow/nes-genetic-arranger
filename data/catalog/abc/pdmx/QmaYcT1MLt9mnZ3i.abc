@@ -1,0 +1,21 @@
+%abc-2.1
+% Alma redemptoris Mater, by Michael Praetorius (1571-1621). Score published on MuseScore (artist:
+% not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Michael Praetorius (died 1621,
+% Wikidata Q108278).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/55/QmaYcT1MLt9mnZ3ifxETHiUgGjWzNU4eqXsWqPK2VEkiBY.mid (sha256
+% f39233f824ccfc209c7152f80accaaa8204576663ff9793cd5c67fdad696c33c): melody track 2, bars 0-9
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Alma redemptoris Mater
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em7"B,8 C4 A,4 A,4 ^F,4 | "Em"G,8 E,8 ^F,8 | "C"G,8 B,4 G,4 C4 B,4 | "Am7"C8 D8 D8 |
+"Em7"B,8 D4 D4 C4 B,4 | "C"A,4 G,2 A,2 B,4 A,4 G,8 | "Em7"A,8 B,8 B,8 | "Bm7"C4 A,8 G,8 ^F,4 |
+"G"G,6 A,2 B,16 |

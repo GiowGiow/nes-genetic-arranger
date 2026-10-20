@@ -1,0 +1,35 @@
+%abc-2.1
+% CHORO TRISTE Nº 2, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/choro-triste-n2.html (file
+% https://www.beakauffmann.com/mpb_c/som/choro-triste-n2.mid, sha256
+% 362a1246d1fca4ea13fb172813cb685f29824e6c21c863cf9bbdfc5b6daae5c7), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CHORO TRISTE Nº 2
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Ebm"z2 _B =B d _d c =B | "Ebm"_B3 _B A3 A | "Em"G3 E ^F G A A | "A"G z2 ^F E3 E |
+"B"_E3 _E z4 | "E"F3 E5 | "F#m7"D3 C2 C2 C | "A7"z G, E D z F, D C |
+"Abm7"C3 B,2 B, _B, =B, | "B7"^F4 z B, _B, =B, | "Em"G4 z B, _B, =B, | "B7"z A2 _A z G2 ^F |
+"F7"c4 F4 | "Am"_A3 =A2 E2 ^F | "Em"^F3 G B, _D _E =E | "F7"_D ^F z3 G2 G |
+"Em"G, E3 z4 | "Ab"D3 E D3 E | "D7"D3 D2 D _D =D | "A7"z2 G A G3 A |
+"G7"G3 G2 G A B | "Eb"B3 A z B2 ^F | "F#7"A3 G z ^F2 _D | "B7"E3 D _D =D _E =E |
+"Am7"A B A B _B G A F | "Bb"z2 F G F3 G | "F7"F3 F2 F E F | "Gm7"z2 _B c _B3 c |
+"D7"_B3 A2 A _B ^F | "G7"A3 G F E _E B, | "A7"D3 C B, C D _E | "Cm"E D F _E B B B B |
+"G7"G z7 | "Am7"z2 D E D3 E | "D7"D3 D2 D _D =D | "A7"z2 G A G3 A |
+"G7"G3 G2 G A B | "Eb"B3 A z B2 ^F | "F#7"A3 G z ^F2 _D | "B7"E3 D _D =D _E =E |
+"Am7"A B A B _B G A F | "Bb"z2 F G F3 G | "F7"F3 F2 F E F | "Gm7"z2 _B c _B3 c |
+"D7"_B3 A2 A _B ^F | "G7"A3 G F E _E B, | "A7"D3 C B, C D _E | "Cm"E D F _E B B B B |
+"G"G2 _B =B d _d c =B | "Ebm"_B3 _B A3 A | "Em"G3 E ^F G A A | "A"G z2 ^F E3 E |
+"B"_E3 _E z4 | "E"F3 E5 | "F#m7"D3 C2 C2 C | "A7"z G, E D z F, D C |
+"Abm7"C3 B,2 B, _B, =B, | "B7"^F4 z B, _B, =B, | "Em"G4 z B, _B, =B, | "B7"z A2 _A z G2 ^F |
+"F7"c4 F4 | "Am"_A3 =A2 E2 ^F | "Em"^F3 G B, _D _E =E | "Db7"^F z4 G2 G |

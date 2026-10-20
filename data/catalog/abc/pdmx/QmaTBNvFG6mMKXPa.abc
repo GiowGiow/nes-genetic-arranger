@@ -1,0 +1,22 @@
+%abc-2.1
+% De madrigale, by Tielman Susato. Score published on MuseScore (artist: Tielman Susato), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tielman Susato (died 1570,
+% Wikidata Q547783).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/45/QmaTBNvFG6mMKXPa5nZUKvDFTG6hvYvxZAdELpyVoadTGG.mid (sha256
+% 1be493e015ffbfda3f77f3435c61cf06c2add7786895930572402625a8263467): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:De madrigale
+M:3/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c12 d4 e8 | "G"d12 e4 f8 | "Am7"c12 d4 e8 | "G"d24 |
+"C"c12 d4 e8 | "G"d12 e4 f8 | "Am7"c12 d4 e8 | "G"d24 |
+"C"e12 d4 e8 | "Dm7"c12 d4 e8 | "Dm7"f16 e8 | "G"d24 |
+"C"e12 d4 e8 | "Dm7"c12 d4 e8 | "Dm7"f16 e8 | "G"d24 |

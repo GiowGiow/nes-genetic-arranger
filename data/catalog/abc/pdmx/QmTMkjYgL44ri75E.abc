@@ -1,0 +1,34 @@
+%abc-2.1
+% Rückert Lieder, by Gustav Mahler (1860-1911). Score published on MuseScore (artist: Gustav
+% Mahler), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Mahler (died 1911,
+% Wikidata Q7304).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/32/QmTMkjYgL44ri75ECVyqH7LWWpHXEUVvX5vfLeZbY9qKmN.mid (sha256
+% c01c635ab63e9b8a91a348e6ee796b976fd53f480e779c5f63c4ca5b45161a62): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Rückert Lieder
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"z8 "D7"z8 | "Am7"z8 "F"z8 | "Dm7"z16 | "C"z8 "Dm"z8 |
+"C"z8 "F"z8 | "C"z8 "F"z8 | "Bb"z8 "Bm7"z8 | "Dm7"z8 "D7"z8 |
+"Dm7"z16 | "Dm7"z16 | "Dm7"z12 C,4 | "Dm7"D,4 F,4 A,8 |
+"C"A,2 _B,2 A,2 G,2 "Dm7"G,2 F,2 G,2 A,2 | "C"C8 "Dm"A,4 z4 | [M:2/4]"C"z6 _B,2 | [M:4/4]"Dm"A,2 D2 E2 F2 "Dm7"E2 D2 C2 _B,2 |
+"Dm7"A,4 G,4 "C"z8 | "Bb"z2 G,2 A,2 _B,2 "Dm"_B,4 A,4 | "C"A,2 A,2 B,2 C2 "Em"C4 B,4 | "Dm"z8 "Gm7"z8 |
+"C7"z8 "Bb"z8 | "Am"z8 "D7"z8 | "F"z8 "Dm7"z8 | "Dm"z2 A,2 C2 A,2 "Dm7"G,4 A,4 |
+"Dm7"z2 A,2 C2 F2 "Dm"G6 F2 | "F"E2 D2 C2 E D "Bm7"C2 B,2 A,2 z2 | "Am7"z8 "Am"z8 | "Cm"z6 F,2 G,2 A,2 _B,2 C2 |
+"F7"C2 D4 C2 "Gm7"_B,2 A,2 G,4 | "Bbm"F,4 z4 "F7"z6 C2 | "Gm7"D2 D2 _E2 F2 G6 F2 | "C"E8 "F"z8 |
+"F7"z8 "Dm"z6 A,2 | "Gm"_B,2 _B,2 C2 D2 "E"E2 D2 C2 _B,2 | "A7"A,4 G,4 "D"z6 ^F,2 | "A7"A,4 E,4 "A"z2 E,2 ^F,2 G,2 |
+"A7"B,2 A,2 E,2 ^F,2 "Em7"G,2 A, G, ^F,2 =F,2 | "D"^F,6 z2 "A7"z8 | "Gm7"z8 "C7"z8 | "C"z8 "Dm7"z8 |
+"Dm7"z8 "D7"z8 | "C7"z16 | "F"z2 C,2 C,2 D,2 "Gm7"D,4 C,4 | "Gm7"z2 C,2 D,2 E,2 "Dm7"G,4 F,4 |
+"Dm7"z4 G,4 "Dm"_B,8 | "Dm7"_B,2 A,2 F,2 D,2 "Bb"D8 | "Am"D4 C4 "Gm7"_B,4 G,4 | "Dm"F,8 "G7"z8 |
+"G7"z4 D,4 G,6 F,2 | "C"F,8 E,8 | "Am"z2 F,2 G,2 A,2 "G"C8 | "D7"_B,4 z4 "Gm"z2 G,2 A,2 _B,2 |
+"Dm7"D8 "F"C8 | "Dm7"z8 "D7"z8 | "C"z4 G4 "Dm7"F6 D2 | "Dm7"F8 "D7"C8 |
+"Dm7"z8 "Am"z8 | "Dm7"z4 C4 "C7"A,6 G,2 | "F"F,8 z8 | "F"z16 |
+"Dm7"z8 "Dm"z8 | "Dm"z8 "Bb"z8 | "Am"z8 "A"z8 | "F"z8 "Dm7"z8 |

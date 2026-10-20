@@ -1,0 +1,35 @@
+%abc-2.1
+% Romeo and Juliet (ballet) Op.64, by Serguei Prokofiev. Score published on MuseScore (artist:
+% Sergei Prokofiev), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Serguei Prokofiev (died 1953,
+% Wikidata Q49481).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/49/QmNVPtWBxzp3m4xJ688jM3FE81NCTM3N2Ms7SvHNgFuQSJ.mid (sha256
+% 6ed46eb5f9f05d5659a96dd74b1efa319862f6fa2a514ca92009bafc2868028e): melody track 25, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Romeo and Juliet (ballet) Op.64
+M:4/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"E"z16 | "Dm"z16 | "Dm7"z16 | "G7"b16 |
+"G7"b16 | "F"b16 | "F"b16 | "Bm"b16 |
+"Bm"b16 | "Bm"b16 | "Bm7"a8- "D"a8 | "Am7"d'8- "C"d'8 |
+"C"d'8- "G"d'8 | "Gm"d'16 | "Gm"d'8 z8 | "C7"z16 |
+"A7"z16 | "Am7"z16 | "Am7"z8 "Cm7"z8 | "Cm7"z16 |
+"G"z16 | "Eb"_e'16 | "Eb"_e'16 | "Abm"_e'16 |
+"Abm"_e'16 | "Abm7"^f16 | "F#7"e'16 | "F"f'16 |
+"F"f'16 | "F7"f'16 | "F7"f'16 | "Em"z16 |
+"Em"z16 | "Em"B,3 E G3 B e3 B G3 E | "Em"B,3 E G3 B e z3 B4 | "Bm"B3 d ^f3 b d'3 b ^f3 d |
+"Bm"B3 d ^f3 b d'8 | "F#m"d'3 _e' d'3 _d' "Gm"=d4 =d'4 | "F#m"d3 _e d _d _d _d "Gm"_d4 =D4 | "G"D3 _E D3 _D- "Dbm"_D3 _E =D3 _D |
+"D7"_D3 G ^F4- "B"^F4 B,4 | "Em"B,3 E G3 B e3 B G3 E | "Em"B,3 E G3 B e2 z2 B4 | "Bm"B3 d ^f3 b d'3 b ^f3 d |
+"Bm"B3 d ^f8 ^f4 | "Bbm"^f3 g ^f =f =f =f "Bm"=f4 ^F4 | "Bbm"F3 G ^F3 _b "Bm"=f4 ^F4 | "G7"F3 A d3 f "Dm"a3 f d3 f |
+"Dm"a3 f d3 f a3 f d3 f | "Dm"a3 f d3 f a3 f d3 f | "Dm"a3 f d3 f "F"a3 f d3 f | "Dm7"a3 f d3 A A3 d f3 a |
+"Dm7"a3 f d3 f "Dm"a3 A d3 f | "Am"a3 c' e'3 a' c''3 a' e'3 c' | "Am"a3 c' e'3 a' c'' z3 e4 | "E"e3 f e3 _e "Am"=E4 f4 |
+"Abm"e3 f e _e _e _e "Am"_e4 =E4 | "Em"B,3 E G3 B e3 a g3 e | "Em"e3 a g3 e "E7"e3 B _A3 E | "Fm"F3 _A c3 f _a3 f c3 _A |
+"Bbm7"F3 _A c3 f "Fm"_a3 f c3 _A | "Fm7"c3 f _a3 c' f'3 c' _a3 f | "Cm7"_a3 c' f'3 _a' "Fm"b' z3 c'' z3 | "Cm"z8 "Dm7"z8 |

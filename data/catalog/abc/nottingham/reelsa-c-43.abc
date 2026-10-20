@@ -1,0 +1,24 @@
+%abc-2.1
+% On The Road To Boston, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 43 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:On The Road To Boston
+M:2/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z6 A2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d2 A2 F2 A2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d4 d2 A2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d2 A2 F2 A2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d4 d2 f g | "D"a4 a2 g a | "G"b2 a2 g2 f2 | "A7"g4 g2 f g |
+"D"a2 g2 f2 e2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d4 d2 f g | "D"a4 a2 g a | "G"b2 a2 g2 f2 | "A7"g4 g2 f g |
+"D"a2 g2 f2 e2 | "D"f4 f2 e f | "G"g2 f2 e2 d2 | "A7"c2 d2 e2 f2 |
+"D"d4 d2 z2 |

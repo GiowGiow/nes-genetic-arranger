@@ -1,0 +1,26 @@
+%abc-2.1
+% Flower Song From CARMEN, by Georges Bizet. Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georges Bizet (died 1875,
+% Wikidata Q56158).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/21/QmSgsxznmXjVsWNY2Cyyp3RSsdBDEyRqUzgkZDiq4k8Q6o.mid (sha256
+% c64d7382ce32bce4177033975c4f3d4f3ddcd5ffeeb3523e48e870bafc130a82): melody track 0, bars 0-25
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Flower Song From CARMEN
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"d'4 _b2 _e2 d2 _d2 =d2 a2 | "Bb"g8 f2 z2 f4 | "Bb"_b2 _b2 _b6 d'2 c'2 g2 | "Bb"a10 z2 _b4 |
+"Eb"a2 ^f2 g6 c'2 a2 g2 | "Dm"f8- "G"f2 f2 a2 g2 | "Db"f8- "A"f2 f2 a2 g2 | "Bb"f8- "F"f6 z2 |
+"Ebm7"z8 "Db"z8 | "Abm"z8 "Eb"z8 | "Db7"z16 | "Eb7"z16 |
+"Am"z8 "C7"z8 | "D"z8 "Dm"z8 | "Am7"z8 "Eb"z8 | "Dm"z8 "Gm7"z4 G3 _B |
+"Bb"_B4 f8 _e2 d2 | "Cm7"d2 c2 d2 _e2 "Bb7"G4 _A4 | "Cm7"G4 _e8 d2 c2 | "Bb"c2 _B2 c2 d2 F4 ^F4 |
+"Bb"F4 d4- "C7"d4 c2 _B2 | "Bb"_B2 A2 _B2 c2 F2 A2 _B2 c2 | "Bb"f8- "Dm7"f4 _e4 | "F7"_e8 "Gm7"d8 |
+"Bb"d15 z |

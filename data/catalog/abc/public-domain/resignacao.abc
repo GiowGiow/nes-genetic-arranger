@@ -1,0 +1,36 @@
+%abc-2.1
+% RESIGNAÇÃO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/resignacao.html (file
+% https://www.beakauffmann.com/mpb_r/som/resignacao.mid, sha256
+% 9ac4e6f3ad6338daa99ed1a0e6714d6e10c2436f402f7fa7c7973b8ca592ed31), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RESIGNAÇÃO
+M:3/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z12 | "D"z12 | "Bm7"z3 _d =d z3 B4 | "Bm7"z12 |
+"Em"z12 | "B7"z12 | "E"z12 | "Em7"z12 |
+"F#m"z12 | "A7"z12 | "A7"z12 | "A7"z12 |
+"Bm"z12 | "Dm"z12 | "E7"z12 | "A7"z12 |
+"D"z12 | "D"z12 | "Bm7"z4 _d =d z6 | "Bm7"z12 |
+"Em"z12 | "B7"z12 | "Em"z4 ^f g z6 | "Gm"z12 |
+"Bm7"z4 _d =d z6 | "D"z12 | "Gm"z4 _B A3 z4 | "A7"z12 |
+"D"z12 | "D"z12 | "D"e' d' e' e' e' e' e' e' e' e' _d' =d' | "D"d''3 z9 |
+"Bm"z12 | "B7"z12 | "Em"z12 | "G"z12 |
+"A7"z12 | "A7"z12 | "D"z12 | "F#7"z12 |
+"Bm"z12 | "B7"z12 | "Em"z G,7 z4 | "Dbm7"z12 |
+"Bm"z12 | "F#7"z12 | "Bm"z12 | "Bm"z12 |
+"Bm"z12 | "B7"z12 | "Em"z12 | "G"z12 |
+"A7"z12 | "A7"z12 | "D"z12 | "F#7"z12 |
+"Bm"z12 | "B7"z12 | "Em"z G,7 z4 | "Dbm7"z12 |
+"Bm"z12 | "F#7"z12 | "Bm"z12 | "Bm"z12 |

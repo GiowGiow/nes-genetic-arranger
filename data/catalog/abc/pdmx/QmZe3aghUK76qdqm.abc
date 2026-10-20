@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphony No.2, by Gustav Mahler. Score published on MuseScore (artist: Gustav Mahler), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Mahler (died 1911,
+% Wikidata Q7304).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/17/QmZe3aghUK76qdqmEyVGPxjuoKDKjuZoxZLhYjf7uwZLne.mid (sha256
+% 4ea4c528dcbcd80fbcfc8d3a9ccff278294bbb0e35cd49faae56ba0b627918df): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.2
+M:4/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"_A,8 "F"_A,8 | "Db"_A,8 "Bbm"F,8 | "Ebm"_B,8 "Ebm7"^F,4 ^F,4 | "Db7"_A,8 "F#"_D,8 |
+"C"G,8 "Bbm"F,8 | "Ab"_A,8 "F"_A,3 z _B,3 z | "Ab"C4 _E4 "Eb7"_E4 _D4 | "C"C12 z4 |
+"F"C8 "C"C8 | "F"C8 "Cm"z8 | "C"C4 C4 "F"C8 | "Cm"C8 z8 |
+"Ab"_A,8 "Eb"_E,8 | "C7"C4 _B,4 "Fm"_A,4 =A,4 | "Bbm"_B,8 "F#"_B,8 | "B"B,8 "G"D8 |
+"D"A,4 _B,4 "F"_A,4 =A,4 | "C"C16 | "G"C8 B,8 | "C"C4 z12 |
+"C"z16 | "C"G,,16 | "C"G,,8 "G"z4 G,4 | "C"C8 "G7"D8 |
+"C"E8 z4 G,2 C2 | "C"E4 D2 C2 "G7"D6 E2 | "C"E8 z4 G, C2 G, | "Fm"F8 "Dm7"D8 |
+"C"E8 z4 C G,2 C | "Fm"F8 _A8 | "C"G8 z8 | "C"z8 "G"z4 G,4 |
+"Dm7"D8 "F7"_E8 | "G7"D8 "Em7"z4 G, D,2 G, | "Dm7"D8 "F7"_E8 | "G7"D8 "G"z4 D G,2 D |
+"G"G8 z8 | "G"z16 | "C"C8- "Cm"C4 _E2 _D2 | "C"C8- "Cm"C4 _E2 _D2 |
+"C"C8- "C7"C8 | "C"z8 "C7"z8 | "C"z16 | "C"z16 |
+"C"z16 | "Ab"_A,8 "G"G,8 | "Ab"_A,8 "Eb"_E,8 | "Db7"B,2 z2 _B, z2 =B, "F#"^F,8 |
+"Cm"_E2 z2 D z2 _E "Bb"_B,8 | "Db"z16 | "Db"z16 | "Db"z16 |
+"Db"z16 | "Db"_D8 "C"C8 | "Db"_D8 "Bb"_B,8 | "B"_E4 _D2 B,2 "F#"_D4 ^F,4 |
+"B"B,8 "Bb"_B,8 | "C"C8 "Bb"_B,8 | "C"C8 "F"F8 | "Fm7"_E4 _A4 "G7"G4 F4 |
+"C"C16 | "F"C8 "C"C8 | "F"C8 "Ab"z4 _A,4 | "Db"_D8 "F#m"_D8 |

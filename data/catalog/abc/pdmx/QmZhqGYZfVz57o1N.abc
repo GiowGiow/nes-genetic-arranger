@@ -1,0 +1,29 @@
+%abc-2.1
+% Trio Sonata in B-flat major Z.791, by Henry Purcell. Score published on MuseScore (artist: Henry
+% Purcell), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/23/QmZhqGYZfVz57o1Ns7FRCTjQuYheNKkArhRnk73Me45En2.mid (sha256
+% a6c7d5285b114107ba9e06495b6d2b6ad1d1a7933ec01d228ab75d29449243bd): melody track 0, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Trio Sonata in B-flat major Z.791
+M:4/4
+L:1/16
+Q:1/4=45.000011
+% Exact tempo 45.000011250002814 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z8 "Bb"z8 | "C"z8 "Bbm7"z8 | "Abm"z8 "Eb7"z8 | "Abm"_A6 _A2 "Bbm7"z8 |
+"Fm7"_e8- "Dbm"_e2 _e2 =e _e _d B | "Abm"_B4 z2 _e2 "Eb7"_A2 =B _d =B3 _B | "Abm"B _B _A2 z2 _A2 "Bbm"_d4 z2 _B2 | "Fm7"_e4 z2 _A2 "Dbm"=E4 z2 _B2 |
+"Abm"G F _E2 z2 _e2 "Eb7"=e _e _d B B3 _B | "Abm"B _B _A2 z4 "Bbm"z2 _d z =B _A ^F E | "Fm7"_E2 _E2 z4 "Dbm"z2 =e z _e B _B _A | "Abm"G2 _E2 _e2 _e2 "Eb7"_e3 =e _e z2 _d |
+"Abm"_d4 B2 z2 "Bbm"B4 _B2 z2 | "Cm7"_B4 _A2 z2 "Eb7"_A6 _B2 | "Bb7"B _B _A ^F ^F2 =F _E "Ebm"_E4 z2 ^F _E | "Fm7"_A3 _B _A4 "Ebm7"_B3 =B _B _A _B ^F |
+"Abm"B4 z2 B _A "Ebm7"_d8 | "Db7"_d2 B _B =B _B _A ^F "F#"^F4 z2 ^F2 | "Abm"^F2 ^F2 ^F G ^F G "Bbm"^F3 G ^F G ^F E | "Fm7"_E2 _E2 z2 _e2 "Dbm"_e =e _e =e _e z3 |
+"Ebm7"z _e _d _e _d z3 "F#7"z _d B _d _e2 _d B | "B"B8 "F#7"z8 | "Eb"z6 _e _d "Ab"c4 z2 =e2 | "Bbm"z2 _d2 z2 _B2 "Abm"z2 _e2 z2 _A2 |
+"Dbm"z2 E2 z2 _d2 "Abm"z2 _B2 z2 _e2 | "Eb7"_d4 B2 _B _A "Abm"_A4 z2 _A ^F | "Ebm"F4 z2 _B _A "Abm"_B =B _B _A ^F2 =F _E | "Abm"_E8 "Eb7"z8 |
+"Abm"_A6 _A2 "Bb7"z8 | "Fm7"_e8- "Dbm"_e2 _e2 =e _e _d B | "Abm"_B4 z2 _e2 "Eb7"_A2 =B _d =B2 _B2 | "Abm"B _B _A2 z2 _A2 "Bbm"_d4 z2 _B2 |
+"Cm"_e4 z2 _A2 "Dbm"=E4 z2 _B2 | "Abm"G F _E2 z2 _e2 "Eb7"=e _e _d B _d B B _e | "Abm"G2 _A2 z2 B B "Ebm7"_d4 z2 ^f ^f | "Fm7"e ^f e z3 _e2 "Dbm"=e2 _e z2 _d _B2 |
+"Abm"_A _B _A z3 _e2 "Eb7"=e _e _d =B _d =B _B _A | "Ab"G8 _A8 |

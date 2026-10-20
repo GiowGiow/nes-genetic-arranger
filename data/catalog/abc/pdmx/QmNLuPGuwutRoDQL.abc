@@ -1,0 +1,33 @@
+%abc-2.1
+% Préludes Livre 2, by Claude Debussy(1862-1918). Score published on MuseScore (artist: Claude
+% Debussy), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/30/QmNLuPGuwutRoDQLhW4hNpBkhowszHBsYbLhf8SzaZFL4G.mid (sha256
+% d5ed45d2626b44d96e95aeec7b6a6f18459643e9182ffd0323f02c4ef99a3b0e): melody track 1, bars 0-55
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Préludes Livre 2
+M:3/4
+L:1/16
+Q:1/4=69.000017
+% Exact tempo 69.00001725000433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"z12 | "Em7"z12 | "Am"z12 | "F"z12 |
+"Em7"z2 E, F, G,6 F, E, | "G7"A,4 z4 D4 | "Dm7"z4 A4 z4 | "Bm7"d4 z8 |
+"F"z12 | "Dm7"E,4 F,4 _B,4 | "Dm7"E,4 F,4 _B,4 | "Em7"_B,6 z6 |
+"F"D z D z D z D z C z A, z | "C7"G, z G, z G, z G, z G, z _B, z | "F"D z D z D z D z C z A, z | "Dm7"G, z G, z G, z G, z G, z _B, z |
+"F"D z D z D z D z C z A, z | "F7"G, z G, z G, z G, z G, z _B, z | "Dm"C z11 | "Dm7"z12 |
+"Am7"z4 c4 z4 | "G"A4 z4 G4 | "G"G4 z4 D, E, G, E, | "Am7"C8 A,4 |
+"G"A,4 G,8 | "G"G,4 z6 G, C | "Dm"D z9 F, _B, | "Cm"C z9 G, C |
+"F"E z E z E z E z D z B, _B, | "Eb"D z D z D z D z C z A, z | "Bb"G, z G, z G, z G, z A, z A, z | "Dm7"G, z G, z A, z A, z _B, z _B, z |
+"Eb"C z C z C z C z D z D z | "Gm7"C z C z D z D z _E z _E z | "Gm7"D z E z F z E z ^F z _A z | "Dm7"A z B z _d z _e z f z g z |
+"Db"a4 a6 _b2 | "Dm"g9 a2 b | "Db"a4 a6 _b2 | "Dm"g9 a2 b |
+"F"z12 | "Dm7"E,4 F,4 _B,4 | "Dm7"E,4 F,4 _B,4 | "Dm7"z12 |
+"D"z12 | "Bm7"z12 | "A"z12 | "A"z8 _B, G, D, z |
+"D7"z12 | "F"D3 C D3 C D3 C | "F"D3 C _B,3 A, G,3 F, | "Am"z4 F,8 |
+"Gm"F,5 z7 | "Dm7"A8 z4 | "F"z12 |

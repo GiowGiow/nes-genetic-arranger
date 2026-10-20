@@ -1,0 +1,34 @@
+%abc-2.1
+% Ave gratia plena a 8, by Claudio Merulo. Score published on MuseScore (artist: Claudio Merulo),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claudio Merulo (died 1604,
+% Wikidata Q380517).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/18/QmTEDkixMEoFv9iXhqNjaaXPFS92CvtpYELbpxnvk5K1V4.mid (sha256
+% f650ac1aee9da37ebc7fd7c9920ce7d66b7102ba57af357f2c674b7d88085f54): melody track 2, bars 1-65
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ave gratia plena a 8
+M:4/2
+L:1/16
+Q:1/4=160
+K:none
+P:A
+"D"z16 "G"D16 | "C"D8 C8 "Em7"B,8 A,8 | "E"G,8 G,8- "C"G,8 ^F,4 E,4 | "Bm"G,8 ^F,8 "G"G,16 |
+"C"G,8 B,8 "D"A,16 | "G"B,32 | "Am7"z16 "B"z16 | "Em"z32 |
+"Em7"z16 "C"z16 | "B"z8 B,8 _E12 _E4 | "Ebm"E8 B,8 "Em"B,16 | "B"B,16 "A"z8 C8 |
+"G"D12 D4 "C"D8 E8 | "F"A,4 B,4 C4 D4 "Em"E16 | "Em7"B,8 B,8- "C"B,8 A,8 | "Bm"G,8 ^F,8 "Am"A,12 A,4 |
+"Em"B,4 A,4 G,4 ^F,4 "Ebm"E,8 B,8 | "Em"B,8 B,8 "B"B,16 | "E"B,16 "A"z8 _D8 | "D"_D8 =D8 "C"=D8 E8 |
+"C"E8 D8 "Bm7"D8 E8 | "A"C8 B,8 "B"B,16 | "Em"E,12 ^F,4 "Em7"G,8 A,8 | "Am"A,8 C8 "Em7"B,16 |
+"D"A,16 "G"B,16 | "G"B,16 z16 | "Am"z16 "Em"z16 | "Em"z32 |
+"C"z16 "B"z16 | "Am"z16 "Em"z16 | "Bm"z16 "Em7"z16 | "D"z16 "Em7"z16 |
+"Em"z32 | "B"z16 "Em"z8 B,8 | "Em"B,4 B,4 G,8 "A7"C8 B,8 | "Dbm7"D8 G,8 "C"G,12 A,4 |
+"Bm7"B,4 C4 D8- "G"D4 C4 B,4 A,4 | "Em"G,16 "G"A,8 G,8 | "D"G,8 ^F,8 "G"G,4 A,4 B,4 C4 | "Em7"D8 B,8- "Em"B,8 G,8 |
+"C"G,8 C8 "Em7"B,8 D8 | "Em"D8 _D8 "D"=D8 =D8 | "B"D8 D8 "Bm"B,12 A,4 | "Am"G,8 A,8 "Bm"^F,16 |
+"Em"G,12 A,4 B,16 | "G"z16 "Am7"z16 | "B7"z16 "B"z16 | "Em"z8 B,8 B,8 G,8 |
+"Am7"G,4 A,4 B,4 C4 "G"D8 A,8 | "Am7"C8 G,8 "Bm"D4 C4 B,4 A,4 | "Em"G,8 G,16 G,8 | "Am"A,16 "Em"E,8 B,8 |
+"Bm"D4 C4 B,4 A,4 "C"G,8 C8 | "Am"C8 E16 E,8 | "Em"E,4 ^F,4 G,4 A,4 B,16 | "Bm"B,16 "Em"z16 |
+"Em"z16 "G"z16 | "Am"z8 D,8- "G"D,8 D,8 | "G"G,12 ^F,4 "C"E,16 | "D7"A,8 D,8- "G"D,8 G,8 |
+"G"G,8 B,8 "C"C16 | "D"E8 A,8- "A"A,4 E,4 A,8 | "D"A,8 A,8 A,8 A,8 | "G"D16 D,8 D,8 |

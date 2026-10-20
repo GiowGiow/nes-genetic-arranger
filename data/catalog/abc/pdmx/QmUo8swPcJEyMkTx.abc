@@ -1,0 +1,27 @@
+%abc-2.1
+% Ich steh mit einem Fuß im Grabe BWV 156, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/35/QmUo8swPcJEyMkTxpMVkVA88rbRthopnqMaFUgnjy9HVWR.mid (sha256
+% 82db9a228e661f5ba2ef6e1705655c0b8b8ed27322cbcb8dfd2e7861caf89679): melody track 0, bars 0-29
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ich steh mit einem Fuß im Grabe BWV 156
+M:4/4
+L:1/16
+Q:1/4=34.999974
+% Exact tempo 34.999973750019684 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z8 "Dbm7"z8 | "D"z8 "E"z8 | "A"_d5 =d e ^f "Dbm7"B5 _d =d e | "D"A2 a ^f d4- "E7"d b _a e e e e d |
+"F#m7"_d2 B A3 z2 "F#m"a5 ^f _a =a | "B7"B5 _e ^f a "E"_a5 =e _d B | "Dbm"A5 _d e _a "Abm7"^f5 _e B =A | "E"_A B _e =e =e4- "B7"=e ^f =a _d' =e =e =e =e |
+[M:2/4]"E"e4 z4 | [M:4/4]"A"_d _d4 =d e ^f "Dbm7"_d z B z2 _d =d e | "D"A2 a ^f d2 e d "E7"d b _a e e e e e | "F#m7"d _d B A z4 "F#m"a5 _a _a =a |
+"B7"B5 _e ^f a "E"a z _a z _a =e _e B | "Dbm"A2 B A A _d e _a "Abm7"^f4 e _e ^f B | "E"A B _e =e =e4- "B7"=e ^f a a _d' =e =e =e | "E"e4 z4 "Dbm7"g5 ^f e B |
+"F#7"B2 _B3 =B _d =d e ^f g _b _d' e ^f g | "Bm"^f d d _d =d'4- "Bm7"=d' _d' b _d' b4 | "G"b a g ^f e d _d _b "F#7"=b _d' =b _d' =d' =d' =d' =b | "Bm"b8 "E7"d4 e d d b |
+"F#m7"d2 _d3 A B _d "F#m"e =d e ^f a g g g | "D"a a a z2 B _d =d "Bm7"_A _A =A =A B B _d _d | "E7"d d b2 _d =d e B "A"_d e a ^f e =d _a =a | "E"d d d z5 "A"_d4 B =d e ^f |
+"Dbm7"^f B3 A _d =d e "D"e A a ^f e =d =d2 | "E7"d b _a e e e e d "A"d d e B =A z =A G | "Bm7"G z4 _A _A =A "E"B =A d B =A =A =A =A | "B7"A5 _d ^f e "E7"e a =d _d _d _d _d _d |
+"A"A8 "F#m7"z8 |

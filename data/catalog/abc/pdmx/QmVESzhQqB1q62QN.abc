@@ -1,0 +1,27 @@
+%abc-2.1
+% 4 Pieces for Anna Magdalena Bach H.1, by Anna Magdalena Bach. Score published on MuseScore
+% (artist: Carl Philipp Emanuel Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Anna Magdalena Bach (died 1760,
+% Wikidata Q57212).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/18/QmVESzhQqB1q62QNkPUUhFj5jgEdJduukkuYsY51SmLt1x.mid (sha256
+% 36380cf2dc7eceaa827f7a6e003855dee2511bda62b4c06dd5e7242323f4ed03): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:4 Pieces for Anna Magdalena Bach H.1
+M:3/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D7"D4 D4 D4 | "C7"G6 A _B A4 | "A7"G4 F2 E2 A4 | "Dm"F4 E2 F2 D4 |
+"Gm"F4 F4 F4 | "Dm7"A6 _B c F4 | "C7"G4 E8 | "F"F11 z |
+"D7"D4 D4 D4 | "C7"G6 A _B A4 | "A7"G4 F2 E2 A4 | "Dm"F4 E2 F2 D4 |
+"Gm"F4 F4 F4 | "Dm7"A6 _B c F4 | "C7"G4 E8 | "F"F11 z |
+"C"G4 G4 G4 | "G"G8 E4 | "G7"A4 G2 F2 E2 D2 | "Dm"_D11 z |
+"Db7"A,4 _D4 E4 | "Dbm"G6 A _B A4 | "Dm"F4 D4 _D4 | "D"D11 z |
+"C"G4 G4 G4 | "G"G8 E4 | "G7"A4 G2 F2 E2 D2 | "Dm"_D11 z |
+"Db7"A,4 _D4 E4 | "Dbm"G6 A _B A4 | "Dm"F4 D4 _D4 | "D"D11 z |

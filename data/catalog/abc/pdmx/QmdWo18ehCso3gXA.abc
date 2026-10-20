@@ -1,0 +1,36 @@
+%abc-2.1
+% Prelude and Fugue in C-sharp major BWV 848, by Johann Sebastian Bach. Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/51/QmdWo18ehCso3gXAy1BpcJ7fWjisUKViTbPA7X93KZcKU6.mid (sha256
+% f5d81b4506933c8b3f7f1da8ab8f07b85d9082213e69030769f44b721acbaecc): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Prelude and Fugue in C-sharp major BWV 848
+M:3/8
+L:1/16
+Q:1/4=143.999885
+% Exact tempo 143.99988480009216 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"_D,4 _D2 | "Ebm7"_E,4 _D2 | "Db"F,4 _D2 | "Eb7"^F,4 _D2 |
+"Db"F,4 _D2 | "Ebm"_E,4 C2 | "Db"_D,4 _D2 | "Cm7"_D2 C _B, _A, _B, |
+"Ab"C _A, _E, _A, C _A, | "Bb7"_D _A, _D _A, _D _A, | "Fm"_E _A, _E _A, _E _A, | "Db"F _A, F _A, F _A, |
+"Fm"_E _A, _E _A, _E _A, | "C7"_D C _B, C _D _B, | "Ab"C _B, _A, _B, C _A, | "Fm7"_B, =B, _B, _A, _A, ^F, |
+"Ebm"_E,4 _E2 | "Fm7"F,4 _E2 | "Eb"^F,4 _E2 | "Abm"_A,4 _E2 |
+"Eb"^F,4 _E2 | "Fm"F,4 D2 | "Ebm"_E,4 _E2 | "F7"_E2 _D C _B, C |
+"Bb"_D _B, F, _B, _D _B, | "C7"_E _B, _E _B, _E _B, | "Eb7"F _B, F _B, F _B, | "Eb"^F _B, ^F _B, ^F _B, |
+"Eb7"F _B, F _B, F _B, | "D7"_E _D C _D _E C | "Bb"_D C _B, C _D _B, | "Gm"_E _D C _D _E C |
+"Ab"F _E F ^F =F _E | "Fm"D C _B, C D _B, | "Ebm"_E2 _E,2 _E2 | "F"_E2 _D2 C2 |
+"C7"_D2 _D,2 _D2 | "Eb"_D2 C2 _B,2 | "Ab"C _B, _A, _B, C _A, | "Fm"D C _B, C D _B, |
+"F#"_E D _E F _E _D | "Ebm"C _B, _A, _B, C _A, | "Db"_D2 _D,2 _D2 | "Eb"_D2 B,2 _B,2 |
+"Ab7"B,2 B,,2 B,2 | "Db"B,2 _B,2 _A,2 | "F#"_B, ^F, _D, ^F, _B, ^F, | "Ab7"B, ^F, B, ^F, B, ^F, |
+"Ebm"_D ^F, _D ^F, _D ^F, | "B"_E ^F, _E ^F, _E ^F, | "Ebm"_D ^F, _D ^F, _D ^F, | "Db"B, _B, _A, _B, =B, _A, |
+"F#"_B, _A, ^F, _A, _B, ^F, | "Ebm7"_A, _B, _A, ^F, =F, _E, | "Db"_D,4 _D2 | "Ebm7"_E,4 _D2 |
+"Db"F,4 _D2 | "Eb7"^F,4 _D2 | "Db"F,4 _D2 | "Ebm"_E,4 _D2 |
+"Db"_D,4 _D2 | "Cm7"^F,2 =F,2 _E,2 | "Ab"_A,2 ^F2 _E2 | "Ab"_A,2 ^F2 _E2 |

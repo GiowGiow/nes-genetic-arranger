@@ -1,0 +1,31 @@
+%abc-2.1
+% Loeul donne au cueur, by Pierre de Manchicourt. Score published on MuseScore (artist: Pierre de
+% Manchicourt), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pierre de Manchicourt (died
+% 1564, Wikidata Q2132795).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/8/Qma9KdLd5BB7nTxQgDn9STs5qXWbnUf2Fi8iCs43ZgkcUC.mid (sha256
+% 3bb9ce1682848795e87d412232e45010f52b34b93a933169ff36ad0b390fe49b): melody track 0, bars 0-52
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Loeul donne au cueur
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"G8 B4 c4 | "Dm7"d4 c4 f4 e4 | "Dm"d4 c4 d4 e4 | "G7"e2 d2 d8 c4 |
+"Am"d8 z4 A4 | "Dm"A4 B4 c4 d4 | "Dm7"c4 B6 A2 A4 | "Dm7"A4 G4 A6 B2 |
+"Dm"A4 G8 F4 | "G"G8 z8 | "C"G8 B4 c4 | "Dm7"d4 c4 f4 e4 |
+"Dm"d4 c4 d4 e4 | "G7"e2 d2 d8 c4 | "Am"d8 z4 A4 | "Dm"A4 B4 c4 d4 |
+"Dm7"c4 B6 A2 A4 | "Dm7"A4 G4 A6 B2 | "Dm"A4 G8 F4 | "G"G16 |
+"C"G8 z4 G4 | "G"G4 G4 d8 | "G7"d8 z4 d4 | "Dm"d4 A4 c4 d4 |
+"Dm"A2 B2 c2 d2 e4 d4 | "G"B2 c2 d2 B2 c8 | "G"B4 d4 e4 f4 | "Am7"d4 B4 B4 c4 |
+"G7"B4 A4 c4 d4 | "Dm"d2 c2 f6 e2 d4 | "Dm"d4 c4 d8 | "Em7"z4 G4 G2 A2 B2 c2 |
+"Dm7"d4 e4 f8 | "C"e4 c4 c4 B4 | "G7"A4 B6 A2 A4 | "Am"A4 G4 A4 z4 |
+"Dm"A4 F4 D4 d4 | "Em7"d2 c2 B2 A2 G4 G4 | "Am7"A4 c6 B2 B4 | "Dm7"B2 A2 A8 G4 |
+"D"G4 F4 G8 | "C"z4 G4 G2 A2 B2 c2 | "Dm7"d4 e4 f8 | "C"e4 c4 c4 B4 |
+"G7"A4 B6 A2 A4 | "Am"A4 G4 A4 z4 | "Dm"A4 F4 D4 d4 | "Em7"d2 c2 B2 A2 G4 G4 |
+"Am7"A4 c6 B2 B4 | "Dm7"B2 A2 A8 G4 | "Em7"G4 F4 G8 | "G"G16 |

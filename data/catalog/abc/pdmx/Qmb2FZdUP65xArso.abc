@@ -1,0 +1,35 @@
+%abc-2.1
+% Alla dolceombra d'una verde riva, by Lodovico Balbi. Score published on MuseScore (artist:
+% Ludovico Balbi), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Lodovico Balbi (died 1604,
+% Wikidata Q942721).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/1/Qmb2FZdUP65xArsoz9H5X1sHJjeNFvr5QevHYmTAsUnKKo.mid (sha256
+% 1110b74c14da24fa62af5b361fe2166851d32ac9ef6bb8205249ebcfc5cd5b59): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Alla dolceombra d'una verde riva
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"e8 "A7"c4 B4 | "D7"e4 d2 c2 "C"B4 c4 | "G"A4 B4 "A"c4 c4 | "A7"B8 "A"c8 |
+"Am7"z8 "D7"z8 | "C"z8 "G"z8 | "Am"z8 "Em"z4 E4 | "Am"E4 E4 "Em"B6 A2 |
+"E"G4 G4 "D7"E4 ^F4 | "E7"G4 ^F4 "C"E8 | "Abm"E8 "Am"z8 | "Em"z16 |
+"G"z8 "Em7"z8 | "Am"z8 "E"e8 | "A"c4 c6 c2 B4 | "F"A8 "E"_A8 |
+"Dm"z8 "E"z8 | "E"z8 "A"c8 | "A"c4 B4 "F"A8 | "E"_A4 _A4 "Dm"=A8 |
+"E"_A12 _A4 | "Am"_A2 _A2 =A4 "Dbm7"B4 B4 | "Am"A8 "E"G8 | "F"A8- "Dm"A4 B4 |
+"E"_A8 _A8 | "C"z4 e8 e4 | "F"c8 "Dm"d4 d4 | "Am"e8 "Em"e8 |
+"D7"e4 d4 "Em"B4 B2 A2 | "Em"B4 B4 "G"E4 E4 | "Dm7"A4 A2 G2 "C"A4 c4 | "C"c4 z4 "Am7"z8 |
+"C"G8 "D"^F4 ^F4 | "Em7"G8- "Am"G4 E4 | "Em7"z4 G4- "D"G2 ^F2 ^F4 | "A"A4 A4 "Em7"B8 |
+"B"B8 "Em"B8 | "C"e4 e4 "G"c4 d4 | "D"d8 "A"_d8 | "A"z4 c4 "D"d6 d2 |
+"F#m7"d4 e4 "D"A4 c4 | "E"B8 B8 | "F#m7"z8 "Em7"z8 | "Dbm7"z8 "Am"z8 |
+"E"z4 e4- "Am"e2 e2 e4 | "A"c4 c4 "Em"B8 | "Em"e8 "Am"z4 e4 | "Em"e2 e2 e4 "D"f4 f4 |
+"Am"e8 e8 | "Dm"z8 "Am"z8 | "Am"z4 c4 "G"B4 B4 | "G"B2 B2 B4 "D"A8 |
+"E"e8 "A"e4 c4 | "E"B8 "Am"A8 | "D7"z12 e4 | "Em"e4 e6 e2 c4 |
+"Em"B8 "E"G8 | "F"A6 B2 "Dm"c4 d4 | "E"B8 B8 | "Am"A4 c6 B2 A2 G2 |
+"Am"A4 c4 "D"f8 | "Am7"e8 "C"z8 | "G"B8 "D"A4 A4 | "Em"e16 |

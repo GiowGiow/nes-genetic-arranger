@@ -1,0 +1,35 @@
+%abc-2.1
+% Symphony No.4 Op.36, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/30/QmULyU79DvyYuMMddLbFE7vy8BrAXqFv5rmRZeWw6LSw2c.mid (sha256
+% ab331d94c4db7664d422780aca2a0a7a757ea25037092ce7de1edb9e6eef5ff9): melody track 25, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.4 Op.36
+M:4/4
+L:1/16
+Q:1/4=148.000148
+% Exact tempo 148.000148000148 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z16 | "Dm7"z16 | "C7"z8 "Dm7"z8 | "C"z8 "Dm7"z8 |
+"Cm"z8 "D7"z8 | "Cm7"z16 | "C7"z16 | "C"z16 |
+"Dm7"z8 "C"z8 | "Dm7"c4 d3 _B "C"_B2 c2 A2 _B2 | "C7"z16 | "C"d4 e3 c c2 d2 _B2 c2 |
+"C"A2 D2 D2 C2 z8 | "Dm7"_B,2 E2 A,2 D2 z8 | "C"G2 A2 z4 "Dm7"A2 _B2 z4 | "C"_B2 c2 z4 "Dm7"c2 d2 z4 |
+"C7"d2 d2 z4 d2 d2 z4 | "C"d2 d2 z4 d2 d2 z4 | "C"e2 e2 z4 e2 e2 z4 | "C"e2 e2 z4 e2 e2 z4 |
+"Em7"E D C _B, A, G, F, E, "Gm7"z8 | "Bb"_B, A, G, F E D C _B, "Em7"z8 | "Gm7"G F E D C _B, A, G, "Bb"z8 | "C"A, G, F, E, D, C, D, E, "F"F, z3 B, C D E |
+"F"F8 "Dm"E6 D2 | "Dm7"C A, C D E D C _B, "F"A, F, A, _B, C _B, A, G, | "A7"A, G, F, E, F, E, D, _D, "C7"=D, C, _B, A, G,2 C,2 | "F"F,2 z3 D, E, F, "Gm7"G, A, _B, C D E F G |
+"F"A8 "Am7"G6 F2 | "C"E C E F G F E D "Am"C A, C D E D C _B, | "A7"A, G, F, E, F, E, D, _D, "C7"=D, C, _B, A, G,2 C,2 | "F"F,2 z3 F, G, A, "Bb"_B, C D E F G A _B |
+"F"c c c c c c c c "Am7"c c c c c c c c | "F"c c c c c c c c "Am7"c c c c c c c c | "F"c c F F B B G G "C7"_B _B G G A A ^F ^F | "B7"A A ^F ^F _A _A =F =F "Bb7"_A _A =F =F G G E E |
+"A7"G G E E ^F ^F _E _E "Ab7"^F ^F _E _E =F =F D D | "G7"F F D D E E _D _D "Eb7"F F _D _D G G _D _D | "D"D2 E ^F A2 z2 "Bm7"z2 G, B, D2 z2 | "Abm7"z2 E ^F A2 z4 _D _E ^F2 z2 |
+"Em"z2 ^F, G, B,2 z2 "Em7"z2 A, B, D2 z2 | "C7"z2 D E G2 D _E "Abm7"^F2 _D _E =F2 B, _D | "B7"E2 B, _D _E2 A, B, "A7"=D2 A, B, _D2 G, A, | "Em7"C2 _A, =A, B,2 D E "G"G G G G G G G G |
+"Em"G G G G G G G G G G G G G G G G | "Db"_A _A _A _A _A _A _A _A "Db7"_A _A _A _A _A _A _A _A | "Dm"_A _A _A _A =A =A =A =A "G7"_B _B _B _B =B =B =B =B | "C"c c c c c c c C "Em"E E G G B B c c |
+"Db"_d _d _d _d _d _d _d _d "C7"c c c c _B _B _B _B | "Ab"_A8 "G7"G4 F4 | "Db"_E _D C B, _E _D C B, _E _D C B, _E _D C B, | "Db"_E _D C B, _E _D C B, "C7"=E =D _D C =E =D _D C |
+"F"c2 c2 c4 _d2 _d2 _d4 | "Db"_A2 _A2 _A4 "C7"F F F F G G G G | "F"c2 c2 c4 _d2 _d2 _d4 | "Db"_A2 _A2 _A4 "C7"F F F F G G G G |
+"Am7"G G G G A A A A "Gm"A A A A _B _B _B _B | "G7"_B _B _B _B =B =B =B =B "F7"=B =B =B =B c c c c | "C7"c c c c _B _B _B _B "Am7"A A A A G G G G | "F"F F F F E E E E "C7"D D D D E E E E |
+"Dm7"F F D C E E D C F F D C E E D C | "Dm7"F F D C E E D C F F D C E E D C | "Dm7"C C G G C C G G C C G G C C G G | "Dm7"C C c c c c c c c c c c c c c c |

@@ -1,0 +1,36 @@
+%abc-2.1
+% NÃO É SOPA, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nao-e-sopa.html (file
+% https://www.beakauffmann.com/mpb_n/som/nao-e-sopa.mid, sha256
+% b767a567ffb432d89b87c467007de29a088d3ae6db81e8336fb21fe8009b0da6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NÃO É SOPA
+M:2/4
+L:1/16
+Q:1/4=90.00009
+% Exact tempo 90.00009000009 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"A, D F A d e f g | "C"f e _d _B G E _D _B, | "C"A, _D E G A _d e f | "C"e d _d e =d A F =D |
+"C"A, D F A d e f g | "C"f e c A E4 | "C"c B _B =B c =B _B =B | "C"f e _d _B G E _D _B, |
+"C"A, D F A d e f g | "C"f e _d A G E _D _B, | "C"A, _D E G A _d e f | "C"e d _d e =d c _B A |
+"C"G ^F G _B d2 =F E | "C"F A d2 F E F A | "C"E _E =E G _B C, A2 | "C"d2 A2 D _D C _B, |
+"C"A, D F A d e f g | "C"f e _d _B G E _D _B, | "C"A, _D E G A _d e f | "C"e d _d e =d A F =D |
+"C"A, D F A d e f g | "C"f e c A E4 | "C"c B _B =B c =B _B =B | "C"f e _d _B G E _D _B, |
+"C"A, D F A d e f g | "C"f e _d A G E _D _B, | "C"A, _D E G A _d e f | "C"e d _d e =d c _B A |
+"C"G ^F G _B d2 =F E | "C"F A d2 F E F A | "C"E _E =E G _B C, A2 | "C"d _B A F D A, A, A, |
+"C"A, C F A c B c _d | "C"d G, _B, D G =B d _e | "C"e G _B e g a _b =b | "C"c' a f d c A F D |
+"C"C A, C F A c _B A | "C"G E F ^F G A =f _d | "C"e3 d F G e B | "C"d3 c _B G E C |
+"C"A, C F A c B c _d | "C"d G, _B, D G _B d _e | "C"e G _B e g a _b =b | "C"c' a f e _e f d' a |
+"C"c'3 _b _d _e c' g | "C"_b3 _a c d _b ^f | "C"a3 g _B c a g | "C"f d c A F C B, _B, |
+"C"A, C F A c B c _d | "C"d G, _B, D G =B d _e | "C"e G _B e g a _b =b | "C"c' a f d c A F D |
+"C"C A, C F A c _B A | "C"G E F ^F G A =f _d | "C"e3 d F G e B | "C"d3 c _B G E C |
+"C"A, C F A c B c _d | "C"d G, _B, D G _B d _e | "C"e G _B e g a _b =b | "C"c' a f e _e f d' a |
+"C"c'3 _b _d _e c' g | "C"_b3 _a c d _b ^f | "C"a3 g _B c a g | "C"f d c A F A, A, A, |

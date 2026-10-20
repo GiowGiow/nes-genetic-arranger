@@ -1,0 +1,35 @@
+%abc-2.1
+% 2 Arabesques, by Claude Debussy (1862-1918). Score published on MuseScore (artist: Claude
+% Debussy), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/10/QmUAYMoNgNjpMXHGPeze3PJUxVMUG3EAWbnn6XQXnb9ufp.mid (sha256
+% 5bb4d1f96aff85c205f4a47f0d4ce3702f0c0b68eaf98a48e6c3224c860e18aa): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:2 Arabesques
+M:4/4
+L:1/16
+Q:1/4=115.999861
+% Exact tempo 115.99986080016704 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m"_D E2 A _d e2 ^f _a _e2 B _A _E2 B, | "F#m"A, _D2 ^F A _d2 _e =e B2 _A =E B,2 _A, | "F#m"z4 _d ^F2 A "F#m7"^f4 _d ^F2 A | "Eb7"A4 _d ^F2 A "Dbm"^f4 a A2 _d |
+"B7"z4 a4- "A"a5 _a2 ^f | "E"z4 e ^f2 _d "Dbm7"e B2 _d _A B2 ^F | "Dbm"_A E2 _A _E8 _D4 | "E"B,2 z2 e ^f2 _d "Dbm7"e B2 _d _A B2 ^F |
+"Dbm"_A E2 _A _E8 _D4 | "F#7"B, A,2 B, _D4- "F#m7"_D2 E2 _E2 =E2 | "Dbm"_D4 _A4- "Dbm7"_A4 E4 | "F#m7"_E _D2 _E =E6 _A2 ^F2 _A2 |
+"Bbm7"E4 _d4- "F#7"_d4 _B _d2 _B | "F#7"_A4 e8 _d e2 _d | "Bbm7"_a6 ^f2 "F#7"_a6 ^f2 | "Bbm7"_a6 ^f2 "F#7"_a2 ^f4 _a2 |
+"F#7"a E2 A _d e2 ^f _a _e2 B _A _E2 B, | "F#7"^f _D2 ^F A _d2 _e =e B2 _A =E B,2 _A, | "Eb7"_e8 "Dbm7"=e4 _a2 b2 | "Eb7"_e8- "F#m7"_e z _d2 =e2 _a2 |
+"B7"B8- "F#m7"B z A2 _d2 e2 | "Ab7"_A8 "F#m7"z =A2 _d e _a2 ^f | "Ab7"_e4 _A4 "B7"z2 ^F2 =A2 _d2 | "E7"E8 "Bm7"z ^F2 A _d e2 =d |
+"E7"_A4 ^F4- "E"^F4 D4 | "A"_D16 | "A"G,4 _D4 E4 _D4 | "D"^F4 A, B,2 _D "F#"B, A,2 B, _D B,2 A, |
+"B7"_D4 ^F4 "B"A4 ^F4 | "Dbm"B4 _A4 "B"B4 _A4 | "F#m7"_d16 | "F#m7"_d4 A4 "Eb7"B4 _d4 |
+"F#m7"_d16 | "F#m7"_d3 z A _D2 E "F#"B _E2 ^F _d =E2 _A | "B"_e ^F2 A =e _A2 B "B7"^f =A2 _d _a B2 _e | "Ebm"a _d2 e b _e2 ^f "B7"_d' =e2 _a _e' ^f2 =a |
+"E"^f'8 "Dbm7"e'8 | "Dbm7"e8- "E"e8 | "Bm"A d2 e _d4- "E7"_d2 B2 B2 _d2 | "B7"A4 ^F8 _A4 |
+"E7"^F2 E2 ^f8 e4 | "A"^F2 E2 _a4- "F#m7"_a2 b2 =a2 ^f2 | "Bm"e d2 e _d4- "D"_d2 B2 B2 _d2 | "B7"A4 ^F4 _E2 ^F2 ^F2 _A2 |
+"F#7"^F E2 B, _D4- "B"_D4 E4 | "E"E4 _A,8 z4 | "F#"D, ^F,2 A, _D B,2 A, "F#7"_A, B,2 =D ^F E2 =D | "A"_D E2 _A B =A2 _A "D"^F =A2 _d e =d2 _d |
+"B"B d2 ^f a4 "E7"d2 _a2 ^f2 e2 | "A"^f2 e2 d2 _d2 "F#7"=d2 _d2 B2 A2 | "F#"D, ^F,2 A, _D B,2 A, "F#7"_A, B,2 =D ^F E2 =D | "A"_D E2 _A B =A2 _A "D"^F =A2 _d e =d2 _d |
+"B"B d2 ^f a4 "Bm"d2 _a2 ^f2 _a2 | "D"B d2 ^f a4 "Bm"d2 _a2 ^f2 _a2 | "E7"e d2 e _d4 "D"^F2 B2 B2 _d2 | "A"A4 ^F4 "B7"_E4 _A4 |
+"E7"^F2 E2 ^f8 e4 | "A"^F2 E2 _a4- "F#m7"_a2 b2 =a2 ^f2 | "Bm"e d2 e _d4- "D"_d2 B2 B2 _d2 | "F#"A4 _A4 "B7"_E2 ^F2 ^F2 _A2 |
+"F#7"^F E2 B, _D4- "B"_D4 E4 | "E"E4 _A,8 z4 | "Dm7"G F2 G E4- "F"E4 D4 | "Dm"C4 G,4- "A"G,4 C4 |

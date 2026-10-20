@@ -1,0 +1,23 @@
+%abc-2.1
+% deutschlandlied, by Joseph Haydn. Score published on MuseScore (artist: Joseph Haydn), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Joseph Haydn (died 1809,
+% Wikidata Q7349).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/53/QmaXaNxhn3VGE6d7ZzMokdgyR72ysB4DzkNAFBuRdfd1ed.mid (sha256
+% eac4d378608978430791b334762db291aab9b096fb7c304cd06671fee0cf888a): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:deutschlandlied
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_E6 F2 G4 F4 | "C"_A4 G4 F2 D2 _E4 | "C"c4 _B4 _A4 G4 | "C"F4 G2 _E2 _B8 |
+"C"_E6 F2 G4 F4 | "C"_A4 G4 F2 D2 _E4 | "C"c4 _B4 _A4 G4 | "C"F4 G2 _E2 _B8 |
+"C"F6 G2 F2 D2 _B,4 | "C"_A4 G4 F2 D2 _B,4 | "C"_B4 _A4 G6 G2 | "C"A4 A2 _B2 _B8 |
+"C"_e6 d2 d2 c2 _B4 | "C"c6 _B2 _B2 _A2 G4 | "C"F6 G _A _B2 c2 _A2 F2 | "C"_E4 F2 G2 G8 |
+"C"_e6 d2 d2 c2 _B4 | "C"c6 _B2 _B2 _A2 G4 | "C"F6 G _A _B2 c2 _A2 F2 | "C"_E4 G2 F2 _E8 |

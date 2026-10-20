@@ -1,0 +1,37 @@
+%abc-2.1
+% LUAR DO SERTÃO, by Catulo da Paixão Cearense e João Pernambuco, as performed by Catulo da Paixão
+% Cearense e João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Catulo da Paixão Cearense (died 1946, Wikidata Q16337108); João
+% Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_l/luar-do-sertao.html (file
+% https://www.beakauffmann.com/mpb_l/som/luar-do-sertao.mid, sha256
+% 412efc0841513fe609e842ab0f1b3aa4a4be56154ea96ea05798c2d34167e228), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:LUAR DO SERTÃO
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z16 | "C"z5 c'3- "Am"c'7 b | "A7"b8 "Dm"a2 g5 f | "Dm"f8- "G7"f7 b |
+"G"b8- "G7"b a7 | "Em"g3 f5 "C"e8 | "C"e8 "Am7"a8 | "F"a2 g6- "A"g2 f2 e4 |
+"Dm"e d8 z2 d3 e2 | "G"f8- "G7"f2 e6 | "Em7"e3 d2 c3- "C"c8 | "C"z9 c'7 |
+"A"c'4 b4- "A7"b3 a3 g2 | "Dm"g3 f13 | "G"f2 b6- "G7"b4 a4 | "Em7"a4 g2 f2- "Em"f3 e5 |
+"C"e8- "Am7"e3 a5 | "Am7"a5 g3- "A"g5 f2 e | "Dm"e4 d8 z2 d2 | "G7"d e3 f10 e2 |
+"G7"e6 d2- "C"d c7 | "Am7"c7 z "Am"z8 | "Am7"z8 "A"z8 | "Dm"z16 |
+"G7"z8 "G"z8 | "G7"z8 "Em"z8 | "C"z8 "Am7"z8 | "C"z8 "F#m7"z8 |
+"A"z8 "Dm"z8 | "Dm7"z8 "G"z8 | "G"z16 | "C"z8 "Am7"z8 |
+"C"z8 "Am"z8 | "A"z8 "Dm"z8 | "Dm"z8 "G"z8 | "Em7"z8 "G7"z8 |
+"Em"z8 "C"z8 | "Am7"z8 "C"z8 | "F#m7"z8 "Dm"z8 | "Dm"z8 "Dm7"z8 |
+"G"z8 "G7"z8 | "Em7"z8 "C"z8 | "C"z16 | "C"z8 "A7"z8 |
+"Dm"z16 | "Dm7"z8 "Em7"z8 | "G7"z8 "Em7"z8 | "Em"z8 "C"z8 |
+"C"z16 | "A7"z8 "Dm"z8 | "Dm"z8 "G7"z8 | "G"z16 |
+"C"z16 | "C"z16 | "C"z8 "Dm"z8 | "Dm"z8 "Dm7"z8 |
+"G"z8 "G7"z8 | "Em7"z8 "Em"z8 | "Am7"z8 "C"z8 | "C"z8 "A7"z8 |
+"Dm"z16 | "G7"z8 "Em7"z8 | "G7"z8 "C"z8 | "C"z16 |

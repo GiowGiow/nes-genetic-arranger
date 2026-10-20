@@ -1,0 +1,36 @@
+%abc-2.1
+% PENSANDO EM AUGUSTINHA, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/pensando-em-augustinha.html (file
+% https://www.beakauffmann.com/mpb_p/som/pensando-em-augustinha.mid, sha256
+% 2617dee82d608d34b1543ae8c089bd89178eea708c5a533e7b0b2f7c977b4b35), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PENSANDO EM AUGUSTINHA
+M:3/4
+L:1/16
+Q:1/4=195.000195
+% Exact tempo 195.000195000195 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"E4 _D8 | "Bbm"E4 _D8 | "Db7"E4 D7 z | "E"z6 B,,2 E,2 _A,2 |
+"E7"^F4 D7 z | "E7"_A4 D7 z | "A"B4 E2 A2 A4 | "F#m7"A4 A4 _A4 |
+"A"B4 A4 _A4 | "Db"B4 A4 _A4 | "Bm"^F4 D,4 ^F,4 | "Dbm7"z4 E,4 _A,4 |
+"E"z4 E4 d4 | "E"_d4 E4 B4 | "A"A6 _D,2 E,2 A,2 | "F#m7"_D6 _D2 =D2 _E2 |
+"A"E4 _D8 | "Bbm"E4 _D8 | "Db7"E4 D7 z | "E"z6 B,,2 E,2 _A,2 |
+"E7"^F4 D7 z | "Db7"_d4 F4 _A4 | "F#m"B4 ^F4 A4 | "F#m"A4 A2 _A2 B2 =A2 |
+"D"^F4 D4 ^F4 | "D"_d4 =D2 B2 ^F2 =D z | "A"_D4 E4 A,4 | "Dbm"B4 _D2 A2 E2 _D2 |
+"D"^F4 _A4 ^F4 | "E"^F4 B,4 E4 | "A"A4 _D4 E4 | "A"_D5 z _D2 A,2 ^F,2 |
+"A"E4 _D8 | "Bbm"E4 _D8 | "Db7"E4 D7 z | "E"z6 B,,2 E,2 _A,2 |
+"E7"^F4 D7 z | "E7"_A4 D7 z | "A"B4 E2 A2 A4 | "F#m7"A4 A4 _A4 |
+"A"B4 A4 _A4 | "Db7"B4 A4 _A4 | "Bm"^F4 D,4 ^F,4 | "Dbm7"z4 E,4 _A,4 |
+"E"z4 E4 d4 | "E"_d4 E4 B4 | "A"A6 _D,2 E,2 A,2 | "F#m7"_D6 _D2 =D2 _E2 |
+"A"E4 _D8 | "Bbm"E4 _D8 | "Db7"E4 D7 z | "E"z6 B,,2 E,2 _A,2 |
+"E7"^F4 D7 z | "Db7"_d4 F4 _A4 | "F#m"B4 ^F4 A4 | "F#m"A4 A2 _A2 B2 =A2 |
+"D"^F4 D4 ^F4 | "D"_d4 =D2 B2 ^F2 =D z | "A"_D4 E4 A,4 | "Dbm"B4 _D2 A2 E2 _D2 |
+"D"^F4 _A4 ^F4 | "E"^F4 B,4 E4 | "A"A4 _D4 E4 | "A"A,6 A2 B2 c2 |

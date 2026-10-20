@@ -1,0 +1,36 @@
+%abc-2.1
+% CHORO EM SOL, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/choro-em-sol.html (file
+% https://www.beakauffmann.com/mpb_c/som/choro-em-sol.mid, sha256
+% cd8c2da3c14bddd696675dd79e8b74bf5c424f7805590ce9533049ae943101fc), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CHORO EM SOL
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"D G2 B2 B e2 | "A7"G _D2 A B2 A2 | "D7"z C ^F A e2 ^F e | "G"G d B G E D B, G, |
+"G"D G2 B2 B e2 | "Bm7"d3 d e ^f e d | "A7"G, _D2 A B2 A2 | "D"z C ^F A e2 ^F2 |
+"G"D G2 B2 B e2 | "A7"G _D2 A B2 A2 | "D"z C ^F A e2 ^F2 | "E7"d B, F _A e B, F d |
+"Am"d c E A c B D _A | "Am"B A E G ^F A G e | "Em7"d B G D B2 A2 | "G"G3 g5 |
+"G"D G2 B2 B e2 | "A7"G _D2 A B2 A2 | "D7"z C ^F A e2 ^F e | "G"G d B G E D B, G, |
+"G"D G2 B2 B e2 | "Bm7"d3 d e ^f e d | "A7"G, _D2 A B2 A2 | "D"z C ^F A e2 ^F2 |
+"G"D G2 B2 B e2 | "A7"G _D2 A B2 A2 | "D"z C ^F A e2 ^F2 | "E7"d B, F _A e B, F d |
+"Am"d c E A c B D _A | "Am"B A E G ^F A G e | "Em7"d B G D B2 A2 | "G"G3 g5 |
+"Em"B, G,2 E5 | "B7"D C D E ^F3 B | "Abm7"A ^F _E C A,3 ^F, | "Am7"G, B, E G A, C A ^F |
+"Em"G E G B E2 B2 | "Bm"^F2 B _d B A G ^F | "Bbm7"D F B F _D E _B E | "Em"z2 B2 B2 B2 |
+"Em"B, G,2 E5 | "B7"D C D E ^F3 B | "B7"A ^F _E C B, A ^F _E | "E7"D6 B,2 |
+"Am"E3 D C B, _B, A, | "Em"G,3 G E2 B,2 | "Abm7"z _B, _D E2 _E3 | "Em"E E2 E5 |
+"Em"B, G,2 E5 | "B7"D C D E ^F3 B | "Abm7"A ^F _E C A,3 ^F, | "Am7"G, B, E G A, C A ^F |
+"Em"G E G B E2 B2 | "Bm"^F2 B _d B A G ^F | "Bbm7"D F B F _D E _B E | "Em"z2 B2 B2 B2 |
+"Em"B, G,2 E5 | "B7"D C D E ^F3 B | "B7"A ^F _E C B, A ^F _E | "E7"D6 B,2 |
+"Am"E3 D C B, _B, A, | "Em"G,3 G E2 B,2 | "Abm7"z _B, _D E2 _E3 | "Em"E E2 E3 z2 |

@@ -1,0 +1,34 @@
+%abc-2.1
+% Symphony No.5, by Gustav Mahler. Score published on MuseScore (artist: Gustav Mahler), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Gustav Mahler (died 1911,
+% Wikidata Q7304).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/5/QmY6MZ4KuRgZXArxMHa8eZieksVUh9X1eSmDYsBYZSNKc2.mid (sha256
+% 24e338a76b0b73d7ab8349e020661c365933fbbb34e2783c3b087d1439591d64): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Symphony No.5
+M:4/4
+L:1/16
+Q:1/4=48
+K:none
+P:A
+"C"z8 "D7"z8 | "D7"z10 C2 D2 E2 | "F"E4 F4- "Dm7"F2 F2 _B2 A2 | "C"A4 G4- "Bb"G2 G2 A2 _B2 |
+"Am"c6 c2 "Ab"d6 c2 | "G7"c4 B4- "Db"B2 _B2 d2 _B2 | "Ab7"_B4 A4- "F7"A2 c2 _B2 ^F2 | "C7"^F2 G2 _B2 _D2 "F"C2 A2 G2 =F2 |
+"C"G8- "F"G8 | "C"G4 C4 A4 E4 | "F"E8 "C"F8 | "C7"F4 F4 "Dm7"_B4 A4 |
+"Dm"A8 "G7"_A8 | "Dm"F4 _A4 "E"c4 B4 | "F"B4 D4 C2 A2 G2 F2 | "Gm7"E2 D2 _B,2 G,2 "E"C8 |
+"E"z2 A,2 _A,2 =A,2 "Ab7"C8 | "B7"C6 C2 "E7"C4 B,4 | "A"A,16 | "Dm7"A,16 |
+"A"A,2 C z C12 | "Am"c8 "Am7"c4 E2 _B2 | "F"_B4 A4- "Dm7"A2 _B2 c2 d2 | "F"e8- "Dm7"e2 f2 c2 A2 |
+"Bb"A4 G8 ^F2 G2 | "D"A d5 A2 "Gm7"A2 _B2 e4 | "E7"e2 d2 c2 _A2 "Dm7"f4 =A2 c2 | "Db"_B2 A2 _d g f2 "Bbm"_d2 A2 G2 F2 |
+"Bbm"_E2 _D2 _B,2 z2 "Dm7"A a4 f c =D | "Dm7"A5 F D A, "D7"C2 f2 c2 A2 | "C7"_d2 c2 _B2 C2 G8 | "C7"G4 F4- "F"F4 G E F2 |
+"Dm7"^F4 G4 "G"G2 A2 _B2 d2 | "F"B4 c4- "Am"c4 E2 F2 | "Bb"^F2 G2 _B4 "C7"_B2 G2 =F2 E2 | "F"E8 F8 |
+"Dm7"z4 C4 D4 E4 | "F"E8 F8 | "F"C4 F4 G4 A4 | "C"A8 "G7"G8 |
+"C"F4 G4 "Bb"A4 _B4 | "Am"c6 c2 "Ab"d6 c2 | "G7"c4 B4- "Db"B2 _B2 d2 _B2 | "Ab7"_B2 A2 c4- "F7"c4 _B2 ^F2 |
+"Em7"^F4 G2 _B2 "Dm7"_B2 A2 G2 =F2 | "C"G8 G4 B,2 C2 | "C"_D2 =D2 F4 "G7"F2 =D2 C2 B,2 | "C"E8 "G"C8 |
+"C"c8 C8 | "C"c8 "A7"E4 _B4 | "F"_B4 A4- "Dm7"A2 _B2 c2 d2 | "Am"e8 "C"c2 f2 c2 A2 |
+"Bb"A4 G8 ^F2 G2 | "D"A d5 A2 "G"A2 _B2 e4 | "E"e2 d2 c2 _A2 "Dm7"f4 =A2 c2 | "A"_B2 A2 g2 f2 "Bbm"c2 A2 G2 F2 |
+"Bbm"_d' a'7 "Bm7"=d' a'7 | "Dm7"c4 f'4 c'4 a4 | "D7"g8 "A7"f8 | "C"c4 d4 "D7"c4 A4 |
+"D"G8- "C"G4 F4 | "Am"F4 C4- "C"C4 _B,4 | "C"_B,16 | "F"_B,16 |

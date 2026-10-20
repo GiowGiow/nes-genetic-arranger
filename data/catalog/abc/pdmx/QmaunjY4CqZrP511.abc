@@ -1,0 +1,34 @@
+%abc-2.1
+% Great Mass in C minor KV427 (417a), by Wolfgang Amadeus Mozart. Score published on MuseScore
+% (artist: Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/46/QmaunjY4CqZrP511EtyXd8KMgsYNPg8Jdf1SuozFJDft9z.mid (sha256
+% a3d2440e0baadc060b697d0ca67372e5eb1e49f0d0c897aa2265423af46e7e76): melody track 11, bars 0-60
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Great Mass in C minor KV427 (417a)
+M:4/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"c'2 c'2 c'2 c'2 "Dm7"c'2 c'2 c'2 c'2 | "C"c'4 z12 | "G"z8 "G7"z8 | "F#m7"z8 "G7"z8 |
+"C"z8 "G"G4 B4 | "Bm7"d8- "Am"d2 c B c2 B A | "G"B2 e2 A2 B2 "C"c4 e4 | "C"g2 g4 g2- "F"g2 f e f4 |
+"C"f2 e d e4- "G7"e2 d c d2 d2 | "C"d2 c2 z4 "F"a6 g f | "C"g6 f e "G7"f6 f2 | "C"f2 e2 z4 g4 z4 |
+"C"g4 z4 g4 z4 | "C"g4 z4 g4 z4 | "C"g4 a4 "Am"g4 c'4 | "G"b2 G, G, G,2 g2 "C"g2 G, G, G,2 g2 |
+"G"g2 G, G, G,2 g2 "C"g2 G, G, G,2 g2 | "G"g2 G, G, G,2 b2 "C"c'2 G, G, G,2 c'2 | "G"d'2 G, G, G,2 d'2 "C"c'2 G, G, G,2 c'2 | "G"b4 g2 d d e2 d2 g2 d d |
+"G"e2 d2 g2 d d "C"e2 d2 g4 | "D"z4 d4- "Bm"d4 c2 B2 | "Dm"A2 G6- "G7"G8 | "G"G8- "G7"G8 |
+"C"G8 A2 C2 _B2 C2 | "Gm7"_B2 G2 C2 _B2 "F"A4 z4 | "F#m"z2 A z a z a z "Eb7"z2 A z g z g z | "Ab7"z2 A z ^f z ^f z "D7"z2 A z ^f z ^f z |
+"Bm"z2 _A z f z f z "G7"z2 G z f z f z | "Bbm"z2 G z e z e z "C7"z2 G z e z e z | "F"z2 F z f z f z "Ab"z2 F z f z f z | "G"z2 B z f z f z "Ab7"z2 A z _e z _e z |
+"G"z2 B z d z d z3 B z d z d z | "C"c4 z4 g4 z4 | "C"g4 z4 g4 z4 | "C"g4 z4 g4 z4 |
+"C"g4 a4 "Am"g4 c'4 | "G"b2 G, G, G,2 g2 "C"g2 G, G, G,2 g2 | "G"g2 G, G, G,2 g2 "C"g2 G, G, G,2 g2 | "G"g2 G, G, G,2 b2 "C"c'2 G, G, G,2 c'2 |
+"G"d'2 G, G, G,2 d'2 "C"c'2 G, G, G,2 c'2 | "G"b4 g2 d d e2 d2 g2 d d | "G"e2 d2 g2 d d "C"e2 d2 g4 | "D"z4 d4- "Bm"d4 c2 B2 |
+"Dm"A2 G6- "G7"G8 | "G7"G16 | "C"G8 A2 C2 _B2 C2 | "Gm7"_B2 G2 C2 _B2 "F"A4 z4 |
+"F#m"z2 A z a z a z "Eb7"z2 A z g z g z | "Ab7"z2 A z ^f z ^f z "D7"z2 A z ^f z ^f z | "Bm"z2 _A z f z f z "G7"z2 G z f z f z | "Bbm"z2 G z e z e z "C7"z2 G z e z e z |
+"F"z2 F z f z f z "Ab"z2 F z f z f z | "G"z2 B z f z f z "Ab7"z2 A z _e z _e z | "G"z2 B z d z d z3 B z d z d z | "C"c2 E z c z c z _B2 E z _B z _B z |
+"C"A2 C z A z A z _A2 B, z _A z _A z | "C"G2 _B, z G z G z F2 _A, z F z F z | "C"E2 G, z E z E z3 G, z E z E z | "C"E16 |

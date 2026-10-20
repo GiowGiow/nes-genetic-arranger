@@ -1,0 +1,22 @@
+%abc-2.1
+% La Passado, by Trad.. Score published on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/32/QmaMRfJgVQh9Z7HdHUyTXg6XRT2gpqwWENgyCEyBNih99q.mid (sha256
+% 80f102eaa5446ec6cf088c27099e9d5bc76b7ee22b2adb96566e761e81d60bd1): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:La Passado
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c2 d2 _e d _e f | "C"g4 g4 | "C"c2 d2 _e d _e f | "C"g8 |
+"C"c2 d2 _e d _e f | "C"g4 g4 | "C"c2 d2 _e d _e f | "C"g8 |
+"C"g2 f2 g f _e d | "C"_e4 f4 | "C"g2 f2 g f _e d | "C"c8 |
+"C"g2 f2 g f _e d | "C"_e4 f4 | "C"g2 f2 g f _e d | "C"c8 |

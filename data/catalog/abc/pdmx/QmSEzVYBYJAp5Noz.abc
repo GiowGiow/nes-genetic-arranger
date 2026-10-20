@@ -1,0 +1,24 @@
+%abc-2.1
+% Todo es ya mansedumbres, by Juan del Vado (fl 1635-75). Score published on MuseScore (artist:
+% Juan del Vado), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Juan del Vado (died 1691,
+% Wikidata Q6301391).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/18/QmSEzVYBYJAp5Noz4qipZSauR121ktvVdZSVPnNs6FRd6W.mid (sha256
+% fc24519f5fc2ece0281c138afed7b6903e10df0244ba3f1e6bcc965b18ce4cc4): melody track 0, bars 1-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Todo es ya mansedumbres
+M:6/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em7"z4 g12 f8 | "C"f4 e12 d8 | "Am7"d4 c12 _B8 | "Dm7"_B4 A12 G8 |
+"A7"F4 F8 E12 | "Gm7"D4 d12 c8 | "Gm7"c4 _B12 A8 | "Cm7"A4 G4 G8 F8 |
+"G"E8 E4 D12 | "C"E4 e4 e4 B4 B4 B4 | "Em7"c12 _A12 | "Am7"z4 A4 A4 E4 E4 E4 |
+"Am7"F12 _D8 _D4 | "Dm7"D8 D4 A12 | "F#m"D4 d4 d4 c4 c8 | "Em7"B4 g12 f8 |
+"C7"f4 e8 d4 g8 | "Am7"g4 f12 e8 | "F#m7"e4 d12 c8 | "Dm7"c4 _B12 A8 |
+"D"A4 G12 F8 | "F#m7"E12 A12 | "D"A24 |

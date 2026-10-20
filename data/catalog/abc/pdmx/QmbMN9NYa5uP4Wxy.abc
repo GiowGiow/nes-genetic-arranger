@@ -1,0 +1,36 @@
+%abc-2.1
+% Fantasia super Jesu meine Freude BWV 713a, by Johann Sebastian Bach (1685-1750). Score published
+% on MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/32/QmbMN9NYa5uP4WxyJwUGT1EUuBkvsYTQoLquF1h51JYv5e.mid (sha256
+% bfde8eb50abbd2abbd6f173be9000868ec5a44106c8673fe723317fbbde0260a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fantasia super Jesu meine Freude BWV 713a
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"z2 D _D =D z F z "Eb7"_B, z G, z E z _D2 | "E7"D z F,2 E, z _D2 "Dm"=D z =D, E, F, G, A, B, | "Am"C D C B, C D E2- "E7"E G F E D C D2 | "Bm7"D C B, A, _A, F E D "Am"C B, =A, z3 C2 |
+"C7"C2 _B, A, _B, z G F E z G z _B z E D | "A7"_D z E z G4- "Gm7"G F E =D _D _B A G | "A"F z D2 _D z A, z "Dm"z2 =D _D =D z F z | "Gm"_B, z G, z E z _D2 "Gm7"=D E =D _D =D E F =D |
+"Em"_B A G F E D _D =B, "Am"_D =B, A, =B, C4 | "D7"C A, _B, C _B, A, G, ^F, "Gm"G, z D, z G, z _B, z | "Dm"A, G, F, E, F, G, A,2- "Gm"A, C _B, A, G, F, G,2 | "Em7"G, F, E, D, _D, _B, A, G, "Dm"F, z A, z =D z F z |
+"Am"E2 A _A =A z c z "E7"F z D z B z _A2 | "E7"A z C2 B, z _A2 "Am"=A z =A, B, C D E ^F | "Dm7"G z D z3 G2- "A7"G f e d _d B A G | "Dm"F z A z E z A z D G F E F G A2 |
+"G"A z D z G F G2- "A7"G G A _B A G F E | "Dm"F e d _d =d e f3 a g f e =d e2 | "A7"e z g f g z _b z e z _d z a z f2 | "A7"g z _B2 A z g2- "Dm"g f e d _d =B A G |
+"Dm7"F A d _d =d z f z "Gm7"_B z G z e z _d2 | "Gm7"d z F2 E z _d2 "Dm"=d G F E F G A2 | "A7"_B, c _B A G F G2 "Gm7"D F E D _D _B A G | "Dm"F E D _D =D E F G "F"A G F E F G A B |
+"F#m7"_d A G F G A _B e "A7"g f e =d _d _b a g | "Dm"f e d _d =d G, f z "Gm"_B C G A, e F, _d2 | "Gm7"d F, F D, E _B, _d G, "Em7"=d E, =D E F G A =B | "Am"c d c B c d e _A "Dm"=A g f e d c d B |
+"Bm7"E c B A _A f e d "Am"c B =A2 E z c2 | "Gm"D2 _B A _B z g f "C7"e z g z _b z e d | "A7"_d z e z g z _d2 "Gm7"=d F G A _B _D =D E | "A"F z d2 _d z A z "Dm"z2 =d _d =d z f z |
+"Gm"_B z G z e z _d2 "Gm7"=d e =d _d =d e f =d | "Em"_b a g f e d _d =B "Am"_d =B A =B c4 | "D7"c A _B c _B A G ^F "Gm"G z D z G z _B z | "Dm"A G F E F G A2- "A7"A c _B A G F G2 |
+"Em7"G F E D _D _B A G "Dm"F z A z =d z f z | "Am"e2 A _A =A z c z "Dm"=A2 D z B z f z | "E7"e z C2 B, z d2 "D7"A z c B, C D c ^F | "Em7"G B _d =d e f g B, "A7"_D a g f e =d _d B |
+"A"_d A B _d =d e f g a _b a g f e =d _d | "Em7"d e d c B A G F "Dbm"E G, e _B, A, G, A E, | "Dm"F, e d _d =d e f G, A, a g f e =d e _A, | "A7"A, z G F G F, _B z "Dbm"E A, _D F, _B =D, G z |
+"A7"e d _d B A G F E =D F E =D _D _B A G | "Dm7"F z d _d =d z f z "G7"B z G z f z =d2 | "Cm7"_e _B A G ^F _e d c "Gm"_B A G2 z2 D2 | "D7"D F _E D C _B, C2- "Am7"C _B, A, G, ^F, _E D C |
+"Gm"_B, A, G, ^F, G, A, _B,2- "Dm"_B, _B, A, G, A, _D =D2 | "Em"D E D _D =D G _B2- "Em7"_B A G F E _B A G | "D"^F z G z A z ^F z "Gm"G A _B3 G ^F G | "D7"A _B c3 A G A "Gm"_B c _B A _B2 G2 |
+[M:3/8]"D"G z A _B c A | "Gm"_B6 | "C7"_B z G A _B G | "Dm7"A f e d d c |
+"Am7"c G F E E D | "Gm7"D2 _B A _B2 | "Dm7"C2 A G A2 | "Bbm"_B, A G F F E |
+"C7"E D F _B, G A, | "Gm7"A, F A G F E | "F"F2 A, _B, C A, | "D7"D d d c c _B |

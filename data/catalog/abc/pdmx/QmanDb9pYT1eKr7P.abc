@@ -1,0 +1,35 @@
+%abc-2.1
+% Guitar Quintet in D major G.448, by Luigi Boccherini. Score published on MuseScore (artist:
+% Luigi Boccherini), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Luigi Boccherini (died 1805,
+% Wikidata Q189766).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/33/QmanDb9pYT1eKr7P2SNDbkChWj41BjvjR6ZkSSTUyVqCEF.mid (sha256
+% 8a9115a3e4962cb9a2018861b52735640dfcf8fa132de79e38cad27ea1647ecf): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Guitar Quintet in D major G.448
+M:3/4
+L:1/16
+Q:1/4=157.5
+% Exact tempo 157.49999999999446 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"z12 | "D"z12 | "Em7"z12 | "Em7"z12 |
+"D"d'2 z3 a3 z2 ^f2 | "D"^f z3 d2 z3 A2 z | "D"z2 ^F3 z2 D5 | "D"D12 |
+"D"D12 | "Em7"D11 z | "D"z12 | "D"z3 d'2 a3 d'2 ^f2 |
+"D"^f a2 z d2 ^f3 A2 z | "D"d2 ^F3 A2 A5 | "D"A12 | "D"A3 z d8 |
+"D"d2 z d9 | "A"d11 z | "A"_d10 z2 | "Bbm"z9 _d3 |
+"Bbm"_d12 | "Bm"_d5 z B _d B2 _d B | "Bm"_d2 _d2 =d8 | "Bm"d2 z ^F9 |
+"Db"^F =F11 | "Db"F12 | "Db"F7 z2 _a3 | "F#m"_a12 |
+"F#m"_a5 z ^f6 | "F#m"^f z _a2 =a5 z =a2 | "F#m"a3 a5 a4 | "D"a a11 |
+"D"a2 z a2 b3 _d' z =d'2 | "D"d'3 z d'5 d'3 | "D"d'2 d'5 d'5 | "A"d'6 _d'2 z _d'2 =d' |
+"A"d'2 e' z ^f'5 z ^f'2 | "D"^f'3 ^f'5 ^f'4 | "D"^f' ^f'11 | "A"e'2 z e'2 ^f'3 g' z a'2 |
+"A"a'3 z a'5 a'3 | "A"a'2 a'5 a'5 | "A"a'3 g'3 g'6 | "A"g'4 z6 g'2 |
+"A"z3 g'2 z3 g'3 z | "A"z g'8 ^f'3 | "D"^f'10 z2 | "Dm"z4 f'5 f'3 |
+"A"f'2 f'5 e'5 | "A"z e'5 d'5 d' | "A"d'4 _d'5 z _d'2 | "A"_d'3 b5 b4 |
+"A"b a5 z a5 | "Dm"_a5 _a4 =a =a2 | "A"a8 z4 | "A"z7 e5 |
+"A"e e6 f5 | "A"z f4 e e6 | "A"e5 z7 | "A"z5 _d6 z |
+"A7"_d5 z =d6 | "A7"d5 _d2 _d5 | "A"_d8 z4 | "A"z12 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% ÚLTIMO DESEJO, by Noel Rosa, as performed by Aracy de Almeida.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Noel Rosa (died 1937, Wikidata Q281078).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_u/ultimo-desejo.html (file
+% https://www.beakauffmann.com/mpb_u/som/ultimo-desejo.mid, sha256
+% 698310c76e1ff4ed0645740ce04ab06814510e4678fe92e217f0112a63214e1b), from Beatriz Kauffmann's Web
+% Site. Melody track 8, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ÚLTIMO DESEJO
+M:2/4
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"Bm"z8 | "Bm"z8 | "Dbm7"z8 | "Bm"z8 |
+"Bm"z8 | "C"z8 | "F#7"z8 | "Bm"z8 |
+"F#7"z8 | "Bm"z5 ^F,2 D | "Bm"_D4 B, A,2 _A, | "Em"G,4 z G2 ^F |
+"Em"E4 _D _B,2 ^F, | "F#7"G,3 ^F,2 =F, ^F,2 | "F#7"E4 _D _B,2 G, | "Bm"^F,5 z3 |
+"F#7"z8 | "Bm"z5 D z B, | "Bm"D4 B, D2 B, | "F#7"_D4 z _D2 =D |
+"F#7"E3 z E E z E | "Em"G,6 B,2 | "Em"D2 B, D2 _D B, z | "F#"^F,8 |
+"F#"z8 | "Bm"z5 B, z B, | "B7"C3 B,2 _B, =B,2 | "Em"E5 G2 ^F |
+"Em"E4 _D _B,2 ^F, | "F#"G,3 ^F,2 =F, ^F, z | "F#"E4 _D _B,2 G, | "Bm"^F,7 z |
+"B7"z8 | "Em"z5 E z E | "Em"E3 z E D2 _D | "Bm"D3 B, z B,2 _D |
+"Bm"E4 D _D2 B, | "C"C6 B,2 | "F#7"_B,2 =B, _D2 _B, ^F,2 | "B"B,8 |
+"Ebm7"B,3 z5 | "B"z6 _A2 | "B"^F3 _E2 B, _A, ^F, | "Db"F,4 z2 ^F z |
+"Bbm7"E2 z _D z _B, ^F, E, | "Bbm"E,4 z _E2 _D | "F#7"B,2 _B, z _E2 _D2 | "B"^F6 z2 |
+"B"z8 | "Bm"z5 D z B, | "Bm"D4 B, D2 B, | "F#7"_D4 z _D =D2 |
+"F#7"E2 z E z E z G, | "Em7"G,6 B,2 | "Em7"D2 B, D2 _D B, z | "F#"^F,7 z |
+"F#"z8 | "B"z6 _A2 | "B"^F3 _E2 B, _A, ^F, | "Db7"F,4 z2 ^F2 |
+"Db"E2 z _D z _B, ^F, =F, | "F#"E,4 z _E2 _D | "F#7"B,2 _B, z _E2 _D2 | "B"^F8 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% Toccata Adagio and Fugue in C major BWV 564, by Johann Sebastian Bach. Score published on
+% MuseScore (artist: Johann Sebastian Bach), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/38/QmeqFD5GdewkgSzD8TPnhrwqApfHwqhp54bygLi9A22Wd5.mid (sha256
+% eae42fd54770d73dda43614ada1c5a64585a8720209cf0f96a78d9754c7b3b7e): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Toccata Adagio and Fugue in C major BWV 564
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G7"z c' e' g' f' z11 | "G7"z8 "A7"z a b d' e' z3 | "Dm7"c' a g d d f c C z4 C D F D | "G"C z3 D E G E E D G A c A A F |
+"G7"f d d B B A d e "Em7"g e e c a f f d | "Gm7"_b g g e _b' g' g' e' "Dm7"f' d' d' =b f' d' d' =b | "Em7"g' e' e' c' c' a a f "Dm7"f d c d f d c d | "Em7"e B A E F G F C "G7"C A, D E G E F G |
+"Gm7"_B A d e g e f g "C"_b _b _b _b _b _b _b2 | "C"D E, F C, F E, D E, F E, A G, F G, A E, | "C"A _B, A _B, c G, A d "Dm7"f a a a a a a2 | "Dm7"f d c G F C g e "Em7"f' d' c' g f c d G |
+"C"G c G E B, z3 G, C G, G,, C, z3 | "C"z C, G, G,, C,2 z2 C, E, D, F, E, G, ^F, A, | "G"G, B, A, C B, D G,2 z8 | "G"z8 "Am"z3 C B, D A, C |
+"G"B, D G,2 z12 | "C"z7 C "Bm7"B, D G, B, A, C ^F, A, | "B7"G, A, B,,2 z12 | "A"z7 A, "B7"G, B, ^F, A, G, A, B,,2 |
+"B7"z16 | "Em"z3 G, F, G, E, G, "G7"F, G, B,, G, F, G, E, G, | "G7"F, G, B,, F, E, F, D, F, "C"E, G, C,2 z4 | "C"z8 "F"z7 F, |
+"C"E, G, D, F, E, G, C,2 z8 | "C"z8 "Gm"z3 _B, A, _B, G, _B, | "Am7"A, C F, A, G, A, E, G, "C"F, A, D, F, E, G, C, E, | "G7"D, F, B,, G, F, G, D, F, "C"E, G, C, C ^F, A, D, C |
+"D7"^F, A, D, C A, C ^F, A, "Em7"G, B, D, D G, B, D, D | "G"B, D G, B, D, G, z D B, D G, B, D, G, z G, | "Dm"z G, z F, z F, E, F, "Bm"z E, z D, C, B,, C, D, | "Em7"C, E, D, F, E, G, B,, D, "C"C, D, E, E, F, G, C, E, |
+"A7"D, F, E, G, F, A, _D, E, "Dm"=D, E, F, F, G, A, =D, F, | "G7"E, F, G, G, A, G, C, D, "C"G,, E, E, E, D, z2 _B, | "C7"E, G, C, _B, E, G, C, _B, "C"A, C F, G, E, G, C, C | "Gm7"_B, C A, _B, G, A, F, G, "C7"E, F, D, E, C, D, _B,, C, |
+"A7"A,, _B,, G,, A,, F,, G,, F,, F,, "C"G,,3 ^F, G, z G, z | "Em"G, z G, z G, E, G, E, "C"G, z C, z G,,3 f' | "C"e'2 z G A B c c "Bm"d d e e f f g g | "C"a G c2 F A f A "G"B2 e2 d A B2 |
+"C"c G C e f2 d2 "G7"e D B E c F d G | "Dm7"e g c' e f a d' a "G7"b d c' c f a b f | "C"c' G c f e g c e B d G F c G C c | "C"d2 z2 e3 d "D"c ^F B C A E ^F C |
+"G"G3 D E ^F G G "B7"A A B B d c d d | "Am7"e D G2 C E c E "D"^F2 B2 A E ^F2 | "Em7"G2 z b c'2 a2 "Am7"b2 ^f2 g2 a2 | "C"b d' g' b c' e' a' e' "Am7"^f' a g' g c' e' d' c' |
+"G"g' D G c' b d' g b ^f a d c g d G g | "G"a2 z2 b3 b "D7"c'2 d' e' b2 a g | "G"g2 z c' b d' g b ^f a d c g d G g | "G"a2 z2 b2 z2 "F#m7"z2 b2 e'3 e' |
+"Dm"a2 z g f a d f _d e A G =d A =D =d | "Dm"e2 z2 f2 z2 "Bb7"z2 f2 e B b e | "Am"e2 z d' c' e' a c' _a b e d =a e =A =a | "Am"b2 z2 c'2 z2 "F7"z2 c'2 b ^f ^f' b |
+"E7"b2 z e ^f _a =a =a "Bm7"b b c' c' d' d' e' e' | "D7"f' e a2 z ^f d' ^f "E"_a B c'2 b ^f _a d | "Am"a2 z c' d'2 b2 c'2 _a2 =a2 b2 | "Bm7"c' e' a' c' d' ^f' b' ^f' "E7"_a' b =a' =a d' ^f' _a' d' |
+"A"a'2 z d' c' e' a c' "Am"_a b e d =a e =A =a | "Am"b2 z2 c'2 z2 "E7"z c' d' e' f' c B A | "E"_A b c' d' e' _A =A B "Am7"c e' ^f' _a' =a' _d =d e | "Dm"f b a _a =a d c _a "E7"=a2 f B c2 B =A |

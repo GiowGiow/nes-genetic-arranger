@@ -1,0 +1,27 @@
+%abc-2.1
+% Liebesträume S.541, by Franz Liszt. Score published on MuseScore (artist: Franz Liszt), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Franz Liszt (died 1886, Wikidata
+% Q41309).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/13/20/QmVFpkfPqz3ancqVTn1bx4gUrtDxCmv55UiFAUMktENLWF.mid (sha256
+% 7e9b5046f80c3190b48cac89e5fdfc15aebc34e1beefd2e603450ddf11bca3e1): melody track 1, bars 0-36
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Liebesträume S.541
+M:6/8
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"z12 | "A"F,2 A,2 C2 F,2 A,2 C2 | "A"E,2 G,2 _D2 E,2 G,2 _D2 | "A"D,2 ^F,2 C2 D,2 ^F,2 C2 |
+"D"D,2 F,2 G,2 B,6 | "Dm"C,2 F,2 _B,2 C,2 E,2 _B,2 | "C"A,4 _A,2 =A,6 | "A"F,2 A,2 C2 F,2 A,2 C2 |
+"A"E,2 G,2 _D2 E,2 G,2 _D2 | "A"D,2 ^F,2 C2 D,2 ^F,2 C2 | "D"D,2 F,2 G,2 B,6 | "Dm"C,2 F,2 _B,2 C,2 E,2 _B,2 |
+"F"F,2 A,2 C2 F,4 z2 | "G7"F,2 _B,2 _D2 F,2 _B,2 _D2 | "A"F,2 A,2 C2 F,2 A,2 C2 | "B7"D,2 F,2 A,2 D,2 F,2 A,2 |
+"Db"E,2 A,2 _D2 E,2 A,2 _D2 | "Db"^F,2 A,2 _D2 ^F,2 A,2 _D2 | "Db"_A,2 _D2 F2 _A,2 _D2 F2 | "Bb"_B,2 _D2 _B,2 G,2 _B,2 G,2 |
+"Gm"C,2 E,2 G,2 F,6 | "F#"C,2 E,2 G,2 F,6 | "F#"C,2 E,2 G,2 _B,,2 _D,2 F,2 | "C"C,2 E,2 _B,2 C,2 E,2 _B,2 |
+"A"F,2 A,2 C2 F,2 A,2 C2 | "A"E,2 G,2 _D2 E,2 G,2 _D2 | "A"D,2 ^F,2 C2 D,2 ^F,2 C2 | "D"D,2 F,2 G,2 B,6 |
+"Dm"C,2 F,2 _B,2 C,2 E,2 _B,2 | "C"A,4 _A,2 =A,6 | "A"F,2 A,2 C2 F,2 A,2 C2 | "A"E,2 G,2 _D2 E,2 G,2 _D2 |
+"A"D,2 ^F,2 C2 D,2 ^F,2 C2 | "D"D,2 F,2 G,2 B,6 | "Dm"C,2 F,2 _B,2 C,2 E,2 _B,2 | "F"F,2 A,2 C2 F,6 |

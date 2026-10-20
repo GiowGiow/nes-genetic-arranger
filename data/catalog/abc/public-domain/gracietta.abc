@@ -1,0 +1,36 @@
+%abc-2.1
+% GRACIETTA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_g/gracietta.html (file
+% https://www.beakauffmann.com/mpb_g/som/gracietta.mid, sha256
+% c641aaf973c69d0db21e105879bb7f01788da8ca236684f63f9dedd455e02a57), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:GRACIETTA
+M:2/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z5 _e d _d | "Ab"c _e c' _b _b _a _a =e | "Bbm"g2 f2 z f g f | "Eb7"f e e _e _e d d _d |
+"Ab"_d2 c2 z _e =d _d | "Ab"c _e c' _b _b _a _a c | "Cm"_a2 g2 z g _a g | "G7"^f g =f g _e g d g |
+"Cm7"c _d =d _e f _e =d _d | "Ab"c _e c' _b _b _a _a =e | "Bbm"g2 f2 z f g f | "Eb7"f e e _e _e d d _d |
+"Ab"_d2 c2 z c _d c | "C7"_B c e g c' e' g' c'' | "Fm"_b'2 _a'2 z e' f' g' | "Eb7"_a' c' _d' =d' f' _e' _b c' |
+"Ab"_a2 _a'2 z4 | "C"z2 _B2 z2 _B2 | "D"z2 c2 z2 c2 | "Bb7"z b d' c' g _b _a d |
+"Cm7"f _e G _A c2 _B2 | "C"z2 _B2 z2 _B2 | "D"z2 d2 z2 d2 | "D7"z _d' _e' =d' a c' _b =d |
+"Bb7"g2 _a =a _b =b c' d' | "Cm"_e'2 _B2 z2 _B2 | "D"z2 c2 z2 c2 | "Bb7"z b d' c' g _b _a d |
+"Cm7"f _e G _A c2 _B2 | "B"z2 _e2 z2 f2 | "C7"z g2 ^f g _a =a _b | "Bb7"c g f c d c' _b d |
+"Eb"_e2 _e'2 z _e d _d | "Ab"c _e c' _b _b _a _a =e | "Bbm"g2 f2 z f g f | "Eb7"f e e _e _e d d _d |
+"Ab"_d2 c2 z _e =d _d | "Ab"c _e c' _b _b _a _a c | "Cm"_a2 g2 z g _a g | "G7"^f g =f g _e g d g |
+"Cm7"c _d =d _e f _e =d _d | "Ab"c _e c' _b _b _a _a =e | "Bbm"g2 f2 z f g f | "Eb7"f e e _e _e d d _d |
+"Ab"_d2 c2 z c _d c | "C7"_B c e g c' e' g' c'' | "Fm"_b'2 _a'2 z e' f' g' | "Eb7"_a' c' _d' =d' f' _e' _b c' |
+"Ab"_a2 _a'2 z4 | "C"z2 F2 z2 F2 | "Bbm"z f g a _b c' _d' _e' | "Bb7"f'2 f'2 z2 f'2 |
+"Ebm"z d'2 f' _e' _b ^f _e | "F#7"_B2 _b2 z2 _b2 | "Ab"z g2 _b _a ^f c _A | "Ab7"^F2 _b2 z2 _b2 |
+"Db"z g2 _b _a f _d _A | "C"F2 F2 z2 F2 | "Bbm"z f g a _b c' _d' _e' | "Bb7"f'2 f'2 z2 f'2 |
+"Ebm"z d'2 f' _e' _b ^f _e | "F#7"_B2 _b2 z2 _b2 | "Db"z _b c' _d' _e' f' ^f' _a' | "Ab7"_b'4 _d' _d' _d' _d' |

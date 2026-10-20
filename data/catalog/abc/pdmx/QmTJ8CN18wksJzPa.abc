@@ -1,0 +1,26 @@
+%abc-2.1
+% The Patriotic Song, by Glinka. Score published on MuseScore (artist: not given), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Glinka (died 1857, Wikidata
+% Q181885).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/27/QmTJ8CN18wksJzPaP43eGYsXQKFBWeYCbQcxH68xHR6reA.mid (sha256
+% cfe7e573eb497c100cdcaf984aaa6d8ec358ad5f5ac95d3eddddaeb31e4d8712): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Patriotic Song
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"D8 G8 | "C"E11 z ^F4 | "Em"G4 A4 B4 c4 | "D"d4 A2 G2 d8 |
+"Am"c8 A8 | "E"G11 z B4 | "D"A4 G4 ^F4 E4 | "D7"z4 d2 d2 d4 d4 |
+"G"D8 G8 | "C"E11 z ^F4 | "Em"G4 A4 B4 c4 | "D"d4 A2 G2 d4 B4 |
+"C"e8 G8 | "D"B11 z c4 | "D"B8 A6 B2 | "G"G4 d2 d2 d4 d4 |
+"A"A8 A8 | "A"A8 G4 A4 | "D"B8 c4 B4 | "E7"d8 B8 |
+"A"A8 A8 | "A"A8 B4 A4 | "B7"G8 ^F4 G4 | "Bm7"E8 ^F8 |
+"G"D8 G8 | "Am7"E11 z ^F4 | "Em"G4 A4 B4 c4 | "D"d4 A2 G2 d4 B4 |
+"C"e8 G8 | "D"B11 z c4 | "D"B8 A6 B2 | "G"G15 z |

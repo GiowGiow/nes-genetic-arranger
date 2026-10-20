@@ -11,7 +11,7 @@ plan: which texture each channel plays in each bar. Examples:
     uv run src/main.py fetch
     uv run src/main.py abc --all
     uv run src/main.py fixtures
-    uv run src/main.py catalog
+    uv run src/main.py catalog analyze --dataset <MPB study copy>
 
 Every hyperparameter comes from `configs/default.json`, an optional `--config` file and `--set`
 overrides; every run needs an explicit `--seed` (constitution, principle I).

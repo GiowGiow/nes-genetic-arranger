@@ -1,0 +1,36 @@
+%abc-2.1
+% HINO ALPINISTA, by Carlos Gomes, as performed by Carlos Gomes.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Carlos Gomes (died 1896, Wikidata Q263855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_h/hino-alpinista.html (file
+% https://www.beakauffmann.com/mpb_h/som/hino-alpinista.mid, sha256
+% 06d456ca70a9d7eed523c21f2e10447c1c1393e3f9f18e7afe2bc980f3b58f5e), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:HINO ALPINISTA
+M:4/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"z16 | "Dm7"z8 "F"z8 | "F"z16 | "F"z8 "Gm7"z8 |
+"Gm7"z16 | "Bb"z8 "F7"z8 | "A7"z8 "C7"z8 | "F"z8 "Gm7"z8 |
+"Bb"z8 "Ebm7"z8 | "F#"z16 | "Gm7"z8 "F"z8 | "Bb"z7 d d4 _B2 z f |
+"Bb"f3 z d2 z2 "Eb"g5 _e2 g | "Gm7"g4 f6 z _B _B A2 _B | "Cm7"_e2 z _e d2 z d "Eb"c4 d4 | "Dm7"c2 z5 _d "F"_d2 z f f2 z a |
+"F"a15 z | "F"f z7 "Gm7"F z4 G z G | "Dm7"A z3 _B _B z _B "F7"c5 _B2 A | "F7"c4 _B z3 "Cm7"_B z3 c c z c |
+"Gm7"d z3 _e _e z _e "Bb7"f5 _e2 d | "Bb7"f4 _e3 z "Cm7"z8 | "Cm7"z3 g g4- "Eb"g2 z6 | "Cm7"z3 g g4- "Eb"g2 z _e _e2 z d |
+"C7"c d2 c d c2 d c2 z2 g3 z | "F"f4 z3 c f3 z f z2 c | "F"a16 | "F"z7 F "Gm7"_B2 z c d2 z c |
+"Gm7"d3 z f4 "Cm7"g4 f3 e | "Bb"f3 z d2 z _B "F7"_B2 z A c2 z F | "Gm7"d3 _d e2 z A "C7"f3 z g4 | "F"f4 z3 F "Gm7"_B2 z c d2 z c |
+"Bb"d2 z2 _e2 z f "Ebm7"^f3 z _a4 | "F#"_d7 z _d z2 c _d2 z _e | "Gm7"f3 d _B2 z _e "F"d3 z c4 | "Bb"_B3 z5 "C7"z8 |
+"Eb"z8 "Cm7"z8 | "Bb7"z8 "Fm"z8 | "Gm7"z8 "Am7"z8 | "Gm7"z8 "Gm"z8 |
+"Gm"z8 "Cm7"z8 | "Cm7"z8 "D"z8 | "Gm"z8 "D7"z8 | "G"z3 d g4- "F7"g2 z c f4 |
+"Gm7"f2 z _B d4- "Eb"d4 c _B2 c | "D"d3 z5 "A7"^f4 e2 z e | "D"d2 A2 z4 "A7"_d =d z _d B3 e | "A7"e6 z A "D7"^f3 z a4 |
+"G"a4 g3 d "A7"^f4 e4 | "D"d2 z A d7 A d4 | "D"d2 z A d3 A d2 z A d z2 A | "D"d6 z2 "Dm"F4 d3 z |
+"Bb"d6 A2 "Gm7"_B z A z _B z f z | "F7"f4 _e3 z "Cm"G4 c4 | "Gm7"F6 ^F2 "C7"G2 ^F2 G2 c2 | "Dm7"c8 "Dm"F4 d4 |
+"Bb"d6 A2 "Bb7"_B2 A2 _B2 f2 | "Bb"f3 e _B3 _e "Cm7"_e3 d G2 z c | "Dm7"c3 _B F3 G "C7"A4 c d2 e | "F"f8- "Bb"f8 |
+"Gm7"f3 z _b4- "Bb"_b8 | "Bb"_b2 z6 "F7"z8 | "A7"z8 "C7"z8 | "F"f2 z5 F "Gm7"_B2 z c d z2 c |

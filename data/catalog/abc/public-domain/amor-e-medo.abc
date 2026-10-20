@@ -1,0 +1,35 @@
+%abc-2.1
+% AMOR E MEDO, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/amor-e-medo.html (file
+% https://www.beakauffmann.com/mpb_a/som/amor-e-medo.mid, sha256
+% c81365c95f2793ec7e397112a7c377fc643203e58d3e063e1049365e8d250e9d), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:AMOR E MEDO
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Fm"F,2 z _A, F2 _A, =A, | "Eb7"_B,2 z _B, G2 _D2 | "C7"C3 z _A,3 z | "Fm"_A,2 z _A, F2 C, z |
+"Fm"F,2 z _A, F2 _A,2 | "C7"G,2 z G, C2 C,2 | "C7"G,2 z G, E2 G,2 | "Fm"F,2 z F, C _B, _A, G, |
+"Fm"F,2 z _A, F2 _A, =A, | "Eb7"_B,2 z _B, G2 _D2 | "C7"C3 z _A,3 z | "Fm"_A,2 z _A, F2 F,2 |
+"Fm7"_B,2 z _B, F2 _B,2 | "Ab"_A,2 z _A, F2 _A,2 | "C7"G,2 z G, E2 C,2 | "Fm"F,2 C,2 F,2 z2 |
+"Fm"F,2 z _A, F2 _A, =A, | "Eb7"_B,2 z _B, G2 _D2 | "C7"C3 z _A,3 z | "Fm"_A,2 z _A, F2 C, z |
+"Fm"F,2 z _A, F2 _A,2 | "C7"G,2 z G, C2 C,2 | "C7"G,2 z G, E2 G,2 | "Fm"F,2 z F, C _B, _A, G, |
+"Fm"F,2 z _A, F2 _A, =A, | "Eb7"_B,2 z _B, G2 _D2 | "C7"C3 z _A,3 z | "Fm"_A,2 z _A, F2 F,2 |
+"Fm7"_B,2 z _B, F2 _B,2 | "Ab"_A,2 z _A, F2 _A,2 | "C7"G,2 z G, E2 C,2 | "Fm"F,2 C,2 F,2 z2 |
+"C7"C,2 z G, E2 C,2 | "Fm"F,2 z F, C2 C,2 | "Gm"G,2 z G, E2 C,2 | "Ab"F,2 z F, C2 F,2 |
+"Bbm"_B,2 z C _D2 z _B, | "Fm"_A,2 z _B, C2 z _A, | "G7"G,2 z D, F,2 z E, | "C"G,2 z _D C _B, G, E, |
+"C7"C,2 z G, E2 C,2 | "Fm"F,2 z F, C2 C,2 | "Gm"G,2 z G, E2 C,2 | "Ab"F,2 z F, C C B, C |
+"Bbm"_B,2 z _E F2 z _D | "Fm"C2 z _A, F,2 z2 | "Bb7"C,2 z G, E2 C,2 | [M:3/8]"Fm"F,2 C,2 F,2 |
+[M:1/8]"Fm"z2 | [M:2/4]"C7"C,2 z G, E2 C,2 | "Fm"F,2 z F, C2 C,2 | "Gm"G,2 z G, E2 C,2 |
+"Ab"F,2 z F, C2 F,2 | "Bbm"_B,2 z C _D2 z _B, | "Fm"_A,2 z _B, C2 z _A, | "G7"G,2 z D, F,2 z E, |
+"C"G,2 z _D C _B, G, E, | "C7"C,2 z G, E2 C,2 | "Fm"F,2 z F, C2 C,2 | "Gm"G,2 z G, E2 C,2 |
+"Ab"F,2 z F, C C B, C | "Bbm"_B,2 z _E F2 z _D | "Fm"C2 z _A, F,2 z2 | "Bb7"C,2 z G, E2 C,2 |

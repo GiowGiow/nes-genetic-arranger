@@ -1,0 +1,36 @@
+%abc-2.1
+% Grande fantaisie triomphale sur l'hymne national brésilien Op.69, by L. M. Gottschalk. Score
+% published on MuseScore (artist: Louis Moreau Gottschalk), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): L. M. Gottschalk (died 1869,
+% Wikidata Q550701).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/6/Qmb72dkFsqp5K7sn47ZNgdE1QCRbFMUe7vfF3YQjpUUWfh.mid (sha256
+% c5a5172138a88c2a9a656bb737fc5bf779ea381ce4ee0a1cbeaabbb25cb115c8): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Grande fantaisie triomphale sur l'hymne national brésilien Op.69
+M:4/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"z12 _A4 | "Db"_d7 c _d3 _e f3 ^f | "Db"_a8- "Bbm7"_a3 z _d4 | "Db"f8 "Ab7"_e4 _a4 |
+"Db"_d4 z8 _A4 | "Db"_d7 c _d3 _e f3 ^f | "Db"g4 _a8 _A4 | "Bbm"_d7 c _e3 _d ^f3 =f |
+"Eb7"f4 _e8 _B4 | "Eb7"_e7 d _e3 f g3 _a | "Eb7"a2 _b2 _e'4 A2 _B2 _e c' _b _b | "Ab7"_e'' _d'' c''2 c''2 _b'2 c'' _b' _a'2 _a'2 _e'2 |
+"Eb7"_b'8 "C7"_a'4 f4 | "F7"^f3 =f e3 =f e3 =f _d'3 c' | "Bb7"c'4 _b3 z5 _b4 | "Bb7"c'3 _b a3 _b a3 _b _a'3 g' |
+"Eb7"f'4 _e'3 z5 _e'4 | "Eb7"f'3 _e' d'3 _e' d'3 _e' _d''3 c'' | "Ab7"c''3 _b' _b'3 a' a'3 _a' _a'3 _a | "Ab7"_a3 ^f' ^f'3 =f' =f'3 e' _e'3 _a |
+"Db"_a3 _e' _e'3 d' _d'3 f f3 f | "F7"^f3 =f e3 =f e3 =f _d'3 c' | "Bb7"c'4 _b3 z5 _b4 | "Bb7"c'3 _b a3 _b a3 _b _a'3 g' |
+"Eb7"f'4 _e'3 z5 _e'4 | "F7"f'3 _e' d'3 _e' "Eb7"d'3 _e' _d''3 c'' | "Ab7"c''3 _b' _b'3 a' a'3 _a' _a'3 _a | "Ab7"_a3 ^f' ^f'3 =f' =f'3 e' _e'3 _a |
+"Db"_a3 _d' _d'3 _a' _a'3 _d'' _d''3 _d | "A"_d2 E c e _d' a' _d'' a''2 _e c B2 c2 | "Db"f2 _A _d _a _d' _a' _d'' f''2 z2 _d4 | "A"_d2 E c e _d' a' _d'' a''2 _e c B2 c2 |
+"Db"f2 _A _d _a _d' _a' _d'' f''2 z2 _d4 | "Db"_a2 _A _d _a _d' _a' _d'' f''2 z2 _d4 | "Db"_d'2 _A _d _a _d' _a' _d'' f''2 z2 _d4 | "Db"f'2 _A _d _a _d' _a' _d'' f''2 z2 f4 |
+"Db"_d'' _A, _D _A _d _a _d' _a' _d'' _a' _d' _a _d _A _D _A, | "Db"z2 _D _A _d _a _d' _a' _d'' _a' _d' _a _d _A _D z | "Db"z2 _D _A _d _a _d' _a' _d'' _a' _d' _a _d _a _d' _a' | "Db"_d'' _a' _d' _a _d _a _d' _a' _d'' _a' _d' _a _d _a _d' _a' |
+"Db"_d'' _a' _d' _a' _d'' _a' _d' _a' _d'' _a' _d' _a' _d'' _a' _d' _a' | "Db"_d'' _a' _d' _a' _d'' _a' _d' _a' "Bbm7"_d'' _a' _d' _a _d _A _D z | "Db"z16 | "Ab"_A4 z =A,, z =A,, "Ab7"z8 |
+"Dbm"z5 A,, z A,, "Ab"z4 G4 | "Ab"_A4 z =A,, z =A,, z4 c4 | "Ab"_d4 z A,, z A,, z4 g4 | "Ab"_a4 z =A,, z =A,, z4 c'4 |
+"Ab"_d'4 z A,, z A,, z4 g'4 | "Ab"_a'4 z =A,, z =A,, z4 c''4 | "Ab"_d''4 z A,, z A,, z4 g''4 | "Abm"_a''2 _e'' _a'' z2 _e' _a' "G7"z2 _e _a z2 _E _A |
+"F#"z2 c'' _a'' z2 _e' _a' z2 _e _a z2 _E _A | "Eb"z2 _e'' _a'' z2 c' f' "F7"z2 _e _a z2 _E _A | "Ab"z4 _A4 "F#m"=A4 _B4 | "E7"B4 z4 "Ab"_d4 _e3 _A, |
+"Db"z7 _E F3 _E F3 ^F | "Db"G4 _D2 _A F _D4 _A,4 | "Bbm"_D3 C _E3 _D "Bb7"F3 =E ^F3 =F | "Eb7"F4 _E8 _B,4 |
+"Eb7"_E3 D _E3 F G3 F G3 _A | "Eb"A2 _B2 _e4 "Eb7"_e2 c _B A2 _B2 | "Ab"_d3 c c3 _B "Ab7"_B3 _A =D3 _E | "Eb7"_B8 "Db"_A4 f4 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% Piano Trio Number 1 in f minor CFF 111 FWV 1 Opus 1 Number 3, by
+% César-Auguste-Jean-Guillaume-Hubert Franck. Score published on MuseScore (artist: César Franck),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago):
+% César-Auguste-Jean-Guillaume-Hubert Franck (died 1890, Wikidata Q50187).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/27/QmYJ6LHYUSePodrD7kSEJxS9wJHHPjeqAzDNiER2zzJGnB.mid (sha256
+% 788daace17cd892ebbbede1e840b8d5496cffa1cb3ac378b1f6a7d9880cf8189): melody track 4, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Piano Trio Number 1 in f minor CFF 111 FWV 1 Opus 1 Number 3
+M:4/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab7"z16 | "F#m"z16 | "D"z8 "Db"z8 | "Ab"z8 "Ebm7"z8 |
+"F#7"z16 | "D"z16 | "Ebm7"z8 "A"z8 | "Ab7"z16 |
+"F#"z16 | "F#m"z16 | "D"z8 "Db"z8 | "Ab7"z8 "F#"z8 |
+"D"z16 | "Bm"z16 | "Ebm7"z8 "F#m"z8 | "F#"z16 |
+"F#"z2 ^F,2 z2 _A,2 z2 _A,2 z2 ^F,2 | "F#m"z2 ^F,2 z2 A,2 z2 A,2 z2 ^F,2 | "F#"z2 ^F,2 z2 D2 "Db7"z2 D2 z2 _D2 | "F#m"z2 A2 z2 _A2 "F#"z2 ^F2 z2 _D2 |
+"D"z2 ^F2 z2 E2 z2 E2 z2 ^F2 | "Bm"z2 ^F2 z2 D2 z2 D2 z2 ^F2 | "F#m"z2 ^F2 z2 _D2 z2 _D2 z2 A,2 | "F#m"z2 ^F,2 z2 _A,2 z2 _A,2 z2 ^F,2 |
+"F#"z4 ^f4 z4 ^f4 | "F#m"z4 ^f4 z4 ^f4 | "D"z4 ^f4 "Db"z4 =f4 | "Abm7"z4 ^f4 "F#m"z4 ^f4 |
+"F#m7"z4 ^f4 z4 ^f4 | "Bm"z4 ^f4 z4 ^f4 | "F#m"z4 ^f4 z4 ^f4 | "F#m"z4 ^f4 "F#"z4 ^f4 |
+"F#"A z A z A z A z "Db"A z A z A z A z | "B"_A z _A z _A z _A z "Bm"_A z _A z _A z _A z | "D"_A z _A z _A z _A z "E7"_A z _A z _A z _A z | "F#"_A z _A z _A z _A z "Ab7"_A z _A z _A z _A z |
+"F#m"A z A z A z A z A z A z A z A z | "D"A z A z A z A z "Db7"A z A z A z A z | "D"A z A z A z A z "Db7"_A z _A z _A z _A z | "A"_A z _A z _A z _A z G z G z G z G z |
+"E"_A z _A z _A z _A z "B"_A z _A z _A z _A z | "A"^F z ^F z ^F z ^F z ^F z ^F z ^F z ^F z | "Db"^F z ^F z ^F z ^F z "F#m"^F z ^F z ^F z ^F z | "E"^F z ^F z ^F z ^F z "F#7"^F z ^F z ^F z ^F z |
+"E"_A z _A z _A z _A z _A z _A z _A z _A z | "Db"_A z _A z _A z _A z "B7"_A z _A z _A z _A z | "Db"_A z _A z _A z _A z "Bb"G z G z G z G z | "E"_A z _A z _A z _A z _A z _A z _A z _A z |
+"Db7"_A z _A z _A z _A z _A z _A z _A z _A z | "E"_A z _A z _A z _A z _A z _A z _A z _A z | "C"_A z _A z _A z _A z _A z _A z _A z _A z | "E"_A z _A z _A z _A z _A z _A z _A z _A z |
+"F#7"A z A z A z A z A z A z A z A z | "F#m"A z A z A z A z "F#m7"A z A z A z A z | "F#m7"A z A z A z A z A z A z A z A z | "Ebm"A z A z A z A z "Eb"_B z _B z _B z _B z |
+"Ab"B z B z B z B z B z B z B z B z | "Db"_B z _B z _B z _B z "Dbm"_B z _B z _B z _B z | "Dbm"_B z _B z _B z _B z _B z _B z _B z _B z | "Db"_B z _B z _B z _B z "Bbm7"_B z _B z _B z _B z |
+"Ab"c z _A z _A z _A z _A z _A z _A z _A z | "Ab"A z A z A z A z A z A z A z A z | "Ab"_A z _A z _A z _A z _A z _A z _A z _A z | "Db"_A z _A z _A z _A z _A z _A z _A z _A z |

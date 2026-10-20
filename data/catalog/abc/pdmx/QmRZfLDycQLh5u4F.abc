@@ -1,0 +1,27 @@
+%abc-2.1
+% when the saints go marching in, by James Milton Black (1856-1938). Score published on MuseScore
+% (artist: Misc Traditional), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): James Milton Black (died 1938,
+% Wikidata Q1680835).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/57/QmRZfLDycQLh5u4FLK1XGxwtB1jex222YJbaRJw9YD4yuk.mid (sha256
+% 4ff86932da200f70e167e7befa4ff470d47c06d5c7ee0350c34c127433080988): melody track 0, bars 0-34
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:when the saints go marching in
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Am7"z4 C4 E4 F4 | "Am7"G16 | "C"G3 z C4 E4 F4 | "Am7"G16 |
+"C"G3 z C4 E4 F4 | "Am7"G8 E8 | "Am7"C8 E8 | "Em7"D16 |
+"G"D3 z E4 E4 D4 | "Am7"C11 z C4 | "Am7"E8 G8 | "Dm7"G4 F12 |
+"F"F3 z F4 E4 F4 | "Am7"G8 E8 | "Am7"C8 D8 | "Am7"C16 |
+"C"C3 z C4 E4 F4 | "Am7"G16 | "C"G3 z C4 E4 F4 | "Am7"G16 |
+"C"G3 z C4 E4 F4 | "Am7"G8 E8 | "Am7"C8 E8 | "Em7"D16 |
+"G"D3 z E4 E4 D4 | "Am7"C11 z C4 | "Am7"E8 G8 | "Dm7"G4 F12 |
+"F"F3 z F4 E4 F4 | "Am7"G8 E8 | "Am7"C8 D8 | "C"z4 C4 E4 F4 |
+"Am7"C16 | "C"C3 z13 |

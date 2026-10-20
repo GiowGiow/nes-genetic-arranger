@@ -1,0 +1,36 @@
+%abc-2.1
+% CHORO Nº 1, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/choro-no1.html (file
+% https://www.beakauffmann.com/mpb_c/som/choro-no1.mid, sha256
+% 052a9b9e17818f9ba1ac86b283f65b5b27da38512f639d3679c6deefc0a97fba), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CHORO Nº 1
+M:2/4
+L:1/16
+Q:1/4=93.999981
+% Exact tempo 93.99998120000376 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F#m7"z2 e2 z2 d2 | "A"z2 _d2 z2 B2 | "F#m7"z2 A2 z2 _A2 | "F#m7"z2 ^F2 z2 E2 |
+"F#m7"z2 e2 z2 d2 | "Db"z2 _d2 z2 B2 | "F#m"z2 B2 z2 A2 | "B7"z2 _A2 z2 ^F2 |
+"E"z2 ^F2 z2 E2 | "E"z2 D2 z2 _D2 | "A"z2 ^F2 z2 E2 | "E"z2 A2 z2 _A2 |
+"A"z2 B2 z2 A2 | "A7"z2 ^f2 z2 e2 | "D"z2 e2 z2 d2 | "E7"z2 _d2 z2 B2 |
+"A"A _D2 _D A4 | "A"A,2 e2 D2 d2 | "A"_D2 _d2 B,2 B2 | "F#m7"A,2 A2 _A,2 _A2 |
+"F#m7"^F,2 ^F2 E,2 E2 | "A"A,2 e2 D2 d2 | "Db"_D2 _d2 B,2 B2 | "F#"B,2 B2 A,2 A2 |
+"Bm7"_A,2 _A2 ^F,2 ^F2 | "E"^F,2 ^F2 E,2 E2 | "E"D,2 D2 _D,2 _D2 | "A"^F,2 ^F2 E,2 E2 |
+"E"A,2 A2 _A,2 _A2 | "A"B,2 B2 A,2 A2 | "A7"^F2 ^f2 E2 e2 | "D"E2 e2 D2 d2 |
+"E7"_D2 _d2 B,2 B2 | "Am"A4 z2 F2 | "A"z2 E2 z2 F2 | "E"z2 F2 z2 E2 |
+"E"z2 D2 z2 F2 | "A"z2 F2 z2 E2 | "Dm"z2 D2 z2 C2 | "E"z2 C2 z2 E2 |
+"F#"z2 E2 z2 _E2 | "E"z2 F2 z2 E2 | "A"z2 F2 z2 E2 | "F#m7"z2 F2 z2 F2 |
+"E"z2 E2 z2 D2 | "A"z2 D2 z2 _D2 | "F"z2 D2 z2 C2 | "E"z2 B,2 z2 C2 |
+"E7"z2 C2 z2 B,2 | "Am"A,4 z A f A | "Am"E A e A F A f A | "E"F _A f _A E _A e _A |
+"Dbm7"D E d E F _A f _A | "Am"F A f A E A e A | "Am"D F d F C F c F | "E"C E c E E _A e _A |
+"B7"E ^F e ^F _E ^F _e ^F | "E"E _A f _A E _A e _A | "Am"F A f A E A e A | "Am"F A f A F _A f _A |
+"E"E _A e _A D E d E | "A7"D E d E _D E _d E | "Dm"D F d F C F c F | "Dm"B, F B F C E c E |

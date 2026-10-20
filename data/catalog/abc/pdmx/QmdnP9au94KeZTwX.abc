@@ -1,0 +1,30 @@
+%abc-2.1
+% Toutes les nuits, by Clement Janequin. Score published on MuseScore (artist: Clément Janequin),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Clement Janequin (died 1558,
+% Wikidata Q71526).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/33/QmdnP9au94KeZTwXUCTsjHzPHcH8yHUKVh8yzbmFgQN82Q.mid (sha256
+% 75430fcabd190b51cee1892d84710fdab7dd04e6f8d9897e4ea170d3838a5657): melody track 2, bars 0-43
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Toutes les nuits
+M:2/2
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"_A,16 | "Eb"G,8 G,8 | "Bbm"_A,4 F,4 _B,4 _B,4 | "Fm7"_A,8 _A,2 _B,2 C2 _D2 |
+"Eb"_E4 _E4 _E4 _E4 | "Bbm"_A,8 z8 | "Fm7"_A,4 _A,4 _A,4 G,4 | "Bbm"F,4 _B,8 _B,4 |
+"Eb"_B,16 | "Ab"_A,16 | "Eb"G,8 G,8 | "Bbm"_A,4 F,4 _B,4 _B,4 |
+"Fm7"_A,8 _A,2 _B,2 C2 _D2 | "Eb"_E4 _E4 _E4 _E4 | "Bbm"_A,8 z8 | "Fm7"_A,4 _A,4 _A,4 G,4 |
+"Bbm"F,4 _B,8 _B,4 | "Eb"_B,16 | "Cm"_A,4 _A,4 _A,4 _A,4 | "Fm7"_D6 C _B, _A,2 _B,2 C2 _D2 |
+"Bbm7"_E8 z4 _B,4 | "Fm7"F,4 G,4 _A,4 _B,4 | "Fm7"C4 F,4 F,4 F,4 | "Bbm7"_B,4 _B,4 _B,4 F,4 |
+"Eb"_B,8 C8 | "Fm7"_D8 C4 C4 | "Db"_A,8 z4 F4 | "Ab"_E8 _E8 |
+"Cm"_E4 _E4 _B,4 C4 | "Fm7"G,4 C4 C4 C4 | "Eb7"F4 F4 _E4 _B,4 | "Cm"C6 _B, _A, G,2 _A,2 _B,2 C2 |
+"Eb7"_D2 C2 _B,2 _A,2 _B,8 | "Db"_D8 C4 C4 | "Db"_A,8 z4 F4 | "Ab"_E8 _E8 |
+"Cm"_E4 _E4 _B,4 C4 | "Fm7"G,4 C4 C4 C4 | "Eb7"F4 F4 _E4 _B,4 | "Cm"C6 _B, _A, G,2 _A,2 _B,2 C2 |
+"Eb7"_D2 C2 _B,2 _A,2 _B,8 | "Db"_D16 | "Ab"C16 |

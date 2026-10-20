@@ -1,0 +1,26 @@
+%abc-2.1
+% Canticorum jubilo, by Georg Friedrich Händel. Score published on MuseScore (artist: Georg
+% Friedrich Händel), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Georg Friedrich Händel (died
+% 1759, Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/11/QmSbFzHT5MkS7H3aCViR33UQq53wBP2vjeqy7fKsNgRjpu.mid (sha256
+% ca54d26a6af4a85e905629f9761c9ff2d166c13532a48f03da55b35acb391dcc): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Canticorum jubilo
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"D"A8 ^F6 G2 | "D"A8 D8 | "A7"E2 ^F2 G2 A2 G4 ^F4 | "A"E16 |
+"D"A2 G2 A2 B2 A4 A4 | "D"d8 A8 | "A7"G4 ^F4 E8 | "D"D16 |
+"D"A8 ^F6 G2 | "D"A8 D8 | "A7"E2 ^F2 G2 A2 G4 ^F4 | "A"E16 |
+"D"A2 G2 A2 B2 A4 A4 | "D"d8 A8 | "A7"G4 ^F4 E8 | "D"D16 |
+"D"^F2 E2 ^F2 G2 ^F4 ^F4 | "A7"E8 D8 | "Em7"G4 ^F4 E4 D4 | "F#"_D16 |
+"B"D2 _D2 =D2 E2 =D4 =D4 | "E7"B8 _A8 | "Dbm7"A4 B2 A2 _A6 =A2 | "A"A16 |
+"D"A8 ^F6 G2 | "D"A8 D8 | "A7"E2 ^F2 G2 A2 G4 ^F4 | "A"E16 |
+"D"A2 G2 A2 B2 A4 A4 | "D"d8 A8 | "A7"G4 ^F4 E8 | "D"D16 |

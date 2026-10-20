@@ -1,0 +1,36 @@
+%abc-2.1
+% COMO É BOM!, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/como-e-bom.html (file
+% https://www.beakauffmann.com/mpb_c/som/como-e-bom.mid, sha256
+% e663d0a5518cdf306c25c155026a06d02cd0087e6b3e2d46770f68788673f767), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:COMO É BOM!
+M:2/4
+L:1/16
+Q:1/4=82.99995
+% Exact tempo 82.9999502000299 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"g a g e c B2 z | "C"z f2 z2 e2 z | "C"g a g e c' b f'2 | "C"d' b g a f _e2 =e |
+"Em7"g a g e c B2 z | "C"z f2 z2 e2 z | "Em7"g a g c' b _a =a d' | "G7"c' _b =b e' d' c'2 z |
+"D"g a g e c B2 z | "C"z f2 z2 e2 z | "C"g a g e c' b f'2 | "C"d' b g a f _e2 =e |
+"Em7"g a g e c B2 z | "C"z f2 z2 e2 z | "Em7"g a g c' b _a =a d' | "G7"c' _b =b e' d' c'2 z |
+"Ab"e' _e' =e' _e' =e' f'2 z | "Db7"z b2 z2 e'2 z | "Am"e' d' c' b a a _a _e | "Bm7"e ^f _a =a b c'2 =a |
+"Am"e' _e' =e' _e' =e' f'2 z | "Db7"z b2 z2 e'2 z | "Am"e' d' c' b a c' d' _e | "E7"e c'3 b a2 z |
+"Ab"e' _e' =e' _e' =e' f'2 z | "Db7"z b2 z2 e'2 z | "Am"e' d' c' b a a _a _e | "Bm7"e ^f _a =a b c'2 =a |
+"Am"e' _e' =e' _e' =e' f'2 z | "Db7"z b2 z2 e'2 z | "Am"e' d' c' b a c' d' _e | "E7"e c'3 b a2 z |
+"D"g a g e c B2 z | "C"z f2 z2 e2 z | "C"g a g e c' b f'2 | "C"d' b g a f _e2 =e |
+"Em7"g a g e c B2 z | "C"z f2 z2 e2 z | "Em7"g a g c' b _a =a d' | "G7"c' _b =b e' d' c'2 z |
+"D"g a g e c B2 z | "C"z f2 z2 e2 z | "C"g a g e c' b f'2 | "C"d' b g a f _e2 =e |
+"Em7"g a g e c B2 z | "C"z f2 z2 e2 z | "Em7"g a g c' b _a =a d' | "C"c' _b =b e' d' c'2 e' |
+"F"e' c' c' b c' g' f' c' | "Bbm"a g'3 f' e' d' _b | "C7"g e'3 d' d' e _d' | "Gm7"e c' e b e d' c' a |
+"F"f c c' _b c' g' f' c' | "Bbm"a g'3 f' e' d' _b | "C7"g e'3 d' d' e _d' | "F"e _d' e a _a f2 =a |
+"F"a f c' b c' g' f' c' | "Bbm"a g'3 f' e' d' _b | "C7"g e'3 d' d' e _d' | "Gm7"e c' e b e d' c' a |
+"F"f c c' _b c' g' f' c' | "Bbm"a g'3 f' e' d' _b | "C7"g e'3 d' d' e _d' | "F"e _d' e a _a f2 z |

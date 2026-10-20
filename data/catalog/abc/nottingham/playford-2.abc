@@ -1,0 +1,22 @@
+%abc-2.1
+% CAL 1, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/playford.abc, tune
+% X: 2 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 070877bc37176e0dedbcd038268d6669399201cd7b58d88b4ab36127528f9c76).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:CAL 1
+M:9/8
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 G4 E2 | "G"D10 E2 G4 B2 | "Em"A6 G10 A2 | "C"A6 G6 E6 |
+"G"D12 B4 A2 | "Em"G10 F2 G4 A2 | "G"B10 A2 G2 A2 B2 | "Am"A10 B2 A4 G2 |
+"Am"E6 F6 G6 | "D"A6 A6 G6 | "G"B10 A2 B4 d2 | "C"e6 d6 B6 |
+"D"A12 G4 A2 | "Em"B6 A6 G6 | "C"E12 D6 | "G"D18 |
+"G"D12 A6 | "D"A6 B6 c6 | "G"d10 c2 B4 d2 | "Am"c18 |
+"G"B6 A6 G6 | "C"A6 B6 c6 | "Em"B12 A4 G2 | "Am"E6 c6 B4 G2 |
+"D7"A12 z6 |

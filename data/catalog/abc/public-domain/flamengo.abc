@@ -1,0 +1,35 @@
+%abc-2.1
+% FLAMENGO, by Bonfiglio de Oliveira, as performed by Bonfiglio de Oliveira.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Bonfiglio de Oliveira (died 1940, Wikidata Q9661385).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_f/flamengo.html (file
+% https://www.beakauffmann.com/mpb_f/som/flamengo.mid, sha256
+% 98d1b822eb88db1d7cc2092c82040167c3bf08ed0ebdbea360a41f9022c12fe4), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:FLAMENGO
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"G"g5 z e2 | "D7"d6 z2 | "Em7"z g2 ^f a g2 e | "D7"d3 z2 c B _B |
+"B7"B _e ^f a g ^f2 b | "Em7"b a g ^f e d _d B | "A7"A B _d =d e ^f g a | "D7"g ^f2 e _e2 d2 |
+"Em7"g5 z e2 | "D7"d6 z2 | "Em7"z g2 ^f a g2 e | "D7"d3 z2 c B _B |
+"B7"B _e ^f a g ^f2 a | "C"a g ^f e _e =e c A | "Em7"_d =d B G B A2 G | "Em7"z D2 E ^F G2 B |
+"G"g5 z e2 | "D7"d6 z2 | "Em7"z g2 ^f a g2 e | "D7"d3 z2 c B _B |
+"B7"B _e ^f a g ^f2 b | "Em7"b a g ^f e d _d B | "A7"A B _d =d e ^f g a | "D7"g ^f2 e _e2 d2 |
+"Em7"g5 z e2 | "D7"d6 z2 | "Em7"z g2 ^f a g2 e | "D7"d3 z2 c B _B |
+"B7"B _e ^f a g ^f2 a | "C"a g ^f e _e =e c A | "Em7"_d =d B G B A2 G | "B7"G3 z2 b g e |
+"B7"B _B =B e _e d _e ^f | "G"e3 z2 _B =B e | "E7"e3 z2 B c d | "Am7"d c2 B A _A =A d |
+"D7"d3 z2 A B c | "Eb"c B2 A G ^F2 =F | "F#7"^F _B2 _d ^f =f e _e | "B7"_e =e f ^f B b g =e |
+"Em"B _B =B e _e d _e ^f | "Em"e3 z2 e f ^f | "G"g3 z2 d e f | "F"f e2 d c B c e |
+"E7"e3 z2 B c d | "A7"d c2 B _B _d2 e | "B7"B e2 g ^f _e2 b | "B7"e3 z2 b g e |
+"Em"B _B =B e _e d _e ^f | "G"e3 z2 _B =B e | "E7"e3 z2 B c d | "Am7"d c2 B A _A =A d |
+"D7"d3 z2 A B c | "Eb"c B2 A G ^F2 =F | "F#7"^F _B2 _d ^f =f e _e | "B7"_e =e f ^f B b g =e |
+"Em"B _B =B e _e d _e ^f | "Em"e3 z2 e f ^f | "G"g3 z2 d e f | "F"f e2 d c B c e |
+"E7"e3 z2 B c d | "A7"d c2 B _B _d2 e | "B7"B e2 g ^f _e2 b | "E7"e2 _e2 d3 z |

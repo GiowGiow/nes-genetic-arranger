@@ -1,0 +1,35 @@
+%abc-2.1
+% English Suite No.2 in A minor BWV 807, by Johann Sebastian Bach. Score published on MuseScore
+% (artist: Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/15/QmNdR3zY5SS9bfYGV8K8gzWGnd52nDm1K9jRPifXhsXvnC.mid (sha256
+% 43cd8e6fe4667b43614966b6fcb9f2b31d08c9bcef96aa01fd99feb4e87c2364): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:English Suite No.2 in A minor BWV 807
+M:3/4
+L:1/16
+Q:1/4=100.000167
+% Exact tempo 100.00016666694444 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A"z2 e2 A2 a2 g e f d | "A"e d c B c B c f B e A d | "E"_A d B _A d B _A B E d c B | "A"c B A _A =A B c F B E =A B |
+"E7"_A2 E2 _A2 B2 _A2 E2 | "A"A g e _d g e _d e A G ^F E | "D7"^F2 d2 ^f2 a2 ^f2 d2 | "G"g f d B f d B d G f e d |
+"C"e d c B A c d ^f g B c A | "C"B d e f g A _B G g A _B G | "Dm7"A c d e f G A F f G A F | "A"G E G B e F G E e F G E |
+"G"F D F A d E F D d E F D | "C"E D C B, C _A, =A, E D B, C =A, | "E"B, D B, _A, D B, _A, B, E, D C B, | "A"C A, _D E G E _D E A, G F E |
+"B"F A, D F A ^F _E ^F B, A _A ^F | "E"_A E _A B d B _A B E d c B | "Am"c2 e2 A2 a2 g e f d | "E"b a _a ^f _a ^f _a b e _a =a c |
+"Abm"d f c f B f c f B f A f | "C"_A B e E =A c e E _A B d E | "Dm"c c A G F E D E F E F c | "C"B A G F E D C D E D E _B |
+"Dm7"A G F E F E F A _A B =A c | "E"B c d B _A E F D E C D B, | "Am"C E A _A =A D E C D B, C =A, | "E"_A, E B =A B E F D E C D B, |
+"Bm7"C D E B, C2 D2 C2 B,2 | "D7"A, B, C _A, =A, E, F, B, E, =A, D, _A, | "E7"C, E, A,4 _A,2 =A, C B, D | "E"_A, B, D F D B, _A, B, E, D C B, |
+"Am"C E A4 _A2 =A c B d | "E"_A B d f d B _A B E d c B | "Am"c e a B c2 _a2 =a c' b =a | "E"_a ^f _a b =a _a =a c' _a ^f _a b |
+"C"^f e ^f a =f e =f b e d e a | "E"d c d _a e d e =a d c d _a | "E"c B c ^f d c d _a c B c ^f | "Am"B A B e d B c A B _A =A ^F |
+"E7"_A ^F _A B E _E =E _A D C D =F | "E7"B, A, B, D z8 | "E7"z12 | "E7"z12 |
+"E7"z12 | "E7"F E D C B, A, _A, ^F, z4 | "Am7"z2 e2 A2 a2 g e f d | "C"e B c _A =A c f d e c d B |
+"Am"c B c _A =A c e c d B c =A | "E7"B A B _A =A _A =A f e c d B | "A"c B A _A =A B c f e c d B | "Am"c B A _A =A B c d c =A B _A |
+"Am"A B c A _A =A c =A B _A =A ^F | "E7"_A F E D C B, C =A B, =A B, _A | "Am"A2 E2 E F E2 E2 E2 | "G"F2 D2 D E D2 D2 D2 |
+"C"E2 G2 G A G2 G2 G2 | "B"A2 ^F2 ^F G ^F2 ^F2 ^F2 | "F#m7"G2 B2 E2 e2 d B c A | "Em"B A G ^F G ^F G c ^F B E A |
+"B"_E A ^F _E A ^F _E ^F B, A G ^F | "Em"G2 B,2 B, C B,2 B,2 B,2 | "D"C2 A,2 A, B, A,2 A,2 A,2 | "G"B,2 D2 D E D2 D2 D2 |

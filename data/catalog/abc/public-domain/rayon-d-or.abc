@@ -1,0 +1,36 @@
+%abc-2.1
+% RAYON D'OR, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/rayon-d-or.html (file
+% https://www.beakauffmann.com/mpb_r/som/rayon-d-or.mid, sha256
+% 7485091cb00907585db44bc9c79a0de73dc7328f6cf9228293897c5cf19fe6ca), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RAYON D'OR
+M:2/4
+L:1/16
+Q:1/4=82.000036
+% Exact tempo 82.00003553334874 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"F, F2 F A,2 F2 | "C"G, E2 E _B,2 E2 | "Am"A, F2 F A,2 F2 | "E"_A, E2 E _A,2 E2 |
+"F#7"G, E2 z5 | "Dm7"D A2 A D2 A2 | "Bm7"B, G2 G B,2 G2 | "E7"_B, G2 G G,2 E2 |
+"F"F, F2 F A,2 F2 | "C"G, E2 E _B,2 E2 | "Am"A, F2 F A,2 F2 | "E"_A, E2 E _A,2 E2 |
+"F#7"G, E2 z5 | "Bb"D A2 A _B,2 G2 | "Am7"A, F2 F G,2 E2 | "F"F4 f z3 |
+"F"F, F2 F A,2 F2 | "C"G, E2 E _B,2 E2 | "Am"A, F2 F A,2 F2 | "E"_A, E2 E _A,2 E2 |
+"F#7"G, E2 z5 | "Dm7"D A2 A D2 A2 | "Bm7"B, G2 G B,2 G2 | "E7"_B, G2 G G,2 E2 |
+"F"F, F2 F A,2 F2 | "C"G, E2 E _B,2 E2 | "Am"A, F2 F A,2 F2 | "E"_A, E2 E _A,2 E2 |
+"F#7"G, E2 z5 | "Bb"D A2 A _B,2 G2 | "Am7"A, F2 F G,2 E2 | "F"F4 f z3 |
+"C"z2 G2 D z C2 | "G7"z B, z _B, =B,2 A z | "C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z |
+"C7"z2 G2 z2 c2 | "F7"z2 c2 z2 c2 | "F#7"z2 c2 z2 A2 | "G7"z2 _A2 z2 G2 |
+"C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z | "C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z |
+"C7"z2 G2 z2 c2 | "F7"z2 c2 z2 c2 | "C"z e2 e g g2 g | "C"c'4 c'4 |
+"C"z2 G2 D z C2 | "G7"z B, z _B, =B,2 A z | "C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z |
+"C7"z2 G2 z2 c2 | "F7"z2 c2 z2 c2 | "F#7"z2 c2 z2 A2 | "G7"z2 _A2 z2 G2 |
+"C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z | "C"z2 G2 D z C2 | "G7"z B,2 _B, =B,2 A z |
+"C7"z2 G2 z2 c2 | "F7"z2 c2 z2 c2 | "C"z e2 e g g2 g | "C"c'4 c'4 |

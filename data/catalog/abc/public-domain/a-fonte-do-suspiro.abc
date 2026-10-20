@@ -1,0 +1,36 @@
+%abc-2.1
+% A FONTE DO SUSPIRO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-fonte-do-suspiro.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-fonte-do-suspiro.mid, sha256
+% 8358273bbb3111918d69356f230aed46d8a8d307ced2b7d598e03f7545dd1691), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A FONTE DO SUSPIRO
+M:2/4
+L:1/16
+Q:1/4=102.000051
+% Exact tempo 102.0000510000255 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab7"_a _b c'2 c' _d' _e'2 | "Db"f' ^f' _a'2 z2 _a'2 | "F#7"_b' c'' _d''2 z2 _d''2 | "Db"_a' _b' _a' f' _d' _e' _d' _b |
+"Ab7"_a _b c'2 c' _d' _e'2 | "Db"f' ^f' _a'2 z2 _a'2 | "C"a' _b' =b' c'' _d'' =d'' _e'' =e'' | "F"f''3 z5 |
+"Ab7"_a _b c'2 c' _d' _e'2 | "Db"f' ^f' _a'2 z2 _a'2 | "F#7"_b' c'' _d''2 z2 _d''2 | "Db"_a' _b' _a' f' _d' _e' _d' _b |
+"Ab7"_a _b c'2 c' _d' _e'2 | "Db"f' ^f' _a'2 z2 _a'2 | "C"a' _b' =b' c'' _d'' =d'' _e'' =e'' | "F"f''3 z2 f' ^f' g' |
+"Ab7"_a' _b' _a'2 ^f' _a' ^f'2 | "Db"f' ^f' =f'2 z _d' _e' =e' | "F7"f' ^f' =f'2 _e' =f' _e'2 | "Bbm"_d' _e' _d'2 z a _b c' |
+"F#7"_d' _e' _d'2 _b c' _b2 | "Db"_a _b _a2 z f _e _d | "Ab7"_d2 c2 c2 _B2 | "Db"_B A _A2 z f' ^f' g' |
+"Ab7"_a' _b' _a'2 ^f' _a' ^f'2 | "Db"f' ^f' =f'2 z _d' _e' =e' | "F7"f' ^f' =f'2 _e' =f' _e'2 | "Bbm"_d' _e' _d'2 z a _b c' |
+"F#"_d'2 _d'2 z a _b c' | "Bbm"_d'2 _d'2 z a _b c' | "C7"_d'' e'' _d'' _b' g' e' _d' _b | "F"a3 z f'3 z |
+"Ab7"_a _b c'2 c' _d' _e'2 | "Db"f' ^f' _a'2 z2 _a'2 | "F#7"_b' c'' _d''2 z2 _d''2 | "Db"_a' _b' _a' f' _d' _e' _d' _b |
+"Ab7"_a _b c'2 c' _d' _e'2 | "Ebm7"f' ^f' _a'2 _b' c'' _d'' _e'' | "Db"f'' ^f'' g'' _a'' =a''2 _a'2 | "Db"_d''3 z _d3 z |
+"Bbm7"_D2 ^F2 _D2 =F2 | "F#"_D3 z _B, _D ^F _B | "Ebm7"_d2 _d'2 _d'2 _d'2 | "Db7"_d' b _a f _d B _A F |
+"Bbm"_E2 ^F2 _D2 ^F2 | "Db7"_D3 z _A, B, _D F | "Db7"_A2 _e'2 _e'2 _e'2 | "F#"_e' _d' _b ^f _e _d _B ^F |
+"Bbm7"_D2 ^F2 _D2 =F2 | "F#"_D3 z _B, _D ^F _B | "Eb7"_d2 e'2 e'2 e'2 | "Abm"e' _e' _d' b _a'3 z |
+"B"_e' _e' _e'2 _e' _e' _e'2 | "Ebm7"_e' _d' _b ^f _e _d _B ^F | "Db7"f ^f _a _b =b _d' _e' =f' | "F#"^f'2 _b'2 ^f'3 z |
+"Bbm7"_D2 ^F2 _D2 =F2 | "F#"_D3 z _B, _D ^F _B | "Ebm7"_d2 _d'2 _d'2 _d'2 | "Db7"_d' b _a f _d B _A F |
+"Bbm"_E2 ^F2 _D2 ^F2 | "Db7"_D3 z _A, B, _D F | "Db7"_A2 _e'2 _e'2 _e'2 | "F#"_e' _d' _b ^f _e _d _B ^F |

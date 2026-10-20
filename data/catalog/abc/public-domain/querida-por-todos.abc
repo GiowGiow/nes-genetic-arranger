@@ -1,0 +1,36 @@
+%abc-2.1
+% QUERIDA POR TODOS, by Joaquim Callado, as performed by Joaquim Callado.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Joaquim Callado (died 1880, Wikidata Q1690855).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_q/querida-por-todos.html (file
+% https://www.beakauffmann.com/mpb_q/som/querida-por-todos.mid, sha256
+% 669ee279f4cca268f03227c5074cd297ebc6495f3866d2a4c8ce6f73d8255304), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:QUERIDA POR TODOS
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 z B G D B2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 B2 d2 g2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 z B G D B2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 B2 d2 g2 |
+"Ebm"B c c B2 _B =B2 | "Em"^f2 ^f e2 _e =e2 | "Eb"g2 g ^f2 =f ^f2 | "Em"a2 a2 g2 ^f2 |
+"C"g2 a2 g2 ^f2 | "D7"e2 ^f z d2 _d2 | "D"d2 _e2 d2 b2 | "G"a2 g2 d2 g2 |
+"Ebm"B c c B2 _B =B2 | "Em"^f2 ^f e2 z e2 | "Eb"g2 g ^f2 =f ^f2 | "Em"a2 a2 g2 ^f2 |
+"C"g2 a2 g2 ^f2 | "D7"e2 ^f z d2 _d2 | "D"d2 _e2 d2 b2 | "G"a2 g2 d2 g2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 z B G D B2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 B2 d2 g2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 z B G D B2 |
+"Db"z4 A2 z2 | "B"A2 z B G D B2 | "D"z3 c ^F D z2 | "Em7"c2 B2 d2 g2 |
+"C7"z4 ^F2 z2 | "A7"^F2 z G E B, G2 | "B"z3 A _E B, z2 | "Dbm7"A2 z G E B, G2 |
+"C7"z4 ^F2 z2 | "A7"^F2 z G E B, G2 | "A"z3 F C A, z2 | "Dbm7"_E2 =E2 G2 =E2 |
+"C7"z4 ^F2 z2 | "A7"^F2 z G E B, G2 | "B"z3 A _E B, z2 | "Dbm7"A2 z G E B, G2 |
+"C7"z4 ^F2 z2 | "A7"^F2 z G E B, G2 | "A"z3 F C A, z2 | "Dbm7"_E2 =E2 G2 =E2 |

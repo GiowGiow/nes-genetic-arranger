@@ -1,0 +1,28 @@
+%abc-2.1
+% Si tu te plains, by Philippe Rogier. Score published on MuseScore (artist: Josquin Baston), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Philippe Rogier (died 1596,
+% Wikidata Q642456).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/25/Qmaik1oK5tS6xA5dSeWxtiPLk8YxsmKPwddhiwPF8hLejb.mid (sha256
+% 6f5079b6293e32df0337c5390095b5c7bcc60768814ac3b31ef116db64579200): melody track 1, bars 0-39
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Si tu te plains
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Dm7"C8 D4 E4 | "F"F12 F4 | "Gm7"F4 F4 F4 D4 | "Dm"F4 D4 _B,4 _B,4 |
+"Dm7"C4 D4 C4 C4 | "Bb"D4 F4 E4 F4 | "F"F4 E2 D2 C4 A,4 | "Bb"D8 C4 _B,4 |
+"F"C6 _B,2 A,8 | "Dm7"z4 C4 D4 E4 | "F"F12 F4 | "Gm7"F4 F4 F4 D4 |
+"Dm"F4 D4 _B,4 _B,4 | "Dm7"E4 F4 C8 | "Bb"D4 F4 E4 F4 | "F"F4 E2 D2 C4 A,4 |
+"Bb"D8 C4 _B,4 | "F"C6 _B,2 A,4 A,4 | "Gm7"F8 D8 | "Dm"D8 z4 D4 |
+"Dm7"C6 D2 _E4 D4 | "Gm7"_B,2 C2 D6 C2 C4 | "Dm7"C4 _B,4 C8 | "Dm7"C4 C4 C4 D4 |
+"Am7"E4 C4 C4 C4 | "Dm"D4 A,4 _B,8 | "Dm7"A,8 z4 G,4 | "F"A,4 A,4 A,4 A,4 |
+"Dm7"_B,4 F,4 A,6 _B,2 | "F"C8 C4 C4 | "Gm7"D12 E4 | "Dm7"F8 F,8 |
+"Dm"z4 F4 F6 E2 | "Gm7"D4 C4 _B,4 G,4 | "F"C8 z4 C4 | "Dm7"D4 E4 F8 |
+"Bb"z4 A,4 D4 D4 | "C"C4 _B,4 C8 | "F"A,16 |

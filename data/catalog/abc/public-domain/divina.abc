@@ -1,0 +1,35 @@
+%abc-2.1
+% DIVINA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/divina.html (file
+% https://www.beakauffmann.com/mpb_d/som/divina.mid, sha256
+% b1daa7ba99400107ea4f5ef9b4d0917c8732f771b30cbaa97c95304bf77a23c2), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DIVINA
+M:3/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Bb"D11 z | "Db7"D7 z3 D2 | "Dm7"_E12 | "F"_E7 z3 _E2 |
+"A7"E11 z | "C7"E7 z3 E2 | "Gm7"F12 | "Gm7"F11 z |
+"Bb"z4 F4 G4 | "Gm7"A4 _B4 c4 | "F7"_B c2 _B A4 g4 | "F7"g7 z A4 |
+"F7"z4 A4 ^f4 | "F7"^f7 z A4 | "Bb"z4 e2 g2 f2 d2 | "Gm7"_B2 G2 F2 D2 _B,2 G,2 |
+"Bb"D11 z | "Db7"D7 z3 D2 | "F7"_E12 | "F"_E7 z3 _E2 |
+"A7"E11 z | "C7"E7 z3 E2 | "Gm7"F12 | "Gm7"F11 z |
+"G7"z4 ^F4 G4 | "G7"_A2 G2 ^F2 G2 _e2 B2 | "Cm"d5 z c2 B2 c2 | "C7"_b7 z g4 |
+"Gm7"f2 g2 f2 d2 _B2 G2 | "F7"F2 E2 _E2 C2 A,2 F,2 | "Bb"_B4 z4 f4 | "Bb"_b11 z |
+"Bb"D11 z | "Db7"D7 z3 D2 | "Dm7"_E12 | "F"_E7 z3 _E2 |
+"A7"E11 z | "C7"E7 z3 E2 | "Gm7"F12 | "Gm7"F11 z |
+"Bb"z4 F4 G4 | "Gm7"A4 _B4 c4 | "F7"_B c2 _B A4 g4 | "F7"g7 z A4 |
+"F7"z4 A4 ^f4 | "F7"^f7 z A4 | "Bb"z4 e2 g2 f2 d2 | "Gm7"_B2 G2 F2 D2 _B,2 G,2 |
+"Bb"D11 z | "Db7"D7 z3 D2 | "F7"_E12 | "F"_E7 z3 _E2 |
+"A7"E11 z | "C7"E7 z3 E2 | "Gm7"F12 | "Gm7"F11 z |
+"G7"z4 ^F4 G4 | "G7"_A2 G2 ^F2 G2 _e2 B2 | "Cm"d5 z c2 B2 c2 | "C7"_b7 z g4 |
+"Gm7"f2 g2 f2 d2 _B2 G2 | "F7"F2 E2 _E2 C2 A,2 F,2 | "Bb"_B4 z4 f4 | "Bb"_b11 z |

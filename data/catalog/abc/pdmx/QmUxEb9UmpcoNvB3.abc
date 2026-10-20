@@ -1,0 +1,33 @@
+%abc-2.1
+% Moments Musicaux Op.16, by Sergei Rachmaninoff(1873-1943). Score published on MuseScore (artist:
+% Sergei Rachmaninoff), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sergei Rachmaninoff (died 1943,
+% Wikidata Q131861).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/12/52/QmUxEb9UmpcoNvB3gAcoLJL91wPkD3EWyTd1QXnKZ2DkBb.mid (sha256
+% 41797541930862f66c70b6cabbad1a8f823783ad3058dbb1742ec3c77fafb1a5): melody track 1, bars 0-53
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Moments Musicaux Op.16
+M:4/4
+L:1/16
+Q:1/4=54.000005
+% Exact tempo 54.00000540000054 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Ab"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Ab"F, _A,,2 _D,, _A,, _D,,2 _A,, "Bbm7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Ebm"F, _A,,2 _D,, _A,, _D,,2 _A,, "C7"_E, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Fm"F, _A,,2 _D,, _A,, _D,,2 _A,, "Db"_A, _A,,2 _D,, _A,, _D,,2 _A,, | "Db7"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Bbm"F, _B,,2 _D,, _B,, _D,,2 _B,, "Db"F, _B,,2 _D,, _B,, _D,,2 _B,, |
+"Bbm"^F, _B,,2 _D,, _B,, _D,,2 _B,, "B"^F, A,,2 _D,, _A,, _D,,2 _A,, | "C"F, _A,,2 _D,, _A,, _D,,2 _A,, "C7"E, _A,,2 _D,, _A,, _D,,2 _A,, | "Bb7"F, _A,,2 _D,, _A,, _D,,2 _A,, "Bbm7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, "Ab"F, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Ab7"F, _A,,2 _D,, _A,, _D,,2 _A,, "C7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Bbm7"F, _A,,2 _D,, _A,, _D,,2 _A,, "Ebm7"_A, _A,,2 _D,, _A,, _D,,2 _A,, | "Db7"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, =A,, _D,,2 =A,, |
+"Bbm"F, _B,,2 _D,, _B,, _D,,2 _B,, F, _B,,2 _D,, _B,, _D,,2 _B,, | "Eb7"^F, _B,,2 _D,, A,, _D,,2 A,, "F7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Db"F, A,,2 _D,, A,, _D,,2 A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, =A,,2 _D,, =A,, _D,,2 =A,, | "Bbm7"F, _A,,2 _D,, _A,, _D,,2 _A,, "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, | [M:2/4]"Db7"F, _A,,2 _D,, =A,, _D,,2 =A,, |
+[M:4/4]"Ebm7"^F, _B,,2 _D,, _B,, _D,,2 _B,, ^F, _B,,2 _D,, _B,, _D,,2 _B,, | "Ebm"D, _B,,2 _D,, _B,, _D,,2 _B,, "Ebm7"_D, _B,,2 _D,, _B,, _D,,2 _B,, | "Db7"^F, _B,,2 _D,, _B,, _D,,2 _B,, "Ebm"=D, _B,,2 _D,, _B,, _D,,2 _B,, | "Ebm7"_D, _B,,2 _D,, _B,, _D,,2 _B,, "Bbm"F, _B,,2 _D,, _B,, _D,,2 _B,, |
+"F#7"E, _B,,2 _D,, _B,, _D,,2 _B,, E, _B,,2 _D,, _B,, _D,,2 _B,, | "B7"^F, A,,2 _D,, A,, _D,,2 A,, "Bm7"^F, A,,2 _D,, A,, _D,,2 A,, | "Ab7"^F, _A,,2 _D,, _A,, _D,,2 _A,, ^F, _A,,2 _D,, _A,, _D,,2 _A,, | "B7"^F, A,,2 _D,, A,, _D,,2 A,, "Bm7"^F, A,,2 _D,, A,, _D,,2 A,, |
+"Ab7"_E, _A,,2 _D,, _A,, _D,,2 _A,, "D"_E, _A,,2 _D,, _A,, _D,,2 _A,, | "Fm"_D, _A,,2 _D,, _A,, _D,,2 _A,, "Dbm"E, _A,,2 _D,, _A,, _D,,2 _A,, | "E"E,, B,,2 E,, B,, E,,2 B,, "F#m7"_A, B,,2 E,, =A, _D,2 E,, | "Dbm"z B,,2 E,, B,, E,,2 B,, "Abm"A, B,,2 E,, B,, E,,2 B,, |
+"Dbm7"_A, B,,2 E,, B,, E,,2 B,, "Ab7"^F, _A,,2 _E,, _A,, _E,,2 _A,, | "Fm"_D,, _A,,2 _D,, _A,, _D,,2 _A,, "Bbm7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Bbm7"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Ebm"F, _A,,2 _D,, _A,, _D,,2 _A,, "C7"^F, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Ebm7"F, _A,,2 _D,, _A,, _D,,2 _A,, _A, _A,,2 _D,, _A,, _D,,2 _A,, | "Db7"F, _A,,2 _D,, _A,, _D,,2 _A,, "B"F, _A,,2 _D,, _A,, _D,,2 _A,, | "Bbm"F, _B,,2 _D,, _B,, _D,,2 _B,, F, _B,,2 _D,, _B,, _D,,2 _B,, |
+"Ebm7"^F, _B,,2 _D,, _B,, _D,,2 _B,, "Fm7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, "B"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Db"F, _A,,2 _D,, _A,, _D,,2 _A,, "Ab7"^F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, E, _A,,2 _D,, _A,, _D,,2 _A,, | "Db"F, _A,,2 _D,, _A,, _D,,2 _A,, F, _A,,2 _D,, _A,, _D,,2 _A,, |
+"Db"F,2 z14 |

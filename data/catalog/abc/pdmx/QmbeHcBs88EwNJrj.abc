@@ -1,0 +1,20 @@
+%abc-2.1
+% Francisco Tárrega - Preludio No. 14, by Francisco Tárrega (1852 - 1909). Score published on
+% MuseScore (artist: not given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tárrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/17/QmbeHcBs88EwNJrjo2aStcWH323QpJz2ZDvisxVu7J9W6g.mid (sha256
+% 525bb49fe4ebdb68f31109d4b0df7528752fbf859e78840f99725c43c4862c10): melody track 0, bars 0-8
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Francisco Tárrega - Preludio No. 14
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"C"_A, B, D F E D B D E F B, C D _A, =A, B, | "C"E, D B D C D B, F E, D B D C D B, F | "C"E, D B D C B, C A, B, E, G _B, A, G, A, F, | "C"G, C, E G, F, E, F, D, E, A,, C E, D, A, D F |
+"C"E,, E, A, C E A c e E,, E, _A, B, E _A B e | "C"A,, d c E _E c B D _D _B A C =B, A G _B, | "C"A, G F A, _A, F E G, ^F, E D _D =D =F, E, _E, | "C"E4 _A4 =A8 |

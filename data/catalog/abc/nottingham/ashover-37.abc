@@ -1,0 +1,27 @@
+%abc-2.1
+% The Sluggard Tapper, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/ashover.abc, tune X: 37 (https://github.com/jukedeck/nottingham-dataset; source file
+% sha256 6586eea8dca53866b42721050d11fc1408bdb2cf31a902b41c5c13504139b164).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:The Sluggard Tapper
+M:3/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"a8 f4 | "D"d6 e2 f4 | "G"B6 c2 d4 | "A"A8 g4 |
+"D"f6 e2 d4 | "D"a8 A4 | "E"B6 c2 d4 | "A"e12 |
+"D"a8 f4 | "D"d6 e2 f4 | "G"B6 c2 d4 | "A"A8 g4 |
+"D"f6 e2 d4 | "D"a8 A4 | "A"B8 c4 | "D"d12 |
+"D"a8 f4 | "D"d6 e2 f4 | "G"B6 c2 d4 | "A"A8 g4 |
+"D"f6 e2 d4 | "D"a8 A4 | "E"B6 c2 d4 | "A"e12 |
+"D"a8 f4 | "D"d6 e2 f4 | "G"B6 c2 d4 | "A"A8 g4 |
+"D"f6 e2 d4 | "D"a8 A4 | "A"B8 c4 | "D"d12 |
+"A"e8 a4 | "E"^g6 a2 b4 | "A"a8 e4 | "D"f12 |
+"A"e8 c4 | "E"d8 B4 | "B"c6 B2 A4 | "E"B12 |
+"A"e8 a4 | "E"^g6 a2 b4 | "A"a8 e4 | "D"f12 |
+"A"e4 c4 e4 | "B"a8 f4 | "E"e6 f2 ^g4 | "A7"a12 |

@@ -1,0 +1,25 @@
+%abc-2.1
+% i got rhythm, by George Gershwin. Score published on MuseScore (artist: George Gershwin), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): George Gershwin (died 1937,
+% Wikidata Q123829).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/7/23/QmPhAvchMjTLZuhQH2sWzVFR3uCugUjh9akyizjiy1ck98.mid (sha256
+% fd30dcc032f38660bfae288ad8dce3c82d06c985c9169b1ff4934c87734ac2f7): melody track 1, bars 0-27
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:i got rhythm
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm7"_B,,4 D,,4 "Ebm7"F,,4 _E,,4 | "Gm7"D,,4 _B,,4 "C7"_D,,4 E,,4 | "Cm7"C,,4 _E,,4 "D7"F,,4 _E,,4 | "Dm7"D,,4 _B,,4 "C7"_D,,4 E,,4 |
+"Gm7"C,,4 _E,,4 "Eb7"F,,4 _E,,4 | "Gm7"D,,4 _B,,4 "C7"_D,,4 E,,4 | "Cm7"C,,4 _E,,4 "F7"F,,4 _E,,4 | "E7"C,,4 _E,,4 "D7"F,,4 A,,4 |
+"Gm7"_B,,4 D,,4 "Ebm7"F,,4 _E,,4 | "Em7"A,,4 C,4 E,4 _E,4 | "D7"D,4 A,,4 "F#7"D,,4 ^F,,4 | "Dm7"D,,4 F,,4 A,,4 _A,,4 |
+"Em7"G,,4 B,,4 D,4 D,,4 | "Dm7"G,,4 _B,,4 D,4 _D,4 | "C7"C,4 G,,4 "E7"C,,4 E,,4 | "Cm7"C,,4 _E,,4 G,,4 ^F,,4 |
+"D7"F,,4 A,,4 C,4 _E,,4 | "Gm7"D,,4 _B,,4 "C7"_D,,4 E,,4 | "Cm7"C,,4 _E,,4 "D7"F,,4 _E,,4 | "Dm7"D,,4 _B,,4 "C7"_D,,4 E,,4 |
+"Gm7"C,,4 _E,,4 "Eb7"F,,4 _E,,4 | "Gm7"D,,4 _B,,4 "C7"_D,,4 E,,4 | "Cm7"C,,4 _E,,4 "F7"F,,4 A,,4 | "Gm7"_B,,4 F,,4 "Cm7"_A,,4 C,4 |
+"Db7"G,,4 B,,4 "B"D,4 _D,4 | "E7"C,4 E,,4 "D7"F,,4 A,,4 | "Gm7"_B,,4 F,,4 _B,,,2 z6 |

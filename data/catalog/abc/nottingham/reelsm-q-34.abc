@@ -1,0 +1,26 @@
+%abc-2.1
+% My Love is but a Lassie Yet, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsm-q.abc, tune X: 34 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 a99f2967cf47460bba70bae40cd355a220b537a87180131c6d9433750bc446a1).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:My Love is but a Lassie Yet
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 d2 c2 | "D"d4 D4 F4 A4 | "D"d4 D4 "G"D4 d2 c2 | "D"d4 D4 F4 A4 |
+"E7"e4 E4 "A7"E4 d2 c2 | "D"d4 D4 F4 A4 | "G"B4 g4 f4 e4 | "Em"d2 c2 B2 A2 "A7"B4 c4 |
+"D"d4 D4 D4 d2 c2 | "D"d4 D4 F4 A4 | "D"d4 D4 "G"D4 d2 c2 | "D"d4 D4 F4 A4 |
+"E7"e4 E4 "A7"E4 d2 c2 | "D"d4 D4 F4 A4 | "G"B4 g4 f4 e4 | "Em"d2 c2 B2 A2 "A7"B4 c4 |
+"D"d4 D4 D4 f2 g2 | "D"a6 f2 "A7"g6 e2 | "D"f4 d4 "A7"d4 f2 g2 | "D"a6 f2 "G"g4 a4 |
+"Em"b4 e4 "A7"e4 f2 g2 | "D"a6 f2 "A"g6 e2 | "Bm"f4 d4 "A7"e4 c4 | "Em"d2 c2 B2 A2 "A7"B4 c4 |
+"D"d4 D4 D4 f2 g2 | "D"a6 f2 "A7"g6 e2 | "D"f4 d4 "A7"d4 f2 g2 | "D"a6 f2 "G"g4 a4 |
+"Em"b4 e4 "A7"e4 f2 g2 | "D"a6 f2 "A"g6 e2 | "Bm"f4 d4 "A7"e4 c4 | "Em"d2 c2 B2 A2 "A7"B4 c4 |
+"D"d4 D4 D4 f2 g2 | "D"a2 g2 f2 a2 "A7"g2 f2 e2 g2 | "D"f4 d4 d4 f2 g2 | "D"a2 g2 f2 a2 "G"g2 f2 g2 a2 |
+"Em"b2 a2 g2 f2 "A7"e4 f2 g2 | "D"a2 g2 f2 a2 "A"g2 f2 e2 g2 | "Bm"f2 e2 d2 f2 "A7"e4 c4 | "Em"d2 c2 B2 A2 "A7"B2 c2 d2 e2 |
+"D"f4 d4 d4 z4 |

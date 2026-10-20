@@ -1,0 +1,25 @@
+%abc-2.1
+% Un Canadien errant, by Antoine Gérin-Lajoie. Score published on MuseScore (artist: not given),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antoine Gérin-Lajoie (died 1882,
+% Wikidata Q2854044).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/17/QmbeUkbBfLthzK3ZyjMXgAa8cmorYmoqGqhZnQT9mftXgX.mid (sha256
+% 1f3bff998fab0e83a0a90e5a38db32272a3f932b8bbed729720e54708ed8425a): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Un Canadien errant
+M:3/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"F4 A4 F4 | "C"C8 F4 | "C"A12 | "C"A4 G4 A4 |
+"C"_B8 A4 | "C"G12 | "C"F4 A4 F4 | "C"C8 F4 |
+"C"A12 | "C"A4 G4 A4 | "C"_B8 A4 | "C"G12 |
+"C"G4 G4 G4 | "C"A8 _B4 | "C"c12 | "C"G4 A4 _B4 |
+"C"A8 G4 | "C"F12 | "C"F4 F4 F4 | "C"d8 d4 |
+"C"c12 | "C"G4 A4 _B4 | "C"A8 G4 | "C"F12 |

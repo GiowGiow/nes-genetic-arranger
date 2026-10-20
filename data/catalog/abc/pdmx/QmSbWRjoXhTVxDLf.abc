@@ -1,0 +1,34 @@
+%abc-2.1
+% Faulte dargent, by Josquin des Prez. Score published on MuseScore (artist: Josquin des Prez),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Josquin des Prez (died 1521,
+% Wikidata Q143100).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/11/QmSbWRjoXhTVxDLf4Kc1SukoxmELfz48A6uB7f8kAdTXyV.mid (sha256
+% 27d2e9b6010ac4aca42bebb0245eed62d3291054b584f61c1e0b3aa80957c84a): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Faulte dargent
+M:2/2
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Gm"z4 _B,8 G,4 | "Gm7"_B,8 A,6 G,2 | "E7"F,4 F,4 G,4 G,4 | "C7"G,4 A,6 G,2 G,4 |
+"A7"G,4 F,4 G,6 A,2 | "C7"_B,4 C4 D4 E4 | "Bb"F4 F,6 G,2 _B,4 | "G7"A,4 F,4 C8 |
+"Am7"z4 C4 D4 E4 | "Gm"F2 E2 D2 C2 _B,2 A,2 G,4 | "Gm"G,2 F,2 G,4 E,8 | "Dm"D,16 |
+"Gm"z4 G,4 _B,4 A,4 | "Em7"_B,4 G,4 A,8 | "Gm7"G,8 E,4 F,4 | "E7"G,4 A,4 D,8 |
+"Gm7"D,8 z4 G,4 | "Am7"_B,4 A,4 _B,4 G,4 | "Dm"A,8 G,8 | "Em7"z8 A,8 |
+"Dm"_B,12 A,4 | "Cm"G,4 _E,4 G,4 F,4 | "Am7"_E,2 D,2 D,8 C,4 | "Gm"D,8 z4 _B,4 |
+"Em7"A,4 A,4 G,8 | "Em7"z4 _B,4 A,4 A,4 | "Em"G,16 | "C"z4 D4 E6 F2 |
+"Em7"G8 z4 D4 | "C"E6 F2 G8 | "C7"z4 C4 C4 D4 | "A7"D2 C2 A,4 _B,8 |
+"A"A,16 | "Am7"E,6 D,2 E,4 F,4 | "Am"E,8 z4 E,4 | "Am"E,4 D,4 F,6 G,2 |
+"C"A,4 F,4 C6 _B,2 | "Am"A,8 z4 A,4 | "G7"A,4 F,4 C6 _B,2 | "Dm"A,4 D4 C8 |
+"Bb"z4 F,8 D,4 | "C7"E,4 F,6 E,2 E,2 D, E, | "Bb"F,4 _B,2 C2 D2 E2 F4 | "Gm"z4 _B,8 G,4 |
+"Gm7"_B,8 A,6 G,2 | "E7"F,4 F,4 G,4 G,4 | "C7"G,4 A,6 G,2 G,4 | "Gm"G,4 F,4 G,6 A,2 |
+"C7"_B,4 C4 D4 E4 | "Bb"F4 F,6 G,2 _B,4 | "G7"A,4 F,4 C8 | "Am7"z4 C4 D4 E4 |
+"Gm"F2 E2 D2 C2 _B,2 A,2 G,4 | "Gm"G,2 F,2 G,4 E,8 | "Dm"D,16 | "Gm"z4 G,4 _B,4 A,4 |
+"Em7"_B,4 G,4 A,8 | "Gm7"G,8 E,4 F,4 | "E7"G,4 A,4 D,8 | "Gm7"D,8 z4 G,4 |
+"Am7"_B,4 A,4 _B,4 G,4 | "Dm"A,8 G,8 | "Em7"z8 A,8 | "Dm"_B,4 G,4 A,4 D,4 |

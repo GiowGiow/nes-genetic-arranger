@@ -1,0 +1,35 @@
+%abc-2.1
+% Confitebor tibi Domine, by Tiburtio Massaino. Score published on MuseScore (artist: Tiburtio
+% Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/28/QmTkUBuPqwt19M9LDnKbJ7VNfJy1tk3AbJ3HYrC7vDiBwa.mid (sha256
+% 0be97f76e83840424070755266f20ddfb707dd16bf05564d396c0084ec5a6f41): melody track 2, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Confitebor tibi Domine
+M:4/2
+L:1/16
+Q:1/4=156.000156
+% Exact tempo 156.00015600015604 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 G,4 A,4 C16 | "C"D4 C4 C6 z18 | "C"C12 C4 "Em7"B,8 G,8 | "F"A,4 B,4 C8- "G"C8 B,8 |
+"C"C8 G,8 G,4 G,4 G,8 | "C"G,8 G,8 "D"D16 | "G"D32 | "G"z8 G,4 A,4 C16 |
+"G"D4 C4 C6 z2 C16 | "G"B,4 C4 A,4 G,4 G,6 z10 | "G"z16 "A"z16 | "C"z16 "D7"z16 |
+"C"G,16 "Dm"A,12 A,4 | "C"G,8 C8- "G"C8 B,8 | "C"C8 C8 "F"A,12 A,4 | "C"B,8 E8- "G"E8 D8 |
+"C"E16 "Am7"C8 C8 | "F"C8 C8 "G"D8 G,8 | "C"G,16 G,8 C8 | "C"C4 C4 C8 "G"B,16 |
+"Em"B,16 "Am"A,16 | "G"z16 "C"z8 E8 | "C"E8 E8 "G"D12 D4 | "Dm7"F8 E8- "C"E4 D4 C4 B,2 A,2 |
+"Em7"B,12 C4 "D"D12 D4 | "G"D32 | "G"z8 G,4 A,4 C16 | "G"D4 C4 C6 z2 C16 |
+"G"B,4 C4 A,4 G,4 G,6 z10 | "C"E16- "F"E8 F8 | "G"D16 "C"C16 | "Dm7"z16 "C"z8 C8 |
+"G"B,12 B,4 "F"A,8 E8 | "G"E8 B,8 "Am7"C16 | "Dm7"A,8 C8- "Dm"C8 B,8 | "C"C8 C8 "Am"C8 A,8 |
+"G7"D12 C4 "Em7"B,16 | "Am"C8 A,8- "Am7"A,4 B,4 C8 | "Dm"C8 B,8 "Am7"C8 C8 | "F"C8 A,8 A,16 |
+"C"C8 B,12 B,4 C8 | "D"A,32 | "G"G,32 | "G"z8 G,4 A,4 C16 |
+"G"D4 C4 C6 z2 C16 | "G"B,4 C4 A,4 G,4 G,6 z10 | "G"z8 G,8 "D"A,12 A,4 | "G"G,16 "C"C12 C4 |
+"C"E8 D8 C4 G,4 C8 | "G"C4 B,2 A,2 B,8 "C"C8 C8 | "C"C8 C8 C4 D4 E4 F4 | "C"G8 E8 "G"D8 G,8 |
+"C"G,8 G,8 "Dm7"A,16 | "C"C12 C4 G,8 G,8 | "G"G,8 D8 "C"C8 G,8 | "C"G,8 G,8 G12 F4 |
+"C"E4 D4 C8- "G"C8 B,8 | "C"C16 "Em7"z16 | "Am"z16 "C"z8 G,8 | "Em7"G,12 G,4 "D"D16 |
+"G"D32 | "G"z8 G,4 A,4 C16 | "G"D4 C4 C6 z2 C16 | "G"B,4 C4 A,4 G,4 G,6 z10 |

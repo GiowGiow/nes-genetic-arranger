@@ -1,0 +1,25 @@
+%abc-2.1
+% Arioso BWV 156, by Johann Sebastian Bach. Score published on MuseScore (artist: Johann Sebastian
+% Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/55/QmbYyZ3ErURZWVxrY6uxHxShRLMkHFMSgp2gPH1PJu5TSZ.mid (sha256
+% 1957ee30e6291ff187d1550c9098602cc0f7605ec2c20a2ca7dc0cab7a892835): melody track 0, bars 0-22
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Arioso BWV 156
+M:4/4
+L:1/16
+Q:1/4=34.999974
+% Exact tempo 34.999973750019684 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z8 "Bm"z8 | "Am"z8 "G"z8 | "C"E5 F G A "Bm"D5 E F G | "Am"C2 c A F4- "G"F d B G G G G F |
+"C"E2 D C3 z2 "Am"c5 A B c | "F#m"D5 ^F A c "G"B5 G E D | "Em"C5 E G B "F#m"A5 ^F D C | "G"B, D ^F G G4- "D7"G A c e G G G G |
+"G"G4 z4 "Em7"_B5 G E D | "A7"_D5 =D E F G A _B _d e2 G2 | "Dm"F2 E D f4- "Dm7"f e d e d4 | "Bb"d c _B A G F E _d "A7"=d3 e e3 =d |
+"Dm"d4 z4 "G7"F5 E D F | "C7"E5 C D E "Am"F G A _B c _B _B2 | "F"_B2 A2 z D E F "Dm7"=B, =B, C C D D E E | "G7"F F d3 E F D "C"E G c A G F B c |
+"G"F F F z5 "C"E5 F G A | "Bm"D5 E F G "Am"C2 c A F4 | "G"F d B G F2 E F "C"E G E C _B,2 A, _B, | "Dm"A,5 B, B, C "G"C B, C A, C C C C |
+"D7"C5 E A ^F "Am7"G c =F E E E E C | "C"C8 z8 |

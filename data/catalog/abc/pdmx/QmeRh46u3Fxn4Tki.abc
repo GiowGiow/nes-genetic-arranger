@@ -1,0 +1,25 @@
+%abc-2.1
+% Le carnaval des animaux, by Camille Saint-Saëns. Score published on MuseScore (artist: Camille
+% Saint-Saëns), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Camille Saint-Saëns (died 1921,
+% Wikidata Q150445).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/41/QmeRh46u3Fxn4TkiPqfm7tAbdmmUxakCjSnexGW2Lc7YRz.mid (sha256
+% 4bf501f37e67a2aba7a0340065ac5bfba4ff7ea067b58b08871b56ba70cdbdaa): melody track 3, bars 0-28
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le carnaval des animaux
+M:6/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"B, D B G B, D B G B, D B G B, D B G B, D B G B, D B G | "G"B, D B G B, D B G B, D B G B, D B G B, D B G B, D B G | "Am7"C E c A C E c A C E c A C E c A C E c A C E c A | "Am7"C E c A C E c A C E c A C E c A C E c A C E c A |
+"G"B, D B G B, D B G B, D B G B, D B G B, D B G B, D B G | "G"B, D B G B, D B G B, D B G B, D B G B, D B G B, D B G | "F#7"_D E _d _B _D E _d _B _D E _d _B _D E _d _B _D E _d _B _D E _d _B | "F#"B, D B ^F B, D B ^F B, D B ^F _B, E _B ^F _B, E _B ^F _B, E _B ^F |
+"Bm"D ^F B ^F D ^F B ^F D ^F B ^F D ^F B ^F D ^F B ^F D ^F B ^F | "Em7"D G d B D G d B D G d B _D E _d G _D E _d G _D E _d G | "D"C D c G C D c G C D c G C D c ^F C D c ^F C D c ^F | "Dm7"C F c A C F c A C F c A B, D B F B, D B F B, D B F |
+"C"_B, C _B F _B, C _B F _B, C _B F _B, C _B F _B, C _B F _B, C _B F | "Am"A, E A E A, E A E A, B, A D A, C A E A, C A E A, C A E | "D7"A, D A ^F A, D A ^F A, D A ^F A, C A E A, C A E A, C A E | "F#m7"A, B, A D A, B, A D A, B, A D A, _D A E A, _D A E A, _D A E |
+"D7"A, D A F B, D A F C D A F C D A ^F C D B ^F C D c ^F | "G"B, D B G B, D B G B, D B G B, D B G B, D B G B, D B G | "Am7"C E c A C E c A C E c A C E c A C E c A C E c A | "Am7"C E c A C E c A C E c A C ^F c A C ^F c A C ^F c A |
+"Em"B, D B F B, D B F B, D B F D _A d B D _A d B D _A d B | "Am7"C E c A C E c A C E c A C ^F c A C ^F c A C ^F c A | "Em7"B, D B G B, D B G B, D B G G12 | "Em7"B, D B G D G d B G B g d z12 |
+"Em7"B, E B G E G e B G B g e c2 z10 | "Em"z4 e g e' b d g d' b B e b g B d b g e g e' b | "Em7"d g d' b B e b g B d b g E G e B D G d B B, D B G | "G"B,2 z22 |

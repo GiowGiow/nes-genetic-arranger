@@ -286,7 +286,7 @@ def catalog_parser() -> argparse.ArgumentParser:
 
 
 def test_the_catalog_command_defaults_follow_the_cli_contract():
-    args = catalog_parser().parse_args(["catalog"])
+    args = catalog_parser().parse_args(["catalog", "crawl"])
 
     assert args.out == Path("arranger/data/catalog.json")
     assert args.cache == Path("data/raw/catalog")
@@ -297,21 +297,30 @@ def test_the_catalog_command_defaults_follow_the_cli_contract():
 
 
 def test_letters_are_read_from_a_comma_separated_list():
-    args = catalog_parser().parse_args(["catalog", "--letters", "0-9, a,M"])
+    args = catalog_parser().parse_args(["catalog", "crawl", "--letters", "0-9, a,M"])
 
     assert args.letters == ["0-9", "a", "m"]
 
 
 def test_an_unknown_letter_is_refused(capsys):
     with pytest.raises(SystemExit):
-        catalog_parser().parse_args(["catalog", "--letters", "a,ç"])
+        catalog_parser().parse_args(["catalog", "crawl", "--letters", "a,ç"])
     assert "ç" in capsys.readouterr().err
 
 
 def test_run_catalog_crawls_writes_the_catalog_and_prints_the_counts(tmp_path, capsys):
     out = tmp_path / "catalog.json"
     args = catalog_parser().parse_args(
-        ["catalog", "--letters", "a,m", "--out", str(out), "--cache", str(tmp_path / "cache")]
+        [
+            "catalog",
+            "crawl",
+            "--letters",
+            "a,m",
+            "--out",
+            str(out),
+            "--cache",
+            str(tmp_path / "cache"),
+        ]
     )
     site = FakeSite(small_site())
 

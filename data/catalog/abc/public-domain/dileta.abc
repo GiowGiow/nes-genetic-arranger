@@ -1,0 +1,35 @@
+%abc-2.1
+% DILETA, by Cândido das Neves, as performed by Cândido das Neves.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Cândido das Neves (died 1934, Wikidata Q10263002).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_d/dileta.html (file
+% https://www.beakauffmann.com/mpb_d/som/dileta.mid, sha256
+% f1fc737c258f4c3872835245a6c2e450415da93d9e1d10dfdfc0916c61582fff), from Beatriz Kauffmann's Web
+% Site. Melody track 5, bars 1-65 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:DILETA
+M:4/4
+L:1/16
+Q:1/4=80
+K:none
+P:A
+"Am"z16 | "Dm7"z8 "Dm"z8 | "Bm"z8 "G7"z8 | "Am"z16 |
+"Am"z16 | "E"z16 | "E"z8 "E7"z8 | "Am"z8 "Bm7"z8 |
+"Am"z4 c2 B d3 c2 B2 c2 | "Am"B2 A z c2 B2 A2 G2 F2 G2 | "Am"F2 E z d z c z d2 c2 B2 A z | "E"B4 z4 "E7"z8 |
+"E7"z4 B z B z d2 c2 B2 A z | "E"A2 _A z _A2 =A2 B2 =A2 _A2 E2 | "E"F2 E z E z E2 D2 _D2 =D2 E2 | "Am"D8 C2 z6 |
+"Am"z4 c2 B z d2 c2 B2 c2 | "Am"B2 A z c2 B2 A2 G2 F2 E2 | "Am"F2 E2 C z C2 D2 C2 B,2 A, z | "E"B,7 z B,2 z6 |
+"E"z4 B z B z B z B z B2 A z | "E"A2 _A z _A z _A z _A2 F z F z F z | "E"F2 E z E z E z "Dbm7"D2 _D2 =D2 E2 | "Am"D8 C2 z6 |
+"Am"z8 "Dm7"z4 c3 z | "Dm"c8 "Dm7"F8 | "G7"F z3 B2 c2 d2 c2 B2 c2 | "Am"B8 E8 |
+"Am"z5 A, B, z C2 E z A2 B2 | "E"A6 _A2 "Dbm7"B8 | "E"z4 B,2 C2 "Dbm7"D2 _D2 =D2 E2 | "Am"D8 C4 z4 |
+"Am"z8 "Am7"z4 c3 z | "Dm"c8 F8 | "Bm"F z3 B2 c2 "G7"d2 c2 B2 c2 | "Am"B8 E8 |
+"Am"E3 z A,2 B,2 C z E z A z B2 | "E"A6 _A2 B8 | "E"B z3 B,2 F2 "Dbm7"E2 D2 B,2 C2 | "Am"A,3 z13 |
+"Am"z16 | "Am"z8 "Am7"z8 | "Am"z16 | "E"z8 "E7"z8 |
+"E"z8 "E7"z8 | "E"z16 | "E"z8 "E7"z8 | "Am"z16 |
+"Am"z16 | "Am"z8 "Am7"z8 | "Am"z16 | "E"z16 |
+"E"z16 | "E"z16 | "E"z8 "E7"z8 | "Am"z16 |
+"Am"z8 "C"z5 c2 z | "Dm"c8 F8 | "Bm"F z3 B2 c d- "G7"d2 c2 B2 c2 | "Am"B8 E8 |
+"Am"E3 z A,2 B,2 C z E2 A z B2 | "E"A6 _A z "E7"B8 | "E7"B2 z2 B,2 C2 D2 _D2 =D2 E2 | "Am"D8 C8 |

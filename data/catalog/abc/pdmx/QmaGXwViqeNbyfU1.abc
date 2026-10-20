@@ -1,0 +1,27 @@
+%abc-2.1
+% Mrs Moray of Abercairny, by Nathaniel Gow. Score published on MuseScore (artist: Nathaniel Gow),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nathaniel Gow (died 1831,
+% Wikidata Q6969638).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/22/QmaGXwViqeNbyfU1fvHSADXdK39YxFhXMYuVdED4LkGvVd.mid (sha256
+% 4e60759c2b84802f4c5b48d2c94783426db1114d727a2d415f0c3f1406920a0c): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mrs Moray of Abercairny
+M:4/4
+L:1/16
+Q:1/4=64.000205
+% Exact tempo 64.00020480065537 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"D D D2 ^F4 A D3 ^F D3 | "C"E c3 G c3 E C3 E4 | "C"D D D2 ^F4 A D3 ^F D3 | "C"D d3 ^F d3 ^F D3 ^F4 |
+"C"D D D2 ^F4 A D3 ^F D3 | "C"E c3 G c3 E C3 E4 | "C"D D D2 ^F4 A D3 ^F D3 | "C"D d3 ^F d3 ^F D3 ^F4 |
+"C"d d d2 ^f3 d a3 d ^f3 d | "C"c c c2 e3 c g3 c e3 c | "C"d d d2 ^f3 d a3 d ^f3 d | "C"A d3 ^F d3 ^F D3 ^F4 |
+"C"d d d2 ^f3 d a3 d ^f3 d | "C"c c c2 e3 c g3 c e3 c | "C"d3 ^f e3 g ^f a3 e g3 | "C"^f3 d e3 _d =d A3 ^F4 |
+"C"D D D2 ^F4 A D3 ^F D3 | "C"E c3 G c3 E C3 E4 | "C"D D D2 ^F4 A D3 ^F D3 | "C"D d3 ^F d3 ^F D3 ^F4 |
+"C"D D D2 ^F4 A D3 ^F D3 | "C"E c3 G c3 E C3 E4 | "C"D D D2 ^F4 A D3 ^F D3 | "C"D d3 ^F d3 ^F D3 ^F4 |
+"C"d d d2 ^f3 d a3 d ^f3 d | "C"c c c2 e3 c g3 c e3 c | "C"d d d2 ^f3 d a3 d ^f3 d | "C"A d3 ^F d3 ^F D3 ^F4 |
+"C"d d d2 ^f3 d a3 d ^f3 d | "C"c c c2 e3 c g3 c e3 c | "C"d3 ^f e3 g ^f a3 e g3 | "C"^f3 d e3 _d =d A3 ^F4 |

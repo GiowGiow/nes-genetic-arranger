@@ -1,0 +1,29 @@
+%abc-2.1
+% Sonatina No.1, by Muzio Clementi. Score published on MuseScore (artist: Muzio Clementi), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Muzio Clementi (died 1832,
+% Wikidata Q193673).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/55/QmdYK53o4RhByfUKq2msSA9uUqUGuZUsPTWzYuwHf2GbQi.mid (sha256
+% 11c4a2e4954b1b49b8115c9eac4fbd728062a564700732545d28843c52dea791): melody track 0, bars 0-38
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sonatina No.1
+M:2/2
+L:1/16
+Q:1/4=156.000156
+% Exact tempo 156.00015600015604 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"c4 e2 c2 G4 G4 | "C"c4 e2 c2 G4 g4 | "C"f2 e2 d2 c2 B2 c2 B2 c2 | "G7"d2 c2 B2 A2 G4 z4 |
+"C"c4 e2 c2 G4 G4 | "D7"e4 g2 e2 c4 e2 c2 | "D7"d2 B2 c2 A2 B2 G2 A2 ^F2 | "G"G2 A2 B2 c2 d2 e2 ^f2 g2 |
+"D"A4 a4 a4 a4 | "G"B2 c2 d2 e2 ^f2 g2 a2 b2 | "D7"c4 c'4 c'4 c'4 | "B"d2 g2 b2 d'2 c'2 b2 a2 g2 |
+"C"^f2 e2 g2 ^f2 a2 g2 ^f2 e2 | "D"e2 d2 c2 B2 d2 c2 B2 A2 | "Em7"G8 z8 | "F"B4 d2 B2 G4 G4 |
+"Eb"c4 _e2 c2 G4 g4 | "B"f4 d4 _e4 c4 | "G"B2 c2 d2 B2 G4 G4 | "G7"g2 G2 g2 G2 g2 G2 g2 G2 |
+"Cm"g2 G2 g2 G2 g2 G2 g2 G2 | "B"d2 _e2 f2 d2 f2 _e2 d2 c2 | "G"g4 z12 | "C"C4 E2 C2 G,4 G,4 |
+"C"C4 E2 C2 G,4 G4 | "C"F2 E2 D2 C2 B,2 C2 B,2 C2 | "Em7"D2 C2 B,2 A,2 G,4 z4 | "C"C4 G,2 C2 E4 E4 |
+"C"E4 C2 E2 G4 c4 | "G"G4 F4 E4 D4 | "C"C2 D2 E2 F2 G2 A2 B2 c2 | "Em7"C4 d4 d4 d4 |
+"C"E2 F2 G2 A2 B2 c2 d2 e2 | "G7"F4 f4 f4 f4 | "E"G2 c2 e2 g2 f2 e2 d2 c2 | "F"a2 g2 f2 e2 d2 c2 B2 A2 |
+"G"G2 A2 F2 G2 E2 F2 D2 E2 | "C"C4 z12 |

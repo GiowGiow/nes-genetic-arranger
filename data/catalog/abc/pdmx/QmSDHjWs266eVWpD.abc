@@ -1,0 +1,35 @@
+%abc-2.1
+% Partita in A minor BWV 1013, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/16/QmSDHjWs266eVWpDgq83uQXCb9Esh1cQQJmDTCXAErtVGq.mid (sha256
+% 083767a2a3febccf826b7df5c5056919c6f28fb8a43d6be3c2121f7f21723c8a): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Partita in A minor BWV 1013
+M:4/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z e a _a =a c' =a e =A e =a _a =a c' =a e | "C"A c e f _A f e d c e _a =a E d c B | "C"A c e f _A f e d c e _a =a E d c B | "C"A c _A =A F d _A =A E c _A =A D c B =A |
+"C"_A E _A B e _a b d' f d' b _a e d c B | "C"c A c e a c' e' f g _b g e c _B A G | "C"A F A c d f a c B G B d e g b d | "C"c A c e f a c' e d B d ^f g b d' =f |
+"C"e g c' b c' e' c' g c g c' b c' e' c' g | "C"c g _b a _b e' _b g c g _b a _b e' _b g | "C"_d g _b a _b e' _b g _d g e _d A G F E | "C"D g f e f a f d B _A B d e d c B |
+"C"c e a _a =a c' =a ^f _e B _e ^f b =a g ^f | "C"g ^f e g A e g c' ^f e d ^f G d ^f b | "C"e d c e ^F e ^f a _e B c A _E c B A | "C"G e f d _A f e d =A ^f g e _B g ^f e |
+"C"_e b _a d _d =a ^f c B g =e _B =A ^f _e =A | "C"G e c A ^F c A ^F _E ^F A c B a g ^f | "C"g ^f b c' ^f3 e e8 | "C"z e a _a =a c' =a e =A e =a _a =a c' =a e |
+"C"A c e f _A f e d c e _a =a E d c B | "C"A c e f _A f e d c e _a =a E d c B | "C"A c _A =A F d _A =A E c _A =A D c B =A | "C"_A E _A B e _a b d' f d' b _a e d c B |
+"C"c A c e a c' e' f g _b g e c _B A G | "C"A F A c d f a c B G B d e g b d | "C"c A c e f a c' e d B d ^f g b d' =f | "C"e g c' b c' e' c' g c g c' b c' e' c' g |
+"C"c g _b a _b e' _b g c g _b a _b e' _b g | "C"_d g _b a _b e' _b g _d g e _d A G F E | "C"D g f e f a f d B _A B d e d c B | "C"c e a _a =a c' =a ^f _e B _e ^f b =a g ^f |
+"C"g ^f e g A e g c' ^f e d ^f G d ^f b | "C"e d c e ^F e ^f a _e B c A _E c B A | "C"G e f d _A f e d =A ^f g e _B g ^f e | "C"_e b _a d _d =a ^f c B g =e _B =A ^f _e =A |
+"C"G e c A ^F c A ^F _E ^F A c B a g ^f | "C"g ^f b c' ^f3 e e B c A B G A B | "C"E B e _e =e g =e B ^F B =e _e =e g =e B | "C"E G B c _E c B A G B _e =e B A G ^F |
+"C"E G B c _E c B A G B _e =e B a g ^f | "C"e g _e =e b _a d =e c =a _e =e _A f =e d | "C"A c _A =A e _d G =A F =d _A =A _d _b =a g | "C"f A d _d =d f =d A =D A =d _d =d f =d A |
+"C"D A c B c ^f c A D A c B c ^f c A | "C"D c ^f e d c B A E d c B ^F e d c | "C"B d g ^f g b g d G d g ^f g b g d | "C"G d f e f b f d G d f e f b f d |
+"C"G f b a g f e d A g f e B a g f | "C"e g e c _B A _B G A =B _d =d e f g e | "C"f a f d c B c A B _d _e =e ^f _a =a ^f | "C"_a b _a e d c d B c e _a =a _A f e d |
+"C"A c e f E d c _B F A _d =d A g f e | "C"d f _d =d a ^f c =d B _a e =f =a =f _d =d | "C"_A f _d =d b =a _a ^f e =d c B =A _A ^F E | "C"d B c e A B c d e ^f _a =a b _a =a c' |
+"C"_e ^f c' b =e _a c' b ^f =a c' b B c' b =a | "C"_a e f e =a e f e b e f e d f e d | "C"c A c e a g f e f a f d d' c' b a | "C"_a e' _d' g ^f =d' b =f e c' =a _e =d _b _a =d |
+"C"c a f d B f d B _A B d f e d c B | "C"c e a c B A E _a =a =A G E F =a E g | "C"D f e _d =d _b c a _a e =d =B c e' =B =d' | "C"c c' d b e a b _a =a E =A c e =A c e |

@@ -1,0 +1,24 @@
+%abc-2.1
+% Hi-There, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsh-l.abc,
+% tune X: 7 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% cb701d4ffe6839cb7a5655bc21785ecb71a72ab63d8560f7be3856f6aedaf7e5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Hi-There
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z8 A4 G4 | "D"F8 D8 | "D"d8 c4 d4 | "G"e4 d4 c4 d4 |
+"G"G8 c4 B4 | "D"A8 F4 A4 | "Bm"d8 f8 | "Em"e8 A6 B2 |
+"A7"A4 G4 F4 E4 | "D"F8 D8 | "D7"d8 c4 d4 | "G"e4 d4 B4 G4 |
+"Em"E8 c4 B4 | "A7"A8 E4 F4 | "A7"G4 A4 B4 c4 | "D"d16 |
+"D7"d16 | "G"d4 d8 B4 | "G"d8 d4 B4 | "D"A6 B2 A4 F4 |
+"D"A16 | "E"B4 E8 E4 | "E7"e8 d8 | "A7"c6 d2 c4 B4 |
+"A7"A8 F4 G4 | "D"A8 D8 | "D7"d8 f4 e4 | "G"d4 B4 "D"A4 F4 |
+"A7"E8 F4 G4 | "D"A8 F4 A4 | "A7"B4 G4 E4 C4 | "A7"E16 |
+"D"D8 z8 |

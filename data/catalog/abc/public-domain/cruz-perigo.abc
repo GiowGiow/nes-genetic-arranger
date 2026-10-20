@@ -1,0 +1,36 @@
+%abc-2.1
+% CRUZ, PERIGO!, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_c/cruz-perigo.html (file
+% https://www.beakauffmann.com/mpb_c/som/cruz-perigo.mid, sha256
+% 7f8952bcc8664f4282cb84156c4bb07a33d01d5e95afd8a08f87050c7e6a1b60), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:CRUZ, PERIGO!
+M:2/4
+L:1/16
+Q:1/4=105.999951
+% Exact tempo 105.99995053335641 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm7"F,2 z F A,2 F2 | "E7"G,2 z E _B,2 E2 | "C7"C,2 z E _B,2 E2 | "Am"F,2 z F A,2 F2 |
+"Dm7"F,2 z F A,2 F2 | "E"E,2 z E A,2 E2 | "E7"E,2 z E _A,2 E2 | "C7"A,2 z E G,2 E2 |
+"Dm"F,2 z F A,2 F2 | "E7"G,2 z E _B,2 E2 | "C7"C,2 z E _B,2 E2 | "Am"F,2 z F A,2 F2 |
+"Db"_B,,2 z F _B,2 F2 | "Dm7"C,2 z F A,2 F2 | "C"C,2 z E _B,2 E2 | "F"F,2 F2 F4 |
+"C"C2 z E _B,2 G2 | "D7"A,2 z ^F C2 ^F2 | "Db7"G,2 z D F,2 D2 | "C"E,2 z C C2 C2 |
+"C"E,2 z E, E,2 _E,2 | "Bm"D,2 z G B,2 B2 | "D7"D,2 z ^F C2 ^F2 | "G7"G,2 z G, F,2 F,2 |
+"C"E,2 z E _B,2 G2 | "D7"A,2 z ^F C2 ^F2 | "Db7"G,2 z D F,2 D2 | "C"E,2 z C C2 C2 |
+"A7"A,2 z G G2 G2 | "Dm"F,2 z D F,2 F,2 | "G7"G,2 z D, G,2 G,,2 | "C"C,2 z G,, C,,4 |
+"C"C2 z E _B,2 G2 | "D7"A,2 z ^F C2 ^F2 | "Db7"G,2 z D F,2 D2 | "C"E,2 z C C2 C2 |
+"C"E,2 z E, E,2 _E,2 | "Bm"D,2 z G B,2 B2 | "D7"D,2 z ^F C2 ^F2 | "G7"G,2 z G, F,2 F,2 |
+"C"E,2 z E _B,2 G2 | "D7"A,2 z ^F C2 ^F2 | "Db7"G,2 z D F,2 D2 | "C"E,2 z C C2 C2 |
+"A7"A,2 z G G2 G2 | "Dm"F,2 z D F,2 F,2 | "G7"G,2 z D, G,2 G,,2 | "C"C,2 z G,, C,,4 |
+"Dm7"F,2 z F A,2 F2 | "E7"G,2 z E _B,2 E2 | "C7"C,2 z E _B,2 E2 | "Am"F,2 z F A,2 F2 |
+"Dm7"F,2 z F A,2 F2 | "E"E,2 z E A,2 E2 | "E7"E,2 z E _A,2 E2 | "C7"A,2 z E G,2 E2 |
+"Dm"F,2 z F A,2 F2 | "E7"G,2 z E _B,2 E2 | "C7"C,2 z E _B,2 E2 | "Am"F,2 z F A,2 F2 |
+"Db"_B,,2 z F _B,2 F2 | "Dm7"C,2 z F A,2 F2 | "C"C,2 z E _B,2 E2 | "Dm7"F,2 F2 F,4 |

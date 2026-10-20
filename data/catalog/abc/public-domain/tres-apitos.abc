@@ -1,0 +1,26 @@
+%abc-2.1
+% TRÊS APITOS, by Noel Rosa, as performed by Aracy de Almeida.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Noel Rosa (died 1937, Wikidata Q281078).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_t/tres-apitos.html (file
+% https://www.beakauffmann.com/mpb_t/som/tres-apitos.mid, sha256
+% bed2a292c678875ae715c73679fee46eabb930dffb250ccbd84085f5c8d8ce23), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-24 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:TRÊS APITOS
+M:4/4
+L:1/16
+Q:1/4=65.75
+% Exact tempo 65.74999999999967 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"A7"z8 "Em7"z8 | "G7"z5 E F2 "C"^F G2 G4 G | "Am7"G A G2 A G c2 "F"G4 F2 F z | "Fm"F G3 F F c2 "Am7"F4 E2 G A |
+"F7"A _E3 G2 _E G- "C"G =E7 | "C"E z E z E z E F ^F G z G3 z G | "Am7"z A G z A G c2 "F"G4 F z F z | "Fm"F3 G F z F c- "Am7"c F3 E2 G A |
+"G7"A z _E z _E D z D "C"C8 | "C"C9 z E2 E z E F | "C"^F2 G3 z2 G "Am7"^F =F3 E E2 =F | "Dm7"E2 D5 _A- "Fm"_A z _A _A _A c z c |
+"Cm"z c B _B A _A G ^F "G7"=F E2 E3 D D | "C"C9 z2 E2 z E F | "C"^F G5 z G- "Am7"G A2 G A G2 c | "F"G4 F z F F2 G3 F F z c |
+"Am7"F4 E2 G2 A z _E z G z _E G | "C"E9 z E z E z F ^F | "C"z G G3 z G2 "C7"^F =F3 E E =F2 | "F"E2 D5 z "Fm"z _A _A z _A c z c |
+"Am7"z c B _B A _A ^F =F "G7"E2 E2 z D D2 | "C"C12 z4 | "C"z16 | "C"z16 |

@@ -1,0 +1,35 @@
+%abc-2.1
+% EXPANSIVA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/expansiva.html (file
+% https://www.beakauffmann.com/mpb_e/som/expansiva.mid, sha256
+% e71939337c9d6039f00f4c6d03e3d4e0cd1623e683ba0b69969331adc10464ff), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:EXPANSIVA
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Db"F4 _D4 _D4 | "C"z4 _E4 _E4 | "B"z4 D4 D4 | "Bb7"z4 D4 D4 |
+"F#"F4 _B,4 _E4 | "Ab7"D4 C4 _E4 | "F"_A4 F4 F4 | "Ab"z4 F4 F4 |
+"Db"z4 _a4 _b4 | "Db"c'3 _e' _d'4 _b4 | "Ab7"c'2 _b'2 _a'2 ^f'2 _e'2 c'2 | "Ab7"_b c' c' c' c' _b c' c' a z3 |
+"Fm7"z4 ^f4 _a4 | "Ab7"_b3 _d' c'4 _a4 | "Db"_b2 _d''2 _b'2 _a'2 f'2 _d'2 | "Db"_b2 _a2 f2 _d2 _B2 _A2 |
+"Db"F4 _D4 _D4 | "C"z4 _E4 _E4 | "B"z4 D4 D4 | "Bb7"z4 D4 D4 |
+"F#"F4 _B,4 _E4 | "Ab7"D4 C4 _E4 | "F"_A4 F4 F4 | "F"z4 F4 F4 |
+"A7"_d4 =d4 _e4 | "A7"e4 ^f6 e2 | "D"d4 e4 f4 | "D"^f4 b6 a2 |
+"Ab7"_a4 _b4 =b4 | "Ab7"c'4 f'6 _e'2 | "Db"_d'4 _a8 | "Db"_d'4 z8 |
+"Db"F4 _D4 _D4 | "C"z4 _E4 _E4 | "B"z4 D4 D4 | "Bb7"z4 D4 D4 |
+"F#"F4 _B,4 _E4 | "Ab7"D4 C4 _E4 | "F"_A4 F4 F4 | "Ab"z4 F4 F4 |
+"Db"z4 _a4 _b4 | "Db"c'3 _e' _d'4 _b4 | "Ab7"c'2 _b'2 _a'2 ^f'2 _e'2 c'2 | "Ab7"_b c' c' c' c' _b c' c' a z3 |
+"Fm7"z4 ^f4 _a4 | "Ab7"_b3 _d' c'4 _a4 | "Db"_b2 _d''2 _b'2 _a'2 f'2 _d'2 | "Db"_b2 _a2 f2 _d2 _B2 _A2 |
+"Db"F4 _D4 _D4 | "C"z4 _E4 _E4 | "B"z4 D4 D4 | "Bb7"z4 D4 D4 |
+"F#"F4 _B,4 _E4 | "Ab7"D4 C4 _E4 | "F"_A4 F4 F4 | "F"z4 F4 F4 |
+"A7"_d4 =d4 _e4 | "A7"e4 ^f6 e2 | "D"d4 e4 f4 | "D"^f4 b6 a2 |
+"Ab7"_a4 _b4 =b4 | "Ab7"c'4 f'6 _e'2 | "Db"_d'4 _a8 | "Db"_d'4 z8 |

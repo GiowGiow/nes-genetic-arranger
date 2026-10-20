@@ -1,0 +1,35 @@
+%abc-2.1
+% PODIA SER PIOR, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/podia-ser-pior.html (file
+% https://www.beakauffmann.com/mpb_p/som/podia-ser-pior.mid, sha256
+% 0dd1ff5dec03a35d8ad17d1979a18b50239370019475cb5be22cd612f9e4cac6), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PODIA SER PIOR
+M:2/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"E"z6 B, _D | "E"_D B, _A, B, E _A B e | "B7"b3 b z f2 ^f | "B7"_a3 _a z ^f _e B |
+"Dbm7"_d3 B z4 | "Dbm"z E _A _d _e =e _a _b | "Abm"b4 _e'4 | "Eb7"z e' _e' d' _e' _e _e' _d' |
+"B7"_d' b _b a ^f _e =B A | "E"_A _A, B, E _A B e _a | "B7"b3 b z f2 ^f | "B7"_a3 _a z ^f _e B |
+"Dbm7"_d3 B z4 | "C"z e _B E E _B, E, ^F, | "Bb"_A,3 _A, _E3 G, | "B"z B,2 B, _A3 ^F |
+"E"E3 e z2 _A, =A, | "Cm"z8 | "Db7"z8 | "Db"B, A, ^F, _D =F B A =F |
+"F#"_A4 ^F3 z | "Ebm7"z F ^F _A B =A _A ^F | "Dbm"E3 _A e4 | "Eb7"G3 _B _e4 |
+"Ab7"c3 _e _a2 _A, =A, | "C"A, _A, E, _A, =A, _A, _E, _A, | "Db7"A, _A, E, _A, =A, _A, F, _A, | "Db"B, A, ^F, _D =F B A =F |
+"F#"_A4 ^F3 z | "Ebm7"z F ^F _A B =A _A ^F | "Dbm"E _A _d _e =e _a _d' _e' | "Cm7"e'4 _e'4 |
+"Dbm"_d'3 _d z2 B, _D | "E"_D B, _A, B, E _A B e | "B7"b3 b z f2 ^f | "B7"_a3 _a z ^f _e B |
+"Dbm7"_d3 B z4 | "Dbm"z E _A _d _e =e _a _b | "Abm"b4 _e'4 | "Eb7"z e' _e' d' _e' _e _e' _d' |
+"B7"_d' b _b a ^f _e =B A | "E"_A _A, B, E _A B e _a | "B7"b3 b z f2 ^f | "B7"_a3 _a z ^f _e B |
+"Dbm7"_d3 B z4 | "C"z e _B E E _B, E, ^F, | "Bb"_A,3 _A, _E3 G, | "B"z B,2 B, _A3 ^F |
+"E"E4 e4 | "E7"z E2 ^F _A =A2 _B | "E7"B4 e4 | "F#m7"z E2 ^F _A =A2 B |
+"A"_d4 e4 | "B7"z _e2 ^f b2 a2 | "E7"z _a2 b e'2 d'2 | "A"_d' _a2 b =a _e2 ^f |
+"F#m7"e _d A ^F E _D A, ^F, | "E7"E, E2 ^F _A =A2 _B | "E7"B4 e4 | "F#m7"z E2 ^F _A =A2 B |
+"A"_d4 e4 | "Dbm7"z B e _a b e' _a' b' | "B7"z a'2 f' _a'2 ^f'2 | "E7"z e'2 _d' e' =d'2 _b |

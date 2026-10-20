@@ -1,0 +1,30 @@
+%abc-2.1
+% 6 Cello Suites BWV 1007-1012, by Bach. Score published on MuseScore (artist: Johann Sebastian
+% Bach), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Bach (died 1953, Wikidata
+% Q1861386).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/34/QmQNBcQNHE9KyQUGu7pV4LPjwVeJuGMpjDpEpe7C6DhRnT.mid (sha256
+% 61e14a69cdd974e81859c988ae13a7f09ba6c5853c76ad0a9bf19da42a43e632): melody track 0, bars 0-42
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:6 Cello Suites BWV 1007-1012
+M:4/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_B,, F, D C D F, D F, _B,, F, D C D F, D F, | "C"_B,, G, _E D _E G, _E G, _B,, G, _E D _E G, _E G, | "C"_B,, A, _E D _E A, _E A, _B,, A, _E D _E A, _E A, | "C"_B,, _B, D C D _B, D _B, _B,, _B, D C D _B, D A, |
+"C"_B,, G, D C D _B, A, _B, G, _B, A, _B, D, F, E, D, | "C"E, _B, C _B, C _B, C _B, E, _B, C _B, C _B, C _B, | "C"A, C F E F C _B, C A, C _B, C F, A, G, F, | "C"G, D, _B, A, _B, D, _B, D, G, D, _B, A, _B, D, _B, D, |
+"C"G, E, F, G, F, E, D, C, _B, A, G, F E D C _B, | "C"A, G, F, F C F A, C F, G, A, C _B, A, G, F, | "C"B, F, _A, G, _A, F, B, F, D F, _A, G, _A, F, B, F, | "C"_E, G, C D _E C G, F, _E, G, C D _E C A, G, |
+"C"^F, A, ^F, A, C A, C A, ^F, A, ^F, A, C A, C A, | "C"_B, A, G, _B, A, _B, C A, _B, A, G, F, _E, D, C, _B,, | "C"A,, _E, F, _E, F, _E, F, _E, A,, _E, F, _E, F, _E, F, _E, | "C"_B,, D, _A, G, _A, D, _A, D, _B,, D, _A, G, _A, D, _A, D, |
+"C"_B,, _E, G, F, G, _E, G, _E, _B,, _E, G, F, G, _E, G, _E, | "C"_B,, A, _E D _E A, _E A, _B,, A, _E D _E A, _E A, | "C"_B,, F, D C D _B, A, G, F, _E, D, C, _B, A, G, F, | "C"E, C, G, A, _B, G, A, _B, E, C, F, A, _B, G, A, _B, |
+"C"_E, C, F, G, A, F, G, A, _E, C, F, G, A, F, G, A, | "C"_E, C, F, A, C =E F2 F C, D, _E, F, G, A, _B, | "C"C A, F, G, A, _B, C D _E C A, _B, C D _E F | "C"^F =F E =F =F _E D _E _E C A, G, =F, C, D, _E, |
+"C"F, C, F, A, C D _E C D _B, F, _E, D, _B,, C, D, | "C"F, _B,, D, F, _B, C D _B, E D C _D _D C =B, C | "C"C _B, A, _B, _B, G, E, D, C, E, G, _B, C E F E | "C"F C A, G, A, C F, A, C F E D C _B, A, G, |
+"C"F,2 _E D C _B, A, G, F, _E D C _B, A, G, F, | "C"_E, D C _B, A, G, F, _E, D, C _B, A, G, F, _E, D, | "C"C, _B, A, G, A, C F, C G, C A, C _B, C G, C | "C"A, C F, C _B, C G, C A, C F, C _B, C G, C |
+"C"A, C F, C G, C A, C _B, C C C D C F, C | "C"C C D C _E C F, C D C _E C F C D C | "C"_E C D C _E C C C D C C C D C _B, C | "C"C C _B, C C C A, C _B, C A, C _B, C G, C |
+"C"A, C F, G, _A, F, =A, F, _B, F, =B, F, C F, _D F, | "C"D F, _E F, =E F, F F, ^F =F, G =F, _A =F, =A =F, | "C"_B D F, D _B D _B D _B D F, D _B D _B D | "C"_B C F, C _B C _B C _B C F, C _B C _B C |
+"C"A _E F, _E A _E A _E A _E F, _E A _E A _E | "C"D16 |

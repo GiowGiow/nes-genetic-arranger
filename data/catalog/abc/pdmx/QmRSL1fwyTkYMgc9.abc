@@ -1,0 +1,32 @@
+%abc-2.1
+% Agonia del Crepusculo, by Alejandro Vega Matus. Score published on MuseScore (artist: Alejandro
+% Vega Matus), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Alejandro Vega Matus (died 1937,
+% Wikidata Q5665573).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/43/QmRSL1fwyTkYMgc9q2dnaCjHamzi5J2WsNEjxByVUurgiA.mid (sha256
+% 08f22ba4992d91942fb46e9a43026304b85847ca26d2ec143492c1944a6fc20f): melody track 0, bars 0-51
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Agonia del Crepusculo
+M:4/4
+L:1/16
+Q:1/4=70.000233
+% Exact tempo 70.00023333411112 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"f8 "Bb"d8 | "A"c8 "D"F8 | "G"_B8 "C"G8 | "Eb7"A8 "D"G8 |
+"Gm"F4 E4 "A7"D4 _D4 | "Dm"D2 z6 "Gm"z2 a2 d'2 _d'2 | "Em7"_b8- "C"_b z f2 e2 _d'2 | "Dm"d'8- "Gm"d' z d2 e2 f2 |
+"C7"g9 z e2 a2 a2 | "Dm"a9 z a2 d'2 _d'2 | "C7"_b9 z g2 e2 _d'2 | "Dm"d'9 z d2 e2 f2 |
+"C7"g9 z e2 a2 a2 | "Gm7"d9 z d2 e2 f2 | "C"e2 z2 e6 z d f3 d | "C"e2 z2 e6 z d f3 d |
+"C"c2 z2 c4- "C7"c2 G2 A2 _B2 | "F"A8- "Dm7"A z F2 G2 _A2 | "F#m"A2 G2 G2 G2 "A7"z2 E2 F2 G2 | "Dm"F2 D2 F2 D2 "Gm7"E2 z c d3 _B |
+"Dm"A2 D2 E2 F2 "A7"F4 E4 | "Dm"D9 z a2 d'2 _d'2 | "Em7"_b8- "C"_b z f2 e2 _d'2 | "Dm"d'8- "Gm"d' z d2 e2 f2 |
+"C7"g9 z e2 a2 a2 | "Dm"a9 z a2 d'2 _d'2 | "C7"_b9 z g2 e2 _d'2 | "Dm"d'9 z d2 e2 f2 |
+"C7"g9 z e2 a2 a2 | "Gm7"d9 z d2 e2 f2 | "C"e2 z2 e6 z d f3 d | "C"e2 z2 e6 z d f3 d |
+"C"c2 z2 c4- "C7"c2 G2 A2 _B2 | "F"A8- "Dm7"A z F2 G2 _A2 | "F#m"A2 G2 G2 G2 "A7"z2 E2 F2 G2 | "Dm"F2 D2 F2 D2 "Gm7"E2 z c d3 _B |
+"Dm"A2 D2 E2 F2 "A7"F4 E4 | "Dm"D9 z D2 E2 F2 | "Em7"G8- "Bb"G z E2 F2 G2 | "Dm"F2 z8 D2 E2 F2 |
+"Em7"E2 z8 F2 E2 A,2 | "Dm"D2 z8 D2 E2 F2 | "Em7"G8- "Bb"G z E2 F2 G2 | "Dm"F2 z8 D2 E2 F2 |
+"Em7"E2 z8 F2 E2 A,2 | "D"D8 "Eb"_e8 | "D"d8 "Db"_d8 | "Dm"d8 "Gm7"_B8 |
+"Dm"d8 "Gm7"_B,8 | "Dm"D4 z4 "A"a4 z4 | "F"d'4 z4 "D"D8 |

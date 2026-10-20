@@ -1,0 +1,34 @@
+%abc-2.1
+% Romance Opus 16 - No. 1, by Pyotr Ilyich Tchaikovsky. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Pyotr Ilyich Tchaikovsky (died
+% 1893, Wikidata Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/6/48/QmNv2MRwoYGr4CnDoAJW2Bna46fZGNFBa5UuqYk1f6zJET.mid (sha256
+% 8a3002aa516e6eb89f8bb2eaa7342fa1f6df5900249fe103d8479ebe53934e42): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Romance Opus 16 - No. 1
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Abm"z8 | "Abm"z8 | "Ab"z8 | "Ab"z8 |
+"Eb7"z8 | "Abm"z8 | "Abm"z8 | "Abm"_e6 _A2 |
+"Abm"_A2 G2 _A4 | "Abm"_e2 =e2 _e4 | "Dbm"_d2 _e2 _d4 | "Abm"B6 _e2 |
+"Eb"_B2 =B2 _B2 =B2 | "Abm"_A8 | "Abm"z8 | "Abm"_e6 _A2 |
+"Abm"_A2 G2 _A4 | "Abm"_e2 =e2 _e4 | "Dbm"_d6 _e2 | "Abm"_A2 _A2 _B2 =B2 |
+"Abm"_A8 | "Abm"z8 | "Ab"z8 | "Ab"z8 |
+"Eb7"z8 | "Abm"z8 | "Abm"z8 | "B"B3 _B _A ^F _d2 |
+"B"_e2 ^f2 _d4 | "B"^f3 ^f e _e _d2 | "B"_e2 B2 _d4 | "Eb7"_e3 _e _d =e _e2 |
+"Abm"_A2 _A2 _e4 | "Dbm"_d3 _d B _B _A _A | "Eb"_E8 | "Eb"z8 |
+"Abm"_e6 _A2 | "Abm"_A2 G2 _A4 | "Abm"_e2 =e2 _e4 | "Dbm"_d8 |
+"Abm"B6 _e2 | "Eb"_B2 =B2 _B2 =B2 | "Abm"_A8 | "Abm"z8 |
+"Abm"_e6 _A2 | "Abm"_A2 G2 _A4 | "Abm"_e2 =e2 _e4 | "Dbm"_d6 _e2 |
+"Abm"_A2 _A2 _B2 =B2 | "Abm"_A8 | "Abm"z8 | "Ab"z8 |
+"Ab"z8 | "Eb7"z8 | "Abm"z8 | "Abm"z8 |
+"B"B3 _B _A ^F _d2 | "B"_e2 ^f2 _d4 | "B"^f3 ^f e _e _d2 | "B"_e2 B2 _d4 |
+"Eb7"_e3 _e _d =e _e2 | "Abm"_A2 _A2 _e4 | "Dbm"_d3 _d B _B _A _A | "Eb"_E8 |

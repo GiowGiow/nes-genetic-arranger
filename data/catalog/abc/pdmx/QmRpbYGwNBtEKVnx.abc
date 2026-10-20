@@ -1,0 +1,35 @@
+%abc-2.1
+% Pirates of Penzance - 02 (Song Ruth), by Arthur Sullivan. Score published on MuseScore (artist:
+% Arthur Sullivan), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Arthur Sullivan (died 1900,
+% Wikidata Q212692).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/36/QmRpbYGwNBtEKVnxSLNm62XK3baBsugDpQgmYMonrJmcRp.mid (sha256
+% d6ad3fabe433c3a2caad4f3c27a4d3f3967918746144c56c8bc8e1c4617754e3): melody track 7, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Pirates of Penzance - 02 (Song Ruth)
+M:2/4
+L:1/16
+Q:1/4=87.000022
+% Exact tempo 87.00002175000542 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z8 | "Am7"z8 | "F"z8 | "Cm"z8 |
+"G"z6 G2 | "Dm7"G2 G2 F2 _E F | "Dm7"G2 G2 F2 _E F | "Cm"G2 _E2 C2 _E2 |
+"G"D2 G,2 z2 G G | "Dm7"G2 G2 F2 _E F | "Dm7"G G G2 F2 _E F | "Cm"G2 _E2 C2 _E2 |
+"Cm"D2 C2 z2 C D | "Fm7"_E2 _E2 _E2 C D | "Fm7"_E2 _E2 _E2 C D | "F7"_E2 F2 G2 A2 |
+"Bb"_B2 _B,2 z2 _B, _B, | "Fm7"_E2 _E _E _E2 C D | "Fm7"_E _E _E _E _E2 C D | "Fm"_E _E _E2 F2 F2 |
+"G"G2 G,4 G,2 | "Dm7"E2 D2 D2 C D | "Dm7"E2 D2 D2 C D | "C"E2 A2 G2 ^F2 |
+"G"F2 D2 z2 G G | "Am"c c c2 G3 G | "F"A2 A2 E3 E | "C"G2 G,2 G,2 E2 |
+"C"D2 C2 z4 | "Am7"z8 | "F"z8 | "Cm"z8 |
+"G"z6 G2 | "Dm7"G2 G2 F2 _E F | "Dm7"G2 G2 F2 _E F | "Cm"G2 _E2 C2 _E2 |
+"G"D2 G,2 z2 G G | "Dm7"G2 G2 F2 _E F | "Dm7"G G G2 F2 _E F | "Cm"G2 _E2 C2 _E2 |
+"Cm"D2 C2 z2 C D | "Fm7"_E2 _E2 _E2 C D | "Fm7"_E2 _E2 _E2 C D | "F7"_E2 F2 G2 A2 |
+"Bb"_B2 _B,2 z2 _B, _B, | "Fm7"_E2 _E _E _E2 C D | "Fm7"_E _E _E _E _E2 C D | "Fm"_E _E _E2 F2 F2 |
+"G"G2 G,4 G,2 | "Dm7"E2 D2 D2 C D | "Dm7"E2 D2 D2 C D | "C"E2 A2 G2 ^F2 |
+"G"F2 D2 z2 G G | "Am"c c c2 G3 G | "F"A2 A2 E3 E | "C"G2 G,2 G,2 E2 |
+"C"D2 C2 z4 | "Am7"z8 | "F"z8 | "Cm"z8 |
+"G"z6 G2 | "Dm7"G2 G2 F2 _E F | "Dm7"G2 G2 F2 _E F | "Cm"G2 _E2 C2 _E2 |

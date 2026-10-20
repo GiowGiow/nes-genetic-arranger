@@ -1,0 +1,36 @@
+%abc-2.1
+% PÓ DE MICO, by João Pernambuco, as performed by João Pernambuco.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): João Pernambuco (died 1947, Wikidata Q651189).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_p/po-de-mico.html (file
+% https://www.beakauffmann.com/mpb_p/som/po-de-mico.mid, sha256
+% 7e17663c48efab8bb489a6200c9803133efde354d199cf6ae7bf8e3b8ab34fde), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:PÓ DE MICO
+M:2/4
+L:1/16
+Q:1/4=83.999966
+% Exact tempo 83.99996640001345 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"D5 D B B | "A7"A5 z G2 | "D7"^F ^F2 ^F e e2 e | "G"e d B G E D B, G, |
+"G"D5 D B B | "D"A5 A ^f A | "Dbm7"_A ^f2 ^f G e2 e | "D"e D ^F A d2 A2 |
+"G"D5 D B B | "A7"A5 z G2 | "D7"^F ^F2 ^F e e2 d | "Ab"d B _A E D B, _A, E, |
+"C7"_D, E, G, _B, _D E G ^F | "Am7"E5 _E2 D | "Am"_D3 _D C C2 C | "G"B, D2 ^F G4 |
+"G"D5 D B B | "Am7"A5 z G2 | "D7"^F ^F2 ^F e e2 e | "G"e d B G E D B, G, |
+"G"D5 D B B | "D7"A5 A ^f A | "Dbm7"_A ^f2 ^f G e2 e | "D"e D ^F A d2 A2 |
+"G"D5 D B B | "A7"A5 z G2 | "D7"^F ^F2 ^F e e2 d | "Ab"d B _A E D B, _A, E, |
+"C7"_D, E, G, _B, _D E G ^F | "Am7"E5 _E2 D | "Am"_D3 _D C C2 C | "G"B, D2 ^F G3 G, |
+"Am7"B,2 e2 A,2 c2 | "Dm7"G,2 B2 F,2 A2 | "C"E,2 A2 D,2 _A2 | "Am"C, _E, =E, A, =E C A, =E, |
+"A"A,2 c2 _A,2 d2 | "Am"A,2 c2 A,2 e2 | "F#7"_B,2 _d2 _B,2 _B2 | "B"^F _E ^F B A ^F _E G, |
+"Em"B,2 e2 A,2 c2 | "G7"G,2 B2 F,2 A2 | "E7"E,2 A2 D,2 _A2 | "Am"C, _E, =E, A, =E C A, =E, |
+"Am"A, _A, =A, C E _E =E G | "Em"^F E2 B, E4 | "F#"E E2 E2 _E2 _E | "Em"E6 z G, |
+"Em"B,2 e2 A,2 c2 | "G7"G,2 B2 F,2 A2 | "E7"E,2 A2 D,2 _A2 | "Am"C, _E, =E, A, =E C A, =E, |
+"A"A,2 c2 _A,2 d2 | "Am"A,2 c2 A,2 e2 | "F#7"_B,2 _d2 _B,2 _B2 | "B"^F _E ^F B A ^F _E G, |
+"Em"B,2 e2 A,2 c2 | "G7"G,2 B2 F,2 A2 | "E7"E,2 A2 D,2 _A2 | "Am"C, _E, =E, A, =E C A, =E, |
+"Am"E _E =E ^F G ^F2 ^F | "Em"E3 B, E4 | "F#7"E ^F2 G ^F ^F2 ^F | "Em"E3 E3 D2 |

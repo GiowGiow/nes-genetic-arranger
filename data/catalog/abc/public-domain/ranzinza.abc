@@ -1,0 +1,36 @@
+%abc-2.1
+% RANZINZA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_r/ranzinza.html (file
+% https://www.beakauffmann.com/mpb_r/som/ranzinza.mid, sha256
+% 4541991e1b7d5eb288cf9dd30b8ccaedfeec3720fa114039a9c7158fd2957ba5), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:RANZINZA
+M:2/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000065 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G7"z5 c' z a | "G7"^f g z b z a z =f | "C"_e =e z a z g z =e | "G7"d A z c B c z d |
+"A"e2 z e z f z e | "Dm"_d =d z b z a z =d | "C"B c z a z g z G | "D7"^F A z e z d z c |
+"G7"B d z g z c' z a | "G7"^f g z b z a z =f | "C"_e =e z a z g z =e | "G7"d A z c B c z d |
+"A"e2 z e z f z e | "Dm"_d =d z b z a z =d' | "C"z c' z e z b z a | "G7"z g z B z e z d |
+"C"c2 z c' z c' z a | "G7"^f g z b z a z =f | "C"_e =e z a z g z =e | "G7"d A z c B c z d |
+"A"e2 z e z f z e | "Dm"_d =d z b z a z =d | "C"B c z a z g z G | "D7"^F A z e z d z c |
+"G7"B d z g z c' z a | "G7"^f g z b z a z =f | "C"_e =e z a z g z =e | "G7"d A z c B c z d |
+"A"e2 z e z f z e | "Dm"_d =d z b z a z =d' | "C"z c' z e z b z a | "G7"z g z B z e z d |
+"C"c2 z c' z f z e | "E7"_e =e z B z f z =e | "Am"_e =e z c z a z g | "G7"^f g z d z a z g |
+"C"^f g z e z d' z c' | "Dm"_a b z =a e g z f | "C"e G z A B c z _d | "D7"d D z E ^F G z A |
+"G"B c z _d =d f z e | "E7"_e =e z B z f z =e | "Am"_e =e z c z a z g | "G7"^f g z d z a z g |
+"C"^f g z e z d' z c' | "Fm"_a f z d c _A z F | "Am7"E e z d _d a z g | "D7"^f d' z c' b g' z b |
+"C"c'2 z c'' z f z e | "E7"_e =e z B z f z =e | "Am"_e =e z c z a z g | "G7"^f g z d z a z g |
+"C"^f g z e z d' z c' | "Dm"_a b z =a e g z f | "C"e G z A B c z _d | "D7"d D z E ^F G z A |
+"G"B c z _d =d f z e | "E7"_e =e z B z f z =e | "Am"_e =e z c z a z g | "G7"^f g z d z a z g |
+"C"^f g z e z d' z c' | "Fm"_a f z d c _A z F | "Am7"E e z d _d a z g | "D7"^f d' z c' b g' z b |

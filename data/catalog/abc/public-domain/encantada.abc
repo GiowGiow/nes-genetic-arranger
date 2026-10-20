@@ -1,0 +1,35 @@
+%abc-2.1
+% ENCANTADA (Schottisch), by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_e/encantada.html (file
+% https://www.beakauffmann.com/mpb_e/som/encantada.mid, sha256
+% 5561161baf0fb8c8a48a3197e27ddf4a8df1411f8bca211b7d8b60a7968b2ef3), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:ENCANTADA (Schottisch)
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Eb"z10 _E,2 D,2 _D,2 | "Fm"C,4 C4 "Gm7"_B,,4 _D4 | "Eb"_A,,4 C4 C4 z4 | "Fm"C,4 C4 "Dm"F,,4 _E4 |
+"Eb7"_B,,4 _D4 "F"_D2 F,2 E,2 _E,2 | "Eb7"_D,4 _D4 "Dm7"C,4 _E4 | "Bbm"_B,,4 _D4 "Fm"_D4 z4 | "Eb7"_B,,4 _D4 "Eb"_E,,4 _D4 |
+"Fm"_A,,4 C4 "Eb"C2 _E,2 D,2 _D,2 | "Fm"C,4 C4 "Gm7"_B,,4 _D4 | "Fm7"_A,,4 C4 "Bbm"C4 z4 | "D7"C,4 _E4 F,,4 _E4 |
+"Eb"_B,,4 _D4 "Db"_D4 z4 | "E"_D,4 _D4 "C7"_D4 z4 | "Fm"_E,,4 C4 "G7"C4 z4 | "Eb7"_B,,4 _D4 "C7"_E,,4 _D4 |
+"Ab"_A,,4 C4 "Fm7"_A,,2 _E,2 D,2 _D,2 | "Fm"C,4 C4 "Gm7"_B,,4 _D4 | "Eb"_A,,4 C4 C4 z4 | "Fm"C,4 C4 "Dm"F,,4 _E4 |
+"Eb7"_B,,4 _D4 "F"_D2 F,2 E,2 _E,2 | "Eb7"_D,4 _D4 "Dm7"C,4 _E4 | "Bbm"_B,,4 _D4 "Fm"_D4 z4 | "Eb7"_B,,4 _D4 "Eb"_E,,4 _D4 |
+"Fm"_A,,4 C4 "Eb"C2 _E,2 D,2 _D,2 | "Fm"C,4 C4 "Gm7"_B,,4 _D4 | "Fm7"_A,,4 C4 "Bbm"C4 z4 | "D7"C,4 _E4 F,,4 _E4 |
+"Eb"_B,,4 _D4 "Db"_D4 z4 | "E"_D,4 _D4 "C7"_D4 z4 | "Fm"_E,,4 C4 "G7"C4 z4 | "Eb7"_B,,4 _D4 "C7"_E,,4 _D4 |
+"Ab"_A,,4 C4 _A,,,4 z4 | "Cm"_E,2 _E,2 _E,4 "Fm7"F,2 F,2 F,4 | "F7"^F,2 ^F,2 ^F,4 "Cm7"G,2 G,2 G,4 | "Fm7"_E,2 _A,2 C2 _E2 _A2 c2 _e2 _a2 |
+"Eb"g4 g4 "Cm7"g8 | "Eb"G4 _E4 "D7"_B4 z4 | "E7"F,4 D4 _A4 z4 | "D"_B,,4 D4 "C7"_A4 z4 |
+"Cm7"_E,4 G4 z8 | "Cm"_E,2 _E,2 _E,4 "Fm7"F,2 F,2 F,4 | "F7"^F,2 ^F,2 ^F,4 "Cm7"G,2 G,2 G,4 | "Fm7"_E,2 _A,2 C2 _E2 _A2 c2 _e2 _a2 |
+"Eb"g4 g4 "Cm7"g8 | "Eb"G,,4 _B,4 "C7"G,,4 C4 | "F"_A,,4 C4 "Ab7"=A,,4 C4 | "Gm"_B,,4 G4 "Bm"_B,,4 _A4 |
+"Eb"_E,4 G4 _E,,4 z4 | "Cm"_E,2 _E,2 _E,4 "Fm7"F,2 F,2 F,4 | "F7"^F,2 ^F,2 ^F,4 "Cm7"G,2 G,2 G,4 | "Fm7"_E,2 _A,2 C2 _E2 _A2 c2 _e2 _a2 |
+"Eb"g4 g4 "Cm7"g8 | "Eb"G4 _E4 "D7"_B4 z4 | "E7"F,4 D4 _A4 z4 | "D"_B,,4 D4 "C7"_A4 z4 |
+"Cm7"_E,4 G4 z8 | "Cm"_E,2 _E,2 _E,4 "Fm7"F,2 F,2 F,4 | "F7"^F,2 ^F,2 ^F,4 "Cm7"G,2 G,2 G,4 | "Fm7"_E,2 _A,2 C2 _E2 _A2 c2 _e2 _a2 |
+"Eb"g4 g4 "Cm7"g8 | "Eb"G,,4 _B,4 "C7"G,,4 C4 | "F"_A,,4 C4 "Ab7"=A,,4 C4 | "Gm"_B,,4 G4 "Bm"_B,,4 _A4 |

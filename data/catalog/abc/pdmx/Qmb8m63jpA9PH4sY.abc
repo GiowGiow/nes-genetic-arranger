@@ -1,0 +1,36 @@
+%abc-2.1
+% Fugue No.1 in G minor HMV 605, by George Frideric Handel (1685-1759). Score published on
+% MuseScore (artist: Georg Friedrich Händel), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): George Frideric Handel (died
+% 1759, Wikidata Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/7/Qmb8m63jpA9PH4sYmhE11a4TsfhWL7csPnaTLNTuwZacfj.mid (sha256
+% efb23e8906b8dde7130963a076fe6bce429f8ca31c9513ea15bca09b72039fd8): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Fugue No.1 in G minor HMV 605
+M:4/4
+L:1/16
+Q:1/4=115.999861
+% Exact tempo 115.99986080016704 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z4 d4 G4 A4 | "G"_B4 A2 G2 f f f f f f f f | "G"d2 D2 D2 d2 G2 _E2 c2 C2 | "G"D2 G,2 _B4 A2 _B c d2 c2 |
+"G"_B2 A2 _B2 c _B "E7"A2 d2 G2 _d2 | "Dm"d2 e d e2 f2 "C7"d4 G4 | "A"_d2 a2 a2 a2 "Em7"_b2 _b2 a2 g2 | "A7"a2 d _d =d2 _B A "Em"G2 _d2 =d2 e2 |
+"D"f6 _e d "Cm"_e6 _e2 | "G"d4 d4 "C7"_E2 G2 c2 _E2 | "Ebm"D2 ^F2 _B4 "D7"A4 ^F4 | "A7"G4 ^F4 "Cm7"G2 D2 G4 |
+"Dm7"_E2 G2 A3 G "Bb"_B2 A2 G2 ^F2 | "Eb"G4 C2 A2 "Em7"^F2 D2 D2 _E D | "F#m"C2 A2 A2 A2 "C"_B2 _B2 A2 G2 | "F"A2 D2 d2 c2 "Gm"_B2 A2 G2 E2 |
+"Gm7"_D2 A2 F2 E2 "A7"F4 E4 | "Em7"z2 d2 d2 d2 "C"_e2 _e2 d2 c2 | "B"d2 G2 g2 f2 "F"_e4 c2 f _e | "D7"d2 c2 f2 A2 "F7"G2 A2 _e2 c2 |
+"Bb"F2 f2 d2 A2 "Eb"G2 _e2 c2 _B2 | "F"A2 c2 c2 c2 "Bb"d2 d2 c2 _B2 | "F"c2 F2 f4 "C"G2 g2 f e f e | "Bb"f z F2 _B2 D2 "F"E2 c2 A2 G2 |
+"Eb"G8 "Dm"F4 f4 | "Gm"_B2 _E2 c2 C2 "Bb"d4 c2 _B2 | "Eb"g2 G2 c2 _B2 "F7"f6 f2 | "Cm7"_B2 _B2 _e2 G2 "Bb"A4 d2 _e2 |
+"Ab"c8 "Gm"_B4 _e2 c _B | "F"_A2 f2 d2 c2 "G7"B4 G2 F2 | "C7"_E4 F4 "Cm"G6 F _E | "Ab"F8- "G"F2 G2 G2 G2 |
+"Fm"_A2 _A2 G2 F2 "Dm7"G2 C2 c2 E2 | "Bbm"F2 _B _A _B2 G2 "Fm"E2 C2 c4 | "Cm7"F2 C _D G3 C "Fm"_A4 G2 F2 | "Bbm"_d8 "Bb7"c2 C2 C2 c2 |
+"Bbm7"F2 _D2 _B2 _B,2 "C"C2 G2 _A2 F2 | "Cm"G6 A _B "F7"A2 F2 _B4 | "F"F2 A2 _B2 c2 "Eb"_d2 F2 _B2 _e _d | "Ab"c2 _A G _A2 c2 "F7"_B2 _e2 _A2 d2 |
+"Eb"_e2 _E2 _B2 G2 "C"_E4 _A4 | "Bb"D2 _B _A G2 F2 "Ab"_E6 D C | "Eb"D2 _B,2 _B,2 C _B, "Bb7"z2 F2 F2 F2 | "C"G2 G2 F2 _E2 "Em7"F2 d2 d2 d2 |
+"C"_e2 _e2 d2 c2 "G"d2 G2 g4 | "Fm"g2 c2 f2 d2 "Am7"B2 G2 _e2 c2 | "Gm"d2 _B A _B2 d2 "C"_E2 d2 c2 _E2 | "D"D2 d2 _B2 A2 A2 ^F E ^F4 |
+"A7"G2 _E2 c2 C2 "Gm"D2 G,2 g4 | "F"d4 e2 _d2 "Dm7"f2 E2 e2 =d2 | "G7"_b4 g4 "A"a4 f2 a2 | "Gm"d2 G2 g2 e2 "D"_d4 f2 g f |
+"F#m"e6 e2 "Em7"d4 c2 _B2 | "Dm"A4 D2 _B2 "A"E2 ^F G A2 G2 | "D"^F2 D2 G4- "D7"G2 A G ^F2 G A | "Bb"D4 d4 "Cm"G4 A4 |
+"Gm"_B4 A2 G2 "C"_e2 d2 c4 | "D"d4 _B2 A2 "Cm"z2 g2 a2 _b2 | "G"^f2 d2 d2 _e d "D"c6 d c | "C7"_B4 G2 _B2 "Dm"A4 F2 d2 |
+"F7"G4 _E2 c2 "Gm"F4 _B4 | "C"_E4 A2 G2 "Bm"^F2 d2 d2 d2 | "C"_e2 a2 a2 a2 "G"_b2 _b2 a2 g2 | "D"a2 ^F2 d2 A2 "A7"_B2 G2 ^F2 G A |

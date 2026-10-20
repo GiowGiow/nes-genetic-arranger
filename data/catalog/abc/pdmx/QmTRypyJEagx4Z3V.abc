@@ -1,0 +1,34 @@
+%abc-2.1
+% Horn Concerto No.1 Op.11, by Richard Strauss. Score published on MuseScore (artist: Richard
+% Strauss), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Richard Strauss (died 1949,
+% Wikidata Q13894).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/41/QmTRypyJEagx4Z3VoDciVExeiYHEBej98ZssmhXkXPDrbZ.mid (sha256
+% 400a7b5565b5039641a9424fb6ebd812a65f8cc14b80727d230c7e8712c25639): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Horn Concerto No.1 Op.11
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"z12 _E3 G | "C"_B12 G3 c | "C"_B4 G3 _E _B,4 _E3 G | "C"F4 _E3 _B, G,4 _E,3 C |
+"C"_B,8 _B,,8 | "C"z16 | "C"z16 | "C"z16 |
+"C"z12 _B,4 | "C"_B12 G4 | "C"_E12 _E4 | "C"_A4 G4 F4 _E3 F |
+"C"_E4 D8 _B,4 | "C"_E8 F4 _B,4 | "C"G8 _A4 =A4 | "C"_B6 z2 c8 |
+"C"F8 z4 _B,4 | "C"_B12 G4 | "C"_E12 _E4 | "C"_A4 G4 F4 _E3 F |
+"C"_E4 D8 F4 | "C"_B8 _A8 | "C"G4 _B2 z2 _e8 | "C"_e4 _B8 _B4 |
+"C"G4 G4 _E4 G2 F2 | "C"_E12 D4 | "C"_E4 z12 | "C"z12 _B,2 C2 |
+"C"D16 | "C"G,4 z12 | "C"z12 D2 E2 | "C"F16 |
+"C"_B,12 _B,4 | "C"_B,8 D4 C2 _B,2 | "C"_B,4 _E8 =E4 | "C"F8 ^F8 |
+"C"G4 G4 _A4 =A4 | "C"_B8 _B8 | "C"G4 G4 _E4 G2 F2 | "C"_E8 D8 |
+"C"_B12 _B4 | "C"_e8 _B4 _B4 | "C"G4 G4 _E4 _B2 _A2 | "C"G12 F4 |
+"C"_E4 z12 | "C"z16 | "C"G8 D7 _B, | "C"G,10 A, _B, C D E ^F |
+"C"G8 _B8 | "C"_E,10 G,2 _B,2 A,2 | "C"G,2 ^F,2 D8 C4 | "C"_B,2 D2 G8 F2 _E2 |
+"C"D2 F2 _B8 E4 | "C"F8 D4 E4 | "C"F2 G z A8 E4 | "C"F3 G A8 E2 F2 |
+"C"D3 E F G A _B c8 | "C"c4 _A,8 _A4 | "C"G3 G, G, B, z D G4 F G z _A | "C"G3 G, G, B, z D G4 F G z _A |
+"C"G4 z5 G, z _A2 G2 F | "C"_E z2 G G A z _B C3 D _E3 F | "C"D3 F, F, _B, z D F4 C D z _E | "C"D3 F, F, _B, z D F4 C D z _E |

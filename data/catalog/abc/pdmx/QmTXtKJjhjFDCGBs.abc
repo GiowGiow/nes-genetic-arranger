@@ -1,0 +1,22 @@
+%abc-2.1
+% RICHMOND (Haweis), by Thomas Haweis. Score published on MuseScore (artist: Thomas Haweis), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Haweis (died 1820,
+% Wikidata Q7790496).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/53/QmTXtKJjhjFDCGBsw3pDe2BFWb7DLhGY7cTP31VQYVdGBp.mid (sha256
+% dc2e9a327026715cd8425e4e6721cc0f5e041da5be6517b843e504db95da96ba): melody track 0, bars 0-14
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:RICHMOND (Haweis)
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"D4 G4 B4 | "D"d4 ^F4 c4 | "C"B4 c4 A4 | "G"G8 B4 |
+"F#m"A4 d4 G4 | "A7"^F4 G4 E4 | "D7"D8 A4 | "Em"B4 A4 G4 |
+"Am7"c4 B4 A2 E2 | "G"d4 c4 B4 | "C"e8 d4 | "D7"E4 c4 B4 |
+"D7"B2 A2 G4 ^F4 | "G"G12 |

@@ -1,0 +1,36 @@
+%abc-2.1
+% SEGREDOS DA INFÂCIA, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/segredos-da-infancia.html (file
+% https://www.beakauffmann.com/mpb_s/som/segredos-da-infancia.mid, sha256
+% 0468c28c4b17784b3ec0fa11d18454f37e08b6055094a23602d19103abe80f16), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SEGREDOS DA INFÂCIA
+M:3/4
+L:1/16
+Q:1/4=100
+% Exact tempo 99.99999999999999 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"z12 | "C"z8 C4 | "C"D8 F4 | "C"E8 G4 |
+"C"F8 A4 | "C"d8 c4 | "C"B6 z2 f3 z | "C"e8 d4 |
+"C7"g6 c z c3 z | "C"c3 z c2 z2 c4 | "F"f4 c4 _B4 | "C"A _B2 A G4 F3 z |
+"C7"c4 z4 c4 | "C7"z8 d4 | "Gm"g4 d4 c4 | "D"_B c2 _B _B,3 z _B,4 |
+"D7"d4 z4 d4 | "D7"z8 d4 | "Gm"a2 g2 ^f2 g2 a2 g2 | "Gm"d12 |
+"Dm7"g2 f2 e2 f2 g2 f2 | "Dm7"c6 A2 _B2 c2 | "Gm"e2 d2 _d2 =d2 _B2 G2 | "C"E4 _B,2 F2 G2 _A2 |
+"F"A4 A,2 _B2 =B2 c2 | "Eb7"_d6 =d2 _e2 =e2 | "F"f4 c4 _B4 | "C"A _B2 A G4 F3 z |
+"C7"c4 z4 c4 | "D7"z4 _B,3 z d2 z2 | "Gm"g4 d4 c4 | "D"_B c2 _B _B,3 z _B,4 |
+"D7"d4 z4 d4 | "D7"z8 d4 | "Gm"c'2 _b2 a2 _b2 c'2 _b2 | "Bbm"a2 g2 ^f2 g2 a2 g z |
+"C"g2 f2 e2 f2 g2 f2 | "A"c2 A2 _B2 =B2 c2 _d2 | "G"e2 d2 A2 c2 _B2 D2 | "C"_E2 =E2 A2 C2 _B, z G2 |
+"F"F2 A,2 C2 F2 A2 c2 | "F"f4 z4 c2 z2 | "F"f4 c4 _B4 | "C"A _B2 A G4 F3 z |
+"C7"c4 z4 c4 | "C7"z8 d4 | "Gm"g4 d4 c4 | "D"_B c2 _B _B,3 z _B,4 |
+"D7"d4 z4 d4 | "D7"z8 d4 | "Gm"a2 g2 ^f2 g2 a2 g2 | "Gm"d12 |
+"Dm7"g2 f2 e2 f2 g2 f2 | "Dm7"c6 A2 _B2 c2 | "Gm"e2 d2 _d2 =d2 _B2 G2 | "C"E4 _B,2 F2 G2 _A2 |
+"F"A4 A,2 _B2 =B2 c2 | "Eb7"_d6 =d2 _e2 =e2 | "F"f4 c4 _B4 | "C"A _B2 A G4 F3 z |
+"C7"c4 z4 c4 | "D7"z4 _B,3 z d2 z2 | "Gm"g4 d4 c4 | "D"_B c2 _B _B,3 z _B,4 |

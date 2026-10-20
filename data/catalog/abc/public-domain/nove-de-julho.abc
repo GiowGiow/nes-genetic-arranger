@@ -1,0 +1,36 @@
+%abc-2.1
+% NOVE DE JULHO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nove-de-julho.html (file
+% https://www.beakauffmann.com/mpb_n/som/nove-de-julho.mid, sha256
+% 0581fb750a9bc25df1fb39d79ef9f987387bbf8cb411eefaa6a43f5777635cde), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NOVE DE JULHO
+M:2/4
+L:1/16
+Q:1/4=40.99999
+% Exact tempo 40.99998975000256 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"B7"z _a z ^f ^f e z _d | "B7"e _e z F ^F2 z _A | "B7"A ^f z e e _e z B | "E"_d B z _E =E2 z ^F |
+"Db7"_A d z _d _d B z _A | "F#m"B A z c _d2 z a | "B7"a _a z f ^f2 z _e' | "C7"_e' _d' z =E _e2 z _d |
+"B"B _a z ^f ^f e z _d | "Eb7"e _e z A _B2 z =B | "Ab7"b a z _d =d2 z _e | "Dbm"e' _e' z ^f g2 z _a |
+"D7"_d' b z _d a _a z =A | "C7"_a ^f z _A e d z E | "B7"A G z E _e _d z _A | "E"E2 z B, _B, z A, z |
+"E"_A, _a z ^f ^f e z _d | "B7"e _e z F ^F2 z _A | "B7"A ^f z e e _e z B | "E"_d B z _E =E2 z ^F |
+"Db7"_A d z _d _d B z _A | "F#m"B A z c _d2 z a | "B7"a _a z f ^f2 z _e' | "C7"_e' _d' z =E _e2 z _d |
+"B"B _a z ^f ^f e z _d | "Eb7"e _e z A _B2 z =B | "Ab7"b a z _d =d2 z _e | "Dbm"e' _e' z ^f g2 z _a |
+"D7"_d' b z _d a _a z =A | "C7"_a ^f z _A e d z E | "B7"A G z E _e _d z _A | "E"E2 z B, _B, z A, z |
+"E"_A,3 z C3 z | "Dbm"z E z _A _d e z _a | "F#m"e'3 z2 _e' z _d' | "B7"_e' _d' z a a _a z g |
+"E"_a3 z3 _A z | "Dbm"z E z _A _d e2 _a | "F#m"_d'3 z2 b z a | "Eb7"b a z ^f e _e z _d |
+"Ab7"_e _d z _e A z _A z | "Dbm"z E z _A _d e z _a | "F#m"e'3 z2 _e' z _d' | "B7"_e' _d' z _d' _e' =e' z ^f' |
+"E"_a'3 z5 | "Ebm7"z a z _a ^f _a z =a | "Dbm"z _a z ^f e ^f z _a | "Ab7"z ^f z e _e z _a z |
+"Db"_d3 z _A3 z | "Dbm"z E z _A _d e z _a | "F#m"e'3 z2 _e' z _d' | "B7"_e' _d' z a a _a z g |
+"E"_a3 z3 _A z | "Dbm"z E z _A _d e2 _a | "F#m"_d'3 z2 b z a | "Eb7"b a z ^f e _e z _d |
+"Ab7"_e _d z _e A z _A z | "Dbm"z E z _A _d e z _a | "F#m"e'3 z2 _e' z _d' | "B7"_e' _d' z _d' _e' =e' z ^f' |
+"E"_a'3 z5 | "Ebm7"z a z _a ^f _a z =a | "Dbm"z _a z ^f e ^f z _a | "Ab7"z ^f z e _e z _a z |

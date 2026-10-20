@@ -1,0 +1,35 @@
+%abc-2.1
+% Get This, by Walter Blaufuss. Score published on MuseScore (artist: Walter Blaufuss), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Walter Blaufuss (died 1945,
+% Wikidata Q55993970).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/4/QmS5KSmsM2fBcwWq4ySqGYZuhVi7daABCDnHhrkXuvUWMc.mid (sha256
+% 2ebba55ef6d55b87dc595250b55683fb0c2c0932b162ddef00d38def47cf3c5d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Get This
+M:2/4
+L:1/16
+Q:1/4=89.999955
+% Exact tempo 89.9999550000225 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am7"c' b a g2 ^f g _a | "C"a g f e2 d c2 | "Ab"_e d c d _e d c2 | "G"g2 z2 g'3 a |
+"C"c' b c' a b g2 a | "C"b _b =b g a e2 f | "C"g ^f g _a =a g e c | "G7"B a2 g4 c |
+"Em7"d _B =B _B =B a2 _B | "C"c B c B c g2 c | "D"d _d =d _d =d b2 g | "G7"g g d A a b d g |
+"C"c' b c' a b g2 a | "C"b _b =b g a e2 d | "C"e _e =e _e =e c d =e | "F"f a2 c'4 a |
+"F#"c' b c' a b g2 _a | "Dbm"a _a =a e f d2 _e | "Em7"e _e =e g2 =e d2 | "G7"c2 g a g3 a |
+"C"c' b c' a b g2 a | "C"b _b =b g a e2 f | "C"g ^f g _a =a g e c | "G7"B a2 g4 A |
+"G7"B _B =B _B =B =b2 _B | "C"c B c B c a2 c | "D"d _d =d _d =d b2 g | "G7"g ^f g _a =a _b =b g |
+"C"c' b c' a b g2 a | "C"b _b =b g a e2 d | "C"e _e =e _e =e c d =e | "F"f a2 c'4 a |
+"F#"c' b c' a b g2 _a | "Db"a _a =a e f d2 _e | "G"e _e =e g2 =e d2 | "C"c z g _a =a g e c |
+"Dm7"_A2 d' c' d'2 d' c' | "Dm7"d'2 c' _d' =d' c' _a f | "C"e2 b _b =b2 =b _b | "C"b2 g _a =a g e c |
+"G7"B2 a _a =a z3 | "G7"z2 a _a =a z3 | "C"z2 a _a =a g e c | "C"A G E C2 A, G, z |
+"Fm"_A2 d' c' d'2 d' c' | "Fm"d'2 c' _d' =d' c' _a f | "C"e2 b _b =b2 =b _b | "C7"b2 g _a =a g e d |
+"Ab7"c2 c' b c'2 ^f2 | "A7"g2 b _b =b2 e2 | "D7"d c d g2 e d2 | "C"c z g _a =a g e c |
+"Dm7"_A2 d' c' d'2 d' c' | "Dm7"d'2 c' _d' =d' c' _a f | "C"e2 b _b =b2 =b _b | "C"b2 g _a =a g e c |
+"G7"B2 a _a =a z3 | "G7"z2 a _a =a z3 | "C"z2 a _a =a g e c | "C"A G E C2 A, G, z |
+"Dm7"_A2 d' c' d'2 d' c' | "Dm7"d'2 c' _d' =d' c' _a f | "C"e2 b _b =b2 =b _b | "Am7"b2 g _a =a g e d |

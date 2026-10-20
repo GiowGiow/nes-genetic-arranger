@@ -1,0 +1,34 @@
+%abc-2.1
+% The Final Countdown, by Europe. Score published on MuseScore (artist: Europe), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Europe (died 1919, Wikidata
+% Q1280917).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/4/Qma5YAg4nH44P9icb9Qck8vKS2yPQrrDMxkZBu8GJsVZyK.mid (sha256
+% 9e7ebd1afda0f0cf0cecdc740c3121f97f14d3e24194234caae590f158aa037a): melody track 0, bars 0-61
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:The Final Countdown
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"z6 B A "Em7"B4 E4 | "C"z6 c B c z B z A4 | "Am"z6 c B c4 E4 | "D"z6 A G "B7"A z G z ^F2 A z |
+"Em"G6 B A "Em7"B4 E4 | "C"z6 c B c z B z A4 | "Am"z6 c B c4 E4 | "D"z6 A G "B7"A z G z ^F2 A z |
+"Em"G6 ^F G "F#m"A6 G A | "D"B2 A2 G2 ^F2 "C"E4 c4 | "B"B8 z4 B c B A | "B"B16 |
+"E"z8 "Em7"E4 D4 | "Em"B,4 G4 "Bm"^F4 D4 | "Em"E2 z4 E2 E4 ^F2 G2 | "F#7"^F4 E4- "E"E8 |
+"E"z6 E2 "C"E4 ^F2 G2 | "A"E16 | "E"z6 E2 "Em"E4 ^F2 G2 | "F#7"^F4 E3 D "E"B,8 |
+"Em"z6 G2 "D"^F4 E2 D2 | "G"D16 | "C"z6 E2 E4 ^F2 G2 | "D"^F4 E2 D2 D8 |
+"G"z6 G2 "Em7"G4 A4 | "Em"G3 ^F E4- "Em7"E8 | "C"z6 E2 E4 ^F2 G2 | "Bm"^F4 E2 D2 D4 E2 ^F2 |
+"D"^F16 | "D"z4 E2 E2 "F#"G4 ^F4 | "F#m7"^F4 E2 B A "E7"B4 E4 | "C"z6 c B c z B z A4 |
+"Am"z6 c B c4 E4 | "D"z6 A G "B7"A z G z ^F2 A z | "Em"G6 B A "Em7"B4 E4 | "C"z6 c B c z B z A4 |
+"Am"z6 c B c4 E4 | "D"z6 A G A z G z ^F2 A z | "C"G2 z4 E2 E4 ^F2 G2 | "D"^F4 E2 D2 D8 |
+"G"z6 G2 "Em7"G4 A4 | "Em"G3 ^F E4- "Em7"E8 | "C"z6 E2 E4 ^F2 G2 | "Bm"^F4 E2 D2 D4 E2 ^F2 |
+"D"^F16 | "D"z4 E2 E2 "F#"G4 ^F4 | "F#m7"^F4 E2 B A "Em7"B4 E4 | "C"z6 c B c z B z A4 |
+"Am"z6 c B c4 E4 | "D"z6 A G "B7"A z G z ^F2 A z | "Em"G6 B A "Em7"B4 E4 | "C"z6 c B c z B z A4 |
+"Am"z6 c B c4 E4 | "D"z6 A G "B7"A z G z ^F2 A z | "Em"G6 ^F G "F#m"A6 G A | "Em7"B2 A2 G2 ^F2 "C"E4 c4 |
+"B"B8 z4 B c B A | "B"B16 | "E"z8 "Em7"E4 D4 | "Em"B,4 G4 "Bm"^F4 d4 |
+"Em"e4 z12 |

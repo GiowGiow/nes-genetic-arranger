@@ -1,0 +1,27 @@
+%abc-2.1
+% lagrima, by Francisco Tarrega. Score published on MuseScore (artist: Francisco Tárrega), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Francisco Tarrega (died 1909,
+% Wikidata Q313372).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/14/0/QmW1pwz5v6SCeVpiMVWSqoXG6j9UYkfBdPPTBgvTHwCLWA.mid (sha256
+% 1398a3d7970309c2da66fab0fc658ccd9347640d9b8724c30ac0fc5e063a4caa): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:lagrima
+M:3/4
+L:1/16
+Q:1/4=79.999787
+% Exact tempo 79.99978666723555 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 | "C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 |
+"C"e2 E2 _e2 =E2 _d2 ^F2 | "C"B2 _A2 _D2 E2 ^F2 =A2 | "C"_A2 E2 _D2 ^F2 B,,2 _E2 | "C"E8 E,,4 |
+"C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 | "C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 |
+"C"e2 E2 _e2 =E2 _d2 ^F2 | "C"B2 _A2 _D2 E2 ^F2 =A2 | "C"_A2 E2 _D2 ^F2 B,,2 _E2 | "C"E8 E,,4 |
+"C"G2 c2 B2 E2 ^F2 G2 | "C"E2 C2 B,2 A,2 G,2 A,2 | "C"B,2 e2 A,2 c2 ^F,2 A2 | "C"^F2 B,2 C2 B,2 B,2 ^F2 |
+"C"G2 B,2 A2 B,2 B2 B,2 | "C"d2 c2 B2 A2 G2 ^F2 | "C"E2 B,2 ^F2 C2 B,2 A,2 | "C"E8 z4 |
+"C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 | "C"_A2 B,2 =A2 B,2 B2 B,2 | "C"^F2 B,2 A,2 B,2 B,,2 B,2 |
+"C"e2 E2 _e2 =E2 _d2 ^F2 | "C"B2 _A2 _D2 E2 ^F2 =A2 | "C"_A2 E2 _D2 ^F2 B,,2 _E2 | "C"E8 E,,4 |

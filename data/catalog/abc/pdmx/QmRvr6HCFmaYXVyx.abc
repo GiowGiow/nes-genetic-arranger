@@ -1,0 +1,33 @@
+%abc-2.1
+% Minuet in G major BWV Anh. 116, by Johann Sebastian Bach. Score published on MuseScore (artist:
+% Johann Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Johann Sebastian Bach (died
+% 1750, Wikidata Q1339).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/48/QmRvr6HCFmaYXVyxbZTfeF2erb2urabaE7xVb51kRU4P1o.mid (sha256
+% 6a4f7c517526b76bb3e30abfff5fcc942e75c93243189b00dbd455bd9a92d2ae): melody track 0, bars 0-56
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Minuet in G major BWV Anh. 116
+M:3/4
+L:1/16
+Q:1/4=91.999847
+% Exact tempo 91.99984666692222 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 | "G"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 |
+"C"e4 e4 e2 g2 | "Em"d4 d4 d2 g2 | "F#m"c4 d2 c2 B2 c2 | "D"A12 |
+"Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 | "Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 |
+"C"e4 d2 c2 B2 A2 | "Em7"d4 c2 B2 A2 G2 | "D7"A B2 c D4 ^F4 | "G"G8 z4 |
+"Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 | "G"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 |
+"C"e4 e4 e2 g2 | "Em"d4 d4 d2 g2 | "F#m"c4 d2 c2 B2 c2 | "D"A12 |
+"Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 | "Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 |
+"C"e4 d2 c2 B2 A2 | "Em7"d4 c2 B2 A2 G2 | "D7"A B2 c D4 ^F4 | "G"G8 z4 |
+"B"G z A z B z A z G z ^F z | "E"G4 E4 E4 | "Em"g2 ^f2 e2 g2 ^f2 e2 | "B"^f4 B3 z B3 z |
+"Em"g2 ^f2 e2 g2 ^f2 e2 | "G"^f4 B4 e4 | "B7"^f g2 a B4 _e4 | "E"e4 _e2 =e2 ^f4 |
+"G"g4 g2 ^f2 e2 d2 | "C"e4 e2 d2 c2 B2 | "Am"c4 c2 B2 A2 G2 | "D"^F4 E2 ^F2 D4 |
+"D"A4 D2 z2 D2 z2 | "Em7"B4 D2 z2 D3 z | "D"c4 d2 c2 B2 c2 | "D"A12 |
+"Em7"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 | "G"G z B z d z g z A z ^f z | "G"g4 G2 z2 G2 z2 |
+"C"e4 d2 c2 B2 A2 | "Em7"d4 c2 B2 A2 G2 | "D7"A B2 c D3 z ^F3 z | "G"G12 |

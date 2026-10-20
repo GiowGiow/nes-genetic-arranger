@@ -1,0 +1,35 @@
+%abc-2.1
+% Ego dormio et cor meum vigilat, by Tiburtio Massaino. Score published on MuseScore (artist:
+% Tiburtio Massaino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tiburtio Massaino (died 1610,
+% Wikidata Q7800551).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/53/QmaXXM1HuuyWf61WZXGCeznZ2qVQaoiEoRYRrRryV2vjgW.mid (sha256
+% a11dc5cf794ab86f9830731449c841b32dd49c86160a300cbb1589e93c05ae1e): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Ego dormio et cor meum vigilat
+M:4/2
+L:1/16
+Q:1/4=136.000145
+% Exact tempo 136.0001450668214 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Gm"d16- "Eb"d8 _e8 | "C"_e16- "D7"_e8 d8 | "D"d32 | "C7"z16 "D7"z16 |
+"C7"d16 e8 f8 | "Dm"f4 e4 d4 c4 "Gm"_B16 | "F"A8 _B16 A8 | "Bb"_B16 "C"z16 |
+"Gm"z16 "F"z16 | "Gm7"_B16 "Dm7"c8 d8 | "Bb"d4 c4 _B8 "C"_e16 | "C"_e16 "D"d12 d4 |
+"Gm"d16 "G"z8 _B8 | "Gm"_B8 _B8 _B16 | "Dm7"G8 _B4 A4 "Gm"_B4 c4 d8 | "Bb"d8 d8 "Gm"z16 |
+"A"z8 A8- "Dm"A8 A8 | "Dm"c8 d8 "Gm7"A8 _B8 | "Dm"c8 d8- "C7"d8 g8 | "Dm"f4 e4 d4 c4 _B8 A8 |
+"F"A4 _B4 c4 A4 "Gm7"f8 d8 | "A"c8 d16 _d8 | "Dm"d16 "Gm7"z8 d8 | "Gm"d4 d4 d8 "A"_d16 |
+"Dm"d8 f8- "D"f8 e8 | "Dm"d16 "A"_d8 =d8 | "Gm7"f4 e4 d4 c4 "Gm"_B4 A4 G4 A4 | "D"_B8 A8 "Gm"_B6 c2 d8 |
+"A"d8 _d8 "Dm"=d8 A8 | "Gm"_B12 A4 "Cm"G8 G8 | "D"d16 "G"B8 z4 d4 | "Gm7"_e12 d4 "G7"c8 _B8 |
+"Am7"_e16 "Gm"d16 | "Gm7"d16 "Dm7"z16 | "Gm"z16 "Gm7"d16 | "Cm7"_e12 d4 "C7"_e8 d8 |
+"D"d16 "Gm"d8 d8 | "Gm"d8 G8 "Dm"d12 e4 | "Gm7"f4 e4 d4 c4 "Bb"_B4 F4 _B8 | "F"_B4 A2 G2 A8 "Bb"_B8 d8 |
+"Dm"d8 f8- "Dm7"f8 e8 | "Dm"e8 d8- "A"d8 _d8 | "D"d16- "Gm"d16 | "Gm7"z16 "Gm"d16 |
+"D"d8 A8 "G"_B16 | "Dm"A8 A8- "Am"A4 _B4 c8 | "Dm"A8 d8 "A"e16 | "Dm"f12 e4 d4 c4 f8 |
+"Gm"e8 d8- "Gm7"d8 d8 | "Dm7"z8 d8- "Gm"d8 _B8 | "F"A8 A8 "Bb"_B4 c4 d4 _B4 | "C"c8 A8 "Gm"d16 |
+"Cm7"G16 "Dm"z8 f8 | "Bb"f8 d8 "F"c8 d8 | "G"_B16 "D"A8 d8 | "Gm"d4 c4 _B4 A4 "Cm7"G8 G8 |
+"D"d12 d4 "Gm"d16 | "Bb"z16 "Cm"c16 | "G"_B16 "Cm"_e12 _e4 | "Dm"d16- "Gm"d16 |
+"D"d32 | "D"z8 f8 "A"d8 c8 | "A7"_B12 A2 G2 "Gm"F8 G8 | "D"G8 ^F8 "Gm"G4 A4 _B4 c4 |

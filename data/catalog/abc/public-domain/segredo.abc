@@ -1,0 +1,36 @@
+%abc-2.1
+% SEGREDO, by Ernesto Nazareth, as performed by Ernesto Nazareth.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Ernesto Nazareth (died 1934, Wikidata Q1356808).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_s/segredo.html (file
+% https://www.beakauffmann.com/mpb_s/som/segredo.mid, sha256
+% 633760c23a79cea3dd2930928b02f5239d770b1177ea044d197454dbe57ee8c7), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:SEGREDO
+M:2/4
+L:1/16
+Q:1/4=78.000078
+% Exact tempo 78.000078000078 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z ^F,2 G, A,2 z2 | "D7"z _A,2 =A, B,2 z2 | "Bb7"z _B,2 =B, C2 z2 | "C7"z _D2 E G _B _d e |
+"Eb7"g' g'2 g' ^f'2 e'2 | "D7"e' a2 b c'4 | "D7"g' g'2 g' ^f'2 e'2 | "Em7"e' g2 a b4 |
+"G"z ^F,2 G, A,2 z2 | "D7"z _A,2 =A, B,2 z2 | "Bb7"z _B,2 =B, C2 z2 | "C7"z _D2 E G _B _d e |
+"Eb7"g' g'2 ^f' g'2 a'2 | "Em7"b' c''2 _d'' =d''4 | "D7"z c''2 e' ^f' b'2 a' | "G"g'4 g''4 |
+"G"z ^F,2 G, A,2 z2 | "D7"z _A,2 =A, B,2 z2 | "Bb7"z _B,2 =B, C2 z2 | "C7"z _D2 E G _B _d e |
+"Eb7"g' g'2 g' ^f'2 e'2 | "D7"e' a2 b c'4 | "D7"g' g'2 g' ^f'2 e'2 | "Em7"e' g2 a b4 |
+"G"z ^F,2 G, A,2 z2 | "D7"z _A,2 =A, B,2 z2 | "Bb7"z _B,2 =B, C2 z2 | "C7"z _D2 E G _B _d e |
+"Eb7"g' g'2 ^f' g'2 a'2 | "Em7"b' c''2 _d'' =d''4 | "D7"z c''2 e' ^f' b'2 a' | "G"g'4 g''4 |
+"D7"z _a2 =a b =a2 ^f | "Em7"a g2 _e ^f2 =e2 | "F#7"z f2 ^f a ^f2 _d | "Bm"e d2 _B _d2 =B2 |
+"G7"z _d2 =d e =d2 B | "D"A d2 ^f a4 | "E7"z _d' z _b =b2 e'2 | "A7"e' z3 a4 |
+"D7"z _a2 =a b =a2 ^f | "Em"a g2 _e ^f2 =e2 | "Db7"z c'2 _d' e' _d'2 _a | "F#m"b a2 f _a2 ^f2 |
+"Em"z _e2 =e _d'2 b2 | "D"z _d2 =d b2 a2 | "A7"z _A2 =A ^f2 e2 | "D"d2 ^f2 d4 |
+"D7"z _a2 =a b =a2 ^f | "Em7"a g2 _e ^f2 =e2 | "F#7"z f2 ^f a ^f2 _d | "Bm"e d2 _B _d2 =B2 |
+"G7"z _d2 =d e =d2 B | "D"A d2 ^f a4 | "E7"z _d' z _b =b2 e'2 | "A7"e' z3 a4 |
+"D7"z _a2 =a b =a2 ^f | "Em"a g2 _e ^f2 =e2 | "Db7"z c'2 _d' e' _d'2 _a | "F#m"b a2 f _a2 ^f2 |
+"Em"z _e2 =e _d'2 b2 | "D"z _d2 =d b2 a2 | "A7"z _A2 =A ^f2 e2 | "D"d2 ^f2 d4 |

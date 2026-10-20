@@ -1,0 +1,24 @@
+%abc-2.1
+% Chtíc aby spal, by Adam Michna z Otradovic. Score published on MuseScore (artist: not given),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Adam Michna z Otradovic (died
+% 1676, Wikidata Q350426).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/17/20/QmZF3ox5gTJU6GUbfANyYTr4ooySAzsdFQJUhxgQPBK28K.mid (sha256
+% cfaa6a1a6cfd7154a4528acbab8c37c6a09fdfbbf42f6bacb5ba8021c06f145a): melody track 0, bars 0-24
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Chtíc aby spal
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"D4 E4 ^F4 | "C"G8 G4 | "C"A8 A4 | "C"B11 z |
+"C"c4 B4 A4 | "C"G8 z4 | "C"D4 E4 ^F4 | "C"G8 G4 |
+"C"A8 A4 | "C"B11 z | "C"c4 B4 A4 | "C"G8 z4 |
+"C"B4 B4 A4 | "C"B8 A4 | "C"B4 G8 | "C"A8 z4 |
+"C"G4 ^F4 E4 | "C"D8 z4 | "C"B4 B4 A4 | "C"B8 A4 |
+"C"B4 G8 | "C"A8 z4 | "C"c4 B4 A4 | "C"G8 z4 |

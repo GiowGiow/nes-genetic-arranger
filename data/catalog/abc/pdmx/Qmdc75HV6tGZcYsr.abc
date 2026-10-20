@@ -1,0 +1,35 @@
+%abc-2.1
+% Études-tableaux Op.39, by Sergei Rachmaninoff. Score published on MuseScore (artist: Sergei
+% Rachmaninoff), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Sergei Rachmaninoff (died 1943,
+% Wikidata Q131861).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/13/Qmdc75HV6tGZcYsrPFw87yngDPvCWSFwF3CXXnj9yySiXJ.mid (sha256
+% ad24e9e8ffb7ee2a5f3c3836e2c64e4e39014ab9be4ecc86306c55a6ebca35fe): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Études-tableaux Op.39
+M:4/4
+L:1/16
+Q:1/4=130.00013
+% Exact tempo 130.00013000013 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "Ab"z C F c ^F =d c g | "Fm"z _E C c G d _E _e "B7"G g _e _a B ^f c g |
+"Abm"^F d B _e B, B _A c C G _A, _A B, _E G, B, | "F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "Ab"z C F c ^F =d c g |
+[M:2/4]"C"z _E _A _e =A f _e _b | [M:4/4]"Eb"_b _b' g' c' d' ^f g c' "A7"a _e _e _b ^f _d G _d | "Gm"z _b2 _b _b _b2 _b "Bbm"_b _b2 _b _b a a a | "Gm7"a2 a' a' _d' a' g' g' z2 a' a' _d' a' g' g' |
+"Gm7"z2 f' f' _b f' _e' _e' "Ebm"z2 d' d' ^f d' _d' _d' | "Gm7"_b2 a a a a g g z2 a a a a g g | "Gm7"z2 f f _B f _e G "Gm"z2 d d ^F d _d ^F | "Em7"G _B ^F A G _B ^F A "Gm"G _B ^F A G _B ^F A |
+"G"G _B G c G =B G _B "Am"^F A =F _A E G _E G | [M:2/4]"E7"D G _D ^F C _B C ^F | [M:4/4]"G"_B, D _E _B =E d _B f "Em7"=E d F c _D =E =D F | "C"_B, C _D _B =D c _B _e "D7"=D c _E _B =D A _E _B |
+"F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "Gm7"_A, _B, C _A _D c _A =d "C7"_D G =D _A _D G =D _A | [M:2/4]"Eb"z _B, C G _D G G =d | [M:4/4]"Eb"^F _d G =d _B ^f _d g =d _b ^f _d' g =d' _d' ^f' |
+"D"d'2 b _d' ^f' _d' a b "F#m"=d' b e ^f b ^f =d e | "D"a e B _d ^f _d A B =d B =D E A E _B, C | "Dm"F2 _b c' f' c' a _b "F"d' _b e f _b f d e | "Dm"a e _B c f c A _B d _B F G _B G _B, C |
+"Db"F2 _b c' f' c' _a _b _d' _b _e f _b f _d _e | "Bbm7"_a _e _B c f c _A _B _d _B _E F _B F _B, C | "Db"E2 _b c' e' c' _a _b "Eb7"_d' _b _e =e _b =e _d _e | "Dbm"_a _e _B c =e c _A _B "Bb7"_d _B _E =E _B =E _B, C |
+"C"_D2 _a _a z2 _A _A "Eb7"z2 B c e _B _D _B, | "C"^F,2 _a _a z G _A _A "Eb7"z B c c e _B _D G, | "F7"^F, z a a z2 c c "D7"z2 B c _e _B _E A, | "Cm"F,2 a a z F c c "F"z _B =B c _e _B _E ^F, |
+"Am"F, z e' e' z2 c' c' "Am7"z2 e e z2 c2 | "C"F, G, B,2 z2 F _D =D E =d2 z2 _A,2 | [M:2/4]"C"A,2 _B,2 z2 F, ^F, | [M:4/4]"C"B, G, F, ^F, B, G, =F, ^F, B, G, =F, ^F, B, G, =F, ^F, |
+"C"z G, _A, _D z G, =A, =D z G, _B, _E z G, =B, =E | "F#"z ^F, G, B, z G, A, C z G, _B, _D z G, _B, _E | [M:2/4]"Ab7"z ^F, _B, _E z ^F, _B, _E | [M:4/4]"F"z ^F, _B, E z ^F, _B, E z ^F, _B, E z ^F, _B, E |
+"C"E8- "Cm"E7 z | "C"_A, C _D _A =D c _A _e "Cm"=D c _E c B, =D C _E | "C"_A, C _D _A =D c _A _e "Cm"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "Ab"z C F c ^F =d c g |
+"Fm"z _E C c G d _E _e "B7"G g _e _a B ^f c g | "Abm"^F d B _e B, B _A c C G _A, _A B, _E G, B, | "F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E | "F"_A, C _D _A =D c _A _e "D7"=D c _E c B, =D C _E |
+[M:3/4]"Fm"_A, C _D _A =D c _B _e =B =e =e c' | "Ab7"z C F c ^F _e _d =f _e c' =f _d' | "Bbm"z _D ^F _d G =f _A =d e g _a =d' | "Db7"z F B f c f e g f _a2 f' |
+"Db7"z _A f _a _A _a _e b _d _d' b =d' | "Db7"f' _a' e' g' _d' e' b =d' g _b =d _a | [M:4/4]"Cm"_A _a _e g f g _e g "Db"_e g d ^f _d =f B =e | "Cm"_A _e G _e f g _e g "Db"_e g d ^f _d =f B =e |
+"Cm"_A _e G _e f g _e g "G7"_e g d _a ^f _a ^f _a | "C"f _a e =a g _b ^f _b "Eb7"^f _b =f =a =a c' _a c' | [M:2/4]"G"_a _d' _a b _d' =d' c' =d' | [M:4/4]"G7"c' d' b f' _b d' a f' "Abm"_a d' =a f' _b d' =b f' |

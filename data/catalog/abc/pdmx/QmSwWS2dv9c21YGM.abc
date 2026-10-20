@@ -1,0 +1,31 @@
+%abc-2.1
+% lachrimae, by John Dowland. Score published on MuseScore (artist: John Dowland), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): John Dowland (died 1626,
+% Wikidata Q207355).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/50/QmSwWS2dv9c21YGMimXykxiTf4egHyT5FqkvHUrJdedJvM.mid (sha256
+% d5f1dc6dce69218c973e2d4eea5f1fa9a8f31ecc9cb60a06df576f735a6dfaac): melody track 3, bars 0-50
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:lachrimae
+M:2/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Gm"z8 | "D"z8 | "Gm"z8 | "Cm7"z8 |
+"Gm7"z8 | "Bb"z8 | "Cm7"z8 | "G"z8 |
+"Gm"z8 | "D"z8 | "Gm"z8 | "Gm"_E _B, C G, D ^F, G, z |
+"Gm"_B G, C _B A D ^F2 | "Gm"A _B c A G z G _B | "Gm"A G G G, ^F G _B G | "Gm"G z F _E G G,, D G |
+"Gm"D _B F, A G F _B2 | "Gm"_B A _B _E A _B F D, | "Gm"_B,, G G ^F G _E D G, | "Gm"C, C _E C, _E, _E G _E, |
+"Gm"G, G _B G, _B, F A F, | "Gm"c z C, C _E C, G _E | "Gm"D _B D A _B z _B A | "Gm"G G ^F E A, ^F3 |
+"Gm"_B2 F, A G F _B2 | "Gm"_B A _B _B _B2 F D, | "Gm"C, G G ^F G _E D G, | "Gm"C, C _E C, _E, _E G _E, |
+"Gm"G, G _B G, _B, F A A | "Gm"c A,, C, C _E _E G _E, | "Gm"G _B D A _B z A _B | "D"G z7 |
+"D"z8 | "Gm"z8 | "G7"z8 | "D"z8 |
+"D7"z8 | "Gm7"z8 | "D7"z8 | "G"z8 |
+[M:1/4]"G"z4 | [M:2/4]"D"z8 | "Gm"z8 | "G"z8 |
+"D"z8 | "D7"z8 | "Gm7"z8 | "Bb"z8 |
+"G"z8 | "G"z8 |

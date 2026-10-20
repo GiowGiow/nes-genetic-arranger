@@ -1,0 +1,28 @@
+%abc-2.1
+% Jugend-Lieder, by Mathilde Kralik. Score published on MuseScore (artist: Mathilde Kralik), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Mathilde Kralik (died 1944,
+% Wikidata Q89972).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/9/29/QmRKn2koMmcKT7LGwjo19viCMgAiq7jDfTBe5kkZ5fDcg2.mid (sha256
+% efcf4d066d712b213b2b1612920b76772234a593071fabb18f8c509a4efc4528): melody track 0, bars 0-37
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Jugend-Lieder
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"_D,4 z6 A,2 B,2 ^F,2 | "C"z2 _A,4 z4 E,2 ^F,2 C,2 | "C"_D,4 z6 A,2 B,2 ^F,2 | "C"z2 _A,4 z4 E,2 ^F,2 C,2 |
+"C"D,6 D,2 D,4 D,4 | "C"D,8 _A,,4 B,,4 | "C"D,6 D,2 D,4 D,4 | "C"D,8 _A,,4 B,,4 |
+"C"z14 _A,2 | "C"E2 _D2 _D12 | "C"z14 A,2 | "C"E6 _D2 _D8 |
+"C"z14 E2 | "C"^F2 _D2 _D12 | "C"z14 A,2 | "C"E6 _D2 _D8 |
+"C"z8 _D2 E2 z4 | "C"z2 E2 E4 E4 E4 | "C"E6 _D2 E2 _D2 E4 | "C"_D6 _D2 _D4 _D4 |
+"C"_D8 z6 _B,2 | "C"z2 E2 E4 E4 E4 | "C"E6 _D2 E2 _D2 E4 | "C"_D6 _D2 _D4 _D4 |
+"C"_D8 z6 _B,2 | "C"_D,6 _D,2 _D,4 _D,4 | "C"_D,8 _A,,4 B,,4 | "C"_D,6 _D,2 _D,4 _D,4 |
+"C"_D,8 _D,4 E,4 | "C"^F,6 ^F,2 ^F,4 ^F,4 | "C"^F,8 _A,,4 B,,4 | "C"_D,6 _D,2 _D,4 _D,4 |
+"C"_D,8 z8 | "C"z2 A,,2 A,,4 A,,4 A,,4 | "C"_A,,8 _A,,4 B,,4 | "C"_D,6 _D,2 _D,4 _D,4 |
+"C"_D,8 _A,,4 B,,4 |

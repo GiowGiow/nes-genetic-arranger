@@ -1,0 +1,27 @@
+%abc-2.1
+% Galliard, by Thoinot Arbeau. Score published on MuseScore (artist: Thoinot Arbeau), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thoinot Arbeau (died 1595,
+% Wikidata Q919152).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/16/QmbDTidLuBG7yNCq1fKgjXRBy1hSrev6mz2urqc3c6RwBs.mid (sha256
+% b9537180562bd4bd234729d64e45b08858bc5f318e8a06dac96d1115076d36c2): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Galliard
+M:3/2
+L:1/16
+Q:1/4=359.99928
+% Exact tempo 359.99928000144 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_B8 A8 G8 | "C"c12 _B4 A8 | "C"G8 F8 E8 | "C"F12 E4 D8 |
+"C"_B8 A8 G8 | "C"c12 _B4 A4 G4 | "C"G16 ^F8 | "C"G16 z8 |
+"C"_B8 A8 G8 | "C"c12 _B4 A8 | "C"G8 F8 E8 | "C"F12 E4 D8 |
+"C"_B8 A8 G8 | "C"c12 _B4 A4 G4 | "C"G16 ^F8 | "C"G16 z8 |
+"C"G8 G8 G8 | "C"F4 G4 A4 _B4 c8 | "C"_B12 A4 A4 G2 A2 | "C"c24 |
+"C"_B8 _B8 _B8 | "C"A4 _B4 c4 _B4 A4 G4 | "C"G16 ^F8 | "C"G24 |
+"C"G8 G8 G8 | "C"F4 G4 A4 _B4 c8 | "C"_B12 A4 A4 G2 A2 | "C"c24 |
+"C"_B8 _B8 _B8 | "C"A4 _B4 c4 _B4 A4 G4 | "C"G16 ^F8 | "C"G24 |

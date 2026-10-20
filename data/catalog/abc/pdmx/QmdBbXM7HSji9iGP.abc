@@ -1,0 +1,35 @@
+%abc-2.1
+% Le Api, by Antonio Pasculli. Score published on MuseScore (artist: Antonino Pasculli), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Antonio Pasculli (died 1924,
+% Wikidata Q604044).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/3/12/QmdBbXM7HSji9iGP77TVThoki5gVpAsjvoRDjSqrst1wNp.mid (sha256
+% c676df4be3d55e276dcc41c26cdcd88acf077e1e9e1f8c86047482cbe0959b1d): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Le Api
+M:2/4
+L:1/16
+Q:1/4=126.000126
+% Exact tempo 126.00012600012599 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"B, E, B, E, B, E, C E, | "C"B,2 z6 | "C"B, D, B, D, B, D, C D, | "C"B,2 z6 |
+"C"B, _E, C _E, B,2 z2 | "C"B, E, C E, B,2 z2 | "C"B, ^F, C ^F, B,2 z2 | "C"z8 |
+"C"B, _E, C _E, B,2 z2 | "C"z8 | "C"B, E, B, E, B, E, C E, | "C"B, E, G, E, B, E, C E, |
+"C"B, E, B, E, B, E, C E, | "C"B, E, _B, E, =B, E, C E, | "C"B, _E, B, _E, B, _E, C _E, | "C"B, _E, ^F, _E, B, _E, C _E, |
+"C"B, _E, B, _E, B, _E, C _E, | "C"B, _E, _B, _E, =B, _E, C _E, | "C"B, E, B, E, B, E, C E, | "C"B, E, G, E, B, E, C E, |
+"C"B, E, B, E, B, E, C E, | "C"B, E, _B, E, =B, E, C E, | "C"D G, D G, D G, E G, | "C"D G, B, G, D G, E G, |
+"C"D G, D G, D G, E G, | "C"D D, _D =D, C =D, A, =D, | "C"G, B,, G, B,, G, B,, ^F, C, | "C"G, B,, G, B,, G, B,, ^F, C, |
+"C"G, B,, G, B,, G, B,, ^F, C, | "C"G, B,, ^F, C, G, B,, _A, D, | "C"A, C, A, C, A, C, _A, D, | "C"A, C, A, C, A, C, _A, D, |
+"C"A, C, A, C, A, C, _A, D, | "C"A, C, _A, D, =A, C, _B, E, | "C"B, D, B, D, B, D, _B, E, | "C"B, D, B, D, B, D, _B, E, |
+"C"B, D, B, D, B, D, _B, E, | "C"B, D, _B, E, =B, D, =B, F, | "C"C E, E G E E, B, F, | "C"C E, E G E E, B, F, |
+"C"C E, E G E E, E G | "C"E E, E G E E, E G | "C"E F, F A F D E D | "C"E F, F A F D E D |
+"C"E D E D E D E D | "C"E D E D E D F F | "C"_A F D F, D, F, D F | "C"A F D F, D, F, D F |
+"C"_A F D F, D, F, D F | "C"A F D F, D, F, D F | "C"_A F D F =A F D F | "C"_A F D F =A F D F |
+"C"_A ^F =A ^F _A ^F =A ^F | "C"_A ^F =A ^F _A ^F =A ^F | "C"_A =A _A =A _A =A _A =A | "C"_A =A _A =A _A =A _A =A |
+"C"_e d _e d _d c _d c | "C"B _B =B _B A _A =A _A | "C"G ^F G ^F =F E =F E | "C"_E D _E D _D C _D C |
+"C"B, _B, A, ^F, A, ^F, _B, ^F, | "C"B, ^F, _A, ^F, =A, ^F, _B, ^F, | "C"B, ^F, G, ^F, G, ^F, A, ^F, | "C"B, ^F, G, ^F, G, ^F, A, ^F, |

@@ -1,0 +1,23 @@
+%abc-2.1
+% Vinum schenk ein, by Erasmus Widmann. Score published on MuseScore (artist: Erasmus Widmann),
+% PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Erasmus Widmann (died 1634,
+% Wikidata Q86222).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/2/Qma3ZuFRBT8YgWfqrkwMURwUoXjp36g9gBUd48J339gYLT.mid (sha256
+% b74831de585d4cac00b813850fe0b7bc26b0c93cf13cef001bdc0fcad75f0bb7): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Vinum schenk ein
+M:6/4
+L:1/16
+Q:1/4=200
+K:none
+P:A
+"G"z12 B4 B4 B4 | "G"B12 z12 | "G"B4 B4 B4 B12 | "D"B4 A4 G4 ^F12 |
+"G"G4 G4 ^F4 G12 | "D"z12 A4 A4 A4 | "D"A12 z12 | "D"A4 A4 A4 A12 |
+"Em7"d4 c4 A4 B6 A2 G4 | "D"d8 _d4 =d12 | "Em7"G4 G4 A4 B12 | "Bm"A4 G4 G4 ^F12 |
+"Am7"G4 A4 B4 c12 | "D"A4 G4 A4 B4 A2 G2 ^F4 | "G"G4 G4 ^F4 G12 | "Em7"G4 G4 A4 B12 |
+"Bm"A4 G4 G4 ^F12 | "Am7"G4 A4 B4 c12 | "D"A4 G4 A4 B4 A2 G2 ^F4 | "G"G4 G4 ^F4 G12 |

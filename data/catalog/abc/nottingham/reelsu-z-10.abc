@@ -1,0 +1,24 @@
+%abc-2.1
+% Pnt ur y Bys, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsu-z.abc, tune X: 10 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 d104d7d1bb83eb1ca18f6b944dc22cf9f7bfe5f955d07cd573615985f69c2c1f).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Pnt ur y Bys
+M:4/4
+L:1/16
+Q:1/4=140
+K:G
+P:A
+"G"z12 d4 | "G"B4 d4 d4 B4 | "C"c4 e4 e4 c4 | "G"B4 d4 d4 B4 |
+"Am"e2 d2 c2 B2 "D7"A8 | "G"B4 d4 d4 B4 | "C"c4 e4 e4 c4 | "Em"B4 d4 "D7"A4 d2 c2 |
+"G"B4 G4 G8 | "G"B4 d4 d4 B4 | "C"c4 e4 e4 c4 | "G"B4 d4 d4 B4 |
+"Am"e2 d2 c2 B2 "D7"A8 | "G"B4 d4 d4 B4 | "C"c4 e4 e4 c4 | "Em"B4 d4 "D7"A4 d2 c2 |
+"G"B4 G4 G8 | "G"G4 B4 d4 g4 | "C"g4 e2 f2 g8 | "G"G2 B2 d4 d4 B4 |
+"Am"c4 A4 "D7"A8 | "G"G4 B4 d4 g4 | "C"g4 e2 f2 g8 | "G"B2 c2 d4 "D7"A2 B2 c4 |
+"G"B4 G4 G8 | "G"G4 B4 d4 g4 | "C"g4 e2 f2 g8 | "G"G2 B2 d4 d4 B4 |
+"Am"c4 A4 "D7"A8 | "G"G4 B4 d4 g4 | "C"g4 e2 f2 g8 | "G"B2 c2 d4 "D7"A2 B2 c4 |
+"G"B4 G4 G8 |

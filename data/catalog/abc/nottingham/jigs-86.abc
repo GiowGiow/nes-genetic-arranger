@@ -1,0 +1,24 @@
+%abc-2.1
+% Wee Emma, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/jigs.abc, tune
+% X: 86 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% 5bb6f621e443bde552540810e3ea53e53531fd22258736e338d795e7a5bdcaf5).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Wee Emma
+M:6/8
+L:1/16
+Q:1/4=140
+K:F
+P:A
+"C7"z6 A4 B2 | "C7"c2 a2 c2 B2 g2 B2 | "F"A4 f2 c4 B2 | "Dm7"A2 _A2 =A2 d2 c2 =A2 |
+"Gm"c6 B6 | "C"b4 a2 g4 f2 | "C7"e2 g2 e2 d4 f2 | "Fm"e2 d2 c2 =B2 c2 d2 |
+"C7"c6 A4 B2 | "C7"c2 a2 c2 B2 g2 B2 | "F"A4 f2 c4 B2 | "Dm7"A2 _A2 =A2 d2 c2 =A2 |
+"Gm"c6 B6 | "C"b4 a2 g4 f2 | "C7"e2 g2 e2 d4 f2 | "C"e2 d2 c2 c2 d2 e2 |
+"F"f6 A4 B2 | "Gm7"c2 d2 c2 f2 e2 d2 | "F"c2 d2 c2 A4 c2 | "F"f2 e2 f2 a2 g2 f2 |
+"C"f6 e4 f2 | "C"g2 a2 g2 g4 e2 | "C"c2 d2 c2 c2 G2 A2 | "C7"B2 A2 B2 d2 c2 B2 |
+"F"B6 A4 B2 | "Gm7"c2 d2 c2 f2 e2 d2 | "F"c2 d2 c2 A4 c2 | "F"f2 e2 f2 a2 g2 f2 |
+"D7"e6 d6 | "Gm"b4 a2 g4 f2 | "C7"e2 g2 e2 d4 f2 | "C"e2 d2 c2 c2 d2 e2 |
+"F"f6 z6 |

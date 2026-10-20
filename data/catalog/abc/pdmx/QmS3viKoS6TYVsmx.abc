@@ -1,0 +1,35 @@
+%abc-2.1
+% Romperan questi miei pregh' amore, by Benedetto Pallavicino. Score published on MuseScore
+% (artist: Benedetto Pallavicino), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Benedetto Pallavicino (died
+% 1601, Wikidata Q4887229).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/2/QmS3viKoS6TYVsmxUrqSa7ioRCLFCjwMDTd39Uf871zFRF.mid (sha256
+% 986bc73b7796f1fc6985a2d898d31f62103099dbb56f27d68118cc7a157da46d): melody track 0, bars 2-66
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Romperan questi miei pregh' amore
+M:4/4
+L:1/16
+Q:1/4=72.000029
+% Exact tempo 72.00002880001152 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Fm"z4 c2 c2 "Fm7"c8 | "Cm"G8 "Eb"G4 _B4 | "Dm7"_B4 c4- "Cm"c4 c4 | "Cm7"_e8 "Gm"d8 |
+"Bb"_B6 d2 "Eb"_e4 g4 | "Cm7"g4 _e4 "G"d8 | "C"c16 | "C"z8 "Dm7"c6 d2 |
+"D"d12 d2 d2 | "C"_e16 | "G"d8 "Bb"d8 | "Bb7"d4 c4 "Cm"_e8 |
+"Gm"d8 "Bb"z2 d2 d2 _e2 | "Bb"f8- "Dm"f4 d4 | "F"c8 "C"c8 | "Gm"z4 G4 _B8 |
+"F"_B4 A4 c8 | "C"c2 e2 e2 f2 "Cm"g8 | "Cm"g12 F4 | "C"G16 |
+"F"A16 | "Fm"z4 c4 "Eb"c8 | "F7"_B4 _A4- "B"_A4 G4 | "Dm7"_A8 "C"G4 c4 |
+"Eb"c6 c2 "Fm7"c4 c4 | "Dm"_B8- "Gm"_B8 | "Gm"d8 "Fm7"f8 | "Dm"B4 c8 B4 |
+"C"c16 | "Fm"c4 c2 c2 "Bb7"c4 d4 | "Eb"_e8- "Cm"_e8 | "Eb"_e8 "Gm"d8 |
+"Gm7"d4 g4- "Cm"g2 f2 _e2 d2 | "Ab"c8 "Fm"c4 f4 | "C"f4 e4 "Dm7"f8 | "G"z8 _B8 |
+"Bb"_B8 "Cm"G4 c4 | "Cm"c2 c2 _B4 "Bb"_B8 | "Bb"_B8 z8 | "G"z8 "Gm"d8 |
+"Bb"d8 "Cm"c4 _e4 | "C7"_e2 _e2 _e4 "Bb"_e8 | "Bb"d8 z8 | "Cm"g8- "Cm7"g4 _e4 |
+"Ab"_e4 c4 "Fm7"_e6 _A2 | "Eb"_B16 | "Ab"c8 z4 c4 | "Fm"c6 c2 "C"c4 A4 |
+"Bbm"_B12 A4 | "Fm"z4 f4 "Bb"d2 d2 d2 d2 | "Gm"_e4 _e4 "Bb7"d4 c4 | "G"B4 c8 B4 |
+"C"c8 z4 e4 | "F"f2 f2 f2 f2 "Bb"f4 d4 | "Eb"d4 c4 "C"c8 | "F"A8 "Fm"z4 c4 |
+"Db"c6 c2 "A7"c4 c4 | "C7"d4 _e4- "Ab"_e2 d2 c4 | "Eb"_B16 | "Ab"c8 "Cm"z4 g4 |
+"Cm"g6 d2 "Em7"d4 e4 | "Fm7"f4 _e4- "Cm7"_e2 _e2 d4 | "F"c16 | "Bb"d16 |

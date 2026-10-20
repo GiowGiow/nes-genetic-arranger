@@ -1,0 +1,23 @@
+%abc-2.1
+% Mein Seel macht grosz den Herrn, by Konrad Hagius. Score published on MuseScore (artist: Conrad
+% Hagius), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Konrad Hagius (died 1616,
+% Wikidata Q16853566).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/11/QmSbuWM7cVE5Kn2GvvEcwYoRuj7hfN744dhG1pANYpSZuc.mid (sha256
+% 56d4e589f3b0f4debc33c8f9746c012ab897dd50cbad79f4e77241815be2d6e9): melody track 0, bars 0-20
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mein Seel macht grosz den Herrn
+M:2/1
+L:1/16
+Q:1/4=240
+K:none
+P:A
+"Em7"_B16 _B8 A8 | "Cm7"G8 ^F8 G16 | "Dm7"A8 d8 c8 c8 | "Bb"_B8 A8 _B16 |
+"Bb"z32 | "Gm7"_B16 A8 _B8 | "Am7"c8 c8 c16 | "Gm7"B8 B8 d8 d8 |
+"D"d8 _d8 =d16 | "D"z32 | "Gm7"B16 c8 _B8 | "Dm"A8 G16 F8 |
+"Cm7"G8 G8 G8 F8 | "Dm7"F8 E8 F16 | "Dm7"z32 | "Bb"d16 d8 c8 |
+"F7"_B4 G4 _B12 A2 G2 A8 | "Bb"_B8 _B8 A8 G8 | "D7"A4 G4 G16 ^F8 | "G"G32 |

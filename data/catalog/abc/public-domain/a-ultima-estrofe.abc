@@ -1,0 +1,36 @@
+%abc-2.1
+% A ÚLTIMA ESTROFE, by Cândido das Neves, as performed by Cândido das Neves.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Cândido das Neves (died 1934, Wikidata Q10263002).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-ultima-estrofe.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-ultima-estrofe.mid, sha256
+% 8c159aaedd0a1689828f8e3c08ebcace5bb574adfdcb0367d3db6cf1e9b45af0), from Beatriz Kauffmann's Web
+% Site. Melody track 2, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A ÚLTIMA ESTROFE
+M:4/4
+L:1/16
+Q:1/4=75
+% Exact tempo 74.99999999999915 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"e2 e z e z e d- "Dbm"d2 _d z _d z _d e | "Bm"e2 d3 z d d "G7"d2 d2 c2 B2 | "Am"d2 c z c z c z "E"c2 B z e z _A2 | "Am"A16 |
+"Am"z14 E2 | "Am"e9 z e2 d2 c2 | "G7"d8- "Db7"d z d2 c2 B2 | "Am"c10 z2 c2 B2 |
+"Bb"_B6 c2 d6 _B2 | "Am"A4 E8 c z c z | "E"c8 "E7"B3 A3 _A2 | "Am"A8- "C"A8 |
+"Am"A z13 E2 | "Am"e9 z e2 d2 c z | "G7"d9 z d2 c2 B2 | "Am"c10 z2 c2 B2 |
+"Bb"_B6 c2 d6 _B2 | "Am"A4 E8 c z c z | "E"c8 "Abm"B3 A3 _A2 | "Am"A13 z A2 |
+"A"e z e z e z e2 "A7"d2 _d z _d z _d z | "Dm"e2 d3 z d d "Db7"d2 d2 c2 B2 | "Am"d2 c3 z c c c z c2 d2 e2 | "E"B8- "E7"B5 z3 |
+"A7"z2 A z A z A2 _d2 _d z _d z _d z | "Dm"e2 d3 z d d "G7"d z d2 c2 B z | "Am"d2 c3 z c c "E"c2 B2 e z _A2 | "Am"A16 |
+"A"e8 "F#m7"_d8 | "F#m7"_d3 z _d2 =d2 e2 ^f z ^f z ^f z | "F#m7"^f2 e z e z e z e2 d z d2 e2 | "F#m7"d2 _d z _d z _d z _d z _d2 B2 _d z |
+"E7"d16 | "E7"d3 z d z d z d z d z d2 _d z | "E7"_d2 B3 z B B B z B z B2 A z | "E7"A2 _A z _A2 =A2 B2 _d2 B2 =A2 |
+"A"_d16 | "F#m7"_d8 z8 | "A"e8 _d8 | "F#m7"_d3 z _d2 =d2 e2 ^f z ^f z ^f z |
+"A"^f2 e3 z e e e2 d z d2 e2 | "A7"d2 _d3 z _d _d "F#m7"_d z _d2 =d2 e z | "D"^f16 | "D"^f2 d z d z d z "Dm"d z B z A z B z |
+"F#m"_d4 e2 _e2 "F#"=d2 _d z ^f2 =d2 | "Bm"_d2 B z ^F2 G z "E"_A z ^f2 e z _A z | "A"A8- "Am"A8 | "Am"A12 z2 E2 |
+"Am"e8 z2 e2 d2 c2 | "G7"d9 z d2 c2 B2 | "Am"c10 z2 c2 B2 | "Bb"_B6 c2 d6 _B2 |
+"Am"A4 E8 c z c z | "E7"c8 B3 A3 _A2 | "Am"A15 z | "Am"z14 E2 |
+"Am"e9 z e2 d2 c z | "Bm"d8- "G7"d z d2 c2 B2 | "Am"c10 z2 c2 B2 | "Bb"_B6 c2 d6 _B2 |
+"Am"A4 E8 c z c z | "E"c8 "E7"B3 A3 _A2 | "Am"A13 z A2 | "A"e z e z e e d2- "A7"d z _d z _d z _d z |

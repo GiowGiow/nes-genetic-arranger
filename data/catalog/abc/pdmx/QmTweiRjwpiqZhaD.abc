@@ -1,0 +1,34 @@
+%abc-2.1
+% 12th street rag, by Euday L. Bowman (1914). Score published on MuseScore (artist: Roy Clark),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Euday L. Bowman (died 1949,
+% Wikidata Q3059496).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/50/QmTweiRjwpiqZhaDuKLrPBLeAQX8yd7BHjCeCFx2jg7DRN.mid (sha256
+% 101315c0c0f0601d300fb92630c6fc1e490fd942556b27b84ec7ca0aa0d325b2): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:12th street rag
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"c4 G2 c4 G2 c4 | "Bb"c4 G2 c4 G2 c4 | "A"z2 c2 d2 _e2- "Ab"_e2 d2 c4 | "Am"e8- "A7"e8 |
+"D7"z4 e2 d4 e2 d4 | "G7"z4 e2 d2 B2 d2 d4 | "C"c4 ^F2 G4 _E2 =E4 | "C"C3 G A3 G c4 z4 |
+"C"E3 E E3 E E3 E E3 E | "D"F3 F F4 "G7"f3 f f4 | "C"E3 E E3 E E3 E E3 E | "D"F3 F F4 "G7"f3 f f4 |
+"C"c3 B A3 c B3 A c3 B | "C"A3 c B3 A c3 B A3 c | "G7"c3 B A3 c B3 A c3 B | "D"A4 F2 F2- "G"F3 F F4 |
+"G7"c3 B A3 c B3 A c3 B | "G7"A3 c B3 A c3 B A3 c | "C"c3 B A3 c B3 A c3 B | "C"A4 E2 E2- "G"E2 E2 E4 |
+"C"c3 B A3 c B3 A c3 B | "C"A3 c B3 A c3 B A3 c | "G7"c3 B A3 c B3 A c3 B | "C"A4 F2 F2- "G"F3 F F4 |
+"D7"c6 c4 c2 c4 | "D7"^f6 ^f4 D2 E2 D2 | "G"G3 A B3 G "C"A3 B A3 G | "G"G3 A B3 G "C"A3 B A3 G |
+"C"c3 B A3 c B3 A c3 B | "C"A3 c B3 A c3 B A3 c | "G7"E3 B A3 c B3 A c3 B | "C"A4 F2 F2- "G"F3 F F4 |
+"G7"c3 B A3 c B3 A c3 B | "G7"A3 c B3 A c3 B A3 c | "C"c3 B A3 c B3 A c3 B | "D"A4 E2 E2- "G"E2 E2 E4 |
+"Bb"c4 G2 c4 G2 c4 | "Bb"c4 G2 c4 G2 c4 | "Ab"c8 ^F4 z4 | "C"G8 A3 G e3 c |
+"D7"e2 A2 c2 z2 "G7"d2 B2 A2 G2 | "C"c4 ^F2 G4 _E2 =E4 | "C"C4 z4 c4 z4 | "C"c4 e2 B4 e2 B2 e2 |
+"C"G2 e2 c2 e2 B2 e2 A4 | "G7"B4 f2 A4 f2 _A4 | "G7"z2 G2 A2 B4 A2 G4 | "G7"B4 f2 A4 f2 G4 |
+"G7"B4 f2 A4 f2 G4 | "C"c4 c2 B4 e2 A4 | "Am7"G8- "G"G8 | "C"c4 e2 B4 e2 A4 |
+"C"G2 e2 c2 e2 B2 e2 A4 | "G7"B4 B2 A4 f2 _A4 | "G7"z2 G2 A2 B4 A2 G4 | "D7"c6 c4 c2 c4 |
+"D7"^f6 ^f4 D2 E2 D2 | "G"G3 A B3 G "C"A3 B A3 G | "G"G3 A B3 G "C"A3 B A3 G | "C"c4 e2 B4 e2 A4 |
+"C"G2 e2 c2 e2 B2 e2 A4 | "G7"B4 B2 A4 f2 _A4 | "G7"z2 G2 A2 B4 A2 G4 | "G7"B4 f2 A4 f2 G4 |

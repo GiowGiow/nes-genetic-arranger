@@ -1,0 +1,35 @@
+%abc-2.1
+% O BOM FILHO À CASA TORNA, by Bonfiglio de Oliveira, as performed by Bonfiglio de Oliveira.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Bonfiglio de Oliveira (died 1940, Wikidata Q9661385).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_o/o-bom-filho-a-casa-torna.html (file
+% https://www.beakauffmann.com/mpb_o/som/o-bom-filho-a-casa-torna.mid, sha256
+% b482fb97ced08198055d48af9269bbbca593f99363724c40603358e411d69bfb), from Beatriz Kauffmann's Web
+% Site. Melody track 1, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:O BOM FILHO À CASA TORNA
+M:2/4
+L:1/16
+Q:1/4=100
+K:none
+P:A
+"Dm"z8 | "A7"z8 | "Dm"z8 | "A7"z8 |
+"Dm"z8 | "A7"z8 | "Dm"z8 | "A7"z8 |
+"Dm"z8 | "C7"z8 | "Em7"z8 | "A7"z8 |
+"Dm"z8 | "A7"z8 | "Dm"z8 | "A7"z8 |
+"D"z8 | "Gm"z8 | "F"z8 | "Dm"z8 |
+"Dm"z8 | "A7"z8 | "Dm"z8 | "A7"z8 |
+"Dm"z8 | "C7"z8 | "Em7"z8 | "A7"z8 |
+"Dm"z8 | "A7"z8 | "Dm"z8 | "A7"z8 |
+"D"z8 | "Gm"z8 | "F"z8 | "Dm"z8 |
+"C7"C D E F G A _B =B | "F"c c2 A d _d =d _B | "Gm"_B _B2 G c =B c A | "F"A A2 F _B A _B G |
+"Em7"G G2 E A _A =A F | "Dm"F5 G F E | "Bb7"D E2 F E D F _A | "C7"A3 z5 |
+"C7"C D E F G A _B =B | "F"c c2 A d _d =d _B | "C7"_B _B2 G c =B c A | "F"A A2 F _B A _B G |
+"Em7"G G2 E A _A =A F | "Gm7"F A2 d _B G2 _B | "F"A c2 A G F E G | "F"F3 z2 E D _D |
+"C7"C D E F G A _B =B | "F"c c2 A d _d =d _B | "Gm"_B _B2 G c =B c A | "F"A A2 F _B A _B G |
+"Em7"G G2 E A _A =A F | "Dm"F5 G F E | "Bb7"D E2 F E D F _A | "C7"A3 z5 |
+"C7"C D E F G A _B =B | "F"c c2 A d _d =d _B | "C7"_B _B2 G c =B c A | "F"A A2 F _B A _B G |

@@ -1,0 +1,34 @@
+%abc-2.1
+% Sei still mein Herz (Louis Spohr), by Louis Spohr. Score published on MuseScore (artist: not
+% given), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Louis Spohr (died 1859, Wikidata
+% Q57226).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/2/QmY3Ywy7gEQAzvYrRdzZ22N5H9X6hcPNZCRcXwdfNQk5pN.mid (sha256
+% da1c3a2547017783388a33577d02eea8a3d855cf56c715d31c109c3724cc38d7): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Sei still mein Herz (Louis Spohr)
+M:2/4
+L:1/16
+Q:1/4=50
+K:none
+P:A
+"Fm"F4 F,3 z | "E7"_a4 f d B D | "C"C4 C C C C | "D7"^f4 _e c A C |
+"Fm"_B,4 _B, _B, _B, _B, | "C7"_d'4 _b g e G | "Fm"F2 E F _B c f g | "Eb7"f z2 _e _d c _B _A |
+"Fm"c2 G _A f2 B c | "C7"_a2 B z g2 _B z | "F"z2 C2 _B,2 A,2 | "F"G,4 F,4 |
+"Bb"_B,2 A, G, F, z3 | "F"F,2 _A, =A, F z E F | "E7"A z3 _A4 | "Dm7"B4 A2 D2 |
+"Am"C2 E4 D2 | "C7"C8 | "F"C4 _B,2 A,2 | "F"G,4 F,4 |
+"Bb"_B,2 A, G, F, z3 | "F"F,2 _A, =A, _A =A e f | "E7"a z3 _a4 | "Ab"a2 _E =E F2 ^F2 |
+"Em7"G6 F2 | "Cm"E4 z4 | "C7"z8 | "C7"z2 C _E ^F A c _e |
+"Fm"f2 c _A _A, _A, C z | "F#"_D4 z2 _D z | "Ab7"_E6 _A,2 | "Db"_A, F, F _A f4 |
+"Ebm7"^f8 | "Ab7"^f8 | "Eb"g6 g2 | "F#7"g4 _a2 ^f2 |
+"C7"f4 e4 | "Ebm7"_e5 _d _B ^F | "C7"F6 E2 | "Fm"F4 F,3 z |
+"E7"_a4 f d B D | "C"C4 C C C C | "D7"^f4 _e c A C | "Fm"_B,4 _B, _B, _B, _B, |
+"C7"_d'4 _b g e G | "Fm"F2 E F _B c f g | "Eb7"f z2 _e _d c _B _A | "Fm"c2 G _A f2 B c |
+"C7"_a2 B z g2 _B z | "F"z2 C2 _B,2 A,2 | "F"G,4 F,4 | "Bb"_B,2 A, G, F, z3 |
+"F"F,2 _A, =A, F z E F | "E7"A z3 _A4 | "Dm7"B4 A2 D2 | "Am"C2 E4 D2 |
+"C7"C8 | "F"C4 _B,2 A,2 | "F"G,4 F,4 | "Bb"_B,2 A, G, F, z3 |
+"F"F,2 _A, =A, _A =A e f | "E7"a z3 _a4 | "Ab"a2 _E =E F2 ^F2 | "Em7"G6 F2 |

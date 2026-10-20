@@ -1,0 +1,24 @@
+%abc-2.1
+% Cuckoo's Nest, from the Nottingham Music Database as cleaned by Jukedeck:
+% ABC_cleaned/reelsa-c.abc, tune X: 80 (https://github.com/jukedeck/nottingham-dataset; source
+% file sha256 f92ed0e66024e0a5bb7d21fe3172cd50c3fb4cb7f642b4ec7cd5aa8ad0396da8).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Cuckoo's Nest
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 A4 | "D"A2 d2 d2 c2 d2 e2 f2 d2 | "Em"e2 d2 c2 B2 "A"A4 A2 B2 | "C"=c2 B2 A2 B2 ^c2 e2 d2 ^c2 |
+"Em"B2 A2 G2 F2 "A7"G4 A2 G2 | "D"F2 D2 F2 A2 d2 f2 e2 d2 | "Em"c2 A2 G2 F2 "A7"G4 A2 G2 | "D"F4 D4 "A7"C2 D2 E2 G2 |
+"D"F4 D4 D4 A4 | "D"A2 d2 d2 c2 d2 e2 f2 d2 | "Em"e2 d2 c2 B2 "A"A4 A2 B2 | "C"=c2 B2 A2 B2 ^c2 e2 d2 ^c2 |
+"Em"B2 A2 G2 F2 "A7"G4 A2 G2 | "D"F2 D2 F2 A2 d2 f2 e2 d2 | "Em"c2 A2 G2 F2 "A7"G4 A2 G2 | "D"F4 D4 "A7"C2 D2 E2 G2 |
+"D"F4 D4 D4 F2 G2 | "D"A2 F2 D2 F2 A2 F2 D2 F2 | "D"A2 G2 F2 E2 D4 E2 =F2 | "C"G2 E2 =C2 E2 G2 E2 ^C2 E2 |
+"C"G2 =F2 E2 D2 =C4 D2 E2 | "D"F2 D2 F2 A2 d2 f2 e2 d2 | "A7"c2 A2 G2 F2 G4 A2 G2 | "D"F4 D4 "A7"C2 D2 E2 G2 |
+"D"F4 D4 D4 F2 G2 | "D"A2 F2 D2 F2 A2 F2 D2 F2 | "D"A2 G2 F2 E2 D4 E2 =F2 | "C"G2 E2 =C2 E2 G2 E2 ^C2 E2 |
+"C"G2 =F2 E2 D2 =C4 D2 E2 | "D"F2 D2 F2 A2 d2 f2 e2 d2 | "A7"c2 A2 G2 F2 G4 A2 G2 | "D"F4 D4 "A7"C2 D2 E2 G2 |
+"D"F4 D4 D4 z4 |

@@ -1,0 +1,34 @@
+%abc-2.1
+% Largo from Xerxes, by Händel. Score published on MuseScore (artist: patricya940411), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Händel (died 1759, Wikidata
+% Q7302).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/52/QmaxVcGUW3wJLtnR5jf9JZKTyRq1ffmQBKXsS1LSuvby5J.mid (sha256
+% f1b0ef50b28f1dfc5000265efd78b562909a0a45351b4f29c7316ba4176e4f1f): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Largo from Xerxes
+M:3/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"G"G12 | "D7"G4 ^F4 E3 D | "Em7"D12 | "D7"E4 ^F4 G A2 B |
+"D"A8 z4 | "C"e12 | "Em7"d8 z4 | "D7"c12 |
+"G"B8 z4 | "G"g4 g4 ^f4 | "Am7"^f4 e4 d4 | "A7"d2 _d2 _d6 _d2 |
+"Bm7"d6 e2 d4 | "D7"c2 B2 A6 G2 | "G"G4 z8 | "G"B4 B4 B4 |
+"D"B4 B4 A3 G | "Em"G4 G4 G4 | "Em7"G4 ^F4 E4 | "Em7"D4 D4 D4 |
+"D7"E4 ^F4 G4 | "D"A6 G2 A4 | "C"e4 e4 d4 | "Em7"d4 d4 d4 |
+"D7"c4 c4 c2 B2 | "G"B4 B4 B4 | "D7"G4 ^F4 E4 | "G"D4 D4 D4 |
+"Em7"c4 c4 B4 | "C"A8 G4 | "D7"^f4 ^f4 e4 | "F#m7"_e4 A4 G4 |
+"B7"E4 E4 _E2 =E2 | "Am7"E4 E4 E4 | "G"A4 G4 B4 | "D"A8 e4 |
+"D7"e4 d4 c4 | "G"B4 d4 ^f4 | "Bm"g4 g4 ^f4 | "D7"^f4 e4 d4 |
+"A7"d4 _d4 _d4 | "Bm7"d12 | "D7"E4 A4 d4 | "Em7"d4 c2 B2 c4 |
+"D7"A B2 c B4 ^F3 G | "Em7"G4 d4 ^f4 | "Em7"g4 g4 ^f4 | "D7"^f4 e4 d4 |
+"A7"d2 _d2 _d4 _d4 | "Bm7"d6 e2 d4 | "C"c2 B2 A6 G2 | "G"G4 d8 |
+"G"d4 B4 B4 | "D"d4 B4 A3 G | "Em"G4 G4 G4 | "Em7"G4 ^F4 E3 D |
+"Em7"D4 D4 D4 | "D7"E4 ^F4 G A2 B | "D"A6 G2 A4 | "C"c4 c4 A4 |
+"Em7"d4 d4 d4 | "Am7"c4 c4 c2 B2 | "G"B4 B4 B4 | "Am7"c4 c4 c4 |

@@ -1,0 +1,32 @@
+%abc-2.1
+% Your beauty it allureth, by Thomas Weelkes. Score published on MuseScore (artist: Thomas
+% Weelkes), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Thomas Weelkes (died 1623,
+% Wikidata Q553908).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/10/QmbAqEiRgGnRiESK9MEfjbKDrKpvTYeMZ3FwwBTMktSrxK.mid (sha256
+% 79199c6ba3a1f161572b84fb2a1216a648b91bfbe1899516450d0fbdc42d6049): melody track 3, bars 1-57
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Your beauty it allureth
+M:4/4
+L:1/16
+Q:1/4=96
+K:none
+P:A
+"G"D8 "Dm"D4 A,4 | "G"G,4 C4 G8 | "C"G8 C4 B,4 | "D"A,4 G,4 A,8 |
+"G"G,8 "Bm7"z4 D4 | "G"D2 E2 D2 C2 D8 | "Em7"D4 G,4 "G"G,6 G,2 | "D"A,4 A,4 "D7"D,4 G,4 |
+"Em7"G,4 z4 "C"G,8 | "Em7"G,6 G,2 "Am7"E,4 G,4 | "D"^F,4 G,4 A,8 | "G"G,16 |
+"G"D8 "Dm"D4 A,4 | "G"G,4 C4 G8 | "C"G8 C4 B,4 | "D"A,4 G,4 A,8 |
+"G"G,8 "Bm7"z4 D4 | "G"D2 E2 D2 C2 D8 | "Em7"D4 G,4 "G"G,6 G,2 | "D"A,4 A,4 "D7"D,4 G,4 |
+"Em7"G,4 z4 "C"G,8 | "Em7"G,6 G,2 "Am7"E,4 G,4 | "D"^F,4 G,4 A,8 | "G"G,4 D4 "D"C4 B,4 |
+"Bm"A,4 G,4 "G"A,4 B,4 | "Am7"C4 G,4 "Dm7"D4 G,4 | "D7"z8 "Bm7"z4 C4 | "Am7"B,4 A,4 G,4 E,4 |
+"Bm7"D,4 E,4 "Em7"^F,4 G,4 | "D"A,4 B,4 A,8 | "Em"G,8- "Em7"G,8 | "C"G,8 "Am"E,8 |
+"D7"^F,8 "Em7"G,8 | "D"A,4 ^F,4 "Em7"G,8 | "Em7"D,8 "Dm"D8 | "Dm"D4 C4 "Em7"B,8 |
+"D"A,8- "Dm"A,8 | "G7"B,8 "C"C4 D4 | "C"E4 ^F4 "G"G8 | "G"G,4 D4 "D"C4 B,4 |
+"Bm"A,4 G,4 "G"A,4 B,4 | "Am7"C4 G,4 "Dm7"D4 G,4 | "D7"z8 "Bm7"z4 C4 | "Am7"B,4 A,4 G,4 E,4 |
+"Bm7"D,4 E,4 "Em7"^F,4 G,4 | "D"A,4 B,4 A,8 | "Em"G,8- "Em7"G,8 | "C"G,8 "Am"E,8 |
+"D7"^F,8 "Em7"G,8 | "D"A,4 ^F,4 "Em7"G,8 | "Em7"D,8 "Dm"D8 | "Dm"D4 C4 "Em7"B,8 |
+"D"A,8- "Dm"A,8 | "G7"B,8 "C"C4 D4 | "C"E4 ^F4 "G"G8 | "G"G,16 |

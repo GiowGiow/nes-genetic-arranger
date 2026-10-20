@@ -1,0 +1,35 @@
+%abc-2.1
+% A demy mort, by Jean de Castro. Score published on MuseScore (artist: Jean de Castro), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Jean de Castro (died 1611,
+% Wikidata Q3175340).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/10/43/QmSSER3MgjdnZydYTQoj8GakQ2xMGzP4uFzSrr8EqnUydW.mid (sha256
+% e197bc95f63bcd592c4a8ded0cf42c5e8afa48cf3dfdc103fb18344419dac588): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:A demy mort
+M:2/2
+L:1/16
+Q:1/4=112.000269
+% Exact tempo 112.00026880064512 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"D"D16 | "D"_B,8 G,8 | "Gm"G4 G4 _B8 | "Bb"_B4 A4 G8 |
+"D"G4 F2 E2 F8 | "Gm"G16 | "D"^F8 A8 | "Dm"A8 F8 |
+"D7"D8 A8 | "Dm7"z8 D8 | "Em7"_B,8 G,8 | "Dm"D8 F8 |
+"Gm"F8 G8 | "D"G8 F8 | "Gm"E4 D4 D8 | "A"D8 C8 |
+"Gm"D8 G,8 | "Gm7"D8 D8 | "F"F8 D4 C4 | "D"_B,4 A,4 G,4 A,4 |
+"Gm"_B,4 C4 D4 E4 | "G"F8 G8 | "Bb"F8 G8 | "F"A8 z4 A4 |
+"C"G8 A8 | "Gm"D4 D4 G8 | "D"G8 ^F8 | "D"^F16 |
+"Bb"z8 D8 | "G"G8 G8 | "Gm"G8 G8 | "D"F12 E4 |
+"Dm"D4 E4 F4 G4 | "D7"A8 G8 | "A"F8 E8 | "Gm"D4 G,4 D4 E4 |
+"Dm"F4 G4 A8 | "E"A4 A4 G8 | "Bb"F8 z4 D4 | "F"C4 C4 F8 |
+"Gm"D4 G,4 D4 E4 | "F"F12 C4 | "Gm"D4 F4 E8 | "Bb"D8 z4 F4 |
+"D7"G8 E4 F4 | "D7"F4 D4 E4 F4 | "Gm"G4 D8 ^F4 | "Gm"G8 D8 |
+"Dm7"D4 F8 E4 | "F"F8 D4 C4 | "D"_B,4 A,4 G,4 A,4 | "Gm"_B,4 C4 D4 E4 |
+"G"F8 G8 | "Bb"F8 G8 | "F"A8 z4 A4 | "C"G8 A8 |
+"Gm"D4 C4 D4 E4 | "D"F4 G4 A8 | "F"A,4 _B,4 C4 D4 | "D7"E4 C4 F8 |
+"Gm"F8 G8 | "D"G8 ^F8 | "C7"G16 | "C"z8 C8 |

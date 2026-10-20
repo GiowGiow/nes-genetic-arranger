@@ -1,0 +1,36 @@
+%abc-2.1
+% Grand Caprice sur 'Le Roi des Aulnes' Op.26, by Heinrich Wilhelm Ernst. Score published on
+% MuseScore (artist: Heinrich Wilhelm Ernst), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Heinrich Wilhelm Ernst (died
+% 1865, Wikidata Q528748).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/47/QmaU5MfcsF7tMA2CCnaJ41kJ1tWJdQLGrbF33ASn174voS.mid (sha256
+% 98e476e74e2a49a6673e05c5d96f26bcf90efffbe716736924d75b22e9111f28): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Grand Caprice sur 'Le Roi des Aulnes' Op.26
+M:4/4
+L:1/16
+Q:1/4=151.999939
+% Exact tempo 151.99993920002433 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bb"G G2 G G G2 G G G2 G G G2 G | "Bb"G G2 G G G2 G G G2 G G G2 G | "G"G G2 G G G2 G G G2 G G G2 G | "G"G G2 G G G2 G "Bb"G G2 G G G2 G |
+"G"G G2 G G G2 G G G2 G G G2 G | "G"A A2 A A A2 A A A2 A A A2 A | "G"_B _B2 _B _B _B2 _B A A2 A A A2 A | "G"G g2 g g g2 g g g2 g g g2 g |
+"G"g g2 g g g2 g "Bb"g g2 g g g2 g | "G"g g2 g g g2 g g g2 g g g2 g | "G"g g2 g g g2 g "Bb"g g2 g g g2 g | "G"g g2 g g g2 g g g2 g g g2 g |
+"G"A A2 A A A2 A A A2 A A A2 A | "G"e _B2 _B _B _B2 _B _B _B2 _B G G2 G | "G"^F ^F2 G A B2 _d =d =D2 =D a =D2 =D | "G"_b _B2 _B _B _B2 _B a _B2 _B g _B2 _B |
+"G"a ^F2 G A B2 _d =d =D2 =D a =D2 =D | "G"_b _B2 _B _B _B2 _B g _B2 _B _B _B2 _B | "G"d' ^F2 G A B2 _d =d ^F2 ^F ^F ^F2 ^F | "G"^F ^F2 ^F ^F ^F2 ^F ^F ^F2 ^F d ^F2 ^F |
+"G"d B2 B B B2 B B B2 B g B2 B | "G"g c2 c c c2 c _e G2 G c G2 G | "G"f F2 F F F2 F _E _E2 _E A _E2 _E | "G"_B C2 D _E F2 ^F =F =E2 _E _B C2 _B, |
+"G"_e ^F2 ^F ^F ^F2 ^F ^F ^F2 ^F A _E2 _E | "G"c C2 D _B F2 ^F =F E2 _E _B C2 _B, | "G"_e ^F2 ^F ^F ^F2 ^F ^F ^F2 ^F A _E2 _E | "G"c C2 D _B F2 ^F =F E2 _E _b C2 _B, |
+"G"d' c2 c c c2 c c c2 c a c2 c | "G"_b _B2 _B _B G2 F _E _E2 F g _E2 D | "G"a A2 A A A2 A ^f D2 D D D2 D | "G"g G2 G G G2 G G G2 G G G2 G |
+"G"G G2 G G G2 G "Bb"G G2 G G G2 G | "G"G G2 G G G2 G G G2 G G G2 G | "G"G G2 G G G2 G "Bb"G G2 G G G2 G | "G"G G2 G G G2 G G G2 G G G2 G |
+"G"G G2 G G G2 G G G2 G G G2 G | "G"G G2 G G G2 G A G2 G G G2 G | "G"_B G2 G G G2 G =B _A2 _A _A G2 =B | "G"c c2 c c c2 c c _e2 _e _e _e2 _e |
+"G"_e c2 c c c2 c c _e2 _e c' _e2 _e | "G"d' f2 f f f2 f f f2 f g f2 f | "G"_e' _E2 F G A2 B c _e2 _e c' _e2 _e | "G"d' f2 f f f2 f f f2 f g f2 f |
+"G"_e' _E2 F G A2 B c _e2 C _B, _e2 _B, | "G"_e A2 A A A2 A A A2 A c' A2 A | "G"_d' e2 e e e2 e e e2 e c' _d2 _b | "G"a F2 F f F2 F F A2 A c' A2 A |
+"G"_d' e2 e e e2 e e e2 e c' _d2 _b | "G"c' A2 A A A2 A A F2 F F F2 F | "G"F F2 F F F2 F F F2 F F F2 F | "G"F F2 F F F2 F F F2 F F F2 F |
+"G"F F2 F F F2 F F F2 F F F2 F | "G"_E _B,2 _B, _B, _B,2 D D F2 F F _B2 _B | "Bb"_B d2 d z f2 f "Dm"z f2 f z f2 f | "Eb"z g2 g g g2 g "C"z _e2 _e _e _e2 _e |
+"F"z d2 d d d2 d z c2 c c' c2 c | "Bb"z16 | "Bb"z8 "Cm7"z8 | "Bb"z16 |
+"Bb"z8 "Cm7"z8 | "Bb"z8 "Dm"z8 | "Dm7"z16 | "C"z8 "C7"z8 |

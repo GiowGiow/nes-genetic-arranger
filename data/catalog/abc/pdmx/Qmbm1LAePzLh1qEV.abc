@@ -1,0 +1,22 @@
+%abc-2.1
+% Bransle des pois, by Trad.. Score published on MuseScore (artist: Misc Traditional), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Trad. (died 1662, Wikidata
+% Q1701960).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/1/31/Qmbm1LAePzLh1qEV38sQwCnop7MiXZ4gfxpYFhSg7GPrYb.mid (sha256
+% 6f11fc8e4c6bcb6abf639c7ac56d945d3e260840d97549100c1d6c5bf6efd8d1): melody track 0, bars 0-16
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Bransle des pois
+M:8/4
+L:1/16
+Q:1/4=400
+K:none
+P:A
+"C"c16 c8 d8 | "C"e16 e8 e8 | "C"f8 e8 d8 d8 | "C"e16 A16 |
+"C"c12 B4 c8 d8 | "C"e16 e8 e8 | "C"f8 e8 d8 d8 | "C"e16 A16 |
+"C"A8 B8 G16 | "C"A8 B8 c8 A8 | "C"A8 B8 c8 d8 | "C"c8 B8 A16 |
+"C"A8 B8 G16 | "C"A8 B8 c8 A8 | "C"A8 B8 c8 d8 | "C"c8 B8 A16 |

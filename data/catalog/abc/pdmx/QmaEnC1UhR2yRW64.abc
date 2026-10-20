@@ -1,0 +1,35 @@
+%abc-2.1
+% There Is a Green Hill Far Away, by Ch. Gounod. Score published on MuseScore (artist: Charles
+% Gounod), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Ch. Gounod (died 1893, Wikidata
+% Q180278).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/18/QmaEnC1UhR2yRW64bEbwtHM61HvY1kCXej4R73G52tJGpH.mid (sha256
+% 41a1362da54e56f669cee9b6815b7d1d84dc14b5eed4fa270175a736f0f415f8): melody track 0, bars 0-63
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:There Is a Green Hill Far Away
+M:4/4
+L:1/16
+Q:1/4=88.000153
+% Exact tempo 88.00015253359773 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Dm"z8 "Bb"z8 | "Gm7"z8 "F"z8 | "Em7"z8 "C7"z8 | "A7"z16 |
+"Dm"z8 "F#m"z8 | "G7"z8 "Abm"z8 | "Dm"z16 | "A"z8 "A7"z8 |
+"Dm"z16 | "Dm"F,4 F,2 F,2 F,4 F,4 | "Gm7"F,3 D, D,4- "Bb"D,2 z4 D,2 | "A"D,8 z2 _D,2 _D,2 _D,2 |
+"Dm"D,8 z8 | "Dm7"A,4 A,2 A,2 A,4 A,4 | "G7"A,3 F, F,4- "Dm"F,2 z2 F,4 | "G7"F,6 F,2 "C7"E,6 E,2 |
+"F"F,8 z8 | "Cm"A,4 A,2 A,2 "Am7"C6 A,2 | "D7"G,2 ^F,2 ^F,4 "Cm7"z4 ^F,4 | "Gm"G,6 G,2 "Cm"_E,6 _E,2 |
+"Gm"D,8 z8 | "Gm7"_B,4 _B,2 _B,2 D6 _B,2 | "E"A,2 _A,2 _A,4 "Bb7"z4 _A,4 | "F#m7"A,8 "E7"z2 E,2 E,2 E,2 |
+"A"E,8 z4 A,4 | "A7"_B,6 _B,2 _B,6 _B,2 | "Dm"_B,2 A,2 A,4 z4 A,4 | "A7"G,6 G,2 G,6 G,2 |
+"D"^F,8 z8 | "Bb"F,4 F,2 F,2 F,6 F,2 | "Cm7"F,2 _E,2 _B,4- "Eb"_B,6 z2 | "Abm"B,4 D,2 E,2 "Db7"F,6 D,2 |
+"A7"A,8 "F#m7"z8 | "D"A,4 A,2 A,2 B,6 ^F,2 | "Em7"A,2 G,2 G,6 z2 G,4 | "Em7"_D6 B,2 "A7"A,6 G,2 |
+"D"^F,4 z4 "Dm"_A,8 | "F#m7"A,4 A,4 "A7"A,6 A,2 | "D"A,4 _B,4 "Ab7"=B,4 C4 | "F#m7"_D6 _D2 "E7"=D6 _A,2 |
+"A"A,8 "F#m"z4 A,4 | "A7"A,4 _D,4 "D7"z4 B,4 | "A7"B,2 A,2 G,2 ^F,2 ^F,4 E,2 z2 | "D"^F,4 ^F,2 ^F,2 "Dm"_D6 B,2 |
+"D"A,8 "A7"z4 A,4 | "D"D10 A,2 G,2 ^F,2 | "Em7"^F,2 E,2 E,4 z4 D4 | "D7"D10 C2 A,2 ^F,2 |
+"Bm"A,2 G,2 G,4 "Em7"z4 G,4 | "D"^F,6 ^F,2 "A7"E,6 E,2 | "D"A,8 "Db7"z4 B,4 | "D"D,6 D,2 "A"^F,4 E,4 |
+"D"D,8 z8 | "Em7"G,6 G,2 B,6 A,2 | "D"A,8 z8 | "Em7"D,6 D,2 G,6 ^F,2 |
+"D"^F,8 "Bm7"z4 ^F,4 | "D"A,8 "Bm"D,8 | "D"^F,8 "A"E,8 | "D"D,12 z4 |
+"D"z8 "F#m7"z8 | "D"z16 | "D"z16 |

@@ -1,0 +1,34 @@
+%abc-2.1
+% Mariage D'amour, by Maurice Ravel. Score published on MuseScore (artist: Richard Clayderman),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Maurice Ravel (died 1937,
+% Wikidata Q1178).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/4/37/QmePJ61KjrycxPYxG8jTheKD7mUXvD8jbcXa2s6h5tBL9Q.mid (sha256
+% 35fcc9c47eea9a76ead701b7f6203ee01889691de3fdfd221171f5e783b1cab8): melody track 0, bars 0-62
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Mariage D'amour
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Em"B2 z2 B2 z2 B2 z2 B2 z2 | "Em"A2 z2 G2 z2 G2 z2 ^F2 z2 | "Em"E2 z2 E2 z2 G2 z2 B2 z2 | "Em"e2 z2 e2 z2 e2 z2 e2 z2 |
+"Em"d2 z2 c2 z2 "Am"c2 z2 B2 z2 | "Am"A2 z2 A2 z2 B2 z2 c2 z2 | "B"B2 z2 c2 z2 B2 z2 _e2 z2 | "B"c2 z2 B2 z2 "Em"B2 z2 A2 z2 |
+"Em"G2 z2 G2 z2 ^F2 z2 E2 z2 | "B7"^F2 z2 ^F2 z2 ^F2 z2 ^F2 z2 | "B7"G2 z2 ^F2 z2 "Em"E2 z2 E2 z2 | "Em"E2 z2 E8 z4 |
+"Em"B2 z2 B2 z2 B2 z2 B2 z2 | "Em"A2 z2 G2 z2 G2 z2 ^F2 z2 | "Em"E2 z2 E2 z2 G2 z2 B2 z2 | "Em"e2 z2 e2 z2 e2 z2 e2 z2 |
+"Em"d2 z2 c2 z2 "Am"c2 z2 B2 z2 | "Am"A2 z2 A2 z2 B2 z2 c2 z2 | "B"B2 z2 c2 z2 B2 z2 _e2 z2 | "B"c2 z2 B2 z2 "Em"B2 z2 A2 z2 |
+"Em"G2 z2 G2 z2 ^F2 z2 E2 z2 | "B7"^F2 z2 ^F2 z2 ^F2 z2 ^F2 z2 | "B7"G2 z2 ^F2 z2 "Em"E2 z2 E2 z2 | "Em"E2 z2 E8 z4 |
+"E"_A2 z2 _A2 z2 _A2 z2 _A2 z2 | "E"^F2 z2 E2 z2 "F#m"E2 z2 _E2 z2 | "F#m"_E2 z2 _E2 z2 "B7"D2 z2 _E2 z2 | "B7"_d2 z2 _d2 z2 _d2 z2 _d2 z2 |
+"B7"_e2 z2 _d2 z2 "E"_d2 z2 B2 z2 | "E"B2 z2 B2 z2 _d2 z2 _e2 z2 | "E"e2 z2 e2 z2 e2 z2 e2 z2 | "E"_e2 z2 d2 z2 "A"_d2 z2 _d2 z2 |
+"A"_d2 z2 _d2 z2 B2 z2 A2 z2 | "Dbm7"_A2 z2 _A2 z2 "B"_A2 z2 _A2 z2 | "B7"A2 z2 ^F2 z2 "Dbm7"E2 z2 E2 z2 | "E"E2 z2 E8 z4 |
+"E"_A2 z2 _A2 z2 _A2 z2 _A2 z2 | "E"^F2 z2 E2 z2 "F#m"E2 z2 _E2 z2 | "F#m"_E2 z2 _E2 z2 "B7"D2 z2 _E2 z2 | "B7"_d2 z2 _d2 z2 _d2 z2 _d2 z2 |
+"B7"_e2 z2 _d2 z2 "E"_d2 z2 B2 z2 | "E"B2 z2 B2 z2 _d2 z2 _e2 z2 | "E"e2 z2 e2 z2 e2 z2 e2 z2 | "E"_e2 z2 d2 z2 "A"_d2 z2 _d2 z2 |
+"A"_d2 z2 _d2 z2 B2 z2 A2 z2 | "Dbm7"_A2 z2 _A2 z2 "B"_A2 z2 _A2 z2 | "B7"A2 z2 ^F2 z2 "Dbm7"E2 z2 E2 z2 | "E"E2 z2 E8 z4 |
+"Em"B2 z2 B2 z2 B2 z2 B2 z2 | "Em"A2 z2 G2 z2 G2 z2 ^F2 z2 | "Em"E2 z2 E2 z2 G2 z2 B2 z2 | "Em"e2 z2 e2 z2 e2 z2 e2 z2 |
+"Em"d2 z2 c2 z2 "Am"c2 z2 B2 z2 | "Am"A2 z2 A2 z2 B2 z2 c2 z2 | "B"B2 z2 c2 z2 B2 z2 _e2 z2 | "B"c2 z2 B2 z2 "Em"B2 z2 A2 z2 |
+"Em"G2 z2 G2 z2 ^F2 z2 E2 z2 | "B7"^F2 z2 ^F2 z2 ^F2 z2 ^F2 z2 | "B7"G2 z2 ^F2 z2 "Em"E2 z2 E2 z2 | "Em"E2 z2 E11 z |
+"Em"E11 z E4 | "Em"E7 z9 |

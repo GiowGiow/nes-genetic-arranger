@@ -1,0 +1,34 @@
+%abc-2.1
+% In the hall of the mountain king, by Edvard Grieg. Score published on MuseScore (artist:
+% rlim11), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Edvard Grieg (died 1907,
+% Wikidata Q80621).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/25/Qmai6Z8LmsYhydvBb4D4teRjBdwVREjNoFGC8UufwPnLZP.mid (sha256
+% 444e1009395081317da976a7ab8256ccc1d5f05b947087eb76383f70622af825): melody track 1, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:In the hall of the mountain king
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"Bm"z16 | "Db7"z8 "C"z8 | "Bm"z16 | "D"z16 |
+"Bm"z16 | "B"z16 | "Bm"z16 | "D"z16 |
+"F#"z8 "Ebm7"z8 | "Bb"z8 "Ebm7"z8 | "F#"z8 "Ebm7"z8 | "Bb"z8 "Ebm7"z8 |
+"F#"z16 | "Gm"z8 "F#"z8 | "F#"z16 | "Gm"z8 "F#"z8 |
+"Bm"z16 | "Db7"z8 "C"z8 | "Bm"z16 | "D"z16 |
+"Bm"z16 | "B"z16 | "Bm"z8 "A7"z8 | "F#7"z8 "Db7"z8 |
+"Bm"z16 | "B"z16 | "Bm"z16 | "D"z16 |
+"Bm"z16 | "B"z16 | "Bm"z16 | "D"z16 |
+"F#"z16 | "D"z8 "F#"z8 | "F#"z16 | "D"z8 "F#"z8 |
+"F#"z16 | "D"z8 "F#"z8 | "F#"z16 | "D"z8 "F#"z8 |
+"Bm"z16 | "B"z16 | "Bm"z16 | "D"z16 |
+"Bm"z16 | "B"z16 | "Bm"z8 "Bm7"z8 | "Bm"B,4 B4 "Db7"B4 B4 |
+"Bm7"B,2 _D2 =D2 E2 ^F2 =D2 ^F4 | "G7"F2 _D2 F4 "Em"E2 C2 E4 | "Bm7"B,2 _D2 =D2 E2 ^F2 =D2 ^F2 B2 | "Bm7"A2 ^F2 D2 ^F2 A4 z4 |
+"Bm7"B,2 _D2 =D2 E2 ^F2 =D2 ^F4 | "G7"F2 _D2 F4 "Em"E2 C2 E4 | "Bm7"B,2 _D2 =D2 E2 ^F2 =D2 ^F2 B2 | "Bm7"A2 ^F2 D2 ^F2 A4 z4 |
+"F#7"^F2 _A2 _B2 =B2 _d2 _B2 _d4 | "Gm"d2 _B2 d4 "F#7"_d2 _B2 _d4 | "F#7"^F2 _A2 _B2 =B2 _d2 _B2 _d4 | "Gm"d2 _B2 d4 "F#7"_d4 z4 |
+"Ebm7"^F2 _A2 _B2 =B2 _d2 _B2 _d4 | "Gm7"d2 _B2 d4 "Ebm7"_d2 _B2 _d4 | "Ebm7"^F2 _A2 _B2 =B2 _d2 _B2 _d4 | "Gm7"d2 _B2 d4 "Ebm7"_d4 z4 |

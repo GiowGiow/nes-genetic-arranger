@@ -1,0 +1,35 @@
+%abc-2.1
+% 14 Romances Op.34, by Rachmaninov. Score published on MuseScore (artist: Sergei Rachmaninoff),
+% CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Rachmaninov (died 1943, Wikidata
+% Q131861).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/40/QmTrEBbsgyehimMsQ3dEeM4RwdHMoazCPWXh61SptunTN7.mid (sha256
+% bc98538882a744f2fabfed615765c5eb9d8367b772da37ce3ddf604976ac8aa8): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:14 Romances Op.34
+M:4/4
+L:1/16
+Q:1/4=50.999982
+% Exact tempo 50.99998215000625 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm"z6 _e d "Cm7"_e6 c d | [M:2/4]"Ab"_e2 d c d2 _B c | [M:4/4]"Gm7"d8- "Fm7"d2 c _B c2 _A _B | "Cm"c8- "G7"c2 _B _A G3 F |
+"C7"G3 _A G4- "Bb7"G _A c _e f3 g | "Fm7"_e6 _d2 "G"_d _d _d _d _d A c2 | "Cm"c6 z2 "Cm7"z2 c4 _B2 | "Cm"A8- "F7"A2 A2 _B2 c2 |
+"Gm"_B2 _B c d4- "Gm7"d2 G A _B2 c d | "Eb7"e8- "Gm7"e2 _d2 =d2 e2 | "F"e2 d e f4- "Dm"f2 e2 d2 c2 | "Fm"d6 c B "Em7"c6 G A |
+"Eb"B2 c d _e6 d2 c2 _B2 | "Cm7"_B2 A _B c4- "D7"c2 _B A _B2 F G | "Db"A2 _B c _d6 c2 _B2 _A2 | "C7"G8 "Ab7"^F6 c2 |
+[M:2/4]"G7"d3 c _B c A2 | [M:4/4]"Gm"G8- "G7"G4 z4 | "Cm"z6 _e d "Cm7"_e6 c d | [M:2/4]"Ab"_e2 d c d2 _B c |
+[M:4/4]"Gm7"d8- "Fm7"d2 c _B c2 _A _B | "Cm"c8- "G7"c2 _B _A G3 F | "C7"G3 _A G4- "Bb7"G _A c _e f3 g | "Fm7"_e6 _d2 "G"_d _d _d _d _d A c2 |
+"Cm"c6 z2 "Cm7"z2 c4 _B2 | "Cm"A8- "F7"A2 A2 _B2 c2 | "Gm"_B2 _B c d4- "Gm7"d2 G A _B2 c d | "Eb7"e8- "Gm7"e2 _d2 =d2 e2 |
+"F"e2 d e f4- "Dm"f2 e2 d2 c2 | "Fm"d6 c B "Em7"c6 G A | "Eb"B2 c d _e6 d2 c2 _B2 | "Cm7"_B2 A _B c4- "D7"c2 _B A _B2 F G |
+"Db"A2 _B c _d6 c2 _B2 _A2 | "C7"G8 "Ab7"^F6 c2 | [M:2/4]"G7"d3 c _B c A2 | "Gm"G8 |
+"E7"z2 d4 c2 | "G7"B4 d4 | "Fm7"d2 d4 c2 | "G7"B4 d4 |
+"Fm"d2 _e2 d2 c2 | "Bb7"_B2 c2 d2 _B2 | "G7"G5 A B f | "Cm"_e8 |
+"Cm7"z2 _e4 d2 | "D7"c4 _e4 | "Cm7"_e2 _e2 d2 c _B | "D7"c4 _e4 |
+"Ab7"_e2 f2 _e2 d2 | "Cm7"c2 d2 _e2 c2 | "Ab7"_A5 _B c _e | "Db7"f8 |
+"Gm7"G6 f2 | "Eb7"g8 | "Dbm7"g2 g2 f2 f2 | "Fm"e2 d e f4 |
+"Fm7"f2 _e2 d2 c2 | "Fm7"B2 _B =B c4 | "Fm7"c2 _B4 _A2 | "G7"G2 G F _E F D2 |
+[M:4/4]"Cm"C6 z2 "Bb7"z2 d4 c2 | "G7"B4 d4- "Fm7"d2 d4 c2 | "G7"B4 d4- "Fm"d2 _e2 d2 c2 | "Bb7"_B2 c2 d2 _B2 "G7"G5 A =B f |

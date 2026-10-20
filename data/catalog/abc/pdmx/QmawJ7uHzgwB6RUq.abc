@@ -1,0 +1,35 @@
+%abc-2.1
+% Valse romantique, by Claude Debussy. Score published on MuseScore (artist: Claude Debussy), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Claude Debussy (died 1918,
+% Wikidata Q4700).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/50/QmawJ7uHzgwB6RUqi63x81eeuUeGvwppDdRDxJSmVEhW1F.mid (sha256
+% 95d17a7e043db0644eac5588ad1f743a5f4a09d900ff936531b5f8f39eff2a65): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Valse romantique
+M:3/4
+L:1/16
+Q:1/4=109.999707
+% Exact tempo 109.99970666744888 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bbm"z12 | "Bbm"z12 | "Bbm"z12 | "Bbm"z12 |
+"Bbm"z2 G z G4 _A4 | "Bbm"z2 _B z _B4 c4 | "Bbm"z2 G z G z _A z _B z c z | "Bbm"G11 z |
+"Fm"z2 G2 _A2 F2 C4 | "Fm7"C2 F2 c8 | "Bb7"c2 F2 C2 F2 c2 f2 | "C"g c2 G z4 g' c'2 g |
+"C"z4 g c2 G z4 | "C"g' c'2 g z4 g c2 G | "Em"z12 | "Bbm7"z2 G z G4 _A4 |
+"Gm7"z2 _B z _B4 c4 | "Eb7"z2 G z G z _A z _B z c z | "C7"G12 | "Fm"z2 G2 _A2 F2 C4 |
+"Fm7"C2 F2 c8 | "Bb7"c2 F2 C2 F2 c2 f2 | "C"g c2 G z4 g' c'2 g | "C"z4 g c2 G z4 |
+"C"g' c'2 g z4 g c2 G | "C"z12 | "Bbm"z8 g4 | "Bbm7"g2 f2 _e2 _d2 F4 |
+"Bbm7"z8 g4 | "Eb7"g2 f2 _e2 _d2 F4 | "Ab"z4 g4 _a4 | "Fm"z4 g4 _a4 |
+"Bb"z4 c4 _A4 | "Ab"_A4 F4 D4 | "Eb7"z8 g4 | "Db"g2 f2 _e2 _d2 F4 |
+"F#m"z8 g4 | "Eb7"g2 f2 _e2 _d2 F4 | "Ab"B4 g4 _a4 | "Cm7"_a4 _e4 c4 |
+"Fm"G4 e4 f4 | "Cm"f4 c4 _A4 | "Bb"C4 _A2 c2 _a2 c'2 | "C7"C4 _E4 C4 |
+"Gm"C4 _A2 c2 _a2 c'2 | "Eb"C4 _E4 C4 | "Ab"G4 _A2 c2 _a2 c'2 | "Bb"D4 _E4 D4 |
+"Ab"G4 _A2 c2 _a2 c'2 | "Bb7"D4 _E4 D4 | "G"G4 D2 G2 g2 c2 | "G"d2 g2 g'2 c'2 d'2 g'2 |
+"G"g''2 c''2 d2 g2 g'2 c'2 | "G"D2 G2 g2 c2 z4 | "G"G4 D2 G2 g2 d2 | "G"d2 g2 g'2 b2 d'2 g'2 |
+"G"g''2 b'2 d2 g2 g'2 b2 | "G"D2 G2 g2 B2 z4 | "Bbm"z2 g z g4 _a4 | "Bbm"z2 _b z _b4 c'4 |
+"Bbm"z2 g2 g2 _a2 _b2 c'2 | "Bbm"g11 z | "Fm"z2 g2 _a2 f2 c4 | "Fm7"c2 f2 c'8 |

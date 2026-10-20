@@ -1,0 +1,36 @@
+%abc-2.1
+% A CAMINHO DOS ESTADOS UNIDOS, by Garoto, as performed by Garoto (Aníbal Augusto Sardinha).
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Garoto (died 1955, Wikidata Q1494414).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_a/a-caminho-dos-estados-unidos.html (file
+% https://www.beakauffmann.com/mpb_a/som/a-caminho-dos-estados-unidos.mid, sha256
+% 601a8146199d0d76ec7d144356ff04eb9797ff16f3d54edfd4de8ba5be954f7f), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:A CAMINHO DOS ESTADOS UNIDOS
+M:2/4
+L:1/16
+Q:1/4=65.999993
+% Exact tempo 65.99999340000066 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"C,3 _D, E, _E, =D, _D, | "C"A _E ^F A _A D =F _A | "C"_A =A, _D ^F =A,, E C _E | "C"D F, B, _D _D, A F _A |
+"C"_D ^F C, _D, E, _E, =D, _D, | "C"A _E ^F A _A D =F _A | "C"_A =A, _D ^F C, E =A, _E | "C"^F _A, _D E =D, ^F B, =F |
+"C"_A _B, _D G F, =A =D _A | "C"B _B A _A2 G ^F z | "C"^F _A, B, =F z C,2 _D, | "C"A _E ^F A _A D =F _A |
+"C"_A =A, _D ^F2 E C _E | "C"D F, B, _D _D, A F _A | "C"D E, _B, _D ^F,, C2 _D | "C"_A B, D ^F C, _A D ^F |
+"C"A A, _D A _A _A2 _A | "C"^F ^F2 ^F =F =F2 ^F | "C"^F C,2 _D, _A, G,2 ^F, | "C"F, E2 D E, _D2 =D, |
+"C"_D, _A2 ^F C, _A2 _A | "C"A ^F2 D _D E C E | "C"E _E,2 =E, _A, G,2 ^F, | "C"F, E2 E E, _D2 =D, |
+"C"_D, _A2 ^F C, _A2 ^F | "C"E _A, _D E _D2 _E2 | "C"F3 F2 C, _D, _D, | "C"E,, _B, _A ^F E _E D _D |
+"C"_D _E, A, B,2 _B,2 =B, | "C"E,, ^F2 E _E D _D B, | "C"B, E,, _D, A,2 _A,2 =A, | "C"E ^F, A, D C, E A, _E |
+"C"^F _A, _D E =D, ^F B, =F | "C"_A _A2 ^F B, E2 _D | "C"A, C,2 _D, _A, G,2 ^F, | "C"F, E2 D E, _D2 =D, |
+"C"_D, _A2 ^F C, _A2 _A | "C"A ^F2 D _D E C E | "C"E _E,2 =E, _A, G,2 ^F, | "C"F, E2 E E, _D2 =D, |
+"C"_D, _A2 ^F C, _A2 ^F | "C"E _A, _D E _D2 _E2 | "C"F3 F2 C, _D, _D, | "C"E,, _B, _A ^F E _E D _D |
+"C"_D _E, A, B,2 _B,2 =B, | "C"E,, ^F2 E _E D _D B, | "C"B, E,, _D, A,2 _A,2 =A, | "C"E ^F, A, D C, E A, _E |
+"C"^F _A, _D E =D, ^F B, =F | "C"_A _A2 ^F B, E2 _D | "C"A, C,2 _D, E, _E, =D, _D, | "C"A _E ^F A _A D =F _A |
+"C"_A =A, _D ^F =A,, E C _E | "C"D F, B, _D _D, A F _A | "C"_D ^F C, _D, E, _E, =D, _D, | "C"A _E ^F A _A D =F _A |
+"C"_A =A, _D ^F C, E =A, _E | "C"^F _A, _D E =D, ^F B, =F | "C"_A _B, _D G F, =A =D _A | "C"B _B A _A2 G ^F z |
+"C"^F _A, B, =F z C,2 _D, | "C"A _E ^F A _A D =F _A | "C"_A =A, _D ^F2 E C _E | "C"D F, B, _D _D, A F _A |

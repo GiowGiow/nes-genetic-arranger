@@ -1,0 +1,24 @@
+%abc-2.1
+% Rollin' In, from the Nottingham Music Database as cleaned by Jukedeck: ABC_cleaned/reelsr-t.abc,
+% tune X: 18 (https://github.com/jukedeck/nottingham-dataset; source file sha256
+% f80a2c0f37a49b9b0c748e922924d59c40d82758abc5b0f7fc9245d7fd563be0).
+% License: GPL-3.0, see LICENSE.md in this folder.
+% This lead sheet is the project's reduction of the tune: repeats written out, the pickup padded
+% to a full bar, chords detected from the tune's chord symbols, one section.
+% Written by: uv run src/main.py catalog nottingham
+X:1
+T:Rollin' In
+M:4/4
+L:1/16
+Q:1/4=140
+K:D
+P:A
+"D"z12 f2 g2 | "D"a4 a2 b2 "A7"a4 f4 | "D"d4 d2 e2 "G"d4 B4 | "A7"A4 e4 c8 |
+"D"d4 a4 "A7"f8 | "D"a4 a2 b2 "F#m"a4 f4 | "Bm"d4 d2 e2 "E7"d4 B4 | "A7"A4 e4 a4 c4 |
+"D"d12 f2 g2 | "D"a4 a2 b2 "A7"a4 f4 | "D"d4 d2 e2 "G"d4 B4 | "A7"A4 e4 c8 |
+"D"d4 a4 "A7"f8 | "D"a4 a2 b2 "F#m"a4 f4 | "Bm"d4 d2 e2 "E7"d4 B4 | "A7"A4 e4 a4 c4 |
+"D"d12 e4 | "A"e2 ^d2 e4 a4 e4 | "A"c6 d2 e8 | "E7"B4 E4 ^G4 B4 |
+"A"A2 B2 c2 d2 "E7"e8 | "A"e2 ^d2 e4 a4 e4 | "F#m"c6 d2 e8 | "Bm"B4 B4 "E7"e4 c4 |
+"A"A12 e4 | "A"e2 ^d2 e4 a4 e4 | "A"c6 d2 e8 | "E7"B4 E4 ^G4 B4 |
+"A"A2 B2 c2 d2 "E7"e8 | "A"e2 ^d2 e4 a4 e4 | "F#m"c6 d2 e8 | "Bm"B4 B4 "E7"e4 c4 |
+"A"A12 z4 |

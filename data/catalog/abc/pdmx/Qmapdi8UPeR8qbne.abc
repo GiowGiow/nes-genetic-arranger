@@ -1,0 +1,27 @@
+%abc-2.1
+% Cathrine Chalmers, by Nathaniel Gow. Score published on MuseScore (artist: Nathaniel Gow), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Nathaniel Gow (died 1831,
+% Wikidata Q6969638).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/0/36/Qmapdi8UPeR8qbnesznr1GcdKzXoXGxj5h1PikBo6x6cZS.mid (sha256
+% 18f80324bc8ab7a18f322fdb9d2be255eb0aa4cb4f58b3fe1eba6e2c3c06581a): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Cathrine Chalmers
+M:4/4
+L:1/16
+Q:1/4=115.999861
+% Exact tempo 115.99986080016704 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"B c d2 c2 B2 c d e2 d2 c2 | "C"B2 E2 A2 G2 ^F4 E2 D2 | "C"B2 G2 D2 B,2 C2 E2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G2 c2 |
+"C"B c d2 c2 B2 c d e2 d2 c2 | "C"B2 E2 A2 G2 ^F4 E2 D2 | "C"B2 G2 D2 B,2 C2 E2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G2 d2 |
+"C"g2 b2 g2 e2 _e2 ^f2 b2 _e2 | "C"e2 g2 e2 d2 _d2 e2 a2 _d2 | "C"d2 e2 ^f2 d2 B2 g2 e2 g2 | "C"^f2 d2 e2 _d2 =d4 =D4 |
+"C"d2 c B b2 B2 c2 a2 A2 c2 | "C"B2 g2 G2 B2 A2 ^F2 E2 D2 | "C"d2 B2 B2 d2 c2 A2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G4 |
+"C"B c d2 c2 B2 c d e2 d2 c2 | "C"B2 E2 A2 G2 ^F4 E2 D2 | "C"B2 G2 D2 B,2 C2 E2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G2 c2 |
+"C"B c d2 c2 B2 c d e2 d2 c2 | "C"B2 E2 A2 G2 ^F4 E2 D2 | "C"B2 G2 D2 B,2 C2 E2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G2 d2 |
+"C"g2 b2 g2 e2 _e2 ^f2 b2 _e2 | "C"e2 g2 e2 d2 _d2 e2 a2 _d2 | "C"d2 e2 ^f2 d2 B2 g2 e2 g2 | "C"^f2 d2 e2 _d2 =d4 =D4 |
+"C"d2 c B b2 B2 c2 a2 A2 c2 | "C"B2 g2 G2 B2 A2 ^F2 E2 D2 | "C"d2 B2 B2 d2 c2 A2 A2 c2 | "C"B2 G2 A2 ^F2 G4 G4 |

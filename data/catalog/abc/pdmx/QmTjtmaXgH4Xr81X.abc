@@ -1,0 +1,32 @@
+%abc-2.1
+% Gnossiennes, by Erik Satie. Score published on MuseScore (artist: Erik Satie), CC0
+% (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Erik Satie (died 1925, Wikidata
+% Q187192).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/11/26/QmTjtmaXgH4Xr81Xkdgs4YFRTwvuoXcoGagyjmez2pkuEJ.mid (sha256
+% 16b68dd114b0d177f211008cd599064748512eeac57d09f05adeb59680fb5825): melody track 0, bars 0-54
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 2000
+X:1
+T:Gnossiennes
+M:4/4
+L:1/16
+Q:1/4=60
+K:none
+P:A
+"Am"a2 a2 _e2 _e2 ^f2 ^f6 | "Am"z4 e2 e2 _e2 _e2 c2 c2 | "Em"B2 B6 z8 | "Em"z16 |
+"Am"a2 a2 _e2 _e2 ^f2 ^f6 | "Am"z4 e2 e2 _e2 _e2 c2 c2 | "Em"B2 B6 z8 | "Dm"d4 B2 B2 c2 c6 |
+"E"B2 B6 z8 | "Dm"d16 | "Dm"d3 z B2 B2 d2 d2 B2 B2 | "Dm"_A2 =A2 B2 d2 B2 =A2 _A2 =A2 |
+"Dm"B2 d2 B2 A2 _A2 =A2 B2 d2 | "Am"f2 f2 A2 A6 z4 | "Am"z16 | "Em"e2 e2 _B2 _B2 _d2 _d6 |
+"Em"z4 B2 B2 _B2 _B2 G2 G2 | "Bm"^F2 ^F6 z8 | "Bm"z16 | "Em"e2 e2 _B2 _B2 _d2 _d6 |
+"Em"z4 B2 B2 _B2 _B2 G2 G2 | "Bm"^F2 ^F6 z8 | "F#m"A15 z | "Em"E2 ^F2 G2 _B2 =B2 _d2 e2 _d2 |
+"Em"B2 _B2 G2 ^F2 E2 ^F2 G2 _B2 | "Em"B2 _d2 e2 _d2 B2 _B2 G2 ^F2 | "Em"E2 ^F2 G2 _B2 =B2 _d2 e2 _d2 | "Bm"d2 d6 z8 |
+"Bm"z16 | "Em"E2 ^F2 G2 _B2 =B2 _d2 e2 _d2 | "Em"B2 _B2 G2 ^F2 E2 ^F2 G2 _B2 | "Em"B2 _d2 e2 _d2 B2 _B2 G2 ^F2 |
+"Em"E2 ^F2 G2 _B2 =B2 _d2 e2 _d2 | "Bm"d2 d6 z8 | "Am"A16 | "Am"A7 z9 |
+"Fm"c z15 | "Fm"z16 | "Fm"_A2 B2 c2 _e2 d2 c2 B2 _A2 | "Fm"c2 c6 z8 |
+"Dm"d16 | "Dm"d7 z9 | "Fm"_A2 B2 c2 _e2 d2 c2 B2 _A2 | "Fm"c2 c6 z8 |
+"Dm"d15 z | "Am"a2 a2 _e2 _e2 ^f2 ^f6 | "Am"z4 e2 e2 _e2 _e2 c2 c2 | "Em"B2 B6 z8 |
+"Em"z16 | "Am"a2 a2 _e2 _e2 ^f2 ^f6 | "Am"z4 e2 e2 _e2 _e2 c2 c2 | "Em"B2 B6 z4 B2 B2 |
+"Am"e2 e6 z8 | "Am"z16 |

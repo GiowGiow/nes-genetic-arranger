@@ -1,0 +1,36 @@
+%abc-2.1
+% NÃO ME TOQUES, by Zequinha de Abreu, as performed by Zequinha de Abreu.
+% License: public domain in Brazil. Every author died 70 or more full years ago (life + 70 years,
+% Lei 9.610/98 art. 41): Zequinha de Abreu (died 1935, Wikidata Q167752).
+% This lead sheet is the project's reduction of a fan-made MIDI sequence: the melody of one track,
+% the chords detected in the other tracks, one section. The sequence's own arrangement is not
+% kept.
+% Source: https://www.beakauffmann.com/mpb_n/nao-me-toques.html (file
+% https://www.beakauffmann.com/mpb_n/som/nao-me-toques.mid, sha256
+% 405b8f4aa9a9be4c689fd50a10451909072cfb1b7cad2798a9b7991c5e8c7f7a), from Beatriz Kauffmann's Web
+% Site. Melody track 0, bars 0-64 (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog public-domain --dataset <local MPB study copy>
+X:1
+T:NÃO ME TOQUES
+M:2/4
+L:1/16
+Q:1/4=85.000043
+% Exact tempo 85.00004250002125 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Am"z5 E _E =E | "Am"e2 z d c B A F | "Am"E5 E _E =E | "Am"F E _E =E A c =e _e |
+"E"d3 z2 E _E =E | "E"d2 z c B A _A F | "E"E5 E _E =E | "E"F E _E =E _A B d _d |
+"Am"c3 z2 E _E =E | "Am"e2 z d c B A F | "Am"E5 E _E =E | "Am7"F E _E =E A _d =e _e |
+"Dm"d3 z2 F A d | "Dm"f d A F f d A F | "Am"e c A E e c A E | "E"d B _A E d B _A E |
+"Am"A2 E2 A E _E =E | "Am"e2 z d c B A F | "Am"E5 E _E =E | "Am"F E _E =E A c =e _e |
+"E"d3 z2 E _E =E | "E"d2 z c B A _A F | "E"E5 E _E =E | "E"F E _E =E _A B d _d |
+"Am"c3 z2 E _E =E | "Am"e2 z d c B A F | "Am"E5 E _E =E | "Am7"F E _E =E A _d =e _e |
+"Dm"d3 z2 F A d | "Dm"f d A F f d A F | "Am"e c A E e c A E | "E"d B _A E d B _A E |
+"Am"A2 E2 A2 z2 | "E"z8 | "Am"z8 | "E"z8 |
+"Am"z8 | "F"z8 | "Am"z8 | "E"z8 |
+"Am"z8 | "E"z8 | "Am"z8 | "E"z8 |
+"Am"z8 | "F"z8 | "Am"z8 | "E"z8 |
+"Am"z8 | "Am"z8 | "Am"z8 | "Am"z8 |
+"E7"z8 | "E"z8 | "E"z8 | "E"z8 |
+"Am"z8 | "Am"z8 | "Am"z8 | "Am7"z8 |
+"Dm"z8 | "Dm"z8 | "Am"z8 | "E"z8 |
