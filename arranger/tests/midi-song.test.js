@@ -32,6 +32,7 @@ import {
   rankMelodyTracks,
   readLeadSheetMidi,
   skyline,
+  melodyConfidence,
   suggestMelodyTrack,
 } from "../src/core/midi-song.js";
 import {
@@ -315,6 +316,36 @@ test("suggestMelodyTrack prefers many single notes, a vocal name and a singing r
   assert.equal(suggestMelodyTrack(tracks), 1);
   assert.deepEqual(rankMelodyTracks(tracks), [1, 2, 0]);
   assert.equal(suggestMelodyTrack([tracks[3]]), null);
+});
+
+test("melodyConfidence is sure of a clear singing line and unsure when the pick may be wrong", () => {
+  const track = { program: 0, isDrum: false, lowest: 0, highest: 0 };
+  const clear = [
+    { ...track, index: 0, name: "Strings", noteCount: 400, meanPitch: 60, polyphony: 0.9 },
+    { ...track, index: 1, name: "Voz", noteCount: 200, meanPitch: 67, polyphony: 0.05 },
+    { ...track, index: 2, name: "Bass", noteCount: 300, meanPitch: 40, polyphony: 0 },
+    { ...track, index: 3, name: "Drums", noteCount: 900, meanPitch: 40, polyphony: 0, isDrum: true },
+  ];
+  assert.deepEqual(melodyConfidence(clear), { track: 1, sure: true, reason: "" });
+
+  const twins = [
+    { ...track, index: 0, name: "Track 1", noteCount: 300, meanPitch: 66, polyphony: 0 },
+    { ...track, index: 1, name: "Track 2", noteCount: 280, meanPitch: 70, polyphony: 0 },
+  ];
+  const twinPick = melodyConfidence(twins);
+  assert.equal(twinPick.track, 0);
+  assert.equal(twinPick.sure, false);
+  assert.match(twinPick.reason, /about as likely/);
+
+  const chords = [{ ...track, index: 0, name: "Piano", noteCount: 500, meanPitch: 64, polyphony: 0.6 }];
+  assert.equal(melodyConfidence(chords).sure, false);
+  assert.match(melodyConfidence(chords).reason, /chords/);
+
+  const bassOnly = [{ ...track, index: 0, name: "Bass", noteCount: 300, meanPitch: 40, polyphony: 0 }];
+  assert.equal(melodyConfidence(bassOnly).sure, false);
+  assert.match(melodyConfidence(bassOnly).reason, /range/);
+
+  assert.deepEqual(melodyConfidence([clear[3]]), { track: null, sure: false, reason: "no track with notes to play" });
 });
 
 test("the readLeadSheetMidi JSDoc example holds: one bar of a voice over a C bass", () => {

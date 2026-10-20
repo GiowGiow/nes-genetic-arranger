@@ -24,6 +24,7 @@ import {
   describeTracks,
   excerptBars,
   readLeadSheetMidi,
+  melodyConfidence,
   suggestMelodyTrack,
 } from "../core/midi-song.js";
 import { noteName, programName } from "./gm-programs.js";
@@ -255,8 +256,8 @@ export function createInputPanel(targets, options) {
     <div class="field" data-tunes hidden>
       <label>Tune <select data-tune></select></label>
     </div>
-    <fieldset class="midi-options" data-midi hidden>
-      <legend>Reduce the MIDI song to a lead sheet</legend>
+    <details class="midi-options" data-midi hidden>
+      <summary class="melody-summary" data-melody-summary>Melody track and bars</summary>
       <h3 class="step-title">1. Which track plays the melody?</h3>
       <p class="hint">A MIDI song has one track per instrument. The arranger keeps one of them as the
         melody (the NES pulse P1) and reads the chords from all the others. Pick the track that plays
@@ -286,7 +287,7 @@ export function createInputPanel(targets, options) {
       <textarea rows="3" spellcheck="false" data-sections aria-label="Parts: bar and label per line"
         placeholder="0 Verse&#10;8 Chorus"></textarea>
       <button type="button" class="button" data-apply>Read again</button>
-    </fieldset>
+    </details>
     <div class="summary" data-summary hidden></div>`,
   );
   const $ = (/** @type {string} */ selector) =>
@@ -414,6 +415,33 @@ export function createInputPanel(targets, options) {
     $("[data-tunes]").hidden = tunes.length < 2;
   }
 
+  /** Why the melody pick may be wrong, until the visitor chooses a track. */
+  let melodyDoubt = "";
+
+  /**
+   * One line for the collapsed melody and bars options: which track is the melody, which bars,
+   * and, when the pick may be wrong, why the visitor should check it.
+   *
+   * @param {string} [doubt] why the pick is unsure; empty when it is not
+   */
+  function showMelodySummary(doubt = "") {
+    const checked = /** @type {HTMLInputElement | null} */ (container.querySelector('input[name="melody-track"]:checked'));
+    const track = source?.tracks?.find((candidate) => String(candidate.index) === checked?.value);
+    const line = $("[data-melody-summary]");
+    line.classList.toggle("unsure", doubt !== "");
+    if (!track) {
+      line.textContent = "Melody track and bars";
+      return;
+    }
+    const first = /** @type {HTMLInputElement} */ ($("[data-first]")).value;
+    const end = /** @type {HTMLInputElement} */ ($("[data-end]")).value;
+    const instrument = programName(track.program, track.isDrum);
+    const name = track.name && track.name !== instrument ? `${track.name}, ${instrument}` : instrument;
+    line.textContent =
+      `Melody: track ${track.index} (${name}), bars ${first} to ${end}. ` +
+      (doubt ? `Not sure of this track (${doubt}): check it.` : "Click to change the track or the bars.");
+  }
+
   /**
    * @param {any} midi
    * @param {any[]} tracks
@@ -446,7 +474,12 @@ export function createInputPanel(targets, options) {
       if (track.index === suggested) row.classList.add("suggested");
       body.append(row);
     }
-    body.querySelectorAll("input").forEach((radio) => radio.addEventListener("change", () => reread()));
+    body.querySelectorAll("input").forEach((radio) =>
+      radio.addEventListener("change", () => {
+        melodyDoubt = ""; // the visitor chose
+        reread();
+      }),
+    );
     body.querySelectorAll("[data-preview]").forEach((button) =>
       button.addEventListener("click", () => {
         const said = options.previewTrack?.(Number(/** @type {HTMLElement} */ (button).dataset.preview));
@@ -470,7 +503,13 @@ export function createInputPanel(targets, options) {
         ? `${barCount} bars; ${MAX_BARS}${skipped} are selected (the most the arranger takes).`
         : `${barCount} bars; ${music} selected${skipped}.`;
     /** @type {HTMLTextAreaElement} */ ($("[data-sections]")).value = "0 Verse";
-    $("[data-midi]").hidden = false;
+    // Collapsed when the heuristic is sure of the melody track, open when it may be wrong.
+    const pick = melodyConfidence(tracks);
+    const details = /** @type {HTMLDetailsElement} */ ($("[data-midi]"));
+    details.open = !pick.sure;
+    details.hidden = false;
+    melodyDoubt = pick.sure ? "" : pick.reason;
+    showMelodySummary(melodyDoubt);
   }
 
   function reread() {
@@ -522,7 +561,10 @@ export function createInputPanel(targets, options) {
         overrides: source.overrides,
       };
       showSummary(leadSheet, source.input);
-      if (source.input.kind === "midi") showTempoHint(source.midi, leadSheet, midiSettings.bars, tempoOverride);
+      if (source.input.kind === "midi") {
+        showTempoHint(source.midi, leadSheet, midiSettings.bars, tempoOverride);
+        showMelodySummary(melodyDoubt);
+      }
       setStatus(`${source.input.name}: ready to arrange.`);
       options.onLoaded(loaded);
     } catch (error) {

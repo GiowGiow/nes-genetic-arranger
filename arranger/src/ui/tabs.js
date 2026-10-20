@@ -2,8 +2,9 @@
 /**
  * Page tabs: the page shows one screen at a time, in the order of a run (spec 005, story 7).
  *
- * Song holds the catalog and the run controls. Evolution holds the run controls too, the GA at
- * work and the result, so that a setting can be changed and the next run heard on one screen.
+ * Song holds the catalog and the run controls. Evolution holds the run controls too, and the GA at
+ * work and the result side by side, so that a setting can be changed and the next run heard on
+ * one screen. The settings drawer and the mixer drawer (from the left edge) belong to the tabs that use them.
  * How it works explains the method. The settings drawer opens from the Song and Evolution tabs.
  * The chosen tab lives in the URL hash (`#song`, `#evolution`, `#how`), so a reload or a shared
  * link opens the same screen. An old link to a card (`#run`, `#result`, `#about`) opens the tab
@@ -25,12 +26,12 @@
 /** @type {readonly PageTab[]} */
 export const TABS = Object.freeze([
   Object.freeze({ id: "song", label: "Song", panels: Object.freeze(["song", "settings"]) }),
-  Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["evolution", "result", "settings"]) }),
+  Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["workbench", "settings", "mix"]) }),
   Object.freeze({ id: "how", label: "How it works", panels: Object.freeze(["how"]) }),
 ]);
 
 /** Section ids from before the tabs or the merge of Result into Evolution, and the tab that holds them now. */
-const OLD_PANELS = Object.freeze({ about: "how", run: "song" });
+const OLD_PANELS = Object.freeze({ about: "how", run: "song", result: "evolution" });
 
 /**
  * The tab that shows a section.

@@ -17,9 +17,9 @@ test("the three tabs come in the order of a visit: song, evolution (with the res
   );
 });
 
-test("the Evolution tab holds the evolution and the result, and the settings drawer opens from it and from Song", () => {
+test("the Evolution tab holds the workbench (run bar, evolution and result) and the mixer; the settings drawer opens from it and from Song", () => {
   assert.deepEqual(TABS[0].panels, ["song", "settings"]);
-  assert.deepEqual(TABS[1].panels, ["evolution", "result", "settings"]);
+  assert.deepEqual(TABS[1].panels, ["workbench", "settings", "mix"]);
 });
 
 test("the hash names the tab, and an unknown or empty hash opens the Song tab", () => {
@@ -35,6 +35,7 @@ test("an old link to a card opens the tab that holds it", () => {
   assert.equal(tabFromHash("#about"), "how");
   assert.equal(tabFromHash("#result"), "evolution", "the result is on the Evolution tab now");
   assert.equal(tabForPanel("result"), "evolution");
+  assert.equal(tabForPanel("workbench"), "evolution");
   assert.equal(tabForPanel("nowhere"), null);
 });
 

@@ -164,7 +164,9 @@ label.block { display: grid; gap: 6px; color: var(--muted); margin: 10px 0; }
 .button-chip .artist { color: var(--muted); font-size: .78rem; }
 .field { margin-top: 10px; }
 .midi-options { border: 1px solid var(--line); border-radius: 12px; margin: 12px 0 0; padding: 10px 12px; min-width: 0; }
-.midi-options legend { color: var(--muted); padding: 0 6px; }
+.midi-options > summary { cursor: pointer; font-weight: 600; color: var(--text); overflow-wrap: anywhere; }
+.midi-options > summary.unsure { color: var(--p2); }
+.midi-options[open] > summary { margin-bottom: 8px; }
 .midi-options .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
 .table-wrap { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: .9rem; }
@@ -369,15 +371,22 @@ footer { column-gap: 18px; }
 .run-strip { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
 .run-song { margin: 0 0 10px; font-weight: 600; overflow-wrap: anywhere; }
 .run-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
-/* On the Evolution tab the strip stays at the top while the page scrolls, so a setting can be
-   changed and the next run started without going back up. */
-[data-run-slot="evolution"] {
-  position: sticky; top: 0; z-index: 5; margin: -6px -6px 14px; padding: 10px 6px 8px;
-  background: rgba(14, 19, 34, .94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+/* One Arrange button at a time: on the Song tab the shelf's Arrange starts the run, so the strip
+   keeps only the seed, the pace, Stop and Settings; on the Evolution tab the strip has Arrange. */
+[data-run-slot="song"] [data-arrange] { display: none; }
+
+/* Evolution tab: the run bar on top, then the evolution and the result side by side on a wide
+   screen, so the result is there when the run ends, without scrolling. */
+.workbench { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
+.workbench[hidden] { display: none; }
+.workbench > .run-bar { grid-column: 1 / -1; position: sticky; top: 0; z-index: 5; padding: 10px 16px;
+  background: rgba(14, 19, 34, .94); backdrop-filter: blur(6px); }
+.workbench > .run-bar .run-strip { margin: 0; padding: 0; border: 0; }
+.workbench > .run-bar .run-song { margin-bottom: 8px; }
+.run-bar:has([data-run-slot]:empty) { display: none; }
+@media (min-width: 1000px) {
+  .workbench { grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); }
 }
-[data-run-slot="evolution"] .run-strip { margin: 0; padding: 0; border: 0; }
-[data-run-slot="evolution"] .run-song { margin-bottom: 8px; }
-[data-run-slot="evolution"]:empty { display: none; }
 #run .toolbar { margin: 0; }
 #run .button.primary { min-width: 9em; }
 .changed-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }

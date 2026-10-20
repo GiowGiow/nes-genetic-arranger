@@ -299,24 +299,48 @@ function songStatus(text, isError = false) {
   status.classList.toggle("error", isError);
 }
 
-/** Play the first 8 bars of the loaded song as the input sounds (Preview on a record). */
+/**
+ * Preview on a record: the first 8 bars of the loaded song as the input sounds, in the Result's
+ * player, so the position, the channel view and the mixer are there as after a run. The
+ * arrangement does not exist yet, so only the original is loaded.
+ */
 function playIntro() {
   const loaded = inputPanel.current();
   if (!loaded) return;
   const context = player.ensureContext();
   player.pause();
   previewSource?.stop();
+  previewSource = null;
   const voices = originalVoices(loaded, loaded.leadSheet);
   const beats = Math.min(totalBeats(loaded.leadSheet.bars.slice(0, 8)), totalBeats(loaded.leadSheet.bars));
   const rendered = renderVoices(voices, loaded.leadSheet.tempoBpm, context.sampleRate, beats);
   const samples = matchLoudness(rendered, rendered, context.sampleRate).a;
-  const buffer = context.createBuffer(1, samples.length, context.sampleRate);
-  buffer.copyToChannel(samples, 0);
-  const source = context.createBufferSource();
-  source.buffer = buffer;
-  source.connect(context.destination);
-  source.start();
-  previewSource = source;
+  const scene = originalScene(clipVoices(voices, beats), loaded.leadSheet.tempoBpm);
+  scenes = { arrangement: scene, original: scene };
+  player.load({ original: samples }, context.sampleRate);
+  player.seek(0);
+  setResultStatus(
+    `Preview of ${loaded.leadSheet.title || loaded.input.name}: its first 8 bars, as the original sounds. Press Arrange to arrange it.`,
+  );
+  showWorkbench();
+  player.play();
+}
+
+/** Open the Evolution tab and bring its run bar, the evolution and the result to the top of the screen. */
+function showWorkbench() {
+  pageTabs.show("evolution");
+  requestAnimationFrame(() => document.getElementById("workbench")?.scrollIntoView({ block: "start" }));
+}
+
+/**
+ * The voices with only the notes that start before a point.
+ *
+ * @param {{melody: any[], others: any[][], drums: any[]}} voices
+ * @param {number} beats
+ */
+function clipVoices(voices, beats) {
+  const early = (/** @type {any[]} */ notes) => notes.filter((note) => note.onset < beats);
+  return { melody: early(voices.melody), others: voices.others.map(early), drums: early(voices.drums) };
 }
 
 const settingsPanel = createSettingsPanel($("#settings"), {
@@ -379,9 +403,9 @@ $("#result").insertAdjacentHTML(
        </select></label>
      <input type="range" min="0" max="1" step="0.01" value="0" data-seek aria-label="Position" disabled>
      <span class="mono time" data-time>0:00 / 0:00</span>
+     <button type="button" class="button" data-mix-toggle aria-expanded="false" aria-controls="mix">Mix</button>
    </div>
    <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
-   <div class="mixer-slot" data-mixer></div>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
    <div data-channel-view></div>
    <p class="caption">Each channel is a line in its color, revealed as it plays: P1 melody (blue),
@@ -420,6 +444,24 @@ const mixerPanel = createMixerPanel($("[data-mixer]"), {
   },
 });
 player.setLevels(mixerPanel.get());
+
+// The mixer is a drawer that slides in from the left edge: a Mix button opens and closes it, and
+// it opens by itself when something starts playing on a wide screen, unless it was closed by hand.
+const mixDrawer = $("#mix");
+const mixToggle = $("[data-mix-toggle]");
+let mixClosedByHand = false;
+
+/**
+ * @param {boolean} open
+ * @param {boolean} [byHand] the visitor did it, so playing must not open the drawer again
+ */
+function setMixDrawer(open, byHand = false) {
+  mixDrawer.classList.toggle("open", open);
+  mixToggle.setAttribute("aria-expanded", String(open));
+  if (byHand) mixClosedByHand = !open;
+}
+mixToggle.addEventListener("click", () => setMixDrawer(!mixDrawer.classList.contains("open"), true));
+$("[data-mix-close]").addEventListener("click", () => setMixDrawer(false, true));
 
 /** Show the chosen sound pack's levels: the visitor's own for that pack, or its defaults. */
 function showPackLevels() {
@@ -509,7 +551,7 @@ async function startRun() {
   downloads.clear();
   setResultStatus("Evolving…");
   updateRunButtons();
-  pageTabs.show("evolution");
+  showWorkbench();
   worker.postMessage({
     type: "run",
     runId: id,
@@ -739,8 +781,10 @@ player.onChange(() => {
   for (const button of document.querySelectorAll("[data-version]")) {
     const element = /** @type {HTMLElement} */ (button);
     element.setAttribute("aria-pressed", String(element.dataset.version === player.active()));
+    (/** @type {HTMLButtonElement} */ (element)).disabled = !player.has(/** @type {"original" | "arrangement"} */ (element.dataset.version));
   }
   $("[data-versions]").hidden = !player.has("original");
+  if (player.isPlaying() && !mixClosedByHand && globalThis.matchMedia?.("(min-width: 1100px)").matches) setMixDrawer(true);
   channelView.setScene(scenes[player.active()]);
 });
 (function tick() {
@@ -837,19 +881,32 @@ function buildScenes(arrangement, voices, tempoBpm) {
       ],
       drums: arrangement.channels.NO.map((/** @type {{onset: number}} */ hit) => hit.onset * seconds),
     },
-    original: {
-      label: "The original: the melody as a blue line, the other parts as faint dashes",
-      lines: [
-        ...voices.others.map((notes) => ({
-          color: "--muted",
-          notes: inSeconds(notes),
-          monophonic: false,
-          faint: true,
-        })),
-        { color: "--p1", notes: inSeconds(voices.melody), monophonic: false, width: 3 },
-      ],
-      drums: voices.drums.map((hit) => hit.onset * seconds),
-    },
+    original: originalScene(voices, tempoBpm),
+  };
+}
+
+/**
+ * The channel view's scene of the original: the melody as a blue line, the other parts as faint dashes.
+ *
+ * @param {{melody: any[], others: any[][], drums: any[]}} voices
+ * @param {number} tempoBpm
+ */
+function originalScene(voices, tempoBpm) {
+  const seconds = 60 / tempoBpm;
+  const inSeconds = (/** @type {Array<{pitch: number, onset: number, duration: number}>} */ notes) =>
+    notes.map((note) => ({ pitch: note.pitch, onset: note.onset * seconds, duration: note.duration * seconds }));
+  return {
+    label: "The original: the melody as a blue line, the other parts as faint dashes",
+    lines: [
+      ...voices.others.map((notes) => ({
+        color: "--muted",
+        notes: inSeconds(notes),
+        monophonic: false,
+        faint: true,
+      })),
+      { color: "--p1", notes: inSeconds(voices.melody), monophonic: false, width: 3 },
+    ],
+    drums: voices.drums.map((hit) => hit.onset * seconds),
   };
 }
 

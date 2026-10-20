@@ -394,6 +394,36 @@ export function rankMelodyTracks(tracks) {
 }
 
 /**
+ * How sure the pick of `suggestMelodyTrack` is, so the page asks the visitor to check it only when
+ * it may be wrong: the likeliest track must play single notes in the singing range, and either
+ * carry a vocal name or lead the next track clearly (1.5 times its melody score).
+ *
+ * @param {TrackSummary[]} tracks from `describeTracks`.
+ * @returns {{track: number | null, sure: boolean, reason: string}} the pick; whether it can be
+ *   trusted; why not, in a few words, when it cannot ("" when it can).
+ * @example
+ * melodyConfidence(tracks); // { track: 1, sure: true, reason: "" }
+ */
+export function melodyConfidence(tracks) {
+  const ranked = tracks
+    .filter((track) => !track.isDrum)
+    .map((track) => ({ track, score: melodyScore(track) }))
+    .sort((a, b) => b.score - a.score);
+  if (ranked.length === 0 || ranked[0].track.noteCount === 0) {
+    return { track: null, sure: false, reason: "no track with notes to play" };
+  }
+  const [best, next] = ranked;
+  const { track } = best;
+  const unsure = (/** @type {string} */ reason) => ({ track: track.index, sure: false, reason });
+  if (track.meanPitch < 55 || track.meanPitch > 84) return unsure("the likeliest track is outside the singing range");
+  if (track.polyphony > 0.35) return unsure("the likeliest track plays chords");
+  if (!MELODY_NAME.test(track.name) && next && best.score < 1.5 * next.score) {
+    return unsure("another track is about as likely");
+  }
+  return { track: track.index, sure: true, reason: "" };
+}
+
+/**
  * The track most likely to carry the melody (research R11); the visitor confirms it.
  *
  * @param {TrackSummary[]} tracks from `describeTracks`.

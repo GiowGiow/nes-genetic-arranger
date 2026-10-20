@@ -239,7 +239,7 @@ export function createPlayer({ createContext = () => new AudioContext() } = {}) 
       addTrack(original, "original", mix.switches.original);
       busScale = options.busScale ?? 1;
       rampTo(mix.bus.gain, busScale);
-      if (!has(active)) active = "arrangement";
+      if (!has(active)) active = has("arrangement") || !has("original") ? "arrangement" : "original";
       rampSwitches();
       offset = Math.min(offset, duration());
       if (wasPlaying) this.play();

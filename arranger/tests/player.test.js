@@ -377,6 +377,18 @@ test("a load without the original while it is heard falls back to the arrangemen
   assert.equal(arrangementSwitch.gain.value, 1);
 });
 
+test("a load with only the original (a preview of a song, before any arrangement) plays the original", () => {
+  const { player } = fakePlayer();
+  player.load({ original: tone(2, 0.5) }, RATE);
+  assert.equal(player.has("original"), true);
+  assert.equal(player.has("arrangement"), false);
+  assert.equal(player.active(), "original", "the version that exists is the one heard");
+  player.play();
+  assert.equal(player.isPlaying(), true);
+  player.switchTo("arrangement");
+  assert.equal(player.active(), "original", "a version that is not loaded changes nothing");
+});
+
 test("a single-buffer arrangement still plays, straight into the bus", () => {
   const { player, context } = fakePlayer();
   player.load({ arrangement: tone(3, 0.6), original: tone(2, 0.5) }, RATE);
