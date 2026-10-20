@@ -1,0 +1,31 @@
+{
+  "query-continue": {"search": {"sroffset": 30}},
+  "query": {
+    "search": [
+      {
+        "ns": 0,
+        "title": "Test Waltz, Op.1 (Example, Anna)",
+        "snippet": "|Work Title=Test <span class='searchmatch'>Waltz</span>\n",
+        "size": 900,
+        "wordcount": 90,
+        "timestamp": "2020-01-01T00:00:00Z"
+      },
+      {
+        "ns": 0,
+        "title": "Valse in A minor (Exemplo, João)",
+        "snippet": "|File Name 1=Exemplo - <span class='searchmatch'>Valse</span>.pdf\n",
+        "size": 1200,
+        "wordcount": 120,
+        "timestamp": "2021-01-01T00:00:00Z"
+      },
+      {
+        "ns": 0,
+        "title": "Untitled Test Piece",
+        "snippet": "",
+        "size": 10,
+        "wordcount": 1,
+        "timestamp": "2022-01-01T00:00:00Z"
+      }
+    ]
+  }
+}

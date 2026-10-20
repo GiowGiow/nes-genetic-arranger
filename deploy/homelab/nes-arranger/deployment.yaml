@@ -1,0 +1,77 @@
+# The NES arranger song server (github.com/GiowGiow/nes-genetic-arranger, spec 005).
+# Stateless: it keeps only a temporary in-memory cache (at most 200 MB for 24 h) and writes
+# nothing but a short-lived temporary MIDI file in /tmp.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nes-arranger
+  namespace: nes-arranger
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nes-arranger
+  template:
+    metadata:
+      labels:
+        app: nes-arranger
+    spec:
+      # The Service is called nes-arranger; keep Kubernetes from injecting NES_ARRANGER_*
+      # variables into the container (the Trilium/ntfy lesson).
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: server
+          # Pin by digest after each publish: the Server image workflow prints the digest, or
+          #   docker buildx imagetools inspect ghcr.io/giowgiow/nes-arranger-server:main
+          # then write  image: ghcr.io/giowgiow/nes-arranger-server@sha256:<digest>
+          image: ghcr.io/giowgiow/nes-arranger-server:main
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8765
+              name: http
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          # music21 takes a few seconds to import on a slow node.
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 2
+            failureThreshold: 30
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi

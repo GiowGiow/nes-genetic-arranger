@@ -1,0 +1,6 @@
+{
+  "comment": "Takedown list (constitution, Song Server Constraints). Add the id of any song whose rights holder asks for it to be removed, under its source, and redeploy: the server then neither lists nor serves it. Ids are the catalog entry ids (mpb) or the ids in search results (mutopia, bitmidi). Takedown contact: see the README.",
+  "mpb": [],
+  "mutopia": [],
+  "bitmidi": []
+}

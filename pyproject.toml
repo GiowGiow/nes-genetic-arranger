@@ -21,6 +21,14 @@ dev = [
     "pre-commit>=4.6.2",
     "pytest>=9.1.1",
     "ruff>=0.17.0",
+    # The song server's tests (tests/server/) run in the dev environment too
+    { include-group = "server" },
+]
+# The optional song server (server/, spec 005); the command line does not need it
+server = [
+    "httpx>=0.28.1",
+    "starlette>=1.7.0",
+    "uvicorn>=0.54.0",
 ]
 
 [tool.uv]
@@ -29,14 +37,17 @@ package = false
 
 [tool.ruff]
 line-length = 100
-src = ["src"]
+src = ["src", "."]
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "B", "UP", "SIM", "NPY"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "src"]
-pythonpath = ["src"]
+testpaths = ["tests", "src", "server"]
+# src/ holds the command line's modules, "." the song server package (`server`), and tests/ the
+# helpers that test modules import from each other (tests/ has an __init__.py so that
+# tests/server/ does not shadow the `server` package)
+pythonpath = ["src", ".", "tests"]
 # Docstring examples in src/ run as tests (constitution principle IV)
 addopts = "-ra --doctest-modules"
 

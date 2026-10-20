@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nes-arranger-external
+  namespace: nes-arranger
+  annotations:
+    gatus.home-operations.com/endpoint: |
+      group: Utilities
+      path: /health
+      conditions:
+        - "[STATUS] == 200"
+        - "[BODY].ok == true"
+    external-dns.alpha.kubernetes.io/hostname: nes-arranger-bh.giow.dev
+    external-dns.alpha.kubernetes.io/target: giow.dev
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    # No forward-auth here on purpose: this is a deliberately public, read-only API for the
+    # arranger page on GitHub Pages, which calls it from visitors' browsers without accounts.
+    # The barriers are the app's own: GET only, CORS for the Pages origin, per-IP rate limits,
+    # an allow-list of upstream sites and no route to private networks (docs/security.md).
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-system-crowdsec-bouncer@kubernetescrd,authentik-redirect-to-https@kubernetescrd,authentik-rate-limit@kubernetescrd,authentik-secure-headers@kubernetescrd
+spec:
+  ingressClassName: traefik
+  # Served by the zone wildcard held in the traefik-system TLSStore, so no secretName here.
+  tls:
+    - hosts:
+        - nes-arranger-bh.giow.dev
+  rules:
+    - host: nes-arranger-bh.giow.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nes-arranger
+                port:
+                  number: 8765
