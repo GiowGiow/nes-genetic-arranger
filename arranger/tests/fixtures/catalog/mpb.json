@@ -1,0 +1,15 @@
+{
+  "source": "mpb",
+  "name": "MPB",
+  "home": "https://example.org/mpb/",
+  "license": "synthetic test data",
+  "credit": "Invented for the tests of arranger/src/core/sources.js.",
+  "note": "Synthetic: titles, names and facts are made up.",
+  "generated": "written by hand for arranger/tests/sources.test.js",
+  "entries": [
+    {"id":"agua-de-lua","source":"mpb","t":"ÁGUA DE LUA","c":"Ana Inventada","p":"Banda Fictícia","u":"https://www.beakauffmann.com/mpb_x/agua-de-lua.html","license":"all-rights-reserved","seed":2498761903,"route":{"server":"/songs/mpb/agua-de-lua.abc"},"facts":{"midi":"https://www.beakauffmann.com/mpb_x/som/x.mid","sha256":"0000000000000000000000000000000000000000000000000000000000000000","melody_track":2,"bars":[0,48],"sections":[[0,"A"]],"key":"D major","tempo_bpm":96.5,"meter":"2/4","n_bars":48,"drums":true,"overrides":{"max_generations":4000,"stagnation_window":400}}},
+    {"id":"abacaxi-azul","source":"mpb","t":"ABACAXI AZUL","c":"Beto Imaginário e Carla Suposta","p":"Duo Teste","u":"https://www.beakauffmann.com/mpb_x/abacaxi-azul.html","license":"all-rights-reserved","seed":2732874608,"route":{"server":"/songs/mpb/abacaxi-azul.abc"},"facts":{"midi":"https://www.beakauffmann.com/mpb_x/som/x.mid","sha256":"0000000000000000000000000000000000000000000000000000000000000000","melody_track":2,"bars":[0,64],"sections":[[0,"A"]],"key":"e- minor","tempo_bpm":132,"meter":"4/4","n_bars":64,"drums":true,"overrides":{"max_generations":4000,"stagnation_window":400}}},
+    {"id":"ciranda-quebrada","source":"mpb","t":"CIRANDA QUEBRADA","c":"Dora Exemplo","p":"Dora Exemplo","u":"https://www.beakauffmann.com/mpb_x/ciranda-quebrada.html","license":"all-rights-reserved","seed":2406688663,"facts":{"midi":"https://www.beakauffmann.com/mpb_x/som/x.mid","sha256":"0000000000000000000000000000000000000000000000000000000000000000","melody_track":2,"bars":[0,0],"sections":[[0,"A"]],"key":"","tempo_bpm":0,"meter":"11/16","n_bars":0,"drums":true,"overrides":{"max_generations":4000,"stagnation_window":400}},"error":"bar 3: the meter 11/16 is not supported"},
+    {"id":"baiao-do-teste","source":"mpb","t":"BAIÃO DO TESTE","c":"Ana Inventada","p":"Grupo Amostra","u":"https://www.beakauffmann.com/mpb_x/baiao-do-teste.html","license":"all-rights-reserved","seed":2728269541,"variant":"2/2","route":{"server":"/songs/mpb/baiao-do-teste.abc"},"facts":{"midi":"https://www.beakauffmann.com/mpb_x/som/x.mid","sha256":"0000000000000000000000000000000000000000000000000000000000000000","melody_track":2,"bars":[0,32],"sections":[[0,"A"]],"key":"G major","tempo_bpm":110,"meter":"2/4","n_bars":32,"drums":true,"overrides":{"max_generations":4000,"stagnation_window":400}}}
+  ]
+}

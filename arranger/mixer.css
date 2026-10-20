@@ -1,0 +1,38 @@
+/* Channel mixer (spec 005, src/ui/mixer-panel.js): one row per channel under the player.
+   Each row carries its channel color in --c (set by the panel), so the swatch and the slider
+   share it, as the plan grid and the channel view color the same four channels. Uses the
+   tokens and .button classes of style.css. On a phone the slider takes a line of its own. */
+
+.mixer { display: grid; gap: 6px; margin-top: 12px; }
+
+.mixer-row {
+  display: grid; align-items: center; gap: 4px 10px;
+  grid-template-columns: 7.5em minmax(0, 1fr) 4.5em auto;
+  grid-template-areas: "name level value mute";
+}
+
+.mixer-name {
+  grid-area: name; display: inline-flex; align-items: center; gap: 8px; min-width: 0;
+  color: var(--text); font-size: .9rem; font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.mixer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); flex: none; }
+.mixer-code { font: 500 .72rem var(--mono); color: var(--muted); }
+
+.mixer-row input[type="range"] { grid-area: level; width: 100%; min-width: 0; accent-color: var(--c); }
+.mixer-value {
+  grid-area: value; text-align: right; white-space: nowrap;
+  font: 600 .82rem var(--mono); font-variant-numeric: tabular-nums; color: var(--text);
+}
+.mixer-mute { grid-area: mute; }
+/* A muted channel keeps its level, shown dimmed until it is unmuted. */
+.mixer-row:has(.mixer-mute[aria-pressed="true"]) :is(.mixer-level, .mixer-value) { opacity: .4; }
+
+.mixer-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin-top: 2px; }
+.mixer-note { margin: 0; color: var(--muted); font-size: .82rem; }
+
+@media (max-width: 480px) {
+  .mixer-row {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas: "name value mute" "level level level";
+  }
+}

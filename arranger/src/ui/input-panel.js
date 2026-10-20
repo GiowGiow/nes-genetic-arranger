@@ -228,11 +228,11 @@ export function loadAbcjs() {
  *   readOptions: () => ReadOptions,
  *   onLoaded: (loaded: LoadedInput) => void,
  *   onFileDropped?: (name: string) => unknown | null,
- *   previewTrack?: (trackIndex: number) => void,
+ *   previewTrack?: (trackIndex: number) => string,
  *   useTempo?: (bpm: number) => void,
  * }} options `onFileDropped` lets the catalog panel claim a dropped file (FR-031);
- *   `previewTrack` plays one track of the MIDI song alone
- * @returns {{reread: () => void, current: () => LoadedInput | null, readFile: (file: File) => Promise<void>}}
+ *   `previewTrack` plays one track of the MIDI song alone and says what it plays
+ * @returns {{reread: () => void, current: () => LoadedInput | null, readFile: (file: File, overrides?: Record<string, number>, catalogEntry?: unknown) => Promise<void>}}
  */
 export function createInputPanel(targets, options) {
   const container = targets.root;
@@ -358,12 +358,17 @@ export function createInputPanel(targets, options) {
   $("[data-apply]").addEventListener("click", () => reread());
 
   /** @param {File} file */
-  async function readDroppedFile(file) {
+  /**
+   * @param {File} file
+   * @param {Record<string, number>} [overrides] stopping limits that come with a catalog song
+   * @param {unknown} [catalogEntry] the catalog song the file is, when known
+   */
+  async function readDroppedFile(file, overrides = {}, catalogEntry = null) {
     for (const button of $("[data-examples]").querySelectorAll("button")) {
       button.setAttribute("aria-pressed", "false");
     }
     const bytes = new Uint8Array(await file.arrayBuffer());
-    await openFile(file.name, bytes, {}, options.onFileDropped?.(file.name) ?? null);
+    await openFile(file.name, bytes, overrides, catalogEntry ?? options.onFileDropped?.(file.name) ?? null);
   }
 
   /**
@@ -443,9 +448,10 @@ export function createInputPanel(targets, options) {
     }
     body.querySelectorAll("input").forEach((radio) => radio.addEventListener("change", () => reread()));
     body.querySelectorAll("[data-preview]").forEach((button) =>
-      button.addEventListener("click", () =>
-        options.previewTrack?.(Number(/** @type {HTMLElement} */ (button).dataset.preview)),
-      ),
+      button.addEventListener("click", () => {
+        const said = options.previewTrack?.(Number(/** @type {HTMLElement} */ (button).dataset.preview));
+        if (said) setStatus(said);
+      }),
     );
     // Bars count from the file's first bar (its time-signature map); by default the excerpt
     // starts on the first bar with a pitched note, so a drum-only count-in is left out.

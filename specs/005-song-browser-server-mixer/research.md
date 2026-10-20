@@ -2,57 +2,78 @@
 
 Sources were checked on 2026-10-20. The approved design is in the plan. Decisions are below.
 
-## R1. Default channel levels (measured)
+## R1. Default channel levels (measured, then set by ear)
 
-- **Decision:** the defaults are per-channel offsets in dB on top of the chip's own mixer gains
-  (`CHANNEL_GAINS`).
-  - They are chosen so that, averaged over the 8 example arrangements (seed 1, default
-    settings), the gated loudness of the TR stem and of the NO stem is 3 dB below the P1 stem.
-  - P2 is set 1 dB below P1, because it is the harmony.
-  - The measurement script is a test, `arranger/tests/mixer-defaults.test.js`: it recomputes the
-    gaps and checks that the defaults keep each gap within 4 dB (SC-001).
-- **Measured** (filled in by task T012): see the table at the end of this section.
-- **Rationale:** the student hears bass and drums as too quiet. The chip gains are the linear
-  NES mixer approximation (TR 1.13, NO 0.66 relative to a pulse), but a low triangle carries
-  little energy where the ear is most sensitive. Short drum hits have a low RMS. A measured
-  offset fixes the balance for every pack, because packs map to the same four stems.
+- **Decision (2026-10-20):** perceptual defaults, as offsets in dB on top of the chip's own
+  mixer gains (`CHANNEL_GAINS`): `DEFAULT_LEVELS` is P1 0, P2 -1, TR +4 and NO +10 dB.
+  - P1 stays at the chip's balance, and P2 sits 1 dB under it, because it is the harmony.
+  - `MAX_DB` is +12 dB, so every slider keeps room to boost, the drums included (2 dB over
+    their default). `MIN_DB` stays -60 dB, shown as Off.
+- **Why the measured rule was dropped:** the first rule set the defaults from gated loudness
+  (TR and NO 3 dB under P1, P2 1 dB under it, averaged over the examples). It gave P1 -9,
+  P2 -5.5, TR -13 and NO +6 dB, which lowers the bass by 4 dB against the melody, while the
+  student hears the bass and the drums as too quiet.
+  - The triangle bass sits at 41 to 155 Hz. Laptop speakers barely reproduce that range, and
+    the ear is less sensitive there. Gated RMS has no frequency weighting, so it already puts
+    the bass 0.9 dB over the melody and cannot see the problem.
+  - The drums are short hits: they measure 16.8 to 18.9 dB under P1 in every example.
+- **What the measurement still does:** `arranger/tests/mixer-defaults.test.js` prints the gaps
+  of the 8 examples at the chip's balance and with the defaults, and bounds the defaults on
+  every example:
+  - TR between 2 dB under and 7 dB over P1;
+  - NO at least 8 dB closer to P1 than at the chip's balance;
+  - the default mix, scaled to -3 dBFS as the WAV download is, never clips.
+- **Confirmation by ear:** the student confirms the defaults by listening (story 1, independent
+  test 1). A change after listening updates `DEFAULT_LEVELS` and this section; the test bounds
+  stay.
+- **Spec impact:** FR-003 and SC-001 bound the gaps at 4 dB of gated loudness. With these
+  defaults the drums measure 6.8 to 8.9 dB under P1 and the bass up to 5.7 dB over it, so those
+  lines need the bounds above.
+- **Rationale for offsets on top of the chip gains:** the chip gains are the linear NES mixer
+  approximation (TR 1.13, NO 0.66 relative to a pulse). An offset fixes the balance for every
+  pack, because packs map to the same four stems.
 - **Alternatives considered:**
   - Changing `CHANNEL_GAINS` would break the chip parity with the CLI and the Korobeiniki pin.
-  - A K-weighted LUFS meter is more exact, but needs a filter not used anywhere else. The gated
-    RMS already in `loudness.js` is enough for a default.
+  - A K-weighted LUFS meter weighs frequencies closer to the ear, but needs a filter not used
+    anywhere else, and it still would not model a laptop speaker. Listening decides; the gated
+    RMS already in `loudness.js` is enough to keep the defaults in bounds.
 
-| Stem | Gap to P1 before (dB) | Default offset (dB) | Gap after (dB) |
-|---|---|---|---|
-| P2 | -4.32 | +3.5 | -0.82 |
-| TR | +0.88 | -4.0 | -3.12 |
-| NO | -17.80 | +15.0 | -2.81 |
+| Stem | Gap to P1 at the chip's balance (dB) | First rule's offset (dB, dropped) | Default offset (dB) | Gap with the defaults (dB) |
+|---|---|---|---|---|
+| P2 | -4.32 | +3.5 | -1 | -5.32 |
+| TR | +0.88 | -4.0 | +4 | +4.88 |
+| NO | -17.80 | +15.0 | +10 | -7.81 |
 
 - Gaps are gated RMS (`gatedRms`, 400 ms blocks) of the NES stems with `CHANNEL_GAINS`, at
   44.1 kHz, averaged over the 8 examples. The arrangements are the committed plan fixtures
   `arranger/tests/fixtures/plans/<example>-s1.json` (seed 1, with the samples' settings).
-- Offsets are relative to P1. The drums' +15 dB is above `MAX_DB` (+6), so all four defaults
-  move down 9 dB: `DEFAULT_LEVELS` is P1 -9, P2 -5.5, TR -13 and NO +6 dB.
-- With these defaults, every example keeps every gap within 4 dB (SC-001). The closest are TR
-  at -3.95 dB and NO at -3.91 dB, both in Ievan Polkka.
-- At the chip's own gains, TR already measures 0.9 dB above P1, so this rule lowers the bass by
-  4 dB against the melody. The drums sit 16.8 to 18.9 dB under P1 in every example.
+- Offsets are relative to P1, whose default is 0 dB.
+- With the defaults, TR measures from +4.05 dB (Ievan Polkka) to +5.68 dB (Aquarela) against
+  P1, and NO from -6.77 dB (Mulher de Fases) to -8.91 dB (Ievan Polkka). The default mix of
+  every example peaks at -3.00 dBFS.
 
 ## R2. Stems and live gain changes
 
 - **Decision:**
-  - `renderChipStems` returns the four channels before normalization, on one scale.
-  - `renderChip` is the stems summed with `CHANNEL_GAINS` and scaled to a -3 dBFS peak, with
-    the same float operations in the same order, so its output stays byte-identical (a test
-    compares it with the pinned SHA).
-  - The player creates one `AudioBufferSourceNode` per stem. Each goes through a `GainNode`
-    into an arrangement bus, then a `DynamicsCompressorNode` used as a limiter (threshold
-    -1 dB, knee 0, ratio 20, attack 3 ms, release 100 ms), then the destination.
+  - `renderChipStems` returns the four channels before the chip gains and the peak scale, on
+    one scale.
+  - `renderChip` and `renderChipStems` share the note scheduling and the synthesis.
+    `renderChip` still adds each note straight into one mix with its channel gain, so its
+    output stays byte-identical (a test compares it with the pinned SHA). The stems summed
+    with `CHANNEL_GAINS` and scaled to -3 dBFS match `renderChip` within 1e-6
+    (`arranger/tests/stems.test.js`).
+  - The player builds its graph once per AudioContext: one `GainNode` per channel, into an
+    arrangement bus, then a `DynamicsCompressorNode` used as a limiter (threshold -1 dB, knee
+    0, ratio 20, attack 3 ms, release 100 ms), then the arrangement's A/B switch gain and the
+    destination. The original goes through its own switch gain to the destination.
+  - Each play or seek creates one `AudioBufferSourceNode` per stem, into its channel gain. An
+    arrangement given as one buffer goes straight into the bus.
   - Levels ramp over 10 ms, like the A/B switch.
 - **Loudness matching** against the original is computed once per render, on the mix at the
-  default levels. The resulting factor scales the bus, so the visitor's changes are relative to
-  a matched mix.
+  default levels (`matchMixLoudness` in `mixer.js`). The resulting factor is the bus gain, so
+  the visitor's changes are relative to a matched mix.
 - **Rationale:** gains on stems change the mix instantly without re-rendering. The limiter
-  handles boosts up to +6 dB on all channels.
+  holds the peaks near -1 dBFS when the visitor boosts channels, up to +12 dB on all of them.
 - **Alternative considered:** re-rendering the mix on every change gives clicks and restarts
   playback.
 
@@ -87,29 +108,32 @@ Sources were checked on 2026-10-20. The approved design is in the plan. Decision
 - **Rationale:** symmetric random sprites read as creatures or emblems, like save icons.
   Seeding from the catalog keeps them deterministic (principle I).
 
-## R6. 3D scene
+## R6. 3D catalog scene (decided with the student through previews, 2026-10-20)
 
+- **Rounds:** four rounds of previews in the real page.
+  1. A PS2 memory-card screen (cards, then songs) with three song layouts: grid, carousel,
+     sleeves. The student chose the **grid of vinyl records**.
+  2. The catalog must be a section of the existing page, not a full-screen browser. The 3D must
+     feel part of the page. No "Memory card", "Save data" or "Browser" text, since the PS2 is
+     only the inspiration. No source site names in the interface.
+  3. No source tabs: **one catalog**, examples first, then pages of records.
+  4. The glow must cover the whole Song card, not stop at the 3D area's edge.
 - **Decision:**
-  - three.js 0.186.1 `three.module.min.js` is vendored (MIT) and imported through an import
-    map, so there is no build step.
-  - **Memory-card screen:** a row of cards, each a thin box with the source's sprite emblem and
-    color.
-  - **Save icons:** each song is a low-poly vinyl (a 24-segment cylinder for the disc, a
-    16-segment cylinder for the label) with its sprite texture. Sprites are drawn into a
-    256×256 canvas atlas (256 sprites) with nearest filtering.
-  - **Background:**
-    - a deep blue gradient sky dome, plus exponential fog;
-    - 60 additive light particles;
-    - 5 tall translucent "pillars" that pulse slowly, as in the PS2 BIOS;
-    - selection glow from an additive halo sprite, with no post-processing pass, to keep the
-      vendored code to one file.
-  - **Resolution:** the canvas renders at 0.5× device pixels with `image-rendering: pixelated`
-    for the low-res look. Rendering pauses while the tab is hidden.
-  - **Scale:** only the 40 songs nearest the selection are meshes; scrolling recycles them.
-- **Alternatives considered:**
-  - The PS1 jitter shader was the student's first idea, but the PS2 memory-card look replaced
-    it.
-  - Post-processing bloom would need the three.js addons.
+  - three.js 0.186.1 `three.module.min.js`, vendored (MIT) and imported through an import map.
+  - **Canvas:** a transparent WebGL canvas (`alpha: true`) inside the Song card, with no box,
+    border or sky of its own.
+  - **Lighting:** ambient light, a white key light, and soft rim lights in P1 blue and P2
+    orange.
+  - **Particles:** about 90 faint particles in the four channel colors.
+  - **Records:** each record is a 28-segment disc with a canvas texture (grooves, a label in a
+    channel color, the 16×16 sprite). Nearest filtering, rendered at 0.6× device pixels.
+  - **Selection:** the selected record moves forward, grows, spins like a turntable, sways and
+    has an additive halo. The others bob gently.
+  - **Grid:** pages of 5×3 (3×3 under 560 px).
+  - **Card glow:** radial gradients in the channel colors on the Song card's background, so it
+    is never cut.
+- **Alternatives rejected by the student:** a full-screen browser, source cards or tabs, the
+  carousel, sleeves, PS2 labels, and showing source names or an "Original page" link.
 
 ## R7. Fallback and accessibility
 
@@ -166,6 +190,10 @@ Sources were checked on 2026-10-20. The approved design is in the plan. Decision
 - **Browser** (The Session): abcjs's `synth.getMidiFile` writes the MIDI (repeats expanded,
   chord symbols as accompaniment). Before that, a leading `z` rest of
   `bar − tune.getPickupLength()` is inserted. The bytes then enter the existing MIDI flow.
+- **Found while building the browser side:** abcjs `getPickupLength()` returns 0 when a tune
+  starts with `|:`. `abcToMidi` therefore measures the first bar itself and writes the leading
+  rest before the `|:` sign, so a repeat goes back to the pickup and not to the rest. A test
+  checks that downbeats stay on bar lines after a repeat.
 - **Rationale:** no new reduction logic. Chords come from the written symbols when present, and
   from the melody otherwise.
 

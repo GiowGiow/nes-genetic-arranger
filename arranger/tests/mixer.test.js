@@ -2,15 +2,18 @@
 // Tests for audio/mixer.js: the visitor's four channel levels, in dB, turned into gains on the
 // stems (spec 005, story 1, research R1 to R3).
 //
-// They read as the rules of the mixer: a level is in dB from -60 (silence) to +6; mute silences a
-// channel at any level; the offline mix (for the WAV download) is the stems times their gains,
-// scaled to peak at -3 dBFS; and the levels survive a reload through a storage that may be
-// missing, full or hold anything at all.
+// They read as the rules of the mixer: a level is in dB from -60 (silence) to +12; the defaults
+// lift the bass and the drums over the chip's own balance; mute silences a channel at any level;
+// the offline mix (for the WAV download) is the stems times their gains, scaled to peak at
+// -3 dBFS; the live mix is matched in loudness with the original once, through the bus gain; and
+// the levels survive a reload through a storage that may be missing, full or hold anything at
+// all.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { PEAK_LEVEL } from "../src/audio/chip-synth.js";
+import { PEAK_LEVEL, SAMPLE_RATE } from "../src/audio/chip-synth.js";
+import { gatedRms, matchLoudness } from "../src/audio/loudness.js";
 import {
   CHANNELS,
   DEFAULT_LEVELS,
@@ -20,6 +23,7 @@ import {
   channelGains,
   clampLevels,
   dbToGain,
+  matchMixLoudness,
   mixStems,
   readLevels,
   storeLevels,
@@ -82,10 +86,10 @@ const blockedStorage = {
 /** @param {number} value */
 const round4 = (value) => Math.round(value * 1e4) / 1e4;
 
-test("the mixer has the four channels P1, P2, TR and NO, each from -60 dB to +6 dB", () => {
+test("the mixer has the four channels P1, P2, TR and NO, each from -60 dB to +12 dB", () => {
   assert.deepEqual(CHANNELS, ["P1", "P2", "TR", "NO"]);
   assert.equal(MIN_DB, -60);
-  assert.equal(MAX_DB, 6);
+  assert.equal(MAX_DB, 12);
   assert.equal(MIX_STORAGE_KEY, "nes-arranger-mix");
 });
 
@@ -93,6 +97,7 @@ test("a level in dB becomes a gain: 0 dB keeps the stem, -6 dB halves it, +6 dB 
   assert.equal(dbToGain(0), 1);
   assert.equal(round4(dbToGain(-6)), 0.5012);
   assert.equal(round4(dbToGain(6)), 1.9953);
+  assert.equal(round4(dbToGain(12)), 3.9811);
   assert.equal(round4(dbToGain(-20)), 0.1);
 });
 
@@ -106,7 +111,9 @@ test("-60 dB and below are silence, and a muted channel is silent at any level",
   assert.deepEqual(gains, { P1: 1, P2: 0, TR: 0, NO: 1 });
 });
 
-test("the default levels stay inside the range and mute nothing (their values come from mixer-defaults)", () => {
+test("the defaults keep the melody at the chip's balance and lift the bass 4 dB and the drums 10 dB (mixer-defaults checks them)", () => {
+  const { P1, P2, TR, NO } = DEFAULT_LEVELS;
+  assert.deepEqual({ P1, P2, TR, NO }, { P1: 0, P2: -1, TR: 4, NO: 10 });
   for (const channel of CHANNELS) {
     assert.ok(DEFAULT_LEVELS[channel] >= MIN_DB && DEFAULT_LEVELS[channel] <= MAX_DB, channel);
     assert.equal(DEFAULT_LEVELS.muted[channel], false, channel);
@@ -114,18 +121,22 @@ test("the default levels stay inside the range and mute nothing (their values co
   assert.ok(Object.isFrozen(DEFAULT_LEVELS) && Object.isFrozen(DEFAULT_LEVELS.muted));
 });
 
-test("clampLevels keeps every level inside [-60, +6] and fills a missing or unreadable one with its default", () => {
-  const input = { P1: 12, P2: -100, TR: "loud", muted: { NO: true, P1: "yes" } };
+test("every default leaves room to boost: even the drums can go 2 dB higher", () => {
+  for (const channel of CHANNELS) assert.ok(MAX_DB - DEFAULT_LEVELS[channel] >= 2, channel);
+});
+
+test("clampLevels keeps every level inside [-60, +12] and fills a missing or unreadable one with its default", () => {
+  const input = { P1: 20, P2: -100, TR: "loud", muted: { NO: true, P1: "yes" } };
   const clamped = clampLevels(/** @type {any} */ (input));
 
   assert.deepEqual(clamped, {
-    P1: 6,
+    P1: 12,
     P2: -60,
     TR: DEFAULT_LEVELS.TR,
     NO: DEFAULT_LEVELS.NO,
     muted: { P1: false, P2: false, TR: false, NO: true },
   });
-  assert.deepEqual(input, { P1: 12, P2: -100, TR: "loud", muted: { NO: true, P1: "yes" } }, "the input is unchanged");
+  assert.deepEqual(input, { P1: 20, P2: -100, TR: "loud", muted: { NO: true, P1: "yes" } }, "the input is unchanged");
   assert.deepEqual(clampLevels(/** @type {any} */ (null)), clampLevels(DEFAULT_LEVELS));
   assert.deepEqual(clampLevels(DEFAULT_LEVELS), { ...DEFAULT_LEVELS, muted: { ...DEFAULT_LEVELS.muted } });
 });
@@ -167,6 +178,61 @@ test("at 0 dB on every channel, mixStems of a pack's stems is the pack's render"
   }
 });
 
+/**
+ * The stems added with the gains of `levels`, before any peak scale: what the player's bus gets.
+ * @param {Record<string, Float32Array>} stems
+ * @param {Levels} levels
+ */
+function busInput(stems, levels) {
+  const gains = channelGains(levels);
+  const sum = new Float32Array(stems.P1.length);
+  for (let i = 0; i < sum.length; i++) {
+    sum[i] = gains.P1 * stems.P1[i] + gains.P2 * stems.P2[i] + gains.TR * stems.TR[i] + gains.NO * stems.NO[i];
+  }
+  return sum;
+}
+
+/**
+ * A plain sine of `seconds` at `amplitude`, standing in for the original's render.
+ * @param {number} seconds
+ * @param {number} amplitude
+ * @param {number} sampleRate
+ */
+function sine(seconds, amplitude, sampleRate) {
+  return Float32Array.from({ length: Math.round(seconds * sampleRate) }, (_, i) => amplitude * Math.sin((2 * Math.PI * 220 * i) / sampleRate));
+}
+
+test("matchMixLoudness gives the bus gain that makes the live mix at the defaults as loud as the original", () => {
+  const stems = renderPackStems("nes", BAND, SAMPLE_RATE);
+  const original = sine(2.15, 0.9, SAMPLE_RATE);
+  const { busScale, original: matchedOriginal } = matchMixLoudness(stems, original, SAMPLE_RATE);
+
+  // The bus gets the stems times the default gains; times busScale it is matchLoudness's render.
+  const live = busInput(stems, clampLevels(DEFAULT_LEVELS));
+  const expected = matchLoudness(live, original, SAMPLE_RATE);
+  let largest = 0;
+  for (let i = 0; i < live.length; i++) largest = Math.max(largest, Math.abs(live[i] * busScale - expected.a[i]));
+  assert.ok(largest < 1e-6, `largest difference ${largest}`);
+  assert.deepEqual(matchedOriginal, expected.b, "the original is matched the same way");
+
+  const scaledLive = live.map((sample) => sample * busScale);
+  const levelDb = (/** @type {Float32Array} */ samples) => 20 * Math.log10(gatedRms(samples, SAMPLE_RATE));
+  assert.ok(Math.abs(levelDb(scaledLive) - levelDb(matchedOriginal)) < 0.01, "both versions equally loud");
+});
+
+test("matchMixLoudness matches the mix at the levels it is given, and a silent mix leaves the bus at 1", () => {
+  const stems = stemsOf({ P1: [0.5, -0.5, 0.5, -0.5], P2: [0, 0, 0, 0], TR: [0.1, 0.1, 0.1, 0.1], NO: [0, 0, 0, 0] });
+  const original = Float32Array.of(0.2, -0.2, 0.2, -0.2);
+  const onlyP1 = { ...UNITY, muted: { ...NOTHING_MUTED, TR: true } };
+
+  // P1 alone has level 0.5, so the bus brings it to the -16 dBFS target: 0.1585 / 0.5.
+  const { busScale } = matchMixLoudness(stems, original, 4, onlyP1);
+  assert.equal(round4(busScale), round4(10 ** (-16 / 20) / 0.5));
+
+  const silent = stemsOf({ P1: [0, 0], P2: [0, 0], TR: [0, 0], NO: [0, 0] });
+  assert.equal(matchMixLoudness(silent, Float32Array.of(0.2, -0.2), 2).busScale, 1);
+});
+
 test("readLevels gives back what storeLevels kept, under one key and with a version", () => {
   const storage = fakeStorage();
   /** @type {Levels} */
@@ -194,10 +260,10 @@ test("readLevels clamps stored levels, and storeLevels clamps what it keeps", ()
   const storage = fakeStorage();
   storeLevels(storage, /** @type {any} */ ({ P1: 40, P2: -400, TR: 0, NO: 0, muted: {} }));
   const stored = JSON.parse(storage.items.get(MIX_STORAGE_KEY));
-  assert.deepEqual([stored.P1, stored.P2], [6, -60]);
+  assert.deepEqual([stored.P1, stored.P2], [12, -60]);
 
   storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ ...stored, P1: 99 }));
-  assert.equal(readLevels(storage).P1, 6);
+  assert.equal(readLevels(storage).P1, 12);
 });
 
 test("storeLevels reports false, without throwing, when there is no storage or it refuses", () => {

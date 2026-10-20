@@ -19,21 +19,28 @@ import { totalBeats } from "../core/meter.js";
 import { arrangementToMidi } from "../core/midi-export.js";
 import { configRecord, defaultSettings, runId, validateSettings } from "../core/settings.js";
 import { matchLoudness } from "../audio/loudness.js";
-import { leadSheetVoices, midiExcerptVoices, renderVoices } from "../audio/plain-synth.js";
+import { leadSheetVoices, midiExcerptVoices, renderVoices, trackPreview } from "../audio/plain-synth.js";
 import { createPlayer } from "../audio/player.js";
-import { SOUND_PACKS, renderPack } from "../audio/sound-packs.js";
-import { createCatalogPanel } from "./catalog-panel.js";
+import { SOUND_PACKS, renderPackStems } from "../audio/sound-packs.js";
+import { matchMixLoudness, mixStems, readLevels, storeLevels } from "../audio/mixer.js";
+import { encodeWav } from "../audio/wav.js";
 import { createChannelView } from "./channel-view.js";
 import { createDownloads } from "./downloads.js";
 import { createEvolutionView } from "./evolution-view.js";
-import { buildExamples } from "./examples.js";
-import { createInputPanel } from "./input-panel.js";
+import { createInputPanel, loadAbcjs } from "./input-panel.js";
+import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
+import { readLeadSheetAbc } from "../core/abc-reader.js";
+import { createMixerPanel } from "./mixer-panel.js";
 import { createPlanGrid } from "./plan-grid.js";
 import { addRun } from "./run-list.js";
 import { renderScores } from "./scores-table.js";
 import { changedSettings, valueAt } from "./settings-form.js";
 import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
+import { setUpPageTabs } from "./tabs.js";
+import { createSongShelf } from "./song-shelf.js";
+import { displayTitle, externalEntry, loadCatalog, openEntry, serverUrl } from "../core/sources.js";
+import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
 /** @typedef {import("../core/settings.js").Settings} Settings */
@@ -41,10 +48,9 @@ import { createSettingsPanel, settingLabel, settingValueText } from "./settings-
 const $ = (/** @type {string} */ selector) =>
   /** @type {HTMLElement} */ (document.querySelector(selector));
 
-const [version, defaultConfig, sources] = await Promise.all([
+const [version, defaultConfig] = await Promise.all([
   fetchJson("version.json").catch(() => ({ commit: "dev" })),
   fetchJson("../configs/default.json"),
-  fetchJson("../data/sources.json"),
 ]);
 $("#app-version").textContent = version.commit === "dev" ? "dev" : version.commit.slice(0, 7);
 
@@ -81,12 +87,16 @@ const defaults = defaultSettings(defaultConfig);
 
 // --- Panels ---------------------------------------------------------------------------------
 
-setUpTabs($("#song"));
+const pageTabs = setUpPageTabs($("[data-page-tabs]"), {
+  // The figures are drawn only when the tab is open; a timeout lets the page finish wiring first.
+  onChange: (id) => {
+    if (id === "how") setTimeout(drawHowItWorks);
+  },
+});
 const inputPanel = createInputPanel(
-  { root: $("#song"), file: $("#panel-file"), examples: $("#panel-examples"), details: $("[data-song-details]") },
+  { root: $("#song"), file: $("[data-file-target]"), examples: $("[data-examples-target]"), details: $("[data-song-details]") },
   {
-  examples: buildExamples(sources),
-  onFileDropped: (name) => catalogPanel.claim(name),
+  examples: [],
   previewTrack: (index) => previewTrack(index),
   useTempo(bpm) {
     state.settings.tempo_bpm = bpm;
@@ -113,15 +123,121 @@ const inputPanel = createInputPanel(
     if (state.settings.tempo_bpm === null) settingsPanel.setFileTempo(loaded.leadSheet.tempoBpm);
     planGrid.setBars(loaded.leadSheet.bars);
     $("[data-run-song]").textContent =
-      `${loaded.leadSheet.title || loaded.input.name} · ${loaded.leadSheet.bars.length} bars`;
+      `${loaded.leadSheet.title || loaded.input.name} (${loaded.leadSheet.bars.length} bars)`;
     updateRunButtons();
+    if (pageTabs.current() === "how") drawHowItWorks();
   },
   },
 );
 
-const catalogPanel = createCatalogPanel($("#panel-catalog"), {
-  onFile: (file) => inputPanel.readFile(file),
+// --- Song catalog: one shelf of records, examples first (spec 005, story 3) ------------------
+
+const server = serverUrl(location);
+const shelf = createSongShelf($("[data-shelf]"), {
+  entries: [],
+  onArrange: async (entry) => {
+    if (await openCatalogEntry(entry)) startRun();
+  },
+  onPreview: async (entry) => {
+    if (await openCatalogEntry(entry)) playIntro();
+  },
 });
+loadCatalog(fetch, (entries) => shelf.setEntries(entries))
+  .then(({ entries }) => {
+    if (entries.length === 0) throw new Error("empty catalog");
+  })
+  .catch(() =>
+    songStatus("The catalog could not be loaded. You can still open your own MIDI or ABC file.", true),
+  );
+$("[data-open-file]").addEventListener("click", () => $("[data-file]").click());
+
+const searchBox = /** @type {HTMLInputElement} */ ($("[data-song-search]"));
+/** @type {ReturnType<typeof setTimeout> | undefined} */
+let searchTimer;
+searchBox.addEventListener("input", () => {
+  const query = searchBox.value;
+  shelf.setQuery(query);
+  clearTimeout(searchTimer);
+  if (query.trim().length >= 2) searchTimer = setTimeout(() => searchElsewhere(query), 450);
+});
+
+/**
+ * Search The Session (from the browser, its API allows it) and the song server's sites, and add
+ * what they find after the catalog's matches, if the query is still the same.
+ *
+ * @param {string} query
+ */
+async function searchElsewhere(query) {
+  const [session, others] = await Promise.allSettled([
+    fetch(sessionSearchUrl(query)).then((response) => (response.ok ? response.json() : Promise.reject())),
+    fetch(`${server}/search?q=${encodeURIComponent(query)}`).then((response) =>
+      response.ok ? response.json() : Promise.reject(),
+    ),
+  ]);
+  if (searchBox.value !== query) return;
+  const found = [
+    ...(session.status === "fulfilled" ? sessionSearchResults(session.value) : []),
+    ...(others.status === "fulfilled" ? others.value.results : []),
+  ].map(externalEntry);
+  shelf.setExternal(found);
+  if (others.status === "rejected") songStatus("Other sites cannot be searched right now; the catalog still can.");
+}
+
+/**
+ * Load a catalog song into the input panel, as if its file were dropped.
+ *
+ * @param {any} entry
+ * @returns {Promise<boolean>} true when the song was read
+ */
+async function openCatalogEntry(entry) {
+  songStatus(`Loading ${displayTitle(entry.t)}…`);
+  try {
+    const abcjs = entry.route?.thesession !== undefined ? await loadAbcjs() : undefined;
+    const song = await openEntry(entry, { fetchFn: fetch, server, abcjs });
+    if (song.kind === "link") {
+      window.open(song.url, "_blank", "noopener");
+      songStatus("");
+      return false;
+    }
+    const before = inputPanel.current();
+    const bytes = song.kind === "abc" ? new TextEncoder().encode(song.text) : song.bytes;
+    await inputPanel.readFile(new File([bytes], song.name), entry.facts?.overrides ?? {}, entry);
+    return inputPanel.current() !== before && inputPanel.current() !== null;
+  } catch (error) {
+    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
+    return false;
+  }
+}
+
+/**
+ * @param {string} text
+ * @param {boolean} [isError]
+ */
+function songStatus(text, isError = false) {
+  const status = $("[data-status]");
+  status.textContent = text;
+  status.classList.toggle("error", isError);
+}
+
+/** Play the first 8 bars of the loaded song as the input sounds (Preview on a record). */
+function playIntro() {
+  const loaded = inputPanel.current();
+  if (!loaded) return;
+  const context = player.ensureContext();
+  player.pause();
+  previewSource?.stop();
+  const voices = originalVoices(loaded, loaded.leadSheet);
+  const beats = Math.min(totalBeats(loaded.leadSheet.bars.slice(0, 8)), totalBeats(loaded.leadSheet.bars));
+  const rendered = renderVoices(voices, loaded.leadSheet.tempoBpm, context.sampleRate, beats);
+  const samples = matchLoudness(rendered, rendered, context.sampleRate).a;
+  const buffer = context.createBuffer(1, samples.length, context.sampleRate);
+  buffer.copyToChannel(samples, 0);
+  const source = context.createBufferSource();
+  source.buffer = buffer;
+  source.connect(context.destination);
+  source.start();
+  previewSource = source;
+}
 
 const settingsPanel = createSettingsPanel($("#settings"), {
   defaults,
@@ -185,6 +301,7 @@ $("#result").insertAdjacentHTML(
      <span class="mono time" data-time>0:00 / 0:00</span>
    </div>
    <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
+   <div class="mixer" data-mixer></div>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
    <div data-channel-view></div>
    <p class="caption">Each channel is a line in its color, revealed as it plays: P1 melody (blue),
@@ -196,6 +313,50 @@ $("#result").insertAdjacentHTML(
    <div data-runs></div>`,
 );
 const player = createPlayer();
+
+/** Local storage when the browser allows it; without it the levels last for this visit only. */
+const levelStorage = (() => {
+  try {
+    return localStorage;
+  } catch {
+    return null;
+  }
+})();
+/** @type {ReturnType<typeof setTimeout> | undefined} */
+let wavTimer;
+const mixerPanel = createMixerPanel($("[data-mixer]"), {
+  levels: readLevels(levelStorage),
+  onChange(levels) {
+    player.setLevels(levels);
+    storeLevels(levelStorage, levels);
+    // The WAV follows the mix; rebuilding it on every slider step would stall the slider.
+    clearTimeout(wavTimer);
+    wavTimer = setTimeout(() => {
+      const run = state.runs.find((entry) => entry.id === state.currentRunId);
+      if (run?.stems && state.phase !== "evolving") downloads.set(withWav(run.files, run.stems, run.sampleRate));
+    }, 400);
+  },
+});
+player.setLevels(mixerPanel.get());
+
+/**
+ * The download list with the WAV entry made from the stems at the mixer's current levels; the
+ * entry is left out while every channel is muted, since the file would be silence.
+ *
+ * @param {Array<{name: string, label: string, hint: string, blob?: Blob, wav?: boolean}>} files
+ * @param {Record<string, Float32Array>} stems
+ * @param {number} sampleRate
+ */
+function withWav(files, stems, sampleRate) {
+  const levels = mixerPanel.get();
+  const silent = Object.values(levels.muted).every(Boolean);
+  return files.flatMap((file) => {
+    if (!file.wav) return [file];
+    if (silent) return [];
+    const bytes = encodeWav(mixStems(/** @type {any} */ (stems), levels), sampleRate);
+    return [{ ...file, blob: new Blob([bytes], { type: "audio/wav" }) }];
+  });
+}
 const downloads = createDownloads($("[data-downloads]"));
 const channelView = createChannelView($("[data-channel-view]"));
 /** @type {{arrangement: any, original: any}} */
@@ -257,8 +418,7 @@ async function startRun() {
   downloads.clear();
   setResultStatus("Evolving…");
   updateRunButtons();
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  $("#evolution").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  pageTabs.show("evolution");
   worker.postMessage({
     type: "run",
     runId: id,
@@ -304,11 +464,10 @@ async function finishRun(message) {
   const durationBeats = totalBeats(leadSheet.bars);
   const voices = originalVoices(input, leadSheet);
   const originalRaw = renderVoices(voices, leadSheet.tempoBpm, context.sampleRate, durationBeats);
-  const matched = matchLoudness(renderPack(state.soundPack, arrangement, context.sampleRate), originalRaw, context.sampleRate);
-  const samples = matched.a;
-  const originalSamples = matched.b;
+  const stems = renderPackStems(state.soundPack, arrangement, context.sampleRate);
+  const { busScale, original: originalSamples } = matchMixLoudness(stems, originalRaw, context.sampleRate);
   scenes = buildScenes(arrangement, voices, leadSheet.tempoBpm);
-  player.load({ arrangement: samples, original: originalSamples }, context.sampleRate);
+  player.load({ arrangement: stems, original: originalSamples }, context.sampleRate, { busScale });
   const record = configRecord({
     settings,
     inputName: input.input.name,
@@ -342,6 +501,12 @@ async function finishRun(message) {
       blob: new Blob([`${JSON.stringify(record, null, 2)}\n`], { type: "application/json" }),
     },
     {
+      name: `${id}.wav`,
+      label: "Audio (WAV)",
+      hint: "The arrangement as you hear it: this sound pack and these channel levels",
+      wav: true,
+    },
+    {
       name: `${id}.abc`,
       label: "Lead sheet",
       hint: "The lead sheet this run arranged, in ABC",
@@ -350,7 +515,7 @@ async function finishRun(message) {
       }),
     },
   ];
-  downloads.set(downloadFiles);
+  downloads.set(withWav(downloadFiles, stems, context.sampleRate));
   state.runs = addRun(state.runs, {
     id,
     settings,
@@ -358,7 +523,8 @@ async function finishRun(message) {
     message,
     arrangement,
     leadSheet,
-    samples,
+    stems,
+    busScale,
     originalSamples,
     originalRaw,
     soundPack: state.soundPack,
@@ -374,6 +540,42 @@ async function finishRun(message) {
     `Best fitness ${message.bestFitness.toFixed(4)} after ${message.generations} generations.`,
   );
   updateRunButtons();
+  pageTabs.show("result");
+}
+
+/** @type {Promise<import("../core/leadsheet.js").LeadSheet> | null} */
+let korobeiniki = null;
+/** @type {string} */
+let howDrawn = "";
+
+/**
+ * Draw How it works with the song on screen: the latest run's lead sheet and best plan when it
+ * belongs to the loaded song, else the loaded song (or Korobeiniki) with the best random plan a
+ * run would start from.
+ */
+async function drawHowItWorks() {
+  const container = $("[data-how]");
+  try {
+    const run = state.runs.find((entry) => entry.id === state.currentRunId) ?? state.runs[0];
+    const settings = validateSettings(state.settings).length === 0 ? state.settings : defaults;
+    let input;
+    if (run && (!state.input || run.leadSheet === state.input.leadSheet)) {
+      input = { leadSheet: run.leadSheet, plan: run.message.bestPlan, settings: run.settings };
+    } else {
+      korobeiniki ??= (async () =>
+        readLeadSheetAbc(await loadAbcjs(), await (await fetch("../data/leadsheets/korobeiniki.abc")).text(), {
+          phraseLength: settings.phrase_length,
+          roleMap: settings.role_map,
+        }))();
+      input = { leadSheet: state.input?.leadSheet ?? (await korobeiniki), plan: null, settings };
+    }
+    const key = `${run?.id ?? ""}|${state.input?.input.sha256 ?? "korobeiniki"}|${JSON.stringify(input.settings)}`;
+    if (key === howDrawn) return;
+    renderHowItWorks(container, howItWorksSteps(input));
+    howDrawn = key;
+  } catch (error) {
+    container.textContent = `The figures could not be drawn: ${/** @type {Error} */ (error).message ?? error}`;
+  }
 }
 
 /**
@@ -399,8 +601,8 @@ function showRun(id) {
   renderScores($("[data-scores]"), run.message.scores, run.message.bestFitness, run.settings.weights);
   scenes = run.scenes;
   voiceRun(run);
-  player.load({ arrangement: run.samples, original: run.originalSamples }, run.sampleRate);
-  downloads.set(run.files);
+  player.load({ arrangement: run.stems, original: run.originalSamples }, run.sampleRate, { busScale: run.busScale });
+  downloads.set(withWav(run.files, run.stems, run.sampleRate));
   runsView.render(state.runs, id);
   setResultStatus(`Run ${id}: best fitness ${run.message.bestFitness.toFixed(4)}.`);
 }
@@ -408,8 +610,8 @@ function showRun(id) {
 // --- Result panel ---------------------------------------------------------------------------
 
 playButton.addEventListener("click", () => {
-  trackPreview?.stop();
-  trackPreview = null;
+  previewSource?.stop();
+  previewSource = null;
   player.ensureContext();
   player.toggle();
 });
@@ -429,7 +631,8 @@ soundPackSelect.addEventListener("change", () => {
   if (!run || state.phase === "evolving") return;
   voiceRun(run);
   // load keeps the position and the play state, so the music goes on in the new sound.
-  player.load({ arrangement: run.samples, original: run.originalSamples }, run.sampleRate);
+  player.load({ arrangement: run.stems, original: run.originalSamples }, run.sampleRate, { busScale: run.busScale });
+  downloads.set(withWav(run.files, run.stems, run.sampleRate));
 });
 for (const button of document.querySelectorAll("[data-version]")) {
   button.addEventListener("click", () =>
@@ -469,32 +672,29 @@ document.addEventListener("keydown", (event) => {
 });
 
 /** @type {AudioBufferSourceNode | null} */
-let trackPreview = null;
+let previewSource = null;
 
 /**
- * Play the first 8 bars of one track of the loaded MIDI song alone, to help choose the melody.
+ * Play one track of the loaded MIDI song alone, to help choose the melody (spec 005, story 2):
+ * from the bar where it first plays, jumping over its long silences, for 8 playing bars.
  *
  * @param {number} index track index, as listed in the input panel
+ * @returns {string} what the preview plays, for the input panel's status line
  */
 function previewTrack(index) {
   const loaded = inputPanel.current();
-  if (!loaded?.song || !loaded.leadSheet.sourceGrid) return;
-  const context = player.ensureContext();
-  player.pause();
-  trackPreview?.stop();
-  const bars = loaded.midi.bars ?? [0, loaded.leadSheet.bars.length];
-  const voices = midiExcerptVoices(loaded.song, {
+  if (!loaded?.song || !loaded.leadSheet.sourceGrid) return "";
+  const preview = trackPreview(loaded.song, {
     melodyTrack: index,
     sourceGrid: /** @type {[number, number]} */ (loaded.leadSheet.sourceGrid),
-    bars: /** @type {[number, number]} */ (bars),
+    bars: /** @type {[number, number]} */ (loaded.midi.bars ?? [0, loaded.leadSheet.bars.length]),
   });
-  const beats = Math.min(32, totalBeats(loaded.leadSheet.bars));
-  const rendered = renderVoices(
-    { melody: voices.melody, others: [], drums: [] },
-    loaded.leadSheet.tempoBpm,
-    context.sampleRate,
-    beats,
-  );
+  previewSource?.stop();
+  previewSource = null;
+  if (preview === null) return `Track ${index} has no notes to play.`;
+  const context = player.ensureContext();
+  player.pause();
+  const rendered = renderVoices(preview.voices, loaded.leadSheet.tempoBpm, context.sampleRate, preview.durationBeats);
   const samples = matchLoudness(rendered, rendered, context.sampleRate).a;
   const buffer = context.createBuffer(1, samples.length, context.sampleRate);
   buffer.copyToChannel(samples, 0);
@@ -502,7 +702,10 @@ function previewTrack(index) {
   source.buffer = buffer;
   source.connect(context.destination);
   source.start();
-  trackPreview = source;
+  previewSource = source;
+  return preview.inExcerpt
+    ? `Playing track ${index} from bar ${preview.firstBar}, where it comes in.`
+    : `Track ${index} plays nothing in the excerpt; playing it from bar ${preview.firstBar}, where it first plays in the song.`;
 }
 
 /**
@@ -613,34 +816,6 @@ function toggleSettings(open) {
 }
 
 /**
- * Tabs of the Song card: arrow keys move between tabs, as in the WAI-ARIA tabs pattern.
- *
- * @param {HTMLElement} card
- */
-function setUpTabs(card) {
-  const tabs = /** @type {HTMLButtonElement[]} */ ([...card.querySelectorAll('[role="tab"]')]);
-  const select = (/** @type {HTMLButtonElement} */ tab) => {
-    for (const other of tabs) {
-      const selected = other === tab;
-      other.setAttribute("aria-selected", String(selected));
-      other.tabIndex = selected ? 0 : -1;
-      const panel = /** @type {HTMLElement} */ (document.getElementById(/** @type {string} */ (other.getAttribute("aria-controls"))));
-      panel.hidden = !selected;
-    }
-  };
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => select(tab));
-    tab.addEventListener("keydown", (event) => {
-      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-      if (!step) return;
-      const next = tabs[(index + step + tabs.length) % tabs.length];
-      select(next);
-      next.focus();
-    });
-  });
-}
-
-/**
  * @param {string} text
  * @param {boolean} [isError]
  */
@@ -709,8 +884,9 @@ function showSoundPack() {
  */
 function voiceRun(run) {
   if (run.soundPack === state.soundPack) return;
-  const matched = matchLoudness(renderPack(state.soundPack, run.arrangement, run.sampleRate), run.originalRaw, run.sampleRate);
-  run.samples = matched.a;
-  run.originalSamples = matched.b;
+  run.stems = renderPackStems(state.soundPack, run.arrangement, run.sampleRate);
+  const matched = matchMixLoudness(run.stems, run.originalRaw, run.sampleRate);
+  run.busScale = matched.busScale;
+  run.originalSamples = matched.original;
   run.soundPack = state.soundPack;
 }

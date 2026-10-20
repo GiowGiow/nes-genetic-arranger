@@ -34,9 +34,14 @@ test("every module, style, font and vendor script of the app is precached", () =
     "./",
     "index.html",
     "style.css",
+    "catalog.css",
+    "mixer.css",
+    "how.css",
     "version.json",
     ...filesUnder(join(appDir, "src")),
     "vendor/abcjs/abcjs-basic-min.js",
+    "vendor/three/three.module.min.js",
+    "vendor/three/three.core.js",
     ...filesUnder(join(appDir, "vendor/fonts")).filter((path) => path.endsWith(".woff2")),
   ].sort();
   const listed = precacheList().filter((path) => !path.startsWith("../")).sort();

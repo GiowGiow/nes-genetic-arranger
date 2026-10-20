@@ -1,0 +1,108 @@
+/* How it works (spec 005, FR-027): six steps, one card each, with a small SVG figure.
+   It uses the page's tokens (style.css): glass and line for surfaces, text and muted for words,
+   and the four channel colors for anything that belongs to a channel. A class c-p1, c-p2, c-tr,
+   c-no (or c-none) sets --c, and every colored mark of a figure paints with var(--c). */
+
+.c-p1 { --c: var(--p1); }
+.c-p2 { --c: var(--p2); }
+.c-tr { --c: var(--tr); }
+.c-no { --c: var(--no); }
+.c-none { --c: var(--muted); }
+
+/* The steps: a responsive grid of cards, one column on a phone. */
+.how-steps {
+  list-style: none; margin: 4px 0 0; padding: 0;
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+.how-step {
+  display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(11, 14, 23, .35);
+}
+.how-step h3 { display: flex; align-items: baseline; gap: 10px; margin: 0; font-size: 1.02rem; line-height: 1.3; letter-spacing: -.005em; }
+.how-number { font-family: var(--mono); font-weight: 700; color: var(--p1); }
+.how-step p { margin: 0; color: #c9cfdb; font-size: .93rem; line-height: 1.55; }
+
+/* The figure sits at the bottom of its card, so the figures of one row line up. */
+.how-figure {
+  margin: auto 0 0; padding: 10px; min-width: 0;
+  border-radius: 12px; border: 1px solid var(--line); background: rgba(0, 0, 0, .25);
+}
+.how-figure figcaption { margin-top: 8px; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+.how-svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* SVG text: sizes are in figure units (300 per figure width), about pixels on a phone. */
+.how-svg text { font: 500 11px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: var(--muted); }
+.how-svg .how-axis { font-size: 9.5px; }
+.how-svg .small { font-size: 8.5px; }
+.how-svg .how-end { text-anchor: end; }
+.how-svg .how-middle { text-anchor: middle; }
+.how-svg .how-accent { fill: var(--no); font-weight: 600; }
+.how-svg .how-axis.colored { fill: var(--c); font-family: var(--mono); }
+
+/* Piano rolls (lead sheet, realization). */
+.how-roll { fill: rgba(255, 255, 255, .025); stroke: var(--line); }
+.how-beatline { stroke: rgba(255, 255, 255, .05); }
+.how-barline { stroke: var(--line); stroke-width: 1.2; }
+.how-lane-line { stroke: var(--line); }
+.how-note { fill: var(--c); }
+.how-svg .how-chord { fill: var(--text); font-size: 11.5px; font-weight: 700; }
+.how-svg .how-part { fill: var(--no); font-size: 9.5px; font-weight: 600; }
+.how-bracket { fill: none; stroke: var(--muted); stroke-width: 1; }
+
+/* Gene cells (genome, evolution): the channel color, brighter for busier values. */
+.how-svg .how-row-label { fill: var(--c); font: 700 10.5px var(--mono); }
+.how-svg .how-row-label.small { font-size: 9px; }
+.how-cell { fill: var(--c); }
+.how-svg .how-cell-value { fill: var(--text); font: 700 11px var(--mono); text-anchor: middle; }
+.how-svg .how-cell-value.on-light { fill: #0B0E17; }
+.how-evolution .how-svg .how-cell-value { font-size: 9px; }
+.how-phrase-line { stroke: var(--muted); stroke-dasharray: 2 2; }
+.how-svg .how-strip-title { fill: var(--text); font-size: 10.5px; font-weight: 600; }
+.how-mutated .how-cell { stroke: var(--text); stroke-width: 2; }
+.how-cut { stroke: var(--no); stroke-width: 1.5; stroke-dasharray: 3 3; }
+
+/* Score bars (fitness), as in the Result tab's scores table. */
+.how-svg .how-label { fill: var(--text); }
+.how-svg .how-label.strong { font-weight: 700; }
+.how-track { fill: rgba(255, 255, 255, .06); }
+.how-track.none { fill: none; stroke: var(--line); stroke-dasharray: 2 2; }
+.how-score.criterion { fill: var(--muted); }
+.how-score.total { fill: var(--text); }
+.how-svg .how-value-text { fill: var(--text); font: 600 10.5px var(--mono); }
+.how-svg .how-value-text.muted,
+.how-svg .how-value-text.none { fill: var(--muted); }
+.how-divider { stroke: var(--line); }
+
+/* Waves (sound). */
+.how-midline { stroke: var(--line); stroke-dasharray: 2 3; }
+.how-wave { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linejoin: round; }
+
+/* Legends: each label next to its values, never a row of pills. */
+.how-legend { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; font-size: .8rem; color: var(--muted); }
+.how-legend > div { display: grid; grid-template-columns: 3.6em minmax(0, 1fr); gap: 8px; align-items: baseline; }
+.how-legend dt { color: var(--c); font-weight: 700; }
+.how-legend dd { margin: 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.how-value b { color: var(--text); font-weight: 600; }
+.how-value.off { opacity: .5; text-decoration: line-through; }
+.how-channels { grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)); gap: 4px 12px; }
+.how-channels li { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.how-channels b { color: var(--c); }
+.how-swatch { flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--c); align-self: center; }
+
+/* Closing paragraph and links. */
+.how-closing { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.how-closing p { margin: 0 0 10px; max-width: 75ch; color: #c9cfdb; }
+.how-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.how-links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.how-links a { font-weight: 600; }
+.how-links .hint { font-size: .88rem; }
+
+/* On a phone the steps drop their own frame, so the figures keep the card's full width. */
+@media (max-width: 640px) {
+  .how-steps { gap: 0; }
+  .how-step { padding: 18px 0; border: 0; border-radius: 0; background: none; }
+  .how-step + .how-step { border-top: 1px solid var(--line); }
+  .how-step:first-child { padding-top: 4px; }
+  .how-figure { padding: 8px; }
+}

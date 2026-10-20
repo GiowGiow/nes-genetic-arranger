@@ -7,44 +7,50 @@
 <meta name="description" content="Arrange your own ABC or MIDI song for the NES sound chip with a genetic algorithm that runs in your browser. Your file never leaves your device.">
 <meta name="theme-color" content="#0B0E17">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="catalog.css">
+<link rel="stylesheet" href="mixer.css">
+<link rel="stylesheet" href="how.css">
+<script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
 <script type="module" src="src/ui/main.js"></script>
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"></div>
 <main>
   <header class="hero">
-    <span class="eyebrow"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Chiptune GA Arranger · runs in your browser</span>
+    <span class="eyebrow"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Runs in your browser</span>
     <h1>NES <span class="gradient">Arranger</span></h1>
     <p class="lead">Give it a lead sheet or a MIDI song. A genetic algorithm evolves an arrangement for
     the four channels of the NES sound chip, and you hear it next to the original. Your file stays on
     this device.</p>
-    <div class="legend" aria-label="Channel colors">
-      <span class="chip"><span class="dot" style="--c: var(--p1)"></span>P1 pulse · melody</span>
-      <span class="chip"><span class="dot" style="--c: var(--p2)"></span>P2 pulse · harmony</span>
-      <span class="chip"><span class="dot" style="--c: var(--tr)"></span>TR triangle · bass</span>
-      <span class="chip"><span class="dot" style="--c: var(--no)"></span>NO noise · drums</span>
-    </div>
-    <nav class="steps" aria-label="Sections">
-      <a href="#song">Song</a>
-      <a href="#evolution">Evolution</a>
-      <a href="#result">Result</a>
-      <a href="#about">About</a>
+    <dl class="channels" aria-label="The four channels of the NES sound chip">
+      <div style="--c: var(--p1)"><dt>P1</dt><dd>Pulse</dd><dd class="role">Melody</dd></div>
+      <div style="--c: var(--p2)"><dt>P2</dt><dd>Pulse</dd><dd class="role">Harmony</dd></div>
+      <div style="--c: var(--tr)"><dt>TR</dt><dd>Triangle</dd><dd class="role">Bass</dd></div>
+      <div style="--c: var(--no)"><dt>NO</dt><dd>Noise</dd><dd class="role">Drums</dd></div>
+    </dl>
+    <nav class="page-tabs" role="tablist" aria-label="Sections" data-page-tabs>
+      <button type="button" role="tab" data-tab="song" aria-controls="song">Song</button>
+      <button type="button" role="tab" data-tab="evolution" aria-controls="evolution">Evolution</button>
+      <button type="button" role="tab" data-tab="result" aria-controls="result">Result</button>
+      <button type="button" role="tab" data-tab="how" aria-controls="how">How it works</button>
     </nav>
   </header>
 
   <noscript><p class="card notice">The arranger runs in JavaScript. Turn it on to arrange a song.</p></noscript>
 
   <div class="panels">
-    <section id="song" class="card" aria-labelledby="song-title">
-      <h2 id="song-title">Song</h2>
-      <div class="tabs" role="tablist" aria-label="Where the song comes from">
-        <button type="button" role="tab" id="tab-file" aria-controls="panel-file" aria-selected="true">Your file</button>
-        <button type="button" role="tab" id="tab-examples" aria-controls="panel-examples" aria-selected="false" tabindex="-1">Examples</button>
-        <button type="button" role="tab" id="tab-catalog" aria-controls="panel-catalog" aria-selected="false" tabindex="-1">MPB catalog</button>
+    <section id="song" class="card has-shelf" aria-labelledby="song-title">
+      <div class="song-head">
+        <h2 id="song-title">Song</h2>
+        <div class="song-tools">
+          <input class="song-search" type="search" placeholder="Search songs" aria-label="Search songs" data-song-search>
+          <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
+        </div>
       </div>
-      <div class="tab-panel" role="tabpanel" id="panel-file" aria-labelledby="tab-file"></div>
-      <div class="tab-panel" role="tabpanel" id="panel-examples" aria-labelledby="tab-examples" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-catalog" aria-labelledby="tab-catalog" hidden></div>
+      <div class="shelf-root" data-shelf></div>
+      <p class="drop-note">You can also drop a MIDI or ABC file anywhere on this card. It stays on this device.</p>
+      <div hidden data-file-target></div>
+      <div hidden data-examples-target></div>
       <div class="song-details" data-song-details></div>
     </section>
 
@@ -91,37 +97,24 @@
       <p class="placeholder">Play the arrangement on the NES chip, compare it with the original, and download the MIDI, the settings and the lead sheet.</p>
     </section>
 
-    <section id="about" class="card wide" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+    <section id="how" class="card wide" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <div class="how" data-how></div>
       <div class="about">
-        <p>The arranger is the browser version of the project's command line
-        (<a href="https://github.com/GiowGiow/nes-genetic-arranger">nes-genetic-arranger</a>, DCC831 TP1,
-        UFMG). It reads your song into a <em>lead sheet</em>: the melody, the chord of every moment and the
-        parts (verse, chorus). A genetic algorithm then searches for an <em>arrangement plan</em>: four genes
-        per bar, the texture of the second pulse channel (P2), the bass texture of the triangle (TR), the drum
-        pattern of the noise channel (NO) and the octave of the melody (P1). Seven music-theory criteria score
-        each plan, roulette selection with elitism picks parents, one-point crossover at bar lines and
-        per-gene mutation make children, and the run stops when the best plan stops improving.</p>
         <p><strong>Same seed, same arrangement.</strong> The app has its own seeded random generator, so the same
         song, seed and settings give the same arrangement in any browser. The command line uses numpy's
         generator: the same seed there gives a different arrangement, equally valid. The algorithm, the
         settings and the fitness are the same, and tests check that both score a plan identically.</p>
-        <p><strong>Your files stay here.</strong> Everything runs in this page: nothing you drop is uploaded,
-        and the app fetches only its own files.</p>
-        <p><strong>Credits.</strong> The MPB catalog search lists songs from
-        <a href="https://www.beakauffmann.com/">Beatriz Kauffmann's Web Site</a>, a non-commercial site of MIDI
-        sequences of Brazilian popular music; the app keeps only titles, names and links, and the files stay on
-        that site. ABC files are parsed with <a href="https://github.com/paulrosen/abcjs">abcjs</a> (MIT). Fonts:
-        Inter and JetBrains Mono (SIL Open Font License).</p>
+        <p><strong>Your files stay here.</strong> A file you open or drop never leaves this device. To find
+        catalog songs, the page asks the project's song server only for the song's identifier or your search
+        words.</p>
       </div>
     </section>
   </div>
 
   <footer>
     <span>Version <span id="app-version" class="mono">dev</span></span>
-    <span class="sep" aria-hidden="true">·</span>
     <a href="../listen/">Listening page</a>
-    <span class="sep" aria-hidden="true">·</span>
     <a href="https://github.com/GiowGiow/nes-genetic-arranger">Code and method</a>
   </footer>
 </main>

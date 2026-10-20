@@ -1,0 +1,13 @@
+{
+  "source": "nottingham",
+  "name": "Nottingham",
+  "home": "https://example.org/nottingham/",
+  "license": "synthetic test data",
+  "credit": "Invented for the tests of arranger/src/core/sources.js.",
+  "note": "Synthetic: titles, names and facts are made up.",
+  "generated": "written by hand for arranger/tests/sources.test.js",
+  "entries": [
+    {"id":"jigs-3","source":"nottingham","t":"The Invented Jig","c":"Trad.","license":"GPL-3.0","seed":1302766251,"route":{"abc":"data/catalog/abc/nottingham/jigs.abc","tune":2}},
+    {"id":"reels-1","source":"nottingham","t":"Another Made-up Reel","c":"Trad.","license":"GPL-3.0","seed":1104545794,"route":{"abc":"data/catalog/abc/nottingham/reels.abc","tune":0}}
+  ]
+}

@@ -13,16 +13,22 @@
 //   the stem as the pack made it (for the NES chip, with the chip's own mixer gains, so the
 //   offsets sit on top of `CHANNEL_GAINS`). -6 dB halves the amplitude, and +6 dB doubles it.
 //   The ear hears loudness as ratios, so each 6 dB step sounds like the same change, whether
-//   the channel is loud or soft. The scale ends at -60 dB, which counts as silence, and at +6 dB.
-// - The default levels are measured on the 8 examples (research R1,
-//   `tests/mixer-defaults.test.js`): P2 sits 1 dB under P1, and TR and NO 3 dB under it, in
-//   gated loudness (`loudness.js`). With the chip's gains alone the short drum hits measure
-//   about 18 dB under the melody, so the drums get the largest lift. Only the differences
-//   between channels matter, so the defaults are moved down together until the loudest one,
-//   the drums, sits at MAX_DB.
+//   the channel is loud or soft. The scale ends at -60 dB, which counts as silence, and at
+//   +12 dB, four times the amplitude, so every channel can still be boosted from its default.
+// - The default levels are perceptual: the melody stays at the chip's balance, the harmony
+//   1 dB under it, the bass 4 dB over it and the drums 10 dB over it. The chip's balance is
+//   the NES's own mixer, but a listener on laptop speakers hears the bass and the drums as too
+//   quiet. The triangle bass sits at 41 to 155 Hz, which small speakers barely reproduce and
+//   the ear hears weakly, and the drums are short hits that measure 17 to 19 dB under the
+//   melody. A loudness meter without a frequency weighting (gated RMS, `loudness.js`) cannot
+//   see the first problem: it already puts the bass level with the melody. So the defaults are
+//   chosen by ear, and `tests/mixer-defaults.test.js` measures the 8 examples to keep them in
+//   bounds (research R1).
 // - The page plays the stems through four Web Audio gains, so a change is heard at once, with
-//   nothing rendered again. The bus adds the channels, and a limiter after it stops a +6 dB boost
-//   on every channel from clipping (`player.js`).
+//   nothing rendered again. The bus adds the channels, and a limiter after it stops a boost on
+//   every channel from clipping (`player.js`). The bus gain comes from `matchMixLoudness`: the
+//   mix at the default levels is matched in loudness with the original once, so the visitor's
+//   changes move away from a fair A/B.
 // - The WAV download mixes the same stems here, offline (`mixStems`), and scales the result to
 //   peak at -3 dBFS, the headroom of every render, so it needs no limiter.
 //
@@ -31,6 +37,7 @@
 // parameter, so the tests pass a fake one.
 
 import { scaleToPeak } from "./chip-synth.js";
+import { matchLoudness } from "./loudness.js";
 
 /** @typedef {import("./chip-synth.js").ChannelName} ChannelName */
 
@@ -66,11 +73,12 @@ export const CHANNELS = Object.freeze(/** @type {ChannelName[]} */ (["P1", "P2",
 export const MIN_DB = -60;
 
 /**
- * The highest level, in dB: twice the amplitude of the pack's own balance.
+ * The highest level, in dB: four times the amplitude of the pack's own balance, so that even the
+ * drums, at +10 dB by default, can go higher.
  * @example
- * dbToGain(MAX_DB); // ≈ 1.995
+ * dbToGain(MAX_DB); // ≈ 3.981
  */
-export const MAX_DB = 6;
+export const MAX_DB = 12;
 
 /**
  * The local-storage key of the levels.
@@ -83,18 +91,22 @@ export const MIX_STORAGE_KEY = "nes-arranger-mix";
 const MIX_VERSION = 1;
 
 /**
- * The default levels, measured on the 8 examples (research R1, `tests/mixer-defaults.test.js`):
- * relative to the chip's balance, the drums go up 15 dB and the bass down 4 dB against the
- * melody, then all four move down 9 dB so that the drums stay within MAX_DB.
+ * The default levels, chosen by ear on top of the chip's balance (research R1): the melody as
+ * the chip has it, the harmony 1 dB under it, the bass 4 dB and the drums 10 dB over it. The
+ * low triangle bass and the short drum hits sound much softer than the pulses on small
+ * speakers, more than an unweighted loudness measure shows. `tests/mixer-defaults.test.js`
+ * checks on the 8 examples that the bass then sits from 2 dB under to 7 dB over the melody, in
+ * gated loudness, and that the drums come at least 8 dB closer to it.
  * @type {Readonly<Levels>}
  * @example
- * DEFAULT_LEVELS.NO - DEFAULT_LEVELS.P1; // 15: the drums, 15 dB over the melody's level
+ * DEFAULT_LEVELS.TR; // 4: the bass, 4 dB over the chip's balance
+ * DEFAULT_LEVELS.NO; // 10: the drums, about three times their chip amplitude
  */
 export const DEFAULT_LEVELS = Object.freeze({
-  P1: -9,
-  P2: -5.5,
-  TR: -13,
-  NO: 6,
+  P1: 0,
+  P2: -1,
+  TR: 4,
+  NO: 10,
   muted: Object.freeze({ P1: false, P2: false, TR: false, NO: false }),
 });
 
@@ -131,8 +143,8 @@ export function channelGains(levels, muted = levels.muted) {
  * @param {Partial<Levels> | null | undefined} levels anything, for example parsed from storage
  * @returns {Levels} a new object; the input is not changed
  * @example
- * clampLevels({ P1: 12, P2: -100, muted: { NO: true } });
- * // { P1: 6, P2: -60, TR: DEFAULT_LEVELS.TR, NO: DEFAULT_LEVELS.NO,
+ * clampLevels({ P1: 20, P2: -100, muted: { NO: true } });
+ * // { P1: 12, P2: -60, TR: DEFAULT_LEVELS.TR, NO: DEFAULT_LEVELS.NO,
  * //   muted: { P1: false, P2: false, TR: false, NO: true } }
  */
 export function clampLevels(levels) {
@@ -164,13 +176,57 @@ export function clampLevels(levels) {
  * mixStems(stems, { P1: 0, P2: -6.02, TR: 0, NO: 0 }); // [0.7079, -0.4248]: [0.625, -0.375] scaled
  */
 export function mixStems(stems, levels, options = {}) {
-  const gains = channelGains(levels, options.muted ?? levels.muted);
+  return scaleToPeak(sumStems(stems, channelGains(levels, options.muted ?? levels.muted)));
+}
+
+/**
+ * Match the live mix with the original in loudness, once per render (research R2).
+ *
+ * The player adds the stems, each times its channel gain, on an arrangement bus. This finds the
+ * bus gain that brings that sum, at the given levels, to the loudness of the original
+ * (`matchLoudness`), and returns the original matched the same way. The levels are the
+ * defaults, so a fresh mix and the original sound equally loud, and the visitor's changes are
+ * relative to a fair A/B.
+ * @param {Record<ChannelName, ArrayLike<number>>} stems four stems of one length (`renderPackStems`)
+ * @param {Float32Array} original the original's render, on the same timeline
+ * @param {number} sampleRate samples per second of both
+ * @param {Omit<Levels, "muted"> & {muted?: Partial<Record<ChannelName, boolean>>}} [levels] the
+ *   levels of the mix to match (default DEFAULT_LEVELS)
+ * @returns {{busScale: number, original: Float32Array}} the bus gain (1 when the mix is silent,
+ *   since there is nothing to match) and the original, matched
+ * @example
+ * const { busScale, original } = matchMixLoudness(stems, originalRaw, 44100);
+ * player.load({ arrangement: stems, original }, 44100, { busScale });
+ */
+export function matchMixLoudness(stems, original, sampleRate, levels = DEFAULT_LEVELS) {
+  const mix = Float32Array.from(sumStems(stems, channelGains(levels)));
+  const matched = matchLoudness(mix, original, sampleRate);
+  const mixPeak = peakOf(mix);
+  return { busScale: mixPeak > 0 ? peakOf(matched.a) / mixPeak : 1, original: matched.b };
+}
+
+/**
+ * @param {Record<ChannelName, ArrayLike<number>>} stems
+ * @param {Record<ChannelName, number>} gains
+ * @returns {Float64Array} each stem times its gain, added
+ */
+function sumStems(stems, gains) {
   const { P1, P2, TR, NO } = stems;
   const mix = new Float64Array(P1.length);
   for (let i = 0; i < mix.length; i++) {
     mix[i] = gains.P1 * P1[i] + gains.P2 * P2[i] + gains.TR * TR[i] + gains.NO * NO[i];
   }
-  return scaleToPeak(mix);
+  return mix;
+}
+
+/**
+ * @param {ArrayLike<number>} samples
+ * @returns {number} the largest absolute sample
+ */
+function peakOf(samples) {
+  let peak = 0;
+  for (let i = 0; i < samples.length; i++) peak = Math.max(peak, Math.abs(samples[i]));
+  return peak;
 }
 
 /**

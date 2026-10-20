@@ -1,0 +1,14 @@
+{
+  "source": "examples",
+  "name": "Examples",
+  "home": "https://example.org/examples/",
+  "license": "synthetic test data",
+  "credit": "Invented for the tests of arranger/src/core/sources.js.",
+  "note": "Synthetic: titles, names and facts are made up.",
+  "generated": "written by hand for arranger/tests/sources.test.js",
+  "entries": [
+    {"id":"korobeiniki","source":"examples","t":"Korobeiniki (Tetris theme)","c":"Traditional (Russia)","license":"public-domain","seed":3006749828,"route":{"abc":"data/leadsheets/korobeiniki.abc","tune":0},"facts":{"key":"a minor","tempo_bpm":120,"meter":"4/4","n_bars":32}},
+    {"id":"ievan_polkka","source":"examples","t":"Ievan Polkka","c":"Traditional (Finland)","license":"public-domain","seed":2728807925,"route":{"abc":"data/leadsheets/ievan_polkka.abc","tune":0},"facts":{"key":"f# minor","tempo_bpm":120,"meter":"4/4","n_bars":32}},
+    {"id":"zebra_march","source":"examples","t":"Zebra March","c":"Invented Composer","license":"public-domain","seed":146810775,"route":{"abc":"data/leadsheets/zebra_march.abc","tune":0},"facts":{"key":"C major","tempo_bpm":120,"meter":"4/4","n_bars":32}}
+  ]
+}

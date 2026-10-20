@@ -1,0 +1,12 @@
+{
+  "source": "public-domain",
+  "name": "Public domain",
+  "home": "https://example.org/public-domain/",
+  "license": "synthetic test data",
+  "credit": "Invented for the tests of arranger/src/core/sources.js.",
+  "note": "Synthetic: titles, names and facts are made up.",
+  "generated": "written by hand for arranger/tests/sources.test.js",
+  "entries": [
+    {"id":"valsa-antiga","source":"public-domain","t":"VALSA ANTIGA","c":"Compositor Falecido","license":"public-domain","seed":3163898187,"route":{"abc":"data/catalog/abc/public-domain/valsa-antiga.abc","tune":0}}
+  ]
+}

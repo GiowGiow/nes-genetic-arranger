@@ -1,0 +1,12 @@
+{
+  "source": "pdmx",
+  "name": "PDMX",
+  "home": "https://example.org/pdmx/",
+  "license": "synthetic test data",
+  "credit": "Invented for the tests of arranger/src/core/sources.js.",
+  "note": "Synthetic: titles, names and facts are made up.",
+  "generated": "written by hand for arranger/tests/sources.test.js",
+  "entries": [
+    {"id":"a1b2c3","source":"pdmx","t":"Étude for Testing","c":"An Uploader","license":"CC0","seed":974427283,"route":{"abc":"data/catalog/abc/pdmx/a1b2c3.abc","tune":0}}
+  ]
+}

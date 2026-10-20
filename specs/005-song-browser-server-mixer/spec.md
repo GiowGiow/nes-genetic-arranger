@@ -4,7 +4,7 @@
 
 **Created**: 2026-10-20
 
-**Status**: Draft
+**Status**: In progress (design approved in previews, 2026-10-20)
 
 **Input**: User description (translated from Portuguese). The student asked for the following
 changes.
@@ -41,9 +41,10 @@ they hear as a WAV file.
 
 **Acceptance Scenarios**:
 
-1. **Given** default levels, **When** any example is arranged, **Then** the bass and the drums
-   are each no more than 4 dB below the melody, measured as gated loudness. Today the gap is far
-   larger.
+1. **Given** default levels, **When** any example is arranged, **Then** the bass and the
+   drums are lifted over the chip's balance: TR by 4 dB and NO by 10 dB. Measured as gated RMS,
+   TR sits 2 dB under to 7 dB over the melody, the drums gain at least 8 dB, and the student
+   hears the bass and the drums clearly.
 2. **Given** a playing arrangement, **When** a level changes, **Then** the change is heard within
    a fraction of a second, and the position and the play state are kept.
 3. **Given** any of the five packs, **Then** the four controls act on the matching parts of that
@@ -76,41 +77,52 @@ preview button of the melody track. The first note sounds within a second.
 
 ---
 
-### User Story 3 - Browse songs in a PS2 memory-card style browser (Priority: P1)
+### User Story 3 - Leaf through one catalog of vinyl records (Priority: P1)
 
-The Song card shows a 3D browser in the style of the PS2 "Browser → Memory Card" screen.
-- **First screen:** one memory card per source (Examples, MPB, Public domain, Open collections,
-  Search), plus an "insert disc" icon for the visitor's own file.
-- **Inside a card:** each song is a floating save icon, a low-poly vinyl record. The record's
-  label is a pixel-art sprite drawn from the song's data, so the same song always gets the same
-  sprite.
-- **Selecting a song:** the icon lifts and spins. A details panel shows title, composer, source,
-  license, bars, tempo and meter, with the actions Arrange, Preview and Song page.
+The Song tab shows the catalog as pages of floating vinyl records. The look takes after the PS2
+memory card screen (floating icons that bob, a selected icon that lifts, spins and glows), but
+no PS2 wording or memory cards appear.
+- **One catalog:** the 8 examples come first, then every other song in alphabetical order. The
+  catalog has no separate tabs per source, and the page never names the sites the songs come
+  from. Credits and licenses are in the README and the article, linked from How it works.
+- **Pages:** 15 records per page on a wide screen, 9 on a phone. ‹ and › buttons, the arrow
+  keys at the edges of a page, and PageUp and PageDown turn the pages.
+- **Each record:** the label is a pixel-art sprite drawn from the song's data, so the same song
+  always gets the same sprite. Label colors come from the four channel colors.
+- **The selected song:** a panel next to the records shows title, composer, key, tempo, meter
+  and bars, as labeled values. Its actions are Arrange and Preview. It has no link to the
+  source page.
+- **Your own file:** an "Open MIDI or ABC" button and the search box are always visible in the
+  Song card's header. Dropping a file anywhere on the card still loads it.
+- **Integration:** the 3D area has no box of its own. The records float over the Song card's
+  glass, and the card's soft glow in the channel colors covers the whole card.
 
 **Independent Test**:
-1. Open the app and enter the Examples card.
-2. Move to Korobeiniki with the arrow keys and press Enter.
-3. Choose Arrange: the song loads and the GA can start, as it does today.
-4. Do the same with a screen reader: the songs are announced as a list.
+1. Open the app: the first record is Korobeiniki.
+2. Choose Arrange: the song loads and the GA can start, as it does today.
+3. Turn to page 2 with ›, then come back with PageUp.
+4. Do the same with a screen reader: the songs on the page are announced as a list.
 5. Do the same with WebGL turned off: a 2D grid of the same sprites works the same way.
 
 **Acceptance Scenarios**:
 
-1. **Given** the first screen, **Then** every source card shows its name and its number of
-   songs, and the insert-disc icon opens the file dialog. Dropping a .mid, .midi, .kar, .abc or
-   .txt file anywhere on the Song card still loads it.
-2. **Given** a card, **Then** keyboard (arrows, Home/End, Enter, Escape), mouse wheel, drag and
-   tap all move the selection and open a song. Escape goes back to the cards.
+1. **Given** the Song tab, **Then** the search box and the "Open MIDI or ABC" button are
+   visible. Dropping a .mid, .midi, .kar, .abc or .txt file anywhere on the Song card loads it.
+2. **Given** the catalog, **Then** keyboard, pointer and touch all work:
+   - arrows, Home/End, PageUp/PageDown and Enter move the selection and open a song;
+   - tap and click select a record.
 3. **Given** a song, **Then** its sprite is identical on every visit and every device.
 4. **Given** a song's Arrange action, **Then** the song reaches the existing reading flow:
    - an ABC song opens like an example does today;
    - a MIDI song opens the track table and the bar range.
-5. **Given** reduced motion is requested, **Then** icons do not bob or spin, and the camera
-   does not move.
-6. **Given** a phone 375 px wide, **Then** the browser fits without horizontal scrolling and
+5. **Given** reduced motion is requested, **Then** records do not bob or spin.
+6. **Given** a phone 375 px wide, **Then** the catalog fits without horizontal scrolling and
    stays usable by touch.
-7. **Given** a card holding thousands of songs, **Then** moving the selection stays smooth: the
-   browser draws only the songs near the selection.
+7. **Given** the whole catalog (about 7,000 songs), **Then** turning pages stays smooth: only
+   the current page's records exist in the scene.
+8. **Given** any text on the page, **Then** no pill or chip packs several facts separated by
+   "·". Facts appear as labeled values. The channel legend in the header is a small grid
+   (channel, wave, role).
 
 ---
 
@@ -190,6 +202,39 @@ and ABC folders byte for byte from the recorded inputs.
 3. **Given** the committed catalog, **Then** it holds no notes of any song that is not public
    domain or openly licensed. Only analysis facts are kept.
 
+### User Story 7 - One screen per tab, and How it works (Priority: P2)
+
+The sections Song, Evolution, Result and How it works become tabs, and only the chosen tab's
+screen shows:
+- The Run card sits in the Song tab, next to the catalog.
+- Pressing Arrange moves to Evolution by itself; when the run ends, the app moves to Result.
+- "How it works" replaces About. It explains the method step by step, for a reader who does
+  not know genetic algorithms, with one small picture per step. Where possible, the pictures
+  use the loaded song:
+  1. song to lead sheet;
+  2. genome;
+  3. fitness;
+  4. evolution;
+  5. realization;
+  6. sound.
+
+  It ends with links to the repository and the article, where sources and licenses are
+  credited.
+
+**Independent Test**: load Korobeiniki and press Arrange: the Evolution tab opens. At the end of
+the run the Result tab opens. Open How it works: each of the six steps is shown, with Korobeiniki
+as the running example.
+
+**Acceptance Scenarios**:
+
+1. **Given** the tabs, **Then** they are keyboard accessible (`role=tablist`, arrows, Home/End),
+   and the chosen tab is kept in the page URL (`#song`, `#evolution`, `#result`, `#how`), so a
+   reload or a link opens it.
+2. **Given** a run starts, **Then** the Evolution tab opens. **Given** it ends, **Then** the
+   Result tab opens. The visitor can switch tabs at any time without stopping the run.
+3. **Given** How it works, **Then** each step has a title, a short explanation in plain words and
+   one picture. When a song is loaded, the pictures use it; otherwise they use Korobeiniki.
+
 ### Edge Cases
 
 - **Several MIDI files for one MPB song** (84 songs have more than one link): each file is its
@@ -211,13 +256,14 @@ and ABC folders byte for byte from the recorded inputs.
 ### Channel mixer
 
 - **FR-001**: The app MUST offer four level controls (P1, P2, bass, drums) for the arrangement,
-  from muted up to +6 dB, each with mute and a shared Reset. The controls apply to every sound
+  from muted up to +12 dB, each with mute and a shared Reset. The controls apply to every sound
   pack.
 - **FR-002**: A level change MUST apply during playback without restarting it or moving its
   position, and the output MUST NOT clip.
-- **FR-003**: The default levels MUST be measured on the 8 examples, so that the bass and the
-  drums are each no more than 4 dB below the melody's gated loudness. The measurement is
-  recorded in the plan's research.
+- **FR-003**: The default levels MUST lift the bass and the drums against the pulses:
+  P1 0 dB, P2 -1 dB, TR +4 dB and NO +10 dB over the chip's own balance (research R1). The gated
+  RMS measured on the 8 examples is recorded in the plan's research. The student confirms the
+  balance by ear.
 - **FR-004**: The app SHOULD remember the levels in local storage, and work without it.
 - **FR-005**: The app MUST offer a WAV download of the arrangement with the current pack and
   levels, peaking at no more than -3 dBFS. The MIDI, settings and ABC downloads MUST NOT change.
@@ -231,18 +277,21 @@ and ABC folders byte for byte from the recorded inputs.
 - **FR-008**: When the track has no notes in the excerpt, the preview MUST play from the track's
   first bar in the whole song and name that bar. A track with no notes MUST say so.
 
-### Song browser
+### Song catalog
 
-- **FR-009**: The Song card MUST replace its three tabs with the memory-card browser of story 3,
-  with the five source cards and the insert-disc icon.
+- **FR-009**: The Song card MUST replace its three tabs with the paged vinyl catalog of story 3,
+  with the search box and the "Open MIDI or ABC" button always visible.
 - **FR-010**: Each song MUST have a deterministic pixel-art sprite derived from its catalog data.
-- **FR-011**: The browser MUST be usable by keyboard, pointer and touch. A list mirrors the
-  current card for assistive technology.
-- **FR-012**: The browser MUST honor reduced motion and fall back to a 2D grid without WebGL.
+- **FR-011**: The catalog MUST be usable by keyboard, pointer and touch. A list mirrors the
+  current page for assistive technology.
+- **FR-012**: The catalog MUST honor reduced motion and fall back to a 2D grid without WebGL.
 - **FR-013**: Opening a song MUST hand it to the existing reading flow, with no change to how
   lead sheets are read or arranged.
-- **FR-014**: The browser MUST keep the page responsive with every catalog loaded, and it MUST
-  NOT load a source's catalog until that card or a search needs it.
+- **FR-014**: The page MUST stay responsive with the whole catalog. Only the examples load at
+  first paint; the rest of the catalog loads in the background or when a page or a search needs
+  it.
+- **FR-014a**: The interface MUST NOT name the source sites of catalog songs. Credits and
+  licenses MUST be reachable from How it works through a link to the README.
 
 ### Song server and loading
 
@@ -288,6 +337,14 @@ and ABC folders byte for byte from the recorded inputs.
   files.
 - **FR-023**: The catalog MUST be split per source and credit each source.
 
+### Tabs and How it works
+
+- **FR-025**: The sections MUST be tabs showing one screen at a time: Song (catalog + Run),
+  Evolution, Result and How it works. The tab is kept in the URL hash.
+- **FR-026**: Starting a run MUST open Evolution, and finishing it MUST open Result.
+- **FR-027**: How it works MUST explain the six steps with one picture each, using the loaded
+  song when there is one.
+
 ### Deployment
 
 - **FR-024**: The repository MUST hold:
@@ -318,8 +375,9 @@ and ABC folders byte for byte from the recorded inputs.
 
 ## Success Criteria *(mandatory)*
 
-- **SC-001**: With default levels on the 8 examples, the bass and the drums are each within 4 dB
-  of the melody's gated loudness. Before this change, the gap was measured and recorded.
+- **SC-001**: With default levels on the 8 examples, the bass sits between 2 dB under and
+  7 dB over the melody (gated RMS), the drums are lifted by at least 8 dB over the chip's
+  balance, and no default mix clips. The before and after gaps are recorded.
 - **SC-002**: A level change is audible within 0.1 s while playing, with 0 restarts or position
   jumps.
 - **SC-003**: For a track that enters after 16 bars of rest, the preview's first note sounds

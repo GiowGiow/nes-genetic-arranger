@@ -12,7 +12,8 @@ DCC831 – Generative AI for Music (UFMG, 2026/2). Assignment 1: algorithmic com
 > course. The version submitted for grading stays in
 > [GiowGiow/chiptune-ga-arranger](https://github.com/GiowGiow/chiptune-ga-arranger) (tag
 > `v1.0-submission`). This repository continues the work after the submission: the browser
-> arranger (spec 002) and meters beyond 4/4 with allowed textures (spec 003). It starts from one
+> arranger (spec 002), meters beyond 4/4 with allowed textures (spec 003) and any time signature
+> (spec 006). It starts from one
 > commit, so commit hashes cited in `specs/` refer to the original repository.
 
 This project re-composes a song as 8-bit music. It reads a lead sheet (a melody with chord symbols
@@ -46,8 +47,13 @@ complete bars of each bar's meter.
 
 **Meters.** The submitted samples are all in 4/4. Since spec 003
 ([specs/003-meters-and-textures/](specs/003-meters-and-textures/)), the arranger also reads and
-arranges 2/2, 2/4, 3/4, 6/8, 9/8, 12/8, 5/4 and 7/8, and songs whose meter changes. Each bar
-carries its meter, and the textures follow its beats and strong beats:
+arranges songs in other meters, and songs whose meter changes. Since spec 006
+([specs/006-any-meter/](specs/006-any-meter/)) it accepts every time signature n/d with d = 1, 2,
+4, 8 or 16 and n from 1 to 32 (3/2, 6/4, 5/8, 11/8, 12/16 and so on), the additive ABC meters
+(`M:2+2+3/8`, `M:(3+3+2)/8`), `C` and `C|`. A meter outside that range, such as 3/32, 33/8 or
+the free meter `M:none`, is refused with an error that names the bar and the accepted range.
+Each bar carries its meter, and the textures follow its beats and strong beats, which one rule
+derives from the meter (see "Meter terms" below):
 
 - TR root–fifth plays the root on the strong beats and the fifth on the weak ones: root, fifth,
   root, fifth in 4/4, and "oom-pah-pah" in a waltz. The walking line plays one note per beat.
@@ -483,7 +489,8 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
 1. Drop an ABC lead sheet or a multi-track MIDI file, or pick one of the 8 committed lead sheets.
    For a MIDI song, choose the melody track (the likeliest one is preselected), the bars to
    arrange and where each part starts. The page shows the lead sheet it read before any run,
-   with its meter. Songs in 2/2, 2/4, 3/4, 4/4, 6/8, 9/8, 12/8, 5/4 and 7/8 are arranged.
+   with its meter. Songs in any meter n/d (d = 1, 2, 4, 8 or 16, n from 1 to 32), and in additive
+   ABC meters such as 2+2+3/8, are arranged.
 2. Change any setting of `configs/default.json`; each one says what it changes in the music.
    "Allowed textures" keeps any texture out of the arrangement, for example the fast 32nd-note
    arpeggio.
@@ -493,8 +500,10 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
    evolution can be followed; "full speed" finishes in under a second.
 4. Play the arrangement with the NES chip sound, or switch the sound pack (Game Boy, Commodore
    64, a soft synth or the original's plain instruments) without losing the position; switch to
-   the original at the same position,
-   and download the MIDI, the run's `config.json` and the lead sheet as ABC.
+   the original at the same position. Four sliders set the level of P1, P2, bass and drums (the
+   defaults put the bass and drums where you can hear them; your mix is remembered), and the
+   downloads are the MIDI, an audio WAV that follows the pack and the mix, the run's
+   `config.json` and the lead sheet as ABC.
 
 Files never leave the device: the page fetches only its own files. After the first visit it
 works offline (a service worker caches it).
@@ -511,15 +520,45 @@ downloaded `config.json` reruns in the command line:
 uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed 1
 ```
 
-**MPB MIDI catalog.** The page can search 3,671 songs of
-[Beatriz Kauffmann's Web Site](https://www.beakauffmann.com/) by title, composer or performer. The
-site does not let other sites read its files, so you download the song from its page and drop it
-in; the app keeps the credit and the song page link. `arranger/data/catalog.json` holds only
-titles, names and links, never the MIDI files. It is rebuilt with a polite crawl (one request per
-second, about an hour, resumable):
+**Song catalog.** The Song tab is a shelf of vinyl records, 15 per page: the 8 examples first,
+then every other song in alphabetical order. Search finds a song by title, composer or
+performer, and also looks for MIDI files on other sites. "Open MIDI or ABC" loads your own file.
+Every catalog song opens like an example: one click, no track to choose.
+
+- **Songs committed as ABC lead sheets** open with no server: public-domain songs (every author
+  died 70 or more years ago, checked on Wikidata; an unknown author counts as not public domain),
+  the cleaned Nottingham folk tunes (GPL-3.0) and a filtered subset of PDMX (CC-BY 4.0).
+  `data/catalog/abc/` holds them, each collection with its license or notice file.
+- **Copyrighted songs** (the MPB catalog of [Beatriz Kauffmann's Web Site](https://www.beakauffmann.com/),
+  "All Rights Reserved") are not copied anywhere. The repository holds only facts about each song
+  (title, composer, melody track, bars, key, tempo, meter, a hash of the file; no notes). When you
+  click one, the song server fetches the MIDI from the site, checks the hash, reduces it to a lead
+  sheet and sends it to your browser. It keeps only a short temporary cache.
+- **Search on other sites** goes through the same server (Mutopia, BitMidi, and IMSLP as a link
+  only), and from your browser to The Session directly. If the server is down the page says so
+  and everything else keeps working.
+
+The page never sends your files anywhere: the server only receives search words and song ids.
+To ask for a song to be removed from the server, open an issue on this repository; the server
+keeps a denylist (`server/denylist.json`) that it checks before every request.
+
+Rebuild the catalog data (needs the local MIDI study copy for the MPB analysis; PDMX and
+Nottingham download into `data/raw/`, which is gitignored):
 
 ```bash
-uv run src/main.py catalog
+uv run src/main.py catalog analyze --dataset path/to/beakauffmann --workers 8
+uv run src/main.py catalog authors
+uv run src/main.py catalog public-domain --dataset path/to/beakauffmann --workers 8
+uv run src/main.py catalog nottingham --workers 8
+uv run src/main.py catalog pdmx --workers 8
+uv run src/main.py catalog examples
+```
+
+Run the song server locally (the page uses `https://nes-arranger-bh.giow.dev`; the manifests for
+the homelab are in `deploy/homelab/nes-arranger/`, with its own README):
+
+```bash
+uv run --group server uvicorn server.app:app --port 8766
 ```
 
 **Develop and test.** Serve the repository root and open `/arranger/`; run the JavaScript tests
@@ -542,17 +581,24 @@ Worker* runs code beside the page so the page stays responsive; the *skyline* of
 its highest note at each moment, which turns chords into a melody line; the *beat grid* places
 the beats of a MIDI recording; *A/B* is switching between two versions at the same position.
 
-Meter terms (spec 003):
-- A *meter* (time signature) gives the length of a bar and its beats: 3/4 has three
-  quarter-note beats.
-- A *simple meter* (2/2, 2/4, 3/4, 4/4) counts beats of the denominator note.
-- A *compound meter* (6/8, 9/8, 12/8) groups eighths in threes, so its beat is a dotted quarter:
-  6/8 has two beats.
-- An *irregular meter* groups unequal beats: 5/4 is felt 3 + 2, and 7/8 as eighths grouped
-  2 + 2 + 3.
-- The *beat grouping* is how the beats gather; its first beats are the *strong beats* (1 and 3
-  in 4/4, only 1 in 3/4 or 6/8, 1 and 4 in 5/4).
-- A MIDI file's *time-signature map* lists where each meter starts.
+Meter terms (specs 003 and 006):
+- A *meter* (time signature) n/d gives the length of a bar, n notes of the value d (4 is a
+  quarter note, 8 an eighth), and its beats: 3/4 has three quarter-note beats.
+- A *compound meter* has a numerator that is a multiple of 3 from 6 on (6/8, 9/8, 12/8, 6/4). It
+  groups its notes in threes, so its beat is a dotted note: 6/8 has two beats of a dotted quarter.
+- An *irregular fast meter* has eighths or sixteenths, five notes or more and is not compound
+  (5/8, 7/8, 8/8, 11/8). It groups its notes in twos, with a last group of three when n is odd:
+  7/8 is felt 2 + 2 + 3, and 11/8 is felt 2 + 2 + 2 + 2 + 3.
+- A *simple meter* is any other (2/2, 3/4, 4/4, 5/4, 7/4, 3/2, 3/8): each of its n notes is a
+  beat. 5/4 is felt 3 + 2 because of its strong beats, not because of its beats.
+- An *additive meter* (`2+2+3/8`) writes its own groups: each group is one beat, so a tune can
+  ask for a grouping other than the rule's.
+- The *beat grouping* is how the beats gather; its first beats are the *strong beats*: beat 1,
+  and the first beat of the second half of the bar when the bar has four beats or more (the first
+  half is the longer one when the number of beats is odd). So the strong beats are 1 and 3 in 4/4,
+  only 1 in 3/4 or 6/8, 1 and 4 in 5/4 and in 11/8.
+- A MIDI file's *time-signature map* lists where each meter starts. A MIDI time signature holds
+  only n and d, so an additive meter is written there as its sum (7/8 for 2+2+3/8).
 - *Allowed values* are the gene values (textures, drum patterns, octaves) that the GA may draw.
 
 ## Inputs, sources and licenses
@@ -604,6 +650,23 @@ Meter terms (spec 003):
     syllables embedded in the file to note onsets: one track meets all of them. For Voa Voa and
     Aquarela, the melody is the monophonic line that plays throughout (tenor sax, clarinet).
 
+## Catalog collections and credits
+
+- **Nottingham Music Database**, cleaned version by Jukedeck
+  ([jukedeck/nottingham-dataset](https://github.com/jukedeck/nottingham-dataset), GPL-3.0). The
+  ABC files in `data/catalog/abc/nottingham/` are reductions of it, with its license file.
+- **PDMX** ([Zenodo 15571083](https://zenodo.org/records/15571083), paper arXiv 2409.10831),
+  CC-BY 4.0. Scores that MuseScore users marked public domain or CC0. The uploaders' labels are
+  not reliable, so the subset keeps a score only when its composer died in 1955 or earlier
+  (Wikidata); the "original composition" flag is not trusted. Credit: PDMX authors (Long et al.),
+  see `data/catalog/abc/pdmx/NOTICE.md`.
+- **Wikidata** (CC0) gives the composers' death years, recorded in `data/catalog/authors.json`.
+- **Beatriz Kauffmann's Web Site**: the MPB song list, credits and page links. No file is
+  copied; the server fetches a song on request and the repository keeps only facts about it.
+- **The Session** is searched from your browser at your request; its data is never copied or
+  read by the tools that wrote this project.
+- **three.js** (MIT) draws the record shelf, vendored in `arranger/vendor/three/`.
+
 ## AI usage
 
 **Tools and purpose.**
@@ -647,6 +710,9 @@ Meter terms (spec 003):
 | Review | "Aplique as correções estruturais na função de fitness com base na auditoria e regenere os samples." | Mandated structural corrections to the fitness function based on the audit and triggered sample regeneration. |
 | After submission | "Vamos fazer as coisas em outra branch sem ser a main. Faça a spec para o nosso app que vai rodar no GitHub Pages: rápido, com os parâmetros configuráveis, animação das gerações e da estagnação, buscar por música ou artista no catálogo de MIDIs de MPB, ou mandar um MIDI ou ABC arbitrário (opção primária)." | Specified the browser arranger (spec 002) on a separate branch, keeping the submitted state on `main`. |
 | After submission | "Só reprodutível no site." / "Baixar e soltar." | Chose an independent seeded generator for the browser (no numpy parity) and a download-and-drop route for catalog songs (no third-party relay). |
+| After submission | "Eu queria que na UI tivéssemos ao invés de your file, exmaples e mpb catalog: um catálogo mesmo, 3d com vinils [...] A busca eu gostaria que utilizasse de outros sites/buscadores/indexadores de midi." / "Além disso gostaria de poder controlar o volume ds áudios do p1, p2, bass, drums." | Replaced download-and-drop with a vinyl song shelf, a companion song server and a channel mixer (spec 005). |
+| After submission | "De onde que você tirou que é creative commons? E de onde você tirou que uma reinterpretação/cover de música vai ter direitos autorais?" | Challenged the licensing plan; the outcome is the on-demand server for copyrighted songs and committed ABC only for public-domain songs and licensed collections. |
+| After submission | "dê suporte à todos os tipos de tempo, não só os definidos atualmente." | Asked for every time signature (spec 006). |
 | After submission | "Pode fazer a emenda e dar push da branch." / "Pode rodar o plan." / "Pode rodar o tasks." / "Pode rodar o implement." | Approved the constitution amendment (1.3.0, web app rules) and each Spec Kit stage of the browser arranger. |
 
 ## License

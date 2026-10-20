@@ -68,11 +68,12 @@ h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; font-weight: 800;
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .lead { color: #c9cfdb; font-size: 1rem; margin: 0 0 12px; max-width: 70ch; }
-.legend { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px;
-  background: rgba(11, 14, 23, .55); border: 1px solid var(--line); font-size: .82rem; color: var(--muted);
-}
+/* The four channels as a small labeled grid: channel, wave, role. */
+.channels { display: grid; grid-template-columns: repeat(4, minmax(0, 120px)); gap: 8px; margin: 4px 0 0; }
+.channels > div { border-left: 3px solid var(--c); padding: 2px 0 2px 10px; }
+.channels dt { font: 700 .95rem var(--mono); color: var(--text); }
+.channels dd { margin: 0; font-size: .8rem; color: var(--muted); line-height: 1.35; }
+.channels dd.role { color: var(--text); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); flex: none; }
 .eq { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; }
 .eq i { width: 4px; height: 10px; border-radius: 2px 2px 0 0; background: var(--c); animation: eq 1s ease-in-out infinite alternate; }
@@ -82,15 +83,15 @@ h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; font-weight: 800;
 .eq i:nth-child(4) { --c: var(--no); animation-delay: .6s; }
 @keyframes eq { from { height: 4px; } to { height: 18px; } }
 
-/* Section links: the four steps of a run, then the catalog and the notes. */
-.steps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.steps a {
-  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
-  color: var(--text); text-decoration: none; font-size: .88rem; font-weight: 600;
-  border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(12px);
-  transition: border-color .2s, transform .2s;
+/* Page tabs: one screen per tab, in the order of a run (ui/tabs.js). */
+.page-tabs { display: flex; gap: 4px; margin-top: 18px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.page-tabs::-webkit-scrollbar { display: none; }
+.page-tabs button {
+  background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 9px 14px 11px;
+  color: var(--muted); font: 600 .95rem Inter, system-ui, sans-serif; cursor: pointer; white-space: nowrap;
 }
-.steps a:hover { border-color: var(--p1); transform: translateY(-1px); color: var(--text); }
+.page-tabs button:hover { color: var(--text); }
+.page-tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--p2); }
 .step-num { font-family: var(--mono); font-weight: 700; color: var(--p1); }
 
 /* Panels: input and settings side by side on a wide screen, the rest across the page. */
@@ -317,7 +318,7 @@ footer {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
   margin-top: 48px; color: var(--muted); font-size: .88rem; text-align: center;
 }
-footer .sep { color: var(--line); }
+footer { column-gap: 18px; }
 #app-version { color: var(--no); }
 
 @media (min-width: 900px) {
@@ -387,3 +388,7 @@ footer .sep { color: var(--line); }
 .sound-pack { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--muted, inherit); }
 .sound-pack select { font: inherit; }
 .sound-pack-hint { margin: 6px 0 0; }
+
+@media (max-width: 560px) {
+  .channels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
