@@ -31,33 +31,33 @@ for the test.
 **Independent test**: arrange Korobeiniki, move each slider while playing, switch packs, reload,
 and download the WAV (quickstart step 1).
 
-- [ ] T004 [P] [US1] Write failing tests in `arranger/tests/stems.test.js`:
+- [X] T004 [P] [US1] Write failing tests in `arranger/tests/stems.test.js`:
   - `renderChipStems` returns P1, P2, TR and NO of equal length.
   - Mixing them with `CHANNEL_GAINS` and the peak scale equals `renderChip` sample for sample.
   - The Korobeiniki defaults SHA pin still holds.
-- [ ] T005 [US1] Implement `renderChipStems` in `arranger/src/audio/chip-synth.js` and rebuild
+- [X] T005 [US1] Implement `renderChipStems` in `arranger/src/audio/chip-synth.js` and rebuild
   `renderChip` on it with the same float operations (FR-006).
-- [ ] T006 [P] [US1] Write failing tests in `arranger/tests/sound-packs.test.js` for
+- [X] T006 [P] [US1] Write failing tests in `arranger/tests/sound-packs.test.js` for
   `renderPackStems(packId, arrangement, rate)`:
   - every pack gives four stems of `renderLength`;
   - plain maps melody, others[0], others[1] and drums to P1, P2, TR and NO;
   - stems mixed at 0 dB equal `renderPack` up to the peak scale.
-- [ ] T007 [US1] Implement `renderPackStems` in `arranger/src/audio/sound-packs.js`, with
+- [X] T007 [US1] Implement `renderPackStems` in `arranger/src/audio/sound-packs.js`, with
   `renderPack` built on it.
-- [ ] T008 [P] [US1] Write failing tests in `arranger/tests/mixer.test.js`:
+- [X] T008 [P] [US1] Write failing tests in `arranger/tests/mixer.test.js`:
   - `dbToGain`; −60 dB and mute give 0.
   - `DEFAULT_LEVELS`.
   - `mixStems(stems, levels)` sums with the gains and peaks at −3 dBFS.
   - `readLevels` and `storeLevels` round-trip, and fall back on bad JSON.
   - Levels are clamped to [−60, +6].
-- [ ] T009 [US1] Implement `arranger/src/audio/mixer.js`, with a module header on gain staging
+- [X] T009 [US1] Implement `arranger/src/audio/mixer.js`, with a module header on gain staging
   (research R2).
-- [ ] T010 [P] [US1] Write failing tests in `arranger/tests/wav.test.js`:
+- [X] T010 [P] [US1] Write failing tests in `arranger/tests/wav.test.js`:
   - the RIFF/WAVE header fields (mono, 16-bit, rate, sizes);
   - clamping and rounding of samples;
   - byte length = 44 + 2·n.
-- [ ] T011 [US1] Implement `arranger/src/audio/wav.js` `encodeWav(samples, sampleRate)`.
-- [ ] T012 [US1] Write `arranger/tests/mixer-defaults.test.js` and use it to set the defaults:
+- [X] T011 [US1] Implement `arranger/src/audio/wav.js` `encodeWav(samples, sampleRate)`.
+- [X] T012 [US1] Write `arranger/tests/mixer-defaults.test.js` and use it to set the defaults:
   1. Measure gated loudness per stem on the 8 example arrangements (seed 1, default settings),
      and print the gaps.
   2. Set `DEFAULT_LEVELS` in `mixer.js` so that TR and NO sit 3 dB under P1 and P2 sits 1 dB
@@ -96,13 +96,13 @@ and download the WAV (quickstart step 1).
 
 **Independent test**: preview a late-entering track; sound within 1 s (quickstart step 2).
 
-- [ ] T017 [P] [US2] Write failing tests in `arranger/tests/plain-synth.test.js` for
+- [X] T017 [P] [US2] Write failing tests in `arranger/tests/plain-synth.test.js` for
   `previewWindow(sounding, maxBars = 8, gapBars = 2)` (research R4):
   - it starts at the first sounding bar;
   - it skips runs of ≥2 silent bars and keeps shorter rests;
   - it stops at 8 sounding bars;
   - it returns an empty list when nothing sounds.
-- [ ] T018 [US2] Implement `previewWindow` in `arranger/src/audio/plain-synth.js`, plus a helper
+- [X] T018 [US2] Implement `previewWindow` in `arranger/src/audio/plain-synth.js`, plus a helper
   that renders a list of bar ranges back to back.
 - [ ] T019 [US2] Rewrite `previewTrack` in `arranger/src/ui/main.js`:
   - compute the bars where the track sounds in the excerpt;

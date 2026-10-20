@@ -23,9 +23,19 @@ Sources were checked on 2026-10-20. The approved design is in the plan. Decision
 
 | Stem | Gap to P1 before (dB) | Default offset (dB) | Gap after (dB) |
 |---|---|---|---|
-| P2 | (T012) | (T012) | (T012) |
-| TR | (T012) | (T012) | (T012) |
-| NO | (T012) | (T012) | (T012) |
+| P2 | -4.32 | +3.5 | -0.82 |
+| TR | +0.88 | -4.0 | -3.12 |
+| NO | -17.80 | +15.0 | -2.81 |
+
+- Gaps are gated RMS (`gatedRms`, 400 ms blocks) of the NES stems with `CHANNEL_GAINS`, at
+  44.1 kHz, averaged over the 8 examples. The arrangements are the committed plan fixtures
+  `arranger/tests/fixtures/plans/<example>-s1.json` (seed 1, with the samples' settings).
+- Offsets are relative to P1. The drums' +15 dB is above `MAX_DB` (+6), so all four defaults
+  move down 9 dB: `DEFAULT_LEVELS` is P1 -9, P2 -5.5, TR -13 and NO +6 dB.
+- With these defaults, every example keeps every gap within 4 dB (SC-001). The closest are TR
+  at -3.95 dB and NO at -3.91 dB, both in Ievan Polkka.
+- At the chip's own gains, TR already measures 0.9 dB above P1, so this rule lowers the bass by
+  4 dB against the melody. The drums sit 16.8 to 18.9 dB under P1 in every example.
 
 ## R2. Stems and live gain changes
 

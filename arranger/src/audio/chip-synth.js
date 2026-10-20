@@ -23,6 +23,12 @@
 // loudness of the input render is the job of `audio/loudness.js`, not of this module. The code
 // is pure (no Web Audio, no DOM) and deterministic: the noise register always starts at 1.
 //
+// `renderChipStems` renders the same notes without mixing them: one track per channel, a
+// "stem", before the channel gains and before the peak scale. The page plays the four stems
+// through four volume controls, so a channel's level changes while the music plays (spec 005,
+// `audio/mixer.js`). `renderChip` adds the very same notes into one mix, in the same order as
+// before stems existed, so its samples did not change.
+//
 // Reference: C. Donahue, H. H. Mao and J. McAuley, "The NES Music Database: a
 // multi-instrumental dataset with expressive performance attributes", ISMIR 2018 (channel
 // roles, 4 duty cycles, 15 volume levels for pulse and noise, no volume for the triangle).
@@ -351,7 +357,7 @@ function noteTone(channel, pitch, velocity, tone, sampleRate) {
  *
  * A function of its own, called once per note, so that the engine compiles this loop early
  * and keeps it fast for every channel.
- * @param {Float64Array} mix
+ * @param {Float64Array | Float32Array} mix the whole mix, or one channel's stem
  * @param {Float64Array} tone
  * @param {number} firstSample
  * @param {number} gain
@@ -385,25 +391,27 @@ export function renderLength(arrangement, sampleRate = SAMPLE_RATE) {
 }
 
 /**
- * Synthesize the P1, P2, TR and NO channels of an arrangement with chip waveforms (mono).
- *
- * Pulse and noise loudness follow the note velocity on the 4-bit volume scale; the triangle is
- * always at full level. The buffer runs from beat 0 to the last note end plus 0.15 s (the
- * longest drum hit), as in the command line (`renderLength`). The mix peaks at -3 dBFS, and a
- * piece without notes gives 0.15 s of zeros.
- * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
- * @param {number} [sampleRate] samples per second (default 44,100; use the AudioContext's)
- * @returns {Float32Array} the samples, in [-1, 1]
- * @example
- * const samples = renderChip({ tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }] } });
- * samples.length; // 28665: (0.5 s + 0.15 s) × 44,100
- * Math.max(...samples.map(Math.abs)); // ≈ 0.7079, -3 dBFS
+ * One note as the synthesizer plays it: its channel, pitch and velocity, and the samples it
+ * sounds (a drum hit is cut by the next hit).
+ * @typedef {object} SoundingNote
+ * @property {ChannelName} channel
+ * @property {number} pitch
+ * @property {number} velocity
+ * @property {number} firstSample index of its first sample in the render
+ * @property {number} nSamples how many samples it sounds, greater than 0
  */
-export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
-  // First, when each note starts and how many samples it sounds; then the waveforms.
+
+/**
+ * When each note starts and how many samples it sounds, channel by channel (P1, P2, TR, NO),
+ * and the length of the render.
+ * @param {ChipArrangement} arrangement
+ * @param {number} sampleRate
+ * @returns {{sounding: SoundingNote[], length: number}}
+ */
+function scheduleNotes(arrangement, sampleRate) {
   const secondsPerBeat = 60 / arrangement.tempoBpm;
   let endSeconds = 0;
-  /** @type {{channel: ChannelName, pitch: number, velocity: number, firstSample: number, nSamples: number}[]} */
+  /** @type {SoundingNote[]} */
   const sounding = [];
   for (const channel of CHANNELS) {
     const notes = (arrangement.channels[channel] ?? []).map((note) => ({
@@ -424,16 +432,37 @@ export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
       if (nSamples > 0) sounding.push({ channel, pitch: note.pitch, velocity: note.velocity, firstSample, nSamples });
     });
   }
+  return { sounding, length: Math.ceil((endSeconds + LONGEST_HIT_SECONDS) * sampleRate) };
+}
 
-  const mix = new Float64Array(Math.ceil((endSeconds + LONGEST_HIT_SECONDS) * sampleRate));
-  // Every note is written in turn into one buffer as long as the longest note, instead of a
-  // new array per note: a minute of music would otherwise allocate tens of megabytes.
+/**
+ * Synthesize the notes one after the other, in the order given, and hand each to `addNote`.
+ *
+ * Every note is written in turn into one buffer as long as the longest note, instead of a new
+ * array per note: a minute of music would otherwise allocate tens of megabytes. So `addNote`
+ * must copy the tone before it returns.
+ * @param {SoundingNote[]} sounding
+ * @param {number} sampleRate
+ * @param {(channel: ChannelName, tone: Float64Array, firstSample: number) => void} addNote
+ * @returns {void}
+ */
+function synthesizeNotes(sounding, sampleRate, addNote) {
   const scratch = new Float64Array(sounding.reduce((longest, note) => Math.max(longest, note.nSamples), 0));
   for (const { channel, pitch, velocity, firstSample, nSamples } of sounding) {
-    const tone = noteTone(channel, pitch, velocity, scratch.subarray(0, nSamples), sampleRate);
-    addTone(mix, tone, firstSample, CHANNEL_GAINS[channel]);
+    addNote(channel, noteTone(channel, pitch, velocity, scratch.subarray(0, nSamples), sampleRate), firstSample);
   }
+}
 
+/**
+ * A mix scaled so that its largest sample sits at PEAK_LEVEL (-3 dBFS), as Float32 samples.
+ * Silence stays all zeros.
+ * @param {ArrayLike<number>} mix the samples, at any scale
+ * @returns {Float32Array} a new array
+ * @example
+ * scaleToPeak(Float64Array.of(2, -1, 0)); // [0.7079, -0.3540, 0]
+ * scaleToPeak(new Float64Array(3)); // [0, 0, 0]
+ */
+export function scaleToPeak(mix) {
   let peak = 0;
   for (let i = 0; i < mix.length; i++) peak = Math.max(peak, Math.abs(mix[i]));
   const samples = new Float32Array(mix.length);
@@ -442,4 +471,61 @@ export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
     for (let i = 0; i < mix.length; i++) samples[i] = mix[i] * scale;
   }
   return samples;
+}
+
+/**
+ * Synthesize the P1, P2, TR and NO channels of an arrangement with chip waveforms (mono).
+ *
+ * Pulse and noise loudness follow the note velocity on the 4-bit volume scale; the triangle is
+ * always at full level. The buffer runs from beat 0 to the last note end plus 0.15 s (the
+ * longest drum hit), as in the command line (`renderLength`). The mix peaks at -3 dBFS, and a
+ * piece without notes gives 0.15 s of zeros.
+ * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
+ * @param {number} [sampleRate] samples per second (default 44,100; use the AudioContext's)
+ * @returns {Float32Array} the samples, in [-1, 1]
+ * @example
+ * const samples = renderChip({ tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }] } });
+ * samples.length; // 28665: (0.5 s + 0.15 s) × 44,100
+ * Math.max(...samples.map(Math.abs)); // ≈ 0.7079, -3 dBFS
+ */
+export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
+  const { sounding, length } = scheduleNotes(arrangement, sampleRate);
+  // Each note goes straight into one mix with its channel's gain. Summing the stems instead
+  // would round some samples differently, and this render must stay the same (spec 005 FR-006).
+  const mix = new Float64Array(length);
+  synthesizeNotes(sounding, sampleRate, (channel, tone, firstSample) => {
+    addTone(mix, tone, firstSample, CHANNEL_GAINS[channel]);
+  });
+  return scaleToPeak(mix);
+}
+
+/**
+ * The four channels of the chip render kept apart: one stem each for P1, P2, TR and NO.
+ *
+ * The stems hold the channels before the chip's channel gains (`CHANNEL_GAINS`) and before the
+ * peak scale, all on one scale: a pulse or noise note at full volume spans about 2 (from -1 to
+ * +1, shifted by its mean), the triangle spans -1 to 1. Summed with `CHANNEL_GAINS` and scaled
+ * to -3 dBFS they give `renderChip`, up to float32 rounding.
+ * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
+ * @param {number} [sampleRate] samples per second (default 44,100; use the AudioContext's)
+ * @returns {Record<ChannelName, Float32Array>} four stems of `renderLength(arrangement, sampleRate)` samples
+ * @example
+ * const stems = renderChipStems({ tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }] } });
+ * stems.P1.length; // 28665, like renderChip
+ * Math.max(...stems.P1); // ≈ 1.2: a 25% pulse at volume 12 of 15, its mean removed
+ * Math.max(...stems.P2); // 0: P2 has no notes
+ */
+export function renderChipStems(arrangement, sampleRate = SAMPLE_RATE) {
+  const { sounding, length } = scheduleNotes(arrangement, sampleRate);
+  /** @type {Record<ChannelName, Float32Array>} */
+  const stems = {
+    P1: new Float32Array(length),
+    P2: new Float32Array(length),
+    TR: new Float32Array(length),
+    NO: new Float32Array(length),
+  };
+  synthesizeNotes(sounding, sampleRate, (channel, tone, firstSample) => {
+    addTone(stems[channel], tone, firstSample, 1);
+  });
+  return stems;
 }

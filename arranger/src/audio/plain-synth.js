@@ -20,9 +20,15 @@
 // list of notes in beats (`leadSheetVoices`, `midiExcerptVoices`), then the samples
 // (`renderVoices`). It is pure and deterministic: the drum noise comes from the seeded generator
 // of `core/random.js`, and the result does not depend on Web Audio.
+//
+// The same voices make the track preview (spec 005 story 2, research R4): one track of a MIDI
+// song played alone, to help choose the melody. Starting at the excerpt's first bar would play
+// silence for a track that enters late, so the preview starts at the track's first playing bar
+// and jumps over long silences (`previewWindow`, over `soundingBars`), and the bars it keeps play
+// back to back (`windowVoices`, gathered by `trackPreview`).
 
 import { barStarts, totalBeats } from "../core/meter.js";
-import { excerptBars } from "../core/midi-song.js";
+import { MAX_BARS, countBars, excerptBars } from "../core/midi-song.js";
 import { createRandom } from "../core/random.js";
 import { PEAK_LEVEL, SAMPLE_RATE } from "./chip-synth.js";
 
@@ -85,6 +91,11 @@ const DRUM_RELEASE_SECONDS = 0.005;
 // hit reads it from a random offset. One draw per hit instead of one per sample.
 const NOISE_SEED = 1;
 const NOISE_TABLE_SIZE = 1 << 16; // 1.5 s at 44.1 kHz, far longer than any burst
+
+// A note must overlap a bar by more than this many beats to play in it, so that a note that ends
+// a hair after a bar line (a rounding of the beat clock) does not reach the next bar, as in the
+// default excerpt of core/midi-song.js.
+const HAIR_BEATS = 1e-3;
 
 /**
  * How one kind of drum sounds: a noise burst that decays by 40 dB over `decaySeconds`, through
@@ -314,20 +325,18 @@ function addTone(mix, tone, firstSample, gain) {
 }
 
 /**
- * Synthesize voices on the beat timeline (mono): the melody as a soft triangle, the other
- * voices as a softened square (a triangle below MIDI 48) and the drums as noise bursts.
- *
- * Every note has a 5 ms attack and a 30 ms release. Notes past the end are cut, and the mix is
- * scaled to peak at -3 dBFS, like the chip render; silence stays all zeros.
+ * The mix of `renderVoices` before it is scaled to its peak: every voice at its fixed gain
+ * (melody 0.5, each other voice 0.1, drums 0.3). Voices mixed apart this way share one scale
+ * and add up to the mix of all of them, which the plain sound pack uses for its stems.
  * @param {Voices} voices notes in beats
  * @param {number} tempoBpm beats per minute of the timeline (the run's tempo)
  * @param {number} sampleRate samples per second
  * @param {number} durationBeats length of the render in beats (the arrangement's length)
- * @returns {Float32Array} round(durationBeats × 60 / tempoBpm × sampleRate) samples
+ * @returns {Float64Array} round(durationBeats × 60 / tempoBpm × sampleRate) samples
  * @example
- * renderVoices(leadSheetVoices(oneBarSheet), 120, 44100, 4).length; // 88200: 2 s
+ * mixVoices(leadSheetVoices(oneBarSheet), 120, 44100, 4).length; // 88200: 2 s
  */
-export function renderVoices(voices, tempoBpm, sampleRate, durationBeats) {
+export function mixVoices(voices, tempoBpm, sampleRate, durationBeats) {
   const secondsPerBeat = 60 / tempoBpm;
   const mix = new Float64Array(Math.round(((durationBeats * 60) / tempoBpm) * sampleRate));
   const toSample = (/** @type {number} */ beat) => Math.min(Math.round(beat * secondsPerBeat * sampleRate), mix.length);
@@ -376,7 +385,25 @@ export function renderVoices(voices, tempoBpm, sampleRate, durationBeats) {
       addTone(mix, tone, firstSample, DRUM_GAIN);
     }
   }
+  return mix;
+}
 
+/**
+ * Synthesize voices on the beat timeline (mono): the melody as a soft triangle, the other
+ * voices as a softened square (a triangle below MIDI 48) and the drums as noise bursts.
+ *
+ * Every note has a 5 ms attack and a 30 ms release. Notes past the end are cut, and the mix is
+ * scaled to peak at -3 dBFS, like the chip render; silence stays all zeros.
+ * @param {Voices} voices notes in beats
+ * @param {number} tempoBpm beats per minute of the timeline (the run's tempo)
+ * @param {number} sampleRate samples per second
+ * @param {number} durationBeats length of the render in beats (the arrangement's length)
+ * @returns {Float32Array} round(durationBeats × 60 / tempoBpm × sampleRate) samples
+ * @example
+ * renderVoices(leadSheetVoices(oneBarSheet), 120, 44100, 4).length; // 88200: 2 s
+ */
+export function renderVoices(voices, tempoBpm, sampleRate, durationBeats) {
+  const mix = mixVoices(voices, tempoBpm, sampleRate, durationBeats);
   let peak = 0;
   for (let i = 0; i < mix.length; i++) peak = Math.max(peak, Math.abs(mix[i]));
   const samples = new Float32Array(mix.length);
@@ -425,8 +452,207 @@ export function renderMidiExcerpt(midi, excerpt, tempoBpm, sampleRate = SAMPLE_R
  * @returns {[number, number]} [first beat, length in beats]
  */
 function excerptSpan(midi, excerpt) {
-  const grid = onFileGrid(midi, excerpt.sourceGrid) ? "file" : excerpt.sourceGrid;
-  const { map, first, end } = excerptBars(midi, excerpt.bars, grid);
+  const { map, first, end } = excerptBars(midi, excerpt.bars, gridOf(midi, excerpt.sourceGrid));
   const last = map[end - 1];
   return [map[first].start, last.start + last.length - map[first].start];
+}
+
+/**
+ * The grid choice of `core/midi-song.js` that a lead sheet's grid stands for: "file" for the
+ * file's own tick grid, or the steady [tempo BPM, first downbeat in seconds] itself.
+ * @param {import("../core/midi-file.js").MidiSong} midi
+ * @param {[number, number]} sourceGrid
+ * @returns {"file" | [number, number]}
+ */
+function gridOf(midi, sourceGrid) {
+  return onFileGrid(midi, sourceGrid) ? "file" : sourceGrid;
+}
+
+// --- Track preview ------------------------------------------------------------------------------
+
+/**
+ * The bars to play, back to back, when the visitor previews one track: from the track's first
+ * playing bar, jumping over long silences, until `maxBars` playing bars have been heard.
+ *
+ * A silent stretch of `gapBars` bars or more (an intro, a verse the track sits out) is skipped.
+ * A shorter rest stays, since it belongs to the phrasing, and it does not count toward
+ * `maxBars`. The silence after the track's last note is left out.
+ * @param {readonly boolean[]} sounding one flag per bar of the excerpt: whether the track plays
+ *   in it (`soundingBars`)
+ * @param {number} [maxBars] playing bars to gather (default 8)
+ * @param {number} [gapBars] the shortest silent stretch that is skipped, in bars (default 2)
+ * @returns {Array<[number, number]>} [first, end) bar ranges in order; empty when no bar plays
+ * @example
+ * // Bars 1, 2, 4 and 7 play: bar 3 is a one-bar rest, bars 5 and 6 a silent stretch.
+ * previewWindow([false, true, true, false, true, false, false, true]); // [[1, 5], [7, 8]]
+ */
+export function previewWindow(sounding, maxBars = 8, gapBars = 2) {
+  /** @type {Array<[number, number]>} */
+  const ranges = [];
+  let heard = 0;
+  let bar = sounding.indexOf(true);
+  while (bar !== -1 && heard < maxBars) {
+    const first = bar;
+    let end = bar; // one past the range's last playing bar
+    // `bar - end` counts the silent bars since that one: at `gapBars` the range is over.
+    while (bar < sounding.length && bar - end < gapBars && heard < maxBars) {
+      if (sounding[bar]) {
+        heard += 1;
+        end = bar + 1;
+      }
+      bar += 1;
+    }
+    ranges.push([first, end]);
+    bar = sounding.indexOf(true, bar);
+  }
+  return ranges;
+}
+
+/**
+ * The bars a voice plays in: a bar plays when a note sounds in it for more than a hair, so a
+ * note that ends on a bar line does not reach the next bar.
+ * @param {readonly VoiceNote[]} notes in beats
+ * @param {readonly number[]} barLines the beat of every bar line, from the start of the first
+ *   bar to the end of the last: n bars have n + 1 bar lines
+ * @returns {boolean[]} one flag per bar
+ * @example
+ * // Bars of 4/4, 2/4 and 4/4: the first note ends on the bar line of bar 1.
+ * soundingBars([{ pitch: 72, onset: 2, duration: 2 }, { pitch: 74, onset: 7, duration: 1 }], [0, 4, 6, 10]);
+ * // [true, false, true]
+ */
+export function soundingBars(notes, barLines) {
+  return barLines.slice(1).map((barEnd, bar) =>
+    notes.some((note) => Math.min(note.onset + note.duration, barEnd) - Math.max(note.onset, barLines[bar]) > HAIR_BEATS),
+  );
+}
+
+/**
+ * Voices cut to ranges of bars and joined back to back: each range starts where the previous
+ * one ends. A note keeps only its part inside a range; a drum hit stays when it starts in one.
+ * @param {Voices} voices notes in beats from the first bar line
+ * @param {ReadonlyArray<readonly [number, number]>} ranges [first, end) bars in order
+ *   (`previewWindow`)
+ * @param {readonly number[]} barLines the beat of every bar line, as in `soundingBars`
+ * @returns {{voices: Voices, durationBeats: number}} the joined voices (one list per
+ *   accompanying voice given, maybe empty) and their length: the ranges' lengths added up
+ * @example
+ * // Bars 1 and 3 of five 4/4 bars; the note held from beat 12 to 18 is cut at bar line 16:
+ * const melody = [{ pitch: 72, onset: 5, duration: 2 }, { pitch: 74, onset: 9, duration: 2 }, { pitch: 76, onset: 12, duration: 6 }];
+ * windowVoices({ melody, others: [], drums: [] }, [[1, 2], [3, 4]], [0, 4, 8, 12, 16, 20]);
+ * // { voices: { melody: [{ pitch: 72, onset: 1, duration: 2 }, { pitch: 76, onset: 4, duration: 4 }],
+ * //   others: [], drums: [] }, durationBeats: 8 }
+ */
+export function windowVoices(voices, ranges, barLines) {
+  // Each range in beats: where it starts and ends in `voices`, and where it starts once joined.
+  const spans = [];
+  let durationBeats = 0;
+  for (const [first, end] of ranges) {
+    spans.push({ start: barLines[first], end: barLines[end], joinedAt: durationBeats });
+    durationBeats += barLines[end] - barLines[first];
+  }
+  const cut = (/** @type {VoiceNote[]} */ notes) =>
+    spans.flatMap(({ start, end, joinedAt }) =>
+      notes.flatMap((note) => {
+        const onset = Math.max(note.onset, start);
+        const release = Math.min(note.onset + note.duration, end);
+        return release - onset > HAIR_BEATS ? [{ pitch: note.pitch, onset: joinedAt + onset - start, duration: release - onset }] : [];
+      }),
+    );
+  const drums = spans.flatMap(({ start, end, joinedAt }) =>
+    voices.drums
+      .filter((hit) => hit.onset > start - HAIR_BEATS && hit.onset < end - HAIR_BEATS)
+      .map((hit) => ({ pitch: hit.pitch, onset: joinedAt + hit.onset - start })),
+  );
+  return { voices: { melody: cut(voices.melody), others: voices.others.map(cut), drums }, durationBeats };
+}
+
+/**
+ * What a track preview plays: one track alone, in beats, and where it starts.
+ * @typedef {object} TrackPreview
+ * @property {Voices} voices the track's notes as the melody, from the preview's start
+ * @property {number} durationBeats the preview's length, for `renderVoices`
+ * @property {number} firstBar the bar where the preview starts, counted from the file's first
+ *   bar like the excerpt's bars
+ * @property {boolean} inExcerpt false when the track plays nothing in the excerpt, so the
+ *   preview comes from the bar where it first plays in the whole song
+ */
+
+/**
+ * Preview one track of a MIDI song (spec 005 story 2): the bars where it plays in the excerpt
+ * (`previewWindow`), or, when it plays nothing there, the bars from where it first plays in the
+ * whole song.
+ * @param {import("../core/midi-file.js").MidiSong} midi the song, as `readMidiFile` gives it
+ * @param {MidiExcerpt} excerpt the lead sheet's grid and bars, with the track to preview as
+ *   `melodyTrack`
+ * @param {number} [maxBars] playing bars to gather (default 8)
+ * @param {number} [gapBars] the shortest silent stretch that is skipped, in bars (default 2)
+ * @returns {TrackPreview | null} null when the track has no pitched note on the song's bars
+ * @example
+ * // A 120 BPM melody that enters in bar 3, then rests in bars 5 and 6 (lateEntrySong in the tests):
+ * const preview = trackPreview(song, { melodyTrack: 1, sourceGrid: [120, 0], bars: [0, 16] });
+ * [preview.firstBar, preview.inExcerpt, preview.durationBeats]; // [3, true, 36]
+ */
+export function trackPreview(midi, excerpt, maxBars = 8, gapBars = 2) {
+  const fromExcerpt = previewOf(midi, excerpt, maxBars, gapBars);
+  if (fromExcerpt) return { ...fromExcerpt, inExcerpt: true };
+  const entrance = entranceExcerpt(midi, excerpt);
+  const fromEntrance = entrance && previewOf(midi, entrance, maxBars, gapBars);
+  return fromEntrance ? { ...fromEntrance, inExcerpt: false } : null;
+}
+
+/**
+ * The preview of the excerpt's melody track inside the excerpt.
+ * @param {import("../core/midi-file.js").MidiSong} midi
+ * @param {MidiExcerpt} excerpt
+ * @param {number} maxBars
+ * @param {number} gapBars
+ * @returns {Omit<TrackPreview, "inExcerpt"> | null} null when the track plays in no bar of it
+ */
+function previewOf(midi, excerpt, maxBars, gapBars) {
+  const barLines = excerptBarLines(midi, excerpt);
+  const { melody } = midiExcerptVoices(midi, excerpt);
+  const ranges = previewWindow(soundingBars(melody, barLines), maxBars, gapBars);
+  if (ranges.length === 0) return null;
+  const { voices, durationBeats } = windowVoices({ melody, others: [], drums: [] }, ranges, barLines);
+  return { voices, durationBeats, firstBar: excerpt.bars[0] + ranges[0][0] };
+}
+
+/**
+ * The bar lines of an excerpt, in beats from its first bar: the same beats as its voices.
+ * @param {import("../core/midi-file.js").MidiSong} midi
+ * @param {MidiExcerpt} excerpt
+ * @returns {number[]} one more than the excerpt's bars
+ */
+function excerptBarLines(midi, excerpt) {
+  const { map, first, end } = excerptBars(midi, excerpt.bars, gridOf(midi, excerpt.sourceGrid));
+  const offset = map[first].start;
+  const last = map[end - 1];
+  return [...map.slice(first, end).map((bar) => bar.start - offset), last.start + last.length - offset];
+}
+
+/**
+ * The excerpt from the bar where the melody track first plays in the whole song to the song's
+ * end (at most MAX_BARS bars), on the same grid.
+ * @param {import("../core/midi-file.js").MidiSong} midi
+ * @param {MidiExcerpt} excerpt
+ * @returns {MidiExcerpt | null} null when the track has no pitched note on the song's bars
+ */
+function entranceExcerpt(midi, excerpt) {
+  const grid = gridOf(midi, excerpt.sourceGrid);
+  const { map } = excerptBars(midi, excerpt.bars, grid);
+  const beatsOf = beatClock(midi, excerpt.sourceGrid);
+  const tracks = Array.isArray(excerpt.melodyTrack) ? excerpt.melodyTrack : [excerpt.melodyTrack];
+  // On an estimated grid a note may start before the first bar line; it enters on that line.
+  const songStart = map[0].start;
+  let entrance = Infinity;
+  for (const track of tracks) {
+    if (midi.instruments[track].isDrum) continue;
+    for (const note of midi.instruments[track].notes) {
+      if (beatsOf(note.end) > songStart + HAIR_BEATS) entrance = Math.min(entrance, Math.max(beatsOf(note.start), songStart));
+    }
+  }
+  if (entrance === Infinity) return null;
+  const first = map.filter((bar) => bar.start <= entrance + HAIR_BEATS).length - 1;
+  const end = Math.min(first + MAX_BARS, countBars(midi, grid));
+  return first < end ? { ...excerpt, bars: [first, end] } : null;
 }

@@ -4,7 +4,8 @@
 // The input is played plainly on the same beat timeline as the arrangement: a lead sheet as its
 // melody over a quiet chord pad, a MIDI song as its own tracks cut to the excerpt. The tests check
 // the notes in beats (what the channel view draws) and the sound: duration, energy in the melody
-// and chord bands, drums as noise, and determinism.
+// and chord bands, drums as noise, and determinism. The last tests cover the track preview (spec
+// 005 story 2): which bars of a track it plays, and how they play back to back.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -17,9 +18,13 @@ import {
   beatClock,
   leadSheetVoices,
   midiExcerptVoices,
+  previewWindow,
   renderLeadSheet,
   renderMidiExcerpt,
   renderVoices,
+  soundingBars,
+  trackPreview,
+  windowVoices,
 } from "../src/audio/plain-synth.js";
 import { assertClose, countInSongBytes, readFixture } from "./helpers.js";
 
@@ -264,4 +269,173 @@ test("the original of a waltz excerpt lasts its bars of three beats", () => {
   // Bar 1 starts on beat 3 (1.5 s): its three melody notes fall on beats 0, 1 and 2 of the excerpt.
   assert.deepEqual(voices.melody.slice(0, 3).map((note) => note.onset), [0, 1, 2]);
   assert.equal(renderMidiExcerpt(midi, excerpt, 120, 1000).length, 3000); // 6 beats at 120 BPM
+});
+
+// --- Track preview (spec 005 story 2, research R4) ---------------------------------------------
+
+/**
+ * Which bars of an excerpt a track plays in, written as text: "x" for a bar where it plays, "."
+ * for a silent bar.
+ * @param {string} pattern for example "..xx.x"
+ * @returns {boolean[]}
+ */
+function barsPlaying(pattern) {
+  return [...pattern].map((bar) => bar === "x");
+}
+
+/**
+ * A 120 BPM song in 4/4, a bar every 2 s, 16 bars: drums on the first beat, a piano intro over
+ * bars 0 to 2 and a melody that enters in bar 3. The melody plays bars 3, 4 and 7, rests in bar 8
+ * and plays bars 9 to 15 (one note per bar, from F5 up); bars 5 and 6 are a silent stretch.
+ * @returns {import("../src/core/midi-file.js").MidiSong}
+ */
+function lateEntrySong() {
+  const note = (/** @type {number} */ start, /** @type {number} */ end, /** @type {number} */ pitch) => ({ start, end, pitch, velocity: 100 });
+  const melody = [note(6, 8, 72), note(8, 10, 74), note(14, 16, 76)];
+  for (let bar = 9; bar < 16; bar++) melody.push(note(2 * bar, 2 * bar + 2, 68 + bar));
+  const bytes = writeMidiFile({
+    tempoBpm: 120,
+    tracks: [
+      { name: "intro", channel: 0, program: 0, notes: [note(0, 6, 60)] },
+      { name: "melody", channel: 1, program: 73, notes: melody },
+      { name: "drums", channel: 9, program: 0, notes: [note(0, 0.1, 36)] },
+    ],
+  });
+  return readMidiFile(bytes);
+}
+
+/** The bars of `lateEntrySong` where the melody plays, in a preview: bars 3–4, then 7–13. */
+const LATE_ENTRY_PREVIEW = [[72, 0], [74, 4], [76, 8], [77, 16], [78, 20], [79, 24], [80, 28], [81, 32]];
+
+test("a track preview starts at the bar of the track's first note", () => {
+  assert.deepEqual(previewWindow(barsPlaying("...xx")), [[3, 5]]);
+});
+
+test("a track preview jumps over two or more silent bars and keeps a shorter rest", () => {
+  // Bar 1 is a one-bar rest inside the phrase; bars 3–4 and 6–8 are silent stretches.
+  assert.deepEqual(previewWindow(barsPlaying("x.x..x...x")), [[0, 3], [5, 6], [9, 10]]);
+});
+
+test("a track preview leaves out the rest after the track's last note", () => {
+  assert.deepEqual(previewWindow(barsPlaying("xx.")), [[0, 2]]);
+});
+
+test("a track preview stops once eight playing bars are heard, and the rests it keeps do not count", () => {
+  assert.deepEqual(previewWindow(barsPlaying("xxxxxxxxxxxx")), [[0, 8]]);
+  assert.deepEqual(previewWindow(barsPlaying("x.xxxxxxxxxx")), [[0, 9]]);
+  assert.deepEqual(previewWindow(barsPlaying("xxx...xxxxxxxx")), [[0, 3], [6, 11]]);
+});
+
+test("a track preview of a track that never plays is empty", () => {
+  assert.deepEqual(previewWindow(barsPlaying("....")), []);
+  assert.deepEqual(previewWindow([]), []);
+});
+
+test("a track preview takes its number of bars and the silence it jumps over as parameters", () => {
+  assert.deepEqual(previewWindow(barsPlaying("x.xxx"), 2, 1), [[0, 1], [2, 3]]);
+  assert.deepEqual(previewWindow(barsPlaying("x..x"), 8, 3), [[0, 4]]);
+});
+
+test("a bar plays when a note sounds in it, and a note that ends on a bar line does not reach the next bar", () => {
+  // Bars of 4/4, 2/4 and 4/4: bar lines on beats 0, 4, 6 and 10.
+  const barLines = [0, 4, 6, 10];
+  assert.deepEqual(soundingBars([{ pitch: 72, onset: 2, duration: 2 }], barLines), [true, false, false]);
+  // A note that ends a hair after the bar line (a rounding error of the beat clock) does not either.
+  assert.deepEqual(soundingBars([{ pitch: 72, onset: 0, duration: 4 + 1e-9 }], barLines), [true, false, false]);
+  // A note held from beat 3 to beat 7 sounds in all three bars.
+  assert.deepEqual(soundingBars([{ pitch: 72, onset: 3, duration: 4 }], barLines), [true, true, true]);
+  assert.deepEqual(soundingBars([], barLines), [false, false, false]);
+});
+
+test("the bars of a preview play back to back, and a note that crosses the edge of a range keeps only its part inside", () => {
+  // Five 4/4 bars; the preview plays bar 1, then bar 3.
+  const barLines = [0, 4, 8, 12, 16, 20];
+  const voices = {
+    melody: [
+      { pitch: 72, onset: 5, duration: 2 }, // in bar 1
+      { pitch: 74, onset: 9, duration: 2 }, // in bar 2, left out
+      { pitch: 76, onset: 12, duration: 6 }, // from bar 3 into bar 4, cut at its bar line
+    ],
+    others: [[{ pitch: 40, onset: 2, duration: 10 }]], // a bass held from bar 0 to the end of bar 2
+    drums: [{ pitch: 36, onset: 4 }, { pitch: 38, onset: 10 }, { pitch: 36, onset: 12 }],
+  };
+
+  const { voices: windowed, durationBeats } = windowVoices(voices, [[1, 2], [3, 4]], barLines);
+
+  assert.equal(durationBeats, 8);
+  assert.deepEqual(windowed.melody, [{ pitch: 72, onset: 1, duration: 2 }, { pitch: 76, onset: 4, duration: 4 }]);
+  assert.deepEqual(windowed.others, [[{ pitch: 40, onset: 0, duration: 4 }]]);
+  assert.deepEqual(windowed.drums, [{ pitch: 36, onset: 0 }, { pitch: 36, onset: 4 }]);
+  assert.equal(renderVoices(windowed, 120, 1000, durationBeats).length, 4000); // 8 beats at 120 BPM
+});
+
+test("a track preview of a MIDI song starts where the track enters and jumps over its long rests", () => {
+  const midi = lateEntrySong();
+  const excerpt = { melodyTrack: trackIndex(midi, "melody"), sourceGrid: /** @type {[number, number]} */ ([120, 0]), bars: /** @type {[number, number]} */ ([0, 16]) };
+
+  const preview = trackPreview(midi, excerpt);
+
+  assert.ok(preview);
+  assert.equal(preview.firstBar, 3);
+  assert.equal(preview.inExcerpt, true);
+  // Bars 3–4, then bars 7–13 (bar 8 is a one-bar rest): eight playing bars and one rest.
+  assert.equal(preview.durationBeats, 36);
+  assert.deepEqual(preview.voices.melody.map((note) => [note.pitch, note.onset]), LATE_ENTRY_PREVIEW);
+  assert.deepEqual(preview.voices.others, []);
+  assert.deepEqual(preview.voices.drums, []);
+  // The first note sounds at once, not after the six seconds of intro.
+  const samples = renderVoices(preview.voices, 120, 8000, preview.durationBeats);
+  assert.equal(samples.length, 144000);
+  assert.ok(samples.subarray(0, 800).some((sample) => sample !== 0));
+});
+
+test("a track preview counts its first bar from the file's first bar, as the excerpt does", () => {
+  const midi = lateEntrySong();
+  const excerpt = { melodyTrack: trackIndex(midi, "melody"), sourceGrid: /** @type {[number, number]} */ ([120, 0]), bars: /** @type {[number, number]} */ ([2, 16]) };
+
+  const preview = trackPreview(midi, excerpt);
+
+  assert.ok(preview);
+  assert.equal(preview.firstBar, 3);
+  assert.deepEqual(preview.voices.melody.map((note) => [note.pitch, note.onset]), LATE_ENTRY_PREVIEW);
+});
+
+test("a track that plays nothing in the excerpt is previewed from the bar where it first plays in the whole song", () => {
+  const midi = lateEntrySong();
+  const excerpt = { melodyTrack: trackIndex(midi, "melody"), sourceGrid: /** @type {[number, number]} */ ([120, 0]), bars: /** @type {[number, number]} */ ([0, 3]) };
+
+  const preview = trackPreview(midi, excerpt);
+
+  assert.ok(preview);
+  assert.equal(preview.inExcerpt, false);
+  assert.equal(preview.firstBar, 3);
+  assert.equal(preview.durationBeats, 36);
+  assert.deepEqual(preview.voices.melody.map((note) => [note.pitch, note.onset]), LATE_ENTRY_PREVIEW);
+});
+
+test("a track with no notes, or only drums, has no preview", () => {
+  const midi = lateEntrySong();
+  const empty = { name: "empty", program: 0, isDrum: false, channel: 2, notes: [] };
+  const withEmpty = { ...midi, instruments: [...midi.instruments, empty] };
+  const excerpt = (/** @type {number} */ track) => ({ melodyTrack: track, sourceGrid: /** @type {[number, number]} */ ([120, 0]), bars: /** @type {[number, number]} */ ([0, 16]) });
+
+  assert.equal(trackPreview(withEmpty, excerpt(withEmpty.instruments.length - 1)), null);
+  assert.equal(trackPreview(midi, excerpt(trackIndex(midi, "drums"))), null);
+});
+
+test("the track preview's documented examples hold", () => {
+  assert.deepEqual(previewWindow([false, true, true, false, true, false, false, true]), [[1, 5], [7, 8]]);
+  assert.deepEqual(
+    soundingBars([{ pitch: 72, onset: 2, duration: 2 }, { pitch: 74, onset: 7, duration: 1 }], [0, 4, 6, 10]),
+    [true, false, true],
+  );
+  const melody = [{ pitch: 72, onset: 5, duration: 2 }, { pitch: 74, onset: 9, duration: 2 }, { pitch: 76, onset: 12, duration: 6 }];
+  assert.deepEqual(windowVoices({ melody, others: [], drums: [] }, [[1, 2], [3, 4]], [0, 4, 8, 12, 16, 20]), {
+    voices: { melody: [{ pitch: 72, onset: 1, duration: 2 }, { pitch: 76, onset: 4, duration: 4 }], others: [], drums: [] },
+    durationBeats: 8,
+  });
+  const song = lateEntrySong();
+  assert.equal(trackIndex(song, "melody"), 1);
+  const preview = trackPreview(song, { melodyTrack: 1, sourceGrid: [120, 0], bars: [0, 16] });
+  assert.deepEqual([preview?.firstBar, preview?.inExcerpt, preview?.durationBeats], [3, true, 36]);
 });

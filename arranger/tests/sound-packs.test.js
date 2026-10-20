@@ -9,8 +9,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { PEAK_LEVEL, renderChip, renderLength } from "../src/audio/chip-synth.js";
-import { SOUND_PACKS, WAVES, arrangementVoices, renderPack } from "../src/audio/sound-packs.js";
+import { CHANNEL_GAINS, PEAK_LEVEL, renderChip, renderChipStems, renderLength } from "../src/audio/chip-synth.js";
+import { SOUND_PACKS, WAVES, arrangementVoices, renderPack, renderPackStems } from "../src/audio/sound-packs.js";
 import { readFixture } from "./helpers.js";
 
 const RATE = 22050;
@@ -155,5 +155,110 @@ test("every pack renders the Korobeiniki sample in under a second", () => {
     renderPack(pack.id, arrangement, 44100);
     const seconds = (performance.now() - start) / 1000;
     assert.ok(seconds < 1, `${pack.id} took ${seconds.toFixed(2)} s`);
+  }
+});
+
+// --- Stems (spec 005): one track per channel, so the page can set each channel's level live ---
+
+/** @type {Array<"P1" | "P2" | "TR" | "NO">} */
+const CHANNELS = ["P1", "P2", "TR", "NO"];
+
+/** One bar where every channel plays, drum hits included. */
+const BAND = {
+  tempoBpm: 120,
+  channels: {
+    P1: [{ pitch: 76, onset: 0, duration: 2, velocity: 100 }, { pitch: 72, onset: 2, duration: 2, velocity: 100 }],
+    P2: [{ pitch: 64, onset: 0, duration: 4, velocity: 80 }],
+    TR: [{ pitch: 45, onset: 0, duration: 4, velocity: 100 }],
+    NO: [{ pitch: 36, onset: 0, duration: 0.5, velocity: 100 }, { pitch: 38, onset: 2, duration: 0.5, velocity: 90 }],
+  },
+};
+
+/**
+ * The largest difference between two renders of the same length.
+ * @param {ArrayLike<number>} a
+ * @param {ArrayLike<number>} b
+ */
+function largestDifference(a, b) {
+  assert.equal(a.length, b.length);
+  let largest = 0;
+  for (let i = 0; i < a.length; i++) largest = Math.max(largest, Math.abs(a[i] - b[i]));
+  return largest;
+}
+
+/**
+ * The four stems added sample by sample.
+ * @param {Record<string, Float32Array>} stems
+ */
+function sumOf(stems) {
+  const sum = new Float64Array(stems.P1.length);
+  for (const channel of CHANNELS) stems[channel].forEach((sample, i) => (sum[i] += sample));
+  return sum;
+}
+
+test("every pack gives four stems, P1, P2, TR and NO, as long as its render", () => {
+  const arrangement = korobeiniki();
+  const length = renderLength(arrangement, RATE);
+  for (const pack of SOUND_PACKS) {
+    const stems = renderPackStems(pack.id, arrangement, RATE);
+    assert.deepEqual(Object.keys(stems).sort(), [...CHANNELS].sort(), pack.id);
+    for (const channel of CHANNELS) {
+      assert.ok(stems[channel] instanceof Float32Array, `${pack.id} ${channel}`);
+      assert.equal(stems[channel].length, length, `${pack.id} ${channel}`);
+      assert.ok(peakOf(stems[channel]) > 0, `${pack.id} ${channel} is silent`);
+    }
+  }
+});
+
+test("in every pack each stem holds only its own channel's notes", () => {
+  // For the plain pack this is its own mapping: the melody voice is P1, the first other voice
+  // P2, the second TR, and the drum hits NO.
+  for (const pack of SOUND_PACKS) {
+    for (const channel of CHANNELS) {
+      const solo = { tempoBpm: BAND.tempoBpm, channels: { [channel]: BAND.channels[channel] } };
+      const stems = renderPackStems(pack.id, solo, RATE);
+      for (const other of CHANNELS) {
+        if (other === channel) assert.ok(peakOf(stems[other]) > 0.01, `${pack.id}: ${channel} is silent`);
+        else assert.equal(peakOf(stems[other]), 0, `${pack.id}: ${channel} leaks into ${other}`);
+      }
+    }
+  }
+});
+
+test("the stems of a pack add up to its render, so at 0 dB the mix sounds the same", () => {
+  const arrangement = korobeiniki();
+  for (const pack of SOUND_PACKS) {
+    const difference = largestDifference(sumOf(renderPackStems(pack.id, arrangement, RATE)), renderPack(pack.id, arrangement, RATE));
+    assert.ok(difference < 1e-5, `${pack.id}: largest difference ${difference}`);
+  }
+});
+
+test("the NES stems are the chip's stems times the chip's channel gains, scaled like the render", () => {
+  const arrangement = korobeiniki();
+  const chip = renderChipStems(arrangement, RATE);
+  const nes = renderPackStems("nes", arrangement, RATE);
+  // renderChip's scale: -3 dBFS over the peak of the chip stems mixed with the chip's gains.
+  const mixed = new Float64Array(chip.P1.length);
+  for (const channel of CHANNELS) chip[channel].forEach((sample, i) => (mixed[i] += CHANNEL_GAINS[channel] * sample));
+  const scale = PEAK_LEVEL / mixed.reduce((peak, sample) => Math.max(peak, Math.abs(sample)), 0);
+  for (const channel of CHANNELS) {
+    const expected = Float32Array.from(chip[channel], (sample) => sample * CHANNEL_GAINS[channel] * scale);
+    const difference = largestDifference(nes[channel], expected);
+    assert.ok(difference < 1e-6, `${channel}: largest difference ${difference}`);
+  }
+});
+
+test("an unknown pack has no stems either", () => {
+  assert.throws(() => renderPackStems("amiga", korobeiniki(), RATE), { message: 'unknown sound pack "amiga"' });
+});
+
+test("an arrangement without notes gives silent stems in every pack", () => {
+  const empty = { tempoBpm: 120, channels: {} };
+  for (const pack of SOUND_PACKS) {
+    const stems = renderPackStems(pack.id, empty, RATE);
+    for (const channel of CHANNELS) {
+      assert.equal(stems[channel].length, renderLength(empty, RATE), `${pack.id} ${channel}`);
+      assert.equal(peakOf(stems[channel]), 0, `${pack.id} ${channel}`);
+    }
   }
 });

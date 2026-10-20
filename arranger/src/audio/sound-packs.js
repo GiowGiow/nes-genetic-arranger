@@ -23,10 +23,32 @@
 // Every pack is a pure, deterministic function: noise comes from fixed shift registers or from
 // `random.js` with a fixed seed, and the mix peaks at -3 dBFS like the NES render (the page then
 // matches its loudness with the original's).
+//
+// Every pack can also keep its four lines apart, as stems: P1 (melody), P2 (harmony), TR (bass)
+// and NO (drums), so the page can set each line's level while it plays (spec 005,
+// `audio/mixer.js`). The stems share one scale: added together they give the pack's render. The
+// plain pack maps its voices the same way: the melody to P1, the two other voices to P2 and TR,
+// and the drum hits to NO.
 
-import { PEAK_LEVEL, SAMPLE_RATE, noiseWave, renderChip, renderLength } from "./chip-synth.js";
-import { renderVoices } from "./plain-synth.js";
+import {
+  CHANNEL_GAINS,
+  PEAK_LEVEL,
+  SAMPLE_RATE,
+  noiseWave,
+  renderChip,
+  renderChipStems,
+  renderLength,
+  scaleToPeak,
+} from "./chip-synth.js";
+import { mixVoices, renderVoices } from "./plain-synth.js";
 import { createRandom } from "../core/random.js";
+
+/** @typedef {import("./chip-synth.js").ChannelName} ChannelName */
+
+/**
+ * One track per channel of the arrangement, all of the same length and on one scale.
+ * @typedef {Record<ChannelName, Float32Array>} Stems
+ */
 
 /**
  * One sound pack, as the page lists it.
@@ -176,6 +198,12 @@ const OSCILLATOR_PACKS = {
 // The noise generators' seed: any fixed number keeps every render identical.
 const NOISE_SEED = 2026;
 
+/** @type {readonly ChannelName[]} */
+const CHANNELS = Object.freeze(["P1", "P2", "TR", "NO"]);
+
+// Stems whose channel gains are already inside them (every pack but the NES chip).
+const UNIT_GAINS = Object.freeze({ P1: 1, P2: 1, TR: 1, NO: 1 });
+
 /**
  * Render an arrangement with a sound pack.
  *
@@ -192,9 +220,79 @@ export function renderPack(packId, arrangement, sampleRate = SAMPLE_RATE) {
   if (packId === "nes") return renderChip(arrangement, sampleRate);
   const length = renderLength(arrangement, sampleRate);
   if (packId === "plain") return renderPlain(arrangement, sampleRate, length);
+  // All four channels write into one mix, the same sums in the same order as before stems.
+  const mix = new Float64Array(length);
+  renderOscillators(oscillatorPack(packId), arrangement, sampleRate, { P1: mix, P2: mix, TR: mix, NO: mix });
+  return scaleToPeak(mix);
+}
+
+/**
+ * Render an arrangement with a sound pack, one stem per channel.
+ *
+ * The stems are the pack's render taken apart: added sample by sample they give
+ * `renderPack(packId, arrangement, sampleRate)`, up to float32 rounding, so together they peak
+ * at -3 dBFS. The NES stems carry the chip's channel gains (`CHANNEL_GAINS`).
+ * @param {string} packId one of the ids of SOUND_PACKS
+ * @param {import("./chip-synth.js").ChipArrangement} arrangement the tempo and the channels' notes, in beats
+ * @param {number} [sampleRate] samples per second (default 44,100)
+ * @returns {Stems} four stems of `renderLength(arrangement, sampleRate)` samples
+ * @throws {Error} for an unknown pack
+ * @example
+ * const stems = renderPackStems("gameboy", arrangement, 44100);
+ * stems.TR.length === renderLength(arrangement, 44100); // true: the bass, alone
+ * // stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] ≈ renderPack("gameboy", arrangement, 44100)[i]
+ */
+export function renderPackStems(packId, arrangement, sampleRate = SAMPLE_RATE) {
+  if (packId === "nes") return scaleStemsToPeak(renderChipStems(arrangement, sampleRate), CHANNEL_GAINS);
+  const length = renderLength(arrangement, sampleRate);
+  if (packId === "plain") return scaleStemsToPeak(plainStems(arrangement, sampleRate, length), UNIT_GAINS);
+  const pack = oscillatorPack(packId);
+  /** @type {Record<ChannelName, Float64Array>} */
+  const stems = {
+    P1: new Float64Array(length),
+    P2: new Float64Array(length),
+    TR: new Float64Array(length),
+    NO: new Float64Array(length),
+  };
+  renderOscillators(pack, arrangement, sampleRate, stems);
+  return scaleStemsToPeak(stems, UNIT_GAINS);
+}
+
+/**
+ * @param {string} packId
+ * @returns {OscillatorPack}
+ * @throws {Error} for an unknown pack
+ */
+function oscillatorPack(packId) {
   const pack = OSCILLATOR_PACKS[packId];
   if (!pack) throw new Error(`unknown sound pack "${packId}"`);
-  return renderOscillators(pack, arrangement, sampleRate, length);
+  return pack;
+}
+
+/**
+ * Stems times their gains, all scaled by one factor so that their sum peaks at -3 dBFS, as the
+ * pack's render does. Silent stems stay zeros.
+ * @param {Record<ChannelName, ArrayLike<number>>} stems on one common scale, of equal length
+ * @param {Readonly<Record<ChannelName, number>>} gains each stem's gain in the pack's mix
+ * @returns {Stems} new arrays
+ */
+function scaleStemsToPeak(stems, gains) {
+  const { P1, P2, TR, NO } = stems;
+  let peak = 0;
+  for (let i = 0; i < P1.length; i++) {
+    peak = Math.max(peak, Math.abs(gains.P1 * P1[i] + gains.P2 * P2[i] + gains.TR * TR[i] + gains.NO * NO[i]));
+  }
+  const scale = peak > 0 ? PEAK_LEVEL / peak : 0;
+  /** @type {Partial<Stems>} */
+  const scaled = {};
+  for (const channel of CHANNELS) {
+    const stem = stems[channel];
+    const factor = gains[channel] * scale;
+    const samples = new Float32Array(stem.length);
+    for (let i = 0; i < stem.length; i++) samples[i] = stem[i] * factor;
+    scaled[channel] = samples;
+  }
+  return /** @type {Stems} */ (scaled);
 }
 
 /**
@@ -233,29 +331,57 @@ function renderPlain(arrangement, sampleRate, length) {
 }
 
 /**
- * Render the channels with a pack's oscillators, envelopes and drums, then mix and filter.
+ * The plain pack's four voices mixed apart, before the peak scale: the melody (P1), the two
+ * other voices (P2 and TR) and the drum hits (NO).
+ * @param {import("./chip-synth.js").ChipArrangement} arrangement
+ * @param {number} sampleRate
+ * @param {number} length samples of each stem
+ * @returns {Record<ChannelName, Float64Array>}
+ */
+function plainStems(arrangement, sampleRate, length) {
+  const durationBeats = (length / sampleRate) * (arrangement.tempoBpm / 60);
+  const { melody, others, drums } = arrangementVoices(arrangement);
+  const mixAlone = (/** @type {import("./plain-synth.js").Voices} */ voices) => {
+    const mix = mixVoices(voices, arrangement.tempoBpm, sampleRate, durationBeats);
+    const stem = new Float64Array(length); // the chip timeline is the reference, as in renderPlain
+    stem.set(mix.subarray(0, length));
+    return stem;
+  };
+  return {
+    P1: mixAlone({ melody, others: [], drums: [] }),
+    P2: mixAlone({ melody: [], others: [others[0]], drums: [] }),
+    TR: mixAlone({ melody: [], others: [others[1]], drums: [] }),
+    NO: mixAlone({ melody: [], others: [], drums }),
+  };
+}
+
+/**
+ * Render the channels with a pack's oscillators, envelopes and drums, each channel into its
+ * buffer in `outputs`, then filter every buffer.
+ *
+ * Giving every channel the same buffer mixes them; giving each its own makes stems. The filter
+ * is linear, so filtering each stem and adding them equals filtering the mix.
  * @param {OscillatorPack} pack
  * @param {import("./chip-synth.js").ChipArrangement} arrangement
  * @param {number} sampleRate
- * @param {number} length
- * @returns {Float32Array}
+ * @param {Record<ChannelName, Float64Array>} outputs where each channel is added, all of one length
+ * @returns {void}
  */
-function renderOscillators(pack, arrangement, sampleRate, length) {
+function renderOscillators(pack, arrangement, sampleRate, outputs) {
   const secondsPerBeat = 60 / arrangement.tempoBpm;
-  const mix = new Float64Array(length);
   for (const channel of /** @type {const} */ (["P1", "P2", "TR"])) {
     const voice = pack.voices[channel];
     for (const { start, end, note } of sounding(arrangement.channels[channel] ?? [], secondsPerBeat)) {
-      addNote(mix, voice, note.pitch, note.velocity, start, end, sampleRate);
+      addNote(outputs[channel], voice, note.pitch, note.velocity, start, end, sampleRate);
     }
   }
   const random = createRandom(NOISE_SEED);
   for (const { start, end, note } of sounding(arrangement.channels.NO ?? [], secondsPerBeat)) {
     const drum = pack.drums[note.pitch] ?? pack.drums[38];
-    if (drum) addDrum(mix, drum, note.velocity, start, end, sampleRate, random);
+    if (drum) addDrum(outputs.NO, drum, note.velocity, start, end, sampleRate, random);
   }
-  if (pack.lowpassHz !== null) lowpass(mix, pack.lowpassHz, sampleRate);
-  return normalized(mix);
+  if (pack.lowpassHz === null) return;
+  for (const output of new Set(Object.values(outputs))) lowpass(output, pack.lowpassHz, sampleRate);
 }
 
 /**
@@ -371,20 +497,4 @@ function lowpass(samples, cutoffHz, sampleRate) {
     state += alpha * (samples[i] - state);
     samples[i] = state;
   }
-}
-
-/**
- * The mix scaled to peak at -3 dBFS, as Float32 samples; silence stays zeros.
- * @param {Float64Array} mix
- * @returns {Float32Array}
- */
-function normalized(mix) {
-  let peak = 0;
-  for (let i = 0; i < mix.length; i++) peak = Math.max(peak, Math.abs(mix[i]));
-  const samples = new Float32Array(mix.length);
-  if (peak > 0) {
-    const scale = PEAK_LEVEL / peak;
-    for (let i = 0; i < mix.length; i++) samples[i] = mix[i] * scale;
-  }
-  return samples;
 }
