@@ -363,12 +363,34 @@ function addTone(mix, tone, firstSample, gain) {
 }
 
 /**
+ * The number of samples of a render: from beat 0 to the last note end, plus the longest drum
+ * hit (0.15 s). Every sound pack (`sound-packs.js`) renders this many samples, so all of them
+ * share one timeline and the player can switch packs without moving.
+ * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
+ * @param {number} [sampleRate] samples per second (default 44,100)
+ * @returns {number}
+ * @example
+ * renderLength({ tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }] } });
+ * // 28665: (0.5 s + 0.15 s) × 44,100
+ */
+export function renderLength(arrangement, sampleRate = SAMPLE_RATE) {
+  const secondsPerBeat = 60 / arrangement.tempoBpm;
+  let endSeconds = 0;
+  for (const channel of CHANNELS) {
+    for (const note of arrangement.channels[channel] ?? []) {
+      endSeconds = Math.max(endSeconds, (note.onset + note.duration) * secondsPerBeat);
+    }
+  }
+  return Math.ceil((endSeconds + LONGEST_HIT_SECONDS) * sampleRate);
+}
+
+/**
  * Synthesize the P1, P2, TR and NO channels of an arrangement with chip waveforms (mono).
  *
  * Pulse and noise loudness follow the note velocity on the 4-bit volume scale; the triangle is
  * always at full level. The buffer runs from beat 0 to the last note end plus 0.15 s (the
- * longest drum hit), as in the command line. The mix peaks at -3 dBFS, and a piece without
- * notes gives 0.15 s of zeros.
+ * longest drum hit), as in the command line (`renderLength`). The mix peaks at -3 dBFS, and a
+ * piece without notes gives 0.15 s of zeros.
  * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
  * @param {number} [sampleRate] samples per second (default 44,100; use the AudioContext's)
  * @returns {Float32Array} the samples, in [-1, 1]

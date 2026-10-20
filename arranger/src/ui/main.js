@@ -18,10 +18,10 @@ import { writeLeadSheetAbc } from "../core/abc-writer.js";
 import { totalBeats } from "../core/meter.js";
 import { arrangementToMidi } from "../core/midi-export.js";
 import { configRecord, defaultSettings, runId, validateSettings } from "../core/settings.js";
-import { renderChip } from "../audio/chip-synth.js";
 import { matchLoudness } from "../audio/loudness.js";
 import { leadSheetVoices, midiExcerptVoices, renderVoices } from "../audio/plain-synth.js";
 import { createPlayer } from "../audio/player.js";
+import { SOUND_PACKS, renderPack } from "../audio/sound-packs.js";
 import { createCatalogPanel } from "./catalog-panel.js";
 import { createChannelView } from "./channel-view.js";
 import { createDownloads } from "./downloads.js";
@@ -53,6 +53,9 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js").catch(() => {});
 }
 
+/** Where the page remembers the chosen sound pack (one viewer's convenience, spec 004). */
+const SOUND_PACK_KEY = "nes-arranger-sound-pack";
+
 /** The app state: everything the panels show comes from here. */
 const state = {
   /** @type {Settings} */
@@ -61,6 +64,8 @@ const state = {
   input: null,
   /** @type {"watch" | "full"} */
   pace: "full",
+  /** @type {string} the sound pack the arrangement plays with (spec 004) */
+  soundPack: storedSoundPack(),
   /** @type {"idle" | "evolving" | "realized" | "ready" | "failed"} */
   phase: "idle",
   /** @type {string | null} */
@@ -172,9 +177,14 @@ $("#result").insertAdjacentHTML(
        <button type="button" class="button" data-version="original">Original</button>
        <button type="button" class="button" data-version="arrangement" aria-pressed="true">NES chip</button>
      </div>
+     <label class="sound-pack">Sound
+       <select data-sound-pack aria-describedby="sound-pack-hint">
+         ${SOUND_PACKS.map((pack) => `<option value="${pack.id}">${pack.name}</option>`).join("")}
+       </select></label>
      <input type="range" min="0" max="1" step="0.01" value="0" data-seek aria-label="Position" disabled>
      <span class="mono time" data-time>0:00 / 0:00</span>
    </div>
+   <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
    <div data-channel-view></div>
    <p class="caption">Each channel is a line in its color, revealed as it plays: P1 melody (blue),
@@ -293,11 +303,8 @@ async function finishRun(message) {
   const context = player.ensureContext();
   const durationBeats = totalBeats(leadSheet.bars);
   const voices = originalVoices(input, leadSheet);
-  const matched = matchLoudness(
-    renderChip(arrangement, context.sampleRate),
-    renderVoices(voices, leadSheet.tempoBpm, context.sampleRate, durationBeats),
-    context.sampleRate,
-  );
+  const originalRaw = renderVoices(voices, leadSheet.tempoBpm, context.sampleRate, durationBeats);
+  const matched = matchLoudness(renderPack(state.soundPack, arrangement, context.sampleRate), originalRaw, context.sampleRate);
   const samples = matched.a;
   const originalSamples = matched.b;
   scenes = buildScenes(arrangement, voices, leadSheet.tempoBpm);
@@ -353,6 +360,8 @@ async function finishRun(message) {
     leadSheet,
     samples,
     originalSamples,
+    originalRaw,
+    soundPack: state.soundPack,
     scenes,
     sampleRate: context.sampleRate,
     log: state.log,
@@ -389,6 +398,7 @@ function showRun(id) {
   });
   renderScores($("[data-scores]"), run.message.scores, run.message.bestFitness, run.settings.weights);
   scenes = run.scenes;
+  voiceRun(run);
   player.load({ arrangement: run.samples, original: run.originalSamples }, run.sampleRate);
   downloads.set(run.files);
   runsView.render(state.runs, id);
@@ -404,6 +414,23 @@ playButton.addEventListener("click", () => {
   player.toggle();
 });
 seekInput.addEventListener("input", () => player.seek(Number(seekInput.value)));
+const soundPackSelect = /** @type {HTMLSelectElement} */ ($("[data-sound-pack]"));
+soundPackSelect.value = state.soundPack;
+showSoundPack();
+soundPackSelect.addEventListener("change", () => {
+  state.soundPack = soundPackSelect.value;
+  try {
+    localStorage.setItem(SOUND_PACK_KEY, state.soundPack);
+  } catch {
+    // Without storage the choice lasts for this visit only.
+  }
+  showSoundPack();
+  const run = state.runs.find((entry) => entry.id === state.currentRunId);
+  if (!run || state.phase === "evolving") return;
+  voiceRun(run);
+  // load keeps the position and the play state, so the music goes on in the new sound.
+  player.load({ arrangement: run.samples, original: run.originalSamples }, run.sampleRate);
+});
 for (const button of document.querySelectorAll("[data-version]")) {
   button.addEventListener("click", () =>
     player.switchTo(/** @type {"original" | "arrangement"} */ (/** @type {HTMLElement} */ (button).dataset.version)),
@@ -653,3 +680,37 @@ async function fetchJson(path) {
 
 // Expose the run list for the settings and run-list panels (User Story 2).
 export { state, inputPanel, player };
+
+// --- Sound packs ----------------------------------------------------------------------------
+
+/** The sound pack chosen on an earlier visit, or the NES chip. @returns {string} */
+function storedSoundPack() {
+  try {
+    const stored = localStorage.getItem(SOUND_PACK_KEY);
+    if (stored && SOUND_PACKS.some((pack) => pack.id === stored)) return stored;
+  } catch {
+    // Storage can be blocked (private windows, previews): fall back to the default.
+  }
+  return SOUND_PACKS[0].id;
+}
+
+/** Name the arrangement's button after the pack, and say how the pack sounds. */
+function showSoundPack() {
+  const pack = SOUND_PACKS.find((entry) => entry.id === state.soundPack) ?? SOUND_PACKS[0];
+  $('[data-version="arrangement"]').textContent = pack.name;
+  $("[data-sound-pack-hint]").textContent = pack.description;
+}
+
+/**
+ * Render a run's arrangement with the chosen pack, once per change of pack, and match its
+ * loudness with the run's original again.
+ *
+ * @param {any} run an entry of the run list
+ */
+function voiceRun(run) {
+  if (run.soundPack === state.soundPack) return;
+  const matched = matchLoudness(renderPack(state.soundPack, run.arrangement, run.sampleRate), run.originalRaw, run.sampleRate);
+  run.samples = matched.a;
+  run.originalSamples = matched.b;
+  run.soundPack = state.soundPack;
+}

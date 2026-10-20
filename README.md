@@ -491,7 +491,9 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
    evolution live: the best and mean fitness, the generation and stagnation counters, and the
    best plan of four genes per bar. The "watch" pace runs about 400 generations per second so the
    evolution can be followed; "full speed" finishes in under a second.
-4. Play the arrangement with the NES chip sound, switch to the original at the same position,
+4. Play the arrangement with the NES chip sound, or switch the sound pack (Game Boy, Commodore
+   64, a soft synth or the original's plain instruments) without losing the position; switch to
+   the original at the same position,
    and download the MIDI, the run's `config.json` and the lead sheet as ABC.
 
 Files never leave the device: the page fetches only its own files. After the first visit it

@@ -19,6 +19,7 @@ const APP_SHELL = [
   "src/audio/chip-synth.js",
   "src/audio/loudness.js",
   "src/audio/plain-synth.js",
+  "src/audio/sound-packs.js",
   "src/audio/player.js",
   "src/core/abc-reader.js",
   "src/core/abc-writer.js",

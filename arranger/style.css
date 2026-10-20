@@ -382,3 +382,8 @@ footer .sep { color: var(--line); }
 .midi-options textarea { width: 100%; }
 .tempo-hint { margin: 0 0 10px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); color: #c9cfdb; font-size: .9rem; }
 .tempo-hint .button { margin-left: 6px; }
+
+/* Sound pack selector (spec 004): beside the A/B buttons, its description under the transport. */
+.sound-pack { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--muted, inherit); }
+.sound-pack select { font: inherit; }
+.sound-pack-hint { margin: 6px 0 0; }
