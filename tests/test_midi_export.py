@@ -68,6 +68,23 @@ def test_the_midi_file_declares_the_first_meter_and_each_change():
     assert signatures(arrangement_to_midi(arrangement)) == [(3, 4, 0.0), (2, 4, 3.0), (4, 4, 4.0)]
 
 
+def test_an_additive_meter_is_written_as_its_time_signature_and_a_regrouping_adds_no_event():
+    from dataclasses import replace
+
+    from leadsheet.meter import parse_meter
+
+    # A MIDI time signature cannot hold the groups: 2+2+3/8 and 3+2+2/8 are both 7/8.
+    texts = ("2+2+3/8", "3+2+2/8", "7/8", "3/2", "11/8")
+    arrangement = replace(small_arrangement(), meters=tuple(parse_meter(t) for t in texts))
+
+    # At 120 BPM a beat lasts 0.5 s: the 3/2 bar starts on beat 10.5 (5.25 s), 11/8 on 16.5.
+    assert signatures(arrangement_to_midi(arrangement)) == [
+        (7, 8, 0.0),
+        (3, 2, 5.25),
+        (11, 8, 8.25),
+    ]
+
+
 def test_a_sample_reruns_to_the_same_midi_bytes(tmp_path):
     import json
     from pathlib import Path

@@ -110,9 +110,9 @@ test("a population that is not whole plans is refused", () => {
 
 const planFiles = readdirSync(join(fixturesDir, "plans")).filter((name) => name.endsWith(".json"));
 
-test("there are 17 plan fixtures: 10 samples and the fixed plans of 7 meter tunes", () => {
-  assert.equal(planFiles.length, 17);
-  assert.equal(planFiles.filter((name) => name.startsWith("meters-")).length, 7);
+test("there are 23 plan fixtures: 10 samples and the fixed plans of 13 meter tunes", () => {
+  assert.equal(planFiles.length, 23);
+  assert.equal(planFiles.filter((name) => name.startsWith("meters-")).length, 13);
 });
 
 test("contrast measures the drums of each bar with that bar's own row of drum activity", () => {

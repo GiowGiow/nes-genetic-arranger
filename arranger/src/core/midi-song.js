@@ -10,10 +10,11 @@
 //   onto its start (a staccato sixteenth, half a sixteenth long or less), keeps one sixteenth: a
 //   staccato note is still a note of the tune. The skyline then cuts it at the next onset.
 // - Chords: over each group of the bar's meter (from one strong beat to the next: half bars in
-//   4/4 and 12/8, 3 + 2 beats in 5/4, the whole bar in 3/4 or 6/8), the other pitched tracks vote
-//   for the 12 pitch classes in proportion to how long each class sounds; bass tracks vote twice.
-//   The chord whose tones collect the most votes (major, minor, dominant seventh or minor
-//   seventh, on any of the 12 roots) wins, with a bonus when its root is the bass note.
+//   4/4 and 12/8, 3 + 2 beats in 5/4, 6 + 5 eighths in 11/8, the whole bar in 3/4 or 6/8), the
+//   other pitched tracks vote for the 12 pitch classes in proportion to how long each class
+//   sounds; bass tracks vote twice. The chord whose tones collect the most votes (major, minor,
+//   dominant seventh or minor seventh, on any of the 12 roots) wins, with a bonus when its root
+//   is the bass note.
 // - Form: the visitor marks where each section starts (for example bar 0 is "A" and bar 8 is
 //   "B"); sections, roles and phrases then follow the same rules as the ABC reader.
 //

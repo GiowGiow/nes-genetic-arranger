@@ -234,12 +234,14 @@ def _tr_root(bar: Bar) -> list[ChannelNote]:
 
 
 def _tr_octave_pump(bar: Bar) -> list[ChannelNote]:
+    bar_end = bar.meter.bar_beats
     notes = []
-    for eighth in range(round(bar.meter.bar_beats / EIGHTH)):
+    # A bar of an odd number of sixteenths (5/16) ends inside its last eighth, which is cut there.
+    for eighth in range(math.ceil(bar_end / EIGHTH)):
         onset = eighth * EIGHTH
         # Even eighths play the root and odd eighths jump an octave up: the bouncing NES bass.
         pitch = _bass_root(bar.chord_at(onset)) + (OCTAVE if eighth % 2 else 0)
-        notes.append(ChannelNote(pitch, onset, EIGHTH, VELOCITY_TR))
+        notes.append(ChannelNote(pitch, onset, min(EIGHTH, bar_end - onset), VELOCITY_TR))
     return notes
 
 
@@ -262,6 +264,9 @@ _WALKING_STEPS = (_bass_root, _bass_third, _bass_fifth)
 
 def _tr_walking(bar: Bar, next_bar: Bar | None) -> list[ChannelNote]:
     chords = _chords_on_beats(bar)
+    if len(chords) == 1:
+        # A one-beat bar (1/4) has no weak beat for the approach; its strong beat needs the root.
+        return _one_per_beat(bar, [_bass_root(chords[0])])
     climb = [_WALKING_STEPS[beat % 3](chord) for beat, chord in enumerate(chords[:-1])]
     # The last beat is a chromatic approach: one semitone below the root that the next bar
     # starts on. The last bar of the piece has no next root to lead to, so it repeats the fifth.
@@ -282,7 +287,7 @@ def realize_tr(bar: Bar, texture_gene: int, next_bar: Bar | None) -> tuple[Chann
       (root, fifth, root, fifth in 4/4);
     - walking: one note per beat climbing root, third, fifth (and again), then on the last beat
       one semitone below the root of `next_bar` (the fifth again when `next_bar` is None, at the
-      end of the piece).
+      end of the piece); a bar of a single beat plays only its root.
 
     >>> from leadsheet.model import ChordSegment
     >>> c = ChordSegment("C", 0, (0, 4, 7), 0.0, 4.0)

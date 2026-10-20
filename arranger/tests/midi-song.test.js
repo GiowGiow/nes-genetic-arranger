@@ -12,7 +12,7 @@ import { basename, extname, join } from "node:path";
 import { test } from "node:test";
 
 import { leadSheetFromJson } from "../src/core/leadsheet.js";
-import { SUPPORTED_METERS, makeMeter, meterText } from "../src/core/meter.js";
+import { SUPPORTED_RANGE, makeMeter } from "../src/core/meter.js";
 import { readMidiFile, writeMidiFile } from "../src/core/midi-file.js";
 import {
   BASS_TRACK_MAX_MEAN_PITCH,
@@ -49,10 +49,13 @@ import {
 const SONGS = readJson(`${repoRoot}/data/sources.json`).songs;
 
 /** The project's synthetic songs (src/export/fixtures.py), committed with their reductions. */
-const SYNTHETIC_SONGS = ["synthetic-waltz", "synthetic-twelve-eight", "synthetic-changes", "synthetic-count-in"];
-
-/** The list of supported meters that ends every "not supported" message (core/meter.js). */
-const SUPPORTED_LIST = SUPPORTED_METERS.map(meterText).join(", ");
+const SYNTHETIC_SONGS = [
+  "synthetic-waltz",
+  "synthetic-twelve-eight",
+  "synthetic-changes",
+  "synthetic-count-in",
+  "synthetic-any-meter",
+];
 
 /**
  * @param {import("../src/core/leadsheet.js").LeadSheet} sheet
@@ -598,13 +601,13 @@ test("a meter change inside the music moves the following bar lines", () => {
   ]);
 });
 
-test("an unsupported meter inside the excerpt is refused, naming it and the bar", () => {
-  const midi = smallSong({ meters: [[5, 8, 0]] });
+test("a meter outside the range inside the excerpt is refused, naming it, the bar and the range", () => {
+  const midi = smallSong({ meters: [[3, 32, 0]] });
   assert.throws(
     () => readLeadSheetMidi(midi, { melodyTrack: 0 }),
     (error) =>
       error instanceof Error &&
-      error.message === `bar 0: the meter 5/8 is not supported; supported meters: ${SUPPORTED_LIST}`,
+      error.message === `bar 0: the meter 3/32 is not supported; supported meters: ${SUPPORTED_RANGE}`,
   );
 });
 
@@ -656,6 +659,24 @@ for (const id of SYNTHETIC_SONGS) {
     assertClose(sheet.bars, expected.bars, 9);
   });
 }
+
+test("a song in 3/2, 6/4, 5/8 and 11/8 has bars of each meter and chords on their strong beats", () => {
+  const sheet = readLeadSheetMidi(syntheticSong("synthetic-any-meter"), { melodyTrack: 0, phraseLength: 4 });
+
+  assert.deepEqual(meters(sheet), ["3/2", "3/2", "6/4", "6/4", "5/8", "5/8", "11/8", "11/8"]);
+  assert.deepEqual(
+    sheet.bars.map((bar) => bar.melody.length),
+    [3, 3, 2, 2, 2, 2, 5, 5],
+  );
+  // 11/8 is felt 2 + 2 + 2 + 2 + 3 eighths, with strong beats on the first and the fourth group.
+  assert.deepEqual(
+    sheet.bars[6].chords.map((c) => [c.onset, c.duration]),
+    [
+      [0, 3],
+      [3, 2.5],
+    ],
+  );
+});
 
 test("bars must satisfy 0 ≤ first < end ≤ barCount and end − first ≤ 256", () => {
   const midi = smallSong({ bars: 4 });

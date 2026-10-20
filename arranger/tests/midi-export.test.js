@@ -111,6 +111,29 @@ test("a time signature is written at each bar whose meter differs from the bar b
   assert.deepEqual(jig.instruments[0].notes.map((n) => [n.pitch, n.start, n.end]), [[72, 0, 0.5]]);
 });
 
+test("an additive meter is written as its time signature, and a regrouping adds no event", () => {
+  // A MIDI time signature cannot hold the groups: 2+2+3/8 and 3+2+2/8 are both 7/8.
+  const meters = ["2+2+3/8", "3+2+2/8", "7/8", "3/2", "11/8"].map((text) => parseMeter(text));
+
+  const midi = readMidiFile(arrangementToMidi(metered(meters)));
+
+  // At 120 BPM a beat lasts 0.5 s: the 3/2 bar starts on beat 10.5 (5.25 s), 11/8 on 16.5.
+  assert.deepEqual(midi.timeSignatures, [
+    { numerator: 7, denominator: 8, time: 0 },
+    { numerator: 3, denominator: 2, time: 5.25 },
+    { numerator: 11, denominator: 8, time: 8.25 },
+  ]);
+});
+
+test("the denominators 1 and 16 are written as time signatures too", () => {
+  const midi = readMidiFile(arrangementToMidi(metered([parseMeter("4/1"), parseMeter("12/16")])));
+
+  assert.deepEqual(midi.timeSignatures, [
+    { numerator: 4, denominator: 1, time: 0 },
+    { numerator: 12, denominator: 16, time: 8 },
+  ]);
+});
+
 test("an all-4/4 arrangement, or one without meters, writes the same bytes as before meters", () => {
   const plain = arrangementToMidi({ ...metered([]), meters: undefined });
   assert.deepEqual(arrangementToMidi(metered([])), plain);

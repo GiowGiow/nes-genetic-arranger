@@ -11,8 +11,9 @@
 // The meter (time signature) says how long a bar is and where its strong beats fall. The header's
 // `M:` field gives the first bar's meter; an inline field such as `[M:3/4]`, or an `M:` line in
 // the body, changes it from the bar where it is written, so a tune may move from 4/4 to 2/4 and
-// back. The reader takes the nine meters of core/meter.js (2/2, 2/4, 3/4, 4/4, 6/8, 9/8, 12/8,
-// 5/4, 7/8) and checks that every bar lasts as long as its own meter says.
+// back. The reader takes every meter of core/meter.js (any n/d with d = 1, 2, 4, 8 or 16 and n
+// from 1 to 32, additive meters such as `M:2+2+3/8` or `M:(3+3+2)/8`, `C` and `C|`) and checks
+// that every bar lasts as long as its own meter says. The free meter `M:none` is refused.
 //
 // This module ports src/leadsheet/abc_reader.py. The Python reader leaves the parsing to music21;
 // here the abcjs parser (vendored in arranger/vendor/abcjs/) reads the notation, and this module
@@ -36,6 +37,11 @@
 //    meter on the first line, an `M:` line in the body on the line that follows it, and an inline
 //    `[M:x]` as an element of the voice (spec 003, research R7).
 // 10. Pad a short first bar (a pickup) with a leading rest, up to its own meter's length.
+// 11. Write the free meter `M:none` as `0/0` before parsing: abcjs drops it without a trace
+//     (no meter on the staff, no element in the voice), so the reader could not name its bar. As
+//     `0/0` abcjs reports it like any meter, and the reader refuses it as "none" (item 9).
+//     abcjs gives an additive meter as one fraction whose numerator keeps the plus signs ("2+2+3"
+//     over "8", with or without parentheses), which `parseMeter` reads as it is.
 //
 // The Python reader refuses repeat signs and pickups; on the tunes it accepts, both readers give
 // the same lead sheet (tests/abc-reader.test.js checks the committed lead sheets and the meter
@@ -220,15 +226,22 @@ export function readLeadSheetAbc(ABCJS, text, options = {}) {
   };
 }
 
+/** How a free meter (`M:none`) is written for abcjs, which reports it and no real meter is. */
+const FREE_METER_AS_PARSED = "0/0";
+
 /**
  * The text given to abcjs: the chord-name directive, then the file with Unix line endings (abcjs
  * counts the character positions of a Windows file as if it had none, which would misplace the
- * Q: field read back from the text).
+ * Q: field read back from the text), and every free meter written as `0/0` (see item 11 above).
  * @param {string} text the ABC file.
  * @returns {string}
  */
 function abcjsInput(text) {
-  return FREE_CHORD_NAMES + text.replace(/\r\n?/g, "\n");
+  const unixText = text.replace(/\r\n?/g, "\n");
+  const withFreeMeters = unixText
+    .replace(/^(M:[ \t]*)none\b/gm, `$1${FREE_METER_AS_PARSED}`)
+    .replace(/(\[M:[ \t]*)none(?=[ \t]*\])/g, `$1${FREE_METER_AS_PARSED}`);
+  return FREE_CHORD_NAMES + withFreeMeters;
 }
 
 /**
@@ -257,13 +270,15 @@ function barTicks(meter) {
 
 /**
  * @param {any} meter an abcjs meter.
- * @returns {string} the meter as ABC writes it ("3/4", "C", "C|"), for `parseMeter`.
+ * @returns {string} the meter as ABC writes it ("3/4", "2+2+3/8", "C", "C|", or "none" for a free
+ *   meter), for `parseMeter`.
  */
 function abcjsMeterText(meter) {
   if (meter.type === "common_time") return "C";
   if (meter.type === "cut_time") return "C|";
   if (meter.type === "specified") {
-    return meter.value.map((/** @type {any} */ part) => `${part.num}/${part.den}`).join(" ");
+    const text = meter.value.map((/** @type {any} */ part) => `${part.num}/${part.den}`).join(" ");
+    return text === FREE_METER_AS_PARSED ? "none" : text;
   }
   return String(meter.type);
 }

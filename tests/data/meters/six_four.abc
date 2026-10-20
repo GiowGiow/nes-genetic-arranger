@@ -1,0 +1,10 @@
+% Written for the nes-genetic-arranger tests (spec 006): an 8-bar tune in 6/4, felt in two dotted halves.
+X:1
+T:Test Six Four
+M:6/4
+L:1/8
+Q:1/4=180
+K:D
+P:A
+"D"D2 F2 A2 d4 A2 | "G"B2 d2 g2 "D"f4 d2 | "Em"e2 g2 b2 "A7"a4 g2 | "D"f6 d6 |
+"G"g2 f2 e2 "D"d4 A2 | "Em"B2 e2 g2 "A7"c4 e2 | "D"d2 f2 a2 "A7"g4 e2 | "D"d12 |

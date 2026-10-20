@@ -455,6 +455,79 @@ test("in 7/8 the bass moves on each group of 2, 2 and 3 eighths", () => {
   );
 });
 
+// --- any meter (spec 006) ------------------------------------------------------------------
+
+test("in 3/2 the drums and the bass follow three half-note beats", () => {
+  const three = parseMeter("3/2");
+  const eighth = realizeNo(NO_PATTERNS.indexOf("eighth_beat"), three);
+  const rootFifth = realizeTr(wholeBarChord("3/2", "C", 0, [0, 4, 7]), TR_TEXTURES.indexOf("root_fifth"), null);
+
+  assert.deepEqual(onsetsOf(eighth, KICK), [0]);
+  assert.deepEqual(onsetsOf(eighth, SNARE), [2, 4]);
+  assert.deepEqual(
+    rootFifth.map((n) => [n.pitch, n.onset, n.duration]),
+    [
+      [36, 0, 2],
+      [43, 2, 2],
+      [43, 4, 2],
+    ],
+  );
+});
+
+test("in 11/8 the kick marks the first and the fourth group", () => {
+  const eighth = realizeNo(NO_PATTERNS.indexOf("eighth_beat"), parseMeter("11/8"));
+
+  assert.deepEqual(onsetsOf(eighth, KICK), [0, 3]);
+  assert.deepEqual(onsetsOf(eighth, SNARE), [1, 2, 4]);
+});
+
+test("in an additive meter the bass moves on each written group", () => {
+  const bar = wholeBarChord("3+2+2/8", "D", 2, [2, 6, 9]);
+
+  const rootFifth = realizeTr(bar, TR_TEXTURES.indexOf("root_fifth"), null);
+
+  assert.deepEqual(
+    rootFifth.map((n) => [n.onset, n.duration]),
+    [
+      [0, 1.5],
+      [1.5, 1],
+      [2.5, 1],
+    ],
+  );
+});
+
+for (const text of ["3/16", "5/16", "1/16", "7/16", "1/8"]) {
+  test(`the octave pump stops at the bar end when ${text} ends inside an eighth`, () => {
+    const bar = wholeBarChord(text, "C", 0, [0, 4, 7]);
+    const { barBeats } = bar.meter;
+
+    const notes = realizeTr(bar, TR_TEXTURES.indexOf("octave_pump"), null);
+
+    assert.equal(notes[0].onset, 0);
+    assert.equal(notes[notes.length - 1].onset + notes[notes.length - 1].duration, barBeats);
+    assert.equal(
+      notes.reduce((total, note) => total + note.duration, 0),
+      barBeats,
+    );
+    assert.deepEqual(
+      notes.map((n) => n.pitch),
+      [36, 48, 36, 48].slice(0, notes.length),
+    );
+  });
+}
+
+test("in a one-beat bar the walking bass plays the root on its strong beat", () => {
+  const cBar = wholeBarChord("1/4", "C", 0, [0, 4, 7]);
+  const gBar = wholeBarChord("1/4", "G", 7, [7, 11, 2]);
+
+  const notes = realizeTr(cBar, TR_TEXTURES.indexOf("walking"), gBar);
+
+  assert.deepEqual(
+    notes.map((n) => [n.pitch, n.onset, n.duration]),
+    [[36, 0, 1]],
+  );
+});
+
 test("an invalid gene value is refused", () => {
   const bar = makeBar([], [C_WHOLE_BAR]);
   assert.throws(() => realizeP1(bar, 3), RangeError);
@@ -469,16 +542,22 @@ const realizationIds = readdirSync(join(fixturesDir, "realizations"))
   .filter((name) => name.endsWith(".json"))
   .map((name) => name.replace(".json", ""));
 
-test("the realization fixtures cover two 4/4 songs and the seven meter tunes", () => {
+test("the realization fixtures cover two 4/4 songs and the thirteen meter tunes", () => {
   assert.deepEqual(realizationIds.sort(), [
+    "additive",
     "changes",
+    "eleven_eight",
     "five",
+    "five_eight",
     "jig",
     "korobeiniki",
     "mulher_de_fases",
     "polka",
     "seven",
+    "six_four",
     "slow_twelve",
+    "three_eight",
+    "three_two",
     "waltz",
   ]);
 });

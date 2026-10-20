@@ -305,12 +305,22 @@ def test_the_repeat_error_names_the_bar_where_the_sign_is():
         read_lead_sheet_text(abc('"C"CDEF|GABc:|'))
 
 
-@pytest.mark.parametrize("meter", ["11/16", "3/8", "none"])
-def test_an_unsupported_meter_is_rejected_naming_the_meter_and_the_bar(meter):
+@pytest.mark.parametrize("meter", ["3/32", "33/8", "3/5", "none"])
+def test_an_unsupported_meter_is_rejected_naming_the_meter_the_bar_and_the_range(meter):
     with pytest.raises(ValueError) as error:
         read_lead_sheet_text(abc('"C"CDE|', meter=f"M:{meter}\n"))
 
-    assert str(error.value).startswith(f"bar 1: the meter {meter} is not supported")
+    assert str(error.value) == (
+        f"bar 1: the meter {meter} is not supported; supported meters: n/d with n from 1 to 32 "
+        "and d = 1, 2, 4, 8 or 16, additive meters such as 2+2+3/8, C and C|"
+    )
+
+
+def test_a_free_meter_written_inside_the_tune_is_rejected_naming_its_bar():
+    with pytest.raises(ValueError, match=r"^bar 3: the meter none is not supported"):
+        read_lead_sheet_text(abc('"C"CDEF|GABc|[M:none]cBAG|'))
+    with pytest.raises(ValueError, match=r"^bar 2: the meter none is not supported"):
+        read_lead_sheet_text(abc('"C"CDEF|\nM:none\nGABc|'))
 
 
 def test_a_tune_without_a_meter_field_is_rejected():
@@ -378,7 +388,18 @@ def test_a_pickup_is_rejected_in_any_meter():
         read_lead_sheet_text(abc('C|"C"CDE|GAB|', meter="M:3/4\n"))
 
 
-@pytest.mark.parametrize("name", ["jig", "slow_twelve", "five", "seven"])
+# The meter test tunes of spec 006, beyond the nine meters of spec 003, and their meters.
+ANY_METER_TUNES = {
+    "three_two": ["3/2"] * 8,
+    "six_four": ["6/4"] * 8,
+    "five_eight": ["5/8"] * 8,
+    "eleven_eight": ["11/8"] * 8,
+    "three_eight": ["3/8"] * 8,
+    "additive": ["2+2+3/8"] * 4 + ["3+2+2/8"] * 4,
+}
+
+
+@pytest.mark.parametrize("name", ["jig", "slow_twelve", "five", "seven", *ANY_METER_TUNES])
 def test_every_meter_test_tune_reads_with_bars_of_its_meter(name):
     sheet = read_lead_sheet(METER_TUNES / f"{name}.abc")
 
@@ -448,3 +469,33 @@ def test_five_four_and_seven_eight_tunes_read_with_their_bar_lengths():
     assert {bar.meter.bar_beats for bar in five.bars} == {5.0}
     assert [(s.symbol, s.onset) for s in five.bars[0].chords] == [("Am", 0.0), ("Dm", 3.0)]
     assert {bar.meter.bar_beats for bar in seven.bars} == {3.5}
+
+
+@pytest.mark.parametrize(("name", "meters"), ANY_METER_TUNES.items())
+def test_the_any_meter_tunes_read_in_their_written_meters(name, meters):
+    sheet = read_lead_sheet(METER_TUNES / f"{name}.abc")
+
+    assert [str(bar.meter) for bar in sheet.bars] == meters
+
+
+def test_a_three_two_bar_has_three_half_note_beats_and_its_chords_change_on_them():
+    sheet = read_lead_sheet(METER_TUNES / "three_two.abc")
+
+    assert sheet.bars[0].meter.beats == (2.0, 2.0, 2.0)
+    assert [(s.symbol, s.onset, s.duration) for s in sheet.bars[1].chords] == [
+        ("C", 0.0, 4.0),
+        ("D7", 4.0, 2.0),
+    ]
+
+
+def test_an_additive_meter_gives_one_beat_per_group_in_the_header_inline_and_body_lines():
+    header = read_lead_sheet_text(abc('"C"C C C3/2|G G G3/2|', meter="M:2+2+3/8\n"))
+    inline = read_lead_sheet_text(abc('"C"CDEF|[M:(3+3+2)/8]C3/2 C3/2 C|'))
+    body_line = read_lead_sheet_text(abc('"C"C3 C2|\nM:2+2+3/8\nC C C3/2|', meter="M:3+2/4\n"))
+
+    assert [str(bar.meter) for bar in header.bars] == ["2+2+3/8", "2+2+3/8"]
+    assert header.bars[0].meter.beats == (1.0, 1.0, 1.5)
+    assert [str(bar.meter) for bar in inline.bars] == ["4/4", "3+3+2/8"]
+    assert inline.bars[1].meter.beats == (1.5, 1.5, 1.0)
+    assert [str(bar.meter) for bar in body_line.bars] == ["3+2/4", "2+2+3/8"]
+    assert body_line.bars[0].meter.beats == (3.0, 2.0)

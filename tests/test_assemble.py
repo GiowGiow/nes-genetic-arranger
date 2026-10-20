@@ -6,6 +6,8 @@ from arrangement.model import CHANNELS
 from arrangement.validation import find_violations
 from ga.genome import GENE_SIZES, random_population
 from leadsheet.abc_reader import read_lead_sheet
+from leadsheet.meter import parse_meter
+from leadsheet.model import Bar, ChordSegment, LeadSheet, MelodyNote
 
 KOROBEINIKI = "data/leadsheets/korobeiniki.abc"
 
@@ -59,7 +61,11 @@ def test_every_plan_on_a_tune_with_meter_changes_obeys_the_nes_rules():
         assert find_violations(assemble(lead_sheet, genome), lead_sheet) == []
 
 
-@pytest.mark.parametrize("name", ["waltz", "polka", "jig", "slow_twelve", "five", "seven"])
+METER_TUNES = ["waltz", "polka", "jig", "slow_twelve", "five", "seven"]
+ANY_METER_TUNES = ["three_two", "six_four", "five_eight", "eleven_eight", "three_eight", "additive"]
+
+
+@pytest.mark.parametrize("name", METER_TUNES + ANY_METER_TUNES)
 def test_every_texture_obeys_the_nes_rules_in_every_meter(name):
     lead_sheet = read_lead_sheet(f"tests/data/meters/{name}.abc")
     for value in range(max(GENE_SIZES)):
@@ -68,3 +74,18 @@ def test_every_texture_obeys_the_nes_rules_in_every_meter(name):
         assert find_violations(assemble(lead_sheet, genome), lead_sheet) == [], value
     for genome in random_population(np.random.default_rng(2), 20, len(lead_sheet.bars)):
         assert find_violations(assemble(lead_sheet, genome), lead_sheet) == []
+
+
+@pytest.mark.parametrize(
+    "text", ["1/4", "2/8", "3/16", "5/16", "9/16", "12/16", "4/1", "3/1", "13/8", "32/16", "7/4"]
+)
+def test_every_texture_obeys_the_nes_rules_at_the_edges_of_the_meter_range(text):
+    meter = parse_meter(text)
+    melody = (MelodyNote(72, 0.0, meter.bar_beats),)
+    chord = ChordSegment("C", 0, (0, 4, 7), 0.0, meter.bar_beats)
+    bars = tuple(Bar(i, melody, (chord,), "A", "verse", 0, i == 2, meter) for i in range(3))
+    lead_sheet = LeadSheet(title="edges", key="C major", tempo_bpm=120.0, bars=bars)
+    for value in range(max(GENE_SIZES)):
+        constant = np.minimum(value, np.array(GENE_SIZES) - 1)
+        genome = np.tile(constant, (len(bars), 1))
+        assert find_violations(assemble(lead_sheet, genome), lead_sheet) == [], value

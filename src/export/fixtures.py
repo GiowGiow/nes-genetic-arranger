@@ -16,11 +16,12 @@ principle I). This module writes that reference as JSON files, one concern per f
   MIDI reader reduces from it (only for songs whose file is in `data/raw/`);
 - `abc/<id>.abc`: the ABC writer's text of each MIDI-song lead sheet.
 
-Meters (spec 003). The project's own test tunes in `tests/data/meters/` (a waltz, a polka, a jig,
-a 12/8, 5/4 and 7/8 tune, and one whose meter changes) get a lead sheet, realizations, tables, the
-writer's text and a fixed plan (`plans/meters-<id>.json`), and four small synthetic MIDI songs
-built here (`midi-songs/synthetic-*.mid`, in 3/4, 12/8, with meter changes and with a drum-only
-count-in) get their reduction. Both are the project's own, so they are committed.
+Meters (specs 003 and 006). The project's own test tunes in `tests/data/meters/` (a waltz, a polka,
+a jig, a 12/8, 5/4 and 7/8 tune, one whose meter changes, and tunes in 3/2, 6/4, 5/8, 11/8, 3/8
+and the additive 2+2+3/8) get a lead sheet, realizations, tables, the writer's text and a fixed
+plan (`plans/meters-<id>.json`), and five small synthetic MIDI songs built here
+(`midi-songs/synthetic-*.mid`, in 3/4, 12/8, with meter changes, with a drum-only count-in and in
+3/2, 6/4, 5/8 and 11/8) get their reduction. Both are the project's own, so they are committed.
 
 JSON has no NaN, so a NaN (a criterion or a bass leap that does not apply) is written as null.
 Field names stay the Python ones (`phrase_end`, `tempo_bpm`); the JavaScript tests translate them.
@@ -70,6 +71,7 @@ SYNTHETIC_SONGS = {
     "synthetic-twelve-eight": ((12, 8, 4, True),),
     "synthetic-changes": ((4, 4, 2, True), (2, 4, 2, True), (4, 4, 2, True)),
     "synthetic-count-in": ((3, 4, 2, False), (4, 4, 4, True)),
+    "synthetic-any-meter": ((3, 2, 2, True), (6, 4, 2, True), (5, 8, 2, True), (11, 8, 2, True)),
 }
 SYNTHETIC_SETTINGS = {"melody_track": 0, "bars": None, "sections": None, "grid": "auto"}
 # Chord qualities that arbitrary ABC tunes use, beyond the ones in the committed lead sheets.

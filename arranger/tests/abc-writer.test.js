@@ -29,7 +29,22 @@ const WRITTEN_LEAD_SHEETS = [
 ];
 
 /** The meter test tunes of tests/data/meters/, read and written back by the Python code. */
-const METER_TUNES = ["waltz", "polka", "jig", "slow_twelve", "five", "seven", "changes"];
+const METER_TUNES = [
+  "waltz",
+  "polka",
+  "jig",
+  "slow_twelve",
+  "five",
+  "seven",
+  "changes",
+  // Spec 006: meters beyond the nine of spec 003, and an additive one.
+  "three_two",
+  "six_four",
+  "five_eight",
+  "eleven_eight",
+  "three_eight",
+  "additive",
+];
 
 /**
  * Every lead sheet fixture, including the two ABC tunes with a key (Ievan Polkka, Korobeiniki)
@@ -101,6 +116,14 @@ for (const id of METER_TUNES) {
     assert.equal(writeLeadSheetAbc(fixtureLeadSheet(id), { phraseLength: 4 }), expected);
   });
 }
+
+test("an additive meter is written with its groups, and a regrouping is written inline", () => {
+  const text = writeLeadSheetAbc(fixtureLeadSheet("additive"), { phraseLength: 4 });
+
+  assert.ok(text.split("\n").includes("M:2+2+3/8"), text);
+  assert.equal(text.split("[M:").length - 1, 1);
+  assert.ok(text.includes("[M:3+2+2/8]"), text);
+});
 
 test("the docstring example: a chord change inside a note writes the note as two tied pieces", () => {
   const expected = [

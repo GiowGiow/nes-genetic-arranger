@@ -14,7 +14,7 @@ import { test } from "node:test";
 
 import { listTunes, readLeadSheetAbc } from "../src/core/abc-reader.js";
 import { leadSheetFromJson } from "../src/core/leadsheet.js";
-import { SUPPORTED_METERS, meterText } from "../src/core/meter.js";
+import { SUPPORTED_RANGE } from "../src/core/meter.js";
 import { assertClose, loadAbcjs, readFixture, repoRoot } from "./helpers.js";
 
 const ABCJS = loadAbcjs();
@@ -31,10 +31,22 @@ const COMMITTED_LEAD_SHEETS = [
 ];
 
 /** The project's meter test tunes (tests/data/meters/<id>.abc), one per supported family. */
-const METER_TUNES = ["waltz", "polka", "jig", "slow_twelve", "five", "seven", "changes"];
-
-/** The message for an unsupported meter, shared with core/meter.js and the Python reader. */
-const SUPPORTED_LIST = SUPPORTED_METERS.map(meterText).join(", ");
+const METER_TUNES = [
+  "waltz",
+  "polka",
+  "jig",
+  "slow_twelve",
+  "five",
+  "seven",
+  "changes",
+  // Spec 006: meters beyond the nine of spec 003, and an additive one.
+  "three_two",
+  "six_four",
+  "five_eight",
+  "eleven_eight",
+  "three_eight",
+  "additive",
+];
 
 /**
  * A one-tune ABC text with the usual header and the given body lines.
@@ -243,24 +255,74 @@ test("every supported meter reads, with bars of its own length", () => {
     "12/8": "C6D6",
     "5/4": "C6D4",
     "7/8": "C2D2E3",
+    "3/2": "C8D4",
+    "6/4": "C6D6",
+    "5/8": "C2D3",
+    "11/8": "C6D5",
+    "3/8": "C3",
+    "12/16": "C3D3",
+    "1/4": "C2",
+    "4/1": "C32",
+    "2+2+3/8": "C2D2E3",
+    "(3+3+2)/8": "C3D3E2",
   };
   for (const [meter, body] of Object.entries(oneBar)) {
     const sheet = readLeadSheetAbc(ABCJS, tune(`"C"${body}|${body}|`, { meter }));
-    assert.deepEqual(sheet.bars.map((bar) => String(bar.meter)), [meter, meter], meter);
+    const written = meter.replace(/^\((.*)\)/, "$1");
+    assert.deepEqual(sheet.bars.map((bar) => String(bar.meter)), [written, written], meter);
     assert.equal(sheet.bars[1].chords[0].duration, sheet.bars[1].meter.barBeats, meter);
   }
 });
 
-test("an unsupported meter is refused with the shared message, naming the bar", () => {
+test("a meter outside the range is refused with the shared message, naming the bar", () => {
   assert.throws(
-    () => readLeadSheetAbc(ABCJS, tune('"C"C8|', { meter: "11/16" })),
-    errorMatching(`bar 1: the meter 11/16 is not supported; supported meters: ${SUPPORTED_LIST}`),
+    () => readLeadSheetAbc(ABCJS, tune('"C"C8|', { meter: "3/32" })),
+    errorMatching(`bar 1: the meter 3/32 is not supported; supported meters: ${SUPPORTED_RANGE}`),
   );
   assert.throws(
-    () => readLeadSheetAbc(ABCJS, tune('"C"C8|D8|[M:5/8]E5|')),
-    errorMatching(`bar 3: the meter 5/8 is not supported; supported meters: ${SUPPORTED_LIST}`),
+    () => readLeadSheetAbc(ABCJS, tune('"C"C8|D8|[M:33/8]E5|')),
+    errorMatching(`bar 3: the meter 33/8 is not supported; supported meters: ${SUPPORTED_RANGE}`),
   );
-  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"C8|D8|\nM:13/8\nE13|')), errorMatching(/^bar 3: the meter 13\/8/));
+  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"C8|D8|\nM:3/5\nE13|')), errorMatching(/^bar 3: the meter 3\/5/));
+});
+
+test("the free meter M:none is refused like the Python reader, naming its bar and the range", () => {
+  const refused = (/** @type {number} */ bar) =>
+    errorMatching(`bar ${bar}: the meter none is not supported; supported meters: ${SUPPORTED_RANGE}`);
+
+  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"CDE|', { meter: "none" })), refused(1));
+  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"CDEF|GABc|[M:none]cBAG|')), refused(3));
+  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"CDEF|\nM:none\nGABc|')), refused(2));
+  assert.throws(() => readLeadSheetAbc(ABCJS, tune('"C"CDEF|\nM: none % free\nGABc|')), refused(2));
+});
+
+test("an additive meter gives one beat per group in the header, inline and body lines", () => {
+  const header = readLeadSheetAbc(ABCJS, tune('"C"C C C3/2|G G G3/2|', { meter: "2+2+3/8", unit: "1/4" }));
+  const inline = readLeadSheetAbc(ABCJS, tune('"C"CDEF|[M:(3+3+2)/8]C3/2 C3/2 C|', { unit: "1/4" }));
+  const bodyLine = readLeadSheetAbc(
+    ABCJS,
+    tune('"C"C3 C2|\nM:2+2+3/8\nC C C3/2|', { meter: "3+2/4", unit: "1/4" }),
+  );
+
+  assert.deepEqual(header.bars.map((bar) => String(bar.meter)), ["2+2+3/8", "2+2+3/8"]);
+  assert.deepEqual([...header.bars[0].meter.beats], [1, 1, 1.5]);
+  assert.deepEqual(inline.bars.map((bar) => String(bar.meter)), ["4/4", "3+3+2/8"]);
+  assert.deepEqual([...inline.bars[1].meter.beats], [1.5, 1.5, 1]);
+  assert.deepEqual(bodyLine.bars.map((bar) => String(bar.meter)), ["3+2/4", "2+2+3/8"]);
+  assert.deepEqual([...bodyLine.bars[0].meter.beats], [3, 2]);
+});
+
+test("a 3/2 bar has three half-note beats and its chords can change on them", () => {
+  const sheet = readLeadSheetAbc(ABCJS, tune('"C"C12|"C"C8"D7"D4|', { meter: "3/2" }));
+
+  assert.deepEqual([...sheet.bars[0].meter.beats], [2, 2, 2]);
+  assert.deepEqual(
+    sheet.bars[1].chords.map((segment) => [segment.symbol, segment.onset, segment.duration]),
+    [
+      ["C", 0, 4],
+      ["D7", 4, 2],
+    ],
+  );
 });
 
 test("a tune without an M: field is refused", () => {

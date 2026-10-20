@@ -147,3 +147,30 @@ def test_fixtures_hold_the_meter_tunes_and_the_synthetic_midi_songs(small_fixtur
     first_bar = twelve["leadsheet"]["bars"][0]
     assert first_bar["meter"] == "12/8"
     assert [(c["onset"], c["duration"]) for c in first_bar["chords"]] == [(0.0, 3.0), (3.0, 3.0)]
+
+
+def test_fixtures_hold_the_any_meter_tunes_and_a_synthetic_song_in_four_new_meters(small_fixtures):
+    out, _ = small_fixtures
+
+    meters = {
+        "three_two": "3/2",
+        "six_four": "6/4",
+        "five_eight": "5/8",
+        "eleven_eight": "11/8",
+        "three_eight": "3/8",
+    }
+    for name, meter in meters.items():
+        sheet = json.loads((out / f"leadsheets/{name}.json").read_text())
+        assert {bar["meter"] for bar in sheet["bars"]} == {meter}, name
+        assert (out / f"plans/meters-{name}.json").exists()
+        assert (out / f"abc/{name}.abc").exists()
+    additive = json.loads((out / "leadsheets/additive.json").read_text())
+    assert [bar["meter"] for bar in additive["bars"]] == ["2+2+3/8"] * 4 + ["3+2+2/8"] * 4
+    # The writer's text keeps the groups, and the bar that regroups the notes opens with a field.
+    abc = (out / "abc/additive.abc").read_text()
+    assert "M:2+2+3/8" in abc and "[M:3+2+2/8]" in abc
+
+    song = json.loads((out / "midi-songs/synthetic-any-meter.json").read_text())
+    assert [bar["meter"] for bar in song["leadsheet"]["bars"]] == (
+        ["3/2"] * 2 + ["6/4"] * 2 + ["5/8"] * 2 + ["11/8"] * 2
+    )

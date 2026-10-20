@@ -129,7 +129,7 @@ class MapBar:
 
     @property
     def meter(self) -> Meter:
-        """The bar's meter; ValueError when the file uses a meter the arranger does not support."""
+        """The bar's meter; ValueError when the file uses a meter outside the supported range."""
         return parse_meter(f"{self.signature[0]}/{self.signature[1]}")
 
 

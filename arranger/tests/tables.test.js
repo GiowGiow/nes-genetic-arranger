@@ -73,13 +73,16 @@ function oneBarSheet(id) {
   });
 }
 
-test("the table fixtures cover the 8 committed lead sheets and the 7 meter tunes", () => {
+test("the table fixtures cover the 8 committed lead sheets and the 13 meter tunes", () => {
   assert.deepEqual([...LEAD_SHEET_IDS].sort(), [
+    "additive",
     "amor_i_love_you",
     "aquarela",
     "changes",
+    "eleven_eight",
     "fico_assim_sem_voce",
     "five",
+    "five_eight",
     "ievan_polkka",
     "jig",
     "korobeiniki",
@@ -87,7 +90,10 @@ test("the table fixtures cover the 8 committed lead sheets and the 7 meter tunes
     "polka",
     "por_voce",
     "seven",
+    "six_four",
     "slow_twelve",
+    "three_eight",
+    "three_two",
     "voa_voa",
     "waltz",
   ]);

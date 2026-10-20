@@ -1,0 +1,10 @@
+% Written for the nes-genetic-arranger tests (spec 006): an 8-bar tune in the additive meters 2+2+3/8, then (3+2+2)/8.
+X:1
+T:Test Additive
+M:2+2+3/8
+L:1/8
+Q:1/4=160
+K:Am
+P:A
+"Am"A2 c2 e3 | "Dm"d2 f2 a3 | "G"g2 d2 B3 | "Am"c2 "E7"B2 ^G3 |
+[M:(3+2+2)/8]"F"f3 a2 c'2 | "E7"^g3 e2 B2 | "Am"c3 "E7"B2 ^G2 | "Am"A3 A2 A2 |

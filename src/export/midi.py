@@ -51,15 +51,18 @@ def write_midi(arrangement: Arrangement, path: Path | str) -> None:
 def _time_signatures(
     arrangement: Arrangement, seconds_per_beat: float
 ) -> list[pretty_midi.TimeSignature]:
-    """One time signature at the start and one at each bar whose meter differs from the last.
+    """One time signature at the start and one at each bar whose time signature changes.
 
-    An arrangement without meters (built by hand) is 4/4 throughout.
+    An arrangement without meters (built by hand) is 4/4 throughout. A time signature holds only
+    the numerator and the denominator, so an additive meter (2+2+3/8) is written as its sum (7/8)
+    and a bar that only regroups the same notes (3+2+2/8 after 2+2+3/8) adds no event.
     """
     meters = arrangement.meters or (FOUR_FOUR,)
     starts = [0.0, *accumulate(meter.bar_beats for meter in meters[:-1])]
+    written = [(meter.numerator, meter.denominator) for meter in meters]
     changes = []
     for index, (meter, start) in enumerate(zip(meters, starts, strict=True)):
-        if index == 0 or meter != meters[index - 1]:
+        if index == 0 or written[index] != written[index - 1]:
             seconds = start * seconds_per_beat
             changes.append(pretty_midi.TimeSignature(meter.numerator, meter.denominator, seconds))
     return changes

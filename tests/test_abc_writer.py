@@ -279,6 +279,13 @@ def test_the_header_declares_the_first_bar_meter_and_a_change_is_written_inline(
     assert "[M:" not in waltz
 
 
+def test_an_additive_meter_is_written_with_its_groups_and_a_regrouping_is_written_inline():
+    text = lead_sheet_to_abc(read_lead_sheet(ROOT / "tests" / "data" / "meters" / "additive.abc"))
+
+    assert "M:2+2+3/8" in text.splitlines()
+    assert text.count("[M:") == 1 and "[M:3+2+2/8]" in text
+
+
 def test_a_seven_eight_bar_holds_fourteen_sixteenths():
     seven = parse_meter("7/8")
     melody = (MelodyNote(62, 0.0, 3.5),)

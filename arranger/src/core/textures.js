@@ -370,14 +370,15 @@ function trRoot(bar) {
  * @returns {ChannelNote[]}
  */
 function trOctavePump(bar) {
+  const barEnd = bar.meter.barBeats;
   /** @type {ChannelNote[]} */
   const notes = [];
-  const eighths = Math.round(bar.meter.barBeats / EIGHTH);
-  for (let eighth = 0; eighth < eighths; eighth++) {
+  // A bar of an odd number of sixteenths (5/16) ends inside its last eighth, which is cut there.
+  for (let eighth = 0; eighth < Math.ceil(barEnd / EIGHTH); eighth++) {
     const onset = eighth * EIGHTH;
     // Even eighths play the root and odd eighths jump an octave up: the bouncing NES bass.
     const pitch = bassRoot(chordAt(bar, onset)) + (eighth % 2 ? OCTAVE : 0);
-    notes.push({ pitch, onset, duration: EIGHTH, velocity: VELOCITY_TR });
+    notes.push({ pitch, onset, duration: Math.min(EIGHTH, barEnd - onset), velocity: VELOCITY_TR });
   }
   return notes;
 }
@@ -406,6 +407,10 @@ const WALKING_STEPS = Object.freeze([bassRoot, bassThird, bassFifth]);
  */
 function trWalking(bar, nextBar) {
   const chords = chordsOnBeats(bar);
+  if (chords.length === 1) {
+    // A one-beat bar (1/4) has no weak beat for the approach; its strong beat needs the root.
+    return onePerBeat(bar, [bassRoot(chords[0])]);
+  }
   const climb = chords.slice(0, -1).map((chord, beat) => WALKING_STEPS[beat % WALKING_STEPS.length](chord));
   // The last beat is a chromatic approach: one semitone below the root that the next bar starts
   // on. The last bar of the piece has no next root to lead to, so it repeats the fifth.
@@ -426,7 +431,7 @@ function trWalking(bar, nextBar) {
  *   (root, fifth, root, fifth in 4/4);
  * - walking: one note per beat climbing root, third, fifth (and again), then on the last beat
  *   one semitone below the root of `nextBar` (the fifth again when `nextBar` is null, at the end
- *   of the piece).
+ *   of the piece); a bar of a single beat plays only its root.
  *
  * @param {import("./leadsheet.js").Bar} bar the lead-sheet bar.
  * @param {number} textureGene index into `TR_TEXTURES`.

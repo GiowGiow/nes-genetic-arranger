@@ -573,3 +573,62 @@ def test_in_seven_eight_the_bass_moves_on_each_group_of_two_two_and_three_eighth
     ]
     assert [(n.onset, n.duration) for n in walking] == [(0.0, 1.0), (1.0, 1.0), (2.0, 1.5)]
     assert [n.pitch for n in walking] == [38, 42, 45]  # root, third, the fifth to end the piece
+
+
+# --- any meter (spec 006) ----------------------------------------------------------------------
+
+
+def test_in_three_two_the_drums_and_the_bass_follow_three_half_note_beats():
+    three_two = parse_meter("3/2")
+    bar = meter_bar(three_two, [ChordSegment("C", 0, (0, 4, 7), 0.0, 6.0)])
+
+    eighth = realize_no(NO_PATTERNS.index("eighth_beat"), three_two)
+    root_fifth = realize_tr(bar, TR_TEXTURES.index("root_fifth"), None)
+
+    assert [n.onset for n in eighth if n.pitch == KICK] == [0.0]
+    assert [n.onset for n in eighth if n.pitch == SNARE] == [2.0, 4.0]
+    assert [(n.pitch, n.onset, n.duration) for n in root_fifth] == [
+        (36, 0.0, 2.0),
+        (43, 2.0, 2.0),
+        (43, 4.0, 2.0),
+    ]
+
+
+def test_in_eleven_eight_the_kick_marks_the_first_and_the_fourth_group():
+    eleven = parse_meter("11/8")
+
+    eighth = realize_no(NO_PATTERNS.index("eighth_beat"), eleven)
+
+    assert [n.onset for n in eighth if n.pitch == KICK] == [0.0, 3.0]
+    assert [n.onset for n in eighth if n.pitch == SNARE] == [1.0, 2.0, 4.0]
+
+
+def test_in_an_additive_meter_the_bass_moves_on_each_written_group():
+    bar = meter_bar(parse_meter("3+2+2/8"), [ChordSegment("D", 2, (2, 6, 9), 0.0, 3.5)])
+
+    root_fifth = realize_tr(bar, TR_TEXTURES.index("root_fifth"), None)
+
+    assert [(n.onset, n.duration) for n in root_fifth] == [(0.0, 1.5), (1.5, 1.0), (2.5, 1.0)]
+
+
+@pytest.mark.parametrize("text", ["3/16", "5/16", "1/16", "7/16", "1/8"])
+def test_the_octave_pump_stops_at_the_bar_end_when_the_bar_ends_inside_an_eighth(text):
+    meter = parse_meter(text)
+    bar = meter_bar(meter, [ChordSegment("C", 0, (0, 4, 7), 0.0, meter.bar_beats)])
+
+    notes = realize_tr(bar, TR_TEXTURES.index("octave_pump"), None)
+
+    assert notes[0].onset == 0.0
+    assert notes[-1].onset + notes[-1].duration == meter.bar_beats
+    assert sum(note.duration for note in notes) == meter.bar_beats
+    assert [n.pitch for n in notes] == [36, 48, 36, 48][: len(notes)]
+
+
+def test_in_a_one_beat_bar_the_walking_bass_plays_the_root_on_its_strong_beat():
+    one = parse_meter("1/4")
+    c_bar = meter_bar(one, [ChordSegment("C", 0, (0, 4, 7), 0.0, 1.0)])
+    g_bar = meter_bar(one, [ChordSegment("G", 7, (7, 11, 2), 0.0, 1.0)])
+
+    notes = realize_tr(c_bar, TR_TEXTURES.index("walking"), g_bar)
+
+    assert [(n.pitch, n.onset, n.duration) for n in notes] == [(36, 0.0, 1.0)]

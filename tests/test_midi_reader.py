@@ -336,11 +336,33 @@ def test_a_two_four_song_has_two_beat_bars(tmp_path):
     assert {bar.meter.bar_beats for bar in lead_sheet.bars} == {2.0}
 
 
-def test_an_unsupported_meter_inside_the_excerpt_is_refused_naming_it(tmp_path):
-    path = with_meters(write_song(tmp_path / "song.mid"), [(5, 8, 0.0)])
+def test_an_unsupported_meter_inside_the_excerpt_is_refused_naming_it_and_the_range(tmp_path):
+    path = with_meters(write_song(tmp_path / "song.mid"), [(3, 32, 0.0)])
 
-    with pytest.raises(ValueError, match="bar 0: the meter 5/8 is not supported"):
+    with pytest.raises(ValueError) as error:
         read_lead_sheet_midi(path, melody_track=0)
+
+    assert str(error.value) == (
+        "bar 0: the meter 3/32 is not supported; supported meters: n/d with n from 1 to 32 "
+        "and d = 1, 2, 4, 8 or 16, additive meters such as 2+2+3/8, C and C|"
+    )
+
+
+def test_a_song_in_any_meter_has_bars_of_each_meter_and_chords_on_their_strong_beats(tmp_path):
+    from export.fixtures import synthetic_song
+
+    path = tmp_path / "any.mid"
+    segments = [(3, 2, 2, True), (6, 4, 2, True), (5, 8, 2, True), (11, 8, 2, True)]
+    synthetic_song(segments).write(str(path))
+
+    lead_sheet = read_lead_sheet_midi(path, melody_track=0)
+
+    assert [str(bar.meter) for bar in lead_sheet.bars] == (
+        ["3/2"] * 2 + ["6/4"] * 2 + ["5/8"] * 2 + ["11/8"] * 2
+    )
+    assert [len(bar.melody) for bar in lead_sheet.bars] == [3, 3, 2, 2, 2, 2, 5, 5]
+    # 11/8 is felt 2 + 2 + 2 + 2 + 3 eighths, with strong beats on the first and the fourth group.
+    assert [(c.onset, c.duration) for c in lead_sheet.bars[6].chords] == [(0.0, 3.0), (3.0, 2.5)]
 
 
 def test_a_bar_cut_short_by_a_time_signature_change_is_refused_inside_the_excerpt(tmp_path):

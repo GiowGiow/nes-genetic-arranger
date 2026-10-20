@@ -10,10 +10,15 @@ the ABC text itself, bar line by bar line, to read the part labels, the meter of
 `M:` field, an inline `[M:3/4]` or an `M:` line in the body) and to check every chord symbol.
 
 The arranger works bar by bar, in the order the bars are played, in the meters of
-`leadsheet.meter` (2/2, 2/4, 3/4, 4/4, 6/8, 9/8, 12/8, 5/4, 7/8). So the reader rejects any other
-meter, pickups and incomplete bars, and repeat signs (a repeat must be written out in full). Each
-bar holds only its own notes: a tie inside a bar joins the tied notes into one melody note, but a
-note tied across a bar line gives one note in each bar.
+`leadsheet.meter`: any n/d with d = 1, 2, 4, 8 or 16 and n from 1 to 32, additive meters such as
+`M:2+2+3/8` or `M:(3+3+2)/8`, `C` and `C|`. So the reader rejects any other meter (`M:none`, the
+free meter, among them), pickups and incomplete bars, and repeat signs (a repeat must be written
+out in full). Each bar holds only its own notes: a tie inside a bar joins the tied notes into one
+melody note, but a note tied across a bar line gives one note in each bar.
+
+Since music21 keeps only the first meter, it cuts a bar that lasts longer than the first meter in
+two; the reader then refuses the tune with a message about an overfull bar. A tune that changes
+to a longer meter (4/4, then 5/4) can open with that longer meter's bar to be read here.
 """
 
 import re

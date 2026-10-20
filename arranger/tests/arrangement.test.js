@@ -168,13 +168,54 @@ test("the tune with meter changes starts its bars at the running sum of their le
   assert.deepEqual(barStarts(sheet.bars), [0, 4, 8, 10, 12, 15, 18, 22]);
 });
 
-for (const id of ["waltz", "polka", "jig", "slow_twelve", "five", "seven", "changes"]) {
+const METER_TUNES = [
+  "waltz",
+  "polka",
+  "jig",
+  "slow_twelve",
+  "five",
+  "seven",
+  "changes",
+  // Spec 006: meters beyond the nine of spec 003, and an additive one.
+  "three_two",
+  "six_four",
+  "five_eight",
+  "eleven_eight",
+  "three_eight",
+  "additive",
+];
+
+for (const id of METER_TUNES) {
   test(`every texture obeys the NES rules in every bar of the ${id} tune`, () => {
     const sheet = leadSheetFromJson(readFixture(`leadsheets/${id}.json`));
     for (let value = 0; value < Math.max(...GENE_SIZES); value++) {
       // The same gene value on every bar, capped at each gene's last value, as in Python.
       const genes = GENE_SIZES.map((size) => Math.min(value, size - 1));
       const plan = Uint8Array.from(sheet.bars.flatMap(() => genes));
+      assert.deepEqual(findViolations(assemble(sheet, plan), sheet), [], `gene value ${value}`);
+    }
+  });
+}
+
+for (const text of ["1/4", "2/8", "3/16", "5/16", "9/16", "12/16", "4/1", "3/1", "13/8", "32/16", "7/4"]) {
+  test(`every texture obeys the NES rules at the edge of the meter range, ${text}`, () => {
+    const meter = parseMeter(text);
+    const melody = [{ pitch: 72, onset: 0, duration: meter.barBeats }];
+    const wholeBar = chord("C", 0, [0, 4, 7], 0, meter.barBeats);
+    const bars = [0, 1, 2].map((index) => ({
+      index,
+      melody,
+      chords: [wholeBar],
+      label: "A",
+      role: "verse",
+      phrase: 0,
+      phraseEnd: index === 2,
+      meter,
+    }));
+    const sheet = { ...LEAD_SHEET, bars };
+    for (let value = 0; value < Math.max(...GENE_SIZES); value++) {
+      const genes = GENE_SIZES.map((size) => Math.min(value, size - 1));
+      const plan = Uint8Array.from(bars.flatMap(() => genes));
       assert.deepEqual(findViolations(assemble(sheet, plan), sheet), [], `gene value ${value}`);
     }
   });

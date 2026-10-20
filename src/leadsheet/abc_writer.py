@@ -8,8 +8,9 @@ the very same lead sheet. Each choice below keeps that round trip exact:
 - Lengths: the unit note length is a sixteenth (`L:1/16`), so "C4" is a quarter note and every
   onset and duration on the sixteenth-note grid is a whole number of units. Rests (`z`) fill the
   silence between notes.
-- Meter: `M:` gives the first bar's meter, and a bar whose meter differs from the bar before it
-  starts with an inline field such as `[M:3/4]`, which both readers follow.
+- Meter: `M:` gives the first bar's meter (an additive meter keeps its groups, `M:2+2+3/8`), and a
+  bar whose meter differs from the bar before it starts with an inline field such as `[M:3/4]`,
+  which both readers follow.
 - Chords: a chord symbol is written just before the note or rest that starts with the chord. When
   the chord changes while a note sounds, the note is written as two tied pieces (`G4- "G"G4`),
   which the reader joins back into one note.

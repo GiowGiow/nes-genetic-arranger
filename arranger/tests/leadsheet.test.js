@@ -8,7 +8,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { chordAt, chordSegments, leadSheetFromJson, phraseMarks, sectionRole } from "../src/core/leadsheet.js";
-import { FOUR_FOUR, parseMeter } from "../src/core/meter.js";
+import { FOUR_FOUR, SUPPORTED_RANGE, parseMeter } from "../src/core/meter.js";
 
 /**
  * Root and tones of the three chords the tests use, so they do not depend on core/chords.js.
@@ -226,10 +226,19 @@ test("a lead sheet has no single beats-per-bar count, since each bar has its own
 });
 
 test("a fixture bar in an unsupported meter is refused, naming the bar counted from 1", () => {
-  const bars = [PYTHON_LEAD_SHEET.bars[0], { ...PYTHON_LEAD_SHEET.bars[1], meter: "11/16" }];
+  const bars = [PYTHON_LEAD_SHEET.bars[0], { ...PYTHON_LEAD_SHEET.bars[1], meter: "3/32" }];
   assert.throws(() => leadSheetFromJson({ ...PYTHON_LEAD_SHEET, bars }), {
-    message: "bar 2: the meter 11/16 is not supported; supported meters: 2/2, 2/4, 3/4, 4/4, 6/8, 9/8, 12/8, 5/4, 7/8",
+    message: `bar 2: the meter 3/32 is not supported; supported meters: ${SUPPORTED_RANGE}`,
   });
+});
+
+test("a fixture bar in an additive meter keeps its groups", () => {
+  const bars = [PYTHON_LEAD_SHEET.bars[0], { ...PYTHON_LEAD_SHEET.bars[1], meter: "2+2+3/8" }];
+
+  const sheet = leadSheetFromJson({ ...PYTHON_LEAD_SHEET, bars });
+
+  assert.equal(String(sheet.bars[1].meter), "2+2+3/8");
+  assert.deepEqual([...sheet.bars[1].meter.beats], [1, 1, 1.5]);
 });
 
 test("a one-bar ABC fixture becomes a lead sheet with camelCase fields", () => {

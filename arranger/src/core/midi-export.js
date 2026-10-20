@@ -14,7 +14,7 @@
 // bars, and a song that moves from 4/4 to 2/4 changes there too. An all-4/4 arrangement writes the
 // same bytes as before meters existed, which keeps the app's Korobeiniki pin.
 
-import { FOUR_FOUR, meterText } from "./meter.js";
+import { FOUR_FOUR } from "./meter.js";
 import { writeMidiFile } from "./midi-file.js";
 
 /** @typedef {import("./meter.js").Meter} Meter */
@@ -91,8 +91,10 @@ export function arrangementToMidi(arrangement) {
 }
 
 /**
- * The bars where the meter is declared: the first bar, and each bar whose meter differs from the
- * bar before it (port of `_time_signatures`).
+ * The bars where the meter is declared: the first bar, and each bar whose time signature differs
+ * from the bar before it (port of `_time_signatures`). A time signature holds only the numerator
+ * and the denominator, so an additive meter (2+2+3/8) is written as its sum (7/8), and a bar that
+ * only regroups the same notes (3+2+2/8 after 2+2+3/8) adds no event.
  *
  * @param {readonly Meter[]} meters the meter of each bar; empty for 4/4 throughout.
  * @returns {Array<{beat: number, meter: Meter}>} at least one entry, the first at beat 0.
@@ -103,7 +105,10 @@ function meterChanges(meters) {
   const changes = [];
   let beat = 0;
   meters.forEach((meter, index) => {
-    if (index === 0 || meterText(meter) !== meterText(meters[index - 1])) changes.push({ beat, meter });
+    const before = meters[index - 1];
+    if (index === 0 || meter.numerator !== before.numerator || meter.denominator !== before.denominator) {
+      changes.push({ beat, meter });
+    }
     beat += meter.barBeats;
   });
   return changes;

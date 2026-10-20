@@ -1,0 +1,10 @@
+% Written for the nes-genetic-arranger tests (spec 006): an 8-bar tune in 5/8, eighths felt 2 + 3.
+X:1
+T:Test Five Eight
+M:5/8
+L:1/8
+Q:1/4=160
+K:Am
+P:A
+"Am"A2 c2 e | "Dm"d2 f2 a | "E7"^g2 e2 B | "Am"A2 "E7"E3 |
+"F"F2 A2 c | "G"G2 B2 d | "Dm"d2 "E7"^g3 | "Am"a2 A3 |

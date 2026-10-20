@@ -11,9 +11,10 @@
 //   onset and duration on the sixteenth-note grid is a whole number of units. Rests (`z`) fill
 //   the silence between notes, so a bar holds 4 units per quarter note of its meter: 16 in 4/4,
 //   12 in 3/4 and 6/8, 14 in 7/8.
-// - Meter: `M:` gives the first bar's meter, as a fraction (`M:4/4`, never `M:C`), and a bar
-//   whose meter differs from the bar before it starts with an inline field such as `[M:3/4]`,
-//   which both readers follow. A 4/4 lead sheet is written exactly as before meters existed.
+// - Meter: `M:` gives the first bar's meter, as a fraction (`M:4/4`, never `M:C`; an additive
+//   meter keeps its groups, `M:2+2+3/8`), and a bar whose meter differs from the bar before it
+//   starts with an inline field such as `[M:3/4]`, which both readers follow. A 4/4 lead sheet is
+//   written exactly as before meters existed.
 // - Chords: a chord symbol is written just before the note or rest that starts with the chord.
 //   When the chord changes while a note sounds, the note is written as two tied pieces
 //   (`G4- "G"G4`), which the reader joins back into one note.
