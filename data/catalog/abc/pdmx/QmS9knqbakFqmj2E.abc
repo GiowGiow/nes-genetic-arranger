@@ -9,7 +9,7 @@
 % Reduced from mid/10/8/QmS9knqbakFqmj2EKezui7zoiUGMSU24zEp24ew6jTYTtN.mid (sha256
 % e1d807010d297fbced86f98572c79d629eddaf0eddf60aaede3154cc1d13e4b9): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Russisches Zigeunerlied und Thüringer Volkslied Op.88
 M:2/4

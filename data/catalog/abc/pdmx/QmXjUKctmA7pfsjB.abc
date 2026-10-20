@@ -8,7 +8,7 @@
 % Reduced from mid/15/26/QmXjUKctmA7pfsjBLikD7B5bfVrAbn4JYTBSs9mtdn7PyY.mid (sha256
 % 1ce83c1e8733e7ec427531fab6db48941d1df869fc4f234e1f49ba663bcc664a): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Organ Symphony No.5 Op.42 No.1
 M:4/2

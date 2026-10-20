@@ -8,7 +8,7 @@
 % Reduced from mid/12/35/QmUomeFjMFCuMGwH8zf66aTZh3cK5dQAMs2zVEEZP8AcVv.mid (sha256
 % a32ea171cfde956330234a1dcc7a87cb12c9839100063b559ca39e7b99a1a9b7): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:odeon
 M:2/4

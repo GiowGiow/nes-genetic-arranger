@@ -8,7 +8,7 @@
 % Reduced from mid/14/33/QmWn11hSuu3JZ67XCGczYZQsT3xoiJu7hbanuTPT6axTqT.mid (sha256
 % 9455a087745df05b657592aeccbcb663501a4185fe018a63beeae9d2654c5e53): melody track 0, bars 0-31
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Prelude and Fugue in C minor BWV 847
 M:4/4

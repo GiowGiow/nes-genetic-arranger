@@ -8,7 +8,7 @@
 % Reduced from mid/11/50/QmTweiRjwpiqZhaDuKLrPBLeAQX8yd7BHjCeCFx2jg7DRN.mid (sha256
 % 101315c0c0f0601d300fb92630c6fc1e490fd942556b27b84ec7ca0aa0d325b2): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:12th street rag
 M:4/4

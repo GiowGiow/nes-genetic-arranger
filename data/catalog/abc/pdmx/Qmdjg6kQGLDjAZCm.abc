@@ -8,7 +8,7 @@
 % Reduced from mid/3/26/Qmdjg6kQGLDjAZCmbewUZqabGCEvJtB7VCdVcafhU5Dq6S.mid (sha256
 % ebd928c8f1c48a9b8ba13a4735721964397914d70b3db23695e69979aef68977): melody track 2, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Dolly Suite Op.56
 M:2/4

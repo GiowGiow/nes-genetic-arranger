@@ -8,7 +8,7 @@
 % Reduced from mid/3/12/QmdBfR996vfyD22i7aR5N2i94XcBU71KfneDWcgTrKM1t1.mid (sha256
 % dfac2d38e06a16ddabdf209f1a6c805c4e2b53409efcb041a729310fbf5d2644): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Sechs kleine Präludien BWV 933-938
 M:3/8

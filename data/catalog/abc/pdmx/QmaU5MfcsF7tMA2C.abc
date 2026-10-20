@@ -9,7 +9,7 @@
 % Reduced from mid/0/47/QmaU5MfcsF7tMA2CCnaJ41kJ1tWJdQLGrbF33ASn174voS.mid (sha256
 % 98e476e74e2a49a6673e05c5d96f26bcf90efffbe716736924d75b22e9111f28): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Grand Caprice sur 'Le Roi des Aulnes' Op.26
 M:4/4

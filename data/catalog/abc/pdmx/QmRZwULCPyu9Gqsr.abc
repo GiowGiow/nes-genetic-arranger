@@ -8,7 +8,7 @@
 % Reduced from mid/9/57/QmRZwULCPyu9GqsrQLQfcUVRCfzNXSzwadHQGeDRpkSprp.mid (sha256
 % 0f4a5078edf443664ffa9f7de551159fdaabeaf30cba16c4354dca7ff4fd1de3): melody track 2, bars 0-16
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Chamber Concerto in D major RV 93
 M:4/4

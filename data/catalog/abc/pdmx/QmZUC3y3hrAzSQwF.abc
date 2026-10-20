@@ -9,7 +9,7 @@
 % Reduced from mid/17/47/QmZUC3y3hrAzSQwFLUXy7PbdTWCg2VgX4H3nn3munLRD82.mid (sha256
 % 8a5441862a540fba1d86967caeb1d58a867b6c44da4e2ef05f4da82ebbb20c2c): melody track 1, bars 0-42
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:State Anthem of the Soviet Union
 M:4/4

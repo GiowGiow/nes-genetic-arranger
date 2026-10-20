@@ -8,7 +8,7 @@
 % Reduced from mid/12/40/QmUrhREDpE8cGNCdpz6PvKa3cJCgGBrSmDQzE1824fSEPD.mid (sha256
 % f555016a4b1c6e0d5f6efed6bcc9f247fdb159b2d2cf97c9d101d92ecffb3ca1): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Danse macabre Op.40
 M:3/4

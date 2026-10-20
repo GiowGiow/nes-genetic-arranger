@@ -8,7 +8,7 @@
 % Reduced from mid/6/49/QmNVPtWBxzp3m4xJ688jM3FE81NCTM3N2Ms7SvHNgFuQSJ.mid (sha256
 % 6ed46eb5f9f05d5659a96dd74b1efa319862f6fa2a514ca92009bafc2868028e): melody track 25, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Romeo and Juliet (ballet) Op.64
 M:4/4

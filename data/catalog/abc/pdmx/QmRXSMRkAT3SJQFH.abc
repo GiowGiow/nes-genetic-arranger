@@ -8,7 +8,7 @@
 % Reduced from mid/9/53/QmRXSMRkAT3SJQFHdvna7envtMsaVE4eTgBBG9ste5qWdz.mid (sha256
 % 11ccba27e16bbbc549965191887d8246a101e9d0c9232002c774f413601596fb): melody track 1, bars 0-37
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Flute Sonata in E-flat major BWV 1031
 M:6/8

@@ -8,7 +8,7 @@
 % Reduced from mid/2/49/QmcV1mc7NZy353NRt1XFR6TaEVe7tWC7wcf5EPaQswfyTy.mid (sha256
 % 3112a47145fa7c43d714cc4dbb921702ffcd9f277a9fa6b8e57c1a7be77f2622): melody track 1, bars 0-16
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Wiegenlied K.350/Anh.C 8.48
 M:6/8

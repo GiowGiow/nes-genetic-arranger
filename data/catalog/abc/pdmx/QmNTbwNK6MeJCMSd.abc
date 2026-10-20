@@ -8,7 +8,7 @@
 % Reduced from mid/6/45/QmNTbwNK6MeJCMSdej4WbXRjk4nS9Raj6p8TNzfpAWP43z.mid (sha256
 % dfdb67dfa0e280446bad8dcf5ea5694729b489f28e7686554677b2a567f5ae1c): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:3 Songs Op.7
 M:3/4

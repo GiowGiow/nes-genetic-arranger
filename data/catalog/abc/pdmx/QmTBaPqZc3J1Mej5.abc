@@ -8,7 +8,7 @@
 % Reduced from mid/11/12/QmTBaPqZc3J1Mej5WFSXnaxBSkk5m2xzfvvS67g1D6bCVr.mid (sha256
 % 815646e71f317aba37a7787b1a968ca33d4df1ad2d579f9c2a96c7c6f429bd13): melody track 0, bars 0-18
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Musikalisches Opfer BWV 1079
 M:4/4

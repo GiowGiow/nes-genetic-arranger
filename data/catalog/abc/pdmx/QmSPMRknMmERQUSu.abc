@@ -8,7 +8,7 @@
 % Reduced from mid/10/37/QmSPMRknMmERQUSumXtB9hUJEndL9F2dTbbPY6iNFvqKDK.mid (sha256
 % 103bf89e6c651e6f9f29ca5a79d98bacf76dbf47b9853af2f6e4f7cef8aeada2): melody track 0, bars 0-54
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Bist du bei mir
 M:3/4

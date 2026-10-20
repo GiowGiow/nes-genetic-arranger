@@ -8,7 +8,7 @@
 % Reduced from mid/17/15/QmZd3jsf5fQnmiCj6UXWJu9RbN393Dz217rFUgjvhAeHNu.mid (sha256
 % 53861d79b90322b247878989a849b9d45db8774889c0a5012b8518a29cbdb27d): melody track 0, bars 0-38
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Oboe Concerto in A minor RV 461
 M:3/4

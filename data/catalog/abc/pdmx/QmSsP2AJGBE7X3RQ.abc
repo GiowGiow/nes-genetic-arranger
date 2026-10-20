@@ -8,7 +8,7 @@
 % Reduced from mid/10/42/QmSsP2AJGBE7X3RQKPjPEqAQNVMwGWtFCckBUNjjwwRLqd.mid (sha256
 % 08d9bb5975d24f82b113309a720e5e648fc2e2b33134192f724b895c86a0267d): melody track 0, bars 0-28
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Ave Maria D.839
 M:4/4

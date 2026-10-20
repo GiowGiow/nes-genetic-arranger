@@ -8,7 +8,7 @@
 % Reduced from mid/11/44/QmTtiJN97SLE1m6RMjwo8t51Ki39GV1bnEq1k1puzN8uFB.mid (sha256
 % b4734ba16023c7fb09e1232801288e6247643ebad39ed58d2c155d0d845925b8): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:andantino
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/4/28/QmekQbhC1yAP8KhJtU1pWBR3Yb4LLSWiHHUFRfKHXAqCxL.mid (sha256
 % 0adb022df7dbf1a25bd3019fc2e529d72b5009167452da358484dd33e8cc41c3): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Jesu Joy of Man's Desiring
 M:9/8

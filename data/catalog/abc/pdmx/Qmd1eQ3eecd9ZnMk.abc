@@ -8,7 +8,7 @@
 % Reduced from mid/3/0/Qmd1eQ3eecd9ZnMkV1YLLmJtWnLGNNBN3nUXzQkKXwmG2h.mid (sha256
 % c70699891723a6240c18cd03cfc959d38e34edf7d3c0ffdd445f9558c260e8b7): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Toccata and Fugue in D minor BWV 565
 M:4/4

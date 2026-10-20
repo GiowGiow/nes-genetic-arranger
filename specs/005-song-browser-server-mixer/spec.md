@@ -337,7 +337,9 @@ as the running example.
 - **FR-021**: A command MUST resolve each author's death year from a recorded source and commit
   the result. Unknown or ambiguous authors count as not public domain.
 - **FR-022**: Commands MUST write the ABC lead sheets of the public-domain MPB songs, the
-  Nottingham collection and the filtered PDMX subset, each with provenance headers and license
+  Nottingham collection and the filtered PDMX subset (only the best-known tunes: a short list of
+  famous Nottingham titles and the most viewed PDMX scores, one arrangement per title; an obscure
+  collection tune adds nothing to a browsable shelf), each with provenance headers and license
   files.
 - **FR-023**: The catalog MUST be split per source and credit each source.
 

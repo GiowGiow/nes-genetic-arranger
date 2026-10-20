@@ -16,4 +16,4 @@ according to Wikidata (`data/catalog/authors.json`). Each file is reduced to a l
 melody, the detected chords, at most 64 bars) and names its source file, its SHA-256 and its
 license in its `%` header.
 
-Written by: `uv run src/main.py catalog pdmx --limit 2000`.
+Written by: `uv run src/main.py catalog pdmx --limit 300`.

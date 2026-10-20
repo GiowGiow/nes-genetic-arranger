@@ -8,7 +8,7 @@
 % Reduced from mid/2/9/Qmca4zrszqVk9cXADhS9nhPGiQAs89zHk3x4EtkWn5Xwpr.mid (sha256
 % be5ab63ea4a0ad10b27dadab52bbc01b60854fa5b49018038ce68885a907d676): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Galliard 10
 M:3/4

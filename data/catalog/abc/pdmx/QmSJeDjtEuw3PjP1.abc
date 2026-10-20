@@ -8,7 +8,7 @@
 % Reduced from mid/10/27/QmSJeDjtEuw3PjP17fheDNXGojcQ76HmntyE2T84D5zJYY.mid (sha256
 % ff7035c76b9a6963ba5644bf5f5248735a41cefbca569497bf01f16469042dfc): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Suite bergamasque
 M:9/8

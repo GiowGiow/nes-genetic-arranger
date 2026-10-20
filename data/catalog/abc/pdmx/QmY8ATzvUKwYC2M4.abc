@@ -8,7 +8,7 @@
 % Reduced from mid/16/7/QmY8ATzvUKwYC2M4QfMkeAzdgLkxHEJsgoq4Ry3FCyaR8U.mid (sha256
 % e5a665b1e0913fecc9b5ff284bedb531d4ed89d75a278183bfa9188b2e5a76f5): melody track 0, bars 0-27
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Il barbiere di Siviglia
 M:4/4

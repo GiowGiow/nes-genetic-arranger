@@ -8,7 +8,7 @@
 % Reduced from mid/9/8/QmR934gV47SXzwV2T4Nv2BhAnNGPs3yGqMM3z4YyW684nU.mid (sha256
 % 0ae67d42e6ed7777ccf254abe40ea2a192f94cebf08de522d22ac6d2c6fcdb1f): melody track 3, bars 3-67
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:hallelujah
 M:4/4

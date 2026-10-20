@@ -39,7 +39,7 @@
   <noscript><p class="card notice">The arranger runs in JavaScript. Turn it on to arrange a song.</p></noscript>
 
   <div class="panels">
-    <section id="song" class="card has-shelf" aria-labelledby="song-title">
+    <section id="song" class="card wide has-shelf" aria-labelledby="song-title">
       <div class="song-head">
         <h2 id="song-title">Song</h2>
         <div class="song-tools">
@@ -49,33 +49,31 @@
       </div>
       <div class="shelf-root" data-shelf></div>
       <p class="drop-note">You can also drop a MIDI or ABC file anywhere on this card. It stays on this device.</p>
+      <div id="run" class="run-strip">
+        <p class="run-song" data-run-song>Choose a song first.</p>
+        <div class="run-controls">
+          <div class="has-tip">
+            <label class="inline">Seed<span class="tip-mark" aria-hidden="true">i</span>
+              <input type="number" min="0" step="1" value="1" class="mono" data-seed aria-describedby="tip-seed"></label>
+            <p class="tip" id="tip-seed" role="tooltip">Starts the random generator. The same song, seed and settings always give the same arrangement; another seed gives another plan.</p>
+          </div>
+          <div class="has-tip">
+            <label class="inline">Pace<span class="tip-mark" aria-hidden="true">i</span>
+              <select data-pace aria-describedby="tip-pace"><option value="full" selected>full speed</option><option value="watch">watch</option></select></label>
+            <p class="tip" id="tip-pace" role="tooltip">Full speed finishes in about a second; watch runs about 400 generations per second, so you can follow the evolution. The arrangement is the same.</p>
+          </div>
+          <div class="toolbar">
+            <button type="button" class="button primary" data-arrange disabled>Arrange</button>
+            <button type="button" class="button" data-stop disabled>Stop</button>
+          </div>
+          <button type="button" class="button small" data-settings-toggle aria-expanded="false" aria-controls="settings">Settings</button>
+        </div>
+        <p class="hint" data-run-hint></p>
+        <div class="changed-chips" data-changed aria-label="Settings changed from the defaults"></div>
+      </div>
       <div hidden data-file-target></div>
       <div hidden data-examples-target></div>
       <div class="song-details" data-song-details></div>
-    </section>
-
-    <section id="run" class="card" aria-labelledby="run-title">
-      <h2 id="run-title">Run</h2>
-      <p class="run-song" data-run-song>Choose a song first.</p>
-      <div class="run-fields">
-        <div class="has-tip">
-          <label class="inline">Seed<span class="tip-mark" aria-hidden="true">i</span>
-            <input type="number" min="0" step="1" value="1" class="mono" data-seed aria-describedby="tip-seed"></label>
-          <p class="tip" id="tip-seed" role="tooltip">Starts the random generator. The same song, seed and settings always give the same arrangement; another seed gives another plan.</p>
-        </div>
-        <div class="has-tip">
-          <label class="inline">Pace<span class="tip-mark" aria-hidden="true">i</span>
-            <select data-pace aria-describedby="tip-pace"><option value="full" selected>full speed</option><option value="watch">watch</option></select></label>
-          <p class="tip" id="tip-pace" role="tooltip">Full speed finishes in about a second; watch runs about 400 generations per second, so you can follow the evolution. The arrangement is the same.</p>
-        </div>
-      </div>
-      <div class="toolbar">
-        <button type="button" class="button primary" data-arrange disabled>Arrange</button>
-        <button type="button" class="button" data-stop disabled>Stop</button>
-      </div>
-      <p class="hint" data-run-hint></p>
-      <div class="changed-chips" data-changed aria-label="Settings changed from the defaults"></div>
-      <button type="button" class="button small" data-settings-toggle aria-expanded="false" aria-controls="settings">Settings</button>
     </section>
 
     <section id="settings" class="card" aria-labelledby="settings-title">

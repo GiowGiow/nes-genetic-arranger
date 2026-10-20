@@ -8,7 +8,7 @@
 % Reduced from mid/1/21/QmbgARtdcsdkf2xiQu16rgawKPGYQmHdngQA4wp4CvwKvH.mid (sha256
 % 3c14c7399544fa1ca60c4e14f593149d2434cd691dfda0af88e1aa981677003a): melody track 2, bars 0-53
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:O christmas night!
 M:4/4

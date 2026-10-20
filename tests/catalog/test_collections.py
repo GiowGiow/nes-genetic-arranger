@@ -323,6 +323,15 @@ def test_nottingham_tunes_are_written_one_per_file_with_the_license(tmp_path, ca
     assert "GPL-3.0" in record["license"]
 
 
+def test_the_nottingham_writer_can_keep_only_the_well_known_titles_once_each(tmp_path):
+    source = nottingham_source(tmp_path / "src")
+    entries, _ = write_nottingham(
+        source, tmp_path / "abc", tmp_path / "n.json", only_titles={"synthetic reel", "not there"}
+    )
+    assert [entry["id"] for entry in entries] == ["reels-1"], "the first tune of the title only"
+    assert {path.name for path in (tmp_path / "abc").glob("*.abc")} == {"reels-1.abc"}
+
+
 def test_the_nottingham_writer_rewrites_the_same_bytes(tmp_path):
     source = nottingham_source(tmp_path / "src")
     write_nottingham(source, tmp_path / "a", tmp_path / "a.json")
@@ -342,6 +351,8 @@ def pdmx_row(name, **fields):
         "is_original": "False",
         "n_ratings": "1",
         "rating": "4.0",
+        "n_views": "1",
+        "n_favorites": "0",
         "license": "publicdomain",
         "song_name": name,
         "composer_name": "Ernesto Nazareth",
@@ -362,8 +373,8 @@ def pdmx_csv(path: Path, rows: list[dict]) -> Path:
 
 
 PDMX_ROWS = [
-    pdmx_row("QmFree", rating="4.5", n_ratings="10"),
-    pdmx_row("QmBetter", rating="4.9", n_ratings="2", license="cc-zero"),
+    pdmx_row("QmFree", rating="4.5", n_ratings="10", n_views="900"),
+    pdmx_row("QmBetter", rating="4.9", n_ratings="2", n_views="100", license="cc-zero"),
     pdmx_row("QmConflict", **{"subset:no_license_conflict": "False"}),
     pdmx_row("QmDuplicate", is_best_unique_arrangement="False"),
     pdmx_row("QmShort", **{"song_length.bars": "4"}),
@@ -377,7 +388,7 @@ PDMX_ROWS = [
 ]
 
 
-def test_the_pdmx_filter_keeps_free_unique_unconflicted_tunes_ranked_by_rating(tmp_path):
+def test_the_pdmx_filter_keeps_free_unique_unconflicted_tunes_most_viewed_first(tmp_path):
     authors = {
         "Ernesto Nazareth": AuthorRecord("Ernesto Nazareth", "Q1", 1934, "dead", "", ""),
         "Caetano Veloso": AuthorRecord("Caetano Veloso", "Q2", None, "alive", "", ""),
@@ -385,8 +396,19 @@ def test_the_pdmx_filter_keeps_free_unique_unconflicted_tunes_ranked_by_rating(t
     path = pdmx_csv(tmp_path / "PDMX.csv", PDMX_ROWS)
 
     kept = select_pdmx_rows(path, authors, limit=10)
-    assert [row["song_name"] for row in kept] == ["QmBetter", "QmFree"]
-    assert [row["song_name"] for row in select_pdmx_rows(path, authors, limit=1)] == ["QmBetter"]
+    assert [row["song_name"] for row in kept] == ["QmFree", "QmBetter"], "views rank, not rating"
+    assert [row["song_name"] for row in select_pdmx_rows(path, authors, limit=1)] == ["QmFree"]
+
+
+def test_a_title_is_listed_once_with_its_most_viewed_arrangement(tmp_path):
+    authors = {"Ernesto Nazareth": AuthorRecord("Ernesto Nazareth", "Q1", 1934, "dead", "", "")}
+    rows = [
+        pdmx_row("QmA1", song_name="Odeon", n_views="50"),
+        pdmx_row("QmA2", song_name="odeon ", n_views="500"),
+        pdmx_row("QmB", song_name="Brejeiro", n_views="10"),
+    ]
+    kept = select_pdmx_rows(pdmx_csv(tmp_path / "PDMX.csv", rows), authors, limit=10)
+    assert [row["path"].split("/")[-1] for row in kept] == ["QmA2.json", "QmB.json"]
 
 
 def test_the_pdmx_author_walk_resolves_only_the_names_of_candidate_tunes(tmp_path):
@@ -454,7 +476,8 @@ def test_the_collection_commands_are_registered():
         extra = ["--dataset", "x"] if command == "public-domain" else []
         args = parser.parse_args(["catalog", command, *extra])
         assert callable(args.handler)
-    assert parser.parse_args(["catalog", "pdmx"]).limit == 2000
+    assert parser.parse_args(["catalog", "pdmx"]).limit == 300
+    assert parser.parse_args(["catalog", "nottingham"]).all is False
 
 
 def test_the_examples_catalog_lists_the_eight_examples_with_abc_routes(tmp_path):

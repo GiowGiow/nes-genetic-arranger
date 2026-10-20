@@ -8,7 +8,7 @@
 % Reduced from mid/6/36/QmNpVHJdPsbiKetPiTvZPEoMsebKtnMqh9fvNpQDmnENaK.mid (sha256
 % 9f230347c66d2da1a718354db7f785b12296d6d9e31fb82c0e172dd1ec2d041e): melody track 0, bars 0-42
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Himno Nacional de Honduras
 M:4/4

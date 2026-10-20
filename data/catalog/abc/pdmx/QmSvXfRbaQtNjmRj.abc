@@ -9,7 +9,7 @@
 % Reduced from mid/10/48/QmSvXfRbaQtNjmRjXXXutCbTT7DyAzvGT2QievCepmG4nE.mid (sha256
 % 83e43431b1b4c8b45a04d1507101f2c82159a857f996834a68a3779274bad634): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:les sauvages nouvelles suites de pieces de clavecin
 M:4/4

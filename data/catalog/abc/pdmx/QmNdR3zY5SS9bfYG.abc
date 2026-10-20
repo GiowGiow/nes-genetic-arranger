@@ -8,7 +8,7 @@
 % Reduced from mid/6/15/QmNdR3zY5SS9bfYGV8K8gzWGnd52nDm1K9jRPifXhsXvnC.mid (sha256
 % 43cd8e6fe4667b43614966b6fcb9f2b31d08c9bcef96aa01fd99feb4e87c2364): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:English Suite No.2 in A minor BWV 807
 M:3/4

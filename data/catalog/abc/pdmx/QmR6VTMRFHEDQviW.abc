@@ -8,7 +8,7 @@
 % Reduced from mid/9/5/QmR6VTMRFHEDQviWNiisVTgkYJULmp1RijYC7ep9RXmVJD.mid (sha256
 % e9e4c051e155a172257ffd53327774e69380c640af24a2cb1f5adc7f234cc53c): melody track 2, bars 0-23
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Come heavy sleep
 M:4/4

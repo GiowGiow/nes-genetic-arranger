@@ -8,7 +8,7 @@
 % Reduced from mid/13/18/QmVESzhQqB1q62QNkPUUhFj5jgEdJduukkuYsY51SmLt1x.mid (sha256
 % 36380cf2dc7eceaa827f7a6e003855dee2511bda62b4c06dd5e7242323f4ed03): melody track 0, bars 0-32
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:4 Pieces for Anna Magdalena Bach H.1
 M:3/4

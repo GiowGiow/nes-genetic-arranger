@@ -8,7 +8,7 @@
 % Reduced from mid/17/31/QmZmHoMJKvabPrhzXCsZQSzuy7zYRfrEXhGEngjWMqQKdC.mid (sha256
 % ee94afb37833315ce8f6bb016df82b6316aace6b72536eb3873252b17b47fc2c): melody track 13, bars 0-52
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Salve oh patria!
 M:4/4

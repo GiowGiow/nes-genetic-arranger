@@ -8,7 +8,7 @@
 % Reduced from mid/16/4/QmY5z81RCunsZb2svQ3c8w24Qc9upfGkP55ws4EzCbv3LE.mid (sha256
 % 14f010ed1da77bbe3eb96759a6f1993df649a9ce09beab2ff90841823ea1a210): melody track 1, bars 0-16
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Suite in D minor HWV 437
 M:3/2

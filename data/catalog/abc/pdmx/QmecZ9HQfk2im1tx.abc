@@ -8,7 +8,7 @@
 % Reduced from mid/4/13/QmecZ9HQfk2im1txGk4VLULXhy6M9cU1CUo5yC4dz2akJi.mid (sha256
 % 78a869d328155c31a772d3548e387ba44a76956ffabe017d317968ce8f40b4a3): melody track 0, bars 0-44
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:The Love for Three Oranges (opera) Op.33
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/15/10/QmXABm8A5AsGpiSfZ41nUnzmWeEZmKeprdUSimms4PYKeo.mid (sha256
 % c488e3daf61b6ebea0bf370f6460157fc46e2c9bac3d5a8bfa2d3678538d1516): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:rumores de la caleta
 M:3/4

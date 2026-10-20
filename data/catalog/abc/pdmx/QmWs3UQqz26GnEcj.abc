@@ -8,7 +8,7 @@
 % Reduced from mid/14/42/QmWs3UQqz26GnEcj2EiJ4C6imbnzT4M1JLpFPq7gMhfUYx.mid (sha256
 % 1335a030c4ead515d70e41bb916b55df96cb23b80ac26722aa7f329694c30853): melody track 0, bars 1-65
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:moonlight serenade
 M:4/4

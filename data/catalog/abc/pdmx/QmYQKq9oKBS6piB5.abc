@@ -8,7 +8,7 @@
 % Reduced from mid/16/39/QmYQKq9oKBS6piB5MMCw19rUUjQAUayKK1XP2UiWgAeGsF.mid (sha256
 % b91a94a9241f71238c73cad5ac7b09394da822df393e0e4c96ba89bf6c7b2f1a): melody track 3, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:californication
 M:4/4

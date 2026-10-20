@@ -1,0 +1,29 @@
+%abc-2.1
+% Orchestral Suite No.1 in C major BWV 1066, by Bach. Score published on MuseScore (artist: Johann
+% Sebastian Bach), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Bach (died 1953, Wikidata
+% Q1861386).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/2/39/QmcQ7JWpbyJKFswpvsiJtamak8uZAiYMhmAu3uGVveRsfy.mid (sha256
+% 915da1d09e728b68e37039be9d76c590491d0326db41d409cb29769a2c34a1d2): melody track 0, bars 0-44
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 300
+X:1
+T:Orchestral Suite No.1 in C major BWV 1066
+M:4/4
+L:1/16
+Q:1/4=120
+K:none
+P:A
+"C"d2 G2 G2 G2 G2 ^f2 g2 e2 | "C"d2 G2 G2 G2 G2 d2 e2 c2 | "C"B2 G2 B2 d2 g2 d2 g2 a b | "C"a2 g2 ^f2 e2 d4 c4 |
+"C"B2 G2 G2 g2 g2 G2 G2 g2 | "C"g2 c2 c2 g2 g2 A2 A2 g2 | "C"^f4 e2 d2 _d6 =d2 | "C"d2 A2 A2 ^F2 ^F2 A2 A2 ^F2 |
+"C"D16 | "C"d2 G2 G2 G2 G2 ^f2 g2 e2 | "C"d2 G2 G2 G2 G2 d2 e2 c2 | "C"B2 G2 B2 d2 g2 d2 g2 a b |
+"C"a2 g2 ^f2 e2 d4 c4 | "C"B2 G2 G2 g2 g2 G2 G2 g2 | "C"g2 c2 c2 g2 g2 A2 A2 g2 | "C"^f4 e2 d2 _d6 =d2 |
+"C"d2 A2 A2 ^F2 ^F2 A2 A2 ^F2 | "C"D16 | "C"d2 A2 A2 A2 d2 ^F2 ^F2 ^F2 | "C"d2 D2 D2 D2 D2 E2 ^F2 G2 |
+"C"A2 G2 A2 B2 c2 B2 c2 d2 | "C"c B3 A2 B2 G2 d2 e2 ^f2 | "C"g2 d2 d2 d2 g2 B2 B2 B2 | "C"g2 G2 G2 G2 G2 A2 B2 c2 |
+"C"d2 c2 d2 e2 f2 e2 f2 g2 | "C"f e3 d2 e2 c2 B2 c2 d2 | "C"e2 c2 c2 A2 A2 ^f2 ^f2 g2 | "C"d2 B2 B2 G2 G2 f2 f2 g2 |
+"C"c4 B2 A2 A6 G2 | "C"G2 D2 D2 B,2 B,2 D2 D2 B,2 | "C"G,16 | "C"d2 A2 A2 A2 d2 ^F2 ^F2 ^F2 |
+"C"d2 D2 D2 D2 D2 E2 ^F2 G2 | "C"A2 G2 A2 B2 c2 B2 c2 d2 | "C"c B3 A2 B2 G2 d2 e2 ^f2 | "C"g2 d2 d2 d2 g2 B2 B2 B2 |
+"C"g2 G2 G2 G2 G2 A2 B2 c2 | "C"d2 c2 d2 e2 f2 e2 f2 g2 | "C"f e3 d2 e2 c2 B2 c2 d2 | "C"e2 c2 c2 A2 A2 ^f2 ^f2 g2 |
+"C"d2 B2 B2 G2 G2 f2 f2 g2 | "C"c4 B2 A2 A6 G2 | "C"G2 D2 D2 B,2 B,2 D2 D2 B,2 | "C"G,16 |

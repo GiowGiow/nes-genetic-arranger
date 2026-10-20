@@ -8,7 +8,7 @@
 % Reduced from mid/13/14/QmVCyFhS2bCYTxPnCMLX3D5hMXBxKHT1Gt3J9GchhbcyiQ.mid (sha256
 % fb9dc950f20c3b7d607ad9ad21fb5d478d16d7035df03e34e12ae5caf3885a2a): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Le quattro stagioni
 M:3/4

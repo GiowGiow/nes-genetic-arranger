@@ -8,7 +8,7 @@
 % Reduced from mid/12/35/QmUo8swPcJEyMkTxpMVkVA88rbRthopnqMaFUgnjy9HVWR.mid (sha256
 % 82db9a228e661f5ba2ef6e1705655c0b8b8ed27322cbcb8dfd2e7861caf89679): melody track 0, bars 0-29
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Ich steh mit einem Fuß im Grabe BWV 156
 M:4/4

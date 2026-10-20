@@ -11,7 +11,7 @@ files, and every file starts with `%` lines that say where it comes from (consti
 - **Nottingham** (GPL-3.0): about a thousand British and American folk tunes in ABC, as cleaned
   by Jukedeck.
 - **PDMX** (CC BY 4.0): MuseScore scores marked public domain or CC0 whose composer died in 1955
-  or earlier, ranked by rating (research R12).
+  or earlier, ranked by views, the most viewed first (research R12).
 
 Folk ABC writes repeat signs, pickups and chord symbols, which the lead-sheet ABC reader refuses
 by design. Such a tune goes through the MIDI reduction instead (research R10):
@@ -37,7 +37,7 @@ import shutil
 import tarfile
 import tempfile
 import textwrap
-from collections.abc import Callable, Iterable, Mapping, Sequence
+from collections.abc import Callable, Collection, Iterable, Mapping, Sequence
 from dataclasses import replace
 from pathlib import Path
 
@@ -84,6 +84,8 @@ PDMX_RECORD = "https://zenodo.org/records/15571083"
 PDMX_DOI = "10.5281/zenodo.15571083"
 PDMX_LICENSES = {"publicdomain": "PDM", "cc-zero": "CC0"}
 PDMX_BARS = (8, 256)
+# How many PDMX scores to keep: the most viewed ones, which are the ones people know.
+PDMX_LIMIT = 300
 # The PDMX.csv columns the filter and the writer read (the file has more).
 PDMX_COLUMNS = (
     "path",
@@ -91,6 +93,8 @@ PDMX_COLUMNS = (
     "is_original",
     "n_ratings",
     "rating",
+    "n_views",
+    "n_favorites",
     "license",
     "license_url",
     "song_name",
@@ -547,18 +551,60 @@ NOTTINGHAM_ENVELOPE = {
 }
 
 
+# The Nottingham tunes people know (most of the 1,000 are local dance tunes nobody lists by name).
+# Matched on the T: title, lower case; the first tune of a title is kept.
+NOTTINGHAM_FAMOUS = frozenset(
+    {
+        "all those endearing young charms",
+        "arkensas traveller",
+        "blaydon races",
+        "blue bells of scotland",
+        "bonnie dundee",
+        "cock of the north",
+        "dashing white sergeant",
+        "drunken sailor",
+        "fisher's hornpipe",
+        "irish washerwoman",
+        "john peel",
+        "keel row",
+        "oh dear, what can the matter be",
+        "oh susanna",
+        "over the hills",
+        "sailor's hornpipe",
+        "she'll be coming round the mountain",
+        "the minstrel boy",
+        "turkey in the straw",
+    }
+)
+
+
+def _tune_title(tune: str) -> str:
+    """The lower-case title of a tune (its first `T:` line)."""
+    match = re.search(r"^T:\s*(.+?)\s*$", tune, re.MULTILINE)
+    return match.group(1).lower() if match else ""
+
+
 def write_nottingham(
-    source_dir: Path | str, out_dir: Path | str, catalog_out: Path | str, workers: int = 1
+    source_dir: Path | str,
+    out_dir: Path | str,
+    catalog_out: Path | str,
+    workers: int = 1,
+    only_titles: Collection[str] | None = None,
 ) -> tuple[list[dict], dict[str, int]]:
     """Write one lead sheet per Nottingham tune that the arranger can read, and the license.
 
-    Returns the catalog entries and the number of tunes skipped per reason.
+    `only_titles` keeps just the tunes with those lower-case titles (the first of each title);
+    None keeps every tune. Returns the catalog entries and the number of tunes skipped per reason.
     """
     source_dir, out_dir = Path(source_dir), Path(out_dir)
-    jobs = []
+    jobs, seen = [], set()
     for path in sorted((source_dir / "ABC_cleaned").glob("*.abc")):
         sha256 = file_sha256(path)
         for number, tune in split_tunes(path.read_text(encoding="latin-1")):
+            title = _tune_title(tune)
+            if only_titles is not None and (title not in only_titles or title in seen):
+                continue
+            seen.add(title)
             jobs.append((path.name, number, tune, sha256))
     _fresh_folder(out_dir)
     shutil.copyfile(source_dir / "LICENSE.md", out_dir / "LICENSE.md")
@@ -624,7 +670,7 @@ PDMX_ENVELOPE = {
     " CC BY 4.0",
     "note": "ABC lead sheets reduced from PDMX's MIDI files of scores whose composer died in 1955 "
     "or earlier: one melody, the detected chords, at most 64 bars.",
-    "generated": "uv run src/main.py catalog pdmx --limit 2000",
+    "generated": "uv run src/main.py catalog pdmx --limit 300",
 }
 
 PDMX_NOTICE = f"""# PDMX lead sheets
@@ -645,7 +691,7 @@ according to Wikidata (`data/catalog/authors.json`). Each file is reduced to a l
 melody, the detected chords, at most 64 bars) and names its source file, its SHA-256 and its
 license in its `%` header.
 
-Written by: `uv run src/main.py catalog pdmx --limit 2000`.
+Written by: `uv run src/main.py catalog pdmx --limit 300`.
 """
 
 
@@ -667,11 +713,11 @@ def _number(value: str) -> float:
 
 
 def pdmx_candidates(csv_path: Path | str) -> list[dict]:
-    """Rows of PDMX.csv that pass the license, uniqueness and length filter, best rated first.
+    """Rows of PDMX.csv that pass the license, uniqueness and length filter, most viewed first.
 
     Kept: the `no_license_conflict` subset, the best unique arrangement of each song, 8 to 256
-    bars, licensed PDM or CC0, with a MIDI file. Ranked by rating, then number of ratings, then
-    path.
+    bars, licensed PDM or CC0, with a MIDI file. Ranked by views, then favorites, then path: the
+    scores people open most are the songs people know.
     """
     csv.field_size_limit(1 << 24)  # some PDMX rows hold long tag lists
     low, high = PDMX_BARS
@@ -686,7 +732,7 @@ def pdmx_candidates(csv_path: Path | str) -> list[dict]:
             and _field(row, "mid")
         ]
     return sorted(
-        rows, key=lambda row: (-_number(row["rating"]), -_number(row["n_ratings"]), row["path"])
+        rows, key=lambda row: (-_number(row["n_views"]), -_number(row["n_favorites"]), row["path"])
     )
 
 
@@ -698,13 +744,30 @@ def select_pdmx_rows(
     PDMX's `is_original` flag is not trusted: it marks covers of protected songs too, so a
     score without a resolvable public-domain composer is left out.
     """
-    chosen = []
+    chosen, titles = [], set()
     for row in pdmx_candidates(csv_path):
+        title = (row["song_name"] or row["title"]).strip().lower()
+        if title in titles:
+            continue  # the most viewed arrangement of a title is the one listed
         if row["composer_name"] and song_is_public_domain(row["composer_name"], authors):
+            titles.add(title)
             chosen.append(row)
             if len(chosen) >= limit:
                 break
     return chosen
+
+
+def clean_composer(name: str) -> str:
+    """A composer's name without the life dates that uploaders write after it.
+
+    >>> clean_composer("Erik Satie(18661925)")
+    'Erik Satie'
+    >>> clean_composer("Johann Sebastian Bach (1685-1750)")
+    'Johann Sebastian Bach'
+    >>> clean_composer("Tchaikovsky")
+    'Tchaikovsky'
+    """
+    return re.sub(r"\s*\(?\d{4}.*$", "", name).strip()
 
 
 def pdmx_author_names(
@@ -763,7 +826,7 @@ def write_pdmx(
     authors_path: Path | str,
     out_dir: Path | str,
     catalog_out: Path | str,
-    limit: int = 2000,
+    limit: int = PDMX_LIMIT,
     workers: int = 1,
 ) -> tuple[list[dict], dict[str, int]]:
     """Write the lead sheets of the PDMX subset (research R12), with the CC BY notice.
@@ -796,7 +859,7 @@ def write_pdmx(
                 "id": song_id,
                 "source": "pdmx",
                 "t": row["song_name"] or row["title"],
-                "c": row["composer_name"],
+                "c": clean_composer(row["composer_name"]),
                 "p": row["artist_name"],
                 "u": PDMX_RECORD,
                 "license": PDMX_LICENSES[row["license"]],
@@ -932,12 +995,20 @@ def add_collection_parsers(catalog_commands: argparse._SubParsersAction) -> None
     nottingham.add_argument("--out-dir", type=Path, default=ABC_ROOT / "nottingham")
     nottingham.add_argument("--out", type=Path, default=CATALOG_ROOT / "nottingham.json")
     nottingham.add_argument("--workers", type=int, default=1)
+    nottingham.add_argument(
+        "--all", action="store_true", help="write every tune, not only the well-known ones"
+    )
     nottingham.set_defaults(handler=run_nottingham)
 
     pdmx = catalog_commands.add_parser("pdmx", help="write the PDMX subset as lead sheets")
     pdmx.add_argument("--source", type=Path, default=Path("data/raw/pdmx"))
     pdmx.add_argument("--authors", type=Path, default=DEFAULT_AUTHORS)
-    pdmx.add_argument("--limit", type=int, default=2000, help="tunes to consider (default 2000)")
+    pdmx.add_argument(
+        "--limit",
+        type=int,
+        default=PDMX_LIMIT,
+        help=f"tunes to keep, the most viewed (default {PDMX_LIMIT})",
+    )
     pdmx.add_argument("--out-dir", type=Path, default=ABC_ROOT / "pdmx")
     pdmx.add_argument("--out", type=Path, default=CATALOG_ROOT / "pdmx.json")
     pdmx.add_argument("--workers", type=int, default=1)
@@ -973,7 +1044,13 @@ def run_public_domain(args: argparse.Namespace) -> list[dict]:
 
 def run_nottingham(args: argparse.Namespace) -> list[dict]:
     """Write the Nottingham lead sheets, the license and their catalog."""
-    entries, skipped = write_nottingham(args.source, args.out_dir, args.out, args.workers)
+    entries, skipped = write_nottingham(
+        args.source,
+        args.out_dir,
+        args.out,
+        args.workers,
+        None if args.all else NOTTINGHAM_FAMOUS,
+    )
     _report(entries, skipped, args.out)
     return entries
 

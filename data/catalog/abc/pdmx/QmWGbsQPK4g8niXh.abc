@@ -9,7 +9,7 @@
 % Reduced from mid/14/22/QmWGbsQPK4g8niXhmTHbcDJdL1K94tTrbaRg3z2CDQdMCy.mid (sha256
 % 136e5ec7d23934853193306dd9c6941af5cf003686c350d38f4e0e5c923b1bc7): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Organ Sonata No.1 in E-flat major BWV 525
 M:3/4

@@ -8,7 +8,7 @@
 % Reduced from mid/7/29/QmPKomdgeZt1224Xj9MAXBvQbmMQhA2R82MUxo91wQocar.mid (sha256
 % e6423ec1d8b39f10f04c606fb106fad0caae3dc492a6bb1b883bb429d703f789): melody track 1, bars 0-45
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:el dia que me quieras
 M:2/4

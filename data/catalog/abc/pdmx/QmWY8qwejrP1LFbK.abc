@@ -8,7 +8,7 @@
 % Reduced from mid/14/55/QmWY8qwejrP1LFbKn5yFXZAyCX3abvncsjQJxLCcaeekTt.mid (sha256
 % 7ff15e45ce5860d51dfc48444c00d3668183e91973b71bacf3063d95232aa5ec): melody track 0, bars 0-17
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Oh! Susanna
 M:4/4

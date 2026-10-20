@@ -8,7 +8,7 @@
 % Reduced from mid/10/34/QmSNBntdiz74Tg21KinZjQb5g2QoXFjt6iHwZuu6FAJy1S.mid (sha256
 % c278b8931b280f9735ffed76d237c19fc7631e5394e34a0563b90f4de1092d81): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:L'Arlésienne
 M:3/4

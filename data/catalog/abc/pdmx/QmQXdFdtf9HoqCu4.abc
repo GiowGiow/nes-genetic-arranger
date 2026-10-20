@@ -8,7 +8,7 @@
 % Reduced from mid/8/53/QmQXdFdtf9HoqCu4QjmtTaojujBNwc1BjAgd25yTZokJU7.mid (sha256
 % 64736b2f26bb5deef18e172ecee1dcdbbdc0b48e2eecd5c2bf7c4c1250a6b4a2): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:21 Hungarian Dances (Piano) WoO 1
 M:2/4

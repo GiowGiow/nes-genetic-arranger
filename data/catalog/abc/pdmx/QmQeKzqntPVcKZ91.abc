@@ -8,7 +8,7 @@
 % Reduced from mid/8/17/QmQeKzqntPVcKZ91miAwLeFubQDpUq4R5d7fjDoqAFeXfL.mid (sha256
 % 5c8b6adcf36c8612ac828df94c12d06d085daa2266b3f6001b7b6571862af5ce): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Götterdämmerung WWV 86D
 M:4/4

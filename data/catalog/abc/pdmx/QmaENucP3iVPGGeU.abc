@@ -8,7 +8,7 @@
 % Reduced from mid/0/18/QmaENucP3iVPGGeUtgdj959VJEx116ke3SYH4X5s993nhN.mid (sha256
 % 871ee9eb25cab1353a2db0507f50f1fe55bc15b0b19efb3dd9a46a83655b9585): melody track 0, bars 0-32
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Minuet in F major K.2
 M:3/4

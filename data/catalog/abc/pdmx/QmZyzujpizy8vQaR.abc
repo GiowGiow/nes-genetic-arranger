@@ -8,7 +8,7 @@
 % Reduced from mid/17/54/QmZyzujpizy8vQaR7acjN5TB6FDJsWsVd4hLDwYjV2TF9P.mid (sha256
 % 0cb17946e2e824a920d5bc40c7a73416b088904f380b8555b2c7518f56f90af0): melody track 0, bars 0-16
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Old German Dance
 M:4/4

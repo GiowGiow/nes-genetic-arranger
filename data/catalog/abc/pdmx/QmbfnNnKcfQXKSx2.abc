@@ -8,7 +8,7 @@
 % Reduced from mid/1/19/QmbfnNnKcfQXKSx2CLy8KXRyRB1V1R8d1wRwEXB2CDD5FC.mid (sha256
 % b56d958f6591bcdcae38f5cf0b8ff32278484ff5b6653f5b84973bbc9c27ef79): melody track 0, bars 0-29
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Arioso BWV 156
 M:4/4

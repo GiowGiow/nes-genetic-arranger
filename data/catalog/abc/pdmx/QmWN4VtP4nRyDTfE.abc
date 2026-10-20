@@ -8,7 +8,7 @@
 % Reduced from mid/14/34/QmWN4VtP4nRyDTfE2DvVc8DHEnKETurWarQd5PMXA1QjU2.mid (sha256
 % bcdb9b02375d328c39ff95f790a66b7c2ee05856596d7e68f49c793081889f1c): melody track 1, bars 0-52
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Elegy Op.24
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/15/15/QmXdVtp4KmMuQr99r1w1AXzPqVCvp8o4bdtQSPMi3hWx8z.mid (sha256
 % 9e78edd3f49b81b152b849355c179e4bca1399772ac41914b4dcf9a424781943): melody track 0, bars 0-27
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Violin Concerto Op.35
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/15/25/QmXiANoF15wqxY1T8hka5xUpgtC7ZNWWHciJ5qJe9mEgXf.mid (sha256
 % 4554a8f1d3ce74f39c2522de4fa19215ff7480dc42015cb28adcfbee4410bcef): melody track 0, bars 0-39
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:La fille aux cheveux de lin
 M:3/4

@@ -9,7 +9,7 @@
 % Reduced from mid/15/5/QmX6WJtxDNDA7Mf6xR3c7w33tw3hUMkvFUJe6yfB5qmgmW.mid (sha256
 % 361db79c2ca073fab7499cde57da06fac5bb754cd4c3cdebf2c207077d746c98): melody track 1, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Air 'on the G string' Orchestral Suite No. 3 in D major BWV 1068
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/4/10/QmeAEFTmKkETELxmMSP95yoSBTERAsBPNQA3FjqZqFfssX.mid (sha256
 % 6deae1713f6cbc7fe3e7c467efd5d93286ff2b3b37fe3dee3c962f056e4964f1): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Clair de lune
 M:9/8

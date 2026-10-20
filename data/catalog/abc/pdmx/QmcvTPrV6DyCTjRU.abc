@@ -8,7 +8,7 @@
 % Reduced from mid/2/48/QmcvTPrV6DyCTjRUjoB3f5G5KPXLzxg9Cyh9ZkPyUELxvm.mid (sha256
 % b960d17d59cbffce54f0dc3ccfc76c2b412ac2a8e5db84e34882c94db725cc69): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:The Puppet Show
 M:4/4

@@ -520,14 +520,18 @@ downloaded `config.json` reruns in the command line:
 uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed 1
 ```
 
-**Song catalog.** The Song tab is a shelf of vinyl records, 15 per page: the 8 examples first,
-then every other song in alphabetical order. Search finds a song by title, composer or
+**Song catalog.** The Song tab is a shelf of vinyl records, 15 per page, with a list of their titles
+beside them (click a title to select it, double-click to arrange it): the 8 examples first, then
+every other song in alphabetical order. The run controls (seed, pace, Arrange, Settings) sit in
+the same card, under the shelf. Search finds a song by title, composer or
 performer, and also looks for MIDI files on other sites. "Open MIDI or ABC" loads your own file.
 Every catalog song opens like an example: one click, no track to choose.
 
 - **Songs committed as ABC lead sheets** open with no server: public-domain songs (every author
   died 70 or more years ago, checked on Wikidata; an unknown author counts as not public domain),
-  the cleaned Nottingham folk tunes (GPL-3.0) and a filtered subset of PDMX (CC-BY 4.0).
+  the best-known tunes of the cleaned Nottingham collection (19, GPL-3.0) and the 217 most viewed
+  PDMX scores by public-domain composers (CC-BY 4.0). Obscure collection tunes are left out on
+  purpose: a shelf of thousands of unknown titles is not worth browsing.
   `data/catalog/abc/` holds them, each collection with its license or notice file.
 - **Copyrighted songs** (the MPB catalog of [Beatriz Kauffmann's Web Site](https://www.beakauffmann.com/),
   "All Rights Reserved") are not copied anywhere. The repository holds only facts about each song
@@ -720,6 +724,7 @@ Meter terms (specs 003 and 006):
 | After submission | "Eu queria que na UI tivéssemos ao invés de your file, exmaples e mpb catalog: um catálogo mesmo, 3d com vinils [...] A busca eu gostaria que utilizasse de outros sites/buscadores/indexadores de midi." / "Além disso gostaria de poder controlar o volume ds áudios do p1, p2, bass, drums." | Replaced download-and-drop with a vinyl song shelf, a companion song server and a channel mixer (spec 005). |
 | After submission | "De onde que você tirou que é creative commons? E de onde você tirou que uma reinterpretação/cover de música vai ter direitos autorais?" | Challenged the licensing plan; the outcome is the on-demand server for copyrighted songs and committed ABC only for public-domain songs and licensed collections. |
 | After submission | "dê suporte à todos os tipos de tempo, não só os definidos atualmente." | Asked for every time signature (spec 006). |
+| After submission | "Agora testando, Poderia juntar essas duas sessões. [...] As músicas do acervo livre que ninguém conhece eu acho que agregam pouco valor, músicas famosas dessas sim. Deveria ter uma lista do lado também nessa UI dizendo quais são todas as músicas." | Merged the Song and Run cards, cut the open collections to the best-known songs, and added a title list beside the 3D records. |
 | After submission | "Pode fazer a emenda e dar push da branch." / "Pode rodar o plan." / "Pode rodar o tasks." / "Pode rodar o implement." | Approved the constitution amendment (1.3.0, web app rules) and each Spec Kit stage of the browser arranger. |
 
 ## License

@@ -8,7 +8,7 @@
 % Reduced from mid/4/13/QmeceqXerwVfGjbPdNHrXxpzijLmqUFQCUxQ6imLLZSn7p.mid (sha256
 % 38c5f76895045e1cfa76e5a60718979c2a54673c6ce0f64b1ef45ef5c70637b6): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:waltz in e minor
 M:3/8

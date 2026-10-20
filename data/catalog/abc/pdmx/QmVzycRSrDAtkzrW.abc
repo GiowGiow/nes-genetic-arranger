@@ -8,7 +8,7 @@
 % Reduced from mid/13/56/QmVzycRSrDAtkzrW8G2HtqWAdJ7UdxkYzpxPAUwkuFxTer.mid (sha256
 % 11e3270effb01d9f9d88e5f3a15ed71b34b6cca0b1a131bb80b06fd624d5d288): melody track 0, bars 0-30
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:A Portugueza
 M:4/4

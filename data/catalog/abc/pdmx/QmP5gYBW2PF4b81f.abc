@@ -8,7 +8,7 @@
 % Reduced from mid/7/4/QmP5gYBW2PF4b81fjC2EoqQSVDXttVachpszaBNv9acMW5.mid (sha256
 % 1c4ee85be08785bd0f835a0d32beeb1f2861cc80e3cd70b564c9c8fa8bd9c3a3): melody track 2, bars 1-40
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Herz und Mund und Tat und Leben BWV 147
 M:3/4

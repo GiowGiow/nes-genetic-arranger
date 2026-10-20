@@ -8,7 +8,7 @@
 % Reduced from mid/1/42/QmbsAZjK8tDQSiXRtMfRXLRQ2hfT25tqR7dFFxP78n8RBS.mid (sha256
 % 3e1d341f1b1b9243d790697e1ab90d45ab3d9a74693b400254771427266adf37): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:is there somewhere
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/0/53/QmaXaNxhn3VGE6d7ZzMokdgyR72ysB4DzkNAFBuRdfd1ed.mid (sha256
 % eac4d378608978430791b334762db291aab9b096fb7c304cd06671fee0cf888a): melody track 0, bars 0-20
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:deutschlandlied
 M:4/4

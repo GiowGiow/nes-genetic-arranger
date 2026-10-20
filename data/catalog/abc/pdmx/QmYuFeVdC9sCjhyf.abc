@@ -1,0 +1,35 @@
+%abc-2.1
+% Eine kleine Nachtmusik K.525, by Wolfgang Amadeus Mozart. Score published on MuseScore (artist:
+% Wolfgang Amadeus Mozart), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Wolfgang Amadeus Mozart (died
+% 1791, Wikidata Q254).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/16/46/QmYuFeVdC9sCjhyfmnMsvfRaEFkKcXGtqrMzM2Kd2wER3M.mid (sha256
+% 4ef2bff605548ad4701093a382e95c1454e08703be026d4b3beae7711bdc864d): melody track 0, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 300
+X:1
+T:Eine kleine Nachtmusik K.525
+M:4/4
+L:1/16
+Q:1/4=139.999813
+% Exact tempo 139.9998133335822 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Bm"G,4 z2 D,2 "Em7"G,4 z2 D,2 | "Em7"G,2 D,2 G,2 B,2 "D"D4 z4 | "Am"C4 z2 A,2 C4 z2 A,2 | "D7"C2 A,2 ^F,2 A,2 "D"D,4 z4 |
+"Em7"G,2 z2 G,6 B,2 A,2 G,2 | "C"G,2 ^F,2 ^F,6 A,2 C2 ^F, z | "Em7"A,2 G,2 G,6 B,2 A,2 G,2 | "C"G,2 ^F,2 ^F,6 A,2 C2 ^F, z |
+"D7"G, z G, z ^F,2 E, ^F, "Bm"G, z G, z A,2 G, A, | "A7"B, z B, z C2 B, C "G"D4 z4 | "B"D8 "C"E8 | "D"D2 C2 C4 "Em"C2 B,2 B,4 |
+"C"B,2 A,2 A,4 "D7"G,2 ^F,2 E, z ^F, z | "Bm"G,2 z2 A,2 z2 "G"B,2 z6 | "B"D8 "C"E8 | "D"D2 C2 C z C z "Em"C2 B,2 B, z B, z |
+"B7"B,2 A,2 A, z A, z "Em7"G,2 ^F,2 E,2 ^F,2 | "G"G,10 G, ^F, A,2 ^F,2 | "G"B,10 B, A, C2 A,2 | "G"D,8 "C"E, E, E, E, ^F, ^F, ^F, ^F, |
+"Bm"G, G, G, G, A, A, A, A, "Em7"B, B, B, B, _D _D _D _D | "D"D6 A,2 "Em7"_D3 A, _D3 A, | "D"D6 A,2 "Em7"_D3 A, _D3 A, | "D"D2 D4 D4 D4 D2 |
+"Em"D2 D4 D2- "E"D2 D4 D2 | "F#m7"_D2 A,2 =D2 A,2 _D2 A,2 =D2 A,2 | "A"_D2 A,2 A,2 A,2 A,4 z4 | "A"A,6 G, ^F, "Abm"D,2 z2 B,2 z2 |
+"Em7"G,2 z2 E,2 z2 "A"A,2 z6 | "C7"^F,6 E, D, "Em7"B,,2 z2 G,2 z2 | "D"^F,8 "E"E,4 z4 | "D"z2 A, z A, z A, z "Abm7"A, z A, z A, z A, z |
+"Em7"A, z A, z A, z A, z "A7"A, z A, z B,2 _D2 | "Em"_D2 =D2 z2 B,2 "A7"B,2 A,2 z2 _D,2 | "D"D,4 z12 | "D"D,4 z2 A,,2 D,4 z2 A,,2 |
+"D"D,2 A,,2 D,2 ^F,2 "A"A,4 z4 | "F#m"A,4 z2 ^F,2 A,4 z2 ^F,2 | "B7"A,2 ^F,2 _E,2 ^F,2 "B"B,,4 z4 | "Dm7"z6 G,2 "C"C2 B,2 A,2 G,2 |
+"E7"A,2 G,2 z2 G,2 "G7"G,2 G,2 G,2 G,2 | "Dm7"A,2 G,2 z2 G,2 "C"C2 B,2 A,2 G,2 | "E7"A,2 _A,2 z2 _A,2 "G7"_A,2 _A,2 _A,2 _A,2 | "D7"B,2 A,2 z2 A,2 "Am"C2 _B,2 A,2 G,2 |
+"D7"G,2 ^F,2 z2 ^F,2 "F7"^F,2 ^F,2 ^F,2 ^F,2 | "F#"A,2 G,2 z2 _E,2 "Gm"G,2 F,2 _E,2 D,2 | "F#"D,2 _D,2 z2 _D,2 "C7"_D,2 _D,2 _D,2 _D,2 | "D"E,2 D,2 z2 D,,2 E,,2 ^F,,2 G,,2 A,,2 |
+"D"C,2 _B,,2 z2 ^F,,2 G,,2 A,,2 _B,,2 _D,2 | "D"E,2 D,2 z2 D,2 "F#m7"E,2 ^F,2 G,2 A,2 | "Bb"_B,4 =B,4 "C"C4 _D4 | "D"B, z B, z B,2 C2 "D7"A, z A, z A,2 B,2 |
+"Bm"G, z G, z G,2 B,2 "D7"B,2 A,2 G, z D, z | "Bm"G,4 z2 D,2 "Em7"G,4 z2 D,2 | "Em7"G,2 D,2 G,2 B,2 "D"D4 z4 | "Am"C4 z2 A,2 C4 z2 A,2 |
+"D7"C2 A,2 ^F,2 A,2 "D"D,4 z4 | "Em7"G,2 G,2 G,2 G,2 G,2 G,2 G,2 G,2 | "D7"A,2 A,2 A,2 A,2 A,2 C2 ^F,2 A,2 | "Em7"G,2 G,2 G,2 G,2 G,2 G,2 G,2 G,2 |
+"D7"A,2 A,2 A,2 A,2 A,2 C2 ^F,2 A,2 | "Bm"G,2 G,2 A,2 A,2 "G"B,2 B,2 ^F,2 ^F,2 | "C"G,2 G,2 A,2 A,2 "G"B,4 z4 | "Bm"z8 "C"z8 |

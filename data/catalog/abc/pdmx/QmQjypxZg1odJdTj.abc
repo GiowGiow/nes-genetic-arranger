@@ -1,0 +1,27 @@
+%abc-2.1
+% Trumpet Tune, by Henry Purcell. Score published on MuseScore (artist: Henry Purcell), PDM
+% (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Henry Purcell (died 1695,
+% Wikidata Q9695).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/8/26/QmQjypxZg1odJdTjRgedNjrtM9PGTbi4kQMFq17Qb3zAVB.mid (sha256
+% 489f4d9eb32a44fe1b83a424d2c891d7320014ec5415c4e3552c903f23c7a423): melody track 0, bars 0-32
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 300
+X:1
+T:Trumpet Tune
+M:4/4
+L:1/16
+Q:1/4=132.000132
+% Exact tempo 132.000132000132 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"C"_B4 _B4 _B6 _A2 | "C"G3 F _E3 G F4 _B,4 | "C"G,4 _B,4 _E4 _B,4 | "C"_E3 F G3 _A F8 |
+"C"_B4 _B4 _B6 _A2 | "C"G3 F _E3 G F4 _B,4 | "C"_E3 F _E3 F G3 A G3 A | "C"_B _B _B _B _B _B _B _B c c c c c c c c |
+"C"F4 F4 F6 G2 | "C"F3 _E D3 _E F4 _B,4 | "C"_B4 _B4 _B6 c2 | "C"_B3 _A G3 _A _B4 _E4 |
+"C"_B3 _A G3 _B _A3 G F3 _A | "C"G3 F _E3 G F4 _B,4 | "C"_E3 G F3 _A G3 _B _A3 G | "C"F6 _E2 _E8 |
+"C"_B4 _B4 _B6 _A2 | "C"G3 F _E3 G F4 _B,4 | "C"G,4 _B,4 _E4 _B,4 | "C"_E3 F G3 _A F8 |
+"C"_B4 _B4 _B6 _A2 | "C"G3 F _E3 G F4 _B,4 | "C"_E3 F _E3 F G3 A G3 A | "C"_B _B _B _B _B _B _B _B c c c c c c c c |
+"C"F4 F4 F6 G2 | "C"F3 _E D3 _E F4 _B,4 | "C"_B4 _B4 _B6 c2 | "C"_B3 _A G3 _A _B4 _E4 |
+"C"_B3 _A G3 _B _A3 G F3 _A | "C"G3 F _E3 G F4 _B,4 | "C"_E3 G F3 _A G3 _B _A3 G | "C"F6 _E2 _E8 |

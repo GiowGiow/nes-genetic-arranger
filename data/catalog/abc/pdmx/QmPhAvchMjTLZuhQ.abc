@@ -8,7 +8,7 @@
 % Reduced from mid/7/23/QmPhAvchMjTLZuhQH2sWzVFR3uCugUjh9akyizjiy1ck98.mid (sha256
 % fd30dcc032f38660bfae288ad8dce3c82d06c985c9169b1ff4934c87734ac2f7): melody track 1, bars 0-27
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:i got rhythm
 M:4/4

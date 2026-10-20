@@ -8,7 +8,7 @@
 % Reduced from mid/2/17/QmceUd7T4GgvzX3Mr39Dfi21xmVRtcw6FEtRCPELBWy25f.mid (sha256
 % 676083f4874d53e1404de44b8e91c0745a7158e09c28cb0c28d9706790fad9fe): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Carmen
 M:2/4

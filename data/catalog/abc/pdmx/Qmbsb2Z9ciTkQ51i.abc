@@ -8,7 +8,7 @@
 % Reduced from mid/1/42/Qmbsb2Z9ciTkQ51iPifFHAS2gLWWU5PSe1d5jFuTDNXDYY.mid (sha256
 % 04a0ee196f0895b7b5752ba1be08ffe641a5636e4568fe23464ddd875cbc9b79): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Bajazet o Il Tamerlano RV 703
 M:3/4

@@ -8,7 +8,7 @@
 % Reduced from mid/17/50/QmZwTmoe45ZNhpgHvoawbJUEyZaBveQfYduAbziwatBzuG.mid (sha256
 % 654a059db7a03f7794d4700f294c9b7613bf6c6fe68194a29fc60deca99b77f4): melody track 0, bars 0-33
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Il carnevale di Venezia Op.10
 M:3/4

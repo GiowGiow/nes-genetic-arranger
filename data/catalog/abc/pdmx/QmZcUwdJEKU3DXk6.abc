@@ -8,7 +8,7 @@
 % Reduced from mid/17/13/QmZcUwdJEKU3DXk6fWYRkzTJ1UCC3JUxpgHymdEa2bYtpW.mid (sha256
 % 86c2534e6dc745fde23b9370d050bdeae08d9a5a930876a602f7b8b85444c1d1): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Fantaisie-impromptu Op.66
 M:2/2

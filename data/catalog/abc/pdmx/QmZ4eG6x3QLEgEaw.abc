@@ -8,7 +8,7 @@
 % Reduced from mid/17/3/QmZ4eG6x3QLEgEawTdnnG5HQbxz292J5hqm77YDKfAau46.mid (sha256
 % dbf7e320667c5b22249e11528914a0c40f0a615d57820050458ea9a1aa0fcab4): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Les folies d'Espagne Op.15
 M:3/4

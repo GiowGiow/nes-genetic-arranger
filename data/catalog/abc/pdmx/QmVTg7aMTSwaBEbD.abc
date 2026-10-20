@@ -8,7 +8,7 @@
 % Reduced from mid/13/45/QmVTg7aMTSwaBEbDbZ88sgSjKym93b7zq9DTdChrwqHXFc.mid (sha256
 % d9fcb5bf9f83d7585d3f45debc1445b77498f1f09dbcb754c6802274c0303a25): melody track 2, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:The Nutcracker (ballet) Op.71
 M:3/4

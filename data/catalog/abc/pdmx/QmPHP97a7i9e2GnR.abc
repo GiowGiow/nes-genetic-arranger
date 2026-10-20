@@ -8,7 +8,7 @@
 % Reduced from mid/7/24/QmPHP97a7i9e2GnRnZGrr4paPXL7K7stXMP1UBuwKK1svs.mid (sha256
 % cce9aef78459b04095c301ac0f86909a2a0af2f42b0fac4a56651dba629a2ff9): melody track 17, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Symphony No.9 Op.95
 M:4/4

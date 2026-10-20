@@ -8,7 +8,7 @@
 % Reduced from mid/9/57/QmRZfLDycQLh5u4FLK1XGxwtB1jex222YJbaRJw9YD4yuk.mid (sha256
 % 4ff86932da200f70e167e7befa4ff470d47c06d5c7ee0350c34c127433080988): melody track 0, bars 0-34
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:when the saints go marching in
 M:2/2

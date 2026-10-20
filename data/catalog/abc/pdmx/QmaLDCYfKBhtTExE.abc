@@ -8,7 +8,7 @@
 % Reduced from mid/0/30/QmaLDCYfKBhtTExETwMKDn77nXwFHMhDPAF5ERLVFzMyAs.mid (sha256
 % de4544fa173836e047415a1d0728e9d039b2ea69a42c8b83824b5f6eaec2252c): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Suite Española No.1 Op.47
 M:3/4

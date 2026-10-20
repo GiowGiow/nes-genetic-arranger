@@ -8,7 +8,7 @@
 % Reduced from mid/12/11/QmUbCP81miGkFzFSk3cTqCXyNV4psQm4UM33sjmc4Twpae.mid (sha256
 % 9a8e12eb29da145e4e07ff791af60eec82755f77845acf0061433f8028175554): melody track 0, bars 0-25
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Invention in A minor BWV 784
 M:4/4

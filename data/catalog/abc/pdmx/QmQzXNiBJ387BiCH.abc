@@ -9,7 +9,7 @@
 % Reduced from mid/8/56/QmQzXNiBJ387BiCHTqizWLNseTyvj4yotn5gzAfxhm1nZw.mid (sha256
 % d579ed20704f1fd29b8d0c67e6db89374fb4db1805116886e7f2a1349976ec94): melody track 0, bars 0-36
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Orchestral Suite No.3 in D major BWV 1068
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/9/39/QmRQW5cgHr5DmALdnV3uigTSopmxeEEih5aZbccm3na9Py.mid (sha256
 % 24a3e8a3652918a55f8734b6f768c4c9d687718764f712e702498a1ccee3acf4): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Feitiço Da Vila
 M:2/4

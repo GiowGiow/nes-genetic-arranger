@@ -8,7 +8,7 @@
 % Reduced from mid/3/55/QmdYK53o4RhByfUKq2msSA9uUqUGuZUsPTWzYuwHf2GbQi.mid (sha256
 % 11c4a2e4954b1b49b8115c9eac4fbd728062a564700732545d28843c52dea791): melody track 0, bars 0-38
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Sonatina No.1
 M:2/2

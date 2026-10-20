@@ -8,7 +8,7 @@
 % Reduced from mid/15/32/QmXMUDUhwgtmAWQRN5cYGYQWTDiYzyFtvRmULgV3PepYs8.mid (sha256
 % a84cabb4dba2d32ebece079a6a854a009695ee8af59617202077eb93bedd9b43): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Asturias op. 47 No.5
 M:3/4

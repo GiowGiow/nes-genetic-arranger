@@ -8,7 +8,7 @@
 % Reduced from mid/9/49/QmRV9cFTWHJ8Tpv3jbgy1pYtKe3TS6yzGoDjWvmqfAaheL.mid (sha256
 % 703ac82ae26a6edf080c09141cc85346b348fbfa57f50272074f928102aed156): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Lied ohne Worte Op.109
 M:4/4

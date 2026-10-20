@@ -8,7 +8,7 @@
 % Reduced from mid/0/46/Qmaug5pXs59BJq1VTdXhrKAU3DHxRqusrDgXraMS6xDtYk.mid (sha256
 % 140840c4bf871716d7bbdb0fb4bc326bb47e95110c2f0f9eaeeb031c78367494): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Préludes Livre 1
 M:6/4

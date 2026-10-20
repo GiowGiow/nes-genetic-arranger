@@ -8,7 +8,7 @@
 % Reduced from mid/7/36/QmPpuXp18UD5m5Ttre2ya4Kw3KdBnJg5bgomAYPkXiMWAv.mid (sha256
 % 9331f0155a4c8cf0b8add04429f62c9b1b0ecbe0e82ad5a9c49fc37824440fb6): melody track 0, bars 0-48
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Silent Night
 M:3/4

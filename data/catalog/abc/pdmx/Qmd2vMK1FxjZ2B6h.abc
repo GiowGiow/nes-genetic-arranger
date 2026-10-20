@@ -8,7 +8,7 @@
 % Reduced from mid/3/1/Qmd2vMK1FxjZ2B6hZmtnqQZgMLLCg6XsXvHhW3u46tcWWm.mid (sha256
 % 0417c08e05bb1f7b2106cb8b413aeaf7e0cabdc720152d7b7120e57c260229cd): melody track 1, bars 0-34
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Adoramus te Christe
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/13/52/QmVxg1JKtNGqRXPVquwoXmRrdh7zpa8q1Xuycv35fg6CME.mid (sha256
 % 7f5eea7c92f37b54daad4cb71cbe86369ab900331ed7b8eaf9c62953b4498b42): melody track 1, bars 12-68
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Oboe Concerto in D minor Op.9 No.2
 M:4/4

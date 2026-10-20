@@ -8,7 +8,7 @@
 % Reduced from mid/17/19/QmZfHayYiHJJBpxa5yZpMwR9RDMcDRYGvFC25NyyKa8ziH.mid (sha256
 % ac0e2f0e6952c9187d23a0b7a6d464aae745265fb9525e52ff3051a7a5468cf7): melody track 0, bars 0-47
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:25 Études faciles et progressives Op.100
 M:2/4

@@ -9,7 +9,7 @@
 % Reduced from mid/4/38/QmeqFD5GdewkgSzD8TPnhrwqApfHwqhp54bygLi9A22Wd5.mid (sha256
 % eae42fd54770d73dda43614ada1c5a64585a8720209cf0f96a78d9754c7b3b7e): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Toccata Adagio and Fugue in C major BWV 564
 M:4/4

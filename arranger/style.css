@@ -365,10 +365,11 @@ footer { column-gap: 18px; }
 #song.over { border-color: var(--p1); }
 .song-details .status:empty { display: none; }
 
-/* Run card. */
+/* Run strip: inside the Song card, under the shelf. What is loaded, and how to run it. */
+.run-strip { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
 .run-song { margin: 0 0 10px; font-weight: 600; overflow-wrap: anywhere; }
-.run-fields { display: flex; flex-wrap: wrap; gap: 10px 16px; }
-#run .toolbar { margin: 12px 0 6px; }
+.run-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+#run .toolbar { margin: 0; }
 #run .button.primary { min-width: 9em; }
 .changed-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
 .changed-chips:empty { display: none; }

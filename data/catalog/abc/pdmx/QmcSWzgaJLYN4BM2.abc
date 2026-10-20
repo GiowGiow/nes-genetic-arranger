@@ -8,7 +8,7 @@
 % Reduced from mid/2/43/QmcSWzgaJLYN4BM2rMJhUdkCsfBwVXdpWvsLheN1MWmbgo.mid (sha256
 % 90c0d214ecb0dd147226c011799ad06777526ebce0a68dd25976ee153bbdb338): melody track 7, bars 0-51
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Messiah HWV 56
 M:6/8

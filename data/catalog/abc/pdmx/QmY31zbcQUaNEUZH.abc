@@ -8,7 +8,7 @@
 % Reduced from mid/16/2/QmY31zbcQUaNEUZH8A5JKxU3JucV4g14cY2NYSbKjqXLFU.mid (sha256
 % e43605417699c0b763afd5264f43d973561007c88958eba80fb11c5f03b9e8c2): melody track 1, bars 0-63
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Études Op.25
 M:2/2

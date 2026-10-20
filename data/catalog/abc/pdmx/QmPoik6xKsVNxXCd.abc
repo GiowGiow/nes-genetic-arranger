@@ -8,7 +8,7 @@
 % Reduced from mid/7/35/QmPoik6xKsVNxXCdMTun7GSGkQbRbk1oyMpGZzztuKVR61.mid (sha256
 % f75fd2e7aa916d105f1683fd5dbbb8f286e48432cc35ea5db2d8d90928c800fa): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Symphonie No.1 Op.14
 M:2/2

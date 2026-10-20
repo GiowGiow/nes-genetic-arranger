@@ -8,7 +8,7 @@
 % Reduced from mid/4/18/QmeERJeGE7YXrgzJNE15zAVyF6XNNbgC8LojiFbTHXkbJj.mid (sha256
 % abf6874784b1c5717db8384d959b849c367b255a86c01b271d384f754621ec1b): melody track 0, bars 3-67
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Tchaikovsky Violin Concerto
 M:3/4

@@ -8,7 +8,7 @@
 % Reduced from mid/3/9/QmdaVv8eQwPvDUbdF57mq34SearJKtButndGyAhext4WFo.mid (sha256
 % cb04abdbc00e46607d8fde47c897973381c38f3bf2b347f4073dac6a946185bb): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Farnace RV 711
 M:4/4

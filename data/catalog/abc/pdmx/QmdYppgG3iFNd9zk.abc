@@ -8,7 +8,7 @@
 % Reduced from mid/3/55/QmdYppgG3iFNd9zkAQUqCBZP2DUYNCB3jBdvq2gMj8i6nx.mid (sha256
 % 9d59a75c2ffbc6ce19775233858e954fa1403957208738ffdd286dd7cfe3049d): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Serenata Op.6
 M:3/4

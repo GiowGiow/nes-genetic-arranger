@@ -8,7 +8,7 @@
 % Reduced from mid/15/18/QmXEe4TZkbG568G87njLiw9tXJ3wdQKceVZ7B17Q6JjBYs.mid (sha256
 % 319e1ac6599e09c4013b89fa1ebfc368ebece9c3356838e56e970c9fdaf7ff5c): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Suite in G minor HWV 432
 M:4/4

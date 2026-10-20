@@ -9,7 +9,7 @@
 % Reduced from mid/4/35/Qmeos36PfuwdsMh5FNV6o1w4RQ6fGPysxZstnecysRCgwE.mid (sha256
 % 4b201a86bad7079f2fe1800681159e7d318464a59f3572c82407cf2d463faa91): melody track 0, bars 0-42
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:fredrik pacius maamme finnish and estonian national anthem
 M:3/4

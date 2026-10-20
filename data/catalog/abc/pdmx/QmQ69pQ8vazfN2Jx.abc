@@ -8,7 +8,7 @@
 % Reduced from mid/8/5/QmQ69pQ8vazfN2JxhjU93N7PhHGGJnG6FYQfCJ1A8462nQ.mid (sha256
 % 7df2db6f989af196ba665d7eb8e2613ff597ddff0df671e03a8060c9883dbfcb): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:le petit negre
 M:2/4

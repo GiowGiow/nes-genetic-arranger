@@ -8,7 +8,7 @@
 % Reduced from mid/16/5/QmY6MZ4KuRgZXArxMHa8eZieksVUh9X1eSmDYsBYZSNKc2.mid (sha256
 % 24e338a76b0b73d7ab8349e020661c365933fbbb34e2783c3b087d1439591d64): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Symphony No.5
 M:4/4

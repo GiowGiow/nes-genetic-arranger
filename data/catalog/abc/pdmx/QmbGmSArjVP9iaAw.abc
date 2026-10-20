@@ -8,7 +8,7 @@
 % Reduced from mid/1/22/QmbGmSArjVP9iaAw4HjSdd8hsBR63nZR6jBSbMr5opfgGN.mid (sha256
 % efebf0e958a1999c40b0f9b551fec314bda7387f20b9cdedbb5b2bdb8dd40e8b): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Carol of the Bells
 M:3/4

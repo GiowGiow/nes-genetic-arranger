@@ -8,7 +8,7 @@
 % Reduced from mid/9/6/QmR7gCGaBUcL1BgMfw8127EjX7BtNMkW4SDK5gRJE3RgGs.mid (sha256
 % eeec8826bb2b7649826a274aee0e5722ec9a2170005a3f957051870e5354af04): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Reír llorando
 M:3/4

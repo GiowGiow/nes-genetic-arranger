@@ -8,7 +8,7 @@
 % Reduced from mid/17/3/QmZ4juQpXtHVJStEFs1bKSMGgXXpKZKNqGU58Hu1xhQ3Ed.mid (sha256
 % 9aa27aa309586b6099754bd1fa64de066c920cdf87dff7ab07521dd80447be0a): melody track 0, bars 0-60
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:24 Caprices for Solo Violin Op.1
 M:3/4

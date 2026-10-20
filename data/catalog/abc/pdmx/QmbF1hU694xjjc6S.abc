@@ -8,7 +8,7 @@
 % Reduced from mid/1/20/QmbF1hU694xjjc6S1kWEgih9ePhu7nfWBPXp8eEg5spyQW.mid (sha256
 % b53cb1187a10d925df85fe46e94ef8ec996a979ae702fb8e6e96c16653547ae4): melody track 1, bars 0-27
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Miserere mei
 M:4/4

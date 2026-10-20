@@ -8,7 +8,7 @@
 % Reduced from mid/8/45/QmQT1kBAP5GRw3usRc3aUR2ARjwQx3ryRWW3cg9NEi72Q9.mid (sha256
 % a3aa2a8b1011bb4ede5116429ee01b4f640d61d7ebb29ebf4ef3b87bfed34e0a): melody track 1, bars 0-46
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Your shining eyes
 M:2/2

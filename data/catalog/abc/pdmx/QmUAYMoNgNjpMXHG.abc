@@ -8,7 +8,7 @@
 % Reduced from mid/12/10/QmUAYMoNgNjpMXHGPeze3PJUxVMUG3EAWbnn6XQXnb9ufp.mid (sha256
 % 5bb4d1f96aff85c205f4a47f0d4ce3702f0c0b68eaf98a48e6c3224c860e18aa): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:2 Arabesques
 M:4/4

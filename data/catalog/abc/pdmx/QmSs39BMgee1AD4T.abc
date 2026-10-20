@@ -8,7 +8,7 @@
 % Reduced from mid/10/42/QmSs39BMgee1AD4TYD4kJNZuAcved3jt316TsRXJbdmVsi.mid (sha256
 % f4361fce5c78ce42a88954a6c52fb8873382cb3b90935280a41856fe1dfcbb76): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Pomp and Circumstance March No.1 Op.39 No.1
 M:2/4

@@ -348,6 +348,33 @@ test("the current page is a listbox of 15 songs, the first one selected", () => 
   assert.equal(pagerText(root), "Page 1 of 2");
 });
 
+test("a list beside the records names every song of the page with its composer, and marks the selected one", () => {
+  const { root, shelf, list } = mount();
+  const songs = byClass(root, "shelf-songs")[0];
+  assert.equal(songs.getAttribute("aria-hidden"), "true", "the listbox stays the accessible list");
+  let rows = byClass(songs, "shelf-song");
+  assert.equal(rows.length, 15);
+  assert.equal(byClass(rows[3], "shelf-song-title")[0].textContent, "Água de Teste");
+  assert.equal(byClass(rows[3], "shelf-song-by")[0].textContent, "Composer 3");
+  assert.ok(rows[0].classList.contains("is-selected"));
+  shelf.select(3);
+  assert.ok(rows[3].classList.contains("is-selected"));
+  assert.ok(!rows[0].classList.contains("is-selected"));
+  press(list, "PageDown");
+  rows = byClass(songs, "shelf-song");
+  assert.equal(rows.length, 5, "the second page lists its own songs");
+});
+
+test("clicking a song in the list selects it, and double-clicking arranges it", () => {
+  const { root, shelf, arranged } = mount();
+  const rows = byClass(root, "shelf-song");
+  click(rows[6]);
+  assert.equal(shelf.selected()?.id, "song-6");
+  assert.deepEqual(arranged, []);
+  rows[6].dispatchEvent(new FakeEvent("dblclick"));
+  assert.deepEqual(arranged.map((entry) => entry.id), ["song-6"]);
+});
+
 test("the panel shows title, composer and the facts as labeled values, with Arrange and Preview", () => {
   const { root, shelf } = mount();
   shelf.select(3);

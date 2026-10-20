@@ -9,7 +9,7 @@
 % Reduced from mid/1/47/QmbUn1kSCXgwKEBqk8w4AjF6X1yUnNfzzLEedyvE4HAGUN.mid (sha256
 % f06c10fd72ccd8599ee7479375fa5533f6743760011fb220913577eafc2b6d9f): melody track 8, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Adagio form Clarinet Concerto in A (K.622)
 M:3/4

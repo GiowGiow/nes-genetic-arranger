@@ -9,7 +9,7 @@
 % Reduced from mid/9/30/QmRLEHaW6r7c79bLNDCZwkjjy3uztjQifGuYhm9kAhP9k6.mid (sha256
 % cd9efd007587e7229bb11c2a02c67b742cdb3876df3c3c7398f1de794b9a3709): melody track 0, bars 0-32
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Sonata 4 Les delices de la solitude for 2 Celli Paris 1738
 M:4/4

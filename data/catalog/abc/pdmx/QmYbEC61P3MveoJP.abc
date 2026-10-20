@@ -8,7 +8,7 @@
 % Reduced from mid/16/11/QmYbEC61P3MveoJPJdETDTHQ66fuPottErVxLKnymN34qN.mid (sha256
 % 6da6ae68b6e614b299f8feecfa84ad53828e6f74abc9e6e30703a0bc1e291233): melody track 1, bars 0-20
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:17 sinterklaasliedjes
 M:6/8

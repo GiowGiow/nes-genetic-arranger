@@ -8,7 +8,7 @@
 % Reduced from mid/13/20/QmVF6jbu1Jyn6M7Cy8HFfXS5qvi93SgrXQmaZDq9MkCBdk.mid (sha256
 % 2690bb48e4c9dfac98e61786452531b19cef1950dbe80b47a1d5871b1da3765e): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Fugue in G minor BWV 578
 M:4/4

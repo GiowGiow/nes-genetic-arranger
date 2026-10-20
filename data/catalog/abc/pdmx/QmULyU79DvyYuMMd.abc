@@ -8,7 +8,7 @@
 % Reduced from mid/12/30/QmULyU79DvyYuMMddLbFE7vy8BrAXqFv5rmRZeWw6LSw2c.mid (sha256
 % ab331d94c4db7664d422780aca2a0a7a757ea25037092ce7de1edb9e6eef5ff9): melody track 25, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Symphony No.4 Op.36
 M:4/4

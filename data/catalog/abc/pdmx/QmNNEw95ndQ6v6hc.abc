@@ -8,7 +8,7 @@
 % Reduced from mid/6/34/QmNNEw95ndQ6v6hcAffQnp1pNB4WwjCn3u9qtsxXREG8DZ.mid (sha256
 % c2543286e11dd1c7c78e08107021fb36f525be7ac8abe12bbaa6abc24afc7868): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Salut d'amour Op.12
 M:2/4

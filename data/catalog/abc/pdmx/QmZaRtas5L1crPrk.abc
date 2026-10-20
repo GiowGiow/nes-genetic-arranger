@@ -8,7 +8,7 @@
 % Reduced from mid/17/9/QmZaRtas5L1crPrkw7TJgLtGzJhG5pUcZqqWbP9K4CUyq3.mid (sha256
 % de4c05bdef265107bf6b21b01048be77d6d0dc17ffa3a7caf8d122de47ea2a54): melody track 0, bars 0-42
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Cello Suite No.1 in G major BWV 1007
 M:4/4

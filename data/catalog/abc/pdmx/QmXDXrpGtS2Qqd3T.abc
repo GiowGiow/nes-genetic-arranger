@@ -8,7 +8,7 @@
 % Reduced from mid/15/16/QmXDXrpGtS2Qqd3THCYxcjaBrU53rHRfMMXLSLtN9wVhU1.mid (sha256
 % 3e788cb85dc4541d278ab24e57d44e4edc2efcb1bb4b30ced49479cfe5face38): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Keyboard Sonata in B minor K.27
 M:3/4

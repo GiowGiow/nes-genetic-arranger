@@ -8,7 +8,7 @@
 % Reduced from mid/8/14/QmQCkMNpVMokNX1udKkpf6b4AYwP42gWnTJwHHPoaKuKy9.mid (sha256
 % ae942ae10d4c8848ea80e5e57cfa39c825dd87beba756d83d1f59a5d1168e01e): melody track 0, bars 0-32
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Aura Lea
 M:4/4

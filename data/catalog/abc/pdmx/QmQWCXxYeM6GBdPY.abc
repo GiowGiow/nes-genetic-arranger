@@ -8,7 +8,7 @@
 % Reduced from mid/8/51/QmQWCXxYeM6GBdPYN2KcjU1QreL2f8jNBx7DpG2DXEon1j.mid (sha256
 % 89043ede9baf27b5020b31bf9b6180b7f78c210feeb2842b0b2ff89ed197760d): melody track 0, bars 0-57
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Canon and Gigue in D major P.37
 M:4/4

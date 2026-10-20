@@ -8,7 +8,7 @@
 % Reduced from mid/4/37/QmePJ61KjrycxPYxG8jTheKD7mUXvD8jbcXa2s6h5tBL9Q.mid (sha256
 % 35fcc9c47eea9a76ead701b7f6203ee01889691de3fdfd221171f5e783b1cab8): melody track 0, bars 0-62
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Mariage D'amour
 M:4/4

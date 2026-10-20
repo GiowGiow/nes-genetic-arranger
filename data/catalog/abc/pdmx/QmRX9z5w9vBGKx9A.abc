@@ -8,7 +8,7 @@
 % Reduced from mid/9/53/QmRX9z5w9vBGKx9AyRCHvm6PqBGufM34MwFL2rNU5yKY8J.mid (sha256
 % 412bb1e8290d067bc9d7c6e1549eaaa374cc1258ff4bb9de547c9fb30ff805c1): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Lohengrin WWV 75
 M:2/4

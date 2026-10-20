@@ -8,7 +8,7 @@
 % Reduced from mid/1/51/QmbWhYRPux1RcQo4smQvKFinUE6DoPYXmg9Qy4U5qpy1Ue.mid (sha256
 % 3a59fb9b020472982c183e063977bc5dac0e2424e90f834f0c86124129c45b39): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Rêverie
 M:4/4

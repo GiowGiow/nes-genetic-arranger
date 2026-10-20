@@ -8,7 +8,7 @@
 % Reduced from mid/6/37/QmNPw9sReWEZiCZwfXLVxsqZcsp8eDn1DTQFMYPGyHAfyp.mid (sha256
 % 6992ab6dcf0e0a55498801b5d8edbcdf05118f577721c4374ba9170d024dda08): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Alcina HWV 34
 M:3/4

@@ -8,7 +8,7 @@
 % Reduced from mid/8/35/QmQofzSUiTk5qTB7b3mkHbYqFCtCDUVERwmAWsXERZm66U.mid (sha256
 % 12718384d69aebba5df41957ef0acc5aa4027861c132bb6ce253d46f057e6bc5): melody track 0, bars 0-32
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Joshua
 M:2/2

@@ -1,0 +1,25 @@
+%abc-2.1
+% 1812 Overture Op.49, by Tchaikovsky. Score published on MuseScore (artist: Pyotr Ilyich
+% Tchaikovsky), PDM (https://creativecommons.org/publicdomain/mark/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tchaikovsky (died 1893, Wikidata
+% Q7315).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/5/27/QmfJ3kvRy79czGfFGT8qhDGbEjdoDaXFdXMfZsZmJeVEPx.mid (sha256
+% 9f31fb702a5f867ce00a067ccd1cf49220e5cb29d13faa80e4d03d040a4cc6fb): melody track 27, bars 0-22
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 300
+X:1
+T:1812 Overture Op.49
+M:4/4
+L:1/16
+Q:1/4=86
+% Exact tempo 85.99999999999852 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"Cm7"_e _B _e f g f _e f g z _e z _e4 | "Cm7"z _B _e f g f _e f g z _e z _e4 | "Fm7"z c f g f c _A c "Bb7"f c _A c f4 | "Cm7"z _B _e f _e _B G _B _e _B G _B _e4 |
+"Bb"z _B _e f g f _e f "Cm"g z _e z _e4 | "Eb"z _B _e f g f _e f g z _e z _e4 | "Fm7"z c f g f c _A c "Bb7"f c _A c f4 | "Bb"z _B _e f _e _B G _B "Cm"_e c G c _e4 |
+"Ab"z2 c c _e2 c2 "Gm"z2 _B _B d2 _B2 | "C7"z2 _B _B _d2 c2 "Am7"_e2 =d2 f2 _e2 | "Cm7"_b a2 _a g ^f2 =f e _e2 d _d c2 =B | "Gm7"_B z3 =B z3 "Bb7"c z3 d z3 |
+"Bb"_e2 _B _B f2 d2 _e2 _B _B f2 d2 | "B"_e2 d2 _e2 d2 _e2 d2 _e2 d2 | "Cm"_e2 d2 _e2 d2 "Cm7"_e2 d2 _e2 f2 | "Eb"_e _B _e f g f _e f g _B G _B _e _B G _B |
+"Eb"_e _B _e f g f _e f g _B G _B _e _B G _B | "Eb"_e z3 _E3 _E G4 _B4 | "Eb"_e4 z4 g4 z4 | "Eb"_E6 F c _e4 z4 |
+"Eb"_e2 z6 _E6 _E2 | "Eb"_E8 z8 |

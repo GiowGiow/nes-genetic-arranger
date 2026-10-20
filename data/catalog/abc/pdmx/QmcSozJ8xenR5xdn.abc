@@ -8,7 +8,7 @@
 % Reduced from mid/2/43/QmcSozJ8xenR5xdnLbxbxi5FZvxr5EWLG7KK8R5XJGbHGH.mid (sha256
 % 1b1f3cb0b74764d148005f9c563e14177e898052230a3e9553c006d7615b2235): melody track 0, bars 0-46
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Ave verum corpus K.618
 M:2/2

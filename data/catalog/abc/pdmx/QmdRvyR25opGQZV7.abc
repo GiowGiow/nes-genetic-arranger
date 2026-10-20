@@ -8,7 +8,7 @@
 % Reduced from mid/3/41/QmdRvyR25opGQZV7JDDpUoPn7ipSJpDr5RRprvMJZ9s2TN.mid (sha256
 % 69d46fe320c996a79c0d159a877bbe45d1be1b5479a31f0acf839f9a61a5a505): melody track 1, bars 0-39
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Le Ray Au Soleyl
 M:3/2

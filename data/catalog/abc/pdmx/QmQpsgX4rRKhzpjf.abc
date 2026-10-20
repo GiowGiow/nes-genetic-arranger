@@ -8,7 +8,7 @@
 % Reduced from mid/8/36/QmQpsgX4rRKhzpjfCduATyhXtg2dn71Wqe6AdyMd32aof4.mid (sha256
 % 2b78b549fcd2c88b87bac1fcebc043c506223cbd3af83844062fec4df9c75ad7): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Caprice No. 24 for Double Bass
 M:2/4

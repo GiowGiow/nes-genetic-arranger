@@ -8,7 +8,7 @@
 % Reduced from mid/13/35/QmVoswizfcGEtBYiBJUYvxy8ZCxfvRZjdjDv2C1cwHiz7P.mid (sha256
 % bdb4e66f53c27c38355e15a7a3f6b0487d89ae2c2839dd8bc9dc00f9e75280c8): melody track 0, bars 0-25
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Études ou caprices
 M:4/4

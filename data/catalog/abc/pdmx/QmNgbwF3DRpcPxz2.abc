@@ -8,7 +8,7 @@
 % Reduced from mid/6/21/QmNgbwF3DRpcPxz2VxcU1rb3MQDZtQbzDRPrxZWsTTgD7r.mid (sha256
 % 09a64b6e04dd0f57b56fa6a5dd3fbc2c2d0c6a39a56bc741d811fe44289181d6): melody track 0, bars 0-56
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Vado ben spesso cangiando loco
 M:3/4

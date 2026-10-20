@@ -8,7 +8,7 @@
 % Reduced from mid/10/16/QmSDHjWs266eVWpDgq83uQXCb9Esh1cQQJmDTCXAErtVGq.mid (sha256
 % 083767a2a3febccf826b7df5c5056919c6f28fb8a43d6be3c2121f7f21723c8a): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Partita in A minor BWV 1013
 M:4/4

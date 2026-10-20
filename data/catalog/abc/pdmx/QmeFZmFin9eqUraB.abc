@@ -8,7 +8,7 @@
 % Reduced from mid/4/20/QmeFZmFin9eqUraBuT4di7b9FRLb5y3Jin1eaNA4WxeG3n.mid (sha256
 % a2eb85cd7472ff8cf8c63f648744e25de0a2f43e22505f74b7c3f9d9389b4ca7): melody track 0, bars 0-51
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Nocturne in C-sharp minor B.49
 M:4/4

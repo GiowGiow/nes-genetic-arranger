@@ -9,7 +9,7 @@
 % Reduced from mid/12/10/QmUATxNyoUY6zXGrAUSdF6XLGUrDP7pJ4MFMqhsZCd2Aoi.mid (sha256
 % 9de87e41436bdfb7a62a141705820c426588755ec93be5f4357312b97c30ca7e): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Awesome Wedding Recessional II (Lemmens Fanfare for Organ)
 M:2/4

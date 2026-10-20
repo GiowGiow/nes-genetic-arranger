@@ -8,7 +8,7 @@
 % Reduced from mid/3/18/QmdERPsUGZkukTHj9tVuYbNFfNSvAf74Aag1muEL18eStN.mid (sha256
 % f06754c7dffa50885d043a5cdc5efbcb4566b50a0864d0f80fa32371674b7f96): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Toccata
 M:2/4

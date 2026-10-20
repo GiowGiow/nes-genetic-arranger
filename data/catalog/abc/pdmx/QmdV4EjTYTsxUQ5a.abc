@@ -8,7 +8,7 @@
 % Reduced from mid/3/49/QmdV4EjTYTsxUQ5av9jmmFj7Yes4a9oHVCmYQo5YsUyRyt.mid (sha256
 % 973917bade8fd7060284b80145405f8d4584d28ec26108efb2953a62c4ac7306): melody track 0, bars 0-54
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Gnossienne No.1
 M:4/4

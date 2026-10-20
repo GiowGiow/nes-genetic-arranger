@@ -8,7 +8,7 @@
 % Reduced from mid/8/34/QmQNBcQNHE9KyQUGu7pV4LPjwVeJuGMpjDpEpe7C6DhRnT.mid (sha256
 % 61e14a69cdd974e81859c988ae13a7f09ba6c5853c76ad0a9bf19da42a43e632): melody track 0, bars 0-42
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:6 Cello Suites BWV 1007-1012
 M:4/4

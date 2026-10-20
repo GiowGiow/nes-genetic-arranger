@@ -8,7 +8,7 @@
 % Reduced from mid/9/21/QmRgJawJt6RoKpXxFkqtYb6q2xQ2sUB3E2Tg6p7zQTasLb.mid (sha256
 % 391e59823a97fdc13ced6f1051440e4dcb68a46fcfe45cad5bb9d5252b99e9a6): melody track 1, bars 0-50
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Oratorio de Noël Op.12
 M:4/4

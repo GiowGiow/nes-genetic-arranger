@@ -221,6 +221,8 @@ export function createSongShelf(root, options) {
   let shown = null;
   /** @type {HTMLElement[]} */
   let optionElements = [];
+  /** @type {HTMLElement[]} the rows of the visible list beside the records */
+  let songRows = [];
   /** @type {ShelfScene | null} */
   let scene = null;
   let destroyed = false;
@@ -250,8 +252,11 @@ export function createSongShelf(root, options) {
   const stage = make("div", "shelf-stage");
   stage.append(canvasHost, listbox, empty);
   const info = make("aside", "shelf-info", { "aria-label": "Selected song" });
+  // The records do not say which song they are: this list does. The listbox above is the
+  // accessible one, so the list is hidden from assistive technology rather than read twice.
+  const songs = make("ol", "shelf-songs", { "aria-hidden": "true" });
   const body = make("div", "shelf-body");
-  body.append(stage, info);
+  body.append(stage, songs, info);
   const previous = make("button", "button small", { type: "button", "aria-label": "Previous page" });
   previous.textContent = "‹";
   const next = make("button", "button small", { type: "button", "aria-label": "Next page" });
@@ -302,6 +307,27 @@ export function createSongShelf(root, options) {
       listbox.focus();
     });
     return option;
+  }
+
+  /**
+   * One row of the visible list: a dot in the record's label color, the title, and who made it.
+   * A click selects the song; a double click arranges it.
+   *
+   * @param {CatalogEntry} entry
+   * @param {number} position index in the whole list
+   */
+  function buildSongRow(entry, position) {
+    const row = make("li", "shelf-song");
+    const dot = make("i", "shelf-dot");
+    dot.style.setProperty("--label", entrySprite(entry).label);
+    row.append(dot, textElement("span", "shelf-song-title", displayTitle(entry.t)));
+    const by = entry.c || entry.p || "";
+    if (by) row.append(textElement("span", "shelf-song-by", by));
+    row.addEventListener("click", () => select(position));
+    row.addEventListener("dblclick", () => {
+      if (canArrange(entry)) options.onArrange(entry);
+    });
+    return row;
   }
 
   /** @param {CatalogEntry} entry */
@@ -369,6 +395,8 @@ export function createSongShelf(root, options) {
     if (!shown || shown.list !== list || shown.page !== page || shown.perPage !== perPage) {
       optionElements = pageEntries.map((entry, i) => buildOption(entry, start + i));
       listbox.replaceChildren(...optionElements);
+      songRows = pageEntries.map((entry, i) => buildSongRow(entry, start + i));
+      songs.replaceChildren(...songRows);
       shown = { list, page, perPage };
       scene?.setPage(pageEntries, index - start, columns);
     } else {
@@ -376,6 +404,8 @@ export function createSongShelf(root, options) {
     }
 
     optionElements.forEach((option, i) => option.setAttribute("aria-selected", String(start + i === index)));
+    songRows.forEach((row, i) => row.classList.toggle("is-selected", start + i === index));
+    songRows[index - start]?.scrollIntoView?.({ block: "nearest" });
     if (total > 0) listbox.setAttribute("aria-activedescendant", `${id}-song-${index}`);
     else listbox.removeAttribute("aria-activedescendant");
     listbox.setAttribute("aria-label", `Songs, page ${page + 1} of ${pages}`);

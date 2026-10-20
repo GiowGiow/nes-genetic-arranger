@@ -8,7 +8,7 @@
 % Reduced from mid/14/24/QmWHSjXdzj7gXLkExbQXL9ygt56GwnvV1h9KEyqr4jtCXz.mid (sha256
 % f2fe6e2e98a2dfc78d122939a1a5f1d21343edef29205250200b5039091ecb08): melody track 1, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Far and Beyond
 M:4/4

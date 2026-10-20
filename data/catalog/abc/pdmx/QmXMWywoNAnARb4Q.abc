@@ -1,0 +1,35 @@
+%abc-2.1
+% Sepulto Domino, by Tomas Luis de Victoria. Score published on MuseScore (artist: Tomás Luis de
+% Victoria), CC0 (https://creativecommons.org/publicdomain/zero/1.0/).
+% Composer in the public domain (died 70 or more full years ago): Tomas Luis de Victoria (died
+% 1611, Wikidata Q215128).
+% From PDMX (Long, Novack, McAuley and Berg-Kirkpatrick), https://zenodo.org/records/15571083, doi
+% 10.5281/zenodo.15571083, CC BY 4.0; see NOTICE.md in this folder.
+% Reduced from mid/15/32/QmXMWywoNAnARb4QJUBAqTXWVWYEuuo838QnCZBdmpdhXj.mid (sha256
+% 843b63832877ec05e0058f90a2a6eb86e530fcdf60d2633f8ea0dfd6992dfe34): melody track 2, bars 0-64
+% (0-based, end excluded), section A at bar 0.
+% Written by: uv run src/main.py catalog pdmx --limit 300
+X:1
+T:Sepulto Domino
+M:2/2
+L:1/16
+Q:1/4=82.000148
+% Exact tempo 82.00014760026568 quarter notes per minute; Q: keeps 6 decimals.
+K:none
+P:A
+"G"z8 G8 | "Gm"G8 F8 | "C7"F8 D8 | "D"D4 D4 D8 |
+"D7"z4 D4 D4 F4 | "Gm"F4 D8 _B,4 | "F7"C4 _B,8 A,4 | "Bb"_B,4 D4 D4 C4 |
+"Gm"D4 _E4 D8 | "Am7"z16 | "Gm"z4 D4 G8 | "D"G4 ^F4 ^F8 |
+"Gm"G8 F4 F4 | "Am7"F4 E2 D2 C8 | "G"D16 | "D"z8 D8 |
+"Am"D4 D4 F6 E2 | "D7"D4 C4 D8 | "G"_E8 D4 _B,4 | "Gm7"_B,4 _B,4 D6 C2 |
+"A7"_B,4 A,4 _B,2 C2 D2 _B,2 | "D"C8 A,4 D4 | "Cm"D4 D4 _E6 D2 | "Cm"C4 B,4 C8 |
+"G"C4 B,4 B,8 | "G"D16 | "A7"E8 F8 | "Gm"D8 z4 G4 |
+"C"G4 G4 E8 | "A"F12 F4 | "Bb"F8 D4 F4 | "Am7"F4 E2 D2 C4 D4 |
+"Gm"E4 F6 E2 D4 | "Dm"D4 _D4 =D8 | "Dm7"z4 G,4 A,8 | "Eb"_B,4 _B,4 G,8 |
+"D"A,16 | "D"z8 D8 | "Am"D4 D4 F6 E2 | "D7"D4 C4 D8 |
+"G"_E8 D4 _B,4 | "Gm7"_B,4 _B,4 D6 C2 | "A7"_B,4 A,4 _B,2 C2 D2 _B,2 | "D"C8 A,4 D4 |
+"Cm"D4 D4 _E6 D2 | "Cm"C4 B,4 C8 | "G"C4 B,4 B,8 | "G"z8 G8 |
+"Gm"G8 F8 | "C7"F8 D8 | "D"D4 D4 D8 | "D7"z4 D4 D4 F4 |
+"Gm"F4 D8 _B,4 | "F7"C4 _B,8 A,4 | "Bb"_B,4 D4 D4 C4 | "Gm"D4 _E4 D8 |
+"Am7"z16 | "Gm"z4 D4 G8 | "D"G4 ^F4 ^F8 | "Gm"G8 F4 F4 |
+"Am7"F4 E2 D2 C8 | "G"D16 | "D"z8 D8 | "Am"D4 D4 F6 E2 |

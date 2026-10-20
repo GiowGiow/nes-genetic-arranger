@@ -8,7 +8,7 @@
 % Reduced from mid/10/55/QmSYFNwdr4BLSh5e1VzpTwRh3u162GV6QNrKVgF6UuYkbh.mid (sha256
 % c72925f63f5d22160cda6f315558f65196143dc6d470157a1594ae40ee43c75a): melody track 5, bars 0-53
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:The Stars and Stripes Forever
 M:2/2

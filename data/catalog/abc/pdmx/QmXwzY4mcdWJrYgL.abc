@@ -8,7 +8,7 @@
 % Reduced from mid/15/50/QmXwzY4mcdWJrYgLYetKhQGShYTk5VrCVZLZBcHT38oBd3.mid (sha256
 % 20fa67fbbd0d9a0537fbf6bac8058fb139d0c8ec12da053f689d8198c9195b9a): melody track 3, bars 0-40
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Miserere mei Deus
 M:4/2

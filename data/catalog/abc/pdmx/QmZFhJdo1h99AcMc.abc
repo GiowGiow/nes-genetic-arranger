@@ -8,7 +8,7 @@
 % Reduced from mid/17/20/QmZFhJdo1h99AcMc2VJmmHeYzW9XasFJk5ybsidHujm6s5.mid (sha256
 % b6be52829e9cf274184951df1ce7b4c52d625c43793df1ccd6f7afdb7c0b5223): melody track 2, bars 0-58
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:Sicut cervus
 M:4/4

@@ -8,7 +8,7 @@
 % Reduced from mid/9/22/QmRGRmiN3gTJVnuaRtkeFKNei3Sp2LyNYG2KXCm5k8TbMn.mid (sha256
 % 430774b57b727dc1a808fee9a7c81c2be43499c315f5f568fcb7c5cf617b5f67): melody track 0, bars 0-64
 % (0-based, end excluded), section A at bar 0.
-% Written by: uv run src/main.py catalog pdmx --limit 2000
+% Written by: uv run src/main.py catalog pdmx --limit 300
 X:1
 T:3 Minuets BWV 841-843
 M:3/4
