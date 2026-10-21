@@ -10,7 +10,16 @@
  * figure of the command line's `evolution.png` (`src/export/figures.py`) shows the same curves
  * after a run; here they grow live from the worker's `progress` messages
  * (contracts/worker-protocol.md).
+ *
+ * The worker reports about twenty times a second, but a curve is followed at a few frames a
+ * second, so redraws are paced (`pacing.js`): a burst of messages costs one redraw, and the last
+ * message always gets its redraw. While the Evolution view is not the visible one (the Result
+ * view is open, or another page tab) nothing is drawn; the canvas size, kept by a ResizeObserver,
+ * is 0 then, and the observer asks for a redraw when the view comes back. The chart's canvas is
+ * resized only when its size changes, because assigning `canvas.width` reallocates the bitmap.
  */
+
+import { createPacer, drawingBudget } from "./pacing.js";
 
 /** @typedef {{generation: number, best: number, mean: number, diversity: number, stagnation: number}} GenerationStats */
 
@@ -18,6 +27,8 @@
  * Build the view inside `container` and return its controls.
  *
  * @param {HTMLElement} container element that receives the chart, the counters and the caption
+ * @param {{chartIntervalMs?: number, maxPixelRatio?: number}} [budget] how much to draw; the
+ *   default is the page's own, from `drawingBudget`
  * @returns {{
  *   reset: (limits: {maxGenerations: number, stagnationWindow: number}) => void,
  *   append: (generations: GenerationStats[]) => void,
@@ -25,7 +36,8 @@
  *   finish: (summary: {stopReason: string, generations: number, durationMs: number}) => void,
  * }}
  */
-export function createEvolutionView(container) {
+export function createEvolutionView(container, budget = drawingBudget(globalThis.matchMedia?.("(pointer: coarse)").matches ?? false)) {
+  const { chartIntervalMs = 250, maxPixelRatio = 3 } = budget;
   container.innerHTML = `
     <div class="counters">
       <div class="counter"><span class="label">Generation</span>
@@ -49,10 +61,11 @@ export function createEvolutionView(container) {
   /** @type {GenerationStats[]} */
   let log = [];
   let limits = { maxGenerations: 1, stagnationWindow: 1 };
-  let frame = 0;
+  // The canvas's CSS size, from the observer: 0 while the view is hidden.
+  let box = { width: 0, height: 0 };
 
   function redraw() {
-    frame = 0;
+    if (box.width === 0 || box.height === 0) return; // hidden: the observer redraws when it shows
     const last = log.at(-1);
     if (last) {
       $("[data-generation]").textContent = `${last.generation} / ${limits.maxGenerations}`;
@@ -61,14 +74,17 @@ export function createEvolutionView(container) {
       setBar($("[data-generation-bar]"), last.generation / limits.maxGenerations);
       setBar($("[data-stagnation-bar]"), last.stagnation / limits.stagnationWindow);
     }
-    drawChart(canvas, log);
+    drawChart(canvas, box, Math.min(window.devicePixelRatio || 1, maxPixelRatio), log);
   }
 
-  function schedule() {
-    if (!frame) frame = requestAnimationFrame(redraw);
-  }
+  const pacer = createPacer(redraw, { intervalMs: chartIntervalMs });
+  const schedule = () => pacer.request();
 
-  new ResizeObserver(schedule).observe(canvas);
+  new ResizeObserver(([entry]) => {
+    box = { width: entry.contentRect.width, height: entry.contentRect.height };
+    // A resize or a return from hidden must show the chart now, not at the next paced redraw.
+    redraw();
+  }).observe(canvas);
 
   return {
     reset(newLimits) {
@@ -110,22 +126,21 @@ export function createEvolutionView(container) {
  * @param {number} share from 0 to 1
  */
 function setBar(bar, share) {
-  bar.style.width = `${Math.max(0, Math.min(1, share)) * 100}%`;
+  // A transform is moved by the compositor; animating `width` would lay the page out again.
+  bar.style.transform = `scaleX(${Math.max(0, Math.min(1, share))})`;
 }
 
 /**
  * Draw best and mean fitness against the generation, scaled to the canvas size.
  *
  * @param {HTMLCanvasElement} canvas
+ * @param {{width: number, height: number}} box the canvas's CSS size
+ * @param {number} ratio device pixels per CSS pixel to draw at
  * @param {GenerationStats[]} log
  */
-function drawChart(canvas, log) {
-  const ratio = window.devicePixelRatio || 1;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (width === 0 || height === 0) return;
-  canvas.width = Math.round(width * ratio);
-  canvas.height = Math.round(height * ratio);
+function drawChart(canvas, { width, height }, ratio, log) {
+  if (canvas.width !== Math.round(width * ratio)) canvas.width = Math.round(width * ratio);
+  if (canvas.height !== Math.round(height * ratio)) canvas.height = Math.round(height * ratio);
   const context = /** @type {CanvasRenderingContext2D} */ (canvas.getContext("2d"));
   context.setTransform(ratio, 0, 0, ratio, 0, 0);
   context.clearRect(0, 0, width, height);

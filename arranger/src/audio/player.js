@@ -36,6 +36,15 @@ const RAMP_SECONDS = 0.01;
 /** The limiter after the bus (research R2): it acts only on peaks above -1 dBFS, and acts fast. */
 const LIMITER = Object.freeze({ threshold: -1, knee: 0, ratio: 20, attack: 0.003, release: 0.1 });
 
+/**
+ * What the player asks of the browser when it makes the AudioContext. `"playback"` trades
+ * latency for stability: the browser mixes in bigger buffers, so a busy main thread (a phone
+ * drawing the playhead, a GC pause) is less likely to leave the sound with a gap. The player
+ * plays pre-rendered music and has no live instrument, so a few tens of milliseconds more
+ * latency only delay the first sound after a click.
+ */
+export const CONTEXT_OPTIONS = Object.freeze({ latencyHint: /** @type {const} */ ("playback") });
+
 /** @typedef {"arrangement" | "original"} Version */
 /** @typedef {import("./chip-synth.js").ChannelName} ChannelName */
 /** @typedef {import("./mixer.js").Levels} Levels */
@@ -63,7 +72,7 @@ const LIMITER = Object.freeze({ threshold: -1, knee: 0, ratio: 20, attack: 0.003
  * click or key handler: browsers keep audio silent until the visitor interacts with the page.
  *
  * @param {{createContext?: () => AudioContext}} [options] `createContext` makes the context
- *   (default `new AudioContext()`; the tests pass a fake one)
+ *   (default `new AudioContext(CONTEXT_OPTIONS)`; the tests pass a fake one)
  * @returns {{
  *   ensureContext: () => AudioContext,
  *   load: (
@@ -84,7 +93,7 @@ const LIMITER = Object.freeze({ threshold: -1, knee: 0, ratio: 20, attack: 0.003
  * player.play();
  * player.setLevels({ ...DEFAULT_LEVELS, muted: { P1: false, P2: false, TR: false, NO: true } }); // drums off
  */
-export function createPlayer({ createContext = () => new AudioContext() } = {}) {
+export function createPlayer({ createContext = () => new AudioContext({ ...CONTEXT_OPTIONS }) } = {}) {
   /** @type {AudioContext | null} */
   let context = null;
   /** @type {MixGraph | null} */

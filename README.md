@@ -486,7 +486,7 @@ Piano rolls of two arrangements (every sample folder has its own `pianoroll.png`
 The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (spec
 `specs/002-browser-arranger/`) brings the method to any song:
 
-1. Drop an ABC lead sheet, a multi-track MIDI file or an audio file (MP3, WAV, M4A, OGG, FLAC…), or pick a song of the shelf.
+1. Drop an ABC lead sheet or a multi-track MIDI file, or pick a song of the shelf.
    For a MIDI song, choose the melody track (the likeliest one is preselected), the bars to
    arrange and where each part starts. The page shows the lead sheet it read before any run,
    with its meter. Songs in any meter n/d (d = 1, 2, 4, 8 or 16, n from 1 to 32), and in additive
@@ -520,16 +520,6 @@ downloaded `config.json` reruns in the command line:
 uv run src/main.py arrange song.mid --config song-s1-1234abcd.config.json --seed 1
 ```
 
-**Audio files.** An audio file is turned into notes on your device, with no server: the browser
-decodes it, [Basic Pitch](https://github.com/spotify/basic-pitch) (Spotify, Apache-2.0, vendored in
-`arranger/vendor/basic-pitch/`, 1.7 MB, loaded only when you open an audio file) finds the notes, and
-the page writes a MIDI file with a melody track (the strongest line in the singing register,
-followed through the model's activations; the highest sounding note if that finds almost nothing)
-and an accompaniment track, at the tempo it finds on the beat of the onsets. That file is read like any MIDI file, and
-you can change its melody track as usual. It hears one voice or instrument well and a full mix
-roughly; at most the first five minutes are used. A YouTube video cannot be opened this way: a page
-cannot read another site's video or audio, so save the audio first and open the file.
-
 **Song catalog.** The Song tab is a shelf of vinyl records (a page of 9, or 15 on a wide screen), with the list of
 every song beside them and a search box above that list (click a title to select it,
 double-click to arrange it; a file you open gets its own record at the top): the 8 examples first, then
@@ -537,10 +527,10 @@ every other song in alphabetical order. The run controls (seed, pace, Arrange, S
 the same card, under the shelf, and on top of the Evolution tab, which also holds the result: change
 a setting, press Arrange again and hear the new arrangement on the same screen. A run goes on
 when you leave the tab. Search finds a song by title, composer or
-performer, and also looks for MIDI files on other sites. "Open MIDI, ABC or audio" loads your own file (an audio file is turned into notes on your device).
+performer, and also looks for folk tunes on The Session. "Open MIDI or ABC" loads your own file.
 Every catalog song opens like an example: one click, no track to choose.
 
-- **Songs committed as ABC lead sheets** open with no server: public-domain songs (every author
+- **Songs committed as ABC lead sheets** open straight from the repository: public-domain songs (every author
   died 70 or more years ago, checked on Wikidata; an unknown author counts as not public domain),
   the best-known tunes of the cleaned Nottingham collection (19, GPL-3.0) and the 217 most viewed
   PDMX scores by public-domain composers (CC-BY 4.0). Obscure collection tunes are left out on
@@ -548,23 +538,15 @@ Every catalog song opens like an example: one click, no track to choose.
   `data/catalog/abc/` holds them, each collection with its license or notice file.
 - **Copyrighted songs** (the MPB catalog of [Beatriz Kauffmann's Web Site](https://www.beakauffmann.com/),
   "All Rights Reserved") are not copied anywhere. The repository holds only facts about each song
-  (title, composer, melody track, bars, key, tempo, meter, a hash of the file; no notes). When you
-  click one, the song server fetches the MIDI from the site, checks the hash, reduces it to a lead
-  sheet and sends it to your browser. It keeps only a short temporary cache.
-- **Search on other sites** goes through the same server (Mutopia, BitMidi, and IMSLP as a link
-  only), and from your browser to The Session directly. If the server is down the page says so
-  and everything else keeps working.
+  (title, composer, melody track, bars, key, tempo, meter, a hash of the file; no notes) and the
+  address of its MIDI file. When you choose one, the page downloads the MIDI file from the site
+  and tells you to drop it in: a page cannot read another site's file, and the file never passes
+  through this project.
+- **Search on The Session** goes from your browser to the site directly, at your request.
 
-**Status: the song server is written and tested but not deployed yet** (the homelab is in a
-memory test; see `deploy/homelab/README.md`). Until then the published page does not ask it for
-anything: an MPB song downloads its MIDI file straight from the source and you drop it in (the
-way it worked before the server), and only The Session is searched besides the catalog. The examples, the
-public-domain songs, Nottingham and PDMX need no server. When the server goes up, set
-`PRODUCTION_SERVER_LIVE = true` in `arranger/src/core/sources.js`.
-
-The page never sends your files anywhere: the server only receives search words and song ids.
-To ask for a song to be removed from the server, open an issue on this repository; the server
-keeps a denylist (`server/denylist.json`) that it checks before every request.
+**The app is only the static page.** An earlier plan (spec 005) had a companion song server that
+fetched MPB songs and searched Mutopia, BitMidi and IMSLP. It was withdrawn on 2026-10-21; the git
+history keeps its code. Nothing else runs besides the files on GitHub Pages.
 
 Rebuild the catalog data (needs the local MIDI study copy for the MPB analysis; PDMX and
 Nottingham download into `data/raw/`, which is gitignored):
@@ -576,14 +558,30 @@ uv run src/main.py catalog public-domain --dataset path/to/beakauffmann --worker
 uv run src/main.py catalog nottingham --workers 8
 uv run src/main.py catalog pdmx --workers 8
 uv run src/main.py catalog examples
+uv run src/main.py catalog popularity
 ```
 
-Run the song server locally (the page uses `https://nes-arranger-bh.giow.dev`; the manifests for
-the homelab are in `deploy/homelab/nes-arranger/`, with its own README):
+**Popularity.** Every catalog entry carries `pop`, a non-negative integer (higher is better
+known), and the shelf lists the most popular songs first. `catalog popularity` adds it, as the
+last step (the other commands write entries without it), and it also gives each MPB entry the
+route `{"download": <MIDI link>}`. The numbers come from:
 
-```bash
-uv run --group server uvicorn server.app:app --port 8766
-```
+- **MPB and public-domain songs**: the Wikipedia page views of the last 12 full months of the
+  song's article, summed over the Portuguese and English Wikipedias (Wikimedia pageviews API).
+  The article is found on Wikidata and accepted only when the normalized title equals the label
+  of a musical work (not an album) **and** a name of the entry's composers or performer is among
+  the work's composers, lyricists or performers (the surname, or the whole name for a very common
+  surname like Silva). A song without a safe match takes a twentieth of the page views of its
+  best-known artist (a composer or the performer, matched by exact name on Wikidata), so a song by
+  a famous artist still outranks an obscure one but ranks below a matched famous song.
+- **PDMX scores**: `(views + 20 * favorites + 50 * ratings * rating / 5) / 5` from `PDMX.csv`
+  (its counters are all-time, so the division by 5 brings them near a yearly count).
+- **Nottingham tunes**: 20,000 for the well-known tunes, 1 for the others. **Examples**: above
+  everything else, in their curated order.
+
+Wikidata is queried at least one second apart and the pageviews API at most five times a second,
+with the project's User-Agent; every answer is cached under `data/raw/popularity/` (gitignored),
+so a rerun needs no network. Only the resulting numbers are committed.
 
 **Develop and test.** Serve the repository root and open `/arranger/`; run the JavaScript tests
 with Node 22 (no install); regenerate the Python reference values they compare with:
@@ -686,17 +684,10 @@ Meter terms (specs 003 and 006):
   see `data/catalog/abc/pdmx/NOTICE.md`.
 - **Wikidata** (CC0) gives the composers' death years, recorded in `data/catalog/authors.json`.
 - **Beatriz Kauffmann's Web Site**: the MPB song list, credits and page links. No file is
-  copied; the server fetches a song on request and the repository keeps only facts about it.
+  copied; the page sends you to the site's MIDI file and the repository keeps only facts about it.
 - **The Session** is searched from your browser at your request; its data is never copied or
   read by the tools that wrote this project.
 - **three.js** (MIT) draws the record shelf, vendored in `arranger/vendor/three/`.
-- **Basic Pitch** (Spotify, Apache-2.0) and **TensorFlow.js** (Google, Apache-2.0) turn an audio file
-  into notes, vendored in `arranger/vendor/basic-pitch/` with their license and the way they were built.
-  The model is used unchanged. Paper: Bittner, R. M., Bosch, J. J., Rubinstein, D., Meseguer-Brocal, G.,
-  Ewert, S. (2022). A lightweight instrument-agnostic model for polyphonic note transcription and
-  multipitch estimation. Proc. ICASSP. What this project adds is the glue in
-  `arranger/src/core/audio-to-midi.js`: note cleaning, a Viterbi melody tracker over the model's
-  activations (singing register, 45 to 76), a simple tempo and beat finder, and the MIDI file.
 
 ## AI usage
 
@@ -741,11 +732,11 @@ Meter terms (specs 003 and 006):
 | Review | "Aplique as correções estruturais na função de fitness com base na auditoria e regenere os samples." | Mandated structural corrections to the fitness function based on the audit and triggered sample regeneration. |
 | After submission | "Vamos fazer as coisas em outra branch sem ser a main. Faça a spec para o nosso app que vai rodar no GitHub Pages: rápido, com os parâmetros configuráveis, animação das gerações e da estagnação, buscar por música ou artista no catálogo de MIDIs de MPB, ou mandar um MIDI ou ABC arbitrário (opção primária)." | Specified the browser arranger (spec 002) on a separate branch, keeping the submitted state on `main`. |
 | After submission | "Só reprodutível no site." / "Baixar e soltar." | Chose an independent seeded generator for the browser (no numpy parity) and a download-and-drop route for catalog songs (no third-party relay). |
-| After submission | "Eu queria que na UI tivéssemos ao invés de your file, exmaples e mpb catalog: um catálogo mesmo, 3d com vinils [...] A busca eu gostaria que utilizasse de outros sites/buscadores/indexadores de midi." / "Além disso gostaria de poder controlar o volume ds áudios do p1, p2, bass, drums." | Replaced download-and-drop with a vinyl song shelf, a companion song server and a channel mixer (spec 005). |
+| After submission | "Eu queria que na UI tivéssemos ao invés de your file, exmaples e mpb catalog: um catálogo mesmo, 3d com vinils [...] A busca eu gostaria que utilizasse de outros sites/buscadores/indexadores de midi." / "Além disso gostaria de poder controlar o volume ds áudios do p1, p2, bass, drums." | Replaced download-and-drop with a vinyl song shelf, a companion song server and a channel mixer (spec 005); the song server was withdrawn on 2026-10-21. |
 | After submission | "De onde que você tirou que é creative commons? E de onde você tirou que uma reinterpretação/cover de música vai ter direitos autorais?" | Challenged the licensing plan; the outcome is the on-demand server for copyrighted songs and committed ABC only for public-domain songs and licensed collections. |
 | After submission | "dê suporte à todos os tipos de tempo, não só os definidos atualmente." | Asked for every time signature (spec 006). |
 | After submission | "Agora testando, Poderia juntar essas duas sessões. [...] As músicas do acervo livre que ninguém conhece eu acho que agregam pouco valor, músicas famosas dessas sim. Deveria ter uma lista do lado também nessa UI dizendo quais são todas as músicas." | Merged the Song and Run cards, cut the open collections to the best-known songs, and added a title list beside the 3D records. |
-| After submission | "talvez evolution e result poderiam estar lado a lado [...] esse mixer podia vir do canto esquerdo da tela [...] repensasse o painel de seleção de instrumento de qual é a voz [...] Ter dois botões de arrange pra mim não faz sentido [...] O preview deveria mostrar a tela de result também. Tem como a gente converter um vídeo do youtube pra midi/abc e/ou converter áudio pra midi/abc num app assim sem server? Se tiver como implemente isso." | Reworked the Evolution tab, the mixer drawer, the melody options and Preview, and added in-browser audio to MIDI (spec 007); a YouTube video cannot be read by a page, so it was not implemented. |
+| After submission | "talvez evolution e result poderiam estar lado a lado [...] esse mixer podia vir do canto esquerdo da tela [...] repensasse o painel de seleção de instrumento de qual é a voz [...] Ter dois botões de arrange pra mim não faz sentido [...] O preview deveria mostrar a tela de result também. Tem como a gente converter um vídeo do youtube pra midi/abc e/ou converter áudio pra midi/abc num app assim sem server? Se tiver como implemente isso." | Reworked the Evolution tab, the mixer drawer, the melody options and Preview, and added in-browser audio to MIDI (spec 007, withdrawn on 2026-10-21: full commercial mixes gave unusable melodies); a YouTube video cannot be read by a page, so it was not implemented. |
 | After submission | "Pode fazer a emenda e dar push da branch." / "Pode rodar o plan." / "Pode rodar o tasks." / "Pode rodar o implement." | Approved the constitution amendment (1.3.0, web app rules) and each Spec Kit stage of the browser arranger. |
 
 ## License

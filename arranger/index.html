@@ -42,11 +42,11 @@
       <div class="song-head">
         <h2 id="song-title">Song</h2>
         <div class="song-tools">
-          <button class="button" type="button" data-open-file>Open MIDI, ABC or audio</button>
+          <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
         </div>
       </div>
       <div class="shelf-root" data-shelf></div>
-      <p class="drop-note">You can also drop a MIDI, ABC or audio file (MP3, WAV, M4A…) anywhere on this card. It stays on this device.</p>
+      <p class="drop-note">You can also drop a MIDI or ABC file anywhere on this card. It stays on this device.</p>
       <div class="run-slot" data-run-slot="song">
         <div id="run" class="run-strip">
           <p class="run-song" data-run-song>Choose a song first.</p>
@@ -85,15 +85,20 @@
       differs from its default, shown below it. Hover or focus a field to read what it changes.</p>
     </section>
 
-    <!-- Evolution tab: the run controls on top, then the evolution and the result side by side. -->
+    <!-- Evolution tab: the run controls on top, then two views of the run, one at a time and each
+         with the full width: the evolution while it runs, the result when it ends (ui/tabs.js). -->
     <div id="workbench" class="workbench wide">
       <div id="run-bar" class="run-bar card"><div class="run-slot" data-run-slot="evolution"></div></div>
-      <section id="evolution" class="card" aria-labelledby="evolution-title">
+      <nav class="view-tabs" role="tablist" aria-label="Views of the run" data-view-tabs>
+        <button type="button" role="tab" id="view-tab-evolution" data-view="evolution" aria-controls="evolution">Evolution</button>
+        <button type="button" role="tab" id="view-tab-result" data-view="result" aria-controls="result">Result</button>
+      </nav>
+      <section id="evolution" class="card" role="tabpanel" aria-labelledby="view-tab-evolution">
         <h2 id="evolution-title">Evolution</h2>
         <p class="placeholder">The fitness curve and the plan of every bar appear here while the run evolves.</p>
       </section>
 
-      <section id="result" class="card" aria-labelledby="result-title">
+      <section id="result" class="card" role="tabpanel" aria-labelledby="view-tab-result" hidden>
         <h2 id="result-title">Result</h2>
         <p class="placeholder">Play the arrangement on the NES chip, compare it with the original, and download the MIDI, the settings and the lead sheet.</p>
       </section>

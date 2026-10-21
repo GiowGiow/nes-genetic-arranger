@@ -10,7 +10,16 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { createSongShelf, factsOf, keyLabel, stepSelection, webglAvailable } from "../src/ui/song-shelf.js";
+import {
+  PLAYLIST_KEY,
+  createSongShelf,
+  factsOf,
+  keyLabel,
+  stepSelection,
+  swipeGesture,
+  webglAvailable,
+  wheelDelta,
+} from "../src/ui/song-shelf.js";
 
 // --- A fake document ---------------------------------------------------------------------------
 
@@ -19,11 +28,16 @@ class FakeEvent {
   constructor(type, fields = {}) {
     this.type = type;
     this.defaultPrevented = false;
+    this.propagationStopped = false;
     Object.assign(this, fields);
   }
 
   preventDefault() {
     this.defaultPrevented = true;
+  }
+
+  stopPropagation() {
+    this.propagationStopped = true;
   }
 }
 
@@ -200,14 +214,15 @@ const click = (element) => element.dispatchEvent(new FakeEvent("click"));
 function song(i, extra = {}) {
   return {
     id: `song-${i}`,
-    source: i < 3 ? "examples" : "mpb",
+    source: i < 3 ? "examples" : "nottingham",
     t: i === 3 ? "ÁGUA DE TESTE" : `Song ${String(i).padStart(2, "0")}`,
     c: `Composer ${i}`,
     p: i === 3 ? "Banda Inventada" : "",
     u: `https://www.beakauffmann.com/mpb_s/song-${i}.html`,
     license: "all-rights-reserved",
     seed: 1000 + i,
-    route: { server: `/songs/mpb/song-${i}.abc` },
+    route: { abc: `data/catalog/abc/song-${i}.abc`, tune: 0 },
+    pop: 100 - i,
     facts: { key: i % 2 ? "e- minor" : "G major", tempo_bpm: 120.4 + i, meter: "4/4", n_bars: 32 },
     ...extra,
   };
@@ -234,6 +249,7 @@ function mount(options = {}, width = 0) {
     onPreview: (/** @type {any} */ entry) => previewed.push(entry),
     webgl: false,
     reducedMotion: false,
+    storage: null,
     ...options,
   });
   const list = byRole(root, "listbox")[0];
@@ -242,6 +258,32 @@ function mount(options = {}, width = 0) {
 
 /** @param {FakeElement} root */
 const optionsOf = (root) => byRole(root, "option");
+/** @param {FakeElement} root the playlist tiles (or the album tiles) now in the chooser */
+const tiles = (root) => byClass(root, "shelf-tile");
+/** @param {FakeElement} root @param {string} name */
+const tile = (root, name) => {
+  const found = tiles(root).find((element) => byClass(element, "shelf-tile-name")[0].textContent === name);
+  assert.ok(found, `no tile "${name}" among ${tiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent)}`);
+  return found;
+};
+/** @param {FakeElement} root */
+const tileNames = (root) => tiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent);
+/** @param {FakeElement} root */
+const pressedTiles = (root) => tiles(root).filter((element) => element.getAttribute("aria-pressed") === "true");
+/** @param {FakeElement} root the titles in the side list, in order */
+const rowTitles = (root) => byClass(root, "shelf-song").map((row) => byClass(row, "shelf-song-title")[0].textContent);
+/** @param {FakeElement} root */
+const viewText = (root) => byClass(root, "shelf-view")[0].textContent;
+
+/** A storage that keeps strings in a map, like `localStorage`. @param {Record<string, string>} [initial] */
+function fakeStorage(initial = {}) {
+  const items = new Map(Object.entries(initial));
+  return {
+    items,
+    getItem: (/** @type {string} */ key) => items.get(key) ?? null,
+    setItem: (/** @type {string} */ key, /** @type {string} */ value) => void items.set(key, value),
+  };
+}
 /** @param {FakeElement} root */
 const panelText = (root) => byClass(root, "shelf-info")[0].textContent;
 /** @param {FakeElement} root */
@@ -428,6 +470,7 @@ test("Arrange and Preview hand the selected song to the page", () => {
 test("a song that cannot be arranged says why and offers no Arrange", () => {
   const entries = [song(0, { route: undefined, error: "bar 3: the meter 11/16 is not supported" }), song(1)];
   const { root, list, arranged } = mount({ entries });
+  click(tile(root, "Examples")); // a song with an error stays out of Popular
   assert.match(panelText(root), /cannot be arranged \(bar 3: the meter 11\/16 is not supported\)/);
   assert.equal(all(root).filter((element) => element.tagName === "BUTTON" && element.textContent === "Arrange").length, 0);
   press(list, "Enter");
@@ -618,4 +661,343 @@ test("no text or attribute names a source site, a PS2 memory card, or packs fact
   assert.doesNotMatch(text, /kauffmann|thesession|the session|mutopia|bitmidi|imslp|nottingham|pdmx/i);
   assert.doesNotMatch(text, /PS2|memory card|save data|original page/i);
   assert.doesNotMatch(text, / · /);
+});
+
+// --- Playlists ---------------------------------------------------------------------------------
+
+/**
+ * @param {number} n
+ * @param {string} artist
+ * @param {number} pop
+ */
+const mpbSong = (n, artist, pop) =>
+  song(200 + n, { source: "mpb", t: `${artist} Song ${n}`, c: "", p: artist, pop, route: { download: `https://example.org/${n}.mid` } });
+
+/** A small library: popular tunes, examples, folk tunes and MPB songs that need a download. */
+function library() {
+  return [
+    mpbSong(1, "Alba", 90), mpbSong(2, "Alba", 80), mpbSong(3, "Alba", 70), mpbSong(4, "Alba", 60), mpbSong(5, "Alba", 50),
+    mpbSong(6, "Bo", 95), mpbSong(7, "Bo", 5),
+    song(30, { source: "nottingham", t: "Reel Low", pop: 1 }),
+    song(31, { source: "nottingham", t: "Reel High", pop: 60 }),
+    song(1, { source: "examples", t: "Example Two", order: 2, pop: 0 }),
+    song(0, { source: "examples", t: "Example One", order: 1, pop: 0 }),
+    song(40, { source: "pdmx", t: "Sonata", pop: 30 }),
+  ];
+}
+
+test("the chooser is a row of toggle buttons, one per playlist, Popular chosen at first", () => {
+  const { root } = mount({ entries: library() });
+  const group = byClass(root, "shelf-playlists")[0];
+  assert.equal(group.getAttribute("role"), "group");
+  assert.equal(group.getAttribute("aria-label"), "Playlists");
+  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  for (const element of tiles(root)) {
+    assert.equal(element.tagName, "BUTTON", "keyboard reachable");
+    assert.equal(element.getAttribute("type"), "button");
+  }
+  assert.deepEqual(pressedTiles(root).map((element) => element.textContent.slice(0, 7)), ["Popular"]);
+  assert.equal(byClass(tile(root, "MPB"), "shelf-tile-count")[0].textContent, "7 songs, 1 album");
+  assert.equal(viewText(root), "Popular: 5 songs", "the five songs that open in one click");
+});
+
+test("each tile has a cover: the sprite of the playlist's most popular song", () => {
+  const { root } = mount({ entries: library() });
+  const cover = byClass(tile(root, "Folk tunes"), "shelf-sprite")[0];
+  assert.equal(cover.tagName, "CANVAS");
+  assert.ok(cover.painted.length > 20, "the sprite is drawn");
+  const sameSprite = mount({ entries: [song(31, { source: "nottingham", t: "Reel High", pop: 60 })] });
+  assert.deepEqual(cover.painted, byClass(tile(sameSprite.root, "Folk tunes"), "shelf-sprite")[0].painted);
+});
+
+test("every list is ordered by popularity, whatever the order of the catalog", () => {
+  const { root, shelf } = mount({ entries: library() });
+  assert.deepEqual(rowTitles(root), ["Reel High", "Sonata", "Reel Low", "Example One", "Example Two"]);
+  assert.equal(shelf.selected()?.t, "Reel High");
+  click(tile(root, "Folk tunes"));
+  assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"]);
+});
+
+test("choosing a playlist shows only its songs, in the records and in the side list, and selects its first", () => {
+  const { root, shelf } = mount({ entries: library() });
+  shelf.select(2);
+  click(tile(root, "Examples"));
+  assert.deepEqual(rowTitles(root), ["Example One", "Example Two"], "the examples keep their own order");
+  assert.equal(optionsOf(root).length, 2);
+  assert.equal(shelf.page().index, 0);
+  assert.equal(shelf.page().total, 2);
+  assert.deepEqual(pressedTiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent), ["Examples"]);
+  assert.equal(viewText(root), "Examples: 2 songs");
+  assert.equal(String(byRole(root, "listbox")[0].getAttribute("aria-label")), "Songs, page 1 of 1");
+});
+
+test("the listbox keeps its roles for the current playlist", () => {
+  const { root, list, shelf } = mount({ entries: library() });
+  click(tile(root, "Folk tunes"));
+  const options = optionsOf(root);
+  assert.equal(options.length, 2);
+  assert.equal(options[0].getAttribute("aria-setsize"), "2");
+  assert.equal(list.getAttribute("aria-activedescendant"), options[0].id);
+  press(list, "ArrowRight");
+  assert.equal(list.getAttribute("aria-activedescendant"), options[1].id);
+  assert.equal(shelf.selected()?.t, "Reel Low");
+});
+
+test("a song that needs a download is marked in the side list and stays out of Popular", () => {
+  const { root } = mount({ entries: library() });
+  assert.ok(!rowTitles(root).some((title) => title.startsWith("Alba") || title.startsWith("Bo")));
+  click(tile(root, "MPB"));
+  const rows = byClass(root, "shelf-song");
+  assert.ok(rows.length > 0);
+  for (const row of rows) assert.equal(byClass(row, "shelf-song-get")[0]?.textContent, "↓");
+  click(tile(root, "Back to playlists"));
+  click(tile(root, "Folk tunes"));
+  assert.equal(byClass(root, "shelf-song-get").length, 0, "songs that open in one click have no hint");
+});
+
+test("MPB opens a second level: its artist albums, with a back control and an All MPB button", () => {
+  const { root, shelf } = mount({ entries: library() });
+  click(tile(root, "MPB"));
+  assert.deepEqual(tileNames(root), ["Back to playlists", "All MPB", "Alba", "Other artists"]);
+  assert.deepEqual(pressedTiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent), ["All MPB"]);
+  assert.equal(shelf.page().total, 7, "all of MPB until an album is chosen");
+  assert.deepEqual(rowTitles(root).slice(0, 2), ["Bo Song 6", "Alba Song 1"], "by popularity");
+
+  click(tile(root, "Alba"));
+  assert.deepEqual(rowTitles(root), ["Alba Song 1", "Alba Song 2", "Alba Song 3", "Alba Song 4", "Alba Song 5"]);
+  assert.equal(viewText(root), "MPB, Alba: 5 songs");
+  assert.deepEqual(pressedTiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent), ["Alba"]);
+
+  click(tile(root, "All MPB"));
+  assert.equal(shelf.page().total, 7);
+
+  click(tile(root, "Back to playlists"));
+  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  assert.equal(pressedTiles(root).length, 1);
+  assert.equal(shelf.page().total, 7, "MPB stays chosen until another playlist is");
+  click(tile(root, "Popular"));
+  assert.equal(viewText(root), "Popular: 5 songs");
+});
+
+test("the keyboard reaches the tiles in order, and a tile keeps the focus after it is pressed", () => {
+  const { root, document } = mount({ entries: library() });
+  click(tile(root, "Folk tunes"));
+  assert.equal(document.activeElement, tile(root, "Folk tunes"));
+  click(tile(root, "MPB"));
+  assert.equal(document.activeElement, tile(root, "All MPB"), "the albums row takes the focus at its first album");
+  click(tile(root, "Back to playlists"));
+  assert.equal(document.activeElement, tile(root, "MPB"), "back returns the focus to MPB");
+});
+
+test("typing in the search box searches every song, named Search results, and clearing returns to the playlist", () => {
+  const { root, shelf } = mount({ entries: library() });
+  click(tile(root, "Folk tunes"));
+  const box = shelf.searchBox;
+  box.value = "song";
+  box.dispatchEvent(new FakeEvent("input"));
+  assert.match(viewText(root), /^Search results: \d+ songs?$/);
+  assert.ok(rowTitles(root).some((title) => title.startsWith("Alba")), "MPB songs are found though Popular and Folk tunes lack them");
+  assert.equal(pressedTiles(root).length, 0, "no playlist is the current view while searching");
+  box.value = "";
+  box.dispatchEvent(new FakeEvent("input"));
+  assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"], "back to the playlist that was chosen");
+  assert.equal(viewText(root), "Folk tunes: 2 songs");
+  assert.equal(pressedTiles(root).length, 1);
+});
+
+test("a search keeps the text ranking and breaks ties by popularity", () => {
+  const { shelf, root } = mount({ entries: library() });
+  shelf.setQuery("reel");
+  assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"]);
+  shelf.setQuery("alba");
+  assert.deepEqual(rowTitles(root), ["Alba Song 1", "Alba Song 2", "Alba Song 3", "Alba Song 4", "Alba Song 5"]);
+  shelf.setQuery("o");
+  assert.equal(shelf.page().total, 5, "one letter shows the playlist, not a search");
+  shelf.setQuery("example");
+  assert.deepEqual(rowTitles(root), ["Example One", "Example Two"]);
+});
+
+test("choosing a playlist while a search is typed clears the search box", () => {
+  /** @type {string[]} */
+  const typed = [];
+  const { root, shelf } = mount({ entries: library(), onSearch: (/** @type {string} */ query) => typed.push(query) });
+  shelf.setQuery("alba");
+  click(tile(root, "Examples"));
+  assert.equal(shelf.searchBox.value, "");
+  assert.deepEqual(rowTitles(root), ["Example One", "Example Two"]);
+  assert.equal(typed.at(-1), "");
+});
+
+test("the chosen playlist is remembered in localStorage and chosen again by the next shelf", () => {
+  const storage = fakeStorage();
+  const first = mount({ entries: library(), storage });
+  click(tile(first.root, "Folk tunes"));
+  assert.equal(PLAYLIST_KEY, "nes-arranger-playlist");
+  assert.equal(storage.items.get(PLAYLIST_KEY), "folk");
+  const second = mount({ entries: library(), storage });
+  assert.equal(viewText(second.root), "Folk tunes: 2 songs");
+});
+
+test("an unknown remembered playlist, or a storage that throws, gives Popular", () => {
+  const unknown = mount({ entries: library(), storage: fakeStorage({ "nes-arranger-playlist": "gone" }) });
+  assert.equal(viewText(unknown.root), "Popular: 5 songs");
+  const broken = {
+    getItem() {
+      throw new Error("blocked");
+    },
+    setItem() {
+      throw new Error("blocked");
+    },
+  };
+  const { root } = mount({ entries: library(), storage: broken });
+  click(tile(root, "Examples"));
+  assert.equal(viewText(root), "Examples: 2 songs", "choosing still works");
+});
+
+test("a remembered playlist applies when the catalog arrives after the shelf", () => {
+  const storage = fakeStorage({ "nes-arranger-playlist": "folk" });
+  const { root, shelf } = mount({ entries: [], storage });
+  shelf.setEntries(library().filter((entry) => entry.source === "examples"));
+  assert.equal(viewText(root), "Popular: 2 songs", "until the remembered playlist exists");
+  shelf.setEntries(library());
+  assert.equal(viewText(root), "Folk tunes: 2 songs");
+  assert.equal(storage.items.get(PLAYLIST_KEY), "folk", "the fallback did not overwrite the choice");
+});
+
+test("the visitor's own songs head Popular, have a Your songs playlist, and a new one is selected first", () => {
+  const { root, shelf } = mount({ entries: library() });
+  assert.ok(!tileNames(root).includes("Your songs"));
+  click(tile(root, "Folk tunes"));
+  const own = song(100, { source: "local", t: "My Tune", c: "Your file", route: { local: true } });
+  shelf.setEntries([own, ...library()]);
+  assert.deepEqual(tileNames(root).slice(0, 3), ["Popular", "Your songs", "Examples"]);
+  assert.equal(viewText(root), "Popular: 6 songs", "a new own song brings Popular back");
+  assert.equal(shelf.selected()?.t, "My Tune");
+  click(tile(root, "Your songs"));
+  assert.deepEqual(rowTitles(root), ["My Tune"]);
+  shelf.setEntries([own, ...library()]);
+  assert.deepEqual(rowTitles(root), ["My Tune"], "the same songs change nothing");
+});
+
+// --- Touch and wheel ---------------------------------------------------------------------------
+
+const point = (/** @type {number} */ x, /** @type {number} */ y, /** @type {number} */ time) => ({ x, y, time });
+
+test("a quick, mostly horizontal drag of 40 pixels or more is a swipe: left turns to the next page, right to the previous", () => {
+  assert.equal(swipeGesture(point(200, 100, 0), point(140, 105, 200)), "next");
+  assert.equal(swipeGesture(point(100, 100, 0), point(160, 90, 200)), "previous");
+  assert.equal(swipeGesture(point(100, 100, 0), point(140, 100, 100)), "previous", "exactly 40 pixels counts");
+});
+
+test("a short drag, a vertical drag and a slow drag are not swipes", () => {
+  assert.equal(swipeGesture(point(100, 100, 0), point(139, 100, 100)), "none", "39 pixels is not enough");
+  assert.equal(swipeGesture(point(100, 100, 0), point(160, 190, 100)), "none", "mostly vertical: the page scrolls");
+  assert.equal(swipeGesture(point(100, 100, 0), point(220, 100, 2000)), "none", "too slow");
+});
+
+test("a touch that hardly moves is a tap", () => {
+  assert.equal(swipeGesture(point(100, 100, 0), point(103, 102, 80)), "tap");
+  assert.equal(swipeGesture(point(100, 100, 0), point(100, 100, 900)), "tap", "a long press still picks");
+});
+
+test("a horizontal wheel, or shift with the wheel, gives a page-turning delta; a vertical wheel gives none", () => {
+  assert.equal(wheelDelta({ deltaX: 50, deltaY: 3, shiftKey: false }), 50);
+  assert.equal(wheelDelta({ deltaX: -30, deltaY: 0, shiftKey: false }), -30);
+  assert.equal(wheelDelta({ deltaX: 0, deltaY: 40, shiftKey: false }), 0, "normal scrolling is left alone");
+  assert.equal(wheelDelta({ deltaX: 5, deltaY: 40, shiftKey: false }), 0);
+  assert.equal(wheelDelta({ deltaX: 0, deltaY: 40, shiftKey: true }), 40, "shift turns the vertical wheel sideways");
+  assert.equal(wheelDelta({ deltaX: -40, deltaY: 0, shiftKey: true }), -40, "some browsers already did that");
+});
+
+/**
+ * One finger's drag on the stage: down, up, and the click the browser may send after.
+ * @param {FakeElement} stage
+ * @param {number[]} from x, y
+ * @param {number[]} to x, y
+ * @param {number} [duration] in milliseconds
+ * @param {string} [pointerType]
+ */
+function drag(stage, from, to, duration = 150, pointerType = "touch") {
+  stage.dispatchEvent(new FakeEvent("pointerdown", { pointerType, isPrimary: true, clientX: from[0], clientY: from[1], timeStamp: 1000 }));
+  stage.dispatchEvent(new FakeEvent("pointerup", { pointerType, isPrimary: true, clientX: to[0], clientY: to[1], timeStamp: 1000 + duration }));
+}
+
+test("swiping the stage turns the page, and the click that follows does not pick a record", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  drag(stage, [250, 100], [150, 108]);
+  assert.equal(shelf.page().page, 1, "a swipe to the left shows the next page");
+  const swipeClick = new FakeEvent("click");
+  stage.dispatchEvent(swipeClick);
+  assert.ok(swipeClick.propagationStopped, "the scene's click handler does not see it");
+  assert.ok(swipeClick.defaultPrevented);
+  const laterClick = new FakeEvent("click");
+  stage.dispatchEvent(laterClick);
+  assert.equal(laterClick.propagationStopped, false, "only the click right after a swipe is stopped");
+  drag(stage, [100, 100], [210, 96]);
+  assert.equal(shelf.page().page, 0, "a swipe to the right shows the previous page");
+});
+
+test("a swipe past the first or last page stays where it is", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  drag(stage, [100, 100], [220, 100]);
+  assert.equal(shelf.page().page, 0);
+  drag(stage, [220, 100], [100, 100]);
+  drag(stage, [220, 100], [100, 100]);
+  assert.equal(shelf.page().page, 1);
+});
+
+test("a tap, a vertical drag and a mouse drag do not turn the page, and their clicks go through", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  drag(stage, [100, 100], [102, 101], 60);
+  drag(stage, [100, 100], [110, 220]);
+  drag(stage, [250, 100], [100, 100], 150, "mouse");
+  assert.equal(shelf.page().page, 0);
+  const tapClick = new FakeEvent("click");
+  stage.dispatchEvent(tapClick);
+  assert.equal(tapClick.propagationStopped, false);
+});
+
+test("a cancelled touch (the browser took it to scroll the page) turns nothing", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  stage.dispatchEvent(new FakeEvent("pointerdown", { pointerType: "touch", isPrimary: true, clientX: 250, clientY: 100, timeStamp: 1000 }));
+  stage.dispatchEvent(new FakeEvent("pointercancel", { pointerType: "touch" }));
+  stage.dispatchEvent(new FakeEvent("pointerup", { pointerType: "touch", isPrimary: true, clientX: 100, clientY: 100, timeStamp: 1100 }));
+  assert.equal(shelf.page().page, 0);
+});
+
+test("a horizontal wheel or shift with the wheel turns pages; a vertical wheel scrolls the page as usual", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  const vertical = new FakeEvent("wheel", { deltaX: 0, deltaY: 120, shiftKey: false, timeStamp: 1000 });
+  stage.dispatchEvent(vertical);
+  assert.equal(shelf.page().page, 0);
+  assert.equal(vertical.defaultPrevented, false, "the page may still scroll");
+
+  const sideways = new FakeEvent("wheel", { deltaX: 100, deltaY: 0, shiftKey: false, timeStamp: 2000 });
+  stage.dispatchEvent(sideways);
+  assert.equal(shelf.page().page, 1);
+  assert.ok(sideways.defaultPrevented, "no browser back-swipe while turning pages");
+
+  const quick = new FakeEvent("wheel", { deltaX: -100, deltaY: 0, shiftKey: false, timeStamp: 2100 });
+  stage.dispatchEvent(quick);
+  assert.equal(shelf.page().page, 1, "a trackpad's flick turns one page, not all of them");
+
+  stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 0, deltaY: -100, shiftKey: true, timeStamp: 3000 }));
+  assert.equal(shelf.page().page, 0, "shift with the wheel turns pages: up goes back");
+  stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 0, deltaY: 100, shiftKey: true, timeStamp: 4000 }));
+  assert.equal(shelf.page().page, 1, "down goes forward");
+});
+
+test("small wheel steps add up before a page turns", () => {
+  const { root, shelf } = mount();
+  const stage = byClass(root, "shelf-stage")[0];
+  stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 20, deltaY: 0, shiftKey: false, timeStamp: 1000 }));
+  stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 20, deltaY: 0, shiftKey: false, timeStamp: 1050 }));
+  assert.equal(shelf.page().page, 0);
+  stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 30, deltaY: 0, shiftKey: false, timeStamp: 1100 }));
+  assert.equal(shelf.page().page, 1);
 });

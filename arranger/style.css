@@ -75,13 +75,15 @@ h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; font-weight: 800;
 .channels dd { margin: 0; font-size: .8rem; color: var(--muted); line-height: 1.35; }
 .channels dd.role { color: var(--text); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); flex: none; }
+/* The bars grow with a transform, which the compositor animates; animating `height` would lay the
+   header out again on every frame, for a decoration. */
 .eq { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; }
-.eq i { width: 4px; height: 10px; border-radius: 2px 2px 0 0; background: var(--c); animation: eq 1s ease-in-out infinite alternate; }
+.eq i { width: 4px; height: 18px; border-radius: 2px 2px 0 0; background: var(--c); transform-origin: bottom; animation: eq 1s ease-in-out infinite alternate; }
 .eq i:nth-child(1) { --c: var(--p1); animation-delay: .1s; }
 .eq i:nth-child(2) { --c: var(--p2); animation-delay: .45s; }
 .eq i:nth-child(3) { --c: var(--tr); animation-delay: .25s; }
 .eq i:nth-child(4) { --c: var(--no); animation-delay: .6s; }
-@keyframes eq { from { height: 4px; } to { height: 18px; } }
+@keyframes eq { from { transform: scaleY(.22); } to { transform: scaleY(1); } }
 
 /* Page tabs: one screen per tab, in the order of a run (ui/tabs.js). */
 .page-tabs { display: flex; gap: 4px; margin-top: 18px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
@@ -196,7 +198,9 @@ tr.drum { color: var(--muted); }
 .counter .value { font-size: 1.15rem; font-weight: 700; }
 .counter .status { margin: 0; font-size: .85rem; }
 .meter { display: block; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .06); overflow: hidden; }
-.meter span { display: block; height: 100%; width: 0; background: var(--p1); transition: width .1s linear; }
+/* The bar is full width and scaled from its left edge (ui/evolution-view.js sets the scale), so a
+   progress update moves a compositor layer instead of changing the layout. */
+.meter span { display: block; height: 100%; width: 100%; background: var(--p1); transform: scaleX(0); transform-origin: left; transition: transform .25s linear; }
 .meter.stagnation span { background: var(--p2); }
 .chart { display: block; width: 100%; height: 220px; margin-top: 12px; }
 .plan-grid { display: grid; gap: 3px; overflow-x: auto; padding-bottom: 4px; }
@@ -331,6 +335,17 @@ footer { column-gap: 18px; }
   main { padding-top: 36px; }
   .card { padding: 14px; }
 }
+/* Phones and narrow screens: the glass without the blur. A backdrop blur is recomputed whenever
+   anything under it repaints, and the channel view and the shelf repaint all the time while music
+   plays; on a phone's GPU that is the difference between smooth and stuttering. The same panel
+   with a more opaque fill looks the same on the dark ground. The desktop keeps the blur. */
+@media (pointer: coarse), (max-width: 700px) {
+  .card { background: rgba(20, 26, 42, .84); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .eyebrow { background: rgba(20, 26, 42, .84); backdrop-filter: none; }
+  /* The fixed ground is sized to the large viewport: it is not repainted when the browser's
+     address bar slides away and the viewport changes height during a scroll. */
+  .backdrop { inset: 0 0 auto 0; height: 100vh; height: 100lvh; }
+}
 @media (prefers-reduced-motion: reduce) {
   .eq i { animation: none !important; }
   .steps a { transition: none; }
@@ -375,17 +390,26 @@ footer { column-gap: 18px; }
    keeps only the seed, the pace, Stop and Settings; on the Evolution tab the strip has Arrange. */
 [data-run-slot="song"] [data-arrange] { display: none; }
 
-/* Evolution tab: the run bar on top, then the evolution and the result side by side on a wide
-   screen, so the result is there when the run ends, without scrolling. */
+/* Evolution tab: the run bar on top, then a second row of tabs and one view under it, the
+   evolution or the result, each with the full width (ui/tabs.js). */
 .workbench { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
 .workbench[hidden] { display: none; }
-.workbench > .run-bar { grid-column: 1 / -1; position: sticky; top: 0; z-index: 5; padding: 10px 16px;
-  background: rgba(14, 19, 34, .94); backdrop-filter: blur(6px); }
+.workbench > .run-bar { position: sticky; top: 0; z-index: 5; padding: 10px 16px; background: rgba(14, 19, 34, .97); }
 .workbench > .run-bar .run-strip { margin: 0; padding: 0; border: 0; }
 .workbench > .run-bar .run-song { margin-bottom: 8px; }
 .run-bar:has([data-run-slot]:empty) { display: none; }
-@media (min-width: 1000px) {
-  .workbench { grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); }
+/* The second row of tabs: the page tabs' look, one step smaller, so the two rows read as two levels. */
+.view-tabs { display: flex; gap: 4px; margin: -6px 0 -4px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.view-tabs::-webkit-scrollbar { display: none; }
+.view-tabs button {
+  background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 8px 16px 9px;
+  color: var(--muted); font: 600 .9rem Inter, system-ui, sans-serif; cursor: pointer; white-space: nowrap;
+}
+.view-tabs button:hover { color: var(--text); }
+.view-tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--p1); }
+.workbench > [role="tabpanel"][hidden] { display: none; }
+@media (max-width: 640px) {
+  .view-tabs button { flex: 1 1 0; padding-inline: 8px; }
 }
 #run .toolbar { margin: 0; }
 #run .button.primary { min-width: 9em; }

@@ -120,13 +120,13 @@ def test_the_catalog_has_the_envelope_and_entry_fields_of_the_contract(tmp_path)
     assert valsa["u"] == f"{SITE}mpb_v/valsa.html"
     assert valsa["license"] == "all-rights-reserved"
     assert valsa["seed"] == sprite_seed("mpb", "valsa")
-    assert valsa["route"] == {"server": "/songs/mpb/valsa.abc"}
+    assert valsa["route"] == {"download": f"{SITE}mpb_v/som/valsa.mid"}
     assert valsa["facts"]["midi"] == f"{SITE}mpb_v/som/valsa.mid"
     assert valsa["facts"]["meter"] == "3/4"
     assert "variant" not in valsa
 
 
-def test_every_entry_has_a_server_route_or_an_error_and_variants_are_labeled(tmp_path):
+def test_every_entry_has_a_download_route_or_an_error_and_variants_are_labeled(tmp_path):
     out = tmp_path / "mpb.json"
     entries = write_mpb_catalog(make_dataset(tmp_path / "dataset"), out)
     by_id = {entry["id"]: entry for entry in entries}
@@ -189,5 +189,5 @@ def test_catalog_analyze_writes_the_file_and_prints_the_counts(tmp_path, capsys)
     args.handler(args)
 
     printed = capsys.readouterr().out
-    assert "5 entries, 3 with a server route, 2 errors" in printed
+    assert "5 entries, 3 with a download route, 2 errors" in printed
     assert out.exists()

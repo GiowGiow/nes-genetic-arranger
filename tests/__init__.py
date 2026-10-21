@@ -1,1 +1,1 @@
-"""Test suite. A package, so that tests/server/ does not shadow the `server` package."""
+"""Test suite: a package, so that test modules can import the helpers of their neighbors."""

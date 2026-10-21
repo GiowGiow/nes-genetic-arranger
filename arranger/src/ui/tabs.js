@@ -2,18 +2,21 @@
 /**
  * Page tabs: the page shows one screen at a time, in the order of a run (spec 005, story 7).
  *
- * Song holds the catalog and the run controls. Evolution holds the run controls too, and the GA at
- * work and the result side by side, so that a setting can be changed and the next run heard on
- * one screen. The settings drawer and the mixer drawer (from the left edge) belong to the tabs that use them.
+ * Song holds the catalog and the run controls. Evolution holds the run controls too, on top, and
+ * under them two views of the run, each with the full width: the GA at work ("Evolution") and
+ * what it found ("Result"). A second row of tabs switches between the two, so a setting can be
+ * changed and the next run heard without leaving the tab. A run that starts shows the Evolution
+ * view; one that ends shows the Result view (`main.js` calls `showView`).
+ * The settings drawer and the mixer drawer (from the left edge) belong to the tabs that use them.
  * How it works explains the method. The settings drawer opens from the Song and Evolution tabs.
- * The chosen tab lives in the URL hash (`#song`, `#evolution`, `#how`), so a reload or a shared
- * link opens the same screen. An old link to a card (`#run`, `#result`, `#about`) opens the tab
- * that holds it now.
- * The keyboard follows the WAI-ARIA tabs pattern: arrows move between tabs and wrap, Home and
- * End jump to the ends.
+ * The chosen tab lives in the URL hash (`#song`, `#evolution`, `#how`), and on the Evolution tab
+ * so does the chosen view (`#evolution`, `#result`), so a reload or a shared link opens the same
+ * screen. An old link to a card (`#run`, `#about`) opens the tab that holds it now.
+ * The keyboard follows the WAI-ARIA tabs pattern on both rows: arrows move between tabs and
+ * wrap, Home and End jump to the ends.
  *
- * The pure helpers decide which tab and which key; `setUpPageTabs` only shows and hides the
- * sections.
+ * The pure helpers decide which tab, which view and which key; `setUpPageTabs` only shows and
+ * hides the sections.
  */
 
 /**
@@ -28,6 +31,18 @@ export const TABS = Object.freeze([
   Object.freeze({ id: "song", label: "Song", panels: Object.freeze(["song", "settings"]) }),
   Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["workbench", "settings", "mix"]) }),
   Object.freeze({ id: "how", label: "How it works", panels: Object.freeze(["how"]) }),
+]);
+
+/**
+ * @typedef {object} EvolutionView
+ * @property {string} id the hash, the view button's `data-view` and the id of the section it shows
+ * @property {string} label what the view button says
+ */
+
+/** The two views of the Evolution tab, in the order of a run. @type {readonly EvolutionView[]} */
+export const VIEWS = Object.freeze([
+  Object.freeze({ id: "evolution", label: "Evolution" }),
+  Object.freeze({ id: "result", label: "Result" }),
 ]);
 
 /** Section ids from before the tabs or the merge of Result into Evolution, and the tab that holds them now. */
@@ -61,6 +76,42 @@ export function tabFromHash(hash) {
 }
 
 /**
+ * What a URL hash asks for: a tab, and on the Evolution tab a view.
+ *
+ * `#result` is the Evolution tab on its Result view and `#evolution` (or the old `#workbench`) on
+ * its Evolution view. A hash that names another tab, or only a drawer, names no view (`null`):
+ * the view stays as it was.
+ *
+ * @param {string} hash `location.hash`, with or without "#"
+ * @returns {{tab: string, view: string | null}}
+ * @example
+ * routeFromHash("#result"); // { tab: "evolution", view: "result" }
+ * routeFromHash("#how"); // { tab: "how", view: null }
+ */
+export function routeFromHash(hash) {
+  const name = hash.replace(/^#/, "");
+  const tab = tabFromHash(name);
+  if (VIEWS.some((view) => view.id === name)) return { tab, view: name };
+  if (name === "workbench") return { tab, view: VIEWS[0].id };
+  return { tab, view: null };
+}
+
+/**
+ * The hash to show for a tab and view: the view's name on the Evolution tab, the tab's name
+ * elsewhere (the view is then only remembered by the page).
+ *
+ * @param {string} tab a tab id
+ * @param {string} view a view id
+ * @returns {string} for example "#result"
+ * @example
+ * hashFor("evolution", "result"); // "#result"
+ * hashFor("song", "result"); // "#song"
+ */
+export function hashFor(tab, view) {
+  return `#${tab === "evolution" ? view : tab}`;
+}
+
+/**
  * The tab a key moves to, in the WAI-ARIA tabs pattern.
  *
  * @param {number} index the current tab's index
@@ -79,15 +130,33 @@ export function stepTab(index, key, count) {
 }
 
 /**
- * Wire the tab buttons in `nav` to the page sections.
+ * Wire the tab buttons in `nav` to the page sections, and the view buttons to the two views of
+ * the Evolution tab.
  *
  * @param {HTMLElement} nav the element with `role="tablist"` and one `[data-tab]` button per tab
- * @param {{onChange?: (id: string) => void}} [options]
- * @returns {{show: (id: string, options?: {focus?: boolean}) => void, current: () => string}}
+ * @param {{
+ *   onChange?: (id: string) => void,
+ *   viewNav?: HTMLElement | null,
+ *   onViewChange?: (view: string) => void,
+ * }} [options] `viewNav` holds one `[data-view]` button per view; `onChange` and `onViewChange`
+ *   run after a tab or a view is shown
+ * @returns {{
+ *   show: (id: string, options?: {focus?: boolean}) => void,
+ *   current: () => string,
+ *   showView: (id: string, options?: {focus?: boolean}) => void,
+ *   view: () => string,
+ * }}
  */
 export function setUpPageTabs(nav, options = {}) {
   const buttons = /** @type {HTMLButtonElement[]} */ ([...nav.querySelectorAll("[data-tab]")]);
+  const viewButtons = /** @type {HTMLButtonElement[]} */ ([...(options.viewNav?.querySelectorAll("[data-view]") ?? [])]);
   let current = TABS[0].id;
+  let view = VIEWS[0].id;
+
+  function writeHash() {
+    const hash = hashFor(current, view);
+    if (location.hash !== hash) history.replaceState(null, "", hash);
+  }
 
   function show(/** @type {string} */ id, { focus = false } = {}) {
     current = TABS.some((tab) => tab.id === id) ? id : TABS[0].id;
@@ -103,8 +172,25 @@ export function setUpPageTabs(nav, options = {}) {
       button.tabIndex = selected ? 0 : -1;
       if (selected && focus) button.focus();
     }
-    if (location.hash !== `#${current}`) history.replaceState(null, "", `#${current}`);
+    writeHash();
     options.onChange?.(current);
+  }
+
+  /** Show one view of the Evolution tab, even while another tab is open: it is there when the visitor returns. */
+  function showView(/** @type {string} */ id, { focus = false } = {}) {
+    view = VIEWS.some((candidate) => candidate.id === id) ? id : VIEWS[0].id;
+    for (const candidate of VIEWS) {
+      const panel = document.getElementById(candidate.id);
+      if (panel) panel.hidden = candidate.id !== view;
+    }
+    for (const button of viewButtons) {
+      const selected = button.dataset.view === view;
+      button.setAttribute("aria-selected", String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      if (selected && focus) button.focus();
+    }
+    writeHash();
+    options.onViewChange?.(view);
   }
 
   buttons.forEach((button, index) => {
@@ -116,7 +202,22 @@ export function setUpPageTabs(nav, options = {}) {
       show(/** @type {string} */ (buttons[next].dataset.tab), { focus: true });
     });
   });
-  addEventListener("hashchange", () => show(tabFromHash(location.hash)));
-  show(tabFromHash(location.hash));
-  return { show, current: () => current };
+  viewButtons.forEach((button, index) => {
+    button.addEventListener("click", () => showView(/** @type {string} */ (button.dataset.view)));
+    button.addEventListener("keydown", (event) => {
+      const next = stepTab(index, event.key, viewButtons.length);
+      if (next === null) return;
+      event.preventDefault();
+      showView(/** @type {string} */ (viewButtons[next].dataset.view), { focus: true });
+    });
+  });
+  /** @param {string} hash */
+  function followHash(hash) {
+    const route = routeFromHash(hash);
+    if (route.view) showView(route.view);
+    show(route.tab);
+  }
+  addEventListener("hashchange", () => followHash(location.hash));
+  followHash(location.hash);
+  return { show, current: () => current, showView, view: () => view };
 }

@@ -13,6 +13,17 @@
  * - **Motion.** `shelf-layout.js` gives every record's pose at each moment: the others bob, the
  *   selected one comes forward, grows, sways and spins like a turntable, with an additive halo
  *   behind it. Under reduced motion every pose is still.
+ * - **Titles.** Under each record hangs a strip with the song's title in light pixel letters
+ *   with a soft glow (a canvas texture). A title wider than the strip scrolls like a marquee:
+ *   the texture holds the title, a gap and then the room to repeat, and only its offset moves
+ *   (`RepeatWrapping`). A short title stays still and centred. The selected record's strip is
+ *   brighter. Under reduced motion nothing scrolls: a long title is cut with an ellipsis.
+ * - **Glow behind, always.** The halo is not "transparent" for three.js, so it joins the opaque
+ *   list, where `renderOrder = -1` draws it before every record; the records then paint over it
+ *   wherever they overlap, however the selected one sways.
+ * - **Cheap on a phone.** The loop is our own `requestAnimationFrame`: it caps at 30 fps on touch
+ *   or narrow screens, lowers the pixel ratio there, and stops asking for frames while the page
+ *   is hidden or the stage is off screen. Under reduced motion it draws only after a change.
  * - **Light and air.** An ambient light, a white key light and two soft rim lights in the P1
  *   blue and the P2 orange; about 90 faint particles in the four channel colors drift slowly.
  * - **No box.** The canvas is transparent (`alpha`), so the records float over the Song
@@ -26,11 +37,32 @@
 import * as THREE from "three";
 
 import { createRandom } from "../core/random.js";
-import { CAMERA_FOV, HALO_SCALE, cameraDistance, haloOpacity, recordPose, shelfColumns } from "./shelf-layout.js";
+import { displayTitle } from "../core/sources.js";
+import {
+  CAMERA_FOV,
+  HALO_SCALE,
+  MARQUEE_STAGGER,
+  STRIP_HEIGHT,
+  STRIP_PADDING,
+  STRIP_PIXELS,
+  STRIP_WIDTH,
+  cameraDistance,
+  ellipsize,
+  haloOpacity,
+  isLowPower,
+  marqueeCycle,
+  marqueeOffset,
+  pixelRatioFor,
+  recordPose,
+  scaleEasing,
+  shelfColumns,
+  shouldRenderFrame,
+  stripOpacity,
+  stripY,
+  targetFps,
+  titleNeedsScroll,
+} from "./shelf-layout.js";
 import { CHANNEL_COLORS, drawSprite, entrySprite } from "./sprites.js";
-
-/** The canvas renders at this fraction of the device's pixels: chunky, and cheap on phones. */
-const PIXEL_SCALE = 0.6;
 
 /** Faint particles drifting behind the records. */
 const PARTICLE_COUNT = 90;
@@ -40,8 +72,11 @@ const PARTICLE_SEED = 5;
 const TEXTURE_SIZE = 128;
 const SPRITE_SCALE = 3;
 
-/** How fast a record's size follows its target (0 to 1 per frame), for a soft grow. */
-const SCALE_EASING = 0.15;
+/** The title strips' letters: a bold monospace face, drawn small so each stroke is a few pixels. */
+const STRIP_FONT = '700 11px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace';
+const STRIP_TEXT = "#e6f0ff";
+const STRIP_GLOW = "rgba(140, 190, 240, 0.95)";
+const STRIP_BACKDROP = "rgba(8, 10, 20, 0.6)";
 
 /** @typedef {import("../core/sources.js").CatalogEntry} CatalogEntry */
 /** @typedef {import("./song-shelf.js").ShelfScene} ShelfScene */
@@ -101,6 +136,53 @@ function recordTexture(entry) {
 }
 
 /**
+ * The texture of a title strip and what the scene needs to scroll it.
+ *
+ * A title that fits is drawn centred on a texture the size of the strip. One that does not is,
+ * with motion, drawn at the left of a wider texture, followed by a gap, and the strip shows a
+ * window of it that moves (`cycle` pixels make one pass); under reduced motion it is cut with
+ * an ellipsis instead and does not move.
+ *
+ * @param {string} title the title to show
+ * @param {CanvasRenderingContext2D} measuring a context whose font is `STRIP_FONT`
+ * @param {boolean} reducedMotion
+ * @returns {{texture: any, cycle: number, width: number}} `cycle` is 0 for a title that stays
+ *   still; `width` is the texture's width in pixels
+ */
+function titleTexture(title, measuring, reducedMotion) {
+  const measure = (/** @type {string} */ text) => measuring.measureText(text).width;
+  const fullWidth = Math.ceil(measure(title));
+  const scrolls = titleNeedsScroll(fullWidth) && !reducedMotion;
+  const shown = titleNeedsScroll(fullWidth) && reducedMotion ? ellipsize(title, STRIP_PIXELS.width - 2 * STRIP_PADDING, measure) : title;
+  const cycle = scrolls ? marqueeCycle(fullWidth) : 0;
+  const canvas = document.createElement("canvas");
+  canvas.width = scrolls ? cycle : STRIP_PIXELS.width;
+  canvas.height = STRIP_PIXELS.height;
+  const context = /** @type {CanvasRenderingContext2D} */ (canvas.getContext("2d"));
+  context.fillStyle = STRIP_BACKDROP;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.font = STRIP_FONT;
+  context.textBaseline = "middle";
+  context.textAlign = scrolls ? "left" : "center";
+  context.fillStyle = STRIP_TEXT;
+  context.shadowColor = STRIP_GLOW;
+  context.shadowBlur = 4;
+  const x = scrolls ? STRIP_PADDING : canvas.width / 2;
+  const y = canvas.height / 2 + 1;
+  context.fillText(shown, x, y);
+  context.shadowBlur = 0;
+  context.fillText(shown, x, y); // a second, sharp pass on top of the glow
+  const texture = pixelTexture(canvas);
+  // Magnified, the letters stay blocky; shrunk below their size (a phone), linear keeps thin strokes whole
+  texture.minFilter = THREE.LinearFilter;
+  if (scrolls) {
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.repeat.x = STRIP_PIXELS.width / canvas.width;
+  }
+  return { texture, cycle, width: canvas.width };
+}
+
+/**
  * A soft radial glow, drawn once, shown behind the selected record.
  *
  * @returns {any} a THREE.Sprite
@@ -116,13 +198,19 @@ function makeHalo() {
   glow.addColorStop(1, "rgba(0, 0, 0, 0)");
   context.fillStyle = glow;
   context.fillRect(0, 0, 64, 64);
+  // Not "transparent": three.js draws opaque objects first, sorted by renderOrder, and the
+  // transparent ones after all of them. A transparent halo would be painted over the part of the
+  // selected record that sways behind it. As an opaque-list object with additive blending (which
+  // three.js applies whatever `transparent` says) and no depth write, it is drawn first, and the
+  // records, which are opaque, simply cover it.
   const material = new THREE.SpriteMaterial({
     map: new THREE.CanvasTexture(canvas),
     blending: THREE.AdditiveBlending,
-    transparent: true,
+    transparent: false,
     depthWrite: false,
   });
   const halo = new THREE.Sprite(material);
+  halo.renderOrder = -1;
   halo.scale.set(HALO_SCALE, HALO_SCALE, 1);
   return halo;
 }
@@ -179,7 +267,10 @@ export function createShelfScene(host, { reducedMotion }) {
     throw error;
   }
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio || 1, 2) * PIXEL_SCALE);
+  const coarsePointer = Boolean(globalThis.matchMedia?.("(pointer: coarse)").matches);
+  let lowPower = isLowPower({ coarsePointer, width: host.clientWidth });
+  let pixelRatio = pixelRatioFor(globalThis.devicePixelRatio, lowPower);
+  renderer.setPixelRatio(pixelRatio);
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(CAMERA_FOV, 1, 0.1, 100);
@@ -198,12 +289,19 @@ export function createShelfScene(host, { reducedMotion }) {
   const particles = makeParticles();
   const halo = makeHalo();
   const records = new THREE.Group();
-  scene.add(particles, halo, records);
+  const strips = new THREE.Group();
+  scene.add(particles, halo, records, strips);
+
+  const stripGeometry = new THREE.PlaneGeometry(STRIP_WIDTH, STRIP_HEIGHT);
+  const measuring = /** @type {CanvasRenderingContext2D} */ (document.createElement("canvas").getContext("2d"));
+  measuring.font = STRIP_FONT;
 
   const discGeometry = new THREE.CylinderGeometry(1, 1, 0.05, 28);
   const edgeMaterial = new THREE.MeshPhongMaterial({ color: 0x07080c, shininess: 20 });
 
   let selected = 0;
+  /** Seconds (animation clock) when the selected record was selected: its title starts over then. */
+  let selectedAt = performance.now() / 1000;
   let columns = 5;
   /** @type {((index: number) => void) | null} */
   let picked = null;
@@ -215,6 +313,23 @@ export function createShelfScene(host, { reducedMotion }) {
       face.dispose();
       records.remove(group);
     }
+    for (const strip of [...strips.children]) {
+      strip.material.map.dispose();
+      strip.material.dispose();
+      strips.remove(strip);
+    }
+  }
+
+  /** @param {CatalogEntry} entry @param {number} index */
+  function makeStrip(entry, index) {
+    const { texture, cycle, width } = titleTexture(displayTitle(entry.t), measuring, reducedMotion);
+    // Drawn over everything (no depth test): the selected record comes forward and grows, and
+    // must not hide the title of its neighbour above it
+    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, depthTest: false, depthWrite: false, toneMapped: false });
+    const strip = new THREE.Mesh(stripGeometry, material);
+    strip.renderOrder = 2;
+    strip.userData = { index, cycle, width };
+    return strip;
   }
 
   /** @param {CatalogEntry} entry @param {number} index */
@@ -234,23 +349,45 @@ export function createShelfScene(host, { reducedMotion }) {
     const width = host.clientWidth;
     const height = host.clientHeight;
     if (!width || !height) return;
+    lowPower = isLowPower({ coarsePointer, width });
+    const ratio = pixelRatioFor(globalThis.devicePixelRatio, lowPower);
+    if (ratio !== pixelRatio) {
+      pixelRatio = ratio;
+      renderer.setPixelRatio(ratio);
+    }
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.position.set(0, 0, cameraDistance(columns, camera.aspect));
     camera.updateProjectionMatrix();
+    requestRender();
   }
 
-  /** @param {number} timestamp milliseconds, from the animation loop */
-  function frame(timestamp) {
-    if (!host.clientWidth) return; // the Song tab is hidden
+  /**
+   * Put the records, their strips and the glow where they belong at a moment, and draw.
+   *
+   * @param {number} timestamp milliseconds, from `requestAnimationFrame`
+   * @param {number} elapsed milliseconds since the last drawn frame
+   */
+  function draw(timestamp, elapsed) {
     const time = timestamp / 1000;
+    const ease = scaleEasing(elapsed);
     records.children.forEach((/** @type {any} */ group, /** @type {number} */ index) => {
       const pose = recordPose(index, { selected: index === selected, columns, time, reducedMotion });
       group.position.set(pose.x, pose.y, pose.z);
       group.rotation.y = pose.tilt;
       if (pose.spin !== null) group.children[0].rotation.y = pose.spin;
-      const scale = reducedMotion ? pose.scale : THREE.MathUtils.lerp(group.scale.x, pose.scale, SCALE_EASING);
+      const scale = reducedMotion ? pose.scale : THREE.MathUtils.lerp(group.scale.x, pose.scale, ease);
       group.scale.setScalar(scale);
+      const strip = strips.children[index];
+      if (strip) {
+        strip.position.set(pose.x, stripY(pose.y, scale), pose.z);
+        strip.material.opacity = stripOpacity(index === selected);
+        const { cycle, width } = strip.userData;
+        if (cycle) {
+          const clock = index === selected ? time - selectedAt : time + index * MARQUEE_STAGGER;
+          strip.material.map.offset.x = marqueeOffset(clock, cycle) / width;
+        }
+      }
     });
     const current = records.children[selected];
     halo.visible = Boolean(current);
@@ -262,6 +399,51 @@ export function createShelfScene(host, { reducedMotion }) {
     renderer.render(scene, camera);
   }
 
+  // ---- The loop: draw only what is worth the battery ----
+  let onScreen = true; // the host is inside the viewport (IntersectionObserver)
+  let dirty = true; // something changed since the last drawn frame
+  let lastDrawn = Number.NEGATIVE_INFINITY;
+  let handle = 0; // the pending requestAnimationFrame, 0 for none
+
+  const isVisible = () => document.visibilityState !== "hidden" && onScreen && host.clientWidth > 0;
+
+  function requestRender() {
+    dirty = true;
+    schedule();
+  }
+
+  function schedule() {
+    if (!handle) handle = requestAnimationFrame(tick);
+  }
+
+  /** @param {number} timestamp */
+  function tick(timestamp) {
+    handle = 0;
+    const visible = isVisible();
+    if (shouldRenderFrame({ visible, animated: !reducedMotion, dirty, now: timestamp, last: lastDrawn, fps: targetFps(lowPower) })) {
+      draw(timestamp, timestamp - lastDrawn);
+      lastDrawn = timestamp;
+      dirty = false;
+    }
+    // Hidden: stop asking for frames; the observers below wake the loop. Without an
+    // IntersectionObserver the loop keeps polling, as it did before.
+    if (!reducedMotion && (visible || !observer)) schedule();
+  }
+
+  /** @type {IntersectionObserver | null} */
+  const observer =
+    typeof IntersectionObserver === "function"
+      ? new IntersectionObserver((entries) => {
+          onScreen = entries[entries.length - 1].isIntersecting;
+          if (onScreen) requestRender();
+        })
+      : null;
+  observer?.observe(host);
+  const onVisibility = () => {
+    if (document.visibilityState !== "hidden") requestRender();
+  };
+  document.addEventListener("visibilitychange", onVisibility);
+
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
   /** @param {MouseEvent} event */
@@ -269,35 +451,46 @@ export function createShelfScene(host, { reducedMotion }) {
     const box = canvas.getBoundingClientRect();
     pointer.set(((event.clientX - box.left) / box.width) * 2 - 1, -((event.clientY - box.top) / box.height) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
-    const hit = raycaster.intersectObjects(records.children, true)[0];
+    const hit = raycaster.intersectObjects([...records.children, ...strips.children], true)[0];
     if (!hit) return;
     let object = hit.object;
-    while (object.parent !== records) object = object.parent;
+    while (object.parent !== records && object.parent !== strips) object = object.parent;
     picked?.(object.userData.index);
   }
   canvas.addEventListener("click", onClick);
 
-  renderer.setAnimationLoop(frame);
+  requestRender();
 
   return {
     setPage(entries, selectedIndex, pageColumns) {
       clearRecords();
-      entries.forEach((entry, index) => records.add(makeRecord(entry, index)));
+      entries.forEach((entry, index) => {
+        records.add(makeRecord(entry, index));
+        strips.add(makeStrip(entry, index));
+      });
       selected = selectedIndex;
+      selectedAt = performance.now() / 1000;
       columns = pageColumns ?? shelfColumns(host.clientWidth);
       resize();
+      requestRender();
     },
     select(index) {
+      if (index !== selected) selectedAt = performance.now() / 1000;
       selected = index;
+      requestRender();
     },
     onPick(callback) {
       picked = callback;
     },
     resize,
     dispose() {
-      renderer.setAnimationLoop(null);
+      cancelAnimationFrame(handle);
+      handle = 0;
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
       canvas.removeEventListener("click", onClick);
       clearRecords();
+      stripGeometry.dispose();
       discGeometry.dispose();
       edgeMaterial.dispose();
       particles.geometry.dispose();

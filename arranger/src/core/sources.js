@@ -7,8 +7,9 @@
  * `data/catalog/`, written by the command line (`contracts/catalog-files.md`):
  *
  * - `examples.json`: the 8 example lead sheets, shown first, in their own order;
- * - `mpb.json`: Brazilian songs whose MIDI files stay at their site; the project's song server
- *   reduces one to a lead sheet when a visitor opens it;
+ * - `mpb.json`: Brazilian songs whose MIDI files stay at their site: opening one downloads the
+ *   file from there and the visitor drops it into the page (the page cannot read another site's
+ *   file, and the site's terms do not let this project keep a copy);
  * - `public-domain.json`, `nottingham.json`, `pdmx.json`: lead sheets committed to the
  *   repository, because their composers died long ago or their license allows it.
  *
@@ -18,12 +19,12 @@
  *
  * A search ranks matches as a person scans a list (as `catalog.js` does): titles that start
  * with the words, then titles that contain them, then composers and performers. Results of the
- * external sites, when they arrive, are appended after the local ones.
+ * The Session's results, when they arrive, are appended after the local ones.
  *
- * Each song carries a route, the one way it loads: a file of the repository, the song server,
- * a folk tune site's API read by the browser, or a page to open. Every failure becomes a plain
- * sentence for the visitor, written here rather than taken from the server, so the page never
- * names the site a song comes from (FR-014a).
+ * Each song carries a route, the one way it loads: a file of the repository, a download of the
+ * song's MIDI file from its site, a folk tune site's API read by the browser, or a page to open.
+ * Every failure becomes a plain sentence for the visitor, written here rather than taken from
+ * the site, so the page never names the site a song comes from (FR-014a).
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
@@ -36,23 +37,6 @@ export const CATALOG_FILES = Object.freeze(
   ),
 );
 
-/** The song server the published page uses once it is deployed (manifests in `deploy/homelab/`). */
-export const PRODUCTION_SERVER = "https://nes-arranger-bh.giow.dev";
-
-/**
- * Whether the production song server is deployed. While it is not, the published page asks it
- * for nothing: an MPB song opens the way it did before the server (its page opens, you download
- * the MIDI file and drop it in) and no other site is searched. Set it to true when the server is up.
- */
-export const PRODUCTION_SERVER_LIVE = false;
-
-/** The port of a song server running on the developer's machine (`server/app.py`). */
-export const SERVER_PORT = 8765;
-
-/** What the page says when the song server does not answer. */
-export const OFFLINE_MESSAGE =
-  "The song server is offline, so this song cannot be opened now. Your own files, the examples and arranging still work.";
-
 /** What the page says when a song's file is downloaded from its source and dropped in by hand. */
 export const PAGE_MESSAGE =
   "The song's MIDI file is downloading from its source. When it finishes, drop it here or choose it with Open MIDI or ABC.";
@@ -64,17 +48,10 @@ export const PAGE_PREVIEW_MESSAGE =
 /** What the page says when a file of the repository or the tune site cannot be reached. */
 export const NETWORK_MESSAGE = "The song could not be loaded. Check your connection and try again.";
 
-/** Plain sentences for the song server's error statuses (`contracts/server-api.md`). */
+/** Plain sentences for the statuses a file of the repository or the tune site answers with. */
 const STATUS_MESSAGES = Object.freeze({
   404: "This song is not available.",
-  409: "This song changed at its source since the catalog was made, so it cannot be opened.",
-  413: "This song's file is too large to open.",
-  415: "This song's file is not MIDI or ABC, so it cannot be opened.",
-  422: "This song cannot be arranged: its file could not be reduced to a lead sheet.",
   429: "Too many requests in a short time. Wait a minute and try again.",
-  502: "The song's source did not answer. Try again later.",
-  503: "The song server did not answer. Try again later.",
-  504: "The song server did not answer. Try again later.",
 });
 
 const EXAMPLES = "examples";
@@ -91,8 +68,9 @@ const collator = new Intl.Collator("pt");
  * @typedef {object} Route how a song loads; exactly one of the kinds below
  * @property {string} [abc] a lead sheet of the repository, path from the repository root
  * @property {number} [tune] which tune of that file, 0 for the first
- * @property {string} [server] a path on the song server
- * @property {"abc" | "midi"} [format] what the server path returns (default "abc")
+ * @property {string} [download] the address of the song's MIDI file at its site, which the visitor
+ *   saves and drops into the page
+ * @property {true} [local] a file the visitor opened in this visit
  * @property {number | string} [thesession] a tune number of the folk tune site
  * @property {number} [setting] which setting of that tune, 0 for the first
  * @property {string} [link] a page to open, for sites that only allow links
@@ -132,7 +110,7 @@ import { meterText } from "./meter.js";
 /**
  * @typedef {object} EntryRequest where a song's file is and how to read it
  * @property {string} url
- * @property {"abc" | "midi" | "thesession" | "link"} kind
+ * @property {"abc" | "download" | "thesession" | "link"} kind
  * @property {number} [tune] for "abc": which tune of the file
  * @property {number} [setting] for "thesession": which setting of the tune
  */
@@ -144,7 +122,7 @@ import { meterText } from "./meter.js";
  * @property {string} [text] the ABC tune, for "abc"
  * @property {Uint8Array} [bytes] the MIDI file, for "midi"
  * @property {string} [url] the page to open, for "link"
- * @property {boolean} [byHand] for "link": the visitor downloads the song's file there and drops it in
+ * @property {boolean} [byHand] for "link": the visitor downloads the song's file and drops it in
  */
 
 /**
@@ -271,24 +249,6 @@ export function pageCount(total, perPage) {
 }
 
 /**
- * The song server for this page: the developer's own machine when the page is served from it,
- * the production host once it is deployed, nothing before that.
- *
- * @param {{hostname: string}} location the page's `location`
- * @param {boolean} [live] whether the production server is deployed (`PRODUCTION_SERVER_LIVE`)
- * @returns {string | null} the server's origin without a trailing slash; null when there is none
- * @example
- * serverUrl({ hostname: "localhost" }); // "http://localhost:8765"
- * serverUrl({ hostname: "giowgiow.github.io" }, true); // "https://nes-arranger-bh.giow.dev"
- * serverUrl({ hostname: "giowgiow.github.io" }, false); // null
- */
-export function serverUrl(location, live = PRODUCTION_SERVER_LIVE) {
-  const host = location.hostname;
-  if (host === "localhost" || host === "127.0.0.1" || host === "[::1]") return `http://${host}:${SERVER_PORT}`;
-  return live ? PRODUCTION_SERVER : null;
-}
-
-/**
  * A repository path as the app folder reaches it: the app lives in `arranger/`.
  *
  * @param {string} path
@@ -302,19 +262,18 @@ function repositoryUrl(path) {
  * Where a song's file is and how to read it, from the song's route.
  *
  * @param {CatalogEntry} entry
- * @param {string} server the song server's origin (`serverUrl`)
  * @returns {EntryRequest | null} null for a song that cannot be arranged
  * @example
- * entryRequest({ id: "k", t: "K", route: { abc: "data/leadsheets/korobeiniki.abc", tune: 0 } }, server);
+ * entryRequest({ id: "k", t: "K", route: { abc: "data/leadsheets/korobeiniki.abc", tune: 0 } });
  * // { url: "../data/leadsheets/korobeiniki.abc", kind: "abc", tune: 0 }
- * entryRequest({ id: "a", t: "A", route: { server: "/songs/mpb/a.abc" } }, "http://localhost:8765");
- * // { url: "http://localhost:8765/songs/mpb/a.abc", kind: "abc" }
+ * entryRequest({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } });
+ * // { url: "https://example.org/a.mid", kind: "download" }
  */
-export function entryRequest(entry, server) {
+export function entryRequest(entry) {
   const route = entry.route;
   if (!route || entry.error) return null;
   if (route.abc !== undefined) return { url: repositoryUrl(route.abc), kind: "abc", tune: route.tune ?? 0 };
-  if (route.server !== undefined) return { url: server + route.server, kind: route.format ?? "abc" };
+  if (route.download !== undefined) return { url: route.download, kind: "download" };
   if (route.thesession !== undefined) {
     return { url: tuneUrl(route.thesession), kind: "thesession", setting: route.setting ?? 0 };
   }
@@ -342,12 +301,12 @@ export function tuneText(text, index) {
 }
 
 /**
- * The visitor's sentence for a failed request to the song server.
+ * The visitor's sentence for a failed request for a file of the repository or the tune site.
  *
  * @param {number} status the HTTP status
  * @returns {string}
  * @example
- * loadErrorMessage(409); // "This song changed at its source since the catalog was made, so it cannot be opened."
+ * loadErrorMessage(404); // "This song is not available."
  * loadErrorMessage(500); // "The song could not be loaded (HTTP 500)."
  */
 export function loadErrorMessage(status) {
@@ -388,45 +347,75 @@ function fileName(entry, extension) {
 /**
  * Load a song along its route, ready for the input panel.
  *
+ * A song with a download route is not fetched: the page cannot read another site's file, so the
+ * result is a link the caller downloads, and the visitor drops the saved file into the page.
+ *
  * @param {CatalogEntry} entry
- * @param {{fetchFn: FetchFunction, server: string | null, abcjs?: any}} context `fetchFn` is the
- *   page's `fetch`; `server` the song server (`serverUrl`, null when there is none); `abcjs` the ABCJS object, needed by the
- *   folk tune site's tunes, which become MIDI (research R10)
+ * @param {{fetchFn: FetchFunction, abcjs?: any}} context `fetchFn` is the page's `fetch`; `abcjs`
+ *   the ABCJS object, needed by the folk tune site's tunes, which become MIDI (research R10)
  * @returns {Promise<OpenedSong>}
- * @throws {Error} with a sentence for the visitor: the server is offline, the song changed at
- *   its source, it cannot be arranged, …
+ * @throws {Error} with a sentence for the visitor: the song cannot be arranged, its file could
+ *   not be loaded, …
  * @example
- * const song = await openEntry(entry, { fetchFn: fetch, server: serverUrl(location), abcjs: ABCJS });
+ * const song = await openEntry(entry, { fetchFn: fetch, abcjs: ABCJS });
  * inputPanel.readFile(new File([song.text ?? song.bytes], song.name));
  */
-export async function openEntry(entry, { fetchFn, server, abcjs }) {
-  const needsServer = entry.route?.server !== undefined;
-  if (needsServer && server === null) return pageLink(entry);
-  const request = entryRequest(entry, server ?? "");
+export async function openEntry(entry, { fetchFn, abcjs }) {
+  const request = entryRequest(entry);
   if (request === null) {
     throw new Error(entry.error ? `This song cannot be arranged (${entry.error}).` : "This song cannot be arranged.");
   }
   if (request.kind === "link") return { kind: "link", name: fileName(entry, ""), url: request.url };
+  if (request.kind === "download") return { kind: "link", name: fileName(entry, "mid"), url: request.url, byHand: true };
 
   /** @type {FetchResponse} */
   let response;
   try {
     response = await fetchFn(request.url);
   } catch {
-    if (needsServer) return pageLink(entry);
     throw new Error(NETWORK_MESSAGE);
   }
-  if (needsServer && (entry.u || entry.facts?.midi) && [502, 503, 504].includes(response.status)) return pageLink(entry);
   if (!response.ok) throw new Error(loadErrorMessage(response.status));
 
   if (request.kind === "abc") {
     return { kind: "abc", name: fileName(entry, "abc"), text: tuneText(await response.text(), request.tune ?? 0) };
   }
-  if (request.kind === "midi") {
-    return { kind: "midi", name: fileName(entry, "mid"), bytes: new Uint8Array(await response.arrayBuffer()) };
-  }
   const abc = tuneToAbc(await response.json(), request.setting ?? 0);
   return { kind: "midi", name: fileName(entry, "mid"), bytes: abcToMidi(abcjs, abc) };
+}
+
+/**
+ * The id of the record of a file the visitor opened: its first 12 hex digits of SHA-256, so the
+ * same file always gets the same record.
+ *
+ * @param {string} sha256
+ * @returns {string}
+ */
+function localId(sha256) {
+  return `local-${sha256.slice(0, 12)}`;
+}
+
+/**
+ * Whether a record is the song the input panel has loaded.
+ *
+ * Arranging or previewing the record of the song that is already loaded must not read the song
+ * again: a fresh reading starts from the likeliest melody track, the whole song and one part,
+ * and would throw away what the visitor chose in the panel, such as the melody track.
+ *
+ * @param {CatalogEntry} entry the record the visitor acted on
+ * @param {{sha256: string, catalogEntry: unknown} | null} input the loaded input; null when
+ *   nothing is loaded
+ * @returns {boolean}
+ * @example
+ * isLoadedSong(localEntry({ name: "a.mid", sha256, leadSheet }), { sha256, catalogEntry: null }); // true
+ * isLoadedSong(shelfSong, { sha256, catalogEntry: otherShelfSong }); // false
+ */
+export function isLoadedSong(entry, input) {
+  if (input === null) return false;
+  const shown = /** @type {CatalogEntry | null} */ (input.catalogEntry);
+  if (shown) return shown.source === entry.source && shown.id === entry.id;
+  // A file just dropped has no record behind it yet: the record is made from its hash.
+  return entry.route?.local === true && entry.id === localId(input.sha256);
 }
 
 /**
@@ -440,7 +429,7 @@ export async function openEntry(entry, { fetchFn, server, abcjs }) {
 export function localEntry({ name, sha256, leadSheet }) {
   const first = leadSheet.bars[0];
   return {
-    id: `local-${sha256.slice(0, 12)}`,
+    id: localId(sha256),
     source: "local",
     t: leadSheet.title || name.replace(/\.[^.]+$/, ""),
     c: "Your file",
@@ -454,20 +443,6 @@ export function localEntry({ name, sha256, leadSheet }) {
       n_bars: leadSheet.bars.length,
     },
   };
-}
-
-/**
- * The way songs opened before the song server: the song's MIDI file is downloaded straight from
- * its source (its own page when the file's address is not known) and the visitor drops it in.
- * Used when the server is not deployed, does not answer, or its source is down.
- *
- * @param {CatalogEntry} entry
- * @returns {OpenedSong}
- * @throws {Error} the offline sentence, for a song that has no page of its own
- */
-function pageLink(entry) {
-  if (!entry.u && !entry.facts?.midi) throw new Error(OFFLINE_MESSAGE);
-  return { kind: "link", name: fileName(entry, "mid"), url: entry.facts?.midi || entry.u, byHand: true };
 }
 
 /**
@@ -550,8 +525,9 @@ export function seedOf(source, id) {
  * @param {SearchResult} result
  * @returns {CatalogEntry}
  * @example
- * externalEntry({ source: "web", id: "5", title: "Tune", composer: "", license: "CC0",
- *   format: "midi", page: "", open: "/files/web/5" }).route; // { server: "/files/web/5", format: "midi" }
+ * externalEntry({ source: "thesession", id: "5", title: "Tune", composer: "", license: "CC0",
+ *   format: "abc", page: "", open: "https://thesession.org/tunes/5?format=json" }).route;
+ * // { thesession: "5" }
  */
 export function externalEntry(result) {
   /** @type {CatalogEntry} */
@@ -564,17 +540,15 @@ export function externalEntry(result) {
     seed: seedOf(result.source, result.id),
   };
   if (result.error) return { ...entry, error: result.error };
-  if (result.format === "link") return { ...entry, route: { link: result.open } };
-  if (result.source === "thesession") return { ...entry, route: { thesession: result.id } };
-  return { ...entry, route: { server: result.open, format: result.format } };
+  return { ...entry, route: { thesession: result.id } };
 }
 
 /**
  * Local matches first, then the external results that are not already listed.
  *
  * @param {CatalogEntry[]} local matches from the catalog (`searchCatalog`)
- * @param {Array<SearchResult | CatalogEntry>} external results of the external sites, as the
- *   server or the tune site give them, or already as entries
+ * @param {Array<SearchResult | CatalogEntry>} external results of the tune site, as it gives
+ *   them, or already as entries
  * @returns {CatalogEntry[]}
  * @example
  * mergeSearchResults([a], [resultOfA, resultOfB]); // [a, entry of B]

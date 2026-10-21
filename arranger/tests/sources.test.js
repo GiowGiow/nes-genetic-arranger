@@ -14,23 +14,23 @@ import { makeMeter } from "../src/core/meter.js";
 import {
   CATALOG_FILES,
   displayTitle,
-  OFFLINE_MESSAGE,
   PAGE_MESSAGE,
-  PRODUCTION_SERVER,
+  PAGE_PREVIEW_MESSAGE,
   entryRequest,
   localEntry,
   externalEntry,
   fnv1a,
+  isLoadedSong,
   loadCatalog,
   loadErrorMessage,
   mergeCatalog,
   mergeSearchResults,
+  NETWORK_MESSAGE,
   openEntry,
   pageCount,
   pageOf,
   searchCatalog,
   seedOf,
-  serverUrl,
   tuneText,
 } from "../src/core/sources.js";
 import { fixturesDir, loadAbcjs } from "./helpers.js";
@@ -177,47 +177,42 @@ test("a page holds perPage songs, and the last page holds the rest", () => {
 
 // --- Where songs load from --------------------------------------------------------------------
 
-test("the song server is on this machine when the page is, and the production host otherwise", () => {
-  assert.equal(serverUrl({ hostname: "localhost" }), "http://localhost:8765");
-  assert.equal(serverUrl({ hostname: "127.0.0.1" }), "http://127.0.0.1:8765");
-  assert.equal(serverUrl({ hostname: "giowgiow.github.io" }, true), "https://nes-arranger-bh.giow.dev");
-  assert.equal(serverUrl({ hostname: "giowgiow.github.io" }), null, "the published page has no server until it is deployed");
-  assert.equal(PRODUCTION_SERVER, "https://nes-arranger-bh.giow.dev");
-});
-
 test("a repository ABC route loads from the repository, next to the app folder", () => {
   const [korobeiniki] = mergeCatalog([fixture("examples")]);
-  assert.deepEqual(entryRequest(korobeiniki, PRODUCTION_SERVER), {
+  assert.deepEqual(entryRequest(korobeiniki), {
     url: "../data/leadsheets/korobeiniki.abc",
     kind: "abc",
     tune: 0,
   });
   const jig = { id: "j", t: "J", route: { abc: "../data/catalog/abc/nottingham/jigs.abc", tune: 2 } };
-  assert.deepEqual(entryRequest(jig, PRODUCTION_SERVER), { url: "../data/catalog/abc/nottingham/jigs.abc", kind: "abc", tune: 2 });
+  assert.deepEqual(entryRequest(jig), { url: "../data/catalog/abc/nottingham/jigs.abc", kind: "abc", tune: 2 });
 });
 
-test("a server route loads the lead sheet from the song server", () => {
+test("a download route names the MIDI file at the catalog site, which the visitor saves and drops in", () => {
   const entry = fixture("mpb").entries[0];
-  assert.deepEqual(entryRequest(entry, "http://localhost:8765"), {
-    url: "http://localhost:8765/songs/mpb/agua-de-lua.abc",
-    kind: "abc",
+  assert.deepEqual(entryRequest(entry), {
+    url: "https://www.beakauffmann.com/mpb_x/som/agua-de-lua.mid",
+    kind: "download",
   });
-  const file = { id: "f", t: "F", route: { server: "/files/web/123", format: "midi" } };
-  assert.deepEqual(entryRequest(file, PRODUCTION_SERVER), { url: `${PRODUCTION_SERVER}/files/web/123`, kind: "midi" });
 });
 
 test("browser and link routes, and a song without a route", () => {
-  assert.deepEqual(entryRequest({ id: "7", t: "T", route: { thesession: 7, setting: 1 } }, PRODUCTION_SERVER), {
+  assert.deepEqual(entryRequest({ id: "7", t: "T", route: { thesession: 7, setting: 1 } }), {
     url: "https://thesession.org/tunes/7?format=json",
     kind: "thesession",
     setting: 1,
   });
-  assert.deepEqual(entryRequest({ id: "w", t: "W", route: { link: "https://example.org/work" } }, PRODUCTION_SERVER), {
+  assert.deepEqual(entryRequest({ id: "w", t: "W", route: { link: "https://example.org/work" } }), {
     url: "https://example.org/work",
     kind: "link",
   });
   const broken = fixture("mpb").entries.find((/** @type {any} */ entry) => entry.error);
-  assert.equal(entryRequest(broken, PRODUCTION_SERVER), null);
+  assert.equal(entryRequest(broken), null);
+});
+
+test("a route that only the withdrawn song server understood is not a way to load a song", () => {
+  const old = { id: "a", t: "A", route: { server: "/songs/mpb/a.abc" } };
+  assert.equal(entryRequest(/** @type {any} */ (old)), null);
 });
 
 test("a tune of a collection file is cut out with the file's header", () => {
@@ -256,85 +251,51 @@ test("opening a repository song reads its ABC, and only its tune of the collecti
   const collection = "% header\nX:1\nT:First\nK:C\nC4|\n\nX:2\nT:Second\nK:G\nG4|\n";
   const { fetchFn } = fakeFetch({ "../data/catalog/abc/nottingham/jigs.abc": { body: collection } });
   const entry = { id: "jigs-2", t: "Second", route: { abc: "data/catalog/abc/nottingham/jigs.abc", tune: 1 } };
-  const opened = await openEntry(entry, { fetchFn, server: PRODUCTION_SERVER });
+  const opened = await openEntry(entry, { fetchFn });
   assert.deepEqual(opened, { kind: "abc", name: "Second.abc", text: "% header\nX:2\nT:Second\nK:G\nG4|\n" });
 });
 
-test("opening a server song reads the lead sheet the server reduced", async () => {
-  const server = "http://localhost:8765";
-  const { fetchFn } = fakeFetch({ [`${server}/songs/mpb/agua-de-lua.abc`]: { body: "X:1\nT:Agua\nK:D\nD4|\n" } });
-  const opened = await openEntry(fixture("mpb").entries[0], { fetchFn, server });
-  assert.equal(opened.kind, "abc");
-  assert.equal(opened.text, "X:1\nT:Agua\nK:D\nD4|\n");
-  assert.equal(opened.name, "Água de Lua.abc");
-});
-
-test("opening a MIDI file from the server gives its bytes", async () => {
-  const bytes = Uint8Array.from([0x4d, 0x54, 0x68, 0x64, 0, 0, 0, 6]);
-  const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/files/web/9`]: { body: bytes } });
-  const entry = { id: "9", t: "A/B tune", route: { server: "/files/web/9", format: "midi" } };
-  const opened = await openEntry(entry, { fetchFn, server: PRODUCTION_SERVER });
-  assert.equal(opened.kind, "midi");
-  assert.equal(opened.name, "A-B tune.mid", "no slash in a file name");
-  assert.deepEqual(opened.bytes, bytes);
-});
-
-test("a song without a page of its own, and a server that does not answer, is called offline", async () => {
-  const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
-  const entry = { ...fixture("mpb").entries[0], u: undefined, facts: {} };
-  await assert.rejects(openEntry(entry, { fetchFn, server: PRODUCTION_SERVER }), { message: OFFLINE_MESSAGE });
-  assert.match(OFFLINE_MESSAGE, /song server is offline/);
-  assert.match(OFFLINE_MESSAGE, /examples/);
-});
-
-test("with no song server, or one that does not answer, an MPB song opens the way it did before: its page, by hand", async () => {
-  const entry = {
-    ...fixture("mpb").entries[0],
-    u: "https://example.org/songs/agua-de-lua.html",
-    facts: { midi: "https://example.org/songs/som/agua-de-lua.mid" },
-  };
-  const expected = { kind: "link", name: "Água de Lua.mid", url: "https://example.org/songs/som/agua-de-lua.mid", byHand: true };
-  const noServer = fakeFetch({});
-  const opened = await openEntry(entry, { fetchFn: noServer.fetchFn, server: null });
-  assert.equal(opened.kind, "link");
-  assert.equal(opened.url, expected.url, "the MIDI file itself, not the song's page");
-  assert.equal(opened.name, expected.name);
-  assert.equal(opened.byHand, true);
-  const pageOnly = await openEntry({ ...entry, facts: {} }, { fetchFn: noServer.fetchFn, server: null });
-  assert.equal(pageOnly.url, entry.u, "no file address: the song's page");
-  assert.equal(noServer.asked.length, 0, "no request goes out when there is no server");
-
-  const down = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: "reject" });
-  const afterFailure = await openEntry(entry, { fetchFn: down.fetchFn, server: PRODUCTION_SERVER });
-  assert.equal(afterFailure.kind, "link");
-  assert.equal(afterFailure.byHand, true);
-
-  for (const status of [502, 503, 504]) {
-    const broken = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: { status, body: "" } });
-    const fallback = await openEntry(entry, { fetchFn: broken.fetchFn, server: PRODUCTION_SERVER });
-    assert.equal(fallback.kind, "link", `HTTP ${status} falls back to the page`);
-  }
+test("an MPB song opens by its download route: the page saves the MIDI file and the visitor drops it in", async () => {
+  const entry = fixture("mpb").entries[0];
+  const { fetchFn, asked } = fakeFetch({});
+  const opened = await openEntry(entry, { fetchFn });
+  assert.deepEqual(opened, {
+    kind: "link",
+    name: "Água de Lua.mid",
+    url: "https://www.beakauffmann.com/mpb_x/som/agua-de-lua.mid",
+    byHand: true,
+  });
+  assert.equal(asked.length, 0, "the page cannot read the site's file, so it asks for nothing");
   assert.match(PAGE_MESSAGE, /MIDI file is downloading/);
+  assert.match(PAGE_PREVIEW_MESSAGE, /choose Arrange to download it/);
 });
 
-test("entries from files in the repository never need the server", async () => {
+test("a download route takes the file name from the song's title, without characters that file names refuse", async () => {
+  const entry = { id: "x", t: "A/B: tune", route: { download: "https://example.org/x.mid" } };
+  const opened = await openEntry(entry, { fetchFn: fakeFetch({}).fetchFn });
+  assert.equal(opened.name, "A-B- tune.mid");
+});
+
+test("entries from files in the repository need no network beyond their own file", async () => {
   const korobeiniki = fixture("examples").entries[0];
-  const { fetchFn } = fakeFetch({ ["../data/leadsheets/korobeiniki.abc"]: { body: "X:1\nT:K\nK:Am\nA|\n" } });
-  const opened = await openEntry(korobeiniki, { fetchFn, server: null });
+  const { fetchFn, asked } = fakeFetch({ ["../data/leadsheets/korobeiniki.abc"]: { body: "X:1\nT:K\nK:Am\nA|\n" } });
+  const opened = await openEntry(korobeiniki, { fetchFn });
   assert.equal(opened.kind, "abc");
+  assert.deepEqual(asked, ["../data/leadsheets/korobeiniki.abc"]);
 });
 
-test("server answers become plain sentences: changed at its source, cannot be arranged, other errors", async () => {
+test("a file that cannot be fetched becomes a plain sentence, without the site's own words", async () => {
+  const entry = { id: "r", t: "R", route: { abc: "data/leadsheets/r.abc" } };
+  await assert.rejects(openEntry(entry, { fetchFn: fakeFetch({ "../data/leadsheets/r.abc": "reject" }).fetchFn }), {
+    message: NETWORK_MESSAGE,
+  });
   for (const [status, expected] of /** @type {Array<[number, RegExp]>} */ ([
-    [409, /changed at its source/],
-    [422, /cannot be arranged/],
     [404, /not available/],
     [429, /Wait a minute/],
-    [502, /did not answer/],
     [500, /HTTP 500/],
   ])) {
-    const { fetchFn } = fakeFetch({ [`${PRODUCTION_SERVER}/songs/mpb/agua-de-lua.abc`]: { status, body: '{"error": "upstream says something"}' } });
-    await assert.rejects(openEntry({ ...fixture("mpb").entries[0], u: undefined, facts: {} }, { fetchFn, server: PRODUCTION_SERVER }), (error) => {
+    const { fetchFn } = fakeFetch({ "../data/leadsheets/r.abc": { status, body: '{"error": "upstream says something"}' } });
+    await assert.rejects(openEntry(entry, { fetchFn }), (error) => {
       assert.ok(error instanceof Error);
       assert.match(error.message, expected);
       assert.equal(error.message, loadErrorMessage(status));
@@ -345,29 +306,29 @@ test("server answers become plain sentences: changed at its source, cannot be ar
 });
 
 test("the doc comment's load messages", () => {
-  assert.equal(loadErrorMessage(409), "This song changed at its source since the catalog was made, so it cannot be opened.");
+  assert.equal(loadErrorMessage(404), "This song is not available.");
   assert.equal(loadErrorMessage(500), "The song could not be loaded (HTTP 500).");
 });
 
 test("no load message names a source site", () => {
-  for (const status of [400, 404, 409, 413, 415, 422, 429, 500, 502, 503]) {
+  for (const status of [400, 404, 429, 500, 502, 503]) {
     assert.doesNotMatch(loadErrorMessage(status), SOURCE_SITE_NAMES);
     assert.match(loadErrorMessage(status), /\.$/, "a full sentence");
   }
-  assert.doesNotMatch(OFFLINE_MESSAGE, SOURCE_SITE_NAMES);
+  assert.doesNotMatch(NETWORK_MESSAGE, SOURCE_SITE_NAMES);
 });
 
 test("a link-only song is not fetched: the caller opens its page", async () => {
   const { fetchFn, asked } = fakeFetch({});
   const entry = { id: "w", t: "Work", route: { link: "https://example.org/work" } };
-  assert.deepEqual(await openEntry(entry, { fetchFn, server: PRODUCTION_SERVER }), { kind: "link", name: "Work", url: "https://example.org/work" });
+  assert.deepEqual(await openEntry(entry, { fetchFn }), { kind: "link", name: "Work", url: "https://example.org/work" });
   assert.equal(asked.length, 0);
 });
 
 test("a song without a route cannot be opened, and says so", async () => {
   const broken = fixture("mpb").entries.find((/** @type {any} */ entry) => entry.error);
   const { fetchFn, asked } = fakeFetch({});
-  await assert.rejects(openEntry(broken, { fetchFn, server: PRODUCTION_SERVER }), /cannot be arranged/);
+  await assert.rejects(openEntry(broken, { fetchFn }), /cannot be arranged/);
   assert.equal(asked.length, 0);
 });
 
@@ -376,7 +337,7 @@ test("a tune from the folk tune site opens as MIDI made in the browser (syntheti
   const tune = { id: 90001, name: "The Made-up Polka", type: "polka", settings: [{ id: 1, key: "Gmajor", abc: '|:"G"GA Bc|dB GB|"D"A2 F2|D4:|' }] };
   const { fetchFn } = fakeFetch({ "https://thesession.org/tunes/90001?format=json": { body: JSON.stringify(tune) } });
   const entry = { id: "90001", source: "thesession", t: "The Made-up Polka", route: { thesession: 90001, setting: 0 } };
-  const opened = await openEntry(entry, { fetchFn, server: PRODUCTION_SERVER, abcjs: loadAbcjs() });
+  const opened = await openEntry(entry, { fetchFn, abcjs: loadAbcjs() });
   assert.equal(opened.kind, "midi");
   assert.equal(opened.name, "The Made-up Polka.mid");
   assert.equal(new TextDecoder().decode(opened.bytes?.subarray(0, 4)), "MThd");
@@ -395,26 +356,27 @@ test("an all-capitals title reads in title case, with the small Portuguese words
 
 test("an external search result becomes a catalog entry with a stable sprite seed", () => {
   const result = {
-    source: "web",
-    id: "123",
-    title: "Invented Gavotte",
-    composer: "Nobody Real",
+    source: "thesession",
+    id: "90123",
+    title: "Invented Polka",
+    composer: "",
     license: "CC0",
-    format: "midi",
-    page: "https://example.org/123",
-    open: "/files/web/123",
+    format: "abc",
+    page: "https://example.org/90123",
+    open: "https://example.org/90123?format=json",
   };
   const entry = externalEntry(result);
   assert.deepEqual(entry, {
-    id: "123",
-    source: "web",
-    t: "Invented Gavotte",
-    c: "Nobody Real",
+    id: "90123",
+    source: "thesession",
+    t: "Invented Polka",
+    c: "",
     license: "CC0",
-    seed: seedOf("web", "123"),
-    route: { server: "/files/web/123", format: "midi" },
+    seed: seedOf("thesession", "90123"),
+    route: { thesession: "90123" },
   });
-  assert.deepEqual(externalEntry({ ...result, format: "link", open: "https://example.org/123" }).route, { link: "https://example.org/123" });
+  assert.equal(externalEntry({ ...result, error: "its type does not fix a meter" }).error, "its type does not fix a meter");
+  assert.equal(externalEntry({ ...result, error: "x" }).route, undefined, "a result with an error has no route");
 });
 
 test("a sprite seed of an external song is the FNV-1a hash of source:id, a stable 32-bit number", () => {
@@ -430,11 +392,11 @@ test("external results come after the local ones, without songs listed twice", (
   const local = mergeCatalog([fixture("nottingham")]);
   const external = [
     { source: "nottingham", id: "jigs-3", title: "The Invented Jig", composer: "Trad.", license: "GPL-3.0", format: "abc", page: "", open: "/x" },
-    { source: "web", id: "5", title: "Invented Five", composer: "", license: "CC0", format: "midi", page: "", open: "/files/web/5" },
-    { source: "web", id: "5", title: "Invented Five", composer: "", license: "CC0", format: "midi", page: "", open: "/files/web/5" },
+    { source: "thesession", id: "5", title: "Invented Five", composer: "", license: "CC0", format: "abc", page: "", open: "/y" },
+    { source: "thesession", id: "5", title: "Invented Five", composer: "", license: "CC0", format: "abc", page: "", open: "/y" },
   ];
   const merged = mergeSearchResults(local, external);
-  assert.deepEqual(merged.map((entry) => `${entry.source}:${entry.id}`), ["nottingham:reels-1", "nottingham:jigs-3", "web:5"]);
+  assert.deepEqual(merged.map((entry) => `${entry.source}:${entry.id}`), ["nottingham:reels-1", "nottingham:jigs-3", "thesession:5"]);
   assert.equal(merged[0], local[0], "local entries stay as they are");
 });
 
@@ -452,4 +414,34 @@ test("a file the visitor opens becomes a record of its own, named by the song or
   assert.deepEqual(entry.facts, { key: "e- minor", tempo_bpm: 96, meter: "3/4", n_bars: 4 });
   const untitled = localEntry({ name: "my_tune.final.mid", sha256, leadSheet: /** @type {any} */ ({ ...leadSheet, title: "" }) });
   assert.equal(untitled.t, "my_tune.final", "no title: the file name without its extension");
+});
+
+// --- The song that is already loaded ----------------------------------------------------------
+
+test("a record is the loaded song when the input came from it, so arranging it again keeps the visitor's choices", () => {
+  const sha256 = "ab12cd34ef56".padEnd(64, "0");
+  const leadSheet = /** @type {any} */ ({ title: "My Tune", key: "", tempoBpm: 96, bars: [] });
+  const own = localEntry({ name: "my_tune.mid", sha256, leadSheet });
+
+  // A file the visitor just dropped has no record behind it yet; the record is made from its hash.
+  assert.equal(isLoadedSong(own, { sha256, catalogEntry: null }), true);
+  // A file read again from its record carries that record.
+  assert.equal(isLoadedSong(own, { sha256, catalogEntry: own }), true);
+  // A shelf song carries its own record, found by source and id.
+  const [shelfSong] = fixture("nottingham").entries;
+  assert.equal(isLoadedSong(shelfSong, { sha256: "0".repeat(64), catalogEntry: shelfSong }), true);
+  assert.equal(isLoadedSong({ ...shelfSong }, { sha256: "0".repeat(64), catalogEntry: shelfSong }), true, "the same song, not the same object");
+});
+
+test("a record is not the loaded song when the input is another file or another record", () => {
+  const sha256 = "ab12cd34ef56".padEnd(64, "0");
+  const leadSheet = /** @type {any} */ ({ title: "My Tune", key: "", tempoBpm: 96, bars: [] });
+  const own = localEntry({ name: "my_tune.mid", sha256, leadSheet });
+  const [shelfSong, otherSong] = fixture("nottingham").entries;
+
+  assert.equal(isLoadedSong(own, { sha256: "99".repeat(32), catalogEntry: null }), false, "another file");
+  assert.equal(isLoadedSong(shelfSong, { sha256, catalogEntry: null }), false, "a file of the visitor is not a shelf song");
+  assert.equal(isLoadedSong(shelfSong, { sha256, catalogEntry: otherSong }), false, "another shelf song");
+  assert.equal(isLoadedSong({ ...shelfSong, source: "pdmx" }, { sha256, catalogEntry: shelfSong }), false, "the same id in another source");
+  assert.equal(isLoadedSong(shelfSong, null), false, "nothing is loaded");
 });

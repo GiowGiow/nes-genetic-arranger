@@ -17,7 +17,7 @@ files, this module makes them once, offline, and records them as *analysis facts
   shown in the browser is estimated: the Krumhansl–Kessler key profile (Krumhansl 1990) that
   correlates best with how long each pitch class sounds in the melody and the chords.
 - **Tempo, meter, bar count, drums** come from the reduction itself; the SHA-256 is of the exact
-  bytes, so the song server can refuse a file that changed at its source.
+  bytes, so a file that changed at its source can be recognised.
 
 Facts never hold notes: the catalog of copyrighted songs keeps metadata, links and these
 measurements only (constitution, "Third-party material"). A file the reader refuses is recorded
@@ -94,8 +94,8 @@ MPB_ENVELOPE = {
     "credit": "Beatriz Kauffmann's Web Site (https://www.beakauffmann.com/): song list and MIDI "
     "sequences",
     "note": "Titles, composers, performers, links and facts measured on each MIDI file (melody "
-    "track, bars, key, tempo, meter, SHA-256). No notes: the song server reads the MIDI file "
-    "from the catalog site when a visitor opens a song, and keeps no permanent copy.",
+    "track, bars, key, tempo, meter, SHA-256). No notes: a visitor who opens a song downloads "
+    "its MIDI file from the catalog site and drops it on the page.",
     "generated": "uv run src/main.py catalog analyze --dataset <local MPB study copy>",
 }
 
@@ -358,7 +358,7 @@ def analyze_and_reduce(
 def reduce_with_facts(path: Path | str, facts: dict, title: str | None = None) -> LeadSheet:
     """Reduce a MIDI file with the options its facts record: the catalog song's lead sheet.
 
-    This is the reduction the song server serves and the public-domain writer commits, so both
+    This is the reduction the public-domain writer commits, so it and the CLI
     give the same lead sheet for the same file (the beat grid is the reader's "auto" choice).
 
     Raises:
@@ -506,7 +506,7 @@ def mpb_entry(row: DatasetRow, facts: dict | None) -> dict:
     facts = dict(facts)
     error = facts.pop("error", None)
     if error is None:
-        entry["route"] = {"server": f"/songs/mpb/{row.song_id}.abc"}
+        entry["route"] = {"download": row.midi_url}
     entry["facts"] = facts
     if error is not None:
         entry["error"] = error
@@ -670,7 +670,7 @@ def run_analyze(args: argparse.Namespace) -> list[dict]:
     authors = read_authors(args.authors) if args.authors.exists() else None
     entries = write_mpb_catalog(args.dataset, args.out, args.workers, authors)
     routed = sum("route" in entry for entry in entries)
-    print(f"{len(entries)} entries, {routed} with a server route, {len(entries) - routed} errors")
+    print(f"{len(entries)} entries, {routed} with a download route, {len(entries) - routed} errors")
     for reason, count in error_counts(entries)[:10]:
         print(f"  {count:5d}  {reason}")
     print(args.out)

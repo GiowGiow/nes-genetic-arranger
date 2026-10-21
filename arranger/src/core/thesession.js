@@ -3,9 +3,10 @@
  * The Session client: search a folk tune site from the browser and turn one of its tunes into
  * something the arranger reads (spec 005, FR-018, research R9 and R10).
  *
- * The site's API answers browsers directly (it sends CORS `*`), so the page asks it itself and
- * the song server never touches its data. This module only builds the URLs and reshapes the
- * answers; the caller fetches. Two things make a site tune different from a lead sheet:
+ * The site's API answers browsers directly (it sends CORS `*`), so the page asks it itself, and
+ * the tools that wrote this project never read its data. This module only builds the URLs and
+ * reshapes the answers; the caller fetches. Two things make a site tune different from a lead
+ * sheet:
  *
  * - **Its ABC is only a body.** A tune's JSON has a name, a type (reel, jig, polka, …) and
  *   settings, each a key and the notes. The header is put back from them: the type gives the
@@ -77,8 +78,7 @@ const MAX_DENOMINATOR = 64;
  */
 
 /**
- * @typedef {object} SearchResult a search result, as the song server also gives them
- *   (data model "Search result")
+ * @typedef {object} SearchResult a search result (data model "Search result")
  * @property {string} source
  * @property {string} id
  * @property {string} title

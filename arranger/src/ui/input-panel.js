@@ -27,7 +27,6 @@ import {
   melodyConfidence,
   suggestMelodyTrack,
 } from "../core/midi-song.js";
-import { isAudioName } from "./audio-import.js";
 import { noteName, programName } from "./gm-programs.js";
 
 export { MAX_BARS };
@@ -231,11 +230,12 @@ export function loadAbcjs() {
  *   onLoaded: (loaded: LoadedInput) => void,
  *   onFileDropped?: (name: string) => unknown | null,
  *   previewTrack?: (trackIndex: number) => string,
+ *   onUnreadable?: () => void,
  *   useTempo?: (bpm: number) => void,
- *   transcribeAudio?: (file: File, say: (text: string) => void) => Promise<File>,
  * }} options `onFileDropped` lets the catalog panel claim a dropped file (FR-031);
  *   `previewTrack` plays one track of the MIDI song alone and says what it plays;
- *   `transcribeAudio` turns an audio file into a MIDI file, saying how far it is
+ *   `onUnreadable` tells the page that the options now chosen cannot be read (a bad bar range),
+ *   so it must not arrange the reading before them
  * @returns {{reread: () => void, current: () => LoadedInput | null, readFile: (file: File, overrides?: Record<string, number>, catalogEntry?: unknown) => Promise<void>}}
  */
 export function createInputPanel(targets, options) {
@@ -243,8 +243,8 @@ export function createInputPanel(targets, options) {
   targets.file.insertAdjacentHTML(
     "beforeend",
     `<label class="dropzone" data-drop>
-      <input type="file" accept=".abc,.txt,.mid,.midi,.kar,.mp3,.wav,.m4a,.aac,.ogg,.oga,.opus,.flac,.webm,audio/*" data-file>
-      <span class="drop-title">Drop an ABC, MIDI or audio file here</span>
+      <input type="file" accept=".abc,.txt,.mid,.midi,.kar" data-file>
+      <span class="drop-title">Drop an ABC or MIDI file here</span>
       <span class="drop-hint">or <span class="button small">choose a file</span>. It stays on this device.</span>
     </label>`,
   );
@@ -360,6 +360,10 @@ export function createInputPanel(targets, options) {
     reread();
   });
   $("[data-apply]").addEventListener("click", () => reread());
+  // The bars and parts apply as soon as they are edited, so Arrange never runs on an old reading.
+  for (const field of ["[data-first]", "[data-end]", "[data-sections]"]) {
+    $(field).addEventListener("change", () => reread());
+  }
 
   /** @param {File} file */
   /**
@@ -370,15 +374,6 @@ export function createInputPanel(targets, options) {
   async function readDroppedFile(file, overrides = {}, catalogEntry = null) {
     for (const button of $("[data-examples]").querySelectorAll("button")) {
       button.setAttribute("aria-pressed", "false");
-    }
-    if (options.transcribeAudio && isAudioName(file.name)) {
-      // A recording becomes a MIDI file first (on this device), then is read like any MIDI file.
-      try {
-        file = await options.transcribeAudio(file, (text) => setStatus(text));
-      } catch (error) {
-        setStatus(/** @type {Error} */ (error).message ?? String(error), true);
-        return;
-      }
     }
     const bytes = new Uint8Array(await file.arrayBuffer());
     await openFile(file.name, bytes, overrides, catalogEntry ?? options.onFileDropped?.(file.name) ?? null);
@@ -580,7 +575,11 @@ export function createInputPanel(targets, options) {
       setStatus(`${source.input.name}: ready to arrange.`);
       options.onLoaded(loaded);
     } catch (error) {
+      // Keeping the last good reading would let Arrange run on bars or a track the visitor has since changed.
+      loaded = null;
+      $("[data-summary]").hidden = true;
       setStatus(`${source.input.name}: ${/** @type {Error} */ (error).message ?? error}`, true);
+      options.onUnreadable?.();
     }
   }
 

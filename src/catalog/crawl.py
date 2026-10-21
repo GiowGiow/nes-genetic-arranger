@@ -239,6 +239,7 @@ def add_catalog_parser(commands: argparse._SubParsersAction) -> argparse.Argumen
     from catalog.analysis import add_analyze_parser
     from catalog.authors import add_authors_parser
     from catalog.collections import add_collection_parsers
+    from catalog.popularity import add_popularity_parser
 
     catalog = commands.add_parser(
         "catalog", help="build the song browser's catalogs and the redistributable lead sheets"
@@ -248,6 +249,7 @@ def add_catalog_parser(commands: argparse._SubParsersAction) -> argparse.Argumen
     add_analyze_parser(catalog_commands)
     add_authors_parser(catalog_commands)
     add_collection_parsers(catalog_commands)
+    add_popularity_parser(catalog_commands)
     return catalog
 
 

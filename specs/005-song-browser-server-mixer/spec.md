@@ -6,6 +6,15 @@
 
 **Status**: In progress (design approved in previews, 2026-10-20)
 
+**Song server part: withdrawn on 2026-10-21.** The student decided that the app is only the
+static page on GitHub Pages. The song server (`server/`), its container, its deploy manifests and
+the search of other sites through it were removed; the git history keeps them. An MPB song now
+opens by a `download` route: the page downloads the MIDI file from the catalog site and the
+visitor drops it in. The Session is still searched from the browser. Everything below that
+mentions the server (story 4's server route, story 5's external sites, FR-015 to FR-019, FR-024,
+SC-007) records the original plan and no longer applies; the mixer, the preview, the shelf and
+the committed catalog data (stories 1 to 3 and 6 to 7) stand.
+
 **Input**: User description (translated from Portuguese). The student asked for the following
 changes.
 - Replace "your file, examples and MPB catalog" with a real catalog: 3D, with vinyl records,
@@ -353,13 +362,8 @@ as the running example.
 
 ### Deployment
 
-- **FR-024**: The repository MUST hold:
-  - the server's container definition;
-  - a workflow that publishes its image;
-  - the manifests and instructions to deploy it in the student's homelab at
-    `nes-arranger-bh.giow.dev`.
-
-  Pushing to the homelab repository requires the student's explicit approval at that time.
+- **FR-024**: Withdrawn on 2026-10-21 together with the song server. The app is the static files
+  on GitHub Pages; there is no container, image workflow or homelab deployment.
 
 ### Key Entities
 

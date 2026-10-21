@@ -1,6 +1,11 @@
 # Spec 007: audio files to notes, in the browser
 
-**Status**: Implemented (2026-10-20)
+**Status**: Withdrawn (2026-10-21)
+
+This feature was removed on 2026-10-21: transcribing full commercial mixes in the browser gave
+unusable melodies, so the app opens MIDI and ABC files only. The git history keeps the code
+(`core/audio-to-midi.js`, `ui/audio-import.js`, the vendored Basic Pitch and their tests). The
+text below records what was built and why, as it was before the removal.
 
 ## Request
 

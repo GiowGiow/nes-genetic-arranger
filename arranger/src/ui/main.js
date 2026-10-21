@@ -30,8 +30,8 @@ import { createEvolutionView } from "./evolution-view.js";
 import { createInputPanel, loadAbcjs } from "./input-panel.js";
 import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
 import { readLeadSheetAbc } from "../core/abc-reader.js";
-import { transcribeAudioFile } from "./audio-import.js";
 import { createMixerPanel } from "./mixer-panel.js";
+import { createPacer, drawingBudget } from "./pacing.js";
 import { createPlanGrid } from "./plan-grid.js";
 import { addRun } from "./run-list.js";
 import { renderScores } from "./scores-table.js";
@@ -40,7 +40,7 @@ import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
 import { setUpPageTabs } from "./tabs.js";
 import { createSongShelf } from "./song-shelf.js";
-import { PAGE_MESSAGE, PAGE_PREVIEW_MESSAGE, displayTitle, externalEntry, loadCatalog, localEntry, openEntry, serverUrl } from "../core/sources.js";
+import { PAGE_MESSAGE, PAGE_PREVIEW_MESSAGE, displayTitle, externalEntry, isLoadedSong, loadCatalog, localEntry, openEntry } from "../core/sources.js";
 import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
@@ -88,7 +88,11 @@ const defaults = defaultSettings(defaultConfig);
 
 // --- Panels ---------------------------------------------------------------------------------
 
+/** What a phone cannot afford while it plays music (see pacing.js): a touch screen gets the smaller budget. */
+const budget = drawingBudget(globalThis.matchMedia?.("(pointer: coarse)").matches ?? false);
+
 const pageTabs = setUpPageTabs($("[data-page-tabs]"), {
+  viewNav: $("[data-view-tabs]"),
   // The figures are drawn only when the tab is open; a timeout lets the page finish wiring first.
   onChange: (id) => {
     placeRunStrip(id);
@@ -111,10 +115,15 @@ function placeRunStrip(tab) {
 const inputPanel = createInputPanel(
   { root: $("#song"), file: $("[data-file-target]"), examples: $("[data-examples-target]"), details: $("[data-song-details]") },
   {
-    // A recording is listened to on this device and becomes a MIDI file (spec 007)
-    transcribeAudio: async (file, say) => (await transcribeAudioFile(file, { onProgress: say })).file,
   examples: [],
   previewTrack: (index) => previewTrack(index),
+  onUnreadable() {
+    // The options now chosen cannot be read: nothing is left to arrange until they are fixed.
+    if (state.phase === "evolving") stopRun(true);
+    state.input = null;
+    $("[data-run-song]").textContent = "These options cannot be read; the message is under the song.";
+    updateRunButtons();
+  },
   useTempo(bpm) {
     state.settings.tempo_bpm = bpm;
     settingsPanel.show(state.settings, state.phase === "evolving");
@@ -150,7 +159,6 @@ const inputPanel = createInputPanel(
 
 // --- Song catalog: one shelf of records, examples first (spec 005, story 3) ------------------
 
-const server = serverUrl(location);
 const shelf = createSongShelf($("[data-shelf]"), {
   entries: [],
   onSearch: (query) => {
@@ -212,28 +220,19 @@ let searchTimer;
 const searchBox = shelf.searchBox;
 
 /**
- * Search The Session (from the browser, its API allows it) and the song server's sites, and add
- * what they find after the catalog's matches, if the query is still the same.
+ * Search The Session (from the browser, its API allows it) and add what it finds after the
+ * catalog's matches, if the query is still the same.
  *
  * @param {string} query
  */
 async function searchElsewhere(query) {
-  const [session, others] = await Promise.allSettled([
-    fetch(sessionSearchUrl(query)).then((response) => (response.ok ? response.json() : Promise.reject())),
-    // No song server yet: only the sites the browser can reach itself are searched
-    server === null
-      ? Promise.resolve({ results: [] })
-      : fetch(`${server}/search?q=${encodeURIComponent(query)}`).then((response) =>
-          response.ok ? response.json() : Promise.reject(),
-        ),
-  ]);
-  if (searchBox.value !== query) return;
-  const found = [
-    ...(session.status === "fulfilled" ? sessionSearchResults(session.value) : []),
-    ...(others.status === "fulfilled" ? others.value.results : []),
-  ].map(externalEntry);
-  shelf.setExternal(found);
-  if (others.status === "rejected") songStatus("Other sites cannot be searched right now; the catalog still can.");
+  /** @type {Array<import("../core/sources.js").SearchResult>} an unreachable site adds nothing */
+  let found = [];
+  try {
+    const response = await fetch(sessionSearchUrl(query));
+    if (response.ok) found = sessionSearchResults(await response.json());
+  } catch {}
+  if (searchBox.value === query) shelf.setExternal(found.map(externalEntry));
 }
 
 /**
@@ -262,6 +261,12 @@ function downloadFrom(url, name) {
  * @returns {Promise<boolean>} true when the song was read
  */
 async function openCatalogEntry(entry, { openPages = true } = {}) {
+  // The song is already read, and the visitor may have chosen its melody track and bars: reading
+  // it again would put the likeliest track back. A run in progress is cancelled, as a new song does.
+  if (isLoadedSong(entry, inputPanel.current()?.input ?? null)) {
+    if (state.phase === "evolving") stopRun(true);
+    return true;
+  }
   const own = ownFiles.get(entry.id);
   if (entry.route?.local && own) {
     const before = inputPanel.current();
@@ -271,7 +276,7 @@ async function openCatalogEntry(entry, { openPages = true } = {}) {
   songStatus(`Loading ${displayTitle(entry.t)}…`);
   try {
     const abcjs = entry.route?.thesession !== undefined ? await loadAbcjs() : undefined;
-    const song = await openEntry(entry, { fetchFn: fetch, server, abcjs });
+    const song = await openEntry(entry, { fetchFn: fetch, abcjs });
     if (song.kind === "link") {
       if (song.byHand) {
         if (openPages) downloadFrom(song.url, song.name);
@@ -325,14 +330,34 @@ function playIntro() {
   setResultStatus(
     `Preview of ${loaded.leadSheet.title || loaded.input.name}: its first 8 bars, as the original sounds. Press Arrange to arrange it.`,
   );
-  showWorkbench();
+  showWorkbench("result");
   player.play();
 }
 
-/** Open the Evolution tab and bring its run bar, the evolution and the result to the top of the screen. */
-function showWorkbench() {
+/**
+ * Open the Evolution tab on one of its views and bring its run bar to the top of the screen: the
+ * evolution when a run starts, the result when a preview plays.
+ *
+ * @param {"evolution" | "result"} view
+ */
+function showWorkbench(view) {
+  pageTabs.showView(view);
   pageTabs.show("evolution");
   requestAnimationFrame(() => document.getElementById("workbench")?.scrollIntoView({ block: "start" }));
+}
+
+/**
+ * A run ended, with a result or with the reason it has none: show the Result view, which holds the
+ * status line. It is the Result view even if the visitor chose the Evolution view by hand during the
+ * run, and even if another tab is open (the Evolution tab then opens on it). When the
+ * Evolution tab is open and has been scrolled past its top, bring the result back into sight.
+ */
+function showRunEnded() {
+  pageTabs.showView("result");
+  const workbench = document.getElementById("workbench");
+  if (pageTabs.current() === "evolution" && workbench && workbench.getBoundingClientRect().top < 0) {
+    requestAnimationFrame(() => workbench.scrollIntoView({ block: "start" }));
+  }
 }
 
 /**
@@ -377,7 +402,7 @@ $("#evolution").insertAdjacentHTML(
    one row per gene: the P2 harmony texture, the TR bass texture, the NO drum pattern and the P1
    melody octave. Brighter cells are busier choices; hover a cell or a chord for its name.</p>`,
 );
-const evolutionView = createEvolutionView($("[data-evolution-view]"));
+const evolutionView = createEvolutionView($("[data-evolution-view]"), budget);
 const planGrid = createPlanGrid($("[data-plan-grid]"));
 const arrangeButton = /** @type {HTMLButtonElement} */ ($("[data-arrange]"));
 const stopButton = /** @type {HTMLButtonElement} */ ($("[data-stop]"));
@@ -430,20 +455,18 @@ const levelStorage = (() => {
   }
 })();
 /** @type {ReturnType<typeof setTimeout> | undefined} */
-let wavTimer;
+let levelsTimer;
 const mixerPanel = createMixerPanel($("[data-mixer]"), {
   // Each sound pack has its own levels, remembered separately (Plain's drums are not the chip's)
   levels: readLevels(levelStorage, state.soundPack),
   defaults: () => defaultLevels(state.soundPack),
   onChange(levels) {
     player.setLevels(levels);
-    storeLevels(levelStorage, levels, state.soundPack);
-    // The WAV follows the mix; rebuilding it on every slider step would stall the slider.
-    clearTimeout(wavTimer);
-    wavTimer = setTimeout(() => {
-      const run = state.runs.find((entry) => entry.id === state.currentRunId);
-      if (run?.stems && state.phase !== "evolving") downloads.set(withWav(run.files, run.stems, run.sampleRate));
-    }, 400);
+    // The gain ramp above is all the sound needs. Saving the levels waits for the slider to rest:
+    // a write to storage on every step of a drag costs main-thread time while the music plays. The
+    // WAV is not rebuilt here at all: it is mixed when the visitor clicks its download (see withWav).
+    clearTimeout(levelsTimer);
+    levelsTimer = setTimeout(() => storeLevels(levelStorage, mixerPanel.get(), state.soundPack), 300);
   },
 });
 player.setLevels(mixerPanel.get());
@@ -476,25 +499,33 @@ function showPackLevels() {
 showPackLevels();
 
 /**
- * The download list with the WAV entry made from the stems at the mixer's current levels; the
- * entry is left out while every channel is muted, since the file would be silence.
+ * The download list with the WAV entry made from the stems at the mixer's levels *when the visitor
+ * clicks it*. Mixing and encoding a three-minute song takes a quarter of a second on a desktop and
+ * several times that on a phone, and the file is 17 MB: doing it after every change of the mixer,
+ * while the music plays, would stall the page and the playhead. Made on the click, the WAV also
+ * always matches the levels at that moment. While every channel is muted the file would be
+ * silence, so the click saves nothing.
  *
  * @param {Array<{name: string, label: string, hint: string, blob?: Blob, wav?: boolean}>} files
  * @param {Record<string, Float32Array>} stems
  * @param {number} sampleRate
  */
 function withWav(files, stems, sampleRate) {
-  const levels = mixerPanel.get();
-  const silent = Object.values(levels.muted).every(Boolean);
-  return files.flatMap((file) => {
-    if (!file.wav) return [file];
-    if (silent) return [];
-    const bytes = encodeWav(mixStems(/** @type {any} */ (stems), levels), sampleRate);
-    return [{ ...file, blob: new Blob([bytes], { type: "audio/wav" }) }];
+  return files.map((file) => {
+    if (!file.wav) return file;
+    return {
+      ...file,
+      make: () => {
+        const levels = mixerPanel.get();
+        if (Object.values(levels.muted).every(Boolean)) return null;
+        const bytes = encodeWav(mixStems(/** @type {any} */ (stems), levels), sampleRate);
+        return new Blob([bytes], { type: "audio/wav" });
+      },
+    };
   });
 }
 const downloads = createDownloads($("[data-downloads]"));
-const channelView = createChannelView($("[data-channel-view]"));
+const channelView = createChannelView($("[data-channel-view]"), budget);
 /** @type {{arrangement: any, original: any}} */
 let scenes = { arrangement: null, original: null };
 const runsView = createRunsView($("[data-runs]"), { defaults, onSelect: (id) => showRun(id) });
@@ -503,6 +534,14 @@ const seekInput = /** @type {HTMLInputElement} */ ($("[data-seek]"));
 
 // --- Worker ---------------------------------------------------------------------------------
 
+/** @type {Uint8Array | null} the best plan of the latest progress message, not yet painted */
+let latestPlan = null;
+const planPacer = createPacer(
+  () => {
+    if (latestPlan) planGrid.update(latestPlan);
+  },
+  { intervalMs: budget.chartIntervalMs },
+);
 const worker = new Worker(new URL("../worker.js", import.meta.url), { type: "module" });
 /** @type {number} */
 let runStartedAt = 0;
@@ -512,13 +551,16 @@ worker.addEventListener("message", (event) => {
   if (message.type === "progress") {
     evolutionView.append(message.generations);
     state.log.push(...message.generations);
-    planGrid.update(message.bestPlan);
+    // The worker reports twenty times a second; the plan grid is repainted a few times a second.
+    latestPlan = message.bestPlan;
+    planPacer.request();
   } else if (message.type === "done") {
     finishRun(message);
   } else if (message.type === "error") {
     state.phase = "failed";
     setResultStatus(`The run failed: ${message.message}`, true);
     updateRunButtons();
+    showRunEnded();
   }
 });
 
@@ -554,7 +596,9 @@ async function startRun() {
   downloads.clear();
   setResultStatus("Evolving…");
   updateRunButtons();
-  showWorkbench();
+  planPacer.cancel();
+  latestPlan = null;
+  showWorkbench("evolution");
   worker.postMessage({
     type: "run",
     runId: id,
@@ -582,6 +626,8 @@ async function finishRun(message) {
   const settings = structuredClone(state.settings);
   const leadSheet = input.leadSheet;
   const arrangement = assemble(leadSheet, message.bestPlan);
+  planPacer.cancel();
+  planGrid.update(message.bestPlan);
   evolutionView.finish({
     stopReason: message.stopReason,
     generations: message.generations,
@@ -593,6 +639,7 @@ async function finishRun(message) {
     state.phase = "failed";
     setResultStatus(`The arrangement breaks NES rules and will not play:\n${violations.join("\n")}`, true);
     updateRunButtons();
+    showRunEnded();
     return;
   }
   state.phase = "realized";
@@ -676,6 +723,7 @@ async function finishRun(message) {
     `Best fitness ${message.bestFitness.toFixed(4)} after ${message.generations} generations.`,
   );
   updateRunButtons();
+  showRunEnded();
 }
 
 /** @type {Promise<import("../core/leadsheet.js").LeadSheet> | null} */
@@ -790,11 +838,30 @@ player.onChange(() => {
   if (player.isPlaying() && !mixClosedByHand && globalThis.matchMedia?.("(min-width: 1100px)").matches) setMixDrawer(true);
   channelView.setScene(scenes[player.active()]);
 });
+// The playhead loop runs on every animation frame, so it must cost almost nothing when nothing
+// moved: it reads the player first, writes to the page only what changed (a write that changes
+// nothing still invalidates style), and asks no question of the layout. A touch of the position
+// slider is tracked by events, because asking `:active` would make the browser recalculate styles.
+const timeText = $("[data-time]");
+let seeking = false;
+seekInput.addEventListener("pointerdown", () => (seeking = true));
+for (const end of ["pointerup", "pointercancel", "change"]) seekInput.addEventListener(end, () => (seeking = false));
+let shownClock = "";
+let shownSeek = -1;
 (function tick() {
-  if (!seekInput.matches(":active")) seekInput.value = String(player.currentTime());
-  $("[data-time]").textContent = `${clock(player.currentTime())} / ${clock(player.duration())}`;
-  channelView.draw(player.currentTime());
   requestAnimationFrame(tick);
+  const now = player.currentTime();
+  channelView.draw(now); // draws only when the playhead moved, the scene changed or the canvas resized
+  const text = `${clock(now)} / ${clock(player.duration())}`;
+  if (text !== shownClock) {
+    timeText.textContent = text;
+    shownClock = text;
+  }
+  // A slider thumb moves less than a pixel in 100 ms on a song of any length.
+  if (!seeking && Math.abs(now - shownSeek) >= 0.1) {
+    seekInput.value = String(now);
+    shownSeek = now;
+  }
 })();
 document.addEventListener("keydown", (event) => {
   const target = /** @type {HTMLElement} */ (event.target);

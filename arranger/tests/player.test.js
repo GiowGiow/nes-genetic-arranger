@@ -470,3 +470,37 @@ test("a load while playing keeps the position and the play state", () => {
   assert.equal(player.isPlaying(), true);
   for (const source of playing(context)) assert.equal(round6(source.started?.offset ?? -1), 0.8);
 });
+
+test("the default context asks for latencyHint 'playback': bigger buffers, so a phone's slow main thread cannot starve the audio", () => {
+  /** @type {unknown[]} */
+  const asked = [];
+  const original = globalThis.AudioContext;
+  // A stand-in constructor: it records the options and acts as the fake context.
+  globalThis.AudioContext = /** @type {any} */ (
+    class extends FakeContext {
+      /** @param {unknown} options */
+      constructor(options) {
+        super();
+        asked.push(options);
+      }
+    }
+  );
+  try {
+    createPlayer().ensureContext();
+  } finally {
+    globalThis.AudioContext = original;
+  }
+  assert.deepEqual(asked, [{ latencyHint: "playback" }]);
+});
+
+test("playing uses the buffers rendered beforehand: no source is scheduled note by note, so seek, A/B and levels never render again", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  const buffersBefore = context.sources.length;
+  player.play();
+  const sourcesWhenPlaying = context.sources.length - buffersBefore;
+  assert.equal(sourcesWhenPlaying, 5, "one source per buffer: four stems and the original");
+  player.switchTo("original");
+  player.setLevels({ ...DEFAULT_LEVELS, TR: 0 });
+  assert.equal(context.sources.length - buffersBefore, 5, "A/B and a level change add no source");
+});
