@@ -609,13 +609,13 @@ export function createInputPanel(targets, options) {
         <div><dt>Melody</dt><dd class="mono">${melody.length ? `${Math.min(...melody)}–${Math.max(...melody)}` : "none"}</dd></div>
         <div class="span"><dt>Parts</dt><dd data-parts></dd></div>
       </dl>
-      <p class="credit" data-credit hidden></p>
-      <p class="hint">The chord of every bar is in the top row of the plan, under
-        <a href="#evolution">Evolution</a>.</p>`;
+      <p class="credit" data-credit hidden></p>`;
     /** @type {HTMLElement} */ (summary.querySelector("[data-title]")).textContent =
       leadSheet.title || input.name;
     /** @type {HTMLElement} */ (summary.querySelector("[data-parts]")).textContent = parts.join(" · ");
     const entry = /** @type {{t: string, p: string, u: string} | null} */ (input.catalogEntry);
+    // A catalog song's title, tempo, bars and meter are already in the shelf's panel above
+    summary.classList.toggle("from-catalog", Boolean(entry));
     if (entry) {
       const credit = /** @type {HTMLElement} */ (summary.querySelector("[data-credit]"));
       credit.innerHTML = `From <a href="https://www.beakauffmann.com/" rel="noopener">Beatriz Kauffmann's

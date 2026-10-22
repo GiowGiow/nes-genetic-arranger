@@ -17,36 +17,34 @@
 <div class="backdrop" aria-hidden="true"></div>
 <main>
   <header class="hero">
-    <span class="eyebrow"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Runs in your browser</span>
-    <h1>NES <span class="gradient">Arranger</span></h1>
-    <p class="lead">Give it a lead sheet or a MIDI song. A genetic algorithm evolves an arrangement for
-    the four channels of the NES sound chip, and you hear it next to the original. Your file stays on
-    this device.</p>
+    <div class="hero-row">
+      <h1>NES <span class="gradient">Arranger</span></h1>
+      <nav class="page-tabs" role="tablist" aria-label="Sections" data-page-tabs>
+        <button type="button" role="tab" data-tab="song" aria-controls="song">Song</button>
+        <button type="button" role="tab" data-tab="evolution" aria-controls="evolution">Run</button>
+        <button type="button" role="tab" data-tab="how" aria-controls="how">How it works</button>
+      </nav>
+    </div>
+    <p class="lead">Arrange any song for the NES sound chip. <span class="lead-more">A genetic algorithm evolves the
+    parts in your browser, and your file stays on this device.</span></p>
     <dl class="channels" aria-label="The four channels of the NES sound chip">
-      <div style="--c: var(--p1)"><dt>P1</dt><dd>Pulse</dd><dd class="role">Melody</dd></div>
-      <div style="--c: var(--p2)"><dt>P2</dt><dd>Pulse</dd><dd class="role">Harmony</dd></div>
-      <div style="--c: var(--tr)"><dt>TR</dt><dd>Triangle</dd><dd class="role">Bass</dd></div>
-      <div style="--c: var(--no)"><dt>NO</dt><dd>Noise</dd><dd class="role">Drums</dd></div>
+      <div style="--c: var(--p1)"><dt>P1</dt><dd>melody</dd></div>
+      <div style="--c: var(--p2)"><dt>P2</dt><dd>harmony</dd></div>
+      <div style="--c: var(--tr)"><dt>TR</dt><dd>bass</dd></div>
+      <div style="--c: var(--no)"><dt>NO</dt><dd>drums</dd></div>
     </dl>
-    <nav class="page-tabs" role="tablist" aria-label="Sections" data-page-tabs>
-      <button type="button" role="tab" data-tab="song" aria-controls="song">Song</button>
-      <button type="button" role="tab" data-tab="evolution" aria-controls="evolution">Evolution</button>
-      <button type="button" role="tab" data-tab="how" aria-controls="how">How it works</button>
-    </nav>
   </header>
 
   <noscript><p class="card notice">The arranger runs in JavaScript. Turn it on to arrange a song.</p></noscript>
 
   <div class="panels">
     <section id="song" class="card wide has-shelf" aria-labelledby="song-title">
-      <div class="song-head">
-        <h2 id="song-title">Song</h2>
-        <div class="song-tools">
-          <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
-        </div>
-      </div>
+      <h2 id="song-title" class="visually-hidden">Song</h2>
       <div class="shelf-root" data-shelf></div>
-      <p class="drop-note">You can also drop a MIDI or ABC file anywhere on this card. It stays on this device.</p>
+      <div class="song-head">
+        <p class="drop-note">Or drop your own MIDI or ABC file anywhere on this card. It stays on this device.</p>
+        <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
+      </div>
       <div class="run-slot" data-run-slot="song">
         <div id="run" class="run-strip">
           <p class="run-song" data-run-song>Choose a song first.</p>
@@ -63,9 +61,9 @@
             </div>
             <div class="toolbar">
               <button type="button" class="button primary" data-arrange disabled>Arrange</button>
-              <button type="button" class="button" data-stop disabled>Stop</button>
+              <button type="button" class="button" data-stop disabled title="Stop keeps the best plan found so far">Stop</button>
             </div>
-            <button type="button" class="button" data-settings-toggle aria-expanded="false" aria-controls="settings">Settings</button>
+            <button type="button" class="button quiet" data-settings-toggle aria-expanded="false" aria-controls="settings">Settings</button>
           </div>
           <p class="hint" data-run-hint></p>
           <div class="changed-chips" data-changed aria-label="Settings changed from the defaults"></div>
@@ -79,13 +77,12 @@
     <section id="settings" class="card" aria-labelledby="settings-title">
       <div class="side-head">
         <h2 id="settings-title" tabindex="-1">Settings</h2>
-        <button type="button" class="button small" data-settings-close>Close</button>
+        <button type="button" class="button quiet" data-settings-close>Close</button>
       </div>
-      <p class="hint">The defaults are the command line's (<code>configs/default.json</code>). A bold name
-      differs from its default, shown below it. Hover or focus a field to read what it changes.</p>
+      <p class="hint">Defaults are the command line's. A bold name differs from its default, shown below it.</p>
     </section>
 
-    <!-- Evolution tab: the run controls on top, then two views of the run, one at a time and each
+    <!-- Run tab: the run controls on top, then two views of the run, one at a time and each
          with the full width: the evolution while it runs, the result when it ends (ui/tabs.js). -->
     <div id="workbench" class="workbench wide">
       <div id="run-bar" class="run-bar card"><div class="run-slot" data-run-slot="evolution"></div></div>
@@ -94,24 +91,24 @@
         <button type="button" role="tab" id="view-tab-result" data-view="result" aria-controls="result">Result</button>
       </nav>
       <section id="evolution" class="card" role="tabpanel" aria-labelledby="view-tab-evolution">
-        <h2 id="evolution-title">Evolution</h2>
+        <h2 id="evolution-title" class="visually-hidden">Evolution</h2>
         <p class="placeholder">The fitness curve and the plan of every bar appear here while the run evolves.</p>
       </section>
 
       <section id="result" class="card" role="tabpanel" aria-labelledby="view-tab-result" hidden>
-        <h2 id="result-title">Result</h2>
+        <h2 id="result-title" class="visually-hidden">Result</h2>
         <p class="placeholder">Play the arrangement on the NES chip, compare it with the original, and download the MIDI, the settings and the lead sheet.</p>
       </section>
     </div>
 
     <!-- The mixer slides in from the left edge, so it takes no room on the page. -->
     <aside id="mix" class="mix-drawer" aria-label="Channel levels">
-      <button type="button" class="button small mix-close" data-mix-close aria-label="Close the mixer">Close</button>
+      <button type="button" class="button quiet mix-close" data-mix-close aria-label="Close the mixer">Close</button>
       <div data-mixer></div>
     </aside>
 
     <section id="how" class="card wide" aria-labelledby="how-title">
-      <h2 id="how-title">How it works</h2>
+      <h2 id="how-title" class="visually-hidden">How it works</h2>
       <div class="how" data-how></div>
       <div class="about">
         <p><strong>Same seed, same arrangement.</strong> The app has its own seeded random generator, so the same

@@ -5,30 +5,27 @@
    with CSS and keeps the same motion rules. Quiet on purpose: few borders, small labels, one
    accent at a time. Tokens and buttons come from style.css. */
 
-/* The card's glow in the channel colors covers the whole card, so the 3D area never cuts it. */
-.card.has-shelf {
-  background:
-    radial-gradient(60% 55% at 38% 78%, rgba(95, 158, 209, .14), transparent 70%),
-    radial-gradient(40% 45% at 70% 95%, rgba(255, 128, 14, .09), transparent 70%),
-    var(--glass);
-}
+/* The card is a column, so the strip with "Open MIDI or ABC" can sit on top of the shelf on a wide
+   screen and under it on a phone. */
+.card.has-shelf { display: flex; flex-direction: column; }
+.card.has-shelf[hidden] { display: none; }
+.card.has-shelf > * { min-width: 0; }
 
-/* Card header: the title, the search box and "Open MIDI or ABC", always visible. */
-.song-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.song-head h2 { margin: 0; }
-.song-tools { display: flex; gap: 8px; justify-content: flex-end; }
+/* The way in for your own song: a short note and the button, one quiet line. */
+.song-head { order: -1; display: flex; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s2); }
 .song-search {
-  width: 100%; min-width: 0; padding: 8px 12px; border-radius: 10px; font: inherit; font-size: .92rem;
-  background: rgba(11, 14, 23, .4); border: 1px solid rgba(255, 255, 255, .08); color: var(--text);
+  width: 100%; min-width: 0; min-height: var(--control); padding: 0 var(--s3); border-radius: var(--radius); font: inherit; font-size: var(--fs-md);
+  background: rgba(0, 0, 0, .28); border: 1px solid var(--line); color: var(--text);
 }
 .song-search:focus { border-color: var(--p1); outline: none; }
-.drop-note { color: var(--muted); font-size: .85rem; margin: 10px 0 0; }
+.drop-note { color: var(--muted); font-size: var(--fs-sm); margin: 0; }
+.song-head .button { flex: none; white-space: nowrap; }
 
 /* The playlist chooser on top; below it the song list on the left and, on the right, the records
    with the selected song's panel under them. On a narrower screen everything stacks: chooser,
    records, panel, list. */
 .song-shelf .shelf-body {
-  display: grid; gap: 14px 20px; margin-top: 14px;
+  display: grid; gap: var(--s3) var(--s5); margin-top: 0;
   grid-template-columns: 260px minmax(0, 1fr);
   grid-template-areas: "choose choose" "songs stage" "songs info";
 }
@@ -51,14 +48,14 @@
 .shelf-empty[hidden] { display: none; }
 
 /* Which page: a quiet counter under the records. The arrows do the turning. */
-.shelf-page { margin: 6px 0 0; text-align: center; color: var(--muted); font-size: .75rem; opacity: .8; }
+.shelf-page { margin: 6px 0 0; text-align: center; color: var(--muted); font-size: var(--fs-sm); opacity: .7; }
 
 /* Page arrows on the stage's edges, over the records, where a thumb rests. Large targets,
    half transparent so the records show through. */
 .shelf-arrow {
   position: absolute; top: 50%; z-index: 3; display: grid; place-items: center; width: 46px; height: 76px;
   padding: 0; border: 0; border-radius: 14px; color: var(--text); cursor: pointer;
-  background: rgba(11, 14, 23, .34); -webkit-tap-highlight-color: transparent;
+  background: rgba(11, 14, 23, .3); -webkit-tap-highlight-color: transparent;
   transform: translateY(-50%); transition: background .15s, opacity .15s;
 }
 .shelf-arrow.is-previous { left: 2px; }
@@ -158,7 +155,7 @@
 /* The selected record grows, glows and turns like a record on a turntable. */
 .shelf-record[aria-selected="true"] .shelf-disc {
   transform: scale(1);
-  box-shadow: 0 0 0 2px rgba(140, 190, 240, .3), 0 0 32px 8px rgba(95, 158, 209, .32);
+  box-shadow: 0 0 0 2px rgba(140, 190, 240, .3), 0 0 24px 4px rgba(95, 158, 209, .26);
   animation: shelf-spin 3s linear infinite;
 }
 @keyframes shelf-bob { from { translate: 0 -2px; } to { translate: 0 2px; } }
@@ -179,19 +176,17 @@
 .shelf-info .shelf-sprite { width: 48px; height: 48px; flex: none; image-rendering: pixelated; border-radius: 8px; }
 .shelf-names { min-width: 0; }
 .shelf-title { margin: 0; font-size: 1.1rem; line-height: 1.25; letter-spacing: -.01em; overflow-wrap: anywhere; }
-.shelf-by, .shelf-performer, .shelf-variant { margin: 1px 0 0; color: var(--muted); font-size: .85rem; line-height: 1.35; }
+.shelf-by, .shelf-performer, .shelf-variant { margin: 1px 0 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.35; }
 /* "A minor · 150 BPM · 4/4 · 32 bars": separate elements, the dots are drawn here. */
 .shelf-facts {
   grid-area: facts; display: flex; flex-wrap: wrap; gap: 0 .6em; margin: 4px 0 0; padding-left: 60px;
-  color: var(--muted); font: 500 .8rem var(--mono);
+  color: var(--muted); font: 500 var(--fs-sm) var(--mono);
 }
 .shelf-facts span + span::before { content: "·"; margin-right: .6em; opacity: .55; }
 .shelf-actions { grid-area: actions; display: flex; flex-wrap: wrap; align-content: center; justify-content: flex-end; gap: 8px; }
-.shelf-actions .button { min-height: 40px; }
-.shelf-info .button.quiet { border-color: transparent; background: none; color: var(--muted); font-weight: 500; }
-.shelf-info .button.quiet:hover:not(:disabled) { color: var(--text); border-color: transparent; }
-.shelf-hint { flex-basis: 100%; margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.35; text-align: right; }
-.shelf-problem { grid-column: 1 / -1; margin: 4px 0 0; padding-left: 60px; color: var(--no); font-size: .85rem; }
+.shelf-actions .button { min-width: 7.5em; }
+.shelf-hint { flex-basis: 100%; margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.35; text-align: right; }
+.shelf-problem { grid-column: 1 / -1; margin: 4px 0 0; padding-left: 60px; color: var(--no); font-size: var(--fs-sm); }
 /* "Download MIDI": the arrow icon is drawn with a mask, so it takes the button's color. */
 .shelf-icon {
   width: 1.1em; height: 1.1em; flex: none; background: currentColor;
@@ -204,20 +199,20 @@
    tile has an outline. */
 .shelf-playlists {
   display: flex; gap: 8px; min-width: 0; padding: 2px 2px 8px; overflow-x: auto;
-  scroll-snap-type: x proximity; overscroll-behavior-x: contain; scrollbar-width: thin;
+  scroll-snap-type: x proximity; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .2) transparent;
 }
 .shelf-playlists[hidden] { display: none; }
 .shelf-tile {
   flex: none; scroll-snap-align: start; display: grid; grid-template-columns: 40px minmax(0, 1fr);
   grid-template-areas: "cover name" "cover count"; align-items: center; column-gap: 10px; row-gap: 0;
   min-width: 150px; max-width: 220px; min-height: 52px; padding: 5px 12px 5px 6px; text-align: left;
-  border: 1px solid transparent; border-radius: 12px; background: rgba(255, 255, 255, .04);
-  color: var(--text); font: inherit; cursor: pointer; transition: border-color .15s, background .15s;
+  border: 0; border-radius: var(--radius); background: rgba(255, 255, 255, .04);
+  color: var(--text); font: inherit; cursor: pointer; transition: background .15s;
 }
 .shelf-tile:not([aria-pressed]) { min-width: 0; } /* the back button is not a toggle */
 .shelf-tile:hover { background: rgba(140, 190, 240, .1); }
 .shelf-tile:focus-visible { outline: 2px solid var(--p1); outline-offset: 2px; }
-.shelf-tile[aria-pressed="true"] { border-color: rgba(95, 158, 209, .75); background: rgba(95, 158, 209, .14); }
+.shelf-tile[aria-pressed="true"] { background: rgba(95, 158, 209, .16); box-shadow: inset 0 0 0 1px rgba(95, 158, 209, .55); }
 /* The cover: the sprite of the playlist's most popular song on a dark sleeve with its label color. */
 .shelf-tile-cover {
   --label: var(--p1); grid-area: cover; display: grid; place-items: center; width: 40px; height: 40px;
@@ -226,11 +221,11 @@
 }
 .shelf-tile-cover canvas { width: 28px; height: 28px; image-rendering: pixelated; }
 .shelf-tile-name { grid-area: name; align-self: end; font-weight: 600; font-size: .875rem; line-height: 1.2; overflow-wrap: anywhere; }
-.shelf-tile-count { grid-area: count; align-self: start; color: var(--muted); font-size: .75rem; }
+.shelf-tile-count { grid-area: count; align-self: start; color: var(--muted); font-size: var(--fs-sm); line-height: 1.2; }
 .shelf-tile:not(:has(.shelf-tile-count)) .shelf-tile-name { align-self: center; grid-row: 1 / 3; }
 
 /* Which list is on show: the playlist, an album of it, or the search results. */
-.shelf-view { margin: 0; color: var(--muted); font-size: .8rem; }
+.shelf-view { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
 
 /* The list beside the records: which song each one is. A click selects, a double click arranges.
    On a wide screen it is as tall as the records and the panel together (its own size does not
@@ -238,11 +233,11 @@
 .shelf-side { grid-area: songs; display: flex; flex-direction: column; gap: 8px; min-width: 0; contain: size; }
 .shelf-songs {
   position: relative; flex: 1; min-height: 0; list-style: none; margin: 0; padding: 4px; overflow-y: auto;
-  border-radius: 14px; background: rgba(11, 14, 23, .32); scrollbar-width: thin;
+  border-radius: 14px; background: rgba(11, 14, 23, .32); scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .2) transparent;
 }
 .shelf-song {
   display: flex; align-items: center; gap: 8px; min-width: 0; padding: 5px 8px; border-radius: 8px;
-  font-size: .86rem; line-height: 1.25; cursor: pointer;
+  font-size: .875rem; line-height: 1.25; cursor: pointer;
   content-visibility: auto; contain-intrinsic-size: auto 28px; /* thousands of rows stay cheap */
 }
 .shelf-song:hover { background: rgba(140, 190, 240, .08); }
@@ -251,7 +246,7 @@
 .shelf-song-title, .shelf-song-by { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shelf-song-title { flex: 1 1 auto; }
 .shelf-song.is-selected .shelf-song-title { color: #fff; font-weight: 600; }
-.shelf-song-by { flex: 0 1 40%; color: var(--muted); font-size: .76rem; text-align: right; }
+.shelf-song-by { flex: 0 1 40%; color: var(--muted); font-size: var(--fs-sm); text-align: right; }
 /* "↓": the song's file is downloaded first and dropped on the page. */
 .shelf-song-get { flex: none; color: var(--p2); font-size: .8rem; }
 
@@ -262,22 +257,26 @@
   .shelf-info { padding: 0 2px; }
 }
 
-/* A phone: a stage that is as wide as the card allows, for bigger records, comfortable touch targets, one column everywhere. */
+/* A phone: the records use the full width (the card has no padding of its own here), a thumb
+   reaches the arrows, and everything reads top to bottom: playlists, records, the song's panel,
+   the list, then the way in for your own file. */
 @media (max-width: 760px) {
-  /* The records get the card's padding too: bigger records, and the arrows reach the edge. */
-  .shelf-stage-column { margin-inline: -12px; }
+  .shelf-stage-column { margin-inline: calc(var(--s4) * -1); }
   .shelf-stage { height: 344px; }
-  .song-tools { width: 100%; }
-  .song-tools .button { flex: 1; }
-  .song-search { font-size: 1rem; padding: 10px 12px; } /* 16px keeps iOS from zooming in */
-  .song-shelf .shelf-body { gap: 10px; }
+  .song-head { order: 1; margin: var(--s3) 0 0; }
+  .song-head .drop-note { display: none; }
+  .song-head .button { width: 100%; }
+  .run-slot { order: 2; }
+  .song-details { order: 3; }
+  .song-shelf .shelf-body { gap: var(--s3); }
   .shelf-tile { min-width: 132px; min-height: 48px; }
-  .shelf-side { height: 280px; }
-  .shelf-song { padding: 8px; }
+  .shelf-side { height: 260px; }
+  .shelf-song { min-height: 40px; padding: 8px; }
   /* The panel stacks: names, facts, then buttons across the full width. */
   .shelf-info { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "facts" "actions"; gap: 6px; padding: 2px; }
-  .shelf-actions { justify-content: stretch; margin-top: 4px; }
-  .shelf-actions .button { flex: 1 1 0; min-height: 46px; }
+  .shelf-actions { justify-content: stretch; margin-top: var(--s1); }
+  .shelf-actions .button { flex: 1 1 0; min-height: 48px; }
+  .shelf-actions .button.primary { flex: 2 1 0; }
   .shelf-hint { text-align: left; }
   .shelf-facts, .shelf-problem { padding-left: 0; }
 }

@@ -528,6 +528,14 @@ test("a list that fits one page needs no arrows", () => {
   assert.ok(arrows.every((arrow) => !arrow.hidden), "they return with a second page");
 });
 
+test("a list that fits one page hides the page counter too: there is no page to count", () => {
+  const { root, shelf } = mount({ entries: twenty().slice(0, 5) });
+  const counter = byClass(root, "shelf-page")[0];
+  assert.equal(counter.hidden, true);
+  shelf.setEntries(twenty());
+  assert.equal(counter.hidden, false, "it returns with a second page");
+});
+
 test("a phone-width shelf shows 9 songs a page, and resizing keeps the selected song", () => {
   const { root, shelf } = mount({}, 375);
   assert.equal(optionsOf(root).length, 9);

@@ -52,9 +52,12 @@ export function createEvolutionView(container, budget = drawingBudget(globalThis
     </div>
     <canvas class="chart" data-chart role="img"
       aria-label="Fitness per generation: best and mean of the population"></canvas>
-    <p class="caption">Best fitness (blue) and population mean (gray) per generation. The best line
-    only climbs, because the best plans pass unchanged to the next generation (elitism). The run
-    stops when the counter "without improvement" fills its window, or at the maximum.</p>`;
+    <details class="more">
+      <summary>How to read the chart</summary>
+      <p>Best fitness (blue) and population mean (gray) per generation. The best line
+      only climbs, because the best plans pass unchanged to the next generation (elitism). The run
+      stops when the counter "without improvement" fills its window, or at the maximum.</p>
+    </details>`;
   const $ = (/** @type {string} */ selector) =>
     /** @type {HTMLElement} */ (container.querySelector(selector));
   const canvas = /** @type {HTMLCanvasElement} */ ($("[data-chart]"));

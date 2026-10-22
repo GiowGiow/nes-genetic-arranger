@@ -6,12 +6,12 @@ import { test } from "node:test";
 
 import { TABS, VIEWS, hashFor, routeFromHash, stepTab, tabFromHash, tabForPanel } from "../src/ui/tabs.js";
 
-test("the three tabs come in the order of a visit: song, evolution (with the result), then how it works", () => {
+test("the three tabs come in the order of a visit: song, run (the evolution and the result), then how it works", () => {
   assert.deepEqual(
     TABS.map((tab) => [tab.id, tab.label]),
     [
       ["song", "Song"],
-      ["evolution", "Evolution"],
+      ["evolution", "Run"],
       ["how", "How it works"],
     ],
   );

@@ -498,10 +498,13 @@ $("#evolution").insertAdjacentHTML(
    <div data-evolution-view></div>
    <h3 class="subhead">Best plan so far</h3>
    <div data-plan-grid></div>
-   <p class="caption">One column per bar. The top row is the chord, named where it changes and
-   held until the next tick; a tick without a name is a chord too long for the column. Below it,
-   one row per gene: the P2 harmony texture, the TR bass texture, the NO drum pattern and the P1
-   melody octave. Brighter cells are busier choices; hover a cell or a chord for its name.</p>`,
+   <details class="more">
+     <summary>How to read the plan</summary>
+     <p>One column per bar. The top row is the chord, named where it changes and
+     held until the next tick; a tick without a name is a chord too long for the column. Below it,
+     one row per gene: the P2 harmony texture, the TR bass texture, the NO drum pattern and the P1
+     melody octave. Brighter cells are busier choices; hover a cell or a chord for its name.</p>
+   </details>`,
 );
 const evolutionView = createEvolutionView($("[data-evolution-view]"), budget);
 const planGrid = createPlanGrid($("[data-plan-grid]"));
@@ -521,27 +524,34 @@ clearPlaceholder("#result");
 $("#result").insertAdjacentHTML(
   "beforeend",
   `<div class="transport">
-     <button type="button" class="button primary" data-play disabled aria-label="Play">Play</button>
-     <span data-volume-slot></span>
-     <div class="versions" role="group" aria-label="Version" data-versions hidden>
-       <button type="button" class="button" data-version="original">Original</button>
-       <button type="button" class="button" data-version="arrangement" aria-pressed="true">NES chip</button>
+     <div class="transport-main">
+       <button type="button" class="button primary" data-play disabled aria-label="Play">Play</button>
+       <input type="range" min="0" max="1" step="0.01" value="0" data-seek aria-label="Position" disabled>
+       <span class="mono time" data-time>0:00 / 0:00</span>
      </div>
-     <label class="sound-pack">Sound
-       <select data-sound-pack aria-describedby="sound-pack-hint">
-         ${SOUND_PACKS.map((pack) => `<option value="${pack.id}">${pack.name}</option>`).join("")}
-       </select></label>
-     <input type="range" min="0" max="1" step="0.01" value="0" data-seek aria-label="Position" disabled>
-     <span class="mono time" data-time>0:00 / 0:00</span>
-     <button type="button" class="button" data-mix-toggle aria-expanded="false" aria-controls="mix">Mix</button>
+     <div class="transport-options">
+       <div class="versions" role="group" aria-label="Version" data-versions hidden>
+         <button type="button" class="button" data-version="original">Original</button>
+         <button type="button" class="button" data-version="arrangement" aria-pressed="true">NES chip</button>
+       </div>
+       <label class="sound-pack"><span class="sound-label">Sound</span>
+         <select data-sound-pack aria-describedby="sound-pack-hint">
+           ${SOUND_PACKS.map((pack) => `<option value="${pack.id}">${pack.name}</option>`).join("")}
+         </select></label>
+       <span data-volume-slot></span>
+       <button type="button" class="button" data-mix-toggle aria-expanded="false" aria-controls="mix">Mix</button>
+     </div>
    </div>
    <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
    <div data-channel-view></div>
-   <p class="caption">Each channel is a line in its color, revealed as it plays: P1 melody (blue),
-   P2 harmony (orange), TR bass (gray) and NO drums as ticks at the bottom. Switch to the original
-   to see its melody in blue and the other parts as faint dashes. Keys: space plays, A and B
-   switch, the arrows move 2 s.</p>
+   <details class="more">
+     <summary>How to read the lines</summary>
+     <p>Each channel is a line in its color, revealed as it plays: P1 melody (blue),
+     P2 harmony (orange), TR bass (gray) and NO drums as ticks at the bottom. Switch to the original
+     to see its melody in blue and the other parts as faint dashes. Keys: space plays, A and B
+     switch, the arrows move 2 s.</p>
+   </details>
    <div class="scores" data-scores></div>
    <div data-downloads></div>
    <div data-runs></div>`,
@@ -1135,7 +1145,7 @@ function updateRunButtons() {
   if (!state.input) setRunHint("");
   else if (!valid) setRunHint(validateSettings(state.settings).map((m) => m.message).join("; "), true);
   else if (evolving) setRunHint("Evolving… changes apply to the next run.");
-  else setRunHint("Ready to arrange.");
+  else setRunHint("");
 }
 
 /** Show the settings that differ from the defaults as chips on the Run card. */

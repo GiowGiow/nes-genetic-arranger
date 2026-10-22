@@ -674,7 +674,7 @@ export function createSongShelf(root, options) {
     pageText.textContent = `Page ${(page + 1).toLocaleString("en")} of ${pages.toLocaleString("en")}`;
     previous.disabled = page === 0;
     next.disabled = page >= pages - 1;
-    previous.hidden = next.hidden = pages <= 1; // one page: nothing to turn
+    previous.hidden = next.hidden = pageText.hidden = pages <= 1; // one page: nothing to turn or count
     view.textContent = viewName();
     empty.hidden = total > 0;
     empty.textContent = entries.length === 0 ? "Loading the songs…" : "No song in the catalog matches.";

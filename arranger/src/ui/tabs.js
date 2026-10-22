@@ -29,7 +29,7 @@
 /** @type {readonly PageTab[]} */
 export const TABS = Object.freeze([
   Object.freeze({ id: "song", label: "Song", panels: Object.freeze(["song", "settings"]) }),
-  Object.freeze({ id: "evolution", label: "Evolution", panels: Object.freeze(["workbench", "settings", "mix"]) }),
+  Object.freeze({ id: "evolution", label: "Run", panels: Object.freeze(["workbench", "settings", "mix"]) }),
   Object.freeze({ id: "how", label: "How it works", panels: Object.freeze(["how"]) }),
 ]);
 

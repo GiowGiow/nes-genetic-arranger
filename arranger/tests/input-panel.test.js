@@ -388,9 +388,12 @@ test("a file the page claims as a download comes with its catalog record and the
     assert.deepEqual(asked, ["song.mid"]);
     assert.equal(loads.at(-1)?.input.catalogEntry, record);
     assert.deepEqual(loads.at(-1)?.overrides, { max_generations: 4000 }, "the record's stopping limits apply, as when it opens from the shelf");
+    const summaryClasses = () => /** @type {any} */ (targets.root.querySelector("[data-summary]")).classList;
+    assert.ok(summaryClasses().contains("from-catalog"), "the summary leaves out what the shelf's panel already says");
 
     await panel.readFile(/** @type {any} */ (new File([TWO_MELODIES], "other.mid")));
     assert.equal(loads.at(-1)?.input.catalogEntry, null, "an unclaimed file stays the visitor's own");
     assert.deepEqual(loads.at(-1)?.overrides, {});
+    assert.ok(!summaryClasses().contains("from-catalog"), "a visitor's own file has no panel above it: the summary says it all");
   });
 });
