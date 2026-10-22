@@ -376,7 +376,11 @@ export function createInputPanel(targets, options) {
       button.setAttribute("aria-pressed", "false");
     }
     const bytes = new Uint8Array(await file.arrayBuffer());
-    await openFile(file.name, bytes, overrides, catalogEntry ?? options.onFileDropped?.(file.name) ?? null);
+    const claimed = /** @type {{facts?: {overrides?: Record<string, number>}} | null} */ (
+      catalogEntry ?? options.onFileDropped?.(file.name) ?? null
+    );
+    // A song claimed as a download brings its record's stopping limits, as when it opens from the shelf.
+    await openFile(file.name, bytes, Object.keys(overrides).length > 0 ? overrides : (claimed?.facts?.overrides ?? {}), claimed);
   }
 
   /**

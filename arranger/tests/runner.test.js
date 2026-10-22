@@ -377,3 +377,45 @@ test("a waltz posted to the worker runs in its own meter", async () => {
   assert.ok(done, "the run ends with a done message");
   assert.equal(done.bestPlan.length, 16 * 4);
 });
+
+test("a worker that runs many songs in one visit keeps no run alive: each ends, nothing sleeps on, late messages are ignored", async () => {
+  let time = 1000;
+  /** @type {any[]} */
+  const posted = [];
+  let sleeping = 0;
+  const runner = createRunner({
+    post: (message) => posted.push(message),
+    now: () => (time += 0.02),
+    sleep: (milliseconds) => {
+      sleeping += 1;
+      time += Math.max(0, milliseconds);
+      return new Promise((resolve) =>
+        setImmediate(() => {
+          sleeping -= 1;
+          resolve(undefined);
+        }),
+      );
+    },
+  });
+
+  for (let visit = 1; visit <= 8; visit += 1) {
+    const id = `run-${visit}`;
+    const run = /** @type {Promise<void>} */ (runner.handle(runMessage(id, visit % 2 ? "full" : "watch", smallSettings({ seed: visit, max_generations: 400 }))));
+    if (visit % 3 === 0) {
+      // The visitor presses Stop mid-run, then the run ends with its best plan so far.
+      await new Promise((resolve) => setImmediate(resolve));
+      runner.handle({ type: "stop", runId: id });
+    }
+    await run;
+    assert.equal(sleeping, 0, `run ${visit}: a pause is still pending after the run ended`);
+    const mine = posted.filter((message) => message.runId === id);
+    assert.equal(mine.filter((message) => message.type === "done").length, 1, `run ${visit} ends with one done`);
+
+    // A stop or pace that arrives after the run is over finds no run and posts nothing.
+    const before = posted.length;
+    runner.handle({ type: "stop", runId: id });
+    runner.handle({ type: "pace", runId: id, pace: "watch" });
+    assert.equal(posted.length, before);
+  }
+  assert.equal(sleeping, 0);
+});

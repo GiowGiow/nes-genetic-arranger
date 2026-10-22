@@ -5,8 +5,10 @@
  *
  * The look takes after the PS2 memory card screen: records float over the Song card, the
  * selected one comes forward and spins, and the others bob. Thousands of songs cannot float
- * at once, so the catalog is cut into pages of 15 records (9 on a phone); only the current page
- * exists in the scene, which keeps paging smooth (story 3, scenario 7).
+ * at once, so the catalog is cut into pages. A page has 3 rows and as many columns as the stage
+ * is wide (3 on a phone, then 5, 7 or 9: `shelf-layout.js`), so a wide shelf shows more records
+ * instead of bigger ones. Only the current page exists in the scene, which keeps paging smooth
+ * (story 3, scenario 7).
  *
  * The truth lives in the DOM, not in the 3D scene:
  *
@@ -25,13 +27,19 @@
  * names the view "Search results"; clearing the box returns to the chosen playlist, which is
  * remembered between visits. Every list is ordered by popularity.
  *
- * On a phone the stage takes swipes: a quick horizontal drag turns the page, while vertical
- * drags still scroll the page (`touch-action: pan-y`). A sideways mouse wheel, or shift with the
- * wheel, turns pages on a desktop.
+ * Pages turn with two arrows on the stage's left and right edges (large touch targets, over the
+ * records, where the thumbs are on a phone), with the keyboard, with a quick horizontal swipe
+ * (vertical drags still scroll the page: `touch-action: pan-y`) and, on a desktop, with a
+ * sideways mouse wheel or shift with the wheel. A small counter under the stage says which page
+ * it is.
  *
- * The side panel shows the selected song's sprite, title, composer and its analysis facts as
- * labeled values (key, tempo, meter, bars), with Arrange and Preview. It never shows where a
- * song comes from: credits live in the README (FR-014a).
+ * The panel shows the selected song's sprite, title and composer, one line of its analysis facts
+ * ("A minor, 150 BPM, 4/4, 32 bars") and what can be done with it: Arrange and Preview or, for a
+ * song whose file the browser cannot read from the catalog site (no CORS header), a primary
+ * "Download MIDI" button with a hint, and after it "Open downloaded file". The page does the
+ * downloading and the opening (`onDownload`, `onOpenDownloaded`); the shelf only remembers which
+ * songs were downloaded in this visit. The panel never shows where a song comes from: credits
+ * live in the README (FR-014a).
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "../core/catalog.js";
@@ -52,6 +60,10 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  *   page of a clicked record
  * @property {() => void} resize
  * @property {() => void} dispose
+ *
+ * The scene also owns the songs' titles: it makes its own layer of labels inside the host it was
+ * given, places them from the projected records and removes the layer on `dispose`. The shelf
+ * never touches that layer.
  */
 
 /**
@@ -61,6 +73,10 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  * @property {(entry: CatalogEntry) => void} [onPreview] plays the song; no Preview without it
  * @property {(query: string) => void} [onSearch] called with the words typed in the shelf's search
  *   box, so the page can look further than the catalog
+ * @property {(entry: CatalogEntry) => void} [onDownload] starts the download of a song whose
+ *   route has `download`; without it such a song keeps Arrange and Preview
+ * @property {(entry: CatalogEntry) => void} [onOpenDownloaded] asks for the file the visitor
+ *   downloaded and opens it as that song; offered after Download
  * @property {boolean} [webgl] draw the 3D scene; default: the browser has WebGL 2 and the
  *   address has no `?no-webgl`
  * @property {{getItem: (key: string) => string | null, setItem: (key: string, value: string) => void} | null} [storage]
@@ -186,22 +202,23 @@ export function keyLabel(keyName) {
 }
 
 /**
- * The facts the panel shows, as [label, value] pairs.
+ * The facts the panel shows on one line: key, tempo, meter and length. A fact the analysis did
+ * not find is left out rather than shown as a dash, so the line stays short.
  *
  * @param {CatalogEntry} entry
- * @returns {Array<[string, string]>}
+ * @returns {string[]}
  * @example
- * factsOf({ id: "a", t: "A", facts: { key: "G major", tempo_bpm: 96.5, meter: "2/4", n_bars: 48 } });
- * // [["Key", "G major"], ["Tempo", "97 BPM"], ["Meter", "2/4"], ["Bars", "48"]]
+ * factSummary({ id: "a", t: "A", facts: { key: "G major", tempo_bpm: 96.5, meter: "2/4", n_bars: 48 } });
+ * // ["G major", "97 BPM", "2/4", "48 bars"]
  */
-export function factsOf(entry) {
+export function factSummary(entry) {
   const facts = entry.facts ?? {};
-  return [
-    ["Key", facts.key ? keyLabel(facts.key) : UNKNOWN],
-    ["Tempo", facts.tempo_bpm ? `${Math.round(facts.tempo_bpm)} BPM` : UNKNOWN],
-    ["Meter", facts.meter || UNKNOWN],
-    ["Bars", facts.n_bars ? String(facts.n_bars) : UNKNOWN],
-  ];
+  const summary = [];
+  if (facts.key) summary.push(keyLabel(facts.key));
+  if (facts.tempo_bpm) summary.push(`${Math.round(facts.tempo_bpm)} BPM`);
+  if (facts.meter) summary.push(facts.meter);
+  if (facts.n_bars) summary.push(`${facts.n_bars} ${facts.n_bars === 1 ? "bar" : "bars"}`);
+  return summary;
 }
 
 /**
@@ -368,6 +385,10 @@ export function createSongShelf(root, options) {
   let wheelTotal = 0;
   let wheelLast = -Infinity;
   let wheelLockedUntil = 0;
+  /** @type {Set<string>} the songs whose Download MIDI was pressed in this visit */
+  const downloaded = new Set();
+  /** @type {HTMLElement | null} the panel's main button as last drawn, to move the focus onto */
+  let primaryAction = null;
 
   /**
    * @param {string} tag
@@ -392,7 +413,16 @@ export function createSongShelf(root, options) {
   const listbox = make("ul", "shelf-list", { role: "listbox", tabindex: 0, id: `${id}-list` });
   const empty = make("p", "shelf-empty");
   const stage = make("div", "shelf-stage");
-  stage.append(canvasHost, listbox, empty);
+  // The page arrows sit on the stage's two edges, over the records: where a thumb rests on a
+  // phone, and the same place on a desktop. CSS draws the chevron.
+  const arrow = (/** @type {string} */ direction, /** @type {string} */ label) => {
+    const element = make("button", `shelf-arrow is-${direction}`, { type: "button", "aria-label": label });
+    element.append(make("span", "shelf-chevron", { "aria-hidden": "true" }));
+    return element;
+  };
+  const previous = arrow("previous", "Previous page");
+  const next = arrow("next", "Next page");
+  stage.append(canvasHost, listbox, empty, previous, next);
   const info = make("aside", "shelf-info", { "aria-label": "Selected song" });
   // The records do not say which song they are: this list does, with every song of the catalog
   // and the search box above it. The listbox above is the accessible one, so the list is hidden
@@ -408,19 +438,16 @@ export function createSongShelf(root, options) {
   const side = make("div", "shelf-side");
   side.append(searchBox, view, songs);
   const chooser = make("div", "shelf-playlists", { role: "group", "aria-label": "Playlists" });
+  // Which page this is: a small counter under the records (the arrows carry the action).
+  const pageText = make("p", "shelf-page mono", { "aria-live": "polite" });
+  const stageColumn = make("div", "shelf-stage-column");
+  stageColumn.append(stage, pageText);
   const body = make("div", "shelf-body");
-  body.append(chooser, stage, side, info);
-  const previous = make("button", "button small", { type: "button", "aria-label": "Previous page" });
-  previous.textContent = "‹";
-  const next = make("button", "button small", { type: "button", "aria-label": "Next page" });
-  next.textContent = "›";
-  const pageText = make("span", "shelf-page mono", { "aria-live": "polite" });
-  const pager = make("div", "shelf-pager");
-  pager.append(previous, pageText, next);
+  body.append(chooser, stageColumn, side, info);
 
   root.classList.add("song-shelf", webgl ? "is-3d" : "is-2d");
   root.classList.toggle("reduce-motion", reducedMotion);
-  root.append(body, pager);
+  root.append(body);
 
   function measure() {
     columns = shelfColumns(stage.clientWidth || root.clientWidth || 0);
@@ -455,7 +482,12 @@ export function createSongShelf(root, options) {
     disc.append(spriteCanvas(entry));
     const names = [displayTitle(entry.t), entry.c || entry.p || ""].filter(Boolean).join(", ");
     const note = entry.error ? ", cannot be arranged" : needsDownload(entry) ? ", needs a download" : "";
-    option.append(disc, textElement("span", "shelf-record-name", names + note));
+    // The first name is the option's accessible name (title, who made it, a note); the second
+    // is what the 2D grid shows under the record, so it is hidden from assistive technology
+    // to avoid a double reading.
+    const label = textElement("span", "shelf-record-label", displayTitle(entry.t));
+    label.setAttribute("aria-hidden", "true");
+    option.append(disc, textElement("span", "shelf-record-name", names + note), label);
     option.addEventListener("click", () => {
       select(position);
       listbox.focus();
@@ -485,7 +517,7 @@ export function createSongShelf(root, options) {
     }
     row.addEventListener("click", () => select(position));
     row.addEventListener("dblclick", () => {
-      if (canArrange(entry)) options.onArrange(entry);
+      if (canArrange(entry)) activate(entry);
     });
     return row;
   }
@@ -518,20 +550,24 @@ export function createSongShelf(root, options) {
     const head = make("div", "shelf-info-head");
     head.append(spriteCanvas(entry), names);
 
-    const facts = make("dl", "shelf-facts");
-    for (const [label, value] of factsOf(entry)) {
-      const fact = make("div");
-      fact.append(textElement("dt", "", label), textElement("dd", "", value));
-      facts.append(fact);
+    info.replaceChildren(head);
+    const facts = factSummary(entry);
+    if (facts.length > 0) {
+      // Separate elements, so the dots between them are CSS and a screen reader hears four facts.
+      const line = make("p", "shelf-facts");
+      line.append(...facts.map((fact) => textElement("span", "", fact)));
+      info.append(line);
     }
-
-    info.replaceChildren(head, facts);
     if (!canArrange(entry)) {
       const reason = entry.error ? ` (${entry.error})` : "";
       info.append(textElement("p", "shelf-problem", `This song cannot be arranged${reason}.`));
       return;
     }
     const actions = make("div", "shelf-actions");
+    if (needsDownload(entry) && options.onDownload) {
+      renderDownloadActions(entry, actions);
+      return;
+    }
     const link = entry.route?.link !== undefined;
     const arrange = make("button", "button primary", { type: "button" });
     arrange.textContent = link ? "Open page" : "Arrange";
@@ -544,6 +580,67 @@ export function createSongShelf(root, options) {
       actions.append(preview);
     }
     info.append(actions);
+  }
+
+  /**
+   * What a song that must be downloaded first offers. The catalog site sends no CORS header, so
+   * the browser cannot read its files: the visitor downloads the MIDI, then opens it here. One
+   * clear step at a time: Download MIDI with a one-line hint, and, once it was pressed, Open
+   * downloaded file as the main button (with a quiet way to download again).
+   *
+   * @param {CatalogEntry} entry
+   * @param {HTMLElement} actions the row the buttons go in; it is added to the panel here
+   */
+  function renderDownloadActions(entry, actions) {
+    if (downloaded.has(keyOf(entry)) && options.onOpenDownloaded) {
+      const open = make("button", "button primary", { type: "button" });
+      open.textContent = "Open downloaded file";
+      open.addEventListener("click", () => openDownloaded(entry));
+      primaryAction = open;
+      const again = make("button", "button quiet", { type: "button" });
+      again.textContent = "Download again";
+      again.addEventListener("click", () => options.onDownload?.(entry));
+      actions.append(open, again);
+      info.append(actions);
+      return;
+    }
+    const get = make("button", "button primary", { type: "button" });
+    get.append(make("span", "shelf-icon", { "aria-hidden": "true" }), textElement("span", "", "Download MIDI"));
+    get.addEventListener("click", () => {
+      startDownload(entry);
+      // The pressed button is gone: the keyboard's place moves on to the next step
+      primaryAction?.focus();
+    });
+    primaryAction = get;
+    actions.append(get, textElement("p", "shelf-hint", "Then open the downloaded file here."));
+    info.append(actions);
+  }
+
+  /** @param {CatalogEntry} entry */
+  function startDownload(entry) {
+    options.onDownload?.(entry);
+    downloaded.add(keyOf(entry));
+    renderInfo(entry);
+  }
+
+  /** @param {CatalogEntry} entry */
+  function openDownloaded(entry) {
+    options.onOpenDownloaded?.(entry);
+  }
+
+  /**
+   * What Enter or a double click does with a song: arrange it, or take the next step of a
+   * download.
+   *
+   * @param {CatalogEntry} entry
+   */
+  function activate(entry) {
+    if (needsDownload(entry) && options.onDownload) {
+      if (downloaded.has(keyOf(entry)) && options.onOpenDownloaded) openDownloaded(entry);
+      else startDownload(entry);
+    } else {
+      options.onArrange(entry);
+    }
   }
 
   function render() {
@@ -577,6 +674,7 @@ export function createSongShelf(root, options) {
     pageText.textContent = `Page ${(page + 1).toLocaleString("en")} of ${pages.toLocaleString("en")}`;
     previous.disabled = page === 0;
     next.disabled = page >= pages - 1;
+    previous.hidden = next.hidden = pages <= 1; // one page: nothing to turn
     view.textContent = viewName();
     empty.hidden = total > 0;
     empty.textContent = entries.length === 0 ? "Loading the songs…" : "No song in the catalog matches.";
@@ -739,7 +837,7 @@ export function createSongShelf(root, options) {
       const entry = list[index];
       if (entry && canArrange(entry)) {
         event.preventDefault();
-        options.onArrange(entry);
+        activate(entry);
       }
       return;
     }

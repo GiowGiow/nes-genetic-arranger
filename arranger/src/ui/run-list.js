@@ -14,7 +14,11 @@ import { settingLabel, settingValueText } from "./settings-panel.js";
 /** How many runs a visit keeps. */
 export const RUN_LIMIT = 5;
 
-/** @typedef {{id: string, settings: import("../core/settings.js").Settings, bestFitness: number}} RunEntry */
+/**
+ * A run of the visit. `audio` holds the big sound buffers (`audio/run-audio.js`) and is null for
+ * every run but the one on screen.
+ * @typedef {{id: string, settings: import("../core/settings.js").Settings, bestFitness: number, audio?: unknown}} RunEntry
+ */
 
 /**
  * Put a run at the head of the list, drop an older run with the same id and keep RUN_LIMIT runs.
@@ -28,6 +32,58 @@ export const RUN_LIMIT = 5;
  */
 export function addRun(runs, run) {
   return [run, ...runs.filter((entry) => entry.id !== run.id)].slice(0, RUN_LIMIT);
+}
+
+/**
+ * Free the sound buffers of every run but one, so a visit holds the audio of the run on screen and
+ * not of all five (see `audio/run-audio.js`). The runs stay in the list; one that is brought back
+ * renders its sound again. This changes the entries in place.
+ *
+ * @param {RunEntry[]} runs
+ * @param {string | null} keepId the run that keeps its audio; null frees every run's
+ * @returns {number} how many runs gave up their audio
+ * @example
+ * releaseAudio(runs, newRun.id); // the older runs are now only their notes
+ */
+export function releaseAudio(runs, keepId) {
+  let freed = 0;
+  for (const run of runs) {
+    if (run.id !== keepId && run.audio) {
+      run.audio = null;
+      freed += 1;
+    }
+  }
+  return freed;
+}
+
+/**
+ * The run on screen, when it belongs to the song that is loaded.
+ *
+ * A run's lead sheet is the reading of the song it arranged. Reading the song again (another
+ * melody track, other bars) makes a new lead sheet, so a run of the old reading is not the run
+ * of this song.
+ *
+ * @param {Array<RunEntry & {leadSheet?: unknown}>} runs
+ * @param {string | null} currentRunId the id of the run on screen, if any
+ * @param {unknown} leadSheet the loaded song's lead sheet
+ * @returns {(RunEntry & {leadSheet?: unknown}) | null}
+ * @example
+ * runShown(state.runs, state.currentRunId, input.leadSheet); // the run, or null
+ */
+export function runShown(runs, currentRunId, leadSheet) {
+  if (currentRunId === null || !leadSheet) return null;
+  const run = runs.find((entry) => entry.id === currentRunId);
+  return run && run.leadSheet === leadSheet ? run : null;
+}
+
+/**
+ * How many runs hold sound buffers.
+ *
+ * @param {RunEntry[]} runs
+ * @returns {number}
+ */
+export function audioHolders(runs) {
+  return runs.filter((run) => run.audio).length;
 }
 
 /**

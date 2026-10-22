@@ -31,6 +31,18 @@
 /* A muted channel keeps its level, shown dimmed until it is unmuted. */
 .mixer-row:has(.mixer-mute[aria-pressed="true"]) :is(.mixer-level, .mixer-value) { opacity: .4; }
 
+/* The master volume (src/ui/volume-slider.js): a horizontal row across the top of the mixer, over
+   all four channels, and a small copy of it beside the Play button. */
+.mixer-volume {
+  grid-column: 1 / -1; justify-self: stretch; display: grid; grid-template-columns: auto 1fr 3.4ch;
+  align-items: center; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.mixer-volume .volume-label { font-size: .8rem; font-weight: 600; color: var(--text); }
+.mixer-volume input[type="range"], .volume-compact input[type="range"] { min-width: 0; margin: 0; accent-color: var(--text); }
+.volume-compact { display: inline-flex; align-items: center; gap: 6px; }
+.volume-compact .volume-label { font-size: .8rem; color: var(--muted); cursor: pointer; }
+.volume-compact input[type="range"] { width: 88px; }
+
 .mixer-footer { grid-column: 1 / -1; justify-self: end; margin-top: 2px; }
 
 /* The drawer: the mixer slides in from the left edge and leaves the page as it is. Closed, it waits

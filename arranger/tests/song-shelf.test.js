@@ -13,7 +13,7 @@ import { test } from "node:test";
 import {
   PLAYLIST_KEY,
   createSongShelf,
-  factsOf,
+  factSummary,
   keyLabel,
   stepSelection,
   swipeGesture,
@@ -345,23 +345,14 @@ test("Home and End go to the ends of the page; PageUp and PageDown keep the plac
   assert.equal(stepSelection(0, "ArrowRight", { total: 0, columns: 5, perPage: 15 }), null);
 });
 
-test("keys read as written, and facts as labeled values with a dash when unknown", () => {
+test("keys read as written, and facts as a short row of values, leaving out what is unknown", () => {
   assert.equal(keyLabel("e- minor"), "Eb minor");
   assert.equal(keyLabel("f# minor"), "F# minor");
   assert.equal(keyLabel("C major"), "C major");
   assert.equal(keyLabel(""), "—");
-  assert.deepEqual(factsOf(song(1)), [
-    ["Key", "Eb minor"],
-    ["Tempo", "121 BPM"],
-    ["Meter", "4/4"],
-    ["Bars", "32"],
-  ]);
-  assert.deepEqual(factsOf({ id: "x", t: "X" }), [
-    ["Key", "—"],
-    ["Tempo", "—"],
-    ["Meter", "—"],
-    ["Bars", "—"],
-  ]);
+  assert.deepEqual(factSummary(song(1)), ["Eb minor", "121 BPM", "4/4", "32 bars"]);
+  assert.deepEqual(factSummary({ id: "x", t: "X" }), [], "no facts, no row");
+  assert.deepEqual(factSummary({ id: "x", t: "X", facts: { key: "G major", n_bars: 1 } }), ["G major", "1 bar"]);
 });
 
 test("WebGL 2 (which three.js needs) is used when the browser has it, unless the address asks for ?no-webgl", () => {
@@ -442,17 +433,17 @@ test("clicking a song in the list selects it, and double-clicking arranges it", 
   assert.deepEqual(arranged.map((entry) => entry.id), ["song-6"]);
 });
 
-test("the panel shows title, composer and the facts as labeled values, with Arrange and Preview", () => {
+test("the panel shows title, composer and one line of facts, with Arrange and Preview", () => {
   const { root, shelf } = mount();
   shelf.select(3);
   const panel = byClass(root, "shelf-info")[0];
   assert.equal(byClass(panel, "shelf-title")[0].textContent, "Água de Teste");
   assert.equal(byClass(panel, "shelf-by")[0].textContent, "Composer 3");
   assert.match(panel.textContent, /Banda Inventada/);
-  const terms = all(panel).filter((element) => element.tagName === "DT").map((element) => element.textContent);
-  const values = all(panel).filter((element) => element.tagName === "DD").map((element) => element.textContent);
-  assert.deepEqual(terms, ["Key", "Tempo", "Meter", "Bars"]);
-  assert.deepEqual(values, ["Eb minor", "123 BPM", "4/4", "32"]);
+  const facts = byClass(panel, "shelf-facts");
+  assert.equal(facts.length, 1, "one line, not four boxes");
+  assert.deepEqual(facts[0].children.map((fact) => fact.textContent), ["Eb minor", "123 BPM", "4/4", "32 bars"]);
+  assert.equal(all(panel).filter((element) => element.tagName === "DT" || element.tagName === "DD").length, 0);
   assert.ok(button(panel, "Arrange").classList.contains("primary"));
   assert.ok(button(panel, "Preview"));
   assert.equal(byClass(panel, "shelf-sprite").length, 1, "the panel shows the song's sprite");
@@ -510,11 +501,14 @@ test("PageDown and PageUp turn pages, Home goes to the page's first song, Enter 
   assert.deepEqual(arranged.map((entry) => entry.id), ["song-0"]);
 });
 
-test("the pager buttons turn pages and are disabled at the ends", () => {
+test("the page arrows sit on the stage's edges, turn pages and are disabled at the ends; a counter stays under it", () => {
   const { root, shelf } = mount();
-  const previous = all(root).find((element) => element.getAttribute("aria-label") === "Previous page");
-  const next = all(root).find((element) => element.getAttribute("aria-label") === "Next page");
-  assert.ok(previous && next);
+  const stage = byClass(root, "shelf-stage")[0];
+  const previous = all(stage).find((element) => element.getAttribute("aria-label") === "Previous page");
+  const next = all(stage).find((element) => element.getAttribute("aria-label") === "Next page");
+  assert.ok(previous && next, "both arrows are inside the stage, over the records");
+  assert.ok(previous.classList.contains("shelf-arrow") && next.classList.contains("shelf-arrow"));
+  assert.ok(previous.classList.contains("is-previous") && next.classList.contains("is-next"));
   assert.equal(previous.disabled, true);
   click(next);
   assert.equal(shelf.page().page, 1);
@@ -522,6 +516,16 @@ test("the pager buttons turn pages and are disabled at the ends", () => {
   assert.equal(previous.disabled, false);
   click(previous);
   assert.equal(shelf.page().page, 0);
+  assert.equal(all(stage).includes(byClass(root, "shelf-page")[0]), false, "the counter is not on the records");
+});
+
+test("a list that fits one page needs no arrows", () => {
+  const { root, shelf } = mount({ entries: twenty().slice(0, 5) });
+  const arrows = byClass(root, "shelf-arrow");
+  assert.equal(arrows.length, 2);
+  assert.ok(arrows.every((arrow) => arrow.hidden));
+  shelf.setEntries(twenty());
+  assert.ok(arrows.every((arrow) => !arrow.hidden), "they return with a second page");
 });
 
 test("a phone-width shelf shows 9 songs a page, and resizing keeps the selected song", () => {
@@ -530,12 +534,26 @@ test("a phone-width shelf shows 9 songs a page, and resizing keeps the selected 
   assert.deepEqual({ perPage: shelf.page().perPage, columns: shelf.page().columns, pages: shelf.page().pages }, { perPage: 9, columns: 3, pages: 3 });
   assert.equal(root.styleValues["--shelf-columns"], "3", "the 2D grid's CSS reads the same column count");
   shelf.select(10);
-  root.clientWidth = 900;
+  root.clientWidth = 700;
   shelf.resize();
   assert.equal(shelf.page().perPage, 15);
   assert.equal(root.styleValues["--shelf-columns"], "5");
   assert.equal(shelf.page().index, 10);
   assert.equal(shelf.page().page, 0);
+});
+
+test("the columns follow the stage width, and so do the page size and the keyboard's rows", () => {
+  const many = Array.from({ length: 80 }, (_, i) => song(i));
+  const expected = [[375, 3], [700, 5], [824, 7], [1000, 9]];
+  for (const [width, columns] of expected) {
+    const { root, shelf, list } = mount({ entries: many }, width);
+    assert.equal(shelf.page().columns, columns, `${width} px`);
+    assert.equal(shelf.page().perPage, columns * 3);
+    assert.equal(optionsOf(root).length, columns * 3);
+    assert.equal(root.styleValues["--shelf-columns"], String(columns));
+    press(list, "ArrowDown");
+    assert.equal(shelf.page().index, columns, "one row down is one more column along the list");
+  }
 });
 
 // --- Search and a growing catalog ---------------------------------------------------------------
@@ -590,6 +608,8 @@ test("without WebGL the options are a 2D grid of sprite canvases that select on 
   assert.equal(sprite.tagName, "CANVAS");
   assert.ok(sprite.painted.length > 20, "the sprite is drawn");
   assert.match(String(byClass(option, "shelf-disc")[0].styleValues["--label"]), /^#[0-9A-F]{6}$/);
+  assert.equal(byClass(option, "shelf-record-label")[0].textContent, "Song 04", "the 2D grid names each record");
+  assert.equal(byClass(option, "shelf-record-label")[0].getAttribute("aria-hidden"), "true", "the option's own name is read once");
   click(option);
   assert.equal(shelf.page().index, 4);
   assert.equal(document.activeElement, list, "the listbox takes the focus, so the keys work next");
@@ -753,6 +773,69 @@ test("a song that needs a download is marked in the side list and stays out of P
   click(tile(root, "Back to playlists"));
   click(tile(root, "Folk tunes"));
   assert.equal(byClass(root, "shelf-song-get").length, 0, "songs that open in one click have no hint");
+});
+
+/** A shelf on the MPB playlist with the first song selected, and the download handlers recorded. */
+function mountMpb(extra = {}) {
+  /** @type {any[]} */
+  const downloaded = [];
+  /** @type {any[]} */
+  const opened = [];
+  const mounted = mount({
+    entries: library(),
+    onDownload: (/** @type {any} */ entry) => downloaded.push(entry),
+    onOpenDownloaded: (/** @type {any} */ entry) => opened.push(entry),
+    ...extra,
+  });
+  click(tile(mounted.root, "MPB"));
+  click(tile(mounted.root, "All MPB"));
+  return { ...mounted, downloaded, opened, panel: byClass(mounted.root, "shelf-info")[0] };
+}
+
+test("a song that needs a download shows a primary Download MIDI button and a one-line hint, not Arrange or Preview", () => {
+  const { panel, downloaded } = mountMpb();
+  const get = button(panel, "Download MIDI");
+  assert.ok(get.classList.contains("primary"));
+  assert.equal(byClass(get, "shelf-icon").length, 1, "with a download icon");
+  assert.equal(byClass(get, "shelf-icon")[0].getAttribute("aria-hidden"), "true");
+  assert.equal(byClass(panel, "shelf-hint")[0].textContent, "Then open the downloaded file here.");
+  const names = all(panel).filter((element) => element.tagName === "BUTTON").map((element) => element.textContent);
+  assert.deepEqual(names, ["Download MIDI"], "no Arrange, no Preview, nothing else to choose");
+  assert.deepEqual(downloaded, []);
+  click(get);
+  assert.deepEqual(downloaded.map((entry) => entry.id), ["song-206"], "the page is told which song");
+});
+
+test("after Download MIDI the panel offers Open downloaded file as its primary action", () => {
+  const { root, shelf, panel, opened, downloaded } = mountMpb();
+  click(button(panel, "Download MIDI"));
+  const info = () => byClass(root, "shelf-info")[0];
+  const open = button(info(), "Open downloaded file");
+  assert.ok(open.classList.contains("primary"));
+  assert.equal(byClass(info(), "shelf-hint").length, 0, "the hint has done its work");
+  assert.ok(button(info(), "Download again"), "a download that failed can be repeated");
+  click(open);
+  assert.deepEqual(opened.map((entry) => entry.id), ["song-206"]);
+  assert.equal(downloaded.length, 1);
+  shelf.select(1);
+  assert.ok(button(info(), "Download MIDI"), "another song starts at the download");
+  shelf.select(0);
+  assert.ok(button(info(), "Open downloaded file"), "and the first one remembers it was downloaded");
+});
+
+test("Enter on a song that needs a download starts the download, then opens the file", () => {
+  const { list, downloaded, opened } = mountMpb();
+  press(list, "Enter");
+  assert.equal(downloaded.length, 1);
+  assert.equal(opened.length, 0);
+  press(list, "Enter");
+  assert.equal(opened.length, 1);
+});
+
+test("without download handlers a song that needs a download keeps Arrange and Preview", () => {
+  const { panel } = mountMpb({ onDownload: undefined, onOpenDownloaded: undefined });
+  assert.ok(button(panel, "Arrange"));
+  assert.ok(button(panel, "Preview"));
 });
 
 test("MPB opens a second level: its artist albums, with a back control and an All MPB button", () => {

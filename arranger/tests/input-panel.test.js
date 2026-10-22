@@ -367,3 +367,30 @@ test("when the excerpt cannot be read, no earlier reading stays loaded to be arr
     assert.equal(/** @type {any} */ (page.panel.current()).midi.melody_track, 1);
   });
 });
+
+test("a file the page claims as a download comes with its catalog record and the record's own limits", async () => {
+  await inFakeDocument(async (targets) => {
+    /** @type {import("../src/ui/input-panel.js").LoadedInput[]} */
+    const loads = [];
+    const record = { id: "x", source: "mpb", t: "Song", u: "https://example.org/song", facts: { overrides: { max_generations: 4000 } } };
+    /** @type {string[]} */
+    const asked = [];
+    const panel = createInputPanel(/** @type {any} */ (targets), {
+      examples: [],
+      readOptions: () => ({ phraseLength: 4, roleMap: {}, tempoOverride: null }),
+      onLoaded: (loaded) => loads.push(loaded),
+      onFileDropped: (name) => {
+        asked.push(name);
+        return name === "song.mid" ? record : null;
+      },
+    });
+    await panel.readFile(/** @type {any} */ (new File([TWO_MELODIES], "song.mid")));
+    assert.deepEqual(asked, ["song.mid"]);
+    assert.equal(loads.at(-1)?.input.catalogEntry, record);
+    assert.deepEqual(loads.at(-1)?.overrides, { max_generations: 4000 }, "the record's stopping limits apply, as when it opens from the shelf");
+
+    await panel.readFile(/** @type {any} */ (new File([TWO_MELODIES], "other.mid")));
+    assert.equal(loads.at(-1)?.input.catalogEntry, null, "an unclaimed file stays the visitor's own");
+    assert.deepEqual(loads.at(-1)?.overrides, {});
+  });
+});

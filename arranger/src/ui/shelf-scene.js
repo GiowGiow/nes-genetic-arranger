@@ -13,11 +13,15 @@
  * - **Motion.** `shelf-layout.js` gives every record's pose at each moment: the others bob, the
  *   selected one comes forward, grows, sways and spins like a turntable, with an additive halo
  *   behind it. Under reduced motion every pose is still.
- * - **Titles.** Under each record hangs a strip with the song's title in light pixel letters
- *   with a soft glow (a canvas texture). A title wider than the strip scrolls like a marquee:
- *   the texture holds the title, a gap and then the room to repeat, and only its offset moves
- *   (`RepeatWrapping`). A short title stays still and centred. The selected record's strip is
- *   brighter. Under reduced motion nothing scrolls: a long title is cut with an ellipsis.
+ * - **Titles.** Under each record hangs its title as a page element, not as a texture: the canvas
+ *   renders at about half the device's pixels, which blurred painted letters. The scene creates a
+ *   layer of labels inside its host (`.shelf-labels`, hidden from assistive technology: the
+ *   shelf's listbox names the songs). Every frame it projects each record's lower rim to the
+ *   stage's pixels (`vector.project(camera)`) and moves the label there, writing a label's style
+ *   only when it moved. The page's UI font and CSS do the rest: a title wider than its label
+ *   slides back and forth (the scene measures the overflow and passes it to the CSS animation as
+ *   custom properties), and under reduced motion it is cut with an ellipsis. The selected
+ *   record's label is brighter. A click on a label picks its record, like a click on the disc.
  * - **Glow behind, always.** The halo is not "transparent" for three.js, so it joins the opaque
  *   list, where `renderOrder = -1` draws it before every record; the records then paint over it
  *   wherever they overlap, however the selected one sways.
@@ -41,26 +45,21 @@ import { displayTitle } from "../core/sources.js";
 import {
   CAMERA_FOV,
   HALO_SCALE,
-  MARQUEE_STAGGER,
-  STRIP_HEIGHT,
-  STRIP_PADDING,
-  STRIP_PIXELS,
-  STRIP_WIDTH,
   cameraDistance,
-  ellipsize,
   haloOpacity,
   isLowPower,
-  marqueeCycle,
-  marqueeOffset,
+  labelAnchorY,
+  labelWidth,
+  marqueeDelay,
+  marqueeTiming,
+  ndcToPixels,
   pixelRatioFor,
+  pixelsPerUnit,
   recordPose,
   scaleEasing,
   shelfColumns,
   shouldRenderFrame,
-  stripOpacity,
-  stripY,
   targetFps,
-  titleNeedsScroll,
 } from "./shelf-layout.js";
 import { CHANNEL_COLORS, drawSprite, entrySprite } from "./sprites.js";
 
@@ -71,12 +70,6 @@ const PARTICLE_SEED = 5;
 /** Size of a record's face texture, in pixels, and of the sprite on its label (3 px a cell). */
 const TEXTURE_SIZE = 128;
 const SPRITE_SCALE = 3;
-
-/** The title strips' letters: a bold monospace face, drawn small so each stroke is a few pixels. */
-const STRIP_FONT = '700 11px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace';
-const STRIP_TEXT = "#e6f0ff";
-const STRIP_GLOW = "rgba(140, 190, 240, 0.95)";
-const STRIP_BACKDROP = "rgba(8, 10, 20, 0.6)";
 
 /** @typedef {import("../core/sources.js").CatalogEntry} CatalogEntry */
 /** @typedef {import("./song-shelf.js").ShelfScene} ShelfScene */
@@ -133,53 +126,6 @@ function recordTexture(entry) {
   drawSprite(context, sprite, centre - spriteSize / 2, centre - spriteSize / 2, SPRITE_SCALE);
   disc(2, "#000000");
   return pixelTexture(canvas);
-}
-
-/**
- * The texture of a title strip and what the scene needs to scroll it.
- *
- * A title that fits is drawn centred on a texture the size of the strip. One that does not is,
- * with motion, drawn at the left of a wider texture, followed by a gap, and the strip shows a
- * window of it that moves (`cycle` pixels make one pass); under reduced motion it is cut with
- * an ellipsis instead and does not move.
- *
- * @param {string} title the title to show
- * @param {CanvasRenderingContext2D} measuring a context whose font is `STRIP_FONT`
- * @param {boolean} reducedMotion
- * @returns {{texture: any, cycle: number, width: number}} `cycle` is 0 for a title that stays
- *   still; `width` is the texture's width in pixels
- */
-function titleTexture(title, measuring, reducedMotion) {
-  const measure = (/** @type {string} */ text) => measuring.measureText(text).width;
-  const fullWidth = Math.ceil(measure(title));
-  const scrolls = titleNeedsScroll(fullWidth) && !reducedMotion;
-  const shown = titleNeedsScroll(fullWidth) && reducedMotion ? ellipsize(title, STRIP_PIXELS.width - 2 * STRIP_PADDING, measure) : title;
-  const cycle = scrolls ? marqueeCycle(fullWidth) : 0;
-  const canvas = document.createElement("canvas");
-  canvas.width = scrolls ? cycle : STRIP_PIXELS.width;
-  canvas.height = STRIP_PIXELS.height;
-  const context = /** @type {CanvasRenderingContext2D} */ (canvas.getContext("2d"));
-  context.fillStyle = STRIP_BACKDROP;
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.font = STRIP_FONT;
-  context.textBaseline = "middle";
-  context.textAlign = scrolls ? "left" : "center";
-  context.fillStyle = STRIP_TEXT;
-  context.shadowColor = STRIP_GLOW;
-  context.shadowBlur = 4;
-  const x = scrolls ? STRIP_PADDING : canvas.width / 2;
-  const y = canvas.height / 2 + 1;
-  context.fillText(shown, x, y);
-  context.shadowBlur = 0;
-  context.fillText(shown, x, y); // a second, sharp pass on top of the glow
-  const texture = pixelTexture(canvas);
-  // Magnified, the letters stay blocky; shrunk below their size (a phone), linear keeps thin strokes whole
-  texture.minFilter = THREE.LinearFilter;
-  if (scrolls) {
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.repeat.x = STRIP_PIXELS.width / canvas.width;
-  }
-  return { texture, cycle, width: canvas.width };
 }
 
 /**
@@ -289,19 +235,27 @@ export function createShelfScene(host, { reducedMotion }) {
   const particles = makeParticles();
   const halo = makeHalo();
   const records = new THREE.Group();
-  const strips = new THREE.Group();
-  scene.add(particles, halo, records, strips);
+  scene.add(particles, halo, records);
 
-  const stripGeometry = new THREE.PlaneGeometry(STRIP_WIDTH, STRIP_HEIGHT);
-  const measuring = /** @type {CanvasRenderingContext2D} */ (document.createElement("canvas").getContext("2d"));
-  measuring.font = STRIP_FONT;
+  // The titles: one element per record, in a layer over the canvas. Pixel positions are all
+  // the layer needs; it is `aria-hidden` because the shelf's listbox names the songs.
+  const labelLayer = document.createElement("div");
+  labelLayer.className = "shelf-labels";
+  labelLayer.setAttribute("aria-hidden", "true");
+  host.append(labelLayer);
+  /** @type {Array<{element: HTMLElement, text: HTMLElement, x: number, y: number}>} */
+  let labels = [];
+  /** The stage's size in CSS pixels, read when it changes, never per frame. */
+  let stageWidth = 0;
+  let stageHeight = 0;
+  /** The width of a label in CSS pixels, set with the stage's size. */
+  let labelWidthPx = 0;
+  const anchor = new THREE.Vector3();
 
   const discGeometry = new THREE.CylinderGeometry(1, 1, 0.05, 28);
   const edgeMaterial = new THREE.MeshPhongMaterial({ color: 0x07080c, shininess: 20 });
 
   let selected = 0;
-  /** Seconds (animation clock) when the selected record was selected: its title starts over then. */
-  let selectedAt = performance.now() / 1000;
   let columns = 5;
   /** @type {((index: number) => void) | null} */
   let picked = null;
@@ -313,25 +267,80 @@ export function createShelfScene(host, { reducedMotion }) {
       face.dispose();
       records.remove(group);
     }
-    for (const strip of [...strips.children]) {
-      strip.material.map.dispose();
-      strip.material.dispose();
-      strips.remove(strip);
-    }
+    labelLayer.replaceChildren();
+    labels = [];
   }
 
-  /** @param {CatalogEntry} entry @param {number} index */
-  function makeStrip(entry, index) {
-    const { texture, cycle, width } = titleTexture(displayTitle(entry.t), measuring, reducedMotion);
-    // Drawn over everything (no depth test): the selected record comes forward and grows, and
-    // must not hide the title of its neighbour above it
-    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, depthTest: false, depthWrite: false, toneMapped: false });
-    const strip = new THREE.Mesh(stripGeometry, material);
-    strip.renderOrder = 2;
-    strip.userData = { index, cycle, width };
-    return strip;
+  /**
+   * The title label of a record: a clipped box with the title inside. Whether the title slides
+   * is decided later (`measureLabels`), once the box has a width.
+   *
+   * @param {CatalogEntry} entry
+   * @param {number} index
+   */
+  function makeLabel(entry, index) {
+    const element = document.createElement("div");
+    element.className = "shelf-label";
+    const text = document.createElement("span");
+    text.className = "shelf-label-text";
+    text.textContent = displayTitle(entry.t);
+    element.append(text);
+    element.style.setProperty("--marquee-delay", `${marqueeDelay(index)}s`);
+    element.addEventListener("click", () => picked?.(index));
+    labelLayer.append(element);
+    return { element, text, x: Number.NaN, y: Number.NaN };
   }
 
+  /**
+   * Mark which label is the selected one: it is brighter, and a long title starts over from its
+   * first letters, so the visitor can read it from the start.
+   */
+  function markSelectedLabel() {
+    labels.forEach(({ element, text }, index) => {
+      const on = index === selected;
+      if (element.classList.contains("is-selected") === on) return;
+      element.classList.toggle("is-selected", on);
+      if (on && element.classList.contains("is-long")) {
+        text.style.animation = "none";
+        void text.offsetWidth; // a reflow, so the animation really restarts when it is given back
+        text.style.animation = "";
+      }
+    });
+  }
+
+  /**
+   * Find which titles are wider than their label and set how they slide. Reads first, writes
+   * after, so the page lays out once. Under reduced motion nothing slides: the CSS cuts the
+   * title with an ellipsis, so there is nothing to measure.
+   */
+  function measureLabels() {
+    if (reducedMotion || !labelLayer.clientWidth) return;
+    const overflows = labels.map(({ element, text }) => text.offsetWidth - element.clientWidth);
+    labels.forEach(({ element }, index) => {
+      const timing = marqueeTiming(overflows[index]);
+      element.classList.toggle("is-long", timing !== null);
+      if (!timing) return;
+      element.style.setProperty("--marquee-shift", `${timing.shift}px`);
+      element.style.setProperty("--marquee-duration", `${timing.duration.toFixed(2)}s`);
+    });
+  }
+
+  /**
+   * Move a label to its place under a record; the style is written only when the position
+   * changed, which saves the browser a style recalculation per label per frame.
+   *
+   * @param {{element: HTMLElement, x: number, y: number}} label
+   * @param {number} x the centre of the label, in stage pixels
+   * @param {number} y the top of the label
+   */
+  function placeLabel(label, x, y) {
+    const left = Math.round(x - labelWidthPx / 2);
+    const top = Math.round(y);
+    if (label.x === left && label.y === top) return;
+    label.x = left;
+    label.y = top;
+    label.element.style.transform = `translate(${left}px, ${top}px)`;
+  }
   /** @param {CatalogEntry} entry @param {number} index */
   function makeRecord(entry, index) {
     const face = new THREE.MeshPhongMaterial({ map: recordTexture(entry), shininess: 25, specular: 0x111622 });
@@ -356,14 +365,22 @@ export function createShelfScene(host, { reducedMotion }) {
       renderer.setPixelRatio(ratio);
     }
     renderer.setSize(width, height, false);
+    stageWidth = width;
+    stageHeight = height;
     camera.aspect = width / height;
-    camera.position.set(0, 0, cameraDistance(columns, camera.aspect));
+    const distance = cameraDistance(columns, camera.aspect);
+    camera.position.set(0, 0, distance);
     camera.updateProjectionMatrix();
+    camera.updateMatrixWorld(); // labels are projected before the first render
+    labelWidthPx = labelWidth(pixelsPerUnit(height, distance));
+    labelLayer.style.setProperty("--label-width", `${labelWidthPx}px`);
+    measureLabels();
+    labels.forEach((label) => (label.x = Number.NaN)); // the width changed: place every label again
     requestRender();
   }
 
   /**
-   * Put the records, their strips and the glow where they belong at a moment, and draw.
+   * Put the records, their labels and the glow where they belong at a moment, and draw.
    *
    * @param {number} timestamp milliseconds, from `requestAnimationFrame`
    * @param {number} elapsed milliseconds since the last drawn frame
@@ -378,15 +395,11 @@ export function createShelfScene(host, { reducedMotion }) {
       if (pose.spin !== null) group.children[0].rotation.y = pose.spin;
       const scale = reducedMotion ? pose.scale : THREE.MathUtils.lerp(group.scale.x, pose.scale, ease);
       group.scale.setScalar(scale);
-      const strip = strips.children[index];
-      if (strip) {
-        strip.position.set(pose.x, stripY(pose.y, scale), pose.z);
-        strip.material.opacity = stripOpacity(index === selected);
-        const { cycle, width } = strip.userData;
-        if (cycle) {
-          const clock = index === selected ? time - selectedAt : time + index * MARQUEE_STAGGER;
-          strip.material.map.offset.x = marqueeOffset(clock, cycle) / width;
-        }
+      const label = labels[index];
+      if (label) {
+        anchor.set(pose.x, labelAnchorY(pose.y, scale), pose.z).project(camera);
+        const { x, y } = ndcToPixels(anchor, stageWidth, stageHeight);
+        placeLabel(label, x, y);
       }
     });
     const current = records.children[selected];
@@ -451,13 +464,19 @@ export function createShelfScene(host, { reducedMotion }) {
     const box = canvas.getBoundingClientRect();
     pointer.set(((event.clientX - box.left) / box.width) * 2 - 1, -((event.clientY - box.top) / box.height) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
-    const hit = raycaster.intersectObjects([...records.children, ...strips.children], true)[0];
+    const hit = raycaster.intersectObjects(records.children, true)[0];
     if (!hit) return;
     let object = hit.object;
-    while (object.parent !== records && object.parent !== strips) object = object.parent;
+    while (object.parent !== records) object = object.parent;
     picked?.(object.userData.index);
   }
   canvas.addEventListener("click", onClick);
+
+  // A title measured before the page font arrives is narrower than it will be.
+  globalThis.document?.fonts?.ready.then(measureLabels);
+
+  // A title measured before the page font arrives is narrower than it will be.
+  globalThis.document?.fonts?.ready.then(measureLabels);
 
   requestRender();
 
@@ -466,17 +485,17 @@ export function createShelfScene(host, { reducedMotion }) {
       clearRecords();
       entries.forEach((entry, index) => {
         records.add(makeRecord(entry, index));
-        strips.add(makeStrip(entry, index));
+        labels.push(makeLabel(entry, index));
       });
       selected = selectedIndex;
-      selectedAt = performance.now() / 1000;
       columns = pageColumns ?? shelfColumns(host.clientWidth);
+      markSelectedLabel();
       resize();
       requestRender();
     },
     select(index) {
-      if (index !== selected) selectedAt = performance.now() / 1000;
       selected = index;
+      markSelectedLabel();
       requestRender();
     },
     onPick(callback) {
@@ -490,7 +509,6 @@ export function createShelfScene(host, { reducedMotion }) {
       document.removeEventListener("visibilitychange", onVisibility);
       canvas.removeEventListener("click", onClick);
       clearRecords();
-      stripGeometry.dispose();
       discGeometry.dispose();
       edgeMaterial.dispose();
       particles.geometry.dispose();
@@ -498,6 +516,7 @@ export function createShelfScene(host, { reducedMotion }) {
       halo.material.map.dispose();
       halo.material.dispose();
       renderer.dispose();
+      labelLayer.remove();
       canvas.remove();
     },
   };

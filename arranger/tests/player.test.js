@@ -12,145 +12,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { CHANNELS, DEFAULT_LEVELS, channelGains } from "../src/audio/mixer.js";
+import { CHANNELS, DEFAULT_LEVELS, DEFAULT_VOLUME, channelGains, volumeToGain } from "../src/audio/mixer.js";
 import { createPlayer } from "../src/audio/player.js";
+import { FakeContext, FakeGain, RATE } from "./fake-audio.js";
 
 /** @typedef {import("../src/audio/mixer.js").Levels} Levels */
-
-const RATE = 100;
-
-/** An AudioParam that records what is scheduled on it; `value` follows the last target. */
-class FakeParam {
-  /** @param {number} value */
-  constructor(value) {
-    this.value = value;
-    /** @type {Array<[string, ...number[]]>} */
-    this.calls = [];
-  }
-  /** @param {number} value @param {number} time */
-  setValueAtTime(value, time) {
-    this.calls.push(["set", value, time]);
-    this.value = value;
-    return this;
-  }
-  /** @param {number} value @param {number} time */
-  linearRampToValueAtTime(value, time) {
-    this.calls.push(["ramp", value, time]);
-    this.value = value;
-    return this;
-  }
-  /** @param {number} time */
-  cancelScheduledValues(time) {
-    this.calls.push(["cancel", time]);
-    return this;
-  }
-}
-
-class FakeNode {
-  /** @param {string} kind */
-  constructor(kind) {
-    this.kind = kind;
-    /** @type {FakeNode[]} */
-    this.outputs = [];
-  }
-  /** @param {FakeNode} node */
-  connect(node) {
-    this.outputs.push(node);
-    return node;
-  }
-}
-
-class FakeGain extends FakeNode {
-  constructor() {
-    super("gain");
-    this.gain = new FakeParam(1);
-  }
-}
-
-class FakeCompressor extends FakeNode {
-  constructor() {
-    super("compressor");
-    this.threshold = new FakeParam(-24);
-    this.knee = new FakeParam(30);
-    this.ratio = new FakeParam(12);
-    this.attack = new FakeParam(0.003);
-    this.release = new FakeParam(0.25);
-  }
-}
-
-class FakeBuffer {
-  /** @param {number} channels @param {number} length @param {number} sampleRate */
-  constructor(channels, length, sampleRate) {
-    this.length = length;
-    this.sampleRate = sampleRate;
-    this.duration = length / sampleRate;
-    /** @type {Float32Array | null} */
-    this.samples = null;
-  }
-  /** @param {Float32Array} samples */
-  copyToChannel(samples) {
-    this.samples = Float32Array.from(samples);
-  }
-}
-
-class FakeSource extends FakeNode {
-  constructor() {
-    super("source");
-    /** @type {FakeBuffer | null} */
-    this.buffer = null;
-    /** @type {{when: number, offset: number} | null} */
-    this.started = null;
-    this.stopped = false;
-    /** @type {(() => void) | null} */
-    this.onended = null;
-  }
-  /** @param {number} when @param {number} offset */
-  start(when, offset) {
-    this.started = { when, offset };
-  }
-  stop() {
-    // As in Web Audio, a source that never started cannot stop.
-    if (!this.started) throw new Error("InvalidStateError");
-    this.stopped = true;
-  }
-}
-
-class FakeContext {
-  constructor() {
-    this.currentTime = 0;
-    this.sampleRate = RATE;
-    this.state = "running";
-    this.destination = new FakeNode("destination");
-    /** @type {FakeGain[]} */
-    this.gains = [];
-    /** @type {FakeSource[]} */
-    this.sources = [];
-    /** @type {FakeCompressor[]} */
-    this.compressors = [];
-  }
-  createGain() {
-    const gain = new FakeGain();
-    this.gains.push(gain);
-    return gain;
-  }
-  createBufferSource() {
-    const source = new FakeSource();
-    this.sources.push(source);
-    return source;
-  }
-  createDynamicsCompressor() {
-    const compressor = new FakeCompressor();
-    this.compressors.push(compressor);
-    return compressor;
-  }
-  /** @param {number} channels @param {number} length @param {number} sampleRate */
-  createBuffer(channels, length, sampleRate) {
-    return new FakeBuffer(channels, length, sampleRate);
-  }
-  resume() {
-    this.state = "running";
-  }
-}
 
 /** A player on a fake context, and the context to look into. */
 function fakePlayer() {
@@ -212,11 +78,13 @@ test("each stem plays through its own channel gain, then the bus, the limiter an
   assert.equal(limiter.kind, "compressor");
   const [arrangementSwitch] = limiter.outputs;
   assert.equal(arrangementSwitch.kind, "gain");
-  assert.deepEqual(arrangementSwitch.outputs, [context.destination]);
 
   const originalSwitch = nodeFedBy(context, 0.5);
   assert.notEqual(originalSwitch, arrangementSwitch);
-  assert.deepEqual(originalSwitch.outputs, [context.destination], "the original skips the mixer");
+  assert.equal(originalSwitch.outputs.length, 1, "the original skips the mixer but not the master volume");
+  const [master] = arrangementSwitch.outputs;
+  assert.deepEqual(originalSwitch.outputs, [master], "both versions end in the one master volume");
+  assert.deepEqual(master.outputs, [context.destination]);
   assert.equal(playing(context).length, 5);
 });
 
@@ -234,7 +102,7 @@ test("the graph is built once per context: loads, plays and seeks only add sourc
   const { player, context } = fakePlayer();
   player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
   const gains = context.gains.length;
-  assert.equal(gains, 7, "four channels, the bus and the two switches");
+  assert.equal(gains, 8, "four channels, the bus, the two switches and the master volume");
   player.play();
   player.seek(1);
   player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
@@ -503,4 +371,177 @@ test("playing uses the buffers rendered beforehand: no source is scheduled note 
   player.switchTo("original");
   player.setLevels({ ...DEFAULT_LEVELS, TR: 0 });
   assert.equal(context.sources.length - buffersBefore, 5, "A/B and a level change add no source");
+});
+
+// --- Master volume ------------------------------------------------------------------------------
+
+/** The master volume gain: the one gain that feeds the destination. */
+function masterOf(/** @type {FakeContext} */ context) {
+  const master = context.gains.find((gain) => gain.outputs.includes(/** @type {any} */ (context.destination)));
+  assert.ok(master, "a gain feeds the speakers");
+  return master;
+}
+
+test("the master volume starts at the default 80 percent, a gain of 0.64, before any visitor choice", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  assert.equal(round6(masterOf(context).gain.value), round6(volumeToGain(DEFAULT_VOLUME)));
+  assert.equal(round6(masterOf(context).gain.value), 0.64);
+});
+
+test("setVolume ramps the master gain over 10 ms, without restarting the music", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.play();
+  context.currentTime = 0.5;
+  const sources = context.sources.length;
+
+  player.setVolume(50);
+  assert.deepEqual(lastRamp(masterOf(context).gain), ["ramp", 0.25, 0.51]);
+  player.setVolume(0);
+  assert.deepEqual(lastRamp(masterOf(context).gain), ["ramp", 0, 0.51]);
+  assert.equal(context.sources.length, sources, "no source is added");
+  assert.equal(player.isPlaying(), true);
+});
+
+test("a volume set before the first sound applies when the graph is built", () => {
+  const { player, context } = fakePlayer();
+  player.setVolume(25);
+  player.load({ arrangement: stems() }, RATE);
+  assert.equal(round6(masterOf(context).gain.value), round6(0.0625));
+});
+
+test("the master volume covers both versions and survives loads and A/B", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.setVolume(60);
+  player.play();
+  player.switchTo("original");
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.load({ original: tone(2, 0.5) }, RATE);
+  assert.equal(round6(masterOf(context).gain.value), round6(0.36));
+  // Both switches feed the one master, so the original is as loud as the volume says.
+  const originalSwitch = nodeFedBy(context, 0.5);
+  assert.deepEqual(originalSwitch.outputs, [masterOf(context)]);
+});
+
+test("a volume past the slider is clamped: 100 percent is the mix as it is, never louder", () => {
+  const { player, context } = fakePlayer();
+  player.load({ original: tone(2, 0.5) }, RATE);
+  player.setVolume(400);
+  assert.equal(masterOf(context).gain.value, 1);
+});
+
+// --- What is loaded and what the toggle shows ---------------------------------------------------
+
+test("show chooses the version heard when a load brings both, and a missing version is ignored", () => {
+  const { player } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.switchTo("original");
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  assert.equal(player.active(), "original", "a plain load keeps the version heard (a change of sound pack goes on in the same version)");
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE, { show: "arrangement" });
+  assert.equal(player.active(), "arrangement", "a new arrangement is heard first");
+  player.load({ arrangement: stems() }, RATE, { show: "original" });
+  assert.equal(player.active(), "arrangement", "the original is not loaded, so it cannot be shown");
+});
+
+test("a preview after a run drops the old arrangement: the toggle can only show the original, and the switches say so", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE, { show: "arrangement" });
+  player.play();
+  const arrangementSwitch = /** @type {FakeGain} */ (nodeFedBy(context, 0.1).outputs[0].outputs[0].outputs[0]);
+  const originalSwitch = /** @type {FakeGain} */ (nodeFedBy(context, 0.5));
+  assert.equal(player.active(), "arrangement");
+
+  // Preview of another song: only its original is loaded.
+  player.load({ original: tone(1, 0.7) }, RATE);
+  assert.equal(player.has("arrangement"), false);
+  assert.equal(player.active(), "original");
+  assert.equal(lastRamp(originalSwitch.gain)?.[1], 1);
+  assert.equal(lastRamp(arrangementSwitch.gain)?.[1], 0);
+  assert.equal(player.duration(), 1, "the old song's two seconds are gone");
+  assert.deepEqual(
+    playing(context).map((source) => source.buffer?.samples?.[0]),
+    [Math.fround(0.7)],
+    "only the preview's buffer plays: no old arrangement or original under it",
+  );
+});
+
+test("unload stops the music and forgets every buffer, so a new song never plays the old one's sound", () => {
+  const { player, context } = fakePlayer();
+  let announced = 0;
+  player.onChange(() => announced++);
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.play();
+  context.currentTime = 0.5;
+  announced = 0;
+
+  player.unload();
+  assert.equal(player.isPlaying(), false);
+  assert.equal(player.duration(), 0);
+  assert.equal(player.currentTime(), 0);
+  assert.equal(player.has("arrangement"), false);
+  assert.equal(player.has("original"), false);
+  assert.equal(playing(context).length, 0);
+  assert.equal(announced, 1, "listeners redraw the buttons");
+  player.play();
+  assert.equal(player.isPlaying(), false, "there is nothing to play");
+  // Unloading again, or before any load, is harmless.
+  player.unload();
+  assert.equal(createPlayer({ createContext: () => /** @type {any} */ (new FakeContext()) }).unload(), undefined);
+});
+
+// --- Nothing piles up ----------------------------------------------------------------------------
+
+test("a stopped source is disconnected, so no finished node stays attached to the graph", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
+  player.play();
+  const first = [...context.sources];
+  player.seek(1);
+  assert.ok(first.every((source) => source.stopped && source.disconnected), "a seek stops and disconnects the old sources");
+  const second = context.sources.slice(first.length);
+  player.pause();
+  assert.ok(second.every((source) => source.stopped && source.disconnected), "pause too");
+  player.play();
+  const third = context.sources.slice(first.length + second.length);
+  player.load({ original: tone(1, 0.7) }, RATE);
+  assert.ok(third.every((source) => source.stopped && source.disconnected), "a load too");
+});
+
+test("many loads, plays and seeks leave at most one set of sources attached, and one graph", () => {
+  const { player, context } = fakePlayer();
+  for (let run = 0; run < 12; run++) {
+    player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE, { show: "arrangement" });
+    player.play();
+    player.seek(0.5);
+    player.switchTo("original");
+    player.setLevels({ ...DEFAULT_LEVELS, TR: run });
+    player.setVolume(run * 5);
+    player.pause();
+  }
+  const attached = context.sources.filter((source) => !source.disconnected);
+  assert.equal(attached.length, 0, "paused: every source was released");
+  player.play();
+  assert.equal(context.sources.filter((source) => !source.disconnected).length, 5, "playing: one source per buffer");
+  assert.equal(context.gains.length, 8, "the graph was built once");
+  assert.equal(context.compressors.length, 1);
+});
+
+test("the position is never negative in the 20 ms between the click and the first sound", () => {
+  const { player, context } = fakePlayer();
+  player.load({ original: tone(2, 0.5) }, RATE);
+  player.play();
+  assert.equal(player.currentTime(), 0, "the sources start at 0.02 s, but the clock reads 0:00, not -1:59");
+  context.currentTime = 0.07;
+  assert.equal(round6(player.currentTime()), 0.05);
+});
+
+test("output is the master volume's input, so a sound made outside the player (a track preview) obeys the volume", () => {
+  const { player, context } = fakePlayer();
+  const node = player.output();
+  assert.deepEqual(node.outputs, [context.destination]);
+  assert.equal(node, masterOf(context));
+  assert.equal(player.output(), node, "the same node every time");
 });

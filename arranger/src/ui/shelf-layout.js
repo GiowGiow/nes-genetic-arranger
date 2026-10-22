@@ -1,26 +1,39 @@
-// @ts-check
 /**
  * Shelf layout: where each vinyl record of a catalog page sits and how it moves (spec 005,
  * story 3, research R6).
  *
- * A page is a grid of records: 5 columns by 3 rows on a wide screen, 3 by 3 on a phone. The
- * look takes after the PS2 memory card screen: the records float and bob gently; the selected
- * one comes forward, rises, grows, and spins like a record on a turntable while it sways from
- * side to side. Under reduced motion every record holds still.
+ * A page is a grid of records, always 3 rows, with as many columns as the stage's width allows:
+ * 3 on a phone, 5 at medium widths, 7 on a wide stage and 9 on a very wide one, so a record keeps
+ * about the same size and a wider shelf simply shows more of them. The look takes after the PS2
+ * memory card screen: the records float and bob gently; the selected one comes forward, rises,
+ * grows, and spins like a record on a turntable while it sways from side to side. Under reduced
+ * motion every record holds still.
  *
- * Under each record hangs a small strip with the song's title. A title that does not fit scrolls
- * slowly like a marquee (after a short wait, so it can be read from its start); under reduced
- * motion it is cut with an ellipsis instead. The same module holds the numbers that keep the
- * scene cheap on a phone: a frame-rate cap, a lower pixel ratio, and the rule for when a frame
- * is worth drawing at all.
+ * Under each record hangs its title, as a DOM label rather than a texture: the 3D canvas draws
+ * at about half the device's pixels (the chunky look, and a light load on a phone), which made
+ * painted letters blurry. This module holds the numbers that place such a label (the record's
+ * rim projected to the stage's pixels, the label's width) and the timing of the marquee that
+ * slides a title too long for it. The same module holds the numbers that keep the scene cheap on
+ * a phone: a frame-rate cap, a lower pixel ratio, and the rule for when a frame is worth drawing.
  *
  * These are pure numbers in scene units (a record has radius 1 before scaling), so they are
  * tested without WebGL; `shelf-scene.js` applies them to three.js objects every frame, and
  * `song-shelf.js` uses the same column count for its keyboard moves and its 2D grid.
  */
 
-/** Below this stage width, in CSS pixels, the shelf shows 3 columns instead of 5. */
+/** Below this stage width, in CSS pixels, the shelf is a phone's: 3 columns, and a lighter scene. */
 export const NARROW_WIDTH = 560;
+
+/**
+ * The narrowest stage width, in CSS pixels, that shows each column count, widest first. Each
+ * step gives a record about the same room (a scene unit stays near 57 px wide): the stage's
+ * height is fixed by the page, so a wider stage can only show more records, not bigger ones.
+ */
+const COLUMN_STEPS = [
+  [960, 9],
+  [760, 7],
+  [NARROW_WIDTH, 5],
+];
 
 /** Rows of records on every page. */
 export const SHELF_ROWS = 3;
@@ -52,38 +65,33 @@ const SELECTED_RISE = 0.12;
 const BOB_HEIGHT = 0.05;
 const RESTING_TILT = 0.2;
 
-/** Width of a title strip in scene units: narrower than the spacing, so neighbours never touch. */
-export const STRIP_WIDTH = 1.5;
+/** The tallest a label can be in CSS pixels (one line of 13 to 14 px text with its padding). */
+export const LABEL_HEIGHT_PX = 22;
 
-/**
- * Size of a title strip's texture in pixels. Its proportions are the strip's, so one texel is
- * square on screen.
- */
-export const STRIP_PIXELS = { width: 128, height: 18 };
+/** The label is this many CSS pixels narrower than the pitch of the records, so neighbours never touch. */
+const LABEL_GUTTER_PX = 8;
 
-/** Height of a title strip in scene units. */
-export const STRIP_HEIGHT = (STRIP_WIDTH * STRIP_PIXELS.height) / STRIP_PIXELS.width;
+/** No label is narrower than this, in CSS pixels: a few letters must always fit. */
+const LABEL_MIN_WIDTH_PX = 40;
 
-/** Empty pixels at each end of a title that fits the strip, and where a scrolling title starts. */
-export const STRIP_PADDING = 6;
+/** Room the camera keeps below the bottom row for a label, in scene units. */
+const LABEL_REACH = SELECTED_SCALE - SELECTED_RISE + BOB_HEIGHT + 0.4;
 
-/** Space between a record's rim and its strip, in scene units. */
-const STRIP_GAP = 0.04;
+/** Marquee speed in CSS pixels per second: slow enough to read. */
+export const MARQUEE_SPEED = 28;
 
-/** How far a strip's lower edge hangs below the row's centre, in the worst case (the selected record). */
-const STRIP_REACH = SELECTED_SCALE - SELECTED_RISE + BOB_HEIGHT + STRIP_GAP + STRIP_HEIGHT;
+/** Share of one pass of the marquee that is movement; the rest is rest at the two ends. */
+const MARQUEE_MOVING_SHARE = 0.64;
 
-/** Marquee speed in texture pixels per second: slow enough to read. */
-export const MARQUEE_SPEED = 24;
+/** The shortest a pass of the marquee lasts, in seconds, however little overflows. */
+const MARQUEE_MIN_SECONDS = 2.5;
 
-/** Seconds a scrolling title waits at its start before each pass. */
-export const MARQUEE_PAUSE = 1.6;
+/** An overflow smaller than this many pixels is not worth moving for. */
+const MARQUEE_MIN_OVERFLOW = 1;
 
-/** Empty pixels between the end of a scrolling title and its next copy. */
-export const MARQUEE_GAP = 32;
-
-/** Seconds between one record's marquee and the next one's, so the titles do not move in step. */
-export const MARQUEE_STAGGER = 0.45;
+/** Labels start their slide this many seconds apart, repeating after 6 of them. */
+const MARQUEE_STAGGER = 0.5;
+const MARQUEE_STAGGER_PERIOD = 6;
 
 /** The longest wait between frames a record's growth counts, in milliseconds (a tab coming back). */
 const LONGEST_STEP = 100;
@@ -111,22 +119,27 @@ const PIXEL_SCALE_PHONE = 0.5;
  * Columns of a page for a stage of this width.
  *
  * @param {number} width the stage's width in CSS pixels; 0 when it is hidden
- * @returns {number} 5, or 3 on a narrow stage
+ * @returns {number} 3 on a phone, then 5, 7 and 9 as the stage widens
  * @example
  * shelfColumns(375); // 3
- * shelfColumns(1200); // 5
+ * shelfColumns(700); // 5
+ * shelfColumns(824); // 7
+ * shelfColumns(1000); // 9
  */
 export function shelfColumns(width) {
-  return width > 0 && width < NARROW_WIDTH ? 3 : 5;
+  if (width <= 0) return 5; // hidden: nothing to measure yet, so a medium layout
+  for (const [narrowest, columns] of COLUMN_STEPS) if (width >= narrowest) return columns;
+  return 3;
 }
 
 /**
  * Records per page for a stage of this width.
  *
  * @param {number} width
- * @returns {number} 15, or 9 on a narrow stage
+ * @returns {number} 9, 15, 21 or 27
  * @example
  * perPageFor(375); // 9
+ * perPageFor(824); // 21
  */
 export function perPageFor(width) {
   return shelfColumns(width) * SHELF_ROWS;
@@ -165,9 +178,9 @@ export function cameraDistance(columns, aspect) {
   const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
   // The edge records' centres, plus the glow around the selected one, which must not be cut off
   const neededWidth = (columns - 1) * RECORD_SPACING + HALO_SCALE + 0.4;
-  // Below and above a row, the glow reaches farther than the title strip does, but the strip
+  // Below and above a row, the glow reaches farther than the title label does, but the label
   // sets the limit if it ever grows, so both count
-  const reach = Math.max(HALO_SCALE / 2, STRIP_REACH) + 0.25;
+  const reach = Math.max(HALO_SCALE / 2, LABEL_REACH) + 0.25;
   const neededHeight = (SHELF_ROWS - 1) * RECORD_SPACING + 2 * reach;
   return Math.max(neededWidth / 2 / (halfTan * aspect), neededHeight / 2 / halfTan) + 1;
 }
@@ -223,84 +236,91 @@ export function haloOpacity(time, reducedMotion) {
 }
 
 /**
- * Height of a title strip's centre, hanging just below its record's rim.
+ * Where a point of the scene lands on the stage, once the camera has projected it.
+ *
+ * `vector.project(camera)` gives normalized device coordinates: x and y from -1 to 1, y up.
+ * Page elements are placed in CSS pixels from the top left, y down.
+ *
+ * @param {{x: number, y: number}} ndc
+ * @param {number} width the stage's width in CSS pixels
+ * @param {number} height the stage's height in CSS pixels
+ * @returns {{x: number, y: number}}
+ * @example
+ * ndcToPixels({ x: 0, y: 0 }, 400, 300); // { x: 200, y: 150 }, the middle
+ * ndcToPixels({ x: -1, y: 1 }, 400, 300); // { x: 0, y: 0 }, the top left
+ */
+export function ndcToPixels({ x, y }, width, height) {
+  return { x: ((x + 1) / 2) * width, y: ((1 - y) / 2) * height };
+}
+
+/**
+ * How many CSS pixels one scene unit spans on the plane of the resting records.
+ *
+ * @param {number} height the stage's height in CSS pixels
+ * @param {number} distance the camera's distance from that plane (`cameraDistance`)
+ * @returns {number}
+ * @example
+ * pixelsPerUnit(400, 10); // about 52: a resting record (radius 0.58) is then 60 px wide
+ */
+export function pixelsPerUnit(height, distance) {
+  return height / (2 * Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180) * distance);
+}
+
+/**
+ * Width of a title label: the pitch of the records minus a small gutter, so the titles of two
+ * neighbours never touch.
+ *
+ * @param {number} unit CSS pixels per scene unit (`pixelsPerUnit`)
+ * @returns {number} CSS pixels
+ * @example
+ * labelWidth(60); // 94, for a pitch of 102 px
+ */
+export function labelWidth(unit) {
+  return Math.max(LABEL_MIN_WIDTH_PX, Math.round(RECORD_SPACING * unit - LABEL_GUTTER_PX));
+}
+
+/**
+ * Height, in scene units, of the point a record's label hangs from: the record's lower rim.
+ * The label's own gap and height are CSS, below this point.
  *
  * @param {number} recordY the record's centre height
  * @param {number} recordScale the record's size (radius), as it is now while it grows
  * @returns {number}
  * @example
- * stripY(0, 0.58); // about -0.73
+ * labelAnchorY(0, 0.58); // -0.58
  */
-export function stripY(recordY, recordScale) {
-  return recordY - recordScale - STRIP_GAP - STRIP_HEIGHT / 2;
+export function labelAnchorY(recordY, recordScale) {
+  return recordY - recordScale;
 }
 
 /**
- * Whether a title is wider than the strip's room for it, so it must scroll (or be cut).
+ * How a title wider than its label slides: by what it overflows, and for how long a pass lasts.
+ * The page's CSS animates `translateX` from 0 to `shift` and back (`alternate`), resting at both
+ * ends so the start and the end of the title can be read.
  *
- * @param {number} textWidth the title's measured width in texture pixels
- * @returns {boolean}
+ * @param {number} overflow how many pixels the title is wider than the label
+ * @returns {{shift: number, duration: number} | null} `shift` in pixels (negative: to the left),
+ *   `duration` in seconds for one pass; null for a title that fits, which stays still
  * @example
- * titleNeedsScroll(90); // false
- * titleNeedsScroll(300); // true
+ * marqueeTiming(0); // null
+ * marqueeTiming(56); // { shift: -56, duration: 3.125 }
  */
-export function titleNeedsScroll(textWidth) {
-  return textWidth > STRIP_PIXELS.width - 2 * STRIP_PADDING;
+export function marqueeTiming(overflow) {
+  if (overflow < MARQUEE_MIN_OVERFLOW) return null;
+  const moving = overflow / MARQUEE_SPEED;
+  return { shift: -overflow, duration: Math.max(MARQUEE_MIN_SECONDS, moving / MARQUEE_MOVING_SHARE) };
 }
 
 /**
- * Pixels the marquee travels before it looks the way it started: the text and the gap after it.
+ * Seconds a label waits before its first slide, so neighbouring titles do not move in step.
  *
- * @param {number} textWidth
- * @returns {number}
- */
-export function marqueeCycle(textWidth) {
-  return textWidth + MARQUEE_GAP;
-}
-
-/**
- * How far a scrolling title has moved at a moment: it waits, moves at a steady speed for one
- * cycle, and starts over.
- *
- * @param {number} time seconds
- * @param {number} cycle pixels in one pass (`marqueeCycle`)
- * @returns {number} texture pixels from 0 up to, but not including, `cycle`
+ * @param {number} index place on the page
+ * @returns {number} from 0 to 2.5
  * @example
- * marqueeOffset(0, 332); // 0: still waiting
- * marqueeOffset(2.6, 332); // 24: one second after the wait
+ * marqueeDelay(2); // 1
  */
-export function marqueeOffset(time, cycle) {
-  const period = MARQUEE_PAUSE + cycle / MARQUEE_SPEED;
-  const phase = ((time % period) + period) % period;
-  return phase < MARQUEE_PAUSE ? 0 : (phase - MARQUEE_PAUSE) * MARQUEE_SPEED;
-}
-
-/**
- * A title cut to fit a width, ending with an ellipsis; a title that fits is returned whole.
- * Used when nothing scrolls (reduced motion).
- *
- * @param {string} text
- * @param {number} maxWidth in the unit `measure` returns
- * @param {(text: string) => number} measure the width of a text in the font that will draw it
- * @returns {string}
- * @example
- * ellipsize("Korobeiniki (Tetris Theme A)", 60, (t) => t.length * 5); // "Korobeiniki…"
- */
-export function ellipsize(text, maxWidth, measure) {
-  if (measure(text) <= maxWidth) return text;
-  let length = text.length - 1;
-  while (length > 0 && measure(`${text.slice(0, length).trimEnd()}…`) > maxWidth) length--;
-  return length > 0 ? `${text.slice(0, length).trimEnd()}…` : "…";
-}
-
-/**
- * How bright a title strip is: full for the selected record, dimmer for the rest.
- *
- * @param {boolean} selected
- * @returns {number} an opacity from 0 to 1
- */
-export function stripOpacity(selected) {
-  return selected ? 1 : 0.6;
+export function marqueeDelay(index) {
+  return (index % MARQUEE_STAGGER_PERIOD) * MARQUEE_STAGGER;
 }
 
 /**

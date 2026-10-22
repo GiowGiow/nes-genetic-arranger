@@ -32,6 +32,11 @@
 // - The WAV download mixes the same stems here, offline (`mixStems`), and scales the result to
 //   peak at -3 dBFS, the headroom of every render, so it needs no limiter.
 //
+// Over the whole playback sits one more control, the master volume (`volumeToGain`): a
+// percentage from 0 to 100 on a gain after the mix and after the original, just before the
+// speakers. It is a listening control only. The WAV download keeps its normalized level, since a
+// file saved at a quiet volume would stay quiet in every other player.
+//
 // The levels are remembered in the browser's local storage when the browser allows it; a
 // missing or unreadable value gives the defaults. The functions are pure: the storage is a
 // parameter, so the tests pass a fake one.
@@ -300,6 +305,87 @@ export function storeLevels(storage, levels, packId = "nes") {
       // Unreadable earlier value: start again.
     }
     storage.setItem(MIX_STORAGE_KEY, JSON.stringify({ version: MIX_VERSION, packs: { ...packs, [packId]: clampLevels(levels) } }));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * The local-storage key of the master volume.
+ * @example
+ * localStorage.getItem(VOLUME_STORAGE_KEY); // "80"
+ */
+export const VOLUME_STORAGE_KEY = "nes-arranger-volume";
+
+/**
+ * The master volume of a first visit, in percent: loud enough to hear every channel, with room
+ * to go up on a quiet speaker.
+ * @example
+ * DEFAULT_VOLUME; // 80
+ */
+export const DEFAULT_VOLUME = 80;
+
+/**
+ * A volume made safe: inside 0 to 100, and the default for anything that is not a number.
+ * @param {unknown} volume anything, for example parsed from storage
+ * @returns {number} a percentage from 0 to 100
+ * @example
+ * clampVolume(140); // 100
+ * clampVolume(NaN); // 80
+ */
+export function clampVolume(volume) {
+  if (typeof volume !== "number" || Number.isNaN(volume)) return DEFAULT_VOLUME;
+  return Math.min(100, Math.max(0, volume));
+}
+
+/**
+ * Turn the volume slider into an amplitude gain with a square-law taper: gain = (percent / 100)².
+ * The ear hears loudness as ratios, so a straight line from the slider to the gain would crowd
+ * every audible change into the bottom third of the slider. 100 % is the mix as it is, never
+ * louder, because the original has no limiter to catch a boost.
+ * @param {number} percent the slider, 0 to 100
+ * @returns {number} the factor that multiplies the whole playback, from 0 to 1
+ * @example
+ * volumeToGain(100); // 1
+ * volumeToGain(80); // 0.64, about -4 dB
+ * volumeToGain(50); // 0.25, -12 dB
+ * volumeToGain(0); // 0, silence
+ */
+export function volumeToGain(percent) {
+  return (clampVolume(percent) / 100) ** 2;
+}
+
+/**
+ * The master volume kept by `storeVolume`, or the default when there is none, the storage is
+ * blocked, or the value is not a number.
+ * @param {LevelStorage | null | undefined} storage usually `localStorage`
+ * @returns {number} a percentage from 0 to 100
+ * @example
+ * readVolume(localStorage); // 80 on a first visit
+ */
+export function readVolume(storage) {
+  try {
+    const stored = storage?.getItem(VOLUME_STORAGE_KEY);
+    if (stored === null || stored === undefined || stored.trim() === "") return DEFAULT_VOLUME;
+    return clampVolume(Number(stored));
+  } catch {
+    return DEFAULT_VOLUME;
+  }
+}
+
+/**
+ * Keep the master volume for the next visit.
+ * @param {LevelStorage | null | undefined} storage usually `localStorage`
+ * @param {number} percent the slider, 0 to 100
+ * @returns {boolean} false when there is no storage or it refuses (blocked, full); never throws
+ * @example
+ * storeVolume(localStorage, 60); // true
+ */
+export function storeVolume(storage, percent) {
+  if (!storage) return false;
+  try {
+    storage.setItem(VOLUME_STORAGE_KEY, String(Math.round(clampVolume(percent))));
     return true;
   } catch {
     return false;

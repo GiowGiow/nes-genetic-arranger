@@ -3,6 +3,10 @@
  * Mixer panel: one level control per channel of the arrangement, under the player (spec 005,
  * story 1, FR-001).
  *
+ * The first row is the master Volume, over everything that plays (`volume-slider.js`): a
+ * percentage from 0 to 100 that the page hands to the player. It belongs to the listener's speakers,
+ * not to a sound pack, so Reset leaves it alone.
+ *
  * Each row names a channel by its role in the arrangement (Melody P1, Harmony P2, Bass TR, Drums
  * NO), in the channel's color, as the plan grid and the channel view draw it. The slider sets
  * the level in dB relative to the sound pack's own balance, from Off (-60 dB, `MIN_DB`) to
@@ -15,7 +19,8 @@
  * the page hands them to the player and to local storage (`main.js`).
  */
 
-import { CHANNELS, DEFAULT_LEVELS, MAX_DB, MIN_DB, clampLevels } from "../audio/mixer.js";
+import { CHANNELS, DEFAULT_LEVELS, DEFAULT_VOLUME, MAX_DB, MIN_DB, clampLevels } from "../audio/mixer.js";
+import { createVolumeSlider } from "./volume-slider.js";
 
 /** @typedef {import("../audio/mixer.js").Levels} Levels */
 /** @typedef {import("../audio/chip-synth.js").ChannelName} ChannelName */
@@ -54,18 +59,29 @@ export function formatLevel(db) {
  * Build the panel at the end of `container`.
  *
  * @param {HTMLElement} container
- * @param {{levels?: Levels, defaults?: () => Levels, onChange: (levels: Levels) => void}} options
+ * @param {{
+ *   levels?: Levels, defaults?: () => Levels, onChange: (levels: Levels) => void,
+ *   volume?: number, onVolume?: (percent: number) => void,
+ * }} options
  *   `levels` to show first (default DEFAULT_LEVELS); `defaults` gives the levels Reset goes back
  *   to (default DEFAULT_LEVELS); `onChange` gets a copy of the full levels after every slider
- *   move, mute toggle or Reset
- * @returns {{set: (levels: Levels) => void, get: () => Levels, setTitle: (text: string) => void}}
+ *   move, mute toggle or Reset; `volume` is the master volume to show first, in percent (default
+ *   DEFAULT_VOLUME) and `onVolume` gets it after every move of the Volume slider
+ * @returns {{
+ *   set: (levels: Levels) => void, get: () => Levels, setTitle: (text: string) => void,
+ *   setVolume: (percent: number) => void, getVolume: () => number,
+ * }}
  *   `set` shows levels without calling `onChange`; `get` returns a copy of the levels shown;
- *   `setTitle` names the sound pack the levels are for
+ *   `setTitle` names the sound pack the levels are for; `setVolume` shows a volume without
+ *   calling `onVolume`
  * @example
  * const mixer = createMixerPanel(card, { levels: readLevels(localStorage), onChange: (levels) => player.setLevels(levels) });
  * mixer.get().TR; // 4, the bass at its default
  */
-export function createMixerPanel(container, { levels = DEFAULT_LEVELS, defaults = () => DEFAULT_LEVELS, onChange }) {
+export function createMixerPanel(
+  container,
+  { levels = DEFAULT_LEVELS, defaults = () => DEFAULT_LEVELS, onChange, volume = DEFAULT_VOLUME, onVolume = () => {} },
+) {
   const doc = container.ownerDocument;
   const idPrefix = `mixer-${++panelCount}`;
   let current = clampLevels(levels);
@@ -89,6 +105,8 @@ export function createMixerPanel(container, { levels = DEFAULT_LEVELS, defaults 
   root.setAttribute("aria-label", "Channel levels");
   const title = element("p", "mixer-title", "Mix");
   root.append(title);
+  const master = createVolumeSlider(doc, { id: `${idPrefix}-volume`, volume, onInput: onVolume });
+  root.append(master.root);
   /** @type {Partial<Record<ChannelName, {slider: HTMLInputElement, value: HTMLOutputElement, mute: HTMLButtonElement}>>} */
   const rows = {};
 
@@ -171,5 +189,7 @@ export function createMixerPanel(container, { levels = DEFAULT_LEVELS, defaults 
     setTitle(text) {
       title.textContent = text;
     },
+    setVolume: (percent) => master.set(percent),
+    getVolume: () => master.get(),
   };
 }

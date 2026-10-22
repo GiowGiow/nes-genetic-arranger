@@ -11,6 +11,9 @@
  * (contracts/worker-protocol.md). When the worker is `done`, the page realizes the best plan into
  * notes, checks the NES rules, renders the chip sound and offers the downloads. Dropping a new
  * file during a run stops it and discards it.
+ *
+ * What the Result panel holds is kept small and true (`result-sound.js`): the player holds the
+ * sound of the song on screen only, and only the run on screen keeps its rendered audio.
  */
 
 import { assemble, findViolations } from "../core/arrangement.js";
@@ -21,11 +24,12 @@ import { configRecord, defaultSettings, runId, validateSettings } from "../core/
 import { matchLoudness } from "../audio/loudness.js";
 import { leadSheetVoices, midiExcerptVoices, renderVoices, trackPreview } from "../audio/plain-synth.js";
 import { createPlayer } from "../audio/player.js";
-import { SOUND_PACKS, renderPackStems } from "../audio/sound-packs.js";
-import { defaultLevels, matchMixLoudness, mixStems, readLevels, storeLevels } from "../audio/mixer.js";
+import { SOUND_PACKS } from "../audio/sound-packs.js";
+import { defaultLevels, mixStems, readLevels, readVolume, storeLevels, storeVolume } from "../audio/mixer.js";
 import { encodeWav } from "../audio/wav.js";
 import { createChannelView } from "./channel-view.js";
 import { createDownloads } from "./downloads.js";
+import { downloadStartedMessage, looksLikeDownload, openDownloadedFile } from "./downloaded-file.js";
 import { createEvolutionView } from "./evolution-view.js";
 import { createInputPanel, loadAbcjs } from "./input-panel.js";
 import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
@@ -33,7 +37,9 @@ import { readLeadSheetAbc } from "../core/abc-reader.js";
 import { createMixerPanel } from "./mixer-panel.js";
 import { createPacer, drawingBudget } from "./pacing.js";
 import { createPlanGrid } from "./plan-grid.js";
-import { addRun } from "./run-list.js";
+import { addRun, runShown } from "./run-list.js";
+import { createResultSound } from "./result-sound.js";
+import { createVolumeSlider } from "./volume-slider.js";
 import { renderScores } from "./scores-table.js";
 import { changedSettings, valueAt } from "./settings-form.js";
 import { createRunsView } from "./runs.js";
@@ -134,7 +140,12 @@ const inputPanel = createInputPanel(
     roleMap: state.settings.role_map,
     tempoOverride: state.settings.tempo_bpm,
   }),
+  onFileDropped: (name) => claimDownload(name),
   onLoaded(loaded) {
+    // The arrangement on screen belongs to the reading before this one: its sound, scores and
+    // downloads go, so Play and the A/B toggle can never play or show another song's.
+    clearResult();
+    resultSound.forget();
     if (state.phase === "evolving") stopRun(true);
     state.input = loaded;
     // An example's own limits (the MIDI songs' 4000/400) last only while it is the input.
@@ -171,6 +182,8 @@ const shelf = createSongShelf($("[data-shelf]"), {
   onPreview: async (entry) => {
     if (await openCatalogEntry(entry, { openPages: false })) playIntro();
   },
+  onDownload: (entry) => startDownload(entry),
+  onOpenDownloaded: (entry) => openDownloaded(entry),
 });
 /** @type {any[]} the catalog's songs, as far as they have been read */
 let catalogEntries = [];
@@ -254,6 +267,69 @@ function downloadFrom(url, name) {
 }
 
 /**
+ * The song whose downloaded file the visitor is about to choose through the hidden file input
+ * (browsers without the native picker). The input panel asks `claimDownload` who a chosen file is.
+ *
+ * @type {{entry: any, name: string} | null}
+ */
+let awaitedDownload = null;
+
+/**
+ * The "Download MIDI" button of a record: save the song's MIDI file under `<Title>.mid`. The
+ * page cannot fetch it (its site sends no CORS header), so the browser saves it and the visitor
+ * gives it back with "Open downloaded file".
+ *
+ * @param {any} entry
+ */
+async function startDownload(entry) {
+  try {
+    const song = await openEntry(entry, { fetchFn: fetch });
+    if (song.kind !== "link") return;
+    downloadFrom(song.url, song.name);
+    songStatus(downloadStartedMessage(song.name, window));
+  } catch (error) {
+    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
+  }
+}
+
+/**
+ * The "Open downloaded file" button of a record: a file dialog, in the Downloads folder where the
+ * browser can. The chosen file opens as the record's song, as if it were dropped on the page. The
+ * page cannot read the folder itself, so the visitor still confirms the file in the dialog.
+ *
+ * @param {any} entry
+ */
+async function openDownloaded(entry) {
+  try {
+    // Opening a link entry reads nothing from the network; it only gives the file name.
+    const song = await openEntry(entry, { fetchFn: fetch });
+    awaitedDownload = { entry, name: song.name };
+    const how = await openDownloadedFile({
+      win: window,
+      fileInput: /** @type {HTMLInputElement} */ ($("[data-file]")),
+      onFile: (file) => inputPanel.readFile(file, entry.facts?.overrides ?? {}, entry),
+    });
+    // Only the file input still waits for a file (its change event asks claimDownload).
+    if (how !== "input") awaitedDownload = null;
+  } catch (error) {
+    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
+  }
+}
+
+/**
+ * Tell the input panel which record a chosen file is, when the visitor opened the dialog for a
+ * downloaded song and chose a file of its name.
+ *
+ * @param {string} name the chosen file's name
+ * @returns {any} the record, or null when the file is the visitor's own
+ */
+function claimDownload(name) {
+  const waiting = awaitedDownload;
+  awaitedDownload = null;
+  return waiting && looksLikeDownload(name, waiting.name) ? waiting.entry : null;
+}
+
+/**
  * Load a catalog song into the input panel, as if its file were dropped.
  *
  * @param {any} entry
@@ -308,30 +384,55 @@ function songStatus(text, isError = false) {
 }
 
 /**
- * Preview on a record: the first 8 bars of the loaded song as the input sounds, in the Result's
- * player, so the position, the channel view and the mixer are there as after a run. The
- * arrangement does not exist yet, so only the original is loaded.
+ * Preview on a record: the song's original, in the Result's player, so the position, the channel
+ * view and the mixer are there as after a run.
+ *
+ * - When the run on screen is for this song, its own original plays from the start (the same
+ *   sound as the Original button), and the arrangement stays one click away.
+ * - Otherwise nothing of an earlier song may stay in the player: the first 8 bars of the loaded
+ *   song, as the input sounds, are the only version loaded. The toggle shows the original and the
+ *   arrangement button is disabled, because there is no arrangement of this song yet.
  */
 function playIntro() {
   const loaded = inputPanel.current();
   if (!loaded) return;
   const context = player.ensureContext();
-  player.pause();
   previewSource?.stop();
   previewSource = null;
+  const shown = runShown(state.runs, state.currentRunId, loaded.leadSheet);
+  if (shown && resultSound.replayOriginal()) {
+    showWorkbench("result");
+    return;
+  }
+  clearResult();
   const voices = originalVoices(loaded, loaded.leadSheet);
   const beats = Math.min(totalBeats(loaded.leadSheet.bars.slice(0, 8)), totalBeats(loaded.leadSheet.bars));
   const rendered = renderVoices(voices, loaded.leadSheet.tempoBpm, context.sampleRate, beats);
   const samples = matchLoudness(rendered, rendered, context.sampleRate).a;
   const scene = originalScene(clipVoices(voices, beats), loaded.leadSheet.tempoBpm);
   scenes = { arrangement: scene, original: scene };
-  player.load({ original: samples }, context.sampleRate);
-  player.seek(0);
+  resultSound.showIntro(samples, context.sampleRate);
   setResultStatus(
     `Preview of ${loaded.leadSheet.title || loaded.input.name}: its first 8 bars, as the original sounds. Press Arrange to arrange it.`,
   );
   showWorkbench("result");
   player.play();
+}
+
+/**
+ * Empty the Result panel of the run on screen: nothing of an earlier arrangement (its scores, its
+ * downloads, its place in the run list) may stay next to a different song. The runs themselves
+ * stay in the list, and clicking one brings it back whole.
+ */
+function clearResult() {
+  state.currentRunId = null;
+  scenes = { arrangement: null, original: null };
+  shownScene = null;
+  channelView.setScene(null);
+  downloads.clear();
+  $("[data-scores]").replaceChildren();
+  runsView.render(state.runs, null);
+  setResultStatus("No arrangement yet.");
 }
 
 /**
@@ -421,6 +522,7 @@ $("#result").insertAdjacentHTML(
   "beforeend",
   `<div class="transport">
      <button type="button" class="button primary" data-play disabled aria-label="Play">Play</button>
+     <span data-volume-slot></span>
      <div class="versions" role="group" aria-label="Version" data-versions hidden>
        <button type="button" class="button" data-version="original">Original</button>
        <button type="button" class="button" data-version="arrangement" aria-pressed="true">NES chip</button>
@@ -445,6 +547,7 @@ $("#result").insertAdjacentHTML(
    <div data-runs></div>`,
 );
 const player = createPlayer();
+const resultSound = createResultSound({ player, runs: () => state.runs });
 
 /** Local storage when the browser allows it; without it the levels last for this visit only. */
 const levelStorage = (() => {
@@ -456,7 +559,12 @@ const levelStorage = (() => {
 })();
 /** @type {ReturnType<typeof setTimeout> | undefined} */
 let levelsTimer;
+/** @type {ReturnType<typeof setTimeout> | undefined} */
+let volumeTimer;
+const savedVolume = readVolume(levelStorage);
 const mixerPanel = createMixerPanel($("[data-mixer]"), {
+  volume: savedVolume,
+  onVolume: (percent) => setVolume(percent, "mixer"),
   // Each sound pack has its own levels, remembered separately (Plain's drums are not the chip's)
   levels: readLevels(levelStorage, state.soundPack),
   defaults: () => defaultLevels(state.soundPack),
@@ -470,6 +578,30 @@ const mixerPanel = createMixerPanel($("[data-mixer]"), {
   },
 });
 player.setLevels(mixerPanel.get());
+player.setVolume(savedVolume);
+
+// The same volume control sits next to Play, so the sound can be turned down without opening the
+// drawer. The two sliders show one value, remembered for the next visit once the slider rests.
+const compactVolume = createVolumeSlider(document, {
+  id: "volume-compact",
+  volume: savedVolume,
+  compact: true,
+  onInput: (percent) => setVolume(percent, "compact"),
+});
+$("[data-volume-slot]").replaceWith(compactVolume.root);
+
+/**
+ * @param {number} percent the master volume, 0 to 100
+ * @param {"mixer" | "compact"} from the slider the visitor moved; the other one follows
+ */
+function setVolume(percent, from) {
+  player.setVolume(percent);
+  if (from === "mixer") compactVolume.set(percent);
+  else mixerPanel.setVolume(percent);
+  // As for the levels: save when the slider rests, not on every step of a drag.
+  clearTimeout(volumeTimer);
+  volumeTimer = setTimeout(() => storeVolume(levelStorage, percent), 300);
+}
 
 // The mixer is a drawer that slides in from the left edge: a Mix button opens and closes it, and
 // it opens by itself when something starts playing on a wide screen, unless it was closed by hand.
@@ -499,26 +631,27 @@ function showPackLevels() {
 showPackLevels();
 
 /**
- * The download list with the WAV entry made from the stems at the mixer's levels *when the visitor
- * clicks it*. Mixing and encoding a three-minute song takes a quarter of a second on a desktop and
- * several times that on a phone, and the file is 17 MB: doing it after every change of the mixer,
- * while the music plays, would stall the page and the playhead. Made on the click, the WAV also
- * always matches the levels at that moment. While every channel is muted the file would be
- * silence, so the click saves nothing.
+ * The download list with the WAV entry made from the run's stems at the mixer's levels *when the
+ * visitor clicks it*. Mixing and encoding a three-minute song takes a quarter of a second on a
+ * desktop and several times that on a phone, and the file is 17 MB: doing it after every change
+ * of the mixer, while the music plays, would stall the page and the playhead. Made on the click,
+ * the WAV also always matches the levels at that moment. While every channel is muted the file
+ * would be silence, so the click saves nothing. The master volume is a listening control and does
+ * not enter the file, which keeps its normalized level.
  *
  * @param {Array<{name: string, label: string, hint: string, blob?: Blob, wav?: boolean}>} files
- * @param {Record<string, Float32Array>} stems
- * @param {number} sampleRate
+ * @param {{audio: import("../audio/run-audio.js").RunAudio | null}} run the run on screen: its
+ *   stems are read at the click, so the list holds no buffer of its own
  */
-function withWav(files, stems, sampleRate) {
+function withWav(files, run) {
   return files.map((file) => {
     if (!file.wav) return file;
     return {
       ...file,
       make: () => {
         const levels = mixerPanel.get();
-        if (Object.values(levels.muted).every(Boolean)) return null;
-        const bytes = encodeWav(mixStems(/** @type {any} */ (stems), levels), sampleRate);
+        if (!run.audio || Object.values(levels.muted).every(Boolean)) return null;
+        const bytes = encodeWav(mixStems(/** @type {any} */ (run.audio.stems), levels), run.audio.sampleRate);
         return new Blob([bytes], { type: "audio/wav" });
       },
     };
@@ -644,13 +777,7 @@ async function finishRun(message) {
   }
   state.phase = "realized";
   const context = player.ensureContext();
-  const durationBeats = totalBeats(leadSheet.bars);
   const voices = originalVoices(input, leadSheet);
-  const originalRaw = renderVoices(voices, leadSheet.tempoBpm, context.sampleRate, durationBeats);
-  const stems = renderPackStems(state.soundPack, arrangement, context.sampleRate);
-  const { busScale, original: originalSamples } = matchMixLoudness(stems, originalRaw, context.sampleRate, defaultLevels(state.soundPack));
-  scenes = buildScenes(arrangement, voices, leadSheet.tempoBpm);
-  player.load({ arrangement: stems, original: originalSamples }, context.sampleRate, { busScale });
   const record = configRecord({
     settings,
     inputName: input.input.name,
@@ -698,24 +825,26 @@ async function finishRun(message) {
       }),
     },
   ];
-  downloads.set(withWav(downloadFiles, stems, context.sampleRate));
-  state.runs = addRun(state.runs, {
+  // The run keeps its notes for good and its sound only while it is on screen (`run-audio.js`).
+  const run = {
     id,
     settings,
     bestFitness: message.bestFitness,
     message,
     arrangement,
     leadSheet,
-    stems,
-    busScale,
-    originalSamples,
-    originalRaw,
-    soundPack: state.soundPack,
-    scenes,
-    sampleRate: context.sampleRate,
+    voices,
+    tempoBpm: leadSheet.tempoBpm,
+    durationBeats: totalBeats(leadSheet.bars),
+    scenes: buildScenes(arrangement, voices, leadSheet.tempoBpm),
+    audio: null,
     log: state.log,
     files: downloadFiles,
-  });
+  };
+  state.runs = addRun(state.runs, run);
+  scenes = run.scenes;
+  resultSound.showRun(run, state.soundPack, context.sampleRate, { fresh: true });
+  downloads.set(withWav(downloadFiles, run));
   runsView.render(state.runs, id);
   settingsPanel.show(state.settings, false);
   state.phase = "ready";
@@ -783,9 +912,8 @@ function showRun(id) {
   });
   renderScores($("[data-scores]"), run.message.scores, run.message.bestFitness, run.settings.weights);
   scenes = run.scenes;
-  voiceRun(run);
-  player.load({ arrangement: run.stems, original: run.originalSamples }, run.sampleRate, { busScale: run.busScale });
-  downloads.set(withWav(run.files, run.stems, run.sampleRate));
+  resultSound.showRun(run, state.soundPack, player.ensureContext().sampleRate, { fresh: true });
+  downloads.set(withWav(run.files, run));
   runsView.render(state.runs, id);
   setResultStatus(`Run ${id}: best fitness ${run.message.bestFitness.toFixed(4)}.`);
 }
@@ -813,10 +941,9 @@ soundPackSelect.addEventListener("change", () => {
   showPackLevels();
   const run = state.runs.find((entry) => entry.id === state.currentRunId);
   if (!run || state.phase === "evolving") return;
-  voiceRun(run);
-  // load keeps the position and the play state, so the music goes on in the new sound.
-  player.load({ arrangement: run.stems, original: run.originalSamples }, run.sampleRate, { busScale: run.busScale });
-  downloads.set(withWav(run.files, run.stems, run.sampleRate));
+  // load keeps the position, the play state and the version heard, so the music goes on in the new sound.
+  resultSound.showRun(run, state.soundPack, player.ensureContext().sampleRate, { fresh: false });
+  downloads.set(withWav(run.files, run));
 });
 for (const button of document.querySelectorAll("[data-version]")) {
   button.addEventListener("click", () =>
@@ -834,10 +961,19 @@ player.onChange(() => {
     element.setAttribute("aria-pressed", String(element.dataset.version === player.active()));
     (/** @type {HTMLButtonElement} */ (element)).disabled = !player.has(/** @type {"original" | "arrangement"} */ (element.dataset.version));
   }
+  // The toggle can only show what exists: a preview has the original and no arrangement.
   $("[data-versions]").hidden = !player.has("original");
+  $('[data-version="arrangement"]').title = player.has("arrangement") ? "" : "Arrange the song to hear its arrangement";
   if (player.isPlaying() && !mixClosedByHand && globalThis.matchMedia?.("(min-width: 1100px)").matches) setMixDrawer(true);
-  channelView.setScene(scenes[player.active()]);
+  // The channel view sorts the scene's notes each time it gets one: only give it a new scene.
+  const scene = scenes[player.active()];
+  if (scene !== shownScene) {
+    shownScene = scene;
+    channelView.setScene(scene);
+  }
 });
+/** @type {any} the scene the channel view holds */
+let shownScene = null;
 // The playhead loop runs on every animation frame, so it must cost almost nothing when nothing
 // moved: it reads the player first, writes to the page only what changed (a write that changes
 // nothing still invalidates style), and asks no question of the layout. A touch of the position
@@ -905,8 +1041,12 @@ function previewTrack(index) {
   buffer.copyToChannel(samples, 0);
   const source = context.createBufferSource();
   source.buffer = buffer;
-  source.connect(context.destination);
+  source.connect(player.output()); // through the master volume, like everything else
   source.start();
+  source.onended = () => {
+    if (previewSource === source) previewSource = null;
+    source.disconnect();
+  };
   previewSource = source;
   return preview.inExcerpt
     ? `Playing track ${index} from bar ${preview.firstBar}, where it comes in.`
@@ -1092,19 +1232,4 @@ function showSoundPack() {
   const pack = SOUND_PACKS.find((entry) => entry.id === state.soundPack) ?? SOUND_PACKS[0];
   $('[data-version="arrangement"]').textContent = pack.name;
   $("[data-sound-pack-hint]").textContent = pack.description;
-}
-
-/**
- * Render a run's arrangement with the chosen pack, once per change of pack, and match its
- * loudness with the run's original again.
- *
- * @param {any} run an entry of the run list
- */
-function voiceRun(run) {
-  if (run.soundPack === state.soundPack) return;
-  run.stems = renderPackStems(state.soundPack, run.arrangement, run.sampleRate);
-  const matched = matchMixLoudness(run.stems, run.originalRaw, run.sampleRate, defaultLevels(state.soundPack));
-  run.busScale = matched.busScale;
-  run.originalSamples = matched.original;
-  run.soundPack = state.soundPack;
 }

@@ -15,20 +15,25 @@
  * (spec 005, `mixer.js`). The graph is built once per AudioContext; only the sources are new on
  * each play or seek:
  *
- *   P1, P2, TR, NO stems -> channel gains -> bus -> limiter -> arrangement switch -> speakers
- *   original ------------------------------------------------> original switch ---> speakers
+ *   P1, P2, TR, NO stems -> channel gains -> bus -> limiter -> arrangement switch -+
+ *   original ------------------------------------------------> original switch ----+-> master -> speakers
  *
  * - A level change ramps one channel gain over 10 ms, like the A/B switch: no click, no restart.
  * - The bus gain (`busScale`) matches the mix with the original in loudness (`matchMixLoudness`),
  *   so the levels move away from a fair A/B.
  * - The limiter, a compressor with a hard knee and a high ratio, holds the peaks near -1 dBFS
  *   when the visitor boosts every channel, instead of letting the sum clip (research R2).
+ * - The master gain is the volume control (`volumeToGain`): it comes after both versions, so the
+ *   original is as loud as the arrangement, and it ramps like every other gain.
+ *
+ * Every source that is stopped is also disconnected, and a load drops the buffers of the song
+ * before it, so a long visit holds one song's sound in memory, not every song played.
  *
  * This is the only module that touches Web Audio (constitution, "Web App Constraints": audio
  * stays at the edges).
  */
 
-import { CHANNELS, DEFAULT_LEVELS, channelGains, clampLevels } from "./mixer.js";
+import { CHANNELS, DEFAULT_LEVELS, DEFAULT_VOLUME, channelGains, clampLevels, clampVolume, volumeToGain } from "./mixer.js";
 
 /** Gain ramp of an A/B switch or a level change, in seconds: long enough to avoid a click, short enough to feel instant. */
 const RAMP_SECONDS = 0.01;
@@ -60,6 +65,7 @@ export const CONTEXT_OPTIONS = Object.freeze({ latencyHint: /** @type {const} */
  * @property {Record<ChannelName, GainNode>} channels one gain per stem, set by the levels
  * @property {GainNode} bus adds the channels, at gain `busScale`
  * @property {Record<Version, GainNode>} switches the A/B gains, 1 for the version you hear
+ * @property {GainNode} master the volume control: both switches end in it, and it feeds the speakers
  */
 
 /**
@@ -75,14 +81,17 @@ export const CONTEXT_OPTIONS = Object.freeze({ latencyHint: /** @type {const} */
  *   (default `new AudioContext(CONTEXT_OPTIONS)`; the tests pass a fake one)
  * @returns {{
  *   ensureContext: () => AudioContext,
+ *   output: () => AudioNode,
  *   load: (
  *     buffers: {arrangement?: Float32Array | Stems, original?: Float32Array},
  *     sampleRate: number,
- *     options?: {busScale?: number},
+ *     options?: {busScale?: number, show?: Version},
  *   ) => void,
+ *   unload: () => void,
  *   play: () => void, pause: () => void, toggle: () => void,
  *   seek: (seconds: number) => void, switchTo: (version: Version) => void,
  *   setLevels: (levels: Levels) => void, setBusScale: (scale: number) => void,
+ *   setVolume: (percent: number) => void,
  *   currentTime: () => number, duration: () => number, isPlaying: () => boolean,
  *   active: () => Version, has: (version: Version) => boolean,
  *   onChange: (listener: () => void) => void,
@@ -107,6 +116,8 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
   /** @type {Levels} */
   let levels = clampLevels(DEFAULT_LEVELS);
   let busScale = 1;
+  /** The master volume in percent; the visitor's choice is kept across loads. */
+  let volume = DEFAULT_VOLUME;
   let offset = 0;
   let startedAt = 0;
   let playing = false;
@@ -128,10 +139,13 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
    * @returns {MixGraph}
    */
   function buildGraph(audio) {
+    const master = audio.createGain();
+    master.gain.value = volumeToGain(volume);
+    master.connect(audio.destination);
     const switches = { arrangement: audio.createGain(), original: audio.createGain() };
     for (const version of /** @type {Version[]} */ (["arrangement", "original"])) {
       switches[version].gain.value = version === active ? 1 : 0;
-      switches[version].connect(audio.destination);
+      switches[version].connect(master);
     }
     const limiter = audio.createDynamicsCompressor();
     limiter.threshold.value = LIMITER.threshold;
@@ -150,7 +164,7 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
       channels[channel].gain.value = gains[channel];
       channels[channel].connect(bus);
     }
-    return { channels, bus, switches };
+    return { channels, bus, switches, master };
   }
 
   /**
@@ -181,7 +195,8 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
 
   function currentTime() {
     if (!playing || !context) return offset;
-    return Math.min(duration(), offset + context.currentTime - startedAt);
+    // The sources start 20 ms after the click, so the first moments are before the start: clamp at 0.
+    return Math.max(0, Math.min(duration(), offset + context.currentTime - startedAt));
   }
 
   function stopSources() {
@@ -192,6 +207,8 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
       } catch {
         // A source that never started cannot stop; nothing to undo.
       }
+      // A stopped source cannot play again; cutting it from the graph lets the browser free it.
+      source.disconnect();
     }
     sources = [];
   }
@@ -224,6 +241,10 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
 
   return {
     ensureContext,
+    output() {
+      ensureContext();
+      return /** @type {MixGraph} */ (graph).master;
+    },
     load(newBuffers, sampleRate, options = {}) {
       const audio = ensureContext();
       const mix = /** @type {MixGraph} */ (graph);
@@ -248,10 +269,20 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
       addTrack(original, "original", mix.switches.original);
       busScale = options.busScale ?? 1;
       rampTo(mix.bus.gain, busScale);
+      // A new arrangement is heard first, and so is nothing else: `show` names the version, a
+      // plain load keeps the one heard (a change of sound pack goes on in the same version).
+      if (options.show && has(options.show)) active = options.show;
       if (!has(active)) active = has("arrangement") || !has("original") ? "arrangement" : "original";
       rampSwitches();
       offset = Math.min(offset, duration());
       if (wasPlaying) this.play();
+      notify();
+    },
+    unload() {
+      playing = false;
+      stopSources();
+      tracks = [];
+      offset = 0;
       notify();
     },
     play() {
@@ -288,6 +319,10 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
       if (!graph) return;
       const gains = channelGains(levels);
       for (const channel of CHANNELS) rampTo(graph.channels[channel].gain, gains[channel]);
+    },
+    setVolume(percent) {
+      volume = clampVolume(percent);
+      if (graph) rampTo(graph.master.gain, volumeToGain(volume));
     },
     setBusScale(scale) {
       busScale = scale;

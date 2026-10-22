@@ -12,6 +12,7 @@ import assert from "node:assert/strict";
 
 import { DEFAULT_LEVELS, MAX_DB, MIN_DB, clampLevels } from "../src/audio/mixer.js";
 import { createMixerPanel, formatLevel } from "../src/ui/mixer-panel.js";
+import { createVolumeSlider } from "../src/ui/volume-slider.js";
 
 /** @typedef {import("../src/audio/mixer.js").Levels} Levels */
 
@@ -275,4 +276,85 @@ test("Reset goes back to the defaults it is given, and the title names the sound
   const title = one(container, hasClass("mixer-title"));
   panel.setTitle("Mix: Plain instruments");
   assert.equal(title.textContent, "Mix: Plain instruments");
+});
+
+// --- Master volume ------------------------------------------------------------------------------
+
+/** A panel with a volume callback; the volume it reported is in `volumes`. */
+function volumePanel(volume = 80) {
+  const container = new FakeDocument().createElement("div");
+  /** @type {number[]} */
+  const volumes = [];
+  const panel = createMixerPanel(/** @type {any} */ (container), {
+    volume,
+    onChange: () => {},
+    onVolume: (percent) => volumes.push(percent),
+  });
+  const row = one(container, hasClass("mixer-volume"));
+  const slider = one(row, (element) => element.tagName === "INPUT");
+  const value = one(row, hasClass("mixer-value"));
+  return { container, panel, volumes, row, slider, value };
+}
+
+test("the first row of the mixer is the master Volume, before the four channels, with no channel code", () => {
+  const { container, row, slider } = volumePanel();
+  const root = container.children[0];
+  const rowsInOrder = root.children.filter((child) => hasClass("mixer-row")(child) || hasClass("mixer-volume")(child));
+  assert.equal(rowsInOrder[0], row, "Volume comes first");
+  assert.equal(row.getAttribute("data-channel"), null, "it is not one of the arrangement's channels");
+  const label = one(row, (element) => element.tagName === "LABEL");
+  assert.match(label.textContent, /^Volume$/);
+  assert.equal(label.htmlFor, slider.id);
+  assert.equal(slider.type, "range");
+  assert.deepEqual([slider.min, slider.max, slider.step], ["0", "100", "1"]);
+  assert.equal(root.getAttribute("aria-label"), "Channel levels");
+});
+
+test("the Volume slider shows its percentage, reports each move, and the title names the sound pack only", () => {
+  const { slider, value, volumes, panel } = volumePanel(80);
+  assert.equal(slider.value, "80");
+  assert.equal(value.textContent, "80%");
+  assert.equal(slider.getAttribute("aria-valuetext"), "80%");
+
+  slider.value = "35";
+  slider.dispatch("input");
+  assert.deepEqual(volumes, [35]);
+  assert.equal(value.textContent, "35%");
+  assert.equal(panel.getVolume(), 35);
+
+  slider.value = "400";
+  slider.dispatch("input");
+  assert.equal(volumes.at(-1), 100, "past the slider is clamped");
+});
+
+test("setVolume shows a volume without reporting it, and Reset leaves the volume alone", () => {
+  const { container, panel, slider, value, volumes } = volumePanel(80);
+  panel.setVolume(20);
+  assert.equal(volumes.length, 0, "not a change by the visitor");
+  assert.equal(slider.value, "20");
+  assert.equal(value.textContent, "20%");
+  one(container, hasClass("mixer-reset")).dispatch("click");
+  assert.equal(panel.getVolume(), 20, "Reset is for the channel levels of a sound pack, not the speakers");
+  assert.equal(volumes.length, 0);
+});
+
+test("without a volume option the panel starts at the default 80 percent", () => {
+  const { panel } = panelOf();
+  assert.equal(panel.getVolume(), 80);
+});
+
+test("the compact volume slider beside Play is the same control: it reports and shows in step with the mixer's", () => {
+  const doc = new FakeDocument();
+  /** @type {number[]} */
+  const heard = [];
+  const compact = createVolumeSlider(/** @type {any} */ (doc), { id: "volume-compact", volume: 80, compact: true, onInput: (percent) => heard.push(percent) });
+  const input = one(compact.root, (element) => element.tagName === "INPUT");
+  assert.match(compact.root.className, /\bvolume-compact\b/);
+  assert.equal(input.getAttribute("aria-label"), "Volume", "the short visible label does not replace the name");
+  input.value = "55";
+  input.dispatch("input");
+  assert.deepEqual(heard, [55]);
+  compact.set(10);
+  assert.equal(input.value, "10");
+  assert.equal(heard.length, 1, "set is not a change by the visitor");
 });

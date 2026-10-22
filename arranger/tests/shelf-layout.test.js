@@ -9,46 +9,50 @@ import { test } from "node:test";
 import {
   CAMERA_FOV,
   HALO_SCALE,
-  MARQUEE_GAP,
-  MARQUEE_PAUSE,
+  LABEL_HEIGHT_PX,
   MARQUEE_SPEED,
-  MARQUEE_STAGGER,
   NARROW_WIDTH,
   RECORD_SPACING,
   SHELF_ROWS,
-  STRIP_HEIGHT,
-  STRIP_PADDING,
-  STRIP_PIXELS,
-  STRIP_WIDTH,
   cameraDistance,
-  ellipsize,
   haloOpacity,
   isLowPower,
-  marqueeCycle,
-  marqueeOffset,
+  labelAnchorY,
+  labelWidth,
+  marqueeDelay,
+  marqueeTiming,
+  ndcToPixels,
   perPageFor,
   pixelRatioFor,
+  pixelsPerUnit,
   recordPose,
   recordPosition,
   scaleEasing,
   shelfColumns,
   shouldRenderFrame,
-  stripOpacity,
-  stripY,
   targetFps,
-  titleNeedsScroll,
 } from "../src/ui/shelf-layout.js";
 
-test("a wide shelf has 5 columns, one under 560 px has 3, always 3 rows", () => {
+test("columns follow the stage width: 3 on a phone, 5 at medium, 7 at wide, 9 at very wide; always 3 rows", () => {
   assert.equal(NARROW_WIDTH, 560);
   assert.equal(SHELF_ROWS, 3);
-  assert.equal(shelfColumns(1200), 5);
-  assert.equal(shelfColumns(560), 5);
-  assert.equal(shelfColumns(559), 3);
-  assert.equal(shelfColumns(375), 3);
-  assert.equal(shelfColumns(0), 5, "a hidden shelf (width 0) keeps the wide layout");
-  assert.equal(perPageFor(1200), 15);
+  const expected = [[320, 3], [375, 3], [559, 3], [560, 5], [759, 5], [760, 7], [959, 7], [960, 9], [1400, 9]];
+  for (const [width, columns] of expected) assert.equal(shelfColumns(width), columns, `${width} px`);
+  assert.equal(shelfColumns(0), 5, "a hidden shelf (width 0) keeps a medium layout");
   assert.equal(perPageFor(375), 9);
+  assert.equal(perPageFor(700), 15);
+  assert.equal(perPageFor(824), 21);
+  assert.equal(perPageFor(1000), 27);
+});
+
+test("every column count keeps the records a sensible size where it starts", () => {
+  // A scene unit is the radius of a full-size record; this is how many pixels it gets on a stage
+  // as wide as the narrowest one that shows that many columns (338 × 344 px on a phone, else 400 high).
+  for (const [width, height] of [[338, 344], [560, 400], [760, 400], [960, 400]]) {
+    const columns = shelfColumns(width);
+    const units = pixelsPerUnit(height, cameraDistance(columns, width / height));
+    assert.ok(units >= 46, `${columns} columns on ${width} px: a unit is ${units.toFixed(1)} px, a resting record ${(1.16 * units).toFixed(0)} px wide`);
+  }
 });
 
 test("records fill the page row by row, centred on the middle record", () => {
@@ -62,7 +66,7 @@ test("records fill the page row by row, centred on the middle record", () => {
 
 test("the camera stands far enough back to show every record, on wide and narrow stages", () => {
   const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
-  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8]]) {
+  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8], [7, 824 / 400], [9, 1000 / 400]]) {
     const distance = cameraDistance(columns, aspect);
     for (let index = 0; index < columns * SHELF_ROWS; index++) {
       const { x, y } = recordPosition(index, columns);
@@ -76,7 +80,7 @@ test("the camera stands far enough back to show every record, on wide and narrow
 test("the glow of the selected record fits the stage whichever record is selected, so it is never cut off", () => {
   const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
   const haloPlane = 1.1 - 0.3; // the glow sits 0.3 behind the selected record, which is 1.1 forward
-  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8]]) {
+  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8], [7, 824 / 400], [9, 1000 / 400]]) {
     const distance = cameraDistance(columns, aspect);
     for (let index = 0; index < columns * SHELF_ROWS; index++) {
       const { x, y } = recordPosition(index, columns);
@@ -127,78 +131,72 @@ test("the selected record sways only a little, so the disc never swings deep beh
   assert.ok(0.92 * Math.sin(widest) < 0.3);
 });
 
-// ---- Title strips under the records ----------------------------------------------------------
+// ---- Title labels under the records (DOM elements placed from the projected position) ---------
 
-test("a title strip is narrower than the gap between record centres and keeps its texture's proportions", () => {
-  assert.ok(STRIP_WIDTH < RECORD_SPACING, "neighbouring strips never touch");
-  assert.ok(Math.abs(STRIP_HEIGHT / STRIP_WIDTH - STRIP_PIXELS.height / STRIP_PIXELS.width) < 1e-9, "texels stay square");
-  assert.ok(STRIP_PADDING * 2 < STRIP_PIXELS.width);
+test("a point on the stage's centre line projects to the middle, the top edge to y 0 and the left edge to x 0", () => {
+  assert.deepEqual(ndcToPixels({ x: 0, y: 0 }, 400, 300), { x: 200, y: 150 });
+  assert.deepEqual(ndcToPixels({ x: -1, y: 1 }, 400, 300), { x: 0, y: 0 }, "top left");
+  assert.deepEqual(ndcToPixels({ x: 1, y: -1 }, 400, 300), { x: 400, y: 300 }, "bottom right");
+  assert.deepEqual(ndcToPixels({ x: 0.5, y: 0.5 }, 400, 300), { x: 300, y: 75 });
 });
 
-test("the strip hangs just below its record, wherever the record is and however big", () => {
-  const resting = stripY(0, 0.58);
-  const selected = stripY(0.12, 0.92);
-  assert.ok(resting < -0.58, "below a resting record's rim");
-  assert.ok(selected < 0.12 - 0.92, "below the selected record's rim, which is larger");
-  assert.ok(resting - STRIP_HEIGHT / 2 > -1.7 + 0.58 + 0.05, "clear of the next row's resting record, bob included");
-});
-
-test("a title scrolls only when its text is wider than the strip's room for it", () => {
-  const room = STRIP_PIXELS.width - 2 * STRIP_PADDING;
-  assert.equal(titleNeedsScroll(room), false, "an exact fit stays still");
-  assert.equal(titleNeedsScroll(room + 1), true);
-  assert.equal(titleNeedsScroll(20), false);
-});
-
-test("the marquee waits at the start, then moves at a steady speed, and a whole cycle looks like the start", () => {
-  assert.equal(MARQUEE_SPEED > 0 && MARQUEE_SPEED < 40, true, "slow");
-  const cycle = marqueeCycle(300);
-  assert.equal(cycle, 300 + MARQUEE_GAP, "the text, a gap, and then the text again");
-  assert.equal(marqueeOffset(0, cycle), 0);
-  assert.equal(marqueeOffset(MARQUEE_PAUSE * 0.99, cycle), 0, "waits so the title can be read from its start");
-  assert.ok(Math.abs(marqueeOffset(MARQUEE_PAUSE + 1, cycle) - MARQUEE_SPEED) < 1e-9, "one second after the wait");
-  const period = MARQUEE_PAUSE + cycle / MARQUEE_SPEED;
-  assert.ok(marqueeOffset(period - 0.001, cycle) < cycle, "never passes one cycle");
-  assert.ok(marqueeOffset(period + 0.5, cycle) === 0, "starts over");
-  assert.ok(Math.abs(marqueeOffset(3 * period + MARQUEE_PAUSE + 2, cycle) - 2 * MARQUEE_SPEED) < 1e-6, "every cycle alike");
-  assert.ok(MARQUEE_STAGGER > 0 && MARQUEE_STAGGER < MARQUEE_PAUSE, "neighbours start a little apart");
-  assert.equal(marqueeOffset(-5, cycle) >= 0, true, "a time before the start still gives an offset in range");
-});
-
-test("ellipsize cuts a title to fit, ending with an ellipsis, and leaves a fitting title alone", () => {
-  const measure = (/** @type {string} */ text) => text.length * 5; // a monospace font, 5 px a letter
-  assert.equal(ellipsize("Ievan Polkka", 100, measure), "Ievan Polkka");
-  const cut = ellipsize("Korobeiniki (Tetris Theme A)", 60, measure);
-  assert.ok(cut.endsWith("…"));
-  assert.ok(measure(cut) <= 60, "fits");
-  assert.ok(cut.length >= 10, "keeps as much as fits");
-  assert.equal(ellipsize("abcdefghij", 15, measure), "ab…");
-  assert.equal(ellipsize("abc", 3, measure), "…", "even the ellipsis may be all that fits");
-  assert.equal(ellipsize("", 50, measure), "");
-});
-
-test("the selected record's strip is brighter than the others", () => {
-  assert.ok(stripOpacity(true) > stripOpacity(false));
-  assert.equal(stripOpacity(true), 1);
-});
-
-test("the camera keeps the strips, those of the bottom row too, inside the stage", () => {
+test("pixels per scene unit grow with the stage's height and shrink as the camera backs away", () => {
   const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
-  for (const [columns, aspect] of [[5, 760 / 400], [5, 1.2], [3, 343 / 300], [3, 0.8]]) {
+  assert.ok(Math.abs(pixelsPerUnit(400, 10) - 400 / (2 * halfTan * 10)) < 1e-9);
+  assert.ok(pixelsPerUnit(400, 10) > pixelsPerUnit(300, 10));
+  assert.ok(pixelsPerUnit(400, 10) > pixelsPerUnit(400, 12));
+});
+
+test("a label is a little narrower than the gap between record centres, so neighbours never touch", () => {
+  const unit = 60;
+  const width = labelWidth(unit);
+  assert.ok(width < RECORD_SPACING * unit, "narrower than the pitch");
+  assert.ok(width > RECORD_SPACING * unit - 12, "but not by much: the title needs the room");
+  assert.equal(labelWidth(1), 40, "never narrower than a few letters");
+});
+
+test("the label hangs from the record's lower rim, wherever the record is and however big", () => {
+  assert.equal(labelAnchorY(0, 0.58), -0.58);
+  assert.equal(labelAnchorY(0.12, 0.92), 0.12 - 0.92);
+  assert.ok(labelAnchorY(0.12, 0.92) < labelAnchorY(0, 0.58), "the larger, raised record has a lower rim");
+});
+
+test("a title that fits stays still; a longer one slides by exactly what overflows, slowly, and rests at each end", () => {
+  assert.equal(marqueeTiming(0), null);
+  assert.equal(marqueeTiming(0.5), null, "a sub-pixel overflow is not worth moving for");
+  const timing = marqueeTiming(90);
+  assert.ok(timing);
+  assert.equal(timing.shift, -90, "to the left, by the hidden width");
+  assert.ok(MARQUEE_SPEED > 10 && MARQUEE_SPEED < 40, "slow enough to read");
+  // The movement takes 64% of a pass (the rest is rest at the ends), at MARQUEE_SPEED
+  assert.ok(Math.abs(timing.duration * 0.64 - 90 / MARQUEE_SPEED) < 1e-9);
+  assert.ok(marqueeTiming(400).duration > timing.duration, "a longer title takes longer");
+  assert.ok(Number(marqueeTiming(2)?.duration) >= 2.5, "never a frantic shake");
+});
+
+test("neighbouring labels start their slide at different moments, so the titles do not move in step", () => {
+  const delays = [0, 1, 2, 3, 4, 5, 6, 7].map(marqueeDelay);
+  assert.equal(delays[0], 0);
+  assert.ok(delays[1] > delays[0]);
+  assert.ok(Math.max(...delays) <= 3, "nobody waits long to start");
+  assert.equal(marqueeDelay(6), marqueeDelay(0), "the pattern repeats across a page");
+});
+
+test("the camera keeps the labels, those of the bottom row too, inside the stage", () => {
+  const halfTan = Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
+  for (const [columns, aspect] of [[3, 343 / 340], [5, 600 / 400], [7, 824 / 400], [9, 1000 / 400], [5, 0.9]]) {
     const distance = cameraDistance(columns, aspect);
+    const unit = pixelsPerUnit(400, distance);
     for (let index = 0; index < columns * SHELF_ROWS; index++) {
-      const { x, y } = recordPosition(index, columns);
       for (const selected of [false, true]) {
         const pose = recordPose(index, { selected, columns, time: 0, reducedMotion: true });
         const bobbing = 0.05;
-        const bottom = stripY(pose.y, pose.scale) - STRIP_HEIGHT / 2 - bobbing;
-        assert.ok(Math.abs(bottom) <= halfTan * (distance - pose.z), `strip bottom of record ${index}, selected ${selected}`);
-        assert.ok(Math.abs(x) + STRIP_WIDTH / 2 <= halfTan * aspect * (distance - pose.z), `strip side of record ${index}`);
+        const labelBottom = labelAnchorY(pose.y, pose.scale) - bobbing - LABEL_HEIGHT_PX / unit;
+        assert.ok(Math.abs(labelBottom) <= halfTan * (distance - pose.z), `label bottom of record ${index}, selected ${selected}, ${columns} columns`);
+        assert.ok(Math.abs(pose.x) + labelWidth(unit) / unit / 2 <= halfTan * aspect * (distance - pose.z), `label side of record ${index}, ${columns} columns`);
       }
     }
   }
-  const taller = cameraDistance(5, 2);
-  assert.ok(taller > 0 && taller < 15);
 });
 
 // ---- Cost: frame rate, pixel ratio, when to draw ----------------------------------------------

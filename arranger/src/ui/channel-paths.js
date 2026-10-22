@@ -1,100 +1,261 @@
 // @ts-check
 /**
- * Channel paths: each NES channel drawn as a step line that the playhead reveals.
+ * Channel paths: the geometry of the channel view, as pure functions.
  *
- * A monophonic channel is a melody line: one pitch at a time, held until the next note or a
- * rest. Drawn as a step line (pitch on y, time on x), each note is a flat segment and each jump is
- * an interval, so a listener can follow every channel at once. These pure functions port the
- * command line's video (`src/export/figures.py` `step_line`, `src/export/video.py`
- * `visible_until` and `sounding_pitch`): the line is revealed up to the playhead, the note that
- * sounds is drawn only up to now, and the glowing tip marks the pitch that plays.
+ * Each NES channel is drawn as a step line, like the neon lines of the "Bach Vision Test" video:
+ * pitch is the height, time runs from right to left as the music plays, a note is a flat
+ * segment and a change of pitch is a vertical jump with a slightly rounded corner. The line has
+ * a gap where the voice rests and a tiny break where a note repeats, so a repeated note reads as
+ * "again" without a dot. Only the head of the line, the note that sounds now, gets a dot.
+ *
+ * Everything here works in numbers (seconds, MIDI pitches, pixels) and knows nothing about the
+ * canvas, so the tests check the shapes directly. The view turns the shapes into strokes.
  */
 
-/** @typedef {{x: number[], y: number[]}} StepLine x in seconds (or beats), y in MIDI pitch, NaN at rests */
+/** @typedef {{pitch: number, onset: number, duration: number}} Note in seconds; lists are sorted by onset */
+/** @typedef {{x: number, y: number}} Point */
+/** @typedef {{op: "moveTo" | "lineTo" | "arcTo", args: number[]}} PathCommand a canvas path call */
 
 /**
- * The points of a step line for a monophonic channel, with a NaN point where a rest starts.
+ * The span of time on screen. The head (now) sits near the right edge, so most of the window
+ * shows the notes that just played and a little shows nothing yet.
  *
- * @param {Array<{pitch: number, onset: number, duration: number}>} notes in one time unit
- * @returns {StepLine}
+ * @param {number} t playhead time in seconds
+ * @param {number} seconds width of the window
+ * @param {number} headFraction where now sits, from 0 (left edge) to 1 (right edge)
+ * @returns {{start: number, end: number}}
  * @example
- * stepLine([{pitch: 60, onset: 0, duration: 1}, {pitch: 62, onset: 2, duration: 1}])
- * // {x: [0, 1, 2, 3], y: [60, NaN, 62, 62]}
+ * timeWindow(10, 8, 0.75) // {start: 4, end: 12}
  */
-export function stepLine(notes) {
-  /** @type {StepLine} */
-  const line = { x: [], y: [] };
-  /** @type {number | null} */
-  let previousEnd = null;
-  for (const note of [...notes].sort((a, b) => a.onset - b.onset)) {
-    if (previousEnd !== null && note.onset > previousEnd + 1e-9) {
-      line.x.push(previousEnd);
-      line.y.push(NaN);
+export function timeWindow(t, seconds, headFraction) {
+  const start = t - seconds * headFraction;
+  return { start, end: start + seconds };
+}
+
+/**
+ * The x position of a time in a window drawn `width` pixels wide.
+ *
+ * @param {number} time
+ * @param {{start: number, end: number}} window
+ * @param {number} width
+ * @example
+ * timeToX(10, {start: 4, end: 12}, 800) // 600
+ */
+export function timeToX(time, window, width) {
+  return ((time - window.start) / (window.end - window.start)) * width;
+}
+
+/**
+ * The range of pitches the canvas shows: every note of every voice plus a margin, and at least
+ * `minSpan` semitones so a tune on one or two pitches does not stretch over the whole height.
+ *
+ * @param {Note[][]} voices
+ * @param {number} [margin] semitones of room above the highest and below the lowest note
+ * @param {number} [minSpan] narrowest range, in semitones
+ * @returns {{low: number, high: number}}
+ * @example
+ * pitchSpan([[{pitch: 40, onset: 0, duration: 1}], [{pitch: 72, onset: 0, duration: 1}]], 2) // {low: 38, high: 74}
+ */
+export function pitchSpan(voices, margin = 2, minSpan = 12) {
+  let low = Infinity;
+  let high = -Infinity;
+  for (const notes of voices) {
+    for (const { pitch } of notes) {
+      if (pitch < low) low = pitch;
+      if (pitch > high) high = pitch;
     }
-    line.x.push(note.onset);
-    line.y.push(note.pitch);
-    previousEnd = note.onset + note.duration;
   }
-  if (previousEnd !== null) {
-    line.x.push(previousEnd);
-    line.y.push(/** @type {number} */ (line.y.at(-1)));
+  if (low > high) return { low: 54, high: 54 + Math.max(minSpan, 24) };
+  low -= margin;
+  high += margin;
+  if (high - low < minSpan) {
+    const middle = (low + high) / 2;
+    low = middle - minSpan / 2;
+    high = middle + minSpan / 2;
   }
-  return line;
+  return { low, high };
 }
 
 /**
- * The part of a step line between `start` and the playhead `t`, as seen at time `t`.
+ * The height of a pitch: the highest pitch at the top of the lane, the lowest at the bottom.
  *
- * @param {StepLine} line
- * @param {number} t playhead time
- * @param {number} [start] left edge of the window; the note sounding there enters from the left
- * @returns {StepLine}
+ * @param {number} pitch MIDI pitch
+ * @param {{low: number, high: number}} span from `pitchSpan`
+ * @param {{top: number, bottom: number}} lane pixel rows the pitches may use
  * @example
- * visibleUntil({x: [0, 1, 2, 3], y: [60, NaN, 62, 62]}, 2.5) // {x: [0, 1, 2, 2.5], y: [60, NaN, 62, 62]}
+ * pitchToY(60, {low: 40, high: 80}, {top: 10, bottom: 110}) // 60
  */
-export function visibleUntil(line, t, start = -Infinity) {
-  const current = lastAtOrBefore(line.x, t);
-  if (current < 0) return { x: [], y: [] };
-  const first = Math.max(lastAtOrBefore(line.x, start), 0);
-  if (current === line.x.length - 1) {
-    // The piece has ended for this channel: the path stops where its last note stops.
-    return { x: line.x.slice(first), y: line.y.slice(first) };
-  }
-  return {
-    x: [...line.x.slice(first, current + 1), t],
-    y: [...line.y.slice(first, current + 1), line.y[current]],
-  };
+export function pitchToY(pitch, span, lane) {
+  return lane.bottom - ((pitch - span.low) / (span.high - span.low)) * (lane.bottom - lane.top);
 }
 
 /**
- * The pitch a step line plays at time `t`, or null when it is silent.
+ * The step line of one voice up to the playhead, as runs of points in pixels.
  *
- * @param {StepLine} line
- * @param {number} t
- * @returns {number | null}
+ * Each run is a connected stretch of the line: a rest, or a repeated pitch, starts a new run, so
+ * the canvas leaves a hole there. A note is a flat segment; a note that follows without a rest
+ * at another pitch adds a vertical jump at its start. The note sounding at `t` stops at `t`, and
+ * a note that starts before the previous one ends cuts it short (a voice plays one pitch at a
+ * time, and the later note wins). A repeated pitch trims `gap` pixels off the end of the earlier
+ * note; the trim is at most 40% of that note, so very short notes stay visible.
+ *
+ * @param {Note[]} notes sorted by onset
+ * @param {{xOf: (time: number) => number, yOf: (pitch: number) => number, t: number, minX: number, gap: number}} view
+ *   `xOf`, `yOf` map seconds and pitches to pixels; notes are cut at the playhead `t` and at the
+ *   left edge `minX`; `gap` is the break between two notes of one pitch, in pixels
+ * @returns {Point[][]}
  * @example
- * soundingPitch({x: [0, 1, 2, 3], y: [60, NaN, 62, 62]}, 0.5) // 60
+ * stepPolylines([{pitch: 60, onset: 0, duration: 1}, {pitch: 64, onset: 1, duration: 1}],
+ *   {xOf: (s) => s * 100, yOf: (p) => 200 - p, t: 9, minX: -50, gap: 0})
+ * // [[{x: 0, y: 140}, {x: 100, y: 140}, {x: 100, y: 136}, {x: 200, y: 136}]]
  */
-export function soundingPitch(line, t) {
-  const current = lastAtOrBefore(line.x, t);
-  if (current < 0 || current >= line.x.length - 1) return null;
-  const pitch = line.y[current];
-  return Number.isNaN(pitch) ? null : pitch;
+export function stepPolylines(notes, { xOf, yOf, t, minX, gap }) {
+  /** @type {Point[][]} */
+  const runs = [];
+  /** @type {Point[] | null} */
+  let run = null;
+  /** @type {{pitch: number, end: number} | null} */
+  let previous = null;
+  for (let index = 0; index < notes.length; index += 1) {
+    const note = notes[index];
+    if (note.onset > t) break;
+    const next = notes[index + 1];
+    let end = note.onset + note.duration;
+    if (next && next.onset < end) end = next.onset;
+    end = Math.min(end, t);
+    if (end <= note.onset) continue;
+    const endX = xOf(end);
+    if (endX < minX) {
+      run = null;
+      previous = null;
+      continue;
+    }
+    const startX = Math.max(xOf(note.onset), minX);
+    const y = yOf(note.pitch);
+    const touches = run !== null && previous !== null && Math.abs(note.onset - previous.end) < 1e-9;
+    if (run && previous && touches && previous.pitch === note.pitch) {
+      const last = run[run.length - 1];
+      last.x -= Math.min(gap, 0.4 * (last.x - run[run.length - 2].x));
+      run = null;
+    }
+    if (run && touches) {
+      run.push({ x: startX, y }, { x: endX, y });
+    } else {
+      run = [{ x: startX, y }, { x: endX, y }];
+      runs.push(run);
+    }
+    previous = { pitch: note.pitch, end };
+  }
+  return runs;
 }
 
 /**
- * Index of the last x at or before t (numpy `searchsorted(x, t, side="right") - 1`).
+ * Canvas path commands for a polyline whose corners are rounded.
  *
- * @param {number[]} x sorted ascending
- * @param {number} t
+ * Each interior point becomes an `arcTo`, which draws the line up to the corner and bends it onto
+ * the next segment. The radius is capped at half of each neighbouring segment, so two corners of
+ * a short step never overlap.
+ *
+ * @param {Point[]} points
+ * @param {number} radius preferred corner radius in pixels
+ * @returns {PathCommand[]} call `path[command.op](...command.args)` on a canvas path
+ * @example
+ * roundedPath([{x: 0, y: 0}, {x: 10, y: 0}, {x: 10, y: 10}], 3)
+ * // moveTo(0, 0), arcTo(10, 0, 10, 10, 3), lineTo(10, 10)
  */
-function lastAtOrBefore(x, t) {
+export function roundedPath(points, radius) {
+  if (points.length === 0) return [];
+  /** @type {PathCommand[]} */
+  const commands = [{ op: "moveTo", args: [points[0].x, points[0].y] }];
+  for (let index = 1; index < points.length - 1; index += 1) {
+    const before = points[index - 1];
+    const corner = points[index];
+    const after = points[index + 1];
+    const cornerRadius = Math.min(radius, distance(before, corner) / 2, distance(corner, after) / 2);
+    commands.push(
+      cornerRadius < 0.25
+        ? { op: "lineTo", args: [corner.x, corner.y] }
+        : { op: "arcTo", args: [corner.x, corner.y, after.x, after.y, cornerRadius] },
+    );
+  }
+  if (points.length > 1) {
+    const last = points[points.length - 1];
+    commands.push({ op: "lineTo", args: [last.x, last.y] });
+  }
+  return commands;
+}
+
+/**
+ * The note that sounds at time `t` on a voice: the last note started, if it has not ended.
+ *
+ * @param {Note[]} notes sorted by onset
+ * @param {number} t
+ * @returns {Note | null} null in a rest, before the first note and after the last
+ * @example
+ * headNote([{pitch: 60, onset: 0, duration: 1}], 0.5) // {pitch: 60, onset: 0, duration: 1}
+ */
+export function headNote(notes, t) {
   let low = 0;
-  let high = x.length;
+  let high = notes.length;
   while (low < high) {
     const middle = (low + high) >> 1;
-    if (x[middle] <= t) low = middle + 1;
+    if (notes[middle].onset <= t) low = middle + 1;
     else high = middle;
   }
-  return low - 1;
+  const note = notes[low - 1];
+  return note && note.onset + note.duration > t ? note : null;
+}
+
+/**
+ * The notes of a part that may overlap (chords), as flat segments inside a window, cut at its
+ * left edge and at now.
+ *
+ * @param {Note[]} notes sorted by onset
+ * @param {number} start left edge of the window, in seconds
+ * @param {number} t playhead time
+ * @returns {Array<{pitch: number, from: number, to: number}>}
+ * @example
+ * visibleSegments([{pitch: 60, onset: 0, duration: 2}], 1, 4) // [{pitch: 60, from: 1, to: 2}]
+ */
+export function visibleSegments(notes, start, t) {
+  /** @type {Array<{pitch: number, from: number, to: number}>} */
+  const segments = [];
+  for (const note of notes) {
+    if (note.onset > t) break;
+    const to = Math.min(note.onset + note.duration, t);
+    if (to < start) continue;
+    segments.push({ pitch: note.pitch, from: Math.max(note.onset, start), to });
+  }
+  return segments;
+}
+
+/**
+ * The drum hits on screen, each with the brightness it has now: a new hit is bright and an old
+ * one dims, down to a floor so it stays faintly visible until it leaves the window.
+ *
+ * @param {number[]} onsets drum hit times in seconds, sorted
+ * @param {number} start left edge of the window
+ * @param {number} t playhead time
+ * @param {number} fadeSeconds age at which a hit has dimmed to the floor
+ * @returns {Array<{onset: number, alpha: number}>}
+ * @example
+ * drumTicks([5, 9.5], 4, 10, 2) // [{onset: 5, alpha: 0.2}, {onset: 9.5, alpha: 0.75}]
+ */
+export function drumTicks(onsets, start, t, fadeSeconds) {
+  /** @type {Array<{onset: number, alpha: number}>} */
+  const ticks = [];
+  for (const onset of onsets) {
+    if (onset > t) break;
+    if (onset < start) continue;
+    ticks.push({ onset, alpha: Math.max(0.2, 1 - (t - onset) / fadeSeconds) });
+  }
+  return ticks;
+}
+
+/**
+ * @param {Point} a
+ * @param {Point} b
+ */
+function distance(a, b) {
+  return Math.hypot(b.x - a.x, b.y - a.y);
 }
