@@ -1,0 +1,9 @@
+{
+  "collections": [
+    {"id":"examples","path":"data/catalog/examples.json","name":"Examples","kind":"abc","lazy":false,"order":10,"enabled":true,"generated":"uv run src/main.py catalog examples; then uv run src/main.py catalog popularity"},
+    {"id":"mpb","path":"data/catalog/mpb.json","name":"MPB","kind":"remote","lazy":true,"order":20,"enabled":true,"generated":"uv run src/main.py catalog analyze --dataset <local MPB study copy>; then uv run src/main.py catalog popularity"},
+    {"id":"public-domain","path":"data/catalog/public-domain.json","name":"Choro & public domain","kind":"abc","lazy":false,"order":30,"enabled":true,"generated":"uv run src/main.py catalog public-domain --dataset <local MPB study copy>; then uv run src/main.py catalog popularity"},
+    {"id":"nottingham","path":"data/catalog/nottingham.json","name":"Folk tunes","kind":"abc","lazy":false,"order":40,"enabled":true,"generated":"uv run src/main.py catalog nottingham; then uv run src/main.py catalog popularity"},
+    {"id":"pdmx","path":"data/catalog/pdmx.json","name":"Classical & standards","kind":"abc","lazy":false,"order":50,"enabled":true,"generated":"uv run src/main.py catalog pdmx --limit 300; then uv run src/main.py catalog popularity"}
+  ]
+}

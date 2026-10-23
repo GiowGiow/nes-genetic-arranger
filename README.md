@@ -498,8 +498,10 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
    evolution live: the best and mean fitness, the generation and stagnation counters, and the
    best plan of four genes per bar. The "watch" pace runs about 400 generations per second so the
    evolution can be followed; "full speed" finishes in under a second.
-4. Play the arrangement with the NES chip sound, or switch the sound pack (Game Boy, Commodore
-   64, a soft synth or the original's plain instruments) without losing the position; switch to
+4. Play the arrangement with the NES chip sound (softened: a rounder harmony pulse and a small
+   TV speaker's filter; "NES chip (raw)" keeps the thin original), or switch the sound pack (Mega
+   Drive FM synthesis, Super Nintendo samples with echo, Game Boy, Commodore 64, a soft synth or
+   the original's plain instruments) without losing the position; switch to
    the original at the same position. Four small sliders set the level of P1, P2, bass and drums for the sound pack in
    use (each pack has its own defaults and your mix is remembered per pack), and the
    downloads are the MIDI, an audio WAV that follows the pack and the mix, the run's
@@ -623,6 +625,137 @@ Meter terms (specs 003 and 006):
   only n and d, so an additive meter is written there as its sum (7/8 for 2+2+3/8).
 - *Allowed values* are the gene values (textures, drum patterns, octaves) that the GA may draw.
 
+## Your own MIDI collections
+
+A *collection* is one playlist of the song shelf: a tile with a cover, a name and its songs.
+The app reads the list of collections from `arranger/data/catalog/collections.json` (the
+*registry*), so a collection is added, hidden, renamed or moved with a command and no code
+change. There are three kinds:
+
+- `abc`: lead sheets committed to the repository (the Examples, public-domain songs, folk tunes
+  and classical subset);
+- `local-midi`: MIDI files committed to a folder of the repository, which the page fetches from
+  its own site (the collections you make below);
+- `remote`: songs that live on another site and open by download (MPB), so the repository holds
+  only titles and links.
+
+### Put your MIDI files in a collection: three steps
+
+Only files you are allowed to redistribute belong here, because GitHub Pages publishes the whole
+repository: your own work, a public-domain composition **whose MIDI sequence is also yours or
+licensed to you**, or files under a license that allows redistribution. A public-domain
+composition is not enough: someone made the MIDI sequence, and that person's sequence has its own
+copyright, so check the license of the file you downloaded.
+
+1. Put the files in a folder of the repository, for example `songs/baroque/` (sub-folders are
+   fine, and a sub-folder is the album of its songs).
+2. Run one command with the license of the folder (and, for a license that asks for credit, where
+   the files come from):
+
+   ```bash
+   uv run src/main.py collection build songs/baroque --license CC0-1.0
+   uv run src/main.py collection build songs/baroque --license CC-BY-4.0 --source "https://example.org/the-pianist"
+   ```
+
+3. Commit the MIDI files, `collection.toml` (if you made one) and `arranger/data/catalog/`, and
+   push. The playlist appears in the app after the next deploy.
+
+`build` finds everything else by itself, for each file:
+
+| What | Where it comes from |
+| --- | --- |
+| Title and composer | the file name (`Composer - Title`, `Title - Composer`, `title_by_composer`, underscores and dashes as spaces, `Op.` or `BWV` numbers kept in the title) and the MIDI file's own text (sequence name, `Composer: ...`, `Title: ...`), then confirmed and normalized on [MusicBrainz](https://musicbrainz.org) (a work search: `Bach` becomes `Johann Sebastian Bach`) |
+| Is the composition public domain? | the composer's death year on Wikidata (every composer died in 1955 or earlier: Lei 9.610/98, art. 41), as in `data/catalog/authors.json` |
+| Popularity | Wikipedia page views of the work, else the composer's page views divided by 20 (the same rule as the other collections) |
+| Album | the sub-folder, else the composer, so a folder of classical pieces groups by composer |
+| Melody track, bars, key, tempo, meter, drums | measured on the file, as for the MPB catalog |
+| Order | by popularity, best known first (`default_sort`) |
+
+Lookups wait at least one second between requests, carry the project's User-Agent, and cache
+every answer under `data/raw/` (gitignored), so a rerun needs no network. `--offline` uses the
+cache only. Tests use fake lookups.
+
+**Check before you publish.** `preview` prints the playlist as the app will show it, with where
+each title and composer came from and the low-confidence matches marked, and writes nothing:
+
+```bash
+uv run src/main.py collection preview songs/baroque --license CC0-1.0
+```
+
+**Fix what is wrong, only if something is.** `init` writes `songs/baroque/collection.toml` with
+everything it found, so a wrong match can be fixed in one place. The file is optional; a value in
+it wins over a lookup, and a file added to the folder later needs no entry (`init` again appends
+only the new files and never rewrites your edits):
+
+```bash
+uv run src/main.py collection init songs/baroque --license CC0-1.0
+```
+
+```toml
+id = "baroque"                 # the collection's id (a slug) and catalog file name
+name = "Baroque"               # the playlist's name in the app
+description = ""
+order = 100                    # place among the playlists; the built-in ones are 10 to 50
+default_sort = "popularity"    # "popularity", "title" or "order" (the order numbers below)
+license = "CC0-1.0"            # one license for the folder
+source = ""                    # a link or a name; required by CC-BY style licenses
+
+[[song]]
+file = "Bach - Air on the G String.mid"
+title = "Air on the G String"
+composer = "Johann Sebastian Bach"
+# found: title from file name; composer from MusicBrainz (high)
+# composition public domain: yes (Johann Sebastian Bach, died 1750)
+# Optional overrides (uncomment to use): performer, license, source, album, popularity, order,
+# melody_track, bars = [first, end], public_domain = true, skip = true
+```
+
+**Licenses.** One license applies to the whole folder; a file may override it in the sidecar.
+`build` refuses, and writes nothing, when a file has no license or one that does not allow
+redistribution, and it lists the files:
+
+| License | Accepted | Needs `--source` |
+| --- | --- | --- |
+| `public-domain`, `CC0-1.0`, `own-work` | yes | no |
+| `CC-BY-<version>`, `CC-BY-SA-<version>` (for example `CC-BY-4.0`) | yes | yes (credit) |
+| `GPL`, `LGPL`, `AGPL`, `MIT`, `Apache-2.0`, `BSD`, `ISC`, `Unlicense` | yes | yes, except `Unlicense` |
+| anything with NonCommercial or NoDerivatives (`CC-BY-NC-4.0`, `CC-BY-ND-4.0`), "all rights reserved", empty | no | |
+
+**The public-domain license is checked.** `public-domain` claims that the composition is free, so
+a song whose composer Wikidata does not confirm as dead in 1955 or earlier (alive, unknown, or only
+a surname) is left out and marked `NOT INCLUDED` in the preview. Pass `--include-unconfirmed` to
+keep such songs, or write `public_domain = true` on one file in `collection.toml` when you know it
+is free. When two people share a composer's name and all of them died long ago, the composition
+counts as free. The other licenses cover the MIDI sequence and are not checked against the
+composer, but the preview still reports each composition's status.
+
+**In the app.** The collection is a tile named by `name`, placed by `order`, with the sprite of its
+most popular song as cover. Its songs follow `default_sort`; when songs have albums, the tile opens
+into one tile per album, like MPB's artists. Its songs open in one click, can enter Popular by their
+popularity, show their license (and credit) in small muted type, and the visitor can download the
+MIDI file, which is redistributable by your choice.
+
+### Manage every collection
+
+The `collection` command manages all the collections, the built-in ones included. Run from the
+repository root; `--root` points at another folder (the tests use it).
+
+| Command | What it does |
+| --- | --- |
+| `collection list` | table: id, name, kind, songs, enabled, order, size of its JSON, lazy |
+| `collection show <id>` | the record, the catalog's envelope, its first songs, counts by license and route |
+| `collection enable <id>` / `disable <id>` | a disabled collection is not loaded and has no tile; its file stays |
+| `collection rename <id> "<name>"` | the playlist's name |
+| `collection order <id> <n>` / `move <id> --before <other>` | the place among the playlists (`move` renumbers to 10, 20, 30...) |
+| `collection lazy <id> on` / `off` | read the file only when the visitor opens its playlist or searches (MPB's 2 MB file is lazy) |
+| `collection rebuild <id>` | run the command recorded in `generated`; `--dataset <MPB study copy>` for `mpb` and `public-domain`; refuses with the reason when the data it needs is missing |
+| `collection add-remote <id> --name "..." --from songs.csv` | a new `remote` collection from a CSV or JSON list with `title`, `url` and optionally `composer`, `performer`, `popularity`, `license`; no file is fetched, each song opens by download from its site |
+| `collection remove <id>` | unregister and delete the catalog file, never your MIDI files; a built-in collection needs `--force`, and the committed lead sheets of an open set (`data/catalog/abc/<id>/`) go only with `--delete-files` |
+
+For a collection of your own, `rename` and `order` also update `collection.toml`, so the next
+`build` keeps them. If the registry cannot be read, the app falls back to the five built-in
+collections, so it never shows nothing.
+
 ## Inputs, sources and licenses
 
 - **Ievan Polkka** ([data/leadsheets/ievan_polkka.abc](data/leadsheets/ievan_polkka.abc)).
@@ -745,3 +878,16 @@ The code and documentation in this repository are released under the
 [GNU General Public License v3.0 or later](LICENSE).
 The ISMIR template files in `paper/` (style, bibliography style and example files) come from
 [ismir/paper_templates](https://github.com/ismir/paper_templates) and keep their original terms.
+
+## MIDI fetcher (Cloudflare Worker)
+
+Songs whose MIDI files sit on sites without a CORS header (today the MPB catalog on `www.beakauffmann.com`) are opened through a small Cloudflare Worker in [`worker/`](worker/). It fetches a file only on the visitor's request, only from allow-listed hosts, at most 2 MB, keeps it in the edge cache for at most 24 hours and stores no permanent copy. A denylist in `worker/src/denylist.js` handles takedown requests. The app works without it (local sources and uploads), and it is deployed by hand:
+
+```bash
+cd worker
+npx wrangler login
+npx wrangler deploy
+node --test   # tests, no network needed
+```
+
+See [`worker/README.md`](worker/README.md) for the rules, the status codes and where the resulting `workers.dev` address goes in the app.

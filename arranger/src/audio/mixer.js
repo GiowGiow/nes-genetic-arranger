@@ -15,8 +15,8 @@
 //   The ear hears loudness as ratios, so each 6 dB step sounds like the same change, whether
 //   the channel is loud or soft. The scale ends at -60 dB, which counts as silence, and at
 //   +12 dB, four times the amplitude, so every channel can still be boosted from its default.
-// - The default levels are perceptual: the melody stays at the chip's balance, the harmony
-//   1 dB under it, the bass 4 dB over it and the drums 10 dB over it. The chip's balance is
+// - The default levels are perceptual: for the raw NES chip, the melody stays at the chip's
+//   balance, the harmony 1 dB under it, the bass 4 dB over it and the drums 10 dB over it. The chip's balance is
 //   the NES's own mixer, but a listener on laptop speakers hears the bass and the drums as too
 //   quiet. The triangle bass sits at 41 to 155 Hz, which small speakers barely reproduce and
 //   the ear hears weakly, and the drums are short hits that measure 17 to 19 dB under the
@@ -107,7 +107,7 @@ const packLevels = (P2, TR, NO) =>
 
 /**
  * The default levels of every sound pack, in dB over the pack's own balance (research R1). The
- * NES levels were chosen by ear: the melody as the chip has it, the harmony 1 dB under it, the
+ * raw NES chip's levels were chosen by ear: the melody as the chip has it, the harmony 1 dB under it, the
  * bass 4 dB and the drums 10 dB over it, because the low triangle bass and the short noise hits
  * sound much softer than the pulses on small speakers, more than an unweighted loudness measure
  * shows. The other packs start from the same balance, measured with a loudness weighted like
@@ -115,11 +115,19 @@ const packLevels = (P2, TR, NO) =>
  * cut until their weighted gap to the melody equals the NES one. Then the Plain pack's drums
  * were lowered by ear (+10 dB was too loud for its noise-like hits), and its bass and the Soft
  * pack's harmony were held at 10 dB and 8 dB so that every default keeps room to boost.
- * `tests/mixer-defaults.test.js` checks the bounds on the examples.
+ * The packs added later (spec 006) were set the same way. The raw NES chip keeps the levels
+ * above, since it is the reference. The softened NES, the Mega Drive and the Super Nintendo had
+ * their own stem gains set first so that no default needs to be negative or above 10 dB; then
+ * their K-weighted gaps on the 8 examples were measured and each level rounded to the nearest
+ * dB that brings the gap to the raw chip's (harmony -5.5, bass +1.5, drums -7.3 dB from the
+ * melody). `tests/mixer-defaults.test.js` repeats that measurement and checks the bounds.
  * @type {Readonly<Record<string, Readonly<Levels>>>}
  */
 export const PACK_LEVELS = Object.freeze({
-  nes: packLevels(-1, 4, 10),
+  nes: packLevels(0, 4, 9),
+  "nes-raw": packLevels(-1, 4, 10),
+  megadrive: packLevels(0, 1, 5),
+  snes: packLevels(0, 2, 6),
   gameboy: packLevels(0, 5, 7),
   c64: packLevels(-5, 2, 5),
   soft: packLevels(8, 3, 8),
@@ -127,17 +135,17 @@ export const PACK_LEVELS = Object.freeze({
 });
 
 /**
- * The default levels of the NES chip, kept for code that mixes without a sound pack.
+ * The default levels of the NES chip pack, kept for code that mixes without a sound pack.
  * @type {Readonly<Levels>}
  * @example
  * DEFAULT_LEVELS.TR; // 4: the bass, 4 dB over the chip's balance
- * DEFAULT_LEVELS.NO; // 10: the drums, about three times their chip amplitude
+ * DEFAULT_LEVELS.NO; // 9: the drums, about 2.8 times their chip amplitude
  */
 export const DEFAULT_LEVELS = PACK_LEVELS.nes;
 
 /**
  * The default levels of a sound pack; an unknown pack gets the NES ones.
- * @param {string} [packId] "nes", "gameboy", "c64", "soft" or "plain"
+ * @param {string} [packId] a sound pack id: "nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain" or "nes-raw"
  * @returns {Readonly<Levels>}
  * @example
  * defaultLevels("plain").NO; // 5: the Plain pack's drums need less than the chip's

@@ -17,6 +17,7 @@ import {
   searchByPopularity,
   sortByPopularity,
 } from "../src/core/playlists.js";
+import { FALLBACK_COLLECTIONS } from "../src/core/sources.js";
 
 /**
  * A made-up entry; `extra` overrides any field.
@@ -240,4 +241,151 @@ test("a playlist's songs never include another collection's", () => {
   const lists = buildPlaylists(sampleCatalog());
   assert.deepEqual(ids(playlist(lists, "choro").songs), ["pd-1", "pd-2"]);
   assert.deepEqual(ids(playlist(lists, "mpb").songs), ["mpb-x"]);
+});
+
+// --- The registry's collections ----------------------------------------------------------------
+
+/**
+ * A registry record, as `data/catalog/collections.json` lists it.
+ * @param {string} id
+ * @param {Record<string, unknown>} [extra]
+ */
+const record = (id, extra = {}) => ({
+  id,
+  path: `data/catalog/${id}.json`,
+  name: id,
+  kind: "local-midi",
+  lazy: false,
+  order: 100,
+  enabled: true,
+  ...extra,
+});
+
+/** @param {string} id @param {Record<string, unknown>} [extra] a song of the collection "mine" */
+const mine = (id, extra = {}) =>
+  entry(id, { source: "mine", t: `Song ${id}`, route: { midi: `../songs/${id}.mid` }, ...extra });
+
+test("a song with a MIDI file of the repository opens in one click, unless it has an error", () => {
+  assert.equal(canArrangeInOneClick(mine("a")), true);
+  assert.equal(canArrangeInOneClick(mine("a", { error: "no pitched notes" })), false);
+});
+
+test("a registered collection is a playlist of its own, named and placed by the registry", () => {
+  const collections = [...FALLBACK_COLLECTIONS, record("mine", { name: "My songs", order: 25 })];
+  const lists = buildPlaylists([...sampleCatalog(), mine("a")], { collections });
+  assert.deepEqual(
+    lists.map((item) => item.id),
+    ["popular", "examples", "mpb", "mine", "choro", "folk", "classical"],
+    "order 25 comes after MPB (20) and before the public-domain playlist (30)",
+  );
+  assert.equal(playlist(lists, "mine").name, "My songs");
+  assert.equal(playlist(lists, "mine").subtitle, "1 song");
+});
+
+test("a collection renamed or moved in the registry is renamed and moved in the app", () => {
+  const collections = FALLBACK_COLLECTIONS.map((item) =>
+    item.id === "pdmx" ? { ...item, name: "Old masters", order: 5 } : item.id === "examples" ? { ...item, name: "Starters" } : item,
+  );
+  const lists = buildPlaylists(sampleCatalog(), { collections });
+  assert.deepEqual(lists.map((item) => item.name), ["Popular", "Old masters", "Starters", "MPB", "Choro & public domain", "Folk tunes"]);
+  assert.equal(playlist(lists, "classical").name, "Old masters", "the playlist keeps its id, so a remembered choice still works");
+});
+
+test("a disabled collection has no playlist, and its songs are not offered", () => {
+  const collections = FALLBACK_COLLECTIONS.map((item) => (item.id === "nottingham" ? { ...item, enabled: false } : item));
+  const lists = buildPlaylists(sampleCatalog(), { collections });
+  assert.equal(playlist(lists, "folk"), undefined);
+  assert.ok(!ids(playlist(lists, "popular").songs).includes("nt-1"));
+});
+
+test("songs of a collection nobody registered are not listed", () => {
+  const lists = buildPlaylists([...sampleCatalog(), mine("a")]);
+  assert.equal(playlist(lists, "mine"), undefined);
+  assert.ok(!ids(playlist(lists, "popular").songs).includes("a"));
+});
+
+test("a collection's songs follow its default sort: popularity, title or order", () => {
+  const songs = [
+    mine("a", { t: "Zebra", pop: 5, order: 1 }),
+    mine("b", { t: "Água", pop: 90, order: 3 }),
+    mine("c", { t: "Bola", pop: 90, order: 2 }),
+    mine("d", { t: "Casa" }),
+  ];
+  /** @param {string} sort */
+  const listed = (sort) => ids(playlist(buildPlaylists(songs, { collections: [record("mine", { default_sort: sort })] }), "mine").songs);
+  assert.deepEqual(listed("popularity"), ["c", "b", "a", "d"], "best known first; equal popularity goes to the order number");
+  assert.deepEqual(listed("title"), ["b", "c", "d", "a"], "without accents or letter case");
+  assert.deepEqual(listed("order"), ["a", "c", "b", "d"], "the order numbers; songs without one come last, by title");
+  assert.deepEqual(
+    ids(playlist(buildPlaylists(songs, { collections: [record("mine")] }), "mine").songs),
+    ["c", "b", "a", "d"],
+    "popularity when the registry does not say",
+  );
+});
+
+test("a collection's songs with an album field become albums, in the order the sort gives", () => {
+  const songs = [
+    mine("a", { album: "Bach", pop: 10 }),
+    mine("b", { album: "Mozart", pop: 90 }),
+    mine("c", { album: "Bach", pop: 80 }),
+    mine("d", { pop: 1 }),
+  ];
+  const list = playlist(buildPlaylists(songs, { collections: [record("mine")] }), "mine");
+  assert.deepEqual(list.albums.map((album) => album.name), ["Mozart", "Bach", "Other songs"], "by the first song of each");
+  assert.deepEqual(ids(list.albums[1].songs), ["c", "a"]);
+  assert.deepEqual(list.albums.map((album) => album.subtitle), ["1 song", "2 songs", "1 song"]);
+  assert.equal(list.subtitle, "4 songs, 2 albums");
+  assert.equal(list.albums[0].id, "mine-album-mozart");
+  assert.equal(list.albums.at(-1)?.id, "mine-other");
+  assert.equal(list.albums[1].cover.id, "c", "an album's cover is its first song");
+});
+
+test("a collection with no album field, or only one album and nothing else, has no second level", () => {
+  const plain = playlist(buildPlaylists([mine("a"), mine("b")], { collections: [record("mine")] }), "mine");
+  assert.equal(plain.albums, undefined);
+  const single = playlist(buildPlaylists([mine("a", { album: "Only" }), mine("b", { album: "Only" })], { collections: [record("mine")] }), "mine");
+  assert.equal(single.albums, undefined);
+  assert.equal(single.subtitle, "2 songs");
+});
+
+test("a collection's cover is its most popular song, or else its first", () => {
+  const popular = playlist(buildPlaylists([mine("a", { pop: 1 }), mine("b", { pop: 9 })], { collections: [record("mine", { default_sort: "title" })] }), "mine");
+  assert.equal(popular.cover.id, "b");
+  const unranked = playlist(buildPlaylists([mine("b", { t: "B" }), mine("a", { t: "A" })], { collections: [record("mine", { default_sort: "title" })] }), "mine");
+  assert.equal(unranked.cover.id, "a", "no popularity: the first song of the list");
+});
+
+test("a collection's songs enter Popular by their popularity, like any other song that opens in one click", () => {
+  const collections = [...FALLBACK_COLLECTIONS, record("mine")];
+  const lists = buildPlaylists([...sampleCatalog(), mine("hit", { pop: 100000 }), mine("quiet", { pop: 2 })], { collections });
+  assert.equal(playlist(lists, "popular").songs[0].id, "hit");
+  assert.ok(ids(playlist(lists, "popular").songs).includes("quiet"));
+});
+
+test("a remote collection groups its songs into artist albums, whatever its id", () => {
+  const songs = Array.from({ length: 5 }, (_, i) =>
+    entry(`s${i}`, { source: "links", p: "Band", t: `Song ${i}`, route: { download: "https://example.org/x.mid" } }),
+  );
+  const list = playlist(buildPlaylists(songs, { collections: [record("links", { kind: "remote" })] }), "links");
+  assert.deepEqual(list.albums.map((album) => album.name), ["Band"]);
+  assert.equal(list.albums[0].id, "links-band");
+  assert.equal(list.subtitle, "5 songs, 1 album");
+});
+
+test("a lazy collection shows a tile with the registry's name and no count until its file arrives", () => {
+  const collections = [...FALLBACK_COLLECTIONS, record("big", { name: "Big list", kind: "remote", lazy: true })];
+  const lists = buildPlaylists(sampleCatalog(), { collections, pending: ["big"] });
+  const big = playlist(lists, "big");
+  assert.equal(big.name, "Big list");
+  assert.equal(big.pending, true);
+  assert.equal(big.subtitle, "");
+  assert.equal(big.cover.source, "big");
+  assert.equal(playlist(buildPlaylists(sampleCatalog(), { collections }), "big"), undefined, "not pending, not loaded: no tile");
+});
+
+test("the built-in playlists keep their old ids so a remembered choice still works", () => {
+  assert.deepEqual(
+    buildPlaylists(sampleCatalog()).map((item) => item.id),
+    ["popular", "examples", "mpb", "choro", "folk", "classical"],
+  );
 });

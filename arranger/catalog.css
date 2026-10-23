@@ -176,7 +176,7 @@
    of its own on a wide screen: it reads as a caption of the records above it. */
 .shelf-info {
   display: grid; align-content: center; gap: 4px 20px; min-width: 0; padding: 4px 6px;
-  grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "head actions" "facts actions";
+  grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "head actions" "facts actions" "license actions";
 }
 .shelf-info > * { min-width: 0; }
 .shelf-info-head { grid-area: head; display: flex; gap: 12px; align-items: center; }
@@ -190,6 +190,9 @@
   color: var(--muted); font: 500 var(--fs-sm) var(--mono);
 }
 .shelf-facts span + span::before { content: "·"; margin-right: .6em; opacity: .55; }
+/* The license of a song the student redistributes: small and muted, under the facts. */
+.shelf-license { grid-area: license; margin: 2px 0 0; padding-left: 60px; color: var(--muted); font-size: var(--fs-sm); opacity: .8; }
+.shelf-license a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .shelf-actions { grid-area: actions; display: flex; flex-wrap: wrap; align-content: center; justify-content: flex-end; gap: 8px; }
 .shelf-actions .button { min-width: 7.5em; }
 .shelf-hint { flex-basis: 100%; margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.35; text-align: right; }
@@ -281,12 +284,12 @@
   .shelf-side { height: 260px; }
   .shelf-song { min-height: 40px; padding: 8px; }
   /* The panel stacks: names, facts, then buttons across the full width. */
-  .shelf-info { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "facts" "actions"; gap: 6px; padding: 2px; }
+  .shelf-info { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "facts" "license" "actions"; gap: 6px; padding: 2px; }
   .shelf-actions { justify-content: stretch; margin-top: var(--s1); }
   .shelf-actions .button { flex: 1 1 0; min-height: 48px; }
   .shelf-actions .button.primary { flex: 2 1 0; }
   .shelf-hint { text-align: left; }
-  .shelf-facts, .shelf-problem { padding-left: 0; }
+  .shelf-facts, .shelf-problem, .shelf-license { padding-left: 0; }
 }
 @media (min-width: 1200px) {
   .shelf-label { font-size: .875rem; }

@@ -692,7 +692,14 @@ function soundStep() {
         "channel (NO) plays pseudo-random bits from a shift register, darker or brighter for the kick, " +
         "the snare and the hi-hat.",
       "The page computes these waves sample by sample from the arrangement's notes, so what you hear " +
-        "is the plan played on a model of the chip.",
+        "is the plan played on a model of the chip. The figure shows the raw chip; the sound menu's " +
+        "NES chip gives P2 a rounder 50% pulse and filters the sound like a small TV speaker, and " +
+        "\"NES chip (raw)\" keeps the thin original.",
+      "The same plan can be voiced by other machines: the Mega Drive uses FM synthesis (sine " +
+        "operators that bend each other's phase) for a brass lead, an electric piano and a slap bass; " +
+        "the Super Nintendo plays short synthesized samples through its soft Gaussian filter and its " +
+        "echo; the Game Boy, the Commodore 64, a soft synth and the original's plain instruments " +
+        "complete the menu. Only the sound changes, never the notes.",
     ],
     figure: {
       kind: "sound",

@@ -164,7 +164,7 @@ test("runShown finds the run on screen only when it is for the loaded song", () 
 
 test("a visit of many runs, previews and pack changes holds one run's buffers, one graph and one set of sources", () => {
   const panel = resultPanel();
-  const packs = ["nes", "plain", "gameboy"];
+  const packs = ["nes", "plain", "gameboy", "megadrive", "snes"];
   for (let index = 1; index <= 14; index += 1) {
     const run = runOf(index);
     panel.finish(run, packs[index % packs.length]);

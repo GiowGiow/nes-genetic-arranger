@@ -48,7 +48,7 @@ import { setUpPageTabs } from "./tabs.js";
 import { createSongShelf } from "./song-shelf.js";
 import { browserSongStore, createSongCache } from "../core/song-cache.js";
 import {
-  LAZY_SOURCES,
+  FALLBACK_COLLECTIONS,
   PAGE_MESSAGE,
   PAGE_PREVIEW_MESSAGE,
   displayTitle,
@@ -186,6 +186,12 @@ const inputPanel = createInputPanel(
 /** Songs downloaded and opened here before, kept in this browser only (core/song-cache.js). */
 const songCache = createSongCache(browserSongStore());
 
+/**
+ * The registry's collections (`data/catalog/collections.json`), as far as they have been read.
+ * Until the registry arrives, the built-in ones: the playlists then are the ones the app always had.
+ */
+let catalogCollections = FALLBACK_COLLECTIONS;
+
 const shelf = createSongShelf($("[data-shelf]"), {
   entries: [],
   onSearch: (query) => {
@@ -202,8 +208,9 @@ const shelf = createSongShelf($("[data-shelf]"), {
   onOpenDownloaded: (entry) => openDownloaded(entry),
   // A downloaded song the browser kept opens in one click, like a song of the repository.
   isCached: (entry) => songCache.has(entry),
-  // The MPB file is the biggest: it is read when the visitor opens MPB or searches.
-  pendingSources: [...LAZY_SOURCES],
+  collections: () => catalogCollections,
+  // A lazy file (MPB's is the biggest) is read when the visitor opens its playlist or searches.
+  pendingSources: FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id),
   onNeedSongs: (sources) => loadMoreSongs(sources),
 });
 /** @type {any[]} the catalog's songs, as far as they have been read */
@@ -237,8 +244,11 @@ function rememberOwnSong(loaded) {
   shelf.select(known < 0 ? 0 : known);
 }
 
-const catalogLoading = loadCatalog(fetch, (entries) => {
+const catalogLoading = loadCatalog(fetch, (entries, view) => {
   catalogEntries = entries;
+  catalogCollections = view.collections;
+  pendingSources = new Set(view.pending);
+  shelf.setPending(view.pending);
   showSongs();
 });
 catalogLoading
@@ -249,8 +259,8 @@ catalogLoading
     songStatus("The catalog could not be loaded. You can still open your own MIDI or ABC file.", true),
   );
 
-/** @type {Set<string>} the catalog files not read yet */
-const pendingSources = new Set(LAZY_SOURCES);
+/** @type {Set<string>} the lazy catalog files not read yet */
+let pendingSources = new Set(FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id));
 
 /**
  * Read the larger catalog files the visitor now needs, and tell the shelf when they are in.
@@ -272,8 +282,8 @@ async function loadMoreSongs(sources) {
 }
 
 // Songs kept from an earlier visit join Popular, which needs their records: read their file now.
-songCache.load().then(() => {
-  const needed = lazySourcesNeeded({ playlistId: null, searching: false, cachedKeys: songCache.keys() });
+Promise.all([songCache.load(), catalogLoading]).then(() => {
+  const needed = lazySourcesNeeded({ playlistId: null, searching: false, cachedKeys: songCache.keys() }, catalogCollections);
   if (needed.length > 0) loadMoreSongs(needed);
   showSongs();
   showForgetAction();

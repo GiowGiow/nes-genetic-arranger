@@ -15,6 +15,7 @@ from catalog.authors import (
     BATCH_SIZE,
     AuthorRecord,
     is_public_domain,
+    namesakes_death_year,
     public_domain_limit,
     read_authors,
     resolve_names,
@@ -126,6 +127,11 @@ WIKIDATA = {
         binding("Miguel", "Q6", "1940-01-01T00:00:00Z", MUSICIAN),
         binding("Miguel", "Q7", None, COMPOSER),
     ],
+    # Two composers share the name and both died long ago: whoever is meant, the work is free.
+    "Ludwig Namesake": [
+        binding("Ludwig Namesake", "Q10", "1773-12-18T00:00:00Z", COMPOSER),
+        binding("Ludwig Namesake", "Q11", "1827-03-26T00:00:00Z", COMPOSER),
+    ],
     # Wikidata knows the person died but not when ("unknown value").
     "Zé Ninguém": [binding("Zé Ninguém", "Q8", "x", MUSICIAN, death_kind="bnode")],
 }
@@ -181,6 +187,24 @@ def test_names_are_resolved_dead_alive_or_unknown(tmp_path):
     assert (records["Miguel"].status, records["Miguel"].qid) == ("unknown", None)
     assert records["Zé Ninguém"].status == "unknown"
     assert (records["Nobody At All"].status, records["Nobody At All"].qid) == ("unknown", None)
+
+
+def test_namesakes_who_all_died_give_the_latest_year_and_anyone_alive_or_unknown_gives_none(
+    tmp_path,
+):
+    names = ["Ludwig Namesake", "Miguel", "Zé Ninguém", "Ernesto Nazareth", "Nobody At All"]
+    records = {
+        r.name: r
+        for r in resolve_names(names, tmp_path, FakeEndpoint(), Pauses(), today="2026-10-20")
+    }
+
+    assert records["Ludwig Namesake"].status == "unknown", "the strict rule cannot tell which one"
+    assert namesakes_death_year("Ludwig Namesake", tmp_path) == 1827
+    assert namesakes_death_year("Miguel", tmp_path) is None  # one of them is alive
+    assert namesakes_death_year("Zé Ninguém", tmp_path) is None  # the date is not known
+    assert namesakes_death_year("Ernesto Nazareth", tmp_path) == 1934  # a single person
+    assert namesakes_death_year("Nobody At All", tmp_path) is None  # nobody matched
+    assert namesakes_death_year("Never Asked", tmp_path) is None  # not in the cache
 
 
 def test_queries_go_in_batches_of_fifty_at_least_one_second_apart(tmp_path):

@@ -285,8 +285,12 @@ def death_year_of(value: str) -> int | None:
     return int(found.group(1)) if found else None
 
 
-def _decide(answer: dict) -> AuthorRecord:
-    """Turn the cached rows of one name into a record (rules in the module docstring)."""
+def _people_of(answer: dict) -> tuple[dict[str, dict], list[str]]:
+    """Group the cached rows of one name by person; return them and the ones that count.
+
+    The ones that count are the people who made music when some did, else all of them, in
+    Wikidata number order.
+    """
     people: dict[str, dict] = {}
     for row in answer["bindings"]:
         qid = row["person"]["value"].removeprefix(ENTITY_PREFIX)
@@ -302,13 +306,42 @@ def _decide(answer: dict) -> AuthorRecord:
             person["jobs"].add(row["occupation"]["value"].removeprefix(ENTITY_PREFIX))
     musicians = [qid for qid, person in people.items() if person["jobs"] & MUSIC_OCCUPATIONS]
     pool = sorted(musicians or people, key=lambda qid: int(qid[1:]) if qid[1:].isdigit() else 0)
-    # A person with several death dates (sources disagree) gets the latest: the cautious choice.
-    outcomes = {
-        max(people[qid]["years"])
-        if people[qid]["years"]
-        else ("unknown" if people[qid]["unknown"] else None)
-        for qid in pool
-    }
+    return people, pool
+
+
+def _outcome_of(person: dict) -> int | str | None:
+    """A person's outcome: the latest death year, "unknown" for a death with no date, None if alive.
+
+    A person with several death dates (sources disagree) gets the latest: the cautious choice.
+    """
+    if person["years"]:
+        return max(person["years"])
+    return "unknown" if person["unknown"] else None
+
+
+def namesakes_death_year(name: str, cache_dir: Path | str) -> int | None:
+    """Return the latest death year among everyone Wikidata knows by exactly this name.
+
+    `resolve_names` calls a name "unknown" when two people share it and disagree. For a
+    composition that is still free when every one of them died long ago, whichever is meant, so
+    this returns the latest year among them (musicians only, when some are) for the caller to
+    compare with the limit. It returns None when nobody matched, the name was never resolved
+    (not in the cache), or any of them is alive or has no known date.
+    """
+    answer = _cached(Path(cache_dir), name)
+    if answer is None:
+        return None
+    people, pool = _people_of(answer)
+    outcomes = [_outcome_of(people[qid]) for qid in pool]
+    if not outcomes or not all(isinstance(outcome, int) for outcome in outcomes):
+        return None
+    return max(outcome for outcome in outcomes if isinstance(outcome, int))
+
+
+def _decide(answer: dict) -> AuthorRecord:
+    """Turn the cached rows of one name into a record (rules in the module docstring)."""
+    people, pool = _people_of(answer)
+    outcomes = {_outcome_of(people[qid]) for qid in pool}
     name, checked = answer["name"], answer["checked"]
     if len(outcomes) != 1:
         return AuthorRecord(name, None, None, "unknown", SPARQL_ENDPOINT, checked)

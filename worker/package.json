@@ -1,0 +1,15 @@
+{
+  "name": "nes-arranger-midi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker that fetches MIDI files from allow-listed sites for the NES genetic arranger (adds CORS).",
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "test": "node --test",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
+  }
+}

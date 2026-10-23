@@ -24,6 +24,7 @@ import {
   noiseWave,
   pulseWave,
   renderChip,
+  renderChipStems,
   triangleWave,
   velocityToVolume,
 } from "../src/audio/chip-synth.js";
@@ -223,4 +224,20 @@ test("a short render matches Python's synthesize within 1e-4", () => {
   let largest = 0;
   for (let i = 0; i < samples.length; i++) largest = Math.max(largest, Math.abs(samples[i] - reference.samples[i]));
   assert.ok(largest < 1e-4, `largest difference ${largest}`);
+});
+
+test("renderChipStems keeps the chip's own duty cycles unless asked otherwise, and `duty` changes only the pulse channels", () => {
+  const notes = [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }];
+  const arrangement = { tempoBpm: 120, channels: { P1: notes, P2: notes, TR: notes } };
+  const chip = renderChipStems(arrangement, 22050);
+  const same = renderChipStems(arrangement, 22050, { duty: PULSE_DUTY });
+  const rounder = renderChipStems(arrangement, 22050, { duty: { P1: 0.25, P2: 0.5 } });
+
+  assert.deepEqual(same, chip, "the default is PULSE_DUTY");
+  assert.deepEqual(rounder.P1, chip.P1, "P1 keeps its 25%");
+  assert.deepEqual(rounder.TR, chip.TR, "the triangle has no duty cycle");
+  assert.notDeepEqual(rounder.P2, chip.P2, "P2 at 50% is another wave");
+  // The chip removes each note's mean, which is 0 for a 50% pulse and -0.75 for a 12.5% one: the
+  // narrow pulse is lifted by 0.75 and its peak is higher
+  assert.ok(Math.max(...rounder.P2) < Math.max(...chip.P2), "the 12.5% pulse peaks higher than the 50% one");
 });

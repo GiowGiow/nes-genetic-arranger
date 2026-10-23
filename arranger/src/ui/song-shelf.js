@@ -51,7 +51,7 @@
 
 import { MIN_QUERY_LENGTH, normalize } from "../core/catalog.js";
 import { buildPlaylists, canArrangeInOneClick, orderCatalog, searchByPopularity } from "../core/playlists.js";
-import { displayTitle, lazySourcesNeeded, mergeSearchResults, pageCount, pageOf } from "../core/sources.js";
+import { FALLBACK_COLLECTIONS, displayTitle, lazySourcesNeeded, licenseNotice, mergeSearchResults, midiDownload, pageCount, pageOf } from "../core/sources.js";
 import { SHELF_ROWS, shelfColumns } from "./shelf-layout.js";
 import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 
@@ -84,6 +84,9 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  *   route has `download`; without it such a song keeps Arrange and Preview
  * @property {(entry: CatalogEntry) => void} [onOpenDownloaded] asks for the file the visitor
  *   downloaded and opens it as that song; offered after Download
+ * @property {() => ReadonlyArray<import("../core/sources.js").CollectionRecord>} [collections] the
+ *   registry's collections as they are now: their names, order and kinds decide the playlists.
+ *   Default: the built-in ones.
  * @property {(entry: CatalogEntry) => boolean} [isCached] whether the browser already holds the
  *   file of a song that is otherwise a download; such a song opens in one click. Default: none.
  * @property {string[]} [pendingSources] the sources whose catalog file has not been read; see
@@ -358,6 +361,8 @@ export function createSongShelf(root, options) {
 
   const storage = "storage" in options ? options.storage : browserStorage();
   const isCached = options.isCached ?? (() => false);
+  /** The registry's collections as they are now: the page reads the registry after the shelf exists. */
+  const collections = () => options.collections?.() ?? FALLBACK_COLLECTIONS;
   /** Whether the visitor must download and open the song's file: a download route the browser has not kept. */
   const needsDownload = (/** @type {CatalogEntry} */ entry) => hasDownloadRoute(entry) && !isCached(entry);
   /** @type {Set<string>} the catalog files not read yet */
@@ -481,7 +486,7 @@ export function createSongShelf(root, options) {
    * @returns {Playlist[]}
    */
   function makePlaylists() {
-    return buildPlaylists(entries, { isCached, pending: entries.length > 0 ? loadingSources() : [] });
+    return buildPlaylists(entries, { isCached, pending: entries.length > 0 ? loadingSources() : [], collections: collections() });
   }
 
   /** @returns {string[]} the pending sources that have no song in the catalog yet */
@@ -496,7 +501,7 @@ export function createSongShelf(root, options) {
       playlistId: playlists.find((playlist) => playlist.id === chosenId)?.id ?? null,
       searching: searching(),
       cachedKeys: [],
-    }).filter((source) => loadingSources().includes(source) && !requested.has(source));
+    }, collections()).filter((source) => loadingSources().includes(source) && !requested.has(source));
     if (wanted.length === 0) return;
     for (const source of wanted) requested.add(source);
     options.onNeedSongs?.(wanted);
@@ -609,6 +614,8 @@ export function createSongShelf(root, options) {
       line.append(...facts.map((fact) => textElement("span", "", fact)));
       info.append(line);
     }
+    const notice = licenseNotice(entry);
+    if (notice) info.append(licenseLine(notice));
     if (!canArrange(entry)) {
       const reason = entry.error ? ` (${entry.error})` : "";
       info.append(textElement("p", "shelf-problem", `This song cannot be arranged${reason}.`));
@@ -630,7 +637,37 @@ export function createSongShelf(root, options) {
       preview.addEventListener("click", () => options.onPreview?.(entry));
       actions.append(preview);
     }
+    const keep = midiDownload(entry);
+    if (keep) {
+      // The student chose to redistribute this file, so the visitor may keep it.
+      const save = make("a", "button", { href: keep.href, download: keep.name });
+      save.textContent = "Download MIDI";
+      actions.append(save);
+    }
     info.append(actions);
+  }
+
+  /**
+   * The small, muted line with a song's license and credit; a credit that is a web address is a link.
+   *
+   * @param {{license: string, credit: string, link: string | null}} notice
+   * @returns {HTMLElement}
+   */
+  function licenseLine(notice) {
+    const line = make("p", "shelf-license");
+    const piece = (/** @type {string} */ text) => line.append(textElement("span", "", text));
+    piece(notice.license ? `License: ${notice.license}` : "Credit");
+    if (notice.credit) {
+      piece(notice.license ? " · Credit: " : ": ");
+      if (notice.link) {
+        const link = make("a", "", { href: notice.link, target: "_blank", rel: "noopener" });
+        link.textContent = notice.credit;
+        line.append(link);
+      } else {
+        piece(notice.credit);
+      }
+    }
+    return line;
   }
 
   /**

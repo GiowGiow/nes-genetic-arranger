@@ -12,6 +12,7 @@ plan: which texture each channel plays in each bar. Examples:
     uv run src/main.py abc --all
     uv run src/main.py fixtures
     uv run src/main.py catalog analyze --dataset <MPB study copy>
+    uv run src/main.py collection list
 
 Every hyperparameter comes from `configs/default.json`, an optional `--config` file and `--set`
 overrides; every run needs an explicit `--seed` (constitution, principle I).
@@ -28,6 +29,7 @@ import numpy as np
 
 from arrangement.assemble import assemble
 from arrangement.validation import find_violations
+from catalog.collection_cli import add_collection_command
 from catalog.crawl import add_catalog_parser
 from config import load_config
 from export.audio import DEFAULT_SOUNDFONT, render_mp3
@@ -166,6 +168,7 @@ def build_parser() -> argparse.ArgumentParser:
     fixtures.set_defaults(handler=run_fixtures)
 
     add_catalog_parser(commands)
+    add_collection_command(commands)
     return parser
 
 

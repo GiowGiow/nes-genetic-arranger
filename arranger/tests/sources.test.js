@@ -12,25 +12,29 @@ import { test } from "node:test";
 import { makeMeter } from "../src/core/meter.js";
 
 import {
-  CATALOG_FILES,
   displayTitle,
   PAGE_MESSAGE,
   PAGE_PREVIEW_MESSAGE,
   entryRequest,
+  FALLBACK_COLLECTIONS,
   localEntry,
   externalEntry,
   fnv1a,
   isLoadedSong,
-  LAZY_SOURCES,
   lazySourcesNeeded,
+  licenseNotice,
   loadCatalog,
   loadErrorMessage,
   mergeCatalog,
   mergeSearchResults,
+  midiDownload,
   NETWORK_MESSAGE,
   openEntry,
   pageCount,
   pageOf,
+  parseRegistry,
+  playlistIdOf,
+  REGISTRY_PATH,
   searchCatalog,
   seedOf,
   tuneText,
@@ -74,19 +78,94 @@ function fakeFetch(routes) {
 
 const catalogRoutes = () =>
   Object.fromEntries(
-    CATALOG_FILES.map(({ source, path }) => [path, { body: readFileSync(join(fixturesDir, "catalog", `${source}.json`), "utf8") }]),
+    FALLBACK_COLLECTIONS.map(({ id, path }) => [path, { body: readFileSync(join(fixturesDir, "catalog", `${id}.json`), "utf8") }]),
   );
 
 // --- The catalog files ------------------------------------------------------------------------
 
-test("the catalog is made of five files, one per source, examples first", () => {
-  assert.deepEqual(CATALOG_FILES, [
-    { source: "examples", path: "data/catalog/examples.json" },
-    { source: "mpb", path: "data/catalog/mpb.json" },
-    { source: "public-domain", path: "data/catalog/public-domain.json" },
-    { source: "nottingham", path: "data/catalog/nottingham.json" },
-    { source: "pdmx", path: "data/catalog/pdmx.json" },
-  ]);
+test("without a registry the catalog is made of the five built-in collections, examples first", () => {
+  assert.deepEqual(
+    FALLBACK_COLLECTIONS.map(({ id, path, name, kind, lazy, order, enabled }) => ({ id, path, name, kind, lazy, order, enabled })),
+    [
+      { id: "examples", path: "data/catalog/examples.json", name: "Examples", kind: "abc", lazy: false, order: 10, enabled: true },
+      { id: "mpb", path: "data/catalog/mpb.json", name: "MPB", kind: "remote", lazy: true, order: 20, enabled: true },
+      { id: "public-domain", path: "data/catalog/public-domain.json", name: "Choro & public domain", kind: "abc", lazy: false, order: 30, enabled: true },
+      { id: "nottingham", path: "data/catalog/nottingham.json", name: "Folk tunes", kind: "abc", lazy: false, order: 40, enabled: true },
+      { id: "pdmx", path: "data/catalog/pdmx.json", name: "Classical & standards", kind: "abc", lazy: false, order: 50, enabled: true },
+    ],
+  );
+});
+
+test("the built-in list is the one the committed registry holds, so the app and the command line agree", () => {
+  const registry = JSON.parse(readFileSync(join(fixturesDir, "..", "..", "data", "catalog", "collections.json"), "utf8"));
+  const committed = parseRegistry(registry) ?? [];
+  for (const builtin of FALLBACK_COLLECTIONS) {
+    const found = committed.find((record) => record.id === builtin.id);
+    assert.ok(found, `the registry lists ${builtin.id}`);
+    assert.deepEqual(
+      { id: found.id, path: found.path, name: found.name, kind: found.kind, lazy: found.lazy, order: found.order, enabled: found.enabled },
+      { id: builtin.id, path: builtin.path, name: builtin.name, kind: builtin.kind, lazy: builtin.lazy, order: builtin.order, enabled: builtin.enabled },
+    );
+  }
+});
+
+// --- The registry ------------------------------------------------------------------------------
+
+const records = (/** @type {object[]} */ list) => ({ collections: list });
+const sample = (/** @type {string} */ id, /** @type {object} */ extra = {}) => ({
+  id,
+  path: `data/catalog/${id}.json`,
+  name: id.toUpperCase(),
+  kind: "abc",
+  lazy: false,
+  order: 50,
+  enabled: true,
+  ...extra,
+});
+
+test("the registry lists the collections in the order of their numbers, then their names", () => {
+  const parsed = parseRegistry(records([sample("c", { order: 30 }), sample("b", { order: 10, name: "Beta" }), sample("a", { order: 10, name: "Alpha" })]));
+  assert.deepEqual(parsed?.map((record) => record.id), ["a", "b", "c"]);
+});
+
+test("a record missing its optional fields gets the defaults: abc, not lazy, enabled, after the others", () => {
+  const [record] = parseRegistry(records([{ id: "x", path: "data/catalog/x.json", name: "X" }])) ?? [];
+  assert.deepEqual(
+    { kind: record.kind, lazy: record.lazy, enabled: record.enabled, order: record.order },
+    { kind: "abc", lazy: false, enabled: true, order: 1000 },
+  );
+});
+
+test("the registry keeps the extras of a local MIDI collection: its sort, its description and its folder", () => {
+  const [record] = parseRegistry(records([sample("mine", { kind: "local-midi", default_sort: "title", description: "My tunes", dir: "songs/mine" })])) ?? [];
+  assert.deepEqual([record.kind, record.default_sort, record.description], ["local-midi", "title", "My tunes"]);
+});
+
+test("a record that cannot be used is skipped, and the others still count", () => {
+  const parsed = parseRegistry(
+    records([
+      sample("good"),
+      { id: "no-path", name: "No path" },
+      { id: "bad-path", path: "../../etc/passwd", name: "Bad" },
+      { id: "absolute", path: "/data/catalog/x.json", name: "Absolute" },
+      { id: "remote", path: "https://example.org/x.json", name: "Remote" },
+      sample("good"),
+      sample("wrong-kind", { kind: "weird" }),
+      "not an object",
+    ]),
+  );
+  assert.deepEqual(parsed?.map((record) => record.id), ["good", "wrong-kind"]);
+  assert.equal(parsed?.[1].kind, "abc", "an unknown kind reads as abc");
+});
+
+test("a registry that is not a registry, or lists nothing usable, is null so the built-in list applies", () => {
+  for (const bad of [null, {}, [], { collections: "x" }, { collections: [] }, { collections: [{ id: 3 }] }]) {
+    assert.equal(parseRegistry(bad), null);
+  }
+});
+
+test("the built-in playlists keep their old ids; every other collection's playlist has its own id", () => {
+  assert.deepEqual(["examples", "mpb", "public-domain", "nottingham", "pdmx", "mine"].map(playlistIdOf), ["examples", "mpb", "choro", "folk", "classical", "mine"]);
 });
 
 test("one catalog: the examples first in their own order, then every other song from A to Z", () => {
@@ -198,6 +277,12 @@ test("a download route names the MIDI file at the catalog site, which the visito
   });
 });
 
+test("a MIDI route names a file of the repository, which the page fetches from its own site", () => {
+  const entry = { id: "m", t: "M", route: { midi: "../songs/mine/m.mid" } };
+  assert.deepEqual(entryRequest(entry), { url: "../songs/mine/m.mid", kind: "midi" });
+  assert.deepEqual(entryRequest({ id: "m", t: "M", route: { midi: "songs/mine/m.mid" } }), { url: "../songs/mine/m.mid", kind: "midi" }, "a path from the repository root");
+});
+
 test("browser and link routes, and a song without a route", () => {
   assert.deepEqual(entryRequest({ id: "7", t: "T", route: { thesession: 7, setting: 1 } }), {
     url: "https://thesession.org/tunes/7?format=json",
@@ -232,13 +317,24 @@ test("the examples load first and show at once; the small files follow, and the 
   const { fetchFn, asked } = fakeFetch(catalogRoutes());
   /** @type {number[]} */
   const sizes = [];
-  const { entries, missing } = await loadCatalog(fetchFn, (list) => sizes.push(list.length));
-  assert.equal(asked[0], "data/catalog/examples.json");
+  const { entries, missing, collections } = await loadCatalog(fetchFn, (list) => sizes.push(list.length));
+  assert.deepEqual(asked.slice(0, 2), [REGISTRY_PATH, "data/catalog/examples.json"], "the registry first, then the examples");
   assert.deepEqual(sizes, [3, 7], "first the 3 examples, then the 7 songs of the small files");
   assert.equal(entries[0].id, "korobeiniki");
   assert.deepEqual(missing, []);
   assert.ok(!asked.includes("data/catalog/mpb.json"), "MPB is the largest file: it is read only when needed");
-  assert.deepEqual(LAZY_SOURCES, ["mpb"]);
+  assert.deepEqual(collections.filter((record) => record.lazy).map((record) => record.id), ["mpb"]);
+});
+
+test("the page is told which lazy collections have not arrived, with each update", async () => {
+  const { fetchFn } = fakeFetch(catalogRoutes());
+  /** @type {Array<{collections: string[], pending: string[]}>} */
+  const views = [];
+  const catalog = await loadCatalog(fetchFn, (_list, view) => views.push({ collections: view.collections.map((record) => record.id), pending: view.pending }));
+  assert.deepEqual(views.map((view) => view.pending), [["mpb"], ["mpb"]]);
+  assert.deepEqual(views[0].collections, ["examples", "mpb", "public-domain", "nottingham", "pdmx"]);
+  await catalog.loadMore("mpb");
+  assert.deepEqual(views.at(-1)?.pending, [], "nothing is pending once MPB is in");
 });
 
 test("loadMore reads a lazy file once, merges it into the catalog and tells the page", async () => {
@@ -290,6 +386,88 @@ test("loadMore of a source that is not lazy or not in the catalog changes nothin
   assert.equal(more.entries.length, 7);
 });
 
+// --- Loading the catalog through the registry --------------------------------------------------
+
+/** A catalog file with a few songs of one collection. @param {string} id @param {string[]} titles */
+const collectionFile = (id, titles) => ({
+  body: JSON.stringify({
+    source: id,
+    entries: titles.map((title, i) => ({ id: `${id}-${i}`, t: title, route: { midi: `../songs/${id}/${i}.mid` } })),
+  }),
+});
+
+/** @param {object[]} list @param {Record<string, any>} [more] */
+const withRegistry = (list, more = {}) => ({
+  ...catalogRoutes(),
+  [REGISTRY_PATH]: { body: JSON.stringify({ collections: list }) },
+  ...more,
+});
+
+test("the registry decides which files load: a new collection loads with the small files, no code change", async () => {
+  const { fetchFn, asked } = fakeFetch(
+    withRegistry([...FALLBACK_COLLECTIONS, sample("mine", { kind: "local-midi", order: 100 })], {
+      "data/catalog/mine.json": collectionFile("mine", ["Zeta", "Alfa"]),
+    }),
+  );
+  const { entries, collections, missing } = await loadCatalog(fetchFn);
+  assert.ok(asked.includes("data/catalog/mine.json"));
+  assert.deepEqual(entries.filter((entry) => entry.source === "mine").map((entry) => entry.t), ["Alfa", "Zeta"]);
+  assert.deepEqual(collections.map((record) => record.id), ["examples", "mpb", "public-domain", "nottingham", "pdmx", "mine"]);
+  assert.deepEqual(missing, []);
+});
+
+test("a disabled collection is not requested at all", async () => {
+  const list = FALLBACK_COLLECTIONS.map((record) => (record.id === "nottingham" ? { ...record, enabled: false } : record));
+  const { fetchFn, asked } = fakeFetch(withRegistry(list));
+  const { entries, collections } = await loadCatalog(fetchFn);
+  assert.ok(!asked.includes("data/catalog/nottingham.json"));
+  assert.ok(!entries.some((entry) => entry.source === "nottingham"));
+  assert.ok(!collections.some((record) => record.id === "nottingham"));
+});
+
+test("the first collection to load, which shows at once, is the first small one in the registry's order", async () => {
+  const list = FALLBACK_COLLECTIONS.map((record) => (record.id === "pdmx" ? { ...record, order: 1 } : record));
+  const { fetchFn, asked } = fakeFetch(withRegistry(list));
+  await loadCatalog(fetchFn);
+  assert.equal(asked[1], "data/catalog/pdmx.json");
+});
+
+test("a lazy flag in the registry makes any collection wait for loadMore, and a lazy MPB can be made eager", async () => {
+  const list = FALLBACK_COLLECTIONS.map((record) =>
+    record.id === "pdmx" ? { ...record, lazy: true } : record.id === "mpb" ? { ...record, lazy: false } : record,
+  );
+  const { fetchFn, asked } = fakeFetch(withRegistry(list));
+  const catalog = await loadCatalog(fetchFn);
+  assert.ok(asked.includes("data/catalog/mpb.json"));
+  assert.ok(!asked.includes("data/catalog/pdmx.json"));
+  assert.equal(catalog.entries.some((entry) => entry.source === "pdmx"), false);
+  const more = await catalog.loadMore("pdmx");
+  assert.ok(more.entries.some((entry) => entry.source === "pdmx"));
+});
+
+test("a collection whose file is missing is named in missing, and the others still load", async () => {
+  const { fetchFn } = fakeFetch(withRegistry([...FALLBACK_COLLECTIONS, sample("ghost")]));
+  const { missing, entries } = await loadCatalog(fetchFn);
+  assert.deepEqual(missing, ["ghost"]);
+  assert.ok(entries.length > 0);
+});
+
+test("an unreadable registry falls back to the built-in collections, so the app never shows nothing", async () => {
+  for (const registry of [{ status: 404 }, { body: "{ not json" }, { body: JSON.stringify({ collections: [] }) }, /** @type {const} */ ("reject")]) {
+    const { fetchFn } = fakeFetch({ ...catalogRoutes(), [REGISTRY_PATH]: registry });
+    const { entries, collections } = await loadCatalog(fetchFn);
+    assert.deepEqual(collections.map((record) => record.id), ["examples", "mpb", "public-domain", "nottingham", "pdmx"]);
+    assert.equal(entries.length, 7);
+  }
+});
+
+test("if the examples cannot be read the page still gets the other collections", async () => {
+  const { fetchFn } = fakeFetch({ ...catalogRoutes(), "data/catalog/examples.json": { status: 500 } });
+  const { entries, missing } = await loadCatalog(fetchFn);
+  assert.deepEqual(missing, ["examples"]);
+  assert.equal(entries.length, 4);
+});
+
 // --- When the lazy files are needed ------------------------------------------------------------
 
 test("the MPB file is needed when the visitor opens the MPB playlist", () => {
@@ -305,6 +483,21 @@ test("a search looks through every song, so it needs every lazy file", () => {
 test("a song downloaded before (its key is in the cache) needs its file, so it can show in Popular", () => {
   assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: ["mpb:agua-de-lua"] }), ["mpb"]);
   assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: ["local:abc"] }), []);
+});
+
+test("which files are lazy comes from the registry: a lazy collection is needed when its playlist is open", () => {
+  const collections = [...FALLBACK_COLLECTIONS, sample("big", { kind: "remote", lazy: true })];
+  const view = { searching: false, cachedKeys: [] };
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "big", ...view }, collections), ["big"]);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "mpb", ...view }, collections), ["mpb"]);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: true, cachedKeys: [] }, collections), ["mpb", "big"]);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "big", searching: false, cachedKeys: ["big:x"] }, collections), ["big"]);
+  const eager = FALLBACK_COLLECTIONS.map((record) => ({ ...record, lazy: false }));
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "mpb", searching: true, cachedKeys: [] }, eager), []);
+  const classical = FALLBACK_COLLECTIONS.map((record) => (record.id === "pdmx" ? { ...record, lazy: true } : record));
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "classical", ...view }, classical), ["pdmx"], "the playlist id of pdmx is classical");
+  const disabled = collections.map((record) => (record.id === "big" ? { ...record, enabled: false } : record));
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "big", ...view }, disabled), []);
 });
 
 test("the needed sources are listed once", () => {
@@ -334,6 +527,38 @@ test("an MPB song opens by its download route: the page saves the MIDI file and 
   assert.equal(asked.length, 0, "the page cannot read the site's file, so it asks for nothing");
   assert.match(PAGE_MESSAGE, /MIDI file is downloading/);
   assert.match(PAGE_PREVIEW_MESSAGE, /choose Arrange to download it/);
+});
+
+test("opening a MIDI route fetches the file's bytes and names it after the song", async () => {
+  const bytes = new Uint8Array([77, 84, 104, 100, 0, 0, 0, 6]);
+  const { fetchFn, asked } = fakeFetch({ "../songs/mine/m.mid": { body: bytes } });
+  const opened = await openEntry({ id: "m", t: "Minuet in G", route: { midi: "../songs/mine/m.mid" } }, { fetchFn });
+  assert.equal(opened.kind, "midi");
+  assert.equal(opened.name, "Minuet in G.mid");
+  assert.deepEqual([...(opened.bytes ?? [])], [...bytes]);
+  assert.deepEqual(asked, ["../songs/mine/m.mid"], "one request, to the app's own site");
+});
+
+test("a MIDI file that is gone says so in plain words", async () => {
+  const entry = { id: "m", t: "M", route: { midi: "../songs/mine/m.mid" } };
+  await assert.rejects(openEntry(entry, { fetchFn: fakeFetch({}).fetchFn }), { message: loadErrorMessage(404) });
+  await assert.rejects(openEntry(entry, { fetchFn: fakeFetch({ "../songs/mine/m.mid": "reject" }).fetchFn }), { message: NETWORK_MESSAGE });
+});
+
+test("a song with a MIDI file of the repository carries its license, its credit and a way to keep the file", () => {
+  const entry = { id: "m", t: "Minuet: in G", license: "CC-BY-4.0", credit: "https://example.org/c", route: { midi: "../songs/mine/m.mid" } };
+  assert.deepEqual(licenseNotice(entry), { license: "CC-BY-4.0", credit: "https://example.org/c", link: "https://example.org/c" });
+  assert.deepEqual(midiDownload(entry), { href: "../songs/mine/m.mid", name: "Minuet- in G.mid" });
+  assert.deepEqual(licenseNotice({ ...entry, credit: "The author" }), { license: "CC-BY-4.0", credit: "The author", link: null });
+  assert.deepEqual(licenseNotice({ ...entry, license: undefined, credit: undefined }), null, "nothing to say");
+  assert.equal(midiDownload({ ...entry, route: { midi: "songs/mine/m.mid" } })?.href, "../songs/mine/m.mid");
+});
+
+test("songs of other routes have no license notice and no download: their files are not ours to give", () => {
+  const mpb = fixture("mpb").entries[0];
+  assert.equal(licenseNotice(mpb), null);
+  assert.equal(midiDownload(mpb), null);
+  assert.equal(midiDownload({ id: "a", t: "A", route: { abc: "x.abc" } }), null);
 });
 
 test("a download route takes the file name from the song's title, without characters that file names refuse", async () => {

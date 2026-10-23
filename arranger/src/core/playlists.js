@@ -10,15 +10,17 @@
  *   back to the title, which makes the order the same on every run.
  * - A playlist is a named list of songs with a cover: the sprite of its most popular song,
  *   like the cover of an album. "Popular" holds the 50 best songs that open in one click.
- *   One playlist per collection follows it, and "MPB", the biggest collection, opens into
- *   albums, one per artist.
+ *   One playlist per collection follows it, named and ordered by the registry
+ *   (`data/catalog/collections.json`). A collection of songs that live on another site (MPB, the
+ *   biggest) opens into albums, one per artist; a collection of the student's own MIDI files
+ *   opens into the albums its songs name, and is sorted as its registry record says.
  *
  * Everything here is a pure function of the catalog entries, so it is tested without a browser;
  * `ui/song-shelf.js` draws the result.
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
-import { searchCatalog, seedOf } from "./sources.js";
+import { FALLBACK_COLLECTIONS, playlistIdOf, searchCatalog, seedOf } from "./sources.js";
 
 /** @typedef {import("./sources.js").CatalogEntry & {pop?: number}} PlaylistEntry */
 
@@ -29,7 +31,7 @@ import { searchCatalog, seedOf } from "./sources.js";
  * @property {string} subtitle the song count, for example "50 songs"
  * @property {PlaylistEntry[]} songs ordered by popularity
  * @property {PlaylistEntry | null} cover the song whose sprite is the cover
- * @property {Playlist[]} [albums] sub-lists; only "MPB" has them
+ * @property {Playlist[]} [albums] sub-lists: a remote collection's artists, or a collection's albums
  * @property {true} [pending] a tile for a collection whose file is still loading: no songs and
  *   no count yet
  */
@@ -125,8 +127,8 @@ function isOwn(entry) {
 }
 
 /**
- * Whether one click arranges the song: it reads from a lead sheet of the repository (`abc` or
- * `tune`) and has no error, or it is a download that this browser already holds (`isCached`:
+ * Whether one click arranges the song: it reads from a lead sheet or a MIDI file of the
+ * repository (`abc`, `tune` or `midi`) and has no error, or it is a download that this browser already holds (`isCached`:
  * the visitor downloaded and opened it once, and the page remembers the file). Songs that
  * still need the visitor to download a file first do not.
  *
@@ -136,13 +138,14 @@ function isOwn(entry) {
  * @returns {boolean}
  * @example
  * canArrangeInOneClick({ id: "a", t: "A", route: { abc: "abc/a.abc" } }); // true
+ * canArrangeInOneClick({ id: "a", t: "A", route: { midi: "../songs/a.mid" } }); // true
  * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }); // false
  * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }, () => true); // true
  */
 export function canArrangeInOneClick(entry, isCached = () => false) {
   if (entry.error || !entry.route) return false;
   if (entry.route.download !== undefined) return isCached(entry);
-  return entry.route.abc !== undefined || entry.route.tune !== undefined;
+  return entry.route.abc !== undefined || entry.route.tune !== undefined || entry.route.midi !== undefined;
 }
 
 /**
@@ -181,13 +184,15 @@ function makePlaylist(id, name, songs, cover = songs[0] ?? null) {
 }
 
 /**
- * MPB as albums: one per artist with at least 5 songs, the most popular artists first (the sum
- * of their songs' popularity), then "Other artists" with every song not in a shown album.
+ * A remote collection as albums: one per artist with at least 5 songs, the most popular artists
+ * first (the sum of their songs' popularity), then "Other artists" with every song not in a
+ * shown album.
  *
- * @param {PlaylistEntry[]} songs the MPB songs, ordered by popularity
+ * @param {string} collectionId the collection's id, which prefixes the album ids
+ * @param {PlaylistEntry[]} songs the collection's songs, ordered by popularity
  * @returns {Playlist[]}
  */
-function mpbAlbums(songs) {
+function artistAlbums(collectionId, songs) {
   /** @type {Map<string, {name: string, songs: PlaylistEntry[], total: number}>} */
   const byArtist = new Map();
   for (const song of songs) {
@@ -203,31 +208,122 @@ function mpbAlbums(songs) {
     .filter(([, artist]) => artist.songs.length >= ALBUM_MIN_SONGS)
     .sort(([, a], [, b]) => b.total - a.total || collator.compare(normalize(a.name), normalize(b.name)))
     .slice(0, MPB_ALBUM_COUNT);
-  const albums = shown.map(([key, artist]) => makePlaylist(`mpb-${key}`, artist.name, artist.songs));
+  const albums = shown.map(([key, artist]) => makePlaylist(`${collectionId}-${key}`, artist.name, artist.songs));
   const inAlbum = new Set(albums.flatMap((album) => album.songs));
   const others = songs.filter((song) => !inAlbum.has(song));
-  if (others.length > 0) albums.push(makePlaylist("mpb-other", "Other artists", others));
+  if (others.length > 0) albums.push(makePlaylist(`${collectionId}-other`, "Other artists", others));
   return albums;
 }
 
 /**
+ * A collection's songs in the order its registry record asks for.
+ *
+ * - "popularity" (the default): best known first; equal popularity goes to the `order` number,
+ *   then to the title. This is `sortByPopularity`.
+ * - "title": the title without accents or letter case.
+ * - "order": the `order` numbers; a song without one comes last, by title.
+ *
+ * @param {PlaylistEntry[]} songs left unchanged
+ * @param {string} [sort] "popularity", "title" or "order"
+ * @returns {PlaylistEntry[]} a new list
+ * @example
+ * sortCollection([{ id: "a", t: "B", order: 1 }, { id: "b", t: "A" }], "order").map((e) => e.id); // ["a", "b"]
+ */
+export function sortCollection(songs, sort = "popularity") {
+  if (sort === "popularity") return sortByPopularity(songs);
+  return songs
+    .map((entry) => ({ entry, title: normalize(entry.t) }))
+    .sort(
+      (a, b) =>
+        (sort === "order" ? (a.entry.order ?? Infinity) - (b.entry.order ?? Infinity) || 0 : 0) ||
+        collator.compare(a.title, b.title) ||
+        (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0),
+    )
+    .map(({ entry }) => entry);
+}
+
+/**
+ * A collection's songs as albums, by the `album` field of each song, in the order of the
+ * songs' first appearance in the list; songs with no album go to "Other songs", last.
+ *
+ * @param {string} collectionId prefixes the album ids
+ * @param {PlaylistEntry[]} songs already in the collection's order
+ * @returns {Playlist[] | undefined} undefined when no song has an album, or all songs share one
+ */
+function namedAlbums(collectionId, songs) {
+  /** @type {Map<string, {name: string, songs: PlaylistEntry[]}>} */
+  const byName = new Map();
+  const others = [];
+  for (const song of songs) {
+    const name = (song.album ?? "").trim();
+    if (name === "") {
+      others.push(song);
+      continue;
+    }
+    const key = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "album";
+    const album = byName.get(key) ?? { name, songs: [] };
+    album.songs.push(song);
+    byName.set(key, album);
+  }
+  if (byName.size === 0 || (byName.size === 1 && others.length === 0)) return undefined;
+  const albums = [...byName.entries()].map(([key, album]) => makePlaylist(`${collectionId}-album-${key}`, album.name, album.songs));
+  if (others.length > 0) albums.push(makePlaylist(`${collectionId}-other`, "Other songs", others));
+  return albums;
+}
+
+/**
+ * The playlist of one registered collection.
+ *
+ * @param {import("./sources.js").CollectionRecord} record
+ * @param {PlaylistEntry[]} songs the collection's songs, by popularity (the catalog's order)
+ * @param {boolean} isPending whether the collection's file is still to come
+ * @returns {Playlist | null} null when there is nothing to show yet
+ */
+function collectionPlaylist(record, songs, isPending) {
+  const id = playlistIdOf(record.id);
+  if (songs.length === 0) {
+    if (!isPending) return null;
+    // No count and no songs yet; the cover is a made-up record, as the real one is not known.
+    return {
+      id, name: record.name, subtitle: "", songs: [], pending: true,
+      cover: { id: record.id, source: record.id, t: record.name, seed: seedOf(record.id, record.id) },
+    };
+  }
+  const ordered = record.kind === "local-midi" ? sortCollection(songs, record.default_sort) : songs;
+  const best = ordered.reduce((top, song) => (popOf(song) > popOf(top) ? song : top), ordered[0]);
+  const list = makePlaylist(id, record.name, ordered, popOf(best) > 0 ? best : ordered[0]);
+  const albums = record.kind === "remote" ? artistAlbums(record.id, ordered) : namedAlbums(record.id, ordered);
+  if (albums) {
+    const count = albums.filter((album) => !album.id.endsWith("-other")).length;
+    list.subtitle = `${songCount(ordered.length)}, ${count} ${count === 1 ? "album" : "albums"}`;
+    list.albums = albums;
+  }
+  return list;
+}
+
+/**
  * The playlists of a catalog, in the order the chooser shows them: Popular, Your songs (only
- * when the visitor opened some), Examples, MPB, Choro & public domain, Folk tunes, and
- * Classical & standards. A playlist with no songs is left out, except MPB while its file is
- * still loading: it shows with no count, so the tile does not appear later and shift the others.
+ * when the visitor opened some), then one per registered collection in the registry's order
+ * (by default Examples, MPB, Choro & public domain, Folk tunes, and Classical & standards). A
+ * playlist with no songs is left out, except that of a lazy collection whose file is still
+ * loading: it shows with no count, so the tile does not appear later and shift the others. A
+ * disabled collection has no playlist, and neither do songs of a collection nobody registered.
  *
  * @param {PlaylistEntry[]} entries the catalog in any order, with the visitor's own songs
  *   (source "local") in the order they should show
- * @param {{isCached?: (entry: PlaylistEntry) => boolean, pending?: string[]}} [context]
+ * @param {{isCached?: (entry: PlaylistEntry) => boolean, pending?: string[], collections?: ReadonlyArray<import("./sources.js").CollectionRecord>}} [context]
  *   `isCached`: which downloaded songs this browser remembers (they join Popular); `pending`:
- *   the sources whose file has not arrived
+ *   the collections whose file has not arrived; `collections`: the registry's records (default:
+ *   the built-in ones)
  * @returns {Playlist[]}
  * @example
  * buildPlaylists(catalog).map((list) => list.name); // ["Popular", "Examples", "MPB", ...]
  */
-export function buildPlaylists(entries, { isCached = () => false, pending = [] } = {}) {
+export function buildPlaylists(entries, { isCached = () => false, pending = [], collections = FALLBACK_COLLECTIONS } = {}) {
+  const active = collections.filter((record) => record.enabled);
+  const known = new Set(active.map((record) => record.id));
   const own = entries.filter(isOwn);
-  const rest = sortByPopularity(entries.filter((entry) => !isOwn(entry)));
+  const rest = sortByPopularity(entries.filter((entry) => !isOwn(entry) && known.has(entry.source ?? "")));
   /** @param {string} source */
   const from = (source) => rest.filter((entry) => entry.source === source);
 
@@ -235,29 +331,13 @@ export function buildPlaylists(entries, { isCached = () => false, pending = [] }
   const lists = [
     makePlaylist("popular", "Popular", [...own, ...best], best[0] ?? own[0] ?? null),
     makePlaylist("yours", "Your songs", own),
-    makePlaylist("examples", "Examples", from("examples")),
   ];
-
-  const mpbSongs = from("mpb");
-  const albums = mpbAlbums(mpbSongs);
-  const mpb = makePlaylist("mpb", "MPB", mpbSongs);
-  const artistAlbums = albums.filter((album) => album.id !== "mpb-other").length;
-  mpb.subtitle = `${songCount(mpbSongs.length)}, ${artistAlbums} ${artistAlbums === 1 ? "album" : "albums"}`;
-  mpb.albums = albums;
-  if (mpbSongs.length === 0 && pending.includes("mpb")) {
-    // No count and no songs yet; the cover is a made-up record, as the real one is not known.
-    lists.push({
-      id: "mpb", name: "MPB", subtitle: "", songs: [], pending: true,
-      cover: { id: "mpb", source: "mpb", t: "MPB", seed: seedOf("mpb", "mpb") },
-    });
-  } else {
-    lists.push(mpb);
+  const ordered = active
+    .map((record, position) => ({ record, position }))
+    .sort((a, b) => a.record.order - b.record.order || a.position - b.position);
+  for (const { record } of ordered) {
+    const list = collectionPlaylist(record, from(record.id), pending.includes(record.id));
+    if (list) lists.push(list);
   }
-
-  lists.push(
-    makePlaylist("choro", "Choro & public domain", from("public-domain")),
-    makePlaylist("folk", "Folk tunes", from("nottingham")),
-    makePlaylist("classical", "Classical & standards", from("pdmx")),
-  );
   return lists.filter((list) => list.songs.length > 0 || list.pending);
 }

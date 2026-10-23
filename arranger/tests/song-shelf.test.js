@@ -20,6 +20,7 @@ import {
   webglAvailable,
   wheelDelta,
 } from "../src/ui/song-shelf.js";
+import { FALLBACK_COLLECTIONS } from "../src/core/sources.js";
 
 // --- A fake document ---------------------------------------------------------------------------
 
@@ -1247,4 +1248,89 @@ test("small wheel steps add up before a page turns", () => {
   assert.equal(shelf.page().page, 0);
   stage.dispatchEvent(new FakeEvent("wheel", { deltaX: 30, deltaY: 0, shiftKey: false, timeStamp: 1100 }));
   assert.equal(shelf.page().page, 1);
+});
+
+// --- Collections from the registry, and a visitor's right to the MIDI files they may keep -------
+
+/** A song of the student's own collection "mine", with a MIDI file of the repository. @param {number} n @param {Record<string, unknown>} [extra] */
+const ownSong = (n, extra = {}) =>
+  song(300 + n, {
+    source: "mine",
+    t: `Own ${n}`,
+    u: undefined,
+    license: "CC-BY-4.0",
+    credit: "https://example.org/credit",
+    route: { midi: `../songs/mine/own-${n}.mid` },
+    facts: { key: "C major", tempo_bpm: 100, meter: "4/4", n_bars: 16, melody_track: 1 },
+    ...extra,
+  });
+
+const registry = () => [
+  ...FALLBACK_COLLECTIONS,
+  { id: "mine", path: "data/catalog/mine.json", name: "My songs", kind: "local-midi", lazy: false, order: 25, enabled: true },
+];
+
+test("a collection of the registry gets its own tile, named and placed by the registry", () => {
+  const { root } = mount({ entries: [...library(), ownSong(1)], collections: registry });
+  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "My songs", "Folk tunes", "Classical & standards"]);
+  click(tile(root, "My songs"));
+  assert.deepEqual(rowTitles(root), ["Own 1"]);
+  assert.equal(viewText(root), "My songs: 1 song");
+});
+
+test("without a registry's list the shelf shows the built-in playlists, and a collection nobody registered stays hidden", () => {
+  const { root } = mount({ entries: [...library(), ownSong(1)] });
+  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+});
+
+test("a collection's songs with albums open a second level, like MPB's artists", () => {
+  const songs = [ownSong(1, { album: "Bach" }), ownSong(2, { album: "Bach" }), ownSong(3, { album: "Mozart" })];
+  const { root } = mount({ entries: [...library(), ...songs], collections: registry });
+  click(tile(root, "My songs"));
+  assert.deepEqual(tileNames(root), ["Back to playlists", "All My songs", "Bach", "Mozart"]);
+  click(tile(root, "Mozart"));
+  assert.deepEqual(rowTitles(root), ["Own 3"]);
+});
+
+test("a song of the student's collection shows its license, small, and can be downloaded as a MIDI file", () => {
+  const { root, shelf } = mount({ entries: [...library(), ownSong(1)], collections: registry });
+  click(tile(root, "My songs"));
+  assert.equal(shelf.selected()?.t, "Own 1");
+  const panel = byClass(root, "shelf-info")[0];
+  const license = byClass(panel, "shelf-license")[0];
+  assert.ok(license, "a muted line with the license");
+  assert.match(license.textContent, /License: CC-BY-4\.0/);
+  const credit = all(license).find((element) => element.tagName === "A");
+  assert.equal(credit?.getAttribute("href"), "https://example.org/credit");
+  assert.equal(credit?.getAttribute("rel"), "noopener");
+  const download = all(panel).find((element) => element.tagName === "A" && element.textContent === "Download MIDI");
+  assert.ok(download, "the file is redistributable, so the visitor may keep it");
+  assert.equal(download.getAttribute("href"), "../songs/mine/own-1.mid");
+  assert.equal(download.getAttribute("download"), "Own 1.mid");
+  assert.ok(button(panel, "Arrange").classList.contains("primary"), "Arrange is still the main action");
+  assert.ok(button(panel, "Preview"));
+});
+
+test("a credit that is not a link is plain text", () => {
+  const { root } = mount({ entries: [...library(), ownSong(1, { credit: "Recorded by the author" })], collections: registry });
+  click(tile(root, "My songs"));
+  const license = byClass(root, "shelf-license")[0];
+  assert.match(license.textContent, /Recorded by the author/);
+  assert.equal(all(license).filter((element) => element.tagName === "A").length, 0);
+});
+
+test("songs from other routes show no license line and no direct download", () => {
+  const { root } = mount({ entries: library(), collections: registry });
+  assert.equal(byClass(root, "shelf-license").length, 0);
+  assert.equal(all(root).filter((element) => element.tagName === "A" && element.textContent === "Download MIDI").length, 0);
+});
+
+test("a collection's pending tile asks the page for its file when opened", () => {
+  const collections = () => [...registry(), { id: "big", path: "data/catalog/big.json", name: "Big list", kind: "remote", lazy: true, order: 90, enabled: true }];
+  /** @type {string[][]} */
+  const asked = [];
+  const { root } = mount({ entries: library(), collections, pendingSources: ["big"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  assert.ok(tileNames(root).includes("Big list"));
+  click(tile(root, "Big list"));
+  assert.deepEqual(asked, [["big"]]);
 });

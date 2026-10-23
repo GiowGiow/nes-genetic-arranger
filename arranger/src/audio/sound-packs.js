@@ -6,7 +6,31 @@
 // the timeline of the NES render (`renderLength`), so the player switches packs at the same
 // second, and changes only how each note sounds:
 //
-// - NES chip: the chip synthesizer of `chip-synth.js`, unchanged.
+// - NES chip: the chip synthesizer of `chip-synth.js`, softened. The raw chip is thin and
+//   bright: a 12.5% pulse on P2 is nasal, and the unfiltered square edges are a burst of
+//   harmonics up to the Nyquist frequency, which sounds shrill on headphones. The pack keeps
+//   everything that makes it a NES (the 4-bit volumes, the stepped triangle, the noise
+//   register) and changes three things:
+//   * P2 plays a 50% pulse instead of 12.5%. It stays apart from P1's 25%, and a 50% pulse has
+//     only odd partials, the roundest of the chip's four widths. It is 4 dB under the chip's
+//     balance, since the wider pulse carries more energy.
+//   * The sound goes through the console's own output filters: a first-order high-pass at
+//     90 Hz (which also blocks any offset) and a first-order low-pass at 14 kHz. The console's
+//     second high-pass, at 440 Hz, is left out: emulators apply it, but it would take most of
+//     the arrangement's bass (41 to 155 Hz) away.
+//   * A gentle second-order low-pass at 4 kHz stands for the small speaker of a CRT television,
+//     the machine this sound was made for. It is the part that matters most: pulse partials
+//     fall only 6 dB per octave whatever the width, so the width alone does not tame them
+//     (measured on the examples with A-weighting, a 6 kHz cutoff lowers the share of the sound
+//     above 2 kHz, where the ear is most sensitive, by 1 dB, and 4 kHz by 2.4 dB).
+//   The filters work on each stem alone, which gives the same mix as filtering the mix; the
+//   bass and the drums are lifted by 2 to 3 dB to make up for what the filters took.
+// - NES chip (raw): the chip synthesizer exactly as the command line renders it (`renderChip`),
+//   for hearing what the softening changed. It sits last in the list.
+// - Mega Drive: the Yamaha YM2612 FM chip and the SN76489 noise chip of the Sega Genesis,
+//   in `megadrive-pack.js`: a brass lead, an electric piano, a slap bass, FM and noise drums.
+// - Super Nintendo: the Sony S-DSP, in `snes-pack.js`: samples made in code and played through
+//   the chip's pitch, ADSR, Gaussian interpolation and echo (`snes-dsp.js`).
 // - Game Boy: the DMG chip has two pulse channels (here 50% and 25% duty, rounder than the NES's
 //   25% and 12.5%), a wave channel that plays a 32-step table of 4-bit samples (here a sine,
 //   so the bass is softer than the NES triangle) and a noise channel built on a shift register
@@ -19,7 +43,7 @@
 // - Plain: the timbre of the original's player (`plain-synth.js`), so A/B compares the content
 //   of the two versions with the same instruments.
 //
-// These are impressions of each chip made with simple oscillators, not cycle-exact emulations.
+// These are impressions of each chip, not cycle-exact emulations.
 // Every pack is a pure, deterministic function: noise comes from fixed shift registers or from
 // `random.js` with a fixed seed, and the mix peaks at -3 dBFS like the NES render (the page then
 // matches its loudness with the original's).
@@ -40,7 +64,11 @@ import {
   renderLength,
   scaleToPeak,
 } from "./chip-synth.js";
+import { biquadLowpass, highpass, lowpass } from "./filters.js";
+import { noteFrequency, sounding } from "./note-schedule.js";
+import { renderMegaDriveStems } from "./megadrive-pack.js";
 import { mixVoices, renderVoices } from "./plain-synth.js";
+import { renderSnesStems } from "./snes-pack.js";
 import { createRandom } from "../core/random.js";
 
 /** @typedef {import("./chip-synth.js").ChannelName} ChannelName */
@@ -53,7 +81,7 @@ import { createRandom } from "../core/random.js";
 /**
  * One sound pack, as the page lists it.
  * @typedef {object} SoundPack
- * @property {string} id "nes", "gameboy", "c64", "soft" or "plain"
+ * @property {string} id "nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain" or "nes-raw"
  * @property {string} name the name shown on the page
  * @property {string} description one line on how it sounds
  */
@@ -62,13 +90,24 @@ import { createRandom } from "../core/random.js";
  * The packs, in the order the page offers them; the NES chip comes first.
  * @type {readonly SoundPack[]}
  * @example
- * SOUND_PACKS.map((pack) => pack.id); // ["nes", "gameboy", "c64", "soft", "plain"]
+ * SOUND_PACKS.map((pack) => pack.id);
+ * // ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain", "nes-raw"]
  */
 export const SOUND_PACKS = Object.freeze([
   Object.freeze({
     id: "nes",
     name: "NES chip",
-    description: "The NES 2A03: thin pulse waves, a buzzy stepped triangle bass and noise drums.",
+    description: "The NES 2A03, softened: pulse waves with a rounder harmony, a stepped triangle bass and noise drums, through a small TV speaker's filter.",
+  }),
+  Object.freeze({
+    id: "megadrive",
+    name: "Mega Drive",
+    description: "The Sega Genesis: warm FM synthesis from the YM2612, a brass lead, an electric piano, a slap bass and noise drums.",
+  }),
+  Object.freeze({
+    id: "snes",
+    name: "Super Nintendo",
+    description: "The SNES sound chip: soft sampled-style voices through its Gaussian filter, with a flute lead, a harp, a round bass and a dreamy echo.",
   }),
   Object.freeze({
     id: "gameboy",
@@ -89,6 +128,11 @@ export const SOUND_PACKS = Object.freeze([
     id: "plain",
     name: "Plain",
     description: "The same plain instruments as the original's player, to compare the content of the two versions.",
+  }),
+  Object.freeze({
+    id: "nes-raw",
+    name: "NES chip (raw)",
+    description: "The NES 2A03 exactly as the command line renders it: thin, bright pulses and an unfiltered square edge.",
   }),
 ]);
 
@@ -201,6 +245,9 @@ const NOISE_SEED = 2026;
 /** @type {readonly ChannelName[]} */
 const CHANNELS = Object.freeze(["P1", "P2", "TR", "NO"]);
 
+// The packs that are built as stems first, and whose render is the stems added together.
+const STEM_PACKS = new Set(["nes", "megadrive", "snes"]);
+
 // Stems whose channel gains are already inside them (every pack but the NES chip).
 const UNIT_GAINS = Object.freeze({ P1: 1, P2: 1, TR: 1, NO: 1 });
 
@@ -214,10 +261,11 @@ const UNIT_GAINS = Object.freeze({ P1: 1, P2: 1, TR: 1, NO: 1 });
  * @throws {Error} for an unknown pack
  * @example
  * renderPack("gameboy", arrangement, 44100).length === renderLength(arrangement, 44100); // true
- * renderPack("nes", arrangement); // the same samples as renderChip(arrangement)
+ * renderPack("nes-raw", arrangement); // the same samples as renderChip(arrangement)
  */
 export function renderPack(packId, arrangement, sampleRate = SAMPLE_RATE) {
-  if (packId === "nes") return renderChip(arrangement, sampleRate);
+  if (packId === "nes-raw") return renderChip(arrangement, sampleRate);
+  if (STEM_PACKS.has(packId)) return sumOfStems(renderPackStems(packId, arrangement, sampleRate));
   const length = renderLength(arrangement, sampleRate);
   if (packId === "plain") return renderPlain(arrangement, sampleRate, length);
   // All four channels write into one mix, the same sums in the same order as before stems.
@@ -243,7 +291,10 @@ export function renderPack(packId, arrangement, sampleRate = SAMPLE_RATE) {
  * // stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] ≈ renderPack("gameboy", arrangement, 44100)[i]
  */
 export function renderPackStems(packId, arrangement, sampleRate = SAMPLE_RATE) {
-  if (packId === "nes") return scaleStemsToPeak(renderChipStems(arrangement, sampleRate), CHANNEL_GAINS);
+  if (packId === "nes-raw") return scaleStemsToPeak(renderChipStems(arrangement, sampleRate), CHANNEL_GAINS);
+  if (packId === "nes") return softNesStems(arrangement, sampleRate);
+  if (packId === "megadrive") return scaleStemsToPeak(renderMegaDriveStems(arrangement, sampleRate), UNIT_GAINS);
+  if (packId === "snes") return scaleStemsToPeak(renderSnesStems(arrangement, sampleRate), UNIT_GAINS);
   const length = renderLength(arrangement, sampleRate);
   if (packId === "plain") return scaleStemsToPeak(plainStems(arrangement, sampleRate, length), UNIT_GAINS);
   const pack = oscillatorPack(packId);
@@ -256,6 +307,60 @@ export function renderPackStems(packId, arrangement, sampleRate = SAMPLE_RATE) {
   };
   renderOscillators(pack, arrangement, sampleRate, stems);
   return scaleStemsToPeak(stems, UNIT_GAINS);
+}
+
+/**
+ * The stems added together, as one render.
+ * @param {Stems} stems four stems of one length
+ * @returns {Float32Array}
+ */
+function sumOfStems(stems) {
+  const mix = new Float32Array(stems.P1.length);
+  for (let i = 0; i < mix.length; i++) mix[i] = stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i];
+  return mix;
+}
+
+/**
+ * What makes the NES chip pack softer than the chip (see the header): the pulse widths, the
+ * level balance and the filters, with the cutoffs in Hz.
+ * @type {Readonly<{duty: Readonly<{P1: number, P2: number}>, gains: Readonly<Record<ChannelName, number>>, highpassHz: number, consoleLowpassHz: number, speakerLowpassHz: number}>}
+ * @example
+ * NES_SOFTENING.duty; // { P1: 0.25, P2: 0.5 }
+ */
+export const NES_SOFTENING = Object.freeze({
+  duty: Object.freeze({ P1: 0.25, P2: 0.5 }),
+  // The chip's own balance, with three touches. P2: a 50% pulse has about 1.5 times the RMS of a
+  // 12.5% one, so it goes down. TR and NO: the 90 Hz high-pass takes some of the bass away and
+  // the low-passes take the highs of the noise away, so they come up by 2 to 3 dB to stay level
+  // with the pulses.
+  gains: Object.freeze({ P1: CHANNEL_GAINS.P1, P2: 0.6, TR: CHANNEL_GAINS.TR * 1.3, NO: CHANNEL_GAINS.NO * 1.4 }),
+  highpassHz: 90,
+  consoleLowpassHz: 14000,
+  speakerLowpassHz: 4000,
+});
+
+/**
+ * The softened NES chip as stems: the chip's channels with P2 on a rounder pulse, each one
+ * through the console's output filters and a small speaker's low-pass, then scaled to peak at
+ * -3 dBFS together. A filter whose cutoff lies too near half the sample rate is skipped.
+ * @param {import("./chip-synth.js").ChipArrangement} arrangement
+ * @param {number} sampleRate
+ * @returns {Stems}
+ */
+function softNesStems(arrangement, sampleRate) {
+  const { duty, gains, highpassHz, consoleLowpassHz, speakerLowpassHz } = NES_SOFTENING;
+  const chip = renderChipStems(arrangement, sampleRate, { duty });
+  /** @type {Record<ChannelName, Float64Array>} */
+  const filtered = { P1: new Float64Array(0), P2: new Float64Array(0), TR: new Float64Array(0), NO: new Float64Array(0) };
+  for (const channel of CHANNELS) {
+    // Float64 keeps the filters' rounding out of the result; the stems come back as float32
+    const stem = Float64Array.from(chip[channel]);
+    highpass(stem, highpassHz, sampleRate);
+    if (consoleLowpassHz < 0.45 * sampleRate) lowpass(stem, consoleLowpassHz, sampleRate);
+    if (speakerLowpassHz < 0.45 * sampleRate) biquadLowpass(stem, speakerLowpassHz, sampleRate);
+    filtered[channel] = stem;
+  }
+  return scaleStemsToPeak(filtered, gains);
 }
 
 /**
@@ -385,21 +490,6 @@ function renderOscillators(pack, arrangement, sampleRate, outputs) {
 }
 
 /**
- * The notes of one channel with the seconds each one sounds: a channel plays one note at a
- * time, so a note stops when the next one starts.
- * @param {Array<{pitch: number, onset: number, duration: number, velocity: number}>} notes
- * @param {number} secondsPerBeat
- */
-function sounding(notes, secondsPerBeat) {
-  const ordered = [...notes].sort((a, b) => a.onset - b.onset || b.pitch - a.pitch);
-  return ordered.map((note, index) => {
-    const start = note.onset * secondsPerBeat;
-    const next = index + 1 < ordered.length ? ordered[index + 1].onset * secondsPerBeat : Infinity;
-    return { start, end: Math.min((note.onset + note.duration) * secondsPerBeat, next), note };
-  });
-}
-
-/**
  * Add one pitched note: the wave at the note's frequency, shaped by the voice's envelope.
  * @param {Float64Array} mix
  * @param {VoiceSound} voice
@@ -412,7 +502,7 @@ function sounding(notes, secondsPerBeat) {
 function addNote(mix, voice, pitch, velocity, start, end, sampleRate) {
   const first = Math.round(start * sampleRate);
   const last = Math.min(mix.length, Math.round(end * sampleRate));
-  const frequency = 440 * 2 ** ((pitch - 69) / 12);
+  const frequency = noteFrequency(pitch);
   const seconds = (last - first) / sampleRate;
   let loudness = velocity / 127;
   if (voice.volumeSteps) loudness = Math.max(1, Math.round(loudness * voice.volumeSteps)) / voice.volumeSteps;
@@ -481,20 +571,5 @@ function addDrum(mix, drum, velocity, start, nextStart, sampleRate, random) {
   for (let i = 0; i < n; i++) {
     const fade = Math.min(1, (n - i) / (0.002 * sampleRate)); // avoid a click when a hit is cut
     mix[first + i] += gain * Math.exp(-fallPerSecond * (i / sampleRate)) * fade * tone[i];
-  }
-}
-
-/**
- * A one-pole low-pass filter, in place: it softens everything above `cutoffHz`.
- * @param {Float64Array} samples
- * @param {number} cutoffHz
- * @param {number} sampleRate
- */
-function lowpass(samples, cutoffHz, sampleRate) {
-  const alpha = 1 - Math.exp((-2 * Math.PI * cutoffHz) / sampleRate);
-  let state = 0;
-  for (let i = 0; i < samples.length; i++) {
-    state += alpha * (samples[i] - state);
-    samples[i] = state;
   }
 }

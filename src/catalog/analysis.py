@@ -312,33 +312,45 @@ def check_bar_lines(bars: Sequence[MapBar], first: int = 0) -> None:
             )
 
 
-def analyze_midi(path: Path | str, midi_ref: str | None = None) -> dict:
+def analyze_midi(
+    path: Path | str,
+    midi_ref: str | None = None,
+    melody_track: int | None = None,
+    bars: tuple[int, int] | None = None,
+) -> dict:
     """Return the analysis facts of a MIDI file (data-model.md, "Analysis facts").
 
     Args:
         path: the MIDI file.
         midi_ref: where the file comes from, recorded as `midi` (the source URL for MPB, the
             dataset path for PDMX); by default the path itself.
+        melody_track: the instrument index the owner chose, instead of the ranking's best guess
+            (an owner's collection, `catalog.own_collection`).
+        bars: the bars [first, end) the owner chose, instead of the noted bars (at most 64).
 
     Returns:
         midi, sha256, melody_track, bars [first, end), sections, key, tempo_bpm, meter, n_bars,
         drums and overrides; or, when the file cannot be reduced, only midi, sha256 and a short
         `error`.
     """
-    return analyze_and_reduce(path, midi_ref)[0]
+    return analyze_and_reduce(path, midi_ref, melody_track, bars)[0]
 
 
 def analyze_and_reduce(
-    path: Path | str, midi_ref: str | None = None
+    path: Path | str,
+    midi_ref: str | None = None,
+    melody_track: int | None = None,
+    bars: tuple[int, int] | None = None,
 ) -> tuple[dict, LeadSheet | None]:
     """Return the analysis facts of a MIDI file (see `analyze_midi`) and the lead sheet they give.
 
     The lead sheet is None when the file cannot be reduced (the facts then hold an `error`).
+    `melody_track` and `bars` are the owner's choices, as in `analyze_midi`.
     """
     path = Path(path)
     facts: dict = {"midi": midi_ref or path.as_posix(), "sha256": file_sha256(path)}
     try:
-        melody_track, (first, end), lead_sheet, drums = _reduce(path)
+        melody_track, (first, end), lead_sheet, drums = _reduce(path, melody_track, bars)
     except (ValueError, OSError, EOFError, IndexError, KeyError) as error:
         return facts | {"error": short_reason(error)}, None
     facts |= {
@@ -407,8 +419,13 @@ def short_reason(error: Exception) -> str:
     return text if len(text) <= MAX_ERROR_LENGTH else text[: MAX_ERROR_LENGTH - 1] + "…"
 
 
-def _reduce(path: Path) -> tuple[int, tuple[int, int], LeadSheet, bool]:
-    """Choose the melody track and bars, reduce, and check the lead sheet can be served as ABC."""
+def _reduce(
+    path: Path, chosen_track: int | None = None, chosen_bars: tuple[int, int] | None = None
+) -> tuple[int, tuple[int, int], LeadSheet, bool]:
+    """Choose the melody track and bars (unless the owner did), reduce, and check the ABC.
+
+    The lead sheet must be servable as ABC: the song server returns that text.
+    """
     try:
         midi = pretty_midi.PrettyMIDI(str(path))
     except Exception as error:  # mido and pretty_midi raise many kinds on a damaged file
@@ -416,10 +433,12 @@ def _reduce(path: Path) -> tuple[int, tuple[int, int], LeadSheet, bool]:
     ranking = rank_melody_tracks(describe_tracks(midi))
     if not any(not i.is_drum and i.notes for i in midi.instruments):
         raise ValueError("no pitched notes (drums only or empty)")
-    melody_track = ranking[0]
+    melody_track = ranking[0] if chosen_track is None else chosen_track
+    if melody_track not in ranking:
+        raise ValueError(f"melody track {melody_track} is not a pitched track of the file")
     grid = beat_grid(midi)
     first, end = noted_bars(midi, grid)
-    bars = (first, min(end, first + MAX_EXCERPT_BARS))
+    bars = chosen_bars or (first, min(end, first + MAX_EXCERPT_BARS))
     if grid == "file":
         check_bar_lines(bar_map(midi)[bars[0] : bars[1]], bars[0])
     lead_sheet = read_lead_sheet_midi(

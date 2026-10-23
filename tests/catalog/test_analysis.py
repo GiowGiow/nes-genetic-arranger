@@ -200,6 +200,25 @@ def test_a_file_the_reader_refuses_gets_a_short_error_and_no_reduction_facts(tmp
         assert 0 < len(facts["error"]) <= 120
 
 
+def test_a_chosen_melody_track_and_bar_range_replace_the_guess(tmp_path):
+    path = write_long_song(tmp_path / "long.mid", bars=100, lead_in_bars=3)
+
+    facts = analyze_midi(path, melody_track=0, bars=(10, 30))
+
+    assert facts["melody_track"] == 0  # the bass, because the owner said so
+    assert facts["bars"] == [10, 30]
+    assert facts["n_bars"] == 20
+
+
+def test_a_chosen_melody_track_that_cannot_carry_a_melody_gets_an_error(tmp_path):
+    path = write_long_song(tmp_path / "long.mid", bars=8)
+
+    for track in (2, 9):  # the drums, and a track the file does not have
+        facts = analyze_midi(path, melody_track=track)
+        assert set(facts) == {"midi", "sha256", "error"}
+        assert "melody track" in facts["error"]
+
+
 def test_the_recorded_facts_reduce_the_file_to_the_same_lead_sheet_as_the_analysis(tmp_path):
     from catalog.analysis import analyze_and_reduce, reduce_with_facts
 

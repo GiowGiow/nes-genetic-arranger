@@ -162,24 +162,101 @@ test("the default mix, scaled to -3 dBFS like the WAV download, never clips", (t
   }
 });
 
-test("every sound pack's own defaults bring the drums closer to the melody, keep the bass near it and the harmony under it", (t) => {
+/**
+ * Weight a signal like the ear, with the two filters of ITU-R BS.1770 (K-weighting): a high shelf
+ * of +4 dB above 1.7 kHz that models the head, and a high-pass at 38 Hz. Coefficients by the
+ * bilinear transform, as the recommendation gives them.
+ * @param {Float32Array} samples
+ * @param {number} sampleRate
+ * @returns {Float32Array}
+ */
+function kWeighted(samples, sampleRate) {
+  /**
+   * @param {ArrayLike<number>} input
+   * @param {number[]} b numerator
+   * @param {number[]} a the two feedback terms (a0 is 1)
+   */
+  const biquad = (input, b, a) => {
+    const output = new Float32Array(input.length);
+    let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    for (let i = 0; i < input.length; i++) {
+      const y = b[0] * input[i] + b[1] * x1 + b[2] * x2 - a[0] * y1 - a[1] * y2;
+      x2 = x1; x1 = input[i]; y2 = y1; y1 = y;
+      output[i] = y;
+    }
+    return output;
+  };
+  const shelf = { f0: 1681.974450955533, gain: 3.999843853973347, q: 0.7071752369554196 };
+  let k = Math.tan((Math.PI * shelf.f0) / sampleRate);
+  const vh = 10 ** (shelf.gain / 20);
+  const vb = vh ** 0.4996667741545416;
+  const a0 = 1 + k / shelf.q + k * k;
+  const shelved = biquad(
+    samples,
+    [(vh + (vb * k) / shelf.q + k * k) / a0, (2 * (k * k - vh)) / a0, (vh - (vb * k) / shelf.q + k * k) / a0],
+    [(2 * (k * k - 1)) / a0, (1 - k / shelf.q + k * k) / a0],
+  );
+  k = Math.tan((Math.PI * 38.13547087602444) / sampleRate);
+  const q = 0.5003270373238773;
+  const a0b = 1 + k / q + k * k;
+  return biquad(shelved, [1, -2, 1], [(2 * (k * k - 1)) / a0b, (1 - k / q + k * k) / a0b]);
+}
+
+/**
+ * The mean gaps of one sound pack on the 8 examples, measured in one pass over its renders (a
+ * render is the slow part, and two tests need numbers from the same one): the unweighted gaps to
+ * the melody at the pack's own balance (`before`) and with its default levels (`after`), and the
+ * K-weighted gaps with its default levels (`weighted`).
+ * @type {Map<string, {before: Record<OtherChannel, number>, after: Record<OtherChannel, number>, weighted: Record<OtherChannel, number>}>}
+ */
+const measuredPacks = new Map();
+
+/** @param {string} packId */
+function measurePack(packId) {
+  const known = measuredPacks.get(packId);
+  if (known) return known;
   const sources = JSON.parse(readFileSync(join(repoRoot, "data/sources.json"), "utf8"));
   const examples = buildExamples(sources);
   const unity = { P1: 1, P2: 1, TR: 1, NO: 1 };
+  const gains = channelGains(defaultLevels(packId));
+  const before = [];
+  const after = [];
+  const mean = { P2: 0, TR: 0, NO: 0 };
+  for (const { id } of examples) {
+    const stems = renderPackStems(packId, exampleArrangement(id), SAMPLE_RATE);
+    before.push(gapsToP1(stems, unity));
+    after.push(gapsToP1(stems, gains));
+    const levelOf = (/** @type {"P1" | OtherChannel} */ channel) => {
+      const weighted = kWeighted(stems[channel], SAMPLE_RATE);
+      for (let i = 0; i < weighted.length; i++) weighted[i] *= gains[channel];
+      return toDb(gatedRms(weighted, SAMPLE_RATE));
+    };
+    const melody = levelOf("P1");
+    for (const channel of OTHERS) mean[channel] += (levelOf(channel) - melody) / examples.length;
+  }
+  const measured = { before: meanGaps(before), after: meanGaps(after), weighted: mean };
+  measuredPacks.set(packId, measured);
+  return measured;
+}
+
+test("every sound pack's own defaults bring the drums closer to the melody, keep the bass near it and the harmony under it", (t) => {
   for (const pack of SOUND_PACKS) {
-    const gains = channelGains(defaultLevels(pack.id));
-    const before = [];
-    const after = [];
-    for (const { id } of examples) {
-      const stems = renderPackStems(pack.id, exampleArrangement(id), SAMPLE_RATE);
-      before.push(gapsToP1(stems, unity));
-      after.push(gapsToP1(stems, gains));
-    }
-    const was = meanGaps(before);
-    const now = meanGaps(after);
+    const { before: was, after: now } = measurePack(pack.id);
     t.diagnostic(`${pack.id}: before ${formatGaps(was)} dB; with its defaults ${formatGaps(now)} dB`);
     assert.ok(now.NO - was.NO >= 4.5, `${pack.id}: the drums come at least 4.5 dB closer`);
     assert.ok(now.TR >= -6 && now.TR <= 7, `${pack.id}: the bass is between 6 dB under and 7 dB over the melody (${now.TR.toFixed(1)})`);
     assert.ok(now.P2 <= 0 && now.P2 >= -8, `${pack.id}: the harmony sits under the melody (${now.P2.toFixed(1)})`);
+  }
+});
+
+test("the defaults of every pack but Plain bring its K-weighted gaps to the raw chip's: harmony -5.5, bass +1.5 and drums -7.3 dB from the melody", (t) => {
+  const reference = { P2: -5.5, TR: 1.5, NO: -7.3 };
+  for (const pack of SOUND_PACKS) {
+    if (pack.id === "plain") continue; // its drums were lowered by ear and its bass held at 10 dB
+    const { weighted } = measurePack(pack.id);
+    t.diagnostic(`${pack.id}: K-weighted gaps ${formatGaps(weighted)} dB`);
+    for (const channel of OTHERS) {
+      assert.ok(Math.abs(weighted[channel] - reference[channel]) <= 1.7, `${pack.id} ${channel}: ${weighted[channel].toFixed(2)} dB, the chip's is ${reference[channel]}`);
+    }
   }
 });

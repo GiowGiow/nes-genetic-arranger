@@ -1,0 +1,6 @@
+# MIDI fetcher Worker. Deployed to https://nes-arranger-midi.<account>.workers.dev
+# No `routes` on purpose: do not attach it to the giow.dev zone (that zone geoblocks Brazil).
+name = "nes-arranger-midi"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true

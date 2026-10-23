@@ -12,6 +12,7 @@ import assert from "node:assert/strict";
 import { CHANNEL_GAINS, PEAK_LEVEL, renderChip, renderChipStems, renderLength } from "../src/audio/chip-synth.js";
 import { SOUND_PACKS, WAVES, arrangementVoices, renderPack, renderPackStems } from "../src/audio/sound-packs.js";
 import { readFixture } from "./helpers.js";
+import { bandLevelDb, peakFrequency, powerSpectrum } from "./spectrum.js";
 
 const RATE = 22050;
 
@@ -30,22 +31,68 @@ function korobeiniki() {
 /** @param {Float32Array} samples */
 const peakOf = (samples) => samples.reduce((peak, value) => Math.max(peak, Math.abs(value)), 0);
 
-test("the five packs come in order, NES chip first, each with a name and a description", () => {
+test("the packs come in order, NES chip first, each with a name and a description", () => {
   assert.deepEqual(
     SOUND_PACKS.map((pack) => pack.id),
-    ["nes", "gameboy", "c64", "soft", "plain"],
+    ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain", "nes-raw"],
   );
   assert.deepEqual(
     SOUND_PACKS.map((pack) => pack.name),
-    ["NES chip", "Game Boy", "Commodore 64", "Soft synth", "Plain"],
+    ["NES chip", "Mega Drive", "Super Nintendo", "Game Boy", "Commodore 64", "Soft synth", "Plain", "NES chip (raw)"],
   );
   for (const pack of SOUND_PACKS) assert.ok(pack.description.length > 20, pack.id);
 });
 
-test("the NES chip pack is the chip synthesizer itself", () => {
+test("the raw NES pack is the chip synthesizer itself, byte for byte", () => {
   const arrangement = korobeiniki();
 
-  assert.deepEqual(renderPack("nes", arrangement, RATE), renderChip(arrangement, RATE));
+  assert.deepEqual(renderPack("nes-raw", arrangement, RATE), renderChip(arrangement, RATE));
+  const stems = renderPackStems("nes-raw", arrangement, RATE);
+  const chip = renderChip(arrangement, RATE);
+  let largest = 0;
+  for (let i = 0; i < chip.length; i++) {
+    largest = Math.max(largest, Math.abs(stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] - chip[i]));
+  }
+  assert.ok(largest < 1e-5, `the raw stems add up to the chip render (${largest})`);
+});
+
+test("the NES chip pack is the chip softened: P1 keeps its 25% pulse, P2 is rounder, and a small TV speaker takes the top off", () => {
+  const arrangement = korobeiniki();
+  const raw = renderPack("nes-raw", arrangement, 44100);
+  const soft = renderPack("nes", arrangement, 44100);
+
+  assert.notDeepEqual(soft, raw);
+  assert.equal(soft.length, raw.length);
+  // The top octave of hearing (8 to 16 kHz) holds far less of the sound than on the raw chip
+  // (both renders peak at -3 dBFS, so their band levels compare directly)
+  const rawTop = bandLevelDb(raw, 44100, 8000, 16000);
+  const softTop = bandLevelDb(soft, 44100, 8000, 16000);
+  assert.ok(softTop < rawTop - 10, `top octave: ${softTop.toFixed(1)} dB, raw ${rawTop.toFixed(1)} dB`);
+  // ... and so is the band just under it, 4 to 8 kHz
+  assert.ok(bandLevelDb(soft, 44100, 4000, 8000) < bandLevelDb(raw, 44100, 4000, 8000) - 3);
+});
+
+test("the softened NES pack still sounds like the chip: its pitch and its pulse stay", () => {
+  // One A4 on P1: the raw chip's pulse and the softened one have their strongest partial at 440 Hz
+  const arrangement = { tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 4, velocity: 100 }] } };
+  const soft = renderPack("nes", arrangement, 44100);
+  assert.ok(Math.abs(peakFrequency(soft.subarray(4000, 80000), 44100) - 440) < 3);
+  // A 25% pulse has a strong 4th harmonic hole (every 4th partial is missing); the 3rd is there
+  const power = powerSpectrum(soft.subarray(4000, 80000), 16384);
+  const at = (/** @type {number} */ hz) => power[Math.round((hz * 16384) / 44100)];
+  assert.ok(at(1320) > at(1760) * 20, "the 3rd partial is present and the 4th is missing, as in a 25% pulse");
+});
+
+test("the softened NES stems add up to the softened NES render", () => {
+  const arrangement = korobeiniki();
+  const stems = renderPackStems("nes", arrangement, RATE);
+  const mix = renderPack("nes", arrangement, RATE);
+  let largest = 0;
+  for (let i = 0; i < mix.length; i++) {
+    largest = Math.max(largest, Math.abs(stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] - mix[i]));
+  }
+  assert.ok(largest < 1e-5, `largest difference ${largest}`);
+  assert.ok(Math.abs(peakOf(mix) - PEAK_LEVEL) < 1e-4, "peaks at -3 dBFS");
 });
 
 test("renderLength gives the length of the chip render", () => {
@@ -233,10 +280,10 @@ test("the stems of a pack add up to its render, so at 0 dB the mix sounds the sa
   }
 });
 
-test("the NES stems are the chip's stems times the chip's channel gains, scaled like the render", () => {
+test("the raw NES stems are the chip's stems times the chip's channel gains, scaled like the render", () => {
   const arrangement = korobeiniki();
   const chip = renderChipStems(arrangement, RATE);
-  const nes = renderPackStems("nes", arrangement, RATE);
+  const nes = renderPackStems("nes-raw", arrangement, RATE);
   // renderChip's scale: -3 dBFS over the peak of the chip stems mixed with the chip's gains.
   const mixed = new Float64Array(chip.P1.length);
   for (const channel of CHANNELS) chip[channel].forEach((sample, i) => (mixed[i] += CHANNEL_GAINS[channel] * sample));

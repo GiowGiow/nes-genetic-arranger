@@ -4,20 +4,28 @@
  * the route that loads each song (spec 005, stories 3 to 5, research R8).
  *
  * The visitor sees one catalog, not one shelf per collection. Each collection is a file in
- * `data/catalog/`, written by the command line (`contracts/catalog-files.md`):
+ * `data/catalog/`, written by the command line (`contracts/catalog-files.md`), and one small
+ * file, `data/catalog/collections.json` (the registry), lists them all: where each file is, its
+ * name, its kind, its place among the playlists, whether it is on and whether it is lazy. Adding,
+ * hiding or reordering a collection is a change to that file, not to this code. The built-in
+ * collections are:
  *
- * - `examples.json`: the 8 example lead sheets, shown first, in their own order;
- * - `mpb.json`: Brazilian songs whose MIDI files stay at their site: opening one downloads the
+ * - `examples`: the 8 example lead sheets, shown first, in their own order;
+ * - `mpb`: Brazilian songs whose MIDI files stay at their site: opening one downloads the
  *   file from there and the visitor drops it into the page (the page cannot read another site's
  *   file, and the site's terms do not let this project keep a copy);
- * - `public-domain.json`, `nottingham.json`, `pdmx.json`: lead sheets committed to the
- *   repository, because their composers died long ago or their license allows it.
+ * - `public-domain`, `nottingham`, `pdmx`: lead sheets committed to the repository, because
+ *   their composers died long ago or their license allows it.
+ *
+ * A student's own MIDI files, committed to a folder of the repository, are one more kind of
+ * collection (`local-midi`): the page fetches each file from its own site.
  *
  * After the examples, every song is listed from A to Z, comparing titles without accents or
- * letter case. The examples file loads first, so the page shows something at once; the other
- * small files follow in the background. `mpb.json` is 2 MB, far larger than the rest, so it is
- * lazy: it is read only when the visitor needs it (`lazySourcesNeeded`), and the page lists it
- * as "still loading" until then.
+ * letter case. The first small collection loads first, so the page shows something at once; the
+ * other small files follow in the background. A lazy collection (MPB's file is 2 MB, far larger
+ * than the rest) is read only when the visitor needs it (`lazySourcesNeeded`), and the page
+ * lists it as "still loading" until then. If the registry cannot be read, `FALLBACK_COLLECTIONS`
+ * (the same five built-in collections) apply, so the app never shows nothing.
  *
  * A search ranks matches as a person scans a list (as `catalog.js` does): titles that start
  * with the words, then titles that contain them, then composers and performers. Results of the
@@ -32,18 +40,106 @@
 import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
 import { abcToMidi, tuneToAbc, tuneUrl } from "./thesession.js";
 
-/** The catalog files, examples first; paths are relative to the app folder. */
-export const CATALOG_FILES = Object.freeze(
-  ["examples", "mpb", "public-domain", "nottingham", "pdmx"].map((source) =>
-    Object.freeze({ source, path: `data/catalog/${source}.json` }),
+/** Where the registry of collections is, relative to the app folder. */
+export const REGISTRY_PATH = "data/catalog/collections.json";
+
+/**
+ * @typedef {object} CollectionRecord one collection of the registry
+ * @property {string} id also the `source` of its songs
+ * @property {string} path its catalog file, relative to the app folder
+ * @property {string} name the name of its playlist
+ * @property {"local-midi" | "abc" | "remote"} kind `abc`: lead sheets of the repository;
+ *   `local-midi`: MIDI files of the repository; `remote`: songs that open by download
+ * @property {boolean} lazy read only when needed
+ * @property {number} order its place among the playlists, smaller first
+ * @property {boolean} enabled a disabled collection is not loaded
+ * @property {string} [default_sort] "order", "title" or "popularity" (`local-midi`)
+ * @property {string} [description]
+ */
+
+/**
+ * The built-in collections, which apply when the registry cannot be read. The Python side keeps
+ * the same list (`BUILTIN_COLLECTIONS` in `src/catalog/registry.py`), and a test on each side
+ * compares it with the committed registry.
+ *
+ * @type {ReadonlyArray<Readonly<CollectionRecord>>}
+ */
+export const FALLBACK_COLLECTIONS = Object.freeze(
+  /** @type {Array<[string, string, CollectionRecord["kind"], boolean, number]>} */ ([
+    ["examples", "Examples", "abc", false, 10],
+    ["mpb", "MPB", "remote", true, 20],
+    ["public-domain", "Choro & public domain", "abc", false, 30],
+    ["nottingham", "Folk tunes", "abc", false, 40],
+    ["pdmx", "Classical & standards", "abc", false, 50],
+  ]).map(([id, name, kind, lazy, order]) =>
+    Object.freeze({ id, path: `data/catalog/${id}.json`, name, kind, lazy, order, enabled: true }),
   ),
 );
 
+/** The ids of the playlists that existed before the registry; a visitor's remembered choice uses them. */
+const LEGACY_PLAYLIST_IDS = Object.freeze({ "public-domain": "choro", nottingham: "folk", pdmx: "classical" });
+
 /**
- * The sources whose file is read only when needed: the MPB catalog is 2 MB, the other four files
- * together are under 0.3 MB.
+ * The id of a collection's playlist: the collection's id, except for three built-in collections
+ * whose playlists keep their older ids.
+ *
+ * @param {string} collectionId
+ * @returns {string}
+ * @example
+ * playlistIdOf("pdmx"); // "classical"
+ * playlistIdOf("my-songs"); // "my-songs"
  */
-export const LAZY_SOURCES = Object.freeze(["mpb"]);
+export function playlistIdOf(collectionId) {
+  return /** @type {Record<string, string>} */ (LEGACY_PLAYLIST_IDS)[collectionId] ?? collectionId;
+}
+
+const COLLECTION_KINDS = ["local-midi", "abc", "remote"];
+
+/** A catalog path the app may read: relative, inside the app folder or the repository, a JSON file. */
+const SAFE_CATALOG_PATH = /^[A-Za-z0-9_][A-Za-z0-9_./-]*\.json$/;
+
+/**
+ * The collections of a registry file, in the order of their playlists.
+ *
+ * A record that cannot be used (no id, name or safe path, or a repeated id) is skipped. The
+ * optional fields default to a lead-sheet collection that is eager, enabled and placed after
+ * the others.
+ *
+ * @param {unknown} registry the parsed `collections.json`
+ * @returns {CollectionRecord[] | null} null when the registry lists nothing usable
+ * @example
+ * parseRegistry({ collections: [{ id: "a", path: "data/catalog/a.json", name: "A", order: 5 }] });
+ * // [{ id: "a", path: "data/catalog/a.json", name: "A", kind: "abc", lazy: false, order: 5, enabled: true }]
+ */
+export function parseRegistry(registry) {
+  const list = /** @type {any} */ (registry)?.collections;
+  if (!Array.isArray(list)) return null;
+  /** @type {CollectionRecord[]} */
+  const records = [];
+  for (const item of list) {
+    if (typeof item?.id !== "string" || typeof item.name !== "string" || typeof item.path !== "string") continue;
+    if (!SAFE_CATALOG_PATH.test(item.path) || item.path.split("/").includes("..")) continue;
+    if (records.some((record) => record.id === item.id)) continue;
+    /** @type {CollectionRecord} */
+    const record = {
+      id: item.id,
+      path: item.path,
+      name: item.name,
+      kind: COLLECTION_KINDS.includes(item.kind) ? item.kind : "abc",
+      lazy: item.lazy === true,
+      order: Number.isFinite(item.order) ? item.order : 1000,
+      enabled: item.enabled !== false,
+    };
+    if (typeof item.default_sort === "string") record.default_sort = item.default_sort;
+    if (typeof item.description === "string") record.description = item.description;
+    records.push(record);
+  }
+  if (records.length === 0) return null;
+  return records
+    .map((record, position) => ({ record, position }))
+    .sort((a, b) => a.record.order - b.record.order || collator.compare(a.record.name, b.record.name) || a.position - b.position)
+    .map(({ record }) => record);
+}
 
 /** What the page says when a song's file is downloaded from its source and dropped in by hand. */
 export const PAGE_MESSAGE =
@@ -78,6 +174,8 @@ const collator = new Intl.Collator("pt");
  * @property {number} [tune] which tune of that file, 0 for the first
  * @property {string} [download] the address of the song's MIDI file at its site, which the visitor
  *   saves and drops into the page
+ * @property {string} [midi] a MIDI file of the repository, a path from the app folder
+ *   ("../songs/mine/a.mid") or from the repository root; the page fetches it itself
  * @property {true} [local] a file the visitor opened in this visit
  * @property {number | string} [thesession] a tune number of the folk tune site
  * @property {number} [setting] which setting of that tune, 0 for the first
@@ -106,7 +204,10 @@ const collator = new Intl.Collator("pt");
  * @property {Facts} [facts]
  * @property {string} [error] why the song cannot be arranged; then there is no route
  * @property {string} [variant] "2/3" when a song has several files
- * @property {number} [order] place of an example
+ * @property {number} [order] place of an example, or of a song in its collection
+ * @property {number} [pop] how well known the song is (`playlists.js` orders by it)
+ * @property {string} [album] the album of the song inside its collection's playlist
+ * @property {string} [credit] whom to credit, or where the file comes from (a link or a name)
  */
 
 import { meterText } from "./meter.js";
@@ -118,7 +219,7 @@ import { meterText } from "./meter.js";
 /**
  * @typedef {object} EntryRequest where a song's file is and how to read it
  * @property {string} url
- * @property {"abc" | "download" | "thesession" | "link"} kind
+ * @property {"abc" | "midi" | "download" | "thesession" | "link"} kind
  * @property {number} [tune] for "abc": which tune of the file
  * @property {number} [setting] for "thesession": which setting of the tune
  */
@@ -276,11 +377,14 @@ function repositoryUrl(path) {
  * // { url: "../data/leadsheets/korobeiniki.abc", kind: "abc", tune: 0 }
  * entryRequest({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } });
  * // { url: "https://example.org/a.mid", kind: "download" }
+ * entryRequest({ id: "m", t: "M", route: { midi: "../songs/mine/m.mid" } });
+ * // { url: "../songs/mine/m.mid", kind: "midi" }
  */
 export function entryRequest(entry) {
   const route = entry.route;
   if (!route || entry.error) return null;
   if (route.abc !== undefined) return { url: repositoryUrl(route.abc), kind: "abc", tune: route.tune ?? 0 };
+  if (route.midi !== undefined) return { url: repositoryUrl(route.midi), kind: "midi" };
   if (route.download !== undefined) return { url: route.download, kind: "download" };
   if (route.thesession !== undefined) {
     return { url: tuneUrl(route.thesession), kind: "thesession", setting: route.setting ?? 0 };
@@ -353,10 +457,45 @@ function fileName(entry, extension) {
 }
 
 /**
+ * The license line of a song whose MIDI file is in the repository, which the student chose to
+ * redistribute: its license and whom to credit. Songs of other routes show none, because their
+ * license is not ours to display as a permission.
+ *
+ * @param {CatalogEntry} entry
+ * @returns {{license: string, credit: string, link: string | null} | null} `link` is the credit
+ *   when it is a web address; null when there is nothing to show
+ * @example
+ * licenseNotice({ id: "a", t: "A", license: "CC0-1.0", route: { midi: "../songs/a.mid" } });
+ * // { license: "CC0-1.0", credit: "", link: null }
+ */
+export function licenseNotice(entry) {
+  if (entry.route?.midi === undefined) return null;
+  const license = entry.license ?? "";
+  const credit = entry.credit ?? "";
+  if (license === "" && credit === "") return null;
+  return { license, credit, link: /^https?:\/\//.test(credit) ? credit : null };
+}
+
+/**
+ * Where the visitor can save the MIDI file of a song that is in the repository, and the file name
+ * to save it as. Only these files are offered: they are redistributable by the student's choice.
+ *
+ * @param {CatalogEntry} entry
+ * @returns {{href: string, name: string} | null}
+ * @example
+ * midiDownload({ id: "a", t: "Air", route: { midi: "../songs/air.mid" } }); // { href: "../songs/air.mid", name: "Air.mid" }
+ */
+export function midiDownload(entry) {
+  const midi = entry.route?.midi;
+  return midi === undefined ? null : { href: repositoryUrl(midi), name: fileName(entry, "mid") };
+}
+
+/**
  * Load a song along its route, ready for the input panel.
  *
  * A song with a download route is not fetched: the page cannot read another site's file, so the
- * result is a link the caller downloads, and the visitor drops the saved file into the page.
+ * result is a link the caller downloads, and the visitor drops the saved file into the page. A
+ * MIDI file of the repository (`midi` route) is fetched from the app's own site.
  *
  * @param {CatalogEntry} entry
  * @param {{fetchFn: FetchFunction, abcjs?: any}} context `fetchFn` is the page's `fetch`; `abcjs`
@@ -387,6 +526,9 @@ export async function openEntry(entry, { fetchFn, abcjs }) {
 
   if (request.kind === "abc") {
     return { kind: "abc", name: fileName(entry, "abc"), text: tuneText(await response.text(), request.tune ?? 0) };
+  }
+  if (request.kind === "midi") {
+    return { kind: "midi", name: fileName(entry, "mid"), bytes: new Uint8Array(await response.arrayBuffer()) };
   }
   const abc = tuneToAbc(await response.json(), request.setting ?? 0);
   return { kind: "midi", name: fileName(entry, "mid"), bytes: abcToMidi(abcjs, abc) };
@@ -454,11 +596,11 @@ export function localEntry({ name, sha256, leadSheet }) {
 }
 
 /**
- * Read one catalog file; null when it is missing or unreachable.
+ * Read one JSON file of the catalog; null when it is missing, unreachable or not JSON.
  *
  * @param {FetchFunction} fetchFn
  * @param {string} path
- * @returns {Promise<CatalogFile | null>}
+ * @returns {Promise<any>}
  */
 async function readCatalogFile(fetchFn, path) {
   try {
@@ -470,63 +612,84 @@ async function readCatalogFile(fetchFn, path) {
 }
 
 /**
- * @typedef {object} LoadedCatalog
- * @property {CatalogEntry[]} entries the songs read so far, merged
- * @property {string[]} missing sources whose file could not be read, in the catalog's order
- * @property {(source: string) => Promise<{entries: CatalogEntry[], missing: string[]}>} loadMore
- *   read a lazy file (`LAZY_SOURCES`) now; resolves with the catalog including it
+ * @typedef {object} CatalogView what the page needs to know besides the songs
+ * @property {CollectionRecord[]} collections the enabled collections, in the order of their playlists
+ * @property {string[]} pending the ids of the lazy collections whose file has not been read
  */
 
 /**
- * Load the catalog: the examples first, then the other small files together. The lazy files
- * (`LAZY_SOURCES`) wait for `loadMore`.
+ * @typedef {object} LoadedCatalog
+ * @property {CatalogEntry[]} entries the songs read so far, merged
+ * @property {string[]} missing collections whose file could not be read, in the registry's order
+ * @property {CollectionRecord[]} collections the enabled collections, in the order of their playlists
+ * @property {(source: string) => Promise<{entries: CatalogEntry[], missing: string[]}>} loadMore
+ *   read a lazy file now; resolves with the catalog including it
+ */
+
+/**
+ * Load the catalog: the registry first, then the first small collection (so the page shows
+ * something at once), then the other small ones together. The lazy collections wait for
+ * `loadMore`; a disabled one is never read.
  *
- * `onUpdate` receives the merged catalog each time it grows: with the examples alone, as soon as
- * they arrive, with the small files, and again when `loadMore` brings a lazy file. A file that
- * is missing or unreachable is skipped and named in `missing`, so the rest of the catalog still
- * works; asking `loadMore` for it again tries once more.
+ * `onUpdate` receives the merged catalog and a `CatalogView` each time it grows: with the first
+ * collection alone, with the small files, and again when `loadMore` brings a lazy file. A file
+ * that is missing or unreachable is skipped and named in `missing`, so the rest of the catalog
+ * still works; asking `loadMore` for it again tries once more. If the registry cannot be read or
+ * lists nothing usable, `FALLBACK_COLLECTIONS` apply.
  *
  * `entries` and `missing` describe the catalog when `loadCatalog` resolves; `loadMore` resolves
  * with the later state.
  *
  * @param {FetchFunction} fetchFn the page's `fetch`
- * @param {(entries: CatalogEntry[]) => void} [onUpdate]
+ * @param {(entries: CatalogEntry[], view: CatalogView) => void} [onUpdate]
  * @returns {Promise<LoadedCatalog>}
  * @example
- * const catalog = await loadCatalog(fetch, (list) => shelf.setEntries(list));
+ * const catalog = await loadCatalog(fetch, (list, view) => shelf.setEntries(list));
  * await catalog.loadMore("mpb"); // the shelf hears about the 4,000 MPB songs
  */
 export async function loadCatalog(fetchFn, onUpdate = () => {}) {
-  const [first, ...others] = CATALOG_FILES;
+  const registry = parseRegistry(await readCatalogFile(fetchFn, REGISTRY_PATH));
+  const collections = (registry ?? FALLBACK_COLLECTIONS).filter((record) => record.enabled);
   /** @type {Map<string, CatalogFile | null>} the files read, or null for one that failed */
   const files = new Map();
   /** @type {Map<string, Promise<void>>} the lazy files being read now */
   const reading = new Map();
 
+  /** @param {CollectionRecord} record @returns {Promise<CatalogFile | null>} */
+  const readCollection = async (record) => {
+    const file = await readCatalogFile(fetchFn, record.path);
+    return Array.isArray(file?.entries) ? { source: record.id, entries: file.entries } : null;
+  };
   /** @returns {{entries: CatalogEntry[], missing: string[]}} */
   const snapshot = () => ({
     entries: mergeCatalog([...files.values()].filter((file) => file !== null)),
-    missing: CATALOG_FILES.filter((file) => files.get(file.source) === null).map((file) => file.source),
+    missing: collections.filter((record) => files.get(record.id) === null).map((record) => record.id),
+  });
+  /** @returns {CatalogView} */
+  const view = () => ({
+    collections,
+    pending: collections.filter((record) => record.lazy && !files.get(record.id)).map((record) => record.id),
   });
 
-  files.set(first.source, await readCatalogFile(fetchFn, first.path));
-  onUpdate(snapshot().entries);
-  const small = others.filter((file) => !LAZY_SOURCES.includes(file.source));
-  const loaded = await Promise.all(small.map((file) => readCatalogFile(fetchFn, file.path)));
-  small.forEach((file, i) => files.set(file.source, loaded[i]));
+  const small = collections.filter((record) => !record.lazy);
+  const [first, ...others] = small;
+  if (first) files.set(first.id, await readCollection(first));
+  onUpdate(snapshot().entries, view());
+  const loaded = await Promise.all(others.map(readCollection));
+  others.forEach((record, i) => files.set(record.id, loaded[i]));
   const now = snapshot();
-  onUpdate(now.entries);
+  onUpdate(now.entries, view());
 
   /** @param {string} source */
   async function loadMore(source) {
-    const file = CATALOG_FILES.find((candidate) => candidate.source === source);
-    if (file && LAZY_SOURCES.includes(source) && !files.get(source)) {
+    const record = collections.find((candidate) => candidate.id === source);
+    if (record && record.lazy && !files.get(source)) {
       let pending = reading.get(source);
       if (!pending) {
-        pending = readCatalogFile(fetchFn, file.path).then((read) => {
+        pending = readCollection(record).then((read) => {
           files.set(source, read);
           reading.delete(source);
-          if (read) onUpdate(snapshot().entries);
+          if (read) onUpdate(snapshot().entries, view());
         });
         reading.set(source, pending);
       }
@@ -534,29 +697,32 @@ export async function loadCatalog(fetchFn, onUpdate = () => {}) {
     }
     return snapshot();
   }
-  return { ...now, loadMore };
+  return { ...now, collections, loadMore };
 }
 
 /**
  * Which lazy files the visitor's view needs now. The page asks for them (`loadMore`) as soon as
  * this names one, so a file is read when the visitor first gets to something it holds.
  *
- * - The MPB playlist holds only MPB songs.
+ * - A lazy collection's playlist holds only that collection's songs.
  * - A search looks through every song, so it needs every lazy file.
  * - A song downloaded on an earlier visit (its key, `source:id`, is in the song cache) is
  *   offered in Popular, which needs the record it belongs to.
  *
  * @param {{playlistId: string | null, searching: boolean, cachedKeys: Iterable<string>}} view
- * @returns {string[]} lazy sources, each once; empty when the small files are enough
+ * @param {ReadonlyArray<CollectionRecord>} [collections] the registry's collections; default: the
+ *   built-in ones
+ * @returns {string[]} lazy collection ids, each once; empty when the small files are enough
  * @example
  * lazySourcesNeeded({ playlistId: "mpb", searching: false, cachedKeys: [] }); // ["mpb"]
  * lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: [] }); // []
  */
-export function lazySourcesNeeded({ playlistId, searching, cachedKeys }) {
+export function lazySourcesNeeded({ playlistId, searching, cachedKeys }, collections = FALLBACK_COLLECTIONS) {
   const keys = [...cachedKeys];
-  return LAZY_SOURCES.filter(
-    (source) => searching || playlistId === source || keys.some((key) => key.startsWith(`${source}:`)),
-  );
+  return collections
+    .filter((record) => record.lazy && record.enabled)
+    .map((record) => record.id)
+    .filter((id) => searching || playlistId === playlistIdOf(id) || keys.some((key) => key.startsWith(`${id}:`)));
 }
 
 /**

@@ -7,10 +7,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { matchMixLoudness, defaultLevels } from "../src/audio/mixer.js";
+import { PEAK_LEVEL } from "../src/audio/chip-synth.js";
+import { matchMixLoudness, defaultLevels, mixStems } from "../src/audio/mixer.js";
 import { renderRunAudio } from "../src/audio/run-audio.js";
 import { leadSheetVoices, renderVoices } from "../src/audio/plain-synth.js";
-import { renderPackStems } from "../src/audio/sound-packs.js";
+import { SOUND_PACKS, renderPackStems } from "../src/audio/sound-packs.js";
 import { leadSheetFromJson } from "../src/core/leadsheet.js";
 import { totalBeats } from "../src/core/meter.js";
 import { RUN_LIMIT, addRun, audioHolders, releaseAudio } from "../src/ui/run-list.js";
@@ -99,5 +100,21 @@ test("a visit of many runs never holds the audio of more than one", () => {
     releaseAudio(runs, run.id);
     assert.ok(audioHolders(runs) <= 1, `after run ${index}`);
     assert.ok(runs.length <= RUN_LIMIT);
+  }
+});
+
+test("every sound pack renders a run's audio, with a usable bus gain, and its WAV mix at the pack's levels stays under the ceiling", () => {
+  const run = korobeiniki();
+  for (const pack of SOUND_PACKS) {
+    const audio = renderRunAudio(run, pack.id, RATE, null);
+    assert.equal(audio.pack, pack.id);
+    assert.ok(Number.isFinite(audio.busScale) && audio.busScale > 0, `${pack.id}: bus gain ${audio.busScale}`);
+    for (const channel of /** @type {const} */ (["P1", "P2", "TR", "NO"])) {
+      assert.equal(audio.stems[channel].length, audio.stems.P1.length, `${pack.id} ${channel}`);
+      assert.ok(audio.stems[channel].some((sample) => sample !== 0), `${pack.id} ${channel} is silent`);
+    }
+    // The WAV download mixes the stems at the pack's default levels and peaks at -3 dBFS
+    const wav = mixStems(audio.stems, defaultLevels(pack.id));
+    assert.ok(Math.abs(wav.reduce((peak, sample) => Math.max(peak, Math.abs(sample)), 0) - PEAK_LEVEL) < 1e-4, pack.id);
   }
 });

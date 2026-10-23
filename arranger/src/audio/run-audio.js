@@ -45,7 +45,7 @@ import { renderPackStems } from "./sound-packs.js";
  * not depend on the pack. Another sample rate (a different sound card) renders everything again.
  *
  * @param {RunSource} run
- * @param {string} soundPack "nes", "gameboy", "c64", "soft" or "plain"
+ * @param {string} soundPack a sound pack id (`SOUND_PACKS` in `sound-packs.js`), for example "nes" or "snes"
  * @param {number} sampleRate samples per second
  * @param {RunAudio | null} [kept] the run's audio from an earlier render, if it still has it
  * @returns {RunAudio} a new object, or `kept` itself when it already fits

@@ -318,9 +318,10 @@ function soundingSeconds(channel, note, nextOnset) {
  * @param {number} velocity
  * @param {Float64Array} tone
  * @param {number} sampleRate
+ * @param {Readonly<{P1: number, P2: number}>} duty the duty cycle of each pulse channel
  * @returns {Float64Array} `tone`
  */
-function noteTone(channel, pitch, velocity, tone, sampleRate) {
+function noteTone(channel, pitch, velocity, tone, sampleRate, duty) {
   const nSamples = tone.length;
   const frequency = 440 * 2 ** ((pitch - 69) / 12);
   let decayPerSample = 1; // only drum hits decay
@@ -334,7 +335,7 @@ function noteTone(channel, pitch, velocity, tone, sampleRate) {
   } else if (channel === "TR") {
     triangleWave(frequency, nSamples, sampleRate, tone);
   } else {
-    pulseWave(frequency, nSamples, PULSE_DUTY[channel], sampleRate, tone);
+    pulseWave(frequency, nSamples, duty[channel], sampleRate, tone);
   }
   // The triangle has no volume control, so it ignores the velocity.
   const volume = channel === "TR" ? 1 : velocityToVolume(velocity) / 15;
@@ -444,12 +445,13 @@ function scheduleNotes(arrangement, sampleRate) {
  * @param {SoundingNote[]} sounding
  * @param {number} sampleRate
  * @param {(channel: ChannelName, tone: Float64Array, firstSample: number) => void} addNote
+ * @param {Readonly<{P1: number, P2: number}>} [duty] the pulse duty cycles (default PULSE_DUTY)
  * @returns {void}
  */
-function synthesizeNotes(sounding, sampleRate, addNote) {
+function synthesizeNotes(sounding, sampleRate, addNote, duty = PULSE_DUTY) {
   const scratch = new Float64Array(sounding.reduce((longest, note) => Math.max(longest, note.nSamples), 0));
   for (const { channel, pitch, velocity, firstSample, nSamples } of sounding) {
-    addNote(channel, noteTone(channel, pitch, velocity, scratch.subarray(0, nSamples), sampleRate), firstSample);
+    addNote(channel, noteTone(channel, pitch, velocity, scratch.subarray(0, nSamples), sampleRate, duty), firstSample);
   }
 }
 
@@ -506,8 +508,13 @@ export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
  * peak scale, all on one scale: a pulse or noise note at full volume spans about 2 (from -1 to
  * +1, shifted by its mean), the triangle spans -1 to 1. Summed with `CHANNEL_GAINS` and scaled
  * to -3 dBFS they give `renderChip`, up to float32 rounding.
+ *
+ * The pulse channels' duty cycles can be changed with `options.duty`; the default is the chip's
+ * own (`PULSE_DUTY`), and the command line's reference render uses nothing else. The softened NES
+ * sound pack (`sound-packs.js`) uses it to give P2 a rounder pulse.
  * @param {ChipArrangement} arrangement the tempo and the four channels' notes, in beats
  * @param {number} [sampleRate] samples per second (default 44,100; use the AudioContext's)
+ * @param {{duty?: Readonly<{P1: number, P2: number}>}} [options] `duty`: the duty cycle of P1 and P2
  * @returns {Record<ChannelName, Float32Array>} four stems of `renderLength(arrangement, sampleRate)` samples
  * @example
  * const stems = renderChipStems({ tempoBpm: 120, channels: { P1: [{ pitch: 69, onset: 0, duration: 1, velocity: 100 }] } });
@@ -515,7 +522,7 @@ export function renderChip(arrangement, sampleRate = SAMPLE_RATE) {
  * Math.max(...stems.P1); // ≈ 1.2: a 25% pulse at volume 12 of 15, its mean removed
  * Math.max(...stems.P2); // 0: P2 has no notes
  */
-export function renderChipStems(arrangement, sampleRate = SAMPLE_RATE) {
+export function renderChipStems(arrangement, sampleRate = SAMPLE_RATE, options = {}) {
   const { sounding, length } = scheduleNotes(arrangement, sampleRate);
   /** @type {Record<ChannelName, Float32Array>} */
   const stems = {
@@ -526,6 +533,6 @@ export function renderChipStems(arrangement, sampleRate = SAMPLE_RATE) {
   };
   synthesizeNotes(sounding, sampleRate, (channel, tone, firstSample) => {
     addTone(stems[channel], tone, firstSample, 1);
-  });
+  }, options.duty);
   return stems;
 }
