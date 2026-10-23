@@ -76,8 +76,9 @@
 
 /* Titles of the 3D records: one element per record, placed by the scene (it writes `transform`
    from the record's projected rim). Clipped to a width a little under the records' pitch; a
-   title that does not fit slides to its end and back, resting at both ends (the scene measures
-   the overflow and sets --marquee-shift and --marquee-duration). Under reduced motion nothing
+   title that does not fit scrolls left like a ticker and loops: a copy follows it after a gap,
+   and the track moves by one title and one gap, so the loop starts over unseen (the scene
+   measures the title and sets --marquee-shift, --marquee-gap and --marquee-duration). Under reduced motion nothing
    slides: the title is cut with an ellipsis. */
 .shelf-labels { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .shelf-label {
@@ -93,21 +94,26 @@
 .shelf-label.is-selected {
   z-index: 2; color: #fff; font-weight: 650;
 }
-.shelf-label-text { display: inline-block; }
+.shelf-label-track, .shelf-label-text { display: inline-block; }
+.shelf-label-copy { display: none; }
 .shelf-label.is-long { text-align: left; }
-.shelf-label.is-long .shelf-label-text {
-  animation: shelf-marquee var(--marquee-duration, 6s) linear var(--marquee-delay, 0s) infinite alternate;
+.shelf-label.is-long .shelf-label-copy { display: inline-block; padding-left: var(--marquee-gap, 32px); }
+.shelf-label.is-long .shelf-label-track {
+  animation: shelf-marquee var(--marquee-duration, 6s) linear var(--marquee-delay, 0s) infinite;
 }
-.shelf-label.is-long.is-selected .shelf-label-text { animation-delay: 0s; }
+.shelf-label.is-long.is-selected .shelf-label-track { animation-delay: 0s; }
 @keyframes shelf-marquee {
-  0%, 18% { transform: translateX(0); }
-  82%, 100% { transform: translateX(var(--marquee-shift, 0px)); }
+  0%, 15% { transform: translateX(0); }
+  100% { transform: translateX(var(--marquee-shift, 0px)); }
 }
 .song-shelf.reduce-motion .shelf-label { text-overflow: ellipsis; text-align: center; }
-.song-shelf.reduce-motion .shelf-label-text { display: inline; animation: none; }
+.song-shelf.reduce-motion .shelf-label-track { display: inline; animation: none; }
+.song-shelf.reduce-motion .shelf-label-text { display: inline; }
+.song-shelf.reduce-motion .shelf-label-copy { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .shelf-label { text-overflow: ellipsis; }
-  .shelf-label-text { display: inline; animation: none !important; }
+  .shelf-label-track, .shelf-label-text { display: inline; animation: none !important; }
+  .shelf-label-copy { display: none !important; }
 }
 
 /* 2D: the same listbox, shown as a grid of records with their titles underneath. The arrows

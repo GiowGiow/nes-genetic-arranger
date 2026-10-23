@@ -281,14 +281,22 @@ export function createShelfScene(host, { reducedMotion }) {
   function makeLabel(entry, index) {
     const element = document.createElement("div");
     element.className = "shelf-label";
+    // The track moves; it holds the title and a copy that shows only while the title scrolls,
+    // so the loop can start over without a jump (see `marqueeTiming`).
+    const track = document.createElement("span");
+    track.className = "shelf-label-track";
     const text = document.createElement("span");
     text.className = "shelf-label-text";
     text.textContent = displayTitle(entry.t);
-    element.append(text);
+    const copy = document.createElement("span");
+    copy.className = "shelf-label-copy";
+    copy.textContent = text.textContent;
+    track.append(text, copy);
+    element.append(track);
     element.style.setProperty("--marquee-delay", `${marqueeDelay(index)}s`);
     element.addEventListener("click", () => picked?.(index));
     labelLayer.append(element);
-    return { element, text, x: Number.NaN, y: Number.NaN };
+    return { element, text, track, x: Number.NaN, y: Number.NaN };
   }
 
   /**
@@ -296,14 +304,14 @@ export function createShelfScene(host, { reducedMotion }) {
    * first letters, so the visitor can read it from the start.
    */
   function markSelectedLabel() {
-    labels.forEach(({ element, text }, index) => {
+    labels.forEach(({ element, track }, index) => {
       const on = index === selected;
       if (element.classList.contains("is-selected") === on) return;
       element.classList.toggle("is-selected", on);
       if (on && element.classList.contains("is-long")) {
-        text.style.animation = "none";
-        void text.offsetWidth; // a reflow, so the animation really restarts when it is given back
-        text.style.animation = "";
+        track.style.animation = "none";
+        void track.offsetWidth; // a reflow, so the animation really restarts when it is given back
+        track.style.animation = "";
       }
     });
   }
@@ -315,12 +323,13 @@ export function createShelfScene(host, { reducedMotion }) {
    */
   function measureLabels() {
     if (reducedMotion || !labelLayer.clientWidth) return;
-    const overflows = labels.map(({ element, text }) => text.offsetWidth - element.clientWidth);
+    const widths = labels.map(({ element, text }) => [text.offsetWidth, element.clientWidth]);
     labels.forEach(({ element }, index) => {
-      const timing = marqueeTiming(overflows[index]);
+      const timing = marqueeTiming(widths[index][0], widths[index][1]);
       element.classList.toggle("is-long", timing !== null);
       if (!timing) return;
       element.style.setProperty("--marquee-shift", `${timing.shift}px`);
+      element.style.setProperty("--marquee-gap", `${timing.gap}px`);
       element.style.setProperty("--marquee-duration", `${timing.duration.toFixed(2)}s`);
     });
   }

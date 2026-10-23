@@ -10,6 +10,7 @@ import {
   CAMERA_FOV,
   HALO_SCALE,
   LABEL_HEIGHT_PX,
+  MARQUEE_GAP,
   MARQUEE_SPEED,
   NARROW_WIDTH,
   RECORD_SPACING,
@@ -161,17 +162,19 @@ test("the label hangs from the record's lower rim, wherever the record is and ho
   assert.ok(labelAnchorY(0.12, 0.92) < labelAnchorY(0, 0.58), "the larger, raised record has a lower rim");
 });
 
-test("a title that fits stays still; a longer one slides by exactly what overflows, slowly, and rests at each end", () => {
-  assert.equal(marqueeTiming(0), null);
-  assert.equal(marqueeTiming(0.5), null, "a sub-pixel overflow is not worth moving for");
-  const timing = marqueeTiming(90);
+test("a title that fits stays still; a longer one runs on in one direction, slowly, and loops without a jump", () => {
+  assert.equal(marqueeTiming(80, 80), null);
+  assert.equal(marqueeTiming(80.5, 80), null, "a sub-pixel overflow is not worth moving for");
+  const timing = marqueeTiming(170, 80);
   assert.ok(timing);
-  assert.equal(timing.shift, -90, "to the left, by the hidden width");
+  // The label shows the title, a gap, then the title again; sliding left by one title and one
+  // gap puts the second copy exactly where the first started, so the loop restarts unseen.
+  assert.equal(timing.shift, -(170 + MARQUEE_GAP), "to the left, by one title and one gap");
+  assert.equal(timing.gap, MARQUEE_GAP);
   assert.ok(MARQUEE_SPEED > 10 && MARQUEE_SPEED < 40, "slow enough to read");
-  // The movement takes 64% of a pass (the rest is rest at the ends), at MARQUEE_SPEED
-  assert.ok(Math.abs(timing.duration * 0.64 - 90 / MARQUEE_SPEED) < 1e-9);
-  assert.ok(marqueeTiming(400).duration > timing.duration, "a longer title takes longer");
-  assert.ok(Number(marqueeTiming(2)?.duration) >= 2.5, "never a frantic shake");
+  // The movement takes 85% of a loop (the rest is a rest on the title's first letters), at MARQUEE_SPEED
+  assert.ok(Math.abs(timing.duration * 0.85 - (170 + MARQUEE_GAP) / MARQUEE_SPEED) < 1e-9);
+  assert.ok(Number(marqueeTiming(400, 80)?.duration) > timing.duration, "a longer title takes longer");
 });
 
 test("neighbouring labels start their slide at different moments, so the titles do not move in step", () => {

@@ -80,11 +80,11 @@ const LABEL_REACH = SELECTED_SCALE - SELECTED_RISE + BOB_HEIGHT + 0.4;
 /** Marquee speed in CSS pixels per second: slow enough to read. */
 export const MARQUEE_SPEED = 28;
 
-/** Share of one pass of the marquee that is movement; the rest is rest at the two ends. */
-const MARQUEE_MOVING_SHARE = 0.64;
+/** Share of one loop of the marquee that is movement; the rest is a rest on the first letters. */
+const MARQUEE_MOVING_SHARE = 0.85;
 
-/** The shortest a pass of the marquee lasts, in seconds, however little overflows. */
-const MARQUEE_MIN_SECONDS = 2.5;
+/** Space between the end of a scrolling title and its next copy, in CSS pixels. */
+export const MARQUEE_GAP = 32;
 
 /** An overflow smaller than this many pixels is not worth moving for. */
 const MARQUEE_MIN_OVERFLOW = 1;
@@ -294,21 +294,25 @@ export function labelAnchorY(recordY, recordScale) {
 }
 
 /**
- * How a title wider than its label slides: by what it overflows, and for how long a pass lasts.
- * The page's CSS animates `translateX` from 0 to `shift` and back (`alternate`), resting at both
- * ends so the start and the end of the title can be read.
+ * How a title wider than its label scrolls: always to the left, like a ticker, so it reads from
+ * left to right, and then again from its start. The label holds the title, a gap and a second
+ * copy; the page's CSS moves them left by one title and one gap, where the second copy stands
+ * exactly where the first began, so the loop starts over without a visible jump. Each loop
+ * rests a moment on the first letters.
  *
- * @param {number} overflow how many pixels the title is wider than the label
- * @returns {{shift: number, duration: number} | null} `shift` in pixels (negative: to the left),
- *   `duration` in seconds for one pass; null for a title that fits, which stays still
+ * @param {number} textWidth the title's width in pixels
+ * @param {number} labelWidth the label's width in pixels
+ * @returns {{shift: number, gap: number, duration: number} | null} `shift` in pixels (negative:
+ *   to the left), `gap` in pixels, `duration` in seconds for one loop; null for a title that
+ *   fits, which stays still
  * @example
- * marqueeTiming(0); // null
- * marqueeTiming(56); // { shift: -56, duration: 3.125 }
+ * marqueeTiming(60, 90); // null
+ * marqueeTiming(146, 90); // { shift: -178, gap: 32, duration: 7.48... }
  */
-export function marqueeTiming(overflow) {
-  if (overflow < MARQUEE_MIN_OVERFLOW) return null;
-  const moving = overflow / MARQUEE_SPEED;
-  return { shift: -overflow, duration: Math.max(MARQUEE_MIN_SECONDS, moving / MARQUEE_MOVING_SHARE) };
+export function marqueeTiming(textWidth, labelWidth) {
+  if (textWidth - labelWidth < MARQUEE_MIN_OVERFLOW) return null;
+  const distance = textWidth + MARQUEE_GAP;
+  return { shift: -distance, gap: MARQUEE_GAP, duration: distance / MARQUEE_SPEED / MARQUEE_MOVING_SHARE };
 }
 
 /**
