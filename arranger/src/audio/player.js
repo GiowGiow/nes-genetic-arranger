@@ -46,9 +46,38 @@ const LIMITER = Object.freeze({ threshold: -1, knee: 0, ratio: 20, attack: 0.003
  * latency for stability: the browser mixes in bigger buffers, so a busy main thread (a phone
  * drawing the playhead, a GC pause) is less likely to leave the sound with a gap. The player
  * plays pre-rendered music and has no live instrument, so a few tens of milliseconds more
- * latency only delay the first sound after a click.
+ * latency only delay the first sound after a click. The bigger buffers also mean the speakers
+ * play a sample later than the context computes it, which `heardTime` corrects for the view.
  */
 export const CONTEXT_OPTIONS = Object.freeze({ latencyHint: /** @type {const} */ ("playback") });
+
+/**
+ * The context time of the sound coming out of the speakers now.
+ *
+ * `context.currentTime` is the time of the samples being computed, ahead of the ear by the
+ * output latency: the browser's buffers, the system mixer, a Bluetooth link (often 0.1 to 0.3 s,
+ * more with `latencyHint: "playback"`). It also moves in jumps of one buffer. The browser's
+ * output timestamp says which context time was at the speakers at a moment of the wall clock;
+ * moving it on by the wall clock since then gives a smooth, heard time. Without a usable
+ * timestamp, the reported latencies are subtracted instead.
+ *
+ * @param {{currentTime: number, outputLatency?: number, baseLatency?: number,
+ *   getOutputTimestamp?: () => {contextTime?: number, performanceTime?: number}}} context
+ * @param {number} nowMs `performance.now()`
+ * @returns {number} seconds of context time, never ahead of `currentTime` and never below 0
+ * @example
+ * heardTime({ currentTime: 3, outputLatency: 0.2 }, performance.now()); // 2.8
+ */
+export function heardTime(context, nowMs) {
+  const stamp = context.getOutputTimestamp?.();
+  let heard;
+  if (stamp?.contextTime && stamp.performanceTime) {
+    heard = stamp.contextTime + (nowMs - stamp.performanceTime) / 1000;
+  } else {
+    heard = context.currentTime - (context.outputLatency ?? 0) - (context.baseLatency ?? 0);
+  }
+  return Math.max(0, Math.min(context.currentTime, heard));
+}
 
 /** @typedef {"arrangement" | "original"} Version */
 /** @typedef {import("./chip-synth.js").ChannelName} ChannelName */
@@ -195,8 +224,10 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
 
   function currentTime() {
     if (!playing || !context) return offset;
-    // The sources start 20 ms after the click, so the first moments are before the start: clamp at 0.
-    return Math.max(0, Math.min(duration(), offset + context.currentTime - startedAt));
+    // The position heard, not the one computed (see `heardTime`). The sources start 20 ms after
+    // the click and the speakers lag behind, so the first moments are before the start: clamp at 0.
+    const heard = heardTime(context, performance.now());
+    return Math.max(0, Math.min(duration(), offset + heard - startedAt));
   }
 
   function stopSources() {

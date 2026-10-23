@@ -13,7 +13,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import { CHANNELS, DEFAULT_LEVELS, DEFAULT_VOLUME, channelGains, volumeToGain } from "../src/audio/mixer.js";
-import { createPlayer } from "../src/audio/player.js";
+import { createPlayer, heardTime } from "../src/audio/player.js";
 import { FakeContext, FakeGain, RATE } from "./fake-audio.js";
 
 /** @typedef {import("../src/audio/mixer.js").Levels} Levels */
@@ -544,4 +544,33 @@ test("output is the master volume's input, so a sound made outside the player (a
   assert.deepEqual(node.outputs, [context.destination]);
   assert.equal(node, masterOf(context));
   assert.equal(player.output(), node, "the same node every time");
+});
+
+// The audio clock runs ahead of the ear: `context.currentTime` is the time of the samples being
+// computed, and the speakers play them later (the output buffer, the system mixer, Bluetooth).
+// The playback view must follow what is heard, or it runs ahead of the music.
+
+test("heardTime follows the output timestamp, moved on by the wall clock since it was taken", () => {
+  const context = {
+    currentTime: 10.5,
+    getOutputTimestamp: () => ({ contextTime: 10.2, performanceTime: 5000 }),
+  };
+  assert.equal(round6(heardTime(context, 5050)), 10.25, "50 ms after the stamp, 0.05 s later");
+  assert.equal(heardTime(context, 9000), 10.5, "never ahead of the audio being computed");
+});
+
+test("heardTime falls back on the reported latencies when there is no usable timestamp", () => {
+  const silent = { currentTime: 3, outputLatency: 0.15, baseLatency: 0.05, getOutputTimestamp: () => ({ contextTime: 0, performanceTime: 0 }) };
+  assert.equal(round6(heardTime(silent, 100)), 2.8);
+  assert.equal(heardTime({ currentTime: 3 }, 100), 3, "no latency reported: the audio clock itself");
+  assert.equal(heardTime({ currentTime: 0.01, outputLatency: 0.2 }, 0), 0, "never before the start");
+});
+
+test("the position the player reports is the one heard, behind the audio clock by the output latency", () => {
+  const { player, context } = fakePlayer();
+  /** @type {any} */ (context).outputLatency = 0.2;
+  player.load({ arrangement: stems() }, RATE);
+  player.play();
+  context.currentTime = 1;
+  assert.equal(round6(player.currentTime()), round6(1 - 0.02 - 0.2));
 });
