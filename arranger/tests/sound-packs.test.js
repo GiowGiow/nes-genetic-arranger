@@ -9,8 +9,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { CHANNEL_GAINS, PEAK_LEVEL, renderChip, renderChipStems, renderLength } from "../src/audio/chip-synth.js";
-import { SOUND_PACKS, WAVES, arrangementVoices, renderPack, renderPackStems } from "../src/audio/sound-packs.js";
+import { PEAK_LEVEL, renderChip, renderLength } from "../src/audio/chip-synth.js";
+import { SOUND_PACKS, WAVES, arrangementVoices, knownSoundPack, renderPack, renderPackStems } from "../src/audio/sound-packs.js";
 import { readFixture } from "./helpers.js";
 import { bandLevelDb, peakFrequency, powerSpectrum } from "./spectrum.js";
 
@@ -34,31 +34,35 @@ const peakOf = (samples) => samples.reduce((peak, value) => Math.max(peak, Math.
 test("the packs come in order, NES chip first, each with a name and a description", () => {
   assert.deepEqual(
     SOUND_PACKS.map((pack) => pack.id),
-    ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain", "nes-raw"],
+    ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain"],
   );
   assert.deepEqual(
     SOUND_PACKS.map((pack) => pack.name),
-    ["NES chip", "Mega Drive", "Super Nintendo", "Game Boy", "Commodore 64", "Soft synth", "Plain", "NES chip (raw)"],
+    ["NES chip", "Mega Drive", "Super Nintendo", "Game Boy", "Commodore 64", "Soft synth", "Plain"],
   );
   for (const pack of SOUND_PACKS) assert.ok(pack.description.length > 20, pack.id);
 });
 
-test("the raw NES pack is the chip synthesizer itself, byte for byte", () => {
+test("the raw chip is no longer a pack of the page: the command line keeps it, the page falls back to the NES chip", () => {
   const arrangement = korobeiniki();
 
-  assert.deepEqual(renderPack("nes-raw", arrangement, RATE), renderChip(arrangement, RATE));
-  const stems = renderPackStems("nes-raw", arrangement, RATE);
-  const chip = renderChip(arrangement, RATE);
-  let largest = 0;
-  for (let i = 0; i < chip.length; i++) {
-    largest = Math.max(largest, Math.abs(stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] - chip[i]));
-  }
-  assert.ok(largest < 1e-5, `the raw stems add up to the chip render (${largest})`);
+  assert.equal(SOUND_PACKS.some((pack) => pack.id === "nes-raw"), false);
+  assert.throws(() => renderPack("nes-raw", arrangement, RATE), { message: 'unknown sound pack "nes-raw"' });
+  assert.throws(() => renderPackStems("nes-raw", arrangement, RATE), { message: 'unknown sound pack "nes-raw"' });
+  assert.equal(renderChip(arrangement, RATE).length, renderLength(arrangement, RATE), "renderChip itself stays");
+});
+
+test("a stored pack id that is no longer offered (the old raw chip) or never was falls back to the NES chip", () => {
+  assert.equal(knownSoundPack("nes-raw"), "nes");
+  assert.equal(knownSoundPack("amiga"), "nes");
+  assert.equal(knownSoundPack(null), "nes");
+  assert.equal(knownSoundPack(undefined), "nes");
+  assert.equal(knownSoundPack("snes"), "snes");
 });
 
 test("the NES chip pack is the chip softened: P1 keeps its 25% pulse, P2 is rounder, and a small TV speaker takes the top off", () => {
   const arrangement = korobeiniki();
-  const raw = renderPack("nes-raw", arrangement, 44100);
+  const raw = renderChip(arrangement, 44100); // the command line's chip, unsoftened
   const soft = renderPack("nes", arrangement, 44100);
 
   assert.notDeepEqual(soft, raw);
@@ -277,21 +281,6 @@ test("the stems of a pack add up to its render, so at 0 dB the mix sounds the sa
   for (const pack of SOUND_PACKS) {
     const difference = largestDifference(sumOf(renderPackStems(pack.id, arrangement, RATE)), renderPack(pack.id, arrangement, RATE));
     assert.ok(difference < 1e-5, `${pack.id}: largest difference ${difference}`);
-  }
-});
-
-test("the raw NES stems are the chip's stems times the chip's channel gains, scaled like the render", () => {
-  const arrangement = korobeiniki();
-  const chip = renderChipStems(arrangement, RATE);
-  const nes = renderPackStems("nes-raw", arrangement, RATE);
-  // renderChip's scale: -3 dBFS over the peak of the chip stems mixed with the chip's gains.
-  const mixed = new Float64Array(chip.P1.length);
-  for (const channel of CHANNELS) chip[channel].forEach((sample, i) => (mixed[i] += CHANNEL_GAINS[channel] * sample));
-  const scale = PEAK_LEVEL / mixed.reduce((peak, sample) => Math.max(peak, Math.abs(sample)), 0);
-  for (const channel of CHANNELS) {
-    const expected = Float32Array.from(chip[channel], (sample) => sample * CHANNEL_GAINS[channel] * scale);
-    const difference = largestDifference(nes[channel], expected);
-    assert.ok(difference < 1e-6, `${channel}: largest difference ${difference}`);
   }
 });
 

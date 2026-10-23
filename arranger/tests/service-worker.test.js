@@ -33,7 +33,9 @@ test("every module, style, font and vendor script of the app is precached", () =
   const expected = [
     "./",
     "index.html",
+    "motion.css",
     "style.css",
+    "drawers.css",
     "catalog.css",
     "mixer.css",
     "how.css",

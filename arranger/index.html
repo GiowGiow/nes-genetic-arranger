@@ -6,7 +6,9 @@
 <title>NES Arranger</title>
 <meta name="description" content="Arrange your own ABC or MIDI song for the NES sound chip with a genetic algorithm that runs in your browser. Your file never leaves your device.">
 <meta name="theme-color" content="#0B0E17">
+<link rel="stylesheet" href="motion.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="drawers.css">
 <link rel="stylesheet" href="catalog.css">
 <link rel="stylesheet" href="mixer.css">
 <link rel="stylesheet" href="how.css">
@@ -15,6 +17,8 @@
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"></div>
+<!-- Messages (ui/notify.js): one polite live region, so a screen reader announces each once. -->
+<div class="toast-region" role="status" aria-live="polite" data-toasts></div>
 <main>
   <header class="hero">
     <div class="hero-row">

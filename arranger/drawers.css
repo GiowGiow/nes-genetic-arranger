@@ -1,0 +1,83 @@
+/* Drawers and tooltips.
+   The Settings drawer slides in over the right side of the page (behavior in ui/drawers.js; the
+   mixer drawer is in mixer.css), and the tooltips float over whatever they explain, in the
+   drawer and on the run strip alike. Loaded after style.css, which defines the tokens used here. */
+
+/* Settings: a drawer that slides in over the right side of the page and leaves the layout as it
+   is, so the evolution keeps its place while the values change. Closed, it waits off screen,
+   invisible to the mouse, the keyboard and screen readers. On a phone it is a full-width sheet. */
+#settings {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 30; width: min(380px, 100vw);
+  overflow: hidden auto; overscroll-behavior: contain; border-radius: 0; border-width: 0 0 0 1px;
+  background: #121828; padding: var(--s4) 18px max(var(--s5), env(safe-area-inset-bottom)); box-shadow: -16px 0 40px rgba(0, 0, 0, .55);
+  transform: translateX(100%); visibility: hidden; backdrop-filter: none; -webkit-backdrop-filter: none;
+  transition: transform .25s ease, visibility 0s linear .25s;
+}
+#settings.open { transform: none; visibility: visible; transition: transform .25s ease; }
+@media (prefers-reduced-motion: reduce) { #settings, #settings.open { transition: none; } }
+/* The header stays at the top of the drawer while its form scrolls, so Close is always there. */
+.side-head {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+  margin: calc(var(--s4) * -1) -18px 0; padding: var(--s3) 18px; background: #121828; border-bottom: 1px solid var(--line);
+}
+.side-head h2 { margin: 0; }
+#settings-title:focus { outline: none; }
+#settings > .hint { margin-top: var(--s4); }
+/* One column of groups set apart by space, not boxes. */
+.settings-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: var(--s3); }
+.settings-group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.settings-group legend { color: var(--muted); padding: 0; margin-bottom: 4px; font-size: var(--fs-sm); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.setting { display: grid; grid-template-columns: minmax(0, 1fr) 6.5em; gap: 2px 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.setting:last-child { border-bottom: 0; }
+.setting label { font-weight: 400; font-size: .9375rem; }
+/* A changed setting is the one bold name, with its default below it. */
+.setting.changed label { font-weight: 700; }
+.setting-note { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+.setting-note:empty { display: none; }
+.setting-note [data-default]:empty { display: none; }
+.share { display: inline-flex; align-items: center; gap: 8px; }
+.share-bar { display: block; width: 72px; height: 6px; border-radius: 2px; background: rgba(255, 255, 255, .07); }
+.share-bar span { display: block; height: 100%; border-radius: 2px; background: var(--muted); }
+.setting input { width: 100%; text-align: right; }
+/* Tooltips: what a setting changes, on hover or keyboard focus, floating over the page. */
+.has-tip { position: relative; }
+.tip {
+  position: absolute; left: 0; top: calc(100% + 6px); z-index: 20; width: min(320px, 90vw); margin: 0;
+  padding: 8px 10px; border-radius: var(--radius); border: 1px solid var(--line); background: #141a2a;
+  color: var(--text); font-size: var(--fs-sm); line-height: 1.45; box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  opacity: 0; visibility: hidden; transform: translateY(-4px); pointer-events: none;
+  transition: opacity .15s, transform .15s, visibility .15s;
+}
+.has-tip:hover .tip, .has-tip:focus-within .tip { opacity: 1; visibility: visible; transform: none; }
+.tip-mark {
+  display: inline-grid; place-items: center; width: 15px; height: 15px; margin-left: 6px; border-radius: 50%;
+  border: 1px solid var(--muted); color: var(--muted); font: 700 .66rem/1 Inter, system-ui, sans-serif; vertical-align: 1px; cursor: help;
+  opacity: .7;
+}
+.has-tip:hover .tip-mark, .has-tip:focus-within .tip-mark { border-color: var(--no); color: var(--no); opacity: 1; }
+.setting .field-error { grid-column: 1 / -1; margin: 0; font-size: var(--fs-sm); }
+.setting .tip { grid-column: 1 / -1; right: 0; width: auto; }
+.setting.invalid input { border-color: #ff9b8a; }
+.field-error:empty { display: none; }
+/* Allowed textures: one fieldset per channel, its values in two columns, which fit the drawer at
+   any width down to a 375 px phone. A changed channel is bold like a changed setting. */
+.allowed-textures .hint { margin: 0 0 4px; }
+.allowed-gene { border: 0; margin: 0; padding: 6px 0; min-width: 0; border-bottom: 1px solid var(--line); }
+.settings-group .allowed-gene legend { display: flex; align-items: center; gap: 8px; margin: 0; padding: 0; color: var(--text); font-size: .9375rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.settings-group .allowed-gene.changed legend { font-weight: 700; }
+.settings-group .allowed-gene.invalid legend { color: #ff9b8a; }
+.allowed-values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 10px; margin-top: 2px; }
+.allowed-value label { display: flex; align-items: flex-start; gap: 6px; padding: 6px 0; font-size: .875rem; line-height: 1.3; cursor: pointer; }
+/* The box lines up with the first line of a label that wraps. */
+.allowed-value input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; padding: 0; accent-color: var(--p1); }
+.allowed-value .tip-mark { margin-left: 5px; }
+/* A tooltip in the right column opens leftward, so it stays inside the drawer. */
+.allowed-value:nth-child(even) .tip { left: auto; right: 0; }
+.allowed-gene .setting-note { margin-top: 2px; }
+.allowed-gene .field-error { margin: 4px 0 0; }
+/* Warnings, not errors: the run may go on, but a criterion or a channel has nothing left to do. */
+.allowed-warnings { display: grid; gap: 4px; margin-top: 8px; }
+.allowed-warnings:empty { display: none; }
+.allowed-warnings p { margin: 0; padding-left: 8px; border-left: 2px solid var(--no); color: var(--no); font-size: var(--fs-sm); }
+#settings code { font-family: var(--mono); font-size: .85em; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }

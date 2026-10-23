@@ -171,7 +171,7 @@ test("with every channel muted the mix is silence as long as the stems", () => {
 });
 
 test("at 0 dB on every channel, mixStems of a pack's stems is the pack's render", () => {
-  for (const packId of ["nes", "nes-raw", "megadrive", "snes", "gameboy", "plain"]) {
+  for (const packId of ["nes", "megadrive", "snes", "gameboy", "plain"]) {
     const expected = renderPack(packId, BAND, 22050);
     const mixed = mixStems(renderPackStems(packId, BAND, 22050), UNITY);
     let largest = 0;
@@ -277,7 +277,7 @@ test("storeLevels reports false, without throwing, when there is no storage or i
 });
 
 test("every sound pack has default levels of its own, all inside the scale with room to boost", () => {
-  assert.deepEqual(Object.keys(PACK_LEVELS).sort(), ["c64", "gameboy", "megadrive", "nes", "nes-raw", "plain", "snes", "soft"]);
+  assert.deepEqual(Object.keys(PACK_LEVELS).sort(), ["c64", "gameboy", "megadrive", "nes", "plain", "snes", "soft"]);
   assert.equal(defaultLevels("nes"), DEFAULT_LEVELS);
   assert.equal(defaultLevels("no such pack"), DEFAULT_LEVELS, "an unknown pack gets the NES levels");
   assert.equal(defaultLevels(), DEFAULT_LEVELS);

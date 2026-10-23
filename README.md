@@ -499,7 +499,7 @@ The [arranger page](https://giowgiow.github.io/nes-genetic-arranger/arranger/) (
    best plan of four genes per bar. The "watch" pace runs about 400 generations per second so the
    evolution can be followed; "full speed" finishes in under a second.
 4. Play the arrangement with the NES chip sound (softened: a rounder harmony pulse and a small
-   TV speaker's filter; "NES chip (raw)" keeps the thin original), or switch the sound pack (Mega
+   TV speaker's filter), or switch the sound pack (Mega
    Drive FM synthesis, Super Nintendo samples with echo, Game Boy, Commodore 64, a soft synth or
    the original's plain instruments) without losing the position; switch to
    the original at the same position. Four small sliders set the level of P1, P2, bass and drums for the sound pack in

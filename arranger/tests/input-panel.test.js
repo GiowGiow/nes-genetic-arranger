@@ -412,3 +412,23 @@ test("a catalog record's analysis picks the melody track, the bars and the parts
   assert.equal(catalogChoice(facts, tracks, 40), null, "bars past the file's end: another file than the one analysed");
   assert.deepEqual(catalogChoice({ melody_track: 0 }, tracks, 80), { melodyTrack: 0, bars: null, sections: null });
 });
+
+test("every status line of the panel is also handed to the page, so it can show it as a toast", async () => {
+  await inFakeDocument(async (targets) => {
+    /** @type {Array<[string, boolean]>} */
+    const heard = [];
+    const panel = createInputPanel(/** @type {any} */ (targets), {
+      examples: [],
+      readOptions: () => ({ phraseLength: 4, roleMap: {}, tempoOverride: null }),
+      onLoaded: () => {},
+      onStatus: (text, isError) => heard.push([text, isError]),
+    });
+
+    await panel.readFile(/** @type {any} */ (new File([TWO_MELODIES], "song.mid")));
+    assert.deepEqual(heard.at(-1), ["song.mid: ready to arrange.", false]);
+
+    await panel.readFile(/** @type {any} */ (new File([new Uint8Array([0x4d, 0x54, 0x68, 0x64])], "bad.mid")));
+    assert.equal(heard.at(-1)?.[1], true, "a file that cannot be read is an error");
+    assert.match(heard.at(-1)?.[0] ?? "", /^bad\.mid: /);
+  });
+});

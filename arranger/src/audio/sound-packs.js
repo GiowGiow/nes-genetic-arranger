@@ -25,8 +25,6 @@
 //     above 2 kHz, where the ear is most sensitive, by 1 dB, and 4 kHz by 2.4 dB).
 //   The filters work on each stem alone, which gives the same mix as filtering the mix; the
 //   bass and the drums are lifted by 2 to 3 dB to make up for what the filters took.
-// - NES chip (raw): the chip synthesizer exactly as the command line renders it (`renderChip`),
-//   for hearing what the softening changed. It sits last in the list.
 // - Mega Drive: the Yamaha YM2612 FM chip and the SN76489 noise chip of the Sega Genesis,
 //   in `megadrive-pack.js`: a brass lead, an electric piano, a slap bass, FM and noise drums.
 // - Super Nintendo: the Sony S-DSP, in `snes-pack.js`: samples made in code and played through
@@ -59,7 +57,6 @@ import {
   PEAK_LEVEL,
   SAMPLE_RATE,
   noiseWave,
-  renderChip,
   renderChipStems,
   renderLength,
   scaleToPeak,
@@ -81,7 +78,7 @@ import { createRandom } from "../core/random.js";
 /**
  * One sound pack, as the page lists it.
  * @typedef {object} SoundPack
- * @property {string} id "nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain" or "nes-raw"
+ * @property {string} id "nes", "megadrive", "snes", "gameboy", "c64", "soft" or "plain"
  * @property {string} name the name shown on the page
  * @property {string} description one line on how it sounds
  */
@@ -91,7 +88,7 @@ import { createRandom } from "../core/random.js";
  * @type {readonly SoundPack[]}
  * @example
  * SOUND_PACKS.map((pack) => pack.id);
- * // ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain", "nes-raw"]
+ * // ["nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain"]
  */
 export const SOUND_PACKS = Object.freeze([
   Object.freeze({
@@ -129,12 +126,22 @@ export const SOUND_PACKS = Object.freeze([
     name: "Plain",
     description: "The same plain instruments as the original's player, to compare the content of the two versions.",
   }),
-  Object.freeze({
-    id: "nes-raw",
-    name: "NES chip (raw)",
-    description: "The NES 2A03 exactly as the command line renders it: thin, bright pulses and an unfiltered square edge.",
-  }),
 ]);
+
+/**
+ * The id of a pack the page offers, from an id that may come from an earlier visit.
+ *
+ * A visitor's stored choice can name a pack that no longer exists (the page once offered the raw
+ * chip, "nes-raw"), or hold anything at all; they get the NES chip then.
+ * @param {string | null | undefined} packId
+ * @returns {string} `packId` when it is in SOUND_PACKS, otherwise "nes"
+ * @example
+ * knownSoundPack("snes"); // "snes"
+ * knownSoundPack("nes-raw"); // "nes"
+ */
+export function knownSoundPack(packId) {
+  return SOUND_PACKS.find((pack) => pack.id === packId)?.id ?? SOUND_PACKS[0].id;
+}
 
 /**
  * Waveforms as functions of the phase, the position inside one period, in [0, 1).
@@ -261,10 +268,8 @@ const UNIT_GAINS = Object.freeze({ P1: 1, P2: 1, TR: 1, NO: 1 });
  * @throws {Error} for an unknown pack
  * @example
  * renderPack("gameboy", arrangement, 44100).length === renderLength(arrangement, 44100); // true
- * renderPack("nes-raw", arrangement); // the same samples as renderChip(arrangement)
  */
 export function renderPack(packId, arrangement, sampleRate = SAMPLE_RATE) {
-  if (packId === "nes-raw") return renderChip(arrangement, sampleRate);
   if (STEM_PACKS.has(packId)) return sumOfStems(renderPackStems(packId, arrangement, sampleRate));
   const length = renderLength(arrangement, sampleRate);
   if (packId === "plain") return renderPlain(arrangement, sampleRate, length);
@@ -291,7 +296,6 @@ export function renderPack(packId, arrangement, sampleRate = SAMPLE_RATE) {
  * // stems.P1[i] + stems.P2[i] + stems.TR[i] + stems.NO[i] ≈ renderPack("gameboy", arrangement, 44100)[i]
  */
 export function renderPackStems(packId, arrangement, sampleRate = SAMPLE_RATE) {
-  if (packId === "nes-raw") return scaleStemsToPeak(renderChipStems(arrangement, sampleRate), CHANNEL_GAINS);
   if (packId === "nes") return softNesStems(arrangement, sampleRate);
   if (packId === "megadrive") return scaleStemsToPeak(renderMegaDriveStems(arrangement, sampleRate), UNIT_GAINS);
   if (packId === "snes") return scaleStemsToPeak(renderSnesStems(arrangement, sampleRate), UNIT_GAINS);

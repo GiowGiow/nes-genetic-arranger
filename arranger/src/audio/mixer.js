@@ -115,8 +115,8 @@ const packLevels = (P2, TR, NO) =>
  * cut until their weighted gap to the melody equals the NES one. Then the Plain pack's drums
  * were lowered by ear (+10 dB was too loud for its noise-like hits), and its bass and the Soft
  * pack's harmony were held at 10 dB and 8 dB so that every default keeps room to boost.
- * The packs added later (spec 006) were set the same way. The raw NES chip keeps the levels
- * above, since it is the reference. The softened NES, the Mega Drive and the Super Nintendo had
+ * The packs added later (spec 006) were set the same way, with the chip's balance above as the
+ * reference. The softened NES, the Mega Drive and the Super Nintendo had
  * their own stem gains set first so that no default needs to be negative or above 10 dB; then
  * their K-weighted gaps on the 8 examples were measured and each level rounded to the nearest
  * dB that brings the gap to the raw chip's (harmony -5.5, bass +1.5, drums -7.3 dB from the
@@ -125,7 +125,6 @@ const packLevels = (P2, TR, NO) =>
  */
 export const PACK_LEVELS = Object.freeze({
   nes: packLevels(0, 4, 9),
-  "nes-raw": packLevels(-1, 4, 10),
   megadrive: packLevels(0, 1, 5),
   snes: packLevels(0, 2, 6),
   gameboy: packLevels(0, 5, 7),
@@ -145,7 +144,7 @@ export const DEFAULT_LEVELS = PACK_LEVELS.nes;
 
 /**
  * The default levels of a sound pack; an unknown pack gets the NES ones.
- * @param {string} [packId] a sound pack id: "nes", "megadrive", "snes", "gameboy", "c64", "soft", "plain" or "nes-raw"
+ * @param {string} [packId] a sound pack id: "nes", "megadrive", "snes", "gameboy", "c64", "soft" or "plain"
  * @returns {Readonly<Levels>}
  * @example
  * defaultLevels("plain").NO; // 5: the Plain pack's drums need less than the chip's

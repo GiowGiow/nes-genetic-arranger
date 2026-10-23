@@ -1,0 +1,53 @@
+/* Motion: the tokens and keyframes every animation of the app shares.
+   One place, so the page moves with one rhythm: short durations, an ease-out that starts fast and
+   settles, and a soft overshoot for things that pop into place. Everything here moves only
+   `transform` and `opacity`, which the browser composites without layout or paint, so it stays
+   smooth on a phone while music plays. The last block is the global switch: a visitor who asked
+   the system for less motion gets none of it. Loaded before the other sheets. */
+
+:root {
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+  /* A soft overshoot: the end value is passed by a few percent and settled back. */
+  --ease-pop: cubic-bezier(.34, 1.4, .64, 1);
+}
+
+/* A panel arriving: fades in while rising a few pixels. */
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+/* A small thing appearing: grows from 85% with the overshoot easing. */
+@keyframes pop {
+  from { opacity: 0; transform: scale(.85); }
+}
+/* A turning record, for the busy indicator (style.css). */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* A skeleton's light sweep: a highlight band slides across, left to right. */
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* Ready-made classes: add one to an element that appears. */
+.anim-panel-in { animation: panel-in var(--dur-2) var(--ease-out) both; }
+.anim-fade-in { animation: fade-in var(--dur-2) var(--ease-out) both; }
+.anim-pop { animation: pop var(--dur-3) var(--ease-pop) both; }
+
+/* Less motion: every animation and transition ends at once, smooth scrolling is off, and the
+   spinner stands still (it is a static record then). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

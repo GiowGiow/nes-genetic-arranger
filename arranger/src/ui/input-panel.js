@@ -257,10 +257,12 @@ export function loadAbcjs() {
  *   previewTrack?: (trackIndex: number) => string,
  *   onUnreadable?: () => void,
  *   useTempo?: (bpm: number) => void,
+ *   onStatus?: (text: string, isError: boolean) => void,
  * }} options `onFileDropped` lets the catalog panel claim a dropped file (FR-031);
  *   `previewTrack` plays one track of the MIDI song alone and says what it plays;
  *   `onUnreadable` tells the page that the options now chosen cannot be read (a bad bar range),
- *   so it must not arrange the reading before them
+ *   so it must not arrange the reading before them; `onStatus` hears every status line (the page
+ *   shows it as a toast as well, since the line sits far down on a phone)
  * @returns {{reread: () => void, current: () => LoadedInput | null, readFile: (file: File, overrides?: Record<string, number>, catalogEntry?: unknown) => Promise<void>}}
  */
 export function createInputPanel(targets, options) {
@@ -700,6 +702,8 @@ export function createInputPanel(targets, options) {
   function setStatus(text, isError = false) {
     status.textContent = text;
     status.classList.toggle("error", isError);
+    // The line sits under the shelf, below the fold on a phone: the page may show it as a toast too.
+    options.onStatus?.(text, isError);
   }
 
   return { reread, current: () => loaded, readFile: readDroppedFile };

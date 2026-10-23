@@ -2,6 +2,10 @@
 /**
  * Page wiring: input, settings, the GA worker, the evolution display, playback and downloads.
  *
+ * The song shelf's glue lives in `catalog-glue.js` (catalog, The Session, song cache, downloads),
+ * the Settings and mixer drawers in `drawers.js`; toasts (`notify.js`) and busy states
+ * (`busy.js`) are shared. This file keeps what is left: the run and the result.
+ *
  * A run goes through the states of data-model.md ("Run state"):
  *
  *   idle → evolving → realized → ready (or failed when the arrangement breaks an NES rule)
@@ -24,17 +28,19 @@ import { configRecord, defaultSettings, runId, validateSettings } from "../core/
 import { matchLoudness } from "../audio/loudness.js";
 import { leadSheetVoices, midiExcerptVoices, renderVoices, trackPreview } from "../audio/plain-synth.js";
 import { createPlayer } from "../audio/player.js";
-import { SOUND_PACKS } from "../audio/sound-packs.js";
+import { SOUND_PACKS, knownSoundPack } from "../audio/sound-packs.js";
 import { defaultLevels, mixStems, readLevels, readVolume, storeLevels, storeVolume } from "../audio/mixer.js";
 import { encodeWav } from "../audio/wav.js";
+import { createCatalogGlue } from "./catalog-glue.js";
 import { createChannelView } from "./channel-view.js";
 import { createDownloads } from "./downloads.js";
-import { downloadStartedMessage, looksLikeDownload, openDownloadedFile } from "./downloaded-file.js";
+import { setUpDrawers } from "./drawers.js";
 import { createEvolutionView } from "./evolution-view.js";
 import { createInputPanel, loadAbcjs } from "./input-panel.js";
 import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
 import { readLeadSheetAbc } from "../core/abc-reader.js";
 import { createMixerPanel } from "./mixer-panel.js";
+import { notify, statusToast } from "./notify.js";
 import { createPacer, drawingBudget } from "./pacing.js";
 import { createPlanGrid } from "./plan-grid.js";
 import { addRun, runShown } from "./run-list.js";
@@ -45,21 +51,6 @@ import { changedSettings, valueAt } from "./settings-form.js";
 import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
 import { setUpPageTabs } from "./tabs.js";
-import { createSongShelf } from "./song-shelf.js";
-import { browserSongStore, createSongCache } from "../core/song-cache.js";
-import {
-  FALLBACK_COLLECTIONS,
-  PAGE_MESSAGE,
-  PAGE_PREVIEW_MESSAGE,
-  displayTitle,
-  externalEntry,
-  isLoadedSong,
-  lazySourcesNeeded,
-  loadCatalog,
-  localEntry,
-  openEntry,
-} from "../core/sources.js";
-import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
 /** @typedef {import("../core/settings.js").Settings} Settings */
@@ -152,7 +143,8 @@ const inputPanel = createInputPanel(
     roleMap: state.settings.role_map,
     tempoOverride: state.settings.tempo_bpm,
   }),
-  onFileDropped: (name) => claimDownload(name),
+  onFileDropped: (name) => catalogGlue.claimDownload(name),
+  onStatus: statusToast,
   onLoaded(loaded) {
     // The arrangement on screen belongs to the reading before this one: its sound, scores and
     // downloads go, so Play and the A/B toggle can never play or show another song's.
@@ -175,315 +167,30 @@ const inputPanel = createInputPanel(
       `${loaded.leadSheet.title || loaded.input.name} (${loaded.leadSheet.bars.length} bars)`;
     updateRunButtons();
     if (pageTabs.current() === "how") drawHowItWorks();
-    rememberOwnSong(loaded);
-    rememberDownload(loaded);
+    catalogGlue.rememberOwnSong(loaded);
+    catalogGlue.rememberDownload(loaded);
   },
   },
 );
 
 // --- Song catalog: one shelf of records, examples first (spec 005, story 3) ------------------
 
-/** Songs downloaded and opened here before, kept in this browser only (core/song-cache.js). */
-const songCache = createSongCache(browserSongStore());
-
-/**
- * The registry's collections (`data/catalog/collections.json`), as far as they have been read.
- * Until the registry arrives, the built-in ones: the playlists then are the ones the app always had.
- */
-let catalogCollections = FALLBACK_COLLECTIONS;
-
-const shelf = createSongShelf($("[data-shelf]"), {
-  entries: [],
-  onSearch: (query) => {
-    clearTimeout(searchTimer);
-    if (query.trim().length >= 2) searchTimer = setTimeout(() => searchElsewhere(query), 450);
+// The shelf, the catalog, The Session, the song cache and the downloads (ui/catalog-glue.js).
+const catalogGlue = createCatalogGlue({
+  shelfRoot: $("[data-shelf]"),
+  elements: {
+    status: $("[data-status]"),
+    forgetNote: $("[data-forget]"),
+    forgetButton: $("[data-forget-songs]"),
+    openFileButton: $("[data-open-file]"),
+    fileInput: /** @type {HTMLInputElement} */ ($("[data-file]")),
   },
-  onArrange: async (entry) => {
-    if (await openCatalogEntry(entry)) startRun();
-  },
-  onPreview: async (entry) => {
-    if (await openCatalogEntry(entry, { openPages: false })) playIntro();
-  },
-  onDownload: (entry) => startDownload(entry),
-  onOpenDownloaded: (entry) => openDownloaded(entry),
-  // A downloaded song the browser kept opens in one click, like a song of the repository.
-  isCached: (entry) => songCache.has(entry),
-  collections: () => catalogCollections,
-  // A lazy file (MPB's is the biggest) is read when the visitor opens its playlist or searches.
-  pendingSources: FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id),
-  onNeedSongs: (sources) => loadMoreSongs(sources),
+  inputPanel: () => inputPanel,
+  isEvolving: () => state.phase === "evolving",
+  stopRun,
+  startRun,
+  playIntro,
 });
-/** @type {any[]} the catalog's songs, as far as they have been read */
-let catalogEntries = [];
-/** @type {any[]} the visitor's own files, as records, newest first */
-const ownEntries = [];
-/** @type {Map<string, {name: string, bytes: Uint8Array}>} the files behind those records */
-const ownFiles = new Map();
-
-function showSongs() {
-  shelf.setEntries([...ownEntries, ...catalogEntries]);
-}
-
-/**
- * A file the visitor opened (dropped, chosen or from a link) gets its own record at the head of
- * the shelf, selected, so it can be found and arranged again later in the visit.
- *
- * @param {any} loaded the input panel's loaded song
- */
-function rememberOwnSong(loaded) {
-  const { input } = loaded;
-  if (input.catalogEntry) return; // a shelf song, or one matched to a shelf song
-  const entry = localEntry({ name: input.name, sha256: input.sha256, leadSheet: loaded.leadSheet });
-  const known = ownEntries.findIndex((own) => own.id === entry.id);
-  if (known < 0) {
-    ownEntries.unshift(entry);
-    ownFiles.set(entry.id, { name: input.name, bytes: input.bytes });
-  }
-  shelf.setQuery("");
-  showSongs();
-  shelf.select(known < 0 ? 0 : known);
-}
-
-const catalogLoading = loadCatalog(fetch, (entries, view) => {
-  catalogEntries = entries;
-  catalogCollections = view.collections;
-  pendingSources = new Set(view.pending);
-  shelf.setPending(view.pending);
-  showSongs();
-});
-catalogLoading
-  .then(({ entries }) => {
-    if (entries.length === 0) throw new Error("empty catalog");
-  })
-  .catch(() =>
-    songStatus("The catalog could not be loaded. You can still open your own MIDI or ABC file.", true),
-  );
-
-/** @type {Set<string>} the lazy catalog files not read yet */
-let pendingSources = new Set(FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id));
-
-/**
- * Read the larger catalog files the visitor now needs, and tell the shelf when they are in.
- *
- * @param {string[]} sources
- */
-async function loadMoreSongs(sources) {
-  let failed = false;
-  try {
-    const catalog = await catalogLoading;
-    const results = await Promise.all(sources.map((source) => catalog.loadMore(source)));
-    failed = results.some((result) => sources.some((source) => result.missing.includes(source)));
-  } catch {
-    failed = true;
-  }
-  for (const source of sources) pendingSources.delete(source);
-  shelf.setPending([...pendingSources]);
-  if (failed) songStatus("More songs could not be loaded. Check your connection and reload the page.", true);
-}
-
-// Songs kept from an earlier visit join Popular, which needs their records: read their file now.
-Promise.all([songCache.load(), catalogLoading]).then(() => {
-  const needed = lazySourcesNeeded({ playlistId: null, searching: false, cachedKeys: songCache.keys() }, catalogCollections);
-  if (needed.length > 0) loadMoreSongs(needed);
-  showSongs();
-  showForgetAction();
-});
-
-const forgetNote = $("[data-forget]");
-
-/** The quiet "Forget downloaded songs" paragraph of the How it works tab: shown only when there is something to forget. */
-function showForgetAction() {
-  forgetNote.hidden = songCache.size === 0;
-}
-$("[data-forget-songs]").addEventListener("click", async () => {
-  await songCache.forget();
-  showForgetAction();
-  showSongs();
-});
-
-/**
- * Keep the file of a catalog song the visitor just opened, so the next visit needs no download.
- * Only a file whose SHA-256 is the one the record names is kept (`core/song-cache.js`).
- *
- * @param {any} loaded the input panel's loaded song
- */
-async function rememberDownload(loaded) {
-  const { input } = loaded;
-  const entry = input.catalogEntry;
-  if (!entry || entry.route?.download === undefined || songCache.has(entry)) return;
-  if ((await songCache.remember(entry, input.bytes, input.sha256)) === "stored") {
-    showForgetAction();
-    showSongs();
-  }
-}
-$("[data-open-file]").addEventListener("click", () => $("[data-file]").click());
-
-/** @type {ReturnType<typeof setTimeout> | undefined} */
-let searchTimer;
-const searchBox = shelf.searchBox;
-
-/**
- * Search The Session (from the browser, its API allows it) and add what it finds after the
- * catalog's matches, if the query is still the same.
- *
- * @param {string} query
- */
-async function searchElsewhere(query) {
-  /** @type {Array<import("../core/sources.js").SearchResult>} an unreachable site adds nothing */
-  let found = [];
-  try {
-    const response = await fetch(sessionSearchUrl(query));
-    if (response.ok) found = sessionSearchResults(await response.json());
-  } catch {}
-  if (searchBox.value === query) shelf.setExternal(found.map(externalEntry));
-}
-
-/**
- * Download a file from another site: the browser saves it, and the page cannot read it, so the
- * visitor drops it in afterwards.
- *
- * @param {string} url
- * @param {string} name
- */
-function downloadFrom(url, name) {
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = name;
-  link.rel = "noopener";
-  link.target = "_blank";
-  document.body.append(link);
-  link.click();
-  link.remove();
-}
-
-/**
- * The song whose downloaded file the visitor is about to choose through the hidden file input
- * (browsers without the native picker). The input panel asks `claimDownload` who a chosen file is.
- *
- * @type {{entry: any, name: string} | null}
- */
-let awaitedDownload = null;
-
-/**
- * The "Download MIDI" button of a record: save the song's MIDI file under `<Title>.mid`. The
- * page cannot fetch it (its site sends no CORS header), so the browser saves it and the visitor
- * gives it back with "Open downloaded file".
- *
- * @param {any} entry
- */
-async function startDownload(entry) {
-  try {
-    const song = await openEntry(entry, { fetchFn: fetch });
-    if (song.kind !== "link") return;
-    downloadFrom(song.url, song.name);
-    songStatus(downloadStartedMessage(song.name, window));
-  } catch (error) {
-    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
-  }
-}
-
-/**
- * The "Open downloaded file" button of a record: a file dialog, in the Downloads folder where the
- * browser can. The chosen file opens as the record's song, as if it were dropped on the page. The
- * page cannot read the folder itself, so the visitor still confirms the file in the dialog.
- *
- * @param {any} entry
- */
-async function openDownloaded(entry) {
-  try {
-    // Opening a link entry reads nothing from the network; it only gives the file name.
-    const song = await openEntry(entry, { fetchFn: fetch });
-    awaitedDownload = { entry, name: song.name };
-    const how = await openDownloadedFile({
-      win: window,
-      fileInput: /** @type {HTMLInputElement} */ ($("[data-file]")),
-      onFile: (file) => inputPanel.readFile(file, entry.facts?.overrides ?? {}, entry),
-    });
-    // Only the file input still waits for a file (its change event asks claimDownload).
-    if (how !== "input") awaitedDownload = null;
-  } catch (error) {
-    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
-  }
-}
-
-/**
- * Tell the input panel which record a chosen file is, when the visitor opened the dialog for a
- * downloaded song and chose a file of its name.
- *
- * @param {string} name the chosen file's name
- * @returns {any} the record, or null when the file is the visitor's own
- */
-function claimDownload(name) {
-  const waiting = awaitedDownload;
-  awaitedDownload = null;
-  return waiting && looksLikeDownload(name, waiting.name) ? waiting.entry : null;
-}
-
-/**
- * Load a catalog song into the input panel, as if its file were dropped.
- *
- * @param {any} entry
- * @param {{openPages?: boolean}} [options] `openPages: false` (Preview) never opens a page
- * @returns {Promise<boolean>} true when the song was read
- */
-async function openCatalogEntry(entry, { openPages = true } = {}) {
-  // The song is already read, and the visitor may have chosen its melody track and bars: reading
-  // it again would put the likeliest track back. A run in progress is cancelled, as a new song does.
-  if (isLoadedSong(entry, inputPanel.current()?.input ?? null)) {
-    if (state.phase === "evolving") stopRun(true);
-    return true;
-  }
-  const own = ownFiles.get(entry.id);
-  if (entry.route?.local && own) {
-    const before = inputPanel.current();
-    await inputPanel.readFile(new File([own.bytes], own.name), {}, entry);
-    return inputPanel.current() !== before && inputPanel.current() !== null;
-  }
-  if (entry.route?.download !== undefined) {
-    // A song downloaded before is read from this browser, with the record's own limits.
-    const kept = songCache.has(entry);
-    const bytes = await songCache.bytesOf(entry);
-    if (bytes) {
-      const before = inputPanel.current();
-      const named = await openEntry(entry, { fetchFn: fetch }); // reads nothing; it gives the file name
-      await inputPanel.readFile(new File([bytes], named.name), entry.facts?.overrides ?? {}, entry);
-      return inputPanel.current() !== before && inputPanel.current() !== null;
-    }
-    if (kept) showSongs(); // the kept file was damaged: the song asks for its download again
-  }
-  songStatus(`Loading ${displayTitle(entry.t)}…`);
-  try {
-    const abcjs = entry.route?.thesession !== undefined ? await loadAbcjs() : undefined;
-    const song = await openEntry(entry, { fetchFn: fetch, abcjs });
-    if (song.kind === "link") {
-      if (song.byHand) {
-        if (openPages) downloadFrom(song.url, song.name);
-        songStatus(openPages ? PAGE_MESSAGE : PAGE_PREVIEW_MESSAGE);
-      } else {
-        if (openPages) window.open(song.url, "_blank", "noopener");
-        songStatus("");
-      }
-      return false;
-    }
-    const before = inputPanel.current();
-    const bytes = song.kind === "abc" ? new TextEncoder().encode(song.text) : song.bytes;
-    await inputPanel.readFile(new File([bytes], song.name), entry.facts?.overrides ?? {}, entry);
-    return inputPanel.current() !== before && inputPanel.current() !== null;
-  } catch (error) {
-    songStatus(/** @type {Error} */ (error).message ?? String(error), true);
-    return false;
-  }
-}
-
-/**
- * @param {string} text
- * @param {boolean} [isError]
- */
-function songStatus(text, isError = false) {
-  const status = $("[data-status]");
-  status.textContent = text;
-  status.classList.toggle("error", isError);
-}
 
 /**
  * Preview on a record: the song's original, in the Result's player, so the position, the channel
@@ -583,12 +290,6 @@ const settingsPanel = createSettingsPanel($("#settings"), {
   },
 });
 settingsPanel.show(state.settings, false);
-const settingsToggle = /** @type {HTMLButtonElement} */ ($("[data-settings-toggle]"));
-settingsToggle.addEventListener("click", () => toggleSettings());
-$("[data-settings-close]").addEventListener("click", () => toggleSettings(false));
-$("#settings").addEventListener("keydown", (event) => {
-  if (event.key === "Escape") toggleSettings(false);
-});
 
 clearPlaceholder("#evolution");
 $("#evolution").insertAdjacentHTML(
@@ -715,23 +416,17 @@ function setVolume(percent, from) {
   volumeTimer = setTimeout(() => storeVolume(levelStorage, percent), 300);
 }
 
-// The mixer is a drawer that slides in from the left edge: a Mix button opens and closes it, and
-// it opens by itself when something starts playing on a wide screen, unless it was closed by hand.
-const mixDrawer = $("#mix");
-const mixToggle = $("[data-mix-toggle]");
-let mixClosedByHand = false;
-
-/**
- * @param {boolean} open
- * @param {boolean} [byHand] the visitor did it, so playing must not open the drawer again
- */
-function setMixDrawer(open, byHand = false) {
-  mixDrawer.classList.toggle("open", open);
-  mixToggle.setAttribute("aria-expanded", String(open));
-  if (byHand) mixClosedByHand = !open;
-}
-mixToggle.addEventListener("click", () => setMixDrawer(!mixDrawer.classList.contains("open"), true));
-$("[data-mix-close]").addEventListener("click", () => setMixDrawer(false, true));
+// The settings and mixer drawers: buttons, focus, Escape, and the mixer opening by itself when
+// something plays on a wide screen (ui/drawers.js).
+const drawers = setUpDrawers({
+  settings: $("#settings"),
+  settingsTitle: $("#settings-title"),
+  settingsToggle: $("[data-settings-toggle]"),
+  settingsClose: $("[data-settings-close]"),
+  mix: $("#mix"),
+  mixToggle: $("[data-mix-toggle]"),
+  mixClose: $("[data-mix-close]"),
+});
 
 /** Show the chosen sound pack's levels: the visitor's own for that pack, or its defaults. */
 function showPackLevels() {
@@ -1076,7 +771,7 @@ player.onChange(() => {
   // The toggle can only show what exists: a preview has the original and no arrangement.
   $("[data-versions]").hidden = !player.has("original");
   $('[data-version="arrangement"]').title = player.has("arrangement") ? "" : "Arrange the song to hear its arrangement";
-  if (player.isPlaying() && !mixClosedByHand && globalThis.matchMedia?.("(min-width: 1100px)").matches) setMixDrawer(true);
+  if (player.isPlaying()) drawers.autoOpenMix();
   // The channel view sorts the scene's notes each time it gets one: only give it a new scene.
   const scene = scenes[player.active()];
   if (scene !== shownScene) {
@@ -1261,28 +956,9 @@ function showChangedSettings() {
     chip.className = "changed mono";
     chip.textContent = `${settingLabel(key)} ${settingValueText(key, valueAt(state.settings, key))}`;
     chip.title = "Open the settings";
-    chip.addEventListener("click", () => toggleSettings(true));
+    chip.addEventListener("click", () => drawers.toggleSettings(true));
     box.append(chip);
   }
-}
-
-/**
- * Open (true), close (false) or flip (undefined) the Settings drawer, which slides in over the
- * right side of the page without moving it. Focus moves into the drawer on opening and back to
- * its button on closing.
- *
- * @param {boolean} [open]
- */
-function toggleSettings(open) {
-  const section = $("#settings");
-  const isOpen = section.classList.contains("open");
-  const show = open ?? !isOpen;
-  if (show === isOpen) return;
-  section.classList.toggle("open", show);
-  settingsToggle.setAttribute("aria-expanded", String(show));
-  settingsToggle.textContent = show ? "Hide settings" : "Settings";
-  if (show) $("#settings-title").focus({ preventScroll: true });
-  else if (section.contains(document.activeElement)) settingsToggle.focus();
 }
 
 /**
@@ -1303,6 +979,8 @@ function setResultStatus(text, isError = false) {
   const status = $("[data-result-status]");
   status.textContent = text;
   status.classList.toggle("error", isError);
+  // A failure must not wait below the fold for someone to scroll to it.
+  if (isError) notify(text, { kind: "error" });
 }
 
 /** @param {string} selector */
@@ -1331,8 +1009,7 @@ export { state, inputPanel, player };
 /** The sound pack chosen on an earlier visit, or the NES chip. @returns {string} */
 function storedSoundPack() {
   try {
-    const stored = localStorage.getItem(SOUND_PACK_KEY);
-    if (stored && SOUND_PACKS.some((pack) => pack.id === stored)) return stored;
+    return knownSoundPack(localStorage.getItem(SOUND_PACK_KEY));
   } catch {
     // Storage can be blocked (private windows, previews): fall back to the default.
   }
