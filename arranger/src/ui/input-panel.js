@@ -194,6 +194,31 @@ export async function sha256Hex(bytes) {
   return Array.from(digest, (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
+/**
+ * What a catalog record's analysis says about its MIDI file: the melody track, the bars and
+ * where the parts start, as the catalog command measured them. A song opened from the catalog
+ * then reads the same way every time, instead of guessing the melody again. Anything that does
+ * not fit the file (a drum or missing track, bars past its end) means the file is not the one
+ * analysed, and the page guesses as for any file.
+ *
+ * @param {{melody_track?: number, bars?: [number, number], sections?: Array<[number, string]>} | undefined} facts
+ * @param {Array<{index: number, isDrum: boolean}>} tracks the file's tracks
+ * @param {number} barCount the file's bars
+ * @returns {{melodyTrack: number, bars: [number, number] | null, sections: string | null} | null}
+ * @example
+ * catalogChoice({ melody_track: 1, bars: [2, 66], sections: [[0, "A"]] }, tracks, 80);
+ * // { melodyTrack: 1, bars: [2, 66], sections: "0 A" }
+ */
+export function catalogChoice(facts, tracks, barCount) {
+  if (facts?.melody_track === undefined || facts.melody_track === null) return null;
+  const track = tracks.find((candidate) => candidate.index === facts.melody_track);
+  if (!track || track.isDrum) return null;
+  const bars = facts.bars ?? null;
+  if (bars && (bars[0] < 0 || bars[1] > barCount || bars[0] >= bars[1])) return null;
+  const sections = facts.sections?.length ? facts.sections.map(([bar, label]) => `${bar} ${label}`).join("\n") : null;
+  return { melodyTrack: track.index, bars, sections };
+}
+
 /** @type {Promise<any> | null} */
 let abcjsLoading = null;
 
@@ -514,8 +539,21 @@ export function createInputPanel(targets, options) {
         ? `${barCount} bars; ${MAX_BARS}${skipped} are selected (the most the arranger takes).`
         : `${barCount} bars; ${music} selected${skipped}.`;
     /** @type {HTMLTextAreaElement} */ ($("[data-sections]")).value = "0 Verse";
-    // Collapsed when the heuristic is sure of the melody track, open when it may be wrong.
-    const pick = melodyConfidence(tracks);
+    // A catalog song reads as the catalog analysed it: its melody track, bars and parts.
+    const entry = /** @type {{facts?: any} | null | undefined} */ (source?.input.catalogEntry);
+    const choice = catalogChoice(entry?.facts, tracks, barCount);
+    if (choice) {
+      body.querySelectorAll("tr").forEach((row) => row.classList.remove("suggested"));
+      const radio = /** @type {HTMLInputElement | null} */ (body.querySelector(`input[value="${choice.melodyTrack}"]`));
+      if (radio) {
+        radio.checked = true;
+        radio.closest("tr")?.classList.add("suggested");
+      }
+      if (choice.bars) [first.value, end.value] = choice.bars.map(String);
+      if (choice.sections) /** @type {HTMLTextAreaElement} */ ($("[data-sections]")).value = choice.sections;
+    }
+    // Collapsed when the heuristic (or the catalog) is sure of the melody track, open when it may be wrong.
+    const pick = choice ? { sure: true, reason: "" } : melodyConfidence(tracks);
     const details = /** @type {HTMLDetailsElement} */ ($("[data-midi]"));
     details.open = !pick.sure;
     details.hidden = false;

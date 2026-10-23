@@ -14,8 +14,10 @@
  *   repository, because their composers died long ago or their license allows it.
  *
  * After the examples, every song is listed from A to Z, comparing titles without accents or
- * letter case. The examples file loads first, so the page shows something at once; the larger
- * files follow in the background.
+ * letter case. The examples file loads first, so the page shows something at once; the other
+ * small files follow in the background. `mpb.json` is 2 MB, far larger than the rest, so it is
+ * lazy: it is read only when the visitor needs it (`lazySourcesNeeded`), and the page lists it
+ * as "still loading" until then.
  *
  * A search ranks matches as a person scans a list (as `catalog.js` does): titles that start
  * with the words, then titles that contain them, then composers and performers. Results of the
@@ -36,6 +38,12 @@ export const CATALOG_FILES = Object.freeze(
     Object.freeze({ source, path: `data/catalog/${source}.json` }),
   ),
 );
+
+/**
+ * The sources whose file is read only when needed: the MPB catalog is 2 MB, the other four files
+ * together are under 0.3 MB.
+ */
+export const LAZY_SOURCES = Object.freeze(["mpb"]);
 
 /** What the page says when a song's file is downloaded from its source and dropped in by hand. */
 export const PAGE_MESSAGE =
@@ -462,27 +470,93 @@ async function readCatalogFile(fetchFn, path) {
 }
 
 /**
- * Load the catalog: the examples first, then the other files together.
+ * @typedef {object} LoadedCatalog
+ * @property {CatalogEntry[]} entries the songs read so far, merged
+ * @property {string[]} missing sources whose file could not be read, in the catalog's order
+ * @property {(source: string) => Promise<{entries: CatalogEntry[], missing: string[]}>} loadMore
+ *   read a lazy file (`LAZY_SOURCES`) now; resolves with the catalog including it
+ */
+
+/**
+ * Load the catalog: the examples first, then the other small files together. The lazy files
+ * (`LAZY_SOURCES`) wait for `loadMore`.
  *
- * `onUpdate` receives the merged catalog twice: with the examples alone, as soon as they
- * arrive, and with every file. A file that is missing or unreachable is skipped and named in
- * `missing`, so the rest of the catalog still works.
+ * `onUpdate` receives the merged catalog each time it grows: with the examples alone, as soon as
+ * they arrive, with the small files, and again when `loadMore` brings a lazy file. A file that
+ * is missing or unreachable is skipped and named in `missing`, so the rest of the catalog still
+ * works; asking `loadMore` for it again tries once more.
+ *
+ * `entries` and `missing` describe the catalog when `loadCatalog` resolves; `loadMore` resolves
+ * with the later state.
  *
  * @param {FetchFunction} fetchFn the page's `fetch`
  * @param {(entries: CatalogEntry[]) => void} [onUpdate]
- * @returns {Promise<{entries: CatalogEntry[], missing: string[]}>} `missing` lists sources
+ * @returns {Promise<LoadedCatalog>}
  * @example
- * const { entries, missing } = await loadCatalog(fetch, (list) => shelf.setEntries(list));
+ * const catalog = await loadCatalog(fetch, (list) => shelf.setEntries(list));
+ * await catalog.loadMore("mpb"); // the shelf hears about the 4,000 MPB songs
  */
 export async function loadCatalog(fetchFn, onUpdate = () => {}) {
-  const [first, ...rest] = CATALOG_FILES;
-  const loaded = [await readCatalogFile(fetchFn, first.path)];
-  onUpdate(mergeCatalog(loaded.filter((file) => file !== null)));
-  loaded.push(...(await Promise.all(rest.map((file) => readCatalogFile(fetchFn, file.path)))));
-  const entries = mergeCatalog(loaded.filter((file) => file !== null));
-  onUpdate(entries);
-  const missing = CATALOG_FILES.filter((_, i) => loaded[i] === null).map((file) => file.source);
-  return { entries, missing };
+  const [first, ...others] = CATALOG_FILES;
+  /** @type {Map<string, CatalogFile | null>} the files read, or null for one that failed */
+  const files = new Map();
+  /** @type {Map<string, Promise<void>>} the lazy files being read now */
+  const reading = new Map();
+
+  /** @returns {{entries: CatalogEntry[], missing: string[]}} */
+  const snapshot = () => ({
+    entries: mergeCatalog([...files.values()].filter((file) => file !== null)),
+    missing: CATALOG_FILES.filter((file) => files.get(file.source) === null).map((file) => file.source),
+  });
+
+  files.set(first.source, await readCatalogFile(fetchFn, first.path));
+  onUpdate(snapshot().entries);
+  const small = others.filter((file) => !LAZY_SOURCES.includes(file.source));
+  const loaded = await Promise.all(small.map((file) => readCatalogFile(fetchFn, file.path)));
+  small.forEach((file, i) => files.set(file.source, loaded[i]));
+  const now = snapshot();
+  onUpdate(now.entries);
+
+  /** @param {string} source */
+  async function loadMore(source) {
+    const file = CATALOG_FILES.find((candidate) => candidate.source === source);
+    if (file && LAZY_SOURCES.includes(source) && !files.get(source)) {
+      let pending = reading.get(source);
+      if (!pending) {
+        pending = readCatalogFile(fetchFn, file.path).then((read) => {
+          files.set(source, read);
+          reading.delete(source);
+          if (read) onUpdate(snapshot().entries);
+        });
+        reading.set(source, pending);
+      }
+      await pending;
+    }
+    return snapshot();
+  }
+  return { ...now, loadMore };
+}
+
+/**
+ * Which lazy files the visitor's view needs now. The page asks for them (`loadMore`) as soon as
+ * this names one, so a file is read when the visitor first gets to something it holds.
+ *
+ * - The MPB playlist holds only MPB songs.
+ * - A search looks through every song, so it needs every lazy file.
+ * - A song downloaded on an earlier visit (its key, `source:id`, is in the song cache) is
+ *   offered in Popular, which needs the record it belongs to.
+ *
+ * @param {{playlistId: string | null, searching: boolean, cachedKeys: Iterable<string>}} view
+ * @returns {string[]} lazy sources, each once; empty when the small files are enough
+ * @example
+ * lazySourcesNeeded({ playlistId: "mpb", searching: false, cachedKeys: [] }); // ["mpb"]
+ * lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: [] }); // []
+ */
+export function lazySourcesNeeded({ playlistId, searching, cachedKeys }) {
+  const keys = [...cachedKeys];
+  return LAZY_SOURCES.filter(
+    (source) => searching || playlistId === source || keys.some((key) => key.startsWith(`${source}:`)),
+  );
 }
 
 /**

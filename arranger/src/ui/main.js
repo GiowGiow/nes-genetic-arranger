@@ -46,7 +46,19 @@ import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
 import { setUpPageTabs } from "./tabs.js";
 import { createSongShelf } from "./song-shelf.js";
-import { PAGE_MESSAGE, PAGE_PREVIEW_MESSAGE, displayTitle, externalEntry, isLoadedSong, loadCatalog, localEntry, openEntry } from "../core/sources.js";
+import { browserSongStore, createSongCache } from "../core/song-cache.js";
+import {
+  LAZY_SOURCES,
+  PAGE_MESSAGE,
+  PAGE_PREVIEW_MESSAGE,
+  displayTitle,
+  externalEntry,
+  isLoadedSong,
+  lazySourcesNeeded,
+  loadCatalog,
+  localEntry,
+  openEntry,
+} from "../core/sources.js";
 import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 
 /** @typedef {import("./input-panel.js").LoadedInput} LoadedInput */
@@ -164,11 +176,15 @@ const inputPanel = createInputPanel(
     updateRunButtons();
     if (pageTabs.current() === "how") drawHowItWorks();
     rememberOwnSong(loaded);
+    rememberDownload(loaded);
   },
   },
 );
 
 // --- Song catalog: one shelf of records, examples first (spec 005, story 3) ------------------
+
+/** Songs downloaded and opened here before, kept in this browser only (core/song-cache.js). */
+const songCache = createSongCache(browserSongStore());
 
 const shelf = createSongShelf($("[data-shelf]"), {
   entries: [],
@@ -184,6 +200,11 @@ const shelf = createSongShelf($("[data-shelf]"), {
   },
   onDownload: (entry) => startDownload(entry),
   onOpenDownloaded: (entry) => openDownloaded(entry),
+  // A downloaded song the browser kept opens in one click, like a song of the repository.
+  isCached: (entry) => songCache.has(entry),
+  // The MPB file is the biggest: it is read when the visitor opens MPB or searches.
+  pendingSources: [...LAZY_SOURCES],
+  onNeedSongs: (sources) => loadMoreSongs(sources),
 });
 /** @type {any[]} the catalog's songs, as far as they have been read */
 let catalogEntries = [];
@@ -216,16 +237,75 @@ function rememberOwnSong(loaded) {
   shelf.select(known < 0 ? 0 : known);
 }
 
-loadCatalog(fetch, (entries) => {
+const catalogLoading = loadCatalog(fetch, (entries) => {
   catalogEntries = entries;
   showSongs();
-})
+});
+catalogLoading
   .then(({ entries }) => {
     if (entries.length === 0) throw new Error("empty catalog");
   })
   .catch(() =>
     songStatus("The catalog could not be loaded. You can still open your own MIDI or ABC file.", true),
   );
+
+/** @type {Set<string>} the catalog files not read yet */
+const pendingSources = new Set(LAZY_SOURCES);
+
+/**
+ * Read the larger catalog files the visitor now needs, and tell the shelf when they are in.
+ *
+ * @param {string[]} sources
+ */
+async function loadMoreSongs(sources) {
+  let failed = false;
+  try {
+    const catalog = await catalogLoading;
+    const results = await Promise.all(sources.map((source) => catalog.loadMore(source)));
+    failed = results.some((result) => sources.some((source) => result.missing.includes(source)));
+  } catch {
+    failed = true;
+  }
+  for (const source of sources) pendingSources.delete(source);
+  shelf.setPending([...pendingSources]);
+  if (failed) songStatus("More songs could not be loaded. Check your connection and reload the page.", true);
+}
+
+// Songs kept from an earlier visit join Popular, which needs their records: read their file now.
+songCache.load().then(() => {
+  const needed = lazySourcesNeeded({ playlistId: null, searching: false, cachedKeys: songCache.keys() });
+  if (needed.length > 0) loadMoreSongs(needed);
+  showSongs();
+  showForgetAction();
+});
+
+const forgetNote = $("[data-forget]");
+
+/** The quiet "Forget downloaded songs" paragraph of the How it works tab: shown only when there is something to forget. */
+function showForgetAction() {
+  forgetNote.hidden = songCache.size === 0;
+}
+$("[data-forget-songs]").addEventListener("click", async () => {
+  await songCache.forget();
+  showForgetAction();
+  showSongs();
+});
+
+/**
+ * Keep the file of a catalog song the visitor just opened, so the next visit needs no download.
+ * Only a file whose SHA-256 is the one the record names is kept (`core/song-cache.js`).
+ *
+ * @param {any} loaded the input panel's loaded song
+ */
+async function rememberDownload(loaded) {
+  const { input } = loaded;
+  const entry = input.catalogEntry;
+  if (!entry || entry.route?.download === undefined || songCache.has(entry)) return;
+  if ((await songCache.remember(entry, input.bytes, input.sha256)) === "stored") {
+    showForgetAction();
+    showSongs();
+  }
+}
 $("[data-open-file]").addEventListener("click", () => $("[data-file]").click());
 
 /** @type {ReturnType<typeof setTimeout> | undefined} */
@@ -348,6 +428,18 @@ async function openCatalogEntry(entry, { openPages = true } = {}) {
     const before = inputPanel.current();
     await inputPanel.readFile(new File([own.bytes], own.name), {}, entry);
     return inputPanel.current() !== before && inputPanel.current() !== null;
+  }
+  if (entry.route?.download !== undefined) {
+    // A song downloaded before is read from this browser, with the record's own limits.
+    const kept = songCache.has(entry);
+    const bytes = await songCache.bytesOf(entry);
+    if (bytes) {
+      const before = inputPanel.current();
+      const named = await openEntry(entry, { fetchFn: fetch }); // reads nothing; it gives the file name
+      await inputPanel.readFile(new File([bytes], named.name), entry.facts?.overrides ?? {}, entry);
+      return inputPanel.current() !== before && inputPanel.current() !== null;
+    }
+    if (kept) showSongs(); // the kept file was damaged: the song asks for its download again
   }
   songStatus(`Loading ${displayTitle(entry.t)}…`);
   try {

@@ -970,6 +970,162 @@ test("the visitor's own songs head Popular, have a Your songs playlist, and a ne
   assert.deepEqual(rowTitles(root), ["My Tune"], "the same songs change nothing");
 });
 
+// --- Song list rows ----------------------------------------------------------------------------
+
+test("a row of the song list shows the title, who made it and, for a download, the arrow; no colored dot", () => {
+  const { root } = mount({ entries: library() });
+  click(tile(root, "MPB"));
+  click(tile(root, "All MPB"));
+  assert.equal(byClass(root, "shelf-dot").length, 0, "the dot meant nothing to the visitor");
+  const row = byClass(root, "shelf-song")[0];
+  assert.deepEqual(
+    row.children.map((child) => child.classList.values().join(" ")),
+    ["shelf-song-title", "shelf-song-by", "shelf-song-get"],
+    "title first, then who made it, then the arrow",
+  );
+  for (const element of all(root)) {
+    assert.ok(!("--label" in element.styleValues) || element.classList.contains("shelf-disc") || element.classList.contains("shelf-tile-cover"),
+      "the label color stays on the records and the covers only");
+  }
+});
+
+// --- Downloaded songs the browser remembers ----------------------------------------------------
+
+test("a song the browser remembers shows Arrange and Preview, not Download MIDI, and has no arrow in the list", () => {
+  const remembered = new Set(["mpb:song-206"]);
+  const { root, panel } = mountMpb({ isCached: (/** @type {any} */ entry) => remembered.has(`${entry.source}:${entry.id}`) });
+  assert.ok(button(panel, "Arrange"));
+  assert.ok(button(panel, "Preview"));
+  assert.equal(all(panel).filter((element) => element.textContent === "Download MIDI").length, 0);
+  const arrows = byClass(root, "shelf-song-get");
+  assert.equal(arrows.length, 6, "the other six MPB songs still need a download");
+  assert.match(optionsOf(root)[0].textContent, /^Bo Song 6/);
+  assert.doesNotMatch(optionsOf(root)[0].textContent, /needs a download/);
+  assert.match(optionsOf(root)[1].textContent, /^Alba Song 1.*needs a download/);
+});
+
+test("a remembered song's Arrange and Preview go to the page like any other song's", () => {
+  const { panel, arranged, previewed, downloaded } = mountMpb({ isCached: () => true });
+  click(button(panel, "Arrange"));
+  click(button(panel, "Preview"));
+  assert.deepEqual(arranged.map((entry) => entry.id), ["song-206"]);
+  assert.deepEqual(previewed.map((entry) => entry.id), ["song-206"]);
+  assert.deepEqual(downloaded, []);
+});
+
+test("Enter on a remembered song arranges it at once", () => {
+  const { list, arranged, downloaded } = mountMpb({ isCached: () => true });
+  press(list, "Enter");
+  assert.equal(arranged.length, 1);
+  assert.equal(downloaded.length, 0);
+});
+
+test("a remembered download joins Popular, and setEntries picks up a song remembered since", () => {
+  const remembered = new Set();
+  const { root, shelf } = mount({ entries: library(), isCached: (/** @type {any} */ entry) => remembered.has(entry.id) });
+  assert.equal(viewText(root), "Popular: 5 songs");
+  remembered.add("song-206");
+  shelf.setEntries(library());
+  assert.equal(viewText(root), "Popular: 6 songs");
+  assert.ok(rowTitles(root).includes("Bo Song 6"));
+});
+
+test("a song remembered while its panel is open turns Download MIDI into Arrange", () => {
+  const remembered = new Set();
+  const { root, shelf } = mount({
+    entries: library(),
+    isCached: (/** @type {any} */ entry) => remembered.has(entry.id),
+    onDownload: () => {},
+    onOpenDownloaded: () => {},
+  });
+  click(tile(root, "MPB"));
+  click(tile(root, "All MPB"));
+  const info = () => byClass(root, "shelf-info")[0];
+  assert.ok(button(info(), "Download MIDI"));
+  remembered.add("song-206");
+  shelf.setEntries(library());
+  assert.equal(shelf.selected()?.id, "song-206", "the same song stays selected");
+  assert.ok(button(info(), "Arrange"));
+});
+
+// --- A catalog file that loads later -----------------------------------------------------------
+
+/** The library without its MPB songs, as the page has it before the MPB file arrives. */
+const withoutMpb = () => library().filter((entry) => entry.source !== "mpb");
+
+test("while the MPB file loads, MPB is a tile with no count that stands where it will be", () => {
+  const { root } = mount({ entries: withoutMpb(), pendingSources: ["mpb"] });
+  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  assert.equal(byClass(tile(root, "MPB"), "shelf-tile-count").length, 0, "no count until the songs are here");
+  assert.equal(byClass(tile(root, "MPB"), "shelf-sprite").length, 1, "it still has a cover");
+});
+
+test("nothing is asked for at the start: Popular does not need the MPB songs", () => {
+  /** @type {string[][]} */
+  const asked = [];
+  mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  assert.deepEqual(asked, []);
+});
+
+test("opening the MPB playlist asks the page for the MPB songs, once, and says they are loading", () => {
+  /** @type {string[][]} */
+  const asked = [];
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  click(tile(root, "MPB"));
+  assert.deepEqual(asked, [["mpb"]]);
+  assert.equal(viewText(root), "MPB: Loading more songs…");
+  assert.equal(shelf.page().total, 0);
+  click(tile(root, "Examples"));
+  click(tile(root, "MPB"));
+  assert.equal(asked.length, 1, "asked once");
+});
+
+test("the songs arrive: the MPB playlist fills in with its count, and the note goes", () => {
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: () => {} });
+  click(tile(root, "MPB"));
+  shelf.setEntries(library());
+  shelf.setPending([]);
+  assert.equal(byClass(tile(root, "All MPB"), "shelf-tile-count")[0].textContent, "7 songs, 1 album", "the albums open, as for any MPB playlist");
+  assert.match(viewText(root), /^MPB: 7 songs$/);
+  assert.doesNotMatch(viewText(root), /Loading/);
+});
+
+test("typing a search asks for the MPB songs; the results grow when they arrive", () => {
+  /** @type {string[][]} */
+  const asked = [];
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  shelf.setQuery("a");
+  assert.deepEqual(asked, [], "one letter is not a search");
+  shelf.searchBox.value = "alba";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  assert.deepEqual(asked, [["mpb"]]);
+  assert.equal(viewText(root), "Search results: 0 songs. Loading more songs…");
+  shelf.setEntries(library());
+  shelf.setPending([]);
+  assert.equal(viewText(root), "Search results: 5 songs");
+  assert.deepEqual(rowTitles(root).slice(0, 2), ["Alba Song 1", "Alba Song 2"]);
+});
+
+test("a remembered MPB playlist is asked for as soon as the catalog shows its tile", () => {
+  /** @type {string[][]} */
+  const asked = [];
+  const storage = fakeStorage({ [PLAYLIST_KEY]: "mpb" });
+  const { shelf } = mount({ entries: [], pendingSources: ["mpb"], storage, onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  assert.deepEqual(asked, [], "the catalog has not arrived, and there is no MPB tile yet");
+  shelf.setEntries(withoutMpb());
+  assert.deepEqual(asked, [["mpb"]]);
+});
+
+test("a source that failed to load is not asked for again by the shelf, and its tile goes", () => {
+  /** @type {string[][]} */
+  const asked = [];
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
+  click(tile(root, "MPB"));
+  shelf.setPending([]);
+  assert.ok(!tileNames(root).includes("MPB"));
+  assert.equal(asked.length, 1);
+});
+
 // --- Touch and wheel ---------------------------------------------------------------------------
 
 const point = (/** @type {number} */ x, /** @type {number} */ y, /** @type {number} */ time) => ({ x, y, time });

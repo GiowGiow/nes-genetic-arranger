@@ -38,13 +38,20 @@
  * song whose file the browser cannot read from the catalog site (no CORS header), a primary
  * "Download MIDI" button with a hint, and after it "Open downloaded file". The page does the
  * downloading and the opening (`onDownload`, `onOpenDownloaded`); the shelf only remembers which
- * songs were downloaded in this visit. The panel never shows where a song comes from: credits
- * live in the README (FR-014a).
+ * songs were downloaded in this visit. A song the browser already holds (`isCached`: the visitor
+ * opened its file on an earlier visit and the page kept it) is a one-click song: Arrange and
+ * Preview, no download. The panel never shows where a song comes from: credits live in the
+ * README (FR-014a).
+ *
+ * The biggest catalog file (MPB) is read only when it is needed. Until then the page passes it as
+ * a pending source: MPB shows as a tile with no count, and the shelf asks the page for the file
+ * (`onNeedSongs`) when the visitor opens that playlist or types a search, which looks through
+ * every song. The note "Loading more songs…" says so until the songs arrive.
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "../core/catalog.js";
 import { buildPlaylists, canArrangeInOneClick, orderCatalog, searchByPopularity } from "../core/playlists.js";
-import { displayTitle, mergeSearchResults, pageCount, pageOf } from "../core/sources.js";
+import { displayTitle, lazySourcesNeeded, mergeSearchResults, pageCount, pageOf } from "../core/sources.js";
 import { SHELF_ROWS, shelfColumns } from "./shelf-layout.js";
 import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 
@@ -77,6 +84,12 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  *   route has `download`; without it such a song keeps Arrange and Preview
  * @property {(entry: CatalogEntry) => void} [onOpenDownloaded] asks for the file the visitor
  *   downloaded and opens it as that song; offered after Download
+ * @property {(entry: CatalogEntry) => boolean} [isCached] whether the browser already holds the
+ *   file of a song that is otherwise a download; such a song opens in one click. Default: none.
+ * @property {string[]} [pendingSources] the sources whose catalog file has not been read; see
+ *   `setPending`
+ * @property {(sources: string[]) => void} [onNeedSongs] called, once per source, when what the
+ *   visitor is looking at needs the songs of pending sources
  * @property {boolean} [webgl] draw the 3D scene; default: the browser has WebGL 2 and the
  *   address has no `?no-webgl`
  * @property {{getItem: (key: string) => string | null, setItem: (key: string, value: string) => void} | null} [storage]
@@ -101,7 +114,9 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 /**
  * @typedef {object} SongShelf
  * @property {(entries: CatalogEntry[]) => void} setEntries replace the catalog, keeping the
- *   selected song when it is still there
+ *   selected song when it is still there; also the way to tell the shelf that `isCached` changed
+ * @property {(sources: string[]) => void} setPending the sources whose file has not been read yet
+ *   (empty: all are here, or gave up)
  * @property {(query: string) => void} setQuery filter by the search box's words
  * @property {(results: Array<SearchResult | CatalogEntry>) => void} setExternal external results
  *   for the current query, shown after the local matches
@@ -118,6 +133,9 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 const MOVE_KEYS = new Set(["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Home", "End", "PageDown", "PageUp"]);
 
 const UNKNOWN = "—";
+
+/** The note shown while a catalog file is still being read. */
+const LOADING_MORE = "Loading more songs…";
 
 /** The `localStorage` key that remembers the chosen playlist. */
 export const PLAYLIST_KEY = "nes-arranger-playlist";
@@ -316,8 +334,8 @@ const keyOf = (entry) => `${entry.source}:${entry.id}`;
 /** @param {CatalogEntry} entry */
 const canArrange = (entry) => Boolean(entry.route) && !entry.error;
 
-/** @param {CatalogEntry} entry whether the song's file is downloaded by the visitor, then dropped in */
-const needsDownload = (entry) => entry.route?.download !== undefined;
+/** @param {CatalogEntry} entry whether the song's file comes from a download route */
+const hasDownloadRoute = (entry) => entry.route?.download !== undefined;
 
 /** @param {number} count @returns {string} "1 song" or "12 songs" */
 const songCount = (count) => `${count.toLocaleString("en")} ${count === 1 ? "song" : "songs"}`;
@@ -339,13 +357,20 @@ export function createSongShelf(root, options) {
   const webgl = options.webgl ?? webglAvailable(/** @type {any} */ (globalThis));
 
   const storage = "storage" in options ? options.storage : browserStorage();
+  const isCached = options.isCached ?? (() => false);
+  /** Whether the visitor must download and open the song's file: a download route the browser has not kept. */
+  const needsDownload = (/** @type {CatalogEntry} */ entry) => hasDownloadRoute(entry) && !isCached(entry);
+  /** @type {Set<string>} the catalog files not read yet */
+  let pending = new Set(options.pendingSources ?? []);
+  /** @type {Set<string>} the sources the page was already asked for */
+  const requested = new Set();
 
   /** @type {CatalogEntry[]} */
   let entries = options.entries ?? [];
   /** @type {CatalogEntry[]} every song, by popularity: what a search looks through */
   let ordered = orderCatalog(entries);
   /** @type {Playlist[]} */
-  let playlists = buildPlaylists(entries);
+  let playlists = makePlaylists();
   /** The chosen playlist; it may not exist yet when the catalog is still arriving. */
   let chosenId = rememberedPlaylist();
   /** @type {string | null} the chosen album of the chosen playlist */
@@ -449,6 +474,34 @@ export function createSongShelf(root, options) {
   root.classList.toggle("reduce-motion", reducedMotion);
   root.append(body);
 
+  /**
+   * The playlists for the catalog as it is now. The MPB tile of a pending file waits for the
+   * first songs to arrive, so an empty shelf does not show a lone tile.
+   *
+   * @returns {Playlist[]}
+   */
+  function makePlaylists() {
+    return buildPlaylists(entries, { isCached, pending: entries.length > 0 ? loadingSources() : [] });
+  }
+
+  /** @returns {string[]} the pending sources that have no song in the catalog yet */
+  function loadingSources() {
+    return [...pending].filter((source) => !entries.some((entry) => entry.source === source));
+  }
+
+  /** Ask the page for the pending files that what the visitor is looking at needs. */
+  function askForSongs() {
+    const wanted = lazySourcesNeeded({
+      // Only a playlist that exists counts: while the catalog is empty the fallback is no choice.
+      playlistId: playlists.find((playlist) => playlist.id === chosenId)?.id ?? null,
+      searching: searching(),
+      cachedKeys: [],
+    }).filter((source) => loadingSources().includes(source) && !requested.has(source));
+    if (wanted.length === 0) return;
+    for (const source of wanted) requested.add(source);
+    options.onNeedSongs?.(wanted);
+  }
+
   function measure() {
     columns = shelfColumns(stage.clientWidth || root.clientWidth || 0);
     perPage = columns * SHELF_ROWS;
@@ -496,17 +549,15 @@ export function createSongShelf(root, options) {
   }
 
   /**
-   * One row of the visible list: a dot in the record's label color, the title, and who made it.
-   * A click selects the song; a double click arranges it.
+   * One row of the visible list: the title, and who made it. A click selects the song; a double
+   * click arranges it.
    *
    * @param {CatalogEntry} entry
    * @param {number} position index in the whole list
    */
   function buildSongRow(entry, position) {
     const row = make("li", "shelf-song");
-    const dot = make("i", "shelf-dot");
-    dot.style.setProperty("--label", entrySprite(entry).label);
-    row.append(dot, textElement("span", "shelf-song-title", displayTitle(entry.t)));
+    row.append(textElement("span", "shelf-song-title", displayTitle(entry.t)));
     const by = entry.c || entry.p || "";
     if (by) row.append(textElement("span", "shelf-song-by", by));
     // MPB songs open through a download: the arrow says so before the visitor picks one.
@@ -677,7 +728,8 @@ export function createSongShelf(root, options) {
     previous.hidden = next.hidden = pageText.hidden = pages <= 1; // one page: nothing to turn or count
     view.textContent = viewName();
     empty.hidden = total > 0;
-    empty.textContent = entries.length === 0 ? "Loading the songs…" : "No song in the catalog matches.";
+    empty.textContent =
+      entries.length === 0 ? "Loading the songs…" : loadingSources().length > 0 ? LOADING_MORE : "No song in the catalog matches.";
     renderInfo(list[index] ?? null);
   }
 
@@ -712,7 +764,9 @@ export function createSongShelf(root, options) {
   function viewName() {
     const playlist = currentPlaylist();
     const name = searching() ? "Search results" : [playlist?.name, currentAlbum()?.name].filter(Boolean).join(", ");
-    return `${name}: ${songCount(list.length)}`;
+    if (!searching() && playlist?.pending) return `${name}: ${LOADING_MORE}`;
+    // A search looks through every song: say when some are still on their way.
+    return `${name}: ${songCount(list.length)}${searching() && loadingSources().length > 0 ? `. ${LOADING_MORE}` : ""}`;
   }
 
   /** @param {boolean} keepSelection */
@@ -727,6 +781,7 @@ export function createSongShelf(root, options) {
     index = selectedKey ? Math.max(0, list.findIndex((entry) => keyOf(entry) === selectedKey)) : 0;
     renderChooser();
     render();
+    askForSongs();
   }
 
   /**
@@ -948,7 +1003,7 @@ export function createSongShelf(root, options) {
       const ownBefore = entries.filter((entry) => entry.source === "local").length;
       entries = next;
       ordered = orderCatalog(entries);
-      playlists = buildPlaylists(entries);
+      playlists = makePlaylists();
       chooserKey = "";
       if (entries.filter((entry) => entry.source === "local").length > ownBefore) {
         // A new song of the visitor's own sits at the head of Popular: show it there.
@@ -959,6 +1014,12 @@ export function createSongShelf(root, options) {
       } else {
         refilter(true);
       }
+    },
+    setPending(sources) {
+      pending = new Set(sources);
+      playlists = makePlaylists();
+      chooserKey = "";
+      refilter(true);
     },
     setQuery(next) {
       query = next;

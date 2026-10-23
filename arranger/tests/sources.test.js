@@ -21,6 +21,8 @@ import {
   externalEntry,
   fnv1a,
   isLoadedSong,
+  LAZY_SOURCES,
+  lazySourcesNeeded,
   loadCatalog,
   loadErrorMessage,
   mergeCatalog,
@@ -226,23 +228,87 @@ test("a tune of a collection file is cut out with the file's header", () => {
 
 // --- Loading the catalog ----------------------------------------------------------------------
 
-test("the examples load first and show at once; the rest of the catalog follows", async () => {
+test("the examples load first and show at once; the small files follow, and the big MPB file stays unread", async () => {
   const { fetchFn, asked } = fakeFetch(catalogRoutes());
   /** @type {number[]} */
   const sizes = [];
   const { entries, missing } = await loadCatalog(fetchFn, (list) => sizes.push(list.length));
   assert.equal(asked[0], "data/catalog/examples.json");
-  assert.deepEqual(sizes, [3, 11], "first the 3 examples, then all 11 songs");
+  assert.deepEqual(sizes, [3, 7], "first the 3 examples, then the 7 songs of the small files");
   assert.equal(entries[0].id, "korobeiniki");
   assert.deepEqual(missing, []);
+  assert.ok(!asked.includes("data/catalog/mpb.json"), "MPB is the largest file: it is read only when needed");
+  assert.deepEqual(LAZY_SOURCES, ["mpb"]);
+});
+
+test("loadMore reads a lazy file once, merges it into the catalog and tells the page", async () => {
+  const { fetchFn, asked } = fakeFetch(catalogRoutes());
+  /** @type {number[]} */
+  const sizes = [];
+  const catalog = await loadCatalog(fetchFn, (list) => sizes.push(list.length));
+  const [first, second] = await Promise.all([catalog.loadMore("mpb"), catalog.loadMore("mpb")]);
+  assert.equal(first.entries.length, 11, "the 4 MPB songs join the 7 others");
+  assert.deepEqual(second, first, "a second ask while the file loads gets the same answer");
+  assert.equal(asked.filter((url) => url === "data/catalog/mpb.json").length, 1, "one request for the file");
+  await catalog.loadMore("mpb");
+  assert.equal(asked.filter((url) => url === "data/catalog/mpb.json").length, 1, "and none once it is loaded");
+  assert.deepEqual(sizes, [3, 7, 11], "the page hears about the new songs once");
+  assert.equal(first.entries.filter((entry) => entry.source === "mpb").length, 4);
 });
 
 test("a catalog file that is missing or unreachable is skipped, and the others still load", async () => {
   const routes = { ...catalogRoutes(), "data/catalog/pdmx.json": { status: 404 }, "data/catalog/mpb.json": /** @type {const} */ ("reject") };
   const { fetchFn } = fakeFetch(routes);
-  const { entries, missing } = await loadCatalog(fetchFn);
-  assert.deepEqual(missing, ["mpb", "pdmx"]);
-  assert.equal(entries.length, 6);
+  const catalog = await loadCatalog(fetchFn);
+  assert.deepEqual(catalog.missing, ["pdmx"]);
+  assert.equal(catalog.entries.length, 6);
+  const more = await catalog.loadMore("mpb");
+  assert.deepEqual(more.missing, ["mpb", "pdmx"], "listed in the catalog's order");
+  assert.equal(more.entries.length, 6, "the songs that did load stay");
+});
+
+test("a lazy file that failed is read again the next time it is asked for", async () => {
+  /** @type {Record<string, any>} */
+  const routes = { ...catalogRoutes(), "data/catalog/mpb.json": "reject" };
+  const { fetchFn, asked } = fakeFetch(routes);
+  const catalog = await loadCatalog(fetchFn);
+  await catalog.loadMore("mpb");
+  Object.assign(routes, catalogRoutes());
+  const again = await catalog.loadMore("mpb");
+  assert.equal(asked.filter((url) => url === "data/catalog/mpb.json").length, 2);
+  assert.equal(again.entries.length, 11);
+  assert.deepEqual(again.missing, []);
+});
+
+test("loadMore of a source that is not lazy or not in the catalog changes nothing", async () => {
+  const { fetchFn, asked } = fakeFetch(catalogRoutes());
+  const catalog = await loadCatalog(fetchFn);
+  const before = asked.length;
+  const more = await catalog.loadMore("examples");
+  await catalog.loadMore("nowhere");
+  assert.equal(asked.length, before);
+  assert.equal(more.entries.length, 7);
+});
+
+// --- When the lazy files are needed ------------------------------------------------------------
+
+test("the MPB file is needed when the visitor opens the MPB playlist", () => {
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "mpb", searching: false, cachedKeys: [] }), ["mpb"]);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: [] }), []);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "folk", searching: false, cachedKeys: [] }), []);
+});
+
+test("a search looks through every song, so it needs every lazy file", () => {
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: true, cachedKeys: [] }), ["mpb"]);
+});
+
+test("a song downloaded before (its key is in the cache) needs its file, so it can show in Popular", () => {
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: ["mpb:agua-de-lua"] }), ["mpb"]);
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "popular", searching: false, cachedKeys: ["local:abc"] }), []);
+});
+
+test("the needed sources are listed once", () => {
+  assert.deepEqual(lazySourcesNeeded({ playlistId: "mpb", searching: true, cachedKeys: ["mpb:a", "mpb:b"] }), ["mpb"]);
 });
 
 // --- Opening a song ---------------------------------------------------------------------------

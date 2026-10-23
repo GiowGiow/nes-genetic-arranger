@@ -18,7 +18,7 @@
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
-import { searchCatalog } from "./sources.js";
+import { searchCatalog, seedOf } from "./sources.js";
 
 /** @typedef {import("./sources.js").CatalogEntry & {pop?: number}} PlaylistEntry */
 
@@ -30,6 +30,8 @@ import { searchCatalog } from "./sources.js";
  * @property {PlaylistEntry[]} songs ordered by popularity
  * @property {PlaylistEntry | null} cover the song whose sprite is the cover
  * @property {Playlist[]} [albums] sub-lists; only "MPB" has them
+ * @property {true} [pending] a tile for a collection whose file is still loading: no songs and
+ *   no count yet
  */
 
 /** How many songs "Popular" holds. */
@@ -124,16 +126,22 @@ function isOwn(entry) {
 
 /**
  * Whether one click arranges the song: it reads from a lead sheet of the repository (`abc` or
- * `tune`) and has no error. Songs that need the visitor to download a file first do not.
+ * `tune`) and has no error, or it is a download that this browser already holds (`isCached`:
+ * the visitor downloaded and opened it once, and the page remembers the file). Songs that
+ * still need the visitor to download a file first do not.
  *
  * @param {PlaylistEntry} entry
+ * @param {(entry: PlaylistEntry) => boolean} [isCached] whether the song's file is remembered
+ *   in this browser; default: nothing is
  * @returns {boolean}
  * @example
  * canArrangeInOneClick({ id: "a", t: "A", route: { abc: "abc/a.abc" } }); // true
  * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }); // false
+ * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }, () => true); // true
  */
-export function canArrangeInOneClick(entry) {
+export function canArrangeInOneClick(entry, isCached = () => false) {
   if (entry.error || !entry.route) return false;
+  if (entry.route.download !== undefined) return isCached(entry);
   return entry.route.abc !== undefined || entry.route.tune !== undefined;
 }
 
@@ -205,21 +213,25 @@ function mpbAlbums(songs) {
 /**
  * The playlists of a catalog, in the order the chooser shows them: Popular, Your songs (only
  * when the visitor opened some), Examples, MPB, Choro & public domain, Folk tunes, and
- * Classical & standards. A playlist with no songs is left out.
+ * Classical & standards. A playlist with no songs is left out, except MPB while its file is
+ * still loading: it shows with no count, so the tile does not appear later and shift the others.
  *
  * @param {PlaylistEntry[]} entries the catalog in any order, with the visitor's own songs
  *   (source "local") in the order they should show
+ * @param {{isCached?: (entry: PlaylistEntry) => boolean, pending?: string[]}} [context]
+ *   `isCached`: which downloaded songs this browser remembers (they join Popular); `pending`:
+ *   the sources whose file has not arrived
  * @returns {Playlist[]}
  * @example
  * buildPlaylists(catalog).map((list) => list.name); // ["Popular", "Examples", "MPB", ...]
  */
-export function buildPlaylists(entries) {
+export function buildPlaylists(entries, { isCached = () => false, pending = [] } = {}) {
   const own = entries.filter(isOwn);
   const rest = sortByPopularity(entries.filter((entry) => !isOwn(entry)));
   /** @param {string} source */
   const from = (source) => rest.filter((entry) => entry.source === source);
 
-  const best = rest.filter(canArrangeInOneClick).slice(0, POPULAR_SIZE);
+  const best = rest.filter((entry) => canArrangeInOneClick(entry, isCached)).slice(0, POPULAR_SIZE);
   const lists = [
     makePlaylist("popular", "Popular", [...own, ...best], best[0] ?? own[0] ?? null),
     makePlaylist("yours", "Your songs", own),
@@ -232,12 +244,20 @@ export function buildPlaylists(entries) {
   const artistAlbums = albums.filter((album) => album.id !== "mpb-other").length;
   mpb.subtitle = `${songCount(mpbSongs.length)}, ${artistAlbums} ${artistAlbums === 1 ? "album" : "albums"}`;
   mpb.albums = albums;
-  lists.push(mpb);
+  if (mpbSongs.length === 0 && pending.includes("mpb")) {
+    // No count and no songs yet; the cover is a made-up record, as the real one is not known.
+    lists.push({
+      id: "mpb", name: "MPB", subtitle: "", songs: [], pending: true,
+      cover: { id: "mpb", source: "mpb", t: "MPB", seed: seedOf("mpb", "mpb") },
+    });
+  } else {
+    lists.push(mpb);
+  }
 
   lists.push(
     makePlaylist("choro", "Choro & public domain", from("public-domain")),
     makePlaylist("folk", "Folk tunes", from("nottingham")),
     makePlaylist("classical", "Classical & standards", from("pdmx")),
   );
-  return lists.filter((list) => list.songs.length > 0);
+  return lists.filter((list) => list.songs.length > 0 || list.pending);
 }

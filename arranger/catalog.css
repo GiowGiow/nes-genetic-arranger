@@ -11,14 +11,15 @@
 .card.has-shelf[hidden] { display: none; }
 .card.has-shelf > * { min-width: 0; }
 
-/* The way in for your own song: a short note and the button, one quiet line. */
-.song-head { order: -1; display: flex; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s2); }
+/* The way in for your own song: the button, then a short muted hint beside it, one group at the left. */
+.song-head { order: -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: var(--s2) var(--s3); margin-bottom: var(--s2); }
 .song-search {
   width: 100%; min-width: 0; min-height: var(--control); padding: 0 var(--s3); border-radius: var(--radius); font: inherit; font-size: var(--fs-md);
   background: rgba(0, 0, 0, .28); border: 1px solid var(--line); color: var(--text);
 }
 .song-search:focus { border-color: var(--p1); outline: none; }
-.drop-note { color: var(--muted); font-size: var(--fs-sm); margin: 0; }
+.drop-note { color: var(--muted); font-size: var(--fs-sm); margin: 0; min-width: 0; }
+.note-narrow { display: none; }
 .song-head .button { flex: none; white-space: nowrap; }
 
 /* The playlist chooser on top; below it the song list on the left and, on the right, the records
@@ -248,7 +249,6 @@
 }
 .shelf-song:hover { background: rgba(140, 190, 240, .08); }
 .shelf-song.is-selected { background: rgba(95, 158, 209, .18); }
-.shelf-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--label, var(--p1)); }
 .shelf-song-title, .shelf-song-by { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shelf-song-title { flex: 1 1 auto; }
 .shelf-song.is-selected .shelf-song-title { color: #fff; font-weight: 600; }
@@ -269,9 +269,11 @@
 @media (max-width: 760px) {
   .shelf-stage-column { margin-inline: calc(var(--s4) * -1); }
   .shelf-stage { height: 344px; }
-  .song-head { order: 1; margin: var(--s3) 0 0; }
-  .song-head .drop-note { display: none; }
+  .song-head { order: 1; margin: var(--s3) 0 0; flex-direction: column; align-items: stretch; gap: var(--s2); }
   .song-head .button { width: 100%; }
+  .song-head .drop-note { text-align: center; }
+  .note-wide { display: none; }
+  .note-narrow { display: inline; }
   .run-slot { order: 2; }
   .song-details { order: 3; }
   .song-shelf .shelf-body { gap: var(--s3); }

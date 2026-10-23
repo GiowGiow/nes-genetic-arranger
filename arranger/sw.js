@@ -44,6 +44,7 @@ const APP_SHELL = [
   "src/core/random.js",
   "src/core/settings.js",
   "src/core/playlists.js",
+  "src/core/song-cache.js",
   "src/core/sources.js",
   "src/core/tables.js",
   "src/core/textures.js",

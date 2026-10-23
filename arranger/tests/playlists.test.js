@@ -101,6 +101,16 @@ test("a song opens in one click when it has an ABC route and no error; downloads
   assert.equal(canArrangeInOneClick(entry("a", { route: undefined })), false);
 });
 
+test("a downloaded song that the visitor's browser remembers opens in one click too", () => {
+  const download = entry("a", { source: "mpb", route: { download: "https://example.org/a.mid" } });
+  const cached = (/** @type {{id: string}} */ candidate) => candidate.id === "a";
+  assert.equal(canArrangeInOneClick(download, cached), true);
+  assert.equal(canArrangeInOneClick(entry("b", { source: "mpb", route: { download: "x" } }), cached), false);
+  assert.equal(canArrangeInOneClick(download, () => false), false);
+  assert.equal(canArrangeInOneClick({ ...download, error: "broken" }, cached), false, "an error still wins");
+  assert.equal(canArrangeInOneClick(entry("c", { route: undefined }), () => true), false, "no route, nothing to read");
+});
+
 // --- Artists -----------------------------------------------------------------------------------
 
 test("the artist of an MPB song is its performer, or else its first composer", () => {
@@ -162,6 +172,33 @@ test("the visitor's own songs head Popular, and make a Your songs playlist only 
 test("a collection with no songs has no playlist", () => {
   assert.deepEqual(buildPlaylists([]), []);
   assert.deepEqual(buildPlaylists([entry("n", { source: "pdmx" })]).map((item) => item.id), ["popular", "classical"]);
+});
+
+test("Popular lists a remembered download among the songs that open in one click, by popularity", () => {
+  const isCached = (/** @type {{id: string}} */ candidate) => candidate.id === "mpb-x";
+  const popular = playlist(buildPlaylists(sampleCatalog(), { isCached }), "popular");
+  assert.deepEqual(ids(popular.songs), ["mpb-x", "pd-1", "ex-b", "pm-1", "nt-1", "ex-a"]);
+  assert.deepEqual(ids(playlist(buildPlaylists(sampleCatalog()), "popular").songs), ["pd-1", "ex-b", "pm-1", "nt-1", "ex-a"], "not without the cache");
+});
+
+test("while the MPB file is still loading, MPB has a tile with no count and no songs", () => {
+  const catalog = sampleCatalog().filter((song) => song.source !== "mpb");
+  const lists = buildPlaylists(catalog, { pending: ["mpb"] });
+  assert.deepEqual(lists.map((item) => item.id), ["popular", "examples", "mpb", "choro", "folk", "classical"]);
+  const mpb = playlist(lists, "mpb");
+  assert.equal(mpb.name, "MPB");
+  assert.equal(mpb.subtitle, "", "the count is unknown until the file arrives");
+  assert.deepEqual(mpb.songs, []);
+  assert.equal(mpb.pending, true);
+  assert.equal(mpb.albums, undefined, "the albums come with the songs");
+  assert.ok(mpb.cover, "it still has a cover");
+  assert.equal(mpb.cover.source, "mpb");
+});
+
+test("once the MPB songs are here, the tile is the real playlist even if the page still lists MPB as pending", () => {
+  const mpb = playlist(buildPlaylists(sampleCatalog(), { pending: ["mpb"] }), "mpb");
+  assert.deepEqual(ids(mpb.songs), ["mpb-x"]);
+  assert.equal(mpb.pending, undefined);
 });
 
 /** @param {string} artist @param {number} count @param {number} pop each song's popularity */

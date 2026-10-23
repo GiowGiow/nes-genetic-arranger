@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { writeMidiFile } from "../src/core/midi-file.js";
-import { createInputPanel, isMidi, parseSections, sha256Hex, sharedTrackName, trackRangeBars } from "../src/ui/input-panel.js";
+import { catalogChoice, createInputPanel, isMidi, parseSections, sha256Hex, sharedTrackName, trackRangeBars } from "../src/ui/input-panel.js";
 
 test("a file is MIDI when it starts with the chunk name MThd, whatever its name", () => {
   assert.equal(isMidi(new TextEncoder().encode("MThd\0\0\0\x06")), true);
@@ -396,4 +396,19 @@ test("a file the page claims as a download comes with its catalog record and the
     assert.deepEqual(loads.at(-1)?.overrides, {});
     assert.ok(!summaryClasses().contains("from-catalog"), "a visitor's own file has no panel above it: the summary says it all");
   });
+});
+
+test("a catalog record's analysis picks the melody track, the bars and the parts, when they fit the file", () => {
+  const tracks = [
+    { index: 0, isDrum: false },
+    { index: 1, isDrum: false },
+    { index: 2, isDrum: true },
+  ];
+  const facts = { melody_track: 1, bars: /** @type {[number, number]} */ ([2, 66]), sections: [[0, "A"], [32, "B"]] };
+  assert.deepEqual(catalogChoice(facts, tracks, 80), { melodyTrack: 1, bars: [2, 66], sections: "0 A\n32 B" });
+  assert.equal(catalogChoice(undefined, tracks, 80), null, "a visitor's own file has no analysis");
+  assert.equal(catalogChoice({ ...facts, melody_track: 2 }, tracks, 80), null, "a drum track never carries the melody");
+  assert.equal(catalogChoice({ ...facts, melody_track: 7 }, tracks, 80), null, "a track the file does not have");
+  assert.equal(catalogChoice(facts, tracks, 40), null, "bars past the file's end: another file than the one analysed");
+  assert.deepEqual(catalogChoice({ melody_track: 0 }, tracks, 80), { melodyTrack: 0, bars: null, sections: null });
 });

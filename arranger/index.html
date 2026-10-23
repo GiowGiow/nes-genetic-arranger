@@ -42,8 +42,11 @@
       <h2 id="song-title" class="visually-hidden">Song</h2>
       <div class="shelf-root" data-shelf></div>
       <div class="song-head">
-        <p class="drop-note">Or drop your own MIDI or ABC file anywhere on this card. It stays on this device.</p>
         <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
+        <p class="drop-note">
+          <span class="note-wide">or drop a MIDI/ABC file here — it stays on this device</span>
+          <span class="note-narrow">Your file stays on this device.</span>
+        </p>
       </div>
       <div class="run-slot" data-run-slot="song">
         <div id="run" class="run-strip">
@@ -118,6 +121,9 @@
         <p><strong>Your files stay here.</strong> A file you open or drop never leaves this device. When the
         project's song server is running, the page asks it only for a song's identifier or your search
         words.</p>
+        <p data-forget hidden><strong>Downloaded songs.</strong> A song you download and open here is
+        remembered in this browser, so it needs downloading only once. Nothing is uploaded.
+        <button type="button" class="button quiet small" data-forget-songs>Forget downloaded songs</button></p>
       </div>
     </section>
   </div>
