@@ -2,6 +2,7 @@
 // test touches the network. They read as the Worker's behavior from the app's point of view.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { createHandler, USER_AGENT } from "../src/index.js";
 import { createRateLimiter } from "../src/rules.js";
 
@@ -370,4 +371,118 @@ test("a request from a refused origin does not use up anyone's quota", async () 
   const { call } = setup({ limit: 1 });
   await call(midiRequest(SONG, { origin: "https://evil.example", ip: "1.1.1.1" }));
   assert.equal((await call(midiRequest(SONG, { ip: "1.1.1.1" }))).status, 200);
+});
+
+// ---- the other sites' files -----------------------------------------------------------
+
+const MIDIS101_FILE = "https://www.midis101.com/download/63384-some-band-some-song";
+const MUTOPIA_FILE = "https://www.mutopiaproject.org/ftp/Anonymous/Little/Little.mid";
+
+test("files of midis101.com and the Mutopia Project are served like any other, with credit", async () => {
+  for (const file of [MIDIS101_FILE, MUTOPIA_FILE]) {
+    const { call } = setup({ table: { [file]: midiResponse } });
+    const response = await call(midiRequest(file));
+    assert.equal(response.status, 200, file);
+    assert.equal(response.headers.get("x-source"), file);
+    assert.deepEqual(new Uint8Array(await response.arrayBuffer()), MIDI_BYTES);
+  }
+});
+
+test("a page of one of those sites is refused even though its host is allowed", async () => {
+  const { call, fetchImpl } = setup();
+  assert.equal((await call(midiRequest("https://www.midis101.com/free-midi/63384-x"))).status, 400);
+  assert.equal(fetchImpl.calls.length, 0);
+});
+
+// ---- search endpoints -----------------------------------------------------------------
+
+const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
+const MIDIS101_PAGE = "https://www.midis101.com/search/example%20band";
+const MUTOPIA_PAGE = "https://www.mutopiaproject.org/cgibin/make-table.cgi?searchingfor=little";
+const htmlResponse = (name) => () => new Response(fixture(name), { status: 200, headers: { "content-type": "text/html" } });
+
+function searchRequest(source, query, { origin = PAGES, ip = "9.9.9.9" } = {}) {
+  const headers = { "cf-connecting-ip": ip };
+  if (origin !== null) headers.origin = origin;
+  const q = query === undefined ? "" : `?q=${encodeURIComponent(query)}`;
+  return new Request(`https://w.example/search/${source}${q}`, { headers });
+}
+
+test("/search/midis101 answers a short JSON list read from the site's search page", async () => {
+  const { call, fetchImpl } = setup({ table: { [MIDIS101_PAGE]: htmlResponse("midis101-search.html") } });
+  const response = await call(searchRequest("midis101", "  example   band "));
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "application/json");
+  assert.equal(response.headers.get("access-control-allow-origin"), PAGES);
+  const body = await response.json();
+  assert.equal(body.source, "midis101");
+  assert.equal(body.results.length, 2);
+  assert.equal(body.results[0].midi, "https://www.midis101.com/download/1001-example-band-first-song");
+  assert.equal(fetchImpl.calls.length, 1, "one request to the site per search");
+  assert.equal(fetchImpl.calls[0].init.headers["User-Agent"], USER_AGENT);
+});
+
+test("/search/mutopia answers with title, composer, license and file of each piece", async () => {
+  const { call } = setup({ table: { [MUTOPIA_PAGE]: htmlResponse("mutopia-search.html") } });
+  const body = await (await call(searchRequest("mutopia", "little"))).json();
+  assert.equal(body.source, "mutopia");
+  assert.deepEqual(body.results.map((r) => [r.title, r.license]), [["Little Test Piece", "Public Domain"]]);
+  assert.equal(body.results[0].midi, MUTOPIA_FILE);
+});
+
+test("a search is answered from the cache the second time, for a different origin too", async () => {
+  const { call, fetchImpl, cache } = setup({ table: { [MIDIS101_PAGE]: htmlResponse("midis101-search.html") } });
+  const first = await (await call(searchRequest("midis101", "example band"))).json();
+  const second = await call(searchRequest("midis101", "example band", { origin: "http://localhost:3000" }));
+  assert.equal(fetchImpl.calls.length, 1);
+  assert.equal(cache.stored.size, 1);
+  assert.equal(second.headers.get("access-control-allow-origin"), "http://localhost:3000");
+  assert.deepEqual(await second.json(), first);
+});
+
+test("a search with no usable words gets 400 and no request to the site", async () => {
+  const { call, fetchImpl } = setup();
+  assert.equal((await call(searchRequest("midis101", undefined))).status, 400);
+  assert.equal((await call(searchRequest("midis101", "a"))).status, 400);
+  assert.equal((await call(searchRequest("mutopia", "x".repeat(200)))).status, 400);
+  assert.equal(fetchImpl.calls.length, 0);
+});
+
+test("a search from another origin gets 403 and never reaches the site", async () => {
+  const { call, fetchImpl } = setup();
+  assert.equal((await call(searchRequest("midis101", "example", { origin: "https://evil.example" }))).status, 403);
+  assert.equal(fetchImpl.calls.length, 0);
+});
+
+test("an unknown search source is 404", async () => {
+  const { call } = setup();
+  assert.equal((await call(searchRequest("limewire", "example"))).status, 404);
+});
+
+test("searches share the rate limit with the files", async () => {
+  const { call } = setup({ limit: 2, table: { [SONG]: midiResponse, [MIDIS101_PAGE]: htmlResponse("midis101-search.html") } });
+  assert.equal((await call(midiRequest())).status, 200);
+  assert.equal((await call(searchRequest("midis101", "example band"))).status, 200);
+  assert.equal((await call(searchRequest("midis101", "example band"))).status, 429);
+});
+
+test("when the site fails the search answers 502, and nothing is cached", async () => {
+  const { call, cache } = setup({ table: { [MIDIS101_PAGE]: () => new Response("", { status: 500 }) } });
+  assert.equal((await call(searchRequest("midis101", "example band"))).status, 502);
+  assert.equal(cache.stored.size, 0);
+});
+
+test("a search page larger than the page cap gets 413", async () => {
+  const big = () => new Response("x".repeat(2 * 1024 * 1024), { status: 200 });
+  const { call } = setup({ table: { [MIDIS101_PAGE]: big } });
+  assert.equal((await call(searchRequest("midis101", "example band"))).status, 413);
+});
+
+test("a result whose file is on the denylist is left out of the list", async () => {
+  const { call } = setup({
+    table: { [MIDIS101_PAGE]: htmlResponse("midis101-search.html") },
+    denylist: ["/download/1001-"],
+  });
+  const body = await (await call(searchRequest("midis101", "example band"))).json();
+  assert.deepEqual(body.results.map((r) => r.id), ["1002"]);
 });

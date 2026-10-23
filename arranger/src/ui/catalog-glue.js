@@ -6,26 +6,41 @@
 // record, and keeps the songs they download:
 //
 // - Loading: the small catalog files first, so the shelf has songs at once; the large ones (MPB's
-//   is 2 MB) when the visitor opens their playlist or searches, and the songs kept from an
-//   earlier visit (`core/song-cache.js`) join Popular.
+//   is 2 MB) in the background once the browser is idle (not on a metered or slow connection),
+//   and at once when the visitor opens their playlist or searches, with the share that has
+//   arrived shown on the shelf. The songs kept from an earlier visit (`core/song-cache.js`)
+//   join Catalog.
 // - Arrange and Preview on a record: its file is read through the input panel, as if it had been
 //   dropped, and then the run starts (Arrange) or the intro plays (Preview). A song that is
 //   already loaded is not read again, because a fresh reading would throw away the melody track
 //   the visitor chose.
-// - Search: after the visitor pauses typing, The Session is asked from the browser (its API
-//   allows it) and its tunes are added after the catalog's matches.
-// - Sites that send no CORS header cannot be read by the page. "Download MIDI" lets the browser
-//   save the file, and "Open downloaded file" asks the visitor to choose it, which the page then
-//   reads and keeps in the browser for next time.
+// - Songs on other sites (MPB, BitMidi, midis101.com, the Mutopia Project) open in one click: the
+//   MIDI fetcher Worker (`core/midi-fetcher.js`) brings the file, and the browser keeps it. If
+//   the Worker fails, the song falls back to the older flow and a toast says why: "Download
+//   MIDI" lets the browser save the file, and "Open downloaded file" asks the visitor to choose
+//   it, which the page then reads and keeps for next time.
+// - Search: after the visitor pauses typing, the online sources (`core/online-search.js`) are
+//   asked, each once, and their results are added after the catalog's matches, with the state of
+//   the search (who is still being asked, who failed) for the shelf to show.
 //
 // Every message to the visitor goes through `songStatus`: the status line in the Song card and a
 // toast, because that line sits far below the shelf on a phone.
 //
 // Everything the module touches comes in as a parameter, so the tests run it on fakes.
 
-import { browserSongStore, createSongCache } from "../core/song-cache.js";
+import {
+  COOL_DOWN_MS,
+  createFetcherHealth,
+  failureMessage,
+  fetchMidiFile,
+  isFetchable,
+} from "../core/midi-fetcher.js";
+import { DEBOUNCE_MS, MIN_QUERY_LENGTH, createOnlineSearch } from "../core/online-search.js";
+import { createOnlineSources } from "../core/online-sources.js";
+import { browserSongStore, createSongCache, cacheKey } from "../core/song-cache.js";
 import {
   FALLBACK_COLLECTIONS,
+  MIDI_FETCHER_URL,
   PAGE_MESSAGE,
   PAGE_PREVIEW_MESSAGE,
   displayTitle,
@@ -35,18 +50,21 @@ import {
   loadCatalog as loadCatalogFiles,
   localEntry,
   openEntry,
+  shouldPrefetch,
 } from "../core/sources.js";
-import { searchResults as sessionSearchResults, searchUrl as sessionSearchUrl } from "../core/thesession.js";
 import { downloadStartedMessage, looksLikeDownload, openDownloadedFile } from "./downloaded-file.js";
 import { loadAbcjs as loadAbcjsParser } from "./input-panel.js";
-import { statusToast } from "./notify.js";
+import { notify, statusToast } from "./notify.js";
 import { createSongShelf } from "./song-shelf.js";
 
-/** How long the visitor must stop typing before The Session is asked, in milliseconds. */
-export const SEARCH_PAUSE_MS = 450;
+/** How long the visitor must stop typing before the online sources are asked, in milliseconds. */
+export const SEARCH_PAUSE_MS = DEBOUNCE_MS;
 
-/** The shortest query worth sending to The Session. */
-export const MIN_SEARCH_LENGTH = 2;
+/** The shortest query worth sending to other sites. */
+export const MIN_SEARCH_LENGTH = MIN_QUERY_LENGTH;
+
+/** How long after the first paint the big catalog file is fetched ahead, if the browser is not busy. */
+const PREFETCH_DELAY_MS = 1500;
 
 /**
  * Save a file from another site through a temporary link: the browser downloads it.
@@ -80,6 +98,18 @@ function downloadThroughLink(url, name) {
  * @property {() => void} startRun start a run on the loaded song
  * @property {() => void} playIntro play the loaded song's first bars in the Result player
  * @property {typeof fetch} [fetchFn]
+ * @property {string | null} [fetcherUrl] the MIDI fetcher Worker's address (default: the deployed
+ *   one); null for no Worker, and songs on other sites keep the download-and-open flow
+ * @property {() => number} [now] the clock, for the Worker's cool-down (default `Date.now`)
+ * @property {Array<import("../core/online-sources.js").OnlineSource>} [onlineSources] the sources the
+ *   search box asks (default: The Session, BitMidi, midis101.com, Mutopia and IMSLP)
+ * @property {() => boolean} [isOnline] default: the browser's `navigator.onLine`
+ * @property {(text: string, options?: import("./notify.js").NotifyOptions) => unknown} [toast] a
+ *   toast with an optional action (`notify.js`)
+ * @property {(run: () => void) => void} [idle] run something when the browser is idle (default
+ *   `requestIdleCallback`, or a timer)
+ * @property {{saveData?: boolean, effectiveType?: string, type?: string}} [connection] default
+ *   `navigator.connection`
  * @property {typeof createSongShelf} [createShelf]
  * @property {typeof loadCatalogFiles} [loadCatalog]
  * @property {ReturnType<typeof createSongCache>} [songCache]
@@ -105,11 +135,26 @@ export function createCatalogGlue(parts) {
   const win = parts.win ?? globalThis.window;
   const download = parts.download ?? downloadThroughLink;
   const notifyStatus = parts.notifyStatus ?? statusToast;
+  const toast = parts.toast ?? ((/** @type {string} */ text, /** @type {any} */ options) => notify(text, options));
+  const fetcherUrl = parts.fetcherUrl === undefined ? MIDI_FETCHER_URL : parts.fetcherUrl;
   const readAbcjs = parts.loadAbcjs ?? loadAbcjsParser;
   const setTimer = parts.setTimer ?? ((/** @type {() => void} */ run, /** @type {number} */ ms) => setTimeout(run, ms));
   const clearTimer = parts.clearTimer ?? ((/** @type {any} */ id) => clearTimeout(id));
   const songCache = parts.songCache ?? createSongCache(browserSongStore());
   const inputPanel = parts.inputPanel;
+  const health = createFetcherHealth({ now: parts.now ?? (() => Date.now()), coolDownMs: COOL_DOWN_MS });
+  /** @type {Set<string>} songs the Worker could not bring in this visit (the song itself is the trouble) */
+  const failedKeys = new Set();
+  const keyOf = (/** @type {{id: string, source?: string}} */ entry) => cacheKey(entry);
+
+  /**
+   * Whether the Worker can be counted on to bring this song's file now: it serves the song's
+   * site, it has not just failed, and it did not fail for this song.
+   *
+   * @param {any} entry
+   * @returns {boolean}
+   */
+  const workerCanBring = (entry) => fetcherUrl !== null && isFetchable(entry) && health.isUp() && !failedKeys.has(keyOf(entry));
 
   /**
    * The registry's collections (`data/catalog/collections.json`), as far as they have been read.
@@ -124,8 +169,6 @@ export function createCatalogGlue(parts) {
   const ownFiles = new Map();
   /** @type {Set<string>} the lazy catalog files not read yet */
   let pendingSources = new Set(FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id));
-  /** @type {any} */
-  let searchTimer;
   /**
    * The song whose downloaded file the visitor is about to choose through the hidden file input
    * (browsers without the native picker). The input panel asks `claimDownload` who a chosen file is.
@@ -136,10 +179,8 @@ export function createCatalogGlue(parts) {
 
   const shelf = (parts.createShelf ?? createSongShelf)(parts.shelfRoot, {
     entries: [],
-    onSearch: (query) => {
-      clearTimer(searchTimer);
-      if (query.trim().length >= MIN_SEARCH_LENGTH) searchTimer = setTimer(() => searchElsewhere(query), SEARCH_PAUSE_MS);
-    },
+    onSearch: (query) => onlineSearch.query(query),
+    onRetrySearch: () => onlineSearch.retry(),
     onArrange: async (entry) => {
       if (await openCatalogEntry(entry)) parts.startRun();
     },
@@ -148,8 +189,10 @@ export function createCatalogGlue(parts) {
     },
     onDownload: (entry) => startDownload(entry),
     onOpenDownloaded: (entry) => openDownloaded(entry),
-    // A downloaded song the browser kept opens in one click, like a song of the repository.
-    isCached: (entry) => songCache.has(entry),
+    // A song the browser kept, or the Worker can bring, opens in one click, like a song of the repository.
+    isOneClick: (entry) => songCache.has(entry) || workerCanBring(entry),
+    setTimer,
+    clearTimer,
     collections: () => catalogCollections,
     // A lazy file (MPB's is the biggest) is read when the visitor opens its playlist or searches.
     pendingSources: FALLBACK_COLLECTIONS.filter((record) => record.lazy).map((record) => record.id),
@@ -205,9 +248,20 @@ export function createCatalogGlue(parts) {
 
   // --- The catalog ----------------------------------------------------------------------------
 
+  /**
+   * How much of a lazy file has arrived: the shelf draws a bar from it. A file that is done (or
+   * failed) is reported as null by `loadMoreSongs`.
+   *
+   * @param {string} source
+   * @param {{loaded: number, total: number}} reading
+   */
+  function onCatalogProgress(source, reading) {
+    shelf.setProgress?.(source, reading);
+  }
+
   const catalogLoading = parts.loadCatalog
-    ? parts.loadCatalog(fetchFn, onCatalogUpdate)
-    : loadCatalogFiles(fetchFn, onCatalogUpdate);
+    ? parts.loadCatalog(fetchFn, onCatalogUpdate, onCatalogProgress)
+    : loadCatalogFiles(fetchFn, onCatalogUpdate, onCatalogProgress);
   catalogLoading
     .then(({ entries }) => {
       if (entries.length === 0) throw new Error("empty catalog");
@@ -240,20 +294,41 @@ export function createCatalogGlue(parts) {
     } catch {
       failed = true;
     }
-    for (const source of sources) pendingSources.delete(source);
+    for (const source of sources) {
+      pendingSources.delete(source);
+      shelf.setProgress?.(source, null);
+    }
     shelf.setPending([...pendingSources]);
     if (failed) songStatus("More songs could not be loaded. Check your connection and reload the page.", true);
   }
 
-  // Songs kept from an earlier visit join Popular, which needs their records: read their file now.
+  // Songs kept from an earlier visit join Catalog, which needs their records: read their file now.
+  // The big file the visitor will probably need is read ahead, once the browser is idle, unless
+  // the connection is metered or slow: then the first search is the first to pay for it.
   Promise.all([songCache.load(), catalogLoading])
     .then(() => {
       const needed = lazySourcesNeeded({ playlistId: null, searching: false, cachedKeys: songCache.keys() }, catalogCollections);
       if (needed.length > 0) loadMoreSongs(needed);
-      showSongs();
+      if (songCache.size > 0) showSongs();
       showForgetAction();
+      prefetchLazySources(needed);
     })
     .catch(() => {}); // a catalog that failed is reported above
+
+  /**
+   * Read the lazy catalog files ahead of need while the browser is idle.
+   *
+   * @param {string[]} alreadyAsked sources that are being read already
+   */
+  function prefetchLazySources(alreadyAsked) {
+    const connection = parts.connection ?? /** @type {any} */ (globalThis.navigator)?.connection;
+    if (!shouldPrefetch(connection)) return;
+    const idle = parts.idle ?? ((/** @type {() => void} */ run) => (globalThis.requestIdleCallback ? globalThis.requestIdleCallback(() => run()) : setTimer(run, PREFETCH_DELAY_MS)));
+    idle(() => {
+      const wanted = [...pendingSources].filter((source) => !alreadyAsked.includes(source));
+      if (wanted.length > 0) loadMoreSongs(wanted);
+    });
+  }
 
   /** The quiet "Forget downloaded songs" paragraph of the How it works tab: shown only when there is something to forget. */
   function showForgetAction() {
@@ -266,8 +341,9 @@ export function createCatalogGlue(parts) {
   });
 
   /**
-   * Keep the file of a catalog song the visitor just opened, so the next visit needs no download.
-   * Only a file whose SHA-256 is the one the record names is kept (`core/song-cache.js`).
+   * Keep the file of a downloadable song the visitor just opened, so the next visit needs no
+   * download. Only a file whose SHA-256 is the one the record names is kept (`core/song-cache.js`);
+   * a song with no recorded hash (a search result) is kept as first downloaded.
    *
    * @param {any} loaded the input panel's loaded song
    */
@@ -275,30 +351,59 @@ export function createCatalogGlue(parts) {
     const { input } = loaded;
     const entry = input.catalogEntry;
     if (!entry || entry.route?.download === undefined || songCache.has(entry)) return;
-    if ((await songCache.remember(entry, input.bytes, input.sha256)) === "stored") {
+    // A song found by a search has no recorded hash: its first download is trusted (and the
+    // copy is checked against itself later). A catalog record's own hash still judges its file.
+    if ((await songCache.remember(entry, input.bytes, input.sha256, { trustFirstDownload: true })) === "stored") {
       showForgetAction();
       showSongs();
+      toast("Saved in this browser: it opens at once next time.");
     }
   }
 
   elements.openFileButton.addEventListener("click", () => elements.fileInput.click());
 
-  // --- The Session ----------------------------------------------------------------------------
+  // --- Online search ---------------------------------------------------------------------------
+
+  /** The query the visitor's failed-source toast was last shown for, so it appears once per search. */
+  let toastedFor = "";
 
   /**
-   * Search The Session (from the browser, its API allows it) and add what it finds after the
-   * catalog's matches, if the query is still the same.
+   * The online search's state changed: hand the shelf the results so far and where the search
+   * stands, unless the visitor has already typed something else. A search that ended with a
+   * failure says so in a toast, with Retry, because the line under the search box is easy to miss.
+   *
+   * @param {import("../core/online-search.js").OnlineState} state
+   */
+  function onOnlineChange(state) {
+    if (shelf.searchBox.value.trim() !== state.query && state.active) return;
+    shelf.setExternal(state.results.map(externalEntry), state);
+    const failureKey = `${state.query}|${state.failed.map((source) => source.id).join(",")}`;
+    if (!state.searching && !state.offline && state.failed.length > 0 && toastedFor !== failureKey) {
+      toastedFor = failureKey;
+      const names = state.failed.map((source) => source.name).join(", ");
+      toast(`${names} could not be reached. Showing the other results.`, { kind: "error", action: { label: "Retry", run: () => onlineSearch.retry() } });
+    }
+    if (state.offline && toastedFor !== `offline|${state.query}`) {
+      toastedFor = `offline|${state.query}`;
+      toast("You are offline: only the catalog and your downloaded songs can be searched.", { kind: "error", action: { label: "Retry", run: () => onlineSearch.retry() } });
+    }
+  }
+
+  const onlineSearch = createOnlineSearch({
+    sources: parts.onlineSources ?? createOnlineSources({ fetchFn, workerUrl: fetcherUrl ?? MIDI_FETCHER_URL }),
+    onChange: onOnlineChange,
+    isOnline: parts.isOnline,
+    setTimer,
+    clearTimer,
+  });
+
+  /**
+   * Search the online sources now (the box does it after a pause by itself).
    *
    * @param {string} query
    */
-  async function searchElsewhere(query) {
-    /** @type {Array<import("../core/sources.js").SearchResult>} an unreachable site adds nothing */
-    let found = [];
-    try {
-      const response = await fetchFn(sessionSearchUrl(query));
-      if (response.ok) found = sessionSearchResults(await response.json());
-    } catch {}
-    if (shelf.searchBox.value === query) shelf.setExternal(found.map(externalEntry));
+  function searchElsewhere(query) {
+    onlineSearch.query(query);
   }
 
   // --- Downloads ------------------------------------------------------------------------------
@@ -361,6 +466,37 @@ export function createCatalogGlue(parts) {
   // --- Opening a record -----------------------------------------------------------------------
 
   /**
+   * Bring a song's file through the Worker and load it into the input panel. When the Worker
+   * cannot, say why and leave the song to the download-and-open flow: the shelf's panel then
+   * offers "Download MIDI" for it.
+   *
+   * @param {any} entry a song with a download route that the Worker serves
+   * @returns {Promise<boolean>} true when the song was read
+   */
+  async function openThroughWorker(entry) {
+    const title = displayTitle(entry.t);
+    songStatus(`Loading ${title}…`);
+    const outcome = await fetchMidiFile(entry, { fetchFn, base: /** @type {string} */ (fetcherUrl) });
+    if (!outcome.ok) {
+      health.recordFailure(outcome);
+      if (!outcome.systemic) failedKeys.add(keyOf(entry));
+      showSongs(); // the song is no longer one click: the shelf offers the download
+      songStatus(`${title} could not be fetched automatically. ${failureMessage(outcome.kind)}`, true);
+      return false;
+    }
+    health.recordSuccess();
+    try {
+      const before = inputPanel().current();
+      const named = await openEntry(entry, { fetchFn }); // reads nothing; it gives the file name
+      await inputPanel().readFile(new File([outcome.bytes], named.name), entry.facts?.overrides ?? {}, entry);
+      return inputPanel().current() !== before && inputPanel().current() !== null;
+    } catch (error) {
+      songStatus(/** @type {Error} */ (error).message ?? String(error), true);
+      return false;
+    }
+  }
+
+  /**
    * Load a catalog song into the input panel, as if its file were dropped.
    *
    * @param {any} entry
@@ -391,6 +527,7 @@ export function createCatalogGlue(parts) {
         return inputPanel().current() !== before && inputPanel().current() !== null;
       }
       if (kept) showSongs(); // the kept file was damaged: the song asks for its download again
+      if (workerCanBring(entry)) return openThroughWorker(entry);
     }
     songStatus(`Loading ${displayTitle(entry.t)}…`);
     try {

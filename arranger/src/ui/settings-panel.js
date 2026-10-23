@@ -20,16 +20,21 @@
  * plays, in the words of the realizers' docstrings (`src/arrangement/textures.py`). A visitor who
  * finds the 32nd-note arpeggio too busy unticks it and the GA never draws it again. Choices that
  * switch off a fitness criterion or a channel are allowed, with a warning under the group.
+ *
+ * What Reset, Export and Import did is told in a toast (notify.js), not in a line at the bottom of
+ * a long form that the visitor has scrolled away from. The line under the form keeps only the
+ * state "Changes apply to the next run."; after an import the button reads "Imported" for a moment.
  */
 
 import { validateSettings } from "../core/settings.js";
+import { notify as pageNotify } from "./notify.js";
 import {
   allowedFromForm,
   allowedWarnings,
   changedSettings,
   exportConfig,
   formToSettings,
-  importConfig,
+  readSettingsFile,
   valueAt,
   weightShares,
 } from "./settings-form.js";
@@ -233,19 +238,35 @@ export function allowedGroupHtml() {
 }
 
 /**
+ * Show a short word on a button for a moment, then give its label back: "Imported" after an import.
+ *
+ * @param {HTMLElement} button
+ * @param {string} word
+ */
+function confirmOn(button, word) {
+  const label = button.textContent;
+  button.textContent = word;
+  setTimeout(() => {
+    button.textContent = label;
+  }, 1500);
+}
+
+/**
  * Build the panel inside `container`.
  *
  * @param {HTMLElement} container
  * @param {{
  *   defaults: Settings,
  *   onChange: (settings: Settings) => void,
- * }} options
+ *   notify?: typeof pageNotify,
+ * }} options `notify` shows a toast (default: the page's)
  * @returns {{
  *   show: (settings: Settings, running: boolean) => void,
  *   setFileTempo: (bpm: number | null) => void,
  * }}
  */
 export function createSettingsPanel(container, options) {
+  const notify = options.notify ?? pageNotify;
   const groups = FIELDS.map(
     ({ group, fields }) => `<fieldset class="settings-group"><legend>${group}</legend>${fields
       .map(
@@ -384,7 +405,7 @@ export function createSettingsPanel(container, options) {
     const settings = structuredClone(options.defaults);
     fill(settings);
     apply(settings);
-    status.textContent = "Back to the command line's defaults.";
+    notify("Settings are back to the command line's defaults.");
   });
   container.querySelector("[data-export]")?.addEventListener("click", () => {
     const blob = new Blob([exportConfig(current)], { type: "application/json" });
@@ -393,21 +414,22 @@ export function createSettingsPanel(container, options) {
     link.download = `settings-s${current.seed}.json`;
     link.click();
     setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    notify(`Exported ${link.download}.`);
   });
   const importInput = /** @type {HTMLInputElement} */ (container.querySelector("[data-import]"));
   container.querySelector("[data-import-button]")?.addEventListener("click", () => importInput.click());
+  const importButton = /** @type {HTMLButtonElement} */ (container.querySelector("[data-import-button]"));
   importInput.addEventListener("change", async () => {
     const file = importInput.files?.[0];
     importInput.value = "";
     if (!file) return;
-    try {
-      const settings = importConfig(await file.text(), options.defaults);
-      fill(settings);
-      apply(settings);
-      status.textContent = `Loaded ${file.name}.`;
-    } catch (error) {
-      status.textContent = `${file.name}: ${/** @type {Error} */ (error).message}`;
+    const outcome = readSettingsFile(file.name, await file.text(), options.defaults);
+    if (outcome.ok) {
+      fill(outcome.settings);
+      apply(outcome.settings);
+      confirmOn(importButton, "Imported");
     }
+    notify(outcome.message, { kind: outcome.ok ? "info" : "error" });
   });
 
   return {

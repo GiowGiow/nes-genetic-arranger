@@ -1,12 +1,14 @@
 // @ts-check
 /**
- * How it works: the method in six steps, each with one small figure computed by the real core
+ * How it works: the method in eight steps, each with one small figure computed by the real core
  * modules (spec 005, User Story 7, FR-027).
  *
- * The reader knows some music but no genetic algorithm. The steps follow a song through the
- * method: the song becomes a lead sheet, the genetic algorithm (GA) describes an arrangement as a
- * genome of four genes per bar, a fitness function scores it, evolution breeds better genomes,
- * realizers turn the genes into notes, and the chip synthesizer turns the notes into sound.
+ * The reader knows some music but no genetic algorithm, and the algorithm is the heart of the
+ * page. The steps follow a song through the method: the song becomes a lead sheet; the genetic
+ * algorithm (GA) describes an arrangement as a genome of four genes per bar; a fitness function of
+ * seven criteria scores it; one generation is six moves in a loop; elitism and roulette selection
+ * choose the parents; crossover at a bar line and mutation make the children; realizers turn the
+ * genes into notes; and the chip synthesizer turns the notes into sound.
  *
  * No figure is drawn by hand. Each one shows what the core computes for the loaded song (or for
  * Korobeiniki when none is loaded): the lead sheet's own bars, the plan's own genes, the scores
@@ -26,7 +28,7 @@ import { createGAParams, evolve } from "../core/evolution.js";
 import { CRITERIA, criterionScores, fitness } from "../core/fitness.js";
 import { ALL_ALLOWED, GENES_PER_BAR, allowedGenes, decode, randomPopulation } from "../core/genome.js";
 import { barStarts, meterText } from "../core/meter.js";
-import { mutate, onePointCrossover } from "../core/operators.js";
+import { TIE_TOLERANCE, eliteIndices, mutate, onePointCrossover, rouletteSelect } from "../core/operators.js";
 import { createRandom } from "../core/random.js";
 import { buildTables } from "../core/tables.js";
 import { CHANNELS, HIHAT, KICK, SNARE } from "../core/textures.js";
@@ -173,7 +175,7 @@ const GENE_ROWS = /** @type {const} */ ([
 /**
  * One step of the explanation.
  * @typedef {object} HowStep
- * @property {"lead-sheet" | "genome" | "fitness" | "evolution" | "realization" | "sound"} id
+ * @property {"lead-sheet" | "genome" | "fitness" | "loop" | "selection" | "evolution" | "realization" | "sound"} id
  * @property {string} title
  * @property {string[]} text short paragraphs in plain words.
  * @property {{kind: string, data: any, alt: string, caption: string}} figure what to draw
@@ -181,7 +183,7 @@ const GENE_ROWS = /** @type {const} */ ([
  */
 
 /**
- * Build the six steps for a song, a plan and the settings.
+ * Build the eight steps for a song, a plan and the settings.
  *
  * The figures use the given plan, for example the best plan of the visitor's latest run of this
  * lead sheet. Without one, they use the plan a run with these settings and seed starts from, the
@@ -194,11 +196,12 @@ const GENE_ROWS = /** @type {const} */ ([
  *   genes, flat (as the GA stores it) or one array of 4 genes per bar (as the fixtures do).
  * @param {Settings} input.settings valid settings (`validateSettings` finds no problem): the
  *   seed, the GA hyperparameters, the weights and the allowed values.
- * @returns {HowStep[]} the steps lead-sheet, genome, fitness, evolution, realization, sound.
+ * @returns {HowStep[]} the steps lead-sheet, genome, fitness, loop, selection, evolution,
+ *   realization, sound.
  * @throws {RangeError} when the plan does not hold 4 valid genes per bar of the lead sheet.
  * @example
  * howItWorksSteps({ leadSheet: korobeiniki, plan, settings }).map((step) => step.id);
- * // ["lead-sheet", "genome", "fitness", "evolution", "realization", "sound"]
+ * // ["lead-sheet", "genome", "fitness", "loop", "selection", "evolution", "realization", "sound"]
  */
 export function howItWorksSteps({ leadSheet, plan = null, settings }) {
   const nBars = leadSheet.bars.length;
@@ -211,6 +214,8 @@ export function howItWorksSteps({ leadSheet, plan = null, settings }) {
     leadSheetStep(leadSheet, song),
     genomeStep(leadSheet, genes, allowed, settings, fromRun, song),
     fitnessStep(tables, genes, settings.weights, fromRun, song),
+    loopStep(nBars, settings),
+    selectionStep(tables, allowed, settings),
     evolutionStep(nBars, allowed, settings),
     realizationStep(leadSheet, genes, song),
     soundStep(),
@@ -434,11 +439,16 @@ function fitnessStep(tables, genes, weights, fromRun, song) {
     CRITERIA.map((name) => [name, Number.isNaN(scores[name][0]) ? null : scores[name][0]]),
   );
   const labels = describeScores(scoreOf, fitnessValue, weights).rows.map((row) => row.label);
+  const weightOf = (/** @type {string} */ name) => (Object.hasOwn(weights, name) ? weights[name] : 0);
+  // The fitness is a weighted mean over the criteria that apply to the song, so a criterion's
+  // share of it is its weight over the sum of those weights (core/fitness.js).
+  const total = CRITERIA.reduce((sum, name) => sum + (scoreOf[name] === null ? 0 : weightOf(name)), 0);
   const criteria = CRITERIA.map((name, index) => ({
     name,
     label: labels[index],
-    weight: Object.hasOwn(weights, name) ? weights[name] : 0,
+    weight: weightOf(name),
     score: scoreOf[name],
+    share: scoreOf[name] === null || total === 0 ? null : weightOf(name) / total,
   }));
   const judged = criteria.filter((row) => row.score !== null && row.weight > 0);
   const weakest = judged.reduce((low, row) => (/** @type {number} */ (row.score) < /** @type {number} */ (low.score) ? row : low), judged[0]);
@@ -450,12 +460,12 @@ function fitnessStep(tables, genes, weights, fromRun, song) {
       : "A criterion that cannot be judged on a song, such as contrast in a song without a chorus, is left out of the mean.";
   return {
     id: "fitness",
-    title: "Fitness: a score for every plan",
+    title: "Fitness: seven rules, one score",
     text: [
       "A fitness function gives every plan a score from 0 to 1: the weighted mean of seven criteria. " +
         "Each criterion is a rule of thumb of arranging, for example: the bass moves by small leaps, " +
         "the chorus is busier than the verse, and the harmony calms down when the melody is busy.",
-      `${leftOut} The weights, in the settings, say how much each criterion counts.`,
+      `${leftOut} ${shareSentence(judged)}`,
       (weakest === undefined
         ? `This plan scores ${fitnessValue.toFixed(2)}.`
         : `This plan scores ${fitnessValue.toFixed(2)}; its weakest criterion is ${weakest.label.toLowerCase()} ` +
@@ -465,17 +475,204 @@ function fitnessStep(tables, genes, weights, fromRun, song) {
       kind: "fitness",
       data: { criteria, fitness: fitnessValue },
       alt:
-        "Horizontal bars of the seven criterion scores of this plan: " +
+        "Horizontal meters of the seven criterion scores of this plan: " +
         criteria
-          .map((row) => (row.score === null ? `${row.label} does not apply` : `${row.label} ${row.score.toFixed(2)} (weight ${row.weight})`))
+          .map((row) =>
+            row.score === null
+              ? `${row.label} does not apply`
+              : `${row.label} ${row.score.toFixed(2)} (weight ${row.weight}, share ${sharePercent(row.share ?? 0)})`,
+          )
           .join(", ") +
         `; fitness ${fitnessValue.toFixed(2)}.`,
-      caption: "Each bar is one criterion's score, from 0 to 1, with its weight; the fitness is their weighted mean.",
+      caption:
+        "Each meter is one criterion's score, from 0 to 1, with its weight and its share of the mean; the " +
+        "fitness is their weighted mean.",
     },
   };
 }
 
-// --- Step 4: evolution --------------------------------------------------------------------------
+/**
+ * What the weights do, with the shares of this song: equal weights give equal shares, and
+ * otherwise the biggest share is named.
+ *
+ * @param {Array<{label: string, weight: number, share: number | null}>} judged the criteria that
+ *   apply to the song and have a weight above 0.
+ * @returns {string}
+ */
+function shareSentence(judged) {
+  if (judged.length === 0) return "Every weight is 0 here, so nothing is judged.";
+  const equal = judged.every((row) => row.weight === judged[0].weight);
+  if (equal) {
+    return (
+      `With every weight at ${judged[0].weight}, each criterion counts for ${sharePercent(1 / judged.length)} of the mean. ` +
+      "Raise one weight in the settings and its share grows; a weight of 0 switches the criterion off."
+    );
+  }
+  const top = judged.reduce((most, row) => (/** @type {number} */ (row.share) > /** @type {number} */ (most.share) ? row : most), judged[0]);
+  return (
+    `A weight sets a criterion's share of the mean: its weight over the sum of the weights. ` +
+    `${top.label} counts for ${sharePercent(top.share ?? 0)}, the most.`
+  );
+}
+
+// --- Steps 4 to 6: the loop, selection, crossover and mutation ----------------------------------
+
+/**
+ * One generation, counted from the settings: the six moves of the loop and how many plans each
+ * one touches. The numbers are those of `nextGeneration` (core/evolution.js): the elite take the
+ * first places, the rest are children made in pairs, and an odd number of free places drops the
+ * second child of the last pair.
+ *
+ * @param {number} nBars
+ * @param {Settings} settings
+ * @returns {HowStep}
+ */
+function loopStep(nBars, settings) {
+  const populationSize = settings.population_size;
+  const eliteCount = settings.elite_count;
+  const children = populationSize - eliteCount;
+  const pairs = Math.ceil(children / 2);
+  const parents = 2 * pairs;
+  const genesPerPlan = nBars * GENES_PER_BAR;
+  const mutationRate = settings.mutation_rate;
+  const mutationsPerChild = mutationRate * genesPerPlan;
+  const rate = `${Number((mutationRate * 100).toFixed(2))}%`;
+  const stages = [
+    { id: "score", label: "Score", detail: `${populationSize} plans, ${CRITERIA.length} criteria` },
+    { id: "elitism", label: "Elitism", detail: eliteCount > 0 ? `keep the best ${eliteCount}, unchanged` : "none kept" },
+    { id: "selection", label: "Select", detail: `${parents} parents from the wheel` },
+    { id: "crossover", label: "Cross", detail: `${count(pairs, "cut")} at a bar line` },
+    { id: "mutation", label: "Mutate", detail: `${rate} of ${genesPerPlan} genes` },
+    { id: "replace", label: "Replace", detail: `${eliteCount} + ${children} = ${populationSize} plans` },
+  ];
+  const places =
+    eliteCount > 0
+      ? `Of the ${populationSize} places in the next generation, ${eliteCount} go to the elite plans, kept unchanged, ` +
+        `and ${children} go to children`
+      : `No plan is kept unchanged: all ${populationSize} places go to children`;
+  const pairing =
+    children % 2 === 1
+      ? `${count(pairs, "pair")} of parents are picked and crossed once each, and the last pair gives only one child`
+      : `${count(pairs, "pair")} of parents are picked and crossed once each`;
+  return {
+    id: "loop",
+    title: "One generation, step by step",
+    text: [
+      `A genetic algorithm keeps a population of ${populationSize} plans and improves it one generation at a ` +
+        `time. Generation 0 is ${populationSize} random plans; every later generation is built from the one ` +
+        "before it by the six moves of the figure.",
+      `${places}: ${pairing}, and each child is mutated.`,
+      `The run stops after ${settings.max_generations} generations, or sooner when the best fitness has not ` +
+        `improved for ${settings.stagnation_window} generations. The best plan seen in any generation is the ` +
+        "one you get.",
+    ],
+    figure: {
+      kind: "loop",
+      data: {
+        stages,
+        populationSize,
+        eliteCount,
+        children,
+        pairs,
+        parents,
+        genesPerPlan,
+        mutationRate,
+        mutationsPerChild,
+        maxGenerations: settings.max_generations,
+        stagnationWindow: settings.stagnation_window,
+      },
+      alt:
+        "One generation as six rows that repeat: " +
+        stages.map((stage, index) => `${index + 1}, ${stage.label}: ${stage.detail}`).join("; ") +
+        ". An arrow leads from the last row back to the first, for the next generation.",
+      caption:
+        `One cycle of the loop, with the numbers of your settings: ${populationSize} plans go in and ` +
+        `${populationSize} come out, and the cycle repeats until a stop rule fires.`,
+    },
+  };
+}
+
+/**
+ * The roulette wheel of generation 0, built from the real random population of this seed.
+ *
+ * It draws the population exactly as `evolve` does (`randomPopulation` first), scores it with
+ * `fitness`, and spins the wheel twice with the same generator: those are the first two parents
+ * that generation 1 of a run with this seed picks, because `nextGeneration` draws all its parents
+ * with `rouletteSelect` right after the population, one spin after another.
+ *
+ * Each plan's slice is its fitness minus the generation's lowest (`rouletteSelect`'s windowing),
+ * as a share of the sum of those differences; the figure also shows what a plain wheel, with
+ * slices proportional to the fitness itself, would give.
+ *
+ * @param {import("../core/tables.js").ScoreTables} tables
+ * @param {number[][]} allowed
+ * @param {Settings} settings
+ * @returns {HowStep}
+ */
+function selectionStep(tables, allowed, settings) {
+  const populationSize = settings.population_size;
+  const rng = createRandom(settings.seed);
+  const population = randomPopulation(rng, populationSize, tables.nBars, allowed);
+  const values = fitness(tables, population, tables.nBars, settings.weights);
+  const parents = [...rouletteSelect(rng, values, 2)];
+  const elite = [...eliteIndices(values, Math.min(settings.elite_count, populationSize))];
+
+  const lowest = values.reduce((low, value) => Math.min(low, value), Infinity);
+  const highest = values.reduce((high, value) => Math.max(high, value), -Infinity);
+  const tied = highest - lowest <= TIE_TOLERANCE;
+  const plainTotal = values.reduce((sum, value) => sum + value, 0);
+  const windowTotal = values.reduce((sum, value) => sum + value - lowest, 0);
+  const slices = Array.from(values, (value, index) => ({
+    index,
+    fitness: value,
+    plainShare: plainTotal > 0 ? value / plainTotal : 1 / populationSize,
+    // When every fitness ties, roulette selection gives equal slices (windowing would divide by 0).
+    share: tied ? 1 / populationSize : (value - lowest) / windowTotal,
+  }));
+  const byFitness = [...slices].sort((a, b) => b.fitness - a.fitness || a.index - b.index);
+  const best = byFitness[0];
+  const median = byFitness[Math.floor(populationSize / 2)];
+  const worst = byFitness[byFitness.length - 1];
+
+  const survivors = settings.elite_count;
+  const keeps =
+    survivors > 0
+      ? `Elitism comes first: the ${survivors === 1 ? "best plan" : `${survivors} best plans`} of a generation are ` +
+        "copied unchanged into the next one, so the best fitness never goes down."
+      : "This run has no elite plans, so every plan of a generation is replaced by a child.";
+  const windowing = tied
+    ? `All ${populationSize} plans score alike here (${highest.toFixed(3)}), so every plan gets an equal slice.`
+    : `The fitness values of one generation are close to each other (here ${lowest.toFixed(2)} to ` +
+      `${highest.toFixed(2)}), so slices proportional to the fitness itself would be almost equal: the best plan ` +
+      `would get ${sharePercent(best.plainShare)} on a plain wheel, hardly more than an average plan. The wheel ` +
+      `therefore subtracts the lowest fitness of the generation first. The best plan's slice becomes ` +
+      `${sharePercent(best.share)}, and the worst plan's slice is empty.`;
+  return {
+    id: "selection",
+    title: "Elitism and roulette selection",
+    text: [
+      keeps,
+      "Roulette selection then picks the parents. Every plan gets a slice of a wheel, a better plan gets a " +
+        "wider slice, and the wheel is spun once per parent: a good plan may be picked many times, a poor " +
+        "one rarely or never. Elite plans take part too, so they can have children as well.",
+      windowing,
+      `Seed ${settings.seed}: the first two spins pick plans ${parents[0] + 1} and ${parents[1] + 1} of ` +
+        `generation 0 as the parents of the first child.`,
+    ],
+    figure: {
+      kind: "selection",
+      data: { populationSize, slices, elite, parents, lowest, highest, tied, best, median, worst, seed: settings.seed },
+      alt:
+        `A wheel of ${populationSize} slices, one per plan of generation 0, as wide as the plan's fitness above ` +
+        `the lowest (${lowest.toFixed(2)}). The best plan, number ${best.index + 1}, has ${sharePercent(best.share)} of ` +
+        `the wheel instead of ${sharePercent(best.plainShare)}; the worst has none. ` +
+        `The elite plans are outlined and the first two parents are marked A and B.`,
+      caption:
+        `Generation 0 of seed ${settings.seed}: one slice per plan. Elite plans are outlined, and A and B mark the ` +
+        "plans that the first two spins pick. The table compares a plain wheel with this one.",
+    },
+  };
+}
 
 /**
  * Two random parents, one-point crossover and one mutation, with the run's seeded generator.
@@ -517,11 +714,6 @@ function evolutionStep(nBars, allowed, settings) {
     mutation = { bar: bar + 1, gene, row: GENE_ROWS[gene].label, from, to, fromName: GENE_NAMES[key][from], toName: GENE_NAMES[key][to] };
   }
 
-  const elite = settings.elite_count;
-  const keeps =
-    elite > 0
-      ? `keeps the ${elite === 1 ? "best plan" : `${elite} best plans`} unchanged and fills the other places with children`
-      : "is made of children only";
   const rate = `${Number((settings.mutation_rate * 100).toFixed(2))}%`;
   const crossing =
     cut < figureBars
@@ -530,17 +722,19 @@ function evolutionStep(nBars, allowed, settings) {
       : "not cut, since a one-bar plan has no bar line inside: the child copies parent A";
   const mutated =
     mutation === null ? "" : `; then its ${mutation.row} gene in bar ${mutation.bar} mutates from ${mutation.fromName} to ${mutation.toName}`;
+  const perChild = Number((settings.mutation_rate * nBars * GENES_PER_BAR).toFixed(2));
   return {
     id: "evolution",
-    title: "Evolution: selection, crossover and mutation",
+    title: "Crossover and mutation: making children",
     text: [
-      `The search starts from ${settings.population_size} random plans, the first generation. Each new ` +
-        `generation ${keeps}.`,
-      "For each child, roulette selection picks two parents, and a better plan has a better chance. " +
-        "One-point crossover cuts both parents at the same bar line and joins the head of one to the " +
-        `tail of the other. Then mutation gives each gene, with a small probability (${rate}), another allowed value.`,
-      `Generation after generation the best fitness climbs. The run stops after ${settings.max_generations} ` +
-        `generations, or sooner when the best plan has not improved for ${settings.stagnation_window} generations.`,
+      "To make a child, two parents are picked on the wheel. One-point crossover cuts both parents at the " +
+        "same bar line and joins the head of one to the tail of the other, so the child keeps whole bars " +
+        "of its parents and never half a bar.",
+      `Then mutation visits every gene of the child and, with probability ${rate}, replaces it by another ` +
+        "value that the settings allow. A gene belongs to one bar, so a mutation changes one bar's texture " +
+        `and leaves the rest; on a plan of ${count(nBars, "bar")} that is about ${perChild} genes per child.`,
+      "Crossover recombines good bars that were found separately, and mutation brings back a choice that " +
+        "selection had lost. The figure forces one mutation, so that you can see what it does.",
     ],
     figure: {
       kind: "evolution",
@@ -726,6 +920,20 @@ function count(n, noun) {
 }
 
 /**
+ * A share of a whole as the page says it: whole percent from 10 up, one decimal below, and an
+ * exact 0 as "0%".
+ * @param {number} share from 0 to 1
+ * @example
+ * sharePercent(1 / 7); // "14%"
+ * sharePercent(0.0167); // "1.7%"
+ */
+function sharePercent(share) {
+  const value = share * 100;
+  if (value === 0) return "0%";
+  return `${value < 10 ? Number(value.toFixed(1)) : Math.round(value)}%`;
+}
+
+/**
  * "Bar 5", "Bars 1–4".
  * @param {number} first
  * @param {number} last
@@ -804,7 +1012,69 @@ export function renderHowItWorks(container, steps) {
     cited.append(item);
   }
   references.append(cited);
+  container.removeAttribute("aria-busy");
   container.replaceChildren(list, closing, references);
+  revealOnScroll(container);
+}
+
+/** How many placeholder steps the skeleton shows: one per step of the eight, as far as the screen shows. */
+const SKELETON_STEPS = 6;
+
+/**
+ * Fill the container with placeholders that have the shape of the steps (a title line, three text
+ * lines and a figure box), so the tab has its size before the figures are computed and nothing
+ * jumps when they arrive. The container is marked `aria-busy`, and `renderHowItWorks` takes the
+ * mark and the placeholders away. The placeholders hold no text: a screen reader hears the busy
+ * state, not a row of words that mean nothing.
+ *
+ * @param {HTMLElement} container
+ * @returns {void}
+ * @example
+ * renderHowSkeleton(document.querySelector("[data-how]")); // then, when the steps are ready:
+ * renderHowItWorks(document.querySelector("[data-how]"), steps);
+ */
+export function renderHowSkeleton(container) {
+  const doc = container.ownerDocument;
+  const grid = html(doc, "div", { class: "how-skeleton", "aria-hidden": "true" });
+  for (let step = 0; step < SKELETON_STEPS; step++) {
+    const box = html(doc, "div", { class: "how-skeleton-step" });
+    box.append(html(doc, "span", { class: "skeleton-line title" }));
+    for (let line = 0; line < 3; line++) box.append(html(doc, "span", { class: "skeleton-line" }));
+    box.append(html(doc, "span", { class: "skeleton-figure" }));
+    grid.append(box);
+  }
+  container.setAttribute("aria-busy", "true");
+  container.replaceChildren(grid);
+}
+
+/**
+ * Show each step the first time it scrolls into view: it fades and rises a few pixels (how.css).
+ * Steps are hidden only when the browser can say when they are seen; without an observer nothing
+ * is hidden and the steps just show.
+ *
+ * @param {HTMLElement} container the element that holds the drawn steps
+ * @param {typeof IntersectionObserver | undefined} [Observer] default the browser's
+ * @returns {void}
+ */
+export function revealOnScroll(container, Observer = globalThis.IntersectionObserver) {
+  if (!Observer) return;
+  const items = /** @type {HTMLElement[]} */ ([...container.querySelectorAll(".how-step")]);
+  /** @param {Element} item @param {string} name */
+  const mark = (item, name) => item.setAttribute("class", `${item.getAttribute("class") ?? ""} ${name}`.trim());
+  const observer = new Observer(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        mark(entry.target, "in");
+        observer.unobserve(entry.target);
+      }
+    },
+    { rootMargin: "0px 0px -8% 0px" },
+  );
+  for (const item of items) {
+    mark(item, "reveal");
+    observer.observe(item);
+  }
 }
 
 /**
@@ -817,7 +1087,7 @@ function stepItem(doc, step, number) {
   const item = html(doc, "li", { class: "how-step", id: `how-step-${step.id}`, "aria-labelledby": headingId });
   const heading = html(doc, "h3", { id: headingId });
   // The list already numbers the steps for screen readers, so the visible number is decoration.
-  heading.append(html(doc, "span", { class: "how-number", "aria-hidden": "true" }, String(number)), step.title);
+  heading.append(html(doc, "span", { class: "how-number", "aria-hidden": "true" }, String(number).padStart(2, "0")), step.title);
   item.append(heading);
   for (const paragraph of step.text) item.append(html(doc, "p", {}, paragraph));
 
@@ -841,6 +1111,8 @@ const DRAWINGS = {
   "lead-sheet": drawLeadSheet,
   genome: drawGenome,
   fitness: drawFitness,
+  loop: drawLoop,
+  selection: drawSelection,
   evolution: drawEvolution,
   realization: drawRealization,
   sound: drawSound,
@@ -1062,33 +1334,170 @@ function drawFitness(doc, data) {
   const rowHeight = 19;
   const top = 16;
   const trackLeft = 106;
-  const trackWidth = 120;
-  const scoreX = 232;
+  const trackWidth = 96;
+  const scoreX = 208;
   const weightX = WIDTH;
   const fitnessY = top + data.criteria.length * rowHeight + 10;
   const image = svgImage(doc, fitnessY + rowHeight);
   image.append(svg(doc, "text", { class: "how-axis", x: trackLeft, y: 10 }, "0"));
   image.append(svg(doc, "text", { class: "how-axis how-end", x: trackLeft + trackWidth, y: 10 }, "1"));
-  image.append(svg(doc, "text", { class: "how-axis", x: scoreX, y: 10 }, "score"));
-  image.append(svg(doc, "text", { class: "how-axis how-end", x: weightX, y: 10 }, "weight"));
+  image.append(svg(doc, "text", { class: "how-axis how-end", x: weightX, y: 10 }, "weight · share"));
   /**
    * @param {string} label @param {number | null} score @param {string} weight @param {number} rowY
    * @param {string} kind
    */
   const scoreRow = (label, score, weight, rowY, kind) => {
+    const middle = rowY + 8.5;
     image.append(svg(doc, "text", { class: `how-label${kind === "total" ? " strong" : ""}`, x: 0, y: rowY + 12 }, label));
-    image.append(svg(doc, "rect", { class: `how-track${score === null ? " none" : ""}`, x: trackLeft, y: rowY + 4, width: trackWidth, height: 9, rx: 2 }));
-    if (score !== null) {
-      image.append(svg(doc, "rect", { class: `how-score ${kind}`, x: trackLeft, y: rowY + 4, width: Math.max(0.5, score * trackWidth), height: 9, rx: 2 }));
+    // A level meter of lit segments, like the LED ladder of a hi-fi amplifier: the track is the
+    // dark segments, the score lights the first ones.
+    image.append(
+      svg(doc, "line", { class: `how-track${score === null ? " none" : ""}`, x1: trackLeft, x2: trackLeft + trackWidth, y1: middle, y2: middle }),
+    );
+    if (score !== null && score > 0) {
+      image.append(svg(doc, "line", { class: `how-score ${kind}`, x1: trackLeft, x2: trackLeft + score * trackWidth, y1: middle, y2: middle }));
     }
     image.append(svg(doc, "text", { class: `how-value-text${score === null ? " none" : ""}`, x: scoreX, y: rowY + 12 }, score === null ? "n/a" : score.toFixed(2)));
     if (weight !== "") image.append(svg(doc, "text", { class: "how-value-text muted how-end", x: weightX, y: rowY + 12 }, weight));
   };
   data.criteria.forEach((/** @type {any} */ row, /** @type {number} */ index) => {
-    scoreRow(row.label, row.score, String(row.weight), top + index * rowHeight, "criterion");
+    const share = row.share === null ? "" : ` · ${sharePercent(row.share)}`;
+    scoreRow(row.label, row.score, `${row.weight}${share}`, top + index * rowHeight, "criterion");
   });
   image.append(svg(doc, "line", { class: "how-divider", x1: 0, x2: WIDTH, y1: fitnessY - 3, y2: fitnessY - 3 }));
   scoreRow("Fitness", data.fitness, "", fitnessY, "total");
+  return { image };
+}
+
+// The loop figure's rows.
+const LOOP_ROW_HEIGHT = 34;
+const LOOP_ROW_GAP = 4;
+const LOOP_WIDTH = 262;
+
+/** @type {Drawing} */
+function drawLoop(doc, data) {
+  const top = 4;
+  const rowsHeight = data.stages.length * (LOOP_ROW_HEIGHT + LOOP_ROW_GAP) - LOOP_ROW_GAP;
+  const image = svgImage(doc, top + rowsHeight + 24);
+  // The rows read like the pattern view of a tracker: a row number, the move, and what it counts.
+  data.stages.forEach((/** @type {any} */ stage, /** @type {number} */ index) => {
+    const y = top + index * (LOOP_ROW_HEIGHT + LOOP_ROW_GAP);
+    const row = svg(doc, "g", { class: `how-loop-row ${stage.id}` });
+    row.append(svg(doc, "rect", { class: "how-loop-bar", x: 0, y, width: LOOP_WIDTH, height: LOOP_ROW_HEIGHT, rx: 4 }));
+    row.append(svg(doc, "text", { class: "how-loop-number", x: 10, y: y + LOOP_ROW_HEIGHT / 2 + 4 }, String(index + 1).padStart(2, "0")));
+    row.append(svg(doc, "text", { class: "how-loop-label", x: 36, y: y + 14 }, stage.label));
+    row.append(svg(doc, "text", { class: "how-loop-detail", x: 36, y: y + 27 }, stage.detail));
+    image.append(row);
+  });
+  // The way back: the last row feeds the first, with an arrowhead where it enters.
+  const first = top + LOOP_ROW_HEIGHT / 2;
+  const last = top + rowsHeight - LOOP_ROW_HEIGHT / 2;
+  const turn = LOOP_WIDTH + 24;
+  image.append(
+    svg(doc, "path", {
+      class: "how-loop-return",
+      d: `M${LOOP_WIDTH + 2} ${last} H${turn} V${first} H${LOOP_WIDTH + 6} M${LOOP_WIDTH + 12} ${first - 4} L${LOOP_WIDTH + 5} ${first} L${LOOP_WIDTH + 12} ${first + 4}`,
+    }),
+  );
+  const label = svg(doc, "text", { class: "how-axis how-middle", x: 0, y: 0, transform: `translate(${turn + 12} ${(first + last) / 2}) rotate(90)` }, "next generation");
+  image.append(label);
+  image.append(
+    svg(
+      doc,
+      "text",
+      { class: "how-axis", x: 0, y: top + rowsHeight + 16 },
+      `stop: ${data.maxGenerations} generations, or ${data.stagnationWindow} without a better best`,
+    ),
+  );
+  return { image };
+}
+
+// The roulette wheel: a ring of slices around a record label, with the pointer on top.
+const WHEEL = { cx: 78, cy: 88, outer: 70, inner: 32 };
+
+/**
+ * A point on the wheel, clockwise from the top.
+ * @param {number} turn a fraction of a full turn
+ * @param {number} radius
+ * @returns {[number, number]}
+ */
+function wheelPoint(turn, radius) {
+  const angle = turn * 2 * Math.PI;
+  return [WHEEL.cx + radius * Math.sin(angle), WHEEL.cy - radius * Math.cos(angle)];
+}
+
+/**
+ * The path of a ring slice from one turn fraction to another.
+ * @param {number} from
+ * @param {number} to
+ */
+function sliceOutline(from, to) {
+  const [outerStartX, outerStartY] = wheelPoint(from, WHEEL.outer);
+  const [outerEndX, outerEndY] = wheelPoint(to, WHEEL.outer);
+  const [innerEndX, innerEndY] = wheelPoint(to, WHEEL.inner);
+  const [innerStartX, innerStartY] = wheelPoint(from, WHEEL.inner);
+  const large = to - from > 0.5 ? 1 : 0;
+  return (
+    `M${r(outerStartX)} ${r(outerStartY)} A${WHEEL.outer} ${WHEEL.outer} 0 ${large} 1 ${r(outerEndX)} ${r(outerEndY)} ` +
+    `L${r(innerEndX)} ${r(innerEndY)} A${WHEEL.inner} ${WHEEL.inner} 0 ${large} 0 ${r(innerStartX)} ${r(innerStartY)} Z`
+  );
+}
+
+/** @type {Drawing} */
+function drawSelection(doc, data) {
+  const image = svgImage(doc, 2 * WHEEL.cy - 4);
+  // Slices in plan order, clockwise from the top; a plan with an empty slice has no wedge.
+  let turn = 0;
+  /** @type {Map<number, number>} where each plan's slice is centered, as a fraction of a turn */
+  const centers = new Map();
+  const elite = new Set(data.elite);
+  /** @type {string[]} the elite plans' outlines, drawn last so that the next wedge does not cover them */
+  const outlines = [];
+  data.slices.forEach((/** @type {any} */ slice) => {
+    const end = Math.min(turn + slice.share, turn + 0.99999);
+    if (slice.share > 0) {
+      centers.set(slice.index, (turn + end) / 2);
+      image.append(svg(doc, "path", { class: `how-wedge ${slice.index % 2 === 0 ? "even" : "odd"}`, d: sliceOutline(turn, end) }));
+      if (elite.has(slice.index)) outlines.push(sliceOutline(turn, end));
+    }
+    turn = end;
+  });
+  for (const outline of outlines) image.append(svg(doc, "path", { class: "how-wedge-elite", d: outline }));
+  image.append(svg(doc, "circle", { class: "how-wheel-hub", cx: WHEEL.cx, cy: WHEEL.cy, r: WHEEL.inner - 2 }));
+  image.append(svg(doc, "text", { class: "how-hub-text how-middle", x: WHEEL.cx, y: WHEEL.cy - 1 }, "gen 0"));
+  image.append(svg(doc, "text", { class: "how-hub-sub how-middle", x: WHEEL.cx, y: WHEEL.cy + 11 }, `${data.populationSize} plans`));
+  // The two spins that the first child of generation 1 uses, marked outside the ring.
+  data.parents.forEach((/** @type {number} */ plan, /** @type {number} */ order) => {
+    const at = centers.get(plan);
+    if (at === undefined) return;
+    const [markX, markY] = wheelPoint(at, WHEEL.outer + 9);
+    const [tipX, tipY] = wheelPoint(at, WHEEL.outer + 1);
+    image.append(svg(doc, "line", { class: "how-pick-line", x1: r(markX), y1: r(markY), x2: r(tipX), y2: r(tipY) }));
+    const [textX, textY] = wheelPoint(at, WHEEL.outer + 17);
+    image.append(svg(doc, "text", { class: "how-pick how-middle", x: r(textX), y: r(textY + 3.5) }, order === 0 ? "A" : "B"));
+  });
+  // The pointer at the top, over the slice that a spin lands on.
+  image.append(svg(doc, "path", { class: "how-pointer", d: `M${WHEEL.cx - 5} 2 H${WHEEL.cx + 5} L${WHEEL.cx} 11 Z` }));
+
+  // The table: a plain wheel against this one, for the best, a middle and the worst plan.
+  const left = 160;
+  const columns = [236, 268, 300];
+  image.append(svg(doc, "text", { class: "how-axis", x: left, y: 30 }, "plan"));
+  ["fitness", "plain", "wheel"].forEach((heading, index) => {
+    image.append(svg(doc, "text", { class: "how-axis how-end", x: columns[index], y: 30 }, heading));
+  });
+  /** @type {Array<[string, any]>} */
+  const rows = [["best", data.best], ["middle", data.median], ["worst", data.worst]];
+  rows.forEach(([name, plan], index) => {
+    const y = 50 + index * 22;
+    image.append(svg(doc, "text", { class: "how-label", x: left, y }, name));
+    image.append(svg(doc, "text", { class: "how-value-text how-end", x: columns[0], y }, plan.fitness.toFixed(2)));
+    image.append(svg(doc, "text", { class: "how-value-text muted how-end", x: columns[1], y }, sharePercent(plan.plainShare)));
+    image.append(svg(doc, "text", { class: `how-value-text how-end${plan === data.best ? " lit" : ""}`, x: columns[2], y }, sharePercent(plan.share)));
+  });
+  image.append(svg(doc, "line", { class: "how-divider", x1: left, x2: WIDTH, y1: 36, y2: 36 }));
+  image.append(svg(doc, "text", { class: "how-axis", x: left, y: 128 }, "outlined: elite, kept"));
+  image.append(svg(doc, "text", { class: "how-axis", x: left, y: 142 }, "A, B: first two spins"));
   return { image };
 }
 

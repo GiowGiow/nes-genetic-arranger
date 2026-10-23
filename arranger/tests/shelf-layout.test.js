@@ -8,14 +8,19 @@ import { test } from "node:test";
 
 import {
   CAMERA_FOV,
+  ENTER_STAGGER_MS,
+  ENTER_STAGGER_MAX_MS,
   HALO_SCALE,
   LABEL_HEIGHT_PX,
   MARQUEE_GAP,
   MARQUEE_SPEED,
   NARROW_WIDTH,
+  PAGE_TURN_MS,
   RECORD_SPACING,
   SHELF_ROWS,
   cameraDistance,
+  enterPose,
+  exitPose,
   haloOpacity,
   isLowPower,
   labelAnchorY,
@@ -250,4 +255,57 @@ test("a record grows toward its size at the same speed in time on a 30 or a 60 f
   assert.ok(Math.abs(scaleEasing(1000 / 30) - twoSteps) < 1e-9, "one 30 fps frame is two 60 fps frames");
   assert.equal(scaleEasing(0), 0);
   assert.ok(scaleEasing(5000) < 1 && scaleEasing(5000) === scaleEasing(100), "a long pause is capped, so the jump is not instant");
+});
+
+// --- Page turns and entrances ------------------------------------------------------------------
+
+test("a page turn takes about a fifth of a second", () => {
+  assert.ok(PAGE_TURN_MS >= 150 && PAGE_TURN_MS <= 300);
+});
+
+test("records of the next page enter from the right and settle; the previous page's enter from the left", () => {
+  const start = enterPose(0, 0, 1);
+  assert.ok(start.offsetX > 0, "coming from the right when turning forward");
+  assert.equal(start.opacity, 0);
+  assert.equal(enterPose(0, 0, -1).offsetX, -start.offsetX, "mirrored when turning back");
+  const end = enterPose(PAGE_TURN_MS, 0, 1);
+  assert.equal(end.offsetX, 0);
+  assert.equal(end.opacity, 1);
+  assert.equal(end.scale, 1);
+  const middle = enterPose(PAGE_TURN_MS / 2, 0, 1);
+  assert.ok(middle.offsetX > 0 && middle.offsetX < start.offsetX);
+  assert.ok(middle.opacity > 0 && middle.opacity < 1);
+});
+
+test("records of the page being left slide away the opposite way and fade out", () => {
+  const start = exitPose(0, 1);
+  assert.equal(start.offsetX, 0);
+  assert.equal(start.opacity, 1);
+  const end = exitPose(PAGE_TURN_MS, 1);
+  assert.ok(end.offsetX < 0, "moving left when turning forward");
+  assert.equal(end.opacity, 0);
+  assert.equal(exitPose(PAGE_TURN_MS, -1).offsetX, -end.offsetX);
+});
+
+test("a list that changes (a playlist, a search) pops its records in one after another, with no sideways move", () => {
+  assert.equal(ENTER_STAGGER_MS, 18);
+  const first = enterPose(0, 0, 0);
+  assert.equal(first.offsetX, 0);
+  assert.equal(first.opacity, 0);
+  assert.equal(first.scale, 0.5);
+  assert.equal(enterPose(ENTER_STAGGER_MS * 3 - 1, 3, 0).opacity, 0, "the fourth record waits its turn");
+  assert.ok(enterPose(ENTER_STAGGER_MS * 3 + 100, 3, 0).opacity > 0);
+  assert.equal(enterPose(ENTER_STAGGER_MAX_MS + 1000, 26, 0).opacity, 1);
+});
+
+test("the wait before a record never passes 300 ms, however far down the page it is", () => {
+  assert.equal(ENTER_STAGGER_MAX_MS, 300);
+  assert.ok(enterPose(ENTER_STAGGER_MAX_MS + 300, 400, 0).opacity >= 0.99);
+});
+
+test("an entrance with time running backwards or before its turn is clamped, never past the ends", () => {
+  const early = enterPose(-50, 2, 1);
+  assert.equal(early.opacity, 0);
+  const late = enterPose(10_000, 2, 1);
+  assert.deepEqual([late.offsetX, late.opacity, late.scale], [0, 1, 1]);
 });

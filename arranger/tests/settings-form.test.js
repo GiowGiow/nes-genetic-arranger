@@ -12,6 +12,7 @@ import {
   exportConfig,
   formToSettings,
   importConfig,
+  readSettingsFile,
   valueAt,
   weightShares,
 } from "../src/ui/settings-form.js";
@@ -190,4 +191,26 @@ test("a config.json with allowed lists restores them, and the genes it omits kee
   assert.deepEqual(settings.allowed.p1_octave, [0]);
   assert.deepEqual(settings.allowed.tr, defaults.allowed.tr);
   assert.throws(() => importConfig('{"allowed": {"p3": ["hold"]}}', defaults), /unknown configuration key 'allowed.p3'/);
+});
+
+// --- What the visitor is told about a file (these messages go to toasts) -----------------------
+
+test("a settings file that loads says which file, and carries the settings", () => {
+  const outcome = readSettingsFile("fast.json", '{"seed": 3, "population_size": 40}', defaults);
+
+  assert.equal(outcome.ok, true);
+  assert.equal(outcome.message, "Loaded fast.json.");
+  assert.equal(outcome.settings?.population_size, 40);
+  assert.equal(outcome.settings?.seed, 3);
+});
+
+test("a settings file that does not load says which file and why, and carries no settings", () => {
+  const notJson = readSettingsFile("notes.txt", "not json", defaults);
+  assert.equal(notJson.ok, false);
+  assert.equal(notJson.message, "notes.txt: the file is not a JSON settings file");
+  assert.equal(notJson.settings, undefined);
+
+  const typo = readSettingsFile("typo.json", '{"populaton_size": 3}', defaults);
+  assert.equal(typo.ok, false);
+  assert.match(typo.message, /^typo\.json: .*populaton_size/);
 });

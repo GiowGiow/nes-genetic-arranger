@@ -37,7 +37,9 @@ import {
   REGISTRY_PATH,
   searchCatalog,
   seedOf,
+  shouldPrefetch,
   tuneText,
+  warmSearchIndex,
 } from "../src/core/sources.js";
 import { fixturesDir, loadAbcjs } from "./helpers.js";
 
@@ -735,4 +737,89 @@ test("a record is not the loaded song when the input is another file or another 
   assert.equal(isLoadedSong(shelfSong, { sha256, catalogEntry: otherSong }), false, "another shelf song");
   assert.equal(isLoadedSong({ ...shelfSong, source: "pdmx" }, { sha256, catalogEntry: shelfSong }), false, "the same id in another source");
   assert.equal(isLoadedSong(shelfSong, null), false, "nothing is loaded");
+});
+
+// --- Progress of a big file ---------------------------------------------------------------------
+
+/**
+ * A fetch that serves the registry-less catalog but sends MPB's file as a stream in pieces, with
+ * its length announced, as a real server does.
+ *
+ * @param {number} pieces how many chunks the file arrives in
+ */
+function streamingFetch(pieces) {
+  const routes = catalogRoutes();
+  const fetchFn = async (/** @type {string} */ url) => {
+    if (url !== "data/catalog/mpb.json") {
+      const body = routes[url]?.body ?? "";
+      return new Response(url === "data/catalog/collections.json" ? null : body, { status: url === "data/catalog/collections.json" ? 404 : 200 });
+    }
+    const bytes = new TextEncoder().encode(/** @type {string} */ (routes[url].body));
+    const size = Math.ceil(bytes.length / pieces);
+    let at = 0;
+    const body = new ReadableStream({
+      pull(controller) {
+        if (at >= bytes.length) return controller.close();
+        controller.enqueue(bytes.slice(at, at + size));
+        at += size;
+      },
+    });
+    return new Response(body, { status: 200, headers: { "content-length": String(bytes.length) } });
+  };
+  return /** @type {any} */ (fetchFn);
+}
+
+test("a lazy file reports how much of it has arrived while it streams in, and still parses", async () => {
+  /** @type {Array<[string, number, number]>} */
+  const progress = [];
+  const catalog = await loadCatalog(streamingFetch(4), () => {}, (source, { loaded, total }) => progress.push([source, loaded, total]));
+  assert.deepEqual(progress, [], "nothing for the small files, and nothing before MPB is asked for");
+  const more = await catalog.loadMore("mpb");
+  assert.equal(more.entries.filter((entry) => entry.source === "mpb").length, 4, "the songs came out right");
+  assert.ok(progress.length >= 2, "more than one report");
+  assert.ok(progress.every(([source]) => source === "mpb"));
+  const loaded = progress.map(([, bytes]) => bytes);
+  assert.deepEqual(loaded, [...loaded].sort((a, b) => a - b), "it only grows");
+  assert.equal(progress.at(-1)?.[1], progress.at(-1)?.[2], "the last report says all of it arrived");
+});
+
+test("a file with no announced length still reports the bytes that arrived, with total 0", async () => {
+  const routes = catalogRoutes();
+  const fetchFn = /** @type {any} */ (async (/** @type {string} */ url) =>
+    url === "data/catalog/collections.json" ? new Response(null, { status: 404 }) : new Response(/** @type {string} */ (routes[url]?.body ?? ""), { status: 200 }));
+  /** @type {number[]} */
+  const totals = [];
+  const catalog = await loadCatalog(fetchFn, () => {}, (_source, { total }) => totals.push(total));
+  await catalog.loadMore("mpb");
+  assert.ok(totals.length >= 1);
+  assert.ok(totals.every((total) => total === 0));
+});
+
+// --- Prefetching the big file ---------------------------------------------------------------------
+
+test("the big file is fetched ahead only on a connection that is not metered or slow", () => {
+  assert.equal(shouldPrefetch(undefined), true, "no information: go ahead");
+  assert.equal(shouldPrefetch({}), true);
+  assert.equal(shouldPrefetch({ saveData: true }), false);
+  assert.equal(shouldPrefetch({ effectiveType: "4g" }), true);
+  for (const effectiveType of ["slow-2g", "2g", "3g"]) assert.equal(shouldPrefetch({ effectiveType }), false, effectiveType);
+  assert.equal(shouldPrefetch({ type: "cellular" }), false);
+  assert.equal(shouldPrefetch({ type: "wifi", effectiveType: "4g" }), true);
+});
+
+// --- The search index -------------------------------------------------------------------------------
+
+test("warming the search index does not change what a search finds", () => {
+  const catalog = mergeCatalog(allFiles());
+  const before = searchCatalog(catalog, "teste").map((entry) => entry.id);
+  warmSearchIndex(catalog);
+  assert.deepEqual(searchCatalog(catalog, "teste").map((entry) => entry.id), before);
+});
+
+test("a search over thousands of songs takes a few milliseconds once the index is built", () => {
+  const many = Array.from({ length: 4000 }, (_, i) => ({ id: `s${i}`, source: "mpb", t: `Canção número ${i} de teste`, c: `Compositor ${i % 50}`, p: "" }));
+  warmSearchIndex(many);
+  const started = performance.now();
+  for (const query of ["can", "cao", "numero 12", "compositor 7"]) searchCatalog(many, query);
+  assert.ok((performance.now() - started) / 4 < 30, "under 30 ms a keystroke");
 });

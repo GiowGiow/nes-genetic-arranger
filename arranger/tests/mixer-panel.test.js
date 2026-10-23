@@ -11,7 +11,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import { DEFAULT_LEVELS, MAX_DB, MIN_DB, clampLevels } from "../src/audio/mixer.js";
-import { createMixerPanel, formatLevel } from "../src/ui/mixer-panel.js";
+import { METER_CEILING_DB, METER_FLOOR_DB, NEEDLE_RANGE_DEGREES, createMixerPanel, formatLevel, meterPosition, needleAngle, vuBallistics } from "../src/ui/mixer-panel.js";
 import { createVolumeSlider } from "../src/ui/volume-slider.js";
 
 /** @typedef {import("../src/audio/mixer.js").Levels} Levels */
@@ -59,6 +59,7 @@ class FakeElement {
   /** @param {string} name @param {string} value */
   setAttribute(name, value) {
     this.attributes.set(name, String(value));
+    if (name === "class") this.className = String(value); // an SVG element has no settable className
   }
   /** @param {string} name */
   getAttribute(name) {
@@ -88,6 +89,10 @@ class FakeElement {
 class FakeDocument {
   /** @param {string} tagName */
   createElement(tagName) {
+    return new FakeElement(tagName, this);
+  }
+  /** @param {string} _namespace @param {string} tagName */
+  createElementNS(_namespace, tagName) {
     return new FakeElement(tagName, this);
   }
 }
@@ -357,4 +362,164 @@ test("the compact volume slider beside Play is the same control: it reports and 
   compact.set(10);
   assert.equal(input.value, "10");
   assert.equal(heard.length, 1, "set is not a change by the visitor");
+});
+
+// --- VU meters ----------------------------------------------------------------------------------
+//
+// Each channel has a small analog needle meter that moves while music plays. The panel does not
+// listen to the audio: it is given a function that returns the current level of each channel
+// (the page gets it from the player), and it reads that function once per animation frame, only
+// while metering is on.
+
+test("a level maps to the needle's range by decibels: the floor rests, the ceiling is full scale, and louder stays there", () => {
+  assert.equal(meterPosition(0), 0, "silence rests");
+  assert.equal(meterPosition(10 ** (METER_FLOOR_DB / 20)), 0);
+  assert.equal(meterPosition(10 ** (METER_CEILING_DB / 20)), 1);
+  assert.equal(meterPosition(1), 1, "a full-scale wave pins the needle");
+  const middle = (METER_FLOOR_DB + METER_CEILING_DB) / 2;
+  assert.ok(Math.abs(meterPosition(10 ** (middle / 20)) - 0.5) < 1e-9, "halfway in dB is halfway on the dial");
+  assert.ok(meterPosition(0.1) < meterPosition(0.2), "a louder channel moves the needle further");
+});
+
+test("the needle sweeps from the left stop to the right stop", () => {
+  assert.equal(needleAngle(0), -NEEDLE_RANGE_DEGREES / 2);
+  assert.equal(needleAngle(1), NEEDLE_RANGE_DEGREES / 2);
+  assert.equal(needleAngle(0.5), 0);
+  assert.equal(needleAngle(7), NEEDLE_RANGE_DEGREES / 2, "past the stop is held at the stop");
+});
+
+test("a needle rises faster than it falls, like a VU meter's, and never overshoots", () => {
+  const rise = vuBallistics(0, 1, 0.05) - 0;
+  const fall = 1 - vuBallistics(1, 0, 0.05);
+  assert.ok(rise > fall * 3, `rises ${rise.toFixed(2)} in 50 ms, falls ${fall.toFixed(2)}`);
+  assert.equal(vuBallistics(0.4, 0.4, 0.05), 0.4, "at its target it stays");
+  assert.ok(vuBallistics(0, 1, 10) <= 1);
+  assert.ok(vuBallistics(1, 0, 10) >= 0);
+  assert.equal(vuBallistics(0.3, 0.9, 0), 0.3, "no time, no movement");
+});
+
+/**
+ * A panel whose meters read levels from a variable and whose animation frames the test runs.
+ * @param {{reducedMotion?: boolean}} [options]
+ */
+function meteredPanel({ reducedMotion = false } = {}) {
+  const container = new FakeDocument().createElement("div");
+  /** @type {Partial<Record<"P1" | "P2" | "TR" | "NO", number>>} */
+  const heard = {};
+  let reads = 0;
+  /** @type {Map<number, (now: number) => void>} */
+  const frames = new Map();
+  let nextFrame = 1;
+  const panel = createMixerPanel(/** @type {any} */ (container), {
+    onChange: () => {},
+    readMeters: () => {
+      reads += 1;
+      return heard;
+    },
+    requestFrame: (run) => {
+      const id = nextFrame++;
+      frames.set(id, run);
+      return id;
+    },
+    cancelFrame: (id) => void frames.delete(id),
+    reducedMotion,
+  });
+  /** Run the pending frame at time `now` (ms), as the browser would. @param {number} now */
+  const frame = (now) => {
+    const pending = [...frames];
+    frames.clear();
+    for (const [, run] of pending) run(now);
+  };
+  const needle = (/** @type {string} */ channel) => {
+    const row = all(container, (element) => element.getAttribute("data-channel") === channel)[0];
+    return one(row, hasClass("vu-needle"));
+  };
+  return { container, panel, heard, frame, frames, needle, reads: () => reads };
+}
+
+test("every channel row has an analog meter with a dial and a needle, hidden from screen readers", () => {
+  const { container, needle } = meteredPanel();
+  for (const channel of ["P1", "P2", "TR", "NO"]) {
+    const row = all(container, (element) => element.getAttribute("data-channel") === channel)[0];
+    const meter = one(row, hasClass("mixer-vu"));
+    assert.equal(meter.getAttribute("aria-hidden"), "true", "the sliders already speak; the needle is for the eye");
+    one(meter, hasClass("vu-dial"));
+    assert.equal(needle(channel).getAttribute("transform"), `rotate(${-NEEDLE_RANGE_DEGREES / 2} 24 29)`, "it rests on the left stop");
+  }
+  const volume = one(container, hasClass("mixer-volume"));
+  assert.equal(all(volume, hasClass("mixer-vu")).length, 0, "the master volume has no meter of its own");
+});
+
+test("meters are idle until metering starts: no animation frame is asked for", () => {
+  const { frames, reads } = meteredPanel();
+
+  assert.equal(frames.size, 0);
+  assert.equal(reads(), 0);
+});
+
+test("while metering, each frame reads the levels and swings the needles toward them", () => {
+  const { panel, heard, frame, needle } = meteredPanel();
+  heard.P1 = 10 ** (METER_CEILING_DB / 20); // full scale
+  heard.TR = 10 ** (((METER_FLOOR_DB + METER_CEILING_DB) / 2) / 20); // half way
+
+  panel.setMetering(true);
+  frame(1000);
+  for (let now = 1033; now <= 1700; now += 33) frame(now);
+
+  const angle = (/** @type {string} */ channel) => Number(/rotate\((-?[\d.]+)/.exec(needle(channel).getAttribute("transform") ?? "")?.[1]);
+  assert.ok(Math.abs(angle("P1") - NEEDLE_RANGE_DEGREES / 2) < 1, `P1 reached the right stop (${angle("P1")})`);
+  assert.ok(Math.abs(angle("TR")) < 1, `TR settled at the middle (${angle("TR")})`);
+  assert.equal(angle("NO"), -NEEDLE_RANGE_DEGREES / 2, "a silent channel stays at rest");
+});
+
+test("frames closer than 33 ms are skipped, so the meters cost little on a phone", () => {
+  const { panel, frame, reads } = meteredPanel();
+  panel.setMetering(true);
+
+  frame(1000);
+  frame(1010);
+  frame(1020);
+  frame(1040);
+
+  assert.equal(reads(), 2, "1000 and 1040 only");
+});
+
+test("when metering stops the needles fall back to rest and then the frames stop", () => {
+  const { panel, heard, frame, frames, needle } = meteredPanel();
+  heard.P2 = 1;
+  panel.setMetering(true);
+  for (let now = 1000; now < 1500; now += 33) frame(now);
+  assert.ok(!needle("P2").getAttribute("transform")?.includes(`${-NEEDLE_RANGE_DEGREES / 2} `), "raised");
+
+  panel.setMetering(false);
+  let now = 1500;
+  for (let step = 0; step < 200 && frames.size > 0; step++, now += 33) frame(now);
+
+  assert.equal(frames.size, 0, "no frame is left running");
+  assert.equal(needle("P2").getAttribute("transform"), `rotate(${-NEEDLE_RANGE_DEGREES / 2} 24 29)`);
+});
+
+test("asking for metering twice does not start two loops", () => {
+  const { panel, frames } = meteredPanel();
+
+  panel.setMetering(true);
+  panel.setMetering(true);
+
+  assert.equal(frames.size, 1);
+});
+
+test("a visitor who asked for less motion gets still needles", () => {
+  const { panel, frames, needle } = meteredPanel({ reducedMotion: true });
+
+  panel.setMetering(true);
+
+  assert.equal(frames.size, 0);
+  assert.equal(needle("P1").getAttribute("transform"), `rotate(${-NEEDLE_RANGE_DEGREES / 2} 24 29)`);
+});
+
+test("a panel built without a level source ignores setMetering", () => {
+  const { panel } = panelOf();
+
+  assert.doesNotThrow(() => panel.setMetering(true));
+  assert.doesNotThrow(() => panel.setMetering(false));
 });

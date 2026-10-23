@@ -36,6 +36,52 @@
   to { transform: translateX(100%); }
 }
 
+/* A counter wheel changing: the new digit rolls in from above (two copies take turns). */
+@keyframes wheel-roll-a {
+  from { opacity: .3; transform: translateY(-40%); }
+}
+@keyframes wheel-roll-b {
+  from { opacity: .3; transform: translateY(-40%); }
+}
+/* The oscilloscope's beam crosses the screen. */
+@keyframes scope-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(260%); }
+}
+/* INSERT COIN: on, then off. */
+@keyframes coin-blink {
+  50% { opacity: 0; }
+}
+/* The step of a generation lit in turn. */
+@keyframes gen-light {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .55; transform: scale(.92); }
+}
+/* A tracker cell that just changed. */
+@keyframes trk-flash {
+  from { opacity: .2; transform: translateX(-2px); }
+}
+
+/* View transitions between tabs (ui/view-transition.js): the old page leaves and the new one
+   arrives, a few pixels apart in the direction of the tab order. */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; animation-timing-function: var(--ease-out); }
+html[data-slide="forward"]::view-transition-old(root) { animation-name: vt-out-left; }
+html[data-slide="forward"]::view-transition-new(root) { animation-name: vt-in-right; }
+html[data-slide="back"]::view-transition-old(root) { animation-name: vt-out-right; }
+html[data-slide="back"]::view-transition-new(root) { animation-name: vt-in-left; }
+@keyframes vt-out-left {
+  to { opacity: 0; transform: translateX(-12px); }
+}
+@keyframes vt-in-right {
+  from { opacity: 0; transform: translateX(12px); }
+}
+@keyframes vt-out-right {
+  to { opacity: 0; transform: translateX(12px); }
+}
+@keyframes vt-in-left {
+  from { opacity: 0; transform: translateX(-12px); }
+}
+
 /* Ready-made classes: add one to an element that appears. */
 .anim-panel-in { animation: panel-in var(--dur-2) var(--ease-out) both; }
 .anim-fade-in { animation: fade-in var(--dur-2) var(--ease-out) both; }

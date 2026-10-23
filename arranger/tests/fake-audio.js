@@ -39,11 +39,15 @@ export class FakeNode {
     this.kind = kind;
     /** @type {FakeNode[]} */
     this.outputs = [];
+    /** @type {FakeAnalyser[]} analysers listening to this node: taps, not part of the signal path */
+    this.taps = [];
     this.disconnected = false;
   }
   /** @param {FakeNode} node */
   connect(node) {
-    this.outputs.push(node);
+    // An analyser only listens: it is not a destination of the signal.
+    if (node instanceof FakeAnalyser) this.taps.push(node);
+    else this.outputs.push(node);
     return node;
   }
   disconnect() {
@@ -67,6 +71,22 @@ export class FakeCompressor extends FakeNode {
     this.ratio = new FakeParam(12);
     this.attack = new FakeParam(0.003);
     this.release = new FakeParam(0.25);
+  }
+}
+
+/** An AnalyserNode: it holds the block of samples the test says is passing now. */
+export class FakeAnalyser extends FakeNode {
+  constructor() {
+    super("analyser");
+    this.fftSize = 2048;
+    /** @type {number[]} what getFloatTimeDomainData hands out (repeated to fill the block) */
+    this.block = [0];
+    this.reads = 0;
+  }
+  /** @param {Float32Array} array */
+  getFloatTimeDomainData(array) {
+    this.reads += 1;
+    for (let i = 0; i < array.length; i++) array[i] = this.block[i % this.block.length];
   }
 }
 
@@ -119,6 +139,13 @@ export class FakeContext {
     this.sources = [];
     /** @type {FakeCompressor[]} */
     this.compressors = [];
+    /** @type {FakeAnalyser[]} */
+    this.analysers = [];
+  }
+  createAnalyser() {
+    const analyser = new FakeAnalyser();
+    this.analysers.push(analyser);
+    return analyser;
   }
   createGain() {
     const gain = new FakeGain();

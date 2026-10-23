@@ -39,6 +39,7 @@ test("every module, style, font and vendor script of the app is precached", () =
     "catalog.css",
     "mixer.css",
     "how.css",
+    "theme.css",
     "version.json",
     ...filesUnder(join(appDir, "src")),
     "vendor/abcjs/abcjs-basic-min.js",

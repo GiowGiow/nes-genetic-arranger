@@ -18,7 +18,8 @@ import {
   isAllowedOrigin,
   isDenied,
 } from "./rules.js";
-import { fetchMidi } from "./upstream.js";
+import { MAX_QUERY_LENGTH, cleanQuery, midis101SearchUrl, mutopiaSearchUrl, parseMidis101, parseMutopia } from "./search.js";
+import { fetchBytes, fetchMidi } from "./upstream.js";
 
 /** Identifies the project to the sites we fetch from, with a way to contact it. */
 export const USER_AGENT = "nes-genetic-arranger (+https://github.com/GiowGiow/nes-genetic-arranger)";
@@ -26,6 +27,16 @@ export const USER_AGENT = "nes-genetic-arranger (+https://github.com/GiowGiow/ne
 const CACHE_SECONDS = 86400;
 const CACHE_CONTROL = `public, max-age=${CACHE_SECONDS}`;
 const TIMEOUT_MS = 10_000;
+/** A search page is HTML of a few tens of kB; one over this is not what we expect. */
+const MAX_PAGE_BYTES = 1024 * 1024;
+/** A search answer may be reused for an hour: the sites' catalogs change slowly. */
+const SEARCH_CACHE_SECONDS = 3600;
+
+/** The search sources: where each searches and how its page is read. */
+const SEARCHES = {
+  midis101: { url: midis101SearchUrl, parse: parseMidis101 },
+  mutopia: { url: mutopiaSearchUrl, parse: parseMutopia },
+};
 const RATE_LIMIT = 30;
 const RATE_WINDOW_MS = 60_000;
 
@@ -62,6 +73,45 @@ export function createHandler({
   timeoutMs = TIMEOUT_MS,
   maxBytes = MAX_BYTES,
 }) {
+  /**
+   * Answer a search: fetch the site's search page once (or take the answer from the cache),
+   * read the songs out of it and return them as JSON. The list is filtered by the denylist on
+   * the way out, so a takedown applies to cached answers too.
+   */
+  async function search(source, rawQuery, origin, ctx) {
+    const query = cleanQuery(rawQuery);
+    if (query === null) {
+      return jsonResponse(400, { error: `q must be 2 to ${MAX_QUERY_LENGTH} characters` }, origin);
+    }
+    const { url, parse } = SEARCHES[source];
+    const pageUrl = url(query);
+    const cacheKey = new Request(pageUrl.href);
+    const answer = (results) =>
+      jsonResponse(
+        200,
+        { source, query, results: results.filter((result) => !isDenied(new URL(result.midi), denylist)) },
+        origin,
+        { "Cache-Control": `public, max-age=${SEARCH_CACHE_SECONDS}` },
+      );
+
+    const cached = await cache.match(cacheKey);
+    if (cached !== undefined) return answer((await cached.json()).results);
+
+    const page = await fetchBytes(pageUrl, { fetchImpl, allowedHosts, denylist, timeoutMs, maxBytes: MAX_PAGE_BYTES, userAgent: USER_AGENT });
+    if (!page.ok) return jsonResponse(page.status, { error: page.reason }, origin);
+    const results = parse(new TextDecoder().decode(page.bytes));
+    ctx.waitUntil(
+      cache.put(
+        cacheKey,
+        new Response(JSON.stringify({ source, query, results }), {
+          status: 200,
+          headers: { "Content-Type": "application/json", "Cache-Control": `public, max-age=${SEARCH_CACHE_SECONDS}` },
+        }),
+      ),
+    );
+    return answer(results);
+  }
+
   return async function handle(request, ctx) {
     const requestUrl = new URL(request.url);
     const origin = request.headers.get("Origin");
@@ -86,7 +136,10 @@ export function createHandler({
     }
 
     if (requestUrl.pathname === "/health") return jsonResponse(200, { ok: true }, echoedOrigin);
-    if (requestUrl.pathname !== "/midi") return jsonResponse(404, { error: "not found" }, echoedOrigin);
+    const searchSource = /^\/search\/([a-z0-9]+)$/.exec(requestUrl.pathname)?.[1];
+    if (requestUrl.pathname !== "/midi" && !(searchSource && Object.hasOwn(SEARCHES, searchSource))) {
+      return jsonResponse(404, { error: "not found" }, echoedOrigin);
+    }
 
     // The origin is checked first so that a refused caller costs nobody a rate-limit slot.
     if (!originAllowed) return jsonResponse(403, { error: "origin not allowed" }, null);
@@ -97,6 +150,10 @@ export function createHandler({
       return jsonResponse(429, { error: "too many requests, try again soon" }, origin, {
         "Retry-After": String(turn.retryAfterSeconds),
       });
+    }
+
+    if (searchSource) {
+      return search(searchSource, requestUrl.searchParams.get("q"), origin, ctx);
     }
 
     const verdict = checkUpstreamUrl(requestUrl.searchParams.get("url"), allowedHosts);

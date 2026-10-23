@@ -9,18 +9,21 @@
  *   know come first. Songs with the same popularity keep the examples' own order, then fall
  *   back to the title, which makes the order the same on every run.
  * - A playlist is a named list of songs with a cover: the sprite of its most popular song,
- *   like the cover of an album. "Popular" holds the 50 best songs that open in one click.
- *   One playlist per collection follows it, named and ordered by the registry
+ *   like the cover of an album. "Catalog" is the default: the visitor's own songs, then the
+ *   examples in their own order, then the 50 best songs that open in one click (a file of the
+ *   repository, a download this browser kept, or a song the file fetcher brings). One playlist
+ *   per other collection follows it, named and ordered by the registry
  *   (`data/catalog/collections.json`). A collection of songs that live on another site (MPB, the
  *   biggest) opens into albums, one per artist; a collection of the student's own MIDI files
- *   opens into the albums its songs name, and is sorted as its registry record says.
+ *   opens into the albums its songs name, and is sorted as its registry record says. The
+ *   examples have no playlist of their own: Catalog shows them first.
  *
  * Everything here is a pure function of the catalog entries, so it is tested without a browser;
  * `ui/song-shelf.js` draws the result.
  */
 
-import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
-import { FALLBACK_COLLECTIONS, playlistIdOf, searchCatalog, seedOf } from "./sources.js";
+import { normalize } from "./catalog.js";
+import { FALLBACK_COLLECTIONS, playlistIdOf, searchRanked, seedOf } from "./sources.js";
 
 /** @typedef {import("./sources.js").CatalogEntry & {pop?: number}} PlaylistEntry */
 
@@ -36,8 +39,28 @@ import { FALLBACK_COLLECTIONS, playlistIdOf, searchCatalog, seedOf } from "./sou
  *   no count yet
  */
 
-/** How many songs "Popular" holds. */
+/** How many songs Catalog holds besides the visitor's own songs and the examples. */
 export const POPULAR_SIZE = 50;
+
+/** The default playlist. */
+export const CATALOG_ID = "catalog";
+
+/** The collection whose songs are shown first in Catalog and have no playlist of their own. */
+const EXAMPLES = "examples";
+
+/**
+ * The playlist id a remembered choice leads to now: "Popular" and "Examples" were folded into
+ * "Catalog", and a visitor who had chosen either lands there.
+ *
+ * @param {string | null | undefined} id a remembered playlist id, if any
+ * @returns {string}
+ * @example
+ * playlistAlias("popular"); // "catalog"
+ * playlistAlias("mpb"); // "mpb"
+ */
+export function playlistAlias(id) {
+  return !id || id === "popular" || id === "examples" ? CATALOG_ID : id;
+}
 
 /** An artist needs this many songs to have an album of their own. */
 export const ALBUM_MIN_SONGS = 5;
@@ -107,18 +130,13 @@ export function orderCatalog(entries) {
  * searchByPopularity(catalog, "samba").map((e) => e.t); // title matches first, famous ones first
  */
 export function searchByPopularity(entries, query) {
-  const wanted = normalize(query);
-  if (wanted.length < MIN_QUERY_LENGTH) return entries;
-  const rankOf = (/** @type {PlaylistEntry} */ entry) => {
-    const title = normalize(entry.t);
-    return title.startsWith(wanted) ? 0 : title.includes(wanted) ? 1 : 2;
-  };
-  // `searchCatalog` already ranks and breaks ties by title; sorting its result again is stable,
-  // so equal rank and equal popularity keep that title order.
-  return searchCatalog(entries, query)
-    .map((entry) => ({ entry, rank: rankOf(entry) }))
-    .sort((a, b) => a.rank - b.rank || popOf(b.entry) - popOf(a.entry))
-    .map(({ entry }) => entry);
+  // The ranks come with the hits, from titles normalized once per list (`searchRanked`): a
+  // keystroke does not normalize a thousand titles again.
+  const hits = searchRanked(entries, query);
+  if (hits === null) return entries;
+  // `searchRanked` already breaks ties by title; this sort is stable, so equal rank and equal
+  // popularity keep that title order.
+  return hits.sort((a, b) => a.rank - b.rank || popOf(b.entry) - popOf(a.entry)).map(({ entry }) => entry);
 }
 
 /** @param {PlaylistEntry} entry */
@@ -128,13 +146,13 @@ function isOwn(entry) {
 
 /**
  * Whether one click arranges the song: it reads from a lead sheet or a MIDI file of the
- * repository (`abc`, `tune` or `midi`) and has no error, or it is a download that this browser already holds (`isCached`:
- * the visitor downloaded and opened it once, and the page remembers the file). Songs that
- * still need the visitor to download a file first do not.
+ * repository (`abc`, `tune` or `midi`) and has no error, or it is a download that the page can
+ * bring by itself (`isOneClick`: this browser kept the file, or the file fetcher can bring it).
+ * Songs that still need the visitor to download a file first do not.
  *
  * @param {PlaylistEntry} entry
- * @param {(entry: PlaylistEntry) => boolean} [isCached] whether the song's file is remembered
- *   in this browser; default: nothing is
+ * @param {(entry: PlaylistEntry) => boolean} [isOneClick] whether the page can open the song's
+ *   downloadable file without the visitor; default: it cannot
  * @returns {boolean}
  * @example
  * canArrangeInOneClick({ id: "a", t: "A", route: { abc: "abc/a.abc" } }); // true
@@ -142,9 +160,9 @@ function isOwn(entry) {
  * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }); // false
  * canArrangeInOneClick({ id: "a", t: "A", route: { download: "https://example.org/a.mid" } }, () => true); // true
  */
-export function canArrangeInOneClick(entry, isCached = () => false) {
+export function canArrangeInOneClick(entry, isOneClick = () => false) {
   if (entry.error || !entry.route) return false;
-  if (entry.route.download !== undefined) return isCached(entry);
+  if (entry.route.download !== undefined) return isOneClick(entry);
   return entry.route.abc !== undefined || entry.route.tune !== undefined || entry.route.midi !== undefined;
 }
 
@@ -302,24 +320,25 @@ function collectionPlaylist(record, songs, isPending) {
 }
 
 /**
- * The playlists of a catalog, in the order the chooser shows them: Popular, Your songs (only
- * when the visitor opened some), then one per registered collection in the registry's order
- * (by default Examples, MPB, Choro & public domain, Folk tunes, and Classical & standards). A
- * playlist with no songs is left out, except that of a lazy collection whose file is still
- * loading: it shows with no count, so the tile does not appear later and shift the others. A
- * disabled collection has no playlist, and neither do songs of a collection nobody registered.
+ * The playlists of a catalog, in the order the chooser shows them: Catalog, then one per
+ * registered collection in the registry's order (by default MPB, Choro & public domain, Folk
+ * tunes, and Classical & standards), then Your songs (only when the visitor opened some). The
+ * examples collection has no playlist: its songs are in Catalog, first. A playlist with no songs
+ * is left out, except that of a lazy collection whose file is still loading: it shows with no
+ * count, so the tile does not appear later and shift the others. A disabled collection has no
+ * playlist, and neither do songs of a collection nobody registered.
  *
  * @param {PlaylistEntry[]} entries the catalog in any order, with the visitor's own songs
  *   (source "local") in the order they should show
- * @param {{isCached?: (entry: PlaylistEntry) => boolean, pending?: string[], collections?: ReadonlyArray<import("./sources.js").CollectionRecord>}} [context]
- *   `isCached`: which downloaded songs this browser remembers (they join Popular); `pending`:
- *   the collections whose file has not arrived; `collections`: the registry's records (default:
- *   the built-in ones)
+ * @param {{isOneClick?: (entry: PlaylistEntry) => boolean, pending?: string[], collections?: ReadonlyArray<import("./sources.js").CollectionRecord>}} [context]
+ *   `isOneClick`: which downloadable songs the page opens by itself (a kept download, a file the
+ *   fetcher brings); they join Catalog; `pending`: the collections whose file has not arrived;
+ *   `collections`: the registry's records (default: the built-in ones)
  * @returns {Playlist[]}
  * @example
- * buildPlaylists(catalog).map((list) => list.name); // ["Popular", "Examples", "MPB", ...]
+ * buildPlaylists(catalog).map((list) => list.name); // ["Catalog", "MPB", ...]
  */
-export function buildPlaylists(entries, { isCached = () => false, pending = [], collections = FALLBACK_COLLECTIONS } = {}) {
+export function buildPlaylists(entries, { isOneClick = () => false, pending = [], collections = FALLBACK_COLLECTIONS } = {}) {
   const active = collections.filter((record) => record.enabled);
   const known = new Set(active.map((record) => record.id));
   const own = entries.filter(isOwn);
@@ -327,17 +346,18 @@ export function buildPlaylists(entries, { isCached = () => false, pending = [], 
   /** @param {string} source */
   const from = (source) => rest.filter((entry) => entry.source === source);
 
-  const best = rest.filter((entry) => canArrangeInOneClick(entry, isCached)).slice(0, POPULAR_SIZE);
-  const lists = [
-    makePlaylist("popular", "Popular", [...own, ...best], best[0] ?? own[0] ?? null),
-    makePlaylist("yours", "Your songs", own),
-  ];
+  const examples = sortCollection(from(EXAMPLES), "order");
+  const best = rest.filter((entry) => entry.source !== EXAMPLES && canArrangeInOneClick(entry, isOneClick)).slice(0, POPULAR_SIZE);
+  const catalogSongs = [...own, ...examples, ...best];
+  const lists = [makePlaylist(CATALOG_ID, "Catalog", catalogSongs, best[0] ?? examples[0] ?? own[0] ?? null)];
   const ordered = active
+    .filter((record) => record.id !== EXAMPLES)
     .map((record, position) => ({ record, position }))
     .sort((a, b) => a.record.order - b.record.order || a.position - b.position);
   for (const { record } of ordered) {
     const list = collectionPlaylist(record, from(record.id), pending.includes(record.id));
     if (list) lists.push(list);
   }
+  lists.push(makePlaylist("yours", "Your songs", own));
   return lists.filter((list) => list.songs.length > 0 || list.pending);
 }

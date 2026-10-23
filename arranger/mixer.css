@@ -1,35 +1,104 @@
-/* Channel mixer (spec 005, src/ui/mixer-panel.js): four small vertical faders under the player,
-   one per channel, side by side. Each row carries its channel color in --c (set by the panel), so
-   the code and the fader share it, as the plan grid and the channel view color the same four
-   channels. Uses the tokens and .button classes of style.css. */
+/* Channel mixer (spec 005, src/ui/mixer-panel.js): a small hi-fi console. Four channel strips side
+   by side, one per channel of the NES chip. Each strip, top to bottom: an analog VU meter with a
+   backlit cream dial, a vertical fader with a metal cap, the level in dB, a mute button with an
+   LED, and the channel's name silk-screened in its color. Each row carries its channel color in
+   --c (set by the panel), as the plan grid and the channel view color the same four channels.
+   Uses the tokens and .button classes of style.css; the console's own materials are the tokens
+   below, which theme.css re-colors for the light theme. */
+
+:root {
+  --plate: #0f1420;
+  --plate-edge: rgba(255, 255, 255, .06);
+  --groove: #05070c;
+  --tick: rgba(255, 255, 255, .28);
+  --cap-top: #4a5470;
+  --cap-bottom: #262c3d;
+  --cap-edge: #05070c;
+  --led-off: #3b2a2c;
+  --led-on: #ff5a46;
+  /* The meter's dial: warm paper lit from behind, with dark ink. It stays the same in both themes,
+     like the real object. */
+  --dial-light: #f1e7c6;
+  --dial-dark: #d8c98f;
+  --dial-ink: #26200f;
+  --dial-hot: #c0392b;
+}
 
 .mixer {
   display: inline-grid; grid-template-columns: repeat(4, 56px); gap: 6px 4px; justify-items: center;
   margin-top: 12px; padding: 10px 12px 8px; border-radius: 12px;
-  background: rgba(11, 14, 23, .45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, 0) 40%), var(--plate);
+  box-shadow: inset 0 1px 0 var(--plate-edge), inset 0 -2px 8px rgba(0, 0, 0, .35), 0 0 0 1px var(--line);
 }
-.mixer-title { grid-column: 1 / -1; justify-self: start; margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+/* Silk-screened title: the sound pack the levels are for. */
+.mixer-title {
+  grid-column: 1 / -1; justify-self: start; margin: 0; color: var(--muted);
+  font: 600 .7rem var(--mono); letter-spacing: .12em; text-transform: uppercase;
+}
 
 .mixer-row { display: grid; justify-items: center; align-content: start; gap: 4px; min-width: 0; }
+
+/* The VU meter on top of the strip. */
+.mixer-vu {
+  order: -2; display: block; width: 100%; max-width: 50px; height: auto; border-radius: 4px;
+  background: radial-gradient(ellipse at 50% 100%, var(--dial-light), var(--dial-dark));
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .55), 0 0 0 1px var(--groove), 0 1px 0 var(--plate-edge);
+}
+.vu-dial, .vu-hot, .vu-tick { fill: none; }
+.vu-dial { stroke: var(--dial-ink); stroke-width: 1.1; }
+.vu-hot { stroke: var(--dial-hot); stroke-width: 2.4; }
+.vu-tick { stroke: var(--dial-ink); stroke-width: .8; }
+line.vu-hot { stroke-width: 1; }
+.vu-hand { stroke: var(--dial-ink); stroke-width: 1; stroke-linecap: round; }
+.vu-cap { fill: var(--dial-ink); }
 
 /* Channel code on top (P1), role under it in small type; the swatch is not needed here. */
 .mixer-name {
   display: flex; flex-direction: column-reverse; align-items: center; gap: 0; min-width: 0;
-  white-space: nowrap; cursor: pointer;
+  white-space: nowrap; cursor: pointer; order: 3;
 }
 .mixer-swatch { display: none; }
 .mixer-code { font: 700 .86rem var(--mono); color: var(--c); }
 .mixer-role { color: var(--muted); font-size: .72rem; font-weight: 500; }
 
-/* A vertical fader: the range input turned on its side, the top of the track is loud. */
+/* A vertical fader: the range input turned on its side, the top of the track is loud. The track is
+   a dark groove with a ruler of ticks on both sides, the thumb a metal cap with a line in the
+   channel's color. */
 .mixer-row input[type="range"] {
-  order: -1; writing-mode: vertical-lr; direction: rtl; width: 22px; height: 84px; margin: 0;
-  accent-color: var(--c);
+  order: -1; writing-mode: vertical-lr; direction: rtl; width: 28px; height: 92px; margin: 0;
+  -webkit-appearance: none; appearance: none; background: none; accent-color: var(--c); cursor: ns-resize;
+  background:
+    repeating-linear-gradient(to bottom, var(--tick) 0 1px, transparent 1px 10px) left center / 4px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--tick) 0 1px, transparent 1px 10px) right center / 4px 100% no-repeat;
 }
+.mixer-row input[type="range"]::-webkit-slider-runnable-track {
+  width: 5px; height: 100%; border-radius: 3px; background: var(--groove); box-shadow: 0 1px 0 var(--plate-edge);
+}
+.mixer-row input[type="range"]::-moz-range-track {
+  width: 5px; height: 100%; border-radius: 3px; background: var(--groove); box-shadow: 0 1px 0 var(--plate-edge);
+}
+.mixer-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 22px; height: 12px; margin-left: -8.5px; border-radius: 3px;
+  border: 1px solid var(--cap-edge);
+  background: linear-gradient(var(--c), var(--c)) center / 70% 2px no-repeat, linear-gradient(var(--cap-top), var(--cap-bottom));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 2px 3px rgba(0, 0, 0, .5);
+}
+.mixer-row input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 10px; border-radius: 3px; border: 1px solid var(--cap-edge);
+  background: linear-gradient(var(--c), var(--c)) center / 70% 2px no-repeat, linear-gradient(var(--cap-top), var(--cap-bottom));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 2px 3px rgba(0, 0, 0, .5);
+}
+.mixer-row input[type="range"]:focus-visible { outline-offset: 0; }
 .mixer-value { order: 0; font: 600 .74rem var(--mono); font-variant-numeric: tabular-nums; color: var(--text); white-space: nowrap; }
-.mixer-mute { font-size: .75rem; min-height: 28px; padding: 0 8px; }
-/* A muted channel keeps its level, shown dimmed until it is unmuted. */
+
+/* Mute: a small button with an LED that lights when the channel is silenced. */
+.mixer-mute { order: 2; font-size: .75rem; min-height: 28px; padding: 0 8px; gap: 6px; }
+.mixer-mute::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--led-off); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .4); }
+.mixer-mute[aria-pressed="true"] { background: var(--fill); box-shadow: none; }
+.mixer-mute[aria-pressed="true"]::before { background: var(--led-on); box-shadow: 0 0 6px 1px var(--led-on); }
+/* A muted channel keeps its level, shown dimmed until it is unmuted, and its meter goes dark. */
 .mixer-row:has(.mixer-mute[aria-pressed="true"]) :is(.mixer-level, .mixer-value) { opacity: .4; }
+.mixer-row:has(.mixer-mute[aria-pressed="true"]) .mixer-vu { opacity: .5; }
 
 /* The master volume (src/ui/volume-slider.js): a horizontal row across the top of the mixer, over
    all four channels, and a small copy of it beside the Play button. */
@@ -47,25 +116,28 @@
 
 /* The drawer: the mixer slides in from the left edge and leaves the page as it is. Closed, it waits
    off screen, invisible to the mouse, the keyboard and screen readers (like the settings drawer).
-   On a phone it is a sheet from the bottom edge, as wide as the screen. */
+   On a wide screen it sits beside the player and the page stays usable; on a phone it is a sheet
+   from the bottom edge, as wide as the screen, with a scrim behind it (ui/drawers.js). It arrives
+   with ease-out and leaves with ease-in, like the settings drawer (drawers.css has the tokens). */
 .mix-drawer {
   position: fixed; left: 0; top: 50%; z-index: 20; width: 290px; padding: var(--s3) var(--s4);
-  background: #121828; border: 1px solid var(--line); border-left: 0; border-radius: 0 14px 14px 0;
-  box-shadow: 16px 0 40px rgba(0, 0, 0, .45);
+  background: var(--sheet); border: 1px solid var(--line); border-left: 0; border-radius: 0 14px 14px 0;
+  box-shadow: 16px 0 40px var(--shadow-sheet);
   transform: translate(-100%, -50%); visibility: hidden;
-  transition: transform .25s ease, visibility 0s linear .25s;
+  transition: transform var(--dur-drawer-out) var(--ease-in), visibility 0s linear var(--dur-drawer-out);
 }
-.mix-drawer.open { transform: translate(0, -50%); visibility: visible; transition: transform .25s ease; }
+.mix-drawer.open { transform: translate(0, -50%); visibility: visible; transition: transform var(--dur-drawer-in) var(--ease-out); }
 .mix-drawer[hidden] { display: none; }
+.mix-drawer:focus { outline: none; }
 .mix-close { position: absolute; top: var(--s2); right: var(--s2); z-index: 1; }
-.mix-drawer .mixer { margin: 0; padding: 0; border: 0; background: none; }
+.mix-drawer .mixer { margin: 0; padding: 0; border: 0; background: none; box-shadow: none; }
 /* Room for Close beside the title */
 .mix-drawer .mixer-title { display: flex; align-items: center; min-height: var(--control); padding-right: 80px; }
 @media (max-width: 760px) {
   .mix-drawer {
     left: 0; right: 0; top: auto; bottom: 0; width: auto; border: 0; border-top: 1px solid var(--line);
     border-radius: 16px 16px 0 0; padding: var(--s2) var(--s4) max(var(--s4), env(safe-area-inset-bottom));
-    box-shadow: 0 -16px 40px rgba(0, 0, 0, .55); transform: translateY(100%);
+    box-shadow: 0 -16px 40px var(--shadow-sheet); transform: translateY(100%);
   }
   .mix-drawer.open { transform: none; }
   .mix-drawer .mixer { display: grid; width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); }

@@ -17,6 +17,7 @@ import { leadSheetVoices } from "../src/audio/plain-synth.js";
 import { leadSheetFromJson } from "../src/core/leadsheet.js";
 import { totalBeats } from "../src/core/meter.js";
 import { addRun, audioHolders, runShown } from "../src/ui/run-list.js";
+import { createAudioRenderer } from "../src/audio/audio-renderer.js";
 import { createResultSound } from "../src/ui/result-sound.js";
 import { FakeContext } from "./fake-audio.js";
 import { readFixture } from "./helpers.js";
@@ -184,4 +185,172 @@ test("a visit of many runs, previews and pack changes holds one run's buffers, o
   assert.equal(panel.context.compressors.length, 1);
   panel.player.pause();
   assert.equal(attached(panel.context), 0, "paused: nothing attached");
+});
+
+// ---- Rendering off the page's thread (audit L12, L13) ----
+
+/** The Result panel again, with a renderer the test controls: each render waits for `finish`. */
+function asyncPanel() {
+  const base = resultPanel();
+  /** @type {Array<{run: any, pack: string, resolve: (audio: any) => void, reject: (error: Error) => void}>} */
+  const waiting = [];
+  const renderer = {
+    renderRun: (/** @type {any} */ run, /** @type {string} */ pack) =>
+      new Promise((resolve, reject) => waiting.push({ run, pack, resolve, reject })),
+    renderOriginal: async () => new Float32Array(0),
+    dispose() {},
+  };
+  /** @type {ReturnType<typeof runOf>[]} */
+  let runs = [];
+  const sound = createResultSound({ player: base.player, runs: () => runs, renderer: /** @type {any} */ (renderer) });
+  return {
+    ...base,
+    sound,
+    waiting,
+    add(/** @type {ReturnType<typeof runOf>} */ run) {
+      runs = addRun(runs, run);
+    },
+    get listed() {
+      return runs;
+    },
+    /** Let a waiting render end with the real audio of its run and pack. */
+    complete(/** @type {number} */ index) {
+      const request = waiting[index];
+      request.resolve(renderRunAudio(request.run, request.pack, RATE, null));
+    },
+  };
+}
+
+test("a run that ends is rendered by the renderer, and the player gets it only when it is ready", async () => {
+  const panel = asyncPanel();
+  const run = runOf(1);
+  panel.add(run);
+  const shown = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+
+  assert.equal(panel.player.has("arrangement"), false, "nothing to play while it renders");
+  panel.complete(0);
+  const audio = await shown;
+
+  assert.equal(audio, run.audio);
+  assert.equal(panel.player.has("arrangement"), true);
+  assert.equal(panel.player.active(), "arrangement", "the new arrangement is heard first");
+});
+
+test("a fresh run empties the player at once, so Play cannot play the last run's sound while the new one renders", async () => {
+  const panel = asyncPanel();
+  const first = runOf(1);
+  panel.add(first);
+  const shownFirst = panel.sound.showRunAsync(first, "nes", RATE, { fresh: true });
+  panel.complete(0);
+  await shownFirst;
+  panel.player.play();
+
+  const second = runOf(2);
+  panel.add(second);
+  const shownSecond = panel.sound.showRunAsync(second, "nes", RATE, { fresh: true });
+
+  assert.equal(panel.player.isPlaying(), false);
+  assert.equal(panel.player.duration(), 0);
+  panel.complete(1);
+  await shownSecond;
+  assert.ok(panel.player.duration() > 0);
+});
+
+test("a change of sound pack keeps the old pack playing until the new one is ready, then swaps and goes on", async () => {
+  const panel = asyncPanel();
+  const run = runOf(1);
+  panel.add(run);
+  const first = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+  panel.complete(0);
+  await first;
+  panel.player.play();
+  panel.player.seek(1);
+  const kept = run.audio;
+
+  const swap = panel.sound.showRunAsync(run, "plain", RATE, { fresh: false });
+
+  assert.equal(panel.player.isPlaying(), true, "the music did not stop");
+  assert.equal(run.audio, kept, "the old pack's sound is still the run's");
+  panel.complete(1);
+  await swap;
+  assert.equal(run.audio?.pack, "plain");
+  assert.equal(panel.player.isPlaying(), true, "and it goes on in the new sound");
+});
+
+test("a render the visitor has replaced is ignored when it arrives late", async () => {
+  const panel = asyncPanel();
+  const run = runOf(1);
+  panel.add(run);
+  const first = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+  panel.complete(0);
+  await first;
+
+  const slow = panel.sound.showRunAsync(run, "megadrive", RATE, { fresh: false });
+  const quick = panel.sound.showRunAsync(run, "plain", RATE, { fresh: false });
+  panel.complete(2);
+  await quick;
+  panel.complete(1); // the slow one arrives after the quick one
+  const outcome = await slow;
+
+  assert.equal(outcome, null, "a replaced render gives nothing");
+  assert.equal(run.audio?.pack, "plain", "the last choice wins");
+});
+
+test("a render that fails is reported to the caller, and the player keeps what it had", async () => {
+  const panel = asyncPanel();
+  const run = runOf(1);
+  panel.add(run);
+  const first = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+  panel.complete(0);
+  await first;
+
+  const failing = panel.sound.showRunAsync(run, "snes", RATE, { fresh: false });
+  panel.waiting[1].reject(new Error("out of memory"));
+
+  await assert.rejects(failing, /out of memory/);
+  assert.equal(run.audio?.pack, "nes");
+  assert.equal(panel.player.has("arrangement"), true);
+});
+
+test("a render the renderer reports as stale resolves to nothing instead of failing", async () => {
+  const panel = asyncPanel();
+  const run = runOf(1);
+  panel.add(run);
+  const shown = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+  panel.waiting[0].reject(Object.assign(new Error("replaced"), { stale: true }));
+
+  assert.equal(await shown, null);
+});
+
+test("with the real renderer and no worker, the async path ends at the same audio as the sync one", async () => {
+  const context = new FakeContext();
+  const player = createPlayer({ createContext: () => /** @type {any} */ (context) });
+  /** @type {ReturnType<typeof runOf>[]} */
+  let runs = [];
+  const sound = createResultSound({ player, runs: () => runs, renderer: createAudioRenderer({ createWorker: null }) });
+  const run = runOf(1);
+  runs = addRun(runs, run);
+
+  const audio = await sound.showRunAsync(run, "nes", RATE, { fresh: true });
+  const expected = renderRunAudio(runOf(1), "nes", RATE, null);
+
+  assert.ok(audio);
+  assert.deepEqual([...audio.stems.P2], [...expected.stems.P2]);
+  assert.equal(player.has("original"), true);
+});
+
+test("a render that ends after a new song was loaded or a preview began is ignored: its sound is not the song on screen", async () => {
+  for (const interrupt of /** @type {const} */ (["forget", "intro"])) {
+    const panel = asyncPanel();
+    const run = runOf(1);
+    panel.add(run);
+    const shown = panel.sound.showRunAsync(run, "nes", RATE, { fresh: true });
+
+    if (interrupt === "forget") panel.sound.forget();
+    else panel.sound.showIntro(intro, RATE);
+    panel.complete(0);
+
+    assert.equal(await shown, null, interrupt);
+    assert.equal(panel.player.has("arrangement"), false, `${interrupt}: no arrangement of the old song`);
+  }
 });

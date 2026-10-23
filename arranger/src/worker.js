@@ -27,3 +27,7 @@ const runner = createRunner({
 scope.onmessage = (event) => {
   runner.handle(event.data);
 };
+
+// Tell the page the worker's modules are loaded and it is listening: until then a run waits
+// (the page shows "INSERT COIN"), and after it a run starts in the same breath.
+scope.postMessage({ type: "ready" });

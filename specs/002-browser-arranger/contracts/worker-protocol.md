@@ -40,6 +40,16 @@ Changes the pace of the running GA; the plan it finds does not change (research 
 
 ## Worker → page
 
+### `ready`
+
+```json
+{ "type": "ready" }
+```
+
+Sent once, when the worker's modules are loaded and it is listening. It has no `runId`. The page
+shows "INSERT COIN" on the Evolution view until the first `progress` of a run; a `run` sent before
+`ready` is queued by the browser and starts as soon as the worker listens.
+
 ### `started`
 
 ```json
@@ -61,9 +71,13 @@ since the previous `progress`, so the page draws the curve without gaps.
     { "generation": 120, "best": 0.871, "mean": 0.803, "diversity": 0.93, "stagnation": 4 }
   ],
   "bestPlan": "Uint8Array(n_bars × 4), best plan so far",
-  "bestFitness": 0.871
+  "bestFitness": 0.871,
+  "scores": { "complementarity": 0.91, "register": 1.0, "coherence": 0.88, "contrast": null, "bass_smoothness": 0.97, "idiom": 0.95, "fidelity": 1.0 }
 }
 ```
+
+`scores` holds the criterion scores of `bestPlan` (the same shape as in `done`, `null` where a
+criterion does not apply), so the page's analog meters follow the run.
 
 ### `done`
 

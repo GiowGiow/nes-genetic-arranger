@@ -33,7 +33,8 @@ import { renderPackStems } from "./sound-packs.js";
  * @property {number} sampleRate samples per second of every buffer
  * @property {Record<import("./chip-synth.js").ChannelName, Float32Array>} stems the arrangement's four channels
  * @property {number} busScale the bus gain that matches the live mix with the original in loudness
- * @property {Float32Array} originalRaw the original's plain render, before its loudness is matched
+ * @property {Float32Array | null} originalRaw the original's plain render, before its loudness is
+ *   matched; null when the render worker made the audio and kept the plain render for itself
  * @property {Float32Array} originalSamples the original, matched to the mix
  */
 
@@ -56,7 +57,7 @@ import { renderPackStems } from "./sound-packs.js";
 export function renderRunAudio(run, soundPack, sampleRate, kept = null) {
   if (kept && kept.pack === soundPack && kept.sampleRate === sampleRate) return kept;
   const originalRaw =
-    kept && kept.sampleRate === sampleRate
+    kept?.originalRaw && kept.sampleRate === sampleRate
       ? kept.originalRaw
       : renderVoices(run.voices, run.tempoBpm, sampleRate, run.durationBeats);
   const stems = renderPackStems(soundPack, run.arrangement, sampleRate);

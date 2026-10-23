@@ -109,7 +109,9 @@ export function createRunner({ post, now, sleep }) {
       let generationCount = 0;
       const sendProgress = () => {
         const bestPlan = result.bestPlan.slice();
-        send("progress", { generations: unsent, bestPlan, bestFitness: result.bestFitness });
+        // The scores of one plan cost a few microseconds; they let the page's meters follow the run.
+        const scores = planScores(tables, bestPlan, nBars);
+        send("progress", { generations: unsent, bestPlan, bestFitness: result.bestFitness, scores });
         unsent = [];
       };
       /** Time at which the next generation is due at the watch pace. */
@@ -148,17 +150,11 @@ export function createRunner({ post, now, sleep }) {
       }
 
       if (unsent.length > 0) sendProgress();
-      const scores = criterionScores(tables, result.bestPlan, nBars);
       send("done", {
         bestPlan: result.bestPlan.slice(),
         initialBestPlan: result.initialBestPlan.slice(),
         bestFitness: result.bestFitness,
-        scores: Object.fromEntries(
-          Object.entries(scores).map(([name, [score]]) => [
-            name,
-            Number.isNaN(score) ? null : score, // JSON has no NaN: null is "not applicable"
-          ]),
-        ),
+        scores: planScores(tables, result.bestPlan, nBars),
         stopReason: result.stopReason,
         generations: result.log.length - 1,
         durationMs: now() - startedAt,
@@ -196,6 +192,20 @@ export function createRunner({ post, now, sleep }) {
       return undefined;
     },
   };
+}
+
+/**
+ * The score of each criterion for one plan, as the messages carry them.
+ *
+ * @param {import("./core/tables.js").ScoreTables} tables
+ * @param {Uint8Array} plan
+ * @param {number} nBars
+ * @returns {Record<string, number | null>} null where the criterion does not apply (JSON has no NaN)
+ */
+function planScores(tables, plan, nBars) {
+  return Object.fromEntries(
+    Object.entries(criterionScores(tables, plan, nBars)).map(([name, [score]]) => [name, Number.isNaN(score) ? null : score]),
+  );
 }
 
 /**

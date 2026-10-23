@@ -84,9 +84,10 @@ const MAX_DENOMINATOR = 64;
  * @property {string} title
  * @property {string} composer
  * @property {string} license
- * @property {"abc" | "midi" | "link"} format
+ * @property {"abc" | "midi" | "link"} format `abc`: a folk tune read from The Session; `midi`: a MIDI
+ *   file that the file fetcher brings; `link`: a page to open, nothing to read
  * @property {string} page the page to credit or open
- * @property {string} open the URL the app fetches
+ * @property {string} open the URL the app fetches (for `midi`, the file; for `link`, the page)
  * @property {string} [error] why the song cannot be arranged, as a short reason
  */
 

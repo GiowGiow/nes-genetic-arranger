@@ -22,8 +22,8 @@
 
 /**
  * @typedef {object} SongStore a key-value store of downloaded files
- * @property {(key: string) => Promise<{bytes: Uint8Array} | null>} get
- * @property {(key: string, value: {bytes: Uint8Array, savedAt: number}) => Promise<void>} put
+ * @property {(key: string) => Promise<{bytes: Uint8Array, sha256?: string} | null>} get
+ * @property {(key: string, value: {bytes: Uint8Array, savedAt: number, sha256?: string}) => Promise<void>} put
  * @property {() => Promise<string[]>} keys
  * @property {() => Promise<void>} clear
  */
@@ -81,6 +81,11 @@ export function fileMatchesEntry(entry, sha256) {
 }
 
 /**
+ * Songs found by an online search have no recorded hash (the catalog never measured their file).
+ * For those the page may ask to trust the first download (`trustFirstDownload`): the hash of the
+ * bytes is kept next to them, and later reads are checked against it, so a damaged store is still
+ * caught, though a wrong first download is not.
+ *
  * A cache of downloaded songs over a store.
  *
  * `has` is what the shelf and the playlists ask (`isCached(entry)`), so it is synchronous and
@@ -92,7 +97,7 @@ export function fileMatchesEntry(entry, sha256) {
  *   has: (entry: {id: string, source?: string}) => boolean,
  *   keys: () => string[],
  *   readonly size: number,
- *   remember: (entry: CachedRecord, bytes: Uint8Array, sha256?: string) => Promise<RememberResult>,
+ *   remember: (entry: CachedRecord, bytes: Uint8Array, sha256?: string, options?: {trustFirstDownload?: boolean}) => Promise<RememberResult>,
  *   bytesOf: (entry: CachedRecord) => Promise<Uint8Array | null>,
  *   forget: () => Promise<void>,
  * }}
@@ -122,13 +127,15 @@ export function createSongCache(store) {
     get size() {
       return known.size;
     },
-    async remember(entry, bytes, sha256) {
+    async remember(entry, bytes, sha256, { trustFirstDownload = false } = {}) {
       if (!store) return "unavailable";
-      if (!entry.facts?.sha256) return "unchecked";
-      if (!fileMatchesEntry(entry, sha256 ?? (await sha256Hex(bytes)))) return "mismatch";
+      const hash = sha256 ?? (await sha256Hex(bytes));
+      const recorded = Boolean(entry.facts?.sha256);
+      if (!recorded && !trustFirstDownload) return "unchecked";
+      if (recorded && !fileMatchesEntry(entry, hash)) return "mismatch";
       if (has(entry)) return "stored";
       try {
-        await store.put(cacheKey(entry), { bytes, savedAt: Date.now() });
+        await store.put(cacheKey(entry), { bytes, savedAt: Date.now(), sha256: hash });
       } catch {
         return "unavailable";
       }
@@ -139,7 +146,13 @@ export function createSongCache(store) {
       if (!store || !has(entry)) return null;
       try {
         const saved = await store.get(cacheKey(entry));
-        if (saved && fileMatchesEntry(entry, await sha256Hex(saved.bytes))) return saved.bytes;
+        if (saved) {
+          // A record that names a hash is the judge; one that does not is judged by the hash
+          // kept with the file when it was first stored.
+          const expected = entry.facts?.sha256 ?? saved.sha256;
+          const hash = await sha256Hex(saved.bytes);
+          if (typeof expected === "string" && expected.toLowerCase() === hash.toLowerCase()) return saved.bytes;
+        }
       } catch {
         // An unreadable store is the same as an empty one.
       }

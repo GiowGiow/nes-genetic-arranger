@@ -13,6 +13,7 @@ import {
   buildPlaylists,
   canArrangeInOneClick,
   orderCatalog,
+  playlistAlias,
   popOf,
   searchByPopularity,
   sortByPopularity,
@@ -112,6 +113,13 @@ test("a downloaded song that the visitor's browser remembers opens in one click 
   assert.equal(canArrangeInOneClick(entry("c", { route: undefined }), () => true), false, "no route, nothing to read");
 });
 
+test("a song the file fetcher can bring opens in one click when the page says so", () => {
+  const fetchable = entry("a", { source: "mpb", route: { download: "https://www.beakauffmann.com/a.mid" } });
+  const canFetch = (/** @type {{id: string}} */ candidate) => candidate.id === "a";
+  assert.equal(canArrangeInOneClick(fetchable, canFetch), true);
+  assert.equal(canArrangeInOneClick(fetchable), false, "no fetcher, no cache: a download");
+});
+
 // --- Artists -----------------------------------------------------------------------------------
 
 test("the artist of an MPB song is its performer, or else its first composer", () => {
@@ -136,56 +144,65 @@ function sampleCatalog() {
   ];
 }
 
-test("the playlists come in a fixed order and each has an id, a name, a subtitle, songs and a cover", () => {
+test("the playlists come in a fixed order: Catalog first, then the collections; Examples has none of its own", () => {
   const lists = buildPlaylists(sampleCatalog());
-  assert.deepEqual(lists.map((item) => item.id), ["popular", "examples", "mpb", "choro", "folk", "classical"]);
-  assert.deepEqual(lists.map((item) => item.name), ["Popular", "Examples", "MPB", "Choro & public domain", "Folk tunes", "Classical & standards"]);
-  const examples = playlist(lists, "examples");
-  assert.deepEqual(ids(examples.songs), ["ex-b", "ex-a"]);
-  assert.equal(examples.subtitle, "2 songs");
-  assert.equal(examples.cover.id, "ex-b", "the cover is the most popular song");
+  assert.deepEqual(lists.map((item) => item.id), ["catalog", "mpb", "choro", "folk", "classical"]);
+  assert.deepEqual(lists.map((item) => item.name), ["Catalog", "MPB", "Choro & public domain", "Folk tunes", "Classical & standards"]);
   assert.equal(playlist(lists, "folk").subtitle, "1 song");
+  assert.equal(playlist(lists, "examples"), undefined);
 });
 
-test("Popular holds the songs that open in one click, by popularity, and leaves out downloads", () => {
+test("Catalog starts with the examples in their own order, then the songs that open in one click, by popularity", () => {
   const lists = buildPlaylists(sampleCatalog());
-  assert.deepEqual(ids(playlist(lists, "popular").songs), ["pd-1", "ex-b", "pm-1", "nt-1", "ex-a"]);
-  assert.ok(!ids(playlist(lists, "popular").songs).includes("mpb-x"));
-  assert.ok(!ids(playlist(lists, "popular").songs).includes("pd-2"));
+  assert.deepEqual(ids(playlist(lists, "catalog").songs), ["ex-a", "ex-b", "pd-1", "pm-1", "nt-1"]);
+  assert.ok(!ids(playlist(lists, "catalog").songs).includes("mpb-x"), "a download is not one click");
+  assert.ok(!ids(playlist(lists, "catalog").songs).includes("pd-2"));
+  assert.equal(playlist(lists, "catalog").cover.id, "pd-1", "the cover is the most popular song");
 });
 
-test("Popular stops at 50 songs", () => {
-  const many = Array.from({ length: 80 }, (_, i) => entry(`n${i}`, { pop: i }));
-  const popular = playlist(buildPlaylists(many), "popular");
-  assert.equal(popular.songs.length, POPULAR_SIZE);
-  assert.equal(popular.songs[0].id, "n79");
-  assert.equal(popular.subtitle, "50 songs");
+test("Catalog holds the examples and then at most 50 of the other songs", () => {
+  const many = [
+    entry("ex-1", { source: "examples", order: 1 }),
+    entry("ex-2", { source: "examples", order: 2 }),
+    ...Array.from({ length: 80 }, (_, i) => entry(`n${i}`, { pop: i })),
+  ];
+  const catalog = playlist(buildPlaylists(many), "catalog");
+  assert.equal(catalog.songs.length, 2 + POPULAR_SIZE);
+  assert.deepEqual(ids(catalog.songs).slice(0, 3), ["ex-1", "ex-2", "n79"]);
+  assert.equal(catalog.subtitle, "52 songs");
 });
 
-test("the visitor's own songs head Popular, and make a Your songs playlist only when there are some", () => {
+test("the visitor's own songs head Catalog, and make a Your songs playlist (the last one) only when there are some", () => {
   assert.equal(playlist(buildPlaylists(sampleCatalog()), "yours"), undefined);
   const lists = buildPlaylists([entry("own-2", { source: "local", route: { local: true } }), entry("own-1", { source: "local", route: { local: true } }), ...sampleCatalog()]);
-  assert.deepEqual(lists.slice(0, 2).map((item) => item.id), ["popular", "yours"]);
-  assert.deepEqual(ids(playlist(lists, "popular").songs).slice(0, 3), ["own-2", "own-1", "pd-1"]);
+  assert.equal(lists.at(-1)?.id, "yours");
+  assert.deepEqual(ids(playlist(lists, "catalog").songs).slice(0, 4), ["own-2", "own-1", "ex-a", "ex-b"]);
   assert.deepEqual(ids(playlist(lists, "yours").songs), ["own-2", "own-1"], "newest first, as given");
 });
 
 test("a collection with no songs has no playlist", () => {
   assert.deepEqual(buildPlaylists([]), []);
-  assert.deepEqual(buildPlaylists([entry("n", { source: "pdmx" })]).map((item) => item.id), ["popular", "classical"]);
+  assert.deepEqual(buildPlaylists([entry("n", { source: "pdmx" })]).map((item) => item.id), ["catalog", "classical"]);
 });
 
-test("Popular lists a remembered download among the songs that open in one click, by popularity", () => {
-  const isCached = (/** @type {{id: string}} */ candidate) => candidate.id === "mpb-x";
-  const popular = playlist(buildPlaylists(sampleCatalog(), { isCached }), "popular");
-  assert.deepEqual(ids(popular.songs), ["mpb-x", "pd-1", "ex-b", "pm-1", "nt-1", "ex-a"]);
-  assert.deepEqual(ids(playlist(buildPlaylists(sampleCatalog()), "popular").songs), ["pd-1", "ex-b", "pm-1", "nt-1", "ex-a"], "not without the cache");
+test("Catalog lists a remembered or fetchable download among the one-click songs, by popularity", () => {
+  const isOneClick = (/** @type {{id: string}} */ candidate) => candidate.id === "mpb-x";
+  const catalog = playlist(buildPlaylists(sampleCatalog(), { isOneClick }), "catalog");
+  assert.deepEqual(ids(catalog.songs), ["ex-a", "ex-b", "mpb-x", "pd-1", "pm-1", "nt-1"]);
+  assert.deepEqual(ids(playlist(buildPlaylists(sampleCatalog()), "catalog").songs), ["ex-a", "ex-b", "pd-1", "pm-1", "nt-1"], "not without it");
+});
+
+test("a playlist id the app used to have leads to Catalog", () => {
+  assert.equal(playlistAlias("popular"), "catalog");
+  assert.equal(playlistAlias("examples"), "catalog");
+  assert.equal(playlistAlias("mpb"), "mpb");
+  assert.equal(playlistAlias(null), "catalog");
 });
 
 test("while the MPB file is still loading, MPB has a tile with no count and no songs", () => {
   const catalog = sampleCatalog().filter((song) => song.source !== "mpb");
   const lists = buildPlaylists(catalog, { pending: ["mpb"] });
-  assert.deepEqual(lists.map((item) => item.id), ["popular", "examples", "mpb", "choro", "folk", "classical"]);
+  assert.deepEqual(lists.map((item) => item.id), ["catalog", "mpb", "choro", "folk", "classical"]);
   const mpb = playlist(lists, "mpb");
   assert.equal(mpb.name, "MPB");
   assert.equal(mpb.subtitle, "", "the count is unknown until the file arrives");
@@ -275,7 +292,7 @@ test("a registered collection is a playlist of its own, named and placed by the 
   const lists = buildPlaylists([...sampleCatalog(), mine("a")], { collections });
   assert.deepEqual(
     lists.map((item) => item.id),
-    ["popular", "examples", "mpb", "mine", "choro", "folk", "classical"],
+    ["catalog", "mpb", "mine", "choro", "folk", "classical"],
     "order 25 comes after MPB (20) and before the public-domain playlist (30)",
   );
   assert.equal(playlist(lists, "mine").name, "My songs");
@@ -284,10 +301,10 @@ test("a registered collection is a playlist of its own, named and placed by the 
 
 test("a collection renamed or moved in the registry is renamed and moved in the app", () => {
   const collections = FALLBACK_COLLECTIONS.map((item) =>
-    item.id === "pdmx" ? { ...item, name: "Old masters", order: 5 } : item.id === "examples" ? { ...item, name: "Starters" } : item,
+    item.id === "pdmx" ? { ...item, name: "Old masters", order: 5 } : item.id === "mpb" ? { ...item, name: "Brazil" } : item,
   );
   const lists = buildPlaylists(sampleCatalog(), { collections });
-  assert.deepEqual(lists.map((item) => item.name), ["Popular", "Old masters", "Starters", "MPB", "Choro & public domain", "Folk tunes"]);
+  assert.deepEqual(lists.map((item) => item.name), ["Catalog", "Old masters", "Brazil", "Choro & public domain", "Folk tunes"]);
   assert.equal(playlist(lists, "classical").name, "Old masters", "the playlist keeps its id, so a remembered choice still works");
 });
 
@@ -295,13 +312,13 @@ test("a disabled collection has no playlist, and its songs are not offered", () 
   const collections = FALLBACK_COLLECTIONS.map((item) => (item.id === "nottingham" ? { ...item, enabled: false } : item));
   const lists = buildPlaylists(sampleCatalog(), { collections });
   assert.equal(playlist(lists, "folk"), undefined);
-  assert.ok(!ids(playlist(lists, "popular").songs).includes("nt-1"));
+  assert.ok(!ids(playlist(lists, "catalog").songs).includes("nt-1"));
 });
 
 test("songs of a collection nobody registered are not listed", () => {
   const lists = buildPlaylists([...sampleCatalog(), mine("a")]);
   assert.equal(playlist(lists, "mine"), undefined);
-  assert.ok(!ids(playlist(lists, "popular").songs).includes("a"));
+  assert.ok(!ids(playlist(lists, "catalog").songs).includes("a"));
 });
 
 test("a collection's songs follow its default sort: popularity, title or order", () => {
@@ -355,11 +372,11 @@ test("a collection's cover is its most popular song, or else its first", () => {
   assert.equal(unranked.cover.id, "a", "no popularity: the first song of the list");
 });
 
-test("a collection's songs enter Popular by their popularity, like any other song that opens in one click", () => {
+test("a collection's songs enter Catalog by their popularity, like any other song that opens in one click", () => {
   const collections = [...FALLBACK_COLLECTIONS, record("mine")];
   const lists = buildPlaylists([...sampleCatalog(), mine("hit", { pop: 100000 }), mine("quiet", { pop: 2 })], { collections });
-  assert.equal(playlist(lists, "popular").songs[0].id, "hit");
-  assert.ok(ids(playlist(lists, "popular").songs).includes("quiet"));
+  assert.equal(playlist(lists, "catalog").songs[2].id, "hit", "after the two examples");
+  assert.ok(ids(playlist(lists, "catalog").songs).includes("quiet"));
 });
 
 test("a remote collection groups its songs into artist albums, whatever its id", () => {
@@ -383,9 +400,9 @@ test("a lazy collection shows a tile with the registry's name and no count until
   assert.equal(playlist(buildPlaylists(sampleCatalog(), { collections }), "big"), undefined, "not pending, not loaded: no tile");
 });
 
-test("the built-in playlists keep their old ids so a remembered choice still works", () => {
+test("the built-in collections keep their old playlist ids so a remembered choice still works", () => {
   assert.deepEqual(
     buildPlaylists(sampleCatalog()).map((item) => item.id),
-    ["popular", "examples", "mpb", "choro", "folk", "classical"],
+    ["catalog", "mpb", "choro", "folk", "classical"],
   );
 });

@@ -21,6 +21,7 @@ import {
   wheelDelta,
 } from "../src/ui/song-shelf.js";
 import { FALLBACK_COLLECTIONS } from "../src/core/sources.js";
+import { createManualClock } from "./fake-dom.js";
 
 // --- A fake document ---------------------------------------------------------------------------
 
@@ -82,6 +83,18 @@ class FakeElement {
 
   get id() {
     return this.attributes.get("id") ?? "";
+  }
+
+  /** What `busy.js` saves and restores when a button becomes busy. */
+  get childNodes() {
+    return this.children;
+  }
+
+  /** @param {string} selector a class (".shelf-tile-count") */
+  querySelector(selector) {
+    const wanted = selector.replace(/^\./, "");
+    const found = (/** @type {FakeElement} */ element) => element.children.flatMap((child) => (child.classList.contains(wanted) ? [child] : found(child)));
+    return found(this)[0] ?? null;
   }
 
   set id(value) {
@@ -300,7 +313,9 @@ function fakeScene() {
     createShelfScene(/** @type {any} */ host, /** @type {any} */ options) {
       calls.push(["create", host, options]);
       return {
-        setPage: (/** @type {any[]} */ entries, /** @type {number} */ index) => calls.push(["setPage", entries.map((e) => e.id), index]),
+        setPage: (/** @type {any[]} */ entries, /** @type {number} */ index, /** @type {number} */ _columns, /** @type {any} */ motion) =>
+          calls.push(["setPage", entries.map((e) => e.id), index, motion]),
+        preload: (/** @type {any[]} */ entries) => calls.push(["preload", entries.map((e) => e.id)]),
         select: (/** @type {number} */ index) => calls.push(["select", index]),
         onPick: (/** @type {(index: number) => void} */ callback) => (pick = callback),
         resize: () => calls.push(["resize"]),
@@ -462,7 +477,7 @@ test("Arrange and Preview hand the selected song to the page", () => {
 test("a song that cannot be arranged says why and offers no Arrange", () => {
   const entries = [song(0, { route: undefined, error: "bar 3: the meter 11/16 is not supported" }), song(1)];
   const { root, list, arranged } = mount({ entries });
-  click(tile(root, "Examples")); // a song with an error stays out of Popular
+  // The first example has the error: Catalog lists the examples first, so it is selected.
   assert.match(panelText(root), /cannot be arranged \(bar 3: the meter 11\/16 is not supported\)/);
   assert.equal(all(root).filter((element) => element.tagName === "BUTTON" && element.textContent === "Arrange").length, 0);
   press(list, "Enter");
@@ -627,18 +642,20 @@ test("without WebGL the options are a 2D grid of sprite canvases that select on 
 test("with WebGL the scene draws the page, follows the selection and picks records", async () => {
   const scene = fakeScene();
   const { root, list, shelf } = mount({ webgl: true, reducedMotion: true, sceneFactory: async () => scene.module });
-  assert.ok(root.classList.contains("is-3d"));
+  assert.ok(root.classList.contains("is-2d"), "the 2D grid shows until the scene is ready");
   assert.ok(root.classList.contains("reduce-motion"));
   await settle();
+  assert.ok(root.classList.contains("is-3d"));
+  assert.ok(!root.classList.contains("is-2d"));
   const [create, ...rest] = scene.calls;
   assert.equal(create[0], "create");
   assert.ok(byClass(root, "shelf-canvas").includes(create[1]), "the scene gets the canvas host");
   assert.deepEqual(create[2], { reducedMotion: true });
-  assert.deepEqual(rest[0], ["setPage", twenty().slice(0, 15).map((entry) => entry.id), 0]);
+  assert.deepEqual(rest[0], ["setPage", twenty().slice(0, 15).map((entry) => entry.id), 0, { direction: 0 }]);
   press(list, "ArrowRight");
   assert.deepEqual(scene.calls.at(-1), ["select", 1]);
   press(list, "PageDown");
-  assert.deepEqual(scene.calls.at(-1), ["setPage", twenty().slice(15).map((entry) => entry.id), 1]);
+  assert.deepEqual(scene.calls.filter((call) => call[0] === "setPage").at(-1), ["setPage", twenty().slice(15).map((entry) => entry.id), 1, { direction: 1 }], "a turn forward slides the page");
   scene.pick(3);
   assert.equal(shelf.page().index, 18);
 });
@@ -715,19 +732,19 @@ function library() {
   ];
 }
 
-test("the chooser is a row of toggle buttons, one per playlist, Popular chosen at first", () => {
+test("the chooser is a row of toggle buttons, one per playlist, Catalog chosen at first", () => {
   const { root } = mount({ entries: library() });
   const group = byClass(root, "shelf-playlists")[0];
   assert.equal(group.getAttribute("role"), "group");
   assert.equal(group.getAttribute("aria-label"), "Playlists");
-  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "Folk tunes", "Classical & standards"], "the examples have no tile: Catalog starts with them");
   for (const element of tiles(root)) {
     assert.equal(element.tagName, "BUTTON", "keyboard reachable");
     assert.equal(element.getAttribute("type"), "button");
   }
-  assert.deepEqual(pressedTiles(root).map((element) => element.textContent.slice(0, 7)), ["Popular"]);
+  assert.deepEqual(pressedTiles(root).map((element) => element.textContent.slice(0, 7)), ["Catalog"]);
   assert.equal(byClass(tile(root, "MPB"), "shelf-tile-count")[0].textContent, "7 songs, 1 album");
-  assert.equal(viewText(root), "Popular: 5 songs", "the five songs that open in one click");
+  assert.equal(viewText(root), "Catalog: 5 songs", "the two examples and the three songs that open in one click");
 });
 
 test("each tile has a cover: the sprite of the playlist's most popular song", () => {
@@ -741,8 +758,8 @@ test("each tile has a cover: the sprite of the playlist's most popular song", ()
 
 test("every list is ordered by popularity, whatever the order of the catalog", () => {
   const { root, shelf } = mount({ entries: library() });
-  assert.deepEqual(rowTitles(root), ["Reel High", "Sonata", "Reel Low", "Example One", "Example Two"]);
-  assert.equal(shelf.selected()?.t, "Reel High");
+  assert.deepEqual(rowTitles(root), ["Example One", "Example Two", "Reel High", "Sonata", "Reel Low"], "the examples first, in their own order");
+  assert.equal(shelf.selected()?.t, "Example One");
   click(tile(root, "Folk tunes"));
   assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"]);
 });
@@ -750,13 +767,13 @@ test("every list is ordered by popularity, whatever the order of the catalog", (
 test("choosing a playlist shows only its songs, in the records and in the side list, and selects its first", () => {
   const { root, shelf } = mount({ entries: library() });
   shelf.select(2);
-  click(tile(root, "Examples"));
-  assert.deepEqual(rowTitles(root), ["Example One", "Example Two"], "the examples keep their own order");
+  click(tile(root, "Folk tunes"));
+  assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"], "by popularity");
   assert.equal(optionsOf(root).length, 2);
   assert.equal(shelf.page().index, 0);
   assert.equal(shelf.page().total, 2);
-  assert.deepEqual(pressedTiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent), ["Examples"]);
-  assert.equal(viewText(root), "Examples: 2 songs");
+  assert.deepEqual(pressedTiles(root).map((element) => byClass(element, "shelf-tile-name")[0].textContent), ["Folk tunes"]);
+  assert.equal(viewText(root), "Folk tunes: 2 songs");
   assert.equal(String(byRole(root, "listbox")[0].getAttribute("aria-label")), "Songs, page 1 of 1");
 });
 
@@ -772,7 +789,7 @@ test("the listbox keeps its roles for the current playlist", () => {
   assert.equal(shelf.selected()?.t, "Reel Low");
 });
 
-test("a song that needs a download is marked in the side list and stays out of Popular", () => {
+test("a song that needs a download is marked in the side list and stays out of Catalog", () => {
   const { root } = mount({ entries: library() });
   assert.ok(!rowTitles(root).some((title) => title.startsWith("Alba") || title.startsWith("Bo")));
   click(tile(root, "MPB"));
@@ -864,11 +881,11 @@ test("MPB opens a second level: its artist albums, with a back control and an Al
   assert.equal(shelf.page().total, 7);
 
   click(tile(root, "Back to playlists"));
-  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "Folk tunes", "Classical & standards"]);
   assert.equal(pressedTiles(root).length, 1);
   assert.equal(shelf.page().total, 7, "MPB stays chosen until another playlist is");
-  click(tile(root, "Popular"));
-  assert.equal(viewText(root), "Popular: 5 songs");
+  click(tile(root, "Catalog"));
+  assert.equal(viewText(root), "Catalog: 5 songs");
 });
 
 test("the keyboard reaches the tiles in order, and a tile keeps the focus after it is pressed", () => {
@@ -914,9 +931,9 @@ test("choosing a playlist while a search is typed clears the search box", () => 
   const typed = [];
   const { root, shelf } = mount({ entries: library(), onSearch: (/** @type {string} */ query) => typed.push(query) });
   shelf.setQuery("alba");
-  click(tile(root, "Examples"));
+  click(tile(root, "Folk tunes"));
   assert.equal(shelf.searchBox.value, "");
-  assert.deepEqual(rowTitles(root), ["Example One", "Example Two"]);
+  assert.deepEqual(rowTitles(root), ["Reel High", "Reel Low"]);
   assert.equal(typed.at(-1), "");
 });
 
@@ -930,9 +947,9 @@ test("the chosen playlist is remembered in localStorage and chosen again by the 
   assert.equal(viewText(second.root), "Folk tunes: 2 songs");
 });
 
-test("an unknown remembered playlist, or a storage that throws, gives Popular", () => {
+test("an unknown remembered playlist, or a storage that throws, gives Catalog", () => {
   const unknown = mount({ entries: library(), storage: fakeStorage({ "nes-arranger-playlist": "gone" }) });
-  assert.equal(viewText(unknown.root), "Popular: 5 songs");
+  assert.equal(viewText(unknown.root), "Catalog: 5 songs");
   const broken = {
     getItem() {
       throw new Error("blocked");
@@ -942,28 +959,28 @@ test("an unknown remembered playlist, or a storage that throws, gives Popular", 
     },
   };
   const { root } = mount({ entries: library(), storage: broken });
-  click(tile(root, "Examples"));
-  assert.equal(viewText(root), "Examples: 2 songs", "choosing still works");
+  click(tile(root, "Folk tunes"));
+  assert.equal(viewText(root), "Folk tunes: 2 songs", "choosing still works");
 });
 
 test("a remembered playlist applies when the catalog arrives after the shelf", () => {
   const storage = fakeStorage({ "nes-arranger-playlist": "folk" });
   const { root, shelf } = mount({ entries: [], storage });
   shelf.setEntries(library().filter((entry) => entry.source === "examples"));
-  assert.equal(viewText(root), "Popular: 2 songs", "until the remembered playlist exists");
+  assert.equal(viewText(root), "Catalog: 2 songs", "until the remembered playlist exists");
   shelf.setEntries(library());
   assert.equal(viewText(root), "Folk tunes: 2 songs");
   assert.equal(storage.items.get(PLAYLIST_KEY), "folk", "the fallback did not overwrite the choice");
 });
 
-test("the visitor's own songs head Popular, have a Your songs playlist, and a new one is selected first", () => {
+test("the visitor's own songs head Catalog, have a Your songs playlist (the last), and a new one is selected first", () => {
   const { root, shelf } = mount({ entries: library() });
   assert.ok(!tileNames(root).includes("Your songs"));
   click(tile(root, "Folk tunes"));
   const own = song(100, { source: "local", t: "My Tune", c: "Your file", route: { local: true } });
   shelf.setEntries([own, ...library()]);
-  assert.deepEqual(tileNames(root).slice(0, 3), ["Popular", "Your songs", "Examples"]);
-  assert.equal(viewText(root), "Popular: 6 songs", "a new own song brings Popular back");
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "Folk tunes", "Classical & standards", "Your songs"]);
+  assert.equal(viewText(root), "Catalog: 6 songs", "a new own song brings Catalog back");
   assert.equal(shelf.selected()?.t, "My Tune");
   click(tile(root, "Your songs"));
   assert.deepEqual(rowTitles(root), ["My Tune"]);
@@ -1021,13 +1038,13 @@ test("Enter on a remembered song arranges it at once", () => {
   assert.equal(downloaded.length, 0);
 });
 
-test("a remembered download joins Popular, and setEntries picks up a song remembered since", () => {
+test("a remembered download joins Catalog, and setEntries picks up a song remembered since", () => {
   const remembered = new Set();
   const { root, shelf } = mount({ entries: library(), isCached: (/** @type {any} */ entry) => remembered.has(entry.id) });
-  assert.equal(viewText(root), "Popular: 5 songs");
+  assert.equal(viewText(root), "Catalog: 5 songs");
   remembered.add("song-206");
   shelf.setEntries(library());
-  assert.equal(viewText(root), "Popular: 6 songs");
+  assert.equal(viewText(root), "Catalog: 6 songs");
   assert.ok(rowTitles(root).includes("Bo Song 6"));
 });
 
@@ -1054,14 +1071,16 @@ test("a song remembered while its panel is open turns Download MIDI into Arrange
 /** The library without its MPB songs, as the page has it before the MPB file arrives. */
 const withoutMpb = () => library().filter((entry) => entry.source !== "mpb");
 
-test("while the MPB file loads, MPB is a tile with no count that stands where it will be", () => {
+test("while the MPB file loads, MPB is a tile with a spinner instead of a count that stands where it will be", () => {
   const { root } = mount({ entries: withoutMpb(), pendingSources: ["mpb"] });
-  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
-  assert.equal(byClass(tile(root, "MPB"), "shelf-tile-count").length, 0, "no count until the songs are here");
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "Folk tunes", "Classical & standards"]);
+  const count = byClass(tile(root, "MPB"), "shelf-tile-count")[0];
+  assert.equal(count.textContent, "Loading…", "no count until the songs are here");
+  assert.equal(byClass(count, "shelf-spinner").length, 1);
   assert.equal(byClass(tile(root, "MPB"), "shelf-sprite").length, 1, "it still has a cover");
 });
 
-test("nothing is asked for at the start: Popular does not need the MPB songs", () => {
+test("nothing is asked for at the start: Catalog does not need the MPB songs", () => {
   /** @type {string[][]} */
   const asked = [];
   mount({ entries: withoutMpb(), pendingSources: ["mpb"], onNeedSongs: (/** @type {string[]} */ sources) => asked.push(sources) });
@@ -1076,7 +1095,7 @@ test("opening the MPB playlist asks the page for the MPB songs, once, and says t
   assert.deepEqual(asked, [["mpb"]]);
   assert.equal(viewText(root), "MPB: Loading more songs…");
   assert.equal(shelf.page().total, 0);
-  click(tile(root, "Examples"));
+  click(tile(root, "Folk tunes"));
   click(tile(root, "MPB"));
   assert.equal(asked.length, 1, "asked once");
 });
@@ -1272,7 +1291,7 @@ const registry = () => [
 
 test("a collection of the registry gets its own tile, named and placed by the registry", () => {
   const { root } = mount({ entries: [...library(), ownSong(1)], collections: registry });
-  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "My songs", "Folk tunes", "Classical & standards"]);
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "My songs", "Folk tunes", "Classical & standards"]);
   click(tile(root, "My songs"));
   assert.deepEqual(rowTitles(root), ["Own 1"]);
   assert.equal(viewText(root), "My songs: 1 song");
@@ -1280,7 +1299,7 @@ test("a collection of the registry gets its own tile, named and placed by the re
 
 test("without a registry's list the shelf shows the built-in playlists, and a collection nobody registered stays hidden", () => {
   const { root } = mount({ entries: [...library(), ownSong(1)] });
-  assert.deepEqual(tileNames(root), ["Popular", "Examples", "MPB", "Folk tunes", "Classical & standards"]);
+  assert.deepEqual(tileNames(root), ["Catalog", "MPB", "Folk tunes", "Classical & standards"]);
 });
 
 test("a collection's songs with albums open a second level, like MPB's artists", () => {
@@ -1333,4 +1352,331 @@ test("a collection's pending tile asks the page for its file when opened", () =>
   assert.ok(tileNames(root).includes("Big list"));
   click(tile(root, "Big list"));
   assert.deepEqual(asked, [["big"]]);
+});
+
+// --- Loading, motion and online results ---------------------------------------------------------
+
+/** @param {FakeElement} root */
+const bodyOf = (root) => byClass(root, "shelf-body")[0];
+/** @param {FakeElement} root */
+const statusOf = (root) => byClass(root, "shelf-search-text")[0].textContent;
+/** @param {FakeElement} root */
+const emptyOf = (root) => byClass(root, "shelf-empty")[0];
+
+/** An online result. @param {string} source @param {number} n @param {Record<string, unknown>} [extra] */
+const online = (source, n, extra = {}) => ({
+  source,
+  id: `${source}-${n}`,
+  title: `${source} tune ${n}`,
+  composer: "",
+  license: "",
+  format: /** @type {const} */ ("midi"),
+  page: "",
+  open: `https://x.example/${n}.mid`,
+  ...extra,
+});
+
+test("before the catalog arrives the stage holds grey records, the list grey rows and the row of playlists grey tiles", () => {
+  const { root, shelf } = mount({ entries: [] });
+  const skeleton = byClass(root, "shelf-skeleton")[0];
+  assert.equal(skeleton.hidden, false);
+  assert.equal(byClass(skeleton, "shelf-sk-disc").length, shelf.page().perPage, "as many as a page holds");
+  assert.ok(byClass(root, "shelf-sk-row").length >= 8);
+  assert.ok(byClass(root, "shelf-sk-tile").length >= 3);
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), "true");
+  shelf.setEntries(twenty());
+  assert.equal(skeleton.hidden, true);
+  assert.equal(byClass(root, "shelf-sk-row").length, 0);
+  assert.equal(byClass(root, "shelf-sk-tile").length, 0);
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), null);
+});
+
+test("while the 3D scene is loading the 2D grid shows, then the two cross-fade for a moment", async () => {
+  const clock = createManualClock();
+  const scene = fakeScene();
+  const { root } = mount({ webgl: true, sceneFactory: async () => scene.module, setTimer: clock.setTimer, clearTimer: clock.clearTimer });
+  assert.ok(root.classList.contains("is-2d"));
+  assert.ok(!root.classList.contains("is-3d"));
+  await settle();
+  assert.ok(root.classList.contains("is-3d"));
+  assert.ok(root.classList.contains("is-crossfade"), "the grid is still visible, fading out");
+  clock.advance(400);
+  assert.ok(!root.classList.contains("is-crossfade"));
+});
+
+test("with reduced motion the scene replaces the grid at once", async () => {
+  const scene = fakeScene();
+  const { root } = mount({ webgl: true, reducedMotion: true, sceneFactory: async () => scene.module });
+  await settle();
+  assert.ok(root.classList.contains("is-3d"));
+  assert.ok(!root.classList.contains("is-crossfade"));
+});
+
+test("records say how they arrive: a turn forward, a turn back, or a new list", () => {
+  const { root, list, shelf } = mount();
+  assert.equal(list.getAttribute("data-motion"), "enter", "the first page pops in");
+  press(list, "PageDown");
+  assert.equal(list.getAttribute("data-motion"), "next");
+  press(list, "PageUp");
+  assert.equal(list.getAttribute("data-motion"), "previous");
+  shelf.setQuery("song 1");
+  assert.equal(list.getAttribute("data-motion"), "enter", "another list pops in");
+  assert.equal(optionsOf(root)[3].styleValues["--i"], "3", "each record knows its place, for the stagger");
+});
+
+test("the scene is told how a page arrives: forward, back or a new list", async () => {
+  const scene = fakeScene();
+  const { list, shelf } = mount({ webgl: true, reducedMotion: false, sceneFactory: async () => scene.module });
+  await settle();
+  press(list, "PageDown");
+  press(list, "PageUp");
+  shelf.setQuery("song 1");
+  const turns = scene.calls.filter((call) => call[0] === "setPage").map((call) => call[3]);
+  assert.deepEqual(turns, [{ direction: 0 }, { direction: 1 }, { direction: -1 }, { direction: 0 }]);
+});
+
+test("the faces of the neighbouring pages are drawn ahead of need", async () => {
+  const scene = fakeScene();
+  const { list } = mount({ webgl: true, sceneFactory: async () => scene.module });
+  await settle();
+  const preloaded = () => scene.calls.filter((call) => call[0] === "preload").map((call) => call[1].length);
+  assert.deepEqual(preloaded(), [5], "page 1 of 2: only the next page exists");
+  press(list, "PageDown");
+  assert.deepEqual(preloaded(), [5, 15], "page 2: the previous page");
+});
+
+test("results that arrive for a page the shelf already shows leave its records as they are", () => {
+  const { root, shelf } = mount();
+  shelf.setQuery("song"); // 20 matches: the first page is full
+  const before = optionsOf(root)[0];
+  shelf.setExternal([online("bitmidi", 1)], { query: "song", searching: true, pending: ["BitMidi"] });
+  assert.equal(optionsOf(root)[0], before, "no rebuild, so no second pop-in");
+  assert.equal(before.getAttribute("aria-setsize"), String(shelf.page().total));
+});
+
+test("a long list is built in chunks: the first 60 rows now, more when the list scrolls near its end", () => {
+  const many = Array.from({ length: 300 }, (_, i) => song(i + 10, { t: `Tune ${String(i).padStart(3, "0")}`, source: "nottingham" }));
+  const { root, shelf } = mount({ entries: many });
+  shelf.setQuery("tune");
+  const rows = () => byClass(root, "shelf-song").length;
+  assert.equal(rows(), 60);
+  const songs = byClass(root, "shelf-songs")[0];
+  Object.assign(songs, { scrollTop: 1500, clientHeight: 400, scrollHeight: 1700 });
+  songs.dispatchEvent(new FakeEvent("scroll"));
+  assert.equal(rows(), 120);
+});
+
+test("selecting a song far down a long list builds the rows up to it", () => {
+  const many = Array.from({ length: 300 }, (_, i) => song(i + 10, { t: `Tune ${String(i).padStart(3, "0")}`, source: "nottingham" }));
+  const { root, shelf } = mount({ entries: many });
+  shelf.setQuery("tune");
+  shelf.select(200);
+  assert.ok(byClass(root, "shelf-song").length >= 201);
+  assert.ok(byClass(root, "shelf-song")[200].classList.contains("is-selected"));
+});
+
+test("a press on Arrange keeps the button busy until the page has loaded the song, and the other button waits", async () => {
+  /** @type {() => void} */
+  let finish = () => {};
+  const pendingLoad = new Promise((resolve) => (finish = () => resolve(undefined)));
+  const calls = [];
+  const { root } = mount({ onArrange: (/** @type {any} */ entry) => (calls.push(entry.id), pendingLoad), onPreview: () => calls.push("preview") });
+  const panel = () => byClass(root, "shelf-info")[0];
+  click(button(panel(), "Arrange"));
+  const busy = byClass(panel(), "primary")[0];
+  assert.equal(busy.textContent, "Loading…");
+  assert.equal(busy.getAttribute("aria-busy"), "true");
+  assert.equal(busy.disabled, true);
+  assert.equal(button(panel(), "Preview").disabled, true, "the other action waits");
+  click(busy);
+  assert.equal(calls.length, 1, "a second press starts nothing");
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), "true");
+  finish();
+  await settle();
+  assert.equal(button(panel(), "Arrange").getAttribute("aria-busy"), null);
+  assert.equal(button(panel(), "Arrange").disabled, false);
+  assert.equal(button(panel(), "Preview").disabled, false);
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), null);
+});
+
+test("a page that fails to load the song gives the buttons back too", async () => {
+  const { root } = mount({ onArrange: () => Promise.reject(new Error("offline")) });
+  const panel = () => byClass(root, "shelf-info")[0];
+  click(button(panel(), "Arrange"));
+  await settle();
+  assert.equal(button(panel(), "Arrange").disabled, false);
+});
+
+test("an action that finishes at once shows no busy state at all", () => {
+  const { root } = mount();
+  click(button(byClass(root, "shelf-info")[0], "Arrange"));
+  assert.equal(button(byClass(root, "shelf-info")[0], "Arrange").getAttribute("aria-busy"), null);
+});
+
+test("the panel credits the site a downloadable song comes from, with a link, and its license", () => {
+  const remembered = () => true;
+  const download = song(50, {
+    source: "mpb",
+    t: "Aquarela",
+    u: "https://www.beakauffmann.com/mpb_v/aquarela.html",
+    license: "all-rights-reserved",
+    route: { download: "https://www.beakauffmann.com/mpb_v/som/aquarela.mid" },
+  });
+  const { root, shelf } = mount({ entries: [download], isOneClick: remembered });
+  assert.equal(shelf.selected()?.t, "Aquarela");
+  const line = byClass(byClass(root, "shelf-info")[0], "shelf-license")[0];
+  assert.match(line.textContent, /^MIDI from beakauffmann\.com · License: all rights reserved$/);
+  const link = all(line).find((element) => element.tagName === "A");
+  assert.equal(link?.getAttribute("href"), "https://www.beakauffmann.com/mpb_v/aquarela.html");
+  assert.equal(link?.getAttribute("rel"), "noopener");
+  assert.equal(link?.getAttribute("target"), "_blank");
+});
+
+test("a song the page opens in one click shows Arrange and Preview, whatever brings the file", () => {
+  const download = song(50, { source: "mpb", t: "Aquarela", route: { download: "https://www.beakauffmann.com/a.mid" } });
+  const { root } = mount({ entries: [download], isOneClick: () => true, onDownload: () => {} });
+  assert.ok(button(byClass(root, "shelf-info")[0], "Arrange"));
+  const withoutFetcher = mount({ entries: [download], onDownload: () => {} });
+  assert.ok(button(byClass(withoutFetcher.root, "shelf-info")[0], "Download MIDI"));
+});
+
+test("a thin bar shows how much of a catalog file has arrived, and the view says so", () => {
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"] });
+  const bar = byClass(root, "shelf-progress")[0];
+  assert.equal(bar.hidden, true);
+  shelf.setProgress("mpb", { loaded: 840_000, total: 2_000_000 });
+  assert.equal(bar.hidden, false);
+  assert.equal(bar.getAttribute("role"), "progressbar");
+  assert.equal(bar.getAttribute("aria-valuenow"), "42");
+  assert.equal(bar.styleValues["--progress"], "0.42");
+  assert.equal(byClass(tile(root, "MPB"), "shelf-tile-count")[0].textContent, "Loading… 42%");
+  click(tile(root, "MPB"));
+  assert.equal(viewText(root), "MPB: Loading MPB (2.0 MB)… 42%");
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), "true");
+  shelf.setProgress("mpb", null);
+  assert.equal(bar.hidden, true);
+});
+
+test("a file of unknown length gets an indeterminate bar", () => {
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"] });
+  shelf.setProgress("mpb", { loaded: 1000, total: 0 });
+  const bar = byClass(root, "shelf-progress")[0];
+  assert.ok(bar.classList.contains("is-indeterminate"));
+  assert.equal(bar.getAttribute("aria-valuenow"), null);
+});
+
+test("the bar goes when its file is no longer pending", () => {
+  const { root, shelf } = mount({ entries: withoutMpb(), pendingSources: ["mpb"] });
+  shelf.setProgress("mpb", { loaded: 10, total: 100 });
+  shelf.setPending([]);
+  assert.equal(byClass(root, "shelf-progress")[0].hidden, true);
+});
+
+test("in the pause before the online sources are asked the shelf does not say that nothing matches", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.searchBox.value = "arctic";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  assert.equal(shelf.page().total, 0);
+  assert.match(emptyOf(root).textContent, /Checking online/);
+  assert.doesNotMatch(emptyOf(root).textContent, /No song/);
+  assert.equal(statusOf(root), "Searching online…");
+  assert.equal(byClass(root, "shelf-search-status")[0].getAttribute("role"), "status");
+});
+
+test("the line under the search box names the sources still being asked", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.searchBox.value = "arctic";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  shelf.setExternal([], { query: "arctic", searching: true, pending: ["BitMidi", "midis101.com"] });
+  assert.equal(statusOf(root), "Searching BitMidi and midis101.com…");
+  assert.match(emptyOf(root).textContent, /Checking BitMidi and midis101\.com/);
+  assert.equal(byClass(root, "shelf-spinner").find((spinner) => spinner.parentNode === byClass(root, "shelf-search-status")[0])?.hidden, false);
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), "true");
+});
+
+test("when every source has answered and nothing matched, the shelf says so once, naming no one", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.searchBox.value = "zzzzzz";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  shelf.setExternal([], { query: "zzzzzz", searching: false, pending: [] });
+  assert.equal(emptyOf(root).hidden, false);
+  assert.equal(emptyOf(root).textContent, "No match here or online.");
+  assert.equal(statusOf(root), "");
+  assert.equal(bodyOf(root).getAttribute("aria-busy"), null);
+});
+
+test("a source that failed is named, with a Retry that asks the page to try again", () => {
+  let retried = 0;
+  const { root, shelf } = mount({ onSearch: () => {}, onRetrySearch: () => (retried += 1) });
+  shelf.searchBox.value = "song";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  shelf.setExternal([online("mutopia", 1)], { query: "song", searching: false, failed: [{ id: "bitmidi", name: "BitMidi", reason: "HTTP 500" }] });
+  assert.equal(statusOf(root), "BitMidi could not be reached. Showing the other results.");
+  const retry = button(root, "Retry");
+  assert.equal(retry.hidden, false);
+  click(retry);
+  assert.equal(retried, 1);
+});
+
+test("offline, the line says the shelf shows the catalog only", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.searchBox.value = "song";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  shelf.setExternal([], { query: "song", searching: false, offline: true });
+  assert.equal(statusOf(root), "You are offline: showing the catalog only.");
+});
+
+test("the status line is empty when the visitor is not searching", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.setExternal([], { query: "", searching: true, pending: ["BitMidi"] });
+  assert.equal(statusOf(root), "");
+});
+
+test("each online source's results sit under a divider that names it and counts them", () => {
+  const { root, shelf } = mount({ onSearch: () => {} });
+  shelf.setQuery("song 1");
+  const local = shelf.page().total;
+  shelf.setExternal([online("bitmidi", 1), online("bitmidi", 2), online("mutopia", 3)], { query: "song 1", searching: false });
+  const dividers = byClass(root, "shelf-divider");
+  assert.deepEqual(dividers.map((divider) => divider.textContent), ["From BitMidi (2)", "From Mutopia Project (1)"]);
+  const rows = byClass(root, "shelf-songs")[0].children.map((child) => (child.classList.contains("shelf-divider") ? "|" : "row"));
+  assert.deepEqual(rows.slice(local), ["|", "row", "row", "|", "row"]);
+  assert.equal(shelf.page().total, local + 3, "a divider is not a song");
+});
+
+test("the song count is said to screen readers once typing has stopped, not on every key", () => {
+  const clock = createManualClock();
+  const { root, shelf } = mount({ setTimer: clock.setTimer, clearTimer: clock.clearTimer });
+  const announcer = byClass(root, "shelf-announce")[0];
+  clock.advance(1000);
+  shelf.searchBox.value = "so";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  shelf.searchBox.value = "son";
+  shelf.searchBox.dispatchEvent(new FakeEvent("input"));
+  const before = announcer.textContent;
+  clock.advance(100);
+  assert.equal(announcer.textContent, before, "still the old count");
+  clock.advance(500);
+  assert.match(announcer.textContent, /^Search results: \d+ songs?$/);
+  assert.equal(byClass(root, "shelf-view")[0].getAttribute("aria-live"), null, "the count line is not live itself");
+  assert.equal(byClass(root, "shelf-page")[0].getAttribute("aria-live"), null);
+});
+
+test("a remembered playlist from before the merge, Popular or Examples, opens Catalog", () => {
+  for (const old of ["popular", "examples"]) {
+    const { root } = mount({ entries: library(), storage: fakeStorage({ [PLAYLIST_KEY]: old }) });
+    assert.match(viewText(root), /^Catalog: /, old);
+  }
+});
+
+test("the search index is warmed when the browser is idle after the catalog changes", () => {
+  const clock = createManualClock();
+  mount({ setTimer: clock.setTimer, clearTimer: clock.clearTimer });
+  assert.ok(clock.pending() >= 1, "a task is waiting for idle time");
+  clock.advance(1000);
+});
+
+test("the playlist bar keeps its place while the playlists are not known yet", () => {
+  const { root } = mount({ entries: [] });
+  assert.equal(byClass(root, "shelf-playlists")[0].hidden, false);
 });

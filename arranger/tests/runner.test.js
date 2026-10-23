@@ -362,7 +362,8 @@ test("the worker adapter hands self.onmessage to the runner and answers with sel
   } finally {
     delete (/** @type {any} */ (globalThis).self);
   }
-  assert.equal(posted[0].type, "started");
+  assert.deepEqual(posted[0], { type: "ready" }, "the worker says it is listening before any run");
+  assert.equal(posted[1].type, "started");
   assert.equal(posted.at(-1).type, "done");
   assert.equal(posted.at(-1).generations, 20);
 });
@@ -418,4 +419,31 @@ test("a worker that runs many songs in one visit keeps no run alive: each ends, 
     assert.equal(posted.length, before);
   }
   assert.equal(sleeping, 0);
+});
+
+test("each progress message carries the criterion scores of the best plan it reports, so the meters can follow the run", async () => {
+  const { runner, posted } = fakeWorld();
+  await runner.handle(runMessage("meters", "full", smallSettings({ max_generations: 40 })));
+  const tables = buildTables(KOROBEINIKI);
+
+  const progress = messagesOf(posted).filter((message) => message.type === "progress");
+  assert.ok(progress.length >= 1);
+  for (const message of progress) {
+    const scores = criterionScores(tables, message.bestPlan, 32);
+    assert.deepEqual(message.scores, Object.fromEntries(Object.entries(scores).map(([name, [score]]) => [name, score])));
+  }
+});
+
+test("a criterion that does not apply is null in the progress scores, as in done", async () => {
+  const flat = {
+    ...KOROBEINIKI,
+    bars: KOROBEINIKI.bars.map((bar, index) => ({ ...bar, role: "verse", phrase: index, phraseEnd: true })),
+  };
+  const { runner, posted } = fakeWorld();
+  await runner.handle({ ...runMessage("flat-meters", "full", smallSettings({ max_generations: 5 })), leadSheet: flat });
+  const progress = messagesOf(posted).find((message) => message.type === "progress");
+
+  assert.equal(progress.scores.contrast, null);
+  assert.equal(progress.scores.coherence, null);
+  assert.equal(typeof progress.scores.idiom, "number");
 });

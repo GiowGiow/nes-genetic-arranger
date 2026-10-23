@@ -24,7 +24,25 @@ const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
  * // With a scripted upstream that answers 404:
  * // (await fetchMidi(url, {...options})).status // 404
  */
-export async function fetchMidi(firstUrl, { fetchImpl, allowedHosts, denylist, timeoutMs, maxBytes, userAgent }) {
+export async function fetchMidi(firstUrl, options) {
+  const result = await fetchBytes(firstUrl, options);
+  if (!result.ok) return result;
+  // A site that answers 200 with an HTML error page at a file address must not be relayed as MIDI.
+  if (!looksLikeMidi(result.bytes)) return fail(502, "upstream body is not a MIDI file");
+  return result;
+}
+
+/**
+ * Fetch any allow-listed address (a MIDI file, or a search page to be read) with every limit
+ * applied: redirects checked, size capped, one shared timeout. It does not look at what the
+ * bytes are; `fetchMidi` adds the MIDI check.
+ *
+ * @param {URL} firstUrl an already validated upstream URL
+ * @param {{fetchImpl: typeof fetch, allowedHosts: string[], denylist: string[], timeoutMs: number,
+ *   maxBytes: number, userAgent: string}} options
+ * @returns {Promise<{ok: true, bytes: Uint8Array} | {ok: false, status: number, reason: string}>}
+ */
+export async function fetchBytes(firstUrl, { fetchImpl, allowedHosts, denylist, timeoutMs, maxBytes, userAgent }) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
@@ -67,7 +85,6 @@ export async function fetchMidi(firstUrl, { fetchImpl, allowedHosts, denylist, t
       }
       const bytes = await readCapped(response.body, maxBytes);
       if (bytes === null) return fail(413, "file is larger than the size cap");
-      if (!looksLikeMidi(bytes)) return fail(502, "upstream body is not a MIDI file");
       return { ok: true, bytes };
     }
   } catch (error) {

@@ -93,6 +93,13 @@ h1 { font-size: clamp(1.5rem, 3vw, 1.875rem); line-height: 1.15; font-weight: 80
   color: var(--muted); font: 600 .9375rem Inter, system-ui, sans-serif; cursor: pointer; white-space: nowrap;
 }
 .page-tabs button:hover, .view-tabs button:hover { color: var(--text); }
+.hero-nav { display: flex; align-items: center; gap: var(--s2); min-width: 0; }
+/* A run that ended while the visitor was on another tab: a dot on the Run tab until they open it. */
+.page-tabs button { position: relative; }
+.page-tabs button.has-news::after {
+  content: ""; position: absolute; top: 8px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--p2);
+  animation: pop var(--dur-3) var(--ease-pop) both;
+}
 .page-tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--p1); }
 .step-num { font-family: var(--mono); font-weight: 700; color: var(--p1); }
 
@@ -114,8 +121,9 @@ h1 { font-size: clamp(1.5rem, 3vw, 1.875rem); line-height: 1.15; font-weight: 80
   display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
   min-height: var(--control); padding: 0 var(--s4); border-radius: var(--radius); cursor: pointer;
   border: 0; background: var(--fill); color: var(--text);
-  font: inherit; font-weight: 600; text-decoration: none; transition: background .15s, color .15s;
+  font: inherit; font-weight: 600; text-decoration: none; transition: background .15s, color .15s, transform .08s;
 }
+.button:active:not(:disabled, .is-busy) { transform: scale(.97); }
 .button:hover:not(:disabled) { background: var(--fill-hover); color: var(--text); }
 .button:disabled { opacity: .4; cursor: not-allowed; }
 .button.primary { background: var(--p1); color: #07101c; font-weight: 700; }
@@ -396,6 +404,180 @@ footer {
   .toast.is-leaving { transform: translateY(6px); }
 }
 
+
+/* ---------------------------------------------------------------------------------------------
+   Panels arriving. A tab or a view that is shown replays this entrance (an element that goes from
+   display: none to shown restarts its animation), so no script is needed. Where the browser's view
+   transitions are on (ui/view-transition.js adds `vt-on`), they do the work instead. */
+#song:not([hidden]), #how:not([hidden]), .workbench > [role="tabpanel"]:not([hidden]) {
+  animation: panel-in var(--dur-2) var(--ease-out) both;
+}
+.vt-on #song, .vt-on #how, .vt-on .workbench > [role="tabpanel"] { animation: none; }
+
+/* The shelf's room before its script runs (index.html): same heights as the shelf, so nothing moves. */
+.shelf-boot { display: grid; gap: var(--s3); }
+.shelf-boot .sk-block { height: 52px; }
+.shelf-boot .sk-stage { height: 400px; }
+
+/* ---------------------------------------------------------------------------------------------
+   Evolution as a lab bench. */
+.empty-state { display: grid; justify-items: start; gap: var(--s2); padding: var(--s4) 0; }
+.empty-state[hidden], .lab[hidden] { display: none; }
+.empty-title { margin: 0; font-size: var(--fs-lg); font-weight: 700; }
+.empty-state .hint { margin: 0; max-width: 60ch; }
+
+/* The mechanical counters: drums of digits in a dark housing, a split line across the middle, the
+   zeros before the number dimmed. The housing is an object, so it is dark in both themes. */
+.counter-row { display: flex; align-items: center; gap: var(--s2); min-height: 40px; }
+.odometer {
+  --wheel-bg: #0a0d14; --wheel-ink: #e6e9f0; --wheel-dim: rgba(230, 233, 240, .24);
+  display: inline-flex; gap: 2px; padding: 3px; border-radius: 6px; background: #1b2030;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08), 0 1px 0 rgba(0, 0, 0, .4);
+}
+.wheel {
+  position: relative; display: inline-grid; place-items: center; width: 1.05em; height: 1.55em; overflow: hidden; border-radius: 3px;
+  background: linear-gradient(var(--wheel-bg), #1a1f2d 48%, var(--wheel-bg) 52%, #05070c);
+  color: var(--wheel-ink); font-size: 1.35rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums;
+}
+.wheel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, .5), transparent 28%, transparent 72%, rgba(0, 0, 0, .5)); }
+.wheel.is-dim { color: var(--wheel-dim); }
+.wheel.is-dot { width: .5em; }
+/* A wheel that changes rolls in from above; two identical animations take turns so it restarts. */
+.wheel[data-tick="0"] { animation: wheel-roll-a var(--dur-2) var(--ease-out); }
+.wheel[data-tick="1"] { animation: wheel-roll-b var(--dur-2) var(--ease-out); }
+.counter .of { color: var(--muted); font-size: var(--fs-sm); }
+.counter { min-width: 0; }
+.is-starting .counter .wheel { animation: none; color: transparent; }
+.is-starting .odometer { position: relative; overflow: hidden; }
+.is-starting .odometer::after {
+  content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .22), transparent);
+  animation: shimmer 1.2s linear infinite;
+}
+
+/* The oscilloscope: black glass, a green phosphor trace (drawn in the canvas), a faint beam sweeping
+   across while a run goes. The sweep is a gradient band moved by `transform`. */
+.scope {
+  position: relative; overflow: hidden; margin-top: var(--s4); border-radius: 12px; background: #04100a;
+  box-shadow: inset 0 0 0 1px rgba(90, 255, 150, .18), inset 0 0 40px rgba(0, 0, 0, .65);
+}
+.scope .chart { margin-top: 0; height: 240px; }
+.scope::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 40%; pointer-events: none; opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(93, 255, 156, .07), transparent); transform: translateX(-100%);
+}
+.is-running .scope::after { opacity: 1; animation: scope-sweep 3.2s linear infinite; }
+.scope-screen { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: var(--s2); pointer-events: none; text-align: center; }
+.scope-screen:has(.coin[hidden]) { place-content: end center; padding-bottom: var(--s4); }
+.coin {
+  margin: 0; color: #5dff9c; font-size: clamp(1.4rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: .14em;
+  text-shadow: 0 0 14px rgba(93, 255, 156, .55);
+}
+.coin[hidden] { display: none; }
+.coin[data-blink="slow"] { animation: coin-blink 1.4s steps(1, end) infinite; }
+.coin[data-blink="fast"] { animation: coin-blink .6s steps(1, end) infinite; }
+.coin-message { margin: 0; color: rgba(130, 255, 180, .7); font-size: var(--fs-sm); }
+
+.lab-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4) var(--s5); }
+.lab-panel { min-width: 0; }
+@media (min-width: 1000px) { .lab-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); } }
+
+/* One generation, step by step: five numbered steps; while a run goes a light passes along them. */
+.gen-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); counter-reset: step; }
+.gen-step { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--s3); align-items: start; padding: var(--s2) var(--s3); border-radius: var(--radius); background: var(--fill); }
+.gen-num { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--p1); color: var(--p1); font-weight: 700; font-size: var(--fs-sm); }
+.gen-title { display: block; font-size: var(--fs-sm); letter-spacing: .02em; }
+.gen-text { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.45; }
+.gen-live { display: flex; flex-wrap: wrap; gap: 2px var(--s4); margin: 4px 0 0; }
+.gen-live:empty { display: none; }
+.gen-live div { display: flex; gap: var(--s2); align-items: baseline; }
+.gen-live dt { color: var(--muted); font-size: .75rem; }
+.gen-live dd { margin: 0; font-size: var(--fs-sm); color: var(--text); font-variant-numeric: tabular-nums; }
+.gen-strip.is-running .gen-num { animation: gen-light 1.5s ease-in-out infinite; animation-delay: calc(var(--i, 0) * .3s); }
+.gen-strip.is-running .gen-step { --i: 0; }
+
+/* The fitness criteria on analog meters: a cream face, a scale with quarter ticks, a needle on a
+   pivot, a red zone at the end. The needle swings with a transition on `transform`. */
+.crit-panel { display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: var(--s3); }
+.crit {
+  --crit-face: #efe4c4; --crit-ink: #2b2a26; --crit-hot: #b3261e; --crit-needle: #1b1a17;
+  margin: 0; display: grid; gap: 4px; min-width: 0;
+}
+.crit svg { display: block; width: 100%; height: auto; }
+.crit-face { fill: var(--crit-face); stroke: rgba(0, 0, 0, .45); stroke-width: 1; }
+.crit-arc, .crit-hot { fill: none; stroke: var(--crit-ink); stroke-width: 1; }
+.crit-hot { stroke: var(--crit-hot); stroke-width: 2.6; }
+.crit-ticks line { stroke: var(--crit-ink); stroke-width: .8; }
+.crit-ticks text { fill: var(--crit-ink); font: 600 5.5px var(--mono); }
+.crit-needle { transform-origin: 50px 54px; transform: rotate(var(--deg, -58deg)); transition: transform .6s cubic-bezier(.3, 1.5, .5, 1); }
+.crit-needle line { stroke: var(--crit-needle); stroke-width: 1.1; stroke-linecap: round; }
+.crit-pivot { fill: var(--crit-needle); }
+.crit.is-parked .crit-needle line { stroke: rgba(27, 26, 23, .45); }
+.crit figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 var(--s2); align-items: baseline; font-size: var(--fs-sm); }
+.crit-name { grid-column: 1 / -1; min-width: 0; font-size: .8125rem; line-height: 1.25; }
+.crit-score { font-weight: 700; }
+.crit-weight { color: var(--muted); font-size: .75rem; text-align: right; }
+.crit-big { grid-column: 1 / -1; max-width: 190px; }
+.crit-big .crit-score { font-size: var(--fs-md); }
+
+/* The best plan as a tracker pattern: rows of sixteenth notes, a column to a channel. */
+.tracker-view { display: grid; gap: var(--s2); }
+.tracker-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); }
+.tracker-where { color: var(--muted); font-size: var(--fs-sm); }
+.tracker-scroll { overflow: auto; max-height: 360px; border-radius: var(--radius); border: 1px solid var(--line); background: rgba(0, 0, 0, .22); }
+.tracker { border-collapse: separate; border-spacing: 0; width: 100%; font-size: .78rem; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.tracker th, .tracker td { padding: 1px 10px; border-bottom: 0; text-align: left; white-space: nowrap; }
+.tracker thead th { position: sticky; top: 0; z-index: 1; background: var(--bg); font-weight: 700; border-bottom: 1px solid var(--line); }
+.tracker .trk-num, .tracker .trk-chord { color: var(--muted); }
+.tracker .trk-chord { width: 5.5em; }
+.tracker .trk-p1 { color: var(--p1); } .tracker .trk-p2 { color: var(--p2); } .tracker .trk-tr { color: var(--tr); } .tracker .trk-no { color: var(--no); }
+.tracker td.is-empty { opacity: .38; }
+.tracker tr.is-beat td { background: var(--fill); }
+.tracker tr.is-bar td { box-shadow: inset 0 1px 0 var(--line); }
+.tracker td.is-new { animation: trk-flash .7s var(--ease-out); }
+
+/* The Result while a run evolves: one clear state in place of the previous run. */
+.result-evolving { display: flex; align-items: center; gap: var(--s4); padding: var(--s5) 0; }
+.result-evolving[hidden] { display: none; }
+.result-evolving .spinner { width: 2.4rem; height: 2.4rem; }
+.evolving-title { margin: 0; font-size: var(--fs-lg); font-weight: 700; }
+.evolving-detail { margin: 2px 0 0; color: var(--text); font-size: var(--fs-sm); }
+.evolving-previous { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+[data-result-body][hidden] { display: none; }
+.transport[aria-busy="true"] .time { opacity: .7; }
+.pack-spinner { width: 1em; height: 1em; }
+.pack-spinner[hidden] { display: none; }
+
+/* Result stage: the turntable beside the step lines on a wide screen, above them on a phone. */
+.result-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s3); margin-top: var(--s3); align-items: stretch; }
+@media (min-width: 900px) { .result-stage { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); } }
+.turntable-slot { min-width: 0; }
+.turntable {
+  position: relative; width: 100%; aspect-ratio: 1.16; max-height: 360px; margin-inline: auto; border-radius: 12px; touch-action: none;
+  background: radial-gradient(ellipse at 50% 60%, rgba(95, 158, 209, .12), transparent 70%); cursor: default;
+}
+.turntable:focus-visible { outline-offset: 2px; }
+.turntable-canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.turntable-canvas.is-entering { animation: fade-in var(--dur-3) var(--ease-out) both; }
+.result-stage > [data-channel-view] { display: flex; min-width: 0; }
+.result-stage .channel-view { flex: 1; width: 100%; height: auto; min-height: 240px; margin-top: 0; }
+
+/* Downloads: an object of the era on each (a cassette, a floppy disk, a cartridge, a sheet). */
+.downloads .button.download { flex-direction: row; align-items: center; gap: var(--s3); padding-inline: var(--s3); }
+.download .dl-icon { display: inline-grid; place-items: center; flex: none; color: var(--p1); }
+.download .dl-text { display: grid; min-width: 0; text-align: left; }
+.download .dl-saved { display: none; color: var(--p1); font-size: .75rem; font-weight: 700; }
+.download.is-saved .dl-saved { display: inline; animation: pop var(--dur-3) var(--ease-pop) both; }
+.download.is-saved .dl-saved::before { content: ""; display: inline-block; width: .35em; height: .65em; margin-right: .4em; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg) translateY(-2px); }
+.downloads .button.download.is-busy { cursor: progress; }
+.download.is-busy .dl-icon, .download.is-busy .dl-saved { display: none; }
+
+/* Skeletons: grey shapes that shimmer, for what is on its way (motion.css has the keyframes). */
+.skeleton { position: relative; display: block; overflow: hidden; border-radius: var(--radius); background: var(--fill); }
+.skeleton::after {
+  content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .12), transparent);
+  animation: shimmer 1.4s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .meter span { transition: none; }
@@ -473,4 +655,25 @@ footer {
   .song-details { margin-top: var(--s3); }
   .about { margin-top: var(--s4); }
   footer { margin-top: var(--s6); }
+}
+
+/* Phones: the lab and the result in one column, the tracker and the meters lighter. */
+@media (max-width: 760px) {
+  .hero-nav { width: 100%; }
+  .shelf-boot .sk-stage { height: 344px; }
+  .hero-nav .page-tabs { flex: 1; min-width: 0; }
+  .scope .chart { height: 200px; }
+  .wheel { font-size: 1.15rem; }
+  .crit-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s2); }
+  .tracker-scroll { max-height: 300px; }
+  .turntable { max-height: 300px; }
+  .result-stage > [data-channel-view] { margin-inline: calc(var(--s4) * -1); }
+  .result-stage .channel-view { height: 260px; flex: none; margin-inline: 0; border-radius: 0; }
+  .result-evolving { padding: var(--s4) 0; }
+  /* The transport in three rows: the version, the sound, then the volume with the mixer. */
+  .transport-options { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .transport-options > .versions, .transport-options > .sound-pack { grid-column: 1 / -1; }
+  .sound-pack select { flex: 1; min-width: 0; }
+  .transport-options > .volume-compact { grid-column: 1; }
+  .transport-options > [data-mix-toggle] { grid-column: 2; }
 }

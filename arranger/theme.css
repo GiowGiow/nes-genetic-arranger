@@ -1,0 +1,96 @@
+/* The light theme (ui/theme.js sets data-theme on <html>).
+   The dark look is the app's own and lives in the other sheets; this one only changes colors, and
+   only under :root[data-theme="light"], so deleting the file leaves the dark app as it was.
+   The light look is warm beige 90s console plastic: a sand ground, cream cards, near-black warm
+   ink. The first block redefines the tokens every sheet uses; the rest covers the few places that
+   painted a literal dark or white color instead of a token. Layout, type and motion do not change.
+   The four channel colors are darkened until their text reaches 4.5:1 on the ground and the
+   cards (tests/theme.test.js checks it). Loaded after every other sheet. */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #EDE6D6;
+  --glass: rgba(247, 242, 230, .9);
+  --line: rgba(34, 32, 28, .16);
+  --text: #22201C;
+  --muted: #6E6656;
+  --p1: #2563A0;
+  --p2: #A84A00;
+  --tr: #5E5E5E;
+  --no: #8A5200;
+  --fill: rgba(34, 32, 28, .07);
+  --fill-hover: rgba(34, 32, 28, .12);
+  --invalid: #B3261E;
+  /* drawers.css */
+  --sheet: #F7F2E6;
+  --tip-bg: #FBF8EE;
+  --shadow-sheet: rgba(60, 50, 30, .28);
+  --scrim: rgba(34, 32, 28, .42);
+  /* mixer.css: the console plate turns to cream-colored plastic with a lit fader cap. */
+  --plate: #DDD3BB;
+  --plate-edge: rgba(255, 255, 255, .65);
+  --groove: #6b6452;
+  --tick: rgba(34, 32, 28, .4);
+  --cap-top: #FBF8EE;
+  --cap-bottom: #CDC2A8;
+  --cap-edge: #6b6452;
+  --led-off: #b3a78f;
+  /* how.css: the figures' paper and ink. */
+  --figure-bg: rgba(34, 32, 28, .045);
+  --soft-text: #3d392f;
+  --grid-faint: rgba(34, 32, 28, .08);
+  --track: rgba(34, 32, 28, .1);
+  --cell-ink: #FBF8EE;
+  --roll: rgba(34, 32, 28, .04);
+  --shimmer: rgba(255, 255, 255, .55);
+}
+
+/* The ground: two quiet glows and a vignette, in sand tones. */
+:root[data-theme="light"] .backdrop {
+  background:
+    radial-gradient(ellipse at center, rgba(237, 230, 214, 0) 0%, rgba(205, 192, 163, .5) 100%),
+    radial-gradient(60vw 40vh at 8% 0%, rgba(37, 99, 160, .1), transparent 70%),
+    radial-gradient(55vw 45vh at 100% 100%, rgba(168, 74, 0, .08), transparent 70%),
+    var(--bg);
+}
+:root[data-theme="light"] .card { box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 0 6px 18px rgba(60, 50, 30, .08); }
+@media (pointer: coarse), (max-width: 700px) {
+  :root[data-theme="light"] .card { background: rgba(247, 242, 230, .94); }
+}
+
+/* Controls */
+:root[data-theme="light"] :is(input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]), select, textarea),
+:root[data-theme="light"] .song-search { background: rgba(255, 255, 255, .6); }
+:root[data-theme="light"] .button.primary { color: #fff; }
+:root[data-theme="light"] .button.primary:hover:not(:disabled) { background: #2f73b5; color: #fff; }
+:root[data-theme="light"] .versions { background: rgba(34, 32, 28, .07); }
+:root[data-theme="light"] .versions .button[aria-pressed="true"] { background: #FBF8EE; color: var(--text); box-shadow: 0 1px 2px rgba(60, 50, 30, .25); }
+:root[data-theme="light"] .view-tabs button[aria-selected="true"] { border-bottom-color: var(--text); }
+:root[data-theme="light"] .workbench > .run-bar { background: rgba(247, 242, 230, .96); }
+:root[data-theme="light"] .run { background: rgba(34, 32, 28, .04); }
+:root[data-theme="light"] :is(.meter, .score-bar, .range-bar, .share-bar) { background: var(--track); }
+:root[data-theme="light"] .error { color: var(--invalid); }
+:root[data-theme="light"] .toast { background: var(--tip-bg); box-shadow: 0 8px 24px rgba(60, 50, 30, .25); }
+:root[data-theme="light"] .toast.error { border-left-color: var(--invalid); }
+
+/* The song shelf (catalog.css). The 3D canvas is transparent, so the records stand on the card;
+   the vinyl itself stays black, like the real thing. The titles were light text with a dark
+   shadow for the night card: on beige they are dark text with no shadow. */
+:root[data-theme="light"] .shelf-label,
+:root[data-theme="light"] .song-shelf.is-2d .shelf-record-label { color: #3d392f; text-shadow: none; }
+:root[data-theme="light"] .shelf-label.is-selected,
+:root[data-theme="light"] .song-shelf.is-2d .shelf-record[aria-selected="true"] .shelf-record-label { color: var(--text); }
+:root[data-theme="light"] .shelf-arrow { background: rgba(247, 242, 230, .6); }
+:root[data-theme="light"] .shelf-tile { background: rgba(34, 32, 28, .05); }
+:root[data-theme="light"] .shelf-tile:hover, :root[data-theme="light"] .shelf-song:hover { background: rgba(37, 99, 160, .1); }
+:root[data-theme="light"] .shelf-song.is-selected .shelf-song-title { color: var(--text); }
+:root[data-theme="light"] .shelf-songs { background: rgba(34, 32, 28, .05); }
+:root[data-theme="light"] :is(.shelf-playlists, .shelf-songs) { scrollbar-color: rgba(34, 32, 28, .3) transparent; }
+
+/* The theme button in the header (ui/theme.js): a square icon button. It is a toggle, but it is
+   not drawn as a pressed button: the sun or the moon already says which theme is on. These rules
+   are the only ones that apply in both themes. */
+.theme-toggle { width: var(--control); padding: 0; flex: none; }
+.theme-toggle[aria-pressed] { background: none; box-shadow: none; }
+.theme-toggle[aria-pressed]:hover:not(:disabled) { background: var(--fill); }
+.theme-toggle svg { display: block; }

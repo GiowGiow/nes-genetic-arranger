@@ -12,8 +12,18 @@
 /** Largest file the Worker will return, in bytes. A song's MIDI file is a few tens of kB. */
 export const MAX_BYTES = 2 * 1024 * 1024;
 
-/** Hosts the Worker may fetch from. Add a host here only after reading its terms of use. */
-export const UPSTREAM_HOSTS = ["www.beakauffmann.com", "beakauffmann.com"];
+/**
+ * Hosts the Worker may fetch from. Add a host here only after reading its terms of use and its
+ * robots.txt, and give it a path rule below when its files are not plain `.mid` paths.
+ * BitMidi is not here: its robots.txt disallows /uploads/, and its files carry CORS `*`, so the
+ * app reads them from the visitor's own browser.
+ */
+export const UPSTREAM_HOSTS = [
+  "www.beakauffmann.com",
+  "beakauffmann.com",
+  "www.midis101.com",
+  "www.mutopiaproject.org",
+];
 
 const PAGES_ORIGIN = "https://giowgiow.github.io";
 const LOCAL_ORIGIN = /^http:\/\/(localhost|127\.0\.0\.1)(:\d{1,5})?$/;
@@ -37,6 +47,25 @@ export function isAllowedOrigin(origin) {
 function hasMidiExtension(pathname) {
   const path = safeDecode(pathname).toLowerCase();
   return path.endsWith(".mid") || path.endsWith(".midi");
+}
+
+/**
+ * Where on a host a MIDI file may be. A host without a rule here accepts any path that ends in
+ * .mid or .midi. The sites that serve their files from one folder get a narrower rule, so the
+ * Worker cannot be asked for their pages, their API or anything else they have. The rule sees the
+ * path as the browser sent it, still percent-encoded, so `..` tricks do not hide in it.
+ */
+const FILE_PATHS = {
+  // midis101.com: /download/<number>-<slug> sends the MIDI bytes, with no extension (checked by hand)
+  "www.midis101.com": (pathname) => /^\/download\/\d+-[a-z0-9-]+$/i.test(pathname),
+  // Mutopia Project: the ftp area, one folder per piece
+  "www.mutopiaproject.org": (pathname) => /^\/ftp\/[^?#]+\.mid$/i.test(pathname) && !pathname.includes(".."),
+};
+
+/** @param {string} hostname @param {string} pathname */
+function isFilePath(hostname, pathname) {
+  const rule = FILE_PATHS[hostname];
+  return rule ? rule(pathname) : hasMidiExtension(pathname);
 }
 
 function safeDecode(text) {
@@ -71,7 +100,7 @@ export function checkUpstreamUrl(raw, allowedHosts) {
   if (url.username !== "" || url.password !== "") return refuse("credentials in the URL");
   if (url.port !== "") return refuse("only the default https port is allowed");
   if (!allowedHosts.includes(url.hostname)) return refuse("host is not on the allow-list");
-  if (!hasMidiExtension(url.pathname)) return refuse("only .mid and .midi paths are fetched");
+  if (!isFilePath(url.hostname, url.pathname)) return refuse("only .mid and .midi paths are fetched");
   return { ok: true, url };
 }
 

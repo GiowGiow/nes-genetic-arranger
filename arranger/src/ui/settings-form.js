@@ -90,6 +90,25 @@ export function importConfig(text, defaults) {
 }
 
 /**
+ * Read a settings file and say what happened, in the words the page shows in a toast.
+ *
+ * @param {string} fileName the name the visitor chose, for the message
+ * @param {string} text the file's text
+ * @param {Settings} defaults the settings that keys missing from the file keep
+ * @returns {{ok: true, settings: Settings, message: string} | {ok: false, settings?: undefined, message: string}}
+ * @example
+ * readSettingsFile("fast.json", '{"population_size": 40}', defaults).message // "Loaded fast.json."
+ * readSettingsFile("a.txt", "no", defaults).message // "a.txt: the file is not a JSON settings file"
+ */
+export function readSettingsFile(fileName, text, defaults) {
+  try {
+    return { ok: true, settings: importConfig(text, defaults), message: `Loaded ${fileName}.` };
+  } catch (error) {
+    return { ok: false, message: `${fileName}: ${/** @type {Error} */ (error).message}` };
+  }
+}
+
+/**
  * Write settings as a file that both the app and the command line (`--config`) read back.
  *
  * @param {Settings} settings

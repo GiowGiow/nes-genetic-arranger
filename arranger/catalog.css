@@ -30,7 +30,7 @@
   grid-template-columns: 260px minmax(0, 1fr);
   grid-template-areas: "choose choose" "songs stage" "songs info";
 }
-.shelf-playlists { grid-area: choose; }
+.shelf-choose { grid-area: choose; position: relative; min-width: 0; }
 .shelf-stage-column { grid-area: stage; min-width: 0; }
 .shelf-info { grid-area: info; }
 .shelf-stage { position: relative; height: 400px; border-radius: 14px; isolation: isolate; }
@@ -69,11 +69,15 @@
 .is-previous .shelf-chevron { transform: translateX(3px) rotate(135deg); }
 .is-next .shelf-chevron { transform: translateX(-3px) rotate(-45deg); }
 
-/* 3D: the listbox stays for keyboards and screen readers, out of sight. */
-.song-shelf.is-3d .shelf-list {
+/* 3D: the listbox stays for keyboards and screen readers, out of sight. While the scene fades in
+   over the 2D grid (`is-crossfade`, a third of a second) the grid is still drawn and fades out. */
+.song-shelf.is-3d:not(.is-crossfade) .shelf-list {
   position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden;
   clip-path: inset(50%); white-space: nowrap;
 }
+.song-shelf.is-crossfade .shelf-canvas { animation: fade-in var(--dur-3) var(--ease-out) both; }
+.song-shelf.is-crossfade .shelf-list { animation: shelf-fade-out var(--dur-3) var(--ease-out) both; pointer-events: none; }
+@keyframes shelf-fade-out { to { opacity: 0; } }
 
 /* Titles of the 3D records: one element per record, placed by the scene (it writes `transform`
    from the record's projected rim). Clipped to a width a little under the records' pitch; a
@@ -120,7 +124,8 @@
 /* 2D: the same listbox, shown as a grid of records with their titles underneath. The arrows
    cover the grid's edges, so the grid keeps clear of them. */
 .song-shelf.is-2d .shelf-canvas { display: none; }
-.song-shelf.is-2d .shelf-list {
+.song-shelf.is-2d .shelf-list,
+.song-shelf.is-crossfade .shelf-list {
   list-style: none; margin: 0; padding: 6px 50px; height: 100%; display: grid; gap: 2px 4px;
   grid-template-columns: repeat(var(--shelf-columns, 5), minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -131,12 +136,15 @@
 }
 /* The visible title exists for the 2D grid only; the 3D scene draws its own. */
 .shelf-record-label { display: none; }
-.song-shelf.is-2d .shelf-record { grid-template-rows: minmax(0, 1fr) auto; row-gap: 2px; }
-.song-shelf.is-2d .shelf-record-label {
+.song-shelf.is-2d .shelf-record,
+.song-shelf.is-crossfade .shelf-record { grid-template-rows: minmax(0, 1fr) auto; row-gap: 2px; }
+.song-shelf.is-2d .shelf-record-label,
+.song-shelf.is-crossfade .shelf-record-label {
   display: block; max-width: 100%; padding-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   font-size: .8125rem; line-height: 1.3; color: rgba(226, 234, 248, .74);
 }
-.song-shelf.is-2d .shelf-record[aria-selected="true"] .shelf-record-label { color: #fff; font-weight: 650; }
+.song-shelf.is-2d .shelf-record[aria-selected="true"] .shelf-record-label,
+.song-shelf.is-crossfade .shelf-record[aria-selected="true"] .shelf-record-label { color: #fff; font-weight: 650; }
 /* A record: dark grooves, a label in a channel color (--label), the sprite and the centre hole. */
 .shelf-disc {
   --label: var(--p1);
@@ -167,6 +175,8 @@
 }
 @keyframes shelf-bob { from { translate: 0 -2px; } to { translate: 0 2px; } }
 @keyframes shelf-spin { from { rotate: 0deg; } to { rotate: 360deg; } }
+/* Off screen, nothing bobs: 27 infinite animations are not free on a phone. */
+.song-shelf.is-offscreen .shelf-disc { animation-play-state: paused; }
 .song-shelf.reduce-motion .shelf-disc { animation: none; transition: none; }
 @media (prefers-reduced-motion: reduce) {
   .shelf-disc { animation: none !important; transition: none; }
@@ -217,9 +227,11 @@
   grid-template-areas: "cover name" "cover count"; align-items: center; column-gap: 10px; row-gap: 0;
   min-width: 150px; max-width: 220px; min-height: 52px; padding: 5px 12px 5px 6px; text-align: left;
   border: 0; border-radius: var(--radius); background: rgba(255, 255, 255, .04);
-  color: var(--text); font: inherit; cursor: pointer; transition: background .15s;
+  color: var(--text); font: inherit; cursor: pointer;
 }
 .shelf-tile:not([aria-pressed]) { min-width: 0; } /* the back button is not a toggle */
+.shelf-tile { transition: background var(--dur-1), transform var(--dur-1) var(--ease-out); }
+.shelf-tile:active { transform: scale(.97); }
 .shelf-tile:hover { background: rgba(140, 190, 240, .1); }
 .shelf-tile:focus-visible { outline: 2px solid var(--p1); outline-offset: 2px; }
 .shelf-tile[aria-pressed="true"] { background: rgba(95, 158, 209, .16); box-shadow: inset 0 0 0 1px rgba(95, 158, 209, .55); }
@@ -250,6 +262,7 @@
   font-size: .875rem; line-height: 1.25; cursor: pointer;
   content-visibility: auto; contain-intrinsic-size: auto 28px; /* thousands of rows stay cheap */
 }
+.shelf-song { transition: background-color var(--dur-1); }
 .shelf-song:hover { background: rgba(140, 190, 240, .08); }
 .shelf-song.is-selected { background: rgba(95, 158, 209, .18); }
 .shelf-song-title, .shelf-song-by { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -290,7 +303,99 @@
   .shelf-actions .button.primary { flex: 2 1 0; }
   .shelf-hint { text-align: left; }
   .shelf-facts, .shelf-problem, .shelf-license { padding-left: 0; }
+  .shelf-info { min-height: 164px; }
 }
 @media (min-width: 1200px) {
   .shelf-label { font-size: .875rem; }
 }
+
+/* ---- Loading, motion and online results ---------------------------------------------------- */
+
+/* A small turning record, the same look as the busy button (style.css): for the line under the
+   search box and the tile of a playlist whose file is on its way. */
+.shelf-spinner {
+  display: inline-block; flex: none; width: .95em; height: .95em; border-radius: 50%; vertical-align: -.12em;
+  background:
+    radial-gradient(circle, currentColor 0 17%, transparent 19%),
+    conic-gradient(transparent 0 8%, currentColor 8% 20%, transparent 20% 58%, currentColor 58% 70%, transparent 70%);
+  box-shadow: inset 0 0 0 1.5px currentColor; opacity: .85; animation: spin 1s linear infinite;
+}
+.shelf-spinner[hidden] { display: none; }
+
+/* The row of playlists keeps its height from the first paint (grey tiles stand in for the real
+   ones), so nothing under it moves when the catalog arrives. */
+.shelf-playlists { min-height: 62px; }
+.shelf-tile-count.is-loading { display: flex; align-items: center; gap: 6px; }
+.shelf-sk-tile, .shelf-sk-row, .shelf-sk-disc { position: relative; overflow: hidden; background: rgba(255, 255, 255, .05); }
+.shelf-sk-tile { flex: none; width: 150px; height: 52px; border-radius: var(--radius); }
+.shelf-sk-row { display: block; height: 20px; margin: 4px 6px; border-radius: 6px; }
+.shelf-sk-row:nth-child(3n + 2) { width: 82%; }
+.shelf-sk-row:nth-child(3n) { width: 68%; }
+/* A skeleton's light sweep: a band slides across (transform only, so it costs the compositor,
+   not the layout). Reduced motion stops it (motion.css), leaving the grey shape. */
+.shelf-sk-tile::after, .shelf-sk-row::after, .shelf-sk-disc::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .07), transparent);
+  transform: translateX(-100%); animation: shimmer 1.4s var(--ease-in-out) infinite;
+}
+
+/* Grey records on the stage, where the real ones will be: the same grid as the 2D list. */
+.shelf-skeleton {
+  position: absolute; inset: 0; z-index: 1; display: grid; gap: 2px 4px; padding: 6px 50px; pointer-events: none;
+  grid-template-columns: repeat(var(--shelf-columns, 5), minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr));
+  place-items: center;
+}
+.shelf-skeleton[hidden] { display: none; }
+.shelf-sk-disc { height: min(66%, 70px); aspect-ratio: 1; border-radius: 50%; }
+
+/* The thin bar under the playlists: how much of a big catalog file has arrived. */
+.shelf-progress { position: absolute; left: 0; right: 0; bottom: 3px; height: 2px; border-radius: 1px; overflow: hidden; background: rgba(255, 255, 255, .06); }
+.shelf-progress[hidden] { display: none; }
+.shelf-progress-fill {
+  display: block; height: 100%; background: var(--p1); transform-origin: left center;
+  transform: scaleX(var(--progress, 0)); transition: transform var(--dur-2) linear;
+}
+.shelf-progress.is-indeterminate .shelf-progress-fill { width: 35%; transform: translateX(-100%); animation: shelf-indeterminate 1.2s var(--ease-in-out) infinite; }
+@keyframes shelf-indeterminate { to { transform: translateX(300%); } }
+
+/* The shelf is busy while songs are on their way, but it must stay legible: no dimming. */
+.shelf-body[aria-busy="true"] { opacity: 1; }
+
+/* Under the search box: which sources are asked, who failed. The line keeps its height when
+   empty, so the list under it does not move. */
+.shelf-search-status {
+  display: flex; align-items: center; gap: 8px; min-height: 1.6em; margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.4;
+}
+.shelf-search-text { min-width: 0; }
+.shelf-retry { flex: none; margin-left: auto; }
+.shelf-retry[hidden] { display: none; }
+/* The song count for screen readers, said after the visitor stops typing. */
+.shelf-announce { position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* "From BitMidi (12)": where a source's results begin in the list. */
+.shelf-divider {
+  position: sticky; top: 0; z-index: 1; margin: 6px 0 2px; padding: 5px 8px 3px; list-style: none;
+  color: var(--muted); font: 600 .6875rem var(--mono); letter-spacing: .06em; text-transform: uppercase;
+  background: rgba(11, 14, 23, .9); border-top: 1px solid var(--line); border-radius: 4px;
+}
+
+/* The panel keeps the height of its tallest variant (the download steps with their hint), so the
+   run strip under it does not jump when the song changes. A new song fades its head in. */
+.shelf-info { min-height: 112px; }
+.shelf-info.is-new .shelf-info-head { animation: fade-in var(--dur-2) var(--ease-out) both; }
+.shelf-info.is-new .shelf-sprite { animation: pop var(--dur-3) var(--ease-pop) both; }
+
+/* Records that arrive in the 2D grid (the 3D scene animates its own). A page turned forward slides
+   in from the right, a page turned back from the left, and a new list pops in record by record,
+   18 ms apart, 300 ms at most. */
+.shelf-list[data-motion="next"] > .shelf-record { animation: shelf-page-next var(--dur-2) var(--ease-out) both; }
+.shelf-list[data-motion="previous"] > .shelf-record { animation: shelf-page-previous var(--dur-2) var(--ease-out) both; }
+.shelf-list[data-motion="enter"] > .shelf-record {
+  animation: shelf-record-in var(--dur-3) var(--ease-pop) both; animation-delay: min(calc(var(--i, 0) * 18ms), 300ms);
+}
+@keyframes shelf-page-next { from { opacity: 0; transform: translateX(24px); } }
+@keyframes shelf-page-previous { from { opacity: 0; transform: translateX(-24px); } }
+@keyframes shelf-record-in { from { opacity: 0; transform: scale(.5); } }
+.song-shelf.reduce-motion .shelf-list > .shelf-record,
+.song-shelf.reduce-motion .shelf-skeleton *,
+.song-shelf.reduce-motion .shelf-spinner { animation: none; }

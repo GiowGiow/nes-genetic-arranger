@@ -17,6 +17,23 @@ const KOROBEINIKI = { id: "korobeiniki", source: "examples", t: "Korobeiniki", c
 /** A record of a song from a site that allows no direct read: it is downloaded by hand. */
 const AQUARELA = { id: "aquarela", source: "mpb", t: "Aquarela", c: "", route: { download: "https://example.org/aquarela.mid" } };
 
+/** A song of the MPB site, whose file the Worker can bring. */
+const SAMBA = {
+  id: "samba",
+  source: "mpb",
+  t: "Samba",
+  c: "",
+  u: "https://www.beakauffmann.com/mpb_v/samba.html",
+  route: { download: "https://www.beakauffmann.com/mpb_v/som/samba.mid" },
+  facts: { sha256: "a".repeat(64), overrides: { max_generations: 4000 } },
+};
+
+/** The Worker used by the tests. */
+const WORKER = "https://fetcher.test";
+
+/** A tiny MIDI file, as the Worker sends it. */
+const MIDI = new Uint8Array([0x4d, 0x54, 0x68, 0x64, 0, 0, 0, 6, 0, 1, 0, 1, 0, 96]);
+
 /** A record that is a page of another site, with no file to read. */
 const PAGE_ONLY = { id: "page", source: "elsewhere", t: "A page", c: "", route: { link: "https://example.org/page" } };
 
@@ -26,7 +43,7 @@ const ABC_TEXT = "X:1\nT:Korobeiniki\nM:4/4\nL:1/4\nK:Am\nA B c d|\n";
 /**
  * A glue on fakes, with a record of everything it does to them.
  *
- * @param {{fetchFn?: any, loadCatalog?: any, cachedKeys?: string[], win?: any, loaded?: () => any}} [parts]
+ * @param {Record<string, any>} [parts] `fetchFn`, `loadCatalog`, `win`, `loaded`, and any option of the glue to override
  */
 function setUp(parts = {}) {
   const document = new FakeDocument();
@@ -43,6 +60,8 @@ function setUp(parts = {}) {
   const relayed = [];
   /** @type {boolean[]} */
   const relayedAsError = [];
+  /** @type {Array<{text: string, options: any}>} */
+  const toasts = [];
   /** @type {any} the options the glue gave the shelf */
   let shelfOptions = null;
   const shelf = {
@@ -60,12 +79,19 @@ function setUp(parts = {}) {
       this.entries.push(list);
     },
     /** @param {any[]} list */
-    setExternal(list) {
+    setExternal(list, status) {
       this.external.push(list);
+      this.statuses.push(status);
     },
+    statuses: /** @type {any[]} */ ([]),
     /** @param {string[]} sources */
     setPending(sources) {
       this.pending.push(sources);
+    },
+    progress: /** @type {Array<[string, any]>} */ ([]),
+    /** @param {string} source @param {any} reading */
+    setProgress(source, reading) {
+      this.progress.push([source, reading]);
     },
     /** @param {string} query */
     setQuery(query) {
@@ -103,6 +129,13 @@ function setUp(parts = {}) {
     startRun: () => void (calls.startRun += 1),
     playIntro: () => void (calls.playIntro += 1),
     fetchFn: parts.fetchFn ?? (async () => ({ ok: true, text: async () => ABC_TEXT })),
+    fetcherUrl: parts.fetcherUrl === undefined ? WORKER : parts.fetcherUrl,
+    now: parts.now,
+    onlineSources: parts.onlineSources,
+    isOnline: parts.isOnline ?? (() => true),
+    toast: (text, options) => void toasts.push({ text, options }),
+    idle: parts.idle ?? (() => {}),
+    connection: parts.connection ?? {},
     createShelf: (_root, options) => {
       shelfOptions = options;
       return /** @type {any} */ (shelf);
@@ -113,7 +146,7 @@ function setUp(parts = {}) {
         onUpdate(catalog.entries, { collections: [], pending: [] });
         return catalog;
       }),
-    songCache: createSongCache(null),
+    songCache: parts.songCache ?? createSongCache(null),
     notifyStatus: (text, isError = false) => {
       relayed.push(text);
       relayedAsError.push(isError);
@@ -124,7 +157,7 @@ function setUp(parts = {}) {
     setTimer: clock.setTimer,
     clearTimer: clock.clearTimer,
   });
-  return { glue, shelf, shelfOptions: () => shelfOptions, inputPanel, calls, phase, clock, elements, relayed, relayedAsError, catalog };
+  return { glue, shelf, shelfOptions: () => shelfOptions, inputPanel, calls, phase, clock, elements, relayed, relayedAsError, catalog, toasts };
 }
 
 test("the shelf gets the songs the catalog reports, and the visitor's own files go in front", async () => {
@@ -260,15 +293,24 @@ test("a chosen file that is not the download is the visitor's own", async () => 
   assert.equal(glue.claimDownload("holiday.mid"), null);
 });
 
-test("a search of two letters or more asks The Session after 450 ms; one letter asks nobody", async () => {
+/** A fetch that answers The Session and the Worker's searches with one result each, and BitMidi with two. */
+function searchFetch(asked = /** @type {string[]} */ ([])) {
+  return async (/** @type {string} */ url) => {
+    asked.push(url);
+    if (url.startsWith("https://thesession.org/")) {
+      return { ok: true, json: async () => ({ tunes: [{ id: 5, name: "Invented Jig", url: "https://thesession.org/tunes/5", type: "jig" }] }) };
+    }
+    if (url.startsWith("https://bitmidi.com/api/")) {
+      return { ok: true, json: async () => ({ result: { results: [{ id: 7, name: "invented-band-song.mid", url: "/invented-band-song-mid" }] } }) };
+    }
+    return { ok: true, json: async () => ({ results: [] }) };
+  };
+}
+
+test("a search of two letters or more asks the online sources after 300 ms; one letter asks nobody", async () => {
   /** @type {string[]} */
   const asked = [];
-  const { shelfOptions, shelf, clock } = setUp({
-    fetchFn: async (/** @type {string} */ url) => {
-      asked.push(url);
-      return { ok: true, json: async () => ({ tunes: [{ id: 5, name: "Invented Jig", url: "https://thesession.org/tunes/5", type: "jig" }] }) };
-    },
-  });
+  const { shelfOptions, shelf, clock } = setUp({ fetchFn: searchFetch(asked) });
   shelf.searchBox.value = "a";
   shelfOptions().onSearch("a");
   clock.advance(1000);
@@ -276,36 +318,57 @@ test("a search of two letters or more asks The Session after 450 ms; one letter 
 
   shelf.searchBox.value = "invented";
   shelfOptions().onSearch("invented");
-  clock.advance(449);
+  clock.advance(299);
   assert.equal(asked.length, 0, "not before the typing pauses");
   clock.advance(1);
   await new Promise((resolve) => setImmediate(resolve));
 
-  assert.equal(asked.length, 1);
-  assert.match(asked[0], /thesession\.org/);
-  assert.equal(shelf.external.at(-1)?.[0].t, "Invented Jig");
+  assert.equal(asked.length, 4, "The Session, BitMidi, midis101.com and Mutopia, once each");
+  assert.ok(asked.some((url) => url.startsWith("https://thesession.org/")));
+  assert.ok(asked.some((url) => url.startsWith("https://bitmidi.com/api/midi/search")));
+  assert.ok(asked.includes(`${WORKER}/search/midis101?q=invented`));
+  assert.ok(asked.includes(`${WORKER}/search/mutopia?q=invented`));
+  const last = shelf.external.at(-1) ?? [];
+  assert.deepEqual(last.map((/** @type {any} */ entry) => [entry.source, entry.t]), [["thesession", "Invented Jig"], ["bitmidi", "Invented Band Song"], ["imslp", 'Search "invented" on IMSLP']]);
+  assert.equal(shelf.statuses.at(-1).searching, false);
+});
+
+test("the shelf hears where the search stands while the sources answer", async () => {
+  const { shelfOptions, shelf, clock } = setUp({ fetchFn: searchFetch() });
+  shelf.searchBox.value = "invented";
+  shelfOptions().onSearch("invented");
+  clock.advance(300);
+  assert.deepEqual(shelf.statuses.at(-1).pending, ["The Session", "BitMidi", "midis101.com", "Mutopia Project"]);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(shelf.statuses.at(-1).pending, []);
+});
+
+test("a result of BitMidi becomes a record that opens through the Worker", async () => {
+  const { shelfOptions, shelf, clock } = setUp({ fetchFn: searchFetch() });
+  shelf.searchBox.value = "invented";
+  shelfOptions().onSearch("invented");
+  clock.advance(300);
+  await new Promise((resolve) => setImmediate(resolve));
+  const record = (shelf.external.at(-1) ?? []).find((/** @type {any} */ entry) => entry.source === "bitmidi");
+  assert.deepEqual(record.route, { download: "https://bitmidi.com/uploads/7.mid" });
+  assert.equal(shelfOptions().isOneClick(record), true);
 });
 
 test("each keystroke restarts the wait, so only the last query is asked", async () => {
   /** @type {string[]} */
   const asked = [];
-  const { shelfOptions, shelf, clock } = setUp({
-    fetchFn: async (/** @type {string} */ url) => {
-      asked.push(url);
-      return { ok: true, json: async () => ({ tunes: [] }) };
-    },
-  });
+  const { shelfOptions, shelf, clock } = setUp({ fetchFn: searchFetch(asked) });
 
   for (const query of ["ba", "bal", "ball"]) {
     shelf.searchBox.value = query;
     shelfOptions().onSearch(query);
-    clock.advance(300);
+    clock.advance(200);
   }
-  clock.advance(450);
+  clock.advance(300);
   await new Promise((resolve) => setImmediate(resolve));
 
-  assert.equal(asked.length, 1);
-  assert.match(asked[0], /q=ball/);
+  assert.equal(asked.length, 4);
+  assert.ok(asked.every((url) => /q=ball/.test(url)));
 });
 
 test("results for a query the visitor has already changed are dropped", async () => {
@@ -319,26 +382,69 @@ test("results for a query the visitor has already changed are dropped", async ()
   });
   shelf.searchBox.value = "invented";
   shelfOptions().onSearch("invented");
-  clock.advance(450);
+  clock.advance(300);
   shelf.searchBox.value = "something else";
   answer();
   await new Promise((resolve) => setImmediate(resolve));
 
-  assert.equal(shelf.external.length, 0);
+  assert.ok(shelf.external.every((/** @type {any[]} */ list) => list.every((entry) => entry.t !== "Late")), "nothing from the old query's answer reached the shelf");
 });
 
-test("a search that cannot reach The Session adds nothing and does not fail", async () => {
-  const { shelfOptions, shelf, clock } = setUp({
+test("when every source fails nothing is added; the shelf is told, and a toast offers Retry", async () => {
+  const { shelfOptions, shelf, clock, toasts } = setUp({
     fetchFn: async () => {
       throw new Error("offline");
     },
   });
   shelf.searchBox.value = "invented";
   shelfOptions().onSearch("invented");
-  clock.advance(450);
+  clock.advance(300);
   await new Promise((resolve) => setImmediate(resolve));
 
-  assert.deepEqual(shelf.external.at(-1), [], "the shelf hears of no results");
+  const status = shelf.statuses.at(-1);
+  assert.equal(status.searching, false);
+  assert.equal(status.failed.length, 4, "IMSLP needs no request, so it cannot fail");
+  assert.equal(shelf.external.at(-1)?.length, 1, "only the IMSLP link");
+  assert.equal(toasts.length, 1);
+  assert.match(toasts[0].text, /The Session, BitMidi, midis101\.com, Mutopia Project could not be reached/);
+  assert.equal(toasts[0].options.kind, "error");
+  assert.equal(toasts[0].options.action.label, "Retry");
+});
+
+test("Retry in the toast asks again only the sources that failed", async () => {
+  let down = true;
+  /** @type {string[]} */
+  const asked = [];
+  const { shelfOptions, shelf, clock, toasts } = setUp({
+    fetchFn: async (/** @type {string} */ url) => {
+      asked.push(url);
+      if (down && url.startsWith("https://bitmidi.com")) throw new Error("down");
+      return { ok: true, json: async () => ({ tunes: [], results: [], result: { results: [] } }) };
+    },
+  });
+  shelf.searchBox.value = "invented";
+  shelfOptions().onSearch("invented");
+  clock.advance(300);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(toasts.length, 1);
+  down = false;
+  asked.length = 0;
+  toasts[0].options.action.run();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(asked.length, 1, "only BitMidi");
+  assert.equal(shelf.statuses.at(-1).failed.length, 0);
+});
+
+test("offline, the search asks nobody and says so in a toast", async () => {
+  /** @type {string[]} */
+  const asked = [];
+  const { shelfOptions, shelf, clock, toasts } = setUp({ fetchFn: searchFetch(asked), isOnline: () => false });
+  shelf.searchBox.value = "invented";
+  shelfOptions().onSearch("invented");
+  clock.advance(300);
+  assert.equal(asked.length, 0);
+  assert.equal(shelf.statuses.at(-1).offline, true);
+  assert.match(toasts[0].text, /offline/i);
 });
 
 test("a larger catalog file that fails to load tells the visitor and stops the shelf waiting for it", async () => {
@@ -376,4 +482,203 @@ test("Forget downloaded songs empties the cache and hides its note", async () =>
   await new Promise((resolve) => setImmediate(resolve));
 
   assert.equal(elements.forgetNote.hidden, true, "nothing is left to forget");
+});
+
+// --- Songs on other sites: the Worker ---------------------------------------------------------------
+
+/** A fetch that answers the Worker's file requests with `answer`, and everything else with the ABC tune. */
+function workerFetch(answer, asked = /** @type {string[]} */ ([])) {
+  return async (/** @type {string} */ url) => {
+    asked.push(url);
+    if (url.startsWith(`${WORKER}/midi`)) return answer();
+    return { ok: true, text: async () => ABC_TEXT };
+  };
+}
+const midiAnswer = () => new Response(MIDI, { status: 200 });
+
+test("a song on another site opens in one click: the Worker brings its file and the run starts", async () => {
+  /** @type {string[]} */
+  const asked = [];
+  const { shelfOptions, inputPanel, calls, relayed } = setUp({ fetchFn: workerFetch(midiAnswer, asked) });
+
+  await shelfOptions().onArrange(SAMBA);
+
+  assert.deepEqual(asked, [`${WORKER}/midi?url=${encodeURIComponent(SAMBA.route.download)}`]);
+  assert.equal(inputPanel.reads.length, 1);
+  assert.equal(inputPanel.reads[0].name, "Samba.mid");
+  assert.deepEqual(inputPanel.reads[0].overrides, { max_generations: 4000 }, "the record's own limits apply");
+  assert.equal(inputPanel.reads[0].entry, SAMBA);
+  assert.equal(calls.startRun, 1);
+  assert.equal(calls.downloads.length, 0, "no download by hand");
+  assert.equal(relayed[0], "Loading Samba…");
+});
+
+test("Preview of a song on another site also goes through the Worker and plays the intro", async () => {
+  const { shelfOptions, calls } = setUp({ fetchFn: workerFetch(midiAnswer) });
+  await shelfOptions().onPreview(SAMBA);
+  assert.equal(calls.playIntro, 1);
+  assert.equal(calls.startRun, 0);
+});
+
+test("such a song is one click while the Worker works, and not once the Worker is off", () => {
+  const { shelfOptions } = setUp();
+  assert.equal(shelfOptions().isOneClick(SAMBA), true);
+  assert.equal(shelfOptions().isOneClick(AQUARELA), false, "a site the Worker does not serve");
+  const without = setUp({ fetcherUrl: null });
+  assert.equal(without.shelfOptions().isOneClick(SAMBA), false, "no Worker, no one click");
+});
+
+test("when the Worker cannot be reached the song falls back to the download flow, with a toast that says why", async () => {
+  const { shelfOptions, calls, relayed, relayedAsError, shelf } = setUp({
+    fetchFn: async () => {
+      throw new TypeError("Failed to fetch");
+    },
+  });
+  const updates = shelf.entries.length;
+
+  const opened = await shelfOptions().onArrange(SAMBA);
+
+  assert.equal(opened, undefined);
+  assert.equal(calls.startRun, 0);
+  assert.match(relayed.at(-1) ?? "", /^Samba could not be fetched automatically\. .*Download the file and open it by hand\.$/);
+  assert.equal(relayedAsError.at(-1), true);
+  assert.equal(shelfOptions().isOneClick(SAMBA), false, "the panel now offers Download MIDI");
+  assert.ok(shelf.entries.length > updates, "the shelf is told, to redraw the panel");
+});
+
+test("a song the source no longer has fails alone: other songs still go through the Worker", async () => {
+  const { shelfOptions } = setUp({ fetchFn: workerFetch(() => new Response("{}", { status: 404 })) });
+  const other = { ...SAMBA, id: "other", t: "Other", route: { download: "https://www.beakauffmann.com/mpb_v/som/other.mid" } };
+  await shelfOptions().onArrange(SAMBA);
+  assert.equal(shelfOptions().isOneClick(SAMBA), false);
+  assert.equal(shelfOptions().isOneClick(other), true);
+});
+
+test("a Worker that is down or overloaded makes every such song a download for a minute, then it is tried again", async () => {
+  let now = 0;
+  const { shelfOptions } = setUp({ fetchFn: workerFetch(() => new Response("{}", { status: 429 })), now: () => now });
+  const other = { ...SAMBA, id: "other", t: "Other", route: { download: "https://bitmidi.com/uploads/9.mid" } };
+  await shelfOptions().onArrange(SAMBA);
+  assert.equal(shelfOptions().isOneClick(other), false);
+  now = 59_000;
+  assert.equal(shelfOptions().isOneClick(other), false);
+  now = 61_000;
+  assert.equal(shelfOptions().isOneClick(other), true);
+});
+
+/** A cache over a map, standing in for IndexedDB. */
+function mapCache() {
+  const store = new Map();
+  return createSongCache({
+    get: async (key) => store.get(key) ?? null,
+    put: async (key, value) => void store.set(key, value),
+    keys: async () => [...store.keys()],
+    clear: async () => store.clear(),
+  });
+}
+
+/** @param {Uint8Array} bytes */
+const sha256 = async (bytes) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)), (byte) => byte.toString(16).padStart(2, "0")).join("");
+
+test("a song kept in the browser opens without asking the Worker", async () => {
+  /** @type {string[]} */
+  const asked = [];
+  const songCache = mapCache();
+  const hash = await sha256(MIDI);
+  const kept = { ...SAMBA, facts: { ...SAMBA.facts, sha256: hash } };
+  await songCache.remember(kept, MIDI, hash);
+  const { shelfOptions, inputPanel, calls } = setUp({ fetchFn: workerFetch(midiAnswer, asked), songCache });
+
+  await shelfOptions().onArrange(kept);
+
+  assert.deepEqual(asked, []);
+  assert.equal(inputPanel.reads.length, 1);
+  assert.equal(calls.startRun, 1);
+});
+
+test("a file the Worker brought is kept for next time, and the visitor is told", async () => {
+  const songCache = mapCache();
+  const { glue, toasts } = setUp({ songCache });
+  const hash = await sha256(MIDI);
+  const song = { ...SAMBA, facts: { ...SAMBA.facts, sha256: hash } };
+
+  await glue.rememberDownload({ input: { catalogEntry: song, bytes: MIDI, sha256: hash } });
+
+  assert.equal(songCache.has(song), true);
+  assert.match(toasts.at(-1)?.text ?? "", /Saved in this browser/);
+});
+
+test("a song found by a search, with no recorded hash, is kept as first downloaded", async () => {
+  const songCache = mapCache();
+  const { glue } = setUp({ songCache });
+  const found = { id: "7", source: "bitmidi", t: "Found", route: { download: "https://bitmidi.com/uploads/7.mid" } };
+
+  await glue.rememberDownload({ input: { catalogEntry: found, bytes: MIDI, sha256: "f".repeat(64) } });
+
+  assert.equal(songCache.has(found), true);
+});
+
+// --- Loading the big file -------------------------------------------------------------------------
+
+test("the share of a big file that has arrived goes to the shelf, and ends when the file is in", async () => {
+  const { shelfOptions, shelf } = setUp({
+    loadCatalog: async (/** @type {any} */ _fetch, /** @type {any} */ onUpdate, /** @type {any} */ onProgress) => {
+      onUpdate([KOROBEINIKI], { collections: [], pending: ["mpb"] });
+      return {
+        entries: [KOROBEINIKI],
+        loadMore: async () => {
+          onProgress("mpb", { loaded: 50, total: 100 });
+          return { entries: [KOROBEINIKI], missing: [] };
+        },
+      };
+    },
+  });
+
+  await shelfOptions().onNeedSongs(["mpb"]);
+
+  assert.deepEqual(shelf.progress, [["mpb", { loaded: 50, total: 100 }], ["mpb", null]]);
+});
+
+/** A glue whose catalog has MPB pending, and a record of what is asked of `loadMore`. */
+function prefetchSetUp(extra = {}) {
+  /** @type {string[]} */
+  const loaded = [];
+  /** @type {Array<() => void>} */
+  const idleTasks = [];
+  const made = setUp({
+    idle: (/** @type {() => void} */ run) => idleTasks.push(run),
+    loadCatalog: async (/** @type {any} */ _fetch, /** @type {any} */ onUpdate) => {
+      onUpdate([KOROBEINIKI], { collections: [], pending: ["mpb"] });
+      return {
+        entries: [KOROBEINIKI],
+        loadMore: async (/** @type {string} */ source) => {
+          loaded.push(source);
+          return { entries: [KOROBEINIKI], missing: [] };
+        },
+      };
+    },
+    ...extra,
+  });
+  return { ...made, loaded, idleTasks };
+}
+
+test("when the browser is idle the big file is read ahead, so the first search is instant", async () => {
+  const { glue, loaded, idleTasks } = prefetchSetUp();
+  await glue.catalogLoading;
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(loaded, [], "not before the browser is idle");
+  assert.equal(idleTasks.length, 1);
+  idleTasks[0]();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(loaded, ["mpb"]);
+});
+
+test("the big file is not read ahead on a connection that saves data or is slow", async () => {
+  for (const connection of [{ saveData: true }, { effectiveType: "3g" }, { type: "cellular" }]) {
+    const { glue, loaded, idleTasks } = prefetchSetUp({ connection });
+    await glue.catalogLoading;
+    await new Promise((resolve) => setImmediate(resolve));
+    assert.equal(idleTasks.length, 0, JSON.stringify(connection));
+    assert.deepEqual(loaded, []);
+  }
 });

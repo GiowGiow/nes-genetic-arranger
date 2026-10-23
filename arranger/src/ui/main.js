@@ -13,8 +13,10 @@
  * The genetic algorithm runs in a module worker (`../worker.js`), so the page stays responsive
  * (FR-015). The page sends `run` and `stop` messages and draws every `progress` message
  * (contracts/worker-protocol.md). When the worker is `done`, the page realizes the best plan into
- * notes, checks the NES rules, renders the chip sound and offers the downloads. Dropping a new
- * file during a run stops it and discards it.
+ * notes and checks the NES rules, shows the Result at once and asks a second worker
+ * (`../audio/render-worker.js`) to render the sound, so the page never freezes for it: a change of
+ * sound pack keeps the old pack playing until the new one is ready. Dropping a new file during a
+ * run stops it and discards it.
  *
  * What the Result panel holds is kept small and true (`result-sound.js`): the player holds the
  * sound of the song on screen only, and only the run on screen keeps its rendered audio.
@@ -27,26 +29,31 @@ import { arrangementToMidi } from "../core/midi-export.js";
 import { configRecord, defaultSettings, runId, validateSettings } from "../core/settings.js";
 import { matchLoudness } from "../audio/loudness.js";
 import { leadSheetVoices, midiExcerptVoices, renderVoices, trackPreview } from "../audio/plain-synth.js";
+import { createAudioRenderer } from "../audio/audio-renderer.js";
 import { createPlayer } from "../audio/player.js";
 import { SOUND_PACKS, knownSoundPack } from "../audio/sound-packs.js";
 import { defaultLevels, mixStems, readLevels, readVolume, storeLevels, storeVolume } from "../audio/mixer.js";
 import { encodeWav } from "../audio/wav.js";
 import { createCatalogGlue } from "./catalog-glue.js";
 import { createChannelView } from "./channel-view.js";
-import { createDownloads } from "./downloads.js";
+import { createDownloads, formatSize } from "./downloads.js";
 import { setUpDrawers } from "./drawers.js";
-import { createEvolutionView } from "./evolution-view.js";
+import { createEvolutionLab } from "./evolution-lab.js";
 import { createInputPanel, loadAbcjs } from "./input-panel.js";
-import { howItWorksSteps, renderHowItWorks } from "./how-it-works.js";
+import { howItWorksSteps, renderHowItWorks, renderHowSkeleton } from "./how-it-works.js";
 import { readLeadSheetAbc } from "../core/abc-reader.js";
 import { createMixerPanel } from "./mixer-panel.js";
+import { setBusy } from "./busy.js";
 import { notify, statusToast } from "./notify.js";
-import { createPacer, drawingBudget } from "./pacing.js";
-import { createPlanGrid } from "./plan-grid.js";
+import { drawingBudget } from "./pacing.js";
 import { addRun, runShown } from "./run-list.js";
+import { createResultEvolving } from "./result-evolving.js";
 import { createResultSound } from "./result-sound.js";
+import { createTurntable } from "./turntable-view.js";
+import { localEntry } from "../core/sources.js";
 import { createVolumeSlider } from "./volume-slider.js";
-import { renderScores } from "./scores-table.js";
+import { setUpThemeToggle } from "./theme.js";
+import { clearScores, renderScores } from "./scores-table.js";
 import { changedSettings, valueAt } from "./settings-form.js";
 import { createRunsView } from "./runs.js";
 import { createSettingsPanel, settingLabel, settingValueText } from "./settings-panel.js";
@@ -58,9 +65,12 @@ import { setUpPageTabs } from "./tabs.js";
 const $ = (/** @type {string} */ selector) =>
   /** @type {HTMLElement} */ (document.querySelector(selector));
 
+// index.html starts these two small files while the modules load (`window.__early`), so they are
+// usually here by the time this line runs.
+const early = /** @type {any} */ (globalThis).__early;
 const [version, defaultConfig] = await Promise.all([
-  fetchJson("version.json").catch(() => ({ commit: "dev" })),
-  fetchJson("../configs/default.json"),
+  (early?.version ?? fetchJson("version.json")).catch(() => ({ commit: "dev" })),
+  early?.config ?? fetchJson("../configs/default.json"),
 ]);
 $("#app-version").textContent = version.commit === "dev" ? "dev" : version.commit.slice(0, 7);
 
@@ -95,6 +105,18 @@ const state = {
 };
 const defaults = defaultSettings(defaultConfig);
 
+/** Local storage when the browser allows it; without it the levels last for this visit only. */
+const levelStorage = (() => {
+  try {
+    return localStorage;
+  } catch {
+    return null;
+  }
+})();
+
+// Light or dark (ui/theme.js); the first paint already has it, from index.html's inline script.
+setUpThemeToggle($("[data-theme-toggle]"), /** @type {any} */ (levelStorage ?? { getItem: () => null, setItem: () => {} }));
+
 // --- Panels ---------------------------------------------------------------------------------
 
 /** What a phone cannot afford while it plays music (see pacing.js): a touch screen gets the smaller budget. */
@@ -106,6 +128,7 @@ const pageTabs = setUpPageTabs($("[data-page-tabs]"), {
   onChange: (id) => {
     placeRunStrip(id);
     if (id === "how") setTimeout(drawHowItWorks);
+    if (id === "evolution") document.querySelector('[data-tab="evolution"]')?.classList.remove("has-news");
   },
 });
 
@@ -162,7 +185,8 @@ const inputPanel = createInputPanel(
     settingsPanel.show(state.settings, false);
     // With no tempo override the lead sheet plays at the file's tempo: the field's placeholder.
     if (state.settings.tempo_bpm === null) settingsPanel.setFileTempo(loaded.leadSheet.tempoBpm);
-    planGrid.setBars(loaded.leadSheet.bars);
+    lab.setSong(loaded.leadSheet, { maxGenerations: state.settings.max_generations, stagnationWindow: state.settings.stagnation_window });
+    turntable.setRecord(recordEntry(loaded));
     $("[data-run-song]").textContent =
       `${loaded.leadSheet.title || loaded.input.name} (${loaded.leadSheet.bars.length} bars)`;
     updateRunButtons();
@@ -191,18 +215,25 @@ const catalogGlue = createCatalogGlue({
   startRun,
   playIntro,
 });
+// The shelf has mounted and shows its own skeleton: the static placeholder that held its room goes.
+$("[data-shelf]").querySelector("[data-shelf-boot]")?.remove();
 
 /**
- * Preview on a record: the song's original, in the Result's player, so the position, the channel
- * view and the mixer are there as after a run.
+ * Preview on a record: the song's original, in the Result's player, so the position, the turntable,
+ * the channel view and the mixer are there as after a run.
  *
  * - When the run on screen is for this song, its own original plays from the start (the same
  *   sound as the Original button), and the arrangement stays one click away.
  * - Otherwise nothing of an earlier song may stay in the player: the first 8 bars of the loaded
  *   song, as the input sounds, are the only version loaded. The toggle shows the original and the
  *   arrangement button is disabled, because there is no arrangement of this song yet.
+ *
+ * The Result opens at once, with the record on the turntable, and the 8 bars are rendered by the
+ * render worker, so the page does not freeze or jump (audit L15). Returns when the preview plays.
+ *
+ * @returns {Promise<void>}
  */
-function playIntro() {
+async function playIntro() {
   const loaded = inputPanel.current();
   if (!loaded) return;
   const context = player.ensureContext();
@@ -214,18 +245,41 @@ function playIntro() {
     return;
   }
   clearResult();
+  turntable.setRecord(recordEntry(loaded));
+  setResultStatus(`Preparing the preview of ${loaded.leadSheet.title || loaded.input.name}…`);
+  showWorkbench("result");
   const voices = originalVoices(loaded, loaded.leadSheet);
   const beats = Math.min(totalBeats(loaded.leadSheet.bars.slice(0, 8)), totalBeats(loaded.leadSheet.bars));
-  const rendered = renderVoices(voices, loaded.leadSheet.tempoBpm, context.sampleRate, beats);
-  const samples = matchLoudness(rendered, rendered, context.sampleRate).a;
+  let samples;
+  try {
+    samples = await renderer.renderOriginal(voices, loaded.leadSheet.tempoBpm, context.sampleRate, beats);
+  } catch (error) {
+    if (/** @type {any} */ (error)?.stale) return;
+    setResultStatus(`The preview could not be made: ${/** @type {Error} */ (error).message}`, true);
+    return;
+  }
+  // The visitor may have chosen another song, or started a run, while it rendered.
+  if (inputPanel.current() !== loaded || state.phase === "evolving") return;
   const scene = originalScene(clipVoices(voices, beats), loaded.leadSheet.tempoBpm);
   scenes = { arrangement: scene, original: scene };
   resultSound.showIntro(samples, context.sampleRate);
   setResultStatus(
     `Preview of ${loaded.leadSheet.title || loaded.input.name}: its first 8 bars, as the original sounds. Press Arrange to arrange it.`,
   );
-  showWorkbench("result");
   player.play();
+}
+
+/**
+ * The record of a loaded song: its catalog entry, or one made from the opened file's hash, the
+ * same record the shelf shows for it (`record-art.js`).
+ *
+ * @param {LoadedInput} loaded
+ */
+function recordEntry(loaded) {
+  return (
+    /** @type {import("../core/sources.js").CatalogEntry | null} */ (loaded.input.catalogEntry) ??
+    localEntry({ name: loaded.input.name, sha256: loaded.input.sha256, leadSheet: loaded.leadSheet })
+  );
 }
 
 /**
@@ -239,7 +293,7 @@ function clearResult() {
   shownScene = null;
   channelView.setScene(null);
   downloads.clear();
-  $("[data-scores]").replaceChildren();
+  clearScores($("[data-scores]"));
   runsView.render(state.runs, null);
   setResultStatus("No arrangement yet.");
 }
@@ -253,21 +307,31 @@ function clearResult() {
 function showWorkbench(view) {
   pageTabs.showView(view);
   pageTabs.show("evolution");
-  requestAnimationFrame(() => document.getElementById("workbench")?.scrollIntoView({ block: "start" }));
+  // A run brings its bar to the top. A preview only makes sure the Result is in sight, at once:
+  // no smooth sweep over the page, so the shelf the visitor came from does not seem to fly away.
+  requestAnimationFrame(() =>
+    document.getElementById("workbench")?.scrollIntoView(view === "result" ? { block: "nearest", behavior: "instant" } : { block: "start" }),
+  );
 }
 
 /**
  * A run ended, with a result or with the reason it has none: show the Result view, which holds the
  * status line. It is the Result view even if the visitor chose the Evolution view by hand during the
- * run, and even if another tab is open (the Evolution tab then opens on it). When the
- * Evolution tab is open and has been scrolled past its top, bring the result back into sight.
+ * run. When the Evolution tab is open and has been scrolled past its top, bring the result back into
+ * sight. When the visitor went to another tab during the run, the page does not pull them back: the
+ * Run tab gets a dot and a message offers to open the result.
  */
 function showRunEnded() {
   pageTabs.showView("result");
   const workbench = document.getElementById("workbench");
-  if (pageTabs.current() === "evolution" && workbench && workbench.getBoundingClientRect().top < 0) {
-    requestAnimationFrame(() => workbench.scrollIntoView({ block: "start" }));
+  if (pageTabs.current() === "evolution") {
+    if (workbench && workbench.getBoundingClientRect().top < 0) {
+      requestAnimationFrame(() => workbench.scrollIntoView({ block: "start" }));
+    }
+    return;
   }
+  document.querySelector('[data-tab="evolution"]')?.classList.add("has-news");
+  notify("The arrangement is ready.", { action: { label: "View", run: () => pageTabs.show("evolution") } });
 }
 
 /**
@@ -287,35 +351,21 @@ const settingsPanel = createSettingsPanel($("#settings"), {
     // The MIDI options belong to the input panel; the form never edits them.
     state.settings = { ...settings, seed: state.settings.seed, midi: state.settings.midi };
     updateRunButtons();
+    if (state.phase === "evolving") setRunHint("Changes apply to the next run.");
   },
 });
 settingsPanel.show(state.settings, false);
 
-clearPlaceholder("#evolution");
-$("#evolution").insertAdjacentHTML(
-  "beforeend",
-  `<div class="toolbar evolution-actions">
-     <button type="button" class="button" data-stop-evolution disabled>Stop</button>
-     <span class="hint">Stop keeps the best plan found so far.</span>
-   </div>
-   <div data-evolution-view></div>
-   <h3 class="subhead">Best plan so far</h3>
-   <div data-plan-grid></div>
-   <details class="more">
-     <summary>How to read the plan</summary>
-     <p>One column per bar. The top row is the chord, named where it changes and
-     held until the next tick; a tick without a name is a chord too long for the column. Below it,
-     one row per gene: the P2 harmony texture, the TR bass texture, the NO drum pattern and the P1
-     melody octave. Brighter cells are busier choices; hover a cell or a chord for its name.</p>
-   </details>`,
-);
-const evolutionView = createEvolutionView($("[data-evolution-view]"), budget);
-const planGrid = createPlanGrid($("[data-plan-grid]"));
+const lab = createEvolutionLab($("#evolution"), {
+  budget,
+  weights: defaults.weights,
+  onStop: () => stopRun(false),
+  onChooseSong: () => pageTabs.show("song"),
+});
 const arrangeButton = /** @type {HTMLButtonElement} */ ($("[data-arrange]"));
 const stopButton = /** @type {HTMLButtonElement} */ ($("[data-stop]"));
 // The Run card scrolls away while the evolution plays, so the Evolution card has its own Stop.
-const stopEvolutionButton = /** @type {HTMLButtonElement} */ ($("[data-stop-evolution]"));
-stopEvolutionButton.addEventListener("click", () => stopRun(false));
+const stopEvolutionButton = lab.stopButton;
 const paceSelect = /** @type {HTMLSelectElement} */ ($("[data-pace]"));
 const seedInput = /** @type {HTMLInputElement} */ ($("[data-seed]"));
 seedInput.addEventListener("input", () => {
@@ -326,7 +376,9 @@ seedInput.addEventListener("input", () => {
 clearPlaceholder("#result");
 $("#result").insertAdjacentHTML(
   "beforeend",
-  `<div class="transport">
+  `<div data-result-evolving hidden></div>
+   <div data-result-body>
+   <div class="transport">
      <div class="transport-main">
        <button type="button" class="button primary" data-play disabled aria-label="Play">Play</button>
        <input type="range" min="0" max="1" step="0.01" value="0" data-seek aria-label="Position" disabled>
@@ -340,36 +392,44 @@ $("#result").insertAdjacentHTML(
        <label class="sound-pack"><span class="sound-label">Sound</span>
          <select data-sound-pack aria-describedby="sound-pack-hint">
            ${SOUND_PACKS.map((pack) => `<option value="${pack.id}">${pack.name}</option>`).join("")}
-         </select></label>
+         </select><span class="pack-spinner spinner" data-pack-spinner hidden role="status" aria-label="Rendering the new sound"></span></label>
        <span data-volume-slot></span>
        <button type="button" class="button" data-mix-toggle aria-expanded="false" aria-controls="mix">Mix</button>
      </div>
    </div>
    <p class="hint sound-pack-hint" id="sound-pack-hint" data-sound-pack-hint></p>
    <p class="status" data-result-status role="status" aria-live="polite">No arrangement yet.</p>
-   <div data-channel-view></div>
+   <div class="result-stage">
+     <div class="turntable-slot" data-turntable></div>
+     <div data-channel-view></div>
+   </div>
    <details class="more">
-     <summary>How to read the lines</summary>
-     <p>Each channel is a line in its color, revealed as it plays: P1 melody (blue),
+     <summary>How to read the turntable and the lines</summary>
+     <p>The song is a record on a turntable: it turns while the music plays and the tonearm crosses
+     it, so the arm shows how far you are. Drag the arm, or anywhere on the record, to jump there. The
+     lines are the channels, each in its color, revealed as it plays: P1 melody (blue),
      P2 harmony (orange), TR bass (gray) and NO drums as ticks at the bottom. Switch to the original
      to see its melody in blue and the other parts as faint dashes. Keys: space plays, A and B
-     switch, the arrows move 2 s.</p>
+     switch, the arrows move 2 s, Home and End jump to the ends of the song.</p>
    </details>
+   <h3 class="subhead">Fitness criteria</h3>
    <div class="scores" data-scores></div>
+   <details class="more">
+     <summary>How to read the meters</summary>
+     <p>Each needle is one criterion of the final plan, from 0 at the left to 1 at the right, with its
+     weight under it. The fitness is their weighted mean; the needle that leans least is what holds the
+     arrangement back.</p>
+   </details>
    <div data-downloads></div>
-   <div data-runs></div>`,
+   <div data-runs></div>
+   </div>`,
 );
+const resultEvolving = createResultEvolving($("[data-result-evolving]"));
 const player = createPlayer();
-const resultSound = createResultSound({ player, runs: () => state.runs });
+// The sound of a run is rendered in a worker, so the page never freezes for it (audit L12, L13).
+const renderer = createAudioRenderer();
+const resultSound = createResultSound({ player, runs: () => state.runs, renderer });
 
-/** Local storage when the browser allows it; without it the levels last for this visit only. */
-const levelStorage = (() => {
-  try {
-    return localStorage;
-  } catch {
-    return null;
-  }
-})();
 /** @type {ReturnType<typeof setTimeout> | undefined} */
 let levelsTimer;
 /** @type {ReturnType<typeof setTimeout> | undefined} */
@@ -377,6 +437,7 @@ let volumeTimer;
 const savedVolume = readVolume(levelStorage);
 const mixerPanel = createMixerPanel($("[data-mixer]"), {
   volume: savedVolume,
+  readMeters: () => player.channelLevels(),
   onVolume: (percent) => setVolume(percent, "mixer"),
   // Each sound pack has its own levels, remembered separately (Plain's drums are not the chip's)
   levels: readLevels(levelStorage, state.soundPack),
@@ -426,6 +487,8 @@ const drawers = setUpDrawers({
   mix: $("#mix"),
   mixToggle: $("[data-mix-toggle]"),
   mixClose: $("[data-mix-close]"),
+  // The meters read the analysers only while the mixer is open and the music plays.
+  onMixChange: (open) => mixerPanel.setMetering(open && player.isPlaying()),
 });
 
 /** Show the chosen sound pack's levels: the visitor's own for that pack, or its defaults. */
@@ -455,17 +518,39 @@ function withWav(files, run) {
     if (!file.wav) return file;
     return {
       ...file,
+      busyLabel: "Mixing…",
+      emptyMessage: "Every channel is muted: nothing to save.",
+      sizeText: wavSizeText(run),
       make: () => {
         const levels = mixerPanel.get();
-        if (!run.audio || Object.values(levels.muted).every(Boolean)) return null;
+        if (!run.audio) throw new Error("the sound is still being rendered");
+        if (Object.values(levels.muted).every(Boolean)) return null;
         const bytes = encodeWav(mixStems(/** @type {any} */ (run.audio.stems), levels), run.audio.sampleRate);
         return new Blob([bytes], { type: "audio/wav" });
       },
     };
   });
 }
+
+/**
+ * About how big the WAV will be: 16-bit mono at 44.1 kHz (the usual rate of a sound card) over the
+ * song's length. The label says "about" because the real rate depends on the visitor's device.
+ *
+ * @param {{tempoBpm: number, durationBeats: number}} run
+ * @returns {string} for example "about 9 MB"
+ */
+function wavSizeText(run) {
+  const seconds = (run.durationBeats * 60) / run.tempoBpm;
+  return formatSize(44 + 2 * Math.ceil(seconds * 44100));
+}
 const downloads = createDownloads($("[data-downloads]"));
 const channelView = createChannelView($("[data-channel-view]"), budget);
+// The result as a record on a turntable: it turns while the music plays, and the arm is the
+// progress bar (drag it to seek). The step-line view beside it keeps the notes.
+const turntable = createTurntable($("[data-turntable]"), {
+  clock: { time: () => player.currentTime(), duration: () => player.duration(), playing: () => player.isPlaying() },
+  seek: (seconds) => player.seek(seconds),
+});
 /** @type {{arrangement: any, original: any}} */
 let scenes = { arrangement: null, original: null };
 const runsView = createRunsView($("[data-runs]"), { defaults, onSelect: (id) => showRun(id) });
@@ -474,26 +559,29 @@ const seekInput = /** @type {HTMLInputElement} */ ($("[data-seek]"));
 
 // --- Worker ---------------------------------------------------------------------------------
 
-/** @type {Uint8Array | null} the best plan of the latest progress message, not yet painted */
-let latestPlan = null;
-const planPacer = createPacer(
-  () => {
-    if (latestPlan) planGrid.update(latestPlan);
-  },
-  { intervalMs: budget.chartIntervalMs },
-);
 const worker = new Worker(new URL("../worker.js", import.meta.url), { type: "module" });
+/** Whether the worker has loaded its modules and is listening (it says `ready`). */
+let workerReady = false;
 /** @type {number} */
 let runStartedAt = 0;
+/** Which criteria the worker said can apply to the run on screen (its `started` message). @type {Record<string, boolean>} */
+let applicable = {};
 worker.addEventListener("message", (event) => {
   const message = event.data;
+  if (message.type === "ready") {
+    workerReady = true;
+    return;
+  }
   if (message.runId !== state.currentRunId) return; // a cancelled run still talking
-  if (message.type === "progress") {
-    evolutionView.append(message.generations);
+  if (message.type === "started") {
+    applicable = message.tables?.applicable ?? {};
+    lab.started(message);
+  } else if (message.type === "progress") {
     state.log.push(...message.generations);
-    // The worker reports twenty times a second; the plan grid is repainted a few times a second.
-    latestPlan = message.bestPlan;
-    planPacer.request();
+    // The lab redraws a few times a second, though the worker reports twenty.
+    lab.progress(message);
+    updateScreen();
+    resultEvolving.update({ last: lab.last(), maxGenerations: state.settings.max_generations, previousFitness: previousFitness() });
   } else if (message.type === "done") {
     finishRun(message);
   } else if (message.type === "error") {
@@ -529,15 +617,12 @@ async function startRun() {
   state.log = [];
   settingsPanel.show(state.settings, true);
   runStartedAt = performance.now();
-  evolutionView.reset({
-    maxGenerations: settings.max_generations,
-    stagnationWindow: settings.stagnation_window,
-  });
+  applicable = {};
+  lab.begin({ settings, leadSheet: state.input.leadSheet });
   downloads.clear();
   setResultStatus("Evolving…");
+  resultEvolving.update({ last: null, maxGenerations: settings.max_generations, previousFitness: previousFitness() });
   updateRunButtons();
-  planPacer.cancel();
-  latestPlan = null;
   showWorkbench("evolution");
   worker.postMessage({
     type: "run",
@@ -566,9 +651,7 @@ async function finishRun(message) {
   const settings = structuredClone(state.settings);
   const leadSheet = input.leadSheet;
   const arrangement = assemble(leadSheet, message.bestPlan);
-  planPacer.cancel();
-  planGrid.update(message.bestPlan);
-  evolutionView.finish({
+  lab.finish(message, {
     stopReason: message.stopReason,
     generations: message.generations,
     durationMs: message.durationMs ?? performance.now() - runStartedAt,
@@ -647,19 +730,58 @@ async function finishRun(message) {
     audio: null,
     log: state.log,
     files: downloadFiles,
+    applicable,
   };
   state.runs = addRun(state.runs, run);
   scenes = run.scenes;
-  resultSound.showRun(run, state.soundPack, context.sampleRate, { fresh: true });
   downloads.set(withWav(downloadFiles, run));
   runsView.render(state.runs, id);
   settingsPanel.show(state.settings, false);
   state.phase = "ready";
-  setResultStatus(
-    `Best fitness ${message.bestFitness.toFixed(4)} after ${message.generations} generations.`,
-  );
+  const summary = `Best fitness ${message.bestFitness.toFixed(4)} after ${message.generations} generations.`;
+  setResultStatus(`${summary} Rendering the sound…`);
+  // The Result opens now, with the record on the turntable and Play waiting; the sound is rendered
+  // by the render worker, and the page stays live meanwhile (audit L12).
   updateRunButtons();
   showRunEnded();
+  try {
+    await showRunSound(run, { fresh: true });
+    setResultStatus(summary);
+  } catch (error) {
+    setResultStatus(`${summary} The sound could not be rendered: ${/** @type {Error} */ (error).message}`, true);
+  }
+}
+
+/** How many renders of the sound are going; the Result is marked busy while any is. */
+let soundRenders = 0;
+
+/**
+ * Render a run's sound for the chosen pack and load it into the player, marking the Result's
+ * transport busy meanwhile. A render the visitor replaces (another pack, another run) ends in
+ * nothing, and the newer one decides when the transport is free again.
+ *
+ * @param {any} run
+ * @param {{fresh: boolean}} options `fresh`: the run has just ended or been picked
+ * @returns {Promise<boolean>} whether this render is the one now in the player
+ */
+async function showRunSound(run, { fresh }) {
+  const transport = $(".transport");
+  const spinner = $("[data-pack-spinner]");
+  soundRenders += 1;
+  transport.setAttribute("aria-busy", "true");
+  spinner.hidden = false;
+  try {
+    const audio = await resultSound.showRunAsync(run, state.soundPack, player.ensureContext().sampleRate, { fresh });
+    if (audio === null) return false;
+    downloads.set(withWav(run.files, run));
+    return true;
+  } finally {
+    soundRenders -= 1;
+    if (soundRenders === 0) {
+      transport.removeAttribute("aria-busy");
+      spinner.hidden = true;
+    }
+  }
 }
 
 /** @type {Promise<import("../core/leadsheet.js").LeadSheet> | null} */
@@ -674,6 +796,8 @@ let howDrawn = "";
  */
 async function drawHowItWorks() {
   const container = $("[data-how]");
+  // The first time, the tab opens at once on grey placeholders while the figures are made.
+  if (howDrawn === "") renderHowSkeleton(container);
   try {
     const run = state.runs.find((entry) => entry.id === state.currentRunId) ?? state.runs[0];
     const settings = validateSettings(state.settings).length === 0 ? state.settings : defaults;
@@ -693,6 +817,7 @@ async function drawHowItWorks() {
     renderHowItWorks(container, howItWorksSteps(input));
     howDrawn = key;
   } catch (error) {
+    container.removeAttribute("aria-busy");
     container.textContent = `The figures could not be drawn: ${/** @type {Error} */ (error).message ?? error}`;
   }
 }
@@ -706,23 +831,17 @@ function showRun(id) {
   const run = state.runs.find((entry) => entry.id === id);
   if (!run || state.phase === "evolving") return;
   state.currentRunId = id;
-  planGrid.setBars(run.leadSheet.bars);
-  planGrid.update(run.message.bestPlan);
-  evolutionView.show(run.log, {
-    maxGenerations: run.settings.max_generations,
-    stagnationWindow: run.settings.stagnation_window,
-  });
-  evolutionView.finish({
-    stopReason: run.message.stopReason,
-    generations: run.message.generations,
-    durationMs: run.message.durationMs ?? 0,
-  });
+  lab.show(run);
   renderScores($("[data-scores]"), run.message.scores, run.message.bestFitness, run.settings.weights);
   scenes = run.scenes;
-  resultSound.showRun(run, state.soundPack, player.ensureContext().sampleRate, { fresh: true });
   downloads.set(withWav(run.files, run));
   runsView.render(state.runs, id);
-  setResultStatus(`Run ${id}: best fitness ${run.message.bestFitness.toFixed(4)}.`);
+  const summary = `Run ${id}: best fitness ${run.message.bestFitness.toFixed(4)}.`;
+  setResultStatus(`${summary} Rendering the sound…`);
+  showRunSound(run, { fresh: true }).then(
+    (shown) => shown && setResultStatus(summary),
+    (error) => setResultStatus(`${summary} The sound could not be rendered: ${error.message}`, true),
+  );
 }
 
 // --- Result panel ---------------------------------------------------------------------------
@@ -748,9 +867,19 @@ soundPackSelect.addEventListener("change", () => {
   showPackLevels();
   const run = state.runs.find((entry) => entry.id === state.currentRunId);
   if (!run || state.phase === "evolving") return;
-  // load keeps the position, the play state and the version heard, so the music goes on in the new sound.
-  resultSound.showRun(run, state.soundPack, player.ensureContext().sampleRate, { fresh: false });
-  downloads.set(withWav(run.files, run));
+  // The old pack keeps playing while the new one renders in the worker; then it is swapped in and
+  // the music goes on in the same place and the same version. Choosing again meanwhile replaces
+  // the render, and only the last choice is loaded.
+  const choice = state.soundPack;
+  showRunSound(run, { fresh: false }).catch((error) => {
+    notify(`The ${SOUND_PACKS.find((pack) => pack.id === choice)?.name ?? "new"} sound could not be rendered: ${error.message}`, { kind: "error" });
+    if (run.audio) {
+      state.soundPack = run.audio.pack;
+      soundPackSelect.value = state.soundPack;
+      showSoundPack();
+      showPackLevels();
+    }
+  });
 });
 for (const button of document.querySelectorAll("[data-version]")) {
   button.addEventListener("click", () =>
@@ -768,15 +897,21 @@ player.onChange(() => {
     element.setAttribute("aria-pressed", String(element.dataset.version === player.active()));
     (/** @type {HTMLButtonElement} */ (element)).disabled = !player.has(/** @type {"original" | "arrangement"} */ (element.dataset.version));
   }
+  turntable.wake(); // the record turns or coasts to a stop, and the arm follows a seek
   // The toggle can only show what exists: a preview has the original and no arrangement.
   $("[data-versions]").hidden = !player.has("original");
   $('[data-version="arrangement"]').title = player.has("arrangement") ? "" : "Arrange the song to hear its arrangement";
-  if (player.isPlaying()) drawers.autoOpenMix();
+  if (player.isPlaying()) drawers.hintMix();
+  mixerPanel.setMetering(player.isPlaying() && drawers.isMixOpen());
   // The channel view sorts the scene's notes each time it gets one: only give it a new scene.
   const scene = scenes[player.active()];
   if (scene !== shownScene) {
+    const switching = shownScene !== null && scene !== null; // A/B: the lines dissolve into the other version's
     shownScene = scene;
     channelView.setScene(scene);
+    if (switching && !globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelector("[data-channel-view] canvas")?.animate([{ opacity: 0.3 }, { opacity: 1 }], { duration: 200, easing: "ease-out" });
+    }
   }
 });
 /** @type {any} the scene the channel view holds */
@@ -936,13 +1071,54 @@ function updateRunButtons() {
     seedInput.value = String(state.settings.seed);
   }
   showChangedSettings();
-  arrangeButton.disabled = !state.input || evolving || !valid;
+  // While a run goes, Arrange says so (a spinning record and "Evolving…") instead of only dimming.
+  if (evolving) {
+    setBusy(arrangeButton, true, "Evolving…");
+  } else {
+    setBusy(arrangeButton, false);
+    arrangeButton.disabled = !state.input || !valid;
+  }
   stopButton.disabled = !evolving;
   stopEvolutionButton.disabled = !evolving;
+  // Before a run, the lab already states the steps this song and these settings will take.
+  if (!evolving && state.input && state.currentRunId === null && valid) lab.setPlan(state.settings, state.input.leadSheet);
   if (!state.input) setRunHint("");
   else if (!valid) setRunHint(validateSettings(state.settings).map((m) => m.message).join("; "), true);
-  else if (evolving) setRunHint("Evolving… changes apply to the next run.");
   else setRunHint("");
+  showEvolvingState(evolving);
+}
+
+/**
+ * Show what depends on a run going on: the Evolution view is busy, the Result says "evolving"
+ * instead of showing the previous run, and the scope's screen shows INSERT COIN while a run waits
+ * to start or is starting.
+ *
+ * @param {boolean} evolving
+ */
+function showEvolvingState(evolving) {
+  $("#evolution").setAttribute("aria-busy", String(evolving));
+  const result = $("#result");
+  result.classList.toggle("is-evolving", evolving);
+  if (evolving) result.setAttribute("aria-busy", "true");
+  else result.removeAttribute("aria-busy");
+  $("[data-result-evolving]").hidden = !evolving;
+  $("[data-result-body]").hidden = evolving;
+  updateScreen();
+}
+
+/** The scope's screen: INSERT COIN while waiting for a run, and while the first generation is on its way. */
+function updateScreen() {
+  lab.setScreen({
+    hasSong: state.input !== null,
+    running: state.phase === "evolving",
+    generations: state.log.length,
+    hasRun: lab.last() !== null || state.phase !== "idle",
+  });
+}
+
+/** The fitness of the newest run, as the number the evolving state reminds of; null with none. @returns {number | null} */
+function previousFitness() {
+  return state.runs[0]?.bestFitness ?? null;
 }
 
 /** Show the settings that differ from the defaults as chips on the Run card. */

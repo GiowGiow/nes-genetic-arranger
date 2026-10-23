@@ -190,3 +190,37 @@ test("the predicate for the shelf is a plain function of a record", async () => 
   const isCached = cache.has;
   assert.equal(isCached(record("a", bytes)), true, "usable detached from the cache object");
 });
+
+// --- Files of songs found online -----------------------------------------------------------------
+
+/** A search result: it names no hash, since the catalog never measured its file. @param {string} id */
+const onlineRecord = (id) => ({ id, source: "bitmidi", t: id.toUpperCase(), route: { download: `https://bitmidi.com/uploads/${id}.mid` } });
+
+test("a song found online is kept when the page asks to trust the first download, and checked against what was kept", async () => {
+  const cache = createSongCache(fakeStore());
+  const bytes = midiBytes(5);
+  assert.equal(await cache.remember(onlineRecord("9"), bytes, sha(bytes), { trustFirstDownload: true }), "stored");
+  assert.equal(cache.has(onlineRecord("9")), true);
+  assert.deepEqual(await cache.bytesOf(onlineRecord("9")), bytes);
+});
+
+test("a song found online is not kept unless the page says so", async () => {
+  const cache = createSongCache(fakeStore());
+  assert.equal(await cache.remember(onlineRecord("9"), midiBytes(5), sha(midiBytes(5))), "unchecked");
+  assert.equal(cache.has(onlineRecord("9")), false);
+});
+
+test("a damaged copy of an online song is not handed out", async () => {
+  const store = fakeStore();
+  const cache = createSongCache(store);
+  const bytes = midiBytes(5);
+  await cache.remember(onlineRecord("9"), bytes, sha(bytes), { trustFirstDownload: true });
+  store.items.get("bitmidi:9").bytes = midiBytes(6);
+  assert.equal(await cache.bytesOf(onlineRecord("9")), null);
+  assert.equal(cache.has(onlineRecord("9")), false);
+});
+
+test("a record that names a hash is still checked against it, even when the page trusts first downloads", async () => {
+  const cache = createSongCache(fakeStore());
+  assert.equal(await cache.remember(record("a", midiBytes(1)), midiBytes(2), sha(midiBytes(2)), { trustFirstDownload: true }), "mismatch");
+});

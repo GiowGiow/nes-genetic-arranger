@@ -12,6 +12,7 @@ import {
   looksLikeMidi,
   createRateLimiter,
   MAX_BYTES,
+  UPSTREAM_HOSTS,
 } from "../src/rules.js";
 
 const HOSTS = ["www.beakauffmann.com", "beakauffmann.com"];
@@ -111,6 +112,44 @@ test("paths that are not .mid or .midi are refused", () => {
 test("a query string does not make a non-MIDI path pass", () => {
   assert.equal(checkUpstreamUrl("https://www.beakauffmann.com/x.html?f=a.mid", HOSTS).ok, false);
   assert.equal(checkUpstreamUrl("https://www.beakauffmann.com/x.mid?v=2", HOSTS).ok, true);
+});
+
+// ---- the other sites ------------------------------------------------------------------
+
+test("the allow-list is the four hosts the app needs, and nothing else; BitMidi is not one (its robots.txt disallows /uploads/)", () => {
+  assert.deepEqual([...UPSTREAM_HOSTS].sort(), [
+    "beakauffmann.com",
+    "www.beakauffmann.com",
+    "www.midis101.com",
+    "www.mutopiaproject.org",
+  ]);
+});
+
+test("BitMidi files are refused: the app reads them from the visitor's browser instead", () => {
+  assert.equal(checkUpstreamUrl("https://bitmidi.com/uploads/16424.mid", UPSTREAM_HOSTS).ok, false);
+});
+
+test("midis101: a download address has no extension and is accepted only in that exact shape", () => {
+  const ok = (raw) => checkUpstreamUrl(raw, UPSTREAM_HOSTS).ok;
+  assert.equal(ok("https://www.midis101.com/download/63384-arctic-monkeys-when-the-sun-goes-down"), true);
+  assert.equal(ok("https://www.midis101.com/free-midi/63384-arctic-monkeys"), false, "a song page is not a file");
+  assert.equal(ok("https://www.midis101.com/download/abc"), false);
+  assert.equal(ok("https://www.midis101.com/download/63384-x/extra"), false);
+  assert.equal(ok("https://www.midis101.com/admin/download/63384-x"), false);
+  assert.equal(ok("https://www.midis101.com/search/a.mid"), false, "a .mid ending alone is not enough on this host");
+});
+
+test("Mutopia: a MIDI file of the project's ftp area is accepted, nothing else of the site", () => {
+  const ok = (raw) => checkUpstreamUrl(raw, UPSTREAM_HOSTS).ok;
+  assert.equal(ok("https://www.mutopiaproject.org/ftp/Anonymous/Ich_ruf/Ich_ruf.mid"), true);
+  assert.equal(ok("https://www.mutopiaproject.org/ftp/BachJS/BWV232/Mass/Mass-mids.zip"), false);
+  assert.equal(ok("https://www.mutopiaproject.org/cgibin/make-table.cgi"), false);
+  assert.equal(ok("https://www.mutopiaproject.org/other/a.mid"), false);
+});
+
+test("beakauffmann.com keeps its plain .mid rule", () => {
+  assert.equal(checkUpstreamUrl("https://www.beakauffmann.com/mpb_v/som/a.mid", UPSTREAM_HOSTS).ok, true);
+  assert.equal(checkUpstreamUrl("https://www.beakauffmann.com/download/1-a", UPSTREAM_HOSTS).ok, false);
 });
 
 // ---- redirects ------------------------------------------------------------------------

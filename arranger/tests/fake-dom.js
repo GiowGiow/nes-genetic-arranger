@@ -131,7 +131,7 @@ export class FakeElement {
   }
   /** @param {string} type @param {object} [event] */
   dispatch(type, event = {}) {
-    for (const listener of this.listeners[type] ?? []) listener({ type, target: this, ...event });
+    for (const listener of this.listeners[type] ?? []) listener({ type, target: this, preventDefault() {}, ...event });
   }
   click() {
     this.dispatch("click");

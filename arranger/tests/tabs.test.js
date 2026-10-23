@@ -96,3 +96,110 @@ test("the two view tabs follow the same arrow keys as the page tabs", () => {
   assert.equal(stepTab(1, "ArrowRight", VIEWS.length), 0);
   assert.equal(stepTab(0, "End", VIEWS.length), 1);
 });
+
+// ---- The wiring: a change of tab or view goes through the transitioner ----
+
+import { setUpPageTabs } from "../src/ui/tabs.js";
+import { FakeDocument } from "./fake-dom.js";
+
+/** The page shell for `setUpPageTabs`: sections by id, tab buttons, and a transitioner that records. */
+function tabsPage() {
+  const document = new FakeDocument();
+  /** @type {Record<string, any>} */
+  const sections = {};
+  for (const id of ["song", "settings", "workbench", "mix", "how", "evolution", "result"]) sections[id] = document.createElement("section");
+  const makeNav = (/** @type {string} */ attribute, /** @type {string[]} */ ids) => {
+    const nav = document.createElement("nav");
+    const buttons = ids.map((id) => {
+      const button = document.createElement("button");
+      button.dataset = { [attribute]: id };
+      return button;
+    });
+    nav.querySelectorAll = () => /** @type {any} */ (buttons);
+    return { nav, buttons };
+  };
+  const tabs = makeNav("tab", ["song", "evolution", "how"]);
+  const views = makeNav("view", ["evolution", "result"]);
+  /** @type {Array<{direction: string | undefined}>} */
+  const runs = [];
+  const real = { document: globalThis.document, location: globalThis.location, history: globalThis.history, addEventListener: globalThis.addEventListener };
+  Object.assign(globalThis, {
+    document: { getElementById: (/** @type {string} */ id) => sections[id] ?? null },
+    location: { hash: "" },
+    history: { replaceState() {} },
+    addEventListener() {},
+  });
+  const changes = /** @type {string[]} */ ([]);
+  const api = setUpPageTabs(/** @type {any} */ (tabs.nav), {
+    viewNav: /** @type {any} */ (views.nav),
+    onChange: (id) => changes.push(id),
+    transitions: {
+      run(update, direction) {
+        runs.push({ direction });
+        update();
+      },
+    },
+  });
+  return {
+    api, sections, tabs, views, runs, changes,
+    restore() {
+      Object.assign(globalThis, real);
+    },
+  };
+}
+
+test("opening a tab changes the sections inside a transition that slides toward the new tab", () => {
+  const page = tabsPage();
+  try {
+    page.runs.length = 0;
+    page.api.show("how");
+
+    assert.equal(page.runs.at(-1)?.direction, "forward");
+    assert.equal(page.sections.how.hidden, false);
+    assert.equal(page.sections.song.hidden, true);
+    assert.equal(page.changes.at(-1), "how");
+
+    page.api.show("song");
+    assert.equal(page.runs.at(-1)?.direction, "back");
+  } finally {
+    page.restore();
+  }
+});
+
+test("the tab buttons answer at once: the selection does not wait for the transition", () => {
+  const page = tabsPage();
+  try {
+    page.api.show("evolution");
+    assert.equal(page.tabs.buttons[1].getAttribute("aria-selected"), "true");
+    assert.equal(page.tabs.buttons[0].getAttribute("aria-selected"), "false");
+  } finally {
+    page.restore();
+  }
+});
+
+test("switching to the Result view slides forward and back to the Evolution view slides back", () => {
+  const page = tabsPage();
+  try {
+    page.runs.length = 0;
+    page.api.showView("result");
+    assert.equal(page.runs.at(-1)?.direction, "forward");
+    assert.equal(page.sections.result.hidden, false);
+    assert.equal(page.sections.evolution.hidden, true);
+    page.api.showView("evolution");
+    assert.equal(page.runs.at(-1)?.direction, "back");
+  } finally {
+    page.restore();
+  }
+});
+
+test("the first screen, read from the hash, appears at once: there is nothing to dissolve from", () => {
+  const page = tabsPage();
+  try {
+    assert.equal(page.runs.length, 0, "no transition for the initial tab and view");
+    assert.equal(page.sections.song.hidden, false);
+    assert.equal(page.sections.how.hidden, true);
+    assert.deepEqual(page.changes, ["song"]);
+  } finally {
+    page.restore();
+  }
+});

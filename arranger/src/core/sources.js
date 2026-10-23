@@ -40,6 +40,13 @@
 import { MIN_QUERY_LENGTH, normalize } from "./catalog.js";
 import { abcToMidi, tuneToAbc, tuneUrl } from "./thesession.js";
 
+/**
+ * The MIDI fetcher Worker (`worker/`): it fetches MIDI files and search pages from sites that send
+ * no CORS header, at the visitor's request, so those songs open in one click (`midi-fetcher.js`).
+ * No trailing slash.
+ */
+export const MIDI_FETCHER_URL = "https://nes-arranger-midi.vitorchibento.workers.dev";
+
 /** Where the registry of collections is, relative to the app folder. */
 export const REGISTRY_PATH = "data/catalog/collections.json";
 
@@ -303,6 +310,45 @@ function searchIndex(entries) {
 }
 
 /**
+ * Normalize every title, composer and performer of a list now, so the first search over it does
+ * not pay for it. (Normalizing 3,500 songs takes about 20 ms; a keystroke after that takes 2.)
+ * The page calls this when the browser is idle after the catalog changes.
+ *
+ * @param {CatalogEntry[]} entries
+ * @example
+ * warmSearchIndex(catalog); // searchCatalog(catalog, "agua") is now fast the first time
+ */
+export function warmSearchIndex(entries) {
+  searchIndex(entries);
+}
+
+/**
+ * The songs that match a query with how they matched: rank 0 when the title starts with the
+ * words, 1 when it contains them, 2 when only the composers or performer do. Best first, then
+ * by title.
+ *
+ * @param {CatalogEntry[]} entries the catalog
+ * @param {string} query the visitor's words
+ * @returns {Array<{entry: CatalogEntry, rank: number, title: string}> | null} null for a query
+ *   under 2 characters, which matches everything
+ * @example
+ * searchRanked(catalog, "agua")?.[0].rank; // 0
+ */
+export function searchRanked(entries, query) {
+  const wanted = normalize(query);
+  if (wanted.length < MIN_QUERY_LENGTH) return null;
+  /** @type {Array<{rank: number, title: string, entry: CatalogEntry}>} */
+  const hits = [];
+  for (const { entry, title, text } of searchIndex(entries)) {
+    if (!text.includes(wanted)) continue;
+    const rank = title.startsWith(wanted) ? 0 : title.includes(wanted) ? 1 : 2;
+    hits.push({ rank, title, entry });
+  }
+  hits.sort((a, b) => a.rank - b.rank || collator.compare(a.title, b.title));
+  return hits;
+}
+
+/**
  * The songs whose title, composers or performer contain the query, best matches first.
  *
  * Unlike `catalog.js` `search`, it returns every match, since the shelf pages through them.
@@ -315,17 +361,8 @@ function searchIndex(entries) {
  * searchCatalog(catalog, "a") === catalog; // true
  */
 export function searchCatalog(entries, query) {
-  const wanted = normalize(query);
-  if (wanted.length < MIN_QUERY_LENGTH) return entries;
-  /** @type {Array<{rank: number, title: string, entry: CatalogEntry}>} */
-  const hits = [];
-  for (const { entry, title, text } of searchIndex(entries)) {
-    if (!text.includes(wanted)) continue;
-    const rank = title.startsWith(wanted) ? 0 : title.includes(wanted) ? 1 : 2;
-    hits.push({ rank, title, entry });
-  }
-  hits.sort((a, b) => a.rank - b.rank || collator.compare(a.title, b.title));
-  return hits.map((hit) => hit.entry);
+  const hits = searchRanked(entries, query);
+  return hits === null ? entries : hits.map((hit) => hit.entry);
 }
 
 /**
@@ -596,16 +633,53 @@ export function localEntry({ name, sha256, leadSheet }) {
 }
 
 /**
+ * Join the pieces of a body that was read in chunks.
+ *
+ * @param {Uint8Array[]} chunks
+ * @param {number} length their total length
+ * @returns {Uint8Array}
+ */
+function joinChunks(chunks, length) {
+  const bytes = new Uint8Array(length);
+  let at = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, at);
+    at += chunk.length;
+  }
+  return bytes;
+}
+
+/**
  * Read one JSON file of the catalog; null when it is missing, unreachable or not JSON.
+ *
+ * With `onProgress`, and a response whose body can be read in pieces, the file is read as it
+ * arrives and each piece is reported (`total` is the announced length, 0 when the server did not
+ * announce one; with compression it can be smaller than the bytes that arrive, so a reader of
+ * the numbers should clamp). Otherwise the file is read in one go.
  *
  * @param {FetchFunction} fetchFn
  * @param {string} path
+ * @param {(progress: {loaded: number, total: number}) => void} [onProgress]
  * @returns {Promise<any>}
  */
-async function readCatalogFile(fetchFn, path) {
+async function readCatalogFile(fetchFn, path, onProgress) {
   try {
-    const response = await fetchFn(path);
-    return response.ok ? await response.json() : null;
+    const response = /** @type {any} */ (await fetchFn(path));
+    if (!response.ok) return null;
+    const reader = onProgress && response.body?.getReader ? response.body.getReader() : null;
+    if (!reader) return await response.json();
+    const total = Number(response.headers?.get?.("content-length")) || 0;
+    /** @type {Uint8Array[]} */
+    const chunks = [];
+    let loaded = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      loaded += value.length;
+      onProgress?.({ loaded, total });
+    }
+    return JSON.parse(new TextDecoder().decode(joinChunks(chunks, loaded)));
   } catch {
     return null;
   }
@@ -640,14 +714,18 @@ async function readCatalogFile(fetchFn, path) {
  * `entries` and `missing` describe the catalog when `loadCatalog` resolves; `loadMore` resolves
  * with the later state.
  *
+ * `onProgress` hears how much of a lazy file has arrived, as `(source, {loaded, total})`, while it
+ * streams in; the page draws a bar from it.
+ *
  * @param {FetchFunction} fetchFn the page's `fetch`
  * @param {(entries: CatalogEntry[], view: CatalogView) => void} [onUpdate]
+ * @param {(source: string, progress: {loaded: number, total: number}) => void} [onProgress]
  * @returns {Promise<LoadedCatalog>}
  * @example
  * const catalog = await loadCatalog(fetch, (list, view) => shelf.setEntries(list));
  * await catalog.loadMore("mpb"); // the shelf hears about the 4,000 MPB songs
  */
-export async function loadCatalog(fetchFn, onUpdate = () => {}) {
+export async function loadCatalog(fetchFn, onUpdate = () => {}, onProgress = () => {}) {
   const registry = parseRegistry(await readCatalogFile(fetchFn, REGISTRY_PATH));
   const collections = (registry ?? FALLBACK_COLLECTIONS).filter((record) => record.enabled);
   /** @type {Map<string, CatalogFile | null>} the files read, or null for one that failed */
@@ -657,7 +735,7 @@ export async function loadCatalog(fetchFn, onUpdate = () => {}) {
 
   /** @param {CollectionRecord} record @returns {Promise<CatalogFile | null>} */
   const readCollection = async (record) => {
-    const file = await readCatalogFile(fetchFn, record.path);
+    const file = await readCatalogFile(fetchFn, record.path, record.lazy ? (progress) => onProgress(record.id, progress) : undefined);
     return Array.isArray(file?.entries) ? { source: record.id, entries: file.entries } : null;
   };
   /** @returns {{entries: CatalogEntry[], missing: string[]}} */
@@ -726,6 +804,26 @@ export function lazySourcesNeeded({ playlistId, searching, cachedKeys }, collect
 }
 
 /**
+ * Whether the page may read the big catalog file ahead of need, while the browser is idle: not
+ * when the visitor asked to save data, not on a mobile connection (`type` "cellular") and not on a
+ * slow one (`effectiveType` 2g or 3g). A browser that does not say (Firefox and Safari have no
+ * Network Information API) gets the file ahead, as most visitors are on a broadband connection.
+ *
+ * @param {{saveData?: boolean, effectiveType?: string, type?: string} | undefined} connection
+ *   `navigator.connection`
+ * @returns {boolean}
+ * @example
+ * shouldPrefetch({ saveData: true }); // false
+ * shouldPrefetch(undefined); // true
+ */
+export function shouldPrefetch(connection) {
+  if (!connection) return true;
+  if (connection.saveData) return false;
+  if (connection.type === "cellular") return false;
+  return !["slow-2g", "2g", "3g"].includes(connection.effectiveType ?? "");
+}
+
+/**
  * FNV-1a, a small 32-bit hash: xor each byte of the UTF-8 text in, then multiply by the FNV
  * prime. It gives external songs a stable sprite seed without waiting for SHA-256.
  *
@@ -762,12 +860,19 @@ export function seedOf(source, id) {
 /**
  * A search result of an external site, as a catalog entry the shelf can show.
  *
+ * The result's format decides the route: a MIDI file is a download (the file fetcher brings it,
+ * `midi-fetcher.js`); a link opens a page; anything else is a folk tune read from the tune site.
+ * The site's page for a MIDI or link result is kept as `u`, so the panel can credit and link it.
+ *
  * @param {SearchResult} result
  * @returns {CatalogEntry}
  * @example
  * externalEntry({ source: "thesession", id: "5", title: "Tune", composer: "", license: "CC0",
  *   format: "abc", page: "", open: "https://thesession.org/tunes/5?format=json" }).route;
  * // { thesession: "5" }
+ * externalEntry({ source: "bitmidi", id: "7", title: "Song", composer: "", license: "",
+ *   format: "midi", page: "https://bitmidi.com/song-mid", open: "https://bitmidi.com/uploads/7.mid" }).route;
+ * // { download: "https://bitmidi.com/uploads/7.mid" }
  */
 export function externalEntry(result) {
   /** @type {CatalogEntry} */
@@ -779,7 +884,10 @@ export function externalEntry(result) {
     license: result.license ?? "",
     seed: seedOf(result.source, result.id),
   };
+  if (result.page && result.format !== "abc") entry.u = result.page;
   if (result.error) return { ...entry, error: result.error };
+  if (result.format === "midi") return { ...entry, route: { download: result.open } };
+  if (result.format === "link") return { ...entry, route: { link: result.open } };
   return { ...entry, route: { thesession: result.id } };
 }
 

@@ -1,7 +1,29 @@
-/* How it works (spec 005, FR-027): six steps, each with a small SVG figure.
+/* How it works (spec 005, FR-027): eight steps, each with a small SVG figure.
    It uses the page's tokens (style.css): glass and line for surfaces, text and muted for words,
    and the four channel colors for anything that belongs to a channel. A class c-p1, c-p2, c-tr,
-   c-no (or c-none) sets --c, and every colored mark of a figure paints with var(--c). */
+   c-no (or c-none) sets --c, and every colored mark of a figure paints with var(--c).
+
+   The figures borrow from the instruments of the era: the genome and the loop read like the
+   pattern rows of a tracker (numbered rows, monospace values), the fitness scores are LED ladders
+   like the level meters of a hi-fi amplifier, the roulette wheel is a record with a pointer, and
+   the chip's waves are phosphor traces on an oscilloscope screen. The few colors that are not
+   tokens are tokens of this sheet (below), which theme.css re-colors for the light theme. */
+
+:root {
+  --figure-bg: rgba(0, 0, 0, .25);
+  --soft-text: #c9cfdb;
+  --grid-faint: rgba(255, 255, 255, .05);
+  --roll: rgba(255, 255, 255, .025);
+  --track: rgba(255, 255, 255, .06);
+  --cell-ink: #0B0E17;
+  --shimmer: rgba(255, 255, 255, .07);
+  /* The oscilloscope is a piece of equipment, dark and green in both themes. */
+  --scope-bg: #07100d;
+  --scope-edge: #1c2a24;
+  --scope-grid: rgba(120, 255, 190, .09);
+  --scope-text: #b8d8c8;
+  --scope-muted: #7fa392;
+}
 
 .c-p1 { --c: var(--p1); }
 .c-p2 { --c: var(--p2); }
@@ -9,7 +31,9 @@
 .c-no { --c: var(--no); }
 .c-none { --c: var(--muted); }
 
-/* The steps: a responsive grid, one column on a phone. */
+/* The steps: a responsive grid, one column on a phone. Each one is skipped by the browser until it
+   is near the screen (content-visibility), and fades in the first time it is seen (the class
+   `reveal` is set by the script only when the browser can tell when it is seen). */
 .how-steps {
   list-style: none; margin: 4px 0 0; padding: 0;
   display: grid; gap: var(--s6) var(--s5);
@@ -17,15 +41,18 @@
 }
 .how-step {
   display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  content-visibility: auto; contain-intrinsic-size: auto 560px;
 }
+.how-step.reveal { opacity: 0; transform: translateY(10px); }
+.how-step.reveal.in { opacity: 1; transform: none; transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out); }
 .how-step h3 { display: flex; align-items: baseline; gap: 10px; margin: 0; font-size: 1.02rem; line-height: 1.3; letter-spacing: -.005em; }
 .how-number { font-family: var(--mono); font-weight: 700; color: var(--p1); }
-.how-step p { margin: 0; color: #c9cfdb; font-size: .9375rem; line-height: 1.55; }
+.how-step p { margin: 0; color: var(--soft-text); font-size: .9375rem; line-height: 1.55; }
 
 /* The figure sits at the bottom of its card, so the figures of one row line up. */
 .how-figure {
   margin: auto 0 0; padding: var(--s3); min-width: 0;
-  border-radius: 12px; background: rgba(0, 0, 0, .25);
+  border-radius: 12px; background: var(--figure-bg);
 }
 .how-figure figcaption { margin-top: 8px; color: var(--muted); font-size: var(--fs-sm); line-height: 1.45; }
 .how-svg { display: block; width: 100%; height: auto; overflow: visible; }
@@ -40,8 +67,8 @@
 .how-svg .how-axis.colored { fill: var(--c); font-family: var(--mono); }
 
 /* Piano rolls (lead sheet, realization). */
-.how-roll { fill: rgba(255, 255, 255, .025); stroke: var(--line); }
-.how-beatline { stroke: rgba(255, 255, 255, .05); }
+.how-roll { fill: var(--roll); stroke: var(--line); }
+.how-beatline { stroke: var(--grid-faint); }
 .how-barline { stroke: var(--line); stroke-width: 1.2; }
 .how-lane-line { stroke: var(--line); }
 .how-note { fill: var(--c); }
@@ -49,33 +76,71 @@
 .how-svg .how-part { fill: var(--no); font-size: 9.5px; font-weight: 600; }
 .how-bracket { fill: none; stroke: var(--muted); stroke-width: 1; }
 
-/* Gene cells (genome, evolution): the channel color, brighter for busier values. */
+/* Gene cells (genome, evolution): the channel color, brighter for busier values, the value in
+   monospace like a tracker cell. */
 .how-svg .how-row-label { fill: var(--c); font: 700 10.5px var(--mono); }
 .how-svg .how-row-label.small { font-size: 9px; }
 .how-cell { fill: var(--c); }
 .how-svg .how-cell-value { fill: var(--text); font: 700 11px var(--mono); text-anchor: middle; }
-.how-svg .how-cell-value.on-light { fill: #0B0E17; }
+.how-svg .how-cell-value.on-light { fill: var(--cell-ink); }
 .how-evolution .how-svg .how-cell-value { font-size: 9px; }
 .how-phrase-line { stroke: var(--muted); stroke-dasharray: 2 2; }
 .how-svg .how-strip-title { fill: var(--text); font-size: 10.5px; font-weight: 600; }
 .how-mutated .how-cell { stroke: var(--text); stroke-width: 2; }
 .how-cut { stroke: var(--no); stroke-width: 1.5; stroke-dasharray: 3 3; }
 
-/* Score bars (fitness), as in the Result tab's scores table. */
+/* Score meters (fitness): an LED ladder. The track is the unlit segments, the score lights the
+   first ones; a dashed line is thick enough to read as a row of segments. */
 .how-svg .how-label { fill: var(--text); }
 .how-svg .how-label.strong { font-weight: 700; }
-.how-track { fill: rgba(255, 255, 255, .06); }
-.how-track.none { fill: none; stroke: var(--line); stroke-dasharray: 2 2; }
-.how-score.criterion { fill: var(--muted); }
-.how-score.total { fill: var(--text); }
+.how-track, .how-score { fill: none; stroke-width: 9; stroke-dasharray: 3 1.5; }
+.how-track { stroke: var(--track); }
+.how-track.none { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 2; }
+.how-score.criterion { stroke: var(--muted); }
+.how-score.total { stroke: var(--text); }
 .how-svg .how-value-text { fill: var(--text); font: 600 10.5px var(--mono); }
 .how-svg .how-value-text.muted,
 .how-svg .how-value-text.none { fill: var(--muted); }
+.how-svg .how-value-text.lit { fill: var(--p1); font-weight: 700; }
 .how-divider { stroke: var(--line); }
 
-/* Waves (sound). */
-.how-midline { stroke: var(--line); stroke-dasharray: 2 3; }
-.how-wave { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linejoin: round; }
+/* The loop: tracker rows, one per move, and the arrow that returns to the first. */
+.how-loop-bar { fill: var(--track); }
+.how-svg .how-loop-number { fill: var(--p1); font: 700 11px var(--mono); }
+.how-svg .how-loop-label { fill: var(--text); font-weight: 650; }
+.how-svg .how-loop-detail { font-size: 9.5px; }
+.how-loop-row.elitism .how-loop-number { fill: var(--no); }
+.how-loop-return { fill: none; stroke: var(--no); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* The roulette wheel: a record whose slices are the plans. Slices alternate in two tints so that
+   neighbours can be told apart; the elite plans are outlined, the pointer waits on top. */
+.how-wedge { fill: var(--p1); stroke: var(--figure-bg); stroke-width: .4; }
+.how-wedge.even { fill-opacity: .95; }
+.how-wedge.odd { fill-opacity: .6; }
+.how-wedge-elite { fill: none; stroke: var(--no); stroke-width: 1.8; stroke-linejoin: round; }
+.how-wheel-hub { fill: var(--p2); }
+.how-svg .how-hub-text { fill: var(--cell-ink); font: 700 10px var(--mono); }
+.how-svg .how-hub-sub { fill: var(--cell-ink); font-size: 8.5px; }
+.how-pointer { fill: var(--text); }
+.how-pick-line { stroke: var(--text); stroke-width: 1; }
+.how-svg .how-pick { fill: var(--text); font: 700 10px var(--mono); }
+
+/* The chip's waves (sound): phosphor traces on an oscilloscope screen with a graticule. The screen
+   keeps the instrument's own colors in both themes, and the channels keep their night colors. */
+.how-sound {
+  background-color: var(--scope-bg); border: 1px solid var(--scope-edge);
+  background-image: linear-gradient(var(--scope-grid) 1px, transparent 1px), linear-gradient(90deg, var(--scope-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.how-sound .c-p1 { --c: #5F9ED1; }
+.how-sound .c-p2 { --c: #FF800E; }
+.how-sound .c-tr { --c: #CFCFCF; }
+.how-sound .c-no { --c: #FFBC79; }
+.how-sound .c-none { --c: var(--scope-muted); }
+.how-sound .how-svg .how-label { fill: var(--scope-text); }
+.how-sound figcaption { color: var(--scope-muted); }
+.how-midline { stroke: var(--scope-grid); stroke-width: 1.2; stroke-dasharray: 2 3; }
+.how-wave { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linejoin: round; filter: drop-shadow(0 0 2px var(--c)); }
 
 /* Legends: each label next to its values, never a row of pills. */
 .how-legend { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; font-size: var(--fs-sm); color: var(--muted); }
@@ -91,7 +156,7 @@
 
 /* Closing paragraph and links. */
 .how-closing { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
-.how-closing p { margin: 0 0 10px; max-width: 75ch; color: #c9cfdb; }
+.how-closing p { margin: 0 0 10px; max-width: 75ch; color: var(--soft-text); }
 .how-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .how-links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
 .how-links a { font-weight: 600; }
@@ -111,5 +176,30 @@
 .how-references h3 { margin: 0 0 4px; font-size: 1.05rem; }
 .how-references > .hint { margin: 0 0 10px; }
 .how-refs { margin: 0; padding-left: 1.4em; display: grid; gap: 10px; max-width: 80ch; }
-.how-reference { display: grid; gap: 2px; font-size: var(--fs-sm); color: #c9cfdb; }
+.how-reference { display: grid; gap: 2px; font-size: var(--fs-sm); color: var(--soft-text); }
 .how-used { font-size: var(--fs-sm); }
+
+/* While the steps are computed: placeholders with the shape of the steps (a title, three lines and
+   a figure), so the tab has its size from the first frame. A light band sweeps across them; only
+   `transform` moves, and under reduced motion (motion.css) the band stands still. */
+.how-skeleton {
+  margin-top: 4px; display: grid; gap: var(--s6) var(--s5);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+.how-skeleton-step { display: flex; flex-direction: column; gap: 10px; min-width: 0; min-height: 360px; }
+.skeleton-line, .skeleton-figure {
+  position: relative; display: block; overflow: hidden; height: 14px; border-radius: 4px; background: var(--track);
+}
+.skeleton-line.title { width: 62%; height: 18px; }
+.skeleton-line:nth-child(3) { width: 94%; }
+.skeleton-line:nth-child(4) { width: 80%; }
+.skeleton-figure { height: 170px; margin-top: auto; border-radius: 12px; }
+.skeleton-line::after, .skeleton-figure::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, var(--shimmer), transparent);
+  animation: shimmer 1.4s linear infinite;
+}
+@media (max-width: 760px) {
+  .how-skeleton { gap: var(--s5); }
+  .how-skeleton-step { min-height: 300px; }
+}

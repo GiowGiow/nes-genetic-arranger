@@ -1,5 +1,5 @@
 // @ts-check
-// Tests for ui/how-it-works.js: the method explained in six steps, each with a figure drawn from
+// Tests for ui/how-it-works.js: the method explained in eight steps, each with a figure drawn from
 // the real core modules (spec 005, User Story 7, FR-027). The figure data must be what the core
 // computes for the song (Korobeiniki here), so the explanation can never drift from the method.
 
@@ -11,13 +11,15 @@ import { DRUM_SOUNDS, PULSE_DUTY, SAMPLE_RATE, noiseWave, pulseWave, triangleWav
 import { assemble } from "../src/core/arrangement.js";
 import { createGAParams, evolve } from "../src/core/evolution.js";
 import { CRITERIA, criterionScores, fitness } from "../src/core/fitness.js";
-import { P2_TEXTURES, allowedGenes, decode } from "../src/core/genome.js";
+import { P2_TEXTURES, allowedGenes, decode, randomPopulation } from "../src/core/genome.js";
 import { leadSheetFromJson } from "../src/core/leadsheet.js";
+import { eliteIndices, rouletteSelect } from "../src/core/operators.js";
 import { createRandom } from "../src/core/random.js";
 import { buildTables } from "../src/core/tables.js";
 import {
   EVOLUTION_FIGURE_BARS,
   GENOME_FIGURE_BARS,
+  HOW_IT_WORKS_CLOSING,
   HOW_IT_WORKS_LINKS,
   HOW_IT_WORKS_REFERENCES,
   LEAD_SHEET_FIGURE_BARS,
@@ -25,6 +27,8 @@ import {
   howItWorksSteps,
   initialBestPlan,
   renderHowItWorks,
+  renderHowSkeleton,
+  revealOnScroll,
 } from "../src/ui/how-it-works.js";
 import { GENE_NAMES } from "../src/ui/plan-grid.js";
 import { assertClose, readFixture, readJson, repoRoot } from "./helpers.js";
@@ -46,10 +50,10 @@ const step = (id) => {
   return found;
 };
 
-test("How it works has six steps in the order of the method, each with a title, plain text and a figure", () => {
+test("How it works has eight steps in the order of the method, each with a title, plain text and a figure", () => {
   assert.deepEqual(
     steps.map((candidate) => candidate.id),
-    ["lead-sheet", "genome", "fitness", "evolution", "realization", "sound"],
+    ["lead-sheet", "genome", "fitness", "loop", "selection", "evolution", "realization", "sound"],
   );
   for (const candidate of steps) {
     assert.ok(candidate.title.length > 0, `${candidate.id} has no title`);
@@ -138,17 +142,19 @@ test("the fitness figure lists the seven criteria with the scores of fitness.js 
 
 test("a criterion that does not apply to the song has no score in the fitness figure", () => {
   const allVerse = { ...korobeiniki, bars: korobeiniki.bars.map((bar) => ({ ...bar, role: /** @type {const} */ ("verse") })) };
-  const verseSteps = howItWorksSteps({ leadSheet: allVerse, plan, settings: runSettings });
-  const contrast = verseSteps[2].figure.data.criteria.find((/** @type {any} */ row) => row.name === "contrast");
+  const verseFitness = howItWorksSteps({ leadSheet: allVerse, plan, settings: runSettings }).find((candidate) => candidate.id === "fitness");
+  assert.ok(verseFitness);
+  const contrast = verseFitness.figure.data.criteria.find((/** @type {any} */ row) => row.name === "contrast");
   assert.equal(contrast.score, null);
-  assert.match(verseSteps[2].figure.alt, /contrast does not apply/i);
+  assert.equal(contrast.share, null, "a criterion that cannot be judged has no share of the mean");
+  assert.match(verseFitness.figure.alt, /contrast does not apply/i);
 });
 
 test("the evolution figure is the same for the same seed, and another seed draws other parents", () => {
   const again = howItWorksSteps({ leadSheet: korobeiniki, plan, settings: runSettings });
-  assert.deepEqual(again[3].figure, step("evolution").figure);
+  assert.deepEqual(again.find((candidate) => candidate.id === "evolution")?.figure, step("evolution").figure);
   const seedTwo = howItWorksSteps({ leadSheet: korobeiniki, plan, settings: { ...runSettings, seed: 2 } });
-  assert.notDeepEqual(seedTwo[3].figure.data.parentA, step("evolution").figure.data.parentA);
+  assert.notDeepEqual(seedTwo.find((candidate) => candidate.id === "evolution")?.figure.data.parentA, step("evolution").figure.data.parentA);
 });
 
 test("the evolution figure's child takes parent A's bars before the cut and parent B's after it, with one mutated gene", () => {
@@ -169,7 +175,7 @@ test("the evolution figure's child takes parent A's bars before the cut and pare
 
 test("the evolution figure draws only the values the settings allow", () => {
   for (let seed = 1; seed <= 20; seed++) {
-    const { data } = howItWorksSteps({ leadSheet: korobeiniki, plan, settings: { ...defaults, seed } })[3].figure;
+    const { data } = howItWorksSteps({ leadSheet: korobeiniki, plan, settings: { ...defaults, seed } }).find((candidate) => candidate.id === "evolution")?.figure ?? { data: null };
     const allowed = allowedGenes(defaults.allowed);
     for (const genes of [data.parentA, data.parentB, data.child]) {
       genes.forEach((/** @type {number} */ value, /** @type {number} */ index) => {
@@ -209,7 +215,7 @@ test("the realization figure holds the notes that assemble gives in its two bars
 
 test("the realization figure falls back to the first bars when no two bars play on every channel", () => {
   const noDrums = Uint8Array.from(plan, (gene, index) => (index % 4 === 2 ? 0 : gene));
-  const { data } = howItWorksSteps({ leadSheet: korobeiniki, plan: noDrums, settings: runSettings })[4].figure;
+  const { data } = howItWorksSteps({ leadSheet: korobeiniki, plan: noDrums, settings: runSettings }).find((candidate) => candidate.id === "realization")?.figure ?? { data: null };
   assert.equal(data.firstBar, 1);
   assert.deepEqual(data.channels.NO, []);
 });
@@ -293,6 +299,199 @@ test("the closing links lead to the repository, its sources and licenses, and th
   for (const link of HOW_IT_WORKS_LINKS) assert.ok(link.label.length > 0);
 });
 
+// --- The genetic algorithm, step by step (loop, selection, fitness shares) ---------------------
+
+/** @param {string} id @param {any} [settings] */
+const stepWith = (id, settings = defaults) => {
+  const found = howItWorksSteps({ leadSheet: korobeiniki, plan, settings }).find((candidate) => candidate.id === id);
+  assert.ok(found, `no step ${id}`);
+  return found;
+};
+
+test("the fitness step counts the seven criteria and gives each its share of the weighted mean", () => {
+  const { data } = step("fitness").figure;
+  const judged = data.criteria.filter((/** @type {any} */ row) => row.score !== null);
+  const total = judged.reduce((/** @type {number} */ sum, /** @type {any} */ row) => sum + row.weight, 0);
+  assert.equal(data.criteria.length, 7);
+  for (const row of judged) assertClose(row.share, row.weight / total);
+  assertClose(judged.reduce((/** @type {number} */ sum, /** @type {any} */ row) => sum + row.share, 0), 1);
+  assert.match(step("fitness").text.join(" "), /seven/);
+  assert.match(step("fitness").figure.alt, /share/);
+});
+
+test("with every weight at 1 the fitness step says each criterion counts the same share", () => {
+  const equal = stepWith("fitness");
+  const each = Math.round(100 / equal.figure.data.criteria.filter((/** @type {any} */ row) => row.score !== null).length);
+  assert.match(equal.text.join(" "), new RegExp(`each criterion counts for ${each}%`));
+  const uneven = stepWith("fitness", { ...defaults, weights: { ...defaults.weights, fidelity: 3 } });
+  assert.match(uneven.text.join(" "), /Fidelity counts for \d+%/);
+});
+
+test("the loop step counts one generation from the settings: survivors, parents, crossovers and mutations", () => {
+  const { data } = stepWith("loop").figure;
+
+  assert.deepEqual(
+    {
+      populationSize: data.populationSize,
+      eliteCount: data.eliteCount,
+      children: data.children,
+      pairs: data.pairs,
+      parents: data.parents,
+      genesPerPlan: data.genesPerPlan,
+      mutationRate: data.mutationRate,
+      maxGenerations: data.maxGenerations,
+      stagnationWindow: data.stagnationWindow,
+    },
+    { populationSize: 60, eliteCount: 2, children: 58, pairs: 29, parents: 58, genesPerPlan: 128, mutationRate: 0.01, maxGenerations: 4000, stagnationWindow: 300 },
+  );
+  assertClose(data.mutationsPerChild, 1.28);
+  assert.deepEqual(data.stages.map((/** @type {any} */ stage) => stage.id), ["score", "elitism", "selection", "crossover", "mutation", "replace"]);
+});
+
+test("an odd number of free places drops the second child of the last pair, as the GA does", () => {
+  const { data } = stepWith("loop", { ...defaults, population_size: 61 }).figure;
+
+  assert.equal(data.children, 59);
+  assert.equal(data.pairs, 30);
+  assert.equal(data.parents, 60, "30 pairs of parents are drawn");
+});
+
+test("without elitism the loop says that no plan survives unchanged", () => {
+  const loop = stepWith("loop", { ...defaults, elite_count: 0 });
+
+  assert.equal(loop.figure.data.children, 60);
+  assert.match(loop.text.join(" "), /no plan is kept/i);
+});
+
+test("the selection step spins the wheel of the real generation 0: the same random plans and the same first two parents", () => {
+  const { data } = stepWith("selection").figure;
+  const tables = buildTables(korobeiniki);
+  const allowed = allowedGenes(defaults.allowed);
+  const rng = createRandom(defaults.seed);
+  const population = randomPopulation(rng, defaults.population_size, 32, allowed);
+  const values = fitness(tables, population, 32, defaults.weights);
+
+  assert.deepEqual(data.slices.map((/** @type {any} */ slice) => slice.fitness), [...values]);
+  assert.deepEqual(data.parents, [...rouletteSelect(rng, values, 2)], "the first two spins of generation 1");
+  assert.deepEqual(data.elite, [...eliteIndices(values, defaults.elite_count)]);
+  assert.equal(data.populationSize, 60);
+});
+
+test("the wheel's slices are the fitness above the generation's lowest, and the worst plan has none", () => {
+  const { data } = stepWith("selection").figure;
+  const fitnesses = data.slices.map((/** @type {any} */ slice) => slice.fitness);
+  const lowest = Math.min(...fitnesses);
+  const windowTotal = fitnesses.reduce((/** @type {number} */ sum, /** @type {number} */ value) => sum + value - lowest, 0);
+
+  assertClose(data.lowest, lowest);
+  assertClose(data.highest, Math.max(...fitnesses));
+  data.slices.forEach((/** @type {any} */ slice) => assertClose(slice.share, (slice.fitness - lowest) / windowTotal));
+  assertClose(data.slices.reduce((/** @type {number} */ sum, /** @type {any} */ slice) => sum + slice.share, 0), 1);
+  assert.equal(data.worst.share, 0);
+  assert.ok(data.best.share > data.best.plainShare, "windowing widens the best plan's slice");
+  assert.ok(data.best.plainShare < 2 / data.populationSize, "a plain wheel would give a good plan hardly more than an average one");
+  assert.ok(data.best.fitness >= data.median.fitness && data.median.fitness >= data.worst.fitness);
+});
+
+test("the selection step explains elitism and windowing in plain words, with the numbers", () => {
+  const text = stepWith("selection").text.join(" ");
+
+  assert.match(text, /2 best plans/);
+  assert.match(text, /copied unchanged/);
+  assert.match(text, /lowest fitness/);
+  assert.match(text, /\d+(\.\d)?% on a plain wheel/);
+});
+
+test("when every plan has the same fitness the wheel gives each an equal slice, as roulette selection does", () => {
+  const oneBar = { ...korobeiniki, bars: korobeiniki.bars.slice(0, 1) };
+  const onlyFidelity = { ...defaults, weights: { complementarity: 0, register: 0, coherence: 0, contrast: 0, bass_smoothness: 0, idiom: 0, fidelity: 1 }, allowed: { ...defaults.allowed, p1_octave: [0] } };
+  const { data } = howItWorksSteps({ leadSheet: oneBar, plan: null, settings: onlyFidelity }).find((candidate) => candidate.id === "selection")?.figure ?? { data: null };
+
+  assert.equal(data.tied, true);
+  data.slices.forEach((/** @type {any} */ slice) => assertClose(slice.share, 1 / data.populationSize));
+});
+
+test("the crossover and mutation step keeps the cut at a bar line and says that a mutation changes one gene of one bar", () => {
+  const text = step("evolution").text.join(" ");
+
+  assert.match(step("evolution").title, /Crossover and mutation/);
+  assert.match(text, /bar line/);
+  assert.match(text, /one bar/);
+});
+
+test("the closing paragraph counts seven rules, as the fitness does", () => {
+  assert.match(HOW_IT_WORKS_CLOSING, /seven/);
+  assert.equal(CRITERIA.length, 7);
+});
+
+// --- Skeleton and reveal -----------------------------------------------------------------------
+
+test("the skeleton stands in for the steps while they are computed: busy, with a box per step and no text to read", () => {
+  const container = new FakeDocument().createElement("div");
+
+  renderHowSkeleton(/** @type {any} */ (container));
+
+  assert.equal(container.getAttribute("aria-busy"), "true");
+  const boxes = findAll(container, (element) => hasClass(element, "how-skeleton-step"));
+  assert.equal(boxes.length, 6);
+  assert.equal(container.textContent, "", "a placeholder says nothing: the live status does");
+});
+
+test("drawing the steps takes the busy mark away", () => {
+  const container = new FakeDocument().createElement("div");
+  renderHowSkeleton(/** @type {any} */ (container));
+
+  renderHowItWorks(/** @type {any} */ (container), steps);
+
+  assert.equal(container.getAttribute("aria-busy"), null);
+  assert.equal(findAll(container, (element) => hasClass(element, "how-skeleton-step")).length, 0);
+});
+
+test("each step is revealed once, the first time it scrolls into view", () => {
+  const container = new FakeDocument().createElement("div");
+  renderHowItWorks(/** @type {any} */ (container), steps);
+  /** @type {Array<(entries: Array<{target: any, isIntersecting: boolean}>) => void>} */
+  const callbacks = [];
+  /** @type {any[]} */
+  const watched = [];
+  /** @type {any[]} */
+  const released = [];
+  class FakeObserver {
+    /** @param {(entries: Array<{target: any, isIntersecting: boolean}>) => void} callback */
+    constructor(callback) {
+      callbacks.push(callback);
+    }
+    /** @param {any} target */
+    observe(target) {
+      watched.push(target);
+    }
+    /** @param {any} target */
+    unobserve(target) {
+      released.push(target);
+    }
+  }
+
+  revealOnScroll(/** @type {any} */ (container), /** @type {any} */ (FakeObserver));
+
+  const items = findAll(container, (element) => hasClass(element, "how-step"));
+  assert.deepEqual(watched, items);
+  assert.ok(items.every((item) => hasClass(item, "reveal") && !hasClass(item, "in")));
+  callbacks[0]([{ target: items[2], isIntersecting: true }, { target: items[3], isIntersecting: false }]);
+  assert.ok(hasClass(items[2], "in"));
+  assert.ok(!hasClass(items[3], "in"));
+  assert.deepEqual(released, [items[2]], "a revealed step is not watched again");
+});
+
+test("without an observer nothing is hidden: the steps simply show", () => {
+  const container = new FakeDocument().createElement("div");
+  renderHowItWorks(/** @type {any} */ (container), steps);
+
+  revealOnScroll(/** @type {any} */ (container), undefined);
+
+  const items = findAll(container, (element) => hasClass(element, "how-step"));
+  assert.ok(items.every((item) => !hasClass(item, "reveal")));
+});
+
 // --- Renderer ----------------------------------------------------------------------------------
 
 /**
@@ -320,6 +519,26 @@ class FakeElement {
   /** @param {string} name */
   getAttribute(name) {
     return this.attributes.get(name) ?? null;
+  }
+
+  /** @param {string} name */
+  removeAttribute(name) {
+    this.attributes.delete(name);
+  }
+
+  /** @param {string} selector a class selector, ".how-step": all the renderer asks for */
+  querySelectorAll(selector) {
+    const name = selector.slice(1);
+    /** @type {FakeElement[]} */
+    const found = [];
+    const visit = (/** @type {FakeElement} */ element) => {
+      for (const child of element.children) {
+        if ((child.getAttribute("class") ?? "").split(" ").includes(name)) found.push(child);
+        visit(child);
+      }
+    };
+    visit(this);
+    return found;
   }
 
   /** @param {...(FakeElement | string)} nodes */
@@ -375,7 +594,7 @@ test("the renderer draws one figure per step, each a labeled image with a captio
   const container = new FakeDocument().createElement("div");
   renderHowItWorks(/** @type {any} */ (container), steps);
   const figures = findAll(container, (element) => element.tagName === "figure");
-  assert.equal(figures.length, 6);
+  assert.equal(figures.length, steps.length);
   figures.forEach((figure, index) => {
     const images = findAll(figure, (element) => element.getAttribute("role") === "img");
     assert.equal(images.length, 1, `step ${index + 1} has one image`);
@@ -396,9 +615,9 @@ test("the renderer gives each step a numbered heading and its paragraphs", () =>
   const headings = items.flatMap((item) => findAll(item, (element) => element.tagName === "h3"));
   assert.deepEqual(
     headings.map((heading) => heading.textContent),
-    steps.map((candidate, index) => `${index + 1}${candidate.title}`),
+    steps.map((candidate, index) => `${String(index + 1).padStart(2, "0")}${candidate.title}`),
   );
-  assert.equal(items.length, 6);
+  assert.equal(items.length, steps.length);
   items.forEach((item, index) => {
     const paragraphs = findAll(item, (element) => element.tagName === "p").map((paragraph) => paragraph.textContent);
     assert.deepEqual(paragraphs, steps[index].text);
@@ -409,7 +628,7 @@ test("the renderer ends with the links to the repository and the article, and re
   const container = new FakeDocument().createElement("div");
   renderHowItWorks(/** @type {any} */ (container), steps);
   renderHowItWorks(/** @type {any} */ (container), steps);
-  assert.equal(findAll(container, (element) => element.tagName === "figure").length, 6);
+  assert.equal(findAll(container, (element) => element.tagName === "figure").length, steps.length);
   const links = findAll(container, (element) => element.tagName === "a");
   assert.deepEqual(
     links.map((link) => link.getAttribute("href")),

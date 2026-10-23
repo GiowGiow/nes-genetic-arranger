@@ -204,7 +204,10 @@ test("the bus gain is the load's busScale, 1 without it, and setBusScale ramps i
   assert.equal(bus.gain.value, 1, "a load without busScale plays the arrangement as given");
 });
 
-test("A/B ramps the two switch gains over 10 ms and keeps the position and the sources", () => {
+/** A ramp with its end time rounded, so floating-point sums compare equal. @param {any} ramp */
+const roundRamp = (ramp) => [ramp[0], ramp[1], round6(ramp[2])];
+
+test("A/B crossfades the two switch gains over 80 ms, one down as the other comes up, and keeps the position and the sources", () => {
   const { player, context } = fakePlayer();
   player.load({ arrangement: stems(), original: tone(2, 0.5) }, RATE);
   player.play();
@@ -216,8 +219,8 @@ test("A/B ramps the two switch gains over 10 ms and keeps the position and the s
 
   player.switchTo("original");
   assert.equal(player.active(), "original");
-  assert.deepEqual(lastRamp(originalSwitch.gain), ["ramp", 1, 0.71]);
-  assert.deepEqual(lastRamp(arrangementSwitch.gain), ["ramp", 0, 0.71]);
+  assert.deepEqual(roundRamp(lastRamp(originalSwitch.gain)), ["ramp", 1, 0.78]);
+  assert.deepEqual(roundRamp(lastRamp(arrangementSwitch.gain)), ["ramp", 0, 0.78]);
   assert.equal(context.sources.length, sourcesBefore);
   assert.equal(round6(player.currentTime()), 0.68);
 
@@ -573,4 +576,67 @@ test("the position the player reports is the one heard, behind the audio clock b
   player.play();
   context.currentTime = 1;
   assert.equal(round6(player.currentTime()), round6(1 - 0.02 - 0.2));
+});
+
+// ---- Live levels for the mixer's meters ----
+
+/** The analyser listening to the channel gain that a stem of this constant feeds. @param {FakeContext} context @param {number} value */
+const analyserOf = (context, value) => nodeFedBy(context, value).taps[0];
+
+test("each stem's fader has an analyser listening after it, so the meters read the level the ear gets from that channel", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems() }, RATE);
+  player.play();
+
+  assert.equal(context.analysers.length, 4, "one analyser per stem");
+  for (const analyser of context.analysers) assert.equal(analyser.fftSize, 256);
+  for (const value of [0.1, 0.2, 0.3, 0.4]) assert.equal(analyserOf(context, value)?.kind, "analyser");
+});
+
+test("channelLevels is null while the music is stopped", () => {
+  const { player } = fakePlayer();
+  assert.equal(player.channelLevels(), null, "nothing loaded");
+  player.load({ arrangement: stems() }, RATE);
+  assert.equal(player.channelLevels(), null, "loaded but not playing");
+  player.play();
+  assert.ok(player.channelLevels());
+  player.pause();
+  assert.equal(player.channelLevels(), null, "paused");
+});
+
+test("channelLevels is the linear RMS of what each analyser hears, between 0 and 1", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems() }, RATE);
+  player.play();
+  analyserOf(context, 0.1).block = [0.5, -0.5];
+  analyserOf(context, 0.2).block = [0.2];
+  analyserOf(context, 0.3).block = [0];
+  analyserOf(context, 0.4).block = [1, 0, 0, 0];
+
+  const levels = /** @type {Record<string, number>} */ (player.channelLevels());
+
+  assert.equal(round6(levels.P1), 0.5);
+  assert.equal(round6(levels.P2), 0.2);
+  assert.equal(levels.TR, 0);
+  assert.equal(round6(levels.NO), 0.5, "sqrt of the mean of squares: 1 in 4 samples is sqrt(1/4)");
+});
+
+test("the analysers are read only when channelLevels is called, not on every frame of the music", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems() }, RATE);
+  player.play();
+  player.seek(1);
+  assert.deepEqual(context.analysers.map((analyser) => analyser.reads), [0, 0, 0, 0]);
+
+  player.channelLevels();
+  assert.deepEqual(context.analysers.map((analyser) => analyser.reads), [1, 1, 1, 1]);
+});
+
+test("a muted channel reads as silence because the analyser sits after its fader", () => {
+  const { player, context } = fakePlayer();
+  player.load({ arrangement: stems() }, RATE);
+  player.play();
+  const fader = /** @type {FakeGain} */ (nodeFedBy(context, 0.1));
+
+  assert.deepEqual(fader.taps, [analyserOf(context, 0.1)], "the tap is on the fader's output");
 });

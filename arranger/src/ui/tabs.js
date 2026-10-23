@@ -16,8 +16,12 @@
  * wrap, Home and End jump to the ends.
  *
  * The pure helpers decide which tab, which view and which key; `setUpPageTabs` only shows and
- * hides the sections.
+ * hides the sections. The tab buttons answer at once; the sections change inside a view
+ * transition (`view-transition.js`) where the browser has them, sliding in the direction of the
+ * tab order, and otherwise at once with the CSS entrance animation of motion.css.
  */
+
+import { createTransitioner, slideDirection } from "./view-transition.js";
 
 /**
  * @typedef {object} PageTab
@@ -138,8 +142,10 @@ export function stepTab(index, key, count) {
  *   onChange?: (id: string) => void,
  *   viewNav?: HTMLElement | null,
  *   onViewChange?: (view: string) => void,
+ *   transitions?: {run: (update: () => void, direction?: "forward" | "back" | "none") => void},
  * }} [options] `viewNav` holds one `[data-view]` button per view; `onChange` and `onViewChange`
- *   run after a tab or a view is shown
+ *   run after a tab or a view is shown; `transitions` wraps the change of sections (default: view
+ *   transitions where supported)
  * @returns {{
  *   show: (id: string, options?: {focus?: boolean}) => void,
  *   current: () => string,
@@ -152,6 +158,13 @@ export function setUpPageTabs(nav, options = {}) {
   const viewButtons = /** @type {HTMLButtonElement[]} */ ([...(options.viewNav?.querySelectorAll("[data-view]") ?? [])]);
   let current = TABS[0].id;
   let view = VIEWS[0].id;
+  const animated = options.transitions ?? createTransitioner();
+  // The first screen (from the hash) appears at once: there is nothing to dissolve from.
+  let started = false;
+  const transitions = {
+    /** @param {() => void} update @param {"forward" | "back" | "none"} [direction] */
+    run: (update, direction) => (started ? animated.run(update, direction) : update()),
+  };
 
   function writeHash() {
     const hash = hashFor(current, view);
@@ -159,13 +172,21 @@ export function setUpPageTabs(nav, options = {}) {
   }
 
   function show(/** @type {string} */ id, { focus = false } = {}) {
+    const leaving = current;
     current = TABS.some((tab) => tab.id === id) ? id : TABS[0].id;
+    const target = current;
     // A section can belong to two tabs (the settings drawer): it shows when the chosen tab has it.
-    const shown = new Set(TABS.find((tab) => tab.id === current)?.panels);
-    for (const panelId of new Set(TABS.flatMap((tab) => tab.panels))) {
-      const panel = document.getElementById(panelId);
-      if (panel) panel.hidden = !shown.has(panelId);
-    }
+    const shown = new Set(TABS.find((tab) => tab.id === target)?.panels);
+    transitions.run(
+      () => {
+        for (const panelId of new Set(TABS.flatMap((tab) => tab.panels))) {
+          const panel = document.getElementById(panelId);
+          if (panel) panel.hidden = !shown.has(panelId);
+        }
+        options.onChange?.(target);
+      },
+      slideDirection(TABS.findIndex((tab) => tab.id === leaving), TABS.findIndex((tab) => tab.id === target)),
+    );
     for (const button of buttons) {
       const selected = button.dataset.tab === current;
       button.setAttribute("aria-selected", String(selected));
@@ -173,16 +194,23 @@ export function setUpPageTabs(nav, options = {}) {
       if (selected && focus) button.focus();
     }
     writeHash();
-    options.onChange?.(current);
   }
 
   /** Show one view of the Evolution tab, even while another tab is open: it is there when the visitor returns. */
   function showView(/** @type {string} */ id, { focus = false } = {}) {
+    const leaving = view;
     view = VIEWS.some((candidate) => candidate.id === id) ? id : VIEWS[0].id;
-    for (const candidate of VIEWS) {
-      const panel = document.getElementById(candidate.id);
-      if (panel) panel.hidden = candidate.id !== view;
-    }
+    const target = view;
+    transitions.run(
+      () => {
+        for (const candidate of VIEWS) {
+          const panel = document.getElementById(candidate.id);
+          if (panel) panel.hidden = candidate.id !== target;
+        }
+        options.onViewChange?.(target);
+      },
+      slideDirection(VIEWS.findIndex((candidate) => candidate.id === leaving), VIEWS.findIndex((candidate) => candidate.id === target)),
+    );
     for (const button of viewButtons) {
       const selected = button.dataset.view === view;
       button.setAttribute("aria-selected", String(selected));
@@ -190,7 +218,6 @@ export function setUpPageTabs(nav, options = {}) {
       if (selected && focus) button.focus();
     }
     writeHash();
-    options.onViewChange?.(view);
   }
 
   buttons.forEach((button, index) => {
@@ -219,5 +246,6 @@ export function setUpPageTabs(nav, options = {}) {
   }
   addEventListener("hashchange", () => followHash(location.hash));
   followHash(location.hash);
+  started = true;
   return { show, current: () => current, showView, view: () => view };
 }

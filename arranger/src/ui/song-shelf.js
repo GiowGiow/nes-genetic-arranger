@@ -22,10 +22,14 @@
  *   sprite canvases, with the same keys and the same selection.
  *
  * Thousands of songs in one list are hard to choose from, so the shelf shows one playlist at a
- * time (`core/playlists.js`): a row of small album covers above the records, "Popular" first.
+ * time (`core/playlists.js`): a row of small album covers above the records, "Catalog" first.
  * MPB opens into one album per artist. Typing in the search box looks through every song and
  * names the view "Search results"; clearing the box returns to the chosen playlist, which is
- * remembered between visits. Every list is ordered by popularity.
+ * remembered between visits. Every list is ordered by popularity. The online sources
+ * (`core/online-search.js`) add their results after the catalog's, each source under its own
+ * divider; a line under the search box says which sources are still being asked, which failed
+ * (with Retry), or that the browser is offline, and the shelf never says "no match" while a
+ * source may still answer.
  *
  * Pages turn with two arrows on the stage's left and right edges (large touch targets, over the
  * records, where the thumbs are on a phone), with the keyboard, with a quick horizontal swipe
@@ -38,20 +42,40 @@
  * song whose file the browser cannot read from the catalog site (no CORS header), a primary
  * "Download MIDI" button with a hint, and after it "Open downloaded file". The page does the
  * downloading and the opening (`onDownload`, `onOpenDownloaded`); the shelf only remembers which
- * songs were downloaded in this visit. A song the browser already holds (`isCached`: the visitor
- * opened its file on an earlier visit and the page kept it) is a one-click song: Arrange and
- * Preview, no download. The panel never shows where a song comes from: credits live in the
- * README (FR-014a).
+ * songs were downloaded in this visit. A song the page can open by itself (`isOneClick`: the
+ * browser kept its file, or the file fetcher can bring it) is a one-click song: Arrange and
+ * Preview, no download. A song that comes from a site is credited under its facts ("MIDI from
+ * beakauffmann.com", a link to the song's page). While Arrange or Preview loads the song, the
+ * pressed button shows its busy state and the other waits.
  *
- * The biggest catalog file (MPB) is read only when it is needed. Until then the page passes it as
- * a pending source: MPB shows as a tile with no count, and the shelf asks the page for the file
- * (`onNeedSongs`) when the visitor opens that playlist or types a search, which looks through
- * every song. The note "Loading more songs…" says so until the songs arrive.
+ * The biggest catalog file (MPB) is read in the background and on demand. Until it is here the
+ * page passes it as a pending source: MPB shows as a tile with a small spinner, a thin bar under
+ * the row of tiles fills as the file streams in (`setProgress`), and the shelf asks the page for
+ * the file (`onNeedSongs`) when the visitor opens that playlist or types a search, which looks
+ * through every song.
+ *
+ * Nothing waits on a blank stage. From the first paint the stage holds grey skeleton records and
+ * the list skeleton rows (so the page does not jump when songs arrive), the 2D grid is shown
+ * until three.js is loaded and the scene then fades in over it, and new records pop in one after
+ * another while a page turn slides the old records out and the new ones in.
  */
 
 import { MIN_QUERY_LENGTH, normalize } from "../core/catalog.js";
-import { buildPlaylists, canArrangeInOneClick, orderCatalog, searchByPopularity } from "../core/playlists.js";
-import { FALLBACK_COLLECTIONS, displayTitle, lazySourcesNeeded, licenseNotice, mergeSearchResults, midiDownload, pageCount, pageOf } from "../core/sources.js";
+import { sourceCredit } from "../core/midi-fetcher.js";
+import { SOURCE_NAMES } from "../core/online-sources.js";
+import { CATALOG_ID, buildPlaylists, orderCatalog, playlistAlias, searchByPopularity } from "../core/playlists.js";
+import {
+  FALLBACK_COLLECTIONS,
+  displayTitle,
+  lazySourcesNeeded,
+  licenseNotice,
+  mergeSearchResults,
+  midiDownload,
+  pageCount,
+  pageOf,
+  warmSearchIndex,
+} from "../core/sources.js";
+import { setBusy } from "./busy.js";
 import { SHELF_ROWS, shelfColumns } from "./shelf-layout.js";
 import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 
@@ -61,7 +85,12 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 
 /**
  * @typedef {object} ShelfScene what `shelf-scene.js` `createShelfScene` returns
- * @property {(entries: CatalogEntry[], selectedIndex: number, columns?: number) => void} setPage
+ * @property {(entries: CatalogEntry[], selectedIndex: number, columns?: number, motion?: {direction: -1 | 0 | 1}) => void} setPage
+ *   `motion`: 1 or -1 when a page turns forward or back (the old page slides out), 0 when the list
+ *   changed (the records pop in); none for no animation
+ * @property {(entries: CatalogEntry[]) => void} [preload] draw the faces of these songs ahead of
+ *   need, while the browser is idle
+ * @property {(reduced: boolean) => void} [setReducedMotion]
  * @property {(index: number) => void} select index on the page
  * @property {(callback: (index: number) => void) => void} onPick called with the index on the
  *   page of a clicked record
@@ -76,8 +105,10 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
 /**
  * @typedef {object} ShelfOptions
  * @property {CatalogEntry[]} [entries] the catalog; it may grow later (`setEntries`)
- * @property {(entry: CatalogEntry) => void} onArrange opens the song in the reading flow
- * @property {(entry: CatalogEntry) => void} [onPreview] plays the song; no Preview without it
+ * @property {(entry: CatalogEntry) => void | Promise<unknown>} onArrange opens the song in the
+ *   reading flow. A promise keeps the button busy until it settles.
+ * @property {(entry: CatalogEntry) => void | Promise<unknown>} [onPreview] plays the song; no
+ *   Preview without it. A promise keeps the button busy until it settles.
  * @property {(query: string) => void} [onSearch] called with the words typed in the shelf's search
  *   box, so the page can look further than the catalog
  * @property {(entry: CatalogEntry) => void} [onDownload] starts the download of a song whose
@@ -87,8 +118,11 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  * @property {() => ReadonlyArray<import("../core/sources.js").CollectionRecord>} [collections] the
  *   registry's collections as they are now: their names, order and kinds decide the playlists.
  *   Default: the built-in ones.
- * @property {(entry: CatalogEntry) => boolean} [isCached] whether the browser already holds the
- *   file of a song that is otherwise a download; such a song opens in one click. Default: none.
+ * @property {(entry: CatalogEntry) => boolean} [isOneClick] whether the page opens the file of a
+ *   song that is otherwise a download by itself (the browser kept it, or the file fetcher brings
+ *   it); such a song opens in one click. Default: none.
+ * @property {(entry: CatalogEntry) => boolean} [isCached] the older name of `isOneClick`
+ * @property {() => void} [onRetrySearch] the visitor pressed Retry on a failed online source
  * @property {string[]} [pendingSources] the sources whose catalog file has not been read; see
  *   `setPending`
  * @property {(sources: string[]) => void} [onNeedSongs] called, once per source, when what the
@@ -98,7 +132,10 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  * @property {{getItem: (key: string) => string | null, setItem: (key: string, value: string) => void} | null} [storage]
  *   where the chosen playlist is remembered; default: `localStorage`, or nothing when the browser
  *   refuses it. Pass null for no memory.
- * @property {boolean} [reducedMotion] no bobbing or spinning; default: the visitor's setting
+ * @property {boolean} [reducedMotion] no bobbing or spinning; default: the visitor's setting, which
+ *   the shelf follows when it changes
+ * @property {(run: () => void, ms: number) => any} [setTimer] default `setTimeout`
+ * @property {(id: any) => void} [clearTimer] default `clearTimeout`
  * @property {() => Promise<{createShelfScene: (host: HTMLElement, options: {reducedMotion: boolean}) => ShelfScene}>} [sceneFactory]
  *   loads the scene module; default `import("./shelf-scene.js")`
  */
@@ -115,14 +152,27 @@ import { SPRITE_SIZE, drawSprite, entrySprite } from "./sprites.js";
  */
 
 /**
+ * @typedef {object} OnlineStatus where the online search stands (`core/online-search.js`)
+ * @property {string} [query] the words it searched
+ * @property {boolean} [active]
+ * @property {boolean} [searching] some source has not answered
+ * @property {boolean} [offline]
+ * @property {string[]} [pending] names of the sources still asked
+ * @property {Array<{id: string, name: string, reason: string}>} [failed]
+ */
+
+/**
  * @typedef {object} SongShelf
  * @property {(entries: CatalogEntry[]) => void} setEntries replace the catalog, keeping the
  *   selected song when it is still there; also the way to tell the shelf that `isCached` changed
  * @property {(sources: string[]) => void} setPending the sources whose file has not been read yet
  *   (empty: all are here, or gave up)
  * @property {(query: string) => void} setQuery filter by the search box's words
- * @property {(results: Array<SearchResult | CatalogEntry>) => void} setExternal external results
- *   for the current query, shown after the local matches
+ * @property {(results: Array<SearchResult | CatalogEntry>, status?: OnlineStatus) => void} setExternal
+ *   external results for the current query, shown after the local matches, with where the online
+ *   search stands (without it the search counts as finished)
+ * @property {(source: string, progress: {loaded: number, total: number} | null) => void} setProgress
+ *   how much of a pending catalog file has arrived (`total` 0 when unknown); null when it is done
  * @property {(index: number) => void} select select a song of the list
  * @property {() => ShelfPage} page
  * @property {() => CatalogEntry | null} selected
@@ -139,6 +189,18 @@ const UNKNOWN = "—";
 
 /** The note shown while a catalog file is still being read. */
 const LOADING_MORE = "Loading more songs…";
+
+/** How many rows of the song list are built at first, and each time the list is scrolled near its end. */
+const ROW_CHUNK = 60;
+
+/** How long after the last change the screen reader hears the song count, in milliseconds. */
+const ANNOUNCE_MS = 500;
+
+/** How long the 2D grid and the 3D scene overlap when the scene arrives (CSS `--dur-3`). */
+const CROSSFADE_MS = 340;
+
+/** How many skeleton rows the list shows while songs are on their way. */
+const SKELETON_ROWS = 12;
 
 /** The `localStorage` key that remembers the chosen playlist. */
 export const PLAYLIST_KEY = "nes-arranger-playlist";
@@ -344,6 +406,39 @@ const hasDownloadRoute = (entry) => entry.route?.download !== undefined;
 const songCount = (count) => `${count.toLocaleString("en")} ${count === 1 ? "song" : "songs"}`;
 
 /**
+ * "A, B and C": names joined as a person writes them.
+ *
+ * @param {string[]} names
+ * @returns {string}
+ * @example
+ * joinNames(["The Session", "BitMidi"]); // "The Session and BitMidi"
+ */
+export function joinNames(names) {
+  if (names.length <= 1) return names.join("");
+  return `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
+}
+
+/**
+ * A size in megabytes, one decimal ("2.3 MB"); "" when unknown.
+ *
+ * @param {number} bytes
+ * @returns {string}
+ */
+function megabytes(bytes) {
+  return bytes > 0 ? `${(bytes / 1e6).toFixed(1)} MB` : "";
+}
+
+/**
+ * A license as a person reads it: "all-rights-reserved" is "all rights reserved".
+ *
+ * @param {string | undefined} license
+ * @returns {string}
+ */
+function licenseWords(license) {
+  return (license ?? "").replaceAll("-", " ").trim();
+}
+
+/**
  * Build the shelf inside `root`.
  *
  * @param {HTMLElement} root an empty element in the Song card
@@ -356,19 +451,23 @@ const songCount = (count) => `${count.toLocaleString("en")} ${count === 1 ? "son
 export function createSongShelf(root, options) {
   const doc = root.ownerDocument;
   const id = `shelf-${++shelfCount}`;
-  const reducedMotion = options.reducedMotion ?? prefersReducedMotion();
+  let reducedMotion = options.reducedMotion ?? prefersReducedMotion();
   const webgl = options.webgl ?? webglAvailable(/** @type {any} */ (globalThis));
+  const setTimer = options.setTimer ?? ((/** @type {() => void} */ run, /** @type {number} */ ms) => setTimeout(run, ms));
+  const clearTimer = options.clearTimer ?? ((/** @type {any} */ timer) => clearTimeout(timer));
 
   const storage = "storage" in options ? options.storage : browserStorage();
-  const isCached = options.isCached ?? (() => false);
+  const isOneClick = options.isOneClick ?? options.isCached ?? (() => false);
   /** The registry's collections as they are now: the page reads the registry after the shelf exists. */
   const collections = () => options.collections?.() ?? FALLBACK_COLLECTIONS;
-  /** Whether the visitor must download and open the song's file: a download route the browser has not kept. */
-  const needsDownload = (/** @type {CatalogEntry} */ entry) => hasDownloadRoute(entry) && !isCached(entry);
+  /** Whether the visitor must download and open the song's file: a download route the page cannot open by itself. */
+  const needsDownload = (/** @type {CatalogEntry} */ entry) => hasDownloadRoute(entry) && !isOneClick(entry);
   /** @type {Set<string>} the catalog files not read yet */
   let pending = new Set(options.pendingSources ?? []);
   /** @type {Set<string>} the sources the page was already asked for */
   const requested = new Set();
+  /** @type {Map<string, {loaded: number, total: number}>} how much of each pending file has arrived */
+  const progress = new Map();
 
   /** @type {CatalogEntry[]} */
   let entries = options.entries ?? [];
@@ -385,17 +484,28 @@ export function createSongShelf(root, options) {
   let query = "";
   /** @type {Array<SearchResult | CatalogEntry>} */
   let external = [];
+  /**
+   * Where the online search stands. Before the page reports anything for the current words the
+   * shelf treats them as still being searched (when the page searches at all), so it never says
+   * "no match" in the pause before the sources are asked.
+   * @type {{reported: boolean, query: string, searching: boolean, offline: boolean, pending: string[], failed: Array<{id: string, name: string, reason: string}>}}
+   */
+  let online = { reported: false, query: "", searching: false, offline: false, pending: [], failed: [] };
   /** @type {CatalogEntry[]} what the shelf shows: the chosen playlist or album, or the matches of the query */
   let list = [];
+  /** @type {Map<number, {source: string, count: number}>} at which positions of a search a source's results start */
+  let groupStarts = new Map();
   let index = 0;
   let columns = 5;
   let perPage = columns * SHELF_ROWS;
-  /** @type {{list: CatalogEntry[], page: number, perPage: number} | null} what the options show */
+  /** @type {{list: CatalogEntry[], page: number, perPage: number, pageKey: string, start: number} | null} what the options show */
   let shown = null;
   /** @type {HTMLElement[]} */
   let optionElements = [];
-  /** @type {HTMLElement[]} the rows of the visible list beside the records: every song of the list */
+  /** @type {HTMLElement[]} the rows of the visible list beside the records, as many as are built */
   let songRows = [];
+  /** How many songs of the list have a row: the list is built in chunks, as it scrolls. */
+  let builtRows = 0;
   /** @type {HTMLElement | null} the row that is marked as selected */
   let markedRow = null;
   /** @type {ShelfScene | null} */
@@ -419,6 +529,18 @@ export function createSongShelf(root, options) {
   const downloaded = new Set();
   /** @type {HTMLElement | null} the panel's main button as last drawn, to move the focus onto */
   let primaryAction = null;
+  /** @type {{key: string, kind: "arrange" | "preview"} | null} the action whose song is loading now */
+  let loading = null;
+  /** The song the panel showed last, so it fades in only when the song changes. */
+  let infoKey = "";
+  /** @type {any} */
+  let announceTimer;
+  /** @type {any} */
+  let warmTimer;
+  /** @type {any} */
+  let crossfadeTimer;
+  /** How many skeleton records the stage holds now. */
+  let skeletonCount = 0;
 
   /**
    * @param {string} tag
@@ -442,6 +564,10 @@ export function createSongShelf(root, options) {
   const canvasHost = make("div", "shelf-canvas", { "aria-hidden": "true" });
   const listbox = make("ul", "shelf-list", { role: "listbox", tabindex: 0, id: `${id}-list` });
   const empty = make("p", "shelf-empty");
+  // Grey records in the places the real ones will take, so the stage has its look from the first
+  // paint and nothing jumps when the songs arrive. Hidden from assistive technology: `aria-busy`
+  // on the body says that songs are coming.
+  const skeleton = make("div", "shelf-skeleton", { "aria-hidden": "true" });
   const stage = make("div", "shelf-stage");
   // The page arrows sit on the stage's two edges, over the records: where a thumb rests on a
   // phone, and the same place on a desktop. CSS draws the chevron.
@@ -452,7 +578,7 @@ export function createSongShelf(root, options) {
   };
   const previous = arrow("previous", "Previous page");
   const next = arrow("next", "Next page");
-  stage.append(canvasHost, listbox, empty, previous, next);
+  stage.append(canvasHost, skeleton, listbox, empty, previous, next);
   const info = make("aside", "shelf-info", { "aria-label": "Selected song" });
   // The records do not say which song they are: this list does, with every song of the catalog
   // and the search box above it. The listbox above is the accessible one, so the list is hidden
@@ -463,21 +589,43 @@ export function createSongShelf(root, options) {
     "aria-label": "Search songs",
   });
   const songs = make("ol", "shelf-songs", { "aria-hidden": "true" });
+  // Under the search box: which online sources are being asked, which failed, whether the
+  // browser is offline. It keeps its line even when empty, so nothing moves when it fills.
+  const searchStatus = make("p", "shelf-search-status", { role: "status" });
+  const statusSpinner = make("span", "shelf-spinner", { "aria-hidden": "true" });
+  const statusText = make("span", "shelf-search-text");
+  const retryButton = make("button", "button quiet small shelf-retry", { type: "button" });
+  retryButton.textContent = "Retry";
+  statusSpinner.hidden = true;
+  retryButton.hidden = true;
+  searchStatus.append(statusSpinner, statusText, retryButton);
   // Which list is showing: the playlist, an album of it, or the search results.
-  const view = make("p", "shelf-view", { "aria-live": "polite" });
+  const view = make("p", "shelf-view");
+  // The song count, said once after the visitor stops typing (not on every key).
+  const announcer = make("p", "shelf-announce", { role: "status" });
   const side = make("div", "shelf-side");
-  side.append(searchBox, view, songs);
+  side.append(searchBox, searchStatus, view, songs, announcer);
   const chooser = make("div", "shelf-playlists", { role: "group", "aria-label": "Playlists" });
+  // A thin bar under the row of playlists: how much of a big catalog file has arrived.
+  const progressBar = make("div", "shelf-progress", { role: "progressbar", "aria-label": "Loading songs", "aria-valuemin": 0, "aria-valuemax": 100 });
+  progressBar.append(make("span", "shelf-progress-fill"));
+  progressBar.hidden = true;
+  const choose = make("div", "shelf-choose");
+  choose.append(chooser, progressBar);
   // Which page this is: a small counter under the records (the arrows carry the action).
-  const pageText = make("p", "shelf-page mono", { "aria-live": "polite" });
+  const pageText = make("p", "shelf-page mono");
   const stageColumn = make("div", "shelf-stage-column");
   stageColumn.append(stage, pageText);
   const body = make("div", "shelf-body");
-  body.append(chooser, stageColumn, side, info);
+  body.append(choose, stageColumn, side, info);
 
-  root.classList.add("song-shelf", webgl ? "is-3d" : "is-2d");
+  // The 2D grid is what shows first, whether or not WebGL is there: three.js is 800 KB and may
+  // take seconds on a phone. When the scene is ready the two cross-fade (see `showScene`).
+  root.classList.add("song-shelf", "is-2d");
   root.classList.toggle("reduce-motion", reducedMotion);
-  root.append(body);
+  // The page may hold a static placeholder in the root (grey shapes drawn before any script
+  // ran); the shelf's own skeleton has the same size and takes its place at once.
+  root.replaceChildren(body);
 
   /**
    * The playlists for the catalog as it is now. The MPB tile of a pending file waits for the
@@ -486,7 +634,7 @@ export function createSongShelf(root, options) {
    * @returns {Playlist[]}
    */
   function makePlaylists() {
-    return buildPlaylists(entries, { isCached, pending: entries.length > 0 ? loadingSources() : [], collections: collections() });
+    return buildPlaylists(entries, { isOneClick, pending: entries.length > 0 ? loadingSources() : [], collections: collections() });
   }
 
   /** @returns {string[]} the pending sources that have no song in the catalog yet */
@@ -565,7 +713,7 @@ export function createSongShelf(root, options) {
     row.append(textElement("span", "shelf-song-title", displayTitle(entry.t)));
     const by = entry.c || entry.p || "";
     if (by) row.append(textElement("span", "shelf-song-by", by));
-    // MPB songs open through a download: the arrow says so before the visitor picks one.
+    // A song that must be downloaded by hand: the arrow says so before the visitor picks one.
     if (needsDownload(entry)) {
       const hint = textElement("span", "shelf-song-get", "↓");
       hint.setAttribute("title", "Download the file, then drop it here");
@@ -578,6 +726,43 @@ export function createSongShelf(root, options) {
     return row;
   }
 
+  /**
+   * The divider that opens a source's results in the list: "From BitMidi (12)".
+   *
+   * @param {{source: string, count: number}} group
+   */
+  function buildDivider(group) {
+    const name = /** @type {Record<string, string>} */ (SOURCE_NAMES)[group.source] ?? group.source;
+    return textElement("li", "shelf-divider", `From ${name} (${group.count})`);
+  }
+
+  /**
+   * Make rows for the songs of the list up to `upTo` (and always a whole chunk): a list of
+   * thousands is built as the visitor scrolls, so a keystroke costs a few milliseconds instead
+   * of a hundred.
+   *
+   * @param {number} upTo the last position that must have a row
+   */
+  function ensureRows(upTo) {
+    const target = Math.min(list.length - 1, Math.max(upTo, builtRows + ROW_CHUNK - 1));
+    if (builtRows > target) return;
+    /** @type {HTMLElement[]} */
+    const added = [];
+    for (; builtRows <= target; builtRows += 1) {
+      const group = groupStarts.get(builtRows);
+      if (group) added.push(buildDivider(group));
+      const row = buildSongRow(list[builtRows], builtRows);
+      songRows[builtRows] = row;
+      added.push(row);
+    }
+    songs.append(...added);
+  }
+
+  /** @returns {HTMLElement[]} grey rows that stand in for songs on their way */
+  function skeletonRows() {
+    return Array.from({ length: SKELETON_ROWS }, () => make("li", "shelf-sk-row"));
+  }
+
   /** @param {CatalogEntry} entry */
   function spriteCanvas(entry) {
     const canvas = make("canvas", "shelf-sprite");
@@ -588,8 +773,24 @@ export function createSongShelf(root, options) {
     return canvas;
   }
 
+  /**
+   * Show a button as busy while its song loads, or leave it alone.
+   *
+   * @param {HTMLElement} button
+   * @param {CatalogEntry} entry
+   * @param {"arrange" | "preview"} kind which button this is
+   */
+  function applyLoading(button, entry, kind) {
+    if (!loading || loading.key !== keyOf(entry)) return;
+    if (loading.kind === kind) setBusy(button, true, "Loading…");
+    else /** @type {HTMLButtonElement} */ (button).disabled = true;
+  }
+
   /** @param {CatalogEntry | null} entry */
   function renderInfo(entry) {
+    const changed = (entry ? keyOf(entry) : "") !== infoKey;
+    infoKey = entry ? keyOf(entry) : "";
+    info.classList.toggle("is-new", changed);
     if (!entry) {
       info.replaceChildren(textElement("p", "shelf-by", "Pick a song, or open your own MIDI or ABC file."));
       return;
@@ -616,6 +817,8 @@ export function createSongShelf(root, options) {
     }
     const notice = licenseNotice(entry);
     if (notice) info.append(licenseLine(notice));
+    const credit = sourceCredit(entry);
+    if (credit) info.append(creditLine(credit, entry));
     if (!canArrange(entry)) {
       const reason = entry.error ? ` (${entry.error})` : "";
       info.append(textElement("p", "shelf-problem", `This song cannot be arranged${reason}.`));
@@ -629,12 +832,14 @@ export function createSongShelf(root, options) {
     const link = entry.route?.link !== undefined;
     const arrange = make("button", "button primary", { type: "button" });
     arrange.textContent = link ? "Open page" : "Arrange";
-    arrange.addEventListener("click", () => options.onArrange(entry));
+    arrange.addEventListener("click", () => runAction(entry, "arrange", options.onArrange));
+    applyLoading(arrange, entry, "arrange");
     actions.append(arrange);
     if (options.onPreview && !link) {
       const preview = make("button", "button", { type: "button" });
       preview.textContent = "Preview";
-      preview.addEventListener("click", () => options.onPreview?.(entry));
+      preview.addEventListener("click", () => runAction(entry, "preview", /** @type {NonNullable<ShelfOptions["onPreview"]>} */ (options.onPreview)));
+      applyLoading(preview, entry, "preview");
       actions.append(preview);
     }
     const keep = midiDownload(entry);
@@ -645,6 +850,31 @@ export function createSongShelf(root, options) {
       actions.append(save);
     }
     info.append(actions);
+  }
+
+  /**
+   * Run what a button of the panel does. If the page answers with a promise (it is loading the
+   * song) the pressed button shows its busy state and the other waits until it settles, so a
+   * second click cannot start a second load.
+   *
+   * @param {CatalogEntry} entry
+   * @param {"arrange" | "preview"} kind
+   * @param {(entry: CatalogEntry) => void | Promise<unknown>} action
+   */
+  function runAction(entry, kind, action) {
+    if (loading) return;
+    const outcome = action(entry);
+    if (!outcome || typeof (/** @type {any} */ (outcome).then) !== "function") return;
+    loading = { key: keyOf(entry), kind };
+    renderInfo(list[index] ?? null);
+    updateBusy();
+    const done = () => {
+      loading = null;
+      if (destroyed) return;
+      renderInfo(list[index] ?? null);
+      updateBusy();
+    };
+    /** @type {Promise<unknown>} */ (outcome).then(done, done);
   }
 
   /**
@@ -671,10 +901,29 @@ export function createSongShelf(root, options) {
   }
 
   /**
-   * What a song that must be downloaded first offers. The catalog site sends no CORS header, so
-   * the browser cannot read its files: the visitor downloads the MIDI, then opens it here. One
-   * clear step at a time: Download MIDI with a one-line hint, and, once it was pressed, Open
-   * downloaded file as the main button (with a quiet way to download again).
+   * The credit of a song that comes from a site: "MIDI from beakauffmann.com", linked to the
+   * song's page there, and its license when the record has one.
+   *
+   * @param {{text: string, link: string}} credit
+   * @param {CatalogEntry} entry
+   * @returns {HTMLElement}
+   */
+  function creditLine(credit, entry) {
+    const line = make("p", "shelf-license");
+    const link = make("a", "", { href: credit.link, target: "_blank", rel: "noopener" });
+    link.textContent = credit.text;
+    line.append(link);
+    const license = licenseWords(entry.license);
+    if (license) line.append(textElement("span", "", ` · License: ${license}`));
+    return line;
+  }
+
+  /**
+   * What a song that must be downloaded first offers. The page could not bring the file by
+   * itself (its site sends no CORS header, or the file fetcher failed): the visitor downloads
+   * the MIDI, then opens it here. One clear step at a time: Download MIDI with a one-line hint,
+   * and, once it was pressed, Open downloaded file as the main button (with a quiet way to
+   * download again).
    *
    * @param {CatalogEntry} entry
    * @param {HTMLElement} actions the row the buttons go in; it is added to the panel here
@@ -727,8 +976,127 @@ export function createSongShelf(root, options) {
       if (downloaded.has(keyOf(entry)) && options.onOpenDownloaded) openDownloaded(entry);
       else startDownload(entry);
     } else {
-      options.onArrange(entry);
+      runAction(entry, "arrange", options.onArrange);
     }
+  }
+
+  /** @returns {boolean} whether the search box holds a query (one letter does not count) */
+  const searching = () => normalize(query).length >= MIN_QUERY_LENGTH;
+
+  /** @returns {Playlist | null} the chosen playlist, or the first one while the chosen one is missing */
+  const currentPlaylist = () => playlists.find((playlist) => playlist.id === chosenId) ?? playlists[0] ?? null;
+
+  /** @returns {Playlist | null} the chosen album of the chosen playlist */
+  const currentAlbum = () => currentPlaylist()?.albums?.find((album) => album.id === albumId) ?? null;
+
+  /**
+   * Whether the online sources may still add results to this search: the page searches online at
+   * all, the words are searchable, and the page has not yet said it finished for these words.
+   */
+  function awaitingOnline() {
+    if (!options.onSearch || !searching()) return false;
+    return !(online.reported && online.query === query.trim() && !online.searching);
+  }
+
+  /** @returns {boolean} whether the list is empty because songs are on their way */
+  function isLoadingList() {
+    if (list.length > 0) return false;
+    if (entries.length === 0) return true;
+    if (searching()) return loadingSources().length > 0 || awaitingOnline();
+    return Boolean(currentPlaylist()?.pending);
+  }
+
+  /** @returns {string} the sentence for an empty stage */
+  function emptyText() {
+    if (entries.length === 0) return "Loading the songs…";
+    if (searching() && (loadingSources().length > 0 || awaitingOnline())) {
+      const names = online.pending.length > 0 ? online.pending : [];
+      return names.length > 0 ? `Checking ${joinNames(names)}…` : "Checking online…";
+    }
+    if (!searching() && currentPlaylist()?.pending) return LOADING_MORE;
+    if (searching() && online.reported && !online.offline && options.onSearch) return "No match here or online.";
+    return "No song in the catalog matches.";
+  }
+
+  /** @returns {{text: string, busy: boolean, retry: boolean}} the line under the search box */
+  function statusLine() {
+    if (!options.onSearch || !searching()) return { text: "", busy: false, retry: false };
+    if (online.offline) return { text: "You are offline: showing the catalog only.", busy: false, retry: true };
+    if (online.pending.length > 0) return { text: `Searching ${joinNames(online.pending)}…`, busy: true, retry: false };
+    if (awaitingOnline()) return { text: "Searching online…", busy: true, retry: false };
+    if (online.failed.length > 0) {
+      return { text: `${joinNames(online.failed.map((source) => source.name))} could not be reached. Showing the other results.`, busy: false, retry: true };
+    }
+    return { text: "", busy: false, retry: false };
+  }
+
+  function renderStatus() {
+    const line = statusLine();
+    if (statusText.textContent !== line.text) statusText.textContent = line.text;
+    statusSpinner.hidden = !line.busy;
+    retryButton.hidden = !line.retry;
+    searchStatus.setAttribute("aria-busy", String(line.busy));
+  }
+
+  /** The body is busy while songs are on their way, so assistive technology waits for them. */
+  function updateBusy() {
+    const busy = isLoadingList() || progress.size > 0 || statusLine().busy || loading !== null;
+    if (busy) body.setAttribute("aria-busy", "true");
+    else body.removeAttribute("aria-busy");
+  }
+
+  /** Say the song count to screen readers once typing has stopped. */
+  function scheduleAnnounce() {
+    clearTimer(announceTimer);
+    announceTimer = setTimer(() => {
+      if (!destroyed) announcer.textContent = viewName();
+    }, ANNOUNCE_MS);
+  }
+
+  /** Normalize the catalog for searching once the browser is idle, so the first keystroke is fast. */
+  function scheduleWarm() {
+    clearTimer(warmTimer);
+    const run = () => warmSearchIndex(ordered);
+    warmTimer = globalThis.requestIdleCallback ? globalThis.requestIdleCallback(run) : setTimer(run, 300);
+  }
+
+  /** @returns {string} what the playlist's name is while its file loads: with the size and share that arrived */
+  function loadingText() {
+    const source = [...pending].find((candidate) => progress.has(candidate)) ?? [...progress.keys()][0];
+    const reading = source ? progress.get(source) : undefined;
+    if (!reading) return LOADING_MORE;
+    const name = collections().find((record) => record.id === source)?.name ?? source;
+    const size = megabytes(reading.total);
+    const share = reading.total > 0 ? ` ${Math.min(99, Math.floor((reading.loaded / reading.total) * 100))}%` : "";
+    return `Loading ${name}${size ? ` (${size})` : ""}…${share}`;
+  }
+
+  /** Draw the thin bar and the numbers for the files that are loading. */
+  function renderProgress() {
+    const reading = [...progress.values()][0];
+    progressBar.hidden = !reading;
+    if (reading) {
+      const known = reading.total > 0;
+      const fraction = known ? Math.min(0.99, reading.loaded / reading.total) : 0;
+      progressBar.style.setProperty("--progress", String(fraction));
+      progressBar.classList.toggle("is-indeterminate", !known);
+      if (known) progressBar.setAttribute("aria-valuenow", String(Math.round(fraction * 100)));
+      else progressBar.removeAttribute("aria-valuenow");
+    }
+    for (const [key, tile] of chooserButtons) {
+      const source = key.startsWith("playlist:") ? sourceOfPlaylist(key.slice("playlist:".length)) : null;
+      const count = tile.querySelector?.(".shelf-tile-count-text");
+      if (!source || !count || !tile.classList.contains("is-pending")) continue;
+      const reading = progress.get(source);
+      count.textContent = reading && reading.total > 0 ? `Loading… ${Math.min(99, Math.floor((reading.loaded / reading.total) * 100))}%` : "Loading…";
+    }
+    view.textContent = viewName();
+    updateBusy();
+  }
+
+  /** @param {string} playlistId @returns {string | null} the collection a pending playlist stands for */
+  function sourceOfPlaylist(playlistId) {
+    return [...pending].find((source) => playlists.some((playlist) => playlist.id === playlistId && playlist.pending && playlist.cover?.source === source)) ?? null;
   }
 
   function render() {
@@ -737,17 +1105,39 @@ export function createSongShelf(root, options) {
     const { page, start, pageEntries } = currentPage();
     const pages = pageCount(total, perPage);
 
-    if (!shown || shown.list !== list) {
-      songRows = list.map((entry, position) => buildSongRow(entry, position));
-      songs.replaceChildren(...songRows);
+    const listChanged = !shown || shown.list !== list;
+    if (listChanged) {
+      // A new list: its rows are built from the first, as many as a chunk (and the selection).
+      songRows = [];
+      builtRows = 0;
       markedRow = null;
+      songs.replaceChildren(...(isLoadingList() ? skeletonRows() : []));
+      songs.scrollTop = 0;
     }
-    if (!shown || shown.list !== list || shown.page !== page || shown.perPage !== perPage) {
-      optionElements = pageEntries.map((entry, i) => buildOption(entry, start + i));
+    if (total > 0) ensureRows(Math.max(index, 0));
+
+    // The records are rebuilt when the page shows other songs; a list that only gained results
+    // elsewhere (online results streaming in) leaves this page's records alone.
+    const pageKey = pageEntries.map((entry) => `${keyOf(entry)}${needsDownload(entry) ? "!" : ""}`).join("|");
+    const samePage = Boolean(shown) && shown?.start === start && shown?.perPage === perPage && shown?.pageKey === pageKey;
+    if (!samePage) {
+      // How the new records arrive: a turn slides them in from the side of the turn; a different
+      // list pops them in one after another.
+      const turned = Boolean(shown) && shown?.list === list && shown?.perPage === perPage;
+      const direction = turned && shown ? (page > shown.page ? 1 : -1) : 0;
+      optionElements = pageEntries.map((entry, i) => {
+        const option = buildOption(entry, start + i);
+        option.style.setProperty("--i", String(i));
+        return option;
+      });
+      listbox.setAttribute("data-motion", turned ? (direction > 0 ? "next" : "previous") : "enter");
       listbox.replaceChildren(...optionElements);
-      shown = { list, page, perPage };
-      scene?.setPage(pageEntries, index - start, columns);
+      shown = { list, page, perPage, pageKey, start };
+      scene?.setPage(pageEntries, index - start, columns, { direction: /** @type {-1 | 0 | 1} */ (direction) });
+      preloadNeighbours(page, pages);
     } else {
+      if (shown) shown.list = list;
+      for (const option of optionElements) option.setAttribute("aria-setsize", String(total));
       scene?.select(index - start);
     }
 
@@ -764,27 +1154,45 @@ export function createSongShelf(root, options) {
     next.disabled = page >= pages - 1;
     previous.hidden = next.hidden = pageText.hidden = pages <= 1; // one page: nothing to turn or count
     view.textContent = viewName();
-    empty.hidden = total > 0;
-    empty.textContent =
-      entries.length === 0 ? "Loading the songs…" : loadingSources().length > 0 ? LOADING_MORE : "No song in the catalog matches.";
+    const loadingList = isLoadingList();
+    empty.hidden = total > 0 || loadingList;
+    empty.textContent = emptyText();
+    renderSkeleton(loadingList);
     renderInfo(list[index] ?? null);
+    renderStatus();
+    updateBusy();
   }
 
-  /** @returns {boolean} whether the search box holds a query (one letter does not count) */
-  const searching = () => normalize(query).length >= MIN_QUERY_LENGTH;
+  /**
+   * Draw the grey records of the stage while songs are on their way, as many as a page holds.
+   *
+   * @param {boolean} show
+   */
+  function renderSkeleton(show) {
+    skeleton.hidden = !show;
+    if (!show || skeletonCount === perPage) return;
+    skeletonCount = perPage;
+    skeleton.replaceChildren(...Array.from({ length: perPage }, () => make("span", "shelf-sk-disc")));
+  }
 
-  /** @returns {Playlist | null} the chosen playlist, or the first one while the chosen one is missing */
-  const currentPlaylist = () => playlists.find((playlist) => playlist.id === chosenId) ?? playlists[0] ?? null;
-
-  /** @returns {Playlist | null} the chosen album of the chosen playlist */
-  const currentAlbum = () => currentPlaylist()?.albums?.find((album) => album.id === albumId) ?? null;
+  /**
+   * Have the scene draw the faces of the pages next to this one while the browser is idle.
+   *
+   * @param {number} page the page now shown
+   * @param {number} pages how many pages the list has
+   */
+  function preloadNeighbours(page, pages) {
+    if (!scene?.preload) return;
+    if (page + 1 < pages) scene.preload(pageOf(list, page + 1, perPage));
+    if (page > 0) scene.preload(pageOf(list, page - 1, perPage));
+  }
 
   /** @returns {string | null} the playlist the previous visit chose; storage may be absent or refuse */
   function rememberedPlaylist() {
     try {
-      return storage?.getItem(PLAYLIST_KEY) ?? "popular";
+      return playlistAlias(storage?.getItem(PLAYLIST_KEY));
     } catch {
-      return "popular";
+      return CATALOG_ID;
     }
   }
 
@@ -801,17 +1209,25 @@ export function createSongShelf(root, options) {
   function viewName() {
     const playlist = currentPlaylist();
     const name = searching() ? "Search results" : [playlist?.name, currentAlbum()?.name].filter(Boolean).join(", ");
-    if (!searching() && playlist?.pending) return `${name}: ${LOADING_MORE}`;
+    if (!searching() && playlist?.pending) return `${name}: ${loadingText()}`;
     // A search looks through every song: say when some are still on their way.
-    return `${name}: ${songCount(list.length)}${searching() && loadingSources().length > 0 ? `. ${LOADING_MORE}` : ""}`;
+    return `${name}: ${songCount(list.length)}${searching() && loadingSources().length > 0 ? `. ${loadingText()}` : ""}`;
   }
 
   /** @param {boolean} keepSelection */
   function refilter(keepSelection) {
     const selectedKey = keepSelection && list[index] ? keyOf(list[index]) : null;
+    groupStarts = new Map();
     if (searching()) {
       const local = searchByPopularity(ordered, query);
       list = external.length > 0 ? mergeSearchResults(local, external) : local;
+      // Where each online source's results start, for the dividers of the list.
+      for (let at = local.length; at < list.length; at += 1) {
+        if (at > local.length && list[at].source === list[at - 1].source) continue;
+        let end = at;
+        while (end < list.length && list[end].source === list[at].source) end += 1;
+        groupStarts.set(at, { source: list[at].source ?? "", count: end - at });
+      }
     } else {
       list = (currentAlbum() ?? currentPlaylist())?.songs ?? [];
     }
@@ -819,13 +1235,14 @@ export function createSongShelf(root, options) {
     renderChooser();
     render();
     askForSongs();
+    scheduleAnnounce();
   }
 
   /**
    * A playlist or album button: its cover (the sprite of its most popular song), name and count.
    *
    * @param {string} key
-   * @param {{name: string, subtitle: string, cover: CatalogEntry | null}} item
+   * @param {{name: string, subtitle: string, cover: CatalogEntry | null, pending?: boolean}} item
    * @param {boolean | null} pressed null for a plain button that is not a toggle
    * @param {() => void} onClick
    */
@@ -840,7 +1257,15 @@ export function createSongShelf(root, options) {
       cover.textContent = "‹";
     }
     tile.append(cover, textElement("span", "shelf-tile-name", item.name));
-    if (item.subtitle) tile.append(textElement("span", "shelf-tile-count", item.subtitle));
+    if (item.pending) {
+      // The file is on its way: a small spinner and "Loading…" take the place of the count.
+      tile.classList.add("is-pending");
+      const count = make("span", "shelf-tile-count is-loading");
+      count.append(make("span", "shelf-spinner", { "aria-hidden": "true" }), textElement("span", "shelf-tile-count-text", "Loading…"));
+      tile.append(count);
+    } else if (item.subtitle) {
+      tile.append(textElement("span", "shelf-tile-count", item.subtitle));
+    }
     tile.addEventListener("click", onClick);
     chooserButtons.set(key, tile);
     return tile;
@@ -853,11 +1278,12 @@ export function createSongShelf(root, options) {
   function renderChooser() {
     const playlist = currentPlaylist();
     const albumLevel = Boolean(playlist?.albums) && !backed;
-    const key = [playlists.length, playlist?.id, albumLevel, currentAlbum()?.id, searching()].join("|");
+    const key = [playlists.length, playlist?.id, albumLevel, currentAlbum()?.id, searching(), playlists.map((item) => (item.pending ? "p" : "")).join("")].join("|");
     if (key === chooserKey) return;
     chooserKey = key;
     chooserButtons = new Map();
-    chooser.hidden = playlist === null;
+    // Before the first playlist exists the row holds grey tiles, so it has its height already.
+    chooser.hidden = false;
     /** @type {HTMLElement[]} */
     const tiles = [];
     if (playlist && albumLevel) {
@@ -872,6 +1298,9 @@ export function createSongShelf(root, options) {
       for (const album of playlist.albums ?? []) {
         tiles.push(chooserButton(`album:${album.id}`, album, !searching() && album.id === currentAlbum()?.id, () => chooseAlbum(album.id)));
       }
+    } else if (playlists.length === 0) {
+      chooser.setAttribute("aria-label", "Playlists");
+      for (let i = 0; i < 4; i += 1) tiles.push(make("span", "shelf-sk-tile", { "aria-hidden": "true" }));
     } else {
       chooser.setAttribute("aria-label", "Playlists");
       for (const item of playlists) {
@@ -880,8 +1309,14 @@ export function createSongShelf(root, options) {
       }
     }
     chooser.replaceChildren(...tiles);
-    if (pendingFocus) chooserButtons.get(pendingFocus)?.focus();
+    const focused = pendingFocus ? chooserButtons.get(pendingFocus) : undefined;
+    if (focused) {
+      focused.focus();
+      // On a phone the row scrolls sideways: bring the chosen tile into view.
+      focused.scrollIntoView?.({ inline: "center", block: "nearest", behavior: reducedMotion ? "auto" : "smooth" });
+    }
     pendingFocus = null;
+    renderProgress();
   }
 
   /** Empty the search box, so the chosen playlist comes back into view. */
@@ -890,6 +1325,7 @@ export function createSongShelf(root, options) {
     query = "";
     searchBox.value = "";
     external = [];
+    online = { reported: false, query: "", searching: false, offline: false, pending: [], failed: [] };
     options.onSearch?.("");
   }
 
@@ -990,9 +1426,15 @@ export function createSongShelf(root, options) {
   searchBox.addEventListener("input", () => {
     query = searchBox.value;
     external = [];
+    online = { reported: false, query: "", searching: false, offline: false, pending: [], failed: [] };
     refilter(false);
     options.onSearch?.(query);
   });
+  // The list beside the records is built in chunks: more rows when the visitor nears the end.
+  songs.addEventListener("scroll", () => {
+    if (builtRows < list.length && songs.scrollTop + songs.clientHeight > songs.scrollHeight - 240) ensureRows(builtRows);
+  });
+  retryButton.addEventListener("click", () => options.onRetrySearch?.());
   previous.addEventListener("click", () => move("PageUp"));
   next.addEventListener("click", () => move("PageDown"));
 
@@ -1005,13 +1447,53 @@ export function createSongShelf(root, options) {
   const observer = typeof ResizeObserver === "function" ? new ResizeObserver(() => resize()) : null;
   observer?.observe(stage);
 
+  // The 2D grid's records bob all the time: stop that while the shelf is off screen.
+  const visibility =
+    typeof IntersectionObserver === "function"
+      ? new IntersectionObserver((seen) => root.classList.toggle("is-offscreen", !seen[seen.length - 1].isIntersecting))
+      : null;
+  visibility?.observe(stage);
+
+  // The visitor may change the system's motion setting while the page is open.
+  const motionQuery = options.reducedMotion === undefined ? globalThis.matchMedia?.("(prefers-reduced-motion: reduce)") : undefined;
+  const onMotionChange = () => {
+    reducedMotion = Boolean(motionQuery?.matches);
+    root.classList.toggle("reduce-motion", reducedMotion);
+    scene?.setReducedMotion?.(reducedMotion);
+  };
+  motionQuery?.addEventListener?.("change", onMotionChange);
+
   /** Drop the 3D scene and show the listbox as the 2D grid; the selection stays. */
   function fallBackTo2d() {
     if (destroyed) return;
     scene?.dispose();
     scene = null;
-    root.classList.remove("is-3d");
+    clearTimer(crossfadeTimer);
+    root.classList.remove("is-3d", "is-crossfade");
     root.classList.add("is-2d");
+  }
+
+  /**
+   * The scene is ready: it fades in over the 2D grid, which fades out (CSS, class
+   * `is-crossfade`), and then only the scene is left.
+   *
+   * @param {{createShelfScene: (host: HTMLElement, options: {reducedMotion: boolean}) => ShelfScene}} module
+   */
+  function showScene(module) {
+    scene = module.createShelfScene(canvasHost, { reducedMotion });
+    scene.onPick((onPage) => {
+      select(currentPage().start + onPage);
+      listbox.focus();
+    });
+    const { start, pageEntries } = currentPage();
+    scene.setPage(pageEntries, index - start, columns, { direction: 0 });
+    preloadNeighbours(currentPage().page, pageCount(list.length, perPage));
+    root.classList.remove("is-2d");
+    root.classList.add("is-3d");
+    if (!reducedMotion) {
+      root.classList.add("is-crossfade");
+      crossfadeTimer = setTimer(() => root.classList.remove("is-crossfade"), CROSSFADE_MS);
+    }
   }
 
   if (webgl) {
@@ -1020,31 +1502,27 @@ export function createSongShelf(root, options) {
     const load = options.sceneFactory ?? (() => import("./shelf-scene.js"));
     load()
       .then((module) => {
-        if (destroyed || !root.classList.contains("is-3d")) return;
-        scene = module.createShelfScene(canvasHost, { reducedMotion });
-        scene.onPick((onPage) => {
-          select(currentPage().start + onPage);
-          listbox.focus();
-        });
-        const { start, pageEntries } = currentPage();
-        scene.setPage(pageEntries, index - start, columns);
+        if (destroyed) return;
+        showScene(module);
       })
       .catch(fallBackTo2d);
   }
 
   measure();
   refilter(false);
+  scheduleWarm();
 
   return {
     setEntries(next) {
       const ownBefore = entries.filter((entry) => entry.source === "local").length;
       entries = next;
       ordered = orderCatalog(entries);
+      scheduleWarm();
       playlists = makePlaylists();
       chooserKey = "";
       if (entries.filter((entry) => entry.source === "local").length > ownBefore) {
-        // A new song of the visitor's own sits at the head of Popular: show it there.
-        chosenId = "popular";
+        // A new song of the visitor's own sits at the head of Catalog: show it there.
+        chosenId = CATALOG_ID;
         albumId = null;
         backed = false;
         refilter(false);
@@ -1054,18 +1532,33 @@ export function createSongShelf(root, options) {
     },
     setPending(sources) {
       pending = new Set(sources);
+      for (const source of [...progress.keys()]) if (!pending.has(source)) progress.delete(source);
       playlists = makePlaylists();
       chooserKey = "";
       refilter(true);
+    },
+    setProgress(source, reading) {
+      if (reading === null) progress.delete(source);
+      else progress.set(source, reading);
+      renderProgress();
     },
     setQuery(next) {
       query = next;
       searchBox.value = next;
       external = [];
+      online = { reported: false, query: "", searching: false, offline: false, pending: [], failed: [] };
       refilter(false);
     },
-    setExternal(results) {
+    setExternal(results, status) {
       external = results;
+      online = {
+        reported: true,
+        query: status?.query ?? query.trim(),
+        searching: status?.searching ?? false,
+        offline: status?.offline ?? false,
+        pending: status?.pending ?? [],
+        failed: status?.failed ?? [],
+      };
       refilter(true);
     },
     select,
@@ -1080,11 +1573,16 @@ export function createSongShelf(root, options) {
     destroy() {
       destroyed = true;
       clearTimeout(swallowTimer);
+      clearTimer(announceTimer);
+      clearTimer(warmTimer);
+      clearTimer(crossfadeTimer);
       observer?.disconnect();
+      visibility?.disconnect();
+      motionQuery?.removeEventListener?.("change", onMotionChange);
       scene?.dispose();
       scene = null;
       root.replaceChildren();
-      root.classList.remove("song-shelf", "is-3d", "is-2d", "reduce-motion");
+      root.classList.remove("song-shelf", "is-3d", "is-2d", "is-crossfade", "is-offscreen", "reduce-motion");
     },
   };
 }

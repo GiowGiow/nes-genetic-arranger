@@ -13,6 +13,13 @@
  * - **Motion.** `shelf-layout.js` gives every record's pose at each moment: the others bob, the
  *   selected one comes forward, grows, sways and spins like a turntable, with an additive halo
  *   behind it. Under reduced motion every pose is still.
+ * - **Page turns.** Turning a page slides the records of the old page out, fading, while those
+ *   of the new page slide in from the side of the turn; a change of list (a playlist, a search)
+ *   pops the new records in one after another (`shelf-layout.js` `enterPose`, `exitPose`).
+ *   The labels follow their records. Reduced motion swaps the page at once.
+ * - **Faces are remembered.** A record's face texture is drawn once per song and kept in a small
+ *   least-recently-used cache (`texture-cache.js`), and the shelf asks the scene to draw the
+ *   faces of the neighbouring pages while the browser is idle, so a turn does not hitch.
  * - **Titles.** Under each record hangs its title as a page element, not as a texture: the canvas
  *   renders at about half the device's pixels, which blurred painted letters. The scene creates a
  *   layer of labels inside its host (`.shelf-labels`, hidden from assistive technology: the
@@ -44,8 +51,12 @@ import { createRandom } from "../core/random.js";
 import { displayTitle } from "../core/sources.js";
 import {
   CAMERA_FOV,
+  ENTER_STAGGER_MAX_MS,
   HALO_SCALE,
+  PAGE_TURN_MS,
   cameraDistance,
+  enterPose,
+  exitPose,
   haloOpacity,
   isLowPower,
   labelAnchorY,
@@ -62,6 +73,7 @@ import {
   targetFps,
 } from "./shelf-layout.js";
 import { CHANNEL_COLORS, drawSprite, entrySprite } from "./sprites.js";
+import { createTextureCache } from "./texture-cache.js";
 
 /** Faint particles drifting behind the records. */
 const PARTICLE_COUNT = 90;
@@ -70,6 +82,21 @@ const PARTICLE_SEED = 5;
 /** Size of a record's face texture, in pixels, and of the sprite on its label (3 px a cell). */
 const TEXTURE_SIZE = 128;
 const SPRITE_SCALE = 3;
+
+/** How many faces to remember: two pages of the widest shelf (27 records) and some to spare. */
+const FACE_LIMIT = 90;
+
+/** How many faces to draw in one idle period when preparing the neighbouring pages. */
+const PRELOAD_BATCH = 3;
+
+/** The most departing records kept at once; a visitor flicking through pages does not pile them up. */
+const MAX_DEPARTING = 54;
+
+/** The longest an entrance can last: the longest wait (300 ms) and the pop itself. */
+const ENTRANCE_MS = ENTER_STAGGER_MAX_MS + PAGE_TURN_MS;
+
+/** @param {CatalogEntry} entry @returns {string} the key a face is remembered under */
+const faceKey = (entry) => `${entry.source}:${entry.id}`;
 
 /** @typedef {import("../core/sources.js").CatalogEntry} CatalogEntry */
 /** @typedef {import("./song-shelf.js").ShelfScene} ShelfScene */
@@ -201,7 +228,9 @@ function makeParticles() {
  * scene.onPick((index) => shelf.select(pageStart + index));
  * scene.setPage(pageEntries, 0, 5);
  */
-export function createShelfScene(host, { reducedMotion }) {
+export function createShelfScene(host, options) {
+  /** Can change while the page is open: the visitor may switch the system setting. */
+  let reducedMotion = options.reducedMotion;
   const canvas = document.createElement("canvas");
   host.append(canvas);
   /** @type {any} */
@@ -253,21 +282,82 @@ export function createShelfScene(host, { reducedMotion }) {
   const anchor = new THREE.Vector3();
 
   const discGeometry = new THREE.CylinderGeometry(1, 1, 0.05, 28);
-  const edgeMaterial = new THREE.MeshPhongMaterial({ color: 0x07080c, shininess: 20 });
+
+  // A face is drawn once per song and kept; it is released (its GPU texture freed) when it falls
+  // out of the cache and no record on screen holds it.
+  const faces = createTextureCache({
+    limit: FACE_LIMIT,
+    make: (_key, entry) => recordTexture(entry),
+    release: (texture) => texture.dispose(),
+  });
 
   let selected = 0;
   let columns = 5;
   /** @type {((index: number) => void) | null} */
   let picked = null;
 
+  /**
+   * Records that have left the page and are sliding away; their labels slide with them. They are
+   * not in `records`, so a click cannot pick them.
+   * @type {Array<{group: any, label: any, born: number, direction: -1 | 1, x: number, y: number, z: number, scale: number}>}
+   */
+  const departing = [];
+  /** A page that is changing, so the records that arrive know which way to come from. */
+  let arrival = /** @type {{direction: -1 | 0 | 1} | null} */ (null);
+
+  /** Free what a record group holds: its materials, and the hold on its face. */
+  function disposeGroup(/** @type {any} */ group) {
+    const [edge, face] = group.children[0].material;
+    faces.unhold(face.map);
+    face.dispose();
+    edge.dispose();
+  }
+
+  /** Remove everything on screen at once: the page, the departing records and their labels. */
   function clearRecords() {
     for (const group of [...records.children]) {
-      const face = group.children[0].material[1];
-      face.map.dispose();
-      face.dispose();
+      disposeGroup(group);
       records.remove(group);
     }
+    for (const gone of departing.splice(0)) {
+      disposeGroup(gone.group);
+      scene.remove(gone.group);
+    }
     labelLayer.replaceChildren();
+    labels = [];
+  }
+
+  /**
+   * Let the current page's records slide away instead of vanishing. Their pose is kept as it was
+   * on the last frame; the record goes to `departing` and its label stays in the layer.
+   *
+   * @param {-1 | 1} direction 1 when turning to the next page
+   * @param {number} now
+   */
+  function retireRecords(direction, now) {
+    records.children.forEach((/** @type {any} */ group, /** @type {number} */ index) => {
+      departing.push({
+        group,
+        label: labels[index],
+        born: now,
+        direction,
+        x: group.position.x,
+        y: group.position.y,
+        z: group.position.z,
+        scale: group.scale.x,
+      });
+    });
+    for (const gone of departing) {
+      scene.add(gone.group); // moves it out of `records`
+      gone.label.element.style.pointerEvents = "none"; // a click on a title leaving cannot pick it
+    }
+    // Too many departing records at once (a visitor holding the arrow): drop the oldest at once.
+    while (departing.length > MAX_DEPARTING) {
+      const oldest = /** @type {NonNullable<(typeof departing)[number]>} */ (departing.shift());
+      disposeGroup(oldest.group);
+      scene.remove(oldest.group);
+      oldest.label.element.remove();
+    }
     labels = [];
   }
 
@@ -350,17 +440,63 @@ export function createShelfScene(host, { reducedMotion }) {
     label.y = top;
     label.element.style.transform = `translate(${left}px, ${top}px)`;
   }
-  /** @param {CatalogEntry} entry @param {number} index */
-  function makeRecord(entry, index) {
-    const face = new THREE.MeshPhongMaterial({ map: recordTexture(entry), shininess: 25, specular: 0x111622 });
+  /** @param {CatalogEntry} entry @param {number} index @param {number} born when the record arrived */
+  function makeRecord(entry, index, born) {
+    const texture = faces.get(faceKey(entry), entry);
+    faces.hold(texture);
+    const face = new THREE.MeshPhongMaterial({ map: texture, shininess: 25, specular: 0x111622 });
+    // Each record has its own rim material, so a record can fade out without its neighbours.
+    const edge = new THREE.MeshPhongMaterial({ color: 0x07080c, shininess: 20 });
     // A cylinder's materials are [side, top, bottom]: both faces show the label.
-    const disc = new THREE.Mesh(discGeometry, [edgeMaterial, face, face]);
+    const disc = new THREE.Mesh(discGeometry, [edge, face, face]);
     disc.rotation.x = Math.PI / 2;
     const group = new THREE.Group();
     group.add(disc);
     group.userData.index = index;
+    group.userData.born = born;
+    group.userData.direction = arrival?.direction ?? 0;
+    group.userData.entering = Boolean(arrival);
     group.scale.setScalar(0.62);
     return group;
+  }
+
+  /**
+   * Fade a record: its two materials become see-through while it moves, and opaque again after.
+   * three.js compiles an opaque material with the alpha forced to 1, so switching between the two
+   * needs `needsUpdate` (the programs are cached, so each is compiled once).
+   *
+   * @param {any} group
+   * @param {number} opacity 1 for opaque
+   */
+  function setOpacity(group, opacity) {
+    const [edge, face] = group.children[0].material;
+    const fading = opacity < 1;
+    for (const material of [edge, face]) {
+      if (material.transparent !== fading) {
+        material.transparent = fading;
+        material.needsUpdate = true;
+      }
+      material.opacity = opacity;
+    }
+  }
+
+  /**
+   * Draw the faces of some songs ahead of need, a few at a time while the browser is idle, so
+   * turning to those pages finds them ready.
+   *
+   * @param {CatalogEntry[]} entries
+   */
+  function preload(entries) {
+    const queue = entries.filter((entry) => !faces.has(faceKey(entry)));
+    const later = /** @type {(run: () => void) => void} */ (
+      (run) => (globalThis.requestIdleCallback ? globalThis.requestIdleCallback(() => run()) : setTimeout(run, 50))
+    );
+    const step = () => {
+      if (disposed) return;
+      for (const entry of queue.splice(0, PRELOAD_BATCH)) faces.get(faceKey(entry), entry);
+      if (queue.length > 0) later(step);
+    };
+    if (queue.length > 0) later(step);
   }
 
   function resize() {
@@ -389,6 +525,19 @@ export function createShelfScene(host, { reducedMotion }) {
   }
 
   /**
+   * A label's opacity, written only when it changed (like its position).
+   *
+   * @param {{element: HTMLElement, opacity?: number}} label
+   * @param {number} opacity
+   */
+  function setLabelOpacity(label, opacity) {
+    const rounded = Math.round(opacity * 20) / 20;
+    if ((label.opacity ?? 1) === rounded) return;
+    label.opacity = rounded;
+    label.element.style.opacity = rounded === 1 ? "" : String(rounded);
+  }
+
+  /**
    * Put the records, their labels and the glow where they belong at a moment, and draw.
    *
    * @param {number} timestamp milliseconds, from `requestAnimationFrame`
@@ -399,18 +548,52 @@ export function createShelfScene(host, { reducedMotion }) {
     const ease = scaleEasing(elapsed);
     records.children.forEach((/** @type {any} */ group, /** @type {number} */ index) => {
       const pose = recordPose(index, { selected: index === selected, columns, time, reducedMotion });
-      group.position.set(pose.x, pose.y, pose.z);
+      // A record that has just arrived slides or pops in (`enterPose`); once settled it is plain.
+      let offsetX = 0;
+      let entrance = 1;
+      let arriving = false;
+      if (group.userData.entering && !reducedMotion) {
+        const since = timestamp - group.userData.born;
+        const entry = enterPose(since, index, group.userData.direction);
+        offsetX = entry.offsetX;
+        entrance = entry.scale;
+        arriving = since < ENTRANCE_MS;
+        setOpacity(group, arriving ? entry.opacity : 1);
+        if (!arriving) group.userData.entering = false;
+      }
+      group.position.set(pose.x + offsetX, pose.y, pose.z);
       group.rotation.y = pose.tilt;
       if (pose.spin !== null) group.children[0].rotation.y = pose.spin;
-      const scale = reducedMotion ? pose.scale : THREE.MathUtils.lerp(group.scale.x, pose.scale, ease);
+      const scale = reducedMotion ? pose.scale : arriving ? pose.scale * entrance : THREE.MathUtils.lerp(group.scale.x, pose.scale, ease);
       group.scale.setScalar(scale);
       const label = labels[index];
       if (label) {
-        anchor.set(pose.x, labelAnchorY(pose.y, scale), pose.z).project(camera);
+        anchor.set(pose.x + offsetX, labelAnchorY(pose.y, scale), pose.z).project(camera);
         const { x, y } = ndcToPixels(anchor, stageWidth, stageHeight);
         placeLabel(label, x, y);
+        setLabelOpacity(label, arriving ? group.children[0].material[1].opacity : 1);
       }
     });
+    // Records of the page being left slide away, fading, and are freed when they are gone.
+    for (let i = departing.length - 1; i >= 0; i -= 1) {
+      const gone = departing[i];
+      const since = timestamp - gone.born;
+      if (since >= PAGE_TURN_MS) {
+        disposeGroup(gone.group);
+        scene.remove(gone.group);
+        gone.label.element.remove();
+        departing.splice(i, 1);
+        continue;
+      }
+      const exit = exitPose(since, gone.direction);
+      gone.group.position.set(gone.x + exit.offsetX, gone.y, gone.z);
+      gone.group.scale.setScalar(gone.scale * exit.scale);
+      setOpacity(gone.group, exit.opacity);
+      anchor.set(gone.x + exit.offsetX, labelAnchorY(gone.y, gone.scale * exit.scale), gone.z).project(camera);
+      const { x, y } = ndcToPixels(anchor, stageWidth, stageHeight);
+      placeLabel(gone.label, x, y);
+      setLabelOpacity(gone.label, exit.opacity);
+    }
     const current = records.children[selected];
     halo.visible = Boolean(current);
     if (current) {
@@ -489,17 +672,34 @@ export function createShelfScene(host, { reducedMotion }) {
 
   requestRender();
 
+  let disposed = false;
+
   return {
-    setPage(entries, selectedIndex, pageColumns) {
-      clearRecords();
-      entries.forEach((entry, index) => {
-        records.add(makeRecord(entry, index));
+    setPage(entries, selectedIndex, pageColumns, motion) {
+      const now = performance.now();
+      const animate = !reducedMotion && motion !== undefined && records.children.length > 0;
+      if (animate && motion.direction !== 0) {
+        // Turning: the old page slides away; its labels stay until it is gone.
+        retireRecords(/** @type {-1 | 1} */ (motion.direction), now);
+      } else {
+        clearRecords();
+      }
+      arrival = reducedMotion || motion === undefined ? null : { direction: motion.direction };
+      for (const [index, entry] of entries.entries()) {
+        records.add(makeRecord(entry, index, now));
         labels.push(makeLabel(entry, index));
-      });
+      }
+      arrival = null;
       selected = selectedIndex;
       columns = pageColumns ?? shelfColumns(host.clientWidth);
       markSelectedLabel();
       resize();
+      requestRender();
+    },
+    preload,
+    setReducedMotion(reduced) {
+      reducedMotion = reduced;
+      measureLabels();
       requestRender();
     },
     select(index) {
@@ -512,14 +712,15 @@ export function createShelfScene(host, { reducedMotion }) {
     },
     resize,
     dispose() {
+      disposed = true;
       cancelAnimationFrame(handle);
       handle = 0;
       observer?.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
       canvas.removeEventListener("click", onClick);
       clearRecords();
+      faces.clear();
       discGeometry.dispose();
-      edgeMaterial.dispose();
       particles.geometry.dispose();
       particles.material.dispose();
       halo.material.map.dispose();

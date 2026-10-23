@@ -12,7 +12,34 @@
 <link rel="stylesheet" href="catalog.css">
 <link rel="stylesheet" href="mixer.css">
 <link rel="stylesheet" href="how.css">
+<link rel="stylesheet" href="theme.css">
+<!-- The first paint already has the right theme (ui/theme.js applies the same three rules). -->
+<script>try{var t=localStorage.getItem("nes-arranger-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.dataset.theme="light"}catch(e){}</script>
+<!-- The two small files main.js waits for start now, while its modules load (audit L2). -->
+<script>
+window.__early = {
+  version: fetch("version.json").then(function (r) { return r.ok ? r.json() : { commit: "dev" }; }),
+  config: fetch("../configs/default.json").then(function (r) { if (!r.ok) throw new Error("configs/default.json: HTTP " + r.status); return r.json(); })
+};
+window.__early.version.catch(function () {});
+window.__early.config.catch(function () {});
+</script>
+<link rel="preload" href="vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="vendor/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+<!-- The biggest modules, found now instead of after main.js is read. -->
+<link rel="modulepreload" href="src/ui/how-it-works.js">
+<link rel="modulepreload" href="src/ui/song-shelf.js">
+<link rel="modulepreload" href="src/ui/input-panel.js">
+<link rel="modulepreload" href="src/ui/catalog-glue.js">
+<link rel="modulepreload" href="src/audio/plain-synth.js">
+<link rel="modulepreload" href="src/audio/sound-packs.js">
+<link rel="modulepreload" href="src/ui/settings-panel.js">
+<link rel="modulepreload" href="src/ui/evolution-lab.js">
+<!-- The 3D shelf: its scene and three.js, fetched at low priority so they do not delay the page. -->
+<link rel="modulepreload" href="src/ui/shelf-scene.js" fetchpriority="low">
+<link rel="modulepreload" href="vendor/three/three.module.min.js" fetchpriority="low">
+<link rel="modulepreload" href="vendor/three/three.core.js" fetchpriority="low">
 <script type="module" src="src/ui/main.js"></script>
 </head>
 <body>
@@ -23,11 +50,14 @@
   <header class="hero">
     <div class="hero-row">
       <h1>NES <span class="gradient">Arranger</span></h1>
-      <nav class="page-tabs" role="tablist" aria-label="Sections" data-page-tabs>
-        <button type="button" role="tab" data-tab="song" aria-controls="song">Song</button>
-        <button type="button" role="tab" data-tab="evolution" aria-controls="evolution">Run</button>
-        <button type="button" role="tab" data-tab="how" aria-controls="how">How it works</button>
-      </nav>
+      <div class="hero-nav">
+        <nav class="page-tabs" role="tablist" aria-label="Sections" data-page-tabs>
+          <button type="button" role="tab" id="tab-song" data-tab="song" aria-controls="song">Song</button>
+          <button type="button" role="tab" id="tab-evolution" data-tab="evolution" aria-controls="workbench">Run</button>
+          <button type="button" role="tab" id="tab-how" data-tab="how" aria-controls="how">How it works</button>
+        </nav>
+        <button type="button" class="button quiet theme-toggle" data-theme-toggle></button>
+      </div>
     </div>
     <p class="lead">Arrange any song for the NES sound chip. <span class="lead-more">A genetic algorithm evolves the
     parts in your browser, and your file stays on this device.</span></p>
@@ -42,9 +72,13 @@
   <noscript><p class="card notice">The arranger runs in JavaScript. Turn it on to arrange a song.</p></noscript>
 
   <div class="panels">
-    <section id="song" class="card wide has-shelf" aria-labelledby="song-title">
+    <section id="song" class="card wide has-shelf" role="tabpanel" aria-labelledby="tab-song">
       <h2 id="song-title" class="visually-hidden">Song</h2>
-      <div class="shelf-root" data-shelf></div>
+      <!-- The shelf's room is kept from the first paint, so the page does not jump when it mounts
+           (main.js removes this placeholder; the shelf then shows its own skeleton). -->
+      <div class="shelf-root" data-shelf><div class="shelf-boot" data-shelf-boot aria-hidden="true">
+        <span class="skeleton sk-block"></span><span class="skeleton sk-block sk-stage"></span>
+      </div></div>
       <div class="song-head">
         <button class="button" type="button" data-open-file>Open MIDI or ABC</button>
         <p class="drop-note">
@@ -64,7 +98,7 @@
             <div class="has-tip">
               <label class="inline">Pace<span class="tip-mark" aria-hidden="true">i</span>
                 <select data-pace aria-describedby="tip-pace"><option value="full" selected>full speed</option><option value="watch">watch</option></select></label>
-              <p class="tip" id="tip-pace" role="tooltip">Full speed finishes in about a second; watch runs about 400 generations per second, so you can follow the evolution. The arrangement is the same.</p>
+              <p class="tip" id="tip-pace" role="tooltip">Full speed runs as fast as your device can: 1 to 3 seconds for a 32-bar song on a computer, a few times that on a phone. Watch runs about 400 generations per second, so you can follow the evolution. The arrangement is the same.</p>
             </div>
             <div class="toolbar">
               <button type="button" class="button primary" data-arrange disabled>Arrange</button>
@@ -91,7 +125,7 @@
 
     <!-- Run tab: the run controls on top, then two views of the run, one at a time and each
          with the full width: the evolution while it runs, the result when it ends (ui/tabs.js). -->
-    <div id="workbench" class="workbench wide">
+    <div id="workbench" class="workbench wide" role="tabpanel" aria-labelledby="tab-evolution">
       <div id="run-bar" class="run-bar card"><div class="run-slot" data-run-slot="evolution"></div></div>
       <nav class="view-tabs" role="tablist" aria-label="Views of the run" data-view-tabs>
         <button type="button" role="tab" id="view-tab-evolution" data-view="evolution" aria-controls="evolution">Evolution</button>
@@ -114,7 +148,7 @@
       <div data-mixer></div>
     </aside>
 
-    <section id="how" class="card wide" aria-labelledby="how-title">
+    <section id="how" class="card wide" role="tabpanel" aria-labelledby="tab-how">
       <h2 id="how-title" class="visually-hidden">How it works</h2>
       <div class="how" data-how></div>
       <div class="about">

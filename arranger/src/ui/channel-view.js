@@ -89,6 +89,11 @@ export function createChannelView(container, budget = drawingBudget(globalThis.m
     box = { width: entry.contentRect.width, height: entry.contentRect.height };
     needsFrame = true;
   }).observe(canvas);
+  // The theme changes the colors the lines read from the page; read them again, and draw.
+  document.addEventListener("themechange", () => {
+    colors.clear();
+    needsFrame = true;
+  });
 
   /** The color to stroke with: the neon version of a theme color, or the color as given. */
   const color = (/** @type {string} */ value) => {

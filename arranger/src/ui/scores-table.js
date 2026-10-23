@@ -1,15 +1,17 @@
 // @ts-check
 /**
- * Scores table: how the best plan scored on each of the seven fitness criteria.
+ * Scores: how the best plan scored on each of the seven fitness criteria.
  *
  * The fitness is the weighted mean of the criterion scores, each from 0 to 1 (`core/fitness.js`).
- * The table lists every criterion with its weight and its score, and draws the score as a bar on
- * the same 0 to 1 scale, so the criterion that holds the fitness back is the shortest bar. Scores
- * show two decimals, enough to tell plans apart by ear. A criterion that does not apply to the
- * song (contrast without a chorus) has no score and drops out of the mean.
+ * The Result shows them as VU meters (`vu-meters.js`), so the criterion that holds the fitness
+ * back is the needle that leans least. `describeScores` is the same information as plain rows
+ * (name, weight, two-decimal score, bar share): the numbers the meters and any text view share.
+ * A criterion that does not apply to the song (contrast without a chorus) has no score and drops
+ * out of the mean.
  */
 
 import { CRITERIA } from "../core/fitness.js";
+import { createVuMeters } from "./vu-meters.js";
 
 /** Criterion names as the settings panel shows them. */
 const CRITERION_LABELS = Object.freeze({
@@ -51,8 +53,24 @@ export function describeScores(scores, fitness, weights) {
   return { rows, fitness: fitness.toFixed(2) };
 }
 
+/** @type {WeakMap<HTMLElement, ReturnType<typeof createVuMeters>>} the meters already built in a container */
+const metersOf = new WeakMap();
+
 /**
- * Draw the table inside `container`, replacing what was there.
+ * Empty a container of its meters, so the next `renderScores` builds them again (the needles then
+ * start parked instead of swinging from another song's scores).
+ *
+ * @param {HTMLElement} container
+ */
+export function clearScores(container) {
+  metersOf.delete(container);
+  container.replaceChildren();
+}
+
+/**
+ * Show the scores in `container` as VU meters (`vu-meters.js`), one per criterion and one for the
+ * fitness. The meters are built the first time and moved after that, so a new run's needles swing
+ * from where the last run left them.
  *
  * @param {HTMLElement} container
  * @param {Record<string, number | null>} scores
@@ -60,21 +78,10 @@ export function describeScores(scores, fitness, weights) {
  * @param {Record<string, number>} weights
  */
 export function renderScores(container, scores, fitness, weights) {
-  const table = describeScores(scores, fitness, weights);
-  const rows = table.rows
-    .map(
-      (row) => `<tr><th scope="row">${row.label}</th><td class="num mono">${row.weight}</td>
-        <td class="num mono">${row.score}</td>
-        <td class="bar-cell">${row.bar === null ? "" : `<span class="score-bar"><span style="width: ${row.bar * 100}%"></span></span>`}</td></tr>`,
-    )
-    .join("");
-  container.innerHTML = `<table>
-    <thead><tr><th scope="col">Criterion</th><th scope="col" class="num">Weight</th>
-      <th scope="col" class="num">Score</th><th scope="col"><span class="visually-hidden">Score from 0 to 1</span>
-      <span class="scale" aria-hidden="true"><span>0</span><span>1</span></span></th></tr></thead>
-    <tbody>${rows}</tbody>
-    <tfoot><tr><th scope="row">Fitness <span class="hint">(weighted mean)</span></th><td></td>
-      <td class="num mono">${table.fitness}</td>
-      <td class="bar-cell"><span class="score-bar"><span style="width: ${fitness * 100}%"></span></span></td></tr></tfoot>
-  </table>`;
+  let meters = metersOf.get(container);
+  if (!meters) {
+    meters = createVuMeters(container, weights);
+    metersOf.set(container, meters);
+  }
+  meters.set(scores, fitness);
 }

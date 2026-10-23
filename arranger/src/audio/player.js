@@ -7,7 +7,7 @@
  * (`chip-synth.js`, `plain-synth.js`, `sound-packs.js`), so beat b sounds at the same second in
  * both. Playing starts one Web Audio source per buffer at the same instant. Each version ends in
  * its own switch gain: the version you hear has gain 1, the other gain 0. Switching only moves
- * the two gains over 10 ms, so the music never restarts or jumps (spec 002, FR-022). A seek
+ * the two gains over 80 ms, a crossfade, so the music never restarts or jumps (spec 002, FR-022). A seek
  * restarts every source at the new offset, because a Web Audio source plays only once.
  *
  * The arrangement may come as one buffer or as four stems, one per channel (P1 melody, P2
@@ -37,6 +37,16 @@ import { CHANNELS, DEFAULT_LEVELS, DEFAULT_VOLUME, channelGains, clampLevels, cl
 
 /** Gain ramp of an A/B switch or a level change, in seconds: long enough to avoid a click, short enough to feel instant. */
 const RAMP_SECONDS = 0.01;
+
+/**
+ * Crossfade of an A/B switch, in seconds. A 10 ms ramp is click-free but sounds like a cut; 80 ms
+ * is heard as one version dissolving into the other, and still short enough to feel instant. The
+ * two versions are the same music on the same timeline, so the fade has no phasing to speak of.
+ */
+const SWITCH_RAMP_SECONDS = 0.08;
+
+/** Samples the meters read from each channel: 256 is a few milliseconds, enough for a steady RMS. */
+const METER_BLOCK = 256;
 
 /** The limiter after the bus (research R2): it acts only on peaks above -1 dBFS, and acts fast. */
 const LIMITER = Object.freeze({ threshold: -1, knee: 0, ratio: 20, attack: 0.003, release: 0.1 });
@@ -95,6 +105,7 @@ export function heardTime(context, nowMs) {
  * @property {GainNode} bus adds the channels, at gain `busScale`
  * @property {Record<Version, GainNode>} switches the A/B gains, 1 for the version you hear
  * @property {GainNode} master the volume control: both switches end in it, and it feeds the speakers
+ * @property {Record<ChannelName, AnalyserNode>} analysers one listener after each channel gain, for the mixer's meters
  */
 
 /**
@@ -122,6 +133,7 @@ export function heardTime(context, nowMs) {
  *   setLevels: (levels: Levels) => void, setBusScale: (scale: number) => void,
  *   setVolume: (percent: number) => void,
  *   currentTime: () => number, duration: () => number, isPlaying: () => boolean,
+ *   channelLevels: () => Record<ChannelName, number> | null,
  *   active: () => Version, has: (version: Version) => boolean,
  *   onChange: (listener: () => void) => void,
  * }}
@@ -188,31 +200,38 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
     bus.connect(limiter);
     const gains = channelGains(levels);
     const channels = /** @type {Record<ChannelName, GainNode>} */ ({});
+    const analysers = /** @type {Record<ChannelName, AnalyserNode>} */ ({});
     for (const channel of CHANNELS) {
       channels[channel] = audio.createGain();
       channels[channel].gain.value = gains[channel];
       channels[channel].connect(bus);
+      // A listener after the fader: the meter shows what the channel contributes at its level,
+      // so a muted channel reads silent. An analyser costs nothing until it is read.
+      analysers[channel] = audio.createAnalyser();
+      analysers[channel].fftSize = METER_BLOCK;
+      channels[channel].connect(analysers[channel]);
     }
-    return { channels, bus, switches, master };
+    return { channels, bus, switches, master, analysers };
   }
 
   /**
    * Move a gain to `target` over RAMP_SECONDS, from wherever it is now.
    * @param {AudioParam} param
    * @param {number} target
+   * @param {number} [seconds]
    */
-  function rampTo(param, target) {
+  function rampTo(param, target, seconds = RAMP_SECONDS) {
     if (!context) return;
     const now = context.currentTime;
     param.cancelScheduledValues(now);
     param.setValueAtTime(param.value, now);
-    param.linearRampToValueAtTime(target, now + RAMP_SECONDS);
+    param.linearRampToValueAtTime(target, now + seconds);
   }
 
   function rampSwitches() {
     if (!graph) return;
-    rampTo(graph.switches.arrangement.gain, active === "arrangement" ? 1 : 0);
-    rampTo(graph.switches.original.gain, active === "original" ? 1 : 0);
+    rampTo(graph.switches.arrangement.gain, active === "arrangement" ? 1 : 0, SWITCH_RAMP_SECONDS);
+    rampTo(graph.switches.original.gain, active === "original" ? 1 : 0, SWITCH_RAMP_SECONDS);
   }
 
   /** @param {Version} version */
@@ -228,6 +247,28 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
     // the click and the speakers lag behind, so the first moments are before the start: clamp at 0.
     const heard = heardTime(context, performance.now());
     return Math.max(0, Math.min(duration(), offset + heard - startedAt));
+  }
+
+  /** The block the meters read into; one array for all four analysers, since they are read in turn. */
+  const meterBlock = new Float32Array(METER_BLOCK);
+
+  /**
+   * The level of each channel now, as the linear RMS (0 to 1) of what comes out of its fader.
+   * Read only when called: the mixer's meters call it once per animation frame, and only while
+   * they are on screen and the music plays.
+   *
+   * @returns {Record<ChannelName, number> | null} null while nothing plays
+   */
+  function channelLevels() {
+    if (!playing || !graph) return null;
+    const levels = /** @type {Record<ChannelName, number>} */ ({});
+    for (const channel of CHANNELS) {
+      graph.analysers[channel].getFloatTimeDomainData(meterBlock);
+      let sum = 0;
+      for (let i = 0; i < meterBlock.length; i++) sum += meterBlock[i] * meterBlock[i];
+      levels[channel] = Math.sqrt(sum / meterBlock.length);
+    }
+    return levels;
   }
 
   function stopSources() {
@@ -361,6 +402,7 @@ export function createPlayer({ createContext = () => new AudioContext({ ...CONTE
     },
     currentTime,
     duration,
+    channelLevels,
     isPlaying: () => playing,
     active: () => active,
     has,

@@ -401,3 +401,69 @@ export function scaleEasing(elapsed) {
   const frames = Math.min(Math.max(elapsed, 0), LONGEST_STEP) / (1000 / 60);
   return 1 - (1 - SCALE_EASING) ** frames;
 }
+
+// --- Page turns and entrances -----------------------------------------------------------------
+//
+// When the page of records changes, the old records do not vanish and the new ones do not
+// appear: a turn slides the old page out and the new page in, in the direction of the turn; a
+// change of list (another playlist, a search) pops the new records in one after another. These
+// functions give the pose of one record `elapsed` milliseconds into such a motion as an offset
+// to add to its resting position (in scene units), an opacity, and a scale factor. The scene
+// applies them to the records' groups every frame; they are numbers only, so they are tested
+// without WebGL. Under reduced motion the scene skips them and swaps the page at once.
+
+/** How long a page turn takes, in milliseconds. */
+export const PAGE_TURN_MS = 220;
+
+/** The wait between one record's entrance and the next's, and the longest wait (milliseconds). */
+export const ENTER_STAGGER_MS = 18;
+export const ENTER_STAGGER_MAX_MS = 300;
+
+/** How far a record travels when a page turns, in scene units: a column and a half. */
+const TURN_DISTANCE = RECORD_SPACING * 1.5;
+
+/** @param {number} progress from 0 to 1 @returns {number} an ease-out cubic: fast at first, settling */
+const easeOut = (progress) => 1 - (1 - progress) ** 3;
+
+/** @param {number} elapsed @param {number} duration @returns {number} progress clamped to 0..1 */
+const progressOf = (elapsed, duration) => Math.min(1, Math.max(0, elapsed / duration));
+
+/**
+ * The pose of a record that is arriving.
+ *
+ * With a direction (1: the next page, -1: the previous one) the record slides in from that side
+ * while fading in. With 0 (the list changed) it stays in place and grows from half size, after a
+ * wait of 18 ms per record before it (at most 300 ms), so a page fills in like a wave.
+ *
+ * @param {number} elapsed milliseconds since the page changed
+ * @param {number} index the record's place on the page, from 0
+ * @param {-1 | 0 | 1} direction
+ * @returns {{offsetX: number, opacity: number, scale: number}} `scale` multiplies the record's own scale
+ * @example
+ * enterPose(0, 0, 1); // { offsetX: 2.55, opacity: 0, scale: 0.9 }: about to slide in from the right
+ * enterPose(220, 0, 1); // { offsetX: 0, opacity: 1, scale: 1 }: settled
+ */
+export function enterPose(elapsed, index, direction) {
+  if (direction === 0) {
+    const wait = Math.min(index * ENTER_STAGGER_MS, ENTER_STAGGER_MAX_MS);
+    const eased = easeOut(progressOf(elapsed - wait, PAGE_TURN_MS));
+    return { offsetX: 0, opacity: eased, scale: 0.5 + 0.5 * eased };
+  }
+  const eased = easeOut(progressOf(elapsed, PAGE_TURN_MS));
+  return { offsetX: direction * TURN_DISTANCE * (1 - eased) + 0, opacity: eased, scale: 0.9 + 0.1 * eased };
+}
+
+/**
+ * The pose of a record that is leaving: it slides away from the side the new page comes from,
+ * fading out.
+ *
+ * @param {number} elapsed milliseconds since the page changed
+ * @param {-1 | 1} direction 1 when turning to the next page (the old records go left)
+ * @returns {{offsetX: number, opacity: number, scale: number}}
+ * @example
+ * exitPose(220, 1); // { offsetX: -2.55, opacity: 0, scale: 0.9 }
+ */
+export function exitPose(elapsed, direction) {
+  const eased = easeOut(progressOf(elapsed, PAGE_TURN_MS));
+  return { offsetX: -direction * TURN_DISTANCE * eased + 0, opacity: 1 - eased, scale: 1 - 0.1 * eased };
+}
